@@ -1,43 +1,40 @@
-# Stage 1-B Starter
+# Stage 1-B: PyConfig Frontend Comparison
 
-This directory starts the Stage 1-B PyConfig frontend experiment.
+> **Status:** Complete and frozen.
+> **Selected variant:** B0 / PyConfig auto-discovery.
+> **Historical workspace:** the original experiment was run under `~/tmp/260704/stage1b`.
+
+This directory preserves the Stage 1-B comparison that replaced the Stage 1-A `Py_BytesMain` frontend with explicit PyConfig initialization while keeping the Stage 1-A runtime contract unchanged.
 
 ## Variants
 
 - `stage1a`: frozen `Py_BytesMain` baseline.
 - `b0-auto`: `PyConfig` initialization without overriding `config.home`.
-- `b1-home`: `PyConfig` initialization with `config.home` from `CPYTHON_HOME`.
+- `b1-home`: the same flow with `config.home` supplied from `CPYTHON_HOME`.
 
-The Stage 1-A runtime integration remains unchanged:
+The comparison covered CLI execution modes, common CLI flags, `sys.orig_argv`, `sys.path`, `PYTHONPATH`, subprocess re-entry, exit codes, native stdlib imports, HTTPS, uv venv, venv identity, uv pip, and uv run.
 
-```sh
-LD_LIBRARY_PATH=<cpython-prefix>/lib
-SSL_CERT_FILE=<termux-prefix>/etc/tls/cert.pem
-```
+Both B0 and B1 passed the tested functional surface. B1's wrong-home negative control failed hard during startup, proving that explicit `config.home` introduced a real additional dependency. B0 passed without that dependency and was selected.
 
-Stage 1-B does not attempt to solve native linker lookup or CA trust through PyConfig.
-
-## Host build
-
-```sh
-source ~/tmp/260704/env.sh
-cd ~/tmp/260704/stage1b
-./build-stage1b.sh
-```
-
-Copy the resulting launchers into the Termux test prefix:
+## Frozen decision
 
 ```text
-<prefix>/bin/python-pyconfig-auto
-<prefix>/bin/python-pyconfig-home
+selected:
+  B0 / PyConfig auto-discovery
+
+initialization:
+  PyConfig_InitPythonConfig
+  PyConfig_SetBytesArgv
+  Py_InitializeFromConfig
+  PyConfig_Clear
+  Py_RunMain
+
+not selected:
+  B1 / explicit config.home
 ```
 
-## Termux comparison
+See `docs/stages/STAGE1B_PYCONFIG.md` for the frozen stage document.
 
-```sh
-./stage1b-compare.sh
-```
+## Reproduction note
 
-The experiment is successful when B0 and B1 can be compared against the Stage 1-A baseline using the same runtime contract and uv workflows.
-
-A B1 failure in venv identity is useful evidence: it would show that forcing `config.home` changes semantics that B0 preserves.
+The scripts in this directory are historical experiment artifacts and some still contain the original date-based workspace assumptions. Stage 2-C introduces the canonical repo-wide workflow under `src/`, `scripts/`, `config/`, and `out/`; the Stage 1-B scripts are retained for experiment provenance rather than as the current project entry point.
