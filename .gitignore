@@ -1,9 +1,8 @@
 # cpython-android-cli
 #
 # Track source, experiment code, selected evidence, documentation,
-# and reproducibility metadata.
-# Keep generated runtimes, toolchains, extracted prefixes, caches,
-# and bulk results repo-local but untracked.
+# and reproducibility metadata. Keep generated runtimes, toolchains,
+# extracted prefixes, caches, and bulk results repo-local but untracked.
 
 # Machine-local configuration
 /.local/
@@ -15,7 +14,7 @@
 # External SDKs, toolchains, and upstream working trees
 /tools/
 
-# Canonical generated trees
+# Canonical generated project trees
 /out/
 /work/
 /results/
@@ -33,13 +32,13 @@
 **/pristine-test/
 **/stage2b-relocation/
 
-# Extracted/installed runtime prefixes
+# Extracted or installed runtime prefixes
 **/prefix/
 
 # Generated bootstrap workspace
 experiments/bootstrap-android-build/android-python-work/testbed/
 
-# Archives and packages
+# Archives and packaged artifacts
 *.tar
 *.tar.gz
 *.tgz
@@ -77,9 +76,9 @@ env/
 *.lo
 *.la
 
-# Do not globally ignore *.so:
-# selected ELF fixtures/evidence may be tracked deliberately.
-# Generated shared libraries are already excluded via prefix/out/work.
+# Do not globally ignore *.so. Selected ELF fixtures or evidence may be
+# tracked deliberately; generated libraries are already excluded via
+# prefix/, out/, work/, and experiment-local generated trees.
 
 # Editors and OS noise
 *.swp
