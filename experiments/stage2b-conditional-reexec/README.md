@@ -1,10 +1,12 @@
-# Stage 2-B Starter
+# Stage 2-B: Conditional Re-exec and Relocation
 
-Stage 2-B refines the Stage 2-A winning strategy: self-location plus re-exec.
+> **Status:** Complete.
+> **Result:** PASS.
+> **Selected design:** R2 conditional self re-exec.
+
+Stage 2-B refined the Stage 2-A self-reexec strategy into a fixed-point launcher that avoids redundant re-exec in prepared subprocesses.
 
 ## R2 policy
-
-The R2 launcher uses a condition instead of a recursion guard:
 
 ```text
 discover /proc/self/exe
@@ -16,7 +18,7 @@ is prefix/lib already an LD_LIBRARY_PATH component?
         +-- no
         |    normalize environment
         |    configure CA
-        |    execv(self, original argv)
+        |    execv(actual executable, original argv)
         |
         +-- yes
              normalize duplicate required entries
@@ -24,82 +26,58 @@ is prefix/lib already an LD_LIBRARY_PATH component?
              run B0 PyConfig directly
 ```
 
-This gives a fixed point:
+This gives:
 
-- top-level clean launch: one re-exec,
-- inherited subprocess with correct loader environment: zero re-execs,
-- wrong or missing loader environment: repaired and one re-exec,
-- wrong/nonexistent CA path: repaired without re-exec when the loader path is already ready.
+- clean top-level launch: one re-exec,
+- inherited subprocess with the correct loader environment: zero re-execs,
+- wrong or missing required native path: repair and one re-exec,
+- wrong or nonexistent CA path: repair without re-exec when the loader path is already ready,
+- duplicate required path components: normalized to one occurrence.
 
-## Build
+## Main validation result
 
-```sh
-source ~/tmp/260704/env.sh
+The final validator covered:
 
-cd ~/tmp/260704/stage2b
+- `clean`,
+- `ready`,
+- `wrong-ld`,
+- `wrong-ca`,
+- `duplicate`,
+- unrelated working directory,
+- external symlink invocation,
+- subprocess re-entry,
+- uv venv,
+- clean launch through the venv interpreter,
+- venv identity,
+- uv run.
 
-DEV_PREFIX="$HOME/tmp/260703/android-python-work/prefix" \
-./build-stage2b.sh
-```
+All tested areas passed.
 
-## Termux preparation
-
-Place `python-s2-r2` beside the scripts, then:
-
-```sh
-./prepare-stage2b-pristine.sh
-
-source \
-  ~/tmp/260704/stage2b/pristine-test/STAGE2B_TEST_PREFIX.env
-```
-
-## Validation
+The canonical validator in this directory is:
 
 ```sh
 ./stage2b-validate.sh
 ```
 
-Profiles:
+## Relocation result
 
-- `clean`
-- `ready`
-- `wrong-ld`
-- `wrong-ca`
-- `duplicate`
-
-Additional tests:
-
-- unrelated working directory,
-- invocation through an external symlink,
-- subprocess re-entry,
-- uv venv,
-- clean launch through the venv interpreter,
-- uv run.
-
-## Relocation
-
-After the main validator passes:
-
-```sh
-./stage2b-relocation.sh
-```
-
-This validates the same whole prefix at location A, then moves it to location B and repeats:
+`stage2b-relocation.sh` validated the runtime at location A, moved the whole prefix to location B, and repeated:
 
 - native imports,
 - HTTPS,
 - subprocess re-entry,
-- uv venv,
+- uv venv creation,
 - clean venv launch,
 - uv run.
 
-## Decision rule
+All tests passed at both locations.
 
-Stage 2-B is successful only if R2:
+The validated claim is:
 
-1. passes from a clean external environment,
-2. does not grow duplicate required library-path entries across subprocesses,
-3. repairs wrong inherited loader and CA settings,
-4. preserves venv identity,
-5. survives whole-prefix relocation,
-6. preserves uv workflows after relocation.
+> The tested runtime prefix can be relocated as a unit, and R2 re-derives its native runtime path from the actual executable location.
+
+The test did **not** prove that an external venv created before moving its base runtime remains usable after that base-runtime move.
+
+## Historical workspace note
+
+The original experiment was run under `~/tmp/260704/stage2b`. The historical build and preparation scripts retain parts of that path model. Stage 2-C provides the current repo-wide build, sync, assembly, and smoke workflows.
