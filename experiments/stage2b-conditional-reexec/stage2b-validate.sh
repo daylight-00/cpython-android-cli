@@ -42,14 +42,16 @@ exec > >(tee "$LOG") 2>&1
     exit 2
 }
 
-base_clean_env=(
-    env
+base_unsets=(
     -u PYTHONHOME
     -u PYTHONPATH
     -u CPYTHON_HOME
     -u SSL_CERT_DIR
     -u VIRTUAL_ENV
     -u UV_PYTHON
+)
+
+base_assignments=(
     PREFIX="$TERMUX_PREFIX"
     HOME="$HOME"
     PATH="$TERMUX_PREFIX/bin:/system/bin"
@@ -63,35 +65,45 @@ run_profile() {
 
     case "$profile" in
         clean)
-            "${base_clean_env[@]}" \
+            env \
+                "${base_unsets[@]}" \
                 -u LD_LIBRARY_PATH \
                 -u SSL_CERT_FILE \
+                "${base_assignments[@]}" \
                 PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/$profile" \
                 "$S2_R2_BIN" "$@"
             ;;
         ready)
-            "${base_clean_env[@]}" \
+            env \
+                "${base_unsets[@]}" \
+                "${base_assignments[@]}" \
                 LD_LIBRARY_PATH="$CPYTHON_PREFIX/lib" \
                 SSL_CERT_FILE="$TERMUX_CA" \
                 PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/$profile" \
                 "$S2_R2_BIN" "$@"
             ;;
         wrong-ld)
-            "${base_clean_env[@]}" \
+            env \
+                "${base_unsets[@]}" \
+                "${base_assignments[@]}" \
                 LD_LIBRARY_PATH="$RESULTS_DIR/not-the-python-lib" \
                 SSL_CERT_FILE="$TERMUX_CA" \
                 PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/$profile" \
                 "$S2_R2_BIN" "$@"
             ;;
         wrong-ca)
-            "${base_clean_env[@]}" \
+            env \
+                "${base_unsets[@]}" \
+                "${base_assignments[@]}" \
                 LD_LIBRARY_PATH="$CPYTHON_PREFIX/lib" \
                 SSL_CERT_FILE="$RESULTS_DIR/missing-ca.pem" \
                 PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/$profile" \
                 "$S2_R2_BIN" "$@"
             ;;
         duplicate)
-            "${base_clean_env[@]}" \
+            env \
+                "${base_unsets[@]}" \
+                "${base_assignments[@]}" \
                 LD_LIBRARY_PATH="$CPYTHON_PREFIX/lib:$CPYTHON_PREFIX/lib" \
                 SSL_CERT_FILE="$TERMUX_CA" \
                 PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/$profile" \
@@ -105,9 +117,11 @@ run_profile() {
 }
 
 run_uv_clean() {
-    "${base_clean_env[@]}" \
+    env \
+        "${base_unsets[@]}" \
         -u LD_LIBRARY_PATH \
         -u SSL_CERT_FILE \
+        "${base_assignments[@]}" \
         PYTHONPYCACHEPREFIX="$PYCACHE_ROOT/uv" \
         "$UV_BIN" "$@"
 }
@@ -185,9 +199,11 @@ echo "################################################################"
 echo "TEST: clean debug trace"
 echo "################################################################"
 
-"${base_clean_env[@]}" \
+env \
+    "${base_unsets[@]}" \
     -u LD_LIBRARY_PATH \
     -u SSL_CERT_FILE \
+    "${base_assignments[@]}" \
     CPYTHON_STAGE2_DEBUG=1 \
     "$S2_R2_BIN" \
     -c 'print("clean-trace-ok")' \
@@ -198,7 +214,9 @@ echo "################################################################"
 echo "TEST: ready debug trace"
 echo "################################################################"
 
-"${base_clean_env[@]}" \
+env \
+    "${base_unsets[@]}" \
+    "${base_assignments[@]}" \
     LD_LIBRARY_PATH="$CPYTHON_PREFIX/lib" \
     SSL_CERT_FILE="$TERMUX_CA" \
     CPYTHON_STAGE2_DEBUG=1 \
@@ -216,9 +234,11 @@ mkdir -p "$RESULTS_DIR/unrelated-cwd"
 (
     cd "$RESULTS_DIR/unrelated-cwd" || exit 1
 
-    "${base_clean_env[@]}" \
+    env \
+        "${base_unsets[@]}" \
         -u LD_LIBRARY_PATH \
         -u SSL_CERT_FILE \
+        "${base_assignments[@]}" \
         "$S2_R2_BIN" \
         -c "$probe"
 )
@@ -234,9 +254,11 @@ mkdir -p "$RESULTS_DIR/external-link"
 SYMLINK_BIN="$RESULTS_DIR/external-link/python-r2-link"
 ln -sfn "$S2_R2_BIN" "$SYMLINK_BIN"
 
-"${base_clean_env[@]}" \
+env \
+    "${base_unsets[@]}" \
     -u LD_LIBRARY_PATH \
     -u SSL_CERT_FILE \
+    "${base_assignments[@]}" \
     "$SYMLINK_BIN" \
     -c "$probe"
 symlink_rc=$?
@@ -275,9 +297,11 @@ print("child LD_LIBRARY_PATH:", os.environ.get("LD_LIBRARY_PATH"))
 )
 '
 
-"${base_clean_env[@]}" \
+env \
+    "${base_unsets[@]}" \
     -u LD_LIBRARY_PATH \
     -u SSL_CERT_FILE \
+    "${base_assignments[@]}" \
     CPYTHON_STAGE2_DEBUG=1 \
     "$S2_R2_BIN" \
     -c "$subprocess_code" \
@@ -306,9 +330,11 @@ if [[ $uv_venv_rc -eq 0 ]]; then
     echo
     echo "== venv clean launch =="
 
-    "${base_clean_env[@]}" \
+    env \
+        "${base_unsets[@]}" \
         -u LD_LIBRARY_PATH \
         -u SSL_CERT_FILE \
+        "${base_assignments[@]}" \
         CPYTHON_STAGE2_DEBUG=1 \
         "$VENV/bin/python" \
         -c '
