@@ -15,11 +15,13 @@ Stage 2-A  bootstrap strategy comparison                complete
 Stage 2-B  conditional re-exec and relocation           complete
 Stage 2-C  synthesis and project workflow               complete
 Stage 2    native bootstrap and workflow architecture   frozen
-Stage 3    distribution engineering                     active
-Stage 3-A  runtime closure census                       active
+Stage 3-A  runtime closure census and boundary model    frozen
+Stage 3-B  reproducible build-input promotion           active
+Stage 3-C  distribution archive/installation contract  deferred
+Stage 3-D  consumer integration                         deferred
 ```
 
-The frozen Stage 2 foundation is:
+The frozen Stage 2 runtime architecture is:
 
 ```text
 R2 conditional self re-exec
@@ -27,64 +29,122 @@ R2 conditional self re-exec
 B0 PyConfig auto-discovery frontend
 ```
 
-The Stage 2-B validation established, on the tested Termux/Android arm64 environment:
+The frozen Stage 3-A result adds an evidence-based runtime closure and host/data boundary model on the tested Termux/Android arm64 environment.
 
-- clean top-level launch performs one bootstrap re-exec,
-- prepared subprocesses enter Python directly without another re-exec,
-- missing or wrong native search-path state is repaired,
-- invalid CA configuration is repaired independently,
-- duplicate required library-path entries are normalized,
-- native stdlib imports work,
-- HTTPS works,
-- subprocess re-entry works,
-- uv venv and venv identity work,
-- uv run works,
-- the runtime prefix works after a whole-prefix move from one absolute path to another.
+## Stage 3-A frozen result
 
-Stage 2-C then reproduced the selected architecture through the cleaned repository workflow:
+Stage 3-A inventoried and probed the already-validated Stage 2-C runtime before packaging work.
+
+Observed inventory:
 
 ```text
-workstation canonical build
-    -> artifact transport
-    -> Termux runtime assembly
-    -> base runtime smoke
-    -> subprocess
-    -> uv venv
-    -> venv identity
-    -> uv run
-    -> STAGE2C_SMOKE=PASS
+file entries             3280
+symlinks                    5
+ELF objects                 81
+DT_NEEDED edges            329
+inspection errors            0
+mutation check            PASS
 ```
 
-The relocation claim is intentionally scoped: whole-prefix runtime relocation was tested; relocation of an already-created external venv after moving its base runtime was not tested.
-
-## Current Stage 3 question
-
-Stage 3 does not begin by changing the frozen launcher.
-
-It asks:
-
-> How should the validated Stage 2 runtime become a reproducible, inspectable, relocatable distribution product without losing the frozen runtime behavior?
-
-The first active sub-stage is Stage 3-A:
+Native closure:
 
 ```text
-runtime file inventory
-symlink inventory
-ELF object inventory
-DT_NEEDED edge inventory
-Python runtime identity
-provider classification
-unresolved-edge review
-non-mutation verification
+9 unique needed SONAMEs
+  4 RUNTIME_INTERNAL
+  5 ANDROID_SYSTEM
+
+RUNTIME_INTERNAL edges    80
+ANDROID_SYSTEM edges     249
+TERMUX native edges        0
+UNRESOLVED edges            0
 ```
 
-Run the first census on Termux with:
+The five unique Android-system SONAMEs passed tested fresh-process loadability probes.
 
-```sh
-bash experiments/stage3a-runtime-closure/inventory-runtime.sh
+Extension surface:
+
+```text
+67 candidates
+67 isolated imports PASS
+0 FAIL
 ```
 
-See `docs/stages/STAGE3_SCOPE.md`.
+Sysconfig missing-path classification:
+
+```text
+91 records
+27 unique paths
+UNKNOWN=0
+```
+
+Non-ELF boundaries:
+
+```text
+CA trust
+  Termux host CA integration confirmed
+
+timezone data
+  absent in base runtime
+  first-party tzdata package fallback PASS
+
+temporary storage
+  Termux $PREFIX/tmp observed
+```
+
+Representative Python-level audit rows were reviewed and classified; no exact observed row remained semantically unknown.
+
+## Final Stage 3-A reconfirmation
+
+Canonical smoke:
+
+```text
+STAGE2C_SMOKE=PASS
+```
+
+Production-shape whole-prefix relocation:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
+```
+
+After moving the whole prefix from A to B, the tested runtime identity, active sysconfig paths, subprocess identity, fresh venv base identity, and uv run base identity all re-rooted at B.
+
+Stage result:
+
+```text
+STAGE3A=FROZEN
+```
+
+See:
+
+```text
+docs/stages/STAGE3A_FINAL.md
+```
+
+## Active Stage 3-B question
+
+Stage 3-B asks:
+
+> Can the current launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
+
+The current development input is:
+
+```text
+experiments/bootstrap-android-build/android-python-work/prefix
+```
+
+This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
+
+Stage 3-B begins with read-only provenance reconstruction before attempting a clean replay.
+
+See:
+
+```text
+docs/stages/STAGE3B_SCOPE.md
+```
 
 ## Architecture in one picture
 
@@ -97,7 +157,8 @@ Stage 2 launcher
         +-- resolve /proc/self/exe
         +-- derive <prefix>/lib
         +-- normalize LD_LIBRARY_PATH
-        +-- preserve or discover Termux CA bundle
+        +-- preserve existing regular-file SSL_CERT_FILE
+        +-- otherwise discover Termux CA bundle
         |
         +-- required libdir absent at process start
         |       -> execv(actual executable, original argv)
@@ -107,7 +168,7 @@ Stage 2 launcher
                 -> Py_RunMain
 ```
 
-Python path discovery, native dependency lookup, and host CA trust integration are treated as separate responsibilities.
+Python path discovery, native dependency lookup, host CA trust integration, timezone data sourcing, build provenance, and distribution packaging are treated as separate responsibilities.
 
 ## Repository map
 
@@ -117,7 +178,7 @@ scripts/        current build, sync, assembly, and smoke workflows
 config/         tracked defaults and machine-role examples
 .local/         machine-local configuration; ignored
 
-docs/           current project context, frozen stages, selected evidence
+docs/           current project context, frozen stages, scopes, selected evidence
 experiments/    historical and active experiment implementations
 
 out/            canonical cross-build artifacts; ignored
@@ -169,23 +230,11 @@ Canonical artifact:
 out/aarch64-linux-android24/release/bin/python3.14
 ```
 
-For a topology where the workstation can initiate the connection to Termux:
+Generated launcher artifacts use rsync rather than Git.
 
-```sh
-DRY_RUN=1 bash scripts/sync/push-out.sh
-bash scripts/sync/push-out.sh
-```
+## Termux workflow
 
-## Termux pull topology
-
-The successful Stage 2-C validation used Termux-initiated pull because Termux inbound connectivity was unavailable.
-
-```sh
-DRY_RUN=1 bash scripts/sync/pull-out.sh
-bash scripts/sync/pull-out.sh
-```
-
-Then:
+Depending on network topology, use the configured sync helper, then:
 
 ```sh
 bash scripts/termux/prepare-runtime.sh
@@ -199,21 +248,26 @@ source, scripts, docs, experiment history  -> Git
 generated out/<target>/<profile>/          -> rsync
 ```
 
-The connection initiator may be workstation push or Termux pull depending on network topology.
+## Documentation reading order
 
-## Documentation
+Current handoff path:
 
-Start with:
+```text
+README.md
+    |
+    v
+docs/PROJECT_CONTEXT_STAGE3.md
+    |
+    +--> docs/stages/STAGE2_FINAL.md
+    |
+    +--> docs/stages/STAGE3A_FINAL.md
+    |
+    +--> docs/stages/STAGE3B_SCOPE.md
+    |
+    +--> docs/evidence/
+```
 
-- `docs/PROJECT_CONTEXT.md` — frozen Stage 2 architecture, decisions, history, and handoff context.
-- `docs/stages/STAGE1A_BASELINE.md` — frozen explicit runtime baseline.
-- `docs/stages/STAGE1B_PYCONFIG.md` — frozen PyConfig frontend comparison and B0 selection.
-- `docs/stages/STAGE2_FINAL.md` — low-level Stage 2 architecture, validation, relocation, and workflow freeze.
-- `docs/stages/STAGE2C_DESIGN.md` — completed repository, build-output, transport, and deployment design.
-- `docs/stages/STAGE3_SCOPE.md` — active distribution-engineering scope and Stage 3-A closure census.
-- `docs/evidence/` — selected decision-bearing evidence summaries.
-
-For implementation provenance, read the corresponding directory under `experiments/`.
+`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the current Stage 3 context.
 
 ## Design principle
 
@@ -221,8 +275,4 @@ For implementation provenance, read the corresponding directory under `experimen
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-not:
-
-```text
-patch -> patch more -> accidentally invent a distribution
-```
+The current active work is Stage 3-B provenance reconstruction, not archive packaging or launcher redesign.
