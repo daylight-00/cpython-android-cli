@@ -108,6 +108,7 @@ import sqlite3
 import ssl
 import subprocess
 import sys
+import sysconfig
 import urllib.request
 
 expected = os.environ["EXPECTED_PREFIX"]
@@ -117,6 +118,7 @@ assert sys.prefix == expected, (sys.prefix, expected)
 assert sys.base_prefix == expected, (sys.base_prefix, expected)
 assert sys.executable.startswith(expected + "/bin/"), sys.executable
 assert all(forbidden not in entry for entry in sys.path), sys.path
+assert all(forbidden not in value for value in sysconfig.get_paths().values())
 
 ctypes.CDLL("libc.so")
 with sqlite3.connect(":memory:") as db:
@@ -126,7 +128,11 @@ with urllib.request.urlopen("https://pypi.org/simple/", timeout=20) as response:
     assert response.status == 200
 
 child = subprocess.check_output(
-    [sys.executable, "-c", "import json,sys; print(json.dumps([sys.executable,sys.prefix,sys.base_prefix]))"],
+    [
+        sys.executable,
+        "-c",
+        "import json,sys; print(json.dumps([sys.executable,sys.prefix,sys.base_prefix]))",
+    ],
     text=True,
 )
 child_identity = json.loads(child)
@@ -139,6 +145,7 @@ print(json.dumps({
     "sys_base_prefix": sys.base_prefix,
     "https_status": 200,
     "child_identity": child_identity,
+    "active_sysconfig_paths": sysconfig.get_paths(),
 }, indent=2, sort_keys=True))
 PY
 
@@ -156,6 +163,7 @@ import os
 import sqlite3
 import ssl
 import sys
+import sysconfig
 
 expected_base = os.environ["EXPECTED_BASE"]
 forbidden = os.environ["FORBIDDEN_PREFIX"]
@@ -163,6 +171,7 @@ assert sys.prefix != sys.base_prefix
 assert sys.base_prefix == expected_base, (sys.base_prefix, expected_base)
 assert forbidden not in sys.base_prefix
 assert all(forbidden not in entry for entry in sys.path)
+assert all(forbidden not in value for value in sysconfig.get_paths().values())
 print("VENV_RECONFIRM=PASS")
 PY
 
@@ -180,11 +189,14 @@ import os
 import sqlite3
 import ssl
 import sys
+import sysconfig
 
 expected_base = os.environ["EXPECTED_BASE"]
 forbidden = os.environ["FORBIDDEN_PREFIX"]
 assert sys.base_prefix == expected_base, (sys.base_prefix, expected_base)
 assert forbidden not in sys.base_prefix
+assert all(forbidden not in entry for entry in sys.path)
+assert all(forbidden not in value for value in sysconfig.get_paths().values())
 print(anyio.__name__)
 print("UV_RUN_RECONFIRM=PASS")
 PY
@@ -203,10 +215,5 @@ mv "$A_PREFIX" "$B_PREFIX"
 validate_location "B" "$B_PREFIX" "$A_PREFIX"
 
 echo
-if grep -F "$A_PREFIX" "$LOG" | grep -v '^A_PREFIX=' | grep -v '^SOURCE_PREFIX=' >/dev/null; then
-    echo "ERROR: stale A prefix text observed in reconfirmation log" >&2
-    exit 4
-fi
-
-echo "STALE_A_PREFIX_CHECK=PASS"
+echo "STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS"
 echo "STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS"
