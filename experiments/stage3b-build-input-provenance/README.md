@@ -65,7 +65,7 @@ CPYTHON_DEV_PREFIX/lib/libpython3.14.so
 
 Phase 1 records these producer and consumer boundaries without yet changing them.
 
-## Run
+## Run provenance census
 
 Run on the Linux workstation, where `.local/env` defines the current compiler and development prefix:
 
@@ -89,6 +89,46 @@ Optional runtime archive identity:
 CPYTHON_RUNTIME_ARCHIVE=/path/to/runtime.tar.gz \
   bash experiments/stage3b-build-input-provenance/probe-current-provenance.sh
 ```
+
+## Analyze current lineage
+
+After the census outputs exist:
+
+```sh
+bash \
+  experiments/stage3b-build-input-provenance/analyze-current-lineage.sh
+```
+
+The analyzer checks:
+
+```text
+dependency release-tag model match
+CONFIG_ARGS structural match with the preserved producer model
+CFLAGS/LDFLAGS structural match
+embedded producer OS class
+embedded NDK version
+preserved snapshot NDK version
+active compiler NDK version
+exact CPython source Git identity availability
+Phase 2 readiness gates
+```
+
+Output:
+
+```text
+current-lineage-analysis.json
+```
+
+`phase2_ready=true` is intentionally strict. It requires:
+
+```text
+exact CPython source Git identity available
+dependency release-tag model match
+producer config structure match
+active compiler NDK version matches preserved snapshot
+```
+
+A false value is not a Stage 3-B failure. It identifies which producer input still needs to be closed before a clean replay.
 
 ## Output root
 
@@ -205,6 +245,10 @@ under the historical bootstrap experiment tree, with size and SHA-256.
 ### `provenance-summary.json`
 
 Provides the first compact result summary.
+
+### `current-lineage-analysis.json`
+
+Provides the Phase 1 gate analysis and remaining producer-input gaps.
 
 ## First interpretation rule
 
