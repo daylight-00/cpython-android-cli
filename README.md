@@ -2,7 +2,7 @@
 
 An experimental CLI adaptation of an upstream CPython Android build for Termux, with uv integration.
 
-The project studies how an upstream-built CPython Android runtime can behave as a practical command-line interpreter under Termux while preserving normal CPython CLI semantics, native stdlib imports, HTTPS trust, subprocess behavior, virtual environments, and uv workflows.
+The project studies how an upstream-built CPython Android runtime can behave as a practical command-line interpreter under Termux while preserving normal CPython CLI semantics, native stdlib imports, HTTPS trust, subprocess behavior, virtual environments, uv workflows, and whole-prefix runtime relocation.
 
 This is a research and engineering project, not a new general-purpose Python distribution and not a replacement for CPython, Termux Python, uv, Conda, or `python-build-standalone`.
 
@@ -13,11 +13,12 @@ Stage 1-A  explicit runtime baseline                    frozen
 Stage 1-B  PyConfig frontend comparison                 frozen
 Stage 2-A  bootstrap strategy comparison                complete
 Stage 2-B  conditional re-exec and relocation           complete
-Stage 2-C  synthesis and project workflow               active
-Stage 3    standalone distribution engineering          deferred
+Stage 2-C  synthesis and project workflow               complete
+Stage 2    native bootstrap and workflow architecture   frozen
+Stage 3    standalone distribution engineering          not started
 ```
 
-The selected Stage 2 foundation is:
+The frozen Stage 2 foundation is:
 
 ```text
 R2 conditional self re-exec
@@ -39,6 +40,20 @@ The Stage 2-B validation established, on the tested Termux/Android arm64 environ
 - uv run works,
 - the runtime prefix works after a whole-prefix move from one absolute path to another.
 
+Stage 2-C then reproduced the selected architecture through the cleaned repository workflow:
+
+```text
+workstation canonical build
+    -> artifact transport
+    -> Termux runtime assembly
+    -> base runtime smoke
+    -> subprocess
+    -> uv venv
+    -> venv identity
+    -> uv run
+    -> STAGE2C_SMOKE=PASS
+```
+
 The relocation claim is intentionally scoped: whole-prefix runtime relocation was tested; relocation of an already-created external venv after moving its base runtime was not tested.
 
 ## Architecture in one picture
@@ -47,7 +62,7 @@ The relocation claim is intentionally scoped: whole-prefix runtime relocation wa
 shell / uv / venv entry point
         |
         v
-Stage 2-C launcher
+Stage 2 launcher
         |
         +-- resolve /proc/self/exe
         +-- derive <prefix>/lib
@@ -72,7 +87,7 @@ scripts/        current build, sync, assembly, and smoke workflows
 config/         tracked defaults and machine-role examples
 .local/         machine-local configuration; ignored
 
-docs/           current project context and frozen stage documents
+docs/           current project context, frozen stages, selected evidence
 experiments/    historical experiment implementations and comparison harnesses
 
 out/            canonical cross-build artifacts; ignored
@@ -115,7 +130,7 @@ The files under `config/legacy/` are historical snapshots from the earlier date-
 ## Workstation workflow
 
 ```sh
-./scripts/build/build-launcher.sh
+bash scripts/build/build-launcher.sh
 ```
 
 Canonical artifact:
@@ -124,11 +139,27 @@ Canonical artifact:
 out/aarch64-linux-android24/release/bin/python3.14
 ```
 
-Generated artifacts can be pushed to the Termux checkout without using Git for binaries:
+For a topology where the workstation can initiate the connection to Termux:
 
 ```sh
-DRY_RUN=1 ./scripts/sync/push-out.sh
-./scripts/sync/push-out.sh
+DRY_RUN=1 bash scripts/sync/push-out.sh
+bash scripts/sync/push-out.sh
+```
+
+## Termux pull topology
+
+The successful Stage 2-C validation used Termux-initiated pull because Termux inbound connectivity was unavailable.
+
+```sh
+DRY_RUN=1 bash scripts/sync/pull-out.sh
+bash scripts/sync/pull-out.sh
+```
+
+Then:
+
+```sh
+bash scripts/termux/prepare-runtime.sh
+bash scripts/test/smoke-termux.sh
 ```
 
 The intended synchronization split is:
@@ -138,16 +169,7 @@ source, scripts, docs, experiment history  -> Git
 generated out/<target>/<profile>/          -> rsync
 ```
 
-## Termux workflow
-
-After source synchronization and artifact transfer:
-
-```sh
-./scripts/termux/prepare-runtime.sh
-./scripts/test/smoke-termux.sh
-```
-
-The runtime assembly lives under `work/`; the cross-built launcher remains under the canonical `out/` path.
+The connection initiator may be workstation push or Termux pull depending on network topology.
 
 ## Documentation
 
@@ -156,7 +178,9 @@ Start with:
 - `docs/PROJECT_CONTEXT.md` — current architecture, decisions, stage history, and handoff context.
 - `docs/stages/STAGE1A_BASELINE.md` — frozen explicit runtime baseline.
 - `docs/stages/STAGE1B_PYCONFIG.md` — frozen PyConfig frontend comparison and B0 selection.
-- `docs/stages/STAGE2C_DESIGN.md` — current repository, build-output, and deployment boundaries.
+- `docs/stages/STAGE2_FINAL.md` — low-level Stage 2 architecture, validation, relocation, and workflow freeze.
+- `docs/stages/STAGE2C_DESIGN.md` — completed repository, build-output, transport, and deployment design.
+- `docs/evidence/` — selected decision-bearing evidence summaries.
 
 For implementation provenance, read the corresponding directory under `experiments/`.
 
