@@ -1,20 +1,24 @@
 # Stage 2-C Design: Synthesis and Project Workflow
 
-> **Status:** Active synthesis stage
+> **Status:** COMPLETE / FROZEN
+> **Result:** PASS
 > **Input:** Stage 2-B R2 validation and relocation success
 > **Target:** Termux on Android arm64
 > **Python:** CPython 3.14.6
+> **Freeze document:** `docs/stages/STAGE2_FINAL.md`
 
 ## 1. Purpose
 
-Stage 2-C turns the validated Stage 2-B R2 experiment into a production-shaped project workflow.
+Stage 2-C turned the validated Stage 2-B R2 experiment into a production-shaped project workflow.
 
-The stage has two goals:
+The stage had two goals:
 
 1. preserve the behavior validated in Stage 2-B while reducing experimental naming and manual file wiring;
 2. establish one repository-wide path model for source, build artifacts, runtime assembly, test results, and workstation-to-Termux synchronization.
 
-Stage 2-C is a synthesis stage, not a new bootstrap-strategy experiment.
+Stage 2-C was a synthesis stage, not a new bootstrap-strategy experiment.
+
+The end-to-end workflow passed and Stage 2 is now frozen.
 
 ## 2. Selected runtime design
 
@@ -146,7 +150,19 @@ out/<target>/<profile>/
 
 The source tree and generated artifact tree are independent synchronization channels.
 
-The rsync helper does not enable deletion by default. Remote deletion is an explicit opt-in and remains scoped to the current target/profile output directory.
+Two artifact-transport initiators are supported:
+
+```text
+workstation-initiated push:
+  scripts/sync/push-out.sh
+
+Termux-initiated pull:
+  scripts/sync/pull-out.sh
+```
+
+The successful Stage 2-C test used Termux-initiated pull because Termux inbound connectivity was unavailable.
+
+Deletion is opt-in in both directions and remains scoped to the current target/profile output tree.
 
 ## 7. Workstation workflow
 
@@ -155,13 +171,17 @@ mkdir -p .local
 cp config/workstation.env.example .local/env
 $EDITOR .local/env
 
-./scripts/build/build-launcher.sh
-
-DRY_RUN=1 ./scripts/sync/push-out.sh
-./scripts/sync/push-out.sh
+bash scripts/build/build-launcher.sh
 ```
 
 The build script writes directly to the canonical `out/` tree.
+
+Optional push topology:
+
+```sh
+DRY_RUN=1 bash scripts/sync/push-out.sh
+bash scripts/sync/push-out.sh
+```
 
 ## 8. Termux workflow
 
@@ -169,9 +189,20 @@ The build script writes directly to the canonical `out/` tree.
 mkdir -p .local
 cp config/termux.env.example .local/env
 $EDITOR .local/env
+```
 
-./scripts/termux/prepare-runtime.sh
-./scripts/test/smoke-termux.sh
+For the tested pull topology:
+
+```sh
+DRY_RUN=1 bash scripts/sync/pull-out.sh
+bash scripts/sync/pull-out.sh
+```
+
+Then:
+
+```sh
+bash scripts/termux/prepare-runtime.sh
+bash scripts/test/smoke-termux.sh
 ```
 
 Runtime assembly consumes:
@@ -210,22 +241,37 @@ python3 -> python3.14
 python  -> python3
 ```
 
-## 10. Stage 2-C completion condition
+## 10. Completion result
 
-Before Stage 2 can be frozen, the new canonical workflow must pass end to end:
+The canonical workflow passed end to end:
 
 ```text
-workstation build
-    -> canonical out artifact
-    -> artifact sync
-    -> Termux runtime assembly
-    -> clean base runtime validation
-    -> native stdlib validation
-    -> HTTPS validation
-    -> subprocess validation
-    -> uv venv validation
-    -> venv identity validation
-    -> uv run validation
+workstation build                              PASS
+canonical out artifact                        PASS
+artifact transport                            PASS
+Termux runtime assembly                       PASS
+clean base runtime validation                 PASS
+native stdlib validation                      PASS
+HTTPS validation                              PASS
+subprocess validation                         PASS
+uv venv validation                            PASS
+venv identity validation                      PASS
+uv run validation                             PASS
+final STAGE2C_SMOKE marker                     PASS
 ```
 
-The selected R2 architecture is already validated. Stage 2-C verifies that the repository and deployment workflow preserve that behavior without manual experiment-specific wiring.
+The selected R2 architecture survived the cleaned repository and deployment workflow without manual experiment-specific wiring.
+
+Therefore:
+
+```text
+Stage 2-C: PASS
+Stage 2: FROZEN
+```
+
+See:
+
+```text
+docs/stages/STAGE2_FINAL.md
+docs/evidence/STAGE2C_E2E_SMOKE_SUMMARY.md
+```
