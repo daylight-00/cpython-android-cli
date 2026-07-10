@@ -25,6 +25,79 @@ def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
         writer.writerows(rows)
 
 
+def discover_extension_dir() -> tuple[Path, dict[str, object]]:
+    version_dir = f"python{sys.version_info.major}.{sys.version_info.minor}"
+    configured_destshared = sysconfig.get_config_var("DESTSHARED")
+
+    raw_candidates: list[tuple[str, Path]] = []
+
+    for entry in sys.path:
+        if not entry:
+            continue
+        path = Path(entry)
+        if path.name == "lib-dynload":
+            raw_candidates.append(("sys.path", path))
+
+    raw_candidates.append(
+        (
+            "sys.base_prefix-derived",
+            Path(sys.base_prefix) / "lib" / version_dir / "lib-dynload",
+        )
+    )
+
+    platstdlib = sysconfig.get_path("platstdlib")
+    if platstdlib:
+        raw_candidates.append(
+            (
+                "sysconfig.platstdlib-derived",
+                Path(platstdlib) / "lib-dynload",
+            )
+        )
+
+    if configured_destshared:
+        raw_candidates.append(("sysconfig.DESTSHARED", Path(configured_destshared)))
+
+    candidates: list[tuple[str, Path]] = []
+    seen: set[str] = set()
+
+    for method, path in raw_candidates:
+        key = str(path)
+        if key in seen:
+            continue
+        seen.add(key)
+        candidates.append((method, path))
+
+    discovery_rows = [
+        {
+            "method": method,
+            "path": str(path),
+            "is_dir": path.is_dir(),
+        }
+        for method, path in candidates
+    ]
+
+    for method, path in candidates:
+        if path.is_dir():
+            metadata = {
+                "configured_destshared": configured_destshared,
+                "selected_method": method,
+                "selected_extension_dir": str(path),
+                "candidates": discovery_rows,
+                "sys_base_prefix": sys.base_prefix,
+                "sys_prefix": sys.prefix,
+                "sys_path": list(sys.path),
+            }
+            return path, metadata
+
+    checked = "\n".join(
+        f"  {row['method']}: {row['path']} (is_dir={row['is_dir']})"
+        for row in discovery_rows
+    )
+    raise SystemExit(
+        "No runtime extension directory was discovered. Checked:\n" + checked
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--python-bin", required=True, type=Path)
@@ -39,18 +112,18 @@ def main() -> int:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    destshared_raw = sysconfig.get_config_var("DESTSHARED")
-    if not destshared_raw:
-        raise SystemExit("DESTSHARED is empty")
+    extension_dir, discovery = discover_extension_dir()
 
-    destshared = Path(destshared_raw)
-    if not destshared.is_dir():
-        raise SystemExit(f"DESTSHARED is not a directory: {destshared}")
+    with (output_dir / "extension-discovery.json").open(
+        "w", encoding="utf-8"
+    ) as f:
+        json.dump(discovery, f, indent=2, sort_keys=True)
+        f.write("\n")
 
     suffixes = list(importlib.machinery.EXTENSION_SUFFIXES)
     candidates: list[tuple[str, Path]] = []
 
-    for path in sorted(destshared.iterdir(), key=lambda p: p.name):
+    for path in sorted(extension_dir.iterdir(), key=lambda p: p.name):
         if not path.is_file():
             continue
         module_name = module_name_from_filename(path.name, suffixes)
@@ -118,7 +191,9 @@ print(getattr(module, "__file__", "<built-in>"))
     )
 
     summary = {
-        "destshared": str(destshared),
+        "configured_destshared": discovery["configured_destshared"],
+        "extension_dir": str(extension_dir),
+        "extension_dir_discovery_method": discovery["selected_method"],
         "extension_candidate_count": len(candidates),
         "import_pass_count": pass_count,
         "import_fail_count": fail_count,
