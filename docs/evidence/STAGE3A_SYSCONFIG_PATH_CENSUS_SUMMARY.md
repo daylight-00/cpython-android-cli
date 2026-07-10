@@ -1,43 +1,42 @@
 # Stage 3-A Sysconfig Absolute-Path Census Summary
 
-> **Status:** PROVISIONAL EVIDENCE — extractor v1 counts superseded pending rerun
+> **Status:** Selected evidence
 > **Stage:** 3-A
-> **Result:** Directionally useful; exact counts require extractor v2 rerun
+> **Result:** PASS with real build-prefix residue and bounded non-runtime paths
 
-## Supersession note
+## Purpose
 
-The first census used a path extractor that could misclassify a slash inside a relative path as the start of an absolute path.
+This summary freezes the extractor-v2 census of absolute-path-bearing `sysconfig` values and install-scheme paths observed from the relocated Stage 2 runtime.
 
-Concrete observed example:
+The v2 extractor rejects relative `../...` paths that were misclassified by the original v1 parser and runs regression self-checks before collecting data.
+
+## Extractor validation
+
+Observed:
 
 ```text
-raw value:
-  ../..
-
-v1 extracted path candidate:
-  /
+extractor_version=2
+extractor_self_check=PASS
 ```
 
-The same issue affected relative build/source paths such as `../Include/...` and similar values.
-
-Therefore the exact v1 counts below are preserved only as experiment history and must not be treated as final Stage 3-A counts.
-
-The extractor was corrected in v2 to:
+Regression cases include:
 
 ```text
-accept standalone/delimited absolute paths
-accept common -I/-L/-B/-isystem/--sysroot= absolute-path forms
-reject slashes embedded in relative ../... paths
+../..                         -> reject
+../Include/internal           -> reject
+/usr/local/...                -> accept
+-I/abs/include                -> accept
+-L/abs/lib                    -> accept
+--sysroot=/ndk/sysroot        -> accept
+-Wl,-rpath,/runtime/lib       -> accept
 ```
 
-The census, analysis, and triage must be rerun before this document is promoted back to selected final evidence.
+## Final v2 census result
 
-## Original v1 observation
-
-The v1 run reported:
+Observed:
 
 ```text
-absolute_path_record_count                 291
+absolute_path_record_count                 179
 build_prefix_residue_record_count           25
 build_prefix_residue_unique_path_count      12
 
@@ -50,21 +49,35 @@ Classification counts:
 ```text
 ANDROID_SYSTEM           1
 BUILD_PREFIX_RESIDUE    25
-OTHER_ABSOLUTE         209
+OTHER_ABSOLUTE          97
 RUNTIME_PREFIX          56
 ```
 
-The important durable observation from this run is not the exact count. It is that the relocated runtime exposes a mixed metadata surface containing both runtime-aware paths and stale build/development paths, including:
+No `TERMUX_PREFIX` record appeared in the v2 census.
+
+## Interpretation
+
+The runtime exposes a mixed metadata surface:
+
+```text
+runtime-prefix-aware paths
+    +
+real stale build-prefix paths
+    +
+other absolute paths requiring role-based interpretation
+```
+
+The concrete stale metadata includes:
 
 ```text
 DESTSHARED=/usr/local/lib/python3.14/lib-dynload
 ```
 
-That concrete stale value remains valid evidence independently of the v1 extraction bug.
+The v2 census confirms that this is not an isolated parser artifact: 25 records across 12 unique `/usr/local` paths remain in the metadata surface.
 
 ## Relationship to runtime correctness
 
-This metadata finding does not invalidate the frozen Stage 2 runtime result.
+This metadata result does not invalidate the frozen runtime behavior.
 
 The same runtime has demonstrated:
 
@@ -77,7 +90,7 @@ whole-prefix runtime relocation                PASS
 0 Termux native-library provider edges
 ```
 
-The working distinction remains:
+The working distinction is:
 
 ```text
 runtime execution correctness
@@ -85,14 +98,12 @@ runtime execution correctness
 development metadata relocation correctness
 ```
 
-## Required rerun
+## Next analysis layer
 
-Run, in order:
+The census is complemented by:
 
 ```text
-probe-sysconfig-paths.sh
-analyze-sysconfig-paths.sh
-triage-sysconfig-paths.sh
+STAGE3A_SYSCONFIG_PATH_ANALYSIS_SUMMARY.md
 ```
 
-Only the extractor-v2 outputs should be used for final Stage 3-A path counts and classification claims.
+which separates path existence and role.
