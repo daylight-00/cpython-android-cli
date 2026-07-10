@@ -4,6 +4,7 @@
 > **Input:** Frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
+> **Current active sub-phase:** Phase 2 controlled Linux replay
 
 ## 1. Question
 
@@ -13,7 +14,7 @@ Stage 3-B asks:
 
 Stage 3-B is not a packaging stage.
 
-It must first establish a reproducible producer model for the already-validated runtime closure.
+It must first establish and replay a reproducible producer model for the already-validated runtime closure.
 
 ## 2. Starting problem
 
@@ -36,7 +37,7 @@ macOS NDK toolchain paths
 host build-tool paths
 ```
 
-The next stage must model these as reproducible inputs rather than patching individual strings after the fact.
+Stage 3-B models these as producer provenance before any metadata normalization.
 
 ## 3. Principle
 
@@ -48,29 +49,152 @@ normalizing consumer artifact metadata
 
 Do not begin Stage 3-B by mass-rewriting sysconfig values.
 
-First identify:
+First identify and replay:
 
 ```text
-what source produced them
-what host/toolchain produced them
-what dependency prefix produced them
-what command-line options produced them
-which values matter only to development workflows
+source identity
+host/toolchain identity
+dependency graph
+configure inputs
+build command path
+output product boundary
 ```
 
-## 4. Required input identities
+## 4. Phase status
 
-Stage 3-B must capture at minimum:
+```text
+Phase 1  current producer provenance reconstruction   FROZEN
+Phase 2  controlled Linux producer replay            ACTIVE
+Phase 3  dependency product promotion                PENDING
+Phase 4  CPython dev/runtime prefix promotion         PENDING
+Phase 5  Stage 3-A closure equivalence validation     PENDING
+```
+
+Authoritative phase documents:
+
+```text
+docs/stages/STAGE3B_PHASE1_FINAL.md
+docs/stages/STAGE3B_PHASE2_SCOPE.md
+```
+
+## 5. Phase 1 frozen result
+
+Phase 1 recovered enough producer identity to begin a controlled replay.
+
+Observed:
+
+```text
+phase2_ready=true
+remaining_gates=[]
+```
+
+Producer structure:
+
+```text
+CONFIG_ARGS structure   PASS
+CFLAGS structure        PASS
+LDFLAGS structure       PASS
+```
+
+Dependency release-tag model:
+
+```text
+bzip2   1.0.8-3   MATCH
+libffi  3.4.4-3   MATCH
+openssl 3.5.7-0   MATCH
+sqlite  3.50.4-0  MATCH
+xz      5.4.6-1   MATCH
+zstd    1.5.7-2   MATCH
+```
+
+NDK identity:
+
+```text
+preserved snapshot       27.3.13750724
+embedded prefix metadata 27.3.13750724
+active Linux compiler    27.3.13750724
+```
+
+Source gate:
+
+```text
+exact_cpython_source_git_identity_available=true
+```
+
+Producer lineage:
+
+```text
+current dev prefix metadata
+  macOS producer
+  darwin-x86_64 NDK prebuilt
+  /Users/runner/work/release-tools/... workspace
+
+replay workstation
+  Linux
+```
+
+Phase 1 conclusion:
+
+```text
+STAGE3B_PHASE1=FROZEN
+STAGE3B_PHASE2_READY=true
+```
+
+## 6. Phase 2 active objective
+
+Phase 2 asks:
+
+> Can the exact identified CPython source commit be rebuilt through the preserved Android producer model on Linux using the matched NDK and dependency declaration graph?
+
+The replay must not modify:
+
+```text
+original CPython source checkout
+historical bootstrap experiment tree
+historical development prefix
+frozen Stage 2-C runtime
+frozen Stage 3-A results
+```
+
+Replay shape:
+
+```text
+exact source commit
+    -> detached Git worktree
+
+source Android producer model
+    -> hash-checked against preserved snapshot
+
+separate cross-build root
+    -> build Python
+    -> target dependency prefix
+    -> Android CPython prefix
+
+shared explicit dependency cache
+    -> declared source-deps release archives
+
+package product
+    -> replay artifact for later comparison
+```
+
+See:
+
+```text
+docs/stages/STAGE3B_PHASE2_SCOPE.md
+```
+
+## 7. Required producer identities
+
+Stage 3-B captures and preserves at minimum:
 
 ```text
 CPython source identity
   version
-  tag
-  commit
-  source hash or equivalent immutable identity
+  tag/describe
+  exact commit
 
 Android toolchain identity
-  SDK version
+  SDK root identity
   NDK version
   API level
   target triple
@@ -85,12 +209,13 @@ host build environment
 third-party native dependencies
   name
   version
-  source identity
-  build options
-  output prefix identity
+  recipe revision
+  release tag
+  source release location
+  later: archive hashes and produced-file equivalence
 
 CPython build configuration
-  configure command
+  configure arguments
   environment inputs
   cross-build paths
   dependency paths
@@ -104,7 +229,7 @@ launcher build configuration
   link flags
 ```
 
-## 5. Desired conceptual pipeline
+## 8. Desired conceptual pipeline
 
 ```text
 source inputs
@@ -114,7 +239,7 @@ toolchain inputs
     -> declared
 
 native dependency sources
-    -> reproducible dependency build products
+    -> reproducible dependency products
 
 CPython Android build
     -> reproducible Android host/runtime prefix
@@ -126,7 +251,7 @@ runtime assembly
     -> Stage 3-A-equivalent runtime closure
 ```
 
-## 6. Stage 3-A invariants that Stage 3-B must preserve
+## 9. Stage 3-A invariants that Stage 3-B must preserve
 
 A Stage 3-B producer is not acceptable merely because it builds.
 
@@ -141,94 +266,85 @@ subprocess re-entry behavior
 uv explicit-interpreter workflow
 venv prefix/base_prefix identity
 native closure with zero unresolved DT_NEEDED edges
-67/67 tested extension import surface, unless the produced runtime inventory intentionally differs and is reviewed
+67/67 tested extension import surface, unless intentionally changed and reviewed
 Termux CA integration behavior
 timezone-data boundary understanding
 whole-prefix production relocation behavior
 ```
 
-## 7. First experiment sequence
+## 10. Phase 2 acceptance conditions
 
-Stage 3-B should proceed in this order.
-
-### Phase 1: provenance reconstruction
-
-Record the current known producer lineage without rebuilding anything yet.
-
-Outputs should include:
+The controlled replay step is successful when:
 
 ```text
-current-build-inputs.json
-current-toolchain-identity.json
-current-dependency-provenance.tsv
-current-build-command-map.md
+[ ] exact source detached worktree prepared
+[ ] source producer scripts match preserved snapshot
+[ ] SDK root resolved
+[ ] NDK 27.3.13750724 confirmed
+[ ] build Python configured and built
+[ ] Android host prefix configured and built
+[ ] target prefix installed
+[ ] Python.h exists
+[ ] pyconfig.h exists
+[ ] libpython3.14.so exists
+[ ] stdlib exists
+[ ] replay package archive produced
 ```
 
-### Phase 2: upstream Android build replay
+A successful build replay does not yet prove Stage 3-A equivalence.
 
-Replay the upstream CPython Android build flow from declared source and toolchain inputs.
+## 11. Later Phase 5 comparison requirements
 
-Do not optimize or redesign the upstream build process during the first replay.
-
-### Phase 3: dependency product promotion
-
-Move third-party native dependency products out of opaque historical experiment paths into explicit generated-product boundaries.
-
-Candidate shape:
-
-```text
-out/deps/<target>/<dependency>/<version>/...
-```
-
-The exact layout is not yet frozen.
-
-### Phase 4: CPython development/runtime prefix promotion
-
-Produce explicit generated prefixes suitable for:
-
-```text
-launcher compilation
-runtime assembly
-metadata inspection
-```
-
-Do not silently use `pristine-test` or copied historical trees as canonical producer inputs.
-
-### Phase 5: closure equivalence validation
-
-Compare the newly produced runtime against Stage 3-A constraints:
+The replayed runtime must eventually be compared against Stage 3-A constraints:
 
 ```text
 file inventory differences
 ELF object inventory differences
-DT_NEEDED closure differences
-SONAME classification differences
-extension import results
+DT_NEEDED graph differences
+unique SONAME differences
+provider classification differences
+extension import surface
+active runtime path behavior
 sysconfig metadata differences
+CA behavior
+timezone boundary behavior
 smoke behavior
 relocation behavior
 ```
 
-## 8. Initial acceptance conditions
+Expected producer-host metadata deltas such as:
+
+```text
+BUILD_GNU_TYPE
+absolute workspace paths
+NDK prebuilt host path
+host build-Python path
+```
+
+are not failures by themselves.
+
+## 12. Stage 3-B completion conditions
 
 Stage 3-B is complete only when:
 
 ```text
-[ ] CPython source identity is explicit and reproducible
-[ ] Android SDK/NDK/API identities are explicit
-[ ] host build Python identity is explicit
-[ ] third-party dependency sources and versions are explicit
-[ ] dependency build commands are recorded
-[ ] CPython Android build commands are recorded
+[x] CPython source identity is explicit
+[x] Android NDK/API/target identities are explicit
+[x] host build environment is inventoried
+[x] third-party dependency release tags are explicit
+[x] CPython configure/build command model is recorded
+[ ] dependency archive hashes are promoted
+[ ] replay build completes
+[ ] replay package is produced
 [ ] launcher build inputs come from promoted generated products
-[ ] historical experiment paths are not required as hidden canonical inputs
-[ ] runtime assembly can be regenerated from declared products
+[ ] historical experiment paths are not hidden canonical inputs
+[ ] runtime assembly is regenerated from declared products
 [ ] regenerated runtime passes closure comparison review
 [ ] regenerated runtime passes smoke validation
 [ ] regenerated runtime passes whole-prefix relocation validation
 ```
 
-## 9. Non-goals
+## 13. Non-goals
 
 Do not add during Stage 3-B unless required by new evidence:
 
@@ -246,13 +362,3 @@ release signing
 ```
 
 These belong to later work.
-
-## 10. First concrete action
-
-Start with a read-only provenance reconstruction of the current producer chain.
-
-The first Stage 3-B experiment should answer:
-
-> Which exact source, SDK/NDK, host Python, third-party native dependency products, commands, and paths produced the currently validated CPython Android prefix and launcher development input?
-
-Only after that map exists should the project attempt a clean replay.
