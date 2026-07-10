@@ -1,28 +1,24 @@
 # Stage 3-A Sysconfig Path Analysis Summary
 
-> **Status:** Selected evidence
+> **Status:** PROVISIONAL EVIDENCE — based on extractor v1 output
 > **Stage:** 3-A
-> **Result:** PASS with strong evidence of mostly non-live absolute-path residue
+> **Result:** Qualitative conclusions retained; exact counts superseded pending extractor v2 rerun
 
-## Purpose
+## Supersession note
 
-This summary freezes the first decomposition of the absolute-path records previously observed in the relocated runtime's `sysconfig` metadata surface.
+The analysis summarized an absolute-path census produced by extractor v1.
 
-The prior census found:
+Triage exposed a concrete parsing artifact:
 
 ```text
-absolute_path_record_count             291
-BUILD_PREFIX_RESIDUE                    25
-OTHER_ABSOLUTE                         209
-RUNTIME_PREFIX                          56
-ANDROID_SYSTEM                           1
+config_var VPATH
+raw value: ../..
+v1 extracted candidate: /
 ```
 
-The purpose of this analysis was to distinguish live filesystem references from stale or historical metadata residue.
+Relative source/build paths were therefore able to enter the v1 absolute-path dataset.
 
-## Result
-
-Observed existence counts:
+The exact v1 counts below are preserved as historical experiment output only:
 
 ```text
 ANDROID_SYSTEM:yes            1
@@ -33,138 +29,68 @@ RUNTIME_PREFIX:no            20
 RUNTIME_PREFIX:yes           36
 ```
 
-Observed unique-path counts:
+and:
 
 ```text
-ANDROID_SYSTEM                 1
-BUILD_PREFIX_RESIDUE          12
-OTHER_ABSOLUTE                92
-RUNTIME_PREFIX                12
+ANDROID_SYSTEM unique paths          1
+BUILD_PREFIX_RESIDUE unique paths   12
+OTHER_ABSOLUTE unique paths         92
+RUNTIME_PREFIX unique paths         12
 ```
 
-Additional aggregation:
+These numbers must be regenerated with extractor v2 before use in final Stage 3-A claims.
+
+## Durable observations from the v1 triage
+
+Several qualitative conclusions remain useful because they came from direct row inspection rather than aggregate counts.
+
+### Active user install paths
+
+The existing non-runtime-prefix paths inspected were:
 
 ```text
-build_residue_key_count              21
-other_absolute_top_prefix_count      43
+/data/data/com.termux/files/home/.local
+/data/data/com.termux/files/home/.local/bin
 ```
 
-## Immediate interpretation
+They came from `userbase` and user install schemes. These are installation destinations, not evidence that base interpreter execution requires those paths.
 
-The result strongly constrains the meaning of the previously observed `OTHER_ABSOLUTE=209` count.
+### Inactive scheme paths
 
-Of those records:
+The inspected missing runtime-prefix paths came from:
 
 ```text
-202 do not exist on the tested runtime host
-7 exist
+nt
+nt_venv
+posix_home
 ```
 
-Therefore:
+while the active default scheme was:
 
 ```text
-OTHER_ABSOLUTE record count
-    !=
-external runtime dependency count
+posix_prefix
 ```
 
-Most observed absolute-path records are not live filesystem paths on the tested device.
+Therefore those missing paths must not be reported as defects in the active runtime layout.
 
-Likewise, all 25 `/usr/local` build-prefix residue records were nonexistent:
+### Concrete stale metadata
+
+The concrete stale value:
 
 ```text
-BUILD_PREFIX_RESIDUE:no = 25
-BUILD_PREFIX_RESIDUE:yes = 0
+DESTSHARED=/usr/local/lib/python3.14/lib-dynload
 ```
 
-This supports interpreting the `/usr/local` paths as stale build/development metadata rather than live runtime dependencies on the tested environment.
+remains valid evidence independently of the parser bug.
 
-## What remains unresolved
+## Required next step
 
-Seven `OTHER_ABSOLUTE` records refer to paths that exist on the tested device.
-
-Those seven records must be reviewed individually before making a final non-ELF external-dependency claim.
-
-Possible interpretations include:
+Regenerate all sysconfig path outputs with extractor v2:
 
 ```text
-Android runtime filesystem paths
-shell or command paths
-Termux host paths not rooted under the configured Termux prefix classifier
-procfs/devfs paths
-shared temporary paths
-actual external runtime resources
+probe-sysconfig-paths.sh
+analyze-sysconfig-paths.sh
+triage-sysconfig-paths.sh
 ```
 
-The analysis count alone is insufficient to choose among these categories.
-
-## Runtime-prefix path records
-
-The census also found:
-
-```text
-RUNTIME_PREFIX:yes = 36
-RUNTIME_PREFIX:no  = 20
-```
-
-A missing runtime-prefix-derived path is not automatically a defect.
-
-Possible reasons include:
-
-```text
-optional install-scheme destinations
-header/development paths omitted from runtime-only layout
-script/data destinations not created yet
-metadata paths that are valid layout conventions but currently absent
-```
-
-These 20 records should therefore be analyzed by key and role rather than treated as runtime failures.
-
-## Stage 3 design implication
-
-The current evidence increasingly supports separating:
-
-```text
-runtime execution contract
-    currently strong
-
-from
-
-development/build metadata contract
-    currently mixed and partially stale
-```
-
-The tested runtime already has strong execution evidence:
-
-```text
-whole-prefix relocation PASS
-native ELF closure census complete
-0 unresolved DT_NEEDED edges
-5/5 Android-system SONAME dlopen probes PASS
-67/67 isolated extension imports PASS
-Stage 2-C smoke PASS
-```
-
-By contrast, development metadata contains:
-
-```text
-25 stale /usr/local records
-12 unique /usr/local paths
-92 unique OTHER_ABSOLUTE paths
-202 nonexistent OTHER_ABSOLUTE records
-7 existing OTHER_ABSOLUTE records requiring review
-```
-
-## Next triage step
-
-The next Stage 3-A step is to inspect:
-
-```text
-1. the 7 existing OTHER_ABSOLUTE records exactly;
-2. the top-prefix and key distribution of the 202 missing OTHER_ABSOLUTE records;
-3. the keys associated with the 20 nonexistent RUNTIME_PREFIX records.
-```
-
-The repository triage helper should produce explicit tables for those categories before Stage 3-A moves to broader non-ELF runtime dependency probing.
-
-This summary is evidence for `docs/stages/STAGE3_SCOPE.md`.
+Only the regenerated counts should be promoted into final selected evidence.
