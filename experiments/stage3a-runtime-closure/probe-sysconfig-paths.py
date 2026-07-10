@@ -79,12 +79,33 @@ def extract_paths(value: object) -> list[str]:
     return result
 
 
+def self_check_extractor() -> None:
+    cases = [
+        ("../..", []),
+        ("../Include/internal", []),
+        ("/usr/local/lib/python3.14", ["/usr/local/lib/python3.14"]),
+        ("cc -I/abs/include -L/abs/lib", ["/abs/include", "/abs/lib"]),
+        ("--sysroot=/ndk/sysroot", ["/ndk/sysroot"]),
+        ("-Wl,-rpath,/runtime/lib", ["/runtime/lib"]),
+    ]
+
+    for raw, expected in cases:
+        actual = extract_paths(raw)
+        if actual != expected:
+            raise RuntimeError(
+                f"absolute-path extractor self-check failed: raw={raw!r} "
+                f"expected={expected!r} actual={actual!r}"
+            )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runtime-prefix", required=True, type=Path)
     parser.add_argument("--termux-prefix", required=True, type=Path)
     parser.add_argument("--output-dir", required=True, type=Path)
     args = parser.parse_args()
+
+    self_check_extractor()
 
     runtime_prefix = args.runtime_prefix.resolve()
     termux_prefix = args.termux_prefix.resolve()
@@ -199,6 +220,7 @@ def main() -> int:
         "runtime_prefix": str(runtime_prefix),
         "termux_prefix": str(termux_prefix),
         "extractor_version": 2,
+        "extractor_self_check": "PASS",
     }
 
     with (output_dir / "sysconfig-path-summary.json").open("w", encoding="utf-8") as f:
