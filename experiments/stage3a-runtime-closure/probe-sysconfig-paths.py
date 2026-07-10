@@ -11,7 +11,15 @@ import sys
 import sysconfig
 from collections import Counter
 
-ABS_PATH_RE = re.compile(r"(?<![A-Za-z0-9_])(/[A-Za-z0-9_@%+=:,./$\-]+)")
+# Absolute paths may appear as standalone tokens or inside common compiler/linker
+# flag forms. The generic pattern deliberately refuses a slash preceded by '.'
+# so relative paths such as ../Include are not misclassified as absolute paths.
+GENERIC_ABS_PATH_RE = re.compile(
+    r"(?:^|[\s=,:\"'\(\[])(/[A-Za-z0-9_@%+=./$~\-]+)"
+)
+FLAG_ABS_PATH_RE = re.compile(
+    r"(?:-I|-L|-B|-isystem|--sysroot=)(/[A-Za-z0-9_@%+=:,./$~\-]+)"
+)
 
 
 def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
@@ -22,8 +30,7 @@ def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
 
 
 def normalize_candidate(raw: str) -> str:
-    candidate = raw.rstrip(".,;:)]}")
-    return candidate
+    return raw.rstrip(".,;:)]}")
 
 
 def classify_path(path: str, runtime_prefix: Path, termux_prefix: Path) -> str:
@@ -58,13 +65,17 @@ def classify_path(path: str, runtime_prefix: Path, termux_prefix: Path) -> str:
 def extract_paths(value: object) -> list[str]:
     if not isinstance(value, str):
         return []
+
     result: list[str] = []
     seen: set[str] = set()
-    for match in ABS_PATH_RE.finditer(value):
-        candidate = normalize_candidate(match.group(1))
-        if candidate and candidate not in seen:
-            seen.add(candidate)
-            result.append(candidate)
+
+    for pattern in (GENERIC_ABS_PATH_RE, FLAG_ABS_PATH_RE):
+        for match in pattern.finditer(value):
+            candidate = normalize_candidate(match.group(1))
+            if candidate and candidate not in seen:
+                seen.add(candidate)
+                result.append(candidate)
+
     return result
 
 
@@ -187,6 +198,7 @@ def main() -> int:
         "default_scheme": sysconfig.get_default_scheme(),
         "runtime_prefix": str(runtime_prefix),
         "termux_prefix": str(termux_prefix),
+        "extractor_version": 2,
     }
 
     with (output_dir / "sysconfig-path-summary.json").open("w", encoding="utf-8") as f:
