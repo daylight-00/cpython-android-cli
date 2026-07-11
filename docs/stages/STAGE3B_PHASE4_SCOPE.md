@@ -142,6 +142,18 @@ Expected marker:
 STAGE3B_PACKAGE_DIFF_REVIEW=PASS
 ```
 
+Compare the regenerated CPython ELF semantic surfaces and capture the exact five non-ELF differences:
+
+```sh
+bash experiments/stage3b-product-boundary/compare-regenerated-surfaces.sh
+```
+
+Expected marker when all 69 semantic surfaces match:
+
+```text
+STAGE3B_REGENERATED_SURFACE_COMPARE=PASS
+```
+
 Result:
 
 ```text
