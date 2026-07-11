@@ -17,6 +17,7 @@ PYTHON="$CANONICAL_PREFIX/bin/python"
 FINGERPRINT="$SCRIPT_DIR/../stage3c-product-role-inventory/fingerprint-product-tree.py"
 LOCAL_SCRIPT_RUNNER="$SCRIPT_DIR/../stage3c-artifact-manifest/run-isolated-local-script.py"
 BUILDER="$SCRIPT_DIR/build-reproducible-archives.py"
+PREFLIGHT="$SCRIPT_DIR/preflight-archive-safety.py"
 VERIFIER="$SCRIPT_DIR/verify-reproducible-archives.py"
 INPUT_DIR="$RESULTS_DIR/input/manifest-schema"
 
@@ -46,6 +47,7 @@ for file in \
     "$FINGERPRINT" \
     "$LOCAL_SCRIPT_RUNNER" \
     "$BUILDER" \
+    "$PREFLIGHT" \
     "$VERIFIER" \
     "$SCRIPT_DIR/archive_serialization_contract.py"; do
     [[ -f "$file" ]] || {
@@ -141,8 +143,12 @@ raise SystemExit(0 if passed else 33)
 PY
 }
 
-write_blocked_verification() {
-    "$PYTHON" -I -B -S - "$RESULTS_DIR/archive-verification.json" "$1" <<'PY'
+write_blocked_json() {
+    local output="$1"
+    local blocked_by="$2"
+    local returncode="$3"
+    local failed_check="$4"
+    "$PYTHON" -I -B -S - "$output" "$blocked_by" "$returncode" "$failed_check" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -151,11 +157,11 @@ result = {
     "schema_version": 1,
     "pass": False,
     "blocked": True,
-    "blocked_by": "reproducible_archive_build",
-    "builder_returncode": int(sys.argv[2]),
+    "blocked_by": sys.argv[2],
+    "blocked_returncode": int(sys.argv[3]),
     "check_count": 0,
     "checks": {},
-    "failed_checks": ["archive_verification_blocked"],
+    "failed_checks": [sys.argv[4]],
     "errors": {},
 }
 Path(sys.argv[1]).write_text(
@@ -168,7 +174,7 @@ PY
 
 write_workflow_status() {
     "$PYTHON" -I -B -S - \
-        "$RESULTS_DIR/workflow-status.json" "$1" "$2" "$3" <<'PY'
+        "$RESULTS_DIR/workflow-status.json" "$1" "$2" "$3" "$4" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -176,7 +182,8 @@ from pathlib import Path
 returncodes = {
     "archive_build": int(sys.argv[2]),
     "source_mutation": int(sys.argv[3]),
-    "archive_verification": int(sys.argv[4]),
+    "archive_preflight": int(sys.argv[4]),
+    "archive_verification": int(sys.argv[5]),
 }
 result = {
     "schema_version": 1,
@@ -221,6 +228,27 @@ set -e
 if [[ $builder_rc -eq 0 ]]; then
     set +e
     run_local_script \
+        "$PREFLIGHT" \
+        --manifest-results "$INPUT_DIR" \
+        --archive-results "$RESULTS_DIR" \
+        --output "$RESULTS_DIR/preflight-verification.json" \
+        > "$RESULTS_DIR/preflight.log" 2>&1
+    preflight_rc=$?
+    set -e
+else
+    preflight_rc=125
+    write_blocked_json \
+        "$RESULTS_DIR/preflight-verification.json" \
+        "reproducible_archive_build" \
+        "$builder_rc" \
+        "archive_preflight_blocked" \
+        > "$RESULTS_DIR/preflight.log" 2>&1
+fi
+cat "$RESULTS_DIR/preflight.log"
+
+if [[ $builder_rc -eq 0 && $preflight_rc -eq 0 ]]; then
+    set +e
+    run_local_script \
         "$VERIFIER" \
         --manifest-results "$INPUT_DIR" \
         --archive-results "$RESULTS_DIR" \
@@ -230,22 +258,33 @@ if [[ $builder_rc -eq 0 ]]; then
         > "$RESULTS_DIR/verifier.log" 2>&1
     verifier_rc=$?
     set -e
-    cat "$RESULTS_DIR/verifier.log"
 else
     verifier_rc=125
-    write_blocked_verification "$builder_rc" > "$RESULTS_DIR/verifier.log" 2>&1
-    cat "$RESULTS_DIR/verifier.log"
+    blocked_by="reproducible_archive_build"
+    blocked_rc="$builder_rc"
+    if [[ $builder_rc -eq 0 ]]; then
+        blocked_by="archive_preflight"
+        blocked_rc="$preflight_rc"
+    fi
+    write_blocked_json \
+        "$RESULTS_DIR/archive-verification.json" \
+        "$blocked_by" \
+        "$blocked_rc" \
+        "archive_verification_blocked" \
+        > "$RESULTS_DIR/verifier.log" 2>&1
 fi
+cat "$RESULTS_DIR/verifier.log"
 
-write_workflow_status "$builder_rc" "$mutation_rc" "$verifier_rc"
+write_workflow_status "$builder_rc" "$mutation_rc" "$preflight_rc" "$verifier_rc"
 
-printf '\nReproducibility:     %s\n' "$RESULTS_DIR/reproducibility.json"
+printf '\nReproducibility:      %s\n' "$RESULTS_DIR/reproducibility.json"
+printf 'Archive preflight:    %s\n' "$RESULTS_DIR/preflight-verification.json"
 printf 'Archive verification: %s\n' "$RESULTS_DIR/archive-verification.json"
-printf 'Archives:            %s\n' "$RESULTS_DIR/archives"
-printf 'Mutation check:      %s\n\n' "$RESULTS_DIR/source-mutation-check.txt"
+printf 'Archives:             %s\n' "$RESULTS_DIR/archives"
+printf 'Mutation check:       %s\n\n' "$RESULTS_DIR/source-mutation-check.txt"
 
 final_rc=0
-for rc in "$builder_rc" "$mutation_rc" "$verifier_rc"; do
+for rc in "$builder_rc" "$mutation_rc" "$preflight_rc" "$verifier_rc"; do
     if [[ $rc -ne 0 ]]; then
         final_rc=$rc
         break
@@ -260,6 +299,7 @@ fi
 echo "REPRODUCIBLE_ARCHIVE_ACCEPTED_INPUTS=PASS"
 echo "REPRODUCIBLE_ARCHIVE_BUILD=31/31 PASS"
 echo "REPRODUCIBLE_ARCHIVE_BYTE_IDENTITY=3/3 PASS"
+echo "REPRODUCIBLE_ARCHIVE_PREFLIGHT=28/28 PASS"
 echo "REPRODUCIBLE_ARCHIVE_VERIFICATION=76/76 PASS"
 echo "REPRODUCIBLE_ARCHIVE_SAFE_STAGING_EXTRACTION=3/3 PASS"
 echo "REPRODUCIBLE_ARCHIVE_SOURCE_MUTATION_CHECK=PASS"
