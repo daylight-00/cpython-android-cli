@@ -1,6 +1,6 @@
 # Stage 3-C Phase 1: Promoted Product Role Inventory
 
-> **Status:** INVENTORY PASS, DECOMPOSITION PASS, SEMANTIC PASS, COMPONENT POLICY PASS, ISOLATED VARIANTS ACTIVE
+> **Status:** INVENTORY PASS, DECOMPOSITION PASS, SEMANTIC PASS, COMPONENT POLICY PASS, ISOLATED PHYSICAL GATES PASS, PHELLO REASSESSMENT ACTIVE
 > **Input:** frozen Stage 3-B promoted runtime
 
 ## Frozen input
@@ -81,19 +81,6 @@ component manifest
   91088a013722ad35910f049bfc45b2e61607423d833c23038c1d9645497b7b84
 ```
 
-Selected components:
-
-```text
-RUNTIME_BASE
-RUNTIME_METADATA
-DEVELOPMENT
-DEVELOPMENT_METADATA
-OPTIONAL_TEST_SUITE
-OPTIONAL_TEST_DEMO
-UNSUPPORTED_GUI_SOURCE
-LICENSE
-```
-
 Selected artifact candidates:
 
 ```text
@@ -119,18 +106,7 @@ unsupported-gui-source
   not distributed until a working Tk backend exists
 ```
 
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
-docs/evidence/STAGE3C_PHASE1_ROLE_DECOMPOSITION_RESULT.md
-docs/evidence/STAGE3C_PHASE1_ROLE_SEMANTICS_RESULT.md
-docs/evidence/STAGE3C_PHASE1_COMPONENT_POLICY_RESULT.md
-```
-
-## Step 5: isolated variant materialization — ACTIVE
-
-This step creates disposable trees from the accepted component manifest. The canonical promoted tree remains read-only.
+## Step 5: isolated variant materialization — PHYSICAL GATES PASS
 
 ```sh
 bash experiments/stage3c-product-role-inventory/run-isolated-variant-validation.sh
@@ -139,96 +115,173 @@ bash experiments/stage3c-product-role-inventory/run-isolated-variant-validation.
 Materialized variants:
 
 ```text
+runtime-base          714 entries    38,759,749 bytes
+runtime-development  1168 entries    43,733,124 bytes
+runtime-test         2502 entries    72,236,539 bytes
+runtime-supported    2956 entries    77,209,914 bytes
+```
+
+No `UNSUPPORTED_GUI_SOURCE` row was copied.
+
+First-run retained result:
+
+```text
+materialization                      7/7 PASS
+initial exact-path fidelity         15/15 PASS
+final exact-path fidelity           15/15 PASS
+runtime-base production smoke             PASS
+development extension compile/import      PASS
+test-addon representative test            PASS
+canonical source mutation control         PASS
+all four variant mutation controls        PASS
+```
+
+Observed behavior:
+
+```text
+runtime-base HTTPS status                 200
+runtime-base uv venv                       PASS
+runtime-base uv run + anyio                PASS
+development extension result               42
+test_json                                  PASS
+```
+
+Canonical source before/after:
+
+```text
+entries
+  3155 / 3155
+
+fingerprint
+  5465a389496e0f7810866ef4b8786d1f3d283b96116ff4da72b881c1a3ec3e6c
+```
+
+Variant strict fingerprints:
+
+```text
 runtime-base
-  714 entries
+  9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
 
 runtime-development
-  runtime-base + development-addon
-  1168 entries
+  c310052378f2ab40041c8ed599c301fbe6778c139665496ddb9f8b8a9ec947c6
 
 runtime-test
-  runtime-base + test-addon
-  2502 entries
+  da1627557907b417bea4b0175e431c746a450dbfa8f31698077853328a54835e
 
 runtime-supported
-  runtime-base + development-addon + test-addon
-  2956 entries
+  ea5930b2b0c0266b28efa0a66fb70267f8ecafe5c62a5c29c61f26cc05c20a64
 ```
 
-No `UNSUPPORTED_GUI_SOURCE` row is copied.
+Every before/after pair was equal.
 
-The workflow validates:
+### First-run capability false negative
+
+The aggregate verifier reported:
 
 ```text
-accepted component manifest identity
-ancestor-closed exact path selection
-path/type/mode/mtime/file-hash/symlink fidelity
-all 81 ELF entries retained in every variant
-variant-specific positive and negative import matrix
-runtime metadata present in every variant
-development metadata absent/present exactly by variant
-Tk/IDLE/turtle source absent in every distributed variant
-runtime-base production smoke with HTTPS and uv/venv
-development-addon real C extension compile and import
-test-addon representative test_json regression run
-variant strict fingerprints unchanged after validation
-canonical source strict fingerprint unchanged
+checks             46
+failed checks       3
+pass             false
 ```
 
-The development probe compiles a real extension against the isolated headers and `libpython3.14.so`, then imports it with `runtime-development`.
-
-The test probe executes:
+Exact failed checks:
 
 ```text
-python -I -B -m test -j1 test_json
+runtime-base_capability_pass
+runtime-development_capability_pass
+workflow_status_pass
+```
+
+The only underlying capability mismatch was `__phello__`.
+
+```text
+runtime-base
+  physical OPTIONAL_TEST_DEMO absent
+  __phello__ import succeeds
+  spec origin = frozen
+
+runtime-development
+  physical OPTIONAL_TEST_DEMO absent
+  __phello__ import succeeds
+  spec origin = frozen
+```
+
+`__phello__` is frozen into this CPython. Importability is therefore independent of physical `lib/python3.14/__phello__` ownership. The synthetic module `__file__` path must not be treated as proof that the physical source directory exists.
+
+The corrected contract is:
+
+```text
+__phello__ import succeeds with frozen origin in every variant
+
+physical lib/python3.14/__phello__ absent
+  runtime-base
+  runtime-development
+
+physical lib/python3.14/__phello__ present
+  runtime-test
+  runtime-supported
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE1_ISOLATED_VARIANT_PHELLO_INCIDENT.md
+```
+
+## Step 6: targeted frozen-module reassessment — ACTIVE
+
+The first-run result is retained unchanged. This workflow does not rematerialize variants or rerun smoke, compilation, or regression tests.
+
+```sh
+bash \
+  experiments/stage3c-product-role-inventory/run-isolated-variant-capability-reassessment.sh
+```
+
+It validates:
+
+```text
+first-run failure set exactly preserved
+all first-run non-capability return codes remain zero
+materialization 7/7 retained
+fidelity before/after 15/15 retained
+current source and variant fingerprints equal first-run identities
+corrected capability schema 2 and 17/17 per variant
+__phello__ import and frozen origin in every variant
+physical __phello__ root follows test-addon ownership
+source and variant fingerprints unchanged by reassessment
 ```
 
 Outputs:
 
 ```text
-work/termux/stage3c-phase1-isolated-variants/
-  runtime-base/prefix
-  runtime-development/prefix
-  runtime-test/prefix
-  runtime-supported/prefix
-
-results/termux/stage3c-phase1-isolated-variants/
-  materialization.json
-  variant-fidelity-before.json
-  variant-fidelity-after.json
+results/termux/stage3c-phase1-isolated-variant-capability-reassessment/
+  source-before.json
+  source-after.json
   capabilities/*.json
   fingerprints/*.json
-  runtime-base-smoke.log
-  development-extension.log
-  test-addon.log
-  workflow-status.json
+  reassessment-status.json
   verification.json
+  verifier.log
 ```
 
 Expected markers:
 
 ```text
-STAGE3C_PHASE1_VARIANT_MATERIALIZATION=PASS
-STAGE3C_PHASE1_VARIANT_FIDELITY=PASS
-STAGE3C_PHASE1_VARIANT_CAPABILITY[runtime-base]=PASS
-STAGE3C_PHASE1_VARIANT_CAPABILITY[runtime-development]=PASS
-STAGE3C_PHASE1_VARIANT_CAPABILITY[runtime-test]=PASS
-STAGE3C_PHASE1_VARIANT_CAPABILITY[runtime-supported]=PASS
-RUNTIME_BASE_SMOKE=PASS
-DEVELOPMENT_ADDON_NATIVE_EXTENSION=PASS
-TEST_ADDON_REPRESENTATIVE_TEST=PASS
-ISOLATED_VARIANT_SOURCE_MUTATION_CHECK=PASS
-STAGE3C_PHASE1_ISOLATED_VARIANTS=PASS
+FIRST_RUN_FAILURE_PRESERVED=PASS
+PHELLO_FROZEN_CONTRACT_CORRECTED=PASS
+ISOLATED_VARIANT_CAPABILITIES_REASSESSED=PASS
+ISOLATED_VARIANT_REASSESSMENT_MUTATION_CHECK=PASS
+STAGE3C_PHASE1_PHELLO_REASSESSMENT=PASS
 ```
 
 ## Non-mutation contract
 
-All Python probes run with explicit bytecode suppression. Every materialized variant and the canonical source are fingerprinted before and after behavior validation.
+All Python probes run with explicit bytecode suppression. The canonical source and every isolated variant are fingerprinted before and after the targeted reassessment.
 
-The first isolated gate does not modify the canonical promoted tree and does not yet freeze archive bytes.
+The original failed output remains evidence and is never rewritten into a synthetic PASS.
 
 ## Claim boundary
 
-A PASS proves exact isolated materialization plus selected runtime, development, and test behavior.
+A corrected reassessment PASS closes only the frozen-module semantic false negative and completes the isolated physical-composition gate.
 
-It does not yet prove that `runtime-base` preserves the frozen native closure or production-shape whole-prefix relocation. Those are the next Phase 1 gates before the component split is frozen.
+It does not yet prove that `runtime-base` preserves the frozen native closure or production-shape whole-prefix relocation. Those remain the next Phase 1 gates before the component split is frozen.
