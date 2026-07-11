@@ -1,8 +1,8 @@
 # CPython Android CLI + uv: Stage 3 Project Context
 
 > **Status:** Current handoff context
-> **Architecture:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B Phases 1–4 frozen
-> **Active work:** Stage 3-B Phase 5 corrected final relocation rerun
+> **Architecture:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B frozen
+> **Next work:** Stage 3-C archive and installation contract design
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
 > **Python baseline:** CPython 3.14.6
@@ -57,8 +57,8 @@ Stage 2-B  conditional re-exec and relocation           COMPLETE
 Stage 2-C  synthesis and project workflow               COMPLETE
 Stage 2    native bootstrap and workflow architecture   FROZEN
 Stage 3-A  runtime closure census and boundary model    FROZEN
-Stage 3-B  reproducible build-input promotion           ACTIVE
-Stage 3-C  distribution archive/installation contract  DEFERRED
+Stage 3-B  reproducible build-input promotion           FROZEN
+Stage 3-C  distribution archive/installation contract  NEXT
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -128,8 +128,6 @@ Extension surface:
 0 FAIL
 ```
 
-Runtime paths re-rooted correctly under relocation while some development/build metadata retained producer provenance. Runtime correctness and development-metadata relocation were intentionally distinguished.
-
 CA boundary:
 
 ```text
@@ -139,7 +137,7 @@ missing path repair          PASS
 existing empty regular file  preserved, HTTPS FAIL
 ```
 
-Timezone boundary, corrected follow-up:
+Timezone boundary:
 
 ```text
 default POSIX TZPATH          unavailable on tested host
@@ -159,9 +157,9 @@ STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
 STAGE3A=FROZEN
 ```
 
-## 6. Stage 3-B producer result
+## 6. Frozen Stage 3-B producer result
 
-Phases 1–4 made explicit and reproducible:
+Stage 3-B made explicit and reproducible:
 
 ```text
 exact CPython source identity
@@ -172,7 +170,7 @@ third-party dependency versions and archive hashes
 configure/build command model
 promoted dependency products
 promoted CPython dev/runtime products
-promoted launcher build inputs
+promoted launcher build inputs and output
 transport and isolated Termux assembly
 ```
 
@@ -182,13 +180,15 @@ Promoted candidate:
 work/termux/stage3b-promoted-runtime/prefix
 ```
 
-Frozen control:
+Frozen comparison/control runtime:
 
 ```text
 work/termux/stage2c/runtime/prefix
 ```
 
-## 7. Stage 3-B Phase 5 completed gates
+These are generated local products. Git tracks the producer, assembly, validation, documentation, and evidence logic rather than runtime tree bytes.
+
+## 7. Frozen Stage 3-B target-equivalence result
 
 Canonical behavior:
 
@@ -200,9 +200,13 @@ Closure equivalence:
 
 ```text
 candidate entries                         3155
+symlinks                                     5
 ELF objects                                 81
 DT_NEEDED edges                            329
+RUNTIME_INTERNAL edges                      80
+ANDROID_SYSTEM edges                       249
 unresolved edges                             0
+inspection errors                            0
 Android-system SONAME dlopen               5/5
 extension imports                         67/67
 candidate/frozen mutation controls         PASS
@@ -221,107 +225,7 @@ machine verifier checks                  28/28
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-## 8. Relocation first-run incident
-
-Production shape:
-
-```text
-canonical promoted candidate
-  -> copy to A
-  -> validate A
-  -> move A -> B
-  -> validate B
-```
-
-Functional result:
-
-```text
-LOCATION_RECONFIRM[A]=PASS
-LOCATION_RECONFIRM[B]=PASS
-STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
-STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
-candidate source mutation control         PASS
-frozen control mutation control           PASS
-```
-
-The initial machine verdict failed only the source/B strict fingerprint.
-
-Retained-tree diagnosis:
-
-```text
-source_entry_count          3155
-relocated_entry_count       3155
-added_count                    0
-removed_count                  0
-portable_changed_count         0
-pycache_path_count              0
-portable_pass                true
-```
-
-Only strict delta:
-
-```text
-lib/python3.14/lib-dynload
-  type        directory
-  field       st_size
-  source      12288
-  relocated   20480
-```
-
-No file content, file mode, file mtime, symlink target, directory mtime, or path set differed.
-
-Classification:
-
-```text
-FINGERPRINT CONTRACT FALSE POSITIVE
-```
-
-## 9. Corrected fidelity design
-
-The earlier gate used one fingerprint for two different questions.
-
-### Same-tree mutation
-
-Candidate and frozen prefixes are measured before and after the workflow with the strict metadata-sensitive fingerprint. The same inode trees must remain unchanged.
-
-### Cross-tree product fidelity
-
-Source and copied B are different inode trees. The corrected product contract requires:
-
-```text
-same relative path set
-same entry type
-same mode
-same mtime
-same regular-file size and SHA-256
-same symlink target
-```
-
-Directory `st_size` is excluded because it describes directory allocation, not runtime payload. Strict differences remain retained as non-gating diagnostics.
-
-This contract is stronger for actual payload because it hashes every regular file.
-
-Evidence:
-
-```text
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
-```
-
-## 10. Current action
-
-Run corrected Gate 4:
-
-```sh
-rm -rf \
-  work/termux/stage3b-promoted-relocation \
-  results/termux/stage3b-promoted-relocation
-
-bash \
-  experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-Expected markers:
+Production-shape relocation:
 
 ```text
 LOCATION_RECONFIRM[A]=PASS
@@ -333,17 +237,123 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-Primary outputs:
+Relocation verifier:
 
 ```text
-results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
-results/termux/stage3b-promoted-relocation/relocated-runtime-fidelity-check.txt
-results/termux/stage3b-promoted-relocation/fidelity-diagnosis/tree-delta.json
+schema_version      2
+check_count        31
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
 ```
 
-The frozen Stage 2-C prefix and canonical promoted source remain read-only controls.
+Relocated-product fidelity:
 
-## 11. Repository-state split
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
+strict fidelity               PASS
+```
+
+Portable source/B fingerprint:
+
+```text
+79ca7d53f25810b1f5276d18df31f10f2ae981dc24caf67c5f33d37fa75127c8
+```
+
+Candidate source/control fingerprint:
+
+```text
+834f7aeb2e5266f027b6ee43dd77255079b2e01cf049dad56fda5ef39ce048b0
+```
+
+Frozen control fingerprint:
+
+```text
+5a14f213bbf069b844a799615ed2b87eb34b48b4251b0a48bf431337e929ce0e
+```
+
+Final Stage 3-B markers:
+
+```text
+STAGE3B_PHASE5=FROZEN
+STAGE3B=FROZEN
+```
+
+## 8. Frozen validation lessons
+
+### Validation must not mutate products
+
+The first promoted-closure attempt created 43 bytecode-related entries because isolated children ignored shell `PYTHON*` controls. Child probes were corrected to use explicit `-B`, and the candidate was freshly reassembled rather than cleaned in place.
+
+### Probe flags must preserve the tested input
+
+The direct-zoneinfo probe originally tested `PYTHONTZPATH` under `-I`, which invalidated the test. The corrected probe sanitizes ambient Python variables without ignoring the explicit variable under test.
+
+### Same-tree mutation and cross-tree fidelity are separate
+
+Same-tree before/after controls use strict metadata-sensitive fingerprints.
+
+Cross-tree source/B product fidelity requires:
+
+```text
+same relative path set
+same entry type, mode and mtime
+same regular-file size and SHA-256
+same symlink target
+```
+
+Directory `st_size` is excluded because it represents filesystem allocation metadata. Strict differences remain non-gating diagnostic evidence.
+
+### Raw aggregate file count is not semantic equality
+
+The frozen historical runtime has `3280` entries and the promoted runtime has `3155`. Complete inventories are retained; acceptance is based on runtime behavior, native closure, extension surface, active identity, host/data boundaries, relocation, source immutability, and relocated-product fidelity.
+
+## 9. Stage 3-C entry boundary
+
+Stage 3-C may consume the frozen Stage 3-B promoted product model and design the distribution archive and installation contract.
+
+The first task is contract design, not immediate packaging implementation:
+
+```text
+select archive payload boundary
+select install-prefix and ownership model
+select metadata and manifest format
+select archive reproducibility definition
+select installer/upgrade/uninstall transaction model
+select validation matrix for unpacked and installed forms
+```
+
+Stage 3-C must not reopen producer or runtime semantics merely to simplify packaging. Any archive or installation transformation must preserve or explicitly revalidate:
+
+```text
+runtime and subprocess identity
+native closure
+extension surface
+CA integration policy
+timezone data boundary
+uv and venv workflows
+whole-prefix relocatability
+product path/content/symlink fidelity
+```
+
+Deferred to later contract choices:
+
+```text
+uv managed-Python provider metadata
+multi-ABI/API release matrix
+signing
+SBOM
+published provenance attestations
+```
+
+## 10. Repository-state split
 
 Tracked state:
 
@@ -375,15 +385,16 @@ Collaboration contract:
 docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-## 12. Reading order
+## 11. Reading order
 
 ```text
 README.md
     -> docs/PROJECT_CONTEXT_STAGE3.md
     -> docs/stages/STAGE2_FINAL.md
     -> docs/stages/STAGE3A_FINAL.md
-    -> docs/stages/STAGE3B_SCOPE.md
-    -> docs/stages/STAGE3B_PHASE5_SCOPE.md
+    -> docs/stages/STAGE3B_FINAL.md
+    -> docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
+    -> docs/stages/STAGE3_SCOPE.md
     -> docs/evidence/
     -> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
