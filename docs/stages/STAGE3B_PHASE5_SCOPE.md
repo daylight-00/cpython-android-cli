@@ -1,6 +1,6 @@
 # Stage 3-B Phase 5 Scope: Target Runtime and Closure Equivalence
 
-> **Status:** ACTIVE
+> **Status:** ACTIVE — corrected final relocation rerun pending
 > **Input:** isolated promoted runtime candidate
 > **Execution host:** Termux on Android arm64
 > **Baseline:** frozen Stage 3-A runtime and closure model
@@ -19,7 +19,7 @@ baseline
   work/termux/stage2c/runtime/prefix
 ```
 
-The baseline is read-only evidence during this phase. Candidate-specific observations are written under new `results/termux/stage3b-*` directories.
+The baseline and canonical candidate are source/control inputs. Candidate-specific evidence is written under `results/termux/stage3b-*`.
 
 ## Validation order
 
@@ -34,17 +34,7 @@ The baseline is read-only evidence during this phase. Candidate-specific observa
 8. whole-prefix relocation
 ```
 
-A failure in an earlier gate is analyzed before later gates proceed.
-
-## Gate 1 result: promoted canonical smoke
-
-Command:
-
-```sh
-bash experiments/stage3b-target-validation/smoke-promoted-runtime.sh
-```
-
-Observed:
+## Gate 1: promoted canonical smoke — PASS
 
 ```text
 candidate executable/prefix/base_prefix identity   PASS
@@ -57,11 +47,9 @@ uv run                                             PASS
 frozen runtime mutation check                      PASS
 ```
 
-Final markers:
+Final marker:
 
 ```text
-STAGE2C_SMOKE=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_SMOKE=PASS
 ```
 
@@ -71,60 +59,9 @@ Evidence:
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 ```
 
-## Gate 2 result: promoted closure equivalence
+## Gate 2: promoted closure equivalence — PASS
 
-The first promoted-closure run matched the frozen semantic closure model but failed the candidate mutation control.
-
-Observed semantic match:
-
-```text
-symlink_count                              5
-elf_object_count                          81
-needed_edge_count                        329
-classification edges
-  RUNTIME_INTERNAL                        80
-  ANDROID_SYSTEM                         249
-unresolved_edge_count                      0
-inspection_error_count                     0
-unique_needed_soname_count                 9
-classification unique SONAMEs
-  RUNTIME_INTERNAL                         4
-  ANDROID_SYSTEM                           5
-Android-system SONAME dlopen              5/5
-isolated extension imports              67/67
-```
-
-Post-failure comparison found:
-
-```text
-file entries before   3280
-file entries after    3323
-delta                    43
-
-new __pycache__ dirs      4
-new .pyc files           39
-```
-
-Root cause:
-
-```text
-fresh-process child
-  python -I -S -c ...
-
--I isolated mode
-  -> ignores shell PYTHON* bytecode controls
-  -> child imports can write .pyc into candidate prefix
-```
-
-Repair:
-
-```text
-python -I -B -S -c ...
-```
-
-The candidate was freshly reassembled from the canonical promoted package rather than cleaned in place.
-
-Clean rerun result:
+Clean rerun result after repairing isolated-child bytecode controls:
 
 ```text
 candidate file entries                  3155
@@ -137,19 +74,14 @@ unresolved edges                           0
 inspection errors                          0
 Android-system SONAME dlopen             5/5
 extension imports                       67/67
-candidate before fingerprint == after fingerprint
-frozen before fingerprint == after fingerprint
-machine verifier checks                  37/37
+candidate mutation control              PASS
+frozen mutation control                 PASS
+machine verifier checks                37/37
 ```
 
-Final markers:
+Final marker:
 
 ```text
-UNRESOLVED_EDGE_COUNT=0
-SYSTEM_SONAME_PROBE=PASS
-EXTENSION_IMPORT_PROBE=PASS
-CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_CLOSURE=PASS
 ```
 
@@ -160,29 +92,9 @@ docs/evidence/STAGE3B_PHASE5_PROBE_MUTATION_DIAGNOSIS.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 ```
 
-Gate 2 is closed.
+## Gate 3: CA and timezone boundary equivalence — PASS
 
-## Gate 3 result: CA and timezone boundary equivalence
-
-Before reuse, the Stage 3-A boundary probes were corrected:
-
-```text
-CA child
-  old: python -I -S -c ...
-  new: python -I -B -S -c ...
-
-zoneinfo child
-  old: tested PYTHONTZPATH under -I
-  new: sanitized Python environment + python -B -P -s -c ...
-```
-
-Command:
-
-```sh
-bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
-```
-
-Machine verdict:
+Corrected boundary verifier:
 
 ```text
 check_count        28
@@ -192,57 +104,30 @@ parse_errors       {}
 pass               true
 ```
 
-CA result for both candidate and frozen runtime:
+Observed model for both candidate and frozen runtime:
 
 ```text
-clean default            Termux CA, HTTPS 200
-explicit Termux CA       preserved, HTTPS 200
-missing CA path          repaired to Termux CA, HTTPS 200
-existing empty file      preserved, HTTPS failure expected
+CA policy matrix
+  clean default                 HTTPS 200 through Termux CA
+  explicit Termux CA            preserved, HTTPS 200
+  missing CA path               repaired, HTTPS 200
+  existing empty regular file   preserved, expected HTTPS failure
+
+base zoneinfo data
+  default POSIX TZPATH           unavailable on tested host
+  explicit Termux zoneinfo path  delivered but absent
+  base first-party tzdata        absent
+
+uv first-party fallback
+  tzdata 2026.3
+  UTC                            PASS
+  Asia/Seoul                     PASS
+  America/New_York               PASS
 ```
 
-Corrected direct-zoneinfo result for both runtimes:
+Final marker:
 
 ```text
-default
-  PYTHONTZPATH unset
-  configured POSIX TZPATH directories absent
-  representative keys FAIL
-
-package-only
-  PYTHONTZPATH=""
-  zoneinfo.TZPATH=[]
-  base tzdata package absent
-  representative keys FAIL
-
-explicit Termux path
-  PYTHONTZPATH=$PREFIX/share/zoneinfo
-  requested path observed by child
-  path absent on tested host
-  representative keys FAIL
-```
-
-uv first-party fallback for both runtimes:
-
-```text
-tzdata version           2026.3
-PYTHONTZPATH              ""
-UTC                       PASS
-Asia/Seoul                PASS
-America/New_York          PASS
-uv sys.base_prefix        expected source runtime
-```
-
-Both candidate and frozen runtime fingerprints remained unchanged.
-
-Final markers:
-
-```text
-CA_BOUNDARY_EQUIVALENCE=PASS
-ZONEINFO_BOUNDARY_EQUIVALENCE=PASS
-TZDATA_FALLBACK_EQUIVALENCE=PASS
-CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
@@ -253,11 +138,9 @@ docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
-Gate 3 is closed.
+## Gate 4 first run: functional relocation PASS, fingerprint contract incident
 
-## Current action: Gate 4 whole-prefix relocation
-
-The remaining Phase 5 gate tests the promoted product in the same production shape used for the frozen Stage 3-A relocation proof:
+The production-shape workflow used:
 
 ```text
 promoted source candidate
@@ -267,7 +150,90 @@ promoted source candidate
   -> validate B
 ```
 
-Command:
+Functional result:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
+candidate source mutation control       PASS
+frozen control mutation control         PASS
+```
+
+The initial machine verifier passed 15 of 16 checks. Only the source/B tree fingerprint failed.
+
+## Relocation fidelity diagnosis
+
+A retained-tree, path-level comparison hashed every regular file.
+
+```text
+source_entry_count          3155
+relocated_entry_count       3155
+added_count                    0
+removed_count                  0
+portable_changed_count         0
+pycache_path_count              0
+portable_pass                true
+```
+
+The only strict difference was:
+
+```text
+path          lib/python3.14/lib-dynload
+type          directory
+field         st_size
+source        12288
+relocated     20480
+```
+
+No product path, file content, file metadata, symlink target, or directory mtime changed.
+
+Classification:
+
+```text
+FINGERPRINT CONTRACT FALSE POSITIVE
+```
+
+The previous source/B fingerprint treated directory allocation size as product payload. That is not a valid cross-inode fidelity requirement.
+
+Evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
+```
+
+## Corrected fidelity contracts
+
+### Same-tree mutation checks
+
+Candidate and frozen before/after controls retain the strict metadata-sensitive fingerprint because the same inode tree is measured twice and must remain untouched.
+
+### Cross-tree source/B product fidelity
+
+The corrected portable manifest requires:
+
+```text
+same relative path set
+same entry type
+same mode
+same mtime
+
+regular files
+  same size
+  same SHA-256
+
+symlinks
+  same target
+
+directories
+  st_size excluded
+```
+
+The strict source/B fingerprint remains recorded as a non-gating observation.
+
+## Current action: corrected Gate 4 rerun
 
 ```sh
 git pull --ff-only
@@ -280,39 +246,18 @@ bash \
   experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
-Location A and B validate:
+The corrected wrapper now:
 
 ```text
-base runtime identity
-active sysconfig paths
-native stdlib and libc loadability
-HTTPS through Termux CA integration
-subprocess interpreter identity
-fresh uv venv creation
-fresh venv base-prefix identity
-uv run with explicit interpreter
-uv run base-prefix identity
-absence of the forbidden stale prefix
+runs A and B functional relocation assertions
+keeps candidate/frozen strict same-tree mutation controls
+builds source and B path-level manifests
+hashes every regular file
+compares symlink targets
+ignores only directory st_size for cross-tree fidelity
+retains strict source/B differences for diagnosis
+writes a structured verifier result
 ```
-
-The promoted wrapper adds outer evidence controls:
-
-```text
-canonical candidate source fingerprint unchanged
-frozen Stage 2-C control fingerprint unchanged
-final B fingerprint identical to source candidate fingerprint
-location A absent after move
-location B present with executable Python
-structured machine verdict retained on completed failure attempts
-```
-
-The reused relocation engine now also exports explicit:
-
-```text
-PYTHONDONTWRITEBYTECODE=1
-```
-
-in addition to its external pycache root, so validation must not write bytecode into the relocated product.
 
 Expected final markers:
 
@@ -320,69 +265,23 @@ Expected final markers:
 LOCATION_RECONFIRM[A]=PASS
 LOCATION_RECONFIRM[B]=PASS
 STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
-RELOCATED_RUNTIME_FIDELITY_CHECK=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
 CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
 FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-Primary machine-readable verdict:
+Primary evidence:
 
 ```text
 results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
-```
-
-## Frozen semantic closure gates
-
-The candidate preserves:
-
-```text
-symlink_count                              5
-elf_object_count                          81
-needed_edge_count                        329
-classification edges
-  RUNTIME_INTERNAL                        80
-  ANDROID_SYSTEM                         249
-unresolved_edge_count                      0
-inspection_error_count                     0
-unique_needed_soname_count                 9
-classification unique SONAMEs
-  RUNTIME_INTERNAL                         4
-  ANDROID_SYSTEM                           5
-Android-system SONAME dlopen              5/5
-isolated extension imports              67/67
-```
-
-Active runtime identity points to the promoted candidate:
-
-```text
-sys.executable
-sys.prefix
-sys.base_prefix
-sys.exec_prefix
-active sysconfig paths
-active lib-dynload discovery
-LD_LIBRARY_PATH candidate component
-Termux CA file
+results/termux/stage3b-promoted-relocation/fidelity-diagnosis/tree-delta.json
+results/termux/stage3b-promoted-relocation/relocated-runtime-fidelity-check.txt
 ```
 
 ## File-entry count policy
 
-The frozen Stage 3-A aggregate was:
-
-```text
-file_entry_count=3280
-```
-
-The fresh promoted candidate aggregate was:
-
-```text
-file_entry_count=3155
-```
-
-Raw file count is not a semantic pass/fail gate. Complete row-level inventory is retained; closure structure, runtime identity, import surface, boundary behavior, relocation, and mutation controls are the gates.
-
-The earlier `+43` incident is separately preserved as validation-induced mutation evidence and is not conflated with the clean candidate's `-125` aggregate product difference.
+The frozen Stage 3-A aggregate was `3280`; the promoted candidate has `3155` entries. Raw aggregate count is not a semantic equality gate across different products. Complete inventories, native closure, runtime identity, import surface, data boundaries, relocation behavior, and mutation controls are the acceptance dimensions.
 
 ## Acceptance conditions
 
@@ -399,19 +298,19 @@ The earlier `+43` incident is separately preserved as validation-induced mutatio
 [x] provider classification matches reviewed model
 [x] 67/67 extension imports pass
 [x] active runtime and sysconfig paths point to candidate
-[x] closure workflow candidate mutation control passes
-[x] closure workflow frozen mutation control passes
+[x] closure candidate/frozen mutation controls pass
 [x] CA boundary equivalence passes
 [x] corrected timezone boundary equivalence passes
 [x] first-party tzdata fallback equivalence passes
-[x] boundary workflow candidate mutation control passes
-[x] boundary workflow frozen mutation control passes
-[ ] whole-prefix relocation A validation passes
-[ ] whole-prefix relocation B validation passes
-[ ] stale A-prefix assertions pass
-[ ] relocated B fingerprint matches source candidate
-[ ] relocation workflow candidate and frozen mutation controls pass
-[ ] relocation machine verdict passes
+[x] boundary candidate/frozen mutation controls pass
+[x] first-run relocation A validation passes
+[x] first-run relocation B validation passes
+[x] first-run stale A-prefix assertions pass
+[x] first-run candidate/frozen mutation controls pass
+[x] source/B fidelity incident classified
+[x] corrected portable source/B contract defined
+[ ] corrected relocation wrapper passes end to end
+[ ] corrected relocation machine verdict passes
 ```
 
-Phase 5 remains active until the relocation gate passes or new evidence explicitly reopens a prior condition.
+Phase 5 remains active until the corrected Gate 4 rerun passes and its final evidence is frozen.
