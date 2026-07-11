@@ -25,16 +25,26 @@ Default input:
 work/termux/stage3b-promoted-runtime/prefix
 ```
 
+Default frozen contract:
+
+```text
+entry count      3155
+ELF objects        81
+symlinks             5
+```
+
 Default output:
 
 ```text
 results/termux/stage3c-phase1-role-inventory
 ```
 
-The frozen Stage 3-B entry-count contract is `3155`. To deliberately inspect a changed candidate without asserting that contract, pass an explicit override and treat the result as new evidence rather than Stage 3-C acceptance:
+To deliberately inspect a changed candidate without asserting the frozen counts, pass explicit overrides and treat the result as new evidence rather than Stage 3-C acceptance:
 
 ```sh
 EXPECTED_ENTRY_COUNT=<reviewed-count> \
+EXPECTED_ELF_COUNT=<reviewed-count> \
+EXPECTED_SYMLINK_COUNT=<reviewed-count> \
   bash experiments/stage3c-product-role-inventory/run-role-inventory.sh
 ```
 
@@ -138,20 +148,27 @@ No bytecode may be written into the candidate.
 
 ## Independent verifier
 
-The verifier checks 32 conditions, including:
+The verifier checks 43 conditions, including:
 
 ```text
 all required outputs exist and parse
-inventory schema is exact
+inventory and auxiliary schemas are exact
 entry count is 3155
+ELF count is 81
+symlink count is 5
 paths are unique
+all used classifier rules are declared
 role and type counts match summary
-UNKNOWN count is zero
+UNKNOWN rows agree across TSV and JSON
 all ELF entries are RUNTIME
 no pycache/pyc paths exist
 no unsupported special files exist
+mixed-directory rows and flags are exact
+directory descendant-role sets are valid
+non-directory descendant-role fields are empty
 manifest SHA-256 recomputes
 candidate before/after fingerprints match
+summary and mutation evidence cross-check
 required runtime/development anchors exist
 classifier and verifier verdicts agree
 ```
