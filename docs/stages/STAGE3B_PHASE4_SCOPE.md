@@ -154,6 +154,18 @@ Expected marker when all 69 semantic surfaces match:
 STAGE3B_REGENERATED_SURFACE_COMPARE=PASS
 ```
 
+Capture structured deltas in the five remaining build/development metadata files:
+
+```sh
+bash experiments/stage3b-product-boundary/analyze-metadata-deltas.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_METADATA_DELTA_CAPTURE=PASS
+```
+
 Result:
 
 ```text
