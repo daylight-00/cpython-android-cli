@@ -33,3 +33,25 @@ results/workstation/stage3b-product-boundary/
 ```
 
 The analyzer hashes files but does not modify either prefix. Metadata-tree fingerprints are taken before and after the census to verify non-mutation.
+
+## Refined package-prefix comparison
+
+The first census showed that the full replay prefix contains thousands of development/dependency entries outside the upstream package boundary.
+
+Compare the historical prefix directly against the archive's selected `prefix/` product without extracting it:
+
+```sh
+bash experiments/stage3b-product-boundary/compare-package-boundary.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_PACKAGE_PREFIX_COMPARISON=PASS
+```
+
+Step 1 low-level evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE4_BOUNDARY_CENSUS_STEP1.md
+```
