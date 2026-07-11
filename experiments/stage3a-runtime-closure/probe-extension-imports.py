@@ -149,6 +149,7 @@ print(getattr(module, "__file__", "<built-in>"))
             [
                 str(python_bin),
                 "-I",
+                "-B",
                 "-S",
                 "-c",
                 probe_code,
