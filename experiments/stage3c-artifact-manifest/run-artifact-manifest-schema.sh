@@ -47,6 +47,10 @@ for file in \
     "$OWNERSHIP_RESULTS/shared-namespace-directories.tsv" \
     "$OWNERSHIP_RESULTS/artifact-ownership-summary.tsv" \
     "$OWNERSHIP_RESULTS/excluded-paths.txt" \
+    "$OWNERSHIP_RESULTS/canonical-before.json" \
+    "$OWNERSHIP_RESULTS/canonical-after.json" \
+    "$OWNERSHIP_RESULTS/runtime-before.json" \
+    "$OWNERSHIP_RESULTS/runtime-after.json" \
     "$OWNERSHIP_RESULTS/input/component-inventory.tsv" \
     "$OWNERSHIP_RESULTS/input/phase1-final-verification.json" \
     "$FINGERPRINT" \
@@ -73,7 +77,11 @@ for name in \
     shared-namespace-directories.tsv \
     artifact-ownership-summary.tsv \
     excluded-paths.txt \
-    source-mutation-check.txt; do
+    source-mutation-check.txt \
+    canonical-before.json \
+    canonical-after.json \
+    runtime-before.json \
+    runtime-after.json; do
     [[ ! -f "$OWNERSHIP_RESULTS/$name" ]] || \
         cp -a "$OWNERSHIP_RESULTS/$name" "$OWNERSHIP_INPUT/$name"
 done
@@ -161,6 +169,44 @@ raise SystemExit(0 if passed else 30)
 PY
 }
 
+write_blocked_verification() {
+    "$PYTHON" -I -B -S - \
+        "$RESULTS_DIR/verification.json" "$1" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+output = Path(sys.argv[1])
+generator_rc = int(sys.argv[2])
+expected = [
+    "generation.json",
+    "manifest-index.json",
+    "manifests/runtime-base.manifest.json",
+    "manifests/development-addon.manifest.json",
+    "manifests/test-addon.manifest.json",
+]
+missing = [str(output.parent / path) for path in expected if not (output.parent / path).is_file()]
+result = {
+    "schema_version": 1,
+    "pass": False,
+    "blocked": True,
+    "blocked_by": "manifest_generation",
+    "generator_returncode": generator_rc,
+    "check_count": 0,
+    "checks": {},
+    "failed_checks": ["independent_verification_blocked"],
+    "missing_outputs": missing,
+    "parse_errors": {},
+    "claim_boundary": {
+        "proved": "No manifest-schema claim; generation did not pass.",
+        "not_proved": "Artifact manifests, index integrity, and canonical JSON fidelity.",
+    },
+}
+output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+print(json.dumps(result, indent=2, sort_keys=True))
+PY
+}
+
 write_workflow_status() {
     "$PYTHON" -I -B -S - \
         "$RESULTS_DIR/workflow-status.json" "$1" "$2" "$3" <<'PY'
@@ -218,27 +264,34 @@ write_mutation_check
 mutation_rc=$?
 set -e
 
-set +e
-run_local_script \
-    "$VERIFIER" \
-    --ownership-dir "$OWNERSHIP_INPUT" \
-    --manifest-output-dir "$RESULTS_DIR" \
-    --product-lock "$RESULTS_DIR/input/product-lock.json" \
-    --canonical-before "$RESULTS_DIR/canonical-before.json" \
-    --canonical-after "$RESULTS_DIR/canonical-after.json" \
-    --runtime-before "$RESULTS_DIR/runtime-before.json" \
-    --runtime-after "$RESULTS_DIR/runtime-after.json" \
-    --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
-    --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
-    --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
-    --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
-    --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
-    --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
-    --output "$RESULTS_DIR/verification.json" \
-    > "$RESULTS_DIR/verifier.log" 2>&1
-verifier_rc=$?
-set -e
-cat "$RESULTS_DIR/verifier.log"
+if [[ $generator_rc -eq 0 ]]; then
+    set +e
+    run_local_script \
+        "$VERIFIER" \
+        --ownership-dir "$OWNERSHIP_INPUT" \
+        --manifest-output-dir "$RESULTS_DIR" \
+        --product-lock "$RESULTS_DIR/input/product-lock.json" \
+        --canonical-before "$RESULTS_DIR/canonical-before.json" \
+        --canonical-after "$RESULTS_DIR/canonical-after.json" \
+        --runtime-before "$RESULTS_DIR/runtime-before.json" \
+        --runtime-after "$RESULTS_DIR/runtime-after.json" \
+        --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
+        --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
+        --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
+        --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
+        --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
+        --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
+        --output "$RESULTS_DIR/verification.json" \
+        > "$RESULTS_DIR/verifier.log" 2>&1
+    verifier_rc=$?
+    set -e
+    cat "$RESULTS_DIR/verifier.log"
+else
+    verifier_rc=125
+    write_blocked_verification "$generator_rc" \
+        > "$RESULTS_DIR/verifier.log" 2>&1
+    cat "$RESULTS_DIR/verifier.log"
+fi
 
 write_workflow_status "$generator_rc" "$mutation_rc" "$verifier_rc"
 
