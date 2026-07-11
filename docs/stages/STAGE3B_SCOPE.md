@@ -81,6 +81,21 @@ docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/evidence/STAGE3B_PHASE4_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
+```
+
+Current Phase 5 checkpoint:
+
+```text
+promoted canonical behavior smoke     PASS
+frozen runtime mutation control       PASS
+next gate                              closure equivalence
+```
+
+Next command on Termux:
+
+```sh
+bash experiments/stage3b-target-validation/validate-promoted-closure.sh
 ```
 
 ## 5. Phase 1 frozen result
@@ -305,7 +320,7 @@ The controlled replay step is successful when:
 
 A successful build replay does not yet prove Stage 3-A equivalence.
 
-## 11. Later Phase 5 comparison requirements
+## 11. Phase 5 comparison requirements
 
 The replayed runtime must eventually be compared against Stage 3-A constraints:
 
@@ -352,7 +367,7 @@ Stage 3-B is complete only when:
 [x] historical experiment paths are not hidden canonical inputs
 [x] runtime assembly is regenerated from declared products
 [ ] regenerated runtime passes closure comparison review
-[ ] regenerated runtime passes smoke validation
+[x] regenerated runtime passes smoke validation
 [ ] regenerated runtime passes whole-prefix relocation validation
 ```
 
