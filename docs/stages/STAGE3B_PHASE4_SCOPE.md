@@ -63,6 +63,8 @@ Python stdlib and extension tree
 
 and strips packaged shared objects unless debug packaging is requested.
 
+Selected development and runtime files are stored under the archive's `prefix/` root. This is the upstream package product root, not the full cross-build target directory name.
+
 Therefore the following are distinct objects:
 
 ```text
