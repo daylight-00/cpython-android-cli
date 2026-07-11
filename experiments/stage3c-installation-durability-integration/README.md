@@ -1,6 +1,6 @@
 # Stage 3-C Phase 4: Recovery Durability Integration Inventory
 
-> **Status:** ACTIVE — target evidence pending
+> **Status:** ACTIVE — checkpoint classification corrected; target rerun pending
 > **Input:** frozen Phase 4 Gate 4 durability result
 
 ## Run
@@ -21,6 +21,26 @@ one detected call has no lifecycle category
 one production call has no durability obligation
 one call-site anchor is duplicated or omitted
 Gate 4 input changes
+```
+
+## Preserved failed attempt
+
+The first target run correctly failed because two durable journal checkpoint calls were detected but not classified:
+
+```text
+recovery_common.py:add_intent
+  persist_journal(transaction, journal)
+
+recovery_common.py:mark_applied
+  persist_journal(transaction, journal)
+```
+
+Both are now explicitly classified as production `transaction-metadata`. The `UNKNOWN=0` requirement remains unchanged.
+
+Failure evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INVENTORY_CLASSIFICATION_FAILURE.md
 ```
 
 ## Source set
@@ -51,6 +71,14 @@ unknown categories        0
 input mutation          PASS
 ```
 
+The corrected inventory is expected to retain:
+
+```text
+all detected rows        81
+production rows          67
+transaction-metadata     10
+```
+
 ## Expected markers
 
 ```text
@@ -74,7 +102,7 @@ results/termux/stage3c-phase4-recovery-durability-inventory/
 
 ```sh
 RESULTS="$PWD/results/termux/stage3c-phase4-recovery-durability-inventory"
-ARCHIVE="$HOME/Downloads/stage3c-phase4-recovery-durability-inventory-results-$(date +%Y%m%d-%H%M%S).tgz"
+ARCHIVE="$HOME/Downloads/stage3c-phase4-recovery-durability-inventory-corrected-results-$(date +%Y%m%d-%H%M%S).tgz"
 
 tar czf "$ARCHIVE" "$RESULTS"
 printf 'upload: %s\n' "$ARCHIVE"
