@@ -21,3 +21,29 @@ results/workstation/stage3b-dependency-promotion/dependency-input-manifest.json
 ```
 
 After review, stable identity fields can be promoted into a tracked manifest. Machine-local cache paths remain evidence and must not become canonical consumer paths.
+
+## Promoted verification
+
+The stable fields from the first capture are tracked at:
+
+```text
+config/dependencies/android-source-deps-aarch64-linux-android.lock.json
+```
+
+Recapture the current cache and compare it field-by-field:
+
+```sh
+bash experiments/stage3b-dependency-promotion/verify-promoted-inputs.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_DEPENDENCY_INPUT_VERIFY=PASS
+```
+
+Low-level evidence and product-boundary interpretation:
+
+```text
+docs/evidence/STAGE3B_PHASE3_DEPENDENCY_CAPTURE.md
+```
