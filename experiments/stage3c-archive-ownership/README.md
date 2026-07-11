@@ -99,13 +99,14 @@ both addons require the accepted runtime-base identity
 canonical and runtime trees contain no pycache or special files
 ```
 
-## Independent verifier
+## Independent verification
 
 ```text
 verification.json
+safety-verification.json
 ```
 
-The 74-check verifier independently re-derives:
+The 74-check structural verifier independently re-derives:
 
 ```text
 all selected owned rows and fields
@@ -119,6 +120,17 @@ license boundary
 source and runtime non-mutation
 ```
 
+The separate 9-check safety verifier independently re-checks:
+
+```text
+no unknown component names
+exact 199-path unsupported-GUI exclusion list
+selected entry types and special-file absence
+all five selected symlinks are relative and prefix-contained
+all symlink targets exist
+all symlink targets remain owned by the same artifact
+```
+
 ## Expected markers
 
 ```text
@@ -126,6 +138,7 @@ STAGE3C_PHASE2_ARCHIVE_OWNERSHIP_ANALYSIS=PASS
 ARCHIVE_OWNERSHIP_ACCEPTED_INPUTS=PASS
 ARCHIVE_EXACT_OWNED_PATH_OVERLAP=0 PASS
 ARCHIVE_STRUCTURAL_NAMESPACE_MODEL=PASS
+ARCHIVE_OWNERSHIP_SAFETY_VERIFIER=9/9 PASS
 ARCHIVE_SELECTED_SYMLINK_POLICY=PASS
 ARCHIVE_LICENSE_OWNERSHIP=PASS
 ARCHIVE_OWNERSHIP_SOURCE_MUTATION_CHECK=PASS
@@ -154,6 +167,7 @@ results/termux/stage3c-phase2-archive-ownership-model/
   source-mutation-check.txt
   workflow-status.json
   verification.json
+  safety-verification.json
 ```
 
 ## Upload
