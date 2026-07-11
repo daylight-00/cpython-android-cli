@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import argparse
 import contextlib
 import fcntl
 import hashlib
@@ -10,10 +9,15 @@ import os
 import shutil
 import stat
 import tarfile
-import time
-import uuid
 from pathlib import Path, PurePosixPath
 from typing import Any
+
+from recovery_durability import (
+    durable_atomic_write,
+    durable_copy_file,
+    durable_ensure_directory,
+    durable_open_lock,
+)
 
 ARTIFACTS = ("runtime-base", "development-addon", "test-addon")
 REGISTRY_KIND = "cpython-android-cli-installed-ownership-registry"
@@ -39,14 +43,7 @@ def sha256_file(path: Path) -> str:
 
 
 def atomic_write(path: Path, data: bytes) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(path.name + ".tmp-" + uuid.uuid4().hex)
-    with temporary.open("wb") as stream:
-        stream.write(data)
-        stream.flush()
-        os.fsync(stream.fileno())
-    os.chmod(temporary, 0o600)
-    os.replace(temporary, path)
+    durable_atomic_write(path, data, mode=0o600, label="atomic-write")
 
 
 def empty_registry() -> dict[str, Any]:
@@ -190,9 +187,9 @@ def stage_archive(archive: Path, manifest: dict[str, Any], staging: Path) -> Pat
 @contextlib.contextmanager
 def installation_lock(root: Path, *, nonblocking: bool = False):
     state = root / ".cpython-android-cli"
-    state.mkdir(parents=True, exist_ok=True)
+    durable_ensure_directory(state, label="installation-state")
     lock_path = state / "lock"
-    descriptor = os.open(lock_path, os.O_RDWR | os.O_CREAT, 0o600)
+    descriptor = durable_open_lock(lock_path, label="installation-lock")
     try:
         flags = fcntl.LOCK_EX | (fcntl.LOCK_NB if nonblocking else 0)
         try:
@@ -208,7 +205,12 @@ def installation_lock(root: Path, *, nonblocking: bool = False):
 
 
 def persist_journal(transaction: Path, journal: dict[str, Any]) -> None:
-    atomic_write(transaction / "journal.json", canonical_json_bytes(journal))
+    durable_atomic_write(
+        transaction / "journal.json",
+        canonical_json_bytes(journal),
+        mode=0o600,
+        label="journal",
+    )
 
 
 class CrashController:
@@ -273,8 +275,6 @@ def mark_applied(transaction: Path, journal: dict[str, Any], index: int, crash: 
 def save_prior_registry(transaction: Path, registry_path: Path) -> bool:
     backup = transaction / "backup/prior-registry.json"
     if registry_path.exists():
-        backup.parent.mkdir(parents=True, exist_ok=True)
-        backup.write_bytes(registry_path.read_bytes())
-        os.chmod(backup, 0o600)
+        durable_copy_file(registry_path, backup, mode=0o600, label="prior-registry-backup")
         return True
     return False

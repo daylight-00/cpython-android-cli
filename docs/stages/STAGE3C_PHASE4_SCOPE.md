@@ -1,7 +1,7 @@
 # Stage 3-C Phase 4 Scope: Installation Transactions
 
-> **Status:** ACTIVE — Gates 1–4 frozen, Gate 5A integration inventory active
-> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–4
+> **Status:** ACTIVE — Gates 1–5A frozen, Gate 5B integrated durability active
+> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–5A
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -140,16 +140,7 @@ result-index sha256
   3cb7e83eb6dc6c186a36da512ed41cbba4566abfc4bd4f5f71766ea1fcf075c4
 ```
 
-Frozen capability boundary:
-
-```text
-regular-file fsync      PASS
-directory fsync         PASS
-O_DIRECTORY             available
-same-filesystem layout  PASS
-```
-
-Frozen primitive ordering:
+Frozen protocol:
 
 ```text
 atomic replacement
@@ -172,24 +163,14 @@ cross-directory move
 unlink / rmdir
   mutation
   FSYNC_DIR(parent)
-```
 
-Frozen transaction ordering:
-
-```text
-journal-prepared
-payload
-journal-applying
-registry
-journal-committed
-backup-cleanup
-```
-
-Frozen negative controls:
-
-```text
-missing target-parent fsync  rejected
-registry before payload      rejected
+transaction order
+  journal-prepared
+  payload
+  journal-applying
+  registry
+  journal-committed
+  backup-cleanup
 ```
 
 ```text
@@ -198,86 +179,48 @@ docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
 docs/evidence/STAGE3C_PHASE4_DURABILITY_RESULT.md
 ```
 
-## Active Gate 5A — recovery-engine durability integration inventory
+## Frozen Gate 5A — recovery durability integration inventory
 
-Run:
+```text
+inventory scenario       32/32 PASS
+independent verifier     29/29 PASS
+input mutation                 PASS
 
-```sh
-bash experiments/stage3c-installation-durability-integration/run-recovery-durability-inventory.sh
+accepted TGZ
+  stage3c-phase4-recovery-durability-inventory-checkpoint-classification-corrected-results-20260712-020339.tgz
+
+TGZ sha256
+  c263814a506b7eb145a5fde891bb55ca1eedbb8b992096769f3505be31ce1d62
+
+result-index sha256
+  ac11225ae6b45ac45f1e378ecf7bba9cd074a1f779009318e001d5694d89ead8
 ```
 
-The inventory is bound to these frozen Git blob identities:
+Frozen source inventory:
 
 ```text
 recovery_common.py
   1ba78274c8c56a1b2b6cbd525fb341719a2ce4a7
-
 recovery_operations.py
   119571e8ad8a5663d20beff0ab82c85c14dfc4eb
-
 recovery_engine.py
   9a3f1898c7420198ff33d2b067a6fa2a6ac8618d
+
+all detected rows       81
+production rows          67
+lifecycle categories     11
+operation families       17
+UNKNOWN categories        0
 ```
 
-Every detected mutation or `fsync` call must receive:
+Frozen checkpoint classification:
 
 ```text
-module
-function
-line and column
-operation family
-lifecycle category
-production-path flag
-explicit durability obligation
+add_intent    transaction-metadata
+mark_applied  transaction-metadata
 ```
 
-Required categories:
-
-```text
-transaction metadata and backup
-install and uninstall
-rollback and recovery cleanup
-transient staging
-lock state and lock probe
-tool output
-```
-
-`UNKNOWN` category count must be zero.
-
-Generated evidence:
-
-```text
-mutation-inventory.json
-integration-plan.json
-scenario.json
-verification.json
-```
-
-Validation:
-
-```text
-inventory scenario       32 checks
-independent verifier     29 checks
-source blobs              exact
-input mutation            PASS required
-```
-
-Expected final marker:
-
-```text
-STAGE3C_PHASE4_RECOVERY_DURABILITY_INVENTORY=PASS
-```
-
-Detailed design:
-
-```text
-docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
-experiments/stage3c-installation-durability-integration/README.md
-```
-
-## Gate 5B requirement after inventory
-
-The implementation gate must apply the generated obligations and then replay both frozen chains:
+Required integration replay:
 
 ```text
 Gate 3 recovery scenarios       55/55
@@ -286,13 +229,96 @@ Gate 4 durability scenarios     64/64
 Gate 4 independent verifier     53/53
 ```
 
-Inventory PASS alone cannot claim integrated durability.
+```text
+docs/stages/STAGE3C_PHASE4_GATE5A_FINAL.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INVENTORY_CLASSIFICATION_FAILURE.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INVENTORY_RESULT.md
+```
+
+## Active Gate 5B — integrated durability and complete replay
+
+Run:
+
+```sh
+bash experiments/stage3c-installation-durability-integration/run-integrated-durability.sh
+```
+
+Integrated source identities:
+
+```text
+recovery_common.py
+  3183ba0861ef45e7a395201bec0085f3f69fb248
+recovery_operations.py
+  8a307065e00fd7a7332541f4911c5478945374ee
+recovery_engine.py
+  aebf5b9a33d163f7f8758f785ca621c94c0e478b
+recovery_durability.py
+  61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f
+```
+
+Production integration:
+
+```text
+journal and registry
+  durable atomic replacement
+
+prior registry backup
+  durable copy before payload mutation
+
+payload files and symlinks
+  fsynced temporary publication and parent sync
+
+payload and backup moves
+  source/destination parent sync
+
+directory create and repair
+  directory and parent sync
+
+unlink, rmdir, and tree cleanup
+  surviving parent sync
+
+transaction cleanup
+  content first
+  journal last
+  transaction directory last
+
+unjournaled transaction preparation
+  DISCARDED_PREPARE
+```
+
+Validation matrix:
+
+```text
+source integration verifier     29/29
+Gate 3 recovery replay           55/55
+Gate 3 recovery verifier         82/82
+Gate 4 durability replay         64/64
+Gate 4 durability verifier       53/53
+focused integrated exercises     20/20
+integrated trace verifier        29/29
+overall independent verifier     36/36
+input mutation                   PASS
+```
+
+Expected final marker:
+
+```text
+STAGE3C_PHASE4_INTEGRATED_DURABILITY=PASS
+```
+
+Detailed design:
+
+```text
+docs/evidence/STAGE3C_PHASE4_INTEGRATED_DURABILITY_DESIGN.md
+experiments/stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md
+```
 
 ## Deferred later gates
 
 ```text
-actual helper integration and full replay
-kernel or sudden-power-loss durability
+actual sudden-power-loss durability
+kernel panic or storage-controller failure
 crash inside one non-atomic filesystem primitive
 adversarial external mutation and lock fairness
 explicit second-version upgrade and downgrade
@@ -303,4 +329,4 @@ whole-prefix installed relocation
 
 ## Claim boundary
 
-A Gate 5A PASS proves inventory completeness for the exact frozen source blobs and declared scanner families. It does not prove that any durability helper has been integrated or that any production crash path has been replayed with an integrated engine.
+A Gate 5B PASS proves integrated source mapping, complete frozen behavioral replay, complete frozen durability replay, and ordered sync traces for exercised production paths. It does not prove persistence after actual sudden power loss, kernel panic, storage-controller failure, write-cache loss, or interruption inside one filesystem primitive.

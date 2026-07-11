@@ -1,6 +1,6 @@
 # Stage 3-C Scope: Distribution Archive and Installation Contract
 
-> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–4 frozen; Gate 5A active
+> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–5A frozen; Gate 5B active
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
 
@@ -93,9 +93,7 @@ development-addon archive
   f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea
 test-addon archive
   02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1
-```
 
-```text
 builder                    31/31 PASS
 extraction preflight       28/28 PASS
 archive verifier           76/76 PASS
@@ -126,28 +124,10 @@ independent verifier      59/59 PASS
 input mutation                  PASS
 contract index
   79e3c173639047bc23b7dbe3c2135abe8f0b868d787735c094cbe06749c7dde3
-```
 
-```text
-registered ownership      2956 exact OWNED_PAYLOAD paths
+registered ownership      2956 exact paths
 structural references        4 non-owning rows
 state root                 outside prefix/
-```
-
-Frozen rules:
-
-```text
-unowned leaf collision              reject
-compatible directory reuse          exact directory path only
-same-version exact match            NOOP
-same-owner mismatch                 backup then repair
-other-artifact owner                reject
-modified uninstall leaf             preserve and report
-owned directory                     remove only when empty
-structural and unowned descendants  preserve
-PREPARED journal                    before first mutation
-registry replacement                atomic after payload changes
-pre-commit mutation failure         rollback required
 ```
 
 ```text
@@ -162,10 +142,8 @@ scenario runner       61/61 PASS
 independent verifier  58/58 PASS
 scenario logs          25/25 retained
 input mutation              PASS
-
 accepted TGZ sha256
   9ea7379263711c8501d674e78e25d29ccd1764db30497c5dc2414030d378c005
-
 result-index sha256
   0041f1c3c73dc7a62291b6c3b244ac885d9bad6799d4115280febc20f61384da
 ```
@@ -174,14 +152,11 @@ Frozen behavior:
 
 ```text
 fresh runtime/addon composition       2956 paths
-runtime dependency enforcement        PASS
 exact runtime reinstall               714 NOOP / 0 mutations
 registered corruption repair          PASS
-unowned collision rejection           no mutation
-addon prerequisite rejection          no mutation
+preflight rejection                   no mutation
 install and uninstall rollback        exact prior fingerprints
-modified-path preservation            PASS
-unowned sentinel preservation         PASS
+modified and unowned path preservation PASS
 retained directory reuse              no descendant adoption
 ```
 
@@ -196,30 +171,24 @@ docs/evidence/STAGE3C_PHASE4_TRANSACTION_RESULT.md
 scenario runner       55/55 PASS
 independent verifier  82/82 PASS
 scenario logs          40/40 canonical
-registry snapshots       5
-observed path snapshots  5
+snapshot pairs           5
 input mutation            PASS
-
 accepted TGZ sha256
   3c164f54e4f205ba8ba889274656375ce2c0cf137f65c6ccf6fb2cafab889bd6
-
 result-index sha256
   f5ba124ebb9752b45d60f027474a399adf61fc5db033c1165a79664cbfc743bd
 ```
 
-Frozen isolation and recovery:
+Frozen recovery:
 
 ```text
-independent scenario-root regular files
-no shared regular-file inodes
-durable INTENT before mutation
-APPLIED after mutation
-PREPARED/APPLYING rollback
-registry pre-commit rollback
+independent scenario roots
+PREPARED and INTENT recovery
+APPLYING install and uninstall recovery
+registry pre-commit recovery
 COMMITTED cleanup finalization
 ROLLED_BACK idempotence
-exclusive flock
-nonblocking contender rejection without mutation
+exclusive flock and contender rejection
 ```
 
 ```text
@@ -235,30 +204,26 @@ docs/evidence/STAGE3C_PHASE4_RECOVERY_RESULT.md
 scenario runner       64/64 PASS
 independent verifier  53/53 PASS
 positive traces         7/7 canonical
-transaction events     27
 negative controls        2
 input mutation            PASS
-
 accepted TGZ sha256
   94567ed50f030f3ab1844d81533a2e67eb22e83accabb0753a8501c84fd2ecda
-
 result-index sha256
   3cb7e83eb6dc6c186a36da512ed41cbba4566abfc4bd4f5f71766ea1fcf075c4
 ```
 
-Frozen primitive boundary:
+Frozen ordering:
 
 ```text
-regular-file fsync
-directory fsync
-atomic temp write + file fsync + replace + target-parent fsync
+file fsync before replace
+target-parent fsync after replace
 new-directory and parent fsync
-source-parent and destination-parent fsync after move
+source/destination parent fsync after move
 parent fsync after unlink or rmdir
 PREPARED before payload
 payload before registry
 registry before COMMITTED
-COMMITTED before backup cleanup
+COMMITTED before cleanup
 ```
 
 ```text
@@ -267,79 +232,97 @@ docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
 docs/evidence/STAGE3C_PHASE4_DURABILITY_RESULT.md
 ```
 
-## Phase 4 Gate 5A — active mutation inventory
+## Phase 4 Gate 5A — frozen production mutation inventory
+
+```text
+inventory scenario       32/32 PASS
+independent verifier     29/29 PASS
+input mutation                 PASS
+accepted TGZ sha256
+  c263814a506b7eb145a5fde891bb55ca1eedbb8b992096769f3505be31ce1d62
+result-index sha256
+  ac11225ae6b45ac45f1e378ecf7bba9cd074a1f779009318e001d5694d89ead8
+```
+
+Frozen inventory:
+
+```text
+source blobs               3 exact
+all detected rows         81
+production rows            67
+lifecycle categories       11
+operation families         17
+UNKNOWN                     0
+checkpoint rows             2
+```
+
+```text
+docs/stages/STAGE3C_PHASE4_GATE5A_FINAL.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INVENTORY_CLASSIFICATION_FAILURE.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INVENTORY_RESULT.md
+```
+
+## Phase 4 Gate 5B — active integrated durability
 
 Implementation:
 
 ```text
-experiments/stage3c-installation-durability-integration/
+experiments/stage3c-installation-recovery/recovery_durability.py
+experiments/stage3c-installation-recovery/recovery_common.py
+experiments/stage3c-installation-recovery/recovery_operations.py
+experiments/stage3c-installation-recovery/recovery_engine.py
+experiments/stage3c-installation-durability-integration/run-integrated-durability.sh
 ```
 
-Frozen source blobs under inventory:
+Integrated source identities:
 
 ```text
 recovery_common.py
-  1ba78274c8c56a1b2b6cbd525fb341719a2ce4a7
+  3183ba0861ef45e7a395201bec0085f3f69fb248
 recovery_operations.py
-  119571e8ad8a5663d20beff0ab82c85c14dfc4eb
+  8a307065e00fd7a7332541f4911c5478945374ee
 recovery_engine.py
-  9a3f1898c7420198ff33d2b067a6fa2a6ac8618d
+  aebf5b9a33d163f7f8758f785ca621c94c0e478b
+recovery_durability.py
+  61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f
 ```
 
-Active inventory requirements:
+Active validation:
 
 ```text
-scan every declared mutation and fsync family
-anchor module, function, line, and column
-classify lifecycle category
-mark production versus non-production path
-assign explicit durability obligation
-reject every UNKNOWN category
-produce sorted canonical inventory and integration plan
-```
-
-Required validation:
-
-```text
-inventory scenario       32/32
-independent verifier     29/29
-source blobs              exact
-input mutation          PASS
+source integration              29/29
+Gate 3 recovery replay           55/55
+Gate 3 recovery verifier         82/82
+Gate 4 durability replay         64/64
+Gate 4 durability verifier       53/53
+focused integrated exercises     20/20
+integrated trace verifier        29/29
+overall independent verifier     36/36
+input mutation                   PASS
 ```
 
 Detailed scope:
 
 ```text
 docs/stages/STAGE3C_PHASE4_SCOPE.md
-docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_INTEGRATED_DURABILITY_DESIGN.md
+experiments/stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md
 ```
 
-## Phase 4 Gate 5B — required after inventory
-
-The implementation must apply the generated plan and replay:
+## Deferred Phase 4 boundaries
 
 ```text
-Gate 3 recovery scenarios       55/55
-Gate 3 independent verifier     82/82
-Gate 4 durability scenarios     64/64
-Gate 4 independent verifier     53/53
-```
-
-Gate 5A does not alter the frozen recovery engine.
-
-## Deferred Phase 4 gates
-
-```text
-actual helper integration and complete replay
-kernel or sudden-power-loss durability
-crash inside one non-atomic filesystem primitive
+actual sudden-power-loss persistence
+kernel panic or storage-controller failure
+interruption inside one filesystem primitive
 adversarial external mutation and lock fairness
 explicit second-version upgrade and downgrade
 ```
 
 ## Phase 5
 
-Phase 5 validates runtime behavior from installed prefixes:
+Phase 5 validates behavior from installed prefixes:
 
 ```text
 installed hash and registry verification
@@ -354,7 +337,7 @@ unowned sentinel preservation
 
 ## Non-reopening rule
 
-Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, license ownership, addon prerequisites, Gate 1 policy, Gate 2 lifecycle behavior, Gate 3 recovery and lock semantics, or Gate 4 durability ordering.
+Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, Gate 1 policy, Gate 2 lifecycle behavior, Gate 3 recovery semantics, Gate 4 ordering, or Gate 5A production obligations.
 
 Any intentional change reopens the corresponding frozen phase or gate and its complete evidence chain.
 
@@ -379,4 +362,4 @@ Generated archives and bulk target evidence remain outside Git and are uploaded 
 
 ## Current action
 
-Execute and independently verify the exact recovery-engine mutation inventory before implementing durability helpers.
+Execute and independently verify integrated durability with complete frozen Gate 3 and Gate 4 replay.

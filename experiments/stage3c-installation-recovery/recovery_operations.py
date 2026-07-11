@@ -5,7 +5,6 @@ from collections import Counter
 from pathlib import Path, PurePosixPath
 from typing import Any
 import os
-import shutil
 import stat
 import uuid
 
@@ -29,6 +28,16 @@ from recovery_common import (
     save_prior_registry,
     stage_archive,
 )
+from recovery_durability import (
+    durable_chmod,
+    durable_cleanup_transaction,
+    durable_ensure_directory,
+    durable_mkdir,
+    durable_move,
+    durable_publish_regular,
+    durable_publish_symlink,
+    durable_rmdir,
+)
 
 
 def install(
@@ -45,7 +54,7 @@ def install(
 ) -> dict[str, Any]:
     manifest, archive, archive_info = load_inputs(contract_results, artifact)
     prefix = root / "prefix"
-    prefix.mkdir(parents=True, exist_ok=True)
+    durable_ensure_directory(prefix, label="install-prefix")
     crash = CrashController(
         after_prepared=crash_after_prepared,
         after_intents=crash_after_intents,
@@ -120,10 +129,14 @@ def install(
 
         transaction_id = "install-" + artifact + "-" + uuid.uuid4().hex
         transaction = state / "transactions" / transaction_id
-        transaction.mkdir(parents=True)
-        staging = stage_archive(archive, manifest, transaction / "staging")
-        (transaction / "backup").mkdir()
-        prior_registry_exists = save_prior_registry(transaction, registry_path)
+        durable_mkdir(transaction, parents=True, label="install-transaction")
+        try:
+            staging = stage_archive(archive, manifest, transaction / "staging")
+            durable_mkdir(transaction / "backup", label="install-backup")
+            prior_registry_exists = save_prior_registry(transaction, registry_path)
+        except Exception:
+            durable_cleanup_transaction(transaction, label="install-prepare-failure")
+            raise
         journal: dict[str, Any] = {
             "schema_version": 2,
             "journal_kind": "cpython-android-cli-crash-recoverable-transaction",
@@ -149,17 +162,16 @@ def install(
         for action, entry in directories:
             relative = entry["payload_path"]
             path = prefix / relative
+            mode = int(entry["mode"], 8)
             if action in ("mkdir-structural", "create"):
                 index = add_intent(transaction, journal, {"kind": "created", "path": relative}, crash)
-                path.mkdir(parents=True, exist_ok=False)
-                os.chmod(path, int(entry["mode"], 8))
+                durable_mkdir(path, mode=mode, parents=True, label="install-directory-create")
                 mark_applied(transaction, journal, index, crash)
             else:
                 kind = actual_kind(path)
                 if kind == "absent":
                     index = add_intent(transaction, journal, {"kind": "created", "path": relative}, crash)
-                    path.mkdir(parents=True, exist_ok=False)
-                    os.chmod(path, int(entry["mode"], 8))
+                    durable_mkdir(path, mode=mode, parents=True, label="install-directory-repair-create")
                     mark_applied(transaction, journal, index, crash)
                 elif kind == "directory":
                     old_mode = f"{stat.S_IMODE(path.lstat().st_mode):04o}"
@@ -169,11 +181,11 @@ def install(
                         {"kind": "chmod", "path": relative, "old_mode": old_mode},
                         crash,
                     )
-                    os.chmod(path, int(entry["mode"], 8))
+                    durable_chmod(path, mode, label="install-directory-repair-mode")
                     mark_applied(transaction, journal, index, crash)
                 else:
                     backup_path = transaction / "backup" / relative
-                    backup_path.parent.mkdir(parents=True, exist_ok=True)
+                    durable_ensure_directory(backup_path.parent, label="install-directory-backup-parent")
                     index = add_intent(
                         transaction,
                         journal,
@@ -184,9 +196,8 @@ def install(
                         },
                         crash,
                     )
-                    os.replace(path, backup_path)
-                    path.mkdir(parents=True, exist_ok=False)
-                    os.chmod(path, int(entry["mode"], 8))
+                    durable_move(path, backup_path, label="install-directory-backup")
+                    durable_mkdir(path, mode=mode, label="install-directory-replacement")
                     mark_applied(transaction, journal, index, crash)
 
         for action, entry in plan:
@@ -195,10 +206,10 @@ def install(
             relative = entry["payload_path"]
             path = prefix / relative
             source = staging / relative
-            path.parent.mkdir(parents=True, exist_ok=True)
+            durable_ensure_directory(path.parent, label="install-leaf-parent")
             if action == "repair":
                 backup_path = transaction / "backup" / relative
-                backup_path.parent.mkdir(parents=True, exist_ok=True)
+                durable_ensure_directory(backup_path.parent, label="install-leaf-backup-parent")
                 record = {
                     "kind": "replaced",
                     "path": relative,
@@ -209,14 +220,20 @@ def install(
                 record = {"kind": "created", "path": relative}
             index = add_intent(transaction, journal, record, crash)
             if backup_path is not None:
-                os.replace(path, backup_path)
-            temporary = path.with_name(path.name + ".new-" + uuid.uuid4().hex)
+                durable_move(path, backup_path, label="install-leaf-backup")
             if entry["type"] == "regular":
-                shutil.copyfile(source, temporary, follow_symlinks=False)
-                os.chmod(temporary, int(entry["mode"], 8))
+                durable_publish_regular(
+                    source,
+                    path,
+                    int(entry["mode"], 8),
+                    label="install-regular-publish",
+                )
             else:
-                os.symlink(os.readlink(source), temporary)
-            os.replace(temporary, path)
+                durable_publish_symlink(
+                    os.readlink(source),
+                    path,
+                    label="install-symlink-publish",
+                )
             mark_applied(transaction, journal, index, crash)
 
         new_paths = {key: value for key, value in path_map.items() if value["owner_artifact"] != artifact}
@@ -241,7 +258,7 @@ def install(
         journal["state"] = "COMMITTED"
         persist_journal(transaction, journal)
         crash.crash_committed()
-        shutil.rmtree(transaction)
+        durable_cleanup_transaction(transaction, label="install-committed-cleanup")
 
         return {
             "operation": "install",
@@ -288,8 +305,8 @@ def uninstall(
 
         transaction_id = "uninstall-" + artifact + "-" + uuid.uuid4().hex
         transaction = state / "transactions" / transaction_id
-        transaction.mkdir(parents=True)
-        (transaction / "backup").mkdir()
+        durable_mkdir(transaction, parents=True, label="uninstall-transaction")
+        durable_mkdir(transaction / "backup", label="uninstall-backup")
         prior_registry_exists = save_prior_registry(transaction, registry_path)
         journal: dict[str, Any] = {
             "schema_version": 2,
@@ -313,7 +330,7 @@ def uninstall(
             path = prefix / row["path"]
             if matches(path, row):
                 backup_path = transaction / "backup" / row["path"]
-                backup_path.parent.mkdir(parents=True, exist_ok=True)
+                durable_ensure_directory(backup_path.parent, label="uninstall-leaf-backup-parent")
                 index = add_intent(
                     transaction,
                     journal,
@@ -324,7 +341,7 @@ def uninstall(
                     },
                     crash,
                 )
-                os.replace(path, backup_path)
+                durable_move(path, backup_path, label="uninstall-leaf-remove")
                 mark_applied(transaction, journal, index, crash)
             else:
                 journal["preserved"].append(row["path"])
@@ -345,7 +362,7 @@ def uninstall(
                     crash,
                 )
                 try:
-                    path.rmdir()
+                    durable_rmdir(path, label="uninstall-directory-remove")
                 except OSError:
                     journal["mutations"].pop(index)
                     journal["preserved"].append(row["path"])
@@ -374,7 +391,7 @@ def uninstall(
         persist_journal(transaction, journal)
         crash.crash_committed()
         preserved = sorted(set(journal["preserved"]))
-        shutil.rmtree(transaction)
+        durable_cleanup_transaction(transaction, label="uninstall-committed-cleanup")
         return {
             "operation": "uninstall",
             "artifact": artifact,
