@@ -1,80 +1,50 @@
 # Stage 3-C Scope: Distribution Archive and Installation Contract
 
-> **Status:** ACTIVE — Phase 1 and Phase 2 frozen, Phase 3 archive serialization active
-> **Input:** frozen Stage 3-B promoted product and frozen Stage 3-C component/manifest contracts
+> **Status:** ACTIVE — Phases 1–3 frozen, Phase 4 installation contract active
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
 
 ## Stage question
 
-> What archive layout and installation contract allow downstream users or tools to inspect, verify, stage, install, upgrade, uninstall, and relocate the runtime without project-specific knowledge?
+> What archive and installation contract allows downstream tools to inspect, verify, stage, install, repair, remove, and relocate the runtime without project-specific knowledge or unsafe ownership assumptions?
 
-## Design principle
+## Design order
 
 ```text
 freeze product semantics
-then freeze ownership and manifests
-then serialize archives
-then design installation transactions
+freeze component ownership and manifests
+freeze archive bytes and extraction safety
+freeze installation state and transaction policy
+execute and validate lifecycle transactions
 ```
-
-Stage 3-C does not choose a tar command first and infer product semantics afterward.
-
-## Non-reopening rule
-
-Packaging must preserve or explicitly revalidate:
-
-```text
-R2 conditional self re-exec
-B0 PyConfig auto-discovery
-runtime and subprocess identity
-native closure
-67-extension surface
-CA integration policy
-timezone data boundary
-uv explicit-interpreter workflow
-venv prefix/base_prefix identity
-whole-prefix relocatability
-stale-prefix absence
-product path/content/symlink fidelity
-```
-
-Component ownership and schema-v1 identities must not be changed merely to simplify archive or installer implementation.
 
 ## Phase roadmap
 
 ```text
-Phase 1  product roles, component split, isolated validation      FROZEN
-Phase 2  archive ownership, shared namespace, manifest model      FROZEN
-Phase 3  reproducible archive serialization                       ACTIVE
-Phase 4  installation transaction prototype                       DEFERRED
-Phase 5  extracted and installed target validation                DEFERRED
+Phase 1  product roles and isolated component validation     FROZEN
+Phase 2  ownership, shared namespace, and manifests          FROZEN
+Phase 3  reproducible archive serialization                  FROZEN
+Phase 4  installation registry and transactions              ACTIVE
+Phase 5  installed runtime and lifecycle validation          DEFERRED
 ```
 
 ## Frozen Phase 1 boundary
 
 ```text
 docs/stages/STAGE3C_PHASE1_FINAL.md
-docs/evidence/STAGE3C_PHASE1_RUNTIME_BASE_FINAL_RESULT.md
 ```
 
-Canonical promoted source:
-
 ```text
-entries
+canonical entries
   3155
 
-fingerprint
+canonical fingerprint
   5465a389496e0f7810866ef4b8786d1f3d283b96116ff4da72b881c1a3ec3e6c
-```
 
-Runtime-base:
-
-```text
-entries
+runtime-base entries
   714
 
-strict fingerprint
+runtime-base fingerprint
   9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
 
 native closure
@@ -83,7 +53,7 @@ native closure
 extension imports
   67/67
 
-production relocation
+relocation
   PASS
 ```
 
@@ -91,19 +61,15 @@ production relocation
 
 ```text
 docs/stages/STAGE3C_PHASE2_FINAL.md
-docs/evidence/STAGE3C_PHASE2_ARCHIVE_OWNERSHIP_RESULT.md
-docs/evidence/STAGE3C_PHASE2_ARTIFACT_MANIFEST_SCHEMA_RESULT.md
 ```
 
-Exact selected ownership:
-
 ```text
-runtime-base          714
-development-addon     454
-test-addon           1788
-selected total       2956
-unsupported GUI       199 excluded
-exact owned overlap     0
+runtime-base owned paths        714
+development-addon owned paths   454
+test-addon owned paths         1788
+selected total                 2956
+unsupported GUI excluded        199
+exact owned overlap               0
 ```
 
 Shared structural namespace:
@@ -113,7 +79,7 @@ lib
 lib/python3.14
 ```
 
-Frozen manifest identities:
+Manifest identities:
 
 ```text
 manifest index
@@ -129,107 +95,136 @@ test-addon
   47d9f2e24e74b23e34ae6bfa95a0df22ec7cf9505e3e189dc3d6bdf2dc1c8b5f
 ```
 
-## Active Phase 3 question
+## Frozen Phase 3 boundary
 
-> Can each frozen schema-v1 artifact be serialized twice to byte-identical normalized tar.gz archives and independently verified through safe staging extraction?
+```text
+docs/stages/STAGE3C_PHASE3_FINAL.md
+docs/evidence/STAGE3C_PHASE3_REPRODUCIBLE_ARCHIVE_RESULT.md
+```
+
+```text
+runtime-base archive
+  2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743
+
+development-addon archive
+  f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea
+
+test-addon archive
+  02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1
+```
+
+```text
+builder                    31/31 PASS
+extraction preflight       28/28 PASS
+archive verifier           76/76 PASS
+safe staging extraction      3/3 PASS
+```
+
+Frozen serialization:
+
+```text
+POSIX pax tar + gzip level 9
+mtime 0
+uid/gid 0/0
+empty owner names
+exact deterministic member order
+hardlinks and special entries forbidden
+```
+
+## Active Phase 4 question
+
+> What registry, collision policy, transaction ordering, rollback obligation, and uninstall rule safely compose the frozen archives while preserving unowned content?
 
 Detailed scope:
 
 ```text
-docs/stages/STAGE3C_PHASE3_SCOPE.md
+docs/stages/STAGE3C_PHASE4_SCOPE.md
 ```
 
-Implementation:
+First implementation:
 
 ```text
-experiments/stage3c-reproducible-archives/
+experiments/stage3c-installation-contract/
 ```
 
-Candidate serialization contract:
+### Gate 1 model
 
 ```text
-format                     POSIX pax tar + gzip
-gzip level                 9
-gzip filename              empty
-gzip mtime                 0
-tar member mtime           0
-uid/gid                    0/0
-uname/gname                empty
-envelope directory mode    0755
-metadata file mode         0644
-payload mode               exact manifest mode
-hardlinks                  forbidden
-special entries            forbidden
-PAX headers                path/linkpath only when required
+registered ownership
+  OWNED_PAYLOAD only
+
+registered paths
+  2956
+
+structural references
+  4 non-owning rows
+
+state layout
+  <installation-root>/prefix/
+  <installation-root>/.cpython-android-cli/
 ```
 
-Required Phase 3 validation:
+Core rules:
 
 ```text
-accepted Phase 2 hashes exact
-source paths match manifests before serialization
-three archives generated twice
-build A/B byte-identical SHA-256 and size
-exact gzip header
-exact tar member order and set
-normalized owner/time/mode metadata
-metadata bytes exact
-regular payload hashes exact
-symlink targets exact
-unsafe paths and entry types zero
-safe staging extraction
-extracted metadata and payload identity
-source mutation controls
+never adopt or overwrite unowned content
+same-version exact match is a no-op
+same-owner mismatch requires backup before replacement
+other-artifact ownership is a conflict
+locally modified content is preserved during uninstall
+owned directories are removed only when empty
+structural parents and unowned descendants are preserved
+preflight and prepared journal precede mutation
+registry update is atomic
+post-mutation failure requires rollback
 ```
 
-## Phase 4: installation transactions
-
-After Phase 3 freezes archive bytes and safe staging extraction, Phase 4 defines:
+### Later Phase 4 gates
 
 ```text
-installed ownership registry
-fresh install
-pre-existing path collision
-same-version reinstall
-upgrade and downgrade
-partial-failure rollback
-interrupted-operation recovery
-concurrent-operation policy
-uninstall
+fresh runtime-base install
+addon prerequisite and overlay install
+same-version reinstall and repair
+unowned collision rejection
+failure injection and rollback
+interrupted-state recovery
+exclusive lock behavior
+exact uninstall and sentinel preservation
+explicit second-version upgrade and downgrade model
+```
+
+## Phase 5
+
+Phase 5 validates runtime and lifecycle behavior from installed prefixes:
+
+```text
+installed hash and registry verification
+runtime smoke and native closure
+uv venv and uv run
+whole-prefix relocation
+same-version lifecycle
+upgrade and rollback lifecycle
+uninstall exact ownership
 unowned sentinel preservation
 ```
 
-The installer must never delete an unowned file merely because it is under a shared parent directory.
+## Non-reopening rule
 
-## Phase 5: runtime and lifecycle validation
-
-Required extracted-runtime matrix:
+Later work must not silently change:
 
 ```text
-stage at A
-manifest and payload verification
-runtime smoke and native closure at A
-fresh uv venv and uv run at A
-move complete payload A -> B
-runtime smoke and native closure at B
-fresh uv venv and uv run at B
-stale A-prefix assertions
-portable source/B fidelity
+component ownership
+STRUCTURAL_PARENT non-ownership
+artifact and manifest identities
+archive bytes and normalization
+archive extraction preflight
+license ownership
+addon prerequisites
 ```
 
-Required installed-lifecycle matrix:
+Any intentional change reopens the corresponding frozen phase and its full evidence chain.
 
-```text
-fresh install
-installed ownership/hash verification
-same-version reinstall
-upgrade
-failed-upgrade rollback
-uninstall exact owned paths only
-unowned sentinel preservation
-```
-
-## Evidence and generated layout
+## Evidence layout
 
 Tracked:
 
@@ -242,25 +237,12 @@ experiments/stage3c-*/
 Generated:
 
 ```text
-dist/
 results/termux/stage3c-*/
 work/termux/stage3c-*/
 ```
 
 Generated archives and bulk target evidence remain outside Git and are uploaded as stage-qualified TGZ bundles.
 
-## Deferred beyond core Stage 3-C
-
-```text
-uv managed-Python provider integration
-multi-ABI/API release matrix
-PGO/LTO and size optimization
-release signing
-SBOM standard selection
-publication infrastructure
-published provenance attestations
-```
-
 ## Current action
 
-Build the three frozen artifacts twice with normalized pax tar/gzip metadata, retain build A, independently verify every member, and safely extract into staging without claiming installation semantics.
+Derive and independently verify the installation registry and transaction policy without mutating an installation target.
