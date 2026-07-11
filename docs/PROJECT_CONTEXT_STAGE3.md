@@ -380,18 +380,19 @@ hashes of promoted build products
 
 ## 9. Current Stage 3-B action
 
-Phase 1 provenance reconstruction and Phase 2 controlled Linux replay are frozen.
+Phases 1–3 are frozen. The source/toolchain lineage, controlled replay, and exact binary dependency products are explicit and verified.
 
 Current action:
 
 ```text
-capture the six consumed dependency archives
-record name/version/revision/URL/hash/size/archive structure
-promote stable identities into a tracked manifest
-verify cache bytes against the promoted identities
+inventory historical and replay development prefixes
+identify the launcher's exact development contract
+inventory the upstream package product
+separate development, package, runtime, and launcher objects
+promote generated products out of historical experiment paths
 ```
 
-Do not prune the replay prefix or begin Stage 3-A closure comparison before the dependency and CPython product boundaries are explicit.
+Do not prune the replay prefix or begin Stage 3-A closure comparison before these CPython product boundaries are explicit.
 
 Authoritative scope:
 
