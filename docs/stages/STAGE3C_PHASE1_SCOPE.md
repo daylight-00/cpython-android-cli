@@ -1,9 +1,9 @@
 # Stage 3-C Phase 1 Scope: Promoted Product Role Inventory
 
-> **Status:** ACTIVE — target execution pending
+> **Status:** ACTIVE — mechanical inventory PASS, semantic decomposition pending
 > **Input:** frozen Stage 3-B promoted runtime
 > **Execution host:** Termux on Android arm64
-> **Hard gate:** `UNKNOWN=0`
+> **Completed hard gate:** `UNKNOWN=0`
 
 ## Question
 
@@ -43,13 +43,15 @@ UNKNOWN
 
 `UNKNOWN` is a review state, not a distributable role.
 
-## Selected implementation
+## Implementation
 
 ```text
 experiments/stage3c-product-role-inventory/
   classify-promoted-product.py
   verify-promoted-product-roles.py
   run-role-inventory.sh
+  analyze-role-inventory.py
+  analyze-role-inventory.sh
   README.md
 ```
 
@@ -66,9 +68,11 @@ writes a normalized role-manifest hash
 re-inventories the source tree for mutation control
 ```
 
-The 43-check verifier independently parses the generated TSV/JSON evidence and checks the frozen entry, ELF and symlink counts, exact schemas, declared rules, role/type counts, UNKNOWN rows, ELF role, bytecode absence, special-file absence, mixed-directory state, anchors, manifest hash, and before/after source fingerprint.
+The 43-check verifier independently checks the frozen entry, ELF and symlink counts, exact schemas, declared rules, role/type counts, UNKNOWN rows, ELF role, bytecode absence, special-file absence, mixed-directory state, anchors, manifest hash, and before/after source fingerprint.
 
-Both run with:
+The decomposition analyzer consumes only accepted inventory evidence. It does not reclassify or mutate the product.
+
+All Python probes run with:
 
 ```text
 promoted-python -I -B -S
@@ -102,104 +106,181 @@ DEBUG_OR_OPTIONAL
 UNKNOWN
 ```
 
-This is an inventory convention for shared parent paths. Final archive ownership is not selected until the target result is reviewed.
+This is an inventory convention for shared parent paths. Final archive ownership is not selected until the semantic decomposition is reviewed.
 
-## Run
+## Step 1 result: complete role inventory — PASS
+
+```text
+entry count                         3155
+regular files                       2934
+directories                          216
+symlinks                               5
+ELF objects                           81
+UNKNOWN                                0
+pycache/pyc paths                       0
+unsupported special files              0
+machine verifier                    43/43
+source mutation control              PASS
+```
+
+Role counts:
+
+```text
+RUNTIME               711
+DEVELOPMENT           449
+METADATA                8
+LICENSE                 1
+DEBUG_OR_OPTIONAL    1986
+```
+
+Regular-file bytes:
+
+```text
+RUNTIME             38,775,506
+DEBUG_OR_OPTIONAL   35,466,620
+DEVELOPMENT          4,737,164
+METADATA               356,169
+LICENSE                  13,804
+```
+
+Role manifest:
+
+```text
+092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
+```
+
+Source before/after fingerprint:
+
+```text
+5465a389496e0f7810866ef4b8786d1f3d283b96116ff4da72b881c1a3ec3e6c
+```
+
+Observed mixed directories:
+
+```text
+lib
+lib/python3.14
+lib/python3.14/config-3.14-aarch64-linux-android
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
+```
+
+## Step 2: exact role decomposition — ACTIVE
+
+The `DEBUG_OR_OPTIONAL` surface is not a trivial tail: it contains 1986 entries and 35,466,620 regular-file bytes. It must be decomposed before any archive omission decision.
+
+Run:
 
 ```sh
-cd "$HOME/projects/cpython-android-cli"
-
-git pull --ff-only
-
-git log -1 --oneline
-
 bash \
-  experiments/stage3c-product-role-inventory/run-role-inventory.sh
+  experiments/stage3c-product-role-inventory/analyze-role-inventory.sh
 ```
 
-Default results:
+The runner first requires the accepted Step 1 verifier evidence:
 
 ```text
-results/termux/stage3c-phase1-role-inventory/
-  product-role-inventory.tsv
-  unknown.tsv
-  mixed-directories.tsv
-  rules.tsv
-  role-summary.json
-  mutation-check.txt
-  classifier.log
-  verifier.log
-  verification.json
+pass=true
+check_count=43
+failed_checks=[]
+missing_outputs=[]
+parse_errors={}
 ```
 
-## Target acceptance conditions
+It then requires the exact frozen inventory identity:
 
 ```text
-[ ] source entry count = 3155
-[ ] source ELF count = 81
-[ ] source symlink count = 5
-[ ] every path has one valid primary role
-[ ] UNKNOWN count = 0
-[ ] unknown.tsv has no data rows
-[ ] all 81 ELF entries are RUNTIME
-[ ] no __pycache__ or .pyc entries exist
-[ ] no unsupported special files exist
-[ ] mixed-directory rows and flags cross-check
-[ ] required runtime/development anchors match
-[ ] role counts and type counts cross-check
-[ ] role-manifest SHA-256 recomputes
-[ ] source before/after fingerprints match
-[ ] independent verifier passes 43/43 checks
+manifest
+  092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
+
+entries / ELF / symlinks
+  3155 / 81 / 5
 ```
 
-Expected markers when the first selected rule set closes the product:
+Decomposition outputs:
 
 ```text
-STAGE3C_PRODUCT_ROLE_CLASSIFIER=PASS
-PRODUCT_ROLE_UNKNOWN_ZERO=PASS
-PRODUCT_ROLE_MUTATION_CHECK=PASS
-STAGE3C_PHASE1_ROLE_INVENTORY=PASS
+role-overview.tsv
+role-by-rule.tsv
+role-by-type.tsv
+role-by-top-level.tsv
+python-subtree-summary.tsv
+optional-component-summary.tsv
+optional-root-summary.tsv
+development-surface-summary.tsv
+runtime-surface-summary.tsv
+selected-boundary-rows.tsv
+largest-regular-files.tsv
+role-review.json
+role-review.log
 ```
 
-## Failure handling
+The decomposition must sum exactly back to every accepted role count and byte total.
 
-A non-zero unknown count is not repaired with a broad fallback.
-
-For every exact unknown path:
+Expected marker:
 
 ```text
-inspect path, type and content surface
-identify its consumer or provenance role
-add the narrowest justified rule
-retain the failed first-run evidence
-rerun from the unchanged canonical product
+ROLE_INVENTORY_ACCEPTED_EVIDENCE=PASS
+STAGE3C_PHASE1_ROLE_DECOMPOSITION=PASS
 ```
 
-If the observed entry, ELF, or symlink count differs from the frozen `3155 / 81 / 5` contract, stop and classify the changed product boundary before overriding expected counts.
+## Acceptance conditions
 
-## Evidence
-
-Design record:
+Mechanical inventory:
 
 ```text
-docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_DESIGN.md
+[x] source entry count = 3155
+[x] source ELF count = 81
+[x] source symlink count = 5
+[x] every path has one valid primary role
+[x] UNKNOWN count = 0
+[x] unknown.tsv has no data rows
+[x] all 81 ELF entries are RUNTIME
+[x] no __pycache__ or .pyc entries exist
+[x] no unsupported special files exist
+[x] mixed-directory rows and flags cross-check
+[x] required runtime/development anchors match
+[x] role counts and type counts cross-check
+[x] role-manifest SHA-256 recomputes
+[x] source before/after fingerprints match
+[x] independent verifier passes 43/43 checks
 ```
 
-The target result document is created only after the Termux machine output is reviewed.
+Semantic decomposition and policy selection:
+
+```text
+[ ] role/rule decomposition sums exactly
+[ ] optional component/root decomposition sums exactly
+[ ] CPython regression tests separated from package-local tests
+[ ] Tkinter reviewed as its own consumer-facing optional component
+[ ] IDLE and turtledemo reviewed separately
+[ ] development surface decomposed by headers/config/pkg-config/static libraries
+[ ] runtime surface decomposed by bin/libpython/lib-dynload/stdlib/data
+[ ] exact LICENSE and METADATA rows reviewed
+[ ] shared-directory ownership model selected
+[ ] runtime/development/optional archive split selected
+```
 
 ## Claim boundary
 
-Phase 1 does not yet decide:
+The current result proves:
 
 ```text
-single versus split archive
-which semantic roles ship together
-archive root naming
-installation prefix
-installer ownership and rollback
-manifest publication schema
-archive metadata normalization
-compression format
+all 3155 paths are covered by the selected rule set
+UNKNOWN=0
+accepted inventory is internally consistent and non-mutating
 ```
 
-It closes only the exact semantic inventory needed to make those decisions without guessing.
+It does not yet prove:
+
+```text
+all DEBUG_OR_OPTIONAL paths are safely removable
+one particular archive split is correct
+shared parent directories belong exclusively to one archive
+installed sysconfig/config metadata belongs to one final product role
+```
+
+Phase 1 remains active until the decomposition and policy review close those questions.
