@@ -4,7 +4,7 @@
 > **Input:** Frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
-> **Current active sub-phase:** Phase 2 controlled Linux replay
+> **Current active sub-phase:** Phase 3 dependency product promotion
 
 ## 1. Question
 
@@ -64,8 +64,8 @@ output product boundary
 
 ```text
 Phase 1  current producer provenance reconstruction   FROZEN
-Phase 2  controlled Linux producer replay            ACTIVE
-Phase 3  dependency product promotion                PENDING
+Phase 2  controlled Linux producer replay            FROZEN
+Phase 3  dependency product promotion                ACTIVE
 Phase 4  CPython dev/runtime prefix promotion         PENDING
 Phase 5  Stage 3-A closure equivalence validation     PENDING
 ```
@@ -73,8 +73,10 @@ Phase 5  Stage 3-A closure equivalence validation     PENDING
 Authoritative phase documents:
 
 ```text
-docs/stages/STAGE3B_PHASE1_FINAL.md
+docs/evidence/STAGE3B_PHASE1_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE2_SCOPE.md
+docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
+docs/stages/STAGE3B_PHASE3_SCOPE.md
 ```
 
 ## 5. Phase 1 frozen result
@@ -140,11 +142,17 @@ STAGE3B_PHASE1=FROZEN
 STAGE3B_PHASE2_READY=true
 ```
 
-## 6. Phase 2 active objective
+## 6. Phase 2 frozen result
 
-Phase 2 asks:
+Phase 2 answered:
 
-> Can the exact identified CPython source commit be rebuilt through the preserved Android producer model on Linux using the matched NDK and dependency declaration graph?
+> The exact identified CPython source commit can be rebuilt through the preserved Android producer model on Linux using the matched NDK, explicit driver Python, and dependency declaration graph.
+
+Observed final marker:
+
+```text
+STAGE3B_UPSTREAM_REPLAY=PASS
+```
 
 The replay must not modify:
 
@@ -277,18 +285,18 @@ whole-prefix production relocation behavior
 The controlled replay step is successful when:
 
 ```text
-[ ] exact source detached worktree prepared
-[ ] source producer scripts match preserved snapshot
-[ ] SDK root resolved
-[ ] NDK 27.3.13750724 confirmed
-[ ] build Python configured and built
-[ ] Android host prefix configured and built
-[ ] target prefix installed
-[ ] Python.h exists
-[ ] pyconfig.h exists
-[ ] libpython3.14.so exists
-[ ] stdlib exists
-[ ] replay package archive produced
+[x] exact source detached worktree prepared
+[x] source producer scripts match preserved snapshot
+[x] SDK root resolved
+[x] NDK 27.3.13750724 confirmed
+[x] build Python configured and built
+[x] Android host prefix configured and built
+[x] target prefix installed
+[x] Python.h exists
+[x] pyconfig.h exists
+[x] libpython3.14.so exists
+[x] stdlib exists
+[x] replay package archive produced
 ```
 
 A successful build replay does not yet prove Stage 3-A equivalence.
@@ -334,8 +342,8 @@ Stage 3-B is complete only when:
 [x] third-party dependency release tags are explicit
 [x] CPython configure/build command model is recorded
 [ ] dependency archive hashes are promoted
-[ ] replay build completes
-[ ] replay package is produced
+[x] replay build completes
+[x] replay package is produced
 [ ] launcher build inputs come from promoted generated products
 [ ] historical experiment paths are not hidden canonical inputs
 [ ] runtime assembly is regenerated from declared products
