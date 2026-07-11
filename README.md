@@ -138,7 +138,7 @@ experiments/bootstrap-android-build/android-python-work/prefix
 
 This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
 
-Stage 3-B Phases 1–3 and Phase 4.1 are frozen: provenance was reconstructed, the Linux replay passed, dependency products were locked, and the replay package was established as the direct successor product. Phase 4.2 now promotes that locked package into canonical generated output.
+Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 now validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure model on Android.
 
 See:
 
