@@ -28,6 +28,7 @@ PYTHON="$RUNTIME_PREFIX/bin/python"
 for file in \
     "$ROLE_RESULTS/product-role-inventory.tsv" \
     "$ROLE_RESULTS/role-summary.json" \
+    "$ROLE_RESULTS/verification.json" \
     "$SEMANTIC_RESULTS/semantic-probes.json" \
     "$SEMANTIC_RESULTS/verification.json" \
     "$FINGERPRINT" \
@@ -66,6 +67,7 @@ set +e
     "$INPUT_VERIFIER" \
     --inventory "$ROLE_RESULTS/product-role-inventory.tsv" \
     --role-summary "$ROLE_RESULTS/role-summary.json" \
+    --role-verification "$ROLE_RESULTS/verification.json" \
     --semantic-probes "$SEMANTIC_RESULTS/semantic-probes.json" \
     --semantic-verification "$SEMANTIC_RESULTS/verification.json" \
     --tree-fingerprint "$OUTPUT_DIR/source-before.json" \
