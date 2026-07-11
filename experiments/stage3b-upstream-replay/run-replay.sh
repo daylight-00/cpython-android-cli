@@ -35,6 +35,7 @@ SOURCE_HEAD="$(read_json_field source_head)"
 CROSS_BUILD_DIR="$(read_json_field cross_build_dir)"
 CACHE_DIR="$(read_json_field cache_dir)"
 ANDROID_HOME_DERIVED="$(read_json_field android_home)"
+NDK_VERSION="$(read_json_field ndk_version)"
 TARGET_HOST="$(read_json_field target_host)"
 EXPECTED_PREFIX="$(read_json_field expected_prefix)"
 
@@ -43,7 +44,10 @@ EXPECTED_PREFIX="$(read_json_field expected_prefix)"
     exit 3
 }
 
-[[ -x "$ANDROID_HOME_DERIVED/ndk/$(read_json_field ndk_version)/toolchains/llvm/prebuilt/$(basename "$(dirname "$(dirname "$(dirname "$(command -v true)")")")")" || true ]]
+[[ -d "$ANDROID_HOME_DERIVED/ndk/$NDK_VERSION" ]] || {
+    echo "ERROR: replay NDK disappeared: $ANDROID_HOME_DERIVED/ndk/$NDK_VERSION" >&2
+    exit 3
+}
 
 mkdir -p "$RESULTS_DIR" "$CACHE_DIR"
 rm -rf "$CROSS_BUILD_DIR"
@@ -52,6 +56,7 @@ mkdir -p "$CROSS_BUILD_DIR"
 printf 'SOURCE_WORKTREE=%s\n' "$SOURCE_WORKTREE"
 printf 'SOURCE_HEAD=%s\n' "$SOURCE_HEAD"
 printf 'ANDROID_HOME=%s\n' "$ANDROID_HOME_DERIVED"
+printf 'NDK_VERSION=%s\n' "$NDK_VERSION"
 printf 'TARGET_HOST=%s\n' "$TARGET_HOST"
 printf 'CROSS_BUILD_DIR=%s\n' "$CROSS_BUILD_DIR"
 printf 'CACHE_DIR=%s\n' "$CACHE_DIR"
@@ -105,4 +110,4 @@ echo
 printf 'Build log: %s\n' "$LOG"
 printf 'Output summary: %s\n' "$RESULTS_DIR/replay-output-summary.json"
 echo
- echo "STAGE3B_UPSTREAM_REPLAY=PASS"
+echo "STAGE3B_UPSTREAM_REPLAY=PASS"
