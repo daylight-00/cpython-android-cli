@@ -1,12 +1,12 @@
 # Stage 3-C Phase 4 Scope: Installation Transactions
 
-> **Status:** ACTIVE — Gates 1–2 frozen, Gate 3 recovery and lock validation active
-> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–2
+> **Status:** ACTIVE — Gates 1–3 frozen, Gate 4 durability protocol active
+> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–3
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Can exact installed ownership and lifecycle semantics remain recoverable after abrupt process termination while excluding concurrent mutation?
+> Can exact installed ownership and lifecycle semantics remain recoverable after abrupt process termination, exclude concurrent mutation, and obey explicit filesystem durability ordering?
 
 ## Frozen Gate 1 — contract
 
@@ -14,7 +14,6 @@
 contract derivation       54/54 PASS
 independent verifier      59/59 PASS
 input mutation                  PASS
-
 contract index
   79e3c173639047bc23b7dbe3c2135abe8f0b868d787735c094cbe06749c7dde3
 ```
@@ -46,7 +45,7 @@ result-index sha256
   0041f1c3c73dc7a62291b6c3b244ac885d9bad6799d4115280febc20f61384da
 ```
 
-Frozen Gate 2 behavior:
+Frozen behavior:
 
 ```text
 fresh runtime/addon composition       2956 paths
@@ -69,100 +68,187 @@ docs/stages/STAGE3C_PHASE4_GATE2_FINAL.md
 docs/evidence/STAGE3C_PHASE4_TRANSACTION_RESULT.md
 ```
 
-## Active Gate 3 — abrupt recovery and lock contention
-
-Run:
-
-```sh
-bash experiments/stage3c-installation-recovery/run-installation-recovery.sh
-```
-
-All mutable roots remain below:
+## Frozen Gate 3 — abrupt recovery and lock contention
 
 ```text
-work/termux/stage3c-phase4-installation-recovery/
+scenario runner       55/55 PASS
+independent verifier  82/82 PASS
+scenario logs          40/40 canonical
+registry snapshots       5
+observed path snapshots  5
+input mutation            PASS
+
+accepted TGZ
+  stage3c-phase4-installation-recovery-independent-seed-copy-corrected-results-20260712-004138.tgz
+
+TGZ sha256
+  3c164f54e4f205ba8ba889274656375ce2c0cf137f65c6ccf6fb2cafab889bd6
+
+result-index sha256
+  f5ba124ebb9752b45d60f027474a399adf61fc5db033c1165a79664cbfc743bd
 ```
 
-The canonical promoted prefix, isolated runtime-base source, live Termux prefix, and copied Gate 2 input are not transaction targets.
-
-### Journal model
+Frozen isolation:
 
 ```text
-schema version       2
-states
-  PREPARED
-  APPLYING
-  COMMITTED
-  ROLLING_BACK
-  ROLLED_BACK
+scenario seed regular files
+  independent copies
 
-mutation checkpoint
-  INTENT before filesystem primitive
-  APPLIED after filesystem primitive
+scenario seed symlinks
+  preserved as symlinks
+
+shared regular-file inode
+  forbidden
 ```
 
-### Process-termination matrix
+Frozen crash boundaries:
 
 ```text
-exit 90  after PREPARED
-exit 93  after durable INTENT, before filesystem mutation
-exit 91  after five APPLIED install mutations
-exit 91  after five APPLIED uninstall mutations
-exit 91  after repaired payload and registry APPLIED, before COMMITTED
-exit 92  after COMMITTED, before cleanup
+exit 90  PREPARED
+exit 93  durable INTENT before mutation
+exit 91  five APPLIED install mutations
+exit 91  five APPLIED uninstall mutations
+exit 91  payload and registry APPLIED before COMMITTED
+exit 92  COMMITTED before cleanup
 ```
 
-Recovery requirements:
+Frozen recovery direction:
 
 ```text
 PREPARED / INTENT / APPLYING / registry pre-commit
-  reverse to exact prior state
+  reverse to prior state
 
 COMMITTED
   finalize cleanup without rollback
 
 ROLLED_BACK
-  idempotent recovery no-op
+  repeated recovery is a no-op
 ```
 
-### Lock contention
+Frozen lock direction:
 
 ```text
-holder process
-  acquires exclusive flock and publishes ready marker
+holder
+  exclusive flock
 
 nonblocking contender
   installation lock busy
   no mutation
 
-post-release install
-  development-addon create 454
-  registry 1168
+post-release operation
+  succeeds
 ```
+
+Authoritative boundary:
+
+```text
+docs/stages/STAGE3C_PHASE4_GATE3_FINAL.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_LOCK_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_RESULT.md
+```
+
+## Active Gate 4 — durability primitive and ordering protocol
+
+Run:
+
+```sh
+bash experiments/stage3c-installation-durability/run-installation-durability.sh
+```
+
+All mutable files remain below:
+
+```text
+work/termux/stage3c-phase4-installation-durability/
+```
+
+### Capability requirements
+
+```text
+regular-file fsync
+directory fsync
+O_DIRECTORY support
+same-filesystem work layout
+```
+
+### Atomic replacement
+
+```text
+OPEN_TEMP
+WRITE_TEMP
+FSYNC_FILE
+REPLACE
+FSYNC_DIR(target parent)
+```
+
+### Namespace mutation
+
+```text
+mkdir
+  MKDIR
+  FSYNC_DIR(new directory)
+  FSYNC_DIR(parent)
+
+move across directories
+  MOVE
+  FSYNC_DIR(source parent)
+  FSYNC_DIR(destination parent)
+
+unlink / rmdir
+  mutation
+  FSYNC_DIR(parent)
+```
+
+### Transaction ordering
+
+```text
+journal-prepared
+payload
+journal-applying
+registry
+journal-committed
+backup-cleanup
+```
+
+Every journal, payload, and registry replacement must use the complete atomic-replacement sequence.
+
+### Negative controls
+
+```text
+missing target-parent fsync
+registry declared before payload
+```
+
+Both invalid traces must be rejected.
 
 ### Validation
 
 ```text
-scenario runner       55 checks
-independent verifier  82 checks
-retained logs          40
-final registry snapshots
-  5 registry JSON
-  5 observed-path JSON
+scenario runner       64 checks
+independent verifier  53 checks
+positive traces         7
+transaction events     27
 input mutation        PASS required
 ```
 
 Expected final marker:
 
 ```text
-STAGE3C_PHASE4_INSTALLATION_RECOVERY=PASS
+STAGE3C_PHASE4_INSTALLATION_DURABILITY=PASS
 ```
 
-## Deferred Gate 4 and later
+Detailed design:
 
 ```text
-kernel or power-loss durability
-parent-directory fsync policy
+docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
+experiments/stage3c-installation-durability/README.md
+```
+
+## Deferred Gate 5 and later
+
+```text
+integration of durability helpers into every Gate 3 transaction path
+kernel or sudden-power-loss durability
 crash inside one non-atomic filesystem primitive
 adversarial external mutation and lock fairness
 explicit second-version upgrade and downgrade
@@ -173,4 +259,4 @@ whole-prefix installed relocation
 
 ## Claim boundary
 
-A Gate 3 PASS proves only the tested abrupt process-exit boundaries and flock contender path in isolated roots. It does not prove power-loss durability, filesystem-primitive atomicity, upgrade/downgrade, or installed runtime behavior.
+A Gate 4 PASS proves successful tested `fsync` operations and declared ordering on the target filesystem. It does not prove persistence after actual sudden power loss, kernel panic, controller failure, or interruption inside one filesystem primitive. It also does not yet prove complete recovery-engine integration.
