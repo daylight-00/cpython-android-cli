@@ -123,11 +123,17 @@ def int_value(value: Any) -> int | None:
     return None
 
 
+def parse_descendant_roles(value: str) -> set[str]:
+    return {part for part in value.split(",") if part}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results-dir", required=True, type=Path)
     parser.add_argument("--runtime-prefix", required=True, type=Path)
     parser.add_argument("--expected-entry-count", required=True, type=int)
+    parser.add_argument("--expected-elf-count", required=True, type=int)
+    parser.add_argument("--expected-symlink-count", required=True, type=int)
     args = parser.parse_args()
 
     results_dir = args.results_dir.resolve()
@@ -189,10 +195,40 @@ def main() -> int:
     mixed_inventory_rows = [
         row for row in rows if row.get("mixed_directory") == "true"
     ]
+    directory_rows = [
+        row for row in rows if row.get("type") == "DIRECTORY"
+    ]
+    nondirectory_rows = [
+        row for row in rows if row.get("type") != "DIRECTORY"
+    ]
     by_path = {row.get("path", ""): row for row in rows}
     anchor_roles = {
         path: by_path.get(path, {}).get("role")
         for path in REQUIRED_ANCHORS
+    }
+
+    declared_rule_ids = {
+        row.get("rule_id", "")
+        for row in rules_rows
+        if row.get("rule_id")
+    }
+    used_rule_ids = {row.get("rule_id", "") for row in rows}
+    unknown_paths = {
+        row.get("path", "") for row in unknown_inventory_rows
+    }
+    unknown_tsv_paths = {
+        row.get("path", "") for row in unknown_rows
+    }
+    mixed_paths = {
+        row.get("path", "") for row in mixed_inventory_rows
+    }
+    mixed_tsv_paths = {row.get("path", "") for row in mixed_rows}
+
+    directory_role_sets = {
+        row.get("path", ""): parse_descendant_roles(
+            row.get("descendant_roles", "")
+        )
+        for row in directory_rows
     }
 
     expected_role_counts = summary.get("role_counts")
@@ -206,16 +242,20 @@ def main() -> int:
     summary_pycache_count = int_value(summary.get("pycache_path_count"))
     summary_special_count = int_value(summary.get("special_file_count"))
     summary_mixed_count = int_value(summary.get("mixed_directory_count"))
+    summary_unknown_paths = set(summary.get("unknown_paths", []))
+    summary_mixed_paths = set(summary.get("mixed_directories", []))
 
     checks: dict[str, bool] = {
         "all_required_outputs_present": not missing,
         "all_required_outputs_parse": not errors,
-        "inventory_schema_exact": inventory_fields == list(INVENTORY_FIELDS),
+        "inventory_schema_exact": inventory_fields
+        == list(INVENTORY_FIELDS),
         "unknown_schema_exact": unknown_fields == list(INVENTORY_FIELDS),
         "mixed_schema_exact": mixed_fields == list(INVENTORY_FIELDS),
         "rules_schema_exact": rules_fields
         == ["rule_id", "role", "reason"],
         "rules_nonempty": bool(rules_rows),
+        "all_used_rules_declared": used_rule_ids <= declared_rule_ids,
         "summary_schema_version": summary.get("schema_version") == 1,
         "summary_runtime_prefix_matches": summary.get("runtime_prefix")
         == str(runtime_prefix),
@@ -225,32 +265,70 @@ def main() -> int:
         "inventory_entry_count_matches": len(rows)
         == args.expected_entry_count,
         "summary_entry_count_matches": expected_entry_count == len(rows),
+        "expected_elf_count_matches": len(elf_rows)
+        == args.expected_elf_count,
+        "summary_elf_count_matches_contract": summary_elf_count
+        == args.expected_elf_count,
+        "expected_symlink_count_matches": types.get("SYMLINK", 0)
+        == args.expected_symlink_count,
         "paths_nonempty": all(paths),
         "paths_unique": len(unique_paths) == len(rows),
         "roles_valid": set(roles) <= ROLES,
-        "role_counts_match_summary": isinstance(expected_role_counts, dict)
+        "role_counts_match_summary": isinstance(
+            expected_role_counts,
+            dict,
+        )
         and dict(sorted(roles.items())) == expected_role_counts,
-        "type_counts_match_summary": isinstance(expected_type_counts, dict)
+        "type_counts_match_summary": isinstance(
+            expected_type_counts,
+            dict,
+        )
         and dict(sorted(types.items())) == expected_type_counts,
         "unknown_inventory_zero": not unknown_inventory_rows,
-        "unknown_tsv_zero": not unknown_rows,
+        "unknown_tsv_matches_inventory": unknown_tsv_paths
+        == unknown_paths,
         "summary_unknown_zero": summary_unknown_count == 0,
+        "summary_unknown_paths_match": summary_unknown_paths
+        == unknown_paths,
         "all_elf_runtime": all(
             row.get("role") == "RUNTIME" for row in elf_rows
         ),
-        "elf_count_matches_summary": summary_elf_count == len(elf_rows),
-        "pycache_zero": not pycache_rows and summary_pycache_count == 0,
+        "pycache_zero": not pycache_rows
+        and summary_pycache_count == 0,
         "special_files_zero": not special_rows
         and summary_special_count == 0,
-        "mixed_directories_match": len(mixed_rows)
-        == len(mixed_inventory_rows)
+        "mixed_directories_exact": mixed_tsv_paths == mixed_paths,
+        "summary_mixed_directories_match": summary_mixed_paths
+        == mixed_paths,
+        "mixed_directory_count_matches": len(mixed_paths)
         == summary_mixed_count,
+        "directory_descendant_roles_nonempty": all(
+            directory_role_sets.get(row.get("path", ""), set())
+            for row in directory_rows
+        ),
+        "directory_descendant_roles_valid": all(
+            role_set <= ROLES
+            for role_set in directory_role_sets.values()
+        ),
+        "directory_mixed_flags_consistent": all(
+            (row.get("mixed_directory") == "true")
+            == (len(directory_role_sets[row.get("path", "")]) > 1)
+            for row in directory_rows
+        ),
+        "nondirectory_role_sets_empty": all(
+            not row.get("descendant_roles", "")
+            and row.get("mixed_directory") == "false"
+            for row in nondirectory_rows
+        ),
         "manifest_sha256_matches": summary.get("manifest_sha256")
         == manifest_hash(rows),
         "mutation_runtime_prefix_matches": mutation.get("runtime_prefix")
         == str(runtime_prefix),
         "mutation_before_after_equal": bool(mutation.get("before"))
         and mutation.get("before") == mutation.get("after"),
+        "mutation_summary_fingerprints_match": mutation.get("before")
+        == summary.get("before_tree_sha256")
+        and mutation.get("after") == summary.get("after_tree_sha256"),
         "mutation_pass": mutation.get("pass") == "true"
         and summary.get("mutation_pass") is True,
         "classifier_pass": summary.get("pass") is True,
@@ -276,18 +354,18 @@ def main() -> int:
         "parse_errors": errors,
         "runtime_prefix": str(runtime_prefix),
         "expected_entry_count": args.expected_entry_count,
+        "expected_elf_count": args.expected_elf_count,
+        "expected_symlink_count": args.expected_symlink_count,
         "observed_entry_count": len(rows),
         "role_counts": dict(sorted(roles.items())),
         "type_counts": dict(sorted(types.items())),
-        "unknown_paths": [
-            row.get("path") for row in unknown_inventory_rows
-        ],
+        "unknown_paths": sorted(unknown_paths),
         "elf_count": len(elf_rows),
         "pycache_paths": [row.get("path") for row in pycache_rows],
         "special_file_paths": [
             row.get("path") for row in special_rows
         ],
-        "mixed_directory_count": len(mixed_inventory_rows),
+        "mixed_directory_count": len(mixed_paths),
         "anchor_roles": anchor_roles,
         "summary": summary,
         "mutation": mutation,
