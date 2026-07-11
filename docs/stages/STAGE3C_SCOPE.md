@@ -1,39 +1,13 @@
 # Stage 3-C Scope: Distribution Archive and Installation Contract
 
-> **Status:** ACTIVE — contract design
-> **Input:** frozen Stage 3-B promoted product and target-equivalence model
+> **Status:** ACTIVE — Phase 1 frozen, Phase 2 ownership/manifest model active
+> **Input:** frozen Stage 3-B promoted product and frozen Stage 3-C Phase 1 component split
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
 
-## Question
+## Stage question
 
-> What archive layout and installation contract allow downstream users or tools to inspect, verify, install, upgrade, uninstall, and relocate the runtime without project-specific knowledge?
-
-## Entry conditions
-
-Stage 3-C begins only because Stage 3-B is frozen.
-
-The input model already proves:
-
-```text
-producer source/toolchain/dependency inputs are explicit
-promoted dependency and CPython products exist
-promoted runtime assembly succeeds on Termux
-canonical runtime behavior passes
-native closure has zero unresolved edges
-67/67 tested extension imports pass
-CA and timezone-data boundaries are explicit
-whole-prefix relocation passes
-candidate/frozen controls remain unchanged
-relocated source/B product fidelity passes
-```
-
-Authoritative input:
-
-```text
-docs/stages/STAGE3B_FINAL.md
-docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
-```
+> What archive layout and installation contract allow downstream users or tools to inspect, verify, stage, install, upgrade, uninstall, and relocate the runtime without project-specific knowledge?
 
 ## Design principle
 
@@ -43,13 +17,11 @@ before
 optimizing the archive or installer
 ```
 
-Stage 3-C must not choose a tar command first and infer the contract afterward.
+Stage 3-C does not choose a tar command first and infer product semantics afterward.
 
 ## Non-reopening rule
 
-Packaging must not silently reopen frozen producer or runtime semantics.
-
-Any archive or installation transformation must preserve or explicitly revalidate:
+Packaging must consume frozen producer and runtime semantics. It must preserve or explicitly revalidate:
 
 ```text
 R2 conditional self re-exec
@@ -66,230 +38,299 @@ stale-prefix absence
 product path/content/symlink fidelity
 ```
 
-## Phase proposal
+Component ownership frozen in Phase 1 must not be changed merely to simplify archive construction.
+
+## Phase roadmap
 
 ```text
-Phase 1  archive and installation requirements       ACTIVE
-Phase 2  payload and manifest model                  DEFERRED
-Phase 3  reproducible archive prototype              DEFERRED
-Phase 4  installation transaction prototype          DEFERRED
-Phase 5  extracted/installed target validation        DEFERRED
+Phase 1  product roles, component split, isolated validation      FROZEN
+Phase 2  archive ownership, shared namespace, manifest model      ACTIVE
+Phase 3  reproducible archive prototype                           DEFERRED
+Phase 4  installation transaction prototype                       DEFERRED
+Phase 5  extracted and installed target validation                DEFERRED
 ```
 
-The phase split is provisional until Phase 1 freezes the requirements.
-
-## Phase 1 question
-
-> What exact consumer-facing guarantees must the distribution product provide, and which generated files belong to the runtime, development, metadata, license, and optional-debug roles?
-
-## Contract dimensions
-
-### 1. Payload boundary
-
-Select and justify one of:
+The Phase 1 boundary is authoritative:
 
 ```text
-single combined archive
-runtime archive + development archive
-runtime archive + development archive + debug archive
+docs/stages/STAGE3C_PHASE1_FINAL.md
+docs/evidence/STAGE3C_PHASE1_RUNTIME_BASE_FINAL_RESULT.md
 ```
 
-Candidate runtime role:
+## Frozen Phase 1 result
+
+Canonical promoted source:
 
 ```text
-launcher and interpreter entry points
-stdlib
-extension modules
-runtime-internal native libraries
-required runtime data
-runtime manifest
-license references or license payload
+entries       3155
+ELF             81
+symlinks         5
+fingerprint
+  5465a389496e0f7810866ef4b8786d1f3d283b96116ff4da72b881c1a3ec3e6c
 ```
 
-Candidate development role:
+Frozen selected artifacts:
 
 ```text
-headers
-libpython development files
-sysconfig development metadata
-link information
-pkg-config or equivalent metadata, if selected
-```
+runtime-base
+  714 entries
+  38,759,749 regular-file bytes
+  strict fingerprint
+    9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
 
-Candidate optional-debug role:
+development-addon
+  454 component-owned entries
+  4,973,375 regular-file bytes
+
+test-addon
+  1788 component-owned entries
+  33,476,790 regular-file bytes
+
+unsupported-gui-source
+  199 entries
+  not distributed
+```
 
 ```text
-unstripped objects
-symbols
-source maps or build-id indexes, if produced
+component manifest
+  91088a013722ad35910f049bfc45b2e61607423d833c23038c1d9645497b7b84
 ```
 
-No role split is accepted until complete path ownership is machine-checked.
+Runtime-base validation:
 
-### 2. Archive root and install-prefix model
+```text
+native closure                  81 ELF / 329 edges / unresolved 0
+Android-system SONAME dlopen    5/5
+extension imports               67/67
+production relocation           A -> B PASS
+source/B entries                714 / 714
+portable added/removed/changed  0 / 0 / 0
+portable fingerprint
+  5e3a46e454163b35f1c3bca6c381253fe0e025695f67fe874deedea006034fab
+```
 
-Define:
+## Phase 2 question
+
+> How can the three frozen distributable components be represented as independently inspectable artifacts and safely composed under one installation prefix while preserving exact payload ownership and shared directory structure?
+
+Detailed scope:
+
+```text
+docs/stages/STAGE3C_PHASE2_SCOPE.md
+```
+
+## Phase 2 contract dimensions
+
+### 1. Exact payload ownership
+
+For every artifact, derive and freeze:
+
+```text
+owned relative paths
+owned regular files
+owned directories
+owned symlinks
+owned ELF objects
+```
+
+Required invariant:
+
+```text
+exact owned path overlap = 0
+```
+
+### 2. Shared structural namespace
+
+Archive structure may require parent directories that another artifact owns or that several addons share.
+
+The model must distinguish:
+
+```text
+OWNED_PAYLOAD
+STRUCTURAL_PARENT
+```
+
+A structural directory is not recursive ownership of every descendant.
+
+### 3. Archive envelope and prefix model
+
+Candidate staging shape:
+
+```text
+<artifact-id>/
+  metadata/
+  payload/
+```
+
+The contract must define:
 
 ```text
 archive root name
-whether payload is prefix-relative
-allowed final installation prefixes
-whether extraction itself is installation
-whether a staging root is supported
-ownership of parent directories
+payload root
+prefix-relative paths
+whether extraction is staging or installation
+addon overlay target
+entry-point naming
 symlink policy
-entry-point naming policy
+forbidden path and entry types
 ```
-
-The contract must preserve whole-prefix relocation rather than hard-code one final absolute installation path.
-
-### 3. Ownership and transaction semantics
-
-Define:
-
-```text
-owned relative path set
-pre-existing path collision policy
-fresh-install behavior
-same-version reinstall behavior
-upgrade behavior
-downgrade behavior
-uninstall behavior
-partial-failure rollback
-interrupted-operation recovery
-concurrent-operation policy
-```
-
-The installer must not delete unowned files merely because they reside under the same parent directory.
 
 ### 4. Machine-readable manifest
-
-The manifest must be versioned and sufficient for independent verification.
 
 Minimum candidate fields:
 
 ```text
 schema version
-product name and runtime version
-source revision identity
-SDK/NDK/API/target identity
-dependency identities and source hashes
-build profile and command-model identity
-payload role for every path
+artifact and component identity
+product/Python/ABI/API identity
+source and component-manifest identity
+entry class
+relative path
 entry type
 mode
 regular-file size and SHA-256
 symlink target
+ELF marker
 license mapping
-archive-level checksum references
+addon prerequisite
 ```
 
-Directory `st_size` must not be treated as product identity.
+Directory `st_size` is not product identity.
 
-### 5. Reproducibility contract
+### 5. License boundary
 
-Select one primary definition:
+The installed canonical license path is runtime-base-owned.
+
+Independently redistributed addons must remain understandable without duplicating installed-path ownership. Candidate solution:
 
 ```text
-byte-identical archive
-or
-manifest-identical payload with normalized archive metadata
+runtime-base owns the in-prefix license row
+all distributable archives embed license mapping/text in metadata/
 ```
 
-The decision must explicitly define:
+### 6. Addon prerequisites
+
+Development and test addons are overlays, not standalone Python distributions. They must require a matching:
 
 ```text
+product identity
+Python version
+target ABI/API
+component-manifest identity
+runtime-base installation
+```
+
+### 7. Ownership and uninstall direction
+
+Candidate ownership unit:
+
+```text
+exact manifest path
+```
+
+Candidate directory rule:
+
+```text
+remove owned files and symlinks
+remove a directory only when empty
+never recursively delete a shared structural parent
+preserve unowned sentinel files
+```
+
+Collision, reinstall, upgrade, rollback, and registry transactions remain Phase 4 questions, but Phase 2 must provide sufficient ownership data for them.
+
+## Phase 3: reproducible archive prototype
+
+After Phase 2 freezes payload and manifest semantics, Phase 3 selects and validates:
+
+```text
+byte-identical archive or normalized manifest-identical archive
 path ordering
-timestamps and epoch source
+timestamp and epoch source
 uid/gid and owner names
 file and directory modes
 symlink representation
-hardlink policy
-PAX or other extended headers
+hardlink prohibition or policy
+PAX/extended headers
 compression algorithm and parameters
-archive/compressor tool identities
+archive/compressor identities
 locale and timezone
 ```
 
-If byte-identical archives are not initially required, payload identity must still be independently verifiable from the manifest.
-
-### 6. Provenance and license boundary
-
-Define which evidence is embedded in the deliverable versus retained externally.
-
-Candidate embedded material:
+Archive validation must include:
 
 ```text
-concise build/provenance manifest
-dependency inventory
-source archive hashes
-license texts and notices
-validation contract version
+archive checksum
+manifest schema
+archive entries equal manifest
+regular-file hashes equal manifest
+symlink targets equal manifest
+unexpected entries = 0
+path traversal and unsafe entry rejection
 ```
 
-Candidate external material:
+## Phase 4: installation transaction prototype
+
+Phase 4 defines:
 
 ```text
-full build logs
-large inventories
-complete experiment evidence
-CI or workstation diagnostics
+installation registry
+fresh install
+pre-existing path collision
+same-version reinstall
+upgrade and downgrade
+partial-failure rollback
+interrupted-operation recovery
+concurrent-operation policy
+uninstall
+unowned sentinel preservation
 ```
 
-The archive must remain independently understandable without embedding the entire repository history.
+The installer must never delete an unowned file merely because it is under the same parent directory.
 
-### 7. Validation matrix
+## Phase 5: extracted and installed validation
 
-Required archive validation:
+Required extracted-runtime matrix:
 
 ```text
-archive checksum verification -> PASS
-manifest schema validation -> PASS
-archive entries equal manifest entries -> PASS
-regular-file hashes equal manifest -> PASS
-symlink targets equal manifest -> PASS
-forbidden unexpected entries -> 0
+extract/stage at A
+manifest and payload verification
+runtime smoke at A
+native closure at A
+fresh uv venv at A
+uv run at A
+move complete payload prefix A -> B
+runtime smoke at B
+native closure at B
+fresh uv venv at B
+uv run at B
+stale A-prefix assertions
+source payload versus B portable fidelity
 ```
 
-Required extracted-runtime validation:
+Required installation matrix:
 
 ```text
-extract at A -> canonical smoke PASS
-native closure at A -> PASS
-fresh uv venv at A -> PASS
-uv run at A -> PASS
-move complete extracted prefix A -> B
-canonical smoke at B -> PASS
-native closure at B -> PASS
-fresh uv venv at B -> PASS
-uv run at B -> PASS
-stale A-prefix assertions -> PASS
-source payload versus B portable fidelity -> PASS
+fresh install
+installed ownership/hash verification
+same-version reinstall result
+upgrade
+failed-upgrade rollback
+uninstall owned paths only
+unowned sentinel preservation
 ```
 
-Required installation validation:
+## Evidence and generated layout
+
+Tracked:
 
 ```text
-fresh install -> PASS
-verify installed ownership and hashes -> PASS
-same-version reinstall -> defined result
-upgrade -> PASS
-failed upgrade rollback -> PASS
-uninstall -> only owned paths removed
-post-uninstall unowned sentinel files preserved -> PASS
-```
-
-## Evidence and output layout
-
-Proposed tracked paths:
-
-```text
-docs/stages/STAGE3C_SCOPE.md
-docs/evidence/STAGE3C_PHASE1_*.md
+docs/stages/STAGE3C_*.md
+docs/evidence/STAGE3C_*.md
 experiments/stage3c-*/
 ```
 
-Proposed generated paths:
+Generated:
 
 ```text
 dist/
@@ -297,61 +338,20 @@ results/termux/stage3c-*/
 work/termux/stage3c-*/
 ```
 
-Generated archives and bulk validation output remain outside Git.
+Generated archives and bulk validation output remain outside Git and are uploaded as stage-qualified TGZ evidence.
 
-## Phase 1 acceptance conditions
-
-```text
-[ ] consumer personas and operations defined
-[ ] runtime/development/debug role decision selected
-[ ] complete path-role classification method defined
-[ ] archive root and prefix-relative layout selected
-[ ] install ownership rules selected
-[ ] collision/upgrade/uninstall semantics selected
-[ ] manifest schema v1 drafted
-[ ] reproducibility definition selected
-[ ] timestamp/uid/gid/mode/symlink normalization defined
-[ ] provenance and license embedding boundary selected
-[ ] archive validation matrix selected
-[ ] extracted relocation validation matrix selected
-[ ] installation transaction validation matrix selected
-[ ] non-goals recorded
-```
-
-## Non-goals for Phase 1
+## Deferred beyond core Stage 3-C
 
 ```text
-building a final release archive
-writing a production installer
 uv managed-Python provider integration
 multi-ABI/API release matrix
-PGO/LTO or size optimization
+PGO/LTO and size optimization
 release signing
 SBOM standard selection
 publication infrastructure
+published provenance attestations
 ```
 
-These may become later Stage 3-C or Stage 3-D questions after the core distribution contract is frozen.
+## Current action
 
-## First action
-
-Inventory the promoted product by semantic role without modifying it.
-
-The first experiment should produce a complete candidate classification:
-
-```text
-RUNTIME
-DEVELOPMENT
-METADATA
-LICENSE
-DEBUG_OR_OPTIONAL
-UNKNOWN
-```
-
-The first hard gate is:
-
-```text
-UNKNOWN=0
-```
-
-Only after every promoted path has an explicit role should the project select the archive split and manifest schema.
+Derive exact archive ownership and structural-parent requirements from the frozen Phase 1 component inventory before creating any archive bytes.
