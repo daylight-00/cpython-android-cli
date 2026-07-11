@@ -140,6 +140,12 @@ This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not
 
 Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 now validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure model on Android.
 
+The promoted candidate passed the canonical behavior smoke on Termux, including HTTPS, subprocess identity, uv venv, venv base-prefix identity, and uv run. The current gate is complete inventory and native closure equivalence:
+
+```sh
+bash experiments/stage3b-target-validation/validate-promoted-closure.sh
+```
+
 See:
 
 ```text
@@ -148,6 +154,8 @@ docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE3_SCOPE.md
 docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE4_SCOPE.md
+docs/stages/STAGE3B_PHASE5_SCOPE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 ```
 
 ## Architecture in one picture
@@ -279,4 +287,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The current active work is Stage 3-B provenance reconstruction, not archive packaging or launcher redesign.
+The current active work is Stage 3-B target runtime and closure equivalence validation, not archive packaging or launcher redesign.
