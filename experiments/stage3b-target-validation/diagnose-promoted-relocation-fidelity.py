@@ -94,10 +94,6 @@ def collect_manifest(root: Path) -> dict[str, dict[str, Any]]:
     return manifest
 
 
-def strict_fields(entry: dict[str, Any]) -> tuple[Any, ...]:
-    return tuple(entry[field] for field in ENTRY_FIELDS)
-
-
 def portable_fields(entry: dict[str, Any]) -> dict[str, Any]:
     result = {
         "type": entry["type"],
@@ -110,10 +106,31 @@ def portable_fields(entry: dict[str, Any]) -> dict[str, Any]:
         result["sha256"] = entry["sha256"]
     elif entry["type"] == "symlink":
         result["target"] = entry["target"]
-    elif entry["type"] not in {"directory"}:
+    elif entry["type"] != "directory":
         result["size"] = entry["size"]
 
     return result
+
+
+def manifest_fingerprint(
+    manifest: dict[str, dict[str, Any]], *, portable: bool
+) -> str:
+    digest = hashlib.sha256()
+    for path in sorted(manifest):
+        entry = manifest[path]
+        if portable:
+            row = {"path": path, **portable_fields(entry)}
+        else:
+            row = {"path": path, **{field: entry[field] for field in ENTRY_FIELDS}}
+        payload = json.dumps(
+            row,
+            ensure_ascii=False,
+            separators=(",", ":"),
+            sort_keys=True,
+        )
+        digest.update(payload.encode("utf-8"))
+        digest.update(b"\n")
+    return digest.hexdigest()
 
 
 def changed_fields(
@@ -164,11 +181,44 @@ def write_tsv(
             )
 
 
+def write_status(path: Path, summary: dict[str, Any]) -> None:
+    with path.open("w", encoding="utf-8") as f:
+        for key in (
+            "source_entry_count",
+            "relocated_entry_count",
+            "added_count",
+            "removed_count",
+            "strict_changed_count",
+            "portable_changed_count",
+            "pycache_path_count",
+        ):
+            f.write(f"{key}={summary[key]}\n")
+        f.write(f"source_strict_fingerprint={summary['source_strict_fingerprint']}\n")
+        f.write(
+            f"relocated_strict_fingerprint={summary['relocated_strict_fingerprint']}\n"
+        )
+        f.write(
+            f"source_portable_fingerprint={summary['source_portable_fingerprint']}\n"
+        )
+        f.write(
+            "relocated_portable_fingerprint="
+            f"{summary['relocated_portable_fingerprint']}\n"
+        )
+        f.write(f"strict_pass={str(summary['strict_pass']).lower()}\n")
+        f.write(f"portable_pass={str(summary['portable_pass']).lower()}\n")
+        f.write(f"pass={str(summary['portable_pass']).lower()}\n")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", required=True, type=Path)
     parser.add_argument("--relocated", required=True, type=Path)
     parser.add_argument("--output-dir", required=True, type=Path)
+    parser.add_argument(
+        "--require-portable-pass",
+        action="store_true",
+        help="Return a failing status when the portable product comparison fails.",
+    )
     args = parser.parse_args()
 
     source_root = args.source.resolve()
@@ -231,7 +281,9 @@ def main() -> int:
     pycache_paths = sorted(
         path
         for path in relocated_paths
-        if path.endswith(".pyc") or "/__pycache__/" in f"/{path}/" or path.endswith("/__pycache__")
+        if path.endswith(".pyc")
+        or "/__pycache__/" in f"/{path}/"
+        or path.endswith("/__pycache__")
     )
 
     added_type_counts = Counter(
@@ -239,8 +291,11 @@ def main() -> int:
     )
     removed_type_counts = Counter(source_manifest[path]["type"] for path in removed)
 
+    strict_pass = not added and not removed and not strict_changed
+    portable_pass = not added and not removed and not portable_changed
+
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "source_root": str(source_root),
         "relocated_root": str(relocated_root),
         "source_entry_count": len(source_manifest),
@@ -249,11 +304,23 @@ def main() -> int:
         "removed_count": len(removed),
         "strict_changed_count": len(strict_changed),
         "portable_changed_count": len(portable_changed),
-        "strict_pass": not added and not removed and not strict_changed,
-        "portable_pass": not added and not removed and not portable_changed,
+        "strict_pass": strict_pass,
+        "portable_pass": portable_pass,
+        "source_strict_fingerprint": manifest_fingerprint(
+            source_manifest, portable=False
+        ),
+        "relocated_strict_fingerprint": manifest_fingerprint(
+            relocated_manifest, portable=False
+        ),
+        "source_portable_fingerprint": manifest_fingerprint(
+            source_manifest, portable=True
+        ),
+        "relocated_portable_fingerprint": manifest_fingerprint(
+            relocated_manifest, portable=True
+        ),
         "interpretation": {
-            "strict": "Replicates the prior metadata-sensitive comparison and includes directory st_size.",
-            "portable": "Ignores directory st_size, but requires path/type/mode/mtime equality, regular-file size and content equality, and symlink-target equality.",
+            "strict": "Includes directory st_size as a diagnostic observation.",
+            "portable": "Requires path/type/mode/mtime equality, regular-file size and SHA-256 equality, and symlink-target equality while ignoring directory st_size.",
         },
         "added_type_counts": dict(sorted(added_type_counts.items())),
         "removed_type_counts": dict(sorted(removed_type_counts.items())),
@@ -275,6 +342,7 @@ def main() -> int:
     )
     write_json(output_dir / "tree-delta.json", summary)
     write_tsv(output_dir / "tree-delta.tsv", added, removed, portable_changed)
+    write_status(output_dir / "fidelity-status.txt", summary)
 
     print(json.dumps(summary, indent=2, sort_keys=True))
     print()
@@ -282,11 +350,15 @@ def main() -> int:
     print(f"Relocated manifest: {output_dir / 'relocated-manifest.jsonl'}")
     print(f"Delta JSON:         {output_dir / 'tree-delta.json'}")
     print(f"Delta TSV:          {output_dir / 'tree-delta.tsv'}")
+    print(f"Fidelity status:    {output_dir / 'fidelity-status.txt'}")
     print()
     print(
         "PROMOTED_RELOCATION_PORTABLE_FIDELITY="
-        + ("PASS" if summary["portable_pass"] else "FAIL")
+        + ("PASS" if portable_pass else "FAIL")
     )
+
+    if args.require_portable_pass and not portable_pass:
+        return 4
     return 0
 
 
