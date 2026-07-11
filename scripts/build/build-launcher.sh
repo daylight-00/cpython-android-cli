@@ -8,13 +8,15 @@ SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 source "$SCRIPT_DIR/../lib/project-env.sh"
 
 : "${ANDROID_CC:?set ANDROID_CC in .local/env}"
-: "${CPYTHON_DEV_PREFIX:?set CPYTHON_DEV_PREFIX in .local/env}"
+CPYTHON_DEV_PREFIX="${CPYTHON_DEV_PREFIX_OVERRIDE:-${CPYTHON_DEV_PREFIX:-}}"
+: "${CPYTHON_DEV_PREFIX:?set CPYTHON_DEV_PREFIX or CPYTHON_DEV_PREFIX_OVERRIDE}"
 
 PYTHON_MM="${PYTHON_MM:-3.14}"
 INCLUDE_DIR="$CPYTHON_DEV_PREFIX/include/python$PYTHON_MM"
 LIB_DIR="$CPYTHON_DEV_PREFIX/lib"
 SOURCE="$PROJECT_ROOT/src/launcher/python.c"
-OUTPUT="$OUT_BIN/python3.14"
+OUTPUT="${LAUNCHER_OUTPUT:-$OUT_BIN/python3.14}"
+BUILD_INFO="${LAUNCHER_BUILD_INFO:-$OUT_META/build-info.txt}"
 
 [[ -f "$INCLUDE_DIR/Python.h" ]] || {
     echo "ERROR: Python.h not found: $INCLUDE_DIR/Python.h" >&2
@@ -31,7 +33,7 @@ OUTPUT="$OUT_BIN/python3.14"
     exit 2
 }
 
-mkdir -p "$OUT_BIN" "$OUT_META"
+mkdir -p "$(dirname "$OUTPUT")" "$(dirname "$BUILD_INFO")"
 
 echo "Project root:  $PROJECT_ROOT"
 echo "Target:        $TARGET_ID"
@@ -59,10 +61,14 @@ echo
     echo "target=$TARGET_ID"
     echo "profile=$BUILD_PROFILE"
     echo "source=src/launcher/python.c"
-    echo "output=out/$TARGET_ID/$BUILD_PROFILE/bin/python3.14"
+    echo "output=$OUTPUT"
+    echo "cpython_dev_prefix=$CPYTHON_DEV_PREFIX"
+    echo "python_h_sha256=$(sha256sum "$INCLUDE_DIR/Python.h" | awk '{print $1}')"
+    echo "pyconfig_h_sha256=$(sha256sum "$INCLUDE_DIR/pyconfig.h" | awk '{print $1}')"
+    echo "libpython_sha256=$(sha256sum "$LIB_DIR/libpython$PYTHON_MM.so" | awk '{print $1}')"
     echo "sha256=$(sha256sum "$OUTPUT" | awk '{print $1}')"
     echo "compiler=$("$ANDROID_CC" --version | head -n 1)"
-} > "$OUT_META/build-info.txt"
+} > "$BUILD_INFO"
 
 file "$OUTPUT"
 readelf -d "$OUTPUT" \
