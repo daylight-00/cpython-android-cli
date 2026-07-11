@@ -64,6 +64,7 @@ print("DLOPEN_OK", name)
             [
                 str(python_bin),
                 "-I",
+                "-B",
                 "-S",
                 "-c",
                 probe_code,
