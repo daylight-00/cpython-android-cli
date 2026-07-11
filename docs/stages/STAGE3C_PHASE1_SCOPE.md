@@ -7,30 +7,27 @@
 
 ## Question
 
-> Which exact paths in the frozen promoted product are runtime, development, metadata, license, or optional/debug surfaces before an archive split and ownership model are selected?
+> Which exact paths in the frozen promoted product belong to runtime, development, metadata, license, and optional surfaces before an archive split and ownership model are selected?
 
-## Input contract
+## Frozen input
 
 ```text
 work/termux/stage3b-promoted-runtime/prefix
 ```
 
-Frozen Stage 3-B properties:
-
 ```text
-entry count                         3155
+entries                             3155
 ELF objects                           81
 symlinks                               5
 unresolved native edges                0
 extension imports                   67/67
 promoted relocation verifier        31/31
 candidate mutation control           PASS
-relocated-product fidelity           PASS
 ```
 
 Phase 1 observes this product. It must not modify, prune, strip, rewrite, or package it.
 
-## Selected descriptive roles
+## Descriptive roles
 
 ```text
 RUNTIME
@@ -43,7 +40,7 @@ UNKNOWN
 
 `UNKNOWN` is a review state, not a distributable role.
 
-`METADATA` is not assumed to be one archive. Its paths are assigned to runtime or development consumers only after semantic and variant testing.
+`METADATA` is descriptive. Its paths are assigned to runtime or development consumers only after semantic and isolated-variant testing.
 
 ## Implementation
 
@@ -81,14 +78,14 @@ machine verifier                     43/43
 source mutation control               PASS
 ```
 
-Role counts:
+Role counts and regular-file bytes:
 
 ```text
-RUNTIME               711
-DEVELOPMENT           449
-METADATA                8
-LICENSE                 1
-DEBUG_OR_OPTIONAL    1986
+RUNTIME               711    38,775,506
+DEVELOPMENT           449     4,737,164
+METADATA                8       356,169
+LICENSE                 1        13,804
+DEBUG_OR_OPTIONAL    1986    35,466,620
 ```
 
 Role manifest:
@@ -110,8 +107,6 @@ docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
 ```
 
 ## Step 2: exact role decomposition — PASS
-
-Machine result:
 
 ```text
 check_count       18
@@ -147,15 +142,15 @@ libpython                                       1 entry     5,821,560 bytes
 bin                                             4 entries      10,992 bytes
 ```
 
-Exact metadata split candidate:
+Metadata candidates:
 
 ```text
-runtime metadata candidates
+runtime metadata
   _sysconfigdata__android_aarch64-linux-android.py
   _sysconfig_vars__android_aarch64-linux-android.json
   build-details.json
 
-development metadata candidates
+development metadata
   config-*/Makefile
   config-*/Setup
   config-*/Setup.local
@@ -169,9 +164,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE1_ROLE_DECOMPOSITION_RESULT.md
 ```
 
-## Directory ownership model
-
-Observed mixed directories:
+## Mixed-directory boundary
 
 ```text
 lib
@@ -179,15 +172,13 @@ lib/python3.14
 lib/python3.14/config-3.14-aarch64-linux-android
 ```
 
-The inventory stores a minimum directory-owner role and the complete descendant-role set. This is not a final archive ownership decision.
-
-A final split must operate on exact manifest paths, not on naive whole-directory moves.
+A final split must operate on exact manifest paths, not naive whole-directory moves.
 
 ## Step 3: semantic capability probes — ACTIVE
 
 Question:
 
-> Which candidate optional and metadata surfaces actually provide working target capabilities, and which are inert or development-only?
+> Which optional and metadata surfaces provide working target capabilities, and which are inert or development-only?
 
 Run:
 
@@ -196,12 +187,12 @@ bash \
   experiments/stage3c-product-role-inventory/run-role-semantic-probes.sh
 ```
 
-Observed capabilities will include:
+The probe records:
 
 ```text
 venv
-ensurepip
 test and test.support
+ensurepip observation
 __phello__
 _tkinter
 tkinter
@@ -210,7 +201,7 @@ turtle
 idlelib
 idlelib.pyshell
 turtledemo
-sysconfig variables and paths
+sysconfig variables and active paths
 _sysconfigdata import
 _sysconfig_vars JSON
 build-details JSON
@@ -218,19 +209,20 @@ Makefile discovery
 pyconfig.h discovery
 ```
 
-The semantic probe is observational:
+Policy:
 
 ```text
-optional-module success or failure is retained as evidence
-core/sysconfig services must succeed
-the canonical source must not change
+optional-module success or failure is evidence
+ensurepip is observed but is not a frozen acceptance gate
+venv, test/test.support, and sysconfig must work on the canonical tree
+the canonical source must remain unchanged
 all observation fields must parse and cross-check
 ```
 
 Expected machine result:
 
 ```text
-semantic probe verifier   36/36
+semantic probe verifier   38/38
 source mutation           PASS
 ```
 
@@ -272,65 +264,44 @@ config-tree Makefile/Setup/config/python-config rows
 Mechanical inventory:
 
 ```text
-[x] source entry count = 3155
-[x] source ELF count = 81
-[x] source symlink count = 5
-[x] every path has one valid primary role
-[x] UNKNOWN count = 0
-[x] all 81 ELF entries are RUNTIME
-[x] no pycache/pyc entries exist
-[x] no unsupported special files exist
-[x] role-manifest SHA-256 recomputes
-[x] source before/after fingerprints match
-[x] independent verifier passes 43/43
+[x] source entry/ELF/symlink counts = 3155/81/5
+[x] every path has one valid role
+[x] UNKNOWN = 0
+[x] all ELF entries are RUNTIME
+[x] no pycache or special files
+[x] role manifest recomputes
+[x] source fingerprint unchanged
+[x] independent verifier 43/43
 ```
 
 Semantic decomposition:
 
 ```text
-[x] role/rule decomposition sums exactly
-[x] optional component/root decomposition sums exactly
-[x] development surface decomposed
-[x] runtime surface decomposed
-[x] exact LICENSE and METADATA rows recorded
-[x] decomposition verifier passes 18/18
+[x] role/rule totals exact
+[x] optional component/root totals exact
+[x] development and runtime surfaces decomposed
+[x] LICENSE and METADATA rows recorded
+[x] decomposition verifier 18/18
 ```
 
 Capability and policy selection:
 
 ```text
 [ ] target optional-module capability matrix recorded
-[ ] sysconfig runtime/development metadata consumers recorded
-[ ] semantic probe verifier passes 36/36
-[ ] semantic probe source mutation control passes
-[ ] CPython regression suite policy selected
+[ ] sysconfig metadata consumers recorded
+[ ] semantic probe verifier 38/38
+[ ] semantic probe mutation control PASS
+[ ] regression-suite policy selected
 [ ] Tkinter/IDLE/turtle/turtledemo policy selected
 [ ] __phello__ policy selected
-[ ] runtime metadata set selected
-[ ] development metadata set selected
+[ ] runtime/development metadata sets selected
 [ ] shared-directory ownership selected
-[ ] runtime/development/optional archive split selected
-[ ] isolated payload variants validate the selected split
+[ ] archive split selected
+[ ] isolated payload variants validate the split
 ```
 
 ## Claim boundary
 
-Current evidence proves:
+Current evidence proves complete path classification and decomposition. It does not yet prove that all optional paths can be removed together, that Tkinter works on the target, that config-tree metadata is removable from runtime, or that one archive split is correct.
 
-```text
-all 3155 paths are completely classified and decomposed
-regression tests dominate the optional byte surface
-development, runtime, metadata, license, and symlink boundaries are explicit
-accepted inventories are internally consistent and non-mutating
-```
-
-It does not yet prove:
-
-```text
-all DEBUG_OR_OPTIONAL paths can be removed together
-tkinter is functional on the tested target
-config-tree metadata can be removed from the runtime product
-one particular archive split is correct
-```
-
-Phase 1 remains active until capability probes and isolated payload variants close those questions.
+Phase 1 remains active until semantic probes and isolated payload variants close those questions.
