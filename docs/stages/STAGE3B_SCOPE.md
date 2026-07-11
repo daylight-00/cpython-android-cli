@@ -4,7 +4,7 @@
 > **Input:** Frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
-> **Current active sub-phase:** Phase 4 CPython development/runtime product promotion
+> **Current active sub-phase:** Phase 5 target runtime and closure equivalence
 
 ## 1. Question
 
@@ -66,8 +66,8 @@ output product boundary
 Phase 1  current producer provenance reconstruction   FROZEN
 Phase 2  controlled Linux producer replay            FROZEN
 Phase 3  dependency product promotion                FROZEN
-Phase 4  CPython dev/runtime prefix promotion         ACTIVE (Termux assembly)
-Phase 5  Stage 3-A closure equivalence validation     PENDING
+Phase 4  CPython dev/runtime prefix promotion         FROZEN
+Phase 5  Stage 3-A closure equivalence validation     ACTIVE
 ```
 
 Authoritative phase documents:
@@ -79,6 +79,8 @@ docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE3_SCOPE.md
 docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE4_SCOPE.md
+docs/evidence/STAGE3B_PHASE4_FINAL_SUMMARY.md
+docs/stages/STAGE3B_PHASE5_SCOPE.md
 ```
 
 ## 5. Phase 1 frozen result
@@ -346,9 +348,9 @@ Stage 3-B is complete only when:
 [x] dependency archive hashes are promoted
 [x] replay build completes
 [x] replay package is produced
-[ ] launcher build inputs come from promoted generated products
-[ ] historical experiment paths are not hidden canonical inputs
-[ ] runtime assembly is regenerated from declared products
+[x] launcher build inputs come from promoted generated products
+[x] historical experiment paths are not hidden canonical inputs
+[x] runtime assembly is regenerated from declared products
 [ ] regenerated runtime passes closure comparison review
 [ ] regenerated runtime passes smoke validation
 [ ] regenerated runtime passes whole-prefix relocation validation
