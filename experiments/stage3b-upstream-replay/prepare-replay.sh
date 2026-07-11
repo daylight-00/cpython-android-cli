@@ -54,6 +54,18 @@ ANDROID_HOME_DERIVED="$(read_json_field "$TOOLCHAIN_JSON" android_sdk_root_deriv
 NDK_VERSION="$(read_json_field "$TOOLCHAIN_JSON" ndk_version_derived)"
 TARGET_HOST="$(read_json_field "$BUILD_INPUTS" target.target_host)"
 
+DRIVER_PYTHON="${DRIVER_PYTHON:-$(command -v python3 || true)}"
+[[ -n "$DRIVER_PYTHON" && -x "$DRIVER_PYTHON" ]] || {
+    echo "ERROR: replay driver Python was not found or is not executable" >&2
+    exit 2
+}
+"$DRIVER_PYTHON" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)' || {
+    echo "ERROR: replay driver Python must be 3.11 or newer: $("$DRIVER_PYTHON" --version 2>&1)" >&2
+    exit 2
+}
+DRIVER_PYTHON="$("$DRIVER_PYTHON" -c 'import sys; print(sys.executable)')"
+DRIVER_PYTHON_VERSION="$("$DRIVER_PYTHON" -c 'import platform; print(platform.python_version())')"
+
 [[ -d "$SOURCE_REPO/.git" || -f "$SOURCE_REPO/.git" ]] || {
     echo "ERROR: source Git worktree not found: $SOURCE_REPO" >&2
     exit 2
@@ -97,12 +109,15 @@ python3 - \
     "$CACHE_DIR" \
     "$ANDROID_HOME_DERIVED" \
     "$NDK_VERSION" \
-    "$TARGET_HOST" <<'PY'
+    "$TARGET_HOST" \
+    "$DRIVER_PYTHON" \
+    "$DRIVER_PYTHON_VERSION" <<'PY'
 import hashlib, json, sys
 from pathlib import Path
 (
     out, source_repo, source_head, source_worktree, cross_build_dir,
     cache_dir, android_home, ndk_version, target_host,
+    driver_python, driver_python_version,
 ) = sys.argv[1:]
 
 def sha(path):
@@ -123,6 +138,8 @@ plan = {
     "android_home": android_home,
     "ndk_version": ndk_version,
     "target_host": target_host,
+    "driver_python": driver_python,
+    "driver_python_version": driver_python_version,
     "expected_prefix": str(Path(cross_build_dir) / target_host / "prefix"),
     "producer_files": {
         "Android/android.py": sha(source / "Android/android.py"),
@@ -133,6 +150,7 @@ plan = {
         "exact_source_head": True,
         "producer_snapshot_match": True,
         "ndk_present": True,
+        "driver_python_compatible": True,
     },
 }
 Path(out).write_text(json.dumps(plan, indent=2, sort_keys=True) + "\n")
