@@ -275,9 +275,20 @@ Asia/Seoul           PASS with tzdata
 America/New_York     PASS with tzdata
 ```
 
-Stage 3-C must later decide whether to bundle, declare, or externally integrate timezone data.
+A later probe review found that the original direct `PYTHONTZPATH` scenarios used `-I`, which ignored the variable under test. Stage 3-B Phase 5 repaired the child contract and reran the frozen runtime.
 
-Phase 5 probe review later found that the old direct `PYTHONTZPATH` scenarios used `-I`, which ignored the variable under test. The default failure, host path existence check, and uv tzdata fallback remain evidence; the direct environment scenarios are explicitly reopened and rerun under a corrected child contract.
+Corrected result:
+
+```text
+default configured TZPATH        absent, three keys FAIL
+PYTHONTZPATH=""                  delivered, package absent, three keys FAIL
+explicit Termux zoneinfo path    delivered, host path absent, three keys FAIL
+uv tzdata 2026.3 fallback        three keys PASS
+```
+
+The promoted runtime matched the frozen runtime exactly.
+
+Stage 3-C must later decide whether to bundle, declare, or externally integrate timezone data.
 
 ### CA trust
 
@@ -294,6 +305,8 @@ Frozen interpretation:
 CA path repair exists
 CA content validation does not
 ```
+
+The promoted runtime preserved the same four-scenario matrix in Stage 3-B Phase 5.
 
 ### Representative runtime audit
 
@@ -384,7 +397,9 @@ hashes of promoted build products
 
 Phases 1–4 are frozen. Source and toolchain provenance, the controlled Linux replay, exact dependency products, the promoted CPython package, the promoted launcher, workstation handoff, transport, and isolated Termux assembly are explicit and verified.
 
-The promoted Termux candidate passed the canonical Stage 2-C workload:
+### Completed Phase 5 gates
+
+Promoted canonical behavior:
 
 ```text
 STAGE2C_SMOKE=PASS
@@ -392,7 +407,7 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_SMOKE=PASS
 ```
 
-The clean promoted closure rerun also passed:
+Promoted closure equivalence:
 
 ```text
 ELF objects                               81
@@ -408,43 +423,79 @@ machine verifier checks                37/37
 STAGE3B_PROMOTED_CLOSURE=PASS
 ```
 
-The `+43` bytecode incident is closed as validation-induced mutation. The repaired child contract uses explicit `-B`, and the candidate was freshly reassembled before the passing rerun.
+The `+43` bytecode incident is closed as validation-induced mutation. The repaired isolated child contract uses explicit `-B`, and the candidate was freshly reassembled before the passing rerun.
 
-Current action:
-
-```sh
-bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
-```
-
-This Gate 3 workflow compares corrected CA and timezone boundary probes between:
+Promoted CA/timezone boundaries:
 
 ```text
-candidate
-  work/termux/stage3b-promoted-runtime/prefix
-
-frozen control
-  work/termux/stage2c/runtime/prefix
+CA contract equivalence                    PASS
+corrected direct-zoneinfo equivalence      PASS
+uv tzdata 2026.3 fallback equivalence      PASS
+candidate mutation control                 PASS
+frozen mutation control                    PASS
+machine verifier checks                  28/28
+STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-and writes only to:
-
-```text
-results/termux/stage3b-promoted-boundaries
-```
-
-The CA probe retains isolated mode but adds explicit no-bytecode behavior:
-
-```text
-python -I -B -S -c ...
-```
-
-The zoneinfo probe cannot use isolated mode because `PYTHONTZPATH` is the variable under test. It now sanitizes ambient `PYTHON*` variables and uses:
+The corrected direct-zoneinfo child uses:
 
 ```text
 python -B -P -s -c ...
 ```
 
-The verifier checks actual scenario input delivery, candidate/frozen semantic equivalence, uv-injected first-party `tzdata`, base-prefix identity, and mutation controls.
+with a sanitized Python environment so `PYTHONTZPATH` remains the deliberate variable under test.
+
+### Current action: promoted whole-prefix relocation
+
+Run:
+
+```sh
+bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
+```
+
+The workflow uses:
+
+```text
+source candidate
+  work/termux/stage3b-promoted-runtime/prefix
+
+relocation copy
+  work/termux/stage3b-promoted-relocation/location-a/prefix
+    -> move to
+  work/termux/stage3b-promoted-relocation/location-b/prefix
+
+results
+  results/termux/stage3b-promoted-relocation
+```
+
+At A and B it validates:
+
+```text
+base runtime identity
+active sysconfig paths
+HTTPS
+subprocess identity
+fresh uv venv and base identity
+uv run and base identity
+forbidden stale-prefix absence
+```
+
+Outer controls validate:
+
+```text
+canonical source candidate unchanged
+frozen Stage 2-C control unchanged
+final B fingerprint equals source candidate fingerprint
+A absent after move
+B present with executable Python
+structured machine verdict
+```
+
+Expected final marker:
+
+```text
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
 
 The frozen Stage 2-C prefix and frozen Stage 3-A result directory remain read-only controls.
 
@@ -456,6 +507,7 @@ docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
 Collaboration workflow:
