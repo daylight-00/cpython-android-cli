@@ -54,6 +54,25 @@ def read_text_safe(
         return ""
 
 
+def read_json_safe(
+    path: Path,
+    missing_outputs: list[str],
+    parse_errors: dict[str, str],
+) -> dict[str, Any]:
+    if not path.is_file():
+        missing_outputs.append(str(path))
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        parse_errors[str(path)] = repr(exc)
+        return {}
+    if not isinstance(value, dict):
+        parse_errors[str(path)] = "top-level JSON value is not an object"
+        return {}
+    return value
+
+
 def is_true(mapping: dict[str, str], key: str) -> bool:
     return mapping.get(key) == "true"
 
@@ -94,6 +113,11 @@ def main() -> int:
         missing_outputs,
         parse_errors,
     )
+    fidelity_diagnosis = read_json_safe(
+        results_dir / "fidelity-diagnosis" / "tree-delta.json",
+        missing_outputs,
+        parse_errors,
+    )
     location_state = read_key_values_safe(
         results_dir / "relocation-location-state.txt",
         missing_outputs,
@@ -112,6 +136,13 @@ def main() -> int:
         "b": f"B_PREFIX={b_prefix}",
     }
 
+    source_portable_fingerprint = fidelity_diagnosis.get(
+        "source_portable_fingerprint"
+    )
+    relocated_portable_fingerprint = fidelity_diagnosis.get(
+        "relocated_portable_fingerprint"
+    )
+
     checks: dict[str, bool] = {
         "all_required_outputs_present": not missing_outputs,
         "all_required_outputs_parse": not parse_errors,
@@ -119,6 +150,31 @@ def main() -> int:
         "candidate_runtime_not_mutated": is_true(candidate_mutation, "pass"),
         "frozen_runtime_not_mutated": is_true(frozen_mutation, "pass"),
         "relocated_runtime_matches_source": is_true(relocated_fidelity, "pass"),
+        "fidelity_contract_is_portable_v2": relocated_fidelity.get("comparison")
+        == "portable-tree-manifest-v2",
+        "fidelity_status_portable_pass": is_true(
+            relocated_fidelity, "portable_pass"
+        ),
+        "fidelity_diagnosis_schema": fidelity_diagnosis.get("schema_version") == 2,
+        "fidelity_source_root_matches": fidelity_diagnosis.get("source_root")
+        == str(candidate_prefix),
+        "fidelity_relocated_root_matches": fidelity_diagnosis.get("relocated_root")
+        == str(b_prefix),
+        "fidelity_portable_pass": fidelity_diagnosis.get("portable_pass") is True,
+        "fidelity_no_added_paths": fidelity_diagnosis.get("added_count") == 0,
+        "fidelity_no_removed_paths": fidelity_diagnosis.get("removed_count") == 0,
+        "fidelity_no_portable_changes": fidelity_diagnosis.get(
+            "portable_changed_count"
+        )
+        == 0,
+        "fidelity_entry_counts_equal": fidelity_diagnosis.get(
+            "source_entry_count"
+        )
+        == fidelity_diagnosis.get("relocated_entry_count"),
+        "fidelity_portable_fingerprints_equal": isinstance(
+            source_portable_fingerprint, str
+        )
+        and source_portable_fingerprint == relocated_portable_fingerprint,
         "location_a_absent_after_move": location_state.get("a_prefix_exists")
         == "false",
         "location_b_present_after_move": location_state.get("b_prefix_exists")
@@ -144,7 +200,7 @@ def main() -> int:
 
     failed_checks = sorted(name for name, passed in checks.items() if not passed)
     summary: dict[str, Any] = {
-        "schema_version": 1,
+        "schema_version": 2,
         "pass": not failed_checks,
         "check_count": len(checks),
         "checks": checks,
@@ -160,6 +216,7 @@ def main() -> int:
         "candidate_mutation": candidate_mutation,
         "frozen_mutation": frozen_mutation,
         "relocated_fidelity": relocated_fidelity,
+        "fidelity_diagnosis": fidelity_diagnosis,
         "location_state": location_state,
         "marker_counts": marker_counts,
     }
