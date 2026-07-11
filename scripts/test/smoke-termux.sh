@@ -7,9 +7,10 @@ SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 # shellcheck disable=SC1091
 source "$SCRIPT_DIR/../lib/project-env.sh"
 
-RUNTIME_ROOT="$TERMUX_WORK_ROOT/runtime"
+RUNTIME_ROOT="${RUNTIME_ROOT_OVERRIDE:-$TERMUX_WORK_ROOT/runtime}"
 RUNTIME_PREFIX="$RUNTIME_ROOT/prefix"
 PYTHON_BIN="$RUNTIME_PREFIX/bin/python"
+SMOKE_RESULTS_ROOT="${TERMUX_RESULTS_ROOT_OVERRIDE:-$TERMUX_RESULTS_ROOT}"
 
 TERMUX_PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
 UV_BIN="${UV_BIN:-$(command -v uv)}"
@@ -19,7 +20,7 @@ UV_BIN="${UV_BIN:-$(command -v uv)}"
     exit 2
 }
 
-mkdir -p "$TERMUX_RESULTS_ROOT"
+mkdir -p "$SMOKE_RESULTS_ROOT"
 
 clean_env=(
     env
@@ -75,7 +76,7 @@ PY
 echo
 echo "== uv venv =="
 
-VENV="$TERMUX_RESULTS_ROOT/venv"
+VENV="$SMOKE_RESULTS_ROOT/venv"
 rm -rf "$VENV"
 
 "${clean_env[@]}" \
