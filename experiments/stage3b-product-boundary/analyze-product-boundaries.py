@@ -170,7 +170,7 @@ def package_inventory(path: Path) -> tuple[list[dict], dict]:
         "declared_file_bytes": total_file_bytes,
         "top_level_paths": sorted(top_level),
         "contract_members": {
-            rel: f"aarch64-linux-android/{rel}" in normalized_paths
+            rel: f"prefix/{rel}" in normalized_paths
             for rel in CONTRACT_PATHS
         },
     }
