@@ -29,6 +29,7 @@ Phase 1 readiness check
 exact source commit resolution
 detached Git worktree creation
 NDK presence check
+active driver Python 3.11+ capture
 Android/android.py snapshot equality check
 Android/android-env.sh snapshot equality check
 separate cross-build root creation
@@ -45,7 +46,7 @@ bash \
 The runner executes the upstream producer graph:
 
 ```text
-build Python
+build Python configure/build
 Android target configure/build/install
 package archive creation
 replay prefix inventory
