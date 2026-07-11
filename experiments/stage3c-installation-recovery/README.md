@@ -1,6 +1,6 @@
 # Stage 3-C Phase 4: Installation Recovery and Lock Contention
 
-> **Status:** ACTIVE — target evidence pending
+> **Status:** ACTIVE — corrected target rerun pending
 > **Input:** frozen Phase 4 Gate 2 transaction result
 
 ## Run
@@ -18,6 +18,26 @@ work/termux/stage3c-phase4-installation-recovery/
 ```
 
 The canonical promoted prefix, runtime-base source, live Termux prefix, and copied Gate 2 input are not transaction targets.
+
+Scenario roots are derived as independent filesystem copies:
+
+```text
+regular files
+  shutil.copy2
+  source/destination inode identity must differ
+
+symlinks
+  preserved as symlinks
+
+hardlinks between seed and scenario roots
+  forbidden
+```
+
+The first target attempt used hardlinks and failed closed with `EACCES` before crash scenarios began. The preserved failure record is:
+
+```text
+docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
+```
 
 ## Recovery checkpoints
 
