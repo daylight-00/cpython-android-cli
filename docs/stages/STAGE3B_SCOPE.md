@@ -84,6 +84,7 @@ docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
 Current Phase 5 checkpoint:
@@ -91,15 +92,17 @@ Current Phase 5 checkpoint:
 ```text
 promoted canonical behavior smoke        PASS
 promoted semantic closure equivalence    PASS
-candidate mutation control               PASS
-frozen runtime mutation control          PASS
-next gate                                CA and timezone boundary equivalence
+promoted CA boundary equivalence         PASS
+promoted timezone boundary equivalence   PASS
+candidate mutation controls              PASS
+frozen runtime mutation controls         PASS
+next gate                                whole-prefix relocation
 ```
 
 Next command on Termux:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
+bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
 ## 5. Phase 1 frozen result
@@ -353,15 +356,21 @@ Android-system SONAME loadability
 67-extension isolated import surface
 active runtime and sysconfig identity
 candidate/frozen mutation controls for closure workflow
+corrected CA boundary equivalence
+corrected direct-zoneinfo input and semantic equivalence
+uv-injected first-party tzdata fallback equivalence
+candidate/frozen mutation controls for boundary workflow
 ```
 
 Current comparison:
 
 ```text
-corrected CA boundary equivalence
-corrected direct-zoneinfo input and semantic equivalence
-uv-injected first-party tzdata fallback equivalence
-candidate/frozen mutation controls for boundary workflow
+production-shape whole-prefix relocation
+location A runtime and consumer identity
+location B runtime and consumer identity after A -> B move
+stale A-prefix exclusion
+relocated B fingerprint equality with source candidate
+candidate/frozen source mutation controls
 ```
 
 Expected producer-host metadata deltas such as:
@@ -375,7 +384,7 @@ host build-Python path
 
 are not failures by themselves.
 
-The raw file-entry aggregate is also not a semantic gate. The promoted candidate had `3155` entries versus the frozen aggregate `3280`, while every closure, identity, import, and mutation gate passed. Complete row-level inventories remain available for review.
+The raw file-entry aggregate is also not a semantic gate. The promoted candidate had `3155` entries versus the frozen aggregate `3280`, while closure, identity, import, boundary, and mutation gates passed. Complete row-level inventories remain available for review.
 
 ## 12. Stage 3-B completion conditions
 
@@ -395,7 +404,7 @@ Stage 3-B is complete only when:
 [x] runtime assembly is regenerated from declared products
 [x] regenerated runtime passes closure comparison review
 [x] regenerated runtime passes smoke validation
-[ ] regenerated runtime preserves or intentionally reopens CA/timezone boundaries
+[x] regenerated runtime preserves the reviewed CA/timezone boundaries
 [ ] regenerated runtime passes whole-prefix relocation validation
 ```
 

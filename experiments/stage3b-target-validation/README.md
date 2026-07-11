@@ -48,30 +48,9 @@ docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 bash experiments/stage3b-target-validation/validate-promoted-closure.sh
 ```
 
-This thin wrapper reuses the frozen Stage 3-A engines with candidate-specific path overrides:
+The wrapper reuses the frozen Stage 3-A inventory, closure, system-SONAME, and extension-import engines with candidate-specific paths.
 
-```text
-inventory-runtime.sh
-    -> complete prefix inventory
-    -> ELF and DT_NEEDED census
-
-analyze-and-probe.sh
-    -> unique SONAME aggregation
-    -> fresh-process Android-system SONAME dlopen probes
-
-probe-extension-imports.sh
-    -> 67 isolated fresh-process extension imports
-```
-
-Candidate-specific results:
-
-```text
-results/termux/stage3b-promoted-closure
-```
-
-The wrapper fingerprints both the candidate and frozen runtime before and after the complete workflow.
-
-Hard gates are the frozen semantic closure invariants:
+Hard semantic gates:
 
 ```text
 symlinks                         5
@@ -88,34 +67,15 @@ extension imports           67/67
 inspection errors              0
 ```
 
-The complete file inventory is retained for row-level comparison. Its aggregate entry count is reported as a non-gating observation because product and generated-state differences may change that count without changing the runtime closure.
-
-### Probe mutation diagnosis and repair
-
-The first Gate 2 run matched every semantic closure invariant but failed the candidate mutation control.
-
-Post-failure comparison found:
-
-```text
-file entries before   3280
-file entries after    3323
-delta                    43
-
-new __pycache__ dirs      4
-new .pyc files           39
-```
-
-The fresh-process probes used `python -I -S -c ...`. Isolated mode ignores `PYTHON*` environment variables, so shell-level bytecode controls did not reach those child interpreters.
-
-The repair makes the child contract explicit:
+The first run exposed validation-induced mutation because isolated child probes ignored shell-level `PYTHON*` controls. The repaired child contract is:
 
 ```text
 python -I -B -S -c ...
 ```
 
-The candidate was freshly assembled from the promoted package before the clean rerun.
+The candidate was freshly reassembled before the clean rerun.
 
-Observed clean result:
+Observed final result:
 
 ```text
 candidate file entries                  3155
@@ -127,23 +87,13 @@ extension imports                       67/67
 candidate mutation control              PASS
 frozen mutation control                 PASS
 machine verifier checks                37/37
-```
-
-Final markers:
-
-```text
-UNRESOLVED_EDGE_COUNT=0
-SYSTEM_SONAME_PROBE=PASS
-EXTENSION_IMPORT_PROBE=PASS
-CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_CLOSURE=PASS
 ```
 
-Primary machine-readable verdict:
+Results:
 
 ```text
-results/termux/stage3b-promoted-closure/promoted-closure-verification.json
+results/termux/stage3b-promoted-closure
 ```
 
 Evidence:
@@ -155,50 +105,49 @@ docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 
 ## Gate 3: CA and timezone boundary equivalence
 
-Pre-run review found that the Stage 3-A boundary probes required contract repair before promoted-runtime reuse.
+```sh
+bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
+```
+
+The Stage 3-A boundary probes were corrected before reuse:
 
 ```text
 CA child
-  -I ignored shell bytecode controls
-  -> add explicit -B
+  add explicit -B to isolated child
 
 zoneinfo child
-  -I ignored PYTHONTZPATH, the variable under test
-  -> remove isolated mode
-  -> sanitize ambient PYTHON* variables
-  -> use -B -P -s
-  -> record observed PYTHONTZPATH and flags
+  remove -I because PYTHONTZPATH is the variable under test
+  sanitize ambient PYTHON* variables
+  use -B -P -s
+  record actual input and flags
 ```
 
-The Gate 3 workflow runs the corrected probes against both the promoted candidate and frozen runtime control under the same Termux host state:
+The corrected workflow runs CA, direct-zoneinfo, and uv-tzdata probes against both candidate and frozen runtime under the same Termux host state.
 
-```sh
-rm -rf \
-  results/termux/stage3b-promoted-boundaries
-
-bash \
-  experiments/stage3b-target-validation/validate-promoted-boundaries.sh
-```
-
-Results:
+Observed machine result:
 
 ```text
-results/termux/stage3b-promoted-boundaries
+check_count        28
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
 ```
 
-The workflow checks:
+Boundary result:
 
 ```text
-frozen CA policy matrix
-candidate/frozen CA semantic equivalence
-actual PYTHONTZPATH delivery for every direct zoneinfo scenario
-candidate/frozen direct-zoneinfo semantic equivalence
-uv-injected first-party tzdata fallback for both runtimes
-uv base-prefix identity for both runtimes
-candidate and frozen runtime mutation controls
+CA policy matrix                          equivalent
+corrected direct-zoneinfo scenarios      equivalent
+base runtime timezone source             unavailable in both
+uv first-party tzdata version            2026.3
+uv tzdata representative keys            3/3 PASS for both
+uv base-prefix identity                   PASS for both
+candidate mutation control               PASS
+frozen mutation control                  PASS
 ```
 
-Expected final markers:
+Final markers:
 
 ```text
 CA_BOUNDARY_EQUIVALENCE=PASS
@@ -209,30 +158,95 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-Primary machine-readable verdict:
+Results:
 
 ```text
-results/termux/stage3b-promoted-boundaries/promoted-boundary-verification.json
+results/termux/stage3b-promoted-boundaries
 ```
 
-Detailed rationale and claim correction:
+Evidence:
 
 ```text
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
-## Gate 4: whole-prefix relocation
+## Gate 4: production-shape whole-prefix relocation
 
-Relocation remains pending until Gate 3 passes or is explicitly reviewed.
+```sh
+rm -rf \
+  work/termux/stage3b-promoted-relocation \
+  results/termux/stage3b-promoted-relocation
 
-The relocation workflow must move the complete promoted prefix and reconfirm:
+bash \
+  experiments/stage3b-target-validation/validate-promoted-relocation.sh
+```
+
+The workflow reuses the Stage 3-A production relocation engine with the promoted source prefix:
 
 ```text
-runtime identity re-roots
-active sysconfig paths re-root
-subprocess identity re-roots
-fresh venv base identity re-roots
-uv run base identity re-roots
-old prefix is absent from active runtime assertions
-candidate and frozen controls are not mutated unexpectedly
+promoted candidate
+  -> copy complete prefix to location A
+  -> validate A
+  -> move A prefix to location B
+  -> validate B
 ```
+
+At both locations it validates:
+
+```text
+sys.executable, sys.prefix and sys.base_prefix
+active sysconfig paths
+native imports and libc loadability
+HTTPS through Termux CA integration
+subprocess identity
+fresh uv venv and venv base identity
+uv run and uv run base identity
+forbidden stale-prefix absence
+```
+
+The Stage 3-B wrapper adds:
+
+```text
+candidate source before/after fingerprint
+frozen control before/after fingerprint
+final B fingerprint versus source candidate fingerprint
+A absent and B present after move
+B Python executable
+structured machine verdict
+```
+
+The relocation engine exports both:
+
+```text
+PYTHONDONTWRITEBYTECODE=1
+PYTHONPYCACHEPREFIX=<results>
+```
+
+so validation must not create bytecode in the relocated prefix.
+
+Expected final markers:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
+
+Results:
+
+```text
+results/termux/stage3b-promoted-relocation
+```
+
+Primary verdict:
+
+```text
+results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
+```
+
+The source candidate remains canonical and read-only. Relocation is performed on a copy under `work/termux/stage3b-promoted-relocation`.

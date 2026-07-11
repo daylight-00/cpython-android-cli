@@ -58,6 +58,7 @@ run_clean() {
         PATH="$TERMUX_PREFIX/bin:/system/bin" \
         TMPDIR="$TERMUX_PREFIX/tmp" \
         TERM="${TERM:-xterm-256color}" \
+        PYTHONDONTWRITEBYTECODE=1 \
         PYTHONPYCACHEPREFIX="$PYCACHE_ROOT" \
         "$python_bin" "$@"
 }
@@ -78,6 +79,7 @@ run_uv_clean() {
         PATH="$TERMUX_PREFIX/bin:/system/bin" \
         TMPDIR="$TERMUX_PREFIX/tmp" \
         TERM="${TERM:-xterm-256color}" \
+        PYTHONDONTWRITEBYTECODE=1 \
         PYTHONPYCACHEPREFIX="$PYCACHE_ROOT" \
         UV_PYTHON_DOWNLOADS=never \
         "$UV_BIN" "$@"

@@ -1,19 +1,16 @@
 # Stage 3-A Zoneinfo Boundary Summary
 
-> **Status:** Selected historical evidence with a later probe-contract correction
-> **Stage:** 3-A
-> **Result:** Default lookup failure and host-path absence observed; direct `PYTHONTZPATH` scenarios reopened
+> **Status:** Selected historical evidence with corrected follow-up confirmation
+> **Stage:** 3-A, corrected during Stage 3-B Phase 5
+> **Result:** Base-runtime timezone sources unavailable; first-party `tzdata` fallback PASS
 
 ## Purpose
 
-This summary records the non-ELF timezone-data boundary probe for the relocated Stage 2 runtime and the later correction discovered while preparing Stage 3-B Phase 5 promoted-runtime equivalence.
-
-The original probe intended to test whether `zoneinfo.ZoneInfo` could resolve representative IANA zone keys from:
+This document records both:
 
 ```text
-1. the runtime's default configured TZPATH;
-2. first-party Python tzdata package fallback only;
-3. an explicit Termux `$PREFIX/share/zoneinfo` directory.
+1. the original Stage 3-A timezone-data observation
+2. the corrected Stage 3-B follow-up that repaired the original direct-scenario control
 ```
 
 Representative keys:
@@ -24,57 +21,91 @@ Asia/Seoul
 America/New_York
 ```
 
-## Later probe-contract correction
+## Original probe-contract defect
 
-The original fresh-process child was invoked with:
+The original fresh-process child used:
 
 ```text
 python -I -c ...
 ```
 
-while scenarios 2 and 3 attempted to set:
+while two scenarios attempted to control:
 
 ```text
 PYTHONTZPATH=""
 PYTHONTZPATH=$PREFIX/share/zoneinfo
 ```
 
-CPython isolated mode ignores all `PYTHON*` environment variables. Therefore the direct child could not consume the `PYTHONTZPATH` value under test.
+CPython isolated mode ignores `PYTHON*` environment variables. Therefore the original child could not prove that those two `PYTHONTZPATH` values were consumed.
 
-The historical output remains useful, but its claim boundary is narrower than originally documented.
-
-Still supported:
+The historical output still established:
 
 ```text
 default lookup failed for all representative keys
 default configured TZPATH directories were absent
-base runtime did not expose a visible tzdata package in that child
+no first-party tzdata package was visible
 $PREFIX/share/zoneinfo was absent at the outer filesystem check
 ```
 
-Reopened for corrected execution:
+The direct environment-input claims were temporarily reopened rather than silently retained.
+
+## Corrected child contract
+
+Stage 3-B Phase 5 repaired the probe to:
 
 ```text
-PYTHONTZPATH="" produced an empty zoneinfo.TZPATH
-PYTHONTZPATH=$PREFIX/share/zoneinfo selected the explicit Termux path
-per-scenario failures were caused by those delivered environment inputs
+sanitize ambient PYTHON* variables
+set PYTHONNOUSERSITE=1
+apply only the scenario-specific PYTHONTZPATH value
+run python -B -P -s -c ...
 ```
 
-The corrected probe is documented in:
+The child records:
+
+```text
+actual PYTHONTZPATH value
+zoneinfo.TZPATH
+path existence
+first-party tzdata visibility
+interpreter flags
+per-key results
+```
+
+Corrected evidence:
 
 ```text
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
-It removes `-I`, sanitizes ambient `PYTHON*` variables, applies only the intended scenario input, and uses:
+## Corrected frozen-runtime result
+
+The corrected workflow reran every scenario against the frozen Stage 2-C runtime and the promoted candidate under the same Termux host state.
+
+Machine checks confirmed:
 
 ```text
-python -B -P -s -c ...
+frozen_zone_input_default             true
+frozen_zone_input_tzdata_only         true
+frozen_zone_input_termux_zoneinfo     true
+frozen_zone_flags_default             true
+frozen_zone_flags_tzdata_only         true
+frozen_zone_flags_termux_zoneinfo     true
+zone_child_contract                   true
+zone_semantic_equivalence             true
 ```
+
+The promoted candidate matched the frozen runtime exactly.
 
 ## Default scenario
 
-Observed configured search path:
+Observed input:
+
+```text
+PYTHONTZPATH unset
+```
+
+Observed search path:
 
 ```text
 /usr/share/zoneinfo
@@ -83,7 +114,7 @@ Observed configured search path:
 /etc/zoneinfo
 ```
 
-All four directories were absent.
+All four paths were absent.
 
 Observed:
 
@@ -94,21 +125,19 @@ Asia/Seoul           FAIL
 America/New_York     FAIL
 ```
 
-Interpretation retained after correction:
+Conclusion:
 
-> The base runtime's default child state had configured POSIX-style timezone search paths, none of those paths existed on the tested device, and no Python `tzdata` package was visible.
+> The tested base runtime has configured POSIX-style timezone search paths, but none exists on the tested device and no first-party `tzdata` package is included in the base environment.
 
-## Historical tzdata-only scenario
+## Package-only scenario
 
-The probe wrapper attempted to set:
+Observed input:
 
 ```text
 PYTHONTZPATH=""
 ```
 
-The intended meaning was to force `zoneinfo` to ignore system TZPATH directories and rely on the Python `tzdata` package fallback.
-
-Historical output recorded:
+Observed:
 
 ```text
 zoneinfo.TZPATH=[]
@@ -118,95 +147,107 @@ Asia/Seoul           FAIL
 America/New_York     FAIL
 ```
 
-Correction:
+The corrected child explicitly recorded the empty environment value and empty `zoneinfo.TZPATH`.
 
-> Because the child used `-I`, this output cannot be attributed to the wrapper's `PYTHONTZPATH` environment input without a corrected rerun.
+Conclusion:
 
-The separate uv-injected first-party `tzdata` experiment remains valid and passed all representative keys. It did not use this invalid isolated child contract.
+> Package-only lookup is correctly selected, but the base runtime does not include the first-party `tzdata` package.
 
-## Historical explicit Termux zoneinfo scenario
+## Explicit Termux-path scenario
 
-The probe wrapper attempted to set:
+Observed input:
 
 ```text
 PYTHONTZPATH=/data/data/com.termux/files/usr/share/zoneinfo
 ```
 
-Historical output recorded:
+Observed:
 
 ```text
+zoneinfo.TZPATH=
+  /data/data/com.termux/files/usr/share/zoneinfo
+
 termux_zoneinfo_exists=false
 UTC                  FAIL
 Asia/Seoul           FAIL
 America/New_York     FAIL
 ```
 
-The outer filesystem observation remains valid:
+The corrected child explicitly recorded the requested path.
 
-> The tested Termux environment did not expose a POSIX-style zoneinfo tree at `$PREFIX/share/zoneinfo`.
+Conclusion:
 
-The direct child result does not prove that the explicit environment input was consumed, because `-I` ignored it.
+> The tested Termux host did not expose a POSIX-style TZif tree at `$PREFIX/share/zoneinfo`.
 
-This result does not claim that no Termux package can provide such data. It records the tested environment state.
+This does not claim that no Termux package can provide such a directory. It records the tested host state.
 
-## Historical aggregate
+## First-party tzdata fallback
 
-The original report printed:
+A uv ephemeral environment supplied:
 
 ```text
-default             FAIL
-tzdata_only         FAIL
-termux_zoneinfo     FAIL
+tzdata 2026.3
+PYTHONTZPATH=""
 ```
 
-The runtime Python process exited normally in each scenario; the observed failure was inability to resolve IANA zone keys.
+For both frozen and promoted runtimes:
 
-After the contract correction, only the default scenario is accepted as a directly established scenario result from that child. The other two labels await corrected execution.
+```text
+tzdata package found
+zoneinfo.TZPATH=[]
+UTC                  PASS
+Asia/Seoul           PASS
+America/New_York     PASS
+all_keys_pass=true
+```
+
+The ephemeral environment preserved the expected runtime as `sys.base_prefix` and did not install data into the base runtime prefix.
+
+Conclusion:
+
+> CPython's first-party `tzdata` package fallback solves the tested timezone-data gap without modifying the runtime product.
 
 ## CPython data-source model
 
-CPython `zoneinfo` searches configured `TZPATH` directories first and falls back to the first-party `tzdata` package. If neither source is available, `ZoneInfo` raises `ZoneInfoNotFoundError`.
-
-The default observation is consistent with:
+The observed corrected behavior matches the CPython model:
 
 ```text
-configured TZPATH directories absent
-    +
-tzdata package not visible
-    ->
-ZoneInfoNotFoundError
+search configured zoneinfo.TZPATH directories
+    -> if unresolved
+fall back to first-party tzdata package
+    -> if unavailable
+raise ZoneInfoNotFoundError
 ```
 
-An empty `PYTHONTZPATH` is the supported way to force package-only lookup, but a test of that behavior must not use `-I` or `-E`.
+An empty `PYTHONTZPATH` forces package-only lookup, but a probe of that input must not use `-I` or `-E`.
 
 ## Android boundary note
 
-Android itself ships and updates timezone rule data for platform components, but Android's platform time-zone data path and format are not automatically exposed as the POSIX-style per-key TZif directory tree searched by CPython `zoneinfo`.
+Android ships timezone data for platform components, but that data is not automatically exposed as the POSIX-style per-key TZif directory tree searched by CPython `zoneinfo`.
 
-The Stage 3-A probe therefore treats Android platform timezone data and CPython `zoneinfo` data sourcing as separate integration domains.
+Android platform timezone data and CPython `zoneinfo` data sourcing therefore remain separate integration domains.
 
-## Architecture consequence
-
-The valid Stage 3-A and follow-up evidence supports:
+## Final boundary model
 
 ```text
 native ELF closure              resolved
 extension execution             PASS
 CA trust source                 Termux host integration
-default zoneinfo source         unavailable in tested base runtime
-first-party tzdata fallback     PASS through uv ephemeral injection
-explicit PYTHONTZPATH controls  pending corrected direct comparison
+default zoneinfo source         unavailable in tested runtime/host state
+base first-party tzdata         absent
+uv first-party tzdata fallback  PASS
+explicit PYTHONTZPATH controls  corrected and confirmed
 ```
 
-The distribution-stage question remains unchanged: compare and choose among bundled, declared Python-package, or host-integrated timezone data contracts.
+## Distribution implication
 
-## Corrected next experiment
+The later distribution stage must choose among:
 
-Run the corrected candidate/frozen comparison:
-
-```sh
-bash \
-  experiments/stage3b-target-validation/validate-promoted-boundaries.sh
+```text
+bundle first-party tzdata
+declare first-party tzdata as a dependency
+integrate a host TZif tree
+support multiple explicit policies
 ```
 
-The machine verifier checks the actual observed `PYTHONTZPATH` value in every scenario before accepting semantic equivalence.
+Stage 3-A and Stage 3-B Phase 5 characterize and preserve the boundary; they do not select the Stage 3-C distribution policy.
