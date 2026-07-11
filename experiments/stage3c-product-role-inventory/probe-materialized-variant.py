@@ -104,6 +104,12 @@ def within(path_value: str, prefix: Path) -> bool:
     return True
 
 
+def expected_presence(values: dict[str, bool], present: bool) -> bool:
+    if present:
+        return all(values.values())
+    return not any(values.values())
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--variant", required=True, choices=sorted(VARIANT_EXPECTATIONS))
@@ -222,8 +228,10 @@ def main() -> int:
         )
         and all(sysconfig_result.get("paths_under_prefix", {}).values()),
         "runtime_metadata_present": all(runtime_metadata.values()),
-        "development_paths_match_variant": all(development_paths.values())
-        is expected["development"],
+        "development_paths_match_variant": expected_presence(
+            development_paths,
+            expected["development"],
+        ),
         "makefile_state_matches_variant": sysconfig_result.get(
             "makefile_exists"
         )
