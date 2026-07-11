@@ -1,12 +1,12 @@
 # Stage 3-C Phase 4 Scope: Installation Transactions
 
-> **Status:** ACTIVE — Gates 1–3 frozen, Gate 4 durability protocol active
-> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–3
+> **Status:** ACTIVE — Gates 1–4 frozen, Gate 5A integration inventory active
+> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–4
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Can exact installed ownership and lifecycle semantics remain recoverable after abrupt process termination, exclude concurrent mutation, and obey explicit filesystem durability ordering?
+> Can exact installed ownership and lifecycle semantics remain recoverable after abrupt process termination, exclude concurrent mutation, and obey an explicit filesystem durability protocol on every production mutation path?
 
 ## Frozen Gate 1 — contract
 
@@ -17,8 +17,6 @@ input mutation                  PASS
 contract index
   79e3c173639047bc23b7dbe3c2135abe8f0b868d787735c094cbe06749c7dde3
 ```
-
-Authoritative boundary:
 
 ```text
 docs/stages/STAGE3C_PHASE4_GATE1_FINAL.md
@@ -61,8 +59,6 @@ unowned sentinel preservation         PASS
 retained directory reuse              no descendant adoption
 ```
 
-Authoritative boundary:
-
 ```text
 docs/stages/STAGE3C_PHASE4_GATE2_FINAL.md
 docs/evidence/STAGE3C_PHASE4_TRANSACTION_RESULT.md
@@ -88,22 +84,11 @@ result-index sha256
   f5ba124ebb9752b45d60f027474a399adf61fc5db033c1165a79664cbfc743bd
 ```
 
-Frozen isolation:
+Frozen isolation and crash boundaries:
 
 ```text
-scenario seed regular files
-  independent copies
-
-scenario seed symlinks
-  preserved as symlinks
-
-shared regular-file inode
-  forbidden
-```
-
-Frozen crash boundaries:
-
-```text
+independent scenario-root regular files
+shared regular-file inode forbidden
 exit 90  PREPARED
 exit 93  durable INTENT before mutation
 exit 91  five APPLIED install mutations
@@ -112,7 +97,7 @@ exit 91  payload and registry APPLIED before COMMITTED
 exit 92  COMMITTED before cleanup
 ```
 
-Frozen recovery direction:
+Frozen recovery and lock direction:
 
 ```text
 PREPARED / INTENT / APPLYING / registry pre-commit
@@ -123,23 +108,10 @@ COMMITTED
 
 ROLLED_BACK
   repeated recovery is a no-op
+
+exclusive flock
+  nonblocking contender rejected without mutation
 ```
-
-Frozen lock direction:
-
-```text
-holder
-  exclusive flock
-
-nonblocking contender
-  installation lock busy
-  no mutation
-
-post-release operation
-  succeeds
-```
-
-Authoritative boundary:
 
 ```text
 docs/stages/STAGE3C_PHASE4_GATE3_FINAL.md
@@ -148,48 +120,51 @@ docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
 docs/evidence/STAGE3C_PHASE4_RECOVERY_RESULT.md
 ```
 
-## Active Gate 4 — durability primitive and ordering protocol
-
-Run:
-
-```sh
-bash experiments/stage3c-installation-durability/run-installation-durability.sh
-```
-
-All mutable files remain below:
+## Frozen Gate 4 — durability primitive and ordering protocol
 
 ```text
-work/termux/stage3c-phase4-installation-durability/
+scenario runner       64/64 PASS
+independent verifier  53/53 PASS
+positive traces         7/7 canonical
+transaction events     27
+negative controls        2
+input mutation            PASS
+
+accepted TGZ
+  stage3c-phase4-installation-durability-results-20260712-011157.tgz
+
+TGZ sha256
+  94567ed50f030f3ab1844d81533a2e67eb22e83accabb0753a8501c84fd2ecda
+
+result-index sha256
+  3cb7e83eb6dc6c186a36da512ed41cbba4566abfc4bd4f5f71766ea1fcf075c4
 ```
 
-### Capability requirements
+Frozen capability boundary:
 
 ```text
-regular-file fsync
-directory fsync
-O_DIRECTORY support
-same-filesystem work layout
+regular-file fsync      PASS
+directory fsync         PASS
+O_DIRECTORY             available
+same-filesystem layout  PASS
 ```
 
-### Atomic replacement
+Frozen primitive ordering:
 
 ```text
-OPEN_TEMP
-WRITE_TEMP
-FSYNC_FILE
-REPLACE
-FSYNC_DIR(target parent)
-```
+atomic replacement
+  OPEN_TEMP
+  WRITE_TEMP
+  FSYNC_FILE
+  REPLACE
+  FSYNC_DIR(target parent)
 
-### Namespace mutation
-
-```text
 mkdir
   MKDIR
   FSYNC_DIR(new directory)
   FSYNC_DIR(parent)
 
-move across directories
+cross-directory move
   MOVE
   FSYNC_DIR(source parent)
   FSYNC_DIR(destination parent)
@@ -199,7 +174,7 @@ unlink / rmdir
   FSYNC_DIR(parent)
 ```
 
-### Transaction ordering
+Frozen transaction ordering:
 
 ```text
 journal-prepared
@@ -210,44 +185,113 @@ journal-committed
 backup-cleanup
 ```
 
-Every journal, payload, and registry replacement must use the complete atomic-replacement sequence.
-
-### Negative controls
+Frozen negative controls:
 
 ```text
-missing target-parent fsync
-registry declared before payload
+missing target-parent fsync  rejected
+registry before payload      rejected
 ```
 
-Both invalid traces must be rejected.
+```text
+docs/stages/STAGE3C_PHASE4_GATE4_FINAL.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_RESULT.md
+```
 
-### Validation
+## Active Gate 5A — recovery-engine durability integration inventory
+
+Run:
+
+```sh
+bash experiments/stage3c-installation-durability-integration/run-recovery-durability-inventory.sh
+```
+
+The inventory is bound to these frozen Git blob identities:
 
 ```text
-scenario runner       64 checks
-independent verifier  53 checks
-positive traces         7
-transaction events     27
-input mutation        PASS required
+recovery_common.py
+  1ba78274c8c56a1b2b6cbd525fb341719a2ce4a7
+
+recovery_operations.py
+  119571e8ad8a5663d20beff0ab82c85c14dfc4eb
+
+recovery_engine.py
+  9a3f1898c7420198ff33d2b067a6fa2a6ac8618d
+```
+
+Every detected mutation or `fsync` call must receive:
+
+```text
+module
+function
+line and column
+operation family
+lifecycle category
+production-path flag
+explicit durability obligation
+```
+
+Required categories:
+
+```text
+transaction metadata and backup
+install and uninstall
+rollback and recovery cleanup
+transient staging
+lock state and lock probe
+tool output
+```
+
+`UNKNOWN` category count must be zero.
+
+Generated evidence:
+
+```text
+mutation-inventory.json
+integration-plan.json
+scenario.json
+verification.json
+```
+
+Validation:
+
+```text
+inventory scenario       32 checks
+independent verifier     29 checks
+source blobs              exact
+input mutation            PASS required
 ```
 
 Expected final marker:
 
 ```text
-STAGE3C_PHASE4_INSTALLATION_DURABILITY=PASS
+STAGE3C_PHASE4_RECOVERY_DURABILITY_INVENTORY=PASS
 ```
 
 Detailed design:
 
 ```text
-docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
-experiments/stage3c-installation-durability/README.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
+experiments/stage3c-installation-durability-integration/README.md
 ```
 
-## Deferred Gate 5 and later
+## Gate 5B requirement after inventory
+
+The implementation gate must apply the generated obligations and then replay both frozen chains:
 
 ```text
-integration of durability helpers into every Gate 3 transaction path
+Gate 3 recovery scenarios       55/55
+Gate 3 independent verifier     82/82
+Gate 4 durability scenarios     64/64
+Gate 4 independent verifier     53/53
+```
+
+Inventory PASS alone cannot claim integrated durability.
+
+## Deferred later gates
+
+```text
+actual helper integration and full replay
 kernel or sudden-power-loss durability
 crash inside one non-atomic filesystem primitive
 adversarial external mutation and lock fairness
@@ -259,4 +303,4 @@ whole-prefix installed relocation
 
 ## Claim boundary
 
-A Gate 4 PASS proves successful tested `fsync` operations and declared ordering on the target filesystem. It does not prove persistence after actual sudden power loss, kernel panic, controller failure, or interruption inside one filesystem primitive. It also does not yet prove complete recovery-engine integration.
+A Gate 5A PASS proves inventory completeness for the exact frozen source blobs and declared scanner families. It does not prove that any durability helper has been integrated or that any production crash path has been replayed with an integrated engine.
