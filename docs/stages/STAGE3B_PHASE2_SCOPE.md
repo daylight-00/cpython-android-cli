@@ -57,6 +57,7 @@ The preparation step requires:
 Phase 1 phase2_ready=true
 exact source Git repo and commit available
 matching active NDK directory present
+explicit replay driver Python 3.11 or newer
 Android/android.py matches preserved snapshot
 Android/android-env.sh matches preserved snapshot
 ```
@@ -84,10 +85,12 @@ bash experiments/stage3b-upstream-replay/run-replay.sh
 The runner performs:
 
 ```text
-Android/android.py build
-    -> build Python
+Android/android.py build build
+    -> configure and make build Python
+
+Android/android.py build aarch64-linux-android
     -> target dependency prefix
-    -> Android CPython host build
+    -> configure and make Android CPython host
     -> install target prefix
 
 Android/android.py package
@@ -100,13 +103,19 @@ capture-replay-output.py
 The effective producer commands are:
 
 ```sh
-python3 Android/android.py \
+<driver-python> Android/android.py \
+  build \
+  --cross-build-dir <phase2 cross-build root> \
+  --cache-dir <shared dependency cache> \
+  build
+
+<driver-python> Android/android.py \
   build \
   --cross-build-dir <phase2 cross-build root> \
   --cache-dir <shared dependency cache> \
   aarch64-linux-android
 
-python3 Android/android.py \
+<driver-python> Android/android.py \
   package \
   --cross-build-dir <phase2 cross-build root> \
   aarch64-linux-android
