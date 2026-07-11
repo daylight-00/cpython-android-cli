@@ -71,3 +71,19 @@ STAGE3B_PACKAGE_DIFF_REVIEW=PASS
 ```
 
 This review does not assign semantic acceptability. It separates changed ELF files, changed regular files, link/kind changes, and paths present on only one side so that later analysis has a closed review set.
+
+## Regenerated surface comparison
+
+Compare all 69 byte-different CPython ELF objects at their semantic consumer surfaces:
+
+```sh
+bash experiments/stage3b-product-boundary/compare-regenerated-surfaces.sh
+```
+
+The comparison covers ELF header identity, SONAME/NEEDED/RPATH/RUNPATH, and normalized dynamic-symbol sets. It also records the exact five changed non-ELF paths for separate metadata classification.
+
+Expected marker:
+
+```text
+STAGE3B_REGENERATED_SURFACE_COMPARE=PASS
+```
