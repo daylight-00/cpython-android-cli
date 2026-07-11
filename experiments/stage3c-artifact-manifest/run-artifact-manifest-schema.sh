@@ -22,6 +22,7 @@ EXPECTED_SHARED_MANIFEST="${EXPECTED_SHARED_MANIFEST:-cc40599da21dbef18e48b940b7
 
 PYTHON="$CANONICAL_PREFIX/bin/python"
 FINGERPRINT="$SCRIPT_DIR/../stage3c-product-role-inventory/fingerprint-product-tree.py"
+LOCAL_SCRIPT_RUNNER="$SCRIPT_DIR/run-isolated-local-script.py"
 GENERATOR="$SCRIPT_DIR/generate-artifact-manifests.py"
 VERIFIER="$SCRIPT_DIR/verify-artifact-manifests.py"
 OWNERSHIP_INPUT="$RESULTS_DIR/input/ownership"
@@ -49,6 +50,7 @@ for file in \
     "$OWNERSHIP_RESULTS/input/component-inventory.tsv" \
     "$OWNERSHIP_RESULTS/input/phase1-final-verification.json" \
     "$FINGERPRINT" \
+    "$LOCAL_SCRIPT_RUNNER" \
     "$GENERATOR" \
     "$VERIFIER" \
     "$SCRIPT_DIR/artifact_manifest_contract.py"; do
@@ -72,9 +74,8 @@ for name in \
     artifact-ownership-summary.tsv \
     excluded-paths.txt \
     source-mutation-check.txt; do
-    if [[ -f "$OWNERSHIP_RESULTS/$name" ]]; then
+    [[ ! -f "$OWNERSHIP_RESULTS/$name" ]] || \
         cp -a "$OWNERSHIP_RESULTS/$name" "$OWNERSHIP_INPUT/$name"
-    fi
 done
 cp -a "$OWNERSHIP_RESULTS/input/component-inventory.tsv" \
     "$OWNERSHIP_INPUT/input/component-inventory.tsv"
@@ -99,58 +100,32 @@ printf 'Runtime-base prefix:     %s\n' "$RUNTIME_PREFIX"
 printf 'Results:                 %s\n\n' "$RESULTS_DIR"
 
 fingerprint_tree() {
-    local root="$1"
-    local output="$2"
-    local expected_count="$3"
     "$PYTHON" -I -B -S \
         "$FINGERPRINT" \
-        --runtime-prefix "$root" \
-        --output "$output" \
-        --expected-entry-count "$expected_count"
+        --runtime-prefix "$1" \
+        --output "$2" \
+        --expected-entry-count "$3"
 }
 
-echo "== Frozen products before manifest generation =="
-fingerprint_tree "$CANONICAL_PREFIX" "$RESULTS_DIR/canonical-before.json" 3155
-fingerprint_tree "$RUNTIME_PREFIX" "$RESULTS_DIR/runtime-before.json" 714
+run_local_script() {
+    "$PYTHON" -I -B -S "$LOCAL_SCRIPT_RUNNER" "$@"
+}
 
-set +e
-"$PYTHON" -I -B -S \
-    "$GENERATOR" \
-    --ownership-dir "$OWNERSHIP_INPUT" \
-    --product-lock "$RESULTS_DIR/input/product-lock.json" \
-    --output-dir "$RESULTS_DIR" \
-    --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
-    --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
-    --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
-    --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
-    --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
-    --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
-    --require-pass \
-    > "$RESULTS_DIR/generator.log" 2>&1
-generator_rc=$?
-set -e
-cat "$RESULTS_DIR/generator.log"
-
-echo
-echo "== Frozen products after manifest generation =="
-fingerprint_tree "$CANONICAL_PREFIX" "$RESULTS_DIR/canonical-after.json" 3155
-fingerprint_tree "$RUNTIME_PREFIX" "$RESULTS_DIR/runtime-after.json" 714
-
-set +e
-"$PYTHON" -I -B -S - \
-    "$RESULTS_DIR/canonical-before.json" \
-    "$RESULTS_DIR/canonical-after.json" \
-    "$RESULTS_DIR/runtime-before.json" \
-    "$RESULTS_DIR/runtime-after.json" \
-    "$RESULTS_DIR/source-mutation-check.txt" <<'PY'
+write_mutation_check() {
+    "$PYTHON" -I -B -S - \
+        "$RESULTS_DIR/canonical-before.json" \
+        "$RESULTS_DIR/canonical-after.json" \
+        "$RESULTS_DIR/runtime-before.json" \
+        "$RESULTS_DIR/runtime-after.json" \
+        "$RESULTS_DIR/source-mutation-check.txt" <<'PY'
 import json
 import sys
 from pathlib import Path
 
-cb = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-ca = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
-rb = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
-ra = json.loads(Path(sys.argv[4]).read_text(encoding="utf-8"))
+cb, ca, rb, ra = [
+    json.loads(Path(path).read_text(encoding="utf-8"))
+    for path in sys.argv[1:5]
+]
 canonical_pass = (
     cb.get("pass") is True
     and ca.get("pass") is True
@@ -184,34 +159,11 @@ Path(sys.argv[5]).write_text(text, encoding="utf-8")
 print(text, end="")
 raise SystemExit(0 if passed else 30)
 PY
-mutation_rc=$?
-set -e
+}
 
-set +e
-"$PYTHON" -I -B -S \
-    "$VERIFIER" \
-    --ownership-dir "$OWNERSHIP_INPUT" \
-    --manifest-output-dir "$RESULTS_DIR" \
-    --product-lock "$RESULTS_DIR/input/product-lock.json" \
-    --canonical-before "$RESULTS_DIR/canonical-before.json" \
-    --canonical-after "$RESULTS_DIR/canonical-after.json" \
-    --runtime-before "$RESULTS_DIR/runtime-before.json" \
-    --runtime-after "$RESULTS_DIR/runtime-after.json" \
-    --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
-    --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
-    --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
-    --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
-    --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
-    --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
-    --output "$RESULTS_DIR/verification.json" \
-    > "$RESULTS_DIR/verifier.log" 2>&1
-verifier_rc=$?
-set -e
-cat "$RESULTS_DIR/verifier.log"
-
-"$PYTHON" -I -B -S - \
-    "$RESULTS_DIR/workflow-status.json" \
-    "$generator_rc" "$mutation_rc" "$verifier_rc" <<'PY'
+write_workflow_status() {
+    "$PYTHON" -I -B -S - \
+        "$RESULTS_DIR/workflow-status.json" "$1" "$2" "$3" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -232,6 +184,63 @@ Path(sys.argv[1]).write_text(
 )
 print(json.dumps(result, indent=2, sort_keys=True))
 PY
+}
+
+echo "== Frozen products before manifest generation =="
+fingerprint_tree "$CANONICAL_PREFIX" "$RESULTS_DIR/canonical-before.json" 3155
+fingerprint_tree "$RUNTIME_PREFIX" "$RESULTS_DIR/runtime-before.json" 714
+
+set +e
+run_local_script \
+    "$GENERATOR" \
+    --ownership-dir "$OWNERSHIP_INPUT" \
+    --product-lock "$RESULTS_DIR/input/product-lock.json" \
+    --output-dir "$RESULTS_DIR" \
+    --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
+    --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
+    --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
+    --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
+    --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
+    --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
+    --require-pass \
+    > "$RESULTS_DIR/generator.log" 2>&1
+generator_rc=$?
+set -e
+cat "$RESULTS_DIR/generator.log"
+
+echo
+echo "== Frozen products after manifest generation =="
+fingerprint_tree "$CANONICAL_PREFIX" "$RESULTS_DIR/canonical-after.json" 3155
+fingerprint_tree "$RUNTIME_PREFIX" "$RESULTS_DIR/runtime-after.json" 714
+
+set +e
+write_mutation_check
+mutation_rc=$?
+set -e
+
+set +e
+run_local_script \
+    "$VERIFIER" \
+    --ownership-dir "$OWNERSHIP_INPUT" \
+    --manifest-output-dir "$RESULTS_DIR" \
+    --product-lock "$RESULTS_DIR/input/product-lock.json" \
+    --canonical-before "$RESULTS_DIR/canonical-before.json" \
+    --canonical-after "$RESULTS_DIR/canonical-after.json" \
+    --runtime-before "$RESULTS_DIR/runtime-before.json" \
+    --runtime-after "$RESULTS_DIR/runtime-after.json" \
+    --expected-component-manifest "$EXPECTED_COMPONENT_MANIFEST" \
+    --expected-canonical-fingerprint "$EXPECTED_CANONICAL_FINGERPRINT" \
+    --expected-runtime-fingerprint "$EXPECTED_RUNTIME_FINGERPRINT" \
+    --expected-owned-manifest "$EXPECTED_OWNED_MANIFEST" \
+    --expected-structural-manifest "$EXPECTED_STRUCTURAL_MANIFEST" \
+    --expected-shared-manifest "$EXPECTED_SHARED_MANIFEST" \
+    --output "$RESULTS_DIR/verification.json" \
+    > "$RESULTS_DIR/verifier.log" 2>&1
+verifier_rc=$?
+set -e
+cat "$RESULTS_DIR/verifier.log"
+
+write_workflow_status "$generator_rc" "$mutation_rc" "$verifier_rc"
 
 printf '\nGeneration:      %s\n' "$RESULTS_DIR/generation.json"
 printf 'Manifest index: %s\n' "$RESULTS_DIR/manifest-index.json"
