@@ -60,15 +60,39 @@ Only `OWNED_PAYLOAD` becomes registered ownership. Archive metadata is not insta
 ## Required policy
 
 ```text
-existing unowned payload path      conflict
-matching registered reinstall      no-op
-same-owner mismatch                replace only with backup
-other-artifact ownership           conflict
-modified path during uninstall     preserve and report
-owned directory                    remove only when empty
-structural parent                  preserve
-unowned descendant                 preserve
+existing unowned regular file or symlink
+  conflict
+
+existing compatible owned-directory path
+  reuse and register exact directory ownership
+  preserve all descendant ownership boundaries
+
+existing compatible structural directory
+  create or reuse without ownership
+
+required directory path occupied by non-directory
+  conflict
+
+matching registered reinstall
+  no-op
+
+same-owner mismatch
+  replace only with backup
+
+other-artifact ownership
+  conflict
+
+modified path during uninstall
+  preserve and report
+
+owned directory
+  remove only when empty
+
+structural parent and unowned descendant
+  preserve
 ```
+
+Exact directory ownership never implies ownership of its descendants. This permits reinstall after an uninstall preserved a directory containing unowned sentinel content, without silently adopting that content.
 
 A complete preflight, exclusive lock, same-filesystem staging, prior-state backup, prepared journal, atomic registry update, and rollback obligation are required before later mutation prototypes can pass.
 
