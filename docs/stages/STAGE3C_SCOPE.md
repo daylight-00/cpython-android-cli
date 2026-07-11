@@ -1,6 +1,6 @@
 # Stage 3-C Scope: Distribution Archive and Installation Contract
 
-> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–3 frozen; Gate 4 active
+> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–4 frozen; Gate 5A active
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
 
@@ -18,7 +18,8 @@ freeze installation state and transaction policy
 execute and validate isolated lifecycle transactions
 validate abrupt recovery and lock exclusion
 validate durability primitives and write ordering
-integrate durability into complete transaction paths
+inventory every recovery-engine mutation site
+integrate durability and replay frozen behavior
 validate upgrade/downgrade and installed runtime behavior
 ```
 
@@ -228,83 +229,108 @@ docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
 docs/evidence/STAGE3C_PHASE4_RECOVERY_RESULT.md
 ```
 
-## Phase 4 Gate 4 — active durability protocol
-
-Implementation:
+## Phase 4 Gate 4 — frozen durability protocol
 
 ```text
-experiments/stage3c-installation-durability/
+scenario runner       64/64 PASS
+independent verifier  53/53 PASS
+positive traces         7/7 canonical
+transaction events     27
+negative controls        2
+input mutation            PASS
+
+accepted TGZ sha256
+  94567ed50f030f3ab1844d81533a2e67eb22e83accabb0753a8501c84fd2ecda
+
+result-index sha256
+  3cb7e83eb6dc6c186a36da512ed41cbba4566abfc4bd4f5f71766ea1fcf075c4
 ```
 
-Active capability matrix:
+Frozen primitive boundary:
 
 ```text
 regular-file fsync
 directory fsync
-O_DIRECTORY support
-same-filesystem work layout
+atomic temp write + file fsync + replace + target-parent fsync
+new-directory and parent fsync
+source-parent and destination-parent fsync after move
+parent fsync after unlink or rmdir
+PREPARED before payload
+payload before registry
+registry before COMMITTED
+COMMITTED before backup cleanup
 ```
 
-Active primitive matrix:
-
 ```text
-atomic create and replacement
-  write temp
-  file fsync
-  replace
-  target-parent fsync
-
-mkdir
-  new-directory fsync
-  parent fsync
-
-move across directories
-  source-parent fsync
-  destination-parent fsync
-
-unlink and rmdir
-  parent fsync
+docs/stages/STAGE3C_PHASE4_GATE4_FINAL.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_RESULT.md
 ```
 
-Transaction trace ordering:
+## Phase 4 Gate 5A — active mutation inventory
+
+Implementation:
 
 ```text
-journal PREPARED
-payload
-journal APPLYING/APPLIED
-registry
-journal COMMITTED
-backup cleanup
+experiments/stage3c-installation-durability-integration/
 ```
 
-Negative controls:
+Frozen source blobs under inventory:
 
 ```text
-missing target-parent fsync
-registry ordered before payload
+recovery_common.py
+  1ba78274c8c56a1b2b6cbd525fb341719a2ce4a7
+recovery_operations.py
+  119571e8ad8a5663d20beff0ab82c85c14dfc4eb
+recovery_engine.py
+  9a3f1898c7420198ff33d2b067a6fa2a6ac8618d
+```
+
+Active inventory requirements:
+
+```text
+scan every declared mutation and fsync family
+anchor module, function, line, and column
+classify lifecycle category
+mark production versus non-production path
+assign explicit durability obligation
+reject every UNKNOWN category
+produce sorted canonical inventory and integration plan
 ```
 
 Required validation:
 
 ```text
-scenario runner       64/64
-independent verifier  53/53
-positive traces         7
-transaction events     27
-input mutation        PASS
+inventory scenario       32/32
+independent verifier     29/29
+source blobs              exact
+input mutation          PASS
 ```
 
 Detailed scope:
 
 ```text
 docs/stages/STAGE3C_PHASE4_SCOPE.md
-docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_INTEGRATION_INVENTORY_DESIGN.md
 ```
+
+## Phase 4 Gate 5B — required after inventory
+
+The implementation must apply the generated plan and replay:
+
+```text
+Gate 3 recovery scenarios       55/55
+Gate 3 independent verifier     82/82
+Gate 4 durability scenarios     64/64
+Gate 4 independent verifier     53/53
+```
+
+Gate 5A does not alter the frozen recovery engine.
 
 ## Deferred Phase 4 gates
 
 ```text
-integration of durability helpers into all recovery-engine paths
+actual helper integration and complete replay
 kernel or sudden-power-loss durability
 crash inside one non-atomic filesystem primitive
 adversarial external mutation and lock fairness
@@ -328,7 +354,7 @@ unowned sentinel preservation
 
 ## Non-reopening rule
 
-Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, license ownership, addon prerequisites, Gate 1 policy, Gate 2 lifecycle behavior, or Gate 3 recovery and lock semantics.
+Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, license ownership, addon prerequisites, Gate 1 policy, Gate 2 lifecycle behavior, Gate 3 recovery and lock semantics, or Gate 4 durability ordering.
 
 Any intentional change reopens the corresponding frozen phase or gate and its complete evidence chain.
 
@@ -353,4 +379,4 @@ Generated archives and bulk target evidence remain outside Git and are uploaded 
 
 ## Current action
 
-Execute and independently verify the Phase 4 durability primitive and transaction-order protocol.
+Execute and independently verify the exact recovery-engine mutation inventory before implementing durability helpers.
