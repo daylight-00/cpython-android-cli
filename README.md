@@ -16,12 +16,12 @@ Stage 2-B  conditional re-exec and relocation           complete
 Stage 2-C  synthesis and project workflow               complete
 Stage 2    native bootstrap and workflow architecture   frozen
 Stage 3-A  runtime closure census and boundary model    frozen
-Stage 3-B  reproducible build-input promotion           active
-Stage 3-C  distribution archive/installation contract  deferred
+Stage 3-B  reproducible build-input promotion           frozen
+Stage 3-C  distribution archive/installation contract  next
 Stage 3-D  consumer integration                         deferred
 ```
 
-The frozen Stage 2 runtime architecture is:
+## Frozen runtime architecture
 
 ```text
 R2 conditional self re-exec
@@ -29,7 +29,27 @@ R2 conditional self re-exec
 B0 PyConfig auto-discovery frontend
 ```
 
-The frozen Stage 3-A result adds an evidence-based runtime closure and host/data boundary model on the tested Termux/Android arm64 environment.
+```text
+shell / uv / venv entry point
+        |
+        v
+Stage 2 launcher
+        |
+        +-- resolve /proc/self/exe
+        +-- derive <prefix>/lib
+        +-- normalize LD_LIBRARY_PATH
+        +-- preserve existing regular-file SSL_CERT_FILE
+        +-- otherwise discover Termux CA bundle
+        |
+        +-- required libdir absent at process start
+        |       -> execv(actual executable, original argv)
+        |
+        +-- required libdir already present
+                -> B0 PyConfig initialization
+                -> Py_RunMain
+```
+
+Python path discovery, native dependency lookup, host CA trust integration, timezone data sourcing, build provenance, distribution packaging, and consumer integration are treated as separate responsibilities.
 
 ## Stage 3-A frozen result
 
@@ -57,22 +77,12 @@ TERMUX native edges        0
 UNRESOLVED edges            0
 ```
 
-The five unique Android-system SONAMEs passed tested fresh-process loadability probes.
-
 Extension surface:
 
 ```text
 67 candidates
 67 isolated imports PASS
 0 FAIL
-```
-
-Sysconfig missing-path classification:
-
-```text
-91 records
-27 unique paths
-UNKNOWN=0
 ```
 
 Non-ELF boundaries:
@@ -82,14 +92,14 @@ CA trust
   Termux host CA integration confirmed
 
 timezone data
-  absent in base runtime
+  absent in base runtime on tested host
   first-party tzdata package fallback PASS
 
 temporary storage
   Termux $PREFIX/tmp observed
 ```
 
-## Final Stage 3-A reconfirmation
+Final markers:
 
 ```text
 STAGE2C_SMOKE=PASS
@@ -100,60 +110,91 @@ STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
 STAGE3A=FROZEN
 ```
 
-After moving the whole prefix from A to B, runtime identity, active sysconfig paths, subprocess identity, fresh venv base identity, and uv run base identity all re-rooted at B.
-
 See:
 
 ```text
 docs/stages/STAGE3A_FINAL.md
 ```
 
-## Active Stage 3-B question
+## Stage 3-B frozen result
 
-Stage 3-B asks:
+Stage 3-B replaced opaque historical producer assumptions with explicit source, toolchain, dependency, command, product, transport, assembly, and target-validation boundaries.
 
-> Can the current launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
-
-The historical development input remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
-
-Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed.
-
-The promoted candidate has passed:
+Frozen phase structure:
 
 ```text
-canonical Stage 2-C behavior smoke
-complete inventory and native closure equivalence
-Android-system SONAME loadability
-67/67 isolated extension imports
-active runtime/sysconfig identity
-corrected CA boundary equivalence
-corrected direct-zoneinfo equivalence
-uv first-party tzdata fallback equivalence
-candidate and frozen runtime mutation controls
+Phase 1  producer provenance reconstruction          frozen
+Phase 2  controlled Linux producer replay            frozen
+Phase 3  dependency product promotion                frozen
+Phase 4  CPython dev/runtime product promotion        frozen
+Phase 5  target runtime and closure equivalence       frozen
 ```
 
-Current final markers include:
+Canonical promoted target runtime:
+
+```text
+work/termux/stage3b-promoted-runtime/prefix
+```
+
+This is a generated local product and is not stored in Git.
+
+### Promoted behavior
 
 ```text
 STAGE3B_PROMOTED_SMOKE=PASS
+```
+
+### Promoted native closure
+
+```text
+candidate entries                         3155
+symlinks                                     5
+ELF objects                                 81
+DT_NEEDED edges                            329
+RUNTIME_INTERNAL edges                      80
+ANDROID_SYSTEM edges                       249
+unresolved edges                             0
+inspection errors                            0
+Android-system SONAME dlopen               5/5
+extension imports                         67/67
+machine verifier checks                  37/37
 STAGE3B_PROMOTED_CLOSURE=PASS
+```
+
+### Promoted host/data boundaries
+
+```text
+CA boundary equivalence                    PASS
+corrected direct-zoneinfo equivalence      PASS
+uv tzdata 2026.3 fallback equivalence      PASS
+machine verifier checks                  28/28
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-The corrected boundary verifier passed all 28 checks. Both base runtimes lacked a usable timezone-data source on the tested host, while uv-injected first-party `tzdata 2026.3` resolved `UTC`, `Asia/Seoul`, and `America/New_York` for both without modifying either base prefix.
-
-## Current final gate: promoted relocation
-
-The first relocation run passed all functional assertions at locations A and B and preserved the candidate and frozen controls.
-
-A source/B strict fingerprint differed only because the copied `lib/python3.14/lib-dynload` directory had a different `st_size`:
+### Promoted production-shape relocation
 
 ```text
-source directory st_size      12288
-relocated directory st_size   20480
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-A path-level diagnostic established:
+Machine verifier:
+
+```text
+schema_version      2
+check_count        31
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
+```
+
+Relocated-product fidelity:
 
 ```text
 source entries               3155
@@ -161,72 +202,97 @@ relocated entries            3155
 added paths                     0
 removed paths                   0
 portable changed paths          0
-regular-file content changes    0
-symlink changes                 0
 pycache paths                    0
 portable fidelity             PASS
+strict fidelity               PASS
 ```
 
-The incident is classified as a fingerprint-contract false positive, not a runtime or validation mutation defect.
-
-The corrected final gate keeps strict fingerprints for same-tree candidate/frozen mutation checks, but uses a portable cross-tree manifest for source/B fidelity:
+Portable source/B fingerprint:
 
 ```text
-same path set
-same type, mode and mtime
-same regular-file size and SHA-256
-same symlink target
-directory st_size ignored
+79ca7d53f25810b1f5276d18df31f10f2ae981dc24caf67c5f33d37fa75127c8
 ```
 
-Run:
-
-```sh
-bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-Expected final marker:
+Candidate and frozen source/control trees remained unchanged:
 
 ```text
-STAGE3B_PROMOTED_RELOCATION=PASS
+candidate
+  834f7aeb2e5266f027b6ee43dd77255079b2e01cf049dad56fda5ef39ce048b0
+
+frozen control
+  5a14f213bbf069b844a799615ed2b87eb34b48b4251b0a48bf431337e929ce0e
+```
+
+Final markers:
+
+```text
+STAGE3B_PHASE5=FROZEN
+STAGE3B=FROZEN
 ```
 
 See:
 
 ```text
-docs/stages/STAGE3B_SCOPE.md
-docs/stages/STAGE3B_PHASE5_SCOPE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
-docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
+docs/stages/STAGE3B_FINAL.md
+docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
 ```
 
-## Architecture in one picture
+## Important validation lessons
+
+### Validation is not allowed to mutate products
+
+Isolated child probes explicitly use `-B` where required. A failed attempt that produced 43 bytecode-related entries was preserved, diagnosed, repaired, and rerun from a freshly assembled candidate.
+
+### Interpreter flags must preserve the input under test
+
+The direct-zoneinfo probe was corrected because `-I` ignored `PYTHONTZPATH`. The final probe sanitizes ambient Python state without invalidating its own input.
+
+### Same-tree mutation and cross-tree product fidelity differ
+
+Same-tree before/after controls use strict metadata-sensitive fingerprints.
+
+Cross-tree source/B fidelity requires:
 
 ```text
-shell / uv / venv entry point
-        |
-        v
-Stage 2 launcher
-        |
-        +-- resolve /proc/self/exe
-        +-- derive <prefix>/lib
-        +-- normalize LD_LIBRARY_PATH
-        +-- preserve existing regular-file SSL_CERT_FILE
-        +-- otherwise discover Termux CA bundle
-        |
-        +-- required libdir absent at process start
-        |       -> execv(actual executable, original argv)
-        |
-        +-- required libdir already present
-                -> B0 PyConfig initialization
-                -> Py_RunMain
+same relative path set
+same entry type, mode and mtime
+same regular-file size and SHA-256
+same symlink target
 ```
 
-Python path discovery, native dependency lookup, host CA trust integration, timezone data sourcing, build provenance, and distribution packaging are treated as separate responsibilities.
+Directory `st_size` is filesystem allocation metadata and is not part of cross-tree product identity. Strict differences remain diagnostic evidence.
+
+### Raw aggregate file count is not semantic equality
+
+The frozen historical runtime has `3280` entries and the promoted runtime has `3155`. Both complete inventories are retained; acceptance is based on runtime behavior, native closure, extension surface, active identity, host/data boundaries, relocation, source immutability, and product fidelity.
+
+## Stage 3-C entry boundary
+
+Stage 3-C may now consume the frozen Stage 3-B promoted product model and design the distribution archive and installation contract.
+
+The first work is contract design, not immediate archive implementation:
+
+```text
+select archive payload boundary
+select installation-prefix and ownership model
+select metadata and manifest format
+select archive reproducibility definition
+select installer/upgrade/uninstall transaction model
+select validation matrix for unpacked and installed forms
+```
+
+Packaging must not silently reopen frozen producer or runtime semantics. Any transformation must preserve or explicitly revalidate:
+
+```text
+runtime and subprocess identity
+native closure
+extension surface
+CA integration policy
+timezone data boundary
+uv and venv workflows
+whole-prefix relocatability
+product path/content/symlink fidelity
+```
 
 ## Repository map
 
@@ -251,7 +317,7 @@ tools/          repo-local SDK/toolchain/upstream working trees; ignored
 
 ## Configuration model
 
-Tracked project defaults:
+Tracked defaults:
 
 ```text
 config/defaults.env
@@ -263,8 +329,6 @@ Machine-specific paths and sync settings:
 .local/env
 ```
 
-Start from the appropriate example:
-
 ```sh
 mkdir -p .local
 cp config/workstation.env.example .local/env
@@ -274,15 +338,13 @@ cp config/termux.env.example .local/env
 
 Scripts load these files themselves. Normal workflows should not require manually sourcing a date-named environment script.
 
-The files under `config/legacy/` are historical snapshots and are not active configuration.
-
 ## Workstation workflow
 
 ```sh
 bash scripts/build/build-launcher.sh
 ```
 
-Canonical artifact:
+Canonical launcher artifact:
 
 ```text
 out/aarch64-linux-android24/release/bin/python3.14
@@ -291,8 +353,6 @@ out/aarch64-linux-android24/release/bin/python3.14
 Generated launcher artifacts use rsync rather than Git.
 
 ## Termux workflow
-
-Depending on network topology, use the configured sync helper, then:
 
 ```sh
 bash scripts/termux/prepare-runtime.sh
@@ -322,8 +382,9 @@ docs/PROJECT_CONTEXT_STAGE3.md
     |
     +--> docs/stages/STAGE2_FINAL.md
     +--> docs/stages/STAGE3A_FINAL.md
-    +--> docs/stages/STAGE3B_SCOPE.md
-    +--> docs/stages/STAGE3B_PHASE5_SCOPE.md
+    +--> docs/stages/STAGE3B_FINAL.md
+    +--> docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
+    +--> docs/stages/STAGE3_SCOPE.md
     +--> docs/evidence/
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
@@ -336,4 +397,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The current active work is the corrected final Stage 3-B promoted whole-prefix relocation rerun. It is not archive packaging or launcher redesign.
+The next work is Stage 3-C archive and installation contract design. It is not a launcher redesign and not an unreviewed packaging shortcut.
