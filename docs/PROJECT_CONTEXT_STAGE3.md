@@ -1,19 +1,19 @@
 # CPython Android CLI + uv: Stage 3 Project Context
 
 > **Status:** Current handoff context
-> **Current architecture state:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B Phases 1–4 frozen
-> **Active phase:** Stage 3-B reproducible build-input promotion
+> **Architecture:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B Phases 1–4 frozen
+> **Active work:** Stage 3-B Phase 5 corrected final relocation rerun
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
 > **Python baseline:** CPython 3.14.6
 
-## 1. Project description
+## 1. Project
 
-The project is:
+This project is:
 
 > **A CLI adaptation of an upstream CPython Android build for Termux, with uv integration.**
 
-The project studies how an upstream-built CPython Android runtime can behave as a practical CLI interpreter under Termux while preserving:
+It preserves and studies:
 
 ```text
 normal CPython CLI semantics
@@ -21,20 +21,11 @@ native stdlib imports
 HTTPS trust
 subprocess behavior
 virtual environments
-uv explicit interpreter workflows
+uv explicit-interpreter workflows
 whole-prefix runtime relocation
 ```
 
-It is not currently:
-
-```text
-a CPython fork
-a Termux Python replacement
-a uv-managed Python provider
-a general Android distribution system
-an Android port of python-build-standalone
-a static Python distribution
-```
+It is not currently a general Python distribution, a Termux Python replacement, a uv-managed provider, or a CPython fork.
 
 ## 2. Working principle
 
@@ -42,13 +33,7 @@ a static Python distribution
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-not:
-
-```text
-patch -> patch more -> accidentally invent a distribution
-```
-
-The architecture process intentionally distinguishes:
+Separate domains:
 
 ```text
 runtime semantics
@@ -60,9 +45,9 @@ distribution contract
 consumer integration
 ```
 
-A solution in one layer must not be assumed to solve the others.
+A solution in one domain is not assumed to solve another.
 
-## 3. Current stage status
+## 3. Stage status
 
 ```text
 Stage 1-A  explicit runtime baseline                    FROZEN
@@ -79,446 +64,288 @@ Stage 3-D  consumer integration                         DEFERRED
 
 ## 4. Frozen Stage 2 architecture
 
-Selected runtime architecture:
-
 ```text
 R2 conditional self re-exec
         +
 B0 PyConfig auto-discovery frontend
 ```
 
-Conceptual flow:
+Flow:
 
 ```text
-shell / uv / venv entry point
+shell / uv / venv entry
         |
         v
 launcher
         |
-        +-- RUNPATH $ORIGIN/../lib for direct libpython lookup
-        |
         +-- resolve /proc/self/exe
-        +-- derive actual prefix
-        +-- derive <prefix>/lib
+        +-- derive actual prefix and <prefix>/lib
         +-- normalize LD_LIBRARY_PATH
-        +-- repair/discover CA path if needed
+        +-- preserve or discover SSL_CERT_FILE
         |
-        +-- required libdir absent at process start
+        +-- libdir absent at process start
         |       -> execv(actual executable, original argv)
         |
-        +-- required libdir already present
-                -> B0 PyConfig auto-discovery
+        +-- libdir already present
+                -> PyConfig auto-discovery
                 -> Py_RunMain
 ```
 
 Frozen invariants:
 
 ```text
-clean top-level launch performs bootstrap re-exec
-ready child process avoids redundant re-exec
-self-location uses actual executable path
-loader path normalization uses exact path components
+clean launch performs bootstrap re-exec
+ready process avoids redundant re-exec
+self-location follows actual executable
+loader normalization uses exact path components
 Python path discovery remains automatic
-CA repair remains separate from loader repair
-venv sys.prefix/sys.base_prefix identity remains correct
-uv explicit interpreter path remains supported
+CA path repair stays separate from loader repair
+venv prefix/base_prefix identity remains correct
+uv explicit interpreter remains supported
 whole-prefix relocation remains supported
 ```
 
-CA semantic clarification:
+## 5. Frozen Stage 3-A result
 
-```text
-existing SSL_CERT_FILE that points to a regular file
-    -> preserve caller choice
-
-missing or unset path
-    -> discover Termux CA candidate
-```
-
-The launcher does not validate CA bundle contents.
-
-## 5. Canonical Stage 2-C workflow
-
-Workstation:
-
-```text
-launcher build
-    -> out/aarch64-linux-android24/release/bin/python3.14
-```
-
-Transport:
-
-```text
-rsync push or Termux-initiated pull
-```
-
-Termux assembly:
-
-```text
-work/termux/stage2c/runtime/prefix
-```
-
-Validation:
-
-```text
-base runtime
-subprocess re-entry
-uv venv
-venv identity
-uv run
-```
-
-Canonical smoke marker:
-
-```text
-STAGE2C_SMOKE=PASS
-```
-
-## 6. Stage 3-A frozen closure result
-
-Stage 3-A treated the validated runtime as data before packaging.
-
-### Complete inventory
+Inventory and native closure:
 
 ```text
 file entries             3280
 symlinks                    5
 ELF objects                 81
 DT_NEEDED edges            329
-inspection errors            0
-mutation check            PASS
+RUNTIME_INTERNAL edges      80
+ANDROID_SYSTEM edges       249
+UNRESOLVED edges              0
+inspection errors             0
 ```
 
-### Native closure
-
-```text
-9 unique needed SONAMEs
-  4 RUNTIME_INTERNAL
-  5 ANDROID_SYSTEM
-
-RUNTIME_INTERNAL edges    80
-ANDROID_SYSTEM edges     249
-TERMUX native edges        0
-UNRESOLVED edges            0
-```
-
-All five unique Android-system SONAMEs passed tested fresh-process loadability probes.
-
-### Extension surface
+Extension surface:
 
 ```text
 67 candidates
-67 isolated import PASS
+67 isolated imports PASS
 0 FAIL
 ```
 
-### Runtime paths versus build metadata
+Runtime paths re-rooted correctly under relocation while some development/build metadata retained producer provenance. Runtime correctness and development-metadata relocation were intentionally distinguished.
 
-Active runtime state was relocation-aware:
-
-```text
-sys.prefix
-sys.base_prefix
-sys.path
-active sysconfig.get_paths()
-```
-
-Development metadata remained partially stale, including:
+CA boundary:
 
 ```text
-/usr/local build-prefix residue
-upstream build-workspace paths
-macOS NDK toolchain paths
-host build-tool paths
+clean default                PASS
+explicit Termux CA           PASS
+missing path repair          PASS
+existing empty regular file  preserved, HTTPS FAIL
 ```
 
-Frozen distinction:
+Timezone boundary, corrected follow-up:
 
 ```text
-runtime execution correctness
-    !=
-development metadata relocation correctness
+default POSIX TZPATH          unavailable on tested host
+explicit Termux TZPATH        delivered but unavailable
+base first-party tzdata       absent
+uv tzdata 2026.3 fallback     PASS for UTC, Asia/Seoul, America/New_York
 ```
 
-### Sysconfig path classification
-
-The extractor-v2 missing absolute-path set closed with:
-
-```text
-91 records
-27 unique paths
-UNKNOWN=0
-```
-
-Categories:
-
-```text
-BUILD_WORKSPACE_RESIDUE
-TOOLCHAIN_RESIDUE
-USER_SCHEME_DESTINATION
-HOST_BUILD_TOOL_RESIDUE
-TZDATA_SEARCH_PATH_METADATA
-```
-
-### Timezone data
-
-```text
-base runtime source absent
-uv ephemeral first-party tzdata fallback PASS
-```
-
-Representative keys:
-
-```text
-UTC                  PASS with tzdata
-Asia/Seoul           PASS with tzdata
-America/New_York     PASS with tzdata
-```
-
-A later probe review found that the original direct `PYTHONTZPATH` scenarios used `-I`, which ignored the variable under test. Stage 3-B Phase 5 repaired the child contract and reran the frozen runtime.
-
-Corrected result:
-
-```text
-default configured TZPATH        absent, three keys FAIL
-PYTHONTZPATH=""                  delivered, package absent, three keys FAIL
-explicit Termux zoneinfo path    delivered, host path absent, three keys FAIL
-uv tzdata 2026.3 fallback        three keys PASS
-```
-
-The promoted runtime matched the frozen runtime exactly.
-
-Stage 3-C must later decide whether to bundle, declare, or externally integrate timezone data.
-
-### CA trust
-
-```text
-clean launcher environment    PASS
-explicit Termux CA            PASS
-missing path repair           PASS
-existing empty regular file   preserved, HTTPS FAIL
-```
-
-Frozen interpretation:
-
-```text
-CA path repair exists
-CA content validation does not
-```
-
-The promoted runtime preserved the same four-scenario matrix in Stage 3-B Phase 5.
-
-### Representative runtime audit
-
-Exact observed rows were classified as:
-
-```text
-/dev/null
-project experiment path
-$PREFIX/tmp temporary storage
-libc.so
-network :443
-file / uname optional platform helpers
-```
-
-No exact observed row remained semantically unknown.
-
-The audit hook result is observational and not a complete syscall trace.
-
-## 7. Final Stage 3-A reconfirmation
-
-Canonical smoke:
+Final Stage 3-A markers:
 
 ```text
 STAGE2C_SMOKE=PASS
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
+STAGE3A=FROZEN
 ```
 
-Production-shape relocation:
+## 6. Stage 3-B producer result
+
+Phases 1–4 made explicit and reproducible:
+
+```text
+exact CPython source identity
+NDK 27.3.13750724
+SDK/API/target identities
+host build Python and build tools
+third-party dependency versions and archive hashes
+configure/build command model
+promoted dependency products
+promoted CPython dev/runtime products
+promoted launcher build inputs
+transport and isolated Termux assembly
+```
+
+Promoted candidate:
+
+```text
+work/termux/stage3b-promoted-runtime/prefix
+```
+
+Frozen control:
+
+```text
+work/termux/stage2c/runtime/prefix
+```
+
+## 7. Stage 3-B Phase 5 completed gates
+
+Canonical behavior:
+
+```text
+STAGE3B_PROMOTED_SMOKE=PASS
+```
+
+Closure equivalence:
+
+```text
+candidate entries                         3155
+ELF objects                                 81
+DT_NEEDED edges                            329
+unresolved edges                             0
+Android-system SONAME dlopen               5/5
+extension imports                         67/67
+candidate/frozen mutation controls         PASS
+machine verifier checks                  37/37
+STAGE3B_PROMOTED_CLOSURE=PASS
+```
+
+Boundary equivalence:
+
+```text
+CA contract equivalence                    PASS
+corrected direct-zoneinfo equivalence      PASS
+uv tzdata fallback equivalence             PASS
+candidate/frozen mutation controls         PASS
+machine verifier checks                  28/28
+STAGE3B_PROMOTED_BOUNDARIES=PASS
+```
+
+## 8. Relocation first-run incident
+
+Production shape:
+
+```text
+canonical promoted candidate
+  -> copy to A
+  -> validate A
+  -> move A -> B
+  -> validate B
+```
+
+Functional result:
 
 ```text
 LOCATION_RECONFIRM[A]=PASS
 LOCATION_RECONFIRM[B]=PASS
 STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
 STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
+candidate source mutation control         PASS
+frozen control mutation control           PASS
 ```
 
-At B, the harness directly checked absence of the old A path from:
+The initial machine verdict failed only the source/B strict fingerprint.
+
+Retained-tree diagnosis:
 
 ```text
-sys.prefix
-sys.base_prefix
-sys.path
-active sysconfig paths
-child interpreter identity
-fresh venv base identity
-uv run base identity
+source_entry_count          3155
+relocated_entry_count       3155
+added_count                    0
+removed_count                  0
+portable_changed_count         0
+pycache_path_count              0
+portable_pass                true
 ```
 
-Stage result:
+Only strict delta:
 
 ```text
-STAGE3A=FROZEN
+lib/python3.14/lib-dynload
+  type        directory
+  field       st_size
+  source      12288
+  relocated   20480
 ```
 
-## 8. Current Stage 3-B problem
+No file content, file mode, file mtime, symlink target, directory mtime, or path set differed.
 
-Current launcher development input:
+Classification:
 
 ```text
-experiments/bootstrap-android-build/android-python-work/prefix
+FINGERPRINT CONTRACT FALSE POSITIVE
 ```
 
-This is accepted historical provenance, but not the desired final build-product boundary.
+## 9. Corrected fidelity design
 
-Stage 3-B asks:
+The earlier gate used one fingerprint for two different questions.
 
-> Can the launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs?
+### Same-tree mutation
 
-Required reconstruction domains:
+Candidate and frozen prefixes are measured before and after the workflow with the strict metadata-sensitive fingerprint. The same inode trees must remain unchanged.
+
+### Cross-tree product fidelity
+
+Source and copied B are different inode trees. The corrected product contract requires:
 
 ```text
-CPython source identity
-CPython tag/commit identity
-Android SDK identity
-Android NDK identity
-API level
-host build Python identity
-third-party native dependency names and versions
-third-party dependency source identities
-build commands
-build options
-dependency prefixes
-CPython output prefix identity
-launcher compile/link inputs
-hashes of promoted build products
+same relative path set
+same entry type
+same mode
+same mtime
+same regular-file size and SHA-256
+same symlink target
 ```
 
-## 9. Current Stage 3-B action
+Directory `st_size` is excluded because it describes directory allocation, not runtime payload. Strict differences remain retained as non-gating diagnostics.
 
-Phases 1–4 are frozen. Source and toolchain provenance, the controlled Linux replay, exact dependency products, the promoted CPython package, the promoted launcher, workstation handoff, transport, and isolated Termux assembly are explicit and verified.
+This contract is stronger for actual payload because it hashes every regular file.
 
-### Completed Phase 5 gates
-
-Promoted canonical behavior:
+Evidence:
 
 ```text
-STAGE2C_SMOKE=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
-STAGE3B_PROMOTED_SMOKE=PASS
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
 ```
 
-Promoted closure equivalence:
+## 10. Current action
 
-```text
-ELF objects                               81
-DT_NEEDED edges                          329
-RUNTIME_INTERNAL edges                    80
-ANDROID_SYSTEM edges                     249
-unresolved edges                           0
-Android-system SONAME dlopen             5/5
-extension imports                       67/67
-candidate mutation control              PASS
-frozen mutation control                 PASS
-machine verifier checks                37/37
-STAGE3B_PROMOTED_CLOSURE=PASS
-```
-
-The `+43` bytecode incident is closed as validation-induced mutation. The repaired isolated child contract uses explicit `-B`, and the candidate was freshly reassembled before the passing rerun.
-
-Promoted CA/timezone boundaries:
-
-```text
-CA contract equivalence                    PASS
-corrected direct-zoneinfo equivalence      PASS
-uv tzdata 2026.3 fallback equivalence      PASS
-candidate mutation control                 PASS
-frozen mutation control                    PASS
-machine verifier checks                  28/28
-STAGE3B_PROMOTED_BOUNDARIES=PASS
-```
-
-The corrected direct-zoneinfo child uses:
-
-```text
-python -B -P -s -c ...
-```
-
-with a sanitized Python environment so `PYTHONTZPATH` remains the deliberate variable under test.
-
-### Current action: promoted whole-prefix relocation
-
-Run:
+Run corrected Gate 4:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-The workflow uses:
-
-```text
-source candidate
-  work/termux/stage3b-promoted-runtime/prefix
-
-relocation copy
-  work/termux/stage3b-promoted-relocation/location-a/prefix
-    -> move to
-  work/termux/stage3b-promoted-relocation/location-b/prefix
-
-results
+rm -rf \
+  work/termux/stage3b-promoted-relocation \
   results/termux/stage3b-promoted-relocation
+
+bash \
+  experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
-At A and B it validates:
+Expected markers:
 
 ```text
-base runtime identity
-active sysconfig paths
-HTTPS
-subprocess identity
-fresh uv venv and base identity
-uv run and base identity
-forbidden stale-prefix absence
-```
-
-Outer controls validate:
-
-```text
-canonical source candidate unchanged
-frozen Stage 2-C control unchanged
-final B fingerprint equals source candidate fingerprint
-A absent after move
-B present with executable Python
-structured machine verdict
-```
-
-Expected final marker:
-
-```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-The frozen Stage 2-C prefix and frozen Stage 3-A result directory remain read-only controls.
-
-Authoritative scope and current evidence:
+Primary outputs:
 
 ```text
-docs/stages/STAGE3B_SCOPE.md
-docs/stages/STAGE3B_PHASE5_SCOPE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
-docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
+results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
+results/termux/stage3b-promoted-relocation/relocated-runtime-fidelity-check.txt
+results/termux/stage3b-promoted-relocation/fidelity-diagnosis/tree-delta.json
 ```
 
-Collaboration workflow:
+The frozen Stage 2-C prefix and canonical promoted source remain read-only controls.
 
-```text
-docs/GITHUB_COLLABORATION_WORKFLOW.md
-```
+## 11. Repository-state split
 
-## 10. Repository structure
-
-Tracked project state:
+Tracked state:
 
 ```text
 src/
@@ -528,15 +355,10 @@ docs/
 experiments/
 ```
 
-Machine-local configuration:
+Generated/local state:
 
 ```text
-.local/env
-```
-
-Generated state:
-
-```text
+.local/
 out/
 work/
 results/
@@ -545,39 +367,23 @@ cache/
 tools/
 ```
 
-Current canonical output shape:
+Source/scripts/docs use Git. Generated launcher and runtime products use the documented transport workflow, normally rsync.
+
+Collaboration contract:
 
 ```text
-out/<target>/<profile>/
+docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-Current target:
-
-```text
-out/aarch64-linux-android24/release/
-```
-
-## 11. Reading order
-
-Current recommended order:
+## 12. Reading order
 
 ```text
 README.md
-    |
-    v
-docs/PROJECT_CONTEXT_STAGE3.md
-    |
-    +--> docs/stages/STAGE2_FINAL.md
-    |
-    +--> docs/stages/STAGE3A_FINAL.md
-    |
-    +--> docs/stages/STAGE3B_SCOPE.md
-    |
-    +--> docs/stages/STAGE3B_PHASE5_SCOPE.md
-    |
-    +--> docs/evidence/
-    |
-    +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
+    -> docs/PROJECT_CONTEXT_STAGE3.md
+    -> docs/stages/STAGE2_FINAL.md
+    -> docs/stages/STAGE3A_FINAL.md
+    -> docs/stages/STAGE3B_SCOPE.md
+    -> docs/stages/STAGE3B_PHASE5_SCOPE.md
+    -> docs/evidence/
+    -> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
-
-`docs/PROJECT_CONTEXT.md` remains useful as the Stage 2-era handoff record, but `PROJECT_CONTEXT_STAGE3.md` is the current Stage 3 handoff context.
