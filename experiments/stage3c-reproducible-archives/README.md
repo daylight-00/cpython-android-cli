@@ -7,8 +7,8 @@
 
 ```text
 Can the accepted schema-v1 artifacts be serialized twice to byte-identical
-normalized tar.gz archives and independently verified through safe staging
-extraction?
+normalized tar.gz archives and independently verified through fail-closed
+preflight and safe staging extraction?
 ```
 
 ## Run
@@ -17,7 +17,7 @@ extraction?
 bash experiments/stage3c-reproducible-archives/run-reproducible-archives.sh
 ```
 
-## Frozen manifest input
+## Frozen input
 
 ```text
 manifest index
@@ -36,7 +36,7 @@ product lock
   83f6b1fd3b610c22606f8dd4108a86cf2454e5997d0d0ada4124a209bfb091b7
 ```
 
-## Archive filenames
+## Archive set
 
 ```text
 cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.gz
@@ -52,8 +52,7 @@ cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.gz
     manifest.json
     manifest-index.json
     product-lock.json
-    licenses/
-      CPython-LICENSE.txt
+    licenses/CPython-LICENSE.txt
   payload/
     <manifest archive paths>
 ```
@@ -73,7 +72,7 @@ metadata file mode         0644
 payload mode               exact manifest mode
 hardlinks                  forbidden
 special entries            forbidden
-pax headers                path/linkpath only when required
+PAX headers                path/linkpath only when required
 ```
 
 ## Source mapping
@@ -82,53 +81,46 @@ pax headers                path/linkpath only when required
 runtime-base
   isolated validated runtime-base prefix
 
-development-addon
-  canonical promoted prefix selected by manifest
-
-test-addon
+development-addon and test-addon
   canonical promoted prefix selected by manifest
 
 STRUCTURAL_PARENT
-  emitted as a directory header from manifest metadata
-  never registered as exclusive payload ownership
+  emitted as a directory header
+  never registered as exclusive ownership
 ```
 
-## Builder
+## Builder — 31 checks
 
 ```text
-build-reproducible-archives.py
-```
-
-The builder performs 31 checks:
-
-```text
-accepted generator 42/42 and verifier 48/48
+accepted Phase 2 generator/verifier results
 accepted manifest/index/product-lock hashes
-source path type/mode/size/hash/symlink checks
+source type/mode/size/hash/symlink checks
 license hash and size checks
 safe manifest paths
 independent build A and build B
-three byte-identical archive hashes
-three identical sizes and member counts
+three identical archive hashes, sizes, and member counts
 ```
 
-Build B is temporary. Its index is retained while build A archives remain in the result tree.
+Build A archives are retained. Build B bytes are temporary; their complete index remains as evidence.
 
-## Independent verifier
+## Extraction preflight — 28 checks
 
 ```text
-verify-reproducible-archives.py
+exact member order and set
+unique safe member paths
+allowed directory/regular/symlink types only
+hardlinks zero
+exact contained symlink set
+no archive member below a symlink parent
 ```
 
-The verifier performs 76 checks:
+The extraction verifier is blocked unless both builder and preflight pass.
+
+## Independent verifier — 76 checks
 
 ```text
 exact gzip header
-exact member order and count
-unique safe member paths
-allowed entry types only
-hardlinks zero
-normalized uid/gid/names/mtime
+normalized tar owner/time metadata
 allowed PAX header keys
 exact envelope and metadata modes
 metadata byte identity
@@ -143,13 +135,12 @@ retained archive hash/size/member-count agreement with build index
 
 ```text
 results/termux/stage3c-phase3-reproducible-archives/
-  input/
-    manifest-schema/
-  archives/
-    *.tar.gz
+  input/manifest-schema/
+  archives/*.tar.gz
   build-a-index.json
   build-b-index.json
   reproducibility.json
+  preflight-verification.json
   archive-verification.json
   canonical-before.json
   canonical-after.json
@@ -166,6 +157,7 @@ STAGE3C_PHASE3_REPRODUCIBLE_ARCHIVE_BUILD=PASS
 REPRODUCIBLE_ARCHIVE_ACCEPTED_INPUTS=PASS
 REPRODUCIBLE_ARCHIVE_BUILD=31/31 PASS
 REPRODUCIBLE_ARCHIVE_BYTE_IDENTITY=3/3 PASS
+REPRODUCIBLE_ARCHIVE_PREFLIGHT=28/28 PASS
 REPRODUCIBLE_ARCHIVE_VERIFICATION=76/76 PASS
 REPRODUCIBLE_ARCHIVE_SAFE_STAGING_EXTRACTION=3/3 PASS
 REPRODUCIBLE_ARCHIVE_SOURCE_MUTATION_CHECK=PASS
@@ -182,10 +174,10 @@ tar czf "$ARCHIVE" "$RESULTS"
 printf 'upload: %s\n' "$ARCHIVE"
 ```
 
-The TGZ includes the three generated tar.gz archives and may be substantially larger than earlier result bundles.
+The TGZ contains the three generated tar.gz archives and may be substantially larger than earlier evidence bundles.
 
 ## Claim boundary
 
-A PASS proves normalized archive serialization, byte identity across two target builds, exact retained archive integrity, and safe staging extraction under the tested implementation.
+A PASS proves target-local byte reproducibility, normalized archive serialization, exact retained archive integrity, and safe staging extraction under the tested implementation.
 
 It does not prove installation transactions, collision handling, upgrade, rollback, or uninstall behavior.
