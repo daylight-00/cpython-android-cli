@@ -20,6 +20,7 @@ Frozen Stage 3-B properties:
 ```text
 entry count                         3155
 ELF objects                           81
+symlinks                               5
 unresolved native edges                0
 extension imports                   67/67
 promoted relocation verifier        31/31
@@ -65,7 +66,7 @@ writes a normalized role-manifest hash
 re-inventories the source tree for mutation control
 ```
 
-The verifier independently parses the generated TSV/JSON evidence and checks the frozen entry count, schemas, role counts, ELF role, bytecode absence, anchors, manifest hash, and before/after source fingerprint.
+The 43-check verifier independently parses the generated TSV/JSON evidence and checks the frozen entry, ELF and symlink counts, exact schemas, declared rules, role/type counts, UNKNOWN rows, ELF role, bytecode absence, special-file absence, mixed-directory state, anchors, manifest hash, and before/after source fingerprint.
 
 Both run with:
 
@@ -135,17 +136,20 @@ results/termux/stage3c-phase1-role-inventory/
 
 ```text
 [ ] source entry count = 3155
+[ ] source ELF count = 81
+[ ] source symlink count = 5
 [ ] every path has one valid primary role
 [ ] UNKNOWN count = 0
 [ ] unknown.tsv has no data rows
 [ ] all 81 ELF entries are RUNTIME
 [ ] no __pycache__ or .pyc entries exist
 [ ] no unsupported special files exist
+[ ] mixed-directory rows and flags cross-check
 [ ] required runtime/development anchors match
 [ ] role counts and type counts cross-check
 [ ] role-manifest SHA-256 recomputes
 [ ] source before/after fingerprints match
-[ ] independent verifier passes all checks
+[ ] independent verifier passes 43/43 checks
 ```
 
 Expected markers when the first selected rule set closes the product:
@@ -171,7 +175,7 @@ retain the failed first-run evidence
 rerun from the unchanged canonical product
 ```
 
-If the observed entry count differs from `3155`, stop and classify the changed product boundary before overriding the expected count.
+If the observed entry, ELF, or symlink count differs from the frozen `3155 / 81 / 5` contract, stop and classify the changed product boundary before overriding expected counts.
 
 ## Evidence
 
