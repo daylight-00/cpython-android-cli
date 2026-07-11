@@ -128,6 +128,7 @@ This avoids duplicate installed-path ownership while keeping addons independentl
 experiments/stage3c-archive-ownership/
   analyze-archive-ownership.py
   verify-archive-ownership.py
+  verify-archive-ownership-safety.py
   run-archive-ownership-model.sh
 ```
 
@@ -142,13 +143,25 @@ artifact summaries
 candidate envelope and prerequisite model
 ```
 
-Independent verifier:
+Structural verifier:
 
 ```text
 74 checks
 re-derives every owned, structural, shared, and summary row
 recomputes all three manifest hashes
 checks frozen source and runtime non-mutation
+```
+
+Safety verifier:
+
+```text
+9 checks
+unknown component set is empty
+excluded GUI path list is exact
+selected entry types are restricted
+special files are absent
+five symlinks are relative and contained
+symlink targets exist and remain same-artifact owned
 ```
 
 ## Output contract
@@ -171,6 +184,7 @@ runtime-after.json
 source-mutation-check.txt
 workflow-status.json
 verification.json
+safety-verification.json
 ```
 
 ## Claim boundary
