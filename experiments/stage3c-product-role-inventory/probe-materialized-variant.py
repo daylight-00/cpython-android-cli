@@ -49,6 +49,7 @@ GUI_PATHS = (
     "lib/python3.14/turtledemo",
     "lib/python3.14/turtle.py",
 )
+TEST_DEMO_ROOT = "lib/python3.14/__phello__"
 
 
 def spec_result(name: str) -> dict[str, Any]:
@@ -195,13 +196,18 @@ def main() -> int:
         path: (prefix / path).exists() or (prefix / path).is_symlink()
         for path in GUI_PATHS
     }
+    test_demo_root = prefix / TEST_DEMO_ROOT
+    test_demo_root_present = test_demo_root.is_dir()
 
     expected_module_success = {
         "venv": True,
         "ensurepip": True,
         "test": expected["tests"],
         "test.support": expected["tests"],
-        "__phello__": expected["tests"],
+        # __phello__ is compiled into this CPython as a frozen package. Its
+        # importability is therefore independent of whether the physical
+        # OPTIONAL_TEST_DEMO source rows are present in the product tree.
+        "__phello__": True,
         "tkinter": False,
         "turtle": False,
         "idlelib": False,
@@ -212,6 +218,7 @@ def main() -> int:
         name: modules[name]["success"] is success
         for name, success in expected_module_success.items()
     }
+    phello_spec = modules["__phello__"].get("spec", {})
 
     checks = {
         "sys_executable_matches": observed_python == expected_python,
@@ -241,6 +248,10 @@ def main() -> int:
         )
         is expected["development"],
         "gui_paths_absent": not any(gui_paths.values()),
+        "test_demo_root_matches_variant": test_demo_root_present
+        is expected["tests"],
+        "phello_frozen_import_consistent": modules["__phello__"]["success"] is True
+        and phello_spec.get("origin") == "frozen",
         "module_expectations_match": all(module_expectations.values()),
         "soabi_matches": sysconfig_result.get("soabi")
         == "cpython-314-aarch64-linux-android",
@@ -249,7 +260,7 @@ def main() -> int:
     }
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
-        "schema_version": 1,
+        "schema_version": 2,
         "pass": not failed,
         "check_count": len(checks),
         "checks": checks,
@@ -266,6 +277,12 @@ def main() -> int:
         "runtime_metadata": runtime_metadata,
         "development_paths": development_paths,
         "gui_paths": gui_paths,
+        "test_demo": {
+            "root": str(test_demo_root),
+            "present": test_demo_root_present,
+            "expected_present": expected["tests"],
+            "import_contract": "frozen-independent-of-physical-source",
+        },
         "sysconfig": sysconfig_result,
         "environment": {
             "LD_LIBRARY_PATH": os.environ.get("LD_LIBRARY_PATH"),
