@@ -1,6 +1,7 @@
 # Stage 3-B Phase 3 Scope: Dependency Product Promotion
 
-> **Status:** ACTIVE
+> **Status:** FROZEN
+> **Result:** PASS — see `docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md`
 > **Input:** Frozen Stage 3-B Phase 2 controlled replay
 > **Target:** aarch64-linux-android
 > **Principle:** identify products before promoting paths
@@ -113,7 +114,7 @@ A cache hit is not reproducibility evidence unless the archive bytes match the p
 [x] SHA-256 and size captured for all six
 [x] archive structural inventory captured for all six
 [x] immutable identities promoted into a tracked manifest
-[ ] a second capture verifies the promoted identities
+[x] a second capture verifies the promoted identities
 [x] extraction/product boundary is documented
 ```
 
