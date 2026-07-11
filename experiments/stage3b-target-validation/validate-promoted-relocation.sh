@@ -12,7 +12,9 @@ FROZEN_PREFIX="$TERMUX_WORK_ROOT/runtime/prefix"
 RELOCATION_ROOT="$WORK_ROOT/termux/stage3b-promoted-relocation"
 RESULTS_DIR="$RESULTS_ROOT/termux/stage3b-promoted-relocation"
 RECONFIRM_SCRIPT="$PROJECT_ROOT/experiments/stage3a-runtime-closure/reconfirm-production-relocation.sh"
+DIAGNOSE_PY="$SCRIPT_DIR/diagnose-promoted-relocation-fidelity.py"
 VERIFY_PY="$SCRIPT_DIR/verify-promoted-relocation.py"
+FIDELITY_DIR="$RESULTS_DIR/fidelity-diagnosis"
 A_PREFIX="$RELOCATION_ROOT/location-a/prefix"
 B_PREFIX="$RELOCATION_ROOT/location-b/prefix"
 
@@ -31,11 +33,19 @@ B_PREFIX="$RELOCATION_ROOT/location-b/prefix"
     exit 2
 }
 
+[[ -f "$DIAGNOSE_PY" ]] || {
+    echo "ERROR: relocation fidelity comparator is missing: $DIAGNOSE_PY" >&2
+    exit 2
+}
+
 [[ -f "$VERIFY_PY" ]] || {
     echo "ERROR: relocation verifier is missing: $VERIFY_PY" >&2
     exit 2
 }
 
+# Same-tree mutation control. This intentionally remains metadata-sensitive,
+# including directory st_size, because the same source/control tree is measured
+# before and after a workflow that must not write it.
 tree_fingerprint() {
     local root="$1"
     if [[ ! -d "$root" ]]; then
@@ -92,7 +102,7 @@ set -e
 
 candidate_after="$(tree_fingerprint "$CANDIDATE_PREFIX")"
 frozen_after="$(tree_fingerprint "$FROZEN_PREFIX")"
-relocated_after="$(tree_fingerprint "$B_PREFIX")"
+relocated_strict="$(tree_fingerprint "$B_PREFIX")"
 
 {
     echo "returncode=$workflow_rc"
@@ -113,12 +123,40 @@ write_comparison \
     "$frozen_before" \
     "$frozen_after"
 
-write_comparison \
-    "$RESULTS_DIR/relocated-runtime-fidelity-check.txt" \
-    relocated_prefix \
-    "$B_PREFIX" \
-    "$candidate_before" \
-    "$relocated_after"
+# Cross-tree fidelity cannot require copied directories to preserve inode
+# allocation metadata such as directory st_size. The comparator instead hashes
+# every regular file and compares the complete path/type/mode/mtime/symlink
+# surface, ignoring only directory st_size.
+set +e
+"$CANDIDATE_PREFIX/bin/python" \
+    -I -B -S \
+    "$DIAGNOSE_PY" \
+    --source "$CANDIDATE_PREFIX" \
+    --relocated "$B_PREFIX" \
+    --output-dir "$FIDELITY_DIR" \
+    --require-portable-pass
+fidelity_rc=$?
+set -e
+
+{
+    echo "comparison=portable-tree-manifest-v2"
+    echo "source_prefix=$CANDIDATE_PREFIX"
+    echo "relocated_prefix=$B_PREFIX"
+    echo "source_same_tree_strict_fingerprint=$candidate_before"
+    echo "relocated_strict_fingerprint=$relocated_strict"
+    if [[ "$candidate_before" == "$relocated_strict" ]]; then
+        echo 'strict_fingerprint_equal=true'
+    else
+        echo 'strict_fingerprint_equal=false'
+    fi
+    if [[ -f "$FIDELITY_DIR/fidelity-status.txt" ]]; then
+        cat "$FIDELITY_DIR/fidelity-status.txt"
+    else
+        echo 'fidelity_status_missing=true'
+        echo 'portable_pass=false'
+        echo 'pass=false'
+    fi
+} > "$RESULTS_DIR/relocated-runtime-fidelity-check.txt"
 
 {
     if [[ -e "$A_PREFIX" ]]; then
@@ -148,10 +186,10 @@ if [[ "$frozen_before" != "$frozen_after" ]]; then
     mutation_rc=3
 fi
 
-fidelity_rc=0
-if [[ "$candidate_before" != "$relocated_after" ]]; then
-    echo "ERROR: relocated B runtime fingerprint differs from source candidate" >&2
-    fidelity_rc=4
+if [[ $fidelity_rc -ne 0 ]]; then
+    echo "ERROR: relocated B runtime failed portable product fidelity" >&2
+elif [[ "$candidate_before" != "$relocated_strict" ]]; then
+    echo "NOTE: strict source/B metadata fingerprints differ; see retained fidelity diagnosis"
 fi
 
 set +e
@@ -176,12 +214,13 @@ elif [[ $verify_rc -ne 0 ]]; then
     final_rc=$verify_rc
 fi
 
-printf '\nWorkflow:            %s\n' "$RESULTS_DIR/workflow-status.txt"
-printf 'Candidate mutation:  %s\n' "$RESULTS_DIR/candidate-runtime-mutation-check.txt"
-printf 'Frozen mutation:     %s\n' "$RESULTS_DIR/frozen-runtime-mutation-check.txt"
-printf 'Relocated fidelity:  %s\n' "$RESULTS_DIR/relocated-runtime-fidelity-check.txt"
-printf 'Location state:      %s\n' "$RESULTS_DIR/relocation-location-state.txt"
-printf 'Verification:        %s\n' "$RESULTS_DIR/promoted-relocation-verification.json"
+printf '\nWorkflow:             %s\n' "$RESULTS_DIR/workflow-status.txt"
+printf 'Candidate mutation:   %s\n' "$RESULTS_DIR/candidate-runtime-mutation-check.txt"
+printf 'Frozen mutation:      %s\n' "$RESULTS_DIR/frozen-runtime-mutation-check.txt"
+printf 'Relocated fidelity:   %s\n' "$RESULTS_DIR/relocated-runtime-fidelity-check.txt"
+printf 'Fidelity diagnosis:   %s\n' "$FIDELITY_DIR/tree-delta.json"
+printf 'Location state:       %s\n' "$RESULTS_DIR/relocation-location-state.txt"
+printf 'Verification:         %s\n' "$RESULTS_DIR/promoted-relocation-verification.json"
 printf '\n'
 
 if [[ $final_rc -ne 0 ]]; then
@@ -192,7 +231,7 @@ fi
 echo "LOCATION_RECONFIRM[A]=PASS"
 echo "LOCATION_RECONFIRM[B]=PASS"
 echo "STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS"
-echo "RELOCATED_RUNTIME_FIDELITY_CHECK=PASS"
+echo "RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS"
 echo "CANDIDATE_RUNTIME_MUTATION_CHECK=PASS"
 echo "FROZEN_RUNTIME_MUTATION_CHECK=PASS"
 echo "STAGE3B_PROMOTED_RELOCATION=PASS"

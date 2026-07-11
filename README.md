@@ -33,8 +33,6 @@ The frozen Stage 3-A result adds an evidence-based runtime closure and host/data
 
 ## Stage 3-A frozen result
 
-Stage 3-A inventoried and probed the already-validated Stage 2-C runtime before packaging work.
-
 Observed inventory:
 
 ```text
@@ -91,32 +89,18 @@ temporary storage
   Termux $PREFIX/tmp observed
 ```
 
-Representative Python-level audit rows were reviewed and classified; no exact observed row remained semantically unknown.
-
 ## Final Stage 3-A reconfirmation
-
-Canonical smoke:
 
 ```text
 STAGE2C_SMOKE=PASS
-```
-
-Production-shape whole-prefix relocation:
-
-```text
 LOCATION_RECONFIRM[A]=PASS
 LOCATION_RECONFIRM[B]=PASS
 STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
 STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
-```
-
-After moving the whole prefix from A to B, the tested runtime identity, active sysconfig paths, subprocess identity, fresh venv base identity, and uv run base identity all re-rooted at B.
-
-Stage result:
-
-```text
 STAGE3A=FROZEN
 ```
+
+After moving the whole prefix from A to B, runtime identity, active sysconfig paths, subprocess identity, fresh venv base identity, and uv run base identity all re-rooted at B.
 
 See:
 
@@ -130,15 +114,9 @@ Stage 3-B asks:
 
 > Can the current launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
 
-The current development input is:
+The historical development input remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
 
-```text
-experiments/bootstrap-android-build/android-python-work/prefix
-```
-
-This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
-
-Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure/boundary model on Android.
+Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed.
 
 The promoted candidate has passed:
 
@@ -164,27 +142,66 @@ STAGE3B_PROMOTED_BOUNDARIES=PASS
 
 The corrected boundary verifier passed all 28 checks. Both base runtimes lacked a usable timezone-data source on the tested host, while uv-injected first-party `tzdata 2026.3` resolved `UTC`, `Asia/Seoul`, and `America/New_York` for both without modifying either base prefix.
 
-The current and final Phase 5 gate is production-shape whole-prefix relocation:
+## Current final gate: promoted relocation
+
+The first relocation run passed all functional assertions at locations A and B and preserved the candidate and frozen controls.
+
+A source/B strict fingerprint differed only because the copied `lib/python3.14/lib-dynload` directory had a different `st_size`:
+
+```text
+source directory st_size      12288
+relocated directory st_size   20480
+```
+
+A path-level diagnostic established:
+
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+regular-file content changes    0
+symlink changes                 0
+pycache paths                    0
+portable fidelity             PASS
+```
+
+The incident is classified as a fingerprint-contract false positive, not a runtime or validation mutation defect.
+
+The corrected final gate keeps strict fingerprints for same-tree candidate/frozen mutation checks, but uses a portable cross-tree manifest for source/B fidelity:
+
+```text
+same path set
+same type, mode and mtime
+same regular-file size and SHA-256
+same symlink target
+directory st_size ignored
+```
+
+Run:
 
 ```sh
 bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
-This copies the promoted candidate to location A, validates it, moves the complete prefix from A to B, validates B, asserts absence of stale A paths, and compares the final B fingerprint with the canonical source candidate.
+Expected final marker:
+
+```text
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
 
 See:
 
 ```text
 docs/stages/STAGE3B_SCOPE.md
-docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE3_SCOPE.md
-docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
 ```
 
 ## Architecture in one picture
@@ -257,7 +274,7 @@ cp config/termux.env.example .local/env
 
 Scripts load these files themselves. Normal workflows should not require manually sourcing a date-named environment script.
 
-The files under `config/legacy/` are historical snapshots from the earlier date-based workspace and are not active configuration.
+The files under `config/legacy/` are historical snapshots and are not active configuration.
 
 ## Workstation workflow
 
@@ -282,7 +299,7 @@ bash scripts/termux/prepare-runtime.sh
 bash scripts/test/smoke-termux.sh
 ```
 
-The intended synchronization split is:
+Synchronization split:
 
 ```text
 source, scripts, docs, experiment history  -> Git
@@ -297,8 +314,6 @@ docs/GITHUB_COLLABORATION_WORKFLOW.md
 
 ## Documentation reading order
 
-Current handoff path:
-
 ```text
 README.md
     |
@@ -306,15 +321,10 @@ README.md
 docs/PROJECT_CONTEXT_STAGE3.md
     |
     +--> docs/stages/STAGE2_FINAL.md
-    |
     +--> docs/stages/STAGE3A_FINAL.md
-    |
     +--> docs/stages/STAGE3B_SCOPE.md
-    |
     +--> docs/stages/STAGE3B_PHASE5_SCOPE.md
-    |
     +--> docs/evidence/
-    |
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
@@ -326,4 +336,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The current active work is the final Stage 3-B promoted whole-prefix relocation gate. It is not archive packaging or launcher redesign.
+The current active work is the corrected final Stage 3-B promoted whole-prefix relocation rerun. It is not archive packaging or launcher redesign.

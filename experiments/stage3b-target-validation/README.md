@@ -2,30 +2,20 @@
 
 Run these gates on Termux after isolated promoted runtime assembly.
 
-Candidate runtime:
-
 ```text
-work/termux/stage3b-promoted-runtime/prefix
+candidate
+  work/termux/stage3b-promoted-runtime/prefix
+
+frozen baseline
+  work/termux/stage2c/runtime/prefix
 ```
 
-Frozen baseline:
-
-```text
-work/termux/stage2c/runtime/prefix
-```
-
-The baseline is an observation and mutation-control input only. These workflows do not write results into the frozen Stage 3-A result directory.
+The frozen baseline is an observation and mutation-control input only. Candidate-specific evidence is written under `results/termux/stage3b-*`.
 
 ## Gate 1: canonical behavior smoke
 
 ```sh
 bash experiments/stage3b-target-validation/smoke-promoted-runtime.sh
-```
-
-Candidate-specific results:
-
-```text
-results/termux/stage3b-promoted-smoke
 ```
 
 Observed final result:
@@ -34,6 +24,12 @@ Observed final result:
 STAGE2C_SMOKE=PASS
 FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_SMOKE=PASS
+```
+
+Results:
+
+```text
+results/termux/stage3b-promoted-smoke
 ```
 
 Evidence:
@@ -47,8 +43,6 @@ docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 ```sh
 bash experiments/stage3b-target-validation/validate-promoted-closure.sh
 ```
-
-The wrapper reuses the frozen Stage 3-A inventory, closure, system-SONAME, and extension-import engines with candidate-specific paths.
 
 Hard semantic gates:
 
@@ -67,23 +61,16 @@ extension imports           67/67
 inspection errors              0
 ```
 
-The first run exposed validation-induced mutation because isolated child probes ignored shell-level `PYTHON*` controls. The repaired child contract is:
+The first run exposed validation-induced `.pyc` mutation because isolated children ignored shell `PYTHON*` controls. The repaired child contract is:
 
 ```text
 python -I -B -S -c ...
 ```
 
-The candidate was freshly reassembled before the clean rerun.
-
-Observed final result:
+Clean rerun:
 
 ```text
 candidate file entries                  3155
-ELF objects                               81
-DT_NEEDED edges                          329
-unresolved edges                           0
-Android-system SONAME dlopen             5/5
-extension imports                       67/67
 candidate mutation control              PASS
 frozen mutation control                 PASS
 machine verifier checks                37/37
@@ -109,20 +96,7 @@ docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
 ```
 
-The Stage 3-A boundary probes were corrected before reuse:
-
-```text
-CA child
-  add explicit -B to isolated child
-
-zoneinfo child
-  remove -I because PYTHONTZPATH is the variable under test
-  sanitize ambient PYTHON* variables
-  use -B -P -s
-  record actual input and flags
-```
-
-The corrected workflow runs CA, direct-zoneinfo, and uv-tzdata probes against both candidate and frozen runtime under the same Termux host state.
+The corrected probes compare candidate and frozen runtime under the same host state.
 
 Observed machine result:
 
@@ -142,19 +116,8 @@ corrected direct-zoneinfo scenarios      equivalent
 base runtime timezone source             unavailable in both
 uv first-party tzdata version            2026.3
 uv tzdata representative keys            3/3 PASS for both
-uv base-prefix identity                   PASS for both
 candidate mutation control               PASS
 frozen mutation control                  PASS
-```
-
-Final markers:
-
-```text
-CA_BOUNDARY_EQUIVALENCE=PASS
-ZONEINFO_BOUNDARY_EQUIVALENCE=PASS
-TZDATA_FALLBACK_EQUIVALENCE=PASS
-CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
-FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
@@ -182,7 +145,7 @@ bash \
   experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
-The workflow reuses the Stage 3-A production relocation engine with the promoted source prefix:
+Workflow:
 
 ```text
 promoted candidate
@@ -192,7 +155,7 @@ promoted candidate
   -> validate B
 ```
 
-At both locations it validates:
+At A and B it validates:
 
 ```text
 sys.executable, sys.prefix and sys.base_prefix
@@ -205,25 +168,74 @@ uv run and uv run base identity
 forbidden stale-prefix absence
 ```
 
-The Stage 3-B wrapper adds:
+### First-run fidelity incident
+
+The first run passed all functional relocation checks and candidate/frozen mutation controls, but the source/B strict fingerprint differed.
+
+Read-only diagnosis found:
 
 ```text
-candidate source before/after fingerprint
-frozen control before/after fingerprint
-final B fingerprint versus source candidate fingerprint
-A absent and B present after move
-B Python executable
-structured machine verdict
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
 ```
 
-The relocation engine exports both:
+The only strict difference was directory `st_size` for:
 
 ```text
-PYTHONDONTWRITEBYTECODE=1
-PYTHONPYCACHEPREFIX=<results>
+lib/python3.14/lib-dynload
 ```
 
-so validation must not create bytecode in the relocated prefix.
+Source `st_size` was `12288`; copied B `st_size` was `20480`. File content, modes, mtimes, symlinks, and path sets were identical.
+
+Classification:
+
+```text
+FINGERPRINT CONTRACT FALSE POSITIVE
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
+```
+
+### Corrected comparison model
+
+Candidate and frozen before/after mutation controls still use the same-tree strict fingerprint.
+
+Source/B cross-tree fidelity now requires:
+
+```text
+same path set
+same type, mode and mtime
+same regular-file size and SHA-256
+same symlink target
+```
+
+Directory `st_size` is ignored only for cross-tree product fidelity and retained as a non-gating diagnostic observation.
+
+The corrected wrapper writes:
+
+```text
+results/termux/stage3b-promoted-relocation/
+  candidate-runtime-mutation-check.txt
+  frozen-runtime-mutation-check.txt
+  relocated-runtime-fidelity-check.txt
+  relocation-location-state.txt
+  fidelity-diagnosis/
+    source-manifest.jsonl
+    relocated-manifest.jsonl
+    tree-delta.json
+    tree-delta.tsv
+    fidelity-status.txt
+  promoted-relocation-verification.json
+```
 
 Expected final markers:
 
@@ -231,22 +243,10 @@ Expected final markers:
 LOCATION_RECONFIRM[A]=PASS
 LOCATION_RECONFIRM[B]=PASS
 STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
-RELOCATED_RUNTIME_FIDELITY_CHECK=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
 CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
 FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-Results:
-
-```text
-results/termux/stage3b-promoted-relocation
-```
-
-Primary verdict:
-
-```text
-results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
-```
-
-The source candidate remains canonical and read-only. Relocation is performed on a copy under `work/termux/stage3b-promoted-relocation`.
+The source candidate remains canonical and read-only. Relocation is performed only on a copy under `work/termux/stage3b-promoted-relocation`.
