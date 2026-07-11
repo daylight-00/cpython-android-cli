@@ -4,7 +4,7 @@
 > **Input:** Frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
-> **Current active sub-phase:** Phase 3 dependency product promotion
+> **Current active sub-phase:** Phase 4 CPython development/runtime product promotion
 
 ## 1. Question
 
@@ -65,8 +65,8 @@ output product boundary
 ```text
 Phase 1  current producer provenance reconstruction   FROZEN
 Phase 2  controlled Linux producer replay            FROZEN
-Phase 3  dependency product promotion                ACTIVE
-Phase 4  CPython dev/runtime prefix promotion         PENDING
+Phase 3  dependency product promotion                FROZEN
+Phase 4  CPython dev/runtime prefix promotion         ACTIVE
 Phase 5  Stage 3-A closure equivalence validation     PENDING
 ```
 
@@ -77,6 +77,8 @@ docs/evidence/STAGE3B_PHASE1_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE2_SCOPE.md
 docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE3_SCOPE.md
+docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
+docs/stages/STAGE3B_PHASE4_SCOPE.md
 ```
 
 ## 5. Phase 1 frozen result
@@ -341,7 +343,7 @@ Stage 3-B is complete only when:
 [x] host build environment is inventoried
 [x] third-party dependency release tags are explicit
 [x] CPython configure/build command model is recorded
-[ ] dependency archive hashes are promoted
+[x] dependency archive hashes are promoted
 [x] replay build completes
 [x] replay package is produced
 [ ] launcher build inputs come from promoted generated products
