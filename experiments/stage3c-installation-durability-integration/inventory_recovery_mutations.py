@@ -20,6 +20,8 @@ CATEGORY_BY_FUNCTION = {
     ("recovery_common.py", "stage_archive"): "transient-staging",
     ("recovery_common.py", "installation_lock"): "lock-state",
     ("recovery_common.py", "persist_journal"): "transaction-metadata",
+    ("recovery_common.py", "add_intent"): "transaction-metadata",
+    ("recovery_common.py", "mark_applied"): "transaction-metadata",
     ("recovery_common.py", "save_prior_registry"): "transaction-backup",
     ("recovery_operations.py", "install"): "install-production",
     ("recovery_operations.py", "uninstall"): "uninstall-production",
