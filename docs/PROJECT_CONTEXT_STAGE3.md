@@ -378,23 +378,20 @@ launcher compile/link inputs
 hashes of promoted build products
 ```
 
-## 9. Stage 3-B first action
+## 9. Current Stage 3-B action
 
-Do not immediately rebuild or rewrite metadata.
+Phase 1 provenance reconstruction and Phase 2 controlled Linux replay are frozen.
 
-First perform read-only provenance reconstruction:
+Current action:
 
 ```text
-current CPython source identity
-current SDK/NDK/API identities
-current host build Python
-current third-party dependency product origins
-current configure/build command chain
-current launcher development inputs
-current hidden historical path dependencies
+capture the six consumed dependency archives
+record name/version/revision/URL/hash/size/archive structure
+promote stable identities into a tracked manifest
+verify cache bytes against the promoted identities
 ```
 
-Then replay the producer chain from declared inputs.
+Do not prune the replay prefix or begin Stage 3-A closure comparison before the dependency and CPython product boundaries are explicit.
 
 Authoritative scope:
 
