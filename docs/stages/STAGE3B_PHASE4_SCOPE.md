@@ -176,6 +176,35 @@ results/workstation/stage3b-product-boundary/
   historical-package-prefix-diff.tsv
 ```
 
+## Phase 4.2 product promotion
+
+Phase 4.1 is frozen. On Victor, promote the locked replay package:
+
+```sh
+bash experiments/stage3b-product-promotion/promote-replay-package.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_CPYTHON_PRODUCT_PROMOTION=PASS
+```
+
+Canonical transport product:
+
+```text
+out/aarch64-linux-android24/release/cpython/
+  python-3.14.6-aarch64-linux-android.tar.gz
+```
+
+Derived workstation development view:
+
+```text
+work/workstation/stage3b-promoted-cpython/prefix
+```
+
+The archive is synchronized to Termux. The extracted development view remains on Victor and exists only to build the launcher.
+
 ## Acceptance conditions
 
 ```text
@@ -183,7 +212,7 @@ results/workstation/stage3b-product-boundary/
 [x] input-tree non-mutation checks pass
 [x] launcher three-file contract compared
 [x] replay package member boundary inventoried
-[ ] differences classified by product role
+[x] differences classified by product role
 [ ] replay development product promoted to canonical generated output
 [ ] launcher rebuilt from promoted development product
 [ ] replacement runtime-source product selected and justified
