@@ -55,3 +55,19 @@ Step 1 low-level evidence:
 ```text
 docs/evidence/STAGE3B_PHASE4_BOUNDARY_CENSUS_STEP1.md
 ```
+
+## Difference review
+
+After package-prefix comparison, classify every non-identical row mechanically:
+
+```sh
+bash experiments/stage3b-product-boundary/review-package-differences.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_PACKAGE_DIFF_REVIEW=PASS
+```
+
+This review does not assign semantic acceptability. It separates changed ELF files, changed regular files, link/kind changes, and paths present on only one side so that later analysis has a closed review set.
