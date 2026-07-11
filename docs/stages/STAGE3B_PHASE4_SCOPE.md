@@ -205,6 +205,22 @@ work/workstation/stage3b-promoted-cpython/prefix
 
 The archive is synchronized to Termux. The extracted development view remains on Victor and exists only to build the launcher.
 
+## Phase 4.2 launcher consumer gate
+
+Build isolated launcher candidates from the historical and promoted development inputs:
+
+```sh
+bash experiments/stage3b-launcher-promotion/compare-launcher-products.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_PROMOTED_LAUNCHER_COMPARE=PASS
+```
+
+The canonical launcher is not overwritten by this comparison.
+
 ## Acceptance conditions
 
 ```text
@@ -213,7 +229,7 @@ The archive is synchronized to Termux. The extracted development view remains on
 [x] launcher three-file contract compared
 [x] replay package member boundary inventoried
 [x] differences classified by product role
-[ ] replay development product promoted to canonical generated output
+[x] replay development product promoted to canonical generated output
 [ ] launcher rebuilt from promoted development product
 [ ] replacement runtime-source product selected and justified
 [ ] runtime assembly no longer depends on the hidden historical archive
