@@ -1,14 +1,14 @@
 # Stage 3-C Phase 4 Scope: Installation Transactions
 
-> **Status:** ACTIVE — Gate 1 frozen, Gate 2 transaction prototype active
-> **Input:** frozen Phase 3 archives and frozen Phase 4 Gate 1 contract
+> **Status:** ACTIVE — Gates 1–2 frozen, Gate 3 recovery and lock validation active
+> **Input:** frozen Phase 3 archives and frozen Phase 4 Gates 1–2
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Can exact installed ownership, collision, reinstall, rollback, and uninstall semantics be executed in isolated installation roots without mutating source products or adopting unowned content?
+> Can exact installed ownership and lifecycle semantics remain recoverable after abrupt process termination while excluding concurrent mutation?
 
-## Frozen Gate 1
+## Frozen Gate 1 — contract
 
 ```text
 contract derivation       54/54 PASS
@@ -26,116 +26,145 @@ docs/stages/STAGE3C_PHASE4_GATE1_FINAL.md
 docs/evidence/STAGE3C_PHASE4_INSTALLATION_CONTRACT_RESULT.md
 ```
 
-Frozen registry model:
+Frozen rules include exact-path ownership, non-owning structural parents, unowned leaf rejection, exact reinstall no-op, backup-before-repair, modified-path preservation, empty-only directory removal, and rollback obligation before commit.
+
+## Frozen Gate 2 — isolated transaction execution
 
 ```text
-exact registered paths       2956
-non-owning structural refs      4
-shared namespace
-  lib
-  lib/python3.14
+scenario runner       61/61 PASS
+independent verifier  58/58 PASS
+scenario logs          25/25 retained
+input mutation              PASS
+
+accepted TGZ
+  stage3c-phase4-installation-transaction-results-20260711-230729.tgz
+
+TGZ sha256
+  9ea7379263711c8501d674e78e25d29ccd1764db30497c5dc2414030d378c005
+
+result-index sha256
+  0041f1c3c73dc7a62291b6c3b244ac885d9bad6799d4115280febc20f61384da
 ```
 
-Frozen state layout:
+Frozen Gate 2 behavior:
 
 ```text
-<installation-root>/
-  prefix/
-  .cpython-android-cli/
-    registry.json
-    lock
-    transactions/
+fresh runtime/addon composition       2956 paths
+runtime dependency enforcement        PASS
+exact runtime reinstall               714 NOOP / 0 mutations
+single registered corruption repair   PASS
+unowned collision rejection           no mutation
+addon prerequisite rejection          no mutation
+install rollback after 5 mutations    exact prior state
+uninstall rollback after 5 mutations  exact prior state
+modified leaf preservation            PASS
+unowned sentinel preservation         PASS
+retained directory reuse              no descendant adoption
 ```
 
-Frozen policy:
+Authoritative boundary:
 
 ```text
-unowned required leaf                    conflict before mutation
-compatible exact owned-directory path    reuse exact directory only
-compatible structural directory          reuse without ownership
-same-version exact registered entry      NOOP
-same-owner mismatch                      backup then repair
-other-artifact owner                     conflict
-modified uninstall leaf                  preserve and report
-owned directory                          remove only when empty
-structural parent and unowned descendant preserve
+docs/stages/STAGE3C_PHASE4_GATE2_FINAL.md
+docs/evidence/STAGE3C_PHASE4_TRANSACTION_RESULT.md
 ```
 
-## Active Gate 2
+## Active Gate 3 — abrupt recovery and lock contention
 
 Run:
 
 ```sh
-bash experiments/stage3c-installation-transaction/run-installation-transaction.sh
+bash experiments/stage3c-installation-recovery/run-installation-recovery.sh
 ```
 
-All mutation is isolated below:
+All mutable roots remain below:
 
 ```text
-work/termux/stage3c-phase4-installation-transaction/
+work/termux/stage3c-phase4-installation-recovery/
 ```
 
-The canonical promoted product, isolated runtime-base source, and live Termux prefix are not transaction targets.
+The canonical promoted prefix, isolated runtime-base source, live Termux prefix, and copied Gate 2 input are not transaction targets.
 
-### Scenario matrix
+### Journal model
 
 ```text
-fresh runtime-base install
-fresh development-addon overlay
-fresh test-addon overlay
-runtime uninstall rejected while addons depend on it
-exact 714-path runtime reinstall NOOP
-single registered runtime corruption detection and repair
-injected test-addon uninstall failure after five mutations
-uninstall rollback to byte-identical pre-state
-unowned runtime leaf collision rejection with no mutation
-addon prerequisite rejection with no mutation
-injected development-addon install failure after five mutations
-install rollback to byte-identical pre-state
-modified test leaf preservation
-unowned sentinel preservation
-test-addon uninstall
-development-addon uninstall
-runtime-base uninstall with nonempty exact directories retained
-runtime-base reinstall reusing two directories without descendant adoption
+schema version       2
+states
+  PREPARED
+  APPLYING
+  COMMITTED
+  ROLLING_BACK
+  ROLLED_BACK
+
+mutation checkpoint
+  INTENT before filesystem primitive
+  APPLIED after filesystem primitive
+```
+
+### Process-termination matrix
+
+```text
+exit 90  after PREPARED
+exit 93  after durable INTENT, before filesystem mutation
+exit 91  after five APPLIED install mutations
+exit 91  after five APPLIED uninstall mutations
+exit 91  after repaired payload and registry APPLIED, before COMMITTED
+exit 92  after COMMITTED, before cleanup
+```
+
+Recovery requirements:
+
+```text
+PREPARED / INTENT / APPLYING / registry pre-commit
+  reverse to exact prior state
+
+COMMITTED
+  finalize cleanup without rollback
+
+ROLLED_BACK
+  idempotent recovery no-op
+```
+
+### Lock contention
+
+```text
+holder process
+  acquires exclusive flock and publishes ready marker
+
+nonblocking contender
+  installation lock busy
+  no mutation
+
+post-release install
+  development-addon create 454
+  registry 1168
 ```
 
 ### Validation
 
 ```text
-scenario runner       61 checks
-independent verifier  58 checks
+scenario runner       55 checks
+independent verifier  82 checks
+retained logs          40
+final registry snapshots
+  5 registry JSON
+  5 observed-path JSON
 input mutation        PASS required
 ```
 
-Expected marker:
+Expected final marker:
 
 ```text
-STAGE3C_PHASE4_INSTALLATION_TRANSACTION=PASS
+STAGE3C_PHASE4_INSTALLATION_RECOVERY=PASS
 ```
 
-### Expected outputs
+## Deferred Gate 4 and later
 
 ```text
-results/termux/stage3c-phase4-installation-transaction/
-  input/contract/
-  01-*.json ... 25-*.json
-  snapshots/
-  scenario.json
-  verification.json
-  input-before.json
-  input-after.json
-  input-mutation-check.txt
-  workflow-status.json
-  result-index.json
-```
-
-## Deferred Gate 3 and later
-
-```text
-process-crash recovery from PREPARED/APPLYING states
-concurrent lock contention and exclusion evidence
-durable parent-directory fsync policy
+kernel or power-loss durability
+parent-directory fsync policy
+crash inside one non-atomic filesystem primitive
+adversarial external mutation and lock fairness
 explicit second-version upgrade and downgrade
 installed runtime smoke and native closure
 uv venv and uv run from installed prefix
@@ -144,4 +173,4 @@ whole-prefix installed relocation
 
 ## Claim boundary
 
-A Gate 2 PASS proves only the explicitly tested isolated transaction paths. It does not prove crash recovery, concurrency, upgrade/downgrade, or installed runtime behavior.
+A Gate 3 PASS proves only the tested abrupt process-exit boundaries and flock contender path in isolated roots. It does not prove power-loss durability, filesystem-primitive atomicity, upgrade/downgrade, or installed runtime behavior.
