@@ -81,6 +81,7 @@ printf '\n'
 
 set +e
 (
+    set -e
     cd "$SOURCE_WORKTREE"
     env \
         ANDROID_HOME="$ANDROID_HOME_DERIVED" \
