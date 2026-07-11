@@ -56,6 +56,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--inventory", required=True, type=Path)
     parser.add_argument("--role-summary", required=True, type=Path)
+    parser.add_argument("--role-verification", required=True, type=Path)
     parser.add_argument("--semantic-probes", required=True, type=Path)
     parser.add_argument("--semantic-verification", required=True, type=Path)
     parser.add_argument("--tree-fingerprint", required=True, type=Path)
@@ -69,6 +70,7 @@ def main() -> int:
     paths = (
         args.inventory.resolve(),
         args.role_summary.resolve(),
+        args.role_verification.resolve(),
         args.semantic_probes.resolve(),
         args.semantic_verification.resolve(),
         args.tree_fingerprint.resolve(),
@@ -79,6 +81,7 @@ def main() -> int:
 
     rows: list[dict[str, str]] = []
     role_summary: dict[str, Any] = {}
+    role_verification: dict[str, Any] = {}
     semantic: dict[str, Any] = {}
     semantic_verification: dict[str, Any] = {}
     tree: dict[str, Any] = {}
@@ -86,9 +89,10 @@ def main() -> int:
         try:
             rows = read_inventory(paths[0])
             role_summary = read_json(paths[1])
-            semantic = read_json(paths[2])
-            semantic_verification = read_json(paths[3])
-            tree = read_json(paths[4])
+            role_verification = read_json(paths[2])
+            semantic = read_json(paths[3])
+            semantic_verification = read_json(paths[4])
+            tree = read_json(paths[5])
         except (OSError, csv.Error, json.JSONDecodeError, ValueError) as exc:
             errors["parse"] = repr(exc)
 
@@ -104,6 +108,11 @@ def main() -> int:
         "inventory_manifest_summary": observed_manifest == role_summary.get("manifest_sha256"),
         "role_summary_pass": role_summary.get("pass") is True,
         "role_summary_unknown_zero": role_summary.get("unknown_count") == 0,
+        "role_verification_pass": role_verification.get("pass") is True,
+        "role_verification_43": role_verification.get("check_count") == 43,
+        "role_failed_checks_empty": role_verification.get("failed_checks") == [],
+        "role_missing_outputs_empty": role_verification.get("missing_outputs") == [],
+        "role_parse_errors_empty": role_verification.get("parse_errors") == {},
         "semantic_probe_pass": semantic.get("pass") is True,
         "semantic_mutation_pass": semantic.get("mutation_pass") is True,
         "semantic_verification_pass": semantic_verification.get("pass") is True,
