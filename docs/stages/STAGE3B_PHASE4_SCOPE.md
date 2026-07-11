@@ -130,6 +130,18 @@ Expected marker:
 STAGE3B_PACKAGE_PREFIX_COMPARISON=PASS
 ```
 
+Mechanically classify the remaining differences:
+
+```sh
+bash experiments/stage3b-product-boundary/review-package-differences.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_PACKAGE_DIFF_REVIEW=PASS
+```
+
 Result:
 
 ```text
