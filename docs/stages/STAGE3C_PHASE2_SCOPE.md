@@ -1,33 +1,32 @@
 # Stage 3-C Phase 2 Scope: Archive Ownership and Manifest Model
 
-> **Status:** ACTIVE — contract design
+> **Status:** ACTIVE — ownership PASS, artifact manifest schema pending
 > **Input:** frozen Stage 3-C Phase 1 component and runtime identities
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> How should the frozen runtime, development, and test components be represented as independently inspectable archives and safely overlaid into one relocatable installation prefix without confusing payload ownership with shared directory structure?
+> How should the frozen runtime, development, and test components be represented as independently inspectable artifacts and safely overlaid into one relocatable installation prefix without confusing payload ownership, shared namespace, and archive representation?
 
 ## Frozen input
 
 ```text
 runtime-base
-  714 entries
+  714 exact owned entries
   fingerprint
     9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
 
 development-addon
-  454 component-owned entries
+  454 exact owned entries
 
 test-addon
-  1788 component-owned entries
+  1788 exact owned entries
 
 selected total
-  2956 entries
+  2956 exact owned entries
 
 unsupported-gui-source
-  199 entries
-  not distributed
+  199 excluded entries
 
 component manifest
   91088a013722ad35910f049bfc45b2e61607423d833c23038c1d9645497b7b84
@@ -40,249 +39,343 @@ docs/stages/STAGE3C_PHASE1_FINAL.md
 docs/evidence/STAGE3C_PHASE1_RUNTIME_BASE_FINAL_RESULT.md
 ```
 
-## Design pressure
+## Gate 1: exact archive ownership — PASS
 
-The component partition assigns every canonical path exactly once. Archive creation introduces a different problem:
+Target result:
 
 ```text
-payload ownership
-  exact file, symlink, or directory row selected by the component manifest
+ownership analyzer          64/64 PASS
+structural verifier         74/74 PASS
+safety verifier               9/9 PASS
+workflow return codes        all 0
+```
+
+Accepted result archive:
+
+```text
+stage3c-phase2-archive-ownership-model-results-20260711-203019.tgz
+sha256
+  e10c3a5086ba4317e7777044cf522c14eb8afaa5cec1aa95a6b124fc8762e84f
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE2_ARCHIVE_OWNERSHIP_DESIGN.md
+docs/evidence/STAGE3C_PHASE2_ARCHIVE_OWNERSHIP_RESULT.md
+```
+
+### Frozen ownership identities
+
+```text
+owned paths
+  ab2c7374d2a70c7eb48db72dbfd1de86b708167efef151519f25b6a5a65023ea
+
+structural directories
+  9481da6ffa6bf0f54a10b631a31b81252580e2323bd1c8a92c6899aff26b78b3
+
+shared namespace
+  cc40599da21dbef18e48b940b77143e44479e821b3273946843a89340052956e
+```
+
+### Exact ownership result
+
+```text
+artifact               entries   regular   directories   symlinks   ELF
+runtime-base                714       654            57          3    81
+development-addon           454       443             9          2     0
+test-addon                 1788      1643           145          0     0
+```
+
+```text
+exact owned overlap               0
+selected and excluded coverage    3155 / 3155
+```
+
+### Shared namespace result
+
+There are exactly two shared namespace directories:
+
+```text
+lib
+lib/python3.14
+```
+
+Both are exactly owned by runtime-base and structurally consumed by both addons.
+
+```text
+development-addon structural rows   2
+test-addon structural rows          2
+total structural rows               4
+```
+
+`STRUCTURAL_PARENT` is non-owning and must never be registered as recursive installed ownership.
+
+### Frozen symlink policy
+
+All five selected symlinks are:
+
+```text
+relative
+prefix-contained
+targeting an existing selected path
+targeting a path owned by the same artifact
+```
+
+### Frozen ownership semantics
+
+```text
+exclusive ownership unit
+  exact OWNED_PAYLOAD path
 
 structural namespace
-  parent directories needed so an archive can carry an owned descendant
-```
+  explicit and non-owning
 
-These must not be conflated.
-
-Examples:
-
-```text
-development-addon owns include/python3.14/Python.h
-but may require an archive path through include/ and include/python3.14/
-
-test-addon owns lib/python3.14/test/...
-but depends on the runtime namespace lib/ and lib/python3.14/
-```
-
-A duplicated directory entry in two archives must not imply two packages recursively own the same subtree.
-
-## Candidate archive set
-
-```text
 runtime-base
-  standalone runtime payload
+  only standalone artifact
 
-development-addon
-  overlay requiring a matching runtime-base
+development-addon and test-addon
+  overlays requiring exact matching runtime-base identity
 
-test-addon
-  overlay requiring a matching runtime-base
-
-unsupported-gui-source
-  excluded from distribution
+directory removal direction
+  remove an owned directory only when empty
+  preserve unowned descendants
 ```
 
-The addons are not standalone Python distributions.
+### Frozen license boundary
 
-## Candidate envelope model
+```text
+installed payload owner
+  runtime-base
 
-Phase 2 will evaluate the following staging-oriented shape:
+installed payload path
+  lib/python3.14/LICENSE.txt
+
+archive envelope
+  every distributable artifact carries license material outside payload/
+```
+
+## Active Gate 2: schema-v1 artifact manifests
+
+Question:
+
+> Can the accepted ownership rows and product lock deterministically produce three canonical JSON artifact manifests and a verified manifest index without creating archive bytes?
+
+Run:
+
+```sh
+bash experiments/stage3c-artifact-manifest/run-artifact-manifest-schema.sh
+```
+
+Implementation:
+
+```text
+experiments/stage3c-artifact-manifest/
+  artifact_manifest_contract.py
+  generate-artifact-manifests.py
+  verify-artifact-manifests.py
+  run-artifact-manifest-schema.sh
+```
+
+Design evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE2_ARTIFACT_MANIFEST_SCHEMA_DESIGN.md
+```
+
+### Product identity
+
+```text
+product kind       upstream-cpython-android-package
+implementation     CPython
+Python version     3.14.6
+source head        c63aec69bd59c55314c06c23f4c22c03de76fe45
+target host        aarch64-linux-android
+Android API        24
+NDK                27.3.13750724
+architecture       aarch64
+multiarch          aarch64-linux-android
+SOABI              cpython-314-aarch64-linux-android
+```
+
+### Artifact identities
+
+```text
+cpython-android-cli-3.14.6-android24-aarch64-runtime-base
+cpython-android-cli-3.14.6-android24-aarch64-development-addon
+cpython-android-cli-3.14.6-android24-aarch64-test-addon
+```
+
+### Manifest entry model
+
+```text
+artifact               OWNED_PAYLOAD   STRUCTURAL_PARENT   total
+runtime-base                      714                   0     714
+development-addon                 454                   2     456
+test-addon                       1788                   2    1790
+```
+
+Common entry identity:
+
+```text
+archive path
+prefix-relative payload path
+entry class
+entry type
+mode
+```
+
+Type-specific identity:
+
+```text
+regular
+  size + SHA-256 + component + ELF marker
+
+directory
+  no content hash
+  no size
+  no mtime
+
+symlink
+  symlink target
+  no regular-file size or hash
+```
+
+Directory `st_size` and all mtimes are excluded from schema-v1 product identity.
+
+### Manifest envelope model
 
 ```text
 <artifact-id>/
   metadata/
-    manifest.json
-    provenance.json
-    licenses/
   payload/
-    <prefix-relative product paths>
 ```
-
-Candidate properties:
 
 ```text
-archive extraction is staging, not installation
-payload paths are prefix-relative
-payload/ is independently inspectable
-runtime-base payload/ may itself be exercised as a relocated prefix
-metadata is outside the installed runtime payload
-addons overlay payload paths into a matching runtime-base prefix
-absolute archive paths are forbidden
-.. path escape is forbidden
-device, fifo, socket and other special entries are forbidden
-hardlinks are forbidden unless explicitly introduced and revalidated later
+payload paths          prefix-relative
+extraction semantics   staging-not-installation
 ```
 
-This is a candidate until machine evidence closes the ownership and namespace gate.
+This gate describes archive representation but does not serialize tar entries.
 
-## Ownership model to derive
+### Compatibility model
 
-For every selected artifact, derive:
+Runtime-base has no prerequisite.
+
+Both addons require:
 
 ```text
-exact owned path set
-owned regular-file set
-owned directory set
-owned symlink set
-owned ELF set
-required structural parent-directory set
-structural parents owned by runtime-base
-structural parents shared by multiple addons
-exact path overlaps between artifacts
+runtime-base artifact ID
+Python version
+target host
+Android API
+component manifest
+runtime-base strict fingerprint
 ```
 
-Required invariant:
+### Canonical JSON model
 
 ```text
-exact owned payload overlap = 0
+UTF-8
+sorted object keys
+2-space indentation
+one trailing newline
 ```
 
-Structural-parent overlap is expected and must be represented explicitly rather than hidden.
+`manifest-index.json` records each manifest filename, SHA-256, size, owned count, structural count, and total manifest count.
 
-## Candidate installation ownership semantics
+### Verification gates
 
 ```text
-exclusive ownership unit
-  exact manifest path
-
-shared directory namespace
-  not recursive exclusive ownership
-
-addon prerequisite
-  matching product name, Python version, target ABI/API, and component-manifest identity
-
-uninstall candidate rule
-  remove owned non-directory entries
-  remove an owned directory only when empty
-  never recursively remove a shared structural parent
-
-pre-existing exact path
-  transaction policy deferred until the ownership model is frozen
+manifest generator      42 checks
+independent verifier    48 checks
 ```
 
-The later installer must preserve unowned sentinel files under shared parents.
+The verifier independently re-derives complete manifest objects and entry lists from the accepted TSV ownership rows.
 
-## License boundary
-
-The canonical in-prefix license row remains owned by `runtime-base`.
-
-Each independently redistributed addon still requires an understandable license mapping. Candidate approach:
+Expected markers:
 
 ```text
-installed payload license path
-  owned only by runtime-base
-
-archive-envelope license material
-  embedded in every distributable artifact outside payload/
+STAGE3C_PHASE2_ARTIFACT_MANIFEST_GENERATION=PASS
+ARTIFACT_MANIFEST_ACCEPTED_INPUTS=PASS
+ARTIFACT_MANIFEST_GENERATION=42/42 PASS
+ARTIFACT_MANIFEST_VERIFICATION=48/48 PASS
+ARTIFACT_MANIFEST_CANONICAL_JSON=PASS
+ARTIFACT_MANIFEST_INDEX_INTEGRITY=PASS
+ARTIFACT_MANIFEST_SOURCE_MUTATION_CHECK=PASS
+STAGE3C_PHASE2_ARTIFACT_MANIFEST_SCHEMA=PASS
 ```
 
-This avoids duplicate installed-path ownership while keeping every archive independently redistributable and inspectable.
-
-## Manifest schema direction
-
-Phase 2 does not yet freeze the complete schema, but the ownership analysis must prepare fields for:
+### Expected outputs
 
 ```text
-schema version
-artifact identity and role
-product/Python/ABI/API identity
-component-manifest identity
-relative payload path
-entry class: owned payload or structural parent
-entry type
-mode
-regular-file size and SHA-256
-symlink target
-ELF marker
-license mapping
-addon prerequisite
+results/termux/stage3c-phase2-artifact-manifest-schema/
+  input/
+  manifests/
+    runtime-base.manifest.json
+    development-addon.manifest.json
+    test-addon.manifest.json
+  manifest-index.json
+  generation.json
+  verification.json
+  workflow-status.json
+  source-mutation-check.txt
 ```
 
-Archive-header timestamps, uid/gid, owner names, compression, and byte reproducibility remain Phase 3 questions.
-
-## First gate: exact archive ownership analysis
-
-The first Phase 2 experiment must consume, without modifying:
-
-```text
-results/termux/stage3c-phase1-component-policy/component-inventory.tsv
-results/termux/stage3c-phase1-component-policy/component-policy.json
-results/termux/stage3c-phase1-component-policy/component-policy-verification.json
-results/termux/stage3c-phase1-runtime-base-final-validation/verification.json
-work/termux/stage3b-promoted-runtime/prefix
-```
-
-It must emit:
-
-```text
-artifact-owned-paths.tsv
-artifact-structural-directories.tsv
-shared-namespace-directories.tsv
-artifact-ownership-summary.tsv
-ownership-model.json
-verification.json
-source-mutation-check.txt
-```
-
-First-gate checks:
-
-```text
-accepted Phase 1 manifests and fingerprints match
-selected owned entries equal 714 + 454 + 1788
-excluded GUI entries equal 199
-all exact selected paths map to one artifact
-exact owned-path overlap is zero
-all structural parents exist as canonical directories
-all selected entries are regular files, directories, or symlinks
-all five selected symlinks are relative and prefix-contained
-all 81 ELF rows remain runtime-base-owned
-license payload path remains runtime-base-owned
-runtime and canonical source identities remain unchanged
-```
-
-## Acceptance conditions
-
-```text
-[ ] accepted Phase 1 evidence chain verified
-[ ] exact owned path sets derived for three artifacts
-[ ] exact owned overlap = 0
-[ ] structural parent sets derived
-[ ] runtime-owned shared namespace identified
-[ ] addon prerequisites selected
-[ ] installed ownership unit selected
-[ ] directory uninstall rule selected
-[ ] archive-envelope versus installed-payload license rule selected
-[ ] candidate envelope root and payload root selected
-[ ] ownership model independently verified
-[ ] canonical source mutation control passes
-[ ] claim boundary recorded
-```
-
-## Non-goals
-
-```text
-creating the final tar archive
-choosing gzip, zstd or other compression
-normalizing archive timestamps or uid/gid
-claiming byte-identical reproducibility
-implementing installation transactions
-implementing upgrade or rollback
-adding unsupported GUI source
-changing the frozen component partition
-```
-
-## Result archive convention
+### Result archive convention
 
 ```sh
-RESULTS="$PWD/results/termux/stage3c-phase2-archive-ownership-model"
-ARCHIVE="$HOME/Downloads/stage3c-phase2-archive-ownership-model-results-$(date +%Y%m%d-%H%M%S).tgz"
+RESULTS="$PWD/results/termux/stage3c-phase2-artifact-manifest-schema"
+ARCHIVE="$HOME/Downloads/stage3c-phase2-artifact-manifest-schema-results-$(date +%Y%m%d-%H%M%S).tgz"
 
 tar czf "$ARCHIVE" "$RESULTS"
 printf 'upload: %s\n' "$ARCHIVE"
 ```
 
+## Acceptance conditions
+
+```text
+[x] accepted Phase 1 evidence chain verified
+[x] exact owned path sets derived for three artifacts
+[x] exact owned overlap = 0
+[x] structural parent sets derived
+[x] runtime-owned shared namespace identified
+[x] addon prerequisites selected
+[x] installed ownership unit selected
+[x] directory uninstall direction selected
+[x] archive-envelope versus installed-payload license rule selected
+[x] candidate envelope root and payload root selected
+[x] ownership model independently verified
+[x] ownership source mutation control passes
+[x] ownership claim boundary recorded
+[ ] schema-v1 manifests generated for all three artifacts
+[ ] artifact product and compatibility identities exact
+[ ] type-specific entry identity exact
+[ ] canonical JSON representation passes
+[ ] manifest index hashes and sizes pass
+[ ] complete manifest objects independently reproduced
+[ ] canonical and runtime-base source mutation controls pass
+[ ] manifest schema result and claim boundary recorded
+```
+
+## Non-goals
+
+```text
+creating final tar archives
+choosing gzip, zstd, or another compression format
+normalizing archive timestamps, uid/gid, or owner names
+claiming byte-identical archive reproducibility
+extracting hostile archives
+implementing installation transactions
+implementing upgrade, rollback, or uninstall
+adding unsupported GUI source
+changing the frozen component partition
+```
+
 ## Claim boundary
 
-A Phase 2 ownership PASS will prove that the frozen components can be represented by disjoint exact payload ownership plus explicit shared structural namespace requirements.
+The ownership PASS proves disjoint exact payload ownership and explicit shared structural namespace.
 
-It will not yet prove an archive is reproducible, safely extractable under hostile input, transactionally installable, upgradeable, or uninstallable.
+A manifest-schema PASS will additionally prove deterministic canonical JSON artifact descriptions and a verified manifest index.
+
+Neither gate proves archive serialization, reproducible archive bytes, hostile-input extraction safety, or transactionally safe installation.
