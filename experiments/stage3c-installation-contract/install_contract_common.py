@@ -58,11 +58,11 @@ SUMMARY_FIELDS = (
 )
 
 COLLISION_POLICY = [
-    ("fresh-install", "OWNED_PAYLOAD", "ABSENT", "CREATE", "true", "new exact owned path"),
-    ("fresh-install", "OWNED_PAYLOAD", "EXISTING_UNOWNED", "CONFLICT", "false", "never adopt or overwrite unowned content"),
-    ("fresh-install", "STRUCTURAL_PARENT", "ABSENT", "CREATE_DIRECTORY", "true", "create non-owning namespace directory"),
-    ("fresh-install", "STRUCTURAL_PARENT", "EXISTING_DIRECTORY", "REUSE_DIRECTORY", "true", "compatible namespace reuse"),
-    ("fresh-install", "STRUCTURAL_PARENT", "EXISTING_NON_DIRECTORY", "CONFLICT", "false", "namespace type mismatch"),
+    ("fresh-install", "OWNED_PAYLOAD", "ABSENT", "CREATE_TYPE_APPROPRIATE", "true", "create exact regular file, symlink, or directory"),
+    ("fresh-install", "OWNED_REGULAR_OR_SYMLINK", "EXISTING_UNOWNED", "CONFLICT", "false", "never adopt or overwrite unowned leaf content"),
+    ("fresh-install", "OWNED_DIRECTORY", "EXISTING_DIRECTORY", "REUSE_AND_REGISTER_DIRECTORY", "true", "exact directory ownership preserves all descendant ownership boundaries"),
+    ("fresh-install", "OWNED_OR_STRUCTURAL_DIRECTORY", "EXISTING_NON_DIRECTORY", "CONFLICT", "false", "directory namespace type mismatch"),
+    ("fresh-install", "STRUCTURAL_PARENT", "ABSENT_OR_EXISTING_DIRECTORY", "CREATE_OR_REUSE_DIRECTORY", "true", "maintain a compatible non-owning namespace directory"),
     ("same-version-reinstall", "OWNED_PAYLOAD", "REGISTERED_SAME_ARTIFACT_MATCH", "NOOP", "true", "exact content and metadata already installed"),
     ("same-version-reinstall", "OWNED_PAYLOAD", "REGISTERED_SAME_ARTIFACT_MISMATCH", "REPLACE_WITH_BACKUP", "true", "repair only registered ownership with rollback backup"),
     ("same-version-reinstall", "OWNED_PAYLOAD", "REGISTERED_OTHER_ARTIFACT", "CONFLICT", "false", "cross-artifact ownership conflict"),
