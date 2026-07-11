@@ -136,6 +136,8 @@ def main() -> int:
         "b": f"B_PREFIX={b_prefix}",
     }
 
+    source_entry_count = fidelity_diagnosis.get("source_entry_count")
+    relocated_entry_count = fidelity_diagnosis.get("relocated_entry_count")
     source_portable_fingerprint = fidelity_diagnosis.get(
         "source_portable_fingerprint"
     )
@@ -167,14 +169,30 @@ def main() -> int:
             "portable_changed_count"
         )
         == 0,
-        "fidelity_entry_counts_equal": fidelity_diagnosis.get(
-            "source_entry_count"
-        )
-        == fidelity_diagnosis.get("relocated_entry_count"),
+        "fidelity_entry_counts_equal": isinstance(source_entry_count, int)
+        and source_entry_count > 0
+        and source_entry_count == relocated_entry_count,
         "fidelity_portable_fingerprints_equal": isinstance(
             source_portable_fingerprint, str
         )
+        and len(source_portable_fingerprint) == 64
         and source_portable_fingerprint == relocated_portable_fingerprint,
+        "fidelity_status_source_count_matches": relocated_fidelity.get(
+            "source_entry_count"
+        )
+        == str(source_entry_count),
+        "fidelity_status_relocated_count_matches": relocated_fidelity.get(
+            "relocated_entry_count"
+        )
+        == str(relocated_entry_count),
+        "fidelity_status_source_fingerprint_matches": relocated_fidelity.get(
+            "source_portable_fingerprint"
+        )
+        == source_portable_fingerprint,
+        "fidelity_status_relocated_fingerprint_matches": relocated_fidelity.get(
+            "relocated_portable_fingerprint"
+        )
+        == relocated_portable_fingerprint,
         "location_a_absent_after_move": location_state.get("a_prefix_exists")
         == "false",
         "location_b_present_after_move": location_state.get("b_prefix_exists")
