@@ -38,10 +38,22 @@ ANDROID_HOME_DERIVED="$(read_json_field android_home)"
 NDK_VERSION="$(read_json_field ndk_version)"
 TARGET_HOST="$(read_json_field target_host)"
 EXPECTED_PREFIX="$(read_json_field expected_prefix)"
+DRIVER_PYTHON="$(read_json_field driver_python)"
+DRIVER_PYTHON_VERSION="$(read_json_field driver_python_version)"
 DIST_DIR="$CROSS_BUILD_DIR/$TARGET_HOST/dist"
 
 [[ "$(git -C "$SOURCE_WORKTREE" rev-parse HEAD)" == "$SOURCE_HEAD" ]] || {
     echo "ERROR: replay source HEAD drifted" >&2
+    exit 3
+}
+
+[[ -x "$DRIVER_PYTHON" ]] || {
+    echo "ERROR: replay driver Python disappeared: $DRIVER_PYTHON" >&2
+    exit 3
+}
+
+[[ "$("$DRIVER_PYTHON" -c 'import platform; print(platform.python_version())')" == "$DRIVER_PYTHON_VERSION" ]] || {
+    echo "ERROR: replay driver Python version drifted" >&2
     exit 3
 }
 
@@ -63,6 +75,8 @@ printf 'TARGET_HOST=%s\n' "$TARGET_HOST"
 printf 'CROSS_BUILD_DIR=%s\n' "$CROSS_BUILD_DIR"
 printf 'CACHE_DIR=%s\n' "$CACHE_DIR"
 printf 'EXPECTED_PREFIX=%s\n' "$EXPECTED_PREFIX"
+printf 'DRIVER_PYTHON=%s\n' "$DRIVER_PYTHON"
+printf 'DRIVER_PYTHON_VERSION=%s\n' "$DRIVER_PYTHON_VERSION"
 printf '\n'
 
 set +e
@@ -70,7 +84,15 @@ set +e
     cd "$SOURCE_WORKTREE"
     env \
         ANDROID_HOME="$ANDROID_HOME_DERIVED" \
-        python3 Android/android.py \
+        "$DRIVER_PYTHON" Android/android.py \
+            build \
+            --cross-build-dir "$CROSS_BUILD_DIR" \
+            --cache-dir "$CACHE_DIR" \
+            build
+
+    env \
+        ANDROID_HOME="$ANDROID_HOME_DERIVED" \
+        "$DRIVER_PYTHON" Android/android.py \
             build \
             --cross-build-dir "$CROSS_BUILD_DIR" \
             --cache-dir "$CACHE_DIR" \
@@ -87,7 +109,7 @@ else
         cd "$SOURCE_WORKTREE"
         env \
             ANDROID_HOME="$ANDROID_HOME_DERIVED" \
-            python3 Android/android.py \
+            "$DRIVER_PYTHON" Android/android.py \
                 package \
                 --cross-build-dir "$CROSS_BUILD_DIR" \
                 "$TARGET_HOST"
@@ -151,7 +173,7 @@ fi
     exit 5
 }
 
-python3 \
+"$DRIVER_PYTHON" \
     "$SCRIPT_DIR/capture-replay-output.py" \
     --plan "$PLAN_JSON" \
     --output-dir "$RESULTS_DIR"
