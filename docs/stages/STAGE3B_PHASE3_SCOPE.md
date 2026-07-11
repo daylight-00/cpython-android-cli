@@ -66,6 +66,24 @@ Result:
 results/workstation/stage3b-dependency-promotion/dependency-input-manifest.json
 ```
 
+Promoted lock:
+
+```text
+config/dependencies/android-source-deps-aarch64-linux-android.lock.json
+```
+
+Verification command:
+
+```sh
+bash experiments/stage3b-dependency-promotion/verify-promoted-inputs.sh
+```
+
+Expected verification marker:
+
+```text
+STAGE3B_DEPENDENCY_INPUT_VERIFY=PASS
+```
+
 ## Promotion model
 
 Phase 3 distinguishes:
@@ -90,13 +108,13 @@ A cache hit is not reproducibility evidence unless the archive bytes match the p
 
 ```text
 [x] Phase 2 consumed all six declared release archives successfully
-[ ] all six cached archives exist
-[ ] all six archives are readable tar products
-[ ] SHA-256 and size captured for all six
-[ ] archive structural inventory captured for all six
-[ ] immutable identities promoted into a tracked manifest
+[x] all six cached archives exist
+[x] all six archives are readable tar products
+[x] SHA-256 and size captured for all six
+[x] archive structural inventory captured for all six
+[x] immutable identities promoted into a tracked manifest
 [ ] a second capture verifies the promoted identities
-[ ] extraction/product boundary is documented
+[x] extraction/product boundary is documented
 ```
 
 ## Non-goals
