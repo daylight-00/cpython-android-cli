@@ -105,19 +105,15 @@ write_mutation_result \
     "$frozen_before" \
     "$frozen_after"
 
+mutation_rc=0
 if [[ "$candidate_before" != "$candidate_after" ]]; then
     echo "ERROR: promoted runtime candidate metadata fingerprint changed" >&2
-    exit 3
+    mutation_rc=3
 fi
 
 if [[ "$frozen_before" != "$frozen_after" ]]; then
     echo "ERROR: frozen Stage 2-C runtime metadata fingerprint changed" >&2
-    exit 3
-fi
-
-if [[ $workflow_rc -ne 0 ]]; then
-    echo "STAGE3B_PROMOTED_CLOSURE=FAIL rc=$workflow_rc"
-    exit "$workflow_rc"
+    mutation_rc=3
 fi
 
 set +e
@@ -131,9 +127,18 @@ PYTHONPYCACHEPREFIX="$RESULTS_DIR/pycache-verification" \
 verify_rc=$?
 set -e
 
-if [[ $verify_rc -ne 0 ]]; then
-    echo "STAGE3B_PROMOTED_CLOSURE=FAIL rc=$verify_rc"
-    exit "$verify_rc"
+final_rc=0
+if [[ $workflow_rc -ne 0 ]]; then
+    final_rc=$workflow_rc
+elif [[ $mutation_rc -ne 0 ]]; then
+    final_rc=$mutation_rc
+elif [[ $verify_rc -ne 0 ]]; then
+    final_rc=$verify_rc
+fi
+
+if [[ $final_rc -ne 0 ]]; then
+    echo "STAGE3B_PROMOTED_CLOSURE=FAIL rc=$final_rc"
+    exit "$final_rc"
 fi
 
 printf '\n'
