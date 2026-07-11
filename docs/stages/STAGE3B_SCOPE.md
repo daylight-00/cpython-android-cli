@@ -1,16 +1,18 @@
 # Stage 3-B Scope: Reproducible Build-Input Promotion
 
-> **Status:** ACTIVE
+> **Status:** FROZEN
 > **Input:** frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
-> **Current sub-phase:** Phase 5 final relocation rerun
+> **Final record:** `docs/stages/STAGE3B_FINAL.md`
 
 ## Question
 
-> Can the launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
+> Can the launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths, then preserve the frozen runtime model on the actual target?
 
-Stage 3-B is a producer-reproducibility and target-equivalence stage, not a packaging stage.
+## Answer
+
+Yes, for the selected and recorded source, toolchain, dependency, producer, product, transport, assembly, and target-validation configuration.
 
 ## Principle
 
@@ -20,37 +22,34 @@ before
 normalizing consumer artifact metadata
 ```
 
-Do not begin by mass-rewriting sysconfig or hiding historical build provenance. First make source, toolchain, dependency, command, and product boundaries explicit.
+Stage 3-B did not begin by rewriting sysconfig or hiding provenance. It first made producer state and product boundaries explicit, then validated the promoted runtime against the frozen target model.
 
-## Phase status
+## Frozen phase status
 
 ```text
 Phase 1  current producer provenance reconstruction   FROZEN
 Phase 2  controlled Linux producer replay            FROZEN
 Phase 3  dependency product promotion                FROZEN
 Phase 4  CPython dev/runtime prefix promotion         FROZEN
-Phase 5  Stage 3-A target equivalence validation      ACTIVE
+Phase 5  Stage 3-A target equivalence validation      FROZEN
 ```
 
-Authoritative documents:
+Authoritative summaries:
 
 ```text
 docs/evidence/STAGE3B_PHASE1_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE2_SCOPE.md
 docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE3_SCOPE.md
 docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/evidence/STAGE3B_PHASE4_FINAL_SUMMARY.md
-docs/stages/STAGE3B_PHASE5_SCOPE.md
+docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
 ```
 
-## Frozen producer result
+## Frozen producer boundary
 
-Stage 3-B has made explicit:
+Stage 3-B made explicit:
 
 ```text
-exact CPython source commit
+exact CPython source identity
 CPython version/tag identity
 Android SDK/NDK identity
 NDK 27.3.13750724
@@ -61,26 +60,30 @@ dependency source archive hashes
 configure inputs
 build command path
 promoted dependency products
-promoted CPython dev/runtime products
-promoted launcher inputs
-transport and isolated Termux assembly
+promoted CPython development product
+promoted CPython runtime product
+promoted launcher inputs and output
+transport boundary
+isolated Termux assembly boundary
 ```
 
-The promoted runtime is assembled at:
+Canonical promoted target runtime:
 
 ```text
 work/termux/stage3b-promoted-runtime/prefix
 ```
 
-Frozen control:
+Frozen comparison/control runtime:
 
 ```text
 work/termux/stage2c/runtime/prefix
 ```
 
-## Stage 3-A invariants to preserve
+Both are generated local products, not tracked Git artifacts.
 
-A build is not accepted merely because it completes. The produced runtime must preserve or explicitly reopen:
+## Preserved runtime model
+
+The promoted runtime preserved:
 
 ```text
 R2 conditional self re-exec
@@ -93,11 +96,12 @@ venv prefix/base_prefix identity
 zero unresolved DT_NEEDED edges
 67/67 tested extension surface
 Termux CA integration
-timezone-data boundary model
+explicit timezone-data boundary model
 whole-prefix relocation
+stale-prefix absence
 ```
 
-## Phase 5 completed gates
+## Phase 5 final result
 
 ### Canonical behavior
 
@@ -108,22 +112,20 @@ STAGE3B_PROMOTED_SMOKE=PASS
 ### Native closure
 
 ```text
-candidate file entries                  3155
-symlinks                                   5
-ELF objects                               81
-DT_NEEDED edges                          329
-RUNTIME_INTERNAL edges                    80
-ANDROID_SYSTEM edges                     249
-unresolved edges                           0
-inspection errors                          0
-Android-system SONAME dlopen             5/5
-extension imports                       67/67
-candidate/frozen mutation controls       PASS
-machine verifier checks                37/37
+candidate entries                         3155
+symlinks                                     5
+ELF objects                                 81
+DT_NEEDED edges                            329
+RUNTIME_INTERNAL edges                      80
+ANDROID_SYSTEM edges                       249
+unresolved edges                             0
+inspection errors                            0
+Android-system SONAME dlopen               5/5
+extension imports                         67/67
+candidate/frozen mutation controls         PASS
+machine verifier checks                  37/37
 STAGE3B_PROMOTED_CLOSURE=PASS
 ```
-
-The raw file-entry difference from the frozen aggregate (`3280`) is retained as an observation, not a semantic equality gate.
 
 ### CA and timezone boundaries
 
@@ -136,126 +138,7 @@ machine verifier checks                  28/28
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-Both base runtimes lacked a usable timezone source on the tested host. The first-party `tzdata` fallback resolved `UTC`, `Asia/Seoul`, and `America/New_York` for both.
-
-## Phase 5 final gate: promoted whole-prefix relocation
-
-Production shape:
-
-```text
-canonical promoted candidate
-  -> copy to location A
-  -> validate A
-  -> move complete prefix A -> B
-  -> validate B
-```
-
-At A and B the harness validates:
-
-```text
-runtime identity
-active sysconfig paths
-native stdlib and libc loadability
-HTTPS through Termux CA integration
-subprocess identity
-fresh uv venv
-fresh venv base identity
-uv run
-uv run base identity
-stale-prefix absence
-```
-
-## First relocation run
-
-Functional relocation passed:
-
-```text
-LOCATION_RECONFIRM[A]=PASS
-LOCATION_RECONFIRM[B]=PASS
-STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
-STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
-candidate mutation control                 PASS
-frozen mutation control                    PASS
-```
-
-The initial source/B fingerprint failed because it included directory `st_size`.
-
-Read-only diagnosis:
-
-```text
-source entries               3155
-relocated entries            3155
-added paths                     0
-removed paths                   0
-portable changed paths          0
-pycache paths                    0
-portable fidelity             PASS
-```
-
-Only one strict row differed:
-
-```text
-lib/python3.14/lib-dynload
-  type          directory
-  changed       st_size only
-  source        12288
-  relocated     20480
-```
-
-No regular-file content, file metadata, symlink target, path set, or directory mtime changed.
-
-Classification:
-
-```text
-FINGERPRINT CONTRACT FALSE POSITIVE
-```
-
-## Corrected fidelity architecture
-
-The earlier implementation reused one fingerprint for two different questions. The corrected architecture separates them.
-
-### Same-tree mutation controls
-
-Candidate and frozen prefixes are measured before and after the workflow using the strict metadata-sensitive fingerprint. These are the same inode trees and must remain unchanged.
-
-### Cross-tree product fidelity
-
-Source and relocated B are different inode trees. Product fidelity requires:
-
-```text
-same relative path set
-same entry type
-same mode
-same mtime
-same regular-file size and SHA-256
-same symlink target
-```
-
-Directory `st_size` is excluded because it is filesystem allocation metadata, not runtime product content. The strict source/B difference remains recorded for diagnosis.
-
-This corrected contract is stronger for actual file payload because every regular file is hashed.
-
-Evidence:
-
-```text
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
-```
-
-## Current action
-
-Run the corrected end-to-end gate on Termux:
-
-```sh
-rm -rf \
-  work/termux/stage3b-promoted-relocation \
-  results/termux/stage3b-promoted-relocation
-
-bash \
-  experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-Expected final markers:
+### Production-shape relocation
 
 ```text
 LOCATION_RECONFIRM[A]=PASS
@@ -266,6 +149,77 @@ CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
 FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
+
+Relocation verifier:
+
+```text
+schema_version      2
+check_count        31
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
+```
+
+Relocated-product fidelity:
+
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
+strict fidelity               PASS
+```
+
+Portable source/B fingerprint:
+
+```text
+79ca7d53f25810b1f5276d18df31f10f2ae981dc24caf67c5f33d37fa75127c8
+```
+
+Candidate source mutation fingerprint:
+
+```text
+834f7aeb2e5266f027b6ee43dd77255079b2e01cf049dad56fda5ef39ce048b0
+```
+
+Frozen control mutation fingerprint:
+
+```text
+5a14f213bbf069b844a799615ed2b87eb34b48b4251b0a48bf431337e929ce0e
+```
+
+## Frozen design decisions
+
+### Raw file count is not semantic equality
+
+The frozen historical runtime aggregate was `3280`; the promoted candidate has `3155` entries. Complete inventories are retained, while acceptance is based on runtime behavior, native closure, extension surface, active identity, data boundaries, relocation, and mutation/fidelity controls.
+
+### Validation must not mutate products
+
+Isolated child interpreters use explicit `-B` where needed. Candidate and frozen control trees are fingerprinted before and after workflows.
+
+### Probe flags must preserve tested inputs
+
+The zoneinfo probe does not use isolated mode while testing `PYTHONTZPATH`; it sanitizes ambient Python variables and records actual flags and inputs.
+
+### Same-tree mutation and cross-tree fidelity are separate
+
+Same-tree before/after controls use strict metadata-sensitive fingerprints.
+
+Cross-tree source/B fidelity requires:
+
+```text
+same relative path set
+same entry type, mode and mtime
+same regular-file size and SHA-256
+same symlink target
+```
+
+Directory `st_size` is excluded because it is filesystem allocation metadata. Strict cross-tree observations are still retained.
 
 ## Stage 3-B completion conditions
 
@@ -283,25 +237,47 @@ STAGE3B_PROMOTED_RELOCATION=PASS
 [x] smoke equivalence passes
 [x] native closure equivalence passes
 [x] CA/timezone boundary equivalence passes
-[x] first relocation functional assertions pass
-[x] relocation fingerprint incident classified
-[x] portable cross-tree fidelity contract implemented
-[ ] corrected relocation workflow passes end to end
-[ ] final Phase 5 evidence frozen
+[x] whole-prefix relocation passes
+[x] candidate/frozen mutation controls pass
+[x] relocated-product path/content/symlink fidelity passes
+[x] Phase 5 final evidence frozen
 ```
 
-## Non-goals
+## Frozen claim boundary
 
-Deferred unless new evidence requires them:
+Stage 3-B does not define:
 
 ```text
-final archive naming
-installer UX
-uv managed-Python provider metadata
-multi-ABI/API matrix
-PGO/LTO
-binary-size optimization
-mass patchelf rewriting
-SBOM
-release signing
+release archive format
+archive reproducibility contract
+installer transaction model
+installation prefix ownership
+upgrade/uninstall behavior
+consumer discovery metadata
+uv managed-Python provider contract
+multi-ABI/API release matrix
+signing, SBOM, or published provenance attestations
+```
+
+## Next stage
+
+Stage 3-C may consume the frozen promoted product model and design the distribution archive and installation contract.
+
+The first Stage 3-C task is contract design, not immediate packaging implementation:
+
+```text
+select archive payload boundary
+select install-prefix and ownership model
+select metadata and manifest format
+select reproducibility definition
+select installer/upgrade/uninstall transaction model
+select validation matrix for unpacked and installed forms
+```
+
+Any packaging transformation must preserve or explicitly revalidate the frozen runtime, closure, boundary, relocation, and product-fidelity invariants.
+
+## Final marker
+
+```text
+STAGE3B=FROZEN
 ```
