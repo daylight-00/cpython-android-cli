@@ -7,7 +7,7 @@ SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 # shellcheck disable=SC1091
 source "$SCRIPT_DIR/../../scripts/lib/project-env.sh"
 
-RESULTS_DIR="${RESULTS_DIR:-$RESULTS_ROOT/workstation/stage3b-upstream-replay}"
+RESULTS_DIR="${RESULTS_DIR:-$RESULTS_ROOT/workstation/stage3b-phase2-replay}"
 PLAN_JSON="$RESULTS_DIR/replay-plan.json"
 LOG="$RESULTS_DIR/replay-build.log"
 
