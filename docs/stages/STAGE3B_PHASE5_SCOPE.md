@@ -1,27 +1,27 @@
-# Stage 3-B Phase 5 Scope: Target Runtime and Closure Equivalence
+# Stage 3-B Phase 5: Target Runtime and Closure Equivalence
 
-> **Status:** ACTIVE — corrected final relocation rerun pending
+> **Status:** FROZEN
 > **Input:** isolated promoted runtime candidate
 > **Execution host:** Termux on Android arm64
-> **Baseline:** frozen Stage 3-A runtime and closure model
+> **Baseline:** frozen Stage 2-C runtime and Stage 3-A closure/boundary model
 
 ## Question
 
-> Does the runtime assembled from promoted products preserve the frozen Stage 2 behavior and Stage 3-A closure invariants on the actual target?
+> Does the runtime assembled from promoted products preserve the frozen runtime behavior and closure invariants on the actual target?
 
-## Candidate and baseline
+## Inputs
 
 ```text
 candidate
   work/termux/stage3b-promoted-runtime/prefix
 
-baseline
+frozen control
   work/termux/stage2c/runtime/prefix
 ```
 
-The baseline and canonical candidate are source/control inputs. Candidate-specific evidence is written under `results/termux/stage3b-*`.
+Both are treated as read-only source/control trees during validation.
 
-## Validation order
+## Gate sequence
 
 ```text
 1. canonical behavior smoke
@@ -31,10 +31,10 @@ The baseline and canonical candidate are source/control inputs. Candidate-specif
 5. active runtime/sysconfig paths
 6. CA and timezone boundary behavior
 7. subprocess, uv and venv identity
-8. whole-prefix relocation
+8. production-shape whole-prefix relocation
 ```
 
-## Gate 1: promoted canonical smoke — PASS
+## Gate 1: canonical smoke — PASS
 
 ```text
 candidate executable/prefix/base_prefix identity   PASS
@@ -44,24 +44,11 @@ subprocess identity                                PASS
 uv venv creation                                   PASS
 venv prefix/base_prefix identity                   PASS
 uv run                                             PASS
-frozen runtime mutation check                      PASS
-```
-
-Final marker:
-
-```text
+frozen mutation control                            PASS
 STAGE3B_PROMOTED_SMOKE=PASS
 ```
 
-Evidence:
-
-```text
-docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
-```
-
-## Gate 2: promoted closure equivalence — PASS
-
-Clean rerun result after repairing isolated-child bytecode controls:
+## Gate 2: native closure — PASS
 
 ```text
 candidate file entries                  3155
@@ -77,189 +64,55 @@ extension imports                       67/67
 candidate mutation control              PASS
 frozen mutation control                 PASS
 machine verifier checks                37/37
-```
-
-Final marker:
-
-```text
 STAGE3B_PROMOTED_CLOSURE=PASS
 ```
 
-Evidence:
+The first attempt created 43 bytecode-related entries because isolated child interpreters ignored shell `PYTHON*` controls. The child contract was corrected to `python -I -B -S`, and a fresh candidate was assembled rather than cleaned in place.
+
+## Gate 3: CA and timezone boundaries — PASS
 
 ```text
-docs/evidence/STAGE3B_PHASE5_PROBE_MUTATION_DIAGNOSIS.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
-```
-
-## Gate 3: CA and timezone boundary equivalence — PASS
-
-Corrected boundary verifier:
-
-```text
-check_count        28
-failed_checks      []
-missing_outputs    []
-parse_errors       {}
-pass               true
-```
-
-Observed model for both candidate and frozen runtime:
-
-```text
-CA policy matrix
-  clean default                 HTTPS 200 through Termux CA
-  explicit Termux CA            preserved, HTTPS 200
-  missing CA path               repaired, HTTPS 200
-  existing empty regular file   preserved, expected HTTPS failure
-
-base zoneinfo data
-  default POSIX TZPATH           unavailable on tested host
-  explicit Termux zoneinfo path  delivered but absent
-  base first-party tzdata        absent
-
-uv first-party fallback
-  tzdata 2026.3
-  UTC                            PASS
-  Asia/Seoul                     PASS
-  America/New_York               PASS
-```
-
-Final marker:
-
-```text
+machine verifier checks                  28/28
+CA policy matrix                          equivalent
+corrected direct-zoneinfo scenarios      equivalent
+base timezone source                     unavailable in both
+uv first-party tzdata                    2026.3
+UTC                                      PASS for both
+Asia/Seoul                               PASS for both
+America/New_York                         PASS for both
+candidate mutation control               PASS
+frozen mutation control                  PASS
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-Evidence:
+The direct-zoneinfo probe was corrected because isolated mode ignored the `PYTHONTZPATH` variable under test.
+
+## Gate 4: production-shape relocation — PASS
+
+Production shape:
 
 ```text
-docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
-```
-
-## Gate 4 first run: functional relocation PASS, fingerprint contract incident
-
-The production-shape workflow used:
-
-```text
-promoted source candidate
+canonical promoted candidate
   -> copy complete prefix to location A
   -> validate A
-  -> move whole prefix A -> B
+  -> move complete prefix A -> B
   -> validate B
 ```
 
-Functional result:
+A and B validated:
 
 ```text
-LOCATION_RECONFIRM[A]=PASS
-LOCATION_RECONFIRM[B]=PASS
-STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
-STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
-candidate source mutation control       PASS
-frozen control mutation control         PASS
+sys.executable, sys.prefix and sys.base_prefix
+active sysconfig paths
+native stdlib and libc loadability
+HTTPS through Termux CA integration
+subprocess interpreter identity
+fresh uv venv and venv base identity
+uv run and uv run base identity
+forbidden stale-prefix absence
 ```
 
-The initial machine verifier passed 15 of 16 checks. Only the source/B tree fingerprint failed.
-
-## Relocation fidelity diagnosis
-
-A retained-tree, path-level comparison hashed every regular file.
-
-```text
-source_entry_count          3155
-relocated_entry_count       3155
-added_count                    0
-removed_count                  0
-portable_changed_count         0
-pycache_path_count              0
-portable_pass                true
-```
-
-The only strict difference was:
-
-```text
-path          lib/python3.14/lib-dynload
-type          directory
-field         st_size
-source        12288
-relocated     20480
-```
-
-No product path, file content, file metadata, symlink target, or directory mtime changed.
-
-Classification:
-
-```text
-FINGERPRINT CONTRACT FALSE POSITIVE
-```
-
-The previous source/B fingerprint treated directory allocation size as product payload. That is not a valid cross-inode fidelity requirement.
-
-Evidence:
-
-```text
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
-```
-
-## Corrected fidelity contracts
-
-### Same-tree mutation checks
-
-Candidate and frozen before/after controls retain the strict metadata-sensitive fingerprint because the same inode tree is measured twice and must remain untouched.
-
-### Cross-tree source/B product fidelity
-
-The corrected portable manifest requires:
-
-```text
-same relative path set
-same entry type
-same mode
-same mtime
-
-regular files
-  same size
-  same SHA-256
-
-symlinks
-  same target
-
-directories
-  st_size excluded
-```
-
-The strict source/B fingerprint remains recorded as a non-gating observation.
-
-## Current action: corrected Gate 4 rerun
-
-```sh
-git pull --ff-only
-
-rm -rf \
-  work/termux/stage3b-promoted-relocation \
-  results/termux/stage3b-promoted-relocation
-
-bash \
-  experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-The corrected wrapper now:
-
-```text
-runs A and B functional relocation assertions
-keeps candidate/frozen strict same-tree mutation controls
-builds source and B path-level manifests
-hashes every regular file
-compares symlink targets
-ignores only directory st_size for cross-tree fidelity
-retains strict source/B differences for diagnosis
-writes a structured verifier result
-```
-
-Expected final markers:
+Final markers:
 
 ```text
 LOCATION_RECONFIRM[A]=PASS
@@ -271,17 +124,99 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_RELOCATION=PASS
 ```
 
-Primary evidence:
+Machine verdict:
 
 ```text
-results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
-results/termux/stage3b-promoted-relocation/fidelity-diagnosis/tree-delta.json
-results/termux/stage3b-promoted-relocation/relocated-runtime-fidelity-check.txt
+schema_version      2
+check_count        31
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
+```
+
+## Relocated-product fidelity
+
+```text
+source_entry_count             3155
+relocated_entry_count          3155
+added_count                       0
+removed_count                     0
+portable_changed_count            0
+pycache_path_count                 0
+portable_pass                   true
+strict_changed_count               0
+strict_pass                     true
+```
+
+Portable source/B fingerprint:
+
+```text
+79ca7d53f25810b1f5276d18df31f10f2ae981dc24caf67c5f33d37fa75127c8
+```
+
+Path-level strict diagnostic source/B fingerprint:
+
+```text
+f46b5d81917e9d5dbcfc826a7ef33ef84c1b7db127689def7f20966037a57011
+```
+
+Same-tree shell source/B fingerprint on the clean rerun:
+
+```text
+834f7aeb2e5266f027b6ee43dd77255079b2e01cf049dad56fda5ef39ce048b0
+```
+
+## Fidelity incident and resolution
+
+The first relocation attempt passed functional A/B validation but the old cross-tree fingerprint differed because `lib/python3.14/lib-dynload` had a different directory `st_size` after copying.
+
+Read-only diagnosis proved:
+
+```text
+same 3155 paths
+no added or removed entries
+no regular-file content differences
+no file metadata differences
+no symlink differences
+no directory mtime differences
+no bytecode additions
+```
+
+The failure was classified as a fingerprint-contract false positive. The final architecture separates:
+
+```text
+same-tree mutation
+  strict metadata-sensitive fingerprint
+
+cross-tree product fidelity
+  same path/type/mode/mtime
+  same regular-file size and SHA-256
+  same symlink target
+  directory st_size excluded
+```
+
+This is stronger for actual product payload because every regular file is hashed.
+
+## Source/control mutation fingerprints
+
+Canonical candidate:
+
+```text
+before == after
+834f7aeb2e5266f027b6ee43dd77255079b2e01cf049dad56fda5ef39ce048b0
+```
+
+Frozen control:
+
+```text
+before == after
+5a14f213bbf069b844a799615ed2b87eb34b48b4251b0a48bf431337e929ce0e
 ```
 
 ## File-entry count policy
 
-The frozen Stage 3-A aggregate was `3280`; the promoted candidate has `3155` entries. Raw aggregate count is not a semantic equality gate across different products. Complete inventories, native closure, runtime identity, import surface, data boundaries, relocation behavior, and mutation controls are the acceptance dimensions.
+The frozen historical aggregate was `3280`; the promoted candidate has `3155` entries. Raw aggregate equality across separately produced trees is not a semantic gate. Complete inventories are retained, while acceptance is based on behavior, native closure, import surface, active identity, data boundaries, relocation, and mutation/product-fidelity controls.
 
 ## Acceptance conditions
 
@@ -303,14 +238,30 @@ The frozen Stage 3-A aggregate was `3280`; the promoted candidate has `3155` ent
 [x] corrected timezone boundary equivalence passes
 [x] first-party tzdata fallback equivalence passes
 [x] boundary candidate/frozen mutation controls pass
-[x] first-run relocation A validation passes
-[x] first-run relocation B validation passes
-[x] first-run stale A-prefix assertions pass
-[x] first-run candidate/frozen mutation controls pass
-[x] source/B fidelity incident classified
-[x] corrected portable source/B contract defined
-[ ] corrected relocation wrapper passes end to end
-[ ] corrected relocation machine verdict passes
+[x] relocation A validation passes
+[x] relocation B validation passes
+[x] stale A-prefix assertions pass
+[x] relocated-product path/content/symlink fidelity passes
+[x] relocation candidate/frozen mutation controls pass
+[x] relocation machine verdict passes 31/31
 ```
 
-Phase 5 remains active until the corrected Gate 4 rerun passes and its final evidence is frozen.
+## Evidence map
+
+```text
+docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
+docs/evidence/STAGE3B_PHASE5_PROBE_MUTATION_DIAGNOSIS.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
+docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION.md
+docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
+```
+
+## Final marker
+
+```text
+STAGE3B_PHASE5=FROZEN
+```

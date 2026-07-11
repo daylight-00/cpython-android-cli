@@ -1,32 +1,20 @@
 # Stage 3-B Phase 5 Promoted Relocation Fidelity Incident
 
-> **Status:** Diagnosed and resolved
+> **Status:** Resolved and superseded by final PASS
 > **Execution host:** Termux on Android arm64
 > **Functional relocation:** PASS at A and B
 > **Source mutation controls:** PASS
 > **Initial strict fingerprint:** FAIL
 > **Corrected portable fidelity:** PASS
+> **Final clean rerun:** PASS
 
 ## Purpose
 
-This document preserves the first promoted whole-prefix relocation run, the exact failure, and its later classification.
+This document preserves the first promoted whole-prefix relocation run, its exact failure, the row-level diagnosis, and the later clean rerun that closed the gate.
 
-The run used:
+## First-run functional result
 
-```text
-source candidate
-  work/termux/stage3b-promoted-runtime/prefix
-
-location A
-  work/termux/stage3b-promoted-relocation/location-a/prefix
-
-location B
-  work/termux/stage3b-promoted-relocation/location-b/prefix
-```
-
-## Functional result
-
-Both locations passed:
+The first run validated both locations:
 
 ```text
 runtime identity re-rooted
@@ -37,9 +25,8 @@ fresh uv venv PASS
 venv base-prefix identity PASS
 uv run PASS
 uv run base-prefix identity PASS
+stale A-prefix active assertions absent at B
 ```
-
-At B, the old A prefix was absent from all tested active runtime assertions.
 
 Observed markers:
 
@@ -50,9 +37,7 @@ STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
 STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
 ```
 
-The uv hardlink warning was the already-reviewed fallback-to-copy performance warning. Both package installation and consumer validations completed.
-
-## Initial machine verdict
+The initial machine verifier reported:
 
 ```text
 check_count       16
@@ -73,8 +58,6 @@ Candidate and frozen controls were unchanged.
 ## Read-only diagnosis
 
 The retained source and B trees were compared path by path, hashing every regular file.
-
-Result:
 
 ```text
 source_entry_count          3155
@@ -111,7 +94,7 @@ No file content, file size, mode, mtime, symlink target, or path-set difference 
 
 The previous fingerprint used `find -printf %s` for all entry types. For directories, `%s` is directory `st_size`, an inode/filesystem allocation property rather than product payload size.
 
-The failure is therefore classified as:
+The failure was classified as:
 
 ```text
 FINGERPRINT CONTRACT FALSE POSITIVE
@@ -131,7 +114,7 @@ path-set mutation
 
 Same-tree candidate/frozen before-and-after mutation controls retain the strict metadata-sensitive fingerprint.
 
-Cross-tree source/B fidelity now requires:
+Cross-tree source/B fidelity requires:
 
 ```text
 identical path set
@@ -148,6 +131,57 @@ Detailed resolution:
 docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
 ```
 
+## Final clean rerun
+
+The corrected end-to-end wrapper later passed:
+
+```text
+schema_version      2
+check_count        31
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
+```
+
+Final product comparison:
+
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
+strict fidelity               PASS
+```
+
+Portable source/B fingerprint:
+
+```text
+79ca7d53f25810b1f5276d18df31f10f2ae981dc24caf67c5f33d37fa75127c8
+```
+
+Final markers:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
+
 ## Current conclusion
 
-The first run proves functional relocation and corrected portable product fidelity. A clean end-to-end rerun of the corrected Gate 4 wrapper remains required before Phase 5 freeze.
+The incident is closed. It remains preserved because it explains why same-tree mutation controls and cross-tree product fidelity use different contracts.
+
+Final selected evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION.md
+docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
+```

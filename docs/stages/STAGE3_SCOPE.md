@@ -2,10 +2,10 @@
 
 > **Status:** ACTIVE
 > **Start date:** 2026-07-10
-> **Input:** Frozen Stage 2 architecture
+> **Input:** frozen Stage 2 architecture
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
-> **Current active sub-stage:** Stage 3-B
+> **Current active sub-stage:** Stage 3-C contract design
 
 ## 1. Stage 3 question
 
@@ -25,9 +25,7 @@ Stage 3 asks:
 
 > How should this validated runtime become a reproducible, inspectable, relocatable distribution product without losing the behavior frozen in Stage 2?
 
-Stage 3 is not primarily a launcher experiment.
-
-The launcher remains a frozen input unless new evidence requires reopening Stage 2.
+Stage 3 is not primarily a launcher experiment. The launcher remains a frozen input unless new evidence requires reopening Stage 2.
 
 The Stage 3 problem surface is:
 
@@ -53,11 +51,11 @@ Stage 3-A
 
 Stage 3-B
   Reproducible build-input promotion
-  ACTIVE
+  FROZEN
 
 Stage 3-C
   Distribution archive and installation contract
-  DEFERRED
+  ACTIVE — contract design
 
 Stage 3-D
   Consumer integration and optional managed-Python research
@@ -68,7 +66,7 @@ Authoritative sub-stage documents:
 
 ```text
 docs/stages/STAGE3A_FINAL.md
-docs/stages/STAGE3B_SCOPE.md
+docs/stages/STAGE3B_FINAL.md
 ```
 
 ## 3. Why Stage 3 began with closure
@@ -89,35 +87,13 @@ which runtime data sources are absent or external
 
 Stage 3-A answered those questions for the tested target before packaging work began.
 
-## 4. Stage 3-A frozen result
-
-Stage 3-A is frozen.
+## 4. Frozen Stage 3-A result
 
 Input runtime:
 
 ```text
 work/termux/stage2c/runtime/prefix
 ```
-
-The stage performed:
-
-```text
-complete file inventory
-symlink inventory
-ELF object inventory
-DT_NEEDED edge inventory
-provider classification
-Android SONAME loadability probes
-extension import sweep
-sysconfig path census and classification
-timezone-data boundary probes
-CA trust boundary probes
-representative runtime audit
-canonical smoke reconfirmation
-production-shape relocation reconfirmation
-```
-
-### 4.1 Runtime inventory
 
 Observed:
 
@@ -126,30 +102,13 @@ file entries             3280
 symlinks                    5
 ELF objects                 81
 DT_NEEDED edges            329
-inspection errors            0
-mutation check            PASS
+RUNTIME_INTERNAL edges      80
+ANDROID_SYSTEM edges       249
+UNRESOLVED edges              0
+inspection errors             0
 ```
 
-### 4.2 Native closure
-
-Observed:
-
-```text
-9 unique needed SONAMEs
-  4 RUNTIME_INTERNAL
-  5 ANDROID_SYSTEM
-
-RUNTIME_INTERNAL edges    80
-ANDROID_SYSTEM edges     249
-TERMUX native edges        0
-UNRESOLVED edges            0
-```
-
-The five unique Android-system SONAMEs passed fresh-process loadability probes on the tested target.
-
-### 4.3 Extension surface
-
-Observed:
+Extension surface:
 
 ```text
 67 extension candidates
@@ -157,88 +116,23 @@ Observed:
 0 import FAIL
 ```
 
-### 4.4 Runtime paths and build metadata
-
-Stage 3-A established:
-
-```text
-active runtime paths
-  relocation-aware
-
-build/development metadata
-  partially stale
-```
-
-Concrete residue included:
-
-```text
-/usr/local build-prefix paths
-upstream build-workspace paths
-macOS NDK toolchain paths
-host build-tool paths
-```
-
-The missing absolute-path set was classified completely with:
-
-```text
-UNKNOWN=0
-```
-
-### 4.5 Non-ELF boundaries
-
-CA trust:
+Boundary model:
 
 ```text
 Termux host CA integration confirmed
-unset path repair PASS
-missing path repair PASS
-explicit Termux CA PASS
-existing unusable regular file preserved -> HTTPS FAIL
-```
-
-Frozen semantic clarification:
-
-```text
-launcher performs path-level CA repair
-launcher does not validate trust-store contents
-```
-
-Timezone data:
-
-```text
-base runtime source absent
-first-party tzdata package fallback PASS
-```
-
-Temporary storage:
-
-```text
+base timezone source absent on tested host
+first-party tzdata fallback PASS
 Termux $PREFIX/tmp observed
 ```
 
-Representative audit:
-
-```text
-all exact observed rows classified
-no new unknown broad boundary in observed set
-```
-
-### 4.6 Final reconfirmation
-
-Observed:
+Final markers:
 
 ```text
 STAGE2C_SMOKE=PASS
-
 LOCATION_RECONFIRM[A]=PASS
 LOCATION_RECONFIRM[B]=PASS
 STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
 STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
-```
-
-Stage 3-A acceptance result:
-
-```text
 STAGE3A=FROZEN
 ```
 
@@ -249,152 +143,107 @@ docs/stages/STAGE3A_FINAL.md
 docs/evidence/STAGE3A_FINAL_RECONFIRMATION_SUMMARY.md
 ```
 
-## 5. Stage 3-B: reproducible build-input promotion
+## 5. Frozen Stage 3-B result
 
-Stage 3-B is active.
+Stage 3-B reconstructed and replayed the producer model, promoted explicit dependency and CPython products, assembled the promoted runtime on Termux, and validated it against the frozen target model.
 
-Question:
-
-> Can the current launcher development input and Android runtime prefix be regenerated from declared source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
-
-The current development input is:
+Frozen phases:
 
 ```text
-experiments/bootstrap-android-build/android-python-work/prefix
+Phase 1  producer provenance reconstruction          FROZEN
+Phase 2  controlled Linux producer replay            FROZEN
+Phase 3  dependency product promotion                FROZEN
+Phase 4  CPython dev/runtime product promotion        FROZEN
+Phase 5  target runtime and closure equivalence       FROZEN
 ```
 
-This is accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
-
-Stage 3-B must establish at minimum:
+Promoted runtime:
 
 ```text
-CPython source identity
-CPython tag/commit identity
-Android SDK identity
-Android NDK identity
-API level
-host build Python identity
-third-party dependency names
-third-party dependency versions
-third-party dependency source identities
-build command sequence
-build options
-output prefix identity
-hashes of promoted build products
+work/termux/stage3b-promoted-runtime/prefix
 ```
 
-Desired conceptual pipeline:
+Producer boundary made explicit:
 
 ```text
-source inputs
-    -> declared
-
-toolchain inputs
-    -> declared
-
-native dependency sources
-    -> reproducible dependency products
-
-CPython Android build
-    -> reproducible Android prefix
-
-launcher build
-    -> reproducible production launcher
-
-runtime assembly
-    -> Stage 3-A-equivalent runtime closure
+CPython source/tag/commit identity
+Android SDK/NDK/API/target identity
+host build Python and tools
+third-party dependency versions, recipes, archives and hashes
+configure/build command model
+promoted dependency products
+promoted CPython development/runtime products
+promoted launcher input/output
+transport and isolated Termux assembly
 ```
 
-Stage 3-B must not begin by mass-rewriting sysconfig metadata.
+Target-equivalence results:
 
-It must reconstruct and replay the producer model first.
+```text
+STAGE3B_PROMOTED_SMOKE=PASS
+STAGE3B_PROMOTED_CLOSURE=PASS
+STAGE3B_PROMOTED_BOUNDARIES=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
+STAGE3B_PHASE5=FROZEN
+STAGE3B=FROZEN
+```
+
+Promoted closure:
+
+```text
+candidate entries                         3155
+ELF objects                                 81
+DT_NEEDED edges                            329
+unresolved edges                             0
+Android-system SONAME dlopen               5/5
+extension imports                         67/67
+machine verifier checks                  37/37
+```
+
+Promoted boundary equivalence:
+
+```text
+CA contract equivalence                    PASS
+corrected direct-zoneinfo equivalence      PASS
+uv tzdata 2026.3 fallback equivalence      PASS
+machine verifier checks                  28/28
+```
+
+Production-shape relocation:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+machine verifier checks                  31/31
+```
+
+Relocated-product fidelity:
+
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
+strict fidelity               PASS
+```
 
 See:
 
 ```text
-docs/stages/STAGE3B_SCOPE.md
+docs/stages/STAGE3B_FINAL.md
+docs/evidence/STAGE3B_PHASE5_FINAL_SUMMARY.md
 ```
 
-## 6. Stage 3-C: distribution archive and installation contract
+## 6. Frozen invariants entering Stage 3-C
 
-Stage 3-C is deferred until Stage 3-B establishes reproducible producer inputs.
-
-Question:
-
-> What archive layout and metadata contract allow downstream users or tools to inspect, install, verify, and relocate the runtime without project-specific knowledge?
-
-Candidate concepts:
-
-```text
-archive root
-runtime install tree
-machine-readable manifest
-build/provenance metadata
-license directory
-checksums
-optional debug/development material
-```
-
-A likely distinction remains:
-
-```text
-runtime archive
-  interpreter
-  stdlib
-  extension modules
-  internal native libraries
-  launcher
-  runtime manifest
-  licenses
-
-full/development archive
-  runtime archive contents
-  headers
-  libpython development files
-  development metadata
-  optional link information
-```
-
-Stage 3-A strengthened the evidence for this distinction because runtime execution paths were relocation-aware while development metadata remained partially stale.
-
-Required later validation should include:
-
-```text
-extract at A -> smoke PASS
-move whole extracted runtime A -> B -> smoke PASS
-fresh uv venv at A -> PASS
-fresh uv venv at B -> PASS
-uv run at A -> PASS
-uv run at B -> PASS
-archive checksum verification -> PASS
-manifest/file inventory agreement -> PASS
-```
-
-## 7. Stage 3-D: consumer integration
-
-Stage 3-D remains deferred.
-
-Questions may include:
-
-```text
-Can uv discover the installed interpreter naturally as a system Python?
-What naming and install layout improve discovery?
-Should an installer expose python3.14/python3/python links?
-What metadata would be required for managed-Python-style integration?
-Can an Android distribution be represented without misleading Linux target assumptions?
-```
-
-Explicit interpreter selection remains a valid frozen integration model:
-
-```text
-uv ... --python /absolute/path/to/python
-```
-
-The project must not imitate uv-managed distribution metadata before the runtime artifact and producer model are stable.
-
-## 8. Frozen Stage 2 and Stage 3-A invariants
-
-Future work must preserve or intentionally reopen:
+Stage 3-C must preserve or intentionally reopen with new evidence:
 
 ```text
 B0 PyConfig auto-discovery
@@ -408,31 +257,157 @@ separate CA repair from loader repair
 venv sys.prefix / sys.base_prefix identity
 uv explicit interpreter workflow
 whole-prefix relocation behavior
-canonical out/<target>/<profile>/ build artifact path
-Stage 3-A native closure constraints
-Stage 3-A non-ELF boundary understanding
-Stage 3-A production relocation result
+zero unresolved native edges
+67/67 tested extension surface
+explicit CA and timezone-data boundary model
+candidate/control non-mutation
+relocated-product path/content/symlink fidelity
 ```
 
-A Stage 3 optimization that breaks one of these is not automatically progress.
+A packaging optimization that breaks one of these is not automatically progress.
 
-## 9. Current first action
+## 7. Stage 3-C question
 
-The next implementation task is Stage 3-B Phase 1:
+> What archive layout and installation contract allow downstream users or tools to inspect, verify, install, upgrade, uninstall, and relocate the runtime without project-specific knowledge?
 
-> Reconstruct the current producer chain as data before attempting a clean rebuild.
+Stage 3-C is now unblocked because Stage 3-B established explicit producer and product inputs.
 
-The first experiment should inventory:
+The first task is contract design, not immediate tar creation.
+
+## 8. Stage 3-C initial design surface
+
+### 8.1 Payload boundary
+
+Decide whether the distribution model uses:
 
 ```text
-CPython source identity
-SDK/NDK identity
-API level
-host build Python
-third-party native dependency sources and products
-configure/build commands
-launcher development inputs
-current hidden historical path dependencies
+one runtime archive
+or
+separate runtime and development archives
 ```
 
-Only after that map exists should the project attempt a clean replay.
+Candidate runtime payload:
+
+```text
+interpreter launcher
+stdlib
+extension modules
+runtime-internal native libraries
+runtime metadata
+licenses
+```
+
+Candidate development payload:
+
+```text
+headers
+libpython development files
+sysconfig development metadata
+link information
+optional debug material
+```
+
+### 8.2 Installation ownership
+
+Define:
+
+```text
+install root
+owned path set
+collision policy
+upgrade replacement policy
+uninstall behavior
+partial-failure rollback
+```
+
+### 8.3 Machine-readable metadata
+
+Define at minimum:
+
+```text
+schema version
+runtime version
+source/toolchain/dependency provenance
+ABI/API/target identity
+archive payload inventory
+file hashes
+symlink targets
+license references
+runtime/development role classification
+```
+
+### 8.4 Reproducibility definition
+
+Choose whether reproducibility means:
+
+```text
+byte-identical archive
+or
+manifest-identical payload with normalized archive metadata
+```
+
+The definition must explicitly address:
+
+```text
+path ordering
+timestamps
+uid/gid
+file modes
+symlinks
+compression parameters
+archive tool identity
+```
+
+### 8.5 Validation matrix
+
+Required validation should include:
+
+```text
+archive checksum verification -> PASS
+manifest/file inventory agreement -> PASS
+extract at A -> smoke PASS
+move whole extracted runtime A -> B -> smoke PASS
+fresh uv venv at A -> PASS
+fresh uv venv at B -> PASS
+uv run at A -> PASS
+uv run at B -> PASS
+native closure after extraction -> PASS
+source archive versus extracted product fidelity -> PASS
+install -> verify -> upgrade -> uninstall transaction tests
+```
+
+## 9. Stage 3-D remains deferred
+
+Questions may include:
+
+```text
+Can uv discover the installed interpreter naturally as a system Python?
+What naming and install layout improve discovery?
+Should an installer expose python3.14/python3/python links?
+What metadata is required for managed-Python-style integration?
+Can an Android distribution be represented without misleading Linux assumptions?
+```
+
+Explicit interpreter selection remains a valid frozen integration model:
+
+```text
+uv ... --python /absolute/path/to/python
+```
+
+The project must not imitate uv-managed distribution metadata before the archive and installation contract is stable.
+
+## 10. Current first action
+
+Create the Stage 3-C scope before implementing packaging.
+
+The scope must select and justify:
+
+```text
+archive payload boundary
+runtime versus development split
+install-prefix ownership model
+manifest schema
+reproducibility contract
+installer/upgrade/uninstall transaction model
+validation evidence layout
+```
