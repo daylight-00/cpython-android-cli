@@ -1,6 +1,6 @@
 # Stage 3-C Scope: Distribution Archive and Installation Contract
 
-> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–2 frozen; Gate 3 active
+> **Status:** ACTIVE — Phases 1–3 and Phase 4 Gates 1–3 frozen; Gate 4 active
 > **Primary target:** Termux on Android arm64
 > **Python baseline:** CPython 3.14.6
 
@@ -17,6 +17,8 @@ freeze archive bytes and extraction safety
 freeze installation state and transaction policy
 execute and validate isolated lifecycle transactions
 validate abrupt recovery and lock exclusion
+validate durability primitives and write ordering
+integrate durability into complete transaction paths
 validate upgrade/downgrade and installed runtime behavior
 ```
 
@@ -187,35 +189,108 @@ docs/stages/STAGE3C_PHASE4_GATE2_FINAL.md
 docs/evidence/STAGE3C_PHASE4_TRANSACTION_RESULT.md
 ```
 
-## Phase 4 Gate 3 — active recovery and lock validation
+## Phase 4 Gate 3 — frozen recovery and lock validation
+
+```text
+scenario runner       55/55 PASS
+independent verifier  82/82 PASS
+scenario logs          40/40 canonical
+registry snapshots       5
+observed path snapshots  5
+input mutation            PASS
+
+accepted TGZ sha256
+  3c164f54e4f205ba8ba889274656375ce2c0cf137f65c6ccf6fb2cafab889bd6
+
+result-index sha256
+  f5ba124ebb9752b45d60f027474a399adf61fc5db033c1165a79664cbfc743bd
+```
+
+Frozen isolation and recovery:
+
+```text
+independent scenario-root regular files
+no shared regular-file inodes
+durable INTENT before mutation
+APPLIED after mutation
+PREPARED/APPLYING rollback
+registry pre-commit rollback
+COMMITTED cleanup finalization
+ROLLED_BACK idempotence
+exclusive flock
+nonblocking contender rejection without mutation
+```
+
+```text
+docs/stages/STAGE3C_PHASE4_GATE3_FINAL.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_LOCK_DESIGN.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
+docs/evidence/STAGE3C_PHASE4_RECOVERY_RESULT.md
+```
+
+## Phase 4 Gate 4 — active durability protocol
 
 Implementation:
 
 ```text
-experiments/stage3c-installation-recovery/
+experiments/stage3c-installation-durability/
 ```
 
-Active matrix:
+Active capability matrix:
 
 ```text
-PREPARED process exit and rollback
-INTENT-window process exit and rollback
-five-mutation install process exit and rollback
-five-mutation uninstall process exit and rollback
-registry-applied pre-commit process exit and rollback
-COMMITTED pre-cleanup process exit and finalization
-retained ROLLED_BACK recovery idempotence
-nonblocking flock contender rejection
-post-release addon install
+regular-file fsync
+directory fsync
+O_DIRECTORY support
+same-filesystem work layout
+```
+
+Active primitive matrix:
+
+```text
+atomic create and replacement
+  write temp
+  file fsync
+  replace
+  target-parent fsync
+
+mkdir
+  new-directory fsync
+  parent fsync
+
+move across directories
+  source-parent fsync
+  destination-parent fsync
+
+unlink and rmdir
+  parent fsync
+```
+
+Transaction trace ordering:
+
+```text
+journal PREPARED
+payload
+journal APPLYING/APPLIED
+registry
+journal COMMITTED
+backup cleanup
+```
+
+Negative controls:
+
+```text
+missing target-parent fsync
+registry ordered before payload
 ```
 
 Required validation:
 
 ```text
-scenario runner       55/55
-independent verifier  82/82
-scenario logs          40/40
-final snapshots         5 registry + 5 observed path sets
+scenario runner       64/64
+independent verifier  53/53
+positive traces         7
+transaction events     27
 input mutation        PASS
 ```
 
@@ -223,13 +298,14 @@ Detailed scope:
 
 ```text
 docs/stages/STAGE3C_PHASE4_SCOPE.md
+docs/evidence/STAGE3C_PHASE4_DURABILITY_PROTOCOL_DESIGN.md
 ```
 
 ## Deferred Phase 4 gates
 
 ```text
-kernel or power-loss durability
-parent-directory fsync policy
+integration of durability helpers into all recovery-engine paths
+kernel or sudden-power-loss durability
 crash inside one non-atomic filesystem primitive
 adversarial external mutation and lock fairness
 explicit second-version upgrade and downgrade
@@ -252,7 +328,7 @@ unowned sentinel preservation
 
 ## Non-reopening rule
 
-Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, license ownership, addon prerequisites, Gate 1 policy, or frozen Gate 2 lifecycle behavior.
+Later work must not silently change component ownership, structural non-ownership, artifact and manifest identities, archive bytes, extraction preflight, license ownership, addon prerequisites, Gate 1 policy, Gate 2 lifecycle behavior, or Gate 3 recovery and lock semantics.
 
 Any intentional change reopens the corresponding frozen phase or gate and its complete evidence chain.
 
@@ -277,4 +353,4 @@ Generated archives and bulk target evidence remain outside Git and are uploaded 
 
 ## Current action
 
-Execute and independently verify the Phase 4 abrupt recovery and lock-contention matrix.
+Execute and independently verify the Phase 4 durability primitive and transaction-order protocol.
