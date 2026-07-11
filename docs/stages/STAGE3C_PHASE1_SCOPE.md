@@ -1,120 +1,48 @@
 # Stage 3-C Phase 1 Scope: Promoted Product Role Inventory
 
-> **Status:** ACTIVE — inventory PASS, decomposition PASS, semantic capability probes pending
+> **Status:** ACTIVE — inventory PASS, decomposition PASS, semantic probe PASS, component policy pending
 > **Input:** frozen Stage 3-B promoted runtime
 > **Execution host:** Termux on Android arm64
-> **Completed hard gate:** `UNKNOWN=0`
-
-## Question
-
-> Which exact paths in the frozen promoted product belong to runtime, development, metadata, license, and optional surfaces before an archive split and ownership model are selected?
 
 ## Frozen input
 
 ```text
 work/termux/stage3b-promoted-runtime/prefix
+entries / ELF / symlinks
+  3155 / 81 / 5
 ```
 
+Frozen runtime properties:
+
 ```text
-entries                             3155
-ELF objects                           81
-symlinks                               5
 unresolved native edges                0
 extension imports                   67/67
 promoted relocation verifier        31/31
 candidate mutation control           PASS
 ```
 
-Phase 1 observes this product. It must not modify, prune, strip, rewrite, or package it.
+Phase 1 must not modify, prune, strip, rewrite, or package the canonical promoted tree.
 
-## Descriptive roles
+## Completed evidence
 
-```text
-RUNTIME
-DEVELOPMENT
-METADATA
-LICENSE
-DEBUG_OR_OPTIONAL
-UNKNOWN
-```
-
-`UNKNOWN` is a review state, not a distributable role.
-
-`METADATA` is descriptive. Its paths are assigned to runtime or development consumers only after semantic and isolated-variant testing.
-
-## Implementation
+### Complete role inventory — PASS
 
 ```text
-experiments/stage3c-product-role-inventory/
-  classify-promoted-product.py
-  verify-promoted-product-roles.py
-  run-role-inventory.sh
-  analyze-role-inventory.py
-  analyze-role-inventory.sh
-  probe-role-semantics.py
-  verify-role-semantics.py
-  run-role-semantic-probes.sh
-  README.md
+UNKNOWN                                0
+machine verifier                    43/43
+source mutation                      PASS
+role manifest
+  092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
 ```
 
-All Python probes run under:
+### Exact role decomposition — PASS
 
 ```text
-promoted-python -I -B -S
+machine checks                      18/18
+role/type/path/byte totals           exact
 ```
 
-## Step 1: complete role inventory — PASS
-
-```text
-entries                              3155
-regular files                        2934
-directories                           216
-symlinks                                5
-ELF objects                            81
-UNKNOWN                                 0
-pycache/pyc paths                        0
-unsupported special files               0
-machine verifier                     43/43
-source mutation control               PASS
-```
-
-Role counts and regular-file bytes:
-
-```text
-RUNTIME               711    38,775,506
-DEVELOPMENT           449     4,737,164
-METADATA                8       356,169
-LICENSE                 1        13,804
-DEBUG_OR_OPTIONAL    1986    35,466,620
-```
-
-Role manifest:
-
-```text
-092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
-```
-
-Source before/after fingerprint:
-
-```text
-5465a389496e0f7810866ef4b8786d1f3d283b96116ff4da72b881c1a3ec3e6c
-```
-
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
-```
-
-## Step 2: exact role decomposition — PASS
-
-```text
-check_count       18
-failed_checks     []
-pass              true
-```
-
-Optional surface:
+Important surfaces:
 
 ```text
 lib/python3.14/test          1785 entries   33,476,596 bytes
@@ -122,35 +50,91 @@ lib/python3.14/idlelib        161 entries    1,624,586 bytes
 lib/python3.14/tkinter         14 entries      303,444 bytes
 lib/python3.14/turtledemo      23 entries       61,800 bytes
 lib/python3.14/__phello__       3 entries          194 bytes
+
+include/                      434 entries    4,701,144 bytes
+lib/pkgconfig/                  9 entries        1,689 bytes
+lib/python3.14/config-*         6 entries       34,331 bytes
 ```
 
-Development surface:
+### Semantic capability probe — PASS
 
 ```text
-include/                                      434 entries   4,701,144 bytes
-lib/pkgconfig/                                  9 entries       1,689 bytes
-lib/python3.14/config-*                         6 entries      34,331 bytes
+machine verifier                     38/38
+source mutation                       PASS
+venv                                  PASS
+ensurepip                             PASS observation
+test / test.support                   PASS
+sysconfig runtime service             PASS
+active sysconfig paths under prefix   PASS
+_sysconfigdata import                 PASS
+build-details parse                   PASS
 ```
 
-Runtime surface:
+Tk-dependent capability:
 
 ```text
-stdlib and runtime data                       622 entries  12,362,626 bytes
-lib-runtime                                    16 entries  12,950,104 bytes
-lib-dynload                                    68 entries   7,630,224 bytes
-libpython                                       1 entry     5,821,560 bytes
-bin                                             4 entries      10,992 bytes
+_tkinter             absent
+tkinter              import failure
+turtle               import failure
+idlelib.pyshell      SystemExit 1
+Tcl interpreter      unavailable
 ```
 
-Metadata candidates:
+Selected interpretation:
 
 ```text
-runtime metadata
-  _sysconfigdata__android_aarch64-linux-android.py
-  _sysconfig_vars__android_aarch64-linux-android.json
-  build-details.json
+Tk/IDLE/turtle pure-Python source is present but unsupported on this target
+runtime sysconfig metadata is active and must remain in runtime-base
+config-tree metadata belongs to the development consumer surface
+```
 
-development metadata
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
+docs/evidence/STAGE3C_PHASE1_ROLE_DECOMPOSITION_RESULT.md
+docs/evidence/STAGE3C_PHASE1_ROLE_SEMANTICS_RESULT.md
+```
+
+## Candidate product components
+
+```text
+RUNTIME_BASE
+RUNTIME_METADATA
+DEVELOPMENT
+DEVELOPMENT_METADATA
+OPTIONAL_TEST_SUITE
+OPTIONAL_TEST_DEMO
+UNSUPPORTED_GUI_SOURCE
+LICENSE
+```
+
+Selected candidate artifact compositions:
+
+```text
+runtime-base
+  RUNTIME_BASE + RUNTIME_METADATA + LICENSE
+
+development-addon
+  DEVELOPMENT + DEVELOPMENT_METADATA
+
+test-addon
+  OPTIONAL_TEST_SUITE + OPTIONAL_TEST_DEMO
+
+unsupported-gui-source
+  UNSUPPORTED_GUI_SOURCE
+  not distributed until a working _tkinter/Tcl/Tk backend exists
+```
+
+Selected metadata ownership:
+
+```text
+RUNTIME_METADATA
+  lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py
+  lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json
+  lib/python3.14/build-details.json
+
+DEVELOPMENT_METADATA
   config-*/Makefile
   config-*/Setup
   config-*/Setup.local
@@ -158,150 +142,84 @@ development metadata
   config-*/python-config.py
 ```
 
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE1_ROLE_DECOMPOSITION_RESULT.md
-```
-
-## Mixed-directory boundary
-
-```text
-lib
-lib/python3.14
-lib/python3.14/config-3.14-aarch64-linux-android
-```
-
-A final split must operate on exact manifest paths, not naive whole-directory moves.
-
-## Step 3: semantic capability probes — ACTIVE
+## Active gate: complete component manifest policy
 
 Question:
 
-> Which optional and metadata surfaces provide working target capabilities, and which are inert or development-only?
+> Can every accepted product path be assigned exactly once to the selected candidate components while retaining the accepted source manifest and source tree identity?
 
 Run:
 
 ```sh
 bash \
-  experiments/stage3c-product-role-inventory/run-role-semantic-probes.sh
+  experiments/stage3c-product-role-inventory/run-component-policy.sh
 ```
 
-The probe records:
+The workflow:
 
 ```text
-venv
-test and test.support
-ensurepip observation
-__phello__
-_tkinter
-tkinter
-Tcl interpreter construction
-turtle
-idlelib
-idlelib.pyshell
-turtledemo
-sysconfig variables and active paths
-_sysconfigdata import
-_sysconfig_vars JSON
-build-details JSON
-Makefile discovery
-pyconfig.h discovery
+recomputes the accepted 3155-row role manifest
+requires accepted 38/38 semantic evidence
+fingerprints the canonical product before and after
+assigns every source row to one component
+emits exact component path lists and byte/count summaries
+re-derives the mapping in an independent verifier
+checks all 81 ELF entries remain in RUNTIME_BASE
+checks runtime/development anchors and metadata sets
+marks unsupported GUI source as non-distributed
 ```
 
-Policy:
+Outputs:
 
 ```text
-optional-module success or failure is evidence
-ensurepip is observed but is not a frozen acceptance gate
-venv, test/test.support, and sysconfig must work on the canonical tree
-the canonical source must remain unchanged
-all observation fields must parse and cross-check
-```
-
-Expected machine result:
-
-```text
-semantic probe verifier   38/38
-source mutation           PASS
+results/termux/stage3c-phase1-component-policy/
+  input-verification.json
+  component-inventory.tsv
+  component-summary.tsv
+  component-policy.json
+  component-policy-verification.json
+  artifact-composition.json
+  source-before.json
+  source-after.json
+  source-mutation-check.txt
+  paths/*.txt
 ```
 
 Expected markers:
 
 ```text
-STAGE3C_PHASE1_ROLE_SEMANTIC_PROBE=PASS
-ROLE_SEMANTICS_SOURCE_MUTATION_CHECK=PASS
-STAGE3C_PHASE1_ROLE_SEMANTICS=PASS
-```
-
-## Provisional policy classes
-
-```text
-lib/python3.14/test
-  OPTIONAL_TEST_SUITE candidate
-
-idlelib + turtledemo
-  OPTIONAL_GUI_TOOLING candidates
-
-tkinter
-  OPTIONAL_GUI_RUNTIME candidate; pending _tkinter/Tcl evidence
-
-__phello__
-  OPTIONAL_TEST_DEMO candidate
-
-include + pkgconfig + config development rows
-  DEVELOPMENT candidate
-
-_sysconfigdata + _sysconfig_vars + build-details
-  RUNTIME_METADATA candidate
-
-config-tree Makefile/Setup/config/python-config rows
-  DEVELOPMENT_METADATA candidate
+STAGE3C_PHASE1_COMPONENT_POLICY=PASS
+COMPONENT_POLICY_INPUT_CONTRACT=PASS
+COMPONENT_POLICY_COMPLETE_PARTITION=PASS
+COMPONENT_POLICY_SOURCE_MUTATION_CHECK=PASS
+STAGE3C_PHASE1_COMPONENT_POLICY_WORKFLOW=PASS
 ```
 
 ## Acceptance conditions
 
-Mechanical inventory:
-
 ```text
-[x] source entry/ELF/symlink counts = 3155/81/5
-[x] every path has one valid role
+[x] role inventory 43/43
 [x] UNKNOWN = 0
-[x] all ELF entries are RUNTIME
-[x] no pycache or special files
-[x] role manifest recomputes
-[x] source fingerprint unchanged
-[x] independent verifier 43/43
-```
-
-Semantic decomposition:
-
-```text
-[x] role/rule totals exact
-[x] optional component/root totals exact
-[x] development and runtime surfaces decomposed
-[x] LICENSE and METADATA rows recorded
-[x] decomposition verifier 18/18
-```
-
-Capability and policy selection:
-
-```text
-[ ] target optional-module capability matrix recorded
-[ ] sysconfig metadata consumers recorded
-[ ] semantic probe verifier 38/38
-[ ] semantic probe mutation control PASS
-[ ] regression-suite policy selected
-[ ] Tkinter/IDLE/turtle/turtledemo policy selected
-[ ] __phello__ policy selected
-[ ] runtime/development metadata sets selected
-[ ] shared-directory ownership selected
-[ ] archive split selected
-[ ] isolated payload variants validate the split
+[x] role decomposition 18/18
+[x] semantic capability verifier 38/38
+[x] semantic probe source mutation PASS
+[x] regression-suite candidate selected
+[x] unsupported Tk/IDLE/turtle policy selected
+[x] runtime/development metadata candidates selected
+[ ] accepted input contract recomputes
+[ ] all 3155 paths assigned exactly once
+[ ] component counts and bytes cross-check
+[ ] all 81 ELF entries remain RUNTIME_BASE
+[ ] component policy independent verifier passes
+[ ] component policy source mutation control passes
+[ ] isolated runtime-base materialization passes
+[ ] development-addon composition passes
+[ ] test-addon composition passes
+[ ] closure and relocation pass for selected product
 ```
 
 ## Claim boundary
 
-Current evidence proves complete path classification and decomposition. It does not yet prove that all optional paths can be removed together, that Tkinter works on the target, that config-tree metadata is removable from runtime, or that one archive split is correct.
+Current evidence proves complete classification, decomposition, and semantic target behavior.
 
-Phase 1 remains active until semantic probes and isolated payload variants close those questions.
+The component policy gate will prove only a complete candidate path partition. It will not prove physical payload variants work. Phase 1 remains active until isolated copies validate smoke, uv/venv, sysconfig, addon composition, native closure, and relocation without modifying the canonical product.
