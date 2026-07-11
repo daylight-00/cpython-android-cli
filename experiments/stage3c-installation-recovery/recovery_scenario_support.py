@@ -106,7 +106,30 @@ def first_regular(root: Path, artifact: str) -> str:
 
 
 def clone_installation(source: Path, destination: Path) -> None:
-    shutil.copytree(source, destination, symlinks=True, copy_function=os.link)
+    # Crash roots must be physically independent. Hardlinks are both rejected by
+    # the Termux/Android target for these files and would permit cross-root inode
+    # sharing, weakening the isolation claim even on filesystems that allow them.
+    shutil.copytree(
+        source,
+        destination,
+        symlinks=True,
+        copy_function=shutil.copy2,
+    )
+
+    for source_path in source.rglob("*"):
+        if source_path.is_symlink() or not source_path.is_file():
+            continue
+        destination_path = destination / source_path.relative_to(source)
+        source_stat = source_path.stat()
+        destination_stat = destination_path.stat()
+        if (source_stat.st_dev, source_stat.st_ino) == (
+            destination_stat.st_dev,
+            destination_stat.st_ino,
+        ):
+            raise RuntimeError(
+                "installation clone shares regular-file inode: "
+                + source_path.relative_to(source).as_posix()
+            )
 
 
 def replace_with_bytes(path: Path, data: bytes) -> None:

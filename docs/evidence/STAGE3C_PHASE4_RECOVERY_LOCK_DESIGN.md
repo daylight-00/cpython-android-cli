@@ -1,11 +1,35 @@
 # Stage 3-C Phase 4 Recovery and Lock Design
 
-> **Status:** IMPLEMENTED — target evidence pending
+> **Status:** IMPLEMENTED — corrected target evidence pending
 > **Input:** frozen Phase 4 Gate 2 result
 
 ## Purpose
 
 Extend the isolated transaction prototype from synchronous rollback to explicit recovery after abrupt process termination, and prove that a concurrent nonblocking contender cannot mutate while the installation lock is held.
+
+## Scenario-root isolation
+
+Each crash scenario begins from a seed installation but must remain physically independent from that seed and from every other scenario root.
+
+```text
+regular files
+  copied with shutil.copy2
+
+symlinks
+  preserved as symlinks
+
+source/destination regular-file inode identity
+  must differ
+
+hardlinks between seed and scenario roots
+  forbidden
+```
+
+The first target attempt used `os.link` as the copy function. Termux/Android rejected those hardlinks with `EACCES` before the crash matrix began. Even where hardlinks are allowed, shared inodes would weaken scenario isolation. The failure is preserved in:
+
+```text
+docs/evidence/STAGE3C_PHASE4_RECOVERY_SEED_CLONE_FAILURE.md
+```
 
 ## Journal schema v2
 
@@ -125,6 +149,8 @@ final registry snapshots
   5 registry files
   5 independently observed path files
 ```
+
+The corrected independent-copy implementation completed a non-authoritative local `55/55 + 82/82` validation against the same extracted Gate 2 evidence. Authoritative Termux evidence remains pending.
 
 ## Claim boundary
 
