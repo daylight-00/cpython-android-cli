@@ -252,7 +252,9 @@ def main() -> int:
         "venv_probe_pass": venv.get("pass") is True,
         "venv_probe_is_venv": venv.get("prefix") != venv.get("base_prefix"),
         "venv_probe_base_installed": same_path(venv.get("base_prefix"), prefix),
-        "venv_probe_executable_within": path_within(venv.get("executable"), args.venv_probe.resolve().parent / "venv"),
+        "venv_probe_executable_within": path_within(
+            venv.get("executable"), args.venv_probe.resolve().parent / "venv"
+        ),
         "uv_run_probe_pass": uv_run.get("pass") is True,
         "uv_run_probe_is_venv": uv_run.get("prefix") != uv_run.get("base_prefix"),
         "uv_run_probe_base_installed": same_path(uv_run.get("base_prefix"), prefix),
@@ -308,7 +310,7 @@ def main() -> int:
             )
         ),
     }
-    if len(checks) != 76:
+    if len(checks) != 80:
         raise RuntimeError(f"unexpected check count: {len(checks)}")
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
