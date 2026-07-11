@@ -233,6 +233,8 @@ The canonical launcher is not overwritten by this comparison.
 [x] launcher rebuilt from promoted development product
 [x] replacement runtime-source product selected and justified
 [ ] runtime assembly no longer depends on the hidden historical archive
+[x] generated workstation handoff verified
+[ ] isolated Termux runtime assembly passes
 [ ] generated handoff is ready for Phase 5 closure validation
 ```
 
@@ -259,6 +261,21 @@ out/aarch64-linux-android24/release/
 ```
 
 This tree is then synchronized to Termux. Target-side assembly and validation remain separate gates.
+
+## Phase 4.3 target assembly
+
+Victor-side Phase 4.2 is frozen with:
+
+```text
+STAGE3B_WORKSTATION_HANDOFF=PASS
+```
+
+The active step moves to Termux using an isolated candidate root. See:
+
+```text
+docs/stages/STAGE3B_PHASE4_3_SCOPE.md
+experiments/stage3b-target-assembly/
+```
 
 ## Non-goals
 
