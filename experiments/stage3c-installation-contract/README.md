@@ -73,7 +73,17 @@ The collision matrix contains 17 exact rules. The operation model contains 12 in
 ## Safety direction
 
 ```text
-unowned existing payload path
+unowned regular file or symlink at a required leaf path
+  conflict
+
+existing compatible directory for an owned directory path
+  reuse and register only the directory path
+  preserve all descendants
+
+existing compatible structural directory
+  create or reuse without ownership
+
+required directory occupied by non-directory
   conflict
 
 matching same-version reinstall
@@ -91,6 +101,8 @@ owned directory
 structural parent and unowned descendant
   preserve
 ```
+
+Exact directory ownership never implies descendant ownership. This preserves unowned sentinels while allowing a later install to reuse the retained directory.
 
 ## Validation
 
