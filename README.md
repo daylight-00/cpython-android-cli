@@ -138,12 +138,14 @@ experiments/bootstrap-android-build/android-python-work/prefix
 
 This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
 
-Stage 3-B begins with read-only provenance reconstruction before attempting a clean replay.
+Stage 3-B Phase 1 provenance reconstruction and Phase 2 controlled Linux replay are frozen. Phase 3 now promotes immutable identities for the dependency products consumed by the successful replay.
 
 See:
 
 ```text
 docs/stages/STAGE3B_SCOPE.md
+docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md
+docs/stages/STAGE3B_PHASE3_SCOPE.md
 ```
 
 ## Architecture in one picture
