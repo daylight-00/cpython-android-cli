@@ -118,13 +118,35 @@ results/workstation/stage3b-product-boundary/product-boundary-summary.json
 
 Detailed TSV evidence is written beside the summary.
 
+Step 1 established that the full replay prefix is not the correct equality object. Compare the selected package product directly:
+
+```sh
+bash experiments/stage3b-product-boundary/compare-package-boundary.sh
+```
+
+Expected marker:
+
+```text
+STAGE3B_PACKAGE_PREFIX_COMPARISON=PASS
+```
+
+Result:
+
+```text
+results/workstation/stage3b-product-boundary/
+  historical-package-prefix-summary.json
+  historical-prefix-inventory.tsv
+  replay-package-prefix-inventory.tsv
+  historical-package-prefix-diff.tsv
+```
+
 ## Acceptance conditions
 
 ```text
-[ ] historical and replay development prefixes inventoried
-[ ] input-tree non-mutation checks pass
-[ ] launcher three-file contract compared
-[ ] replay package member boundary inventoried
+[x] historical and replay development prefixes inventoried
+[x] input-tree non-mutation checks pass
+[x] launcher three-file contract compared
+[x] replay package member boundary inventoried
 [ ] differences classified by product role
 [ ] replay development product promoted to canonical generated output
 [ ] launcher rebuilt from promoted development product
