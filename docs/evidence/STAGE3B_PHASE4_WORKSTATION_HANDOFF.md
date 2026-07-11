@@ -1,6 +1,7 @@
 # Stage 3-B Phase 4.2 Canonical Workstation Handoff
 
-> **Status:** PASS — promoted workstation products complete
+> **Status:** FROZEN — promoted workstation products complete
+> **Final marker:** `STAGE3B_WORKSTATION_HANDOFF=PASS`
 > **Execution host:** Victor Linux workstation
 
 ## Canonical tree
@@ -84,4 +85,21 @@ Result:
 ```text
 STAGE3B_PHASE4_2=FROZEN
 STAGE3B_PHASE4_3=READY
+```
+
+## Final verifier
+
+The canonical verifier closed every check:
+
+```text
+archive size                       PASS
+archive SHA-256                    PASS
+checksum sidecar                   PASS
+product manifest                   PASS
+source commit                      PASS
+launcher recorded hash             PASS
+promoted prefix identity           PASS
+three development contract hashes  PASS
+launcher DT_NEEDED                 PASS
+launcher RUNPATH                   PASS
 ```
