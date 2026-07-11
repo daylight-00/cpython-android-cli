@@ -108,19 +108,15 @@ new .pyc files           39
 Root cause:
 
 ```text
-probe wrapper environment
-  PYTHONDONTWRITEBYTECODE=1
-  PYTHONPYCACHEPREFIX=<results>
-
-fresh-process child probes
+fresh-process child
   python -I -S -c ...
 
 -I isolated mode
-  -> ignores PYTHON* environment variables
+  -> ignores shell PYTHON* bytecode controls
   -> child imports can write .pyc into candidate prefix
 ```
 
-The repaired child contract is:
+Repair:
 
 ```text
 python -I -B -S -c ...
@@ -166,67 +162,80 @@ docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 
 Gate 2 is closed.
 
-## Current action: Gate 3 CA and timezone boundary equivalence
+## Gate 3 result: CA and timezone boundary equivalence
 
-Pre-run review of the Stage 3-A boundary probes found two probe-contract issues:
+Before reuse, the Stage 3-A boundary probes were corrected:
 
 ```text
 CA child
-  python -I -S -c ...
-  -> bytecode-write risk because -I ignores shell PYTHON* controls
-  -> repaired to python -I -B -S -c ...
+  old: python -I -S -c ...
+  new: python -I -B -S -c ...
 
 zoneinfo child
-  tested PYTHONTZPATH while using -I
-  -> invalid control because -I ignores the variable under test
-  -> repaired to sanitized environment + python -B -P -s -c ...
+  old: tested PYTHONTZPATH under -I
+  new: sanitized Python environment + python -B -P -s -c ...
 ```
 
-The old zoneinfo evidence remains valid for:
-
-```text
-default runtime lookup failure
-host $PREFIX/share/zoneinfo absence at the filesystem check
-uv-injected first-party tzdata fallback PASS
-```
-
-The direct `PYTHONTZPATH` scenario claims are reopened and must be rerun with a child that actually consumes the scenario input.
-
-Detailed reassessment:
-
-```text
-docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
-```
-
-Run on Termux:
+Command:
 
 ```sh
-git pull --ff-only
-
-rm -rf \
-  results/termux/stage3b-promoted-boundaries
-
-bash \
-  experiments/stage3b-target-validation/validate-promoted-boundaries.sh
+bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
 ```
 
-The Gate 3 workflow runs corrected CA, direct-zoneinfo, and uv-tzdata probes against both:
+Machine verdict:
 
 ```text
-candidate
-  work/termux/stage3b-promoted-runtime/prefix
-
-frozen control
-  work/termux/stage2c/runtime/prefix
+check_count        28
+failed_checks      []
+missing_outputs    []
+parse_errors       {}
+pass               true
 ```
 
-and writes to:
+CA result for both candidate and frozen runtime:
 
 ```text
-results/termux/stage3b-promoted-boundaries
+clean default            Termux CA, HTTPS 200
+explicit Termux CA       preserved, HTTPS 200
+missing CA path          repaired to Termux CA, HTTPS 200
+existing empty file      preserved, HTTPS failure expected
 ```
 
-Expected final markers:
+Corrected direct-zoneinfo result for both runtimes:
+
+```text
+default
+  PYTHONTZPATH unset
+  configured POSIX TZPATH directories absent
+  representative keys FAIL
+
+package-only
+  PYTHONTZPATH=""
+  zoneinfo.TZPATH=[]
+  base tzdata package absent
+  representative keys FAIL
+
+explicit Termux path
+  PYTHONTZPATH=$PREFIX/share/zoneinfo
+  requested path observed by child
+  path absent on tested host
+  representative keys FAIL
+```
+
+uv first-party fallback for both runtimes:
+
+```text
+tzdata version           2026.3
+PYTHONTZPATH              ""
+UTC                       PASS
+Asia/Seoul                PASS
+America/New_York          PASS
+uv sys.base_prefix        expected source runtime
+```
+
+Both candidate and frozen runtime fingerprints remained unchanged.
+
+Final markers:
 
 ```text
 CA_BOUNDARY_EQUIVALENCE=PASS
@@ -237,10 +246,90 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
+Evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
+```
+
+Gate 3 is closed.
+
+## Current action: Gate 4 whole-prefix relocation
+
+The remaining Phase 5 gate tests the promoted product in the same production shape used for the frozen Stage 3-A relocation proof:
+
+```text
+promoted source candidate
+  -> copy complete prefix to location A
+  -> validate A
+  -> move whole prefix A -> B
+  -> validate B
+```
+
+Command:
+
+```sh
+git pull --ff-only
+
+rm -rf \
+  work/termux/stage3b-promoted-relocation \
+  results/termux/stage3b-promoted-relocation
+
+bash \
+  experiments/stage3b-target-validation/validate-promoted-relocation.sh
+```
+
+Location A and B validate:
+
+```text
+base runtime identity
+active sysconfig paths
+native stdlib and libc loadability
+HTTPS through Termux CA integration
+subprocess interpreter identity
+fresh uv venv creation
+fresh venv base-prefix identity
+uv run with explicit interpreter
+uv run base-prefix identity
+absence of the forbidden stale prefix
+```
+
+The promoted wrapper adds outer evidence controls:
+
+```text
+canonical candidate source fingerprint unchanged
+frozen Stage 2-C control fingerprint unchanged
+final B fingerprint identical to source candidate fingerprint
+location A absent after move
+location B present with executable Python
+structured machine verdict retained on completed failure attempts
+```
+
+The reused relocation engine now also exports explicit:
+
+```text
+PYTHONDONTWRITEBYTECODE=1
+```
+
+in addition to its external pycache root, so validation must not write bytecode into the relocated product.
+
+Expected final markers:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
+
 Primary machine-readable verdict:
 
 ```text
-results/termux/stage3b-promoted-boundaries/promoted-boundary-verification.json
+results/termux/stage3b-promoted-relocation/promoted-relocation-verification.json
 ```
 
 ## Frozen semantic closure gates
@@ -277,8 +366,6 @@ LD_LIBRARY_PATH candidate component
 Termux CA file
 ```
 
-Both the candidate and frozen runtime fingerprints remained unchanged across the completed Gate 2 workflow.
-
 ## File-entry count policy
 
 The frozen Stage 3-A aggregate was:
@@ -293,7 +380,7 @@ The fresh promoted candidate aggregate was:
 file_entry_count=3155
 ```
 
-The complete candidate `files.tsv` is retained and the aggregate delta is reported, but raw file count is not a semantic pass/fail gate. Closure structure, active runtime identity, import surface, and mutation controls are the gates.
+Raw file count is not a semantic pass/fail gate. Complete row-level inventory is retained; closure structure, runtime identity, import surface, boundary behavior, relocation, and mutation controls are the gates.
 
 The earlier `+43` incident is separately preserved as validation-induced mutation evidence and is not conflated with the clean candidate's `-125` aggregate product difference.
 
@@ -312,15 +399,19 @@ The earlier `+43` incident is separately preserved as validation-induced mutatio
 [x] provider classification matches reviewed model
 [x] 67/67 extension imports pass
 [x] active runtime and sysconfig paths point to candidate
-[x] frozen runtime mutation control passes in Gate 2
-[x] candidate mutation failure root cause diagnosed
-[x] probe child bytecode-write repair applied
-[x] repaired clean rerun candidate mutation control passes
-[x] repaired clean rerun machine verdict passes
-[ ] corrected CA boundary equivalence passes
-[ ] corrected timezone boundary equivalence passes or is intentionally reviewed
-[ ] candidate and frozen mutation controls pass in Gate 3
-[ ] whole-prefix relocation passes
+[x] closure workflow candidate mutation control passes
+[x] closure workflow frozen mutation control passes
+[x] CA boundary equivalence passes
+[x] corrected timezone boundary equivalence passes
+[x] first-party tzdata fallback equivalence passes
+[x] boundary workflow candidate mutation control passes
+[x] boundary workflow frozen mutation control passes
+[ ] whole-prefix relocation A validation passes
+[ ] whole-prefix relocation B validation passes
+[ ] stale A-prefix assertions pass
+[ ] relocated B fingerprint matches source candidate
+[ ] relocation workflow candidate and frozen mutation controls pass
+[ ] relocation machine verdict passes
 ```
 
-Phase 5 remains active until all open conditions are either passed or explicitly reviewed and reopened.
+Phase 5 remains active until the relocation gate passes or new evidence explicitly reopens a prior condition.
