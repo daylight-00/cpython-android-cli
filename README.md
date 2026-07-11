@@ -138,13 +138,32 @@ experiments/bootstrap-android-build/android-python-work/prefix
 
 This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
 
-Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 now validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure model on Android.
+Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure/boundary model on Android.
 
-The promoted candidate passed the canonical behavior smoke on Termux, including HTTPS, subprocess identity, uv venv, venv base-prefix identity, and uv run. The current gate is complete inventory and native closure equivalence:
+The promoted candidate passed:
+
+```text
+canonical Stage 2-C behavior smoke
+complete inventory and native closure equivalence
+Android-system SONAME loadability
+67/67 isolated extension imports
+active runtime/sysconfig identity
+candidate and frozen runtime mutation controls
+```
+
+Gate 2 final marker:
+
+```text
+STAGE3B_PROMOTED_CLOSURE=PASS
+```
+
+The current gate is corrected CA and timezone boundary equivalence:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-closure.sh
+bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
 ```
+
+The boundary review found that the old direct-zoneinfo probe attempted to test `PYTHONTZPATH` under `-I`, which ignores the variable under test. The repaired workflow validates actual scenario delivery and compares the promoted candidate with the frozen runtime under the same Termux host state.
 
 See:
 
@@ -156,6 +175,8 @@ docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
+docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
 ```
 
 ## Architecture in one picture
@@ -260,6 +281,12 @@ source, scripts, docs, experiment history  -> Git
 generated out/<target>/<profile>/          -> rsync
 ```
 
+The GitHub/Termux/assistant operating contract is documented in:
+
+```text
+docs/GITHUB_COLLABORATION_WORKFLOW.md
+```
+
 ## Documentation reading order
 
 Current handoff path:
@@ -276,7 +303,11 @@ docs/PROJECT_CONTEXT_STAGE3.md
     |
     +--> docs/stages/STAGE3B_SCOPE.md
     |
+    +--> docs/stages/STAGE3B_PHASE5_SCOPE.md
+    |
     +--> docs/evidence/
+    |
+    +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
 `docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the current Stage 3 context.
@@ -287,4 +318,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The current active work is Stage 3-B target runtime and closure equivalence validation, not archive packaging or launcher redesign.
+The current active work is Stage 3-B CA/timezone boundary equivalence, followed by promoted whole-prefix relocation. It is not archive packaging or launcher redesign.
