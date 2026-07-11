@@ -10,6 +10,8 @@ source "$SCRIPT_DIR/../../scripts/lib/project-env.sh"
 RUNTIME_PREFIX="${RUNTIME_PREFIX:-$WORK_ROOT/termux/stage3b-promoted-runtime/prefix}"
 OUTPUT_DIR="${OUTPUT_DIR:-$RESULTS_ROOT/termux/stage3c-phase1-role-inventory}"
 EXPECTED_ENTRY_COUNT="${EXPECTED_ENTRY_COUNT:-3155}"
+EXPECTED_ELF_COUNT="${EXPECTED_ELF_COUNT:-81}"
+EXPECTED_SYMLINK_COUNT="${EXPECTED_SYMLINK_COUNT:-5}"
 CLASSIFIER="$SCRIPT_DIR/classify-promoted-product.py"
 VERIFIER="$SCRIPT_DIR/verify-promoted-product-roles.py"
 PYTHON="$RUNTIME_PREFIX/bin/python"
@@ -32,6 +34,8 @@ mkdir -p "$OUTPUT_DIR"
 
 printf 'Runtime prefix:       %s\n' "$RUNTIME_PREFIX"
 printf 'Expected entry count: %s\n' "$EXPECTED_ENTRY_COUNT"
+printf 'Expected ELF count:   %s\n' "$EXPECTED_ELF_COUNT"
+printf 'Expected symlinks:    %s\n' "$EXPECTED_SYMLINK_COUNT"
 printf 'Results:              %s\n\n' "$OUTPUT_DIR"
 
 set +e
@@ -52,6 +56,8 @@ set +e
     --results-dir "$OUTPUT_DIR" \
     --runtime-prefix "$RUNTIME_PREFIX" \
     --expected-entry-count "$EXPECTED_ENTRY_COUNT" \
+    --expected-elf-count "$EXPECTED_ELF_COUNT" \
+    --expected-symlink-count "$EXPECTED_SYMLINK_COUNT" \
     > "$OUTPUT_DIR/verifier.log" 2>&1
 verifier_rc=$?
 set -e
