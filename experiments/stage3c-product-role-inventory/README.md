@@ -1,31 +1,18 @@
 # Stage 3-C Phase 1: Promoted Product Role Inventory
 
-> **Status:** ACTIVE — target execution pending
+> **Status:** MECHANICAL INVENTORY PASS — semantic decomposition active
 > **Input:** frozen Stage 3-B promoted runtime
-> **Gate:** complete semantic role classification with `UNKNOWN=0`
+> **First gate:** complete semantic role classification with `UNKNOWN=0`
 
 ## Question
 
 > Which exact paths in the frozen promoted product are runtime, development, metadata, license, or optional/debug surfaces before an archive split is selected?
 
-## Run
-
-On Termux:
-
-```sh
-git pull --ff-only
-
-bash \
-  experiments/stage3c-product-role-inventory/run-role-inventory.sh
-```
-
-Default input:
+## Frozen input
 
 ```text
 work/termux/stage3b-promoted-runtime/prefix
 ```
-
-Default frozen contract:
 
 ```text
 entry count      3155
@@ -33,19 +20,51 @@ ELF objects        81
 symlinks             5
 ```
 
-Default output:
+## Step 1: complete role inventory — PASS
 
-```text
-results/termux/stage3c-phase1-role-inventory
-```
-
-To deliberately inspect a changed candidate without asserting the frozen counts, pass explicit overrides and treat the result as new evidence rather than Stage 3-C acceptance:
+Run:
 
 ```sh
-EXPECTED_ENTRY_COUNT=<reviewed-count> \
-EXPECTED_ELF_COUNT=<reviewed-count> \
-EXPECTED_SYMLINK_COUNT=<reviewed-count> \
-  bash experiments/stage3c-product-role-inventory/run-role-inventory.sh
+bash \
+  experiments/stage3c-product-role-inventory/run-role-inventory.sh
+```
+
+Observed:
+
+```text
+UNKNOWN                              0
+machine verifier                 43/43
+source mutation control           PASS
+role manifest
+  092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
+```
+
+Role counts:
+
+```text
+RUNTIME               711
+DEVELOPMENT           449
+METADATA                8
+LICENSE                 1
+DEBUG_OR_OPTIONAL    1986
+```
+
+Regular-file bytes:
+
+```text
+RUNTIME             38,775,506
+DEBUG_OR_OPTIONAL   35,466,620
+DEVELOPMENT          4,737,164
+METADATA               356,169
+LICENSE                  13,804
+```
+
+The mechanical gate is closed. The optional bucket remains a policy-review input because its size is close to the runtime payload and it combines tests, demos, GUI modules, and other optional trees.
+
+First-result evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE1_ROLE_INVENTORY_FIRST_RESULT.md
 ```
 
 ## Roles
@@ -59,11 +78,7 @@ DEBUG_OR_OPTIONAL
 UNKNOWN
 ```
 
-The first hard gate is:
-
-```text
-UNKNOWN=0
-```
+`UNKNOWN` is a review state, not a distributable role.
 
 ## Rule model
 
@@ -102,7 +117,71 @@ mixed_directory
 
 This keeps shared directory ownership explicit without pretending all children have one role.
 
-## Outputs
+Observed mixed directories:
+
+```text
+lib
+lib/python3.14
+lib/python3.14/config-3.14-aarch64-linux-android
+```
+
+## Step 2: exact role decomposition — ACTIVE
+
+Run after the accepted Step 1 evidence exists:
+
+```sh
+bash \
+  experiments/stage3c-product-role-inventory/analyze-role-inventory.sh
+```
+
+The runner first requires the accepted verifier result:
+
+```text
+pass=true
+check_count=43
+failed_checks=[]
+missing_outputs=[]
+parse_errors={}
+```
+
+It then verifies the frozen inventory identity:
+
+```text
+manifest SHA-256
+  092ea87eed2a3c800053a0ef480abd8ef836bda8a8890549ce84370eae6e2a0f
+
+entries / ELF / symlinks
+  3155 / 81 / 5
+```
+
+Outputs added beside the original evidence:
+
+```text
+role-overview.tsv
+role-by-rule.tsv
+role-by-type.tsv
+role-by-top-level.tsv
+python-subtree-summary.tsv
+optional-component-summary.tsv
+optional-root-summary.tsv
+development-surface-summary.tsv
+runtime-surface-summary.tsv
+selected-boundary-rows.tsv
+largest-regular-files.tsv
+role-review.json
+role-review.log
+```
+
+The decomposition must sum exactly back to the accepted role counts and regular-file bytes. It does not change the original role inventory or the promoted product.
+
+Expected marker:
+
+```text
+ROLE_INVENTORY_ACCEPTED_EVIDENCE=PASS
+STAGE3C_PHASE1_ROLE_DECOMPOSITION=PASS
+```
+
+## Step 1 outputs
 
 ```text
 product-role-inventory.tsv
@@ -138,7 +217,7 @@ mixed_directory
 
 The promoted tree is fingerprinted before and after the census using path, type, mode, size, mtime, regular-file SHA-256, and symlink target.
 
-The classifier and verifier run under the promoted interpreter as:
+The classifier, verifier, and decomposition analyzer run under the promoted interpreter as:
 
 ```text
 python -I -B -S
@@ -146,45 +225,7 @@ python -I -B -S
 
 No bytecode may be written into the candidate.
 
-## Independent verifier
-
-The verifier checks 43 conditions, including:
-
-```text
-all required outputs exist and parse
-inventory and auxiliary schemas are exact
-entry count is 3155
-ELF count is 81
-symlink count is 5
-paths are unique
-all used classifier rules are declared
-role and type counts match summary
-UNKNOWN rows agree across TSV and JSON
-all ELF entries are RUNTIME
-no pycache/pyc paths exist
-no unsupported special files exist
-mixed-directory rows and flags are exact
-directory descendant-role sets are valid
-non-directory descendant-role fields are empty
-manifest SHA-256 recomputes
-candidate before/after fingerprints match
-summary and mutation evidence cross-check
-required runtime/development anchors exist
-classifier and verifier verdicts agree
-```
-
-Required anchors:
-
-```text
-bin/python3.14                     RUNTIME
-bin/python                         RUNTIME
-bin/python3                        RUNTIME
-lib/libpython3.14.so               RUNTIME
-include/python3.14/Python.h        DEVELOPMENT
-include/python3.14/pyconfig.h      DEVELOPMENT
-```
-
-## Expected final markers
+## First-gate markers
 
 ```text
 STAGE3C_PRODUCT_ROLE_CLASSIFIER=PASS
@@ -193,4 +234,4 @@ PRODUCT_ROLE_MUTATION_CHECK=PASS
 STAGE3C_PHASE1_ROLE_INVENTORY=PASS
 ```
 
-A failure is retained as evidence. Do not add broad fallback rules merely to force `UNKNOWN=0`; review exact unknown paths and assign a justified semantic rule.
+A future changed inventory is retained as new evidence. Do not add broad fallback rules merely to force `UNKNOWN=0`, and do not treat `DEBUG_OR_OPTIONAL` as wholesale removable before exact component review.
