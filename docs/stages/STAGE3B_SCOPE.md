@@ -1,45 +1,18 @@
 # Stage 3-B Scope: Reproducible Build-Input Promotion
 
 > **Status:** ACTIVE
-> **Input:** Frozen Stage 3-A runtime closure and boundary model
+> **Input:** frozen Stage 3-A runtime closure and boundary model
 > **Primary target:** Termux on Android arm64
-> **Current Python baseline:** CPython 3.14.6
-> **Current active sub-phase:** Phase 5 target runtime and closure equivalence
+> **Python baseline:** CPython 3.14.6
+> **Current sub-phase:** Phase 5 final relocation rerun
 
-## 1. Question
+## Question
 
-Stage 3-B asks:
+> Can the launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
 
-> Can the current launcher development input and Android runtime prefix be regenerated from explicit source, toolchain, dependency, and command inputs instead of being consumed from historical experiment paths?
+Stage 3-B is a producer-reproducibility and target-equivalence stage, not a packaging stage.
 
-Stage 3-B is not a packaging stage.
-
-It must first establish and replay a reproducible producer model for the already-validated runtime closure.
-
-## 2. Starting problem
-
-The current launcher development input is:
-
-```text
-experiments/bootstrap-android-build/android-python-work/prefix
-```
-
-and the validated runtime input has historical provenance through the earlier Android build experiment.
-
-This is accepted evidence for Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
-
-Stage 3-A also observed development metadata containing:
-
-```text
-upstream build workspace residue
-macOS NDK toolchain paths
-/usr/local build-prefix residue
-host build-tool paths
-```
-
-Stage 3-B models these as producer provenance before any metadata normalization.
-
-## 3. Principle
+## Principle
 
 ```text
 reproduce producer state
@@ -47,30 +20,19 @@ before
 normalizing consumer artifact metadata
 ```
 
-Do not begin Stage 3-B by mass-rewriting sysconfig values.
+Do not begin by mass-rewriting sysconfig or hiding historical build provenance. First make source, toolchain, dependency, command, and product boundaries explicit.
 
-First identify and replay:
-
-```text
-source identity
-host/toolchain identity
-dependency graph
-configure inputs
-build command path
-output product boundary
-```
-
-## 4. Phase status
+## Phase status
 
 ```text
 Phase 1  current producer provenance reconstruction   FROZEN
 Phase 2  controlled Linux producer replay            FROZEN
 Phase 3  dependency product promotion                FROZEN
 Phase 4  CPython dev/runtime prefix promotion         FROZEN
-Phase 5  Stage 3-A closure equivalence validation     ACTIVE
+Phase 5  Stage 3-A target equivalence validation      ACTIVE
 ```
 
-Authoritative phase documents:
+Authoritative documents:
 
 ```text
 docs/evidence/STAGE3B_PHASE1_FINAL_SUMMARY.md
@@ -81,348 +43,265 @@ docs/evidence/STAGE3B_PHASE3_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/evidence/STAGE3B_PHASE4_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
-docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
-docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
-Current Phase 5 checkpoint:
+## Frozen producer result
+
+Stage 3-B has made explicit:
 
 ```text
-promoted canonical behavior smoke        PASS
-promoted semantic closure equivalence    PASS
-promoted CA boundary equivalence         PASS
-promoted timezone boundary equivalence   PASS
-candidate mutation controls              PASS
-frozen runtime mutation controls         PASS
-next gate                                whole-prefix relocation
+exact CPython source commit
+CPython version/tag identity
+Android SDK/NDK identity
+NDK 27.3.13750724
+API level and target triple
+host build Python identity
+third-party dependency versions and recipe revisions
+dependency source archive hashes
+configure inputs
+build command path
+promoted dependency products
+promoted CPython dev/runtime products
+promoted launcher inputs
+transport and isolated Termux assembly
 ```
 
-Next command on Termux:
-
-```sh
-bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
-```
-
-## 5. Phase 1 frozen result
-
-Phase 1 recovered enough producer identity to begin a controlled replay.
-
-Observed:
+The promoted runtime is assembled at:
 
 ```text
-phase2_ready=true
-remaining_gates=[]
+work/termux/stage3b-promoted-runtime/prefix
 ```
 
-Producer structure:
+Frozen control:
 
 ```text
-CONFIG_ARGS structure   PASS
-CFLAGS structure        PASS
-LDFLAGS structure       PASS
+work/termux/stage2c/runtime/prefix
 ```
 
-Dependency release-tag model:
+## Stage 3-A invariants to preserve
+
+A build is not accepted merely because it completes. The produced runtime must preserve or explicitly reopen:
 
 ```text
-bzip2   1.0.8-3   MATCH
-libffi  3.4.4-3   MATCH
-openssl 3.5.7-0   MATCH
-sqlite  3.50.4-0  MATCH
-xz      5.4.6-1   MATCH
-zstd    1.5.7-2   MATCH
-```
-
-NDK identity:
-
-```text
-preserved snapshot       27.3.13750724
-embedded prefix metadata 27.3.13750724
-active Linux compiler    27.3.13750724
-```
-
-Source gate:
-
-```text
-exact_cpython_source_git_identity_available=true
-```
-
-Producer lineage:
-
-```text
-current dev prefix metadata
-  macOS producer
-  darwin-x86_64 NDK prebuilt
-  /Users/runner/work/release-tools/... workspace
-
-replay workstation
-  Linux
-```
-
-Phase 1 conclusion:
-
-```text
-STAGE3B_PHASE1=FROZEN
-STAGE3B_PHASE2_READY=true
-```
-
-## 6. Phase 2 frozen result
-
-Phase 2 answered:
-
-> The exact identified CPython source commit can be rebuilt through the preserved Android producer model on Linux using the matched NDK, explicit driver Python, and dependency declaration graph.
-
-Observed final marker:
-
-```text
-STAGE3B_UPSTREAM_REPLAY=PASS
-```
-
-The replay must not modify:
-
-```text
-original CPython source checkout
-historical bootstrap experiment tree
-historical development prefix
-frozen Stage 2-C runtime
-frozen Stage 3-A results
-```
-
-Replay shape:
-
-```text
-exact source commit
-    -> detached Git worktree
-
-source Android producer model
-    -> hash-checked against preserved snapshot
-
-separate cross-build root
-    -> build Python
-    -> target dependency prefix
-    -> Android CPython prefix
-
-shared explicit dependency cache
-    -> declared source-deps release archives
-
-package product
-    -> replay artifact for later comparison
-```
-
-See:
-
-```text
-docs/stages/STAGE3B_PHASE2_SCOPE.md
-```
-
-## 7. Required producer identities
-
-Stage 3-B captures and preserves at minimum:
-
-```text
-CPython source identity
-  version
-  tag/describe
-  exact commit
-
-Android toolchain identity
-  SDK root identity
-  NDK version
-  API level
-  target triple
-  host toolchain platform
-
-host build environment
-  host OS identity
-  host architecture
-  host build Python identity
-  key build tools and versions
-
-third-party native dependencies
-  name
-  version
-  recipe revision
-  release tag
-  source release location
-  later: archive hashes and produced-file equivalence
-
-CPython build configuration
-  configure arguments
-  environment inputs
-  cross-build paths
-  dependency paths
-  build command sequence
-
-launcher build configuration
-  compiler identity
-  include path source
-  libpython source
-  compile flags
-  link flags
-```
-
-## 8. Desired conceptual pipeline
-
-```text
-source inputs
-    -> declared and immutable
-
-toolchain inputs
-    -> declared
-
-native dependency sources
-    -> reproducible dependency products
-
-CPython Android build
-    -> reproducible Android host/runtime prefix
-
-launcher build
-    -> reproducible production launcher artifact
-
-runtime assembly
-    -> Stage 3-A-equivalent runtime closure
-```
-
-## 9. Stage 3-A invariants that Stage 3-B must preserve
-
-A Stage 3-B producer is not acceptable merely because it builds.
-
-The produced runtime must preserve or intentionally reopen:
-
-```text
-R2 conditional self re-exec behavior
+R2 conditional self re-exec
 B0 PyConfig auto-discovery
 clean launcher bootstrap
 ready-process direct entry
-subprocess re-entry behavior
+subprocess re-entry
 uv explicit-interpreter workflow
 venv prefix/base_prefix identity
-native closure with zero unresolved DT_NEEDED edges
-67/67 tested extension import surface, unless intentionally changed and reviewed
-Termux CA integration behavior
-timezone-data boundary understanding
-whole-prefix production relocation behavior
+zero unresolved DT_NEEDED edges
+67/67 tested extension surface
+Termux CA integration
+timezone-data boundary model
+whole-prefix relocation
 ```
 
-## 10. Phase 2 acceptance conditions
+## Phase 5 completed gates
 
-The controlled replay step is successful when:
+### Canonical behavior
 
 ```text
-[x] exact source detached worktree prepared
-[x] source producer scripts match preserved snapshot
-[x] SDK root resolved
-[x] NDK 27.3.13750724 confirmed
-[x] build Python configured and built
-[x] Android host prefix configured and built
-[x] target prefix installed
-[x] Python.h exists
-[x] pyconfig.h exists
-[x] libpython3.14.so exists
-[x] stdlib exists
-[x] replay package archive produced
+STAGE3B_PROMOTED_SMOKE=PASS
 ```
 
-A successful build replay does not yet prove Stage 3-A equivalence.
-
-## 11. Phase 5 comparison requirements
-
-The replayed runtime is compared against Stage 3-A constraints:
+### Native closure
 
 ```text
-file inventory differences
-ELF object inventory differences
-DT_NEEDED graph differences
-unique SONAME differences
-provider classification differences
-extension import surface
-active runtime path behavior
-sysconfig metadata differences
-CA behavior
-timezone boundary behavior
-smoke behavior
-relocation behavior
+candidate file entries                  3155
+symlinks                                   5
+ELF objects                               81
+DT_NEEDED edges                          329
+RUNTIME_INTERNAL edges                    80
+ANDROID_SYSTEM edges                     249
+unresolved edges                           0
+inspection errors                          0
+Android-system SONAME dlopen             5/5
+extension imports                       67/67
+candidate/frozen mutation controls       PASS
+machine verifier checks                37/37
+STAGE3B_PROMOTED_CLOSURE=PASS
 ```
 
-Completed comparisons:
+The raw file-entry difference from the frozen aggregate (`3280`) is retained as an observation, not a semantic equality gate.
+
+### CA and timezone boundaries
 
 ```text
-canonical behavior smoke
-ELF and DT_NEEDED closure
-provider classification
-Android-system SONAME loadability
-67-extension isolated import surface
-active runtime and sysconfig identity
-candidate/frozen mutation controls for closure workflow
-corrected CA boundary equivalence
-corrected direct-zoneinfo input and semantic equivalence
-uv-injected first-party tzdata fallback equivalence
-candidate/frozen mutation controls for boundary workflow
+CA contract equivalence                    PASS
+corrected direct-zoneinfo equivalence      PASS
+uv tzdata 2026.3 fallback equivalence      PASS
+candidate/frozen mutation controls         PASS
+machine verifier checks                  28/28
+STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-Current comparison:
+Both base runtimes lacked a usable timezone source on the tested host. The first-party `tzdata` fallback resolved `UTC`, `Asia/Seoul`, and `America/New_York` for both.
+
+## Phase 5 final gate: promoted whole-prefix relocation
+
+Production shape:
 
 ```text
-production-shape whole-prefix relocation
-location A runtime and consumer identity
-location B runtime and consumer identity after A -> B move
-stale A-prefix exclusion
-relocated B fingerprint equality with source candidate
-candidate/frozen source mutation controls
+canonical promoted candidate
+  -> copy to location A
+  -> validate A
+  -> move complete prefix A -> B
+  -> validate B
 ```
 
-Expected producer-host metadata deltas such as:
+At A and B the harness validates:
 
 ```text
-BUILD_GNU_TYPE
-absolute workspace paths
-NDK prebuilt host path
-host build-Python path
+runtime identity
+active sysconfig paths
+native stdlib and libc loadability
+HTTPS through Termux CA integration
+subprocess identity
+fresh uv venv
+fresh venv base identity
+uv run
+uv run base identity
+stale-prefix absence
 ```
 
-are not failures by themselves.
+## First relocation run
 
-The raw file-entry aggregate is also not a semantic gate. The promoted candidate had `3155` entries versus the frozen aggregate `3280`, while closure, identity, import, boundary, and mutation gates passed. Complete row-level inventories remain available for review.
-
-## 12. Stage 3-B completion conditions
-
-Stage 3-B is complete only when:
+Functional relocation passed:
 
 ```text
-[x] CPython source identity is explicit
-[x] Android NDK/API/target identities are explicit
-[x] host build environment is inventoried
-[x] third-party dependency release tags are explicit
-[x] CPython configure/build command model is recorded
-[x] dependency archive hashes are promoted
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+STAGE3A_PRODUCTION_RELOCATION_RECONFIRM=PASS
+candidate mutation control                 PASS
+frozen mutation control                    PASS
+```
+
+The initial source/B fingerprint failed because it included directory `st_size`.
+
+Read-only diagnosis:
+
+```text
+source entries               3155
+relocated entries            3155
+added paths                     0
+removed paths                   0
+portable changed paths          0
+pycache paths                    0
+portable fidelity             PASS
+```
+
+Only one strict row differed:
+
+```text
+lib/python3.14/lib-dynload
+  type          directory
+  changed       st_size only
+  source        12288
+  relocated     20480
+```
+
+No regular-file content, file metadata, symlink target, path set, or directory mtime changed.
+
+Classification:
+
+```text
+FINGERPRINT CONTRACT FALSE POSITIVE
+```
+
+## Corrected fidelity architecture
+
+The earlier implementation reused one fingerprint for two different questions. The corrected architecture separates them.
+
+### Same-tree mutation controls
+
+Candidate and frozen prefixes are measured before and after the workflow using the strict metadata-sensitive fingerprint. These are the same inode trees and must remain unchanged.
+
+### Cross-tree product fidelity
+
+Source and relocated B are different inode trees. Product fidelity requires:
+
+```text
+same relative path set
+same entry type
+same mode
+same mtime
+same regular-file size and SHA-256
+same symlink target
+```
+
+Directory `st_size` is excluded because it is filesystem allocation metadata, not runtime product content. The strict source/B difference remains recorded for diagnosis.
+
+This corrected contract is stronger for actual file payload because every regular file is hashed.
+
+Evidence:
+
+```text
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_INCIDENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_RELOCATION_FIDELITY_RESOLUTION.md
+```
+
+## Current action
+
+Run the corrected end-to-end gate on Termux:
+
+```sh
+rm -rf \
+  work/termux/stage3b-promoted-relocation \
+  results/termux/stage3b-promoted-relocation
+
+bash \
+  experiments/stage3b-target-validation/validate-promoted-relocation.sh
+```
+
+Expected final markers:
+
+```text
+LOCATION_RECONFIRM[A]=PASS
+LOCATION_RECONFIRM[B]=PASS
+STALE_A_PREFIX_RUNTIME_ASSERTIONS=PASS
+RELOCATED_RUNTIME_PORTABLE_FIDELITY_CHECK=PASS
+CANDIDATE_RUNTIME_MUTATION_CHECK=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_RELOCATION=PASS
+```
+
+## Stage 3-B completion conditions
+
+```text
+[x] source identity explicit
+[x] NDK/API/target identities explicit
+[x] host build environment inventoried
+[x] dependency identities and hashes explicit
+[x] producer command model recorded
 [x] replay build completes
-[x] replay package is produced
-[x] launcher build inputs come from promoted generated products
+[x] promoted products produced
+[x] launcher uses promoted inputs
 [x] historical experiment paths are not hidden canonical inputs
-[x] runtime assembly is regenerated from declared products
-[x] regenerated runtime passes closure comparison review
-[x] regenerated runtime passes smoke validation
-[x] regenerated runtime preserves the reviewed CA/timezone boundaries
-[ ] regenerated runtime passes whole-prefix relocation validation
+[x] promoted runtime assembled from declared products
+[x] smoke equivalence passes
+[x] native closure equivalence passes
+[x] CA/timezone boundary equivalence passes
+[x] first relocation functional assertions pass
+[x] relocation fingerprint incident classified
+[x] portable cross-tree fidelity contract implemented
+[ ] corrected relocation workflow passes end to end
+[ ] final Phase 5 evidence frozen
 ```
 
-## 13. Non-goals
+## Non-goals
 
-Do not add during Stage 3-B unless required by new evidence:
+Deferred unless new evidence requires them:
 
 ```text
-final release archive naming
+final archive naming
 installer UX
-uv managed-Python download metadata
-multi-ABI release matrix
-multi-API-level release matrix
-PGO/LTO optimization
+uv managed-Python provider metadata
+multi-ABI/API matrix
+PGO/LTO
 binary-size optimization
 mass patchelf rewriting
-SBOM generation
+SBOM
 release signing
 ```
-
-These belong to later work.
