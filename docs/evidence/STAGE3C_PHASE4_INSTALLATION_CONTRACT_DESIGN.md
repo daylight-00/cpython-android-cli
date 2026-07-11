@@ -42,16 +42,20 @@ The registry and transaction state are outside the installed payload prefix.
 ## Collision model
 
 ```text
-absent owned path
-  create
+absent owned payload path
+  create the manifest entry type
 
-existing unowned owned-path candidate
+existing unowned regular file or symlink
   conflict
 
-existing compatible structural directory
-  reuse without ownership
+existing compatible owned-directory path
+  reuse and register exact directory ownership
+  preserve every descendant ownership boundary
 
-existing structural non-directory
+existing compatible structural directory
+  create or reuse without ownership
+
+required directory occupied by non-directory
   conflict
 
 same-version exact registered match
@@ -64,7 +68,9 @@ other-artifact owner
   conflict
 ```
 
-Unowned content is never silently adopted.
+Exact directory ownership is ownership of the directory path only. It does not adopt or overwrite existing descendants. This permits a later install to reuse a directory retained because it contains an unowned sentinel.
+
+Unowned regular files and symlinks are never silently adopted.
 
 ## Uninstall model
 
@@ -87,7 +93,7 @@ unowned descendant
 
 ## Transaction ordering
 
-The model defines twelve install steps and ten uninstall steps. Preflight and lock acquisition precede mutation. A prepared journal and backup plan precede the first mutation. Registry replacement occurs only after payload changes. Any failure after the first mutation requires rollback.
+The model defines twelve install steps and ten uninstall steps. Preflight and lock acquisition precede mutation. A prepared journal and backup plan precede the first mutation. Registry replacement occurs only after payload changes. A failure after the first mutation and before durable commit requires rollback.
 
 States:
 
