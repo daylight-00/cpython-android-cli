@@ -138,7 +138,7 @@ experiments/bootstrap-android-build/android-python-work/prefix
 
 This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not the desired final build-product boundary.
 
-Stage 3-B Phases 1–3 are frozen: provenance was reconstructed, the Linux replay passed, and the six dependency products were locked and independently verified. Phase 4 now promotes explicit CPython development and runtime product boundaries.
+Stage 3-B Phases 1–3 and Phase 4.1 are frozen: provenance was reconstructed, the Linux replay passed, dependency products were locked, and the replay package was established as the direct successor product. Phase 4.2 now promotes that locked package into canonical generated output.
 
 See:
 
