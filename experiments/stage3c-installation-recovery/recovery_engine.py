@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import shutil
 import time
 from pathlib import Path
 from typing import Any
@@ -21,14 +20,20 @@ from recovery_common import (
     read_json,
     sha256_file,
 )
+from recovery_durability import (
+    durable_chmod,
+    durable_cleanup_transaction,
+    durable_ensure_directory,
+    durable_mkdir,
+    durable_move,
+    durable_tree_remove,
+    durable_unlink,
+)
 from recovery_operations import install, uninstall
 
 
 def remove_path(path: Path) -> None:
-    if path.is_symlink() or path.is_file():
-        path.unlink(missing_ok=True)
-    elif path.is_dir():
-        shutil.rmtree(path)
+    durable_tree_remove(path, label="rollback-remove-path")
 
 
 def rollback_transaction(root: Path, transaction: Path, journal: dict[str, Any]) -> dict[str, Any]:
@@ -48,7 +53,11 @@ def rollback_transaction(root: Path, transaction: Path, journal: dict[str, Any])
                     raise RuntimeError("missing prior registry backup")
                 atomic_write(registry_path, backup.read_bytes())
             else:
-                registry_path.unlink(missing_ok=True)
+                durable_unlink(
+                    registry_path,
+                    missing_ok=True,
+                    label="rollback-registry-remove",
+                )
             restored += 1
         elif kind == "created":
             path = prefix / relative
@@ -61,13 +70,17 @@ def rollback_transaction(root: Path, transaction: Path, journal: dict[str, Any])
             if backup.exists() or backup.is_symlink():
                 if actual_kind(path) != "absent":
                     remove_path(path)
-                path.parent.mkdir(parents=True, exist_ok=True)
-                os.replace(backup, path)
+                durable_ensure_directory(path.parent, label="rollback-replaced-parent")
+                durable_move(backup, path, label="rollback-replaced-restore")
                 restored += 1
         elif kind == "chmod":
             path = prefix / relative
             if path.is_dir() and not path.is_symlink():
-                os.chmod(path, int(mutation["old_mode"], 8))
+                durable_chmod(
+                    path,
+                    int(mutation["old_mode"], 8),
+                    label="rollback-chmod-restore",
+                )
                 restored += 1
         elif kind == "removed":
             path = prefix / relative
@@ -75,14 +88,18 @@ def rollback_transaction(root: Path, transaction: Path, journal: dict[str, Any])
             if backup.exists() or backup.is_symlink():
                 if actual_kind(path) != "absent":
                     remove_path(path)
-                path.parent.mkdir(parents=True, exist_ok=True)
-                os.replace(backup, path)
+                durable_ensure_directory(path.parent, label="rollback-removed-parent")
+                durable_move(backup, path, label="rollback-removed-restore")
                 restored += 1
         elif kind == "removed-dir":
             path = prefix / relative
             if actual_kind(path) == "absent":
-                path.mkdir(parents=True, exist_ok=True)
-                os.chmod(path, int(mutation["mode"], 8))
+                durable_mkdir(
+                    path,
+                    mode=int(mutation["mode"], 8),
+                    parents=True,
+                    label="rollback-directory-restore",
+                )
                 restored += 1
         else:
             raise RuntimeError(f"unknown mutation kind: {kind}")
@@ -100,12 +117,21 @@ def rollback_transaction(root: Path, transaction: Path, journal: dict[str, Any])
 def recover(root: Path, *, nonblocking_lock: bool = False) -> dict[str, Any]:
     with installation_lock(root, nonblocking=nonblocking_lock) as state:
         transactions_root = state / "transactions"
-        transactions_root.mkdir(parents=True, exist_ok=True)
+        durable_ensure_directory(transactions_root, label="recovery-transactions-root")
         actions: list[dict[str, Any]] = []
         for transaction in sorted(path for path in transactions_root.iterdir() if path.is_dir()):
             journal_path = transaction / "journal.json"
             if not journal_path.is_file():
-                raise RuntimeError(f"transaction journal missing: {transaction}")
+                durable_cleanup_transaction(transaction, label="recovery-unjournaled-prepare")
+                actions.append(
+                    {
+                        "transaction": transaction.name,
+                        "prior_state": "UNJOURNALED_PREPARE",
+                        "action": "DISCARDED_PREPARE",
+                        "restored_count": 0,
+                    }
+                )
+                continue
             journal = read_json(journal_path)
             current_state = journal.get("state")
             if current_state in {"PREPARED", "APPLYING", "ROLLING_BACK"}:
@@ -119,7 +145,7 @@ def recover(root: Path, *, nonblocking_lock: bool = False) -> dict[str, Any]:
                         "restored_count": 0,
                     }
                 )
-                shutil.rmtree(transaction)
+                durable_cleanup_transaction(transaction, label="recovery-committed-cleanup")
             elif current_state == "ROLLED_BACK":
                 actions.append(
                     {
