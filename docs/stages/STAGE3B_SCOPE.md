@@ -66,7 +66,7 @@ output product boundary
 Phase 1  current producer provenance reconstruction   FROZEN
 Phase 2  controlled Linux producer replay            FROZEN
 Phase 3  dependency product promotion                FROZEN
-Phase 4  CPython dev/runtime prefix promotion         ACTIVE
+Phase 4  CPython dev/runtime prefix promotion         ACTIVE (Termux assembly)
 Phase 5  Stage 3-A closure equivalence validation     PENDING
 ```
 
