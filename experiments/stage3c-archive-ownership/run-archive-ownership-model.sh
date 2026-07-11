@@ -21,6 +21,7 @@ PYTHON="$CANONICAL_PREFIX/bin/python"
 FINGERPRINT="$SCRIPT_DIR/../stage3c-product-role-inventory/fingerprint-product-tree.py"
 ANALYZER="$SCRIPT_DIR/analyze-archive-ownership.py"
 VERIFIER="$SCRIPT_DIR/verify-archive-ownership.py"
+SAFETY_VERIFIER="$SCRIPT_DIR/verify-archive-ownership-safety.py"
 
 [[ -x "$PYTHON" ]] || {
     echo "ERROR: canonical promoted Python is missing: $PYTHON" >&2
@@ -38,7 +39,8 @@ for file in \
     "$PHASE1_FINAL_RESULTS/verification.json" \
     "$FINGERPRINT" \
     "$ANALYZER" \
-    "$VERIFIER"; do
+    "$VERIFIER" \
+    "$SAFETY_VERIFIER"; do
     [[ -f "$file" ]] || {
         echo "ERROR: required frozen evidence or tool is missing: $file" >&2
         exit 2
@@ -171,9 +173,21 @@ verifier_rc=$?
 set -e
 cat "$RESULTS_DIR/verifier.log"
 
+set +e
+"$PYTHON" -I -B -S \
+    "$SAFETY_VERIFIER" \
+    --component-inventory "$RESULTS_DIR/input/component-inventory.tsv" \
+    --owned-paths "$RESULTS_DIR/artifact-owned-paths.tsv" \
+    --excluded-paths "$RESULTS_DIR/excluded-paths.txt" \
+    --output "$RESULTS_DIR/safety-verification.json" \
+    > "$RESULTS_DIR/safety-verifier.log" 2>&1
+safety_rc=$?
+set -e
+cat "$RESULTS_DIR/safety-verifier.log"
+
 "$PYTHON" -I -B -S - \
     "$RESULTS_DIR/workflow-status.json" \
-    "$analyzer_rc" "$mutation_rc" "$verifier_rc" <<'PY'
+    "$analyzer_rc" "$mutation_rc" "$verifier_rc" "$safety_rc" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -182,6 +196,7 @@ returncodes = {
     "ownership_analysis": int(sys.argv[2]),
     "source_mutation": int(sys.argv[3]),
     "independent_verification": int(sys.argv[4]),
+    "safety_verification": int(sys.argv[5]),
 }
 result = {
     "schema_version": 1,
@@ -201,10 +216,11 @@ printf 'Structural parents:   %s\n' "$RESULTS_DIR/artifact-structural-directorie
 printf 'Shared namespace:     %s\n' "$RESULTS_DIR/shared-namespace-directories.tsv"
 printf 'Artifact summary:     %s\n' "$RESULTS_DIR/artifact-ownership-summary.tsv"
 printf 'Verification:         %s\n' "$RESULTS_DIR/verification.json"
+printf 'Safety verification:  %s\n' "$RESULTS_DIR/safety-verification.json"
 printf 'Mutation check:       %s\n\n' "$RESULTS_DIR/source-mutation-check.txt"
 
 final_rc=0
-for rc in "$analyzer_rc" "$mutation_rc" "$verifier_rc"; do
+for rc in "$analyzer_rc" "$mutation_rc" "$verifier_rc" "$safety_rc"; do
     if [[ $rc -ne 0 ]]; then
         final_rc=$rc
         break
@@ -219,6 +235,7 @@ fi
 echo "ARCHIVE_OWNERSHIP_ACCEPTED_INPUTS=PASS"
 echo "ARCHIVE_EXACT_OWNED_PATH_OVERLAP=0 PASS"
 echo "ARCHIVE_STRUCTURAL_NAMESPACE_MODEL=PASS"
+echo "ARCHIVE_OWNERSHIP_SAFETY_VERIFIER=9/9 PASS"
 echo "ARCHIVE_SELECTED_SYMLINK_POLICY=PASS"
 echo "ARCHIVE_LICENSE_OWNERSHIP=PASS"
 echo "ARCHIVE_OWNERSHIP_SOURCE_MUTATION_CHECK=PASS"
