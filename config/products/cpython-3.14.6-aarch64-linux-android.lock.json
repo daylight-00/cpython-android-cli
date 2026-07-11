@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "product_kind": "upstream-cpython-android-package",
+  "python_version": "3.14.6",
+  "source_head": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+  "target_host": "aarch64-linux-android",
+  "android_api": 24,
+  "ndk_version": "27.3.13750724",
+  "archive": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "size_bytes": 22346066,
+    "sha256": "a16e0433b6f7e69c4634b52ce582d4d387447fbcfed797425f669ac224631f4f"
+  },
+  "package_prefix_root": "prefix",
+  "launcher_development_contract": {
+    "include/python3.14/Python.h": {
+      "sha256": "e39aad93d70c3ea1a63b77ec5795ff59a5c177745aedace6f83bbf4275a20d9f"
+    },
+    "include/python3.14/pyconfig.h": {
+      "sha256": "f92a48f0cfce0f5f687590ed9c485d3381dfaaff16ba320e0be5a413b7b98fb5"
+    },
+    "lib/libpython3.14.so": {
+      "sha256": "f7d1a53e32186eb304ce1192f408994b557fe78e6e05c0c0c4d0934998b894a9"
+    }
+  }
+}
