@@ -15,7 +15,6 @@ EXPECTED_BLOBS = {
     "recovery_operations.py": "119571e8ad8a5663d20beff0ab82c85c14dfc4eb",
     "recovery_engine.py": "9a3f1898c7420198ff33d2b067a6fa2a6ac8618d",
 }
-
 CATEGORY_BY_FUNCTION = {
     ("recovery_common.py", "atomic_write"): "transaction-metadata",
     ("recovery_common.py", "stage_archive"): "transient-staging",
@@ -30,7 +29,6 @@ CATEGORY_BY_FUNCTION = {
     ("recovery_engine.py", "hold_lock"): "lock-probe",
     ("recovery_engine.py", "main"): "tool-output",
 }
-
 PRODUCTION_CATEGORIES = {
     "transaction-metadata",
     "transaction-backup",
@@ -40,13 +38,13 @@ PRODUCTION_CATEGORIES = {
     "rollback-production",
     "recovery-cleanup",
 }
-
-DIRECT_MUTATIONS = {
+DIRECT_OPERATIONS = {
     "os.replace": "namespace-replace",
     "os.symlink": "symlink-create",
     "os.chmod": "metadata-change",
     "os.unlink": "unlink",
     "os.rmdir": "rmdir",
+    "os.fsync": "file-or-directory-fsync",
     "shutil.copyfile": "regular-copy",
     "shutil.copyfileobj": "regular-copy",
     "shutil.rmtree": "tree-remove",
@@ -54,8 +52,7 @@ DIRECT_MUTATIONS = {
     "persist_journal": "journal-helper",
     "save_prior_registry": "registry-backup-helper",
 }
-
-METHOD_MUTATIONS = {
+METHOD_OPERATIONS = {
     "mkdir": "mkdir",
     "write_bytes": "direct-write",
     "write_text": "direct-write",
@@ -64,12 +61,7 @@ METHOD_MUTATIONS = {
     "write": "stream-write",
     "flush": "stream-flush",
 }
-
-SYNC_CALLS = {
-    "os.fsync": "file-or-directory-fsync",
-}
-
-OBLIGATION_BY_OPERATION = {
+OBLIGATIONS = {
     "namespace-replace": "fsync source parent and destination parent after replace",
     "symlink-create": "fsync containing directory after symlink publication",
     "metadata-change": "fsync affected file or directory after metadata change",
@@ -85,6 +77,7 @@ OBLIGATION_BY_OPERATION = {
     "stream-write": "fsync stream before publication",
     "stream-flush": "flush is not a persistence boundary without fsync",
     "os-open-create": "fsync created file and parent when persistent state is introduced",
+    "path-open-write": "fsync file and parent when the opened path becomes persistent",
     "file-or-directory-fsync": "retain and classify the fsync target",
 }
 
@@ -110,91 +103,85 @@ def sha256_file(path: Path) -> str:
 
 def git_blob_sha(path: Path) -> str:
     data = path.read_bytes()
-    header = f"blob {len(data)}\0".encode("ascii")
-    return hashlib.sha1(header + data).hexdigest()
+    return hashlib.sha1(f"blob {len(data)}\0".encode("ascii") + data).hexdigest()
 
 
-def dotted_name(node: ast.AST) -> str:
+def dotted(node: ast.AST) -> str:
     if isinstance(node, ast.Name):
         return node.id
     if isinstance(node, ast.Attribute):
-        prefix = dotted_name(node.value)
+        prefix = dotted(node.value)
         return f"{prefix}.{node.attr}" if prefix else node.attr
     return ""
 
 
-def os_open_is_mutating(call: ast.Call) -> bool:
-    if dotted_name(call.func) != "os.open" or len(call.args) < 2:
+def os_open_mutates(call: ast.Call) -> bool:
+    if dotted(call.func) != "os.open" or len(call.args) < 2:
         return False
     flags = ast.dump(call.args[1], include_attributes=False)
     return any(token in flags for token in ("O_CREAT", "O_TRUNC", "O_WRONLY", "O_RDWR"))
 
 
-def path_open_is_mutating(call: ast.Call) -> bool:
+def path_open_mutates(call: ast.Call) -> bool:
     if not isinstance(call.func, ast.Attribute) or call.func.attr != "open":
         return False
-    mode: str | None = None
+    modes: list[str] = []
     if call.args and isinstance(call.args[0], ast.Constant) and isinstance(call.args[0].value, str):
-        mode = call.args[0].value
+        modes.append(call.args[0].value)
     for keyword in call.keywords:
         if keyword.arg == "mode" and isinstance(keyword.value, ast.Constant):
             if isinstance(keyword.value.value, str):
-                mode = keyword.value.value
-    return mode is not None and any(marker in mode for marker in ("w", "a", "x", "+"))
+                modes.append(keyword.value.value)
+    return any(any(marker in mode for marker in ("w", "a", "x", "+")) for mode in modes)
 
 
 class InventoryVisitor(ast.NodeVisitor):
-    def __init__(self, module_name: str, source: str):
-        self.module_name = module_name
+    def __init__(self, module: str, source: str):
+        self.module = module
         self.source = source
-        self.function_stack: list[str] = []
+        self.functions: list[str] = []
         self.rows: list[dict[str, Any]] = []
 
     def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
-        self.function_stack.append(node.name)
+        self.functions.append(node.name)
         self.generic_visit(node)
-        self.function_stack.pop()
+        self.functions.pop()
 
     visit_AsyncFunctionDef = visit_FunctionDef
 
     def visit_Call(self, node: ast.Call) -> None:
-        function = self.function_stack[-1] if self.function_stack else "<module>"
-        call = dotted_name(node.func)
-        operation: str | None = DIRECT_MUTATIONS.get(call) or SYNC_CALLS.get(call)
+        function = self.functions[-1] if self.functions else "<module>"
+        call = dotted(node.func)
+        operation = DIRECT_OPERATIONS.get(call)
         if operation is None and isinstance(node.func, ast.Attribute):
-            operation = METHOD_MUTATIONS.get(node.func.attr)
-        if operation is None and os_open_is_mutating(node):
+            operation = METHOD_OPERATIONS.get(node.func.attr)
+        if operation is None and os_open_mutates(node):
             operation = "os-open-create"
-        if operation is None and path_open_is_mutating(node):
+        if operation is None and path_open_mutates(node):
             operation = "path-open-write"
         if operation is not None:
-            category = CATEGORY_BY_FUNCTION.get((self.module_name, function), "UNKNOWN")
-            segment = ast.get_source_segment(self.source, node) or call
+            category = CATEGORY_BY_FUNCTION.get((self.module, function), "UNKNOWN")
             self.rows.append(
                 {
-                    "module": self.module_name,
+                    "module": self.module,
                     "function": function,
                     "line": node.lineno,
                     "column": node.col_offset,
                     "call": call,
-                    "source": segment,
+                    "source": ast.get_source_segment(self.source, node) or call,
                     "operation": operation,
                     "category": category,
                     "production_path": category in PRODUCTION_CATEGORIES,
-                    "obligation": OBLIGATION_BY_OPERATION.get(
-                        operation,
-                        "classify explicit durability obligation",
-                    ),
+                    "obligation": OBLIGATIONS[operation],
                 }
             )
         self.generic_visit(node)
 
 
-def scan_file(path: Path) -> list[dict[str, Any]]:
+def scan(path: Path) -> list[dict[str, Any]]:
     source = path.read_text(encoding="utf-8")
-    tree = ast.parse(source, filename=str(path))
     visitor = InventoryVisitor(path.name, source)
-    visitor.visit(tree)
+    visitor.visit(ast.parse(source, filename=str(path)))
     return visitor.rows
 
 
@@ -214,11 +201,10 @@ def main() -> int:
     gate4_scenario = read_json(gate4 / "scenario.json")
     gate4_verification = read_json(gate4 / "verification.json")
     gate4_workflow = read_json(gate4 / "workflow-status.json")
-
     source_paths = {name: recovery_dir / name for name in EXPECTED_BLOBS}
     source_blobs = {name: git_blob_sha(path) for name, path in source_paths.items()}
     rows = sorted(
-        [row for path in source_paths.values() for row in scan_file(path)],
+        [row for path in source_paths.values() for row in scan(path)],
         key=lambda row: (row["module"], row["line"], row["column"], row["operation"]),
     )
     unknown = [row for row in rows if row["category"] == "UNKNOWN"]
@@ -238,9 +224,9 @@ def main() -> int:
     }
     (output / "mutation-inventory.json").write_bytes(canonical_json_bytes(inventory))
 
-    plan_groups: dict[str, list[dict[str, Any]]] = {}
+    groups: dict[str, list[dict[str, Any]]] = {}
     for row in production:
-        plan_groups.setdefault(row["category"], []).append(
+        groups.setdefault(row["category"], []).append(
             {
                 "module": row["module"],
                 "function": row["function"],
@@ -254,7 +240,7 @@ def main() -> int:
         "plan_kind": "cpython-android-cli-recovery-durability-integration-plan",
         "source_blobs": source_blobs,
         "production_row_count": len(production),
-        "groups": {name: value for name, value in sorted(plan_groups.items())},
+        "groups": {name: value for name, value in sorted(groups.items())},
         "required_gate5_replay": {
             "recovery_scenarios": 55,
             "recovery_independent_verifier": 82,
@@ -308,6 +294,7 @@ def main() -> int:
                 row["column"],
                 row["operation"],
             ),
+        ),
         "row_anchors_unique": len(
             {
                 (row["module"], row["line"], row["column"], row["operation"])
