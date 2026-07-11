@@ -140,7 +140,7 @@ This remains accepted provenance for frozen Stage 2 and Stage 3-A, but it is not
 
 Stage 3-B Phases 1–4 are frozen: provenance, controlled replay, dependency locking, product promotion, launcher rebuilding, transport, and isolated Termux assembly all passed. Phase 5 validates the promoted runtime against the frozen Stage 2 behavior and Stage 3-A closure/boundary model on Android.
 
-The promoted candidate passed:
+The promoted candidate has passed:
 
 ```text
 canonical Stage 2-C behavior smoke
@@ -148,22 +148,29 @@ complete inventory and native closure equivalence
 Android-system SONAME loadability
 67/67 isolated extension imports
 active runtime/sysconfig identity
+corrected CA boundary equivalence
+corrected direct-zoneinfo equivalence
+uv first-party tzdata fallback equivalence
 candidate and frozen runtime mutation controls
 ```
 
-Gate 2 final marker:
+Current final markers include:
 
 ```text
+STAGE3B_PROMOTED_SMOKE=PASS
 STAGE3B_PROMOTED_CLOSURE=PASS
+STAGE3B_PROMOTED_BOUNDARIES=PASS
 ```
 
-The current gate is corrected CA and timezone boundary equivalence:
+The corrected boundary verifier passed all 28 checks. Both base runtimes lacked a usable timezone-data source on the tested host, while uv-injected first-party `tzdata 2026.3` resolved `UTC`, `Asia/Seoul`, and `America/New_York` for both without modifying either base prefix.
+
+The current and final Phase 5 gate is production-shape whole-prefix relocation:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
+bash experiments/stage3b-target-validation/validate-promoted-relocation.sh
 ```
 
-The boundary review found that the old direct-zoneinfo probe attempted to test `PYTHONTZPATH` under `-I`, which ignores the variable under test. The repaired workflow validates actual scenario delivery and compares the promoted candidate with the frozen runtime under the same Termux host state.
+This copies the promoted candidate to location A, validates it, moves the complete prefix from A to B, validates B, asserts absence of stale A paths, and compares the final B fingerprint with the canonical source candidate.
 
 See:
 
@@ -177,6 +184,7 @@ docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
 docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_BOUNDARIES.md
 ```
 
 ## Architecture in one picture
@@ -318,4 +326,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The current active work is Stage 3-B CA/timezone boundary equivalence, followed by promoted whole-prefix relocation. It is not archive packaging or launcher redesign.
+The current active work is the final Stage 3-B promoted whole-prefix relocation gate. It is not archive packaging or launcher redesign.
