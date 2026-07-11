@@ -230,11 +230,35 @@ The canonical launcher is not overwritten by this comparison.
 [x] replay package member boundary inventoried
 [x] differences classified by product role
 [x] replay development product promoted to canonical generated output
-[ ] launcher rebuilt from promoted development product
-[ ] replacement runtime-source product selected and justified
+[x] launcher rebuilt from promoted development product
+[x] replacement runtime-source product selected and justified
 [ ] runtime assembly no longer depends on the hidden historical archive
 [ ] generated handoff is ready for Phase 5 closure validation
 ```
+
+## Canonical workstation handoff
+
+After product promotion, rebuild the canonical launcher on Victor:
+
+```sh
+bash experiments/stage3b-product-promotion/promote-replay-package.sh
+bash scripts/build/build-launcher.sh
+```
+
+The first command refreshes the portable checksum sidecar and derived development view. The second command now uses the promoted development prefix by default.
+
+Generated handoff:
+
+```text
+out/aarch64-linux-android24/release/
+  bin/python3.14
+  cpython/python-3.14.6-aarch64-linux-android.tar.gz
+  cpython/SHA256SUMS
+  metadata/build-info.txt
+  metadata/cpython-product.json
+```
+
+This tree is then synchronized to Termux. Target-side assembly and validation remain separate gates.
 
 ## Non-goals
 
