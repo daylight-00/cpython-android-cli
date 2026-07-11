@@ -82,20 +82,24 @@ docs/stages/STAGE3B_PHASE4_SCOPE.md
 docs/evidence/STAGE3B_PHASE4_FINAL_SUMMARY.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
+docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
 ```
 
 Current Phase 5 checkpoint:
 
 ```text
-promoted canonical behavior smoke     PASS
-frozen runtime mutation control       PASS
-next gate                              closure equivalence
+promoted canonical behavior smoke        PASS
+promoted semantic closure equivalence    PASS
+candidate mutation control               PASS
+frozen runtime mutation control          PASS
+next gate                                CA and timezone boundary equivalence
 ```
 
 Next command on Termux:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-closure.sh
+bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
 ```
 
 ## 5. Phase 1 frozen result
@@ -322,7 +326,7 @@ A successful build replay does not yet prove Stage 3-A equivalence.
 
 ## 11. Phase 5 comparison requirements
 
-The replayed runtime must eventually be compared against Stage 3-A constraints:
+The replayed runtime is compared against Stage 3-A constraints:
 
 ```text
 file inventory differences
@@ -339,6 +343,27 @@ smoke behavior
 relocation behavior
 ```
 
+Completed comparisons:
+
+```text
+canonical behavior smoke
+ELF and DT_NEEDED closure
+provider classification
+Android-system SONAME loadability
+67-extension isolated import surface
+active runtime and sysconfig identity
+candidate/frozen mutation controls for closure workflow
+```
+
+Current comparison:
+
+```text
+corrected CA boundary equivalence
+corrected direct-zoneinfo input and semantic equivalence
+uv-injected first-party tzdata fallback equivalence
+candidate/frozen mutation controls for boundary workflow
+```
+
 Expected producer-host metadata deltas such as:
 
 ```text
@@ -349,6 +374,8 @@ host build-Python path
 ```
 
 are not failures by themselves.
+
+The raw file-entry aggregate is also not a semantic gate. The promoted candidate had `3155` entries versus the frozen aggregate `3280`, while every closure, identity, import, and mutation gate passed. Complete row-level inventories remain available for review.
 
 ## 12. Stage 3-B completion conditions
 
@@ -366,8 +393,9 @@ Stage 3-B is complete only when:
 [x] launcher build inputs come from promoted generated products
 [x] historical experiment paths are not hidden canonical inputs
 [x] runtime assembly is regenerated from declared products
-[ ] regenerated runtime passes closure comparison review
+[x] regenerated runtime passes closure comparison review
 [x] regenerated runtime passes smoke validation
+[ ] regenerated runtime preserves or intentionally reopens CA/timezone boundaries
 [ ] regenerated runtime passes whole-prefix relocation validation
 ```
 

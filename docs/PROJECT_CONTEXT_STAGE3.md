@@ -277,6 +277,8 @@ America/New_York     PASS with tzdata
 
 Stage 3-C must later decide whether to bundle, declare, or externally integrate timezone data.
 
+Phase 5 probe review later found that the old direct `PYTHONTZPATH` scenarios used `-I`, which ignored the variable under test. The default failure, host path existence check, and uv tzdata fallback remain evidence; the direct environment scenarios are explicitly reopened and rerun under a corrected child contract.
+
 ### CA trust
 
 ```text
@@ -390,25 +392,61 @@ FROZEN_RUNTIME_MUTATION_CHECK=PASS
 STAGE3B_PROMOTED_SMOKE=PASS
 ```
 
+The clean promoted closure rerun also passed:
+
+```text
+ELF objects                               81
+DT_NEEDED edges                          329
+RUNTIME_INTERNAL edges                    80
+ANDROID_SYSTEM edges                     249
+unresolved edges                           0
+Android-system SONAME dlopen             5/5
+extension imports                       67/67
+candidate mutation control              PASS
+frozen mutation control                 PASS
+machine verifier checks                37/37
+STAGE3B_PROMOTED_CLOSURE=PASS
+```
+
+The `+43` bytecode incident is closed as validation-induced mutation. The repaired child contract uses explicit `-B`, and the candidate was freshly reassembled before the passing rerun.
+
 Current action:
 
 ```sh
-bash experiments/stage3b-target-validation/validate-promoted-closure.sh
+bash experiments/stage3b-target-validation/validate-promoted-boundaries.sh
 ```
 
-This gate reuses the Stage 3-A inventory and probe engines against:
+This Gate 3 workflow compares corrected CA and timezone boundary probes between:
 
 ```text
-work/termux/stage3b-promoted-runtime/prefix
+candidate
+  work/termux/stage3b-promoted-runtime/prefix
+
+frozen control
+  work/termux/stage2c/runtime/prefix
 ```
 
 and writes only to:
 
 ```text
-results/termux/stage3b-promoted-closure
+results/termux/stage3b-promoted-boundaries
 ```
 
-The frozen Stage 2-C prefix and frozen Stage 3-A results remain read-only controls.
+The CA probe retains isolated mode but adds explicit no-bytecode behavior:
+
+```text
+python -I -B -S -c ...
+```
+
+The zoneinfo probe cannot use isolated mode because `PYTHONTZPATH` is the variable under test. It now sanitizes ambient `PYTHON*` variables and uses:
+
+```text
+python -B -P -s -c ...
+```
+
+The verifier checks actual scenario input delivery, candidate/frozen semantic equivalence, uv-injected first-party `tzdata`, base-prefix identity, and mutation controls.
+
+The frozen Stage 2-C prefix and frozen Stage 3-A result directory remain read-only controls.
 
 Authoritative scope and current evidence:
 
@@ -416,6 +454,14 @@ Authoritative scope and current evidence:
 docs/stages/STAGE3B_SCOPE.md
 docs/stages/STAGE3B_PHASE5_SCOPE.md
 docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_CLOSURE.md
+docs/evidence/STAGE3B_PHASE5_BOUNDARY_PROBE_REASSESSMENT.md
+```
+
+Collaboration workflow:
+
+```text
+docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
 ## 10. Repository structure
@@ -475,7 +521,11 @@ docs/PROJECT_CONTEXT_STAGE3.md
     |
     +--> docs/stages/STAGE3B_SCOPE.md
     |
+    +--> docs/stages/STAGE3B_PHASE5_SCOPE.md
+    |
     +--> docs/evidence/
+    |
+    +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
 `docs/PROJECT_CONTEXT.md` remains useful as the Stage 2-era handoff record, but `PROJECT_CONTEXT_STAGE3.md` is the current Stage 3 handoff context.

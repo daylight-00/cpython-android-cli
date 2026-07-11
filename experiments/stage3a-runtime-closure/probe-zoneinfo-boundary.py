@@ -8,8 +8,20 @@ from pathlib import Path
 import subprocess
 
 
+CHILD_ARGS = ["-B", "-P", "-s", "-c"]
+
+
 def run_probe(python_bin: Path, env_overrides: dict[str, str | None]) -> dict[str, object]:
     env = os.environ.copy()
+
+    # This probe intentionally tests PYTHONTZPATH. Isolated mode cannot be used,
+    # because -I implies -E and would ignore the variable under test. Remove
+    # ambient Python controls explicitly, then add only the scenario input.
+    for key in list(env):
+        if key.startswith("PYTHON"):
+            env.pop(key, None)
+    env["PYTHONNOUSERSITE"] = "1"
+
     for key, value in env_overrides.items():
         if value is None:
             env.pop(key, None)
@@ -20,6 +32,7 @@ def run_probe(python_bin: Path, env_overrides: dict[str, str | None]) -> dict[st
 import importlib.util
 import json
 import os
+import sys
 import zoneinfo
 
 keys = ["UTC", "Asia/Seoul", "America/New_York"]
@@ -33,15 +46,22 @@ for key in keys:
         results[key] = {"result": "PASS"}
 
 print(json.dumps({
+    "pythontzpath_env": os.environ.get("PYTHONTZPATH"),
     "zoneinfo_tzpath": list(zoneinfo.TZPATH),
     "tzpath_exists": {path: os.path.isdir(path) for path in zoneinfo.TZPATH},
     "tzdata_spec_found": importlib.util.find_spec("tzdata") is not None,
+    "flags": {
+        "isolated": sys.flags.isolated,
+        "safe_path": sys.flags.safe_path,
+        "no_user_site": sys.flags.no_user_site,
+        "dont_write_bytecode": sys.dont_write_bytecode,
+    },
     "keys": results,
 }, sort_keys=True))
 '''
 
     proc = subprocess.run(
-        [str(python_bin), "-I", "-c", code],
+        [str(python_bin), *CHILD_ARGS, code],
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -103,6 +123,7 @@ def main() -> int:
     }
 
     summary = {
+        "child_args": CHILD_ARGS,
         "termux_zoneinfo_path": str(termux_zoneinfo),
         "termux_zoneinfo_exists": termux_zoneinfo.is_dir(),
         "scenarios": {

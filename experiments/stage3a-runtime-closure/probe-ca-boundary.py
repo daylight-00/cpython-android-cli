@@ -44,7 +44,7 @@ raise SystemExit(0 if result["https_result"] == "PASS" else 4)
 '''
 
     proc = subprocess.run(
-        [str(python_bin), "-I", "-S", "-c", code],
+        [str(python_bin), "-I", "-B", "-S", "-c", code],
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
