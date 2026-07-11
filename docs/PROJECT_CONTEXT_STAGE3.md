@@ -1,7 +1,7 @@
 # CPython Android CLI + uv: Stage 3 Project Context
 
 > **Status:** Current handoff context
-> **Current architecture state:** Stage 2 frozen, Stage 3-A frozen
+> **Current architecture state:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B Phases 1–4 frozen
 > **Active phase:** Stage 3-B reproducible build-input promotion
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
@@ -380,24 +380,42 @@ hashes of promoted build products
 
 ## 9. Current Stage 3-B action
 
-Phases 1–3 are frozen. The source/toolchain lineage, controlled replay, and exact binary dependency products are explicit and verified.
+Phases 1–4 are frozen. Source and toolchain provenance, the controlled Linux replay, exact dependency products, the promoted CPython package, the promoted launcher, workstation handoff, transport, and isolated Termux assembly are explicit and verified.
+
+The promoted Termux candidate passed the canonical Stage 2-C workload:
+
+```text
+STAGE2C_SMOKE=PASS
+FROZEN_RUNTIME_MUTATION_CHECK=PASS
+STAGE3B_PROMOTED_SMOKE=PASS
+```
 
 Current action:
 
-```text
-inventory historical and replay development prefixes
-identify the launcher's exact development contract
-inventory the upstream package product
-separate development, package, runtime, and launcher objects
-promote generated products out of historical experiment paths
+```sh
+bash experiments/stage3b-target-validation/validate-promoted-closure.sh
 ```
 
-Do not prune the replay prefix or begin Stage 3-A closure comparison before these CPython product boundaries are explicit.
+This gate reuses the Stage 3-A inventory and probe engines against:
 
-Authoritative scope:
+```text
+work/termux/stage3b-promoted-runtime/prefix
+```
+
+and writes only to:
+
+```text
+results/termux/stage3b-promoted-closure
+```
+
+The frozen Stage 2-C prefix and frozen Stage 3-A results remain read-only controls.
+
+Authoritative scope and current evidence:
 
 ```text
 docs/stages/STAGE3B_SCOPE.md
+docs/stages/STAGE3B_PHASE5_SCOPE.md
+docs/evidence/STAGE3B_PHASE5_PROMOTED_SMOKE.md
 ```
 
 ## 10. Repository structure
