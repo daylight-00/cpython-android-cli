@@ -31,6 +31,7 @@ exact source commit
 
 preserved Android producer model
     -> source-tree Android/android.py
+    -> hash-checked against preserved snapshot
 
 separate cross-build root
     -> work/workstation/stage3b-phase2-replay/cross-build
@@ -42,47 +43,69 @@ separate results root
     -> results/workstation/stage3b-phase2-replay
 ```
 
-## Producer-model alignment gate
+## Preparation gate
 
-Before building, Phase 2 must compare the replay source tree's:
+Run:
 
-```text
-Android/android.py
-Android/android-env.sh
+```sh
+bash experiments/stage3b-upstream-replay/prepare-replay.sh
 ```
 
-against the preserved Stage 1 bootstrap snapshot.
+The preparation step requires:
 
-If the files differ, replay must stop before build and report producer-model drift.
+```text
+Phase 1 phase2_ready=true
+exact source Git repo and commit available
+matching active NDK directory present
+Android/android.py matches preserved snapshot
+Android/android-env.sh matches preserved snapshot
+```
 
-The purpose is not to force old script bytes into a newer source tree. The purpose is to ensure the exact source identity and preserved producer model really align before executing the producer graph.
+Expected marker:
+
+```text
+STAGE3B_REPLAY_PREPARE=PASS
+```
+
+The preparation step creates:
+
+```text
+results/workstation/stage3b-phase2-replay/replay-plan.json
+```
 
 ## Replay command path
 
-The preserved producer model defines:
+Run:
 
-```text
-configure build Python
-make build Python
-configure Android host Python
-make Android host Python
-install Android host Python into target prefix
+```sh
+bash experiments/stage3b-upstream-replay/run-replay.sh
 ```
 
-The one-shot replay path is:
+The runner performs:
+
+```text
+Android/android.py build
+    -> build Python
+    -> target dependency prefix
+    -> Android CPython host build
+    -> install target prefix
+
+Android/android.py package
+    -> packaged replay archive
+
+capture-replay-output.py
+    -> inventory and selected sysconfig metadata
+```
+
+The effective producer commands are:
 
 ```sh
 python3 Android/android.py \
   build \
   --cross-build-dir <phase2 cross-build root> \
   --cache-dir <shared dependency cache> \
-  --clean \
   aarch64-linux-android
-```
 
-After build completion, package the replay product:
-
-```sh
 python3 Android/android.py \
   package \
   --cross-build-dir <phase2 cross-build root> \
@@ -111,13 +134,11 @@ Result metadata:
 results/workstation/stage3b-phase2-replay/
   replay-plan.json
   replay-build.log
-  replay-package.log
-  replay-result.json
+  replay-build-result.json
+  replay-output-summary.json
 ```
 
-## Success conditions for the build step
-
-Phase 2 build replay is successful when:
+## Success conditions for the replay step
 
 ```text
 [ ] exact source commit detached worktree prepared
@@ -131,6 +152,13 @@ Phase 2 build replay is successful when:
 [ ] expected libpython exists
 [ ] expected stdlib exists
 [ ] package archive produced
+[ ] replay output summary captured
+```
+
+Expected final marker:
+
+```text
+STAGE3B_UPSTREAM_REPLAY=PASS
 ```
 
 ## What Phase 2 does not prove by itself
