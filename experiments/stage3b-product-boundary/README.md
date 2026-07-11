@@ -87,3 +87,19 @@ Expected marker:
 ```text
 STAGE3B_REGENERATED_SURFACE_COMPARE=PASS
 ```
+
+## Non-ELF metadata deltas
+
+Parse and compare the five remaining build/development metadata files:
+
+```sh
+bash experiments/stage3b-product-boundary/analyze-metadata-deltas.sh
+```
+
+This produces key-level differences for sysconfig JSON/Python data, build-details JSON and the installed Makefile, plus a line-level generated config.c diff.
+
+Expected marker:
+
+```text
+STAGE3B_METADATA_DELTA_CAPTURE=PASS
+```
