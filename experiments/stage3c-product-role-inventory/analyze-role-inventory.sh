@@ -13,6 +13,7 @@ EXPECTED_MANIFEST_SHA256="${EXPECTED_MANIFEST_SHA256:-092ea87eed2a3c800053a0ef48
 EXPECTED_ENTRY_COUNT="${EXPECTED_ENTRY_COUNT:-3155}"
 EXPECTED_ELF_COUNT="${EXPECTED_ELF_COUNT:-81}"
 EXPECTED_SYMLINK_COUNT="${EXPECTED_SYMLINK_COUNT:-5}"
+EXPECTED_VERIFIER_CHECK_COUNT="${EXPECTED_VERIFIER_CHECK_COUNT:-43}"
 ANALYZER="$SCRIPT_DIR/analyze-role-inventory.py"
 PYTHON="$RUNTIME_PREFIX/bin/python"
 
@@ -33,6 +34,36 @@ for file in \
         exit 2
     }
 done
+
+"$PYTHON" -I -B -S - \
+    "$RESULTS_DIR/verification.json" \
+    "$EXPECTED_VERIFIER_CHECK_COUNT" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+expected_checks = int(sys.argv[2])
+result = json.loads(path.read_text(encoding="utf-8"))
+problems = []
+if result.get("pass") is not True:
+    problems.append("pass is not true")
+if result.get("check_count") != expected_checks:
+    problems.append(
+        f"check_count={result.get('check_count')!r} expected={expected_checks}"
+    )
+if result.get("failed_checks") != []:
+    problems.append(f"failed_checks={result.get('failed_checks')!r}")
+if result.get("missing_outputs") != []:
+    problems.append(f"missing_outputs={result.get('missing_outputs')!r}")
+if result.get("parse_errors") != {}:
+    problems.append(f"parse_errors={result.get('parse_errors')!r}")
+if problems:
+    raise SystemExit(
+        "role inventory is not accepted evidence: " + "; ".join(problems)
+    )
+print("ROLE_INVENTORY_ACCEPTED_EVIDENCE=PASS")
+PY
 
 "$PYTHON" -I -B -S \
     "$ANALYZER" \
