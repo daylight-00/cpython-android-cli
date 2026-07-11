@@ -159,7 +159,7 @@ root = Path(sys.argv[1]).resolve()
 output = Path(sys.argv[2]).resolve()
 files = []
 for path in sorted(root.rglob("*"), key=lambda item: item.relative_to(root).as_posix()):
-    if path == output or path.is_dir():
+    if path == output or path.is_dir() or path.name == "result-index.log":
         continue
     relative = path.relative_to(root).as_posix()
     observed = path.lstat()
