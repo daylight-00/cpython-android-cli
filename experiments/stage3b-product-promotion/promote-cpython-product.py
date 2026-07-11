@@ -51,6 +51,10 @@ def main() -> int:
     shutil.copy2(source, canonical_archive)
     if sha256(canonical_archive) != expected["sha256"]:
         raise SystemExit("canonical archive copy verification failed")
+    checksum_file = args.canonical_archive_dir / "SHA256SUMS"
+    checksum_file.write_text(
+        f"{expected['sha256']}  {expected['filename']}\n"
+    )
 
     product_root = args.derived_product_root.resolve()
     product_root.parent.mkdir(parents=True, exist_ok=True)
@@ -104,6 +108,7 @@ def main() -> int:
         "canonical_archive": str(canonical_archive.resolve()),
         "canonical_archive_size_bytes": canonical_archive.stat().st_size,
         "canonical_archive_sha256": sha256(canonical_archive),
+        "checksum_file": str(checksum_file.resolve()),
         "derived_development_prefix": str(product_root),
         "launcher_development_contract": contract_results,
         "pass": True,
