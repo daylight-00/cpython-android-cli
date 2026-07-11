@@ -1,6 +1,7 @@
 # Stage 3-B Phase 2 Scope: Controlled Linux Replay of the Android Producer Graph
 
-> **Status:** ACTIVE
+> **Status:** FROZEN
+> **Result:** PASS — see `docs/evidence/STAGE3B_PHASE2_FINAL_SUMMARY.md`
 > **Input:** Frozen Stage 3-B Phase 1 provenance reconstruction
 > **Target:** `aarch64-linux-android`
 > **Android API intent:** 24
