@@ -150,8 +150,9 @@ def main() -> int:
         before = before_variants[variant]
         after = after_variants[variant]
         checks[f"{variant}_capability_pass"] = capability.get("pass") is True
+        checks[f"{variant}_capability_schema"] = capability.get("schema_version") == 2
         checks[f"{variant}_capability_check_count"] = (
-            capability.get("check_count") == 15
+            capability.get("check_count") == 17
         )
         checks[f"{variant}_before_fingerprint_pass"] = before.get("pass") is True
         checks[f"{variant}_after_fingerprint_pass"] = after.get("pass") is True
@@ -165,7 +166,7 @@ def main() -> int:
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
-        "schema_version": 1,
+        "schema_version": 2,
         "pass": not failed,
         "check_count": len(checks),
         "checks": checks,
@@ -192,6 +193,7 @@ def main() -> int:
                 "module_expectations": capabilities[variant].get(
                     "module_expectations"
                 ),
+                "test_demo": capabilities[variant].get("test_demo"),
             }
             for variant in VARIANTS
         },
