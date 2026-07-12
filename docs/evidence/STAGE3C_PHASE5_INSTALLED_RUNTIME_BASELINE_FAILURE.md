@@ -49,7 +49,7 @@ duplicate indexed paths
   0
 ```
 
-All `result-index.log` files are intentionally excluded by the result-index writer. All declared indexed entries were present and matched.
+Nested `result-index.log` files are intentionally excluded by the result-index writer. All declared indexed entries were present and matched.
 
 ## Workflow result
 
