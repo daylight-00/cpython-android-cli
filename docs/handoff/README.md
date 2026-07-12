@@ -7,23 +7,24 @@ Use these documents to continue the project without relying on prior chat contex
 ```text
 1. COLLABORATION_PROTOCOL.md
 2. PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
-3. ../evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
-4. ../stages/STAGE3C_PHASE5_SCOPE.md
-5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-6. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
+3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md
+4. ../evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+5. ../stages/STAGE3C_PHASE5_SCOPE.md
+6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+7. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
 
 Historical intervention authority:
-7. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
-8. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+8. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
+9. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
 
 Historical diagnostic authority:
-9. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-10. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
-11. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
+10. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+11. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+12. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
 
 Frozen Gate 2 evidence:
-12. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-13. PHASE5_GATE3_HANDOFF_20260712.md
+13. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+14. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
@@ -43,6 +44,7 @@ Phase 4I missing-leaf intervention
 
 Phase 5 Gate 3A product acceptance
   ACTIVE
+  authoritative Termux run pending
 ```
 
 ## Frozen Phase 4I identity
@@ -55,22 +57,32 @@ result-index sha256
   7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 ```
 
-## Active Gate 3A target
+## Active Gate 3A topology
 
 ```text
-exact reinstall NOOP
-six repair classes
-registry and payload identity after every repair
-full post-repair runtime validation
+isolated exact NOOP root       1
+isolated repair roots          6
+sequential repaired root       1
+repair scenario checks        29
+Gate 1 regression checks      80
+acceptance verifier checks    69
+```
+
+The sequential root must pass:
+
+```text
+six repairs
+registry and strict/portable identity
 HTTPS 200
+smoke-termux
 uv venv and uv run
 native closure 81/329/0
 system SONAME 5/5
 extension imports 67/67
-no transaction residue
+zero transaction residue
 ```
 
-Gate 2 relocation regression remains separate unless the Gate 3A workflow explicitly performs and validates the move.
+Gate 2 corrected-engine relocation regression remains a separate boundary.
 
 ## Authority rule
 
