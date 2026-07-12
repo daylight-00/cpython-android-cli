@@ -58,7 +58,7 @@ Crash boundaries per subject:
 
 ```text
 crash after PREPARED
-late APPLYING crash after all payload mutations and before registry mutation
+late APPLYING crash after registry INTENT is persisted and before registry write
 crash after COMMITTED before cleanup
 ```
 
@@ -85,7 +85,15 @@ second recovery NOOP_ROLLED_BACK
 second recovery changes nothing
 ```
 
-The late APPLYING boundary must be derived from a successful uninstall mutation count and use `mutation_count - 1`, proving rollback after all removable payload mutations but before registry commit.
+The late APPLYING boundary must be derived from a successful uninstall `mutation_count` and use:
+
+```text
+--crash-after-intents=<happy uninstall mutation_count>
+```
+
+At this point all payload traversal and `preserved` reporting are complete. The final registry mutation exists as an `INTENT`, but the registry write has not occurred. The expected process return code is 93.
+
+Using `mutation_count - 1` with `--crash-after-mutations` is not accepted because the process exits immediately after the last payload mutation and may do so before later non-mutating parent-directory preservation records are written.
 
 ## Committed requirements
 
@@ -122,6 +130,8 @@ A full-prefix portable fingerprint is not the sole identity after intentional re
 ## Evidence policy
 
 Gate 3B product acceptance requires a complete independently inspected Termux TGZ. The target-only workflow must use one wrapper that verifies the accepted Gate 3B0 TGZ, performs fresh extraction, executes all scenarios, captures logs synchronously, writes status and result-index evidence, and packages a TGZ on PASS or FAIL.
+
+No target command is authoritative until the workflow implementation, independent verifier, and one-command wrapper have completed repository review and static validation.
 
 ## Claim boundary
 
