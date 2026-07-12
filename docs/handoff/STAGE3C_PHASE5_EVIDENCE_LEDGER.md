@@ -18,18 +18,11 @@ result-index sha256
 verifier
   80/80 PASS
 
-portable payload fingerprint
+portable fingerprint
   f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
-
-runtime
-  Python 3.14.6
-  Android aarch64
-  HTTPS 200
-  uv venv and uv run PASS
-  81 ELF / 329 edges / 0 unresolved
-  5/5 system SONAME dlopen
-  67/67 extension imports
 ```
+
+Runtime: Python 3.14.6, Android aarch64, HTTPS 200, uv PASS, closure 81/329/0, system SONAME 5/5, extension imports 67/67.
 
 Evidence:
 
@@ -37,7 +30,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-## Gate 2 — historical complete installed-root relocation
+## Gate 2 — historical complete-root relocation
 
 ```text
 status
@@ -52,17 +45,8 @@ result-index sha256
 Gate 1 at A / B
   80/80 / 80/80
 
-Gate 2 verifier
+verifier
   46/46 PASS
-
-complete-root fingerprint
-  aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
-
-complete-root shape
-  719 entries
-  60 directories
-  656 regular files
-  3 symlinks
 ```
 
 Evidence:
@@ -71,7 +55,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 ```
 
-## Gate 3A0 — reinstall and repair diagnostic census
+## Gate 3A0 — reinstall and repair diagnostic
 
 ```text
 status
@@ -83,11 +67,8 @@ archive sha256
 result-index sha256
   a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
 
-scenario checks
-  17/17
-
-independent verifier
-  31/31
+checks
+  17/17 + 31/31
 ```
 
 Evidence:
@@ -96,7 +77,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
-## Phase 4I — missing registered leaf repair intervention
+## Phase 4I — missing registered leaf intervention
 
 ```text
 status
@@ -108,29 +89,11 @@ archive sha256
 result-index sha256
   7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 
-scenario checks
-  39/39 PASS
-
-independent verifier
-  51/51 PASS
-
-success/regression roots
-  7/7
+checks
+  39/39 + 51/51
 
 crash boundaries
   12/12
-```
-
-Accepted correction:
-
-```text
-existing registered mismatch
-  replaced mutation
-  backup current path
-
-missing registered non-directory
-  created mutation
-  skip nonexistent backup move
 ```
 
 Evidence:
@@ -145,59 +108,23 @@ docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
 status
   FROZEN PASS
 
-archive
-  stage3c-phase5-gate3a-reinstall-repair-acceptance-results-20260712-191758.tgz
-
 archive sha256
   16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
-
-archive size
-  48,135,273 bytes
-
-archive members
-  1,284
 
 result-index sha256
   a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
 
-indexed files
-  1,174/1,174 exact
+repair scenarios
+  29/29
 
-repair scenario checks
-  29/29 PASS
+corrected-engine Gate 1
+  80/80
 
-corrected-engine Gate 1 regression
-  80/80 PASS
-
-independent acceptance verifier
-  69/69 PASS
+acceptance verifier
+  69/69
 ```
 
-Accepted product matrix:
-
-```text
-exact reinstall NOOP                  PASS
-isolated repair classes               6/6 PASS
-sequential repair classes             6/6 PASS
-registry identity after every repair  exact
-unaffected owned paths                exact
-portable identity                     f860caf... exact
-transaction residue                   0
-```
-
-Runtime:
-
-```text
-Python 3.14.6
-Android aarch64
-HTTPS 200
-smoke-termux PASS
-uv venv and uv run PASS
-native closure 81/329/0
-system SONAME 5/5
-extension imports 67/67
-engine verify 1 artifact / 714 owned rows / 0 bad paths
-```
+Accepted matrix: exact reinstall NOOP; six isolated repairs; six sequential repairs; registry and unaffected-owned identity exact; portable fingerprint exact; zero transaction residue; complete runtime contract PASS.
 
 Evidence:
 
@@ -205,42 +132,90 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 ```
 
-Preserved first-run infrastructure failure:
+## Gate 2R — corrected-engine complete-root relocation
 
 ```text
-docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_FAILURE_20260712.md
+status
+  FROZEN PASS
+
+archive
+  stage3c-phase5-gate2r-corrected-engine-relocation-results-20260712-202419.tgz
+
+archive sha256
+  8e2c131567d78a4208e7c8eb02e783a479713f6d867a3e5cd98eae60aa5738a7
+
+archive size
+  72,501,453 bytes
+
+archive members
+  1,727
+
+result-index sha256
+  69734a0ba286b9d6b55e8ef4c364dca7cb80bd380080cd6653038040ac51650c
+
+indexed files
+  1,576/1,576 exact
+
+Gate 1 at A / B
+  80/80 / 80/80
+
+historical relocation verifier
+  46/46
+
+corrected-engine authority verifier
+  15/15
+```
+
+Frozen relocation identity:
+
+```text
+same filesystem / inode preserved
+  true / true
+
+complete-root shape
+  719 / 60 / 656 / 3
+
+complete-root fingerprint
+  aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
+
+portable fingerprint
+  f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
+
+strict same-tree fingerprint
+  3d61c27a3943930e53ac30035a2c4b77932cfabd17e4994f6370a30408a034f3
+
+stale location-A references
+  0
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
 ```
 
 ## Active boundary
 
 ```text
-Gate 2R corrected-engine complete-root relocation regression
+Gate 3B preservation boundaries
 ```
 
-Required proof:
+Required investigation:
 
 ```text
-fresh corrected-engine install at A
-Gate 1-equivalent 80/80 at A and B
-same-filesystem inode-preserving complete-root move
-complete-root shape 719/60/656/3
-registry and portable identity exact
-strict and complete-root same-tree identity exact
-zero stale A references
-full destination runtime validation
-one-command Termux runner with PASS/FAIL TGZ packaging
+modified owned regular leaf
+modified owned symlink
+unowned sentinel file
+unowned sentinel directory
+install/repair enforcement versus uninstall preservation
+registry and transaction-state consequences
 ```
 
-Handoff:
-
-```text
-docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
-```
+Policy must be derived from the frozen transaction contract rather than assumed.
 
 ## Deferred boundaries
 
 ```text
-Gate 3B preservation boundaries
 Gate 3C addon lifecycle and dependencies
 Gate 3D runtime uninstall and final ownership boundary
 Gate 4 upgrade and downgrade
