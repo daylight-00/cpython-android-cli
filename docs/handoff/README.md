@@ -6,17 +6,20 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE2_CORRECTION_20260712.md
-3. PHASE5_GATE2_HANDOFF_20260712.md
-4. STAGE3C_EVIDENCE_LEDGER.md
-5. ../stages/STAGE3C_SCOPE.md
-6. ../stages/STAGE3C_PHASE5_SCOPE.md
-7. ../../experiments/stage3c-installed-runtime-relocation/README.md
+2. STAGE3C_EVIDENCE_LEDGER.md
+3. ../stages/STAGE3C_SCOPE.md
+4. ../stages/STAGE3C_PHASE5_SCOPE.md
+5. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+
+Historical Gate 2 context:
+6. PHASE5_GATE2_CORRECTION_20260712.md
+7. PHASE5_GATE2_HANDOFF_20260712.md
+8. ../../experiments/stage3c-installed-runtime-relocation/README.md
 
 Historical Gate 1 context:
-8. PHASE5_GATE1_CORRECTION_20260712.md
-9. SESSION_HANDOFF_20260712.md
-10. ../../experiments/stage3c-installed-runtime-baseline/README.md
+9. PHASE5_GATE1_CORRECTION_20260712.md
+10. SESSION_HANDOFF_20260712.md
+11. ../../experiments/stage3c-installed-runtime-baseline/README.md
 ```
 
 ## Current state
@@ -29,21 +32,35 @@ Stage 3-C Phase 5 Gate 1
   FROZEN PASS
   verifier 80/80
 
-first Gate 1 target result
-  preserved FAIL 78/80
-
 Stage 3-C Phase 5 Gate 2
-  ACTIVE
-  corrected authoritative rerun pending
+  FROZEN PASS
+  Gate 1 prerequisite at A 80/80
+  Gate 1 revalidation at B 80/80
+  Gate 2 verifier 46/46
 
-first Gate 2 target result
-  preserved FAIL 45/46
-  incorrect complete-root count only
+preserved failures
+  Gate 1 first target 78/80
+  Gate 2 first target 45/46
 
-next authoritative action
-  rerun installed-runtime whole-root relocation on Termux
-  expected complete-root shape 719/60/656/3
-  upload the corrected Gate 2 TGZ
+next authoritative boundary
+  Stage 3-C Phase 5 Gate 3
+  same-version lifecycle and exact uninstall semantics
+```
+
+## Frozen Gate 2 identity
+
+```text
+archive sha256
+  8e57399f907aec0c64e033a1d51380f0a27c3806773bc05ed2d88cbd3bf8785e
+
+result-index sha256
+  a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
+
+complete-root shape
+  719 entries / 60 directories / 656 regular / 3 symlinks
+
+complete-root fingerprint
+  aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
 ```
 
 ## Authority rule
