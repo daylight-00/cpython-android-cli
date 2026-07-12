@@ -24,15 +24,17 @@ rm -rf "$RESULTS_DIR" "$WORK_DIR" "$PATCH_DIR"; mkdir -p "$RESULTS_DIR" "$PATCH_
 "$TOOL_PYTHON" -I -B -S - "$FROZEN_BASELINE" "$FROZEN_RELOCATION" "$PATCHED_BASELINE" "$PATCHED_RELOCATION" "$PATCH_DIR/patch-authority.json" <<'PY'
 import json,sys
 from pathlib import Path
-base=Path(sys.argv[1]).read_text(); rel=Path(sys.argv[2]).read_text()
+base_path=Path(sys.argv[1]).resolve(); rel_path=Path(sys.argv[2]).resolve(); base=base_path.read_text(); rel=rel_path.read_text()
+old_script_dir='SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"'
 old_engine='ENGINE="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_engine.py"'
 new_engine='ENGINE="${ENGINE_OVERRIDE:-$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_engine.py}"'
 old_baseline='BASELINE_RUNNER="$PROJECT_ROOT/experiments/stage3c-installed-runtime-baseline/run-installed-runtime-baseline.sh"'
 new_baseline='BASELINE_RUNNER="${BASELINE_RUNNER_OVERRIDE:-$PROJECT_ROOT/experiments/stage3c-installed-runtime-baseline/run-installed-runtime-baseline.sh}"'
 forward='WORK_DIR="$BASELINE_WORK" \\\nbash "$BASELINE_RUNNER" \\'
 forward_new='WORK_DIR="$BASELINE_WORK" \\\nENGINE_OVERRIDE="$ENGINE" \\\nbash "$BASELINE_RUNNER" \\'
-counts={'baseline_engine_override_count':base.count(old_engine),'relocation_engine_override_count':rel.count(old_engine),'relocation_baseline_override_count':rel.count(old_baseline),'relocation_engine_forward_count':rel.count(forward)}
-base=base.replace(old_engine,new_engine); rel=rel.replace(old_engine,new_engine).replace(old_baseline,new_baseline).replace(forward,forward_new)
+counts={'baseline_script_dir_count':base.count(old_script_dir),'relocation_script_dir_count':rel.count(old_script_dir),'baseline_engine_override_count':base.count(old_engine),'relocation_engine_override_count':rel.count(old_engine),'relocation_baseline_override_count':rel.count(old_baseline),'relocation_engine_forward_count':rel.count(forward)}
+base=base.replace(old_script_dir,f'SCRIPT_DIR="{base_path.parent}"').replace(old_engine,new_engine)
+rel=rel.replace(old_script_dir,f'SCRIPT_DIR="{rel_path.parent}"').replace(old_engine,new_engine).replace(old_baseline,new_baseline).replace(forward,forward_new)
 Path(sys.argv[3]).write_text(base); Path(sys.argv[4]).write_text(rel)
 r={'schema_version':1,**counts}; r['pass']=all(v==1 for v in counts.values()); Path(sys.argv[5]).write_text(json.dumps(r,indent=2,sort_keys=True)+'\n'); print(json.dumps(r,indent=2,sort_keys=True)); raise SystemExit(0 if r['pass'] else 97)
 PY
