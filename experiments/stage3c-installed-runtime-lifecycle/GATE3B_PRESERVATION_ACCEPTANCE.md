@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 3B: Preserve-and-Report Product Acceptance
 
-> **Status:** ACTIVE — authoritative Termux evidence pending
+> **Status:** FROZEN PASS — authoritative Termux evidence accepted
 > **Prerequisite:** frozen Gate 3B0 preservation diagnostic
 > **Target:** Termux on Android arm64
 
@@ -247,6 +247,33 @@ TERMUX_EVIDENCE_ARCHIVE_SHA256=...
 TERMUX_EVIDENCE_ARCHIVE_SIZE=...
 TERMUX_WORKFLOW_RETURN_CODE=0
 ```
+
+## Accepted Termux evidence
+
+```text
+archive
+  stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz
+
+archive sha256
+  0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
+
+root result-index sha256
+  f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+
+root indexed files
+  289/289 exact
+
+scenario / independent checks
+  29/29 / 62/62 PASS
+
+happy reinstall / uninstall / crash recovery
+  4/4 / 4/4 / 12/12
+
+return codes
+  scenario 0 / verifier 0 / workflow 0 / wrapper 0
+```
+
+The historical `.tgz` is immutable accepted evidence. It is not replaced by a renamed or recompressed archive.
 
 ## Claim boundary
 

@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3B preserve-and-report product acceptance
+> **Status:** ACTIVE — Gate 3C addon lifecycle and dependency enforcement
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -41,8 +41,8 @@ Phase 4I  missing registered non-directory repair intervention    FROZEN
 Gate 3A   corrected reinstall and repair product acceptance       FROZEN
 Gate 2R   corrected-engine complete-root relocation regression    FROZEN
 Gate 3B0  preservation-boundary diagnostic census                 FROZEN
-Gate 3B   preserve-and-report product acceptance                  ACTIVE
-Gate 3C   addon lifecycle and dependency enforcement              DEFERRED
+Gate 3B   preserve-and-report product acceptance                  FROZEN
+Gate 3C   addon lifecycle and dependency enforcement              ACTIVE
 Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
 Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
@@ -143,78 +143,72 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 ```
 
-## Active Gate 3B preserve-and-report product acceptance
-
-### Product question
-
-> Does the accepted engine enforce registered ownership on reinstall while safely preserving and reporting modified or unowned residual paths through uninstall and crash recovery?
-
-### Required happy-path matrix
+## Frozen Gate 3B preserve-and-report product acceptance
 
 ```text
-modified owned regular + reinstall
-modified owned symlink + reinstall
-unowned file + reinstall
-unowned directory + reinstall
-modified owned regular + uninstall
-modified owned symlink + uninstall
-unowned file + uninstall
-unowned directory + uninstall
+archive
+  stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz
+
+archive sha256
+  0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
+
+root result-index sha256
+  f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+
+archive safety
+  323 members / 290 regular / 33 directories / 0 unsafe / 0 links / 0 special
+
+root indexed files
+  289/289 exact
+
+scenario / independent checks
+  29/29 / 62/62 PASS
+
+happy topology
+  reinstall 4/4 / uninstall 4/4
+
+crash recovery
+  12/12
+
+workflow
+  scenario runner 0 / independent verifier 0 / workflow 0 / wrapper 0
 ```
 
-### Required uninstall acceptance
+Accepted crash boundaries:
 
 ```text
-preserved output exact and sorted
-modified registered residual exact
-unowned sentinel residual exact
-registry 1 artifact / 714 rows → 0 / 0
-all matching registered leaves removed
-only contract-approved non-empty parent directories preserved
-empty-registry verify PASS
-transaction residue 0
+PREPARED       rc 90
+late APPLYING  rc 93
+COMMITTED      rc 92
 ```
 
-Registry-owned identity and residual identity are separate evidence surfaces. Registered directory identity is type plus mode only; residual unowned directory content must be independently and recursively fingerprinted.
+Pre-commit recovery restores the prior registry and installed state while preserving the original modified leaf or unowned sentinel. Modified-owned states intentionally verify with exactly the modified registered leaf as `bad_paths` and rc 44; unowned-sentinel states verify cleanly with rc 0. Committed states retain the accepted residual, have an empty registry, and verify with rc 0.
 
-### Required crash-recovery matrix
-
-For modified regular, modified symlink, unowned file, and unowned directory uninstall states, cover at least:
+Evidence:
 
 ```text
-crash after PREPARED
-crash during APPLYING before registry commit
-crash after COMMITTED before cleanup
+docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
 
-Pre-commit recovery must restore the complete installed state and prior registry while retaining the original modification or sentinel. Committed recovery must retain the accepted residual state and empty registry. A second recovery must be idempotent.
+## Active Gate 3C addon lifecycle and dependency enforcement
 
-### Reinstall regressions
+### Policy-bounded question
 
-```text
-registered mismatch restored exactly
-unowned sentinel preserved exactly
-registry unchanged
-registry-owned identity unchanged after repair
-runtime verification clean
-```
+> Can development-addon and test-addon be installed and removed over the frozen runtime-base while enforcing manifest dependencies, ownership separation, transaction recovery, and runtime-base revalidation?
 
-### Verification and evidence policy
-
-Product acceptance requires a separate independently verified Termux TGZ. Scenario-level PASS and console markers are not authority.
-
-Every target-only workflow must use one wrapper that verifies accepted input TGZ identities, performs fresh extraction, executes the workflow, captures logs synchronously, writes status and result indices, and packages a TGZ on PASS or FAIL.
-
-## Deferred Gate 3C
+Required order and rejection surface:
 
 ```text
 runtime-base
 → development-addon
 → test-addon
-→ dependency-order rejection
-→ addon removals
-→ runtime-base revalidation
+→ reject dependency-invalid removals
+→ remove test-addon
+→ remove development-addon
+→ revalidate runtime-base
 ```
+
+Gate 3C must prove exact registry transitions, addon-owned path identity, shared-path collision policy, dependency-order rejection without mutation, crash recovery at accepted transaction boundaries, and final runtime-base identity and behavior. It must not claim final runtime-base uninstall.
 
 ## Deferred Gate 3D
 
@@ -234,4 +228,4 @@ Upgrade and downgrade remain deferred until a second complete frozen product ide
 
 ## Non-reopening rule
 
-Gate 3B may validate the frozen preserve-and-report policy and its recovery behavior. It must not silently broaden journal schema, registry schema, manifest/archive identity, addon dependency policy, or upgrade/downgrade policy. Any policy-changing intervention requires a separate authority decision.
+Gate 3C must consume Gate 3B as frozen authority. It must not reopen preserve-and-report behavior or silently broaden journal schema, registry schema, manifest/archive identity, final-uninstall policy, or upgrade/downgrade policy. Any policy-changing intervention requires a separate authority decision.

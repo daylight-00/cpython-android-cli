@@ -1,6 +1,6 @@
 # Phase 5 Gate 3B Preserve-and-Report Product Acceptance Handoff — 2026-07-12
 
-> **Status:** ACTIVE — authoritative Termux evidence pending
+> **Status:** FROZEN PASS — authoritative Termux evidence accepted
 > **Prerequisite:** frozen Gate 3B0 preservation diagnostic
 > **Target:** Termux on Android arm64
 
@@ -260,6 +260,28 @@ experiments/stage3c-installed-runtime-lifecycle/run-gate3b-preservation-acceptan
 ```
 
 It verifies the accepted Gate 3B0 TGZ, freshly extracts it, executes all 20 roots, captures logs synchronously, writes workflow/wrapper status and result-index evidence, and creates a TGZ on PASS or FAIL.
+
+## Accepted evidence
+
+```text
+archive
+  stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz
+
+archive sha256
+  0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
+
+root result-index sha256
+  f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+
+checks
+  29/29 scenario / 62/62 independent / 8 happy / 12 crash
+```
+
+Successor boundary:
+
+```text
+docs/handoff/PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
+```
 
 ## Claim boundary
 

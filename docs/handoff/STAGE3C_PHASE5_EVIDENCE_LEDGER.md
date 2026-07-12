@@ -193,31 +193,72 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 ```
 
+## Gate 3B — preserve-and-report product acceptance
+
+```text
+status
+  FROZEN PASS
+
+archive
+  stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz
+
+archive sha256
+  0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
+
+archive size
+  24,857,211 bytes
+
+archive members
+  323
+
+root result-index sha256
+  f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+
+root indexed files
+  289/289 exact
+
+scenario checks
+  29/29 PASS
+
+independent verifier
+  62/62 PASS
+
+happy / crash topology
+  8/8 / 12/12
+
+return codes
+  scenario 0 / verifier 0 / workflow 0 / wrapper 0
+```
+
+Accepted boundaries are PREPARED rc 90, late APPLYING rc 93, and COMMITTED rc 92. Modified-owned pre-commit recovery intentionally returns verifier rc 44 with exactly the modified leaf; unowned pre-commit and committed states return rc 0.
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+```
+
 ## Active boundary
 
 ```text
-Gate 3B preserve-and-report product acceptance
+Gate 3C addon lifecycle and dependency enforcement
 ```
 
 Required proof:
 
 ```text
-exact preserved output and residual identity
-registry 1/714 → 0/0
-matching owned leaves removed
-contract-approved parent preservation only
-unowned sentinel preservation
-transaction residue 0
-pre-commit rollback
-committed recovery
-idempotent second recovery
-reinstall enforcement regressions
+runtime-base → development-addon → test-addon
+exact registry and ownership transitions
+dependency-invalid operation rejection without mutation
+addon uninstall ordering and recovery
+shared-path and collision-policy enforcement
+runtime-base identity and behavior after addon removal
+no Gate 3D final-runtime-uninstall claim
 ```
 
 ## Deferred boundaries
 
 ```text
-Gate 3C addon lifecycle and dependencies
 Gate 3D runtime uninstall and final ownership boundary
 Gate 4 upgrade and downgrade
 ```
@@ -232,4 +273,5 @@ docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
