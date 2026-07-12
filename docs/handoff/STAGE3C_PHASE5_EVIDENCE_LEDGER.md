@@ -37,7 +37,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-## Gate 2 — complete installed-root relocation
+## Gate 2 — historical complete installed-root relocation
 
 ```text
 status
@@ -90,15 +90,6 @@ independent verifier
   31/31
 ```
 
-Frozen prior-engine classification:
-
-```text
-exact same-version reinstall            supported NOOP
-four existing-path mismatch classes     supported repair
-registered regular absent               unsupported
-registered symlink absent               unsupported
-```
-
 Evidence:
 
 ```text
@@ -111,23 +102,11 @@ docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 status
   FROZEN PASS
 
-archive
-  stage3c-phase4-missing-leaf-repair-intervention-results-20260712-180237.tgz
-
 archive sha256
   d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
 
-archive size
-  23,980,515 bytes
-
-archive members
-  580
-
 result-index sha256
   7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
-
-indexed files
-  523/523 exact
 
 scenario checks
   39/39 PASS
@@ -135,8 +114,11 @@ scenario checks
 independent verifier
   51/51 PASS
 
-Phase 4 copied input
-  324/324 exact
+success/regression roots
+  7/7
+
+crash boundaries
+  12/12
 ```
 
 Accepted correction:
@@ -151,62 +133,113 @@ missing registered non-directory
   skip nonexistent backup move
 ```
 
-Success/regression matrix:
-
-```text
-exact reinstall NOOP                 PASS
-existing-path repairs               4/4 PASS
-missing regular/symlink repair      2/2 PASS
-```
-
-Crash matrix:
-
-```text
-regular leaf boundaries             6/6 PASS
-symlink leaf boundaries             6/6 PASS
-all crash boundaries               12/12 PASS
-```
-
-Pre-commit recovery restored the original missing state and prior registry. Committed recovery preserved the repaired leaf and cleaned the transaction.
-
 Evidence:
 
 ```text
 docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
 ```
 
+## Gate 3A — corrected reinstall and repair product acceptance
+
+```text
+status
+  FROZEN PASS
+
+archive
+  stage3c-phase5-gate3a-reinstall-repair-acceptance-results-20260712-191758.tgz
+
+archive sha256
+  16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
+
+archive size
+  48,135,273 bytes
+
+archive members
+  1,284
+
+result-index sha256
+  a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
+
+indexed files
+  1,174/1,174 exact
+
+repair scenario checks
+  29/29 PASS
+
+corrected-engine Gate 1 regression
+  80/80 PASS
+
+independent acceptance verifier
+  69/69 PASS
+```
+
+Accepted product matrix:
+
+```text
+exact reinstall NOOP                  PASS
+isolated repair classes               6/6 PASS
+sequential repair classes             6/6 PASS
+registry identity after every repair  exact
+unaffected owned paths                exact
+portable identity                     f860caf... exact
+transaction residue                   0
+```
+
+Runtime:
+
+```text
+Python 3.14.6
+Android aarch64
+HTTPS 200
+smoke-termux PASS
+uv venv and uv run PASS
+native closure 81/329/0
+system SONAME 5/5
+extension imports 67/67
+engine verify 1 artifact / 714 owned rows / 0 bad paths
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+```
+
+Preserved first-run infrastructure failure:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_FAILURE_20260712.md
+```
+
 ## Active boundary
 
 ```text
-Phase 5 Gate 3A product acceptance
+Gate 2R corrected-engine complete-root relocation regression
 ```
 
 Required proof:
 
 ```text
-exact reinstall NOOP
-six accepted repair classes
-registry and portable identity after every repair
-full post-repair Python runtime behavior
-HTTPS 200
-smoke-termux
-uv venv and uv run
-81/329/0 native closure
-5/5 system SONAME dlopen
-67/67 extension imports
-no transaction residue
+fresh corrected-engine install at A
+Gate 1-equivalent 80/80 at A and B
+same-filesystem inode-preserving complete-root move
+complete-root shape 719/60/656/3
+registry and portable identity exact
+strict and complete-root same-tree identity exact
+zero stale A references
+full destination runtime validation
+one-command Termux runner with PASS/FAIL TGZ packaging
 ```
 
 Handoff:
 
 ```text
-docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
 ```
 
 ## Deferred boundaries
 
 ```text
-Gate 2 relocation regression under corrected engine
 Gate 3B preservation boundaries
 Gate 3C addon lifecycle and dependencies
 Gate 3D runtime uninstall and final ownership boundary
