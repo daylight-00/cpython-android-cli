@@ -1,12 +1,12 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3A reinstall/repair diagnostic census
-> **Input:** frozen Stage 3-C Phases 1–4 and frozen Phase 5 Gates 1–2
+> **Status:** ACTIVE — missing registered leaf repair intervention
+> **Input:** frozen Stage 3-C product identities, Gates 1–2, and frozen Gate 3A0 diagnostic evidence
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Does the frozen runtime remain exact, functional, natively closed, relocatable, repairable, composable, and safely removable after installation through the frozen transaction engine?
+> Does the installed runtime remain exact, functional, relocatable, repairable, composable, and safely removable through the transaction and recovery engine?
 
 ## Frozen product identities
 
@@ -31,27 +31,25 @@ native closure
   329 DT_NEEDED edges
   0 unresolved
   67/67 extension imports
-
-Phase 4 integrated durability result-index
-  878ed426720c48f8d0240e3e4e141ff3434426a30d3be9230da23dd5eba0a4ce
 ```
 
-## Gate order
+## Authority order
 
 ```text
-Gate 1   installed runtime baseline                              FROZEN
-Gate 2   complete installed-root relocation                     FROZEN
-Gate 3A0 reinstall/repair diagnostic census                     ACTIVE
-Gate 3A  accepted same-version reinstall and repair             BLOCKED
-Gate 3B  modified owned-leaf and unowned-sentinel preservation  DEFERRED
-Gate 3C  addon lifecycle and dependency enforcement             DEFERRED
-Gate 3D  runtime uninstall and final ownership boundary         DEFERRED
-Gate 4   upgrade and downgrade with second frozen product       DEFERRED
+Gate 1    installed runtime baseline                               FROZEN
+Gate 2    complete installed-root relocation                      FROZEN
+Gate 3A0  reinstall and repair diagnostic census                  FROZEN
+Phase 4I  missing registered non-directory repair intervention    ACTIVE
+Gate 3A   accepted same-version reinstall and repair              BLOCKED
+Gate 3B   owned/unowned preservation boundaries                   DEFERRED
+Gate 3C   addon lifecycle and dependency enforcement              DEFERRED
+Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
+Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
 
-`Gate 3A0` is a diagnostic authority boundary. A PASS classifies behavior; it is not product acceptance.
+`Gate 3A0` is diagnostic authority. Its PASS classifies existing behavior and does not establish product acceptance.
 
-## Frozen Gate 1 — installed runtime baseline
+## Frozen Gate 1
 
 ```text
 archive sha256
@@ -68,16 +66,15 @@ install / registry
   715 mutations
   1 artifact
   714 owned rows
-  manifest mapping exact
 
 runtime
   Python 3.14.6
   Android aarch64
   HTTPS 200
-  uv venv and uv run PASS
-  81 ELF / 329 edges / 0 unresolved
-  5/5 system SONAME dlopen
-  67/67 extension imports
+  uv PASS
+  native closure 81/329/0
+  system SONAME 5/5
+  extension imports 67/67
 ```
 
 Evidence:
@@ -86,7 +83,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-## Frozen Gate 2 — complete installed-root relocation
+## Frozen Gate 2
 
 ```text
 archive sha256
@@ -112,10 +109,7 @@ complete-root shape
   60 directories
   656 regular files
   3 symlinks
-  0 special
 ```
-
-The complete root, registry, payload identities, runtime, HTTPS, uv, closure, and stale-prefix checks remained exact after a same-filesystem inode-preserving move.
 
 Evidence:
 
@@ -123,158 +117,203 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 ```
 
-## Active Gate 3A0 — reinstall/repair diagnostic census
-
-### Reason for intervention census
-
-The frozen installer plans `repair` whenever a registered non-directory path does not match its registry row.
-
-For an existing path, repair backs it up and publishes the frozen archive member.
-
-For an absent registered leaf, the same path attempts:
+## Frozen Gate 3A0 diagnostic
 
 ```text
-durable_move(absent source, backup)
-  → os.replace(absent source, backup)
-  → expected FileNotFoundError
+archive sha256
+  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
+
+result-index sha256
+  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
+
+scenario checks
+  17/17 PASS
+
+independent verifier
+  31/31 PASS
+
+Phase 4 copied input
+  324/324 exact
 ```
 
-Prior Phase 4 evidence proved in-place byte-corruption repair. It did not close missing regular or symlink repair.
-
-Therefore product acceptance must not assume that all registered corruption classes are repairable.
-
-### Diagnostic matrix
+Frozen classification:
 
 ```text
-exact same-version reinstall            expected NOOP
-regular byte mismatch                   expected supported repair
-regular mode mismatch                   expected supported repair
-symlink target mismatch                 expected supported repair
-registered regular replaced by dir      expected supported repair
-registered regular absent               expected unsupported
-registered symlink absent               expected unsupported
+exact same-version reinstall            supported NOOP
+regular byte mismatch                   supported repair
+regular mode mismatch                   supported repair
+symlink target mismatch                 supported repair
+registered regular wrong type           supported repair
+registered regular absent               unsupported
+registered symlink absent               unsupported
 ```
 
-### Diagnostic scenario isolation
-
-One fresh runtime-base seed installation is independently copied to seven scenario roots.
-
-Required clone checks:
+Evidence:
 
 ```text
-root inode separation
-registry inode separation
-representative payload inode separation
+docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
-Hardlink-based scenario seeds are forbidden.
+## Active Phase 4I intervention
 
-### Exact NOOP evidence
+### Confirmed defect
+
+For an absent registered regular or symlink leaf, the frozen engine executes:
 
 ```text
-noop                         true
-action_counts                {noop: 714}
-mutation_count               0
-registry identity            unchanged
-portable identity            unchanged
-transactions                 empty
-engine verify                PASS
+planner
+  repair
+
+journal intent
+  replaced
+
+execution
+  durable_move(absent source, backup)
+  os.replace(absent source, backup)
+  FileNotFoundError
+
+recovery
+  APPLYING → ROLLED_BACK
+  restored_count 0
+  retained ROLLED_BACK transaction
+
+final state
+  registry row retained
+  leaf absent
+  verify still fails
 ```
 
-### Supported in-place repair evidence
-
-Each supported scenario must show:
+### Authorized correction
 
 ```text
-pre-verify bad paths         exactly one
-install actions              {noop: 713, repair: 1}
-mutation_count               2
-post-verify                  PASS
-registry identity            unchanged
-portable identity            restored
-transactions                 empty
-final path                   exact manifest identity
+registered path exists and differs
+  keep replaced mutation
+  backup current path
+  publish frozen member
+
+registered path is absent
+  use created mutation
+  do not backup a nonexistent source
+  publish frozen member
 ```
 
-### Missing-leaf diagnostic evidence
+The existing `created` rollback path must be reused. No new journal schema or recovery operation is authorized.
 
-The source-derived expected observation is:
+Decision:
 
 ```text
-pre-verify                   one missing bad path
-install                      rc=44 / FileNotFoundError
-journal before recovery      APPLYING
-first recovery               ROLLED_BACK
-retained journal             ROLLED_BACK
-second recovery              NOOP_ROLLED_BACK
-post-recovery verify         same missing bad path
-registry row                 retained
-leaf                         absent
+docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
 ```
 
-A match is a diagnostic PASS and a product-acceptance blocker.
-
-### Diagnostic verifier
+### Required success scenarios
 
 ```text
-scenario checks              17
-independent verifier         31
+missing registered regular repair
+missing registered symlink repair
+exact same-version NOOP regression
+four in-place repair regressions
 ```
 
-The independent verifier must read raw engine outputs and journal inventories rather than trusting scenario `pass` fields.
-
-### Diagnostic workflow
+Successful missing-leaf repair must produce:
 
 ```text
-experiments/stage3c-installed-runtime-lifecycle/
-├── README.md
-├── run-gate3a-reinstall-repair-diagnostic.sh
-├── run-gate3a-reinstall-repair-diagnostic.py
-└── verify-gate3a-reinstall-repair-diagnostic.py
+install PASS
+one repair action or explicitly named missing-repair action
+exact manifest path identity
+registry identity exact
+portable payload identity restored
+engine verify PASS
+no transaction residue
 ```
 
-### Post-diagnostic decision
+### Required crash/recovery scenarios
 
-If missing-leaf failure is confirmed:
+At minimum:
 
 ```text
-preserve authoritative TGZ evidence
-freeze only the diagnostic census
-keep Gate 3A product acceptance blocked
-decide whether Phase 4 architecture intervention is required
+prepared before intent
+created intent recorded before publish
+published leaf before registry mutation
+registry mutation before commit
+committed before cleanup
 ```
 
-Any intervention must explicitly reopen affected frozen authority and identify downstream revalidation requirements. It must not be hidden inside a Phase 5 validation change.
+Expected recovery:
 
-## Deferred lifecycle boundaries
+```text
+pre-commit crash
+  restore original missing state
+  restore prior registry
 
-### Gate 3A product acceptance
+post-commit crash
+  preserve repaired leaf
+  preserve committed registry
+```
 
-Requires an explicit decision after the diagnostic census. Product acceptance must cover exact NOOP and all approved repair classes, including final runtime validation.
+### Non-authorized changes
 
-### Gate 3B preservation
+```text
+manifest or archive identity
+registry schema
+artifact identity
+ownership policy
+uninstall preservation policy
+addon dependency policy
+new generic repair subsystem
+```
+
+## Mandatory revalidation order
+
+```text
+1. static and synthetic intervention validation
+2. authoritative Termux intervention scenarios
+3. Gate 3A product acceptance
+4. Gate 1 regression if accepted engine input identity changes
+5. Gate 2 regression if accepted engine input identity changes
+6. Gate 3B may then open
+```
+
+Prior target evidence may be reused only where the accepted input identity and exercised code path are proven unaffected.
+
+## Deferred Gate 3A product acceptance
+
+Gate 3A product acceptance must prove:
+
+```text
+exact reinstall NOOP
+all supported in-place repair classes
+missing regular repair
+missing symlink repair
+post-repair runtime behavior
+HTTPS
+uv
+native closure
+extension imports
+no transaction residue
+```
+
+## Deferred Gate 3B preservation
 
 ```text
 modified owned regular leaf
 modified owned symlink
 unowned sentinel file
 unowned sentinel directory
-exact preservation or replacement policy derived from frozen contract
+policy derived from the transaction contract
 ```
 
-### Gate 3C addons
+## Deferred Gate 3C addons
 
 ```text
 runtime-base
 → development-addon
 → test-addon
 → dependency-order rejection
-→ test-addon removal
-→ development-addon removal
+→ addon removals
 → runtime-base revalidation
 ```
 
-### Gate 3D uninstall
+## Deferred Gate 3D uninstall
 
 ```text
 runtime-base-only state
@@ -284,51 +323,28 @@ owned payload removal
 unowned preservation
 registry transition
 transaction residue check
-empty-state engine verification
+empty-state verification
 ```
 
-### Gate 4 upgrade/downgrade
+## Deferred Gate 4
 
-Deferred until a second complete frozen product identity exists. Synthetic version labels are forbidden.
+Upgrade and downgrade remain deferred until a second complete frozen product identity exists. Synthetic version labels are not accepted.
 
 ## Non-reopening rule
 
-Gate 3 diagnostic work may add orchestration and independent verification only.
+The active intervention may change only the registered missing non-directory repair execution path and directly required scenario/verifier code.
 
-It must not silently change:
-
-```text
-source archives
-manifests
-installation contract
-registry schema or ownership semantics
-transaction operations
-recovery behavior
-durability helpers
-```
-
-A frozen-engine defect requires a separately authorized architecture intervention.
-
-## Claim boundaries
-
-A Gate 3A0 diagnostic PASS proves only the target classification matrix.
-
-It does not prove:
-
-```text
-Gate 3A product acceptance
-missing-leaf repair
-preservation policy
-addon lifecycle
-uninstall
-upgrade or downgrade
-cross-filesystem relocation
-physical power-loss persistence
-```
+Any broader change requires a new authority decision.
 
 ## Results layout
 
 ```text
-results/termux/stage3c-phase5-gate3a-reinstall-repair-diagnostic/
-work/termux/stage3c-phase5-gate3a-reinstall-repair-diagnostic/
+Gate 3A0 diagnostic
+  results/termux/stage3c-phase5-gate3a-reinstall-repair-diagnostic/
+
+Phase 4I intervention
+  results/termux/stage3c-phase4-missing-leaf-repair-intervention/
+
+Gate 3A product acceptance
+  results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance/
 ```
