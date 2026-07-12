@@ -1,180 +1,10 @@
 # Stage 3-C Phase 5 Gate 3A: Corrected Reinstall and Repair Product Acceptance
 
-> **Status:** ACTIVE — authoritative Termux evidence pending
-> **Prerequisites:** frozen Phase 4I intervention, frozen Gate 1, frozen Gate 2
+> **Status:** FROZEN PASS
 > **Target:** Termux on Android arm64
+> **Next boundary:** Gate 2R corrected-engine relocation regression
 
-## Product question
-
-> After exact same-version reinstall and every accepted registered repair class, does the corrected installed runtime retain exact ownership identity and the complete Gate 1 behavior contract?
-
-## Frozen inputs and identity semantics
-
-```text
-Phase 4 integrated result-index
-  878ed426720c48f8d0240e3e4e141ff3434426a30d3be9230da23dd5eba0a4ce
-
-Phase 4I intervention result-index
-  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
-
-portable installed-payload fingerprint
-  f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
-
-manifest source-tree fingerprint
-  9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
-```
-
-The manifest source-tree fingerprint is a frozen contract identity. It is **not** the expected installed strict fingerprint.
-
-The strict installed-tree fingerprint includes `mtime_ns`; therefore it is a same-tree mutation control only:
-
-```text
-per repair
-  strict output must pass 714-entry shape and safety checks
-
-runtime probes
-  strict fingerprint before and after probes must be identical
-
-cross-root identity
-  use the portable f860caf... fingerprint
-```
-
-## Scenario topology
-
-One corrected-engine seed installation is used for seven inode-separated isolated roots:
-
-```text
-exact-noop
-regular-bytes
-regular-mode
-regular-wrong-type
-symlink-target
-missing-regular
-missing-symlink
-```
-
-A separate sequential root executes:
-
-```text
-fresh corrected install
-→ exact reinstall NOOP
-→ regular byte repair
-→ regular mode repair
-→ wrong-type regular repair
-→ symlink target repair
-→ missing regular repair
-→ missing symlink repair
-→ full runtime validation
-```
-
-## Per-repair proof
-
-Each repair must produce:
-
-```text
-intentional mutation recorded
-pre-repair verify exactly one bad path
-install actions noop 713 / repair 1
-mutation count 2
-post-repair verify PASS
-registry bytes unchanged
-portable fingerprint f860caf... exact
-strict output shape/safety PASS
-unaffected owned paths exact
-transaction residue 0
-final candidate exact to manifest and source archive
-```
-
-A fixed strict hash is deliberately not required across independently installed roots.
-
-## Runtime acceptance
-
-The sequential repaired root must pass the existing Gate 1 verifier without weakening its 80 checks:
-
-```text
-Python 3.14.6
-Android aarch64
-SOABI cpython-314-aarch64-linux-android
-MULTIARCH aarch64-linux-android
-sys.prefix and base_prefix exact
-sysconfig paths inside installed prefix
-HTTPS 200
-smoke-termux PASS
-uv venv PASS
-uv run anyio PASS
-native closure 81 ELF / 329 edges / 0 unresolved
-system SONAME dlopen 5/5
-extension imports 67/67
-registry 1 artifact / 714 owned rows
-portable fingerprint f860caf... exact before and after probes
-strict shape/safety PASS before and after probes
-strict fingerprint unchanged across probes
-zero transaction residue
-```
-
-## Verification
-
-```text
-repair scenario checks          29
-Gate 1 regression checks        80
-Gate 3A acceptance checks       69
-```
-
-The 69-check verifier is split into evidence/repair and runtime/identity modules. It independently reopens raw engine process records, repair records, registry identity, fingerprints, runtime probes, smoke output, closure results, and Gate 1 verification.
-
-## Run
-
-Freshly extract both accepted evidence archives:
-
-```sh
-cd "$HOME/projects/cpython-android-cli"
-
-git fetch origin agent/phase5-gate3a-product-acceptance
-git switch --detach origin/agent/phase5-gate3a-product-acceptance
-
-git log -1 --oneline
-
-PHASE4_ARCHIVE="$HOME/Downloads/stage3c-phase4-integrated-durability-results-20260712-082135.tgz"
-PHASE4_EXTRACT="$PREFIX/tmp/stage3c-phase4-integrated-durability-accepted"
-
-printf '%s  %s\n' \
-  '76bb78f200d9836d96f677cc1eca1e2f1483186f3655efa17a8e1f2361bd0187' \
-  "$PHASE4_ARCHIVE" | sha256sum -c -
-
-rm -rf "$PHASE4_EXTRACT"
-mkdir -p "$PHASE4_EXTRACT"
-tar xzf "$PHASE4_ARCHIVE" -C "$PHASE4_EXTRACT"
-
-PHASE4_RESULTS="$(find "$PHASE4_EXTRACT" \
-  -type d \
-  -path '*/results/termux/stage3c-phase4-integrated-durability' \
-  -print -quit)"
-
-PHASE4I_ARCHIVE="$HOME/Downloads/stage3c-phase4-missing-leaf-repair-intervention-results-20260712-180237.tgz"
-PHASE4I_EXTRACT="$PREFIX/tmp/stage3c-phase4-missing-leaf-repair-intervention-accepted"
-
-printf '%s  %s\n' \
-  'd497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a' \
-  "$PHASE4I_ARCHIVE" | sha256sum -c -
-
-rm -rf "$PHASE4I_EXTRACT"
-mkdir -p "$PHASE4I_EXTRACT"
-tar xzf "$PHASE4I_ARCHIVE" -C "$PHASE4I_EXTRACT"
-
-PHASE4I_RESULTS="$(find "$PHASE4I_EXTRACT" \
-  -type d \
-  -path '*/results/termux/stage3c-phase4-missing-leaf-repair-intervention' \
-  -print -quit)"
-
-test -n "$PHASE4_RESULTS"
-test -n "$PHASE4I_RESULTS"
-
-PHASE4_RESULTS="$PHASE4_RESULTS" \
-PHASE4I_RESULTS="$PHASE4I_RESULTS" \
-  bash experiments/stage3c-installed-runtime-lifecycle/run-gate3a-product-acceptance.sh
-```
-
-## Expected markers
+## Frozen result
 
 ```text
 GATE3A_ACCEPTANCE_EXACT_REINSTALL_NOOP=PASS
@@ -191,16 +21,104 @@ GATE3A_ACCEPTANCE_VERIFICATION=69/69 PASS
 STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_ACCEPTANCE=PASS
 ```
 
-## Upload
+Accepted archive:
 
-```sh
-RESULTS="$PWD/results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance"
-ARCHIVE="$HOME/Downloads/stage3c-phase5-gate3a-reinstall-repair-acceptance-results-$(date +%Y%m%d-%H%M%S).tgz"
-
-tar czf "$ARCHIVE" "$RESULTS"
-printf 'upload: %s\n' "$ARCHIVE"
+```text
+stage3c-phase5-gate3a-reinstall-repair-acceptance-results-20260712-191758.tgz
+sha256
+  16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
+size
+  48,135,273 bytes
+members
+  1,284
 ```
+
+Result identity:
+
+```text
+root result-index sha256
+  a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
+indexed files
+  1,174/1,174 exact
+repair scenario checks
+  29/29
+Gate 1 regression
+  80/80
+acceptance verifier
+  69/69
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+```
+
+## Accepted classes
+
+```text
+exact same-version reinstall NOOP
+regular byte repair
+regular mode repair
+registered regular wrong-type repair
+symlink target repair
+missing registered regular repair
+missing registered symlink repair
+```
+
+Every repair preserved registry bytes, unaffected owned paths, portable installed identity, strict shape and safety, and zero transaction residue.
+
+## Accepted runtime contract
+
+```text
+Python 3.14.6
+Android aarch64
+SOABI cpython-314-aarch64-linux-android
+MULTIARCH aarch64-linux-android
+HTTPS 200
+smoke-termux PASS
+uv venv PASS
+uv run anyio PASS
+native closure 81/329/0
+system SONAME 5/5
+extension imports 67/67
+engine verify 1 artifact / 714 owned rows / 0 bad paths
+```
+
+Portable before and after runtime probes remained:
+
+```text
+f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
+```
+
+Strict installed-tree fingerprints include `mtime_ns` and were used as same-tree mutation controls; before and after runtime probes were identical.
+
+## Preserved first-run infrastructure failure
+
+The first target run is preserved separately. Product-facing work passed, but the modular acceptance verifier failed before executing checks because its sibling module directory was absent under Python isolated mode.
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_FAILURE_20260712.md
+```
+
+The corrected bootstrap and one-command Termux wrapper produced the accepted archive.
+
+## Next boundary
+
+```text
+Gate 2R corrected-engine complete-root relocation regression
+```
+
+Handoff:
+
+```text
+docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
+```
+
+## Termux execution policy
+
+Target-only workflows must provide one wrapper script that verifies inputs, performs fresh extraction and execution, records status and result indices, and creates a TGZ on PASS or FAIL.
 
 ## Claim boundary
 
-A PASS closes corrected same-version reinstall and all six registered repair classes with complete installed-runtime behavior. Corrected-engine relocation, preservation boundaries, addon lifecycle, uninstall, upgrade, and downgrade remain separate gates.
+Gate 3A proves corrected reinstall, all six repair classes, and full post-repair installed-runtime behavior. Corrected-engine relocation, preservation boundaries, addon lifecycle, uninstall, upgrade, and downgrade remain separate gates.
