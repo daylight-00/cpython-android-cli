@@ -7,25 +7,11 @@ Use these documents to continue the project without relying on prior chat contex
 ```text
 1. COLLABORATION_PROTOCOL.md
 2. PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
-3. ../evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+3. ../evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
 4. ../stages/STAGE3C_PHASE5_SCOPE.md
 5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-6. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md
-
-Historical Gate 3A authority:
+6. ../evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 7. PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
-8. ../evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_FAILURE_20260712.md
-9. ../evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
-10. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
-11. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
-
-Historical diagnostic authority:
-12. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-13. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
-
-Historical Gate 2 evidence:
-14. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-15. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
@@ -47,37 +33,46 @@ Phase 5 Gate 3A product acceptance
   FROZEN 29/29 + 80/80 + 69/69
 
 Phase 5 Gate 2R corrected-engine relocation
+  FROZEN 80/80 + 46/46 + 15/15
+
+Phase 5 Gate 3B preservation boundaries
   ACTIVE
 ```
 
-## Frozen Gate 3A identity
+## Frozen Gate 2R identity
 
 ```text
 archive sha256
-  16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
+  8e2c131567d78a4208e7c8eb02e783a479713f6d867a3e5cd98eae60aa5738a7
 
 result-index sha256
-  a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
+  69734a0ba286b9d6b55e8ef4c364dca7cb80bd380080cd6653038040ac51650c
+
+complete-root fingerprint
+  aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
+
+portable fingerprint
+  f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
 ```
 
-## Active Gate 2R target
+## Active Gate 3B target
 
 ```text
-fresh corrected-engine install at A
-Gate 1-equivalent 80/80 at A and B
-same-filesystem complete-root mv
-root inode preserved
-complete-root shape 719/60/656/3
-registry and portable identity exact
-strict and complete-root identity unchanged
-zero stale A references
-full destination runtime validation
+modified owned regular leaf
+modified owned symlink
+unowned sentinel file
+unowned sentinel directory
+install/repair enforcement versus uninstall preservation
+registry and transaction state
+full runtime revalidation where applicable
 ```
+
+Policy must be derived from the frozen transaction contract rather than assumed.
 
 ## Termux execution policy
 
-All future target-only workflows must provide one wrapper script that performs accepted input verification, fresh extraction, execution, status/index capture, and TGZ packaging on PASS or FAIL. No separate `tar` command should be required.
+All target-only workflows must use one wrapper that verifies accepted inputs, performs fresh extraction, executes the workflow, captures status and result indices, and packages a TGZ on PASS or FAIL. Log capture must be synchronous before packaging.
 
 ## Authority rule
 
-Only a complete independently inspected Termux TGZ can close Gate 2R. Console markers and scenario-level `pass` fields are insufficient.
+Only a complete independently inspected Termux TGZ can close an active target gate. Console markers and scenario-level `pass` fields are insufficient.
