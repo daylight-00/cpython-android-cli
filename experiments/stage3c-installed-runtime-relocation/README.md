@@ -1,37 +1,67 @@
 # Stage 3-C Phase 5 Gate 2: Installed Runtime Relocation
 
-> **Status:** ACTIVE — corrected authoritative Termux rerun pending
+> **Status:** FROZEN PASS
 > **Prerequisite:** frozen Phase 5 Gate 1 PASS
 > **Input:** frozen Stage 3-C Phase 4 integrated durability evidence
 
-## Gate question
-
-> Does a runtime installed through the frozen Phase 4 engine remain exact, registered, functional, natively closed, and free of stale source-location references after the complete installation root is moved to a second location?
-
-## Preserved first target failure
-
-The first target run passed every relocation and runtime component but failed one incorrect verifier expectation:
+## Gate result
 
 ```text
-STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION=FAIL rc=65
-Gate 2 verifier                         45/46 PASS
-failed check
-  installation_root_entry_count_717
+STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION=PASS
+location A Gate 1 prerequisite        80/80 PASS
+location B Gate 1 revalidation        80/80 PASS
+Gate 2 verifier                       46/46 PASS
+workflow return codes                 all 0
 ```
 
-The failure is preserved in:
+Final evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+```
+
+The first target failure remains preserved in:
 
 ```text
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_FAILURE.md
 ```
 
-The corrected verifier expects the frozen Phase 4 management surface and remains exactly 46 checks.
+## Frozen archive identity
+
+```text
+stage3c-phase5-installed-runtime-relocation-root-shape-corrected-results-20260712-163535.tgz
+
+sha256
+  8e57399f907aec0c64e033a1d51380f0a27c3806773bc05ed2d88cbd3bf8785e
+
+size
+  24,212,336 bytes
+
+members
+  434
+
+regular files / directories
+  401 / 33
+
+unsafe, link, or special entries
+  0
+```
+
+Result-index:
+
+```text
+sha256
+  a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
+
+indexed files
+  393 / 393 exact
+```
 
 ## Design boundary
 
-This workflow does not introduce a second installer or a new generic relocation engine.
+The workflow did not introduce a second installer or a new generic relocation engine.
 
-It performs:
+It performed:
 
 ```text
 frozen Phase 4 input
@@ -41,7 +71,7 @@ frozen Phase 4 input
   → independent Gate 2 move and stale-prefix verifier
 ```
 
-The moved object is the complete installation root:
+The moved object was the complete installation root:
 
 ```text
 installation/
@@ -52,7 +82,19 @@ installation/
     └── transactions/
 ```
 
-Complete installation-root shape:
+Moving only `prefix/` while leaving ownership or recovery state behind is not accepted evidence.
+
+## Frozen complete-root identity
+
+All three checkpoints matched exactly:
+
+```text
+location A before move
+location B immediately after move
+location B after all probes
+```
+
+Shape:
 
 ```text
 entries          719
@@ -62,51 +104,64 @@ symlinks            3
 special             0
 ```
 
-Moving only `prefix/` while leaving the ownership and recovery state behind is not accepted evidence for this gate.
-
-## Accepted Gate 1 authority
+Fingerprint:
 
 ```text
-Gate 1 archive sha256
-  06aa75b8b7617dc1310e7c0f3b56781b2297d2cc1ad617c1f4045909af9fb6ea
-
-Gate 1 result-index sha256
-  29e6dc1e24b7ad82bd809ac44d70aac1486549e71c24d49eb3ef8cc2dc4fe377
-
-Gate 1 verifier
-  80/80 PASS
+aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
 ```
 
-The Gate 2 workflow reruns the frozen Gate 1 workflow as an in-process prerequisite. It does not trust console markers alone.
+## Frozen payload identities
 
-## Required relocation checks
+Portable identity:
 
 ```text
-location A Gate 1 prerequisite             80/80 PASS
+fingerprint
+  f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
+
+entries
+  714 / 714 / 714
+
+regular / directory / symlink / special
+  654 / 57 / 3 / 0
+```
+
+Strict same-tree identity:
+
+```text
+fingerprint
+  691b4886792a4f6bb63da1ad0f82d2cdac4d42848d04de934d0cfc0e0548a2a0
+
+entries
+  714 / 714 / 714
+
+pycache paths
+  0
+
+special paths
+  0
+```
+
+## Relocation checks
+
+```text
 complete installation-root move            PASS
 source and destination filesystem device   equal
 installation-root inode                    preserved
 location A installation root               absent
+location B installation root               present
 location B Python                           executable
-full installation-root shape               719/60/656/3 exact
-full installation-root fingerprint         exact
-runtime-base strict fingerprint             exact
-portable payload fingerprint               exact
-registry before / after                     exact
+registry before / after                     byte exact
 engine verify at location B                 PASS
 stale location-A paths in moved tree        0
 stale location-A paths in B probes          0
 ```
 
-The same-filesystem and inode-preservation checks prove that this gate exercised a rename-style whole-root move rather than an implicit cross-filesystem copy.
-
-## Required location-B revalidation
-
-The existing Gate 1 80-check verifier is rerun against the location-B prefix and registry.
+## Location-B runtime result
 
 ```text
 Python                         3.14.6
 platform                       android
+machine                        aarch64
 SOABI                          cpython-314-aarch64-linux-android
 MULTIARCH                      aarch64-linux-android
 sys.executable                 location B prefix/bin/python
@@ -116,106 +171,33 @@ HTTPS                          status 200
 subprocess identity            location B prefix
 uv venv                        PASS
 uv run --with anyio            PASS
-ELF objects                    81
-DT_NEEDED edges               329
-unresolved edges                0
-system SONAME dlopen          5/5
-extension imports            67/67
 ```
 
-## Corrected run
-
-Use a fresh extraction of the accepted Phase 4 archive:
-
-```sh
-cd "$HOME/projects/cpython-android-cli"
-
-git fetch origin agent/phase5-gate2-installed-relocation
-git switch --detach origin/agent/phase5-gate2-installed-relocation
-
-git log -1 --oneline
-
-PHASE4_ARCHIVE="$HOME/Downloads/stage3c-phase4-integrated-durability-results-20260712-082135.tgz"
-PHASE4_EXTRACT="$PREFIX/tmp/stage3c-phase4-integrated-durability-accepted"
-
-printf '%s  %s\n' \
-  '76bb78f200d9836d96f677cc1eca1e2f1483186f3655efa17a8e1f2361bd0187' \
-  "$PHASE4_ARCHIVE" | sha256sum -c -
-
-rm -rf "$PHASE4_EXTRACT"
-mkdir -p "$PHASE4_EXTRACT"
-tar xzf "$PHASE4_ARCHIVE" -C "$PHASE4_EXTRACT"
-
-PHASE4_RESULTS="$(find "$PHASE4_EXTRACT" \
-  -type d \
-  -path '*/results/termux/stage3c-phase4-integrated-durability' \
-  -print -quit)"
-
-test -n "$PHASE4_RESULTS"
-
-PHASE4_RESULTS="$PHASE4_RESULTS" \
-  bash experiments/stage3c-installed-runtime-relocation/run-installed-runtime-relocation.sh
-```
-
-## Expected markers
+## Location-B native closure
 
 ```text
-INSTALLED_RUNTIME_RELOCATION_GATE1_PREREQUISITE=80/80 PASS
-INSTALLED_RUNTIME_RELOCATION_WHOLE_ROOT_MOVE=PASS
-INSTALLED_RUNTIME_RELOCATION_REGISTRY=714/714 PASS
-INSTALLED_RUNTIME_RELOCATION_PORTABLE_FIDELITY=PASS
-INSTALLED_RUNTIME_RELOCATION_STRICT_MUTATION_CHECK=PASS
-INSTALLED_RUNTIME_RELOCATION_STALE_PREFIX=0 PASS
-INSTALLED_RUNTIME_RELOCATION_SMOKE=PASS
-INSTALLED_RUNTIME_RELOCATION_HTTPS=200 PASS
-INSTALLED_RUNTIME_RELOCATION_UV_VENV=PASS
-INSTALLED_RUNTIME_RELOCATION_UV_RUN=PASS
-INSTALLED_RUNTIME_RELOCATION_NATIVE_CLOSURE=81/329/0 PASS
-INSTALLED_RUNTIME_RELOCATION_EXTENSION_IMPORTS=67/67 PASS
-INSTALLED_RUNTIME_RELOCATION_REVALIDATION=80/80 PASS
-STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION=PASS
+symlinks                         3
+ELF objects                     81
+DT_NEEDED edges                329
+RUNTIME_INTERNAL edges          80
+ANDROID_SYSTEM edges           249
+unresolved edges                 0
+inspection errors                0
+system SONAME dlopen           5/5
+extension imports             67/67
 ```
 
-## Evidence layout
+## Independent verifier
 
 ```text
-results/termux/stage3c-phase5-installed-runtime-relocation/
-├── baseline/
-├── relocated/
-├── a-installation-root.json
-├── b-installation-root-after-move.json
-├── b-installation-root-after-probes.json
-├── a-installed-strict.json
-├── b-installed-strict-before.json
-├── b-installed-strict-after.json
-├── a-installed-portable.json
-├── b-installed-portable-before.json
-├── b-installed-portable-after.json
-├── a-registry.json
-├── b-registry.json
-├── relocation-state.json
-├── stale-prefix-scan.json
-├── relocated-baseline-verification.json
-├── verification.json
-├── workflow-status.json
-└── result-index.json
+46/46 PASS
 ```
 
-## Upload
-
-```sh
-RESULTS="$PWD/results/termux/stage3c-phase5-installed-runtime-relocation"
-ARCHIVE="$HOME/Downloads/stage3c-phase5-installed-runtime-relocation-root-shape-corrected-results-$(date +%Y%m%d-%H%M%S).tgz"
-
-tar czf "$ARCHIVE" "$RESULTS"
-printf 'upload: %s\n' "$ARCHIVE"
-```
-
-Upload the TGZ rather than pasting only the final markers. Preserve the first failed archive unchanged.
+It validates the frozen Gate 1 prerequisite, complete-root move state, same-filesystem inode preservation, exact complete-root shape and fingerprint, strict and portable payload identities, registry equality, destination engine verification, stale-prefix absence, canonical machine evidence, and the relocated 80-check runtime result.
 
 ## Claim boundary
 
-A PASS proves same-filesystem rename-style relocation of the complete installed root, including ownership and recovery state, and full runtime revalidation at the destination.
+This PASS proves same-filesystem rename-style relocation of the complete installed root, including ownership and recovery state, and full runtime revalidation at the destination.
 
 It does not prove:
 
@@ -223,9 +205,18 @@ It does not prove:
 cross-filesystem copy relocation
 archive transport or extraction at the destination
 same-version reinstall or corruption repair
+modified owned-leaf preservation
+unowned sentinel preservation
 addon lifecycle
 exact uninstall preservation
 upgrade
 downgrade
 physical power-loss persistence
+```
+
+## Next boundary
+
+```text
+Stage 3-C Phase 5 Gate 3
+  same-version lifecycle and exact uninstall semantics
 ```
