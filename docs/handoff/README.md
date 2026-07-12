@@ -6,12 +6,12 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
-3. ../evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
-4. ../stages/STAGE3C_PHASE5_SCOPE.md
-5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-6. ../evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
-7. PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+2. PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md
+3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md
+4. ../evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
+5. PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
+6. ../stages/STAGE3C_PHASE5_SCOPE.md
+7. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
 ```
 
 ## Current state
@@ -35,8 +35,9 @@ Phase 5 Gate 3A product acceptance
 Phase 5 Gate 2R corrected-engine relocation
   FROZEN 80/80 + 46/46 + 15/15
 
-Phase 5 Gate 3B preservation boundaries
+Phase 5 Gate 3B0 preservation diagnostic
   ACTIVE
+  authoritative Termux run pending
 ```
 
 ## Frozen Gate 2R identity
@@ -55,24 +56,41 @@ portable fingerprint
   f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
 ```
 
-## Active Gate 3B target
+## Active Gate 3B0 topology
 
 ```text
-modified owned regular leaf
-modified owned symlink
-unowned sentinel file
-unowned sentinel directory
-install/repair enforcement versus uninstall preservation
-registry and transaction state
-full runtime revalidation where applicable
+corrected-engine seed roots        1
+eight inode-separated scenarios    8
+scenario checks                   16
+independent checks                40
 ```
 
-Policy must be derived from the frozen transaction contract rather than assumed.
+Current-behavior census:
+
+```text
+registered mismatch + reinstall
+  ENFORCED_REPAIR
+
+unowned sentinel + reinstall
+  PRESERVED_NOOP
+
+modified registered leaf + uninstall
+  PRESERVED_AND_DEREGISTERED
+
+unowned sentinel + uninstall
+  UNOWNED_PRESERVED
+```
+
+This is diagnostic classification only. No preservation policy or uninstall product contract is accepted.
+
+## Identity boundary
+
+Registry-owned identity and unowned sentinel identity are separate evidence surfaces. An unowned child must not be treated as a mutation of an owned directory whose registry identity is only type and mode.
 
 ## Termux execution policy
 
-All target-only workflows must use one wrapper that verifies accepted inputs, performs fresh extraction, executes the workflow, captures status and result indices, and packages a TGZ on PASS or FAIL. Log capture must be synchronous before packaging.
+All target-only workflows must use one wrapper that verifies accepted inputs, performs fresh extraction, executes the workflow, captures logs synchronously, writes status and result indices, and packages a TGZ on PASS or FAIL.
 
 ## Authority rule
 
-Only a complete independently inspected Termux TGZ can close an active target gate. Console markers and scenario-level `pass` fields are insufficient.
+Only a complete independently inspected Termux TGZ can close Gate 3B0. Console markers and scenario-level `pass` fields are insufficient.
