@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3A corrected reinstall and repair product acceptance
+> **Status:** ACTIVE — Gate 2R corrected-engine relocation regression
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -38,11 +38,11 @@ The source-tree fingerprint is a manifest contract identity. It is not a fixed i
 
 ```text
 Gate 1    installed runtime baseline                               FROZEN
-Gate 2    complete installed-root relocation                      FROZEN
+Gate 2    historical complete installed-root relocation           FROZEN
 Gate 3A0  reinstall and repair diagnostic census                  FROZEN
 Phase 4I  missing registered non-directory repair intervention    FROZEN
-Gate 3A   corrected reinstall and repair product acceptance       ACTIVE
-Gate 2R   corrected-engine relocation regression                  DEFERRED
+Gate 3A   corrected reinstall and repair product acceptance       FROZEN
+Gate 2R   corrected-engine complete-root relocation regression    ACTIVE
 Gate 3B   owned/unowned preservation boundaries                   DEFERRED
 Gate 3C   addon lifecycle and dependency enforcement              DEFERRED
 Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
@@ -60,15 +60,6 @@ result-index sha256
 
 verifier
   80/80 PASS
-
-runtime
-  Python 3.14.6
-  Android aarch64
-  HTTPS 200
-  uv PASS
-  native closure 81/329/0
-  system SONAME 5/5
-  extension imports 67/67
 ```
 
 Evidence:
@@ -77,7 +68,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-## Frozen Gate 2
+## Frozen historical Gate 2
 
 ```text
 archive sha256
@@ -86,17 +77,20 @@ archive sha256
 result-index sha256
   a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
 
-location A Gate 1
-  80/80 PASS
-
-location B Gate 1
-  80/80 PASS
+location A / B Gate 1
+  80/80 / 80/80
 
 Gate 2 verifier
   46/46 PASS
 
 complete-root fingerprint
   aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
+
+complete-root shape
+  719 entries
+  60 directories
+  656 regular files
+  3 symlinks
 ```
 
 Evidence:
@@ -121,15 +115,6 @@ independent verifier
   31/31
 ```
 
-Diagnostic classification of the prior engine:
-
-```text
-exact reinstall                       supported NOOP
-four existing-path repairs            supported
-missing regular repair                unsupported
-missing symlink repair                unsupported
-```
-
 Evidence:
 
 ```text
@@ -151,9 +136,6 @@ scenario checks
 independent verifier
   51/51
 
-success/regression roots
-  7/7
-
 crash boundaries
   12/12
 ```
@@ -170,134 +152,136 @@ missing registered non-directory
   skip nonexistent backup move
 ```
 
-The correction adds no journal schema, registry schema, manifest, archive, ownership, uninstall, or addon policy.
-
 Evidence:
 
 ```text
 docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
 ```
 
-## Active Gate 3A product acceptance
-
-### Product question
-
-> After every accepted same-version repair class, does the corrected installed runtime retain exact ownership identity and the complete Gate 1 behavior contract?
-
-### Required classes
+## Frozen Gate 3A product acceptance
 
 ```text
-exact same-version reinstall NOOP
-regular byte repair
-regular mode repair
-registered regular wrong-type repair
-symlink target repair
-missing regular repair
-missing symlink repair
+archive sha256
+  16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
+
+result-index sha256
+  a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
+
+repair scenario checks
+  29/29
+
+corrected-engine Gate 1 regression
+  80/80
+
+independent acceptance verifier
+  69/69
 ```
 
-### Scenario isolation
-
-Use one fresh corrected-engine seed and independent roots for all six repairs.
-
-Also use one sequential acceptance root:
+Accepted product matrix:
 
 ```text
-fresh install
-→ exact reinstall NOOP
-→ six corruption/repair cycles
-→ complete runtime validation
+exact reinstall NOOP
+six isolated repairs
+six sequential repairs
+registry identity exact after every repair
+unaffected owned paths exact
+portable identity f860caf... exact
+zero transaction residue
 ```
 
-All roots must be inode-separated from the seed.
-
-### Per-repair requirements
-
-```text
-intentional mutation evidence
-pre-repair verify exactly one bad path
-install actions noop 713 / repair 1
-mutation count 2
-post-repair verify PASS
-registry bytes unchanged
-portable fingerprint f860caf... exact
-strict output 714-entry shape/safety PASS
-transaction residue 0
-candidate exact to manifest and source archive
-unaffected-path identity exact
-```
-
-No fixed strict fingerprint is required across independent roots. The strict output contains mtime and is not portable.
-
-### Full corrected-runtime requirements
-
-After all repairs, the sequential acceptance root must prove:
+Runtime:
 
 ```text
 Python 3.14.6
 Android aarch64
-SOABI cpython-314-aarch64-linux-android
-MULTIARCH aarch64-linux-android
-sys.prefix and base_prefix exact
-sysconfig paths inside installed prefix
+HTTPS 200
+smoke-termux PASS
+uv venv and uv run PASS
+native closure 81/329/0
+system SONAME 5/5
+extension imports 67/67
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+```
+
+## Active Gate 2R corrected-engine relocation regression
+
+### Regression question
+
+> Does a complete installation root created by the accepted corrected engine retain exact ownership identity and full runtime behavior after the same-filesystem inode-preserving relocation proven by historical Gate 2?
+
+### Required topology
+
+```text
+fresh corrected-engine runtime-base installation at location A
+full Gate 1-equivalent validation at A
+complete-root and payload identities at A
+same-filesystem mv A → B
+full Gate 1-equivalent validation at B
+complete-root and payload identities after move and after probes
+stale location-A scan
+```
+
+The complete root includes:
+
+```text
+prefix/
+.cpython-android-cli/lock
+.cpython-android-cli/registry.json
+.cpython-android-cli/transactions/
+```
+
+### Required relocation evidence
+
+```text
+source and destination parent device identical
+root inode preserved
+location A absent
+location B present
+location B Python executable
+registry bytes exact
+portable fingerprint f860caf... exact
+strict same-tree fingerprint exact across move
+complete-root fingerprint exact across move and probes
+complete-root shape 719 / 60 / 656 / 3
+zero special paths
+zero stale A references
+zero transaction residue
+```
+
+### Runtime validation at A and B
+
+```text
+Gate 1 verifier 80/80
+Python 3.14.6
+Android aarch64
 HTTPS 200
 smoke-termux PASS
 uv venv PASS
 uv run anyio PASS
-native closure 81 ELF / 329 edges / 0 unresolved
-system SONAME dlopen 5/5
+native closure 81/329/0
+system SONAME 5/5
 extension imports 67/67
-engine verify PASS
-registry 1 artifact / 714 owned rows
-portable payload exact before and after probes
-strict shape/safety PASS before and after probes
-strict fingerprint unchanged across probes
-no transaction residue
+engine verify 1 artifact / 714 owned rows / 0 bad paths
 ```
 
-### Gate 1 regression
+### Termux execution policy
 
-The accepted correction changes engine implementation identity. Therefore Gate 3A acceptance must include a complete Gate 1-equivalent corrected-engine regression. Prior Gate 1 evidence alone is insufficient.
-
-The active workflow invokes the complete frozen 80-check Gate 1 verifier on the sequential repaired root.
-
-### Gate 2 boundary
-
-Corrected-engine relocation remains a separate Gate 2R regression unless the acceptance workflow explicitly relocates the complete root and repeats destination validation.
-
-### Independent verification
-
-```text
-repair scenario checks
-  29
-
-Gate 1 regression checks
-  80
-
-Gate 3A acceptance checks
-  69
-```
-
-The 69 checks are split into repair/evidence and runtime/identity modules. The verifier reopens raw engine outputs, mutation records, registry bytes, portable and strict controls, runtime probes, uv results, native closure outputs, and result-index coverage.
-
-Scenario `pass` values and console markers are not authority.
+The workflow must provide one Termux wrapper that verifies accepted input archives, performs fresh extraction and execution, writes status and result-index evidence, and packages a TGZ on PASS or FAIL.
 
 Handoff:
 
 ```text
-docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
 ```
 
-## Deferred Gate 2R
+### Claim boundary
 
-```text
-complete corrected-engine installation-root move
-registry byte exact
-portable identity exact
-strict same-tree identity unchanged across destination probes
-full destination runtime validation
-zero stale source references
-```
+Gate 2R proves only same-filesystem rename-style corrected-engine relocation. Cross-filesystem copy relocation remains unproved.
 
 ## Deferred Gate 3B
 
@@ -338,7 +322,7 @@ Upgrade and downgrade remain deferred until a second complete frozen product ide
 
 ## Non-reopening rule
 
-Gate 3A may add orchestration and independent verification around the accepted correction only.
+Gate 2R may adapt historical relocation orchestration and verification to the accepted corrected engine only.
 
 It must not broaden:
 
@@ -356,12 +340,9 @@ Any broader change requires a new authority decision.
 ## Results layout
 
 ```text
-Gate 3A0 diagnostic
-  results/termux/stage3c-phase5-gate3a-reinstall-repair-diagnostic/
-
-Phase 4I intervention
-  results/termux/stage3c-phase4-missing-leaf-repair-intervention/
-
 Gate 3A product acceptance
   results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance/
+
+Gate 2R corrected-engine relocation regression
+  results/termux/stage3c-phase5-gate2r-corrected-engine-relocation/
 ```
