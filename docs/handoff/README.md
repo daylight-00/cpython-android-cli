@@ -6,67 +6,77 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3_HANDOFF_20260712.md
-3. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-4. STAGE3C_EVIDENCE_LEDGER.md
-5. ../stages/STAGE3C_SCOPE.md
-6. ../stages/STAGE3C_PHASE5_SCOPE.md
-7. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+2. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+3. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+4. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
+5. ../stages/STAGE3C_PHASE5_SCOPE.md
+6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+7. STAGE3C_EVIDENCE_LEDGER.md
+8. ../../experiments/stage3c-installed-runtime-lifecycle/README.md
 
-Historical Gate 2 context:
-8. PHASE5_GATE2_CORRECTION_20260712.md
-9. PHASE5_GATE2_HANDOFF_20260712.md
-10. ../../experiments/stage3c-installed-runtime-relocation/README.md
+Historical Gate 3A diagnostic design:
+9. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
 
-Historical Gate 1 context:
-11. PHASE5_GATE1_CORRECTION_20260712.md
-12. SESSION_HANDOFF_20260712.md
-13. ../../experiments/stage3c-installed-runtime-baseline/README.md
+Frozen Gate 2 evidence:
+10. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+11. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
 
 ```text
 Stage 3-C Phases 1–4
-  FROZEN
+  FROZEN except the explicitly authorized missing-leaf repair intervention
 
-Stage 3-C Phase 5 Gate 1
+Phase 5 Gate 1
+  FROZEN 80/80
+
+Phase 5 Gate 2
+  FROZEN 46/46
+
+Phase 5 Gate 3A0 diagnostic
   FROZEN PASS
-  verifier 80/80
+  scenario checks 17/17
+  independent verifier 31/31
 
-Stage 3-C Phase 5 Gate 2
-  FROZEN PASS
-  Gate 1 prerequisite at A 80/80
-  Gate 1 revalidation at B 80/80
-  Gate 2 verifier 46/46
+Phase 5 Gate 3A product acceptance
+  BLOCKED
 
-preserved failures
-  Gate 1 first target 78/80
-  Gate 2 first target 45/46
-
-Stage 3-C Phase 5 Gate 3A
-  ACTIVE DESIGN BOUNDARY
-  same-version reinstall NOOP and registered corruption repair
+active authority
+  narrow Phase 4 registered missing-leaf repair intervention
 ```
 
-## Frozen Gate 2 identity
+## Frozen diagnostic identity
 
 ```text
 archive sha256
-  8e57399f907aec0c64e033a1d51380f0a27c3806773bc05ed2d88cbd3bf8785e
+  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
 
 result-index sha256
-  a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
-
-complete-root shape
-  719 entries / 60 directories / 656 regular / 3 symlinks
-
-complete-root fingerprint
-  aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
+  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
 ```
 
-## Authority rule
+## Confirmed defect
 
-The repository records the design and frozen identities. Uploaded Termux TGZ evidence closes target gates.
+```text
+registered missing regular or symlink
+  planned as repair
+  recorded as replaced
+  durable_move(absent source, backup)
+  FileNotFoundError
+  retained ROLLED_BACK journal
+  missing leaf remains absent
+```
 
-Do not infer a PASS from local validation, final console markers alone, or the absence of visible errors.
+## Authorized correction
+
+```text
+existing mismatching path
+  retain replaced mutation semantics
+
+missing registered non-directory
+  use created mutation semantics
+  do not move a nonexistent source
+```
+
+The intervention must preserve all diagnostic failure evidence and remain separate from Gate 3A product acceptance.

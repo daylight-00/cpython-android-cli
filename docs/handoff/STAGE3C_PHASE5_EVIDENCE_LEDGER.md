@@ -18,35 +18,20 @@ result-index sha256
 verifier
   80/80 PASS
 
-workflow return codes
-  all 0
-
 portable payload fingerprint
   f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
 
-payload shape
+payload / registry
   714 entries
-  654 regular
-  57 directories
-  3 symlinks
-  0 special
-
-registry
   1 artifact
   714 owned rows
-  manifest mapping exact
 
 runtime
   Python 3.14.6
   Android aarch64
   HTTPS 200
-  uv venv PASS
-  uv run anyio PASS
-
-native closure
-  81 ELF
-  329 DT_NEEDED edges
-  0 unresolved
+  uv venv and uv run PASS
+  81 ELF / 329 edges / 0 unresolved
   5/5 system SONAME dlopen
   67/67 extension imports
 ```
@@ -57,101 +42,42 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-Preserved first failure:
-
-```text
-verifier 78/80
-phase4_result_index_exact
-installed_fingerprint_exact
-```
-
 ## Gate 2 — complete installed-root relocation
 
 ```text
 status
   FROZEN PASS
 
-accepted archive
-  stage3c-phase5-installed-runtime-relocation-root-shape-corrected-results-20260712-163535.tgz
-
 accepted archive sha256
   8e57399f907aec0c64e033a1d51380f0a27c3806773bc05ed2d88cbd3bf8785e
-
-archive size
-  24,212,336 bytes
-
-archive members
-  434
 
 result-index sha256
   a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
 
-indexed files
-  393 / 393 exact
-
-location A Gate 1
+Gate 1 at location A
   80/80 PASS
 
-location B Gate 1
+Gate 1 at location B
   80/80 PASS
 
 Gate 2 verifier
   46/46 PASS
 
-workflow return codes
-  all 0
-```
-
-Complete-root identity:
-
-```text
-fingerprint
+complete-root fingerprint
   aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
 
-entries
-  719
+complete-root shape
+  719 entries
+  60 directories
+  656 regular files
+  3 symlinks
+  0 special
 
-directories
-  60
-
-regular files
-  656
-
-symlinks
-  3
-
-special
-  0
-```
-
-Relocation semantics:
-
-```text
-complete installation-root move          PASS
-same filesystem                          PASS
-installation-root inode preserved        PASS
-location A root absent                   PASS
-location B root present                  PASS
-registry A-to-B                          byte exact
-portable payload identity                exact
-strict payload identity                  exact
-complete-root identity                   exact
-stale location-A references              0
-```
-
-Destination result:
-
-```text
-Python 3.14.6
-Android aarch64
-HTTPS 200
-uv venv PASS
-uv run anyio PASS
-81 ELF
-329 edges
-0 unresolved
-5/5 system SONAME dlopen
-67/67 extension imports
+relocation
+  same filesystem
+  inode preserved
+  registry byte exact
+  stale source references 0
 ```
 
 Evidence:
@@ -160,45 +86,98 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 ```
 
-Preserved first failure:
+## Gate 3A0 — reinstall and repair diagnostic census
 
 ```text
-verifier 45/46
-installation_root_entry_count_717
+status
+  FROZEN DIAGNOSTIC PASS
 
-root cause
-  verifier omitted the durable lock and empty transactions root
+product acceptance
+  BLOCKED
+
+accepted archive
+  stage3c-phase5-gate3a-reinstall-repair-diagnostic-results-20260712-172353.tgz
+
+accepted archive sha256
+  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
+
+archive size
+  23,954,673 bytes
+
+archive members
+  409
+
+result-index sha256
+  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
+
+indexed files
+  365/365 exact
+
+scenario checks
+  17/17 PASS
+
+independent verifier
+  31/31 PASS
+
+Phase 4 copied input
+  324/324 exact
 ```
 
-## Active next boundary
+Frozen classification:
 
 ```text
-Stage 3-C Phase 5 Gate 3A
-  same-version reinstall NOOP
-  registered corruption repair
+exact same-version reinstall            supported NOOP
+regular byte mismatch                   supported repair
+regular mode mismatch                   supported repair
+symlink target mismatch                 supported repair
+registered regular wrong type           supported repair
+registered regular absent               unsupported
+registered symlink absent               unsupported
 ```
 
-Gate 3 subgate order:
+Missing-leaf sequence:
 
 ```text
-3A reinstall and repair
-3B preservation boundaries
-3C addon lifecycle and dependencies
-3D runtime uninstall and final ownership boundary
+install                     rc 44 FileNotFoundError
+journal                     APPLYING
+recover 1                   ROLLED_BACK, restored 0
+recover 2                   NOOP_ROLLED_BACK
+post-recovery verify        same missing bad path
+registry row                retained
+leaf                        absent
 ```
 
-## Claim discipline
-
-Gate 2 does not prove:
+Evidence:
 
 ```text
-cross-filesystem relocation
-same-version reinstall or repair
-modified owned-leaf preservation
-unowned sentinel preservation
-addon lifecycle
-exact uninstall preservation
-upgrade
-downgrade
-physical power-loss persistence
+docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
+
+## Active authority
+
+```text
+narrow Phase 4 architecture intervention
+  registered missing non-directory repair
+
+required correction
+  existing mismatch → replaced mutation
+  missing registered leaf → created mutation
+```
+
+Decision:
+
+```text
+docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+```
+
+## Deferred boundaries
+
+```text
+Gate 3A product acceptance
+Gate 3B preservation boundaries
+Gate 3C addon lifecycle and dependencies
+Gate 3D runtime uninstall and final ownership boundary
+Gate 4 upgrade and downgrade
+```
+
+No later gate may proceed until the intervention and affected downstream regressions are accepted from authoritative Termux evidence.

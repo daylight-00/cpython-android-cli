@@ -1,12 +1,12 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3 same-version lifecycle and exact uninstall semantics
-> **Input:** frozen Stage 3-C Phases 1–4 and frozen Phase 5 Gates 1–2
+> **Status:** ACTIVE — missing registered leaf repair intervention
+> **Input:** frozen Stage 3-C product identities, Gates 1–2, and frozen Gate 3A0 diagnostic evidence
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Does the frozen runtime remain exact, functional, natively closed, relocatable, repairable, composable, and safely removable after installation through the frozen transaction engine rather than direct assembly?
+> Does the installed runtime remain exact, functional, relocatable, repairable, composable, and safely removable through the transaction and recovery engine?
 
 ## Frozen product identities
 
@@ -31,23 +31,25 @@ native closure
   329 DT_NEEDED edges
   0 unresolved
   67/67 extension imports
-
-Phase 4 integrated durability result-index
-  878ed426720c48f8d0240e3e4e141ff3434426a30d3be9230da23dd5eba0a4ce
 ```
 
-## Design order
+## Authority order
 
 ```text
-Gate 1  install runtime-base and validate exact installed behavior      FROZEN
-Gate 2  relocate the complete installed root and revalidate            FROZEN
-Gate 3  validate same-version lifecycle and exact uninstall            ACTIVE
-Gate 4  validate upgrade and downgrade with a second frozen version    DEFERRED
+Gate 1    installed runtime baseline                               FROZEN
+Gate 2    complete installed-root relocation                      FROZEN
+Gate 3A0  reinstall and repair diagnostic census                  FROZEN
+Phase 4I  missing registered non-directory repair intervention    ACTIVE
+Gate 3A   accepted same-version reinstall and repair              BLOCKED
+Gate 3B   owned/unowned preservation boundaries                   DEFERRED
+Gate 3C   addon lifecycle and dependency enforcement              DEFERRED
+Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
+Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
 
-## Frozen Gate 1 — installed runtime baseline
+`Gate 3A0` is diagnostic authority. Its PASS classifies existing behavior and does not establish product acceptance.
 
-Authoritative identity:
+## Frozen Gate 1
 
 ```text
 archive sha256
@@ -59,25 +61,20 @@ result-index sha256
 verifier
   80/80 PASS
 
-workflow return codes
-  all 0
-```
+install / registry
+  714 creates
+  715 mutations
+  1 artifact
+  714 owned rows
 
-Frozen result:
-
-```text
-install create actions              714
-registry mutation count             715
-registry artifacts                    1
-registry owned paths                714
-manifest-to-registry mapping        exact
-portable installed payload          exact
-strict validation-time mutation     none
-HTTPS                               200
-uv venv / uv run                    PASS
-native closure                      81/329/0
-system SONAME dlopen                5/5
-extension imports                  67/67
+runtime
+  Python 3.14.6
+  Android aarch64
+  HTTPS 200
+  uv PASS
+  native closure 81/329/0
+  system SONAME 5/5
+  extension imports 67/67
 ```
 
 Evidence:
@@ -86,11 +83,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-Gate 1 proves original-path installed identity and behavior. It does not independently prove relocation or later lifecycle operations.
-
-## Frozen Gate 2 — complete installed-root relocation
-
-Authoritative identity:
+## Frozen Gate 2
 
 ```text
 archive sha256
@@ -99,50 +92,23 @@ archive sha256
 result-index sha256
   a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
 
-location A Gate 1 prerequisite
+location A Gate 1
   80/80 PASS
 
-location B Gate 1 revalidation
+location B Gate 1
   80/80 PASS
 
 Gate 2 verifier
   46/46 PASS
 
-workflow return codes
-  all 0
-```
-
-Complete installation-root identity:
-
-```text
-entries          719
-directories       60
-regular files    656
-symlinks            3
-special             0
-
-fingerprint
+complete-root fingerprint
   aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
-```
 
-Frozen result:
-
-```text
-same-filesystem whole-root move       PASS
-installation-root inode preserved     PASS
-location A root absent                PASS
-location B root present               PASS
-registry A-to-B                       byte exact
-portable payload identity             exact
-strict payload identity               exact
-complete-root identity                exact
-stale location-A references           0
-engine verify at location B           PASS
-HTTPS                                 200
-uv venv / uv run                      PASS
-native closure                        81/329/0
-system SONAME dlopen                  5/5
-extension imports                    67/67
+complete-root shape
+  719 entries
+  60 directories
+  656 regular files
+  3 symlinks
 ```
 
 Evidence:
@@ -151,194 +117,234 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 ```
 
-Gate 2 proves same-filesystem rename-style relocation of the complete installed root and destination revalidation. It does not prove cross-filesystem relocation or lifecycle mutations after the move.
-
-## Active Gate 3 — same-version lifecycle and exact uninstall
-
-Gate 3 must consume the frozen installer, manifests, archives, registry semantics, transaction behavior, recovery behavior, and durability helpers without modifying them.
-
-Gate 3 is divided into ordered subgates so each claim remains narrow and independently inspectable.
+## Frozen Gate 3A0 diagnostic
 
 ```text
-Gate 3A  same-version reinstall NOOP and registered corruption repair
-Gate 3B  modified owned-leaf and unowned-sentinel preservation
-Gate 3C  addon composition, dependency enforcement, and addon removal
-Gate 3D  runtime uninstall and exact final ownership boundary
+archive sha256
+  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
+
+result-index sha256
+  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
+
+scenario checks
+  17/17 PASS
+
+independent verifier
+  31/31 PASS
+
+Phase 4 copied input
+  324/324 exact
 ```
 
-A later subgate must not run until the previous subgate is frozen from authoritative Termux evidence.
-
-### Gate 3A — reinstall and repair
-
-Required scenarios:
+Frozen classification:
 
 ```text
-fresh runtime-base install
-exact same-version reinstall
-registered regular-file corruption
-registered symlink corruption
-registered mode corruption
-registered missing leaf
-registered missing owned directory where safe to reconstruct
+exact same-version reinstall            supported NOOP
+regular byte mismatch                   supported repair
+regular mode mismatch                   supported repair
+symlink target mismatch                 supported repair
+registered regular wrong type           supported repair
+registered regular absent               unsupported
+registered symlink absent               unsupported
 ```
 
-Required same-version reinstall result:
+Evidence:
 
 ```text
-operation                    install runtime-base
-result                       PASS
-noop                         true
-payload mutation count       0
-registry mutation count      0
-registry JSON                byte unchanged
-portable payload identity    unchanged
-strict payload identity      unchanged
-runtime verification         PASS
+docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
-Required corruption-repair result:
+## Active Phase 4I intervention
+
+### Confirmed defect
+
+For an absent registered regular or symlink leaf, the frozen engine executes:
 
 ```text
-only registered corrupted paths repaired
-unaffected registered paths unchanged
-registry returns to exact manifest mapping
+planner
+  repair
+
+journal intent
+  replaced
+
+execution
+  durable_move(absent source, backup)
+  os.replace(absent source, backup)
+  FileNotFoundError
+
+recovery
+  APPLYING → ROLLED_BACK
+  restored_count 0
+  retained ROLLED_BACK transaction
+
+final state
+  registry row retained
+  leaf absent
+  verify still fails
+```
+
+### Authorized correction
+
+```text
+registered path exists and differs
+  keep replaced mutation
+  backup current path
+  publish frozen member
+
+registered path is absent
+  use created mutation
+  do not backup a nonexistent source
+  publish frozen member
+```
+
+The existing `created` rollback path must be reused. No new journal schema or recovery operation is authorized.
+
+Decision:
+
+```text
+docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+```
+
+### Required success scenarios
+
+```text
+missing registered regular repair
+missing registered symlink repair
+exact same-version NOOP regression
+four in-place repair regressions
+```
+
+Successful missing-leaf repair must produce:
+
+```text
+install PASS
+one repair action or explicitly named missing-repair action
+exact manifest path identity
+registry identity exact
 portable payload identity restored
 engine verify PASS
-runtime, HTTPS, uv, and native closure PASS
+no transaction residue
 ```
 
-Synthetic corruption must be applied only after a frozen clean baseline fingerprint is captured. Every intentional mutation must be recorded in machine-readable evidence.
+### Required crash/recovery scenarios
 
-### Gate 3B — preservation boundaries
-
-Required preservation scenarios:
+At minimum:
 
 ```text
-modified owned regular leaf before reinstall
-modified owned symlink before reinstall
-unowned sentinel file inside an owned directory
-unowned sentinel directory under a shared structural namespace
+prepared before intent
+created intent recorded before publish
+published leaf before registry mutation
+registry mutation before commit
+committed before cleanup
 ```
 
-The gate must distinguish policy rather than assume it:
+Expected recovery:
 
 ```text
-registered corruption
-  engine may repair to the frozen manifest identity
+pre-commit crash
+  restore original missing state
+  restore prior registry
 
-user-modified owned content
-  preservation or replacement must match the frozen transaction contract
-
-unowned content
-  must not be claimed or silently removed
+post-commit crash
+  preserve repaired leaf
+  preserve committed registry
 ```
 
-Expected outcomes must be derived from the frozen Phase 4 transaction contract and existing scenario evidence before target execution. Gate 3 must not redefine policy to make the test pass.
-
-### Gate 3C — addon lifecycle and dependencies
-
-Required order:
+### Non-authorized changes
 
 ```text
-install runtime-base
-install development-addon
-verify combined registry and payload
-install test-addon where dependencies permit
-verify combined registry and payload
-attempt forbidden dependency-order removals
-remove test-addon
-remove development-addon
-revalidate runtime-base
+manifest or archive identity
+registry schema
+artifact identity
+ownership policy
+uninstall preservation policy
+addon dependency policy
+new generic repair subsystem
 ```
 
-Required properties:
+## Mandatory revalidation order
 
 ```text
-owned-path overlap                         0
-shared structural namespace preserved     exact
-registry artifact transitions             exact
-registry owned-path transitions           exact
-runtime dependency enforcement            exact
-addon removal preserves runtime-base       exact
-runtime, HTTPS, uv, and closure after addon removal PASS
+1. static and synthetic intervention validation
+2. authoritative Termux intervention scenarios
+3. Gate 3A product acceptance
+4. Gate 1 regression if accepted engine input identity changes
+5. Gate 2 regression if accepted engine input identity changes
+6. Gate 3B may then open
 ```
 
-### Gate 3D — runtime uninstall and final boundary
+Prior target evidence may be reused only where the accepted input identity and exercised code path are proven unaffected.
 
-Required final sequence:
+## Deferred Gate 3A product acceptance
+
+Gate 3A product acceptance must prove:
 
 ```text
-start from exact runtime-base-only state
-place approved unowned sentinels
-uninstall runtime-base through frozen engine
-verify registry transition
-verify owned payload removal
-verify preservation of unowned sentinels
-verify shared structural cleanup policy
-verify no transaction residue
+exact reinstall NOOP
+all supported in-place repair classes
+missing regular repair
+missing symlink repair
+post-repair runtime behavior
+HTTPS
+uv
+native closure
+extension imports
+no transaction residue
 ```
 
-Required final state:
+## Deferred Gate 3B preservation
 
 ```text
-runtime-base registry artifact         absent
-runtime-base owned registry rows       0
-registered owned payload paths         absent
-unowned sentinel paths                 preserved
-active transaction directories         0
-engine verification                    PASS for empty installation state
+modified owned regular leaf
+modified owned symlink
+unowned sentinel file
+unowned sentinel directory
+policy derived from the transaction contract
 ```
 
-Whether empty state directories, lock files, registry files, or structural directories remain must be judged against the frozen Phase 4 contract. Gate 3 may not invent an aesthetic cleanup rule.
-
-## Gate 3 claim boundary
-
-A complete Gate 3 PASS will prove same-version reinstall, repair, preservation, addon lifecycle, dependency enforcement, and exact uninstall behavior for the currently frozen product set.
-
-It will not prove:
+## Deferred Gate 3C addons
 
 ```text
-upgrade or downgrade
-compatibility with a second product identity
-cross-filesystem relocation
-physical power-loss persistence
-storage-controller or kernel-level failure behavior
+runtime-base
+→ development-addon
+→ test-addon
+→ dependency-order rejection
+→ addon removals
+→ runtime-base revalidation
 ```
 
-## Deferred Gate 4 — explicit second-version lifecycle
-
-Upgrade and downgrade remain deferred until a second complete frozen product identity exists.
-
-Synthetic version labels are not acceptable evidence.
-
-Required future inputs:
+## Deferred Gate 3D uninstall
 
 ```text
-second source identity
-second manifest set
-second deterministic archive set
-second installation contract
-explicit compatibility policy
+runtime-base-only state
+approved unowned sentinels
+frozen-engine uninstall
+owned payload removal
+unowned preservation
+registry transition
+transaction residue check
+empty-state verification
 ```
+
+## Deferred Gate 4
+
+Upgrade and downgrade remain deferred until a second complete frozen product identity exists. Synthetic version labels are not accepted.
 
 ## Non-reopening rule
 
-Phase 5 consumes frozen Phase 1–4 identities. It must not modify source archives, manifests, registry semantics, transaction semantics, recovery behavior, or durability helpers while claiming installed lifecycle validation.
+The active intervention may change only the registered missing non-directory repair execution path and directly required scenario/verifier code.
 
-Gate 3 may orchestrate existing frozen tools and introduce independent scenario runners and verifiers. It must not silently rewrite policy or broaden a claim beyond the target evidence.
+Any broader change requires a new authority decision.
 
 ## Results layout
 
 ```text
-Gate 1
-  results/termux/stage3c-phase5-installed-runtime-baseline/
-  work/termux/stage3c-phase5-installed-runtime-baseline/
+Gate 3A0 diagnostic
+  results/termux/stage3c-phase5-gate3a-reinstall-repair-diagnostic/
 
-Gate 2
-  results/termux/stage3c-phase5-installed-runtime-relocation/
-  work/termux/stage3c-phase5-installed-runtime-relocation/
+Phase 4I intervention
+  results/termux/stage3c-phase4-missing-leaf-repair-intervention/
 
-Gate 3
-  results/termux/stage3c-phase5-installed-runtime-lifecycle/
-  work/termux/stage3c-phase5-installed-runtime-lifecycle/
+Gate 3A product acceptance
+  results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance/
 ```
