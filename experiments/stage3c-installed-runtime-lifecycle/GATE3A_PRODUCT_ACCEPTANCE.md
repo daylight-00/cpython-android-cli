@@ -8,7 +8,7 @@
 
 > After exact same-version reinstall and every accepted registered repair class, does the corrected installed runtime retain exact ownership identity and the complete Gate 1 behavior contract?
 
-## Frozen inputs
+## Frozen inputs and identity semantics
 
 ```text
 Phase 4 integrated result-index
@@ -17,11 +17,26 @@ Phase 4 integrated result-index
 Phase 4I intervention result-index
   7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 
-portable payload fingerprint
+portable installed-payload fingerprint
   f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
 
-strict payload fingerprint
+manifest source-tree fingerprint
   9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796
+```
+
+The manifest source-tree fingerprint is a frozen contract identity. It is **not** the expected installed strict fingerprint.
+
+The strict installed-tree fingerprint includes `mtime_ns`; therefore it is a same-tree mutation control only:
+
+```text
+per repair
+  strict output must pass 714-entry shape and safety checks
+
+runtime probes
+  strict fingerprint before and after probes must be identical
+
+cross-root identity
+  use the portable f860caf... fingerprint
 ```
 
 ## Scenario topology
@@ -63,12 +78,14 @@ install actions noop 713 / repair 1
 mutation count 2
 post-repair verify PASS
 registry bytes unchanged
-portable fingerprint exact
-strict fingerprint exact
+portable fingerprint f860caf... exact
+strict output shape/safety PASS
 unaffected owned paths exact
 transaction residue 0
-final candidate exact to manifest
+final candidate exact to manifest and source archive
 ```
+
+A fixed strict hash is deliberately not required across independently installed roots.
 
 ## Runtime acceptance
 
@@ -89,7 +106,9 @@ native closure 81 ELF / 329 edges / 0 unresolved
 system SONAME dlopen 5/5
 extension imports 67/67
 registry 1 artifact / 714 owned rows
-portable and strict identity exact before and after probes
+portable fingerprint f860caf... exact before and after probes
+strict shape/safety PASS before and after probes
+strict fingerprint unchanged across probes
 zero transaction residue
 ```
 
@@ -101,7 +120,7 @@ Gate 1 regression checks        80
 Gate 3A acceptance checks       69
 ```
 
-The final verifier independently reopens raw engine process records, repair records, registry identity, fingerprints, runtime probes, smoke output, closure results, and Gate 1 verification.
+The 69-check verifier is split into evidence/repair and runtime/identity modules. It independently reopens raw engine process records, repair records, registry identity, fingerprints, runtime probes, smoke output, closure results, and Gate 1 verification.
 
 ## Run
 
