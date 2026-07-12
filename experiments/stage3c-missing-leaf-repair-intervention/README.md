@@ -1,26 +1,55 @@
 # Stage 3-C Phase 4I: Missing Registered Leaf Repair Intervention
 
-> **Status:** ACTIVE — authoritative Termux rerun pending
-> **Authority:** `docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md`
+> **Status:** FROZEN PASS
+> **Target:** Termux on Android arm64
 > **Product acceptance:** not claimed by this workflow
 
-## Intervention question
-
-> Can an absent registered regular or symlink leaf be repaired to the frozen manifest identity while preserving the existing crash-recovery contract?
-
-## Confirmed defect
-
-The frozen engine plans an absent registered non-directory as `repair`, records a `replaced` intent, and attempts to move a nonexistent source to backup. Authoritative Gate 3A0 evidence produced `FileNotFoundError`, a retained `ROLLED_BACK` journal, a retained registry row, and an absent leaf.
-
-Frozen diagnostic evidence:
+## Frozen result
 
 ```text
-docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+PHASE4I_EXACT_REINSTALL_NOOP=PASS
+PHASE4I_IN_PLACE_REPAIR_REGRESSION=4/4 PASS
+PHASE4I_MISSING_LEAF_REPAIR=2/2 PASS
+PHASE4I_CRASH_RECOVERY=12/12 PASS
+PHASE4I_INTERVENTION_VERIFICATION=51/51 PASS
+PHASE4I_GATE3A_PRODUCT_ACCEPTANCE=NOT_CLAIMED
+STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION=PASS
 ```
 
-## Candidate correction
+Accepted archive:
 
-The frozen source remains available unchanged. The intervention adapter changes only the execution semantics of a `replaced` intent whose registered source is absent:
+```text
+stage3c-phase4-missing-leaf-repair-intervention-results-20260712-180237.tgz
+sha256
+  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
+size
+  23,980,515 bytes
+members
+  580
+```
+
+Result identity:
+
+```text
+root result-index sha256
+  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
+indexed files
+  523/523 exact
+scenario checks
+  39/39
+independent verifier
+  51/51
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+```
+
+## Frozen correction
+
+The accepted correction changes only an absent registered non-directory repair:
 
 ```text
 existing mismatch
@@ -42,54 +71,36 @@ experiments/stage3c-installation-recovery/
 └── recovery_engine_missing_leaf.py
 ```
 
-The adapter reuses the frozen `created` rollback behavior:
+No journal schema, registry schema, manifest, archive, ownership, uninstall, or addon policy changed.
+
+## Accepted success matrix
 
 ```text
-created INTENT before publish
-  recovery sees no path and performs no removal
-
-created APPLIED after publish
-  recovery removes the published path
-
-COMMITTED
-  recovery finalizes the transaction and preserves the repaired path
+exact-noop                  PASS
+regular-bytes               PASS
+regular-mode                PASS
+regular-wrong-type          PASS
+symlink-target              PASS
+missing-regular             PASS
+missing-symlink             PASS
 ```
 
-No journal schema, recovery operation, registry schema, manifest, archive, ownership, uninstall, or addon-policy change is introduced.
-
-## Success scenarios
-
-Seven independent roots:
+All repair scenarios produced:
 
 ```text
-exact-noop
-regular-bytes
-regular-mode
-regular-wrong-type
-symlink-target
-missing-regular
-missing-symlink
+pre-verify one bad path
+noop 713 / repair 1
+mutation count 2
+post-verify PASS
+registry unchanged
+portable payload exact
+transaction residue 0
+final leaf exact
 ```
 
-Required missing-leaf result:
+## Accepted crash matrix
 
-```text
-pre-verify                  one bad path
-install                     PASS
-install actions             noop 713 / repair 1
-mutation count              2
-post-verify                 PASS
-registry identity           unchanged
-portable payload identity   f860caf... exact
-transaction residue         0
-final leaf                  exact manifest identity
-```
-
-The four existing mismatch classes and exact NOOP are regression controls.
-
-## Crash-recovery matrix
-
-Each missing leaf type is tested at six boundaries:
+Both missing leaf types passed at:
 
 ```text
 prepared
@@ -100,116 +111,32 @@ mutation-2
 committed
 ```
 
-Total crash scenarios:
-
-```text
-2 leaf types × 6 boundaries = 12
-```
-
-Expected pre-commit recovery:
-
-```text
-prepared
-  mutations []
-  restored_count 0
-
-intent-1
-  created INTENT
-  restored_count 0
-
-mutation-1
-  created APPLIED
-  restored_count 1
-
-intent-2
-  created APPLIED + registry INTENT
-  restored_count 2
-
-mutation-2
-  created APPLIED + registry APPLIED
-  restored_count 2
-
-all pre-commit cases
-  ROLLED_BACK
-  original missing state restored
-  prior registry exact
-  second recovery NOOP_ROLLED_BACK
-```
-
-Expected committed recovery:
-
-```text
-journal COMMITTED
-recover FINALIZED_COMMIT
-repaired leaf exact
-registry exact
-transaction removed
-second recover transaction_count 0
-```
+Pre-commit recovery restored the original missing state and prior registry. Committed recovery preserved the repaired leaf and cleaned the transaction.
 
 ## Verification
 
 ```text
-scenario runner checks       39
-independent verifier checks  51
+independent roots            19/19 inode-separated
+scenario runner checks       39/39
+independent verifier checks  51/51
+generated JSON canonical     157/157
+raw process cross-check      exact
 ```
 
-The independent verifier reopens raw process records, engine JSON, journal inventories, clone inode evidence, final candidate identities, and registry and portable fingerprints.
-
-## Run
-
-```sh
-cd "$HOME/projects/cpython-android-cli"
-
-git fetch origin agent/phase4-missing-leaf-repair-intervention
-git switch --detach origin/agent/phase4-missing-leaf-repair-intervention
-
-git log -1 --oneline
-
-PHASE4_ARCHIVE="$HOME/Downloads/stage3c-phase4-integrated-durability-results-20260712-082135.tgz"
-PHASE4_EXTRACT="$PREFIX/tmp/stage3c-phase4-integrated-durability-accepted"
-
-printf '%s  %s\n' \
-  '76bb78f200d9836d96f677cc1eca1e2f1483186f3655efa17a8e1f2361bd0187' \
-  "$PHASE4_ARCHIVE" | sha256sum -c -
-
-rm -rf "$PHASE4_EXTRACT"
-mkdir -p "$PHASE4_EXTRACT"
-tar xzf "$PHASE4_ARCHIVE" -C "$PHASE4_EXTRACT"
-
-PHASE4_RESULTS="$(find "$PHASE4_EXTRACT" \
-  -type d \
-  -path '*/results/termux/stage3c-phase4-integrated-durability' \
-  -print -quit)"
-
-test -n "$PHASE4_RESULTS"
-
-PHASE4_RESULTS="$PHASE4_RESULTS" \
-  bash experiments/stage3c-missing-leaf-repair-intervention/run-missing-leaf-repair-intervention.sh
-```
-
-## Expected markers
+## Next boundary
 
 ```text
-PHASE4I_EXACT_REINSTALL_NOOP=PASS
-PHASE4I_IN_PLACE_REPAIR_REGRESSION=4/4 PASS
-PHASE4I_MISSING_LEAF_REPAIR=2/2 PASS
-PHASE4I_CRASH_RECOVERY=12/12 PASS
-PHASE4I_INTERVENTION_VERIFICATION=51/51 PASS
-PHASE4I_GATE3A_PRODUCT_ACCEPTANCE=NOT_CLAIMED
-STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION=PASS
+Phase 5 Gate 3A product acceptance
 ```
 
-## Upload
+The next workflow must exercise all six repair classes and then run the complete installed-runtime behavior contract with the corrected engine.
 
-```sh
-RESULTS="$PWD/results/termux/stage3c-phase4-missing-leaf-repair-intervention"
-ARCHIVE="$HOME/Downloads/stage3c-phase4-missing-leaf-repair-intervention-results-$(date +%Y%m%d-%H%M%S).tgz"
+Handoff:
 
-tar czf "$ARCHIVE" "$RESULTS"
-printf 'upload: %s\n' "$ARCHIVE"
+```text
+docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
 ```
 
 ## Claim boundary
 
-A PASS proves only the candidate intervention behavior and crash recovery matrix. Gate 3A product acceptance, post-repair runtime/HTTPS/uv/native closure, and Gate 1 or Gate 2 regression remain open.
+This intervention PASS proves the correction and recovery matrix only. Post-repair runtime, HTTPS, uv, native closure, extension imports, and Gate 2 relocation regression remain open.
