@@ -1,12 +1,11 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — missing registered leaf repair intervention
-> **Input:** frozen Stage 3-C product identities, Gates 1–2, and frozen Gate 3A0 diagnostic evidence
+> **Status:** ACTIVE — Gate 3A corrected reinstall and repair product acceptance
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
 
-> Does the installed runtime remain exact, functional, relocatable, repairable, composable, and safely removable through the transaction and recovery engine?
+> Does the installed runtime remain exact, functional, relocatable, repairable, composable, and safely removable through the accepted transaction and recovery engine?
 
 ## Frozen product identities
 
@@ -39,15 +38,14 @@ native closure
 Gate 1    installed runtime baseline                               FROZEN
 Gate 2    complete installed-root relocation                      FROZEN
 Gate 3A0  reinstall and repair diagnostic census                  FROZEN
-Phase 4I  missing registered non-directory repair intervention    ACTIVE
-Gate 3A   accepted same-version reinstall and repair              BLOCKED
+Phase 4I  missing registered non-directory repair intervention    FROZEN
+Gate 3A   corrected reinstall and repair product acceptance       ACTIVE
+Gate 2R   corrected-engine relocation regression                  DEFERRED
 Gate 3B   owned/unowned preservation boundaries                   DEFERRED
 Gate 3C   addon lifecycle and dependency enforcement              DEFERRED
 Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
 Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
-
-`Gate 3A0` is diagnostic authority. Its PASS classifies existing behavior and does not establish product acceptance.
 
 ## Frozen Gate 1
 
@@ -60,12 +58,6 @@ result-index sha256
 
 verifier
   80/80 PASS
-
-install / registry
-  714 creates
-  715 mutations
-  1 artifact
-  714 owned rows
 
 runtime
   Python 3.14.6
@@ -103,12 +95,6 @@ Gate 2 verifier
 
 complete-root fingerprint
   aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
-
-complete-root shape
-  719 entries
-  60 directories
-  656 regular files
-  3 symlinks
 ```
 
 Evidence:
@@ -127,25 +113,19 @@ result-index sha256
   a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
 
 scenario checks
-  17/17 PASS
+  17/17
 
 independent verifier
-  31/31 PASS
-
-Phase 4 copied input
-  324/324 exact
+  31/31
 ```
 
-Frozen classification:
+Diagnostic classification of the prior engine:
 
 ```text
-exact same-version reinstall            supported NOOP
-regular byte mismatch                   supported repair
-regular mode mismatch                   supported repair
-symlink target mismatch                 supported repair
-registered regular wrong type           supported repair
-registered regular absent               unsupported
-registered symlink absent               unsupported
+exact reinstall                       supported NOOP
+four existing-path repairs            supported
+missing regular repair                unsupported
+missing symlink repair                unsupported
 ```
 
 Evidence:
@@ -154,145 +134,152 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
-## Active Phase 4I intervention
-
-### Confirmed defect
-
-For an absent registered regular or symlink leaf, the frozen engine executes:
+## Frozen Phase 4I intervention
 
 ```text
-planner
-  repair
+archive sha256
+  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
 
-journal intent
-  replaced
+result-index sha256
+  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 
-execution
-  durable_move(absent source, backup)
-  os.replace(absent source, backup)
-  FileNotFoundError
+scenario checks
+  39/39
 
-recovery
-  APPLYING → ROLLED_BACK
-  restored_count 0
-  retained ROLLED_BACK transaction
+independent verifier
+  51/51
 
-final state
-  registry row retained
-  leaf absent
-  verify still fails
+success/regression roots
+  7/7
+
+crash boundaries
+  12/12
 ```
 
-### Authorized correction
+Accepted correction:
 
 ```text
-registered path exists and differs
-  keep replaced mutation
+existing mismatch
+  replaced mutation
   backup current path
-  publish frozen member
 
-registered path is absent
-  use created mutation
-  do not backup a nonexistent source
-  publish frozen member
+missing registered non-directory
+  created mutation
+  skip nonexistent backup move
 ```
 
-The existing `created` rollback path must be reused. No new journal schema or recovery operation is authorized.
+The correction adds no journal schema, registry schema, manifest, archive, ownership, uninstall, or addon policy.
 
-Decision:
+Evidence:
 
 ```text
-docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
 ```
 
-### Required success scenarios
+## Active Gate 3A product acceptance
+
+### Product question
+
+> After every accepted same-version repair class, does the corrected installed runtime retain exact ownership identity and the complete Gate 1 behavior contract?
+
+### Required classes
 
 ```text
-missing registered regular repair
-missing registered symlink repair
-exact same-version NOOP regression
-four in-place repair regressions
-```
-
-Successful missing-leaf repair must produce:
-
-```text
-install PASS
-one repair action or explicitly named missing-repair action
-exact manifest path identity
-registry identity exact
-portable payload identity restored
-engine verify PASS
-no transaction residue
-```
-
-### Required crash/recovery scenarios
-
-At minimum:
-
-```text
-prepared before intent
-created intent recorded before publish
-published leaf before registry mutation
-registry mutation before commit
-committed before cleanup
-```
-
-Expected recovery:
-
-```text
-pre-commit crash
-  restore original missing state
-  restore prior registry
-
-post-commit crash
-  preserve repaired leaf
-  preserve committed registry
-```
-
-### Non-authorized changes
-
-```text
-manifest or archive identity
-registry schema
-artifact identity
-ownership policy
-uninstall preservation policy
-addon dependency policy
-new generic repair subsystem
-```
-
-## Mandatory revalidation order
-
-```text
-1. static and synthetic intervention validation
-2. authoritative Termux intervention scenarios
-3. Gate 3A product acceptance
-4. Gate 1 regression if accepted engine input identity changes
-5. Gate 2 regression if accepted engine input identity changes
-6. Gate 3B may then open
-```
-
-Prior target evidence may be reused only where the accepted input identity and exercised code path are proven unaffected.
-
-## Deferred Gate 3A product acceptance
-
-Gate 3A product acceptance must prove:
-
-```text
-exact reinstall NOOP
-all supported in-place repair classes
+exact same-version reinstall NOOP
+regular byte repair
+regular mode repair
+registered regular wrong-type repair
+symlink target repair
 missing regular repair
 missing symlink repair
-post-repair runtime behavior
-HTTPS
-uv
-native closure
-extension imports
+```
+
+### Scenario isolation
+
+Use one fresh corrected-engine seed and independent roots for all six repairs.
+
+Also use one sequential acceptance root:
+
+```text
+fresh install
+→ exact reinstall NOOP
+→ six corruption/repair cycles
+→ complete runtime validation
+```
+
+All roots must be inode-separated from the seed.
+
+### Per-repair requirements
+
+```text
+intentional mutation evidence
+pre-repair verify exactly one bad path
+install actions noop 713 / repair 1
+mutation count 2
+post-repair verify PASS
+registry bytes unchanged
+portable fingerprint f860caf... exact
+strict payload identity restored
+transaction residue 0
+candidate exact to manifest and source archive
+unaffected-path identity exact
+```
+
+### Full corrected-runtime requirements
+
+After all repairs, the sequential acceptance root must prove:
+
+```text
+Python 3.14.6
+Android aarch64
+SOABI cpython-314-aarch64-linux-android
+MULTIARCH aarch64-linux-android
+sys.prefix and base_prefix exact
+sysconfig paths inside installed prefix
+HTTPS 200
+smoke-termux PASS
+uv venv PASS
+uv run anyio PASS
+native closure 81 ELF / 329 edges / 0 unresolved
+system SONAME dlopen 5/5
+extension imports 67/67
+engine verify PASS
+registry 1 artifact / 714 owned rows
+portable payload exact
 no transaction residue
 ```
 
-## Deferred Gate 3B preservation
+### Gate 1 regression
+
+The accepted correction changes engine implementation identity. Therefore Gate 3A acceptance must include a complete Gate 1-equivalent corrected-engine regression. Prior Gate 1 evidence alone is insufficient.
+
+### Gate 2 boundary
+
+Corrected-engine relocation remains a separate Gate 2R regression unless the acceptance workflow explicitly relocates the complete root and repeats destination validation.
+
+### Independent verification
+
+The verifier must reopen raw engine outputs, mutation records, registry bytes, fingerprints, runtime probes, uv results, native closure outputs, and result-index coverage.
+
+Scenario `pass` values and console markers are not authority.
+
+Handoff:
+
+```text
+docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+```
+
+## Deferred Gate 2R
+
+```text
+complete corrected-engine installation-root move
+registry byte exact
+portable and strict identity exact
+full destination runtime validation
+zero stale source references
+```
+
+## Deferred Gate 3B
 
 ```text
 modified owned regular leaf
@@ -302,7 +289,7 @@ unowned sentinel directory
 policy derived from the transaction contract
 ```
 
-## Deferred Gate 3C addons
+## Deferred Gate 3C
 
 ```text
 runtime-base
@@ -313,12 +300,11 @@ runtime-base
 → runtime-base revalidation
 ```
 
-## Deferred Gate 3D uninstall
+## Deferred Gate 3D
 
 ```text
 runtime-base-only state
 approved unowned sentinels
-frozen-engine uninstall
 owned payload removal
 unowned preservation
 registry transition
@@ -332,7 +318,18 @@ Upgrade and downgrade remain deferred until a second complete frozen product ide
 
 ## Non-reopening rule
 
-The active intervention may change only the registered missing non-directory repair execution path and directly required scenario/verifier code.
+Gate 3A may add orchestration and independent verification around the accepted correction only.
+
+It must not broaden:
+
+```text
+journal schema
+registry schema
+manifest or archive identity
+ownership policy
+uninstall policy
+addon dependency policy
+```
 
 Any broader change requires a new authority decision.
 
