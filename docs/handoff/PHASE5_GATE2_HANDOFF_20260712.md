@@ -4,6 +4,7 @@
 > **Target:** Termux on Android arm64
 > **Current gate:** Stage 3-C Phase 5 Gate 2
 > **Authority:** frozen repository contracts plus accepted uploaded TGZ evidence
+> **Correction authority:** `PHASE5_GATE2_CORRECTION_20260712.md`
 
 ## Executive state
 
@@ -17,7 +18,7 @@ Stage 3-C Phase 5 Gate 1
 
 Stage 3-C Phase 5 Gate 2
   ACTIVE
-  authoritative Termux result pending
+  corrected authoritative Termux rerun pending
 ```
 
 Gate 1 final evidence is recorded in:
@@ -26,9 +27,13 @@ Gate 1 final evidence is recorded in:
 docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 ```
 
-The historical identity rows in `STAGE3C_EVIDENCE_LEDGER.md` remain authoritative. Its final “Active next boundary — Phase 5 Gate 1” section is superseded by this handoff and the current Phase 5 scope.
+The first Gate 2 target failure is preserved in:
 
-The first Gate 1 target failure remains preserved separately and must not be rewritten as a pass.
+```text
+docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_FAILURE.md
+```
+
+The first run passed every relocation and destination-runtime component but exposed an incorrect `717` complete-root count in the Gate 2 verifier. The corrected shape is `719` entries.
 
 ## Gate 1 frozen identity
 
@@ -64,8 +69,21 @@ The workflow must move:
 
 ```text
 installation/
-├── prefix/
-└── .cpython-android-cli/registry.json
+├── prefix/                              714 payload entries
+└── .cpython-android-cli/
+    ├── lock
+    ├── registry.json
+    └── transactions/
+```
+
+Expected complete-root shape:
+
+```text
+entries          719
+directories       60
+regular files    656
+symlinks            3
+special             0
 ```
 
 The workflow must not claim success by:
@@ -74,6 +92,7 @@ The workflow must not claim success by:
 moving only prefix/
 reassembling a new prefix at location B
 synthesizing or rewriting the registry
+omitting the lock or transactions root
 using the Stage 3-B promoted prefix as the runtime under test
 skipping the Gate 1 80-check prerequisite
 accepting console markers without machine evidence
@@ -102,19 +121,20 @@ The runner:
 7. reruns runtime, HTTPS, smoke, uv, closure, and extension probes
 8. reruns the complete Gate 1 80-check verifier against B
 9. scans the moved tree and B probe outputs for location-A references
-10. runs a 46-check Gate 2 verifier
+10. runs a corrected 46-check Gate 2 verifier
 ```
 
-## First action
+## Corrected rerun
 
 Use a fresh extraction of the accepted Phase 4 TGZ.
 
 ```sh
 cd "$HOME/projects/cpython-android-cli"
 
-git pull --ff-only
+git fetch origin agent/phase5-gate2-installed-relocation
+git switch --detach origin/agent/phase5-gate2-installed-relocation
 
-git log -3 --oneline
+git log -1 --oneline
 
 PHASE4_ARCHIVE="$HOME/Downloads/stage3c-phase4-integrated-durability-results-20260712-082135.tgz"
 PHASE4_EXTRACT="$PREFIX/tmp/stage3c-phase4-integrated-durability-accepted"
@@ -161,7 +181,7 @@ STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION=PASS
 
 ```sh
 RESULTS="$PWD/results/termux/stage3c-phase5-installed-runtime-relocation"
-ARCHIVE="$HOME/Downloads/stage3c-phase5-installed-runtime-relocation-results-$(date +%Y%m%d-%H%M%S).tgz"
+ARCHIVE="$HOME/Downloads/stage3c-phase5-installed-runtime-relocation-root-shape-corrected-results-$(date +%Y%m%d-%H%M%S).tgz"
 
 tar czf "$ARCHIVE" "$RESULTS"
 printf 'upload: %s\n' "$ARCHIVE"
@@ -178,6 +198,7 @@ workflow return codes
 baseline Gate 1 verifier 80/80
 relocated Gate 1 verifier 80/80
 Gate 2 verifier 46/46
+complete-root shape 719/60/656/3
 same device and preserved installation-root inode
 location A absent and location B present
 installation-root fingerprint exact across move and probes
@@ -196,7 +217,7 @@ absence of pycache and special paths
 canonical generated JSON
 ```
 
-If Gate 2 fails, preserve the TGZ and write a dedicated failure evidence document before changing the implementation.
+If Gate 2 fails, preserve the TGZ before changing the implementation.
 
 ## Gate 2 claim boundary
 
