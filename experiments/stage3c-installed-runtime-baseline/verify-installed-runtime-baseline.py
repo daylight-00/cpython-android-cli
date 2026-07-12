@@ -9,8 +9,11 @@ from typing import Any
 
 EXPECTED_PHASE4_RESULT_INDEX = "878ed426720c48f8d0240e3e4e141ff3434426a30d3be9230da23dd5eba0a4ce"
 EXPECTED_RUNTIME_FINGERPRINT = "9c6b8ee205ab3d41f79fc0cf0a817730af091b3af81db4bde7d1f44449e97796"
+EXPECTED_PORTABLE_FINGERPRINT = "f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978"
+EXPECTED_PORTABLE_FINGERPRINT_KIND = "stage3c-installed-payload-portable-v1"
 EXPECTED_ARTIFACT_ID = "cpython-android-cli-3.14.6-android24-aarch64-runtime-base"
 EXPECTED_TYPES = {"directory": 57, "regular": 654, "symlink": 3}
+EXPECTED_PORTABLE_TYPES = {**EXPECTED_TYPES, "special": 0}
 
 
 def canonical_json_bytes(value: Any) -> bytes:
@@ -29,6 +32,22 @@ def sha256_file(path: Path) -> str:
     with path.open("rb") as stream:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
+    return digest.hexdigest()
+
+
+def portable_fingerprint_from_entries(entries: list[dict[str, Any]]) -> str:
+    digest = hashlib.sha256()
+    for entry in sorted(entries, key=lambda value: value["payload_path"]):
+        record = (
+            entry["payload_path"],
+            entry["type"],
+            entry["mode"],
+            str(entry["size"]) if entry.get("size") is not None else "",
+            entry.get("sha256") or "",
+            entry.get("symlink_target") or "",
+        )
+        digest.update("\t".join(record).encode("utf-8", "surrogateescape"))
+        digest.update(b"\n")
     return digest.hexdigest()
 
 
@@ -74,6 +93,8 @@ def main() -> int:
     parser.add_argument("--registry", required=True, type=Path)
     parser.add_argument("--installed-before", required=True, type=Path)
     parser.add_argument("--installed-after", required=True, type=Path)
+    parser.add_argument("--installed-portable-before", required=True, type=Path)
+    parser.add_argument("--installed-portable-after", required=True, type=Path)
     parser.add_argument("--input-before", required=True, type=Path)
     parser.add_argument("--input-after", required=True, type=Path)
     parser.add_argument("--base-probe", required=True, type=Path)
@@ -92,6 +113,8 @@ def main() -> int:
     registry = read_json(args.registry.resolve())
     installed_before = read_json(args.installed_before.resolve())
     installed_after = read_json(args.installed_after.resolve())
+    installed_portable_before = read_json(args.installed_portable_before.resolve())
+    installed_portable_after = read_json(args.installed_portable_after.resolve())
     input_before = read_json(args.input_before.resolve())
     input_after = read_json(args.input_after.resolve())
     base = read_json(args.base_probe.resolve())
@@ -125,6 +148,7 @@ def main() -> int:
         kind: sum(1 for entry in owned if entry["type"] == kind)
         for kind in EXPECTED_TYPES
     }
+    manifest_portable_fingerprint = portable_fingerprint_from_entries(owned)
     sysconfig_paths = base.get("sysconfig_paths", {})
 
     required_closure_outputs = {
@@ -210,18 +234,38 @@ def main() -> int:
         "registry_paths_unique": len(registry_by_path) == 714,
         "registry_path_set_exact": set(registry_by_path) == set(expected_by_path),
         "registry_rows_exact": registry_by_path == expected_by_path,
-        "installed_before_pass": installed_before.get("pass") is True,
-        "installed_after_pass": installed_after.get("pass") is True,
+        "installed_before_pass": installed_before.get("pass") is True
+        and installed_portable_before.get("pass") is True,
+        "installed_after_pass": installed_after.get("pass") is True
+        and installed_portable_after.get("pass") is True,
         "installed_entry_count_714": installed_before.get("entry_count") == 714
-        and installed_after.get("entry_count") == 714,
-        "installed_fingerprint_exact": installed_before.get("fingerprint")
-        == EXPECTED_RUNTIME_FINGERPRINT,
+        and installed_after.get("entry_count") == 714
+        and installed_portable_before.get("entry_count") == 714
+        and installed_portable_after.get("entry_count") == 714
+        and installed_portable_before.get("type_counts") == EXPECTED_PORTABLE_TYPES
+        and installed_portable_after.get("type_counts") == EXPECTED_PORTABLE_TYPES,
+        "installed_portable_fingerprint_exact": manifest_portable_fingerprint
+        == EXPECTED_PORTABLE_FINGERPRINT
+        and installed_portable_before.get("fingerprint_kind")
+        == EXPECTED_PORTABLE_FINGERPRINT_KIND
+        and same_path(installed_portable_before.get("root"), prefix)
+        and installed_portable_after.get("fingerprint_kind")
+        == EXPECTED_PORTABLE_FINGERPRINT_KIND
+        and same_path(installed_portable_after.get("root"), prefix)
+        and installed_portable_before.get("fingerprint") == EXPECTED_PORTABLE_FINGERPRINT
+        and installed_portable_after.get("fingerprint") == EXPECTED_PORTABLE_FINGERPRINT,
         "installed_not_mutated": installed_before.get("fingerprint")
-        == installed_after.get("fingerprint"),
+        == installed_after.get("fingerprint")
+        and installed_portable_before.get("fingerprint")
+        == installed_portable_after.get("fingerprint"),
         "installed_pycache_zero": installed_before.get("pycache_paths") == []
-        and installed_after.get("pycache_paths") == [],
+        and installed_after.get("pycache_paths") == []
+        and installed_portable_before.get("pycache_paths") == []
+        and installed_portable_after.get("pycache_paths") == [],
         "installed_special_zero": installed_before.get("special_paths") == []
-        and installed_after.get("special_paths") == [],
+        and installed_after.get("special_paths") == []
+        and installed_portable_before.get("special_paths") == []
+        and installed_portable_after.get("special_paths") == [],
         "base_probe_pass": base.get("pass") is True,
         "base_probe_identity": same_path(base.get("executable"), prefix / "bin/python")
         and same_path(base.get("prefix"), prefix)
@@ -304,6 +348,8 @@ def main() -> int:
                 args.registry.resolve(),
                 args.installed_before.resolve(),
                 args.installed_after.resolve(),
+                args.installed_portable_before.resolve(),
+                args.installed_portable_after.resolve(),
                 args.base_probe.resolve(),
                 args.venv_probe.resolve(),
                 args.uv_run_probe.resolve(),
@@ -320,16 +366,18 @@ def main() -> int:
         "checks": checks,
         "failed_checks": failed,
         "observed": {
+            "phase4_result_index_sha256": sha256_file(phase4 / "result-index.json"),
             "manifest_owned_count": len(owned),
             "registry_owned_count": len(registry_rows),
-            "installed_fingerprint": installed_before.get("fingerprint"),
+            "installed_strict_fingerprint": installed_before.get("fingerprint"),
+            "installed_portable_fingerprint": installed_portable_before.get("fingerprint"),
             "elf_object_count": inventory.get("elf_object_count"),
             "needed_edge_count": inventory.get("needed_edge_count"),
             "extension_import_pass_count": extension_probe.get("import_pass_count"),
             "https_status": base.get("https_status"),
         },
         "claim_boundary": {
-            "proved": "The frozen runtime-base was installed through the frozen Phase 4 engine and retained exact registry, tree, runtime, HTTPS, uv, native-closure, and extension-import behavior on its original installation path.",
+            "proved": "The frozen runtime-base was installed through the frozen Phase 4 engine and retained exact registry, portable payload identity, strict before/after immutability, runtime, HTTPS, uv, native-closure, and extension-import behavior on its original installation path.",
             "not_proved": "Relocation, later reinstall and repair lifecycle, exact uninstall preservation, upgrade, and downgrade remain separate gates.",
         },
     }
