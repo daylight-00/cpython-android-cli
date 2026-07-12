@@ -6,11 +6,12 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md
-3. ../evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
-4. ../stages/STAGE3C_PHASE5_SCOPE.md
-5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-6. ../evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
+2. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
+4. PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md
+5. ../evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
+6. ../stages/STAGE3C_PHASE5_SCOPE.md
+7. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
 ```
 
 ## Current state
@@ -39,6 +40,7 @@ Phase 5 Gate 3B0 preservation diagnostic
 
 Phase 5 Gate 3B preserve-and-report product acceptance
   ACTIVE
+  authoritative Termux run pending
 ```
 
 ## Frozen Gate 3B0 identity
@@ -69,24 +71,53 @@ unowned sentinel + uninstall
 
 The frozen installation contract explicitly specifies preserve-and-report, remove-owned-directory-only-when-empty, preserve structural namespaces, and preserve unowned descendants. No intervention is required.
 
-## Active Gate 3B requirements
+## Active Gate 3B topology
+
+```text
+happy reinstall roots          4
+happy uninstall roots          4
+crash-recovery roots          12
+total inode-separated roots   20
+scenario checks               29
+independent checks            62
+```
+
+Crash boundaries:
+
+```text
+PREPARED                 rc 90
+late APPLYING            rc 93
+COMMITTED                rc 92
+```
+
+Late APPLYING uses the registry-intent ordinal:
+
+```text
+happy mutation_count
++ preserved registered-directory count
+```
+
+It does not use `mutation_count - 1`.
+
+## Acceptance requirements
 
 ```text
 exact preserved-path reporting
 modified-leaf residual identity
 unowned sentinel residual identity
 registry 1/714 → 0/0
-matching owned leaves removed
+matching owned paths removed
 only approved parent directories preserved
 transaction residue 0
 pre-commit rollback
 committed recovery
 idempotent second recovery
+reinstall enforcement regressions
 ```
 
 ## Identity boundary
 
-Registry-owned identity and unowned residual identity are separate evidence surfaces. An unowned child must not be treated as a mutation of an owned directory whose registry identity is type and mode only.
+Registry-owned identity and residual identity are separate evidence surfaces. An unowned child must not be treated as a mutation of an owned directory whose registry identity is type and mode only.
 
 ## Termux execution policy
 
@@ -94,4 +125,4 @@ All target-only workflows must use one wrapper that verifies accepted inputs, pe
 
 ## Authority rule
 
-Only a complete independently inspected Termux TGZ can close an active target gate. Console markers and scenario-level `pass` fields are insufficient.
+Only a complete independently inspected Termux TGZ can close Gate 3B. Console markers and scenario-level `pass` fields are insufficient.
