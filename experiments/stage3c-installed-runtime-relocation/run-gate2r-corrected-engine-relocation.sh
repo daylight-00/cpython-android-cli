@@ -14,13 +14,13 @@ FROZEN_RELOCATION="$PROJECT_ROOT/experiments/stage3c-installed-runtime-relocatio
 ENGINE="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_engine_missing_leaf.py"
 OPS="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_operations_missing_leaf.py"
 VERIFIER="$SCRIPT_DIR/verify-gate2r-corrected-engine-relocation.py"
-PATCH_DIR="$WORK_DIR/patched-tools"
+PATCH_DIR="${PREFIX:-/data/data/com.termux/files/usr}/tmp/stage3c-phase5-gate2r-patched-$$"
 PATCHED_BASELINE="$PATCH_DIR/run-installed-runtime-baseline.sh"
 PATCHED_RELOCATION="$PATCH_DIR/run-installed-runtime-relocation.sh"
 PHASE4_RESULTS="$GATE3A_RESULTS/input/phase4"
 for f in "$GATE3A_RESULTS/result-index.json" "$GATE3A_RESULTS/verification.json" "$GATE3A_RESULTS/workflow-status.json" "$PHASE4_RESULTS/result-index.json" "$FROZEN_BASELINE" "$FROZEN_RELOCATION" "$ENGINE" "$OPS" "$VERIFIER"; do [[ -f "$f" ]] || { echo "ERROR: missing $f" >&2; exit 2; }; done
-rm -rf "$RESULTS_DIR" "$WORK_DIR"; mkdir -p "$RESULTS_DIR/input/gate3a" "$PATCH_DIR"; cp -a "$GATE3A_RESULTS"/. "$RESULTS_DIR/input/gate3a"/
-"$TOOL_PYTHON" -I -B -S - "$FROZEN_BASELINE" "$FROZEN_RELOCATION" "$PATCHED_BASELINE" "$PATCHED_RELOCATION" "$RESULTS_DIR/patch-authority.json" <<'PY'
+rm -rf "$RESULTS_DIR" "$WORK_DIR" "$PATCH_DIR"; mkdir -p "$RESULTS_DIR" "$PATCH_DIR"
+"$TOOL_PYTHON" -I -B -S - "$FROZEN_BASELINE" "$FROZEN_RELOCATION" "$PATCHED_BASELINE" "$PATCHED_RELOCATION" "$PATCH_DIR/patch-authority.json" <<'PY'
 import json,sys
 from pathlib import Path
 base=Path(sys.argv[1]).read_text(); rel=Path(sys.argv[2]).read_text()
@@ -36,7 +36,7 @@ Path(sys.argv[3]).write_text(base); Path(sys.argv[4]).write_text(rel)
 r={'schema_version':1,**counts}; r['pass']=all(v==1 for v in counts.values()); Path(sys.argv[5]).write_text(json.dumps(r,indent=2,sort_keys=True)+'\n'); print(json.dumps(r,indent=2,sort_keys=True)); raise SystemExit(0 if r['pass'] else 97)
 PY
 chmod +x "$PATCHED_BASELINE" "$PATCHED_RELOCATION"
-"$TOOL_PYTHON" -I -B -S - "$ENGINE" "$OPS" "$RESULTS_DIR/engine-authority.json" <<'PY'
+"$TOOL_PYTHON" -I -B -S - "$ENGINE" "$OPS" "$PATCH_DIR/engine-authority.json" <<'PY'
 import hashlib,json,sys
 from pathlib import Path
 e=Path(sys.argv[1]).resolve(); o=Path(sys.argv[2]).resolve(); r={'schema_version':1,'engine_path':str(e),'operations_path':str(o),'engine_sha256':hashlib.sha256(e.read_bytes()).hexdigest(),'operations_sha256':hashlib.sha256(o.read_bytes()).hexdigest()}; r['pass']=r['engine_sha256']=='33b55d94714fb96f401caefe0e72d6587da955a9d0c201f4eb18dfc5193eb87a' and r['operations_sha256']=='61d20c68c7c5234a00328104914b83adc69859acca9791f3b14d9ff969e24021'; Path(sys.argv[3]).write_text(json.dumps(r,indent=2,sort_keys=True)+'\n'); print(json.dumps(r,indent=2,sort_keys=True)); raise SystemExit(0 if r['pass'] else 98)
@@ -48,6 +48,10 @@ set -e
 cat "$RESULTS_DIR/historical-relocation.log"
 cp -a "$RESULTS_DIR/verification.json" "$RESULTS_DIR/historical-relocation-verification.json" 2>/dev/null || true
 cp -a "$RESULTS_DIR/workflow-status.json" "$RESULTS_DIR/historical-workflow-status.json" 2>/dev/null || true
+mkdir -p "$RESULTS_DIR/input/gate3a"
+cp -a "$GATE3A_RESULTS"/. "$RESULTS_DIR/input/gate3a"/
+cp -a "$PATCH_DIR/patch-authority.json" "$RESULTS_DIR/patch-authority.json"
+cp -a "$PATCH_DIR/engine-authority.json" "$RESULTS_DIR/engine-authority.json"
 final_rc=125
 if [[ $historical_rc -eq 0 ]]; then
   set +e; "$TOOL_PYTHON" -I -B -S "$VERIFIER" --results-dir "$RESULTS_DIR" --output "$RESULTS_DIR/verification.json" > "$RESULTS_DIR/gate2r-verifier.log" 2>&1; final_rc=$?; set -e
@@ -77,6 +81,7 @@ for p in sorted(root.rglob('*'),key=lambda x:x.relative_to(root).as_posix()):
  else: raise SystemExit(99)
 r={'schema_version':1,'index_kind':'stage3c-phase5-gate2r-corrected-engine-relocation-result-index','file_count':len(rows),'files':rows}; out.write_text(json.dumps(r,indent=2,sort_keys=True)+'\n'); print(json.dumps(r,indent=2,sort_keys=True))
 PY
+rm -rf "$PATCH_DIR"
 if [[ $historical_rc -ne 0 ]]; then echo "STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION=FAIL rc=$historical_rc"; exit "$historical_rc"; fi
 if [[ $final_rc -ne 0 ]]; then echo "STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION=FAIL rc=$final_rc"; exit "$final_rc"; fi
 echo "GATE2R_HISTORICAL_RELOCATION=46/46 PASS"
