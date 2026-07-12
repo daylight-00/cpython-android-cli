@@ -9,7 +9,7 @@
 status
   FROZEN PASS
 
-accepted archive sha256
+archive sha256
   06aa75b8b7617dc1310e7c0f3b56781b2297d2cc1ad617c1f4045909af9fb6ea
 
 result-index sha256
@@ -20,11 +20,6 @@ verifier
 
 portable payload fingerprint
   f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
-
-payload / registry
-  714 entries
-  1 artifact
-  714 owned rows
 
 runtime
   Python 3.14.6
@@ -48,17 +43,14 @@ docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
 status
   FROZEN PASS
 
-accepted archive sha256
+archive sha256
   8e57399f907aec0c64e033a1d51380f0a27c3806773bc05ed2d88cbd3bf8785e
 
 result-index sha256
   a6607fd9bc88e4cf2776295b0fce329b690b8ccf33aba2426847ba1529e85e3d
 
-Gate 1 at location A
-  80/80 PASS
-
-Gate 1 at location B
-  80/80 PASS
+Gate 1 at A / B
+  80/80 / 80/80
 
 Gate 2 verifier
   46/46 PASS
@@ -71,13 +63,6 @@ complete-root shape
   60 directories
   656 regular files
   3 symlinks
-  0 special
-
-relocation
-  same filesystem
-  inode preserved
-  registry byte exact
-  stale source references 0
 ```
 
 Evidence:
@@ -92,59 +77,26 @@ docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 status
   FROZEN DIAGNOSTIC PASS
 
-product acceptance
-  BLOCKED
-
-accepted archive
-  stage3c-phase5-gate3a-reinstall-repair-diagnostic-results-20260712-172353.tgz
-
-accepted archive sha256
+archive sha256
   9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
-
-archive size
-  23,954,673 bytes
-
-archive members
-  409
 
 result-index sha256
   a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
 
-indexed files
-  365/365 exact
-
 scenario checks
-  17/17 PASS
+  17/17
 
 independent verifier
-  31/31 PASS
-
-Phase 4 copied input
-  324/324 exact
+  31/31
 ```
 
-Frozen classification:
+Frozen prior-engine classification:
 
 ```text
 exact same-version reinstall            supported NOOP
-regular byte mismatch                   supported repair
-regular mode mismatch                   supported repair
-symlink target mismatch                 supported repair
-registered regular wrong type           supported repair
+four existing-path mismatch classes     supported repair
 registered regular absent               unsupported
 registered symlink absent               unsupported
-```
-
-Missing-leaf sequence:
-
-```text
-install                     rc 44 FileNotFoundError
-journal                     APPLYING
-recover 1                   ROLLED_BACK, restored 0
-recover 2                   NOOP_ROLLED_BACK
-post-recovery verify        same missing bad path
-registry row                retained
-leaf                        absent
 ```
 
 Evidence:
@@ -153,31 +105,110 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
-## Active authority
+## Phase 4I — missing registered leaf repair intervention
 
 ```text
-narrow Phase 4 architecture intervention
-  registered missing non-directory repair
+status
+  FROZEN PASS
 
-required correction
-  existing mismatch → replaced mutation
-  missing registered leaf → created mutation
+archive
+  stage3c-phase4-missing-leaf-repair-intervention-results-20260712-180237.tgz
+
+archive sha256
+  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
+
+archive size
+  23,980,515 bytes
+
+archive members
+  580
+
+result-index sha256
+  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
+
+indexed files
+  523/523 exact
+
+scenario checks
+  39/39 PASS
+
+independent verifier
+  51/51 PASS
+
+Phase 4 copied input
+  324/324 exact
 ```
 
-Decision:
+Accepted correction:
 
 ```text
-docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+existing registered mismatch
+  replaced mutation
+  backup current path
+
+missing registered non-directory
+  created mutation
+  skip nonexistent backup move
+```
+
+Success/regression matrix:
+
+```text
+exact reinstall NOOP                 PASS
+existing-path repairs               4/4 PASS
+missing regular/symlink repair      2/2 PASS
+```
+
+Crash matrix:
+
+```text
+regular leaf boundaries             6/6 PASS
+symlink leaf boundaries             6/6 PASS
+all crash boundaries               12/12 PASS
+```
+
+Pre-commit recovery restored the original missing state and prior registry. Committed recovery preserved the repaired leaf and cleaned the transaction.
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+```
+
+## Active boundary
+
+```text
+Phase 5 Gate 3A product acceptance
+```
+
+Required proof:
+
+```text
+exact reinstall NOOP
+six accepted repair classes
+registry and portable identity after every repair
+full post-repair Python runtime behavior
+HTTPS 200
+smoke-termux
+uv venv and uv run
+81/329/0 native closure
+5/5 system SONAME dlopen
+67/67 extension imports
+no transaction residue
+```
+
+Handoff:
+
+```text
+docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
 ```
 
 ## Deferred boundaries
 
 ```text
-Gate 3A product acceptance
+Gate 2 relocation regression under corrected engine
 Gate 3B preservation boundaries
 Gate 3C addon lifecycle and dependencies
 Gate 3D runtime uninstall and final ownership boundary
 Gate 4 upgrade and downgrade
 ```
-
-No later gate may proceed until the intervention and affected downstream regressions are accepted from authoritative Termux evidence.

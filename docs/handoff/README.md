@@ -6,28 +6,29 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
-3. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-4. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
-5. ../stages/STAGE3C_PHASE5_SCOPE.md
-6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-7. STAGE3C_EVIDENCE_LEDGER.md
-8. ../../experiments/stage3c-installed-runtime-lifecycle/README.md
+2. PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+3. ../evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+4. ../stages/STAGE3C_PHASE5_SCOPE.md
+5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+6. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
 
-Historical Gate 3A diagnostic design:
-9. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+Historical intervention authority:
+7. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
+8. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+
+Historical diagnostic authority:
+9. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+10. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+11. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
 
 Frozen Gate 2 evidence:
-10. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-11. PHASE5_GATE3_HANDOFF_20260712.md
+12. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+13. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
 
 ```text
-Stage 3-C Phases 1–4
-  FROZEN except the explicitly authorized missing-leaf repair intervention
-
 Phase 5 Gate 1
   FROZEN 80/80
 
@@ -35,48 +36,42 @@ Phase 5 Gate 2
   FROZEN 46/46
 
 Phase 5 Gate 3A0 diagnostic
-  FROZEN PASS
-  scenario checks 17/17
-  independent verifier 31/31
+  FROZEN 17/17 + 31/31
+
+Phase 4I missing-leaf intervention
+  FROZEN 39/39 + 51/51
 
 Phase 5 Gate 3A product acceptance
-  BLOCKED
-
-active authority
-  narrow Phase 4 registered missing-leaf repair intervention
+  ACTIVE
 ```
 
-## Frozen diagnostic identity
+## Frozen Phase 4I identity
 
 ```text
 archive sha256
-  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
+  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
 
 result-index sha256
-  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
+  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 ```
 
-## Confirmed defect
+## Active Gate 3A target
 
 ```text
-registered missing regular or symlink
-  planned as repair
-  recorded as replaced
-  durable_move(absent source, backup)
-  FileNotFoundError
-  retained ROLLED_BACK journal
-  missing leaf remains absent
+exact reinstall NOOP
+six repair classes
+registry and payload identity after every repair
+full post-repair runtime validation
+HTTPS 200
+uv venv and uv run
+native closure 81/329/0
+system SONAME 5/5
+extension imports 67/67
+no transaction residue
 ```
 
-## Authorized correction
+Gate 2 relocation regression remains separate unless the Gate 3A workflow explicitly performs and validates the move.
 
-```text
-existing mismatching path
-  retain replaced mutation semantics
+## Authority rule
 
-missing registered non-directory
-  use created mutation semantics
-  do not move a nonexistent source
-```
-
-The intervention must preserve all diagnostic failure evidence and remain separate from Gate 3A product acceptance.
+Only a complete independently inspected Termux TGZ can close Gate 3A product acceptance. Scenario-level PASS fields and console markers are insufficient.
