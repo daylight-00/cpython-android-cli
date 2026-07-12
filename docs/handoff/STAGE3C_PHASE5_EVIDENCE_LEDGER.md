@@ -24,12 +24,6 @@ portable fingerprint
 
 Runtime: Python 3.14.6, Android aarch64, HTTPS 200, uv PASS, closure 81/329/0, system SONAME 5/5, extension imports 67/67.
 
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
-```
-
 ## Gate 2 — historical complete-root relocation
 
 ```text
@@ -49,12 +43,6 @@ verifier
   46/46 PASS
 ```
 
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-```
-
 ## Gate 3A0 — reinstall and repair diagnostic
 
 ```text
@@ -69,12 +57,6 @@ result-index sha256
 
 checks
   17/17 + 31/31
-```
-
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 ```
 
 ## Phase 4I — missing registered leaf intervention
@@ -96,12 +78,6 @@ crash boundaries
   12/12
 ```
 
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
-```
-
 ## Gate 3A — corrected reinstall and repair product acceptance
 
 ```text
@@ -114,22 +90,8 @@ archive sha256
 result-index sha256
   a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
 
-repair scenarios
-  29/29
-
-corrected-engine Gate 1
-  80/80
-
-acceptance verifier
-  69/69
-```
-
-Accepted matrix: exact reinstall NOOP; six isolated repairs; six sequential repairs; registry and unaffected-owned identity exact; portable fingerprint exact; zero transaction residue; complete runtime contract PASS.
-
-Evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+checks
+  29/29 repair + 80/80 Gate 1 + 69/69 acceptance
 ```
 
 ## Gate 2R — corrected-engine complete-root relocation
@@ -138,23 +100,11 @@ docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 status
   FROZEN PASS
 
-archive
-  stage3c-phase5-gate2r-corrected-engine-relocation-results-20260712-202419.tgz
-
 archive sha256
   8e2c131567d78a4208e7c8eb02e783a479713f6d867a3e5cd98eae60aa5738a7
 
-archive size
-  72,501,453 bytes
-
-archive members
-  1,727
-
 result-index sha256
   69734a0ba286b9d6b55e8ef4c364dca7cb80bd380080cd6653038040ac51650c
-
-indexed files
-  1,576/1,576 exact
 
 Gate 1 at A / B
   80/80 / 80/80
@@ -162,56 +112,107 @@ Gate 1 at A / B
 historical relocation verifier
   46/46
 
-corrected-engine authority verifier
+corrected-engine verifier
   15/15
-```
-
-Frozen relocation identity:
-
-```text
-same filesystem / inode preserved
-  true / true
 
 complete-root shape
   719 / 60 / 656 / 3
 
 complete-root fingerprint
   aea9a035d55530ab513458f43dbf7604a1f6aa9628eae4218dd050e688c14a30
-
-portable fingerprint
-  f860cafec28cfb5eb91bd8bcc492ca824e1f912afa4614176df1606a1b006978
-
-strict same-tree fingerprint
-  3d61c27a3943930e53ac30035a2c4b77932cfabd17e4994f6370a30408a034f3
-
-stale location-A references
-  0
 ```
+
+## Gate 3B0 — preservation-boundary diagnostic
+
+```text
+status
+  FROZEN DIAGNOSTIC PASS
+
+archive
+  stage3c-phase5-gate3b0-preservation-diagnostic-results-20260712-211837.tgz
+
+archive sha256
+  ed5cb08cc576e74cacac4077cf9c9d7f3164a34913197aae9ef10cc8c113801a
+
+archive size
+  22,701,335 bytes
+
+archive members
+  131
+
+result-index sha256
+  7a8e982a44118dac3f232b2fefb578d22bedc0c7d32a6267ab3cd55c5e8deb27
+
+indexed files
+  110/110 exact
+
+scenario checks
+  16/16
+
+independent verifier
+  40/40
+```
+
+Frozen census:
+
+```text
+reinstall-owned-regular       ENFORCED_REPAIR
+reinstall-owned-symlink       ENFORCED_REPAIR
+reinstall-unowned-file        PRESERVED_NOOP
+reinstall-unowned-directory   PRESERVED_NOOP
+uninstall-owned-regular       PRESERVED_AND_DEREGISTERED
+uninstall-owned-symlink       PRESERVED_AND_DEREGISTERED
+uninstall-unowned-file        UNOWNED_PRESERVED
+uninstall-unowned-directory   UNOWNED_PRESERVED
+```
+
+Contract decision:
+
+```text
+local modification uninstall policy
+  preserve-and-report
+
+modified regular or symlink
+  PRESERVE_AND_REPORT
+
+owned directory
+  REMOVE_ONLY_WHEN_EMPTY
+
+structural parent
+  PRESERVE_NAMESPACE
+
+unowned descendant
+  PRESERVE
+```
+
+The Termux census matches the frozen contract. No intervention is required.
 
 Evidence:
 
 ```text
-docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 ```
 
 ## Active boundary
 
 ```text
-Gate 3B preservation boundaries
+Gate 3B preserve-and-report product acceptance
 ```
 
-Required investigation:
+Required proof:
 
 ```text
-modified owned regular leaf
-modified owned symlink
-unowned sentinel file
-unowned sentinel directory
-install/repair enforcement versus uninstall preservation
-registry and transaction-state consequences
+exact preserved output and residual identity
+registry 1/714 → 0/0
+matching owned leaves removed
+contract-approved parent preservation only
+unowned sentinel preservation
+transaction residue 0
+pre-commit rollback
+committed recovery
+idempotent second recovery
+reinstall enforcement regressions
 ```
-
-Policy must be derived from the frozen transaction contract rather than assumed.
 
 ## Deferred boundaries
 
@@ -219,4 +220,16 @@ Policy must be derived from the frozen transaction contract rather than assumed.
 Gate 3C addon lifecycle and dependencies
 Gate 3D runtime uninstall and final ownership boundary
 Gate 4 upgrade and downgrade
+```
+
+## Evidence paths
+
+```text
+docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 ```
