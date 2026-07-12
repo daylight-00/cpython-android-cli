@@ -72,7 +72,10 @@ The sequential root must pass:
 
 ```text
 six repairs
-registry and strict/portable identity
+registry byte identity
+portable fingerprint f860caf... exact
+strict shape/safety PASS
+strict fingerprint unchanged across runtime probes
 HTTPS 200
 smoke-termux
 uv venv and uv run
@@ -81,6 +84,8 @@ system SONAME 5/5
 extension imports 67/67
 zero transaction residue
 ```
+
+The manifest source-tree fingerprint is not an installed strict fingerprint. Strict output includes mtime and is used only as a same-tree mutation control.
 
 Gate 2 corrected-engine relocation regression remains a separate boundary.
 
