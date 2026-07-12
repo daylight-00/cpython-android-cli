@@ -7,20 +7,21 @@ Use these documents to continue the project without relying on prior chat contex
 ```text
 1. COLLABORATION_PROTOCOL.md
 2. PHASE5_GATE3_HANDOFF_20260712.md
-3. STAGE3C_EVIDENCE_LEDGER.md
-4. ../stages/STAGE3C_SCOPE.md
-5. ../stages/STAGE3C_PHASE5_SCOPE.md
-6. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+3. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+4. STAGE3C_EVIDENCE_LEDGER.md
+5. ../stages/STAGE3C_SCOPE.md
+6. ../stages/STAGE3C_PHASE5_SCOPE.md
+7. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 
 Historical Gate 2 context:
-7. PHASE5_GATE2_CORRECTION_20260712.md
-8. PHASE5_GATE2_HANDOFF_20260712.md
-9. ../../experiments/stage3c-installed-runtime-relocation/README.md
+8. PHASE5_GATE2_CORRECTION_20260712.md
+9. PHASE5_GATE2_HANDOFF_20260712.md
+10. ../../experiments/stage3c-installed-runtime-relocation/README.md
 
 Historical Gate 1 context:
-10. PHASE5_GATE1_CORRECTION_20260712.md
-11. SESSION_HANDOFF_20260712.md
-12. ../../experiments/stage3c-installed-runtime-baseline/README.md
+11. PHASE5_GATE1_CORRECTION_20260712.md
+12. SESSION_HANDOFF_20260712.md
+13. ../../experiments/stage3c-installed-runtime-baseline/README.md
 ```
 
 ## Current state
