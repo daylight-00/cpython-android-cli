@@ -32,6 +32,8 @@ native closure
   67/67 extension imports
 ```
 
+The source-tree fingerprint is a manifest contract identity. It is not a fixed installed strict fingerprint. The installed strict fingerprint contains `mtime_ns` and is used only as a same-tree mutation control.
+
 ## Authority order
 
 ```text
@@ -219,11 +221,13 @@ mutation count 2
 post-repair verify PASS
 registry bytes unchanged
 portable fingerprint f860caf... exact
-strict payload identity restored
+strict output 714-entry shape/safety PASS
 transaction residue 0
 candidate exact to manifest and source archive
 unaffected-path identity exact
 ```
+
+No fixed strict fingerprint is required across independent roots. The strict output contains mtime and is not portable.
 
 ### Full corrected-runtime requirements
 
@@ -245,7 +249,9 @@ system SONAME dlopen 5/5
 extension imports 67/67
 engine verify PASS
 registry 1 artifact / 714 owned rows
-portable payload exact
+portable payload exact before and after probes
+strict shape/safety PASS before and after probes
+strict fingerprint unchanged across probes
 no transaction residue
 ```
 
@@ -253,13 +259,26 @@ no transaction residue
 
 The accepted correction changes engine implementation identity. Therefore Gate 3A acceptance must include a complete Gate 1-equivalent corrected-engine regression. Prior Gate 1 evidence alone is insufficient.
 
+The active workflow invokes the complete frozen 80-check Gate 1 verifier on the sequential repaired root.
+
 ### Gate 2 boundary
 
 Corrected-engine relocation remains a separate Gate 2R regression unless the acceptance workflow explicitly relocates the complete root and repeats destination validation.
 
 ### Independent verification
 
-The verifier must reopen raw engine outputs, mutation records, registry bytes, fingerprints, runtime probes, uv results, native closure outputs, and result-index coverage.
+```text
+repair scenario checks
+  29
+
+Gate 1 regression checks
+  80
+
+Gate 3A acceptance checks
+  69
+```
+
+The 69 checks are split into repair/evidence and runtime/identity modules. The verifier reopens raw engine outputs, mutation records, registry bytes, portable and strict controls, runtime probes, uv results, native closure outputs, and result-index coverage.
 
 Scenario `pass` values and console markers are not authority.
 
@@ -274,7 +293,8 @@ docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
 ```text
 complete corrected-engine installation-root move
 registry byte exact
-portable and strict identity exact
+portable identity exact
+strict same-tree identity unchanged across destination probes
 full destination runtime validation
 zero stale source references
 ```
