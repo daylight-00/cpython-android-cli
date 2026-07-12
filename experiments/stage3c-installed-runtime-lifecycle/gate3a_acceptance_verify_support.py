@@ -75,6 +75,7 @@ def load_context(args: Any) -> SimpleNamespace:
     accepted = read_json(scenarios_root / "accepted-inputs.json")
     clones = read_json(scenarios_root / "clone-separation.json")
     sequential = read_json(scenarios_root / "sequential/summary.json")
+    seed_summary = read_json(scenarios_root / "seed/summary.json")
     gate1 = read_json(args.gate1_verification.resolve())
     engine = read_json(runtime_root / "engine-verification.json")
     registry = read_json(runtime_root / "registry.json")
@@ -117,6 +118,15 @@ def load_context(args: Any) -> SimpleNamespace:
         scenarios_root / "sequential/final-verify.json",
         scenarios_root / "sequential/final-verify-process.json",
         scenarios_root / "sequential/summary.json",
+        scenarios_root / "sequential/final-strict.json",
+        scenarios_root / "sequential/final-portable.json",
+        scenarios_root / "seed/install.json",
+        scenarios_root / "seed/install-process.json",
+        scenarios_root / "seed/verify.json",
+        scenarios_root / "seed/verify-process.json",
+        scenarios_root / "seed/identity-strict.json",
+        scenarios_root / "seed/identity-portable.json",
+        scenarios_root / "seed/summary.json",
         runtime_root / "engine-verification.json",
         runtime_root / "registry.json",
         runtime_root / "installed-before.json",
@@ -142,29 +152,51 @@ def load_context(args: Any) -> SimpleNamespace:
         for stage in stages:
             required.add(base_dir / f"{stage}.json")
             required.add(base_dir / f"{stage}-process.json")
+        labels = ("before", "after") if name == "exact-noop" else ("before", "corrupted", "after")
+        for label in labels:
+            required.add(base_dir / f"{label}-strict.json")
+            required.add(base_dir / f"{label}-portable.json")
     for index, name in enumerate(REPAIRS, start=1):
         base_dir = scenarios_root / "sequential" / f"{index:02d}-{name}"
         required.add(base_dir / "scenario.json")
         for stage in ("pre-verify", "install", "post-verify"):
             required.add(base_dir / f"{stage}.json")
             required.add(base_dir / f"{stage}-process.json")
+        for label in ("before", "corrupted", "after"):
+            required.add(base_dir / f"{label}-strict.json")
+            required.add(base_dir / f"{label}-portable.json")
 
     raw_embedded_match = True
+    raw_embedded_match &= read_json(scenarios_root / "seed/install-process.json") == seed_summary["install"]
+    raw_embedded_match &= read_json(scenarios_root / "seed/verify-process.json") == seed_summary["verify"]
+    raw_embedded_match &= read_json(scenarios_root / "seed/identity-strict.json") == seed_summary["identity"]["strict"]["result"]
+    raw_embedded_match &= read_json(scenarios_root / "seed/identity-portable.json") == seed_summary["identity"]["portable"]["result"]
     noop = isolated["exact-noop"]
     raw_embedded_match &= read_json(scenarios_root / "isolated/exact-noop/install-process.json") == noop["install"]
     raw_embedded_match &= read_json(scenarios_root / "isolated/exact-noop/verify-process.json") == noop["verify"]
+    for label in ("before", "after"):
+        raw_embedded_match &= read_json(scenarios_root / "isolated/exact-noop" / f"{label}-strict.json") == noop[label]["strict"]["result"]
+        raw_embedded_match &= read_json(scenarios_root / "isolated/exact-noop" / f"{label}-portable.json") == noop[label]["portable"]["result"]
     for name in REPAIRS:
         row = isolated[name]
         directory = scenarios_root / "isolated" / name
         raw_embedded_match &= read_json(directory / "pre-verify-process.json") == row["pre_verify"]
         raw_embedded_match &= read_json(directory / "install-process.json") == row["install"]
         raw_embedded_match &= read_json(directory / "post-verify-process.json") == row["post_verify"]
+        for label in ("before", "corrupted", "after"):
+            raw_embedded_match &= read_json(directory / f"{label}-strict.json") == row[label]["strict"]["result"]
+            raw_embedded_match &= read_json(directory / f"{label}-portable.json") == row[label]["portable"]["result"]
     for index, name in enumerate(REPAIRS, start=1):
         row = sequential_steps[name]
         directory = scenarios_root / "sequential" / f"{index:02d}-{name}"
         raw_embedded_match &= read_json(directory / "pre-verify-process.json") == row["pre_verify"]
         raw_embedded_match &= read_json(directory / "install-process.json") == row["install"]
         raw_embedded_match &= read_json(directory / "post-verify-process.json") == row["post_verify"]
+        for label in ("before", "corrupted", "after"):
+            raw_embedded_match &= read_json(directory / f"{label}-strict.json") == row[label]["strict"]["result"]
+            raw_embedded_match &= read_json(directory / f"{label}-portable.json") == row[label]["portable"]["result"]
+    raw_embedded_match &= read_json(scenarios_root / "sequential/final-strict.json") == sequential["final_identity"]["strict"]["result"]
+    raw_embedded_match &= read_json(scenarios_root / "sequential/final-portable.json") == sequential["final_identity"]["portable"]["result"]
 
     return SimpleNamespace(
         phase4=phase4,
@@ -175,6 +207,7 @@ def load_context(args: Any) -> SimpleNamespace:
         accepted=accepted,
         clones=clones,
         sequential=sequential,
+        seed_summary=seed_summary,
         gate1=gate1,
         engine=engine,
         registry=registry,
