@@ -47,10 +47,8 @@ gate3a_results=""
                 echo "ERROR: Gate 3A result root not found after extraction" >&2
                 workflow_rc=2
             else
-                set +e
                 GATE3A_RESULTS="$gate3a_results" RESULTS_DIR="$RESULTS_DIR" WORK_DIR="$WORK_DIR" bash "$RUNNER"
                 workflow_rc=$?
-                set -e
             fi
         fi
     fi
@@ -59,7 +57,8 @@ gate3a_results=""
 mkdir -p "$RESULTS_DIR"
 cp -f "$TMP_LOG" "$RESULTS_DIR/termux-wrapper.log"
 
-"$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/termux-wrapper-status.json" "$GATE3A_ARCHIVE" "$gate3a_results" "$ARCHIVE" "$workflow_rc" <<'PY'
+if [[ -x "$TOOL_PYTHON" ]]; then
+    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/termux-wrapper-status.json" "$GATE3A_ARCHIVE" "$gate3a_results" "$ARCHIVE" "$workflow_rc" <<'PY'
 import json,sys
 from pathlib import Path
 out=Path(sys.argv[1]); rc=int(sys.argv[5])
@@ -68,8 +67,8 @@ out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8')
 print(json.dumps(result,indent=2,sort_keys=True))
 PY
 
-rm -f "$RESULTS_DIR/result-index.json"
-"$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR" "$RESULTS_DIR/result-index.json" <<'PY'
+    rm -f "$RESULTS_DIR/result-index.json"
+    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR" "$RESULTS_DIR/result-index.json" <<'PY'
 import hashlib,json,os,stat,sys
 from pathlib import Path
 root=Path(sys.argv[1]).resolve(); output=Path(sys.argv[2]).resolve(); files=[]
@@ -87,6 +86,9 @@ result={'schema_version':1,'index_kind':'stage3c-phase5-gate2r-corrected-engine-
 output.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8')
 print(json.dumps(result,indent=2,sort_keys=True))
 PY
+else
+    printf '{"schema_version":1,"pass":false,"workflow_returncode":%s,"error":"canonical tool Python missing"}\n' "$workflow_rc" > "$RESULTS_DIR/termux-wrapper-status.json"
+fi
 
 mkdir -p "$(dirname "$ARCHIVE")"
 relative_results="${RESULTS_DIR#$PROJECT_ROOT/}"
