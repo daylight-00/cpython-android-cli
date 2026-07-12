@@ -1,154 +1,110 @@
 # Phase 5 Gate 3A Product Acceptance Handoff — 2026-07-12
 
-> **Current boundary:** corrected same-version reinstall and registered repair product acceptance
-> **Prerequisite:** frozen Phase 4I missing-leaf intervention evidence
-> **Target:** Termux on Android arm64
+> **Status:** FROZEN PASS
+> **Accepted target:** Termux on Android arm64
+> **Next boundary:** Gate 2R corrected-engine relocation regression
 
-## Frozen authority
+## Frozen ancestry
 
 ```text
 Gate 1 installed-runtime baseline
   FROZEN 80/80
 
-Gate 2 installed-root relocation
+historical Gate 2 relocation
   FROZEN 46/46
 
 Gate 3A0 diagnostic
   FROZEN 17/17 + 31/31
 
-Phase 4I missing-leaf intervention
+Phase 4I intervention
   FROZEN 39/39 + 51/51
 ```
 
-Phase 4I accepted archive:
+## Frozen Gate 3A identity
 
 ```text
-stage3c-phase4-missing-leaf-repair-intervention-results-20260712-180237.tgz
-sha256
-  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
+archive
+  stage3c-phase5-gate3a-reinstall-repair-acceptance-results-20260712-191758.tgz
+
+archive sha256
+  16dbe98dedeb8db92df574a4d22ac3e45c0dd4032771dcf75e5e489b49605142
 
 result-index sha256
-  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
+  a161eedeebd086b1be6f115671312b463ed1eb9969c4494cae1bdbb626794128
+
+repair scenario checks
+  29/29
+
+Gate 1 regression
+  80/80
+
+acceptance verifier
+  69/69
 ```
 
 Evidence:
 
 ```text
-docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 ```
 
-## Product question
-
-> After exact same-version reinstall and every accepted registered repair class, does the corrected installed runtime retain exact ownership identity and the full Gate 1 runtime behavior contract?
-
-## Required repair classes
+## Accepted product contract
 
 ```text
-regular byte corruption
-regular mode corruption
-registered regular replaced by directory
-symlink target corruption
-missing registered regular
-missing registered symlink
+exact reinstall NOOP
+six isolated repair classes
+six sequential repair cycles
+registry bytes unchanged after every repair
+unaffected owned paths unchanged
+portable fingerprint f860caf... exact
+strict shape and safety PASS
+zero transaction residue
 ```
 
-Exact same-version reinstall remains a separate NOOP prerequisite.
-
-## Required topology
-
-Use one fresh corrected-engine installation as an immutable seed and create independent scenario roots for all repair classes.
-
-Additionally create one canonical sequential acceptance root:
-
-```text
-fresh install
-→ exact reinstall NOOP
-→ six corruption/repair cycles
-→ full installed-runtime validation
-```
-
-Every scenario root and the sequential acceptance root must be inode-separated from the seed.
-
-## Per-repair evidence
-
-Each repair class must prove:
-
-```text
-intentional mutation recorded
-pre-repair engine verify has exactly one bad path
-corrected install succeeds
-install action counts noop 713 / repair 1
-mutation count 2
-post-repair engine verify PASS
-registry byte identity unchanged
-portable payload fingerprint f860caf... exact
-strict payload fingerprint restored
-transaction residue 0
-final candidate exact to manifest and source archive
-unaffected-path identity exact
-```
-
-## Sequential acceptance root
-
-The sequential root must apply and repair all six classes in a deterministic order. After every repair, capture registry, portable, strict, and transaction identities.
-
-After the final repair, run the complete installed-runtime behavior contract:
+Runtime contract:
 
 ```text
 Python 3.14.6
 Android aarch64
-SOABI cpython-314-aarch64-linux-android
-MULTIARCH aarch64-linux-android
-sys.prefix and base_prefix exact
-sysconfig paths inside installed prefix
-HTTPS status 200
+HTTPS 200
 smoke-termux PASS
 uv venv PASS
 uv run anyio PASS
-native closure 81 ELF / 329 edges / 0 unresolved
-system SONAME dlopen 5/5
+native closure 81/329/0
+system SONAME 5/5
 extension imports 67/67
-engine verify PASS
-registry 1 artifact / 714 owned rows
-portable payload identity exact
-no transaction residue
+engine verify 1 artifact / 714 owned rows / 0 bad paths
 ```
 
-## Gate 1 regression requirement
-
-The accepted correction changes the engine implementation identity even though fresh installation behavior is expected to remain unchanged.
-
-Gate 3A acceptance must therefore include a Gate 1-equivalent baseline regression using the corrected engine. A prior Gate 1 TGZ alone is insufficient.
-
-The regression may share the sequential root only if the verifier proves the complete Gate 1 contract after all repairs. Otherwise run a dedicated corrected-engine Gate 1 baseline root.
-
-## Gate 2 boundary
-
-Gate 2 relocation regression remains separate unless the Gate 3A workflow explicitly moves the complete corrected-engine installation root and repeats the full destination validation.
-
-Do not claim Gate 2 regression from Gate 3A acceptance alone.
-
-## Independent verification
-
-The verifier must reopen raw engine outputs, mutation records, registry bytes, fingerprints, runtime probes, uv results, native closure outputs, and result-index coverage.
-
-Scenario-level `pass` values and final console markers are not authority.
-
-## Claim boundary
-
-Gate 3A PASS will prove corrected same-version NOOP, all six registered repair classes, and full post-repair installed-runtime behavior.
-
-It will not prove:
+## Identity semantics
 
 ```text
-Gate 2 relocation regression
-modified owned-leaf preservation
-unowned sentinel preservation
-addon lifecycle
-uninstall
-upgrade or downgrade
+portable fingerprint
+  cross-root installed identity
+
+strict installed fingerprint
+  contains mtime_ns
+  same-tree mutation control only
+
+manifest source-tree fingerprint
+  frozen contract identity
+  not an installed strict fingerprint
 ```
 
-## Successor action
+## Preserved first-run failure
 
-Create a dedicated Gate 3A product acceptance branch from the merged Phase 4I intervention commit. Reuse frozen Gate 1 probes and closure tools, but point all install and verify operations to the accepted corrected engine adapter.
+The first target run remains preserved as an infrastructure failure. All product-facing work and the Gate 1 regression passed, but the modular verifier failed before running checks under Python isolated mode.
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_FAILURE_20260712.md
+```
+
+## Next action
+
+Continue from:
+
+```text
+docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md
+```
+
+Gate 2R must use a one-command Termux wrapper that verifies inputs, executes the full workflow, and packages evidence on PASS or FAIL.
