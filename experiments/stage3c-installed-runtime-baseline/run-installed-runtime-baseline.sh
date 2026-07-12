@@ -11,11 +11,13 @@ PHASE4_RESULTS="${PHASE4_RESULTS:-$RESULTS_ROOT/termux/stage3c-phase4-integrated
 CANONICAL_PREFIX="${CANONICAL_PREFIX:-$WORK_ROOT/termux/stage3b-promoted-runtime/prefix}"
 RESULTS_DIR="${RESULTS_DIR:-$RESULTS_ROOT/termux/stage3c-phase5-installed-runtime-baseline}"
 WORK_DIR="${WORK_DIR:-$WORK_ROOT/termux/stage3c-phase5-installed-runtime-baseline}"
+EXPECTED_PHASE4_RESULT_INDEX_SHA256="878ed426720c48f8d0240e3e4e141ff3434426a30d3be9230da23dd5eba0a4ce"
 
 TOOL_PYTHON="$CANONICAL_PREFIX/bin/python"
 LOCAL_SCRIPT_RUNNER="$PROJECT_ROOT/experiments/stage3c-artifact-manifest/run-isolated-local-script.py"
 INPUT_FINGERPRINT="$PROJECT_ROOT/experiments/stage3c-installation-contract/fingerprint-evidence-tree.py"
 PRODUCT_FINGERPRINT="$PROJECT_ROOT/experiments/stage3c-product-role-inventory/fingerprint-product-tree.py"
+PORTABLE_FINGERPRINT="$SCRIPT_DIR/fingerprint-installed-payload.py"
 ENGINE="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_engine.py"
 PROBE="$SCRIPT_DIR/probe-installed-runtime.py"
 VERIFIER="$SCRIPT_DIR/verify-installed-runtime-baseline.py"
@@ -43,6 +45,7 @@ for file in \
     "$LOCAL_SCRIPT_RUNNER" \
     "$INPUT_FINGERPRINT" \
     "$PRODUCT_FINGERPRINT" \
+    "$PORTABLE_FINGERPRINT" \
     "$ENGINE" \
     "$PROBE" \
     "$VERIFIER" \
@@ -82,6 +85,41 @@ fingerprint_product() {
         --runtime-prefix "$1" \
         --output "$2" \
         --expected-entry-count 714
+}
+
+fingerprint_portable() {
+    "$TOOL_PYTHON" -I -B -S \
+        "$PORTABLE_FINGERPRINT" \
+        --installed-prefix "$1" \
+        --output "$2"
+}
+
+verify_accepted_input() {
+    "$TOOL_PYTHON" -I -B -S - \
+        "$INPUT_DIR/result-index.json" \
+        "$RESULTS_DIR/accepted-inputs.json" \
+        "$EXPECTED_PHASE4_RESULT_INDEX_SHA256" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+source = Path(sys.argv[1]).resolve()
+output = Path(sys.argv[2]).resolve()
+expected = sys.argv[3]
+digest = hashlib.sha256(source.read_bytes()).hexdigest()
+index = json.loads(source.read_text(encoding="utf-8"))
+result = {
+    "schema_version": 1,
+    "pass": digest == expected,
+    "expected_result_index_sha256": expected,
+    "observed_result_index_sha256": digest,
+    "result_index_file_count": index.get("file_count"),
+}
+output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+print(json.dumps(result, indent=2, sort_keys=True))
+raise SystemExit(0 if result["pass"] else 62)
+PY
 }
 
 write_status() {
@@ -197,18 +235,12 @@ clean_env=(
 fingerprint_input "$INPUT_DIR" "$RESULTS_DIR/input-before.json"
 
 set +e
-run_local_script \
-    "$ENGINE" \
-    --contract-results "$CONTRACT_RESULTS" \
-    --installation-root "$INSTALL_ROOT" \
-    --operation install \
-    --artifact runtime-base \
-    --output "$RESULTS_DIR/install-result.json" \
-    > "$RESULTS_DIR/install.log" 2>&1
-install_rc=$?
+verify_accepted_input > "$RESULTS_DIR/accepted-inputs.log" 2>&1
+accepted_inputs_rc=$?
 set -e
-cat "$RESULTS_DIR/install.log"
+cat "$RESULTS_DIR/accepted-inputs.log"
 
+install_rc=125
 engine_verify_rc=125
 base_probe_rc=125
 smoke_rc=125
@@ -218,6 +250,21 @@ closure_inventory_rc=125
 closure_analysis_rc=125
 closure_extension_rc=125
 final_verify_rc=125
+
+if [[ $accepted_inputs_rc -eq 0 ]]; then
+    set +e
+    run_local_script \
+        "$ENGINE" \
+        --contract-results "$CONTRACT_RESULTS" \
+        --installation-root "$INSTALL_ROOT" \
+        --operation install \
+        --artifact runtime-base \
+        --output "$RESULTS_DIR/install-result.json" \
+        > "$RESULTS_DIR/install.log" 2>&1
+    install_rc=$?
+    set -e
+    cat "$RESULTS_DIR/install.log"
+fi
 
 if [[ $install_rc -eq 0 && -x "$INSTALLED_PYTHON" ]]; then
     set +e
@@ -232,6 +279,7 @@ if [[ $install_rc -eq 0 && -x "$INSTALLED_PYTHON" ]]; then
     cat "$RESULTS_DIR/engine-verification.log"
     cp -a "$INSTALL_ROOT/.cpython-android-cli/registry.json" "$RESULTS_DIR/registry.json"
     fingerprint_product "$INSTALLED_PREFIX" "$RESULTS_DIR/installed-before.json"
+    fingerprint_portable "$INSTALLED_PREFIX" "$RESULTS_DIR/installed-portable-before.json"
 fi
 
 if [[ $engine_verify_rc -eq 0 ]]; then
@@ -332,10 +380,12 @@ write_closure_status
 
 if [[ -d "$INSTALLED_PREFIX" ]]; then
     fingerprint_product "$INSTALLED_PREFIX" "$RESULTS_DIR/installed-after.json"
+    fingerprint_portable "$INSTALLED_PREFIX" "$RESULTS_DIR/installed-portable-after.json"
 fi
 fingerprint_input "$INPUT_DIR" "$RESULTS_DIR/input-after.json"
 
-if [[ $install_rc -eq 0 \
+if [[ $accepted_inputs_rc -eq 0 \
+    && $install_rc -eq 0 \
     && $engine_verify_rc -eq 0 \
     && $base_probe_rc -eq 0 \
     && $smoke_rc -eq 0 \
@@ -355,6 +405,8 @@ if [[ $install_rc -eq 0 \
         --registry "$RESULTS_DIR/registry.json" \
         --installed-before "$RESULTS_DIR/installed-before.json" \
         --installed-after "$RESULTS_DIR/installed-after.json" \
+        --installed-portable-before "$RESULTS_DIR/installed-portable-before.json" \
+        --installed-portable-after "$RESULTS_DIR/installed-portable-after.json" \
         --input-before "$RESULTS_DIR/input-before.json" \
         --input-after "$RESULTS_DIR/input-after.json" \
         --base-probe "$RESULTS_DIR/base-probe.json" \
@@ -367,17 +419,24 @@ if [[ $install_rc -eq 0 \
     final_verify_rc=$?
     set -e
 else
-    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/verification.json" <<'PY'
+    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/verification.json" "$accepted_inputs_rc" <<'PY'
 import json
 import sys
 from pathlib import Path
+
+accepted_inputs_rc = int(sys.argv[2])
+failed_check = (
+    "accepted_input_gate_blocked"
+    if accepted_inputs_rc != 0
+    else "component_gate_blocked"
+)
 result = {
     "schema_version": 1,
     "pass": False,
     "blocked": True,
     "check_count": 0,
     "checks": {},
-    "failed_checks": ["component_gate_blocked"],
+    "failed_checks": [failed_check],
 }
 Path(sys.argv[1]).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 PY
@@ -385,6 +444,7 @@ fi
 cat "$RESULTS_DIR/verifier.log" 2>/dev/null || cat "$RESULTS_DIR/verification.json"
 
 write_status \
+    accepted_inputs "$accepted_inputs_rc" \
     install "$install_rc" \
     engine_verify "$engine_verify_rc" \
     base_probe "$base_probe_rc" \
@@ -401,7 +461,7 @@ cat "$RESULTS_DIR/result-index.log"
 
 final_rc=0
 for rc in \
-    "$install_rc" "$engine_verify_rc" "$base_probe_rc" "$smoke_rc" \
+    "$accepted_inputs_rc" "$install_rc" "$engine_verify_rc" "$base_probe_rc" "$smoke_rc" \
     "$venv_probe_rc" "$uv_run_rc" "$closure_inventory_rc" \
     "$closure_analysis_rc" "$closure_extension_rc" "$final_verify_rc"; do
     if [[ $rc -ne 0 ]]; then
