@@ -149,9 +149,13 @@ def main() -> int:
         "installation_root_fingerprints_pass": a_root_fp.get("pass") is True
         and b_root_move.get("pass") is True
         and b_root_after.get("pass") is True,
-        "installation_root_entry_count_717": a_root_fp.get("entry_count") == 717
-        and b_root_move.get("entry_count") == 717
-        and b_root_after.get("entry_count") == 717,
+        "installation_root_shape_exact": all(
+            value.get("entry_count") == 719
+            and value.get("directory_count") == 60
+            and value.get("regular_count") == 656
+            and value.get("symlink_count") == 3
+            for value in (a_root_fp, b_root_move, b_root_after)
+        ),
         "installation_root_no_special": a_root_fp.get("special_paths") == []
         and b_root_move.get("special_paths") == []
         and b_root_after.get("special_paths") == [],
