@@ -1,12 +1,31 @@
 # Stage 3-C Phase 5 Gate 2: Installed Runtime Relocation
 
-> **Status:** ACTIVE — authoritative Termux result pending
+> **Status:** ACTIVE — corrected authoritative Termux rerun pending
 > **Prerequisite:** frozen Phase 5 Gate 1 PASS
 > **Input:** frozen Stage 3-C Phase 4 integrated durability evidence
 
 ## Gate question
 
 > Does a runtime installed through the frozen Phase 4 engine remain exact, registered, functional, natively closed, and free of stale source-location references after the complete installation root is moved to a second location?
+
+## Preserved first target failure
+
+The first target run passed every relocation and runtime component but failed one incorrect verifier expectation:
+
+```text
+STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION=FAIL rc=65
+Gate 2 verifier                         45/46 PASS
+failed check
+  installation_root_entry_count_717
+```
+
+The failure is preserved in:
+
+```text
+docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_FAILURE.md
+```
+
+The corrected verifier expects the frozen Phase 4 management surface and remains exactly 46 checks.
 
 ## Design boundary
 
@@ -26,12 +45,24 @@ The moved object is the complete installation root:
 
 ```text
 installation/
-├── prefix/
+├── prefix/                              714 payload entries
 └── .cpython-android-cli/
-    └── registry.json
+    ├── lock
+    ├── registry.json
+    └── transactions/
 ```
 
-Moving only `prefix/` while leaving the ownership registry behind is not accepted evidence for this gate.
+Complete installation-root shape:
+
+```text
+entries          719
+directories       60
+regular files    656
+symlinks            3
+special             0
+```
+
+Moving only `prefix/` while leaving the ownership and recovery state behind is not accepted evidence for this gate.
 
 ## Accepted Gate 1 authority
 
@@ -57,6 +88,7 @@ source and destination filesystem device   equal
 installation-root inode                    preserved
 location A installation root               absent
 location B Python                           executable
+full installation-root shape               719/60/656/3 exact
 full installation-root fingerprint         exact
 runtime-base strict fingerprint             exact
 portable payload fingerprint               exact
@@ -91,16 +123,17 @@ system SONAME dlopen          5/5
 extension imports            67/67
 ```
 
-## Run
+## Corrected run
 
 Use a fresh extraction of the accepted Phase 4 archive:
 
 ```sh
 cd "$HOME/projects/cpython-android-cli"
 
-git pull --ff-only
+git fetch origin agent/phase5-gate2-installed-relocation
+git switch --detach origin/agent/phase5-gate2-installed-relocation
 
-git log -3 --oneline
+git log -1 --oneline
 
 PHASE4_ARCHIVE="$HOME/Downloads/stage3c-phase4-integrated-durability-results-20260712-082135.tgz"
 PHASE4_EXTRACT="$PREFIX/tmp/stage3c-phase4-integrated-durability-accepted"
@@ -172,17 +205,17 @@ results/termux/stage3c-phase5-installed-runtime-relocation/
 
 ```sh
 RESULTS="$PWD/results/termux/stage3c-phase5-installed-runtime-relocation"
-ARCHIVE="$HOME/Downloads/stage3c-phase5-installed-runtime-relocation-results-$(date +%Y%m%d-%H%M%S).tgz"
+ARCHIVE="$HOME/Downloads/stage3c-phase5-installed-runtime-relocation-root-shape-corrected-results-$(date +%Y%m%d-%H%M%S).tgz"
 
 tar czf "$ARCHIVE" "$RESULTS"
 printf 'upload: %s\n' "$ARCHIVE"
 ```
 
-Upload the TGZ rather than pasting only the final markers.
+Upload the TGZ rather than pasting only the final markers. Preserve the first failed archive unchanged.
 
 ## Claim boundary
 
-A PASS proves same-filesystem rename-style relocation of the complete installed root, including the ownership registry, and full runtime revalidation at the destination.
+A PASS proves same-filesystem rename-style relocation of the complete installed root, including ownership and recovery state, and full runtime revalidation at the destination.
 
 It does not prove:
 
