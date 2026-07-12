@@ -6,20 +6,21 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. STAGE3C_EVIDENCE_LEDGER.md
-3. ../stages/STAGE3C_SCOPE.md
-4. ../stages/STAGE3C_PHASE5_SCOPE.md
-5. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+2. PHASE5_GATE3_HANDOFF_20260712.md
+3. STAGE3C_EVIDENCE_LEDGER.md
+4. ../stages/STAGE3C_SCOPE.md
+5. ../stages/STAGE3C_PHASE5_SCOPE.md
+6. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
 
 Historical Gate 2 context:
-6. PHASE5_GATE2_CORRECTION_20260712.md
-7. PHASE5_GATE2_HANDOFF_20260712.md
-8. ../../experiments/stage3c-installed-runtime-relocation/README.md
+7. PHASE5_GATE2_CORRECTION_20260712.md
+8. PHASE5_GATE2_HANDOFF_20260712.md
+9. ../../experiments/stage3c-installed-runtime-relocation/README.md
 
 Historical Gate 1 context:
-9. PHASE5_GATE1_CORRECTION_20260712.md
-10. SESSION_HANDOFF_20260712.md
-11. ../../experiments/stage3c-installed-runtime-baseline/README.md
+10. PHASE5_GATE1_CORRECTION_20260712.md
+11. SESSION_HANDOFF_20260712.md
+12. ../../experiments/stage3c-installed-runtime-baseline/README.md
 ```
 
 ## Current state
@@ -42,9 +43,9 @@ preserved failures
   Gate 1 first target 78/80
   Gate 2 first target 45/46
 
-next authoritative boundary
-  Stage 3-C Phase 5 Gate 3
-  same-version lifecycle and exact uninstall semantics
+Stage 3-C Phase 5 Gate 3A
+  ACTIVE DESIGN BOUNDARY
+  same-version reinstall NOOP and registered corruption repair
 ```
 
 ## Frozen Gate 2 identity
