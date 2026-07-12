@@ -20,6 +20,8 @@ TMP_LOG="${PREFIX:-/data/data/com.termux/files/usr}/tmp/stage3c-phase5-gate2r-wr
 rm -f "$TMP_LOG"
 workflow_rc=125
 gate3a_results=""
+gate3a_observed_sha=""
+gate3a_sha_pass=false
 
 {
     echo "== Gate 2R one-command Termux wrapper =="
@@ -34,21 +36,29 @@ gate3a_results=""
     elif [[ ! -f "$GATE3A_ARCHIVE" ]]; then
         echo "ERROR: accepted Gate 3A archive missing: $GATE3A_ARCHIVE" >&2
         workflow_rc=2
-    elif ! printf '%s  %s\n' "$GATE3A_SHA256" "$GATE3A_ARCHIVE" | sha256sum -c -; then
-        workflow_rc=2
     else
-        rm -rf "$GATE3A_EXTRACT"
-        mkdir -p "$GATE3A_EXTRACT"
-        if ! tar xzf "$GATE3A_ARCHIVE" -C "$GATE3A_EXTRACT"; then
+        gate3a_observed_sha="$(sha256sum "$GATE3A_ARCHIVE" | awk '{print $1}')"
+        if [[ "$gate3a_observed_sha" != "$GATE3A_SHA256" ]]; then
+            echo "ERROR: Gate 3A archive SHA mismatch" >&2
+            echo "expected: $GATE3A_SHA256" >&2
+            echo "observed: $gate3a_observed_sha" >&2
             workflow_rc=2
         else
-            gate3a_results="$(find "$GATE3A_EXTRACT" -type d -path '*/results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance' -print -quit)"
-            if [[ -z "$gate3a_results" ]]; then
-                echo "ERROR: Gate 3A result root not found after extraction" >&2
+            gate3a_sha_pass=true
+            printf '%s  %s\n' "$GATE3A_SHA256" "$GATE3A_ARCHIVE" | sha256sum -c -
+            rm -rf "$GATE3A_EXTRACT"
+            mkdir -p "$GATE3A_EXTRACT"
+            if ! tar xzf "$GATE3A_ARCHIVE" -C "$GATE3A_EXTRACT"; then
                 workflow_rc=2
             else
-                GATE3A_RESULTS="$gate3a_results" RESULTS_DIR="$RESULTS_DIR" WORK_DIR="$WORK_DIR" bash "$RUNNER"
-                workflow_rc=$?
+                gate3a_results="$(find "$GATE3A_EXTRACT" -type d -path '*/results/termux/stage3c-phase5-gate3a-reinstall-repair-acceptance' -print -quit)"
+                if [[ -z "$gate3a_results" ]]; then
+                    echo "ERROR: Gate 3A result root not found after extraction" >&2
+                    workflow_rc=2
+                else
+                    GATE3A_RESULTS="$gate3a_results" RESULTS_DIR="$RESULTS_DIR" WORK_DIR="$WORK_DIR" bash "$RUNNER"
+                    workflow_rc=$?
+                fi
             fi
         fi
     fi
@@ -58,11 +68,11 @@ mkdir -p "$RESULTS_DIR"
 cp -f "$TMP_LOG" "$RESULTS_DIR/termux-wrapper.log"
 
 if [[ -x "$TOOL_PYTHON" ]]; then
-    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/termux-wrapper-status.json" "$GATE3A_ARCHIVE" "$gate3a_results" "$ARCHIVE" "$workflow_rc" <<'PY'
+    "$TOOL_PYTHON" -I -B -S - "$RESULTS_DIR/termux-wrapper-status.json" "$GATE3A_ARCHIVE" "$GATE3A_SHA256" "$gate3a_observed_sha" "$gate3a_sha_pass" "$gate3a_results" "$ARCHIVE" "$workflow_rc" <<'PY'
 import json,sys
 from pathlib import Path
-out=Path(sys.argv[1]); rc=int(sys.argv[5])
-result={'schema_version':1,'pass':rc==0,'gate3a_archive':sys.argv[2],'gate3a_results':sys.argv[3],'evidence_archive':sys.argv[4],'workflow_returncode':rc}
+out=Path(sys.argv[1]); rc=int(sys.argv[8])
+result={'schema_version':1,'pass':rc==0,'gate3a_archive':sys.argv[2],'gate3a_expected_sha256':sys.argv[3],'gate3a_observed_sha256':sys.argv[4],'gate3a_sha256_pass':sys.argv[5]=='true','gate3a_results':sys.argv[6],'evidence_archive':sys.argv[7],'workflow_returncode':rc}
 out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8')
 print(json.dumps(result,indent=2,sort_keys=True))
 PY
