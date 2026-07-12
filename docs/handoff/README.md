@@ -6,29 +6,29 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
-3. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
-4. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-5. ../stages/STAGE3C_PHASE5_SCOPE.md
-6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-7. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
+2. PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+3. ../evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
+4. ../stages/STAGE3C_PHASE5_SCOPE.md
+5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+6. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
 
-Historical Gate 3A diagnostic design:
-8. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
-9. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
-10. ../../experiments/stage3c-installed-runtime-lifecycle/README.md
+Historical intervention authority:
+7. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
+8. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+
+Historical diagnostic authority:
+9. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
+10. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+11. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
 
 Frozen Gate 2 evidence:
-11. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-12. PHASE5_GATE3_HANDOFF_20260712.md
+12. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+13. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
 
 ```text
-Stage 3-C Phases 1–4
-  FROZEN except the explicitly authorized missing-leaf repair intervention
-
 Phase 5 Gate 1
   FROZEN 80/80
 
@@ -36,40 +36,42 @@ Phase 5 Gate 2
   FROZEN 46/46
 
 Phase 5 Gate 3A0 diagnostic
-  FROZEN PASS
-  scenario checks 17/17
-  independent verifier 31/31
+  FROZEN 17/17 + 31/31
 
 Phase 4I missing-leaf intervention
-  ACTIVE
-  authoritative Termux run pending
+  FROZEN 39/39 + 51/51
 
 Phase 5 Gate 3A product acceptance
-  BLOCKED
+  ACTIVE
 ```
 
-## Intervention target
+## Frozen Phase 4I identity
 
 ```text
-7 success/regression roots
-12 crash-recovery roots
-19 independent clones
-39 scenario checks
-51 independent verifier checks
+archive sha256
+  d497955abf1c4f83d9efc4e01783447c30af30f9b7b532d4a454b263a89c655a
+
+result-index sha256
+  7c87a7a3ee34b9c827a4895c78dc15780058d5f3af37e7eb78cd1c454d28f3b6
 ```
 
-Expected candidate behavior:
+## Active Gate 3A target
 
 ```text
-missing registered regular
-missing registered symlink
-  created mutation
-  no nonexistent backup move
-  exact repair on success
-  original missing state on pre-commit recovery
-  repaired state on committed recovery
+exact reinstall NOOP
+six repair classes
+registry and payload identity after every repair
+full post-repair runtime validation
+HTTPS 200
+uv venv and uv run
+native closure 81/329/0
+system SONAME 5/5
+extension imports 67/67
+no transaction residue
 ```
+
+Gate 2 relocation regression remains separate unless the Gate 3A workflow explicitly performs and validates the move.
 
 ## Authority rule
 
-Do not merge the corrective PR or call Gate 3A accepted from local validation. The complete Termux TGZ must be independently inspected first.
+Only a complete independently inspected Termux TGZ can close Gate 3A product acceptance. Scenario-level PASS fields and console markers are insufficient.
