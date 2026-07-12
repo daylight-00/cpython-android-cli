@@ -6,20 +6,21 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
-3. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-4. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
+2. PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md
+3. PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md
+4. ../evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
 5. ../stages/STAGE3C_PHASE5_SCOPE.md
 6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-7. STAGE3C_EVIDENCE_LEDGER.md
-8. ../../experiments/stage3c-installed-runtime-lifecycle/README.md
+7. ../../experiments/stage3c-missing-leaf-repair-intervention/README.md
 
 Historical Gate 3A diagnostic design:
-9. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+8. PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md
+9. ../stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md
+10. ../../experiments/stage3c-installed-runtime-lifecycle/README.md
 
 Frozen Gate 2 evidence:
-10. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-11. PHASE5_GATE3_HANDOFF_20260712.md
+11. ../evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
+12. PHASE5_GATE3_HANDOFF_20260712.md
 ```
 
 ## Current state
@@ -39,44 +40,36 @@ Phase 5 Gate 3A0 diagnostic
   scenario checks 17/17
   independent verifier 31/31
 
+Phase 4I missing-leaf intervention
+  ACTIVE
+  authoritative Termux run pending
+
 Phase 5 Gate 3A product acceptance
   BLOCKED
-
-active authority
-  narrow Phase 4 registered missing-leaf repair intervention
 ```
 
-## Frozen diagnostic identity
+## Intervention target
 
 ```text
-archive sha256
-  9aae0ce2134331b272421bbb4f94010acde48e468ef8774617630bb6e8edd6b2
-
-result-index sha256
-  a7507ab60de402a636c8e2899706aec77844896254f28dd068c8683dcb3dce7b
+7 success/regression roots
+12 crash-recovery roots
+19 independent clones
+39 scenario checks
+51 independent verifier checks
 ```
 
-## Confirmed defect
+Expected candidate behavior:
 
 ```text
-registered missing regular or symlink
-  planned as repair
-  recorded as replaced
-  durable_move(absent source, backup)
-  FileNotFoundError
-  retained ROLLED_BACK journal
-  missing leaf remains absent
+missing registered regular
+missing registered symlink
+  created mutation
+  no nonexistent backup move
+  exact repair on success
+  original missing state on pre-commit recovery
+  repaired state on committed recovery
 ```
 
-## Authorized correction
+## Authority rule
 
-```text
-existing mismatching path
-  retain replaced mutation semantics
-
-missing registered non-directory
-  use created mutation semantics
-  do not move a nonexistent source
-```
-
-The intervention must preserve all diagnostic failure evidence and remain separate from Gate 3A product acceptance.
+Do not merge the corrective PR or call Gate 3A accepted from local validation. The complete Termux TGZ must be independently inspected first.
