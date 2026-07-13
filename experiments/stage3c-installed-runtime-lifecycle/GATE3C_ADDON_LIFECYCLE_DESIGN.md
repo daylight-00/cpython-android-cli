@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 3C: Addon Lifecycle and Dependency Enforcement Design
 
-> **Status:** DESIGN FROZEN — authoritative Termux evidence pending
+> **Status:** DESIGN FROZEN — target implementation ready; authoritative Termux evidence pending
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -144,7 +144,7 @@ late APPLYING  rc 93
 COMMITTED      rc 92
 ```
 
-PREPARED and late APPLYING restore the exact prior payload and registry. COMMITTED finalizes the exact new state. Every scenario requires a second recovery NOOP and zero residual transactions.
+PREPARED and late APPLYING restore the exact prior payload and registry. The frozen engine then retains one `ROLLED_BACK` transaction tombstone as durable audit state; the second recovery reports `NOOP_ROLLED_BACK`. COMMITTED finalizes the exact new state, removes its transaction, and the second recovery observes zero transactions. The implementation must preserve this already accepted Gate 3B engine behavior rather than rewriting it to satisfy an over-broad zero-residue interpretation.
 
 ### Behavior probes
 

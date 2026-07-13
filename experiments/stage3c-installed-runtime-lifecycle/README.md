@@ -1,27 +1,32 @@
 # Stage 3-C Phase 5 Installed Runtime Lifecycle
 
-> **Current boundary:** Gate 3C addon lifecycle design frozen; target implementation pending
+> **Current boundary:** Gate 3C target implementation ready; authoritative Termux archive pending
 
 Current authority:
 
 ```text
 Gate 3B preserve-and-report product acceptance   FROZEN
-Gate 3C design verifier                          73/73 PASS
+Gate 3C design verifier                          FROZEN 73/73
 Gate 3C target matrix                            50 scenarios
+Gate 3C target runner/verifier                   READY FOR TERMUX
 Gate 3D final runtime-base uninstall             DEFERRED
 upgrade/downgrade                                DEFERRED
 ```
 
-Gate 3C design files:
+Gate 3C implementation files:
 
 ```text
 GATE3C_ADDON_LIFECYCLE_DESIGN.md
 gate3c-addon-lifecycle-matrix.json
-verify-gate3c-addon-lifecycle-design.py
-run-gate3c-addon-lifecycle-design.sh
+gate3c_addon_lifecycle_support.py
+run-gate3c-addon-lifecycle.py
+verify-gate3c-addon-lifecycle.py
+run-gate3c-addon-lifecycle-termux.sh
 ```
 
-The two addons independently require exact runtime-base and do not depend on each other. Target acceptance must test both install and removal orders.
+The target wrapper consumes the byte-exact frozen Gate 3B archive, independently verifies its root index and three artifact identities, executes all 50 scenarios, then emits a `.tar.zst` archive on PASS or FAIL. The two addons independently require exact runtime-base and do not depend on each other.
+
+Recovery retention follows the frozen engine: PREPARED/APPLYING rollback retains one `ROLLED_BACK` audit tombstone; COMMITTED recovery cleans its transaction. Normal successful lifecycle roots still require zero transaction residue.
 
 ---
 

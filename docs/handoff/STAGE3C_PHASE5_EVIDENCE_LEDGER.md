@@ -273,6 +273,43 @@ Design evidence:
 
 ```text
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+```
+
+
+## Gate 3C target implementation
+
+```text
+status
+  READY FOR TERMUX — target evidence pending
+
+input authority
+  Gate 3B archive 0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
+  Gate 3B result-index f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+
+scenario topology
+  50 total
+  10 preflight / 10 composition / 9 uninstall
+  12 recovery / 2 locking / 7 behavior
+
+execution surfaces
+  single Termux wrapper
+  raw stdout and stderr plus real process return codes
+  payload, registry, and transaction snapshots
+  independent verifier
+  root result-index
+  PASS-or-FAIL .tar.zst archive
+
+recovery retention
+  PREPARED/APPLYING -> exact prior state + one ROLLED_BACK audit tombstone
+  second rollback recovery -> NOOP_ROLLED_BACK
+  COMMITTED -> exact new state + transaction cleanup
+```
+
+Implementation evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 ```
 
 ## Deferred boundaries
@@ -294,4 +331,5 @@ docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 ```

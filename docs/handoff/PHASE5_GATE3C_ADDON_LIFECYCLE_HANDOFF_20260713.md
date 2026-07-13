@@ -1,6 +1,6 @@
 # Phase 5 Gate 3C Addon Lifecycle and Dependency Enforcement Handoff — 2026-07-13
 
-> **Status:** ACTIVE — design frozen, target implementation and evidence pending
+> **Status:** ACTIVE — design and target implementation frozen; authoritative Termux evidence pending
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -92,10 +92,12 @@ Gate 4
 
 ## Execution rule
 
-A future target workflow must use one Termux wrapper that verifies accepted inputs, extracts them freshly, captures stdout/stderr synchronously, writes machine status and a root result-index, and emits a new `.tar.zst` archive on PASS or FAIL. Historical `.tgz` inputs remain immutable and valid.
+The repository now provides one Termux wrapper that verifies accepted inputs, extracts them freshly, captures stdout/stderr synchronously, writes machine status and a root result-index, and emits a new `.tar.zst` archive on PASS or FAIL. Historical `.tgz` inputs remain immutable and valid.
 
-## Immediate repository task
+## Recovery retention clarification
 
-Implement the single-wrapper Termux scenario runner and independent verifier for the frozen 50-scenario matrix. Reuse the corrected durability engine without changing frozen prerequisite, registry, journal, recovery, preservation, or collision policy.
+The frozen engine does not delete a pre-commit rollback journal. PREPARED and late APPLYING recovery restore the prior payload and registry, persist one `ROLLED_BACK` audit tombstone, and return `NOOP_ROLLED_BACK` on the second recovery. COMMITTED recovery finalizes the new state and cleans the transaction. This is the already accepted Gate 3B behavior and is not an implementation defect.
 
-The wrapper must create fresh inode-separated roots, capture raw process outputs and real return codes, emit canonical machine evidence and a root result-index, and package a `.tar.zst` archive on PASS or FAIL. Only a complete independently inspected Termux archive can close Gate 3C.
+## Immediate target task
+
+Run `run-gate3c-addon-lifecycle-termux.sh` through the supplied single user wrapper against the exact Gate 3B authority archive. Inspect the resulting `.tar.zst` for archive safety, root-index identity, 50/50 scenario evidence, independent verifier results, raw process return codes, and claim-boundary integrity. Only that independent inspection can close Gate 3C.

@@ -217,6 +217,10 @@ accepted addon-removal orders
 
 The repository-side design verifier is frozen at 73/73 PASS over a 50-scenario matrix: 10 preflight, 10 composition/repair, 9 uninstall, 12 recovery, 2 locking, and 7 behavior/final-audit scenarios.
 
+The single target runner and independent verifier are now repository-ready. They consume the exact Gate 3B archive, create inode-separated scenario roots, preserve raw stdout/stderr and real return codes, verify both addon orders, and package PASS or FAIL evidence as `.tar.zst`. Target Gate 3C remains ACTIVE until that archive is executed and independently inspected.
+
+Recovery policy is not broadened: PREPARED/APPLYING rollback retains one durable `ROLLED_BACK` audit tombstone and second recovery is `NOOP_ROLLED_BACK`; COMMITTED recovery cleans its transaction. Zero transaction residue applies to normal successful lifecycle roots and committed recovery, not to the frozen rollback audit record.
+
 Gate 3C must prove exact registry transitions, addon-owned path identity, shared-path collision policy, exact runtime prerequisite rejection without mutation, both addon orders, crash recovery at accepted transaction boundaries, and final runtime-base identity and behavior. It must not invent a test-addon-to-development-addon dependency or claim final runtime-base uninstall.
 
 Evidence:
