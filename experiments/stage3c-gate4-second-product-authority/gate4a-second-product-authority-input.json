@@ -1,0 +1,109 @@
+{
+  "claim_boundary": "Selects a genuine second-product source and producer boundary only. It is not a product lock, archive authority, transition design, or target acceptance claim.",
+  "dependency_selection": {
+    "authority_rule": "Use the dependency release tags declared by the exact v3.14.5 Android/android.py producer file; capture every downloaded asset identity before replay.",
+    "products": [
+      {
+        "filename": "bzip2-1.0.8-3-aarch64-linux-android.tar.gz",
+        "identity_source": "reusable-first-lock-plus-fresh-download-verification",
+        "name": "bzip2",
+        "release_tag": "bzip2-1.0.8-3"
+      },
+      {
+        "filename": "libffi-3.4.4-3-aarch64-linux-android.tar.gz",
+        "identity_source": "reusable-first-lock-plus-fresh-download-verification",
+        "name": "libffi",
+        "release_tag": "libffi-3.4.4-3"
+      },
+      {
+        "differs_from_first_product": true,
+        "filename": "openssl-3.0.20-0-aarch64-linux-android.tar.gz",
+        "identity_source": "fresh-capture-required",
+        "name": "openssl",
+        "release_tag": "openssl-3.0.20-0"
+      },
+      {
+        "filename": "sqlite-3.50.4-0-aarch64-linux-android.tar.gz",
+        "identity_source": "reusable-first-lock-plus-fresh-download-verification",
+        "name": "sqlite",
+        "release_tag": "sqlite-3.50.4-0"
+      },
+      {
+        "filename": "xz-5.4.6-1-aarch64-linux-android.tar.gz",
+        "identity_source": "reusable-first-lock-plus-fresh-download-verification",
+        "name": "xz",
+        "release_tag": "xz-5.4.6-1"
+      },
+      {
+        "filename": "zstd-1.5.7-2-aarch64-linux-android.tar.gz",
+        "identity_source": "reusable-first-lock-plus-fresh-download-verification",
+        "name": "zstd",
+        "release_tag": "zstd-1.5.7-2"
+      }
+    ]
+  },
+  "first_product": {
+    "android_api": 24,
+    "dependency_lock": "config/dependencies/android-source-deps-aarch64-linux-android.lock.json",
+    "ndk_version": "27.3.13750724",
+    "product_lock": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json",
+    "python_version": "3.14.6",
+    "source_head": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "source_tag": "v3.14.6",
+    "target_host": "aarch64-linux-android"
+  },
+  "forbidden_shortcuts": [
+    "manual version-string editing",
+    "copying first-product payload and relabeling it",
+    "using the official Python.org Android package as the project product authority",
+    "reusing the first product lock as the second product lock",
+    "starting transition policy or target scenarios before independent second-product freeze"
+  ],
+  "required_authority_outputs": [
+    "runtime-base archive and manifest",
+    "development-addon archive and manifest",
+    "test-addon archive and manifest",
+    "product lock and manifest index",
+    "ownership registry template",
+    "native closure evidence",
+    "runtime and addon behavior evidence",
+    "exact source, producer, dependency, toolchain, and build provenance",
+    "byte-exact archive and manifest identities"
+  ],
+  "schema_version": 1,
+  "second_product_selection": {
+    "android_api": 24,
+    "ndk_version": "27.3.13750724",
+    "official_references": {
+      "android_aarch64_package": {
+        "authority_role": "reference-only-not-project-product",
+        "filename": "python-3.14.5-aarch64-linux-android.tar.gz",
+        "sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+        "url": "https://www.python.org/ftp/python/3.14.5/python-3.14.5-aarch64-linux-android.tar.gz"
+      },
+      "source_tar_xz": {
+        "authority_role": "reference-only",
+        "filename": "Python-3.14.5.tar.xz",
+        "sha256": "7e32597b99e5d9a39abed35de4693fa169df3e5850d4c334337ffd6a19a36db6",
+        "url": "https://www.python.org/ftp/python/3.14.5/Python-3.14.5.tar.xz"
+      }
+    },
+    "python_version": "3.14.5",
+    "selection_class": "immediate-stable-predecessor-same-minor",
+    "source_head": "5607950ef232dad16d75c0cf53101d9649d89115",
+    "source_native_producer": {
+      "Android/android-env.sh": {
+        "git_blob_sha": "5859c0eac4a88fb552c495d46b77422ac5cdc2f0",
+        "sha256_status": "capture-required"
+      },
+      "Android/android.py": {
+        "git_blob_sha": "ec4d28bbaad84d4db730678a5d627c4703bbb401",
+        "sha256_status": "capture-required"
+      }
+    },
+    "source_tag": "v3.14.5",
+    "target_host": "aarch64-linux-android"
+  },
+  "status": "selected-design-input-input-capture-pending",
+  "verification_kind": "stage3c-phase5-gate4a-second-product-authority-selected-input"
+}

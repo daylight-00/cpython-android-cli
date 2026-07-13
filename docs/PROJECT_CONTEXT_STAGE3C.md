@@ -2,7 +2,7 @@
 
 > **Status:** Current handoff context
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 3D
-> **Active boundary:** Gate 4 second-product authority acquisition and repository design
+> **Active boundary:** Gate 4 second-product authority acquisition — CPython 3.14.5 selected; exact input capture pending
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
 > **First-product baseline:** CPython 3.14.6
@@ -72,7 +72,7 @@ Stage 2    native bootstrap/workflow architecture       FROZEN
 Stage 3-A  runtime closure and host-data boundaries     FROZEN
 Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
-Gate 4     upgrade/downgrade                            ACTIVE — second authority pending
+Gate 4A    second-product authority acquisition         ACTIVE — 3.14.5 selected, input capture pending
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -225,7 +225,30 @@ Historical `.tgz` evidence remains immutable. New evidence and ordinary assistan
 
 Gate 4 asks whether one complete frozen three-artifact product can transition to and from a second complete frozen product while preserving dependency, ownership, residual, collision, transaction, recovery, and runtime-behavior boundaries.
 
-The immediate task is **not** an upgrade runner. It is to acquire or build and independently freeze a second authority containing:
+The immediate task is **not** an upgrade runner. Gate 4A has selected the immediate stable predecessor as the second-product input:
+
+```text
+CPython version  3.14.5
+upstream tag     v3.14.5
+source commit    5607950ef232dad16d75c0cf53101d9649d89115
+target           aarch64-linux-android / API 24
+NDK              27.3.13750724
+```
+
+The exact v3.14.5 producer declares OpenSSL 3.0.20-0 rather than the first product's 3.5.7-0. This is a real source/dependency boundary, not a version-label exercise.
+
+The acquisition sequence is:
+
+```text
+A1  selection and repository design          DESIGN FROZEN
+A2  exact input and toolchain capture         pending
+A3  clean upstream Android replay             pending
+A4  three-artifact materialization            pending
+A5  standalone Termux validation              pending
+A6  independent archive audit and freeze      pending
+```
+
+The authority must ultimately contain:
 
 ```text
 runtime-base archive and manifest
@@ -238,7 +261,7 @@ source/build provenance
 byte-exact archive and manifest identities
 ```
 
-A synthetic version label or manually edited first-product copy is rejected as authority.
+A synthetic version label, manually edited first-product copy, or the official Python.org Android package used directly as project authority is rejected.
 
 Only after the second authority is frozen may the repository decide:
 

@@ -372,3 +372,38 @@ docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 ```
+
+## Gate 4A — second-product authority acquisition design
+
+```text
+status
+  DESIGN FROZEN — exact input capture pending
+
+selected second product
+  CPython 3.14.5 / v3.14.5
+
+upstream source commit
+  5607950ef232dad16d75c0cf53101d9649d89115
+
+target held constant
+  aarch64-linux-android / API 24 / NDK 27.3.13750724
+
+producer dependency delta
+  second product OpenSSL 3.0.20-0
+  first product  OpenSSL 3.5.7-0
+
+acquisition sequence
+  A1 design -> A2 input capture -> A3 replay -> A4 materialization
+  -> A5 standalone Termux validation -> A6 independent freeze
+```
+
+Design authority:
+
+```text
+experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
+experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
+experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
+docs/evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md
+```
+
+The design selects a genuine source-native input and freezes the acquisition contract only. The second-product archive, three manifests, product lock, target behavior, and independent freeze are not yet authority. Upgrade/downgrade policy remains closed until A6.

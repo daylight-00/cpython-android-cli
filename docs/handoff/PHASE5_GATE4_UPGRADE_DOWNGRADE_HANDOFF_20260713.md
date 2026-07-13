@@ -1,6 +1,7 @@
 # Phase 5 Gate 4 Upgrade and Downgrade Handoff — 2026-07-13
 
 > **Status:** ACTIVE — second product authority and design pending
+> **Gate 4A detail:** design frozen; CPython 3.14.5 exact input capture pending
 > **Prerequisite:** frozen Gate 3D final uninstall and ownership acceptance
 > **Target:** Termux on Android arm64
 
@@ -26,6 +27,33 @@ scenario / verifier / external audit
 ## Gate 4 question
 
 > Can one complete frozen three-artifact product be upgraded to, and downgraded from, a second complete frozen product while preserving dependency, ownership, residual, collision, transaction, recovery, and runtime-behavior boundaries?
+
+## Selected second product
+
+```text
+version       CPython 3.14.5
+upstream tag  v3.14.5
+source commit 5607950ef232dad16d75c0cf53101d9649d89115
+target        aarch64-linux-android / API 24
+NDK           27.3.13750724
+```
+
+This is the immediate stable predecessor of the frozen 3.14.6 first product. The exact v3.14.5 `Android/android.py` declares OpenSSL 3.0.20-0 instead of first-product OpenSSL 3.5.7-0, so the second authority requires a genuine source-native replay and dependency capture.
+
+Official Python.org source and Android package hashes are references only. The official Android package is not the project product authority.
+
+Gate 4A sequence:
+
+```text
+A1 selection/design                  DESIGN FROZEN
+A2 exact input/toolchain capture     pending
+A3 clean upstream replay             pending
+A4 three-artifact materialization    pending
+A5 standalone Termux validation      pending
+A6 independent audit/freeze          pending
+```
+
+No second-product target authority exists until A6 passes.
 
 ## Required second-product authority
 
@@ -69,8 +97,17 @@ Before creating the second-product authority branch, reconcile the root README, 
 
 ## Immediate repository task
 
-Acquire or build the second complete product authority and freeze its archives, manifests, product lock, ownership counts, native closure, runtime behavior, and provenance. Only then design the upgrade/downgrade matrix and repository verifier.
+Execute Gate 4A A2 exact input capture for CPython 3.14.5: verify tag/commit reachability, source and producer hashes, all six source-dependency asset identities and archive inventories, NDK/toolchain paths and versions, and clean-worktree boundaries. Then proceed through replay, three-artifact materialization, standalone Termux validation, and independent freeze. Only after A6 may the upgrade/downgrade matrix and repository verifier be designed.
+
+Gate 4A machine design:
+
+```text
+experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
+experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
+```
 
 ## Claim boundary
 
-Gate 4 is authority/design pending. No upgrade, downgrade, compatibility, migration, recovery, or target acceptance claim is made by opening this handoff. Gate 3D remains frozen and must not be reopened implicitly.
+Gate 4A input selection/design is frozen, but the second-product artifact authority is still pending. No second-product target authority, upgrade, downgrade, compatibility, migration, recovery, or transition acceptance claim is made by this handoff. Gate 3D remains frozen and must not be reopened implicitly.
+
+No Gate 4 target claim is made by the Gate 4A design.

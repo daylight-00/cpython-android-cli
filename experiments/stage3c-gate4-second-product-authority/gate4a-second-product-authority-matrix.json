@@ -1,0 +1,378 @@
+{
+  "claim_boundary": {
+    "not_proved_by_design": "No second-product archive, manifest, product lock, target behavior, upgrade, downgrade, compatibility, migration, or recovery transition is proved.",
+    "proved_by_design": "The repository selects a genuine v3.14.5 source-native producer input and a six-stage authority-acquisition contract.",
+    "transition_design_requires": "A6 independently frozen second-product authority."
+  },
+  "execution_contract": {
+    "canonical_json": true,
+    "complete_result_indexes": true,
+    "historical_tgz_immutable": true,
+    "independent_external_audit": true,
+    "new_evidence_archive_suffix": ".tar.zst",
+    "pass_or_fail_archive_required": true,
+    "real_returncodes": true,
+    "synchronous_raw_stdout_stderr": true
+  },
+  "requirement_count": 36,
+  "requirements": [
+    {
+      "group": "identity",
+      "id": "G4A-ID-01",
+      "required_evidence": [
+        "exact tag",
+        "exact commit"
+      ],
+      "statement": "Second product is CPython 3.14.5, the immediate stable predecessor of first product 3.14.6."
+    },
+    {
+      "group": "identity",
+      "id": "G4A-ID-02",
+      "required_evidence": [
+        "git object verification"
+      ],
+      "statement": "Second product uses exact upstream tag v3.14.5 at commit 5607950ef232dad16d75c0cf53101d9649d89115."
+    },
+    {
+      "group": "identity",
+      "id": "G4A-ID-03",
+      "required_evidence": [
+        "input record"
+      ],
+      "statement": "Target host remains aarch64-linux-android."
+    },
+    {
+      "group": "identity",
+      "id": "G4A-ID-04",
+      "required_evidence": [
+        "producer environment"
+      ],
+      "statement": "Android API remains 24."
+    },
+    {
+      "group": "identity",
+      "id": "G4A-ID-05",
+      "required_evidence": [
+        "android-env capture"
+      ],
+      "statement": "NDK remains 27.3.13750724 unless a separate authority decision changes it."
+    },
+    {
+      "group": "identity",
+      "id": "G4A-ID-06",
+      "required_evidence": [
+        "reference hashes",
+        "claim boundary"
+      ],
+      "statement": "Official Python.org source and Android packages are reference identities, not the project product authority."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-01",
+      "required_evidence": [
+        "git blob SHA",
+        "SHA-256"
+      ],
+      "statement": "The exact v3.14.5 Android/android.py and Android/android-env.sh blobs are captured."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-02",
+      "required_evidence": [
+        "parsed dependency inventory"
+      ],
+      "statement": "Dependency release tags are parsed from the exact v3.14.5 Android/android.py."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-03",
+      "required_evidence": [
+        "URL",
+        "size",
+        "SHA-256",
+        "archive inventory"
+      ],
+      "statement": "All six dependency assets are downloaded and independently hashed before replay."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-04",
+      "required_evidence": [
+        "dependency diff"
+      ],
+      "statement": "OpenSSL 3.0.20-0 is treated as a real product-input delta from first-product OpenSSL 3.5.7-0."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-05",
+      "required_evidence": [
+        "clean worktree",
+        "source tree"
+      ],
+      "statement": "Source archive/tag/worktree identity is verified without local source edits."
+    },
+    {
+      "group": "producer",
+      "id": "G4A-PR-06",
+      "required_evidence": [
+        "tool versions",
+        "paths",
+        "hashes where applicable"
+      ],
+      "statement": "Build host, Android SDK/NDK, compiler, linker, make, and Python tool identities are captured."
+    },
+    {
+      "group": "replay",
+      "id": "G4A-RP-01",
+      "required_evidence": [
+        "before inventory"
+      ],
+      "statement": "Replay starts from an isolated clean source worktree and empty cross-build/output roots."
+    },
+    {
+      "group": "replay",
+      "id": "G4A-RP-02",
+      "required_evidence": [
+        "raw commands",
+        "stdout",
+        "stderr",
+        "return codes"
+      ],
+      "statement": "The source-native Android producer performs dependency unpack, build-Python, target configure, target build, install, and package steps."
+    },
+    {
+      "group": "replay",
+      "id": "G4A-RP-03",
+      "required_evidence": [
+        "input/output provenance",
+        "inode/path audit"
+      ],
+      "statement": "No first-product payload bytes are copied into the second product candidate."
+    },
+    {
+      "group": "replay",
+      "id": "G4A-RP-04",
+      "required_evidence": [
+        "runtime probes",
+        "sysconfig probes"
+      ],
+      "statement": "The produced candidate reports Python 3.14.5 and exact expected target/platform identity."
+    },
+    {
+      "group": "replay",
+      "id": "G4A-RP-05",
+      "required_evidence": [
+        "archive SHA-256",
+        "member index",
+        "prefix index"
+      ],
+      "statement": "Candidate packaging preserves exact replay archive and extracted prefix identities."
+    },
+    {
+      "group": "materialization",
+      "id": "G4A-MT-01",
+      "required_evidence": [
+        "three archives",
+        "three manifests"
+      ],
+      "statement": "Runtime-base, development-addon, and test-addon are complete and independently owned artifacts."
+    },
+    {
+      "group": "materialization",
+      "id": "G4A-MT-02",
+      "required_evidence": [
+        "canonical manifests"
+      ],
+      "statement": "Each manifest has canonical paths, types, modes, sizes or link targets, and SHA-256 for regular files."
+    },
+    {
+      "group": "materialization",
+      "id": "G4A-MT-03",
+      "required_evidence": [
+        "product lock",
+        "manifest index"
+      ],
+      "statement": "The second product lock and manifest index refer only to second-product artifact identities."
+    },
+    {
+      "group": "materialization",
+      "id": "G4A-MT-04",
+      "required_evidence": [
+        "ownership counts",
+        "overlap audit"
+      ],
+      "statement": "The ownership registry template preserves the frozen registry schema and disjoint artifact ownership."
+    },
+    {
+      "group": "materialization",
+      "id": "G4A-MT-05",
+      "required_evidence": [
+        "reconstruction index",
+        "zero unexplained drift"
+      ],
+      "statement": "Artifact reconstruction equals the complete replay candidate prefix under the accepted exclusion policy."
+    },
+    {
+      "group": "target",
+      "id": "G4A-TG-01",
+      "required_evidence": [
+        "wrapper evidence",
+        "root census"
+      ],
+      "statement": "Second-product validation uses fresh inode-separated Termux roots and exact input hashes."
+    },
+    {
+      "group": "target",
+      "id": "G4A-TG-02",
+      "required_evidence": [
+        "raw behavior probes"
+      ],
+      "statement": "Runtime CLI, stdlib native imports, HTTPS trust, subprocess, venv, uv explicit interpreter, and relocation behavior are validated."
+    },
+    {
+      "group": "target",
+      "id": "G4A-TG-03",
+      "required_evidence": [
+        "addon lifecycle evidence"
+      ],
+      "statement": "Both addons install independently over exact runtime-base and remain behaviorally valid."
+    },
+    {
+      "group": "target",
+      "id": "G4A-TG-04",
+      "required_evidence": [
+        "lifecycle evidence"
+      ],
+      "statement": "Same-version reinstall, repair boundaries, preservation, recovery, lock exclusion, and final teardown are validated as standalone second-product properties."
+    },
+    {
+      "group": "target",
+      "id": "G4A-TG-05",
+      "required_evidence": [
+        "claim-boundary audit"
+      ],
+      "statement": "No upgrade or downgrade operation is executed in second-product standalone authority acquisition."
+    },
+    {
+      "group": "freeze",
+      "id": "G4A-FR-01",
+      "required_evidence": [
+        "target archive"
+      ],
+      "statement": "A complete result archive is produced on pass or fail with raw return codes and logs."
+    },
+    {
+      "group": "freeze",
+      "id": "G4A-FR-02",
+      "required_evidence": [
+        "result indexes"
+      ],
+      "statement": "Root and nested result indexes are complete and independently recomputed."
+    },
+    {
+      "group": "freeze",
+      "id": "G4A-FR-03",
+      "required_evidence": [
+        "safety report"
+      ],
+      "statement": "Archive members are safe: no absolute/traversal paths, unsafe links, or special entries."
+    },
+    {
+      "group": "freeze",
+      "id": "G4A-FR-04",
+      "required_evidence": [
+        "external audit"
+      ],
+      "statement": "Independent audit recomputes artifact, manifest, product lock, ownership, native closure, and runtime evidence."
+    },
+    {
+      "group": "freeze",
+      "id": "G4A-FR-05",
+      "required_evidence": [
+        "freeze decision"
+      ],
+      "statement": "Second product is frozen only after repository design, workstation replay/materialization, Termux validation, and external audit all pass."
+    },
+    {
+      "group": "claim",
+      "id": "G4A-CL-01",
+      "required_evidence": [
+        "regression checks"
+      ],
+      "statement": "Gate 3B, Gate 3C, and Gate 3D first-product authorities remain immutable inputs."
+    },
+    {
+      "group": "claim",
+      "id": "G4A-CL-02",
+      "required_evidence": [
+        "explicit status"
+      ],
+      "statement": "A1 design does not create or freeze a second-product artifact authority."
+    },
+    {
+      "group": "claim",
+      "id": "G4A-CL-03",
+      "required_evidence": [
+        "explicit exclusions"
+      ],
+      "statement": "No mixed-version compatibility, transition order, collision, recovery, upgrade, or downgrade policy is frozen."
+    },
+    {
+      "group": "claim",
+      "id": "G4A-CL-04",
+      "required_evidence": [
+        "phase gate"
+      ],
+      "statement": "Gate 4 transition design starts only after A6 independent freeze."
+    }
+  ],
+  "schema_version": 1,
+  "selected_input": "experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json",
+  "stage_count": 6,
+  "stages": [
+    {
+      "execution_location": "repository",
+      "id": "A1",
+      "name": "selection-and-design",
+      "objective": "Select CPython 3.14.5 and freeze the source-native producer boundary.",
+      "status": "design-frozen-input-capture-pending"
+    },
+    {
+      "execution_location": "workstation",
+      "id": "A2",
+      "name": "input-capture",
+      "objective": "Capture exact source, producer, dependency assets, NDK/toolchain, host tools, and download archive inventories.",
+      "status": "pending"
+    },
+    {
+      "execution_location": "workstation",
+      "id": "A3",
+      "name": "upstream-replay",
+      "objective": "Replay the exact v3.14.5 Android producer from a clean source worktree without editing product identity.",
+      "status": "pending"
+    },
+    {
+      "execution_location": "workstation",
+      "id": "A4",
+      "name": "three-artifact-materialization",
+      "objective": "Derive complete runtime-base, development-addon, and test-addon artifacts with manifests, product lock, manifest index, and ownership template.",
+      "status": "pending"
+    },
+    {
+      "execution_location": "termux",
+      "id": "A5",
+      "name": "standalone-target-validation",
+      "objective": "Install and validate the second product independently on fresh Termux roots, including runtime, native closure, addons, relocation, reinstall, recovery, and final teardown.",
+      "status": "pending"
+    },
+    {
+      "execution_location": "independent",
+      "id": "A6",
+      "name": "external-audit-and-freeze",
+      "objective": "Recompute archive identities, indexes, safety, manifests, ownership counts, behavior evidence, and claim boundary before freezing authority.",
+      "status": "pending"
+    }
+  ],
+  "status": "design-frozen-input-capture-pending",
+  "verification_kind": "stage3c-phase5-gate4a-second-product-authority-design-matrix"
+}

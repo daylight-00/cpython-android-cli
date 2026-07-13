@@ -10,15 +10,19 @@ Use these documents to continue the project without relying on prior chat contex
 3. COLLABORATION_PROTOCOL.md
 4. ../GITHUB_COLLABORATION_WORKFLOW.md
 5. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
-6. ../stages/STAGE3C_PHASE5_SCOPE.md
-7. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-8. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
-9. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
-10. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
-11. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
-12. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
-13. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
-14. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+6. ../../experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
+7. ../../experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
+8. ../../experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
+9. ../evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md
+10. ../stages/STAGE3C_PHASE5_SCOPE.md
+11. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+12. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+13. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
+14. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
+15. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+16. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+17. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+18. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```
 
 ## Current state
@@ -38,6 +42,7 @@ Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
 Gate 3D final uninstall design                       FROZEN 108/108, 44 scenarios
 Gate 3D final uninstall target                       FROZEN 44/44 + 138/138 + 37/37
 Gate 4 upgrade/downgrade                             ACTIVE — second product authority/design pending
+Gate 4A authority acquisition                          DESIGN FROZEN — 3.14.5 input capture pending
 ```
 
 ## Frozen Gate 3B identity
@@ -90,7 +95,9 @@ Gate 3D accepts complete addon teardown, final runtime-base uninstall, exact reg
 
 ## Active Gate 4 boundary
 
-Gate 4 begins with second-product authority acquisition. No upgrade/downgrade matrix or target claim is frozen. A synthetic version label or edited copy of the first product is not an acceptable second authority.
+Gate 4A selected CPython 3.14.5 (`v3.14.5`, `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. Exact source/producer/dependency/toolchain capture is next, followed by clean replay, three-artifact materialization, standalone Termux validation, and independent freeze.
+
+No second-product artifact authority is frozen. No upgrade/downgrade matrix or target claim is frozen. A synthetic version label, edited copy of the first product, or official reference package used directly as project authority is not acceptable.
 
 ## Evidence and transport rule
 
