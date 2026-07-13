@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3D final uninstall and ownership boundary design
+> **Status:** ACTIVE — Gate 3D design frozen; target implementation pending
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -43,7 +43,7 @@ Gate 2R   corrected-engine complete-root relocation regression    FROZEN
 Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
-Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — DESIGN PENDING
+Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — DESIGN FROZEN / TARGET PENDING
 Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
 
@@ -217,7 +217,7 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```
 
-## Active Gate 3D final uninstall and ownership boundary
+## Active Gate 3D final uninstall and ownership boundary — design frozen
 
 Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report behavior with the frozen Gate 3C composed-product lifecycle. It must begin from explicit composed/runtime-plus-addon/runtime-only states, reject runtime-base removal while addons remain, remove addons through accepted orders, and then audit final runtime-base removal.
 
@@ -232,7 +232,7 @@ required non-empty ancestors retained
 transaction cleanup or accepted rollback tombstone
 ```
 
-The immediate task is repository-side matrix and verifier design only. No target Gate 3D claim is authorized.
+The repository-side design is frozen at 108/108 verifier checks and 44 scenarios: 6 preflight, 8 teardown, 10 residual, 12 recovery, 2 locking, and 6 final-audit cases. The immediate task is target runner and independent verifier implementation. No target Gate 3D claim is authorized.
 
 ## Deferred Gate 4
 

@@ -1,6 +1,6 @@
 # Phase 5 Gate 3D Final Uninstall and Ownership Boundary Handoff — 2026-07-13
 
-> **Status:** ACTIVE — design and target evidence pending
+> **Status:** DESIGN FROZEN — target implementation and evidence pending
 > **Prerequisites:** frozen Gate 3B preserve-and-report acceptance and frozen Gate 3C addon lifecycle acceptance
 > **Target:** Termux on Android arm64
 
@@ -105,9 +105,29 @@ filesystem root physically empty
 
 These are not interchangeable states.
 
-## Immediate repository task
+## Frozen design result
 
-Create a policy-bounded Gate 3D machine matrix and repository verifier using the exact Gate 3B and Gate 3C authorities. Begin with static authority and scenario-design verification only. Do not authorize a target PASS until a complete independently inspected Termux `.tar.zst` archive exists.
+The repository-side matrix is now frozen at exactly 44 scenarios and the repository verifier passes 108/108 checks:
+
+```text
+preflight rejection                6
+valid and guarded teardown         8
+residual ownership                10
+crash recovery                    12
+lock exclusion                     2
+final-state and evidence audit     6
+```
+
+Canonical design files:
+
+```text
+experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
+experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall-design.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
+```
+
+The next repository task is target runner and independent verifier implementation. Do not authorize a target PASS until a complete independently inspected Termux `.tar.zst` archive exists.
 
 ## Claim boundary
 

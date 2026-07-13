@@ -1,0 +1,1187 @@
+{
+  "authority": {
+    "artifacts": {
+      "development-addon": {
+        "archive_sha256": "f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-development-addon",
+        "manifest_sha256": "9a01655d63044ab126fd71236ca2cb814221317ee9b6b44fd2417fa5535a8b2a",
+        "owned_paths": 454,
+        "prerequisite": "runtime-base"
+      },
+      "runtime-base": {
+        "archive_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base",
+        "manifest_sha256": "ce48849c9c88c9296264d6a917c3b55b0433e0d67bdda06579d6f18d701f285a",
+        "owned_paths": 714
+      },
+      "test-addon": {
+        "archive_sha256": "02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-test-addon",
+        "manifest_sha256": "47d9f2e24e74b23e34ae6bfa95a0df22ec7cf9505e3e189dc3d6bdf2dc1c8b5f",
+        "owned_paths": 1788,
+        "prerequisite": "runtime-base"
+      }
+    },
+    "contract_index_sha256": "79e3c173639047bc23b7dbe3c2135abe8f0b868d787735c094cbe06749c7dde3",
+    "gate3b": {
+      "archive": "stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz",
+      "archive_sha256": "0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b",
+      "result_index_sha256": "f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9",
+      "scenario_pass": "29/29",
+      "verifier_pass": "62/62"
+    },
+    "gate3c": {
+      "archive": "stage3c-phase5-gate3c-addon-lifecycle-results-20260713T033412Z.tar.zst",
+      "archive_sha256": "43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a",
+      "external_audit_pass": "27/27",
+      "result_index_sha256": "fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c",
+      "result_tree_safety_sha256": "ab338579025da63dec1750e3a7649c9a5f260cd4556f60ab3b3ade6140187bb9",
+      "scenario_pass": "50/50",
+      "verifier_pass": "103/103"
+    },
+    "integrated_engine_git_blobs": {
+      "recovery_common.py": "3183ba0861ef45e7a395201bec0085f3f69fb248",
+      "recovery_durability.py": "61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f",
+      "recovery_engine.py": "aebf5b9a33d163f7f8758f785ca621c94c0e478b",
+      "recovery_operations.py": "8a307065e00fd7a7332541f4911c5478945374ee"
+    },
+    "shared_structural_namespace": [
+      "lib",
+      "lib/python3.14"
+    ],
+    "states": {
+      "composed": {
+        "artifact_count": 3,
+        "artifacts": [
+          "runtime-base",
+          "development-addon",
+          "test-addon"
+        ],
+        "owned_path_count": 2956
+      },
+      "empty": {
+        "artifact_count": 0,
+        "artifacts": [],
+        "owned_path_count": 0
+      },
+      "runtime": {
+        "artifact_count": 1,
+        "artifacts": [
+          "runtime-base"
+        ],
+        "owned_path_count": 714
+      },
+      "runtime-development": {
+        "artifact_count": 2,
+        "artifacts": [
+          "runtime-base",
+          "development-addon"
+        ],
+        "owned_path_count": 1168
+      },
+      "runtime-test": {
+        "artifact_count": 2,
+        "artifacts": [
+          "runtime-base",
+          "test-addon"
+        ],
+        "owned_path_count": 2502
+      }
+    },
+    "subjects": {
+      "modified_owned_regular": "lib/python3.14/LICENSE.txt",
+      "modified_owned_symlink": "bin/python",
+      "unowned_directory": "lib/python3.14/site-packages/gate3d-user-dir",
+      "unowned_file": "lib/python3.14/site-packages/gate3d-user-file.txt"
+    }
+  },
+  "claim_boundary": {
+    "gate3d_close_requires": "A complete independently inspected Termux result archive.",
+    "not_proved_by_design": "No target final multi-artifact/runtime-base uninstall, upgrade, or downgrade claim is made.",
+    "proved_by_design": "The frozen Gate 3B and Gate 3C authorities and the forty-four-scenario Gate 3D final-uninstall matrix are internally consistent and policy-bounded."
+  },
+  "execution_contract": {
+    "historical_tgz_immutable": true,
+    "new_archive_suffix": ".tar.zst",
+    "pass_or_fail_archive_required": true,
+    "single_termux_wrapper": true
+  },
+  "final_state_classes": {
+    "exact-owned-teardown": {
+      "approved_residuals": [],
+      "owned_payload_absent": true,
+      "prefix_root_physically_empty": true,
+      "registry_empty": true,
+      "transactions_empty": true
+    },
+    "mixed-approved-residual": {
+      "approved_residuals": [
+        "modified-owned-leaf",
+        "unowned-sentinel",
+        "required-nonempty-ancestors"
+      ],
+      "owned_payload_absent": true,
+      "prefix_root_physically_empty": false,
+      "registry_empty": true,
+      "transactions_empty": true
+    },
+    "modified-owned-residual": {
+      "approved_residuals": [
+        "modified-owned-leaf",
+        "required-nonempty-ancestors"
+      ],
+      "owned_payload_absent": true,
+      "prefix_root_physically_empty": false,
+      "registry_empty": true,
+      "transactions_empty": true
+    },
+    "unowned-sentinel-residual": {
+      "approved_residuals": [
+        "unowned-sentinel",
+        "required-nonempty-ancestors"
+      ],
+      "owned_payload_absent": true,
+      "prefix_root_physically_empty": false,
+      "registry_empty": true,
+      "transactions_empty": true
+    }
+  },
+  "matrix_kind": "stage3c-phase5-gate3d-final-uninstall-design",
+  "policy": {
+    "committed_recovery": "finalize-final-state-remove-transaction",
+    "committed_second_recovery": "ZERO_TRANSACTIONS",
+    "exact_owned_leaf": "remove-and-deregister",
+    "modified_owned_leaf": "preserve-report-deregister",
+    "owned_directory": "remove-only-when-empty",
+    "precommit_recovery": "restore-exact-prior-runtime-state-retain-one-rolled-back-tombstone",
+    "precommit_second_recovery": "NOOP_ROLLED_BACK",
+    "registry_after_committed_final_uninstall": "empty",
+    "runtime_uninstall_precondition": "all-addons-absent",
+    "runtime_uninstall_with_any_addon": "reject-before-mutation",
+    "structural_namespace": "runtime-owned-remove-when-empty-preserve-for-residual-descendant",
+    "unowned_descendant": "preserve-unchanged",
+    "upgrade_downgrade": "out-of-scope"
+  },
+  "scenario_count": 44,
+  "scenario_group_counts": {
+    "audit": 6,
+    "locking": 2,
+    "preflight": 6,
+    "recovery": 12,
+    "residual": 10,
+    "teardown": 8
+  },
+  "scenarios": [
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "composed",
+      "group": "preflight",
+      "id": "P01",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "runtime-development",
+      "group": "preflight",
+      "id": "P02",
+      "initial_state": "runtime-development",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "runtime-test",
+      "group": "preflight",
+      "id": "P03",
+      "initial_state": "runtime-test",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS_AFTER_FIRST_ADDON",
+      "expected_state": "runtime-development",
+      "group": "preflight",
+      "id": "P04",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation_sequence": [
+        "uninstall test-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS_AFTER_FIRST_ADDON",
+      "expected_state": "runtime-test",
+      "group": "preflight",
+      "id": "P05",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation_sequence": [
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "artifact not installed",
+      "expected_result": "REJECT_NOT_INSTALLED",
+      "expected_state": "empty",
+      "group": "preflight",
+      "id": "P06",
+      "initial_state": "empty",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_FINAL_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T01",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_FINAL_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T02",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall development-addon",
+        "uninstall test-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_FINAL_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T03",
+      "initial_state": "runtime-development",
+      "operation_sequence": [
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_FINAL_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T04",
+      "initial_state": "runtime-test",
+      "operation_sequence": [
+        "uninstall test-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_FINAL_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T05",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "GUARDED_THEN_EXACT_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T06",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall test-addon",
+        "reject uninstall runtime-base",
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "GUARDED_THEN_EXACT_TEARDOWN",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T07",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall development-addon",
+        "reject uninstall runtime-base",
+        "uninstall test-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "EXACT_THEN_IDEMPOTENT_REJECTION",
+      "expected_state": "empty",
+      "final_state_class": "exact-owned-teardown",
+      "group": "teardown",
+      "id": "T08",
+      "initial_state": "runtime",
+      "operation_sequence": [
+        "uninstall runtime-base",
+        "reject repeated uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PRESERVE_REPORT_DEREGISTER",
+      "final_state_class": "modified-owned-residual",
+      "group": "residual",
+      "id": "S01",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "modified-owned-regular",
+      "subject_path": "lib/python3.14/LICENSE.txt"
+    },
+    {
+      "expected_result": "PRESERVE_REPORT_DEREGISTER",
+      "final_state_class": "modified-owned-residual",
+      "group": "residual",
+      "id": "S02",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "modified-owned-symlink",
+      "subject_path": "bin/python"
+    },
+    {
+      "expected_result": "COMPOSED_PRESERVE_REPORT_DEREGISTER",
+      "final_state_class": "modified-owned-residual",
+      "group": "residual",
+      "id": "S03",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "modified-owned-regular",
+      "subject_path": "lib/python3.14/LICENSE.txt"
+    },
+    {
+      "expected_result": "COMPOSED_PRESERVE_REPORT_DEREGISTER",
+      "final_state_class": "modified-owned-residual",
+      "group": "residual",
+      "id": "S04",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall development-addon",
+        "uninstall test-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "modified-owned-symlink",
+      "subject_path": "bin/python"
+    },
+    {
+      "expected_result": "PRESERVE_UNOWNED",
+      "final_state_class": "unowned-sentinel-residual",
+      "group": "residual",
+      "id": "S05",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "unowned-file",
+      "subject_path": "lib/python3.14/site-packages/gate3d-user-file.txt"
+    },
+    {
+      "expected_result": "PRESERVE_UNOWNED",
+      "final_state_class": "unowned-sentinel-residual",
+      "group": "residual",
+      "id": "S06",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "unowned-directory",
+      "subject_path": "lib/python3.14/site-packages/gate3d-user-dir"
+    },
+    {
+      "expected_result": "PRESERVE_DESCENDANT_AND_REQUIRED_ANCESTORS",
+      "final_state_class": "unowned-sentinel-residual",
+      "group": "residual",
+      "id": "S07",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "unowned-descendant-under-owned-directory",
+      "subject_path": "lib/python3.14/site-packages/gate3d-descendant.txt"
+    },
+    {
+      "expected_result": "PRESERVE_SHARED_NAMESPACE_DESCENDANT",
+      "final_state_class": "unowned-sentinel-residual",
+      "group": "residual",
+      "id": "S08",
+      "initial_state": "composed",
+      "operation_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon",
+        "uninstall runtime-base"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "unowned-file-under-shared-namespace",
+      "subject_path": "lib/python3.14/gate3d-shared-sentinel.txt"
+    },
+    {
+      "expected_result": "PRESERVE_COMBINED_RESIDUALS",
+      "final_state_class": "mixed-approved-residual",
+      "group": "residual",
+      "id": "S09",
+      "initial_state": "runtime",
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject_paths": [
+        "lib/python3.14/LICENSE.txt",
+        "lib/python3.14/site-packages/gate3d-user-dir"
+      ],
+      "subjects": [
+        "modified-owned-regular",
+        "unowned-directory"
+      ]
+    },
+    {
+      "expected_result": "RESIDUAL_COLLISION_REJECTED",
+      "final_state_class": "modified-owned-residual",
+      "group": "residual",
+      "id": "S10",
+      "initial_state": "runtime",
+      "operation_sequence": [
+        "uninstall runtime-base",
+        "reject reinstall runtime-base over preserved residual"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "subject": "modified-owned-regular",
+      "subject_path": "lib/python3.14/LICENSE.txt"
+    },
+    {
+      "committed_final_state_class": "exact-owned-teardown",
+      "crash_boundary": "prepared",
+      "expected_crash_returncode": 90,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R01",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "exact-owned"
+    },
+    {
+      "committed_final_state_class": "exact-owned-teardown",
+      "crash_boundary": "applying-late",
+      "expected_crash_returncode": 93,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R02",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "exact-owned"
+    },
+    {
+      "committed_final_state_class": "exact-owned-teardown",
+      "crash_boundary": "committed",
+      "expected_crash_returncode": 92,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "group": "recovery",
+      "id": "R03",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "exact-owned"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "prepared",
+      "expected_crash_returncode": 90,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R04",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-regular"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "applying-late",
+      "expected_crash_returncode": 93,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R05",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-regular"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "committed",
+      "expected_crash_returncode": 92,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "group": "recovery",
+      "id": "R06",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-regular"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "prepared",
+      "expected_crash_returncode": 90,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R07",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-symlink"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "applying-late",
+      "expected_crash_returncode": 93,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R08",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-symlink"
+    },
+    {
+      "committed_final_state_class": "modified-owned-residual",
+      "crash_boundary": "committed",
+      "expected_crash_returncode": 92,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "group": "recovery",
+      "id": "R09",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "modified-owned-symlink"
+    },
+    {
+      "committed_final_state_class": "unowned-sentinel-residual",
+      "crash_boundary": "prepared",
+      "expected_crash_returncode": 90,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R10",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "unowned-file"
+    },
+    {
+      "committed_final_state_class": "unowned-sentinel-residual",
+      "crash_boundary": "applying-late",
+      "expected_crash_returncode": 93,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "group": "recovery",
+      "id": "R11",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "unowned-file"
+    },
+    {
+      "committed_final_state_class": "unowned-sentinel-residual",
+      "crash_boundary": "committed",
+      "expected_crash_returncode": 92,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "group": "recovery",
+      "id": "R12",
+      "initial_state": "composed",
+      "operation": "crash uninstall runtime-base",
+      "precommit_state": "runtime",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ],
+      "setup_sequence": [
+        "uninstall test-addon",
+        "uninstall development-addon"
+      ],
+      "subject": "unowned-file"
+    },
+    {
+      "expected_result": "REJECT_LOCKED",
+      "expected_returncode": 44,
+      "expected_state": "runtime",
+      "group": "locking",
+      "id": "L01",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base while transaction lock held",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "REJECT_RECOVERY_LOCKED",
+      "expected_returncode": 44,
+      "expected_state": "runtime-with-prepared-transaction",
+      "group": "locking",
+      "id": "L02",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation_sequence": [
+        "crash uninstall runtime-base at PREPARED",
+        "recover while transaction lock held"
+      ],
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "registry_empty",
+        "owned_payload_absent",
+        "approved_residuals_empty",
+        "transactions_empty",
+        "prefix_root_physically_empty"
+      ],
+      "expected_result": "FINAL_AUDIT_EXACT",
+      "group": "audit",
+      "id": "A01",
+      "initial_state": "runtime",
+      "operation": "audit exact final teardown",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "registry_empty",
+        "owned_payload_absent",
+        "modified_leaf_preserved",
+        "required_nonempty_ancestors_only",
+        "prefix_root_not_empty"
+      ],
+      "expected_result": "FINAL_AUDIT_MODIFIED",
+      "group": "audit",
+      "id": "A02",
+      "initial_state": "runtime",
+      "operation": "audit modified-owned final teardown",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "registry_empty",
+        "owned_payload_absent",
+        "unowned_sentinel_unchanged",
+        "required_nonempty_ancestors_only",
+        "prefix_root_not_empty"
+      ],
+      "expected_result": "FINAL_AUDIT_UNOWNED",
+      "group": "audit",
+      "id": "A03",
+      "initial_state": "runtime",
+      "operation": "audit unowned final teardown",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "shared_namespace_removed_when_empty",
+        "shared_namespace_retained_only_for_residual_descendant",
+        "no_addon_ownership_adoption"
+      ],
+      "expected_result": "STRUCTURAL_NAMESPACE_EXACT",
+      "group": "audit",
+      "id": "A04",
+      "initial_state": "composed",
+      "operation": "audit structural namespace after both teardown orders",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "precommit_exact_prior_state",
+        "rolled_back_tombstone_one",
+        "second_recovery_noop",
+        "committed_transaction_cleaned"
+      ],
+      "expected_result": "RECOVERY_TOPOLOGY_EXACT",
+      "group": "audit",
+      "id": "A05",
+      "initial_state": "runtime",
+      "operation": "audit recovery topology",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "raw_stdout_stderr",
+        "real_returncodes",
+        "canonical_json",
+        "archive_safety",
+        "complete_root_result_index",
+        "independent_verifier",
+        "explicit_claim_boundary"
+      ],
+      "expected_result": "EVIDENCE_PACKAGE_COMPLETE",
+      "group": "audit",
+      "id": "A06",
+      "initial_state": "runtime",
+      "operation": "audit evidence package",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "payload_inventory",
+        "residual_inventory",
+        "transaction_inventory"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "status": "DESIGN_FROZEN_TARGET_EVIDENCE_PENDING",
+  "target": "Termux on Android arm64",
+  "target_evidence_requirements": [
+    "accepted Gate 3B and Gate 3C authority hashes",
+    "fresh authority extraction",
+    "inode-separated roots",
+    "synchronous raw stdout and stderr",
+    "real process return codes",
+    "before and after registry snapshots",
+    "owned payload and residual inventories",
+    "journal and transaction snapshots",
+    "second-recovery evidence",
+    "canonical machine JSON",
+    "archive safety report",
+    "complete root result-index recomputation",
+    "independent verifier",
+    "explicit claim boundary"
+  ]
+}

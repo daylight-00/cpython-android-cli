@@ -288,13 +288,32 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 ```
 
-## Active boundary
+## Gate 3D — final uninstall and ownership boundary
 
 ```text
-Gate 3D runtime uninstall and final ownership boundary design
+status
+  DESIGN FROZEN — target implementation and evidence pending
+
+design verifier
+  108/108 PASS
+
+scenario matrix
+  44 total
+  6 preflight / 8 teardown / 10 residual / 12 recovery / 2 locking / 6 audit
 ```
 
-Gate 3D must integrate the frozen Gate 3B runtime-base preserve-and-report authority with the frozen Gate 3C composed-product lifecycle. Required design surfaces include valid addon teardown orders, runtime-base preflight rejection while addons remain, exact final registry transition, owned-payload absence, approved residual census, recovery, and archive/index integrity.
+Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report authority with the frozen Gate 3C composed-product lifecycle. It fixes valid addon teardown orders, runtime-base preflight rejection while addons remain, exact final registry transition, owned-payload absence, approved residual census, recovery, and archive/index integrity without reopening frozen policy.
+
+Design files:
+
+```text
+experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
+experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall-design.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
+```
+
+No target Gate 3D PASS is authorized until a complete `.tar.zst` result archive is independently inspected.
 
 ## Deferred boundary
 

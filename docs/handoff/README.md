@@ -7,14 +7,16 @@ Use these documents to continue the project without relying on prior chat contex
 ```text
 1. COLLABORATION_PROTOCOL.md
 2. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
-3. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
-4. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
-5. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
-6. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-7. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-8. ../stages/STAGE3C_PHASE5_SCOPE.md
-9. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-10. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+4. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
+5. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+6. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
+7. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
+8. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
+9. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+10. ../stages/STAGE3C_PHASE5_SCOPE.md
+11. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+12. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
 
 ## Current state
@@ -31,7 +33,8 @@ Gate 3B preserve-and-report product acceptance       FROZEN 29/29 + 62/62
 Gate 3C design                                       FROZEN 73/73, 50 scenarios
 Gate 3C target implementation                       FROZEN 50/50 + 103/103
 Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
-Gate 3D final uninstall                              ACTIVE — design pending
+Gate 3D final uninstall design                       DESIGN FROZEN — 108/108, 44 scenarios
+Gate 3D target implementation                       ACTIVE — pending
 Gate 4 upgrade/downgrade                             DEFERRED
 ```
 
@@ -65,7 +68,7 @@ scenario / verifier / external audit
 
 Gate 3C accepts both addon install and removal orders, exact runtime-base prerequisites, dependency rejection without mutation, addon preservation/recovery, and complete runtime revalidation after addon removal.
 
-## Active Gate 3D boundary
+## Frozen Gate 3D design boundary
 
 ```text
 consume frozen Gate 3B runtime-base uninstall semantics
@@ -75,6 +78,9 @@ final registry / owned-payload / residual separation
 modified-owned and unowned residual census
 transaction recovery and second-recovery idempotence
 no upgrade or downgrade claim
+
+canonical design matrix: 44 scenarios
+repository design verifier required before target execution
 ```
 
 ## Evidence and transport rule

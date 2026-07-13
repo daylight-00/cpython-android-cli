@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Installed Runtime Lifecycle
 
-> **Current boundary:** Gate 3C frozen; Gate 3D final-uninstall design pending
+> **Current boundary:** Gate 3C frozen; Gate 3D design frozen and target implementation pending
 
 Current authority:
 
@@ -9,9 +9,22 @@ Gate 3B preserve-and-report product acceptance   FROZEN
 Gate 3C design verifier                          FROZEN 73/73
 Gate 3C target matrix                            50 scenarios
 Gate 3C target runner/verifier                   FROZEN 50/50 + 103/103 + 27/27
-Gate 3D final runtime-base uninstall             ACTIVE — DESIGN PENDING
+Gate 3D final runtime-base uninstall design      DESIGN FROZEN — 108/108, 44 scenarios
+Gate 3D target runner/verifier                    ACTIVE — PENDING
 upgrade/downgrade                                DEFERRED
 ```
+
+
+Gate 3D design files:
+
+```text
+GATE3D_FINAL_UNINSTALL_DESIGN.md
+gate3d-final-uninstall-matrix.json
+verify-gate3d-final-uninstall-design.py
+run-gate3d-final-uninstall-design.sh
+```
+
+The Gate 3D matrix contains 44 scenarios across preflight rejection, valid/guarded teardown, residual ownership, crash recovery, locking, and final-state/evidence audit. It explicitly separates an empty registry, absence of matching owned payload, approved residual presence, transaction/tombstone state, and whether the prefix root is physically empty.
 
 Gate 3C implementation files:
 
