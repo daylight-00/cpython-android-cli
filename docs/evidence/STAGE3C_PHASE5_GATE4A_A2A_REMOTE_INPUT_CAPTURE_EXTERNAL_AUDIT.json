@@ -1,0 +1,231 @@
+{
+  "acceptance": {
+    "a2_overall": "open",
+    "a2a_remote_inputs": "accepted",
+    "a2b_linux_workstation_toolchain_witness": "pending",
+    "a3_through_a6": "pending"
+  },
+  "archive_sha256": "e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf",
+  "archive_size": 26218,
+  "check_count": 81,
+  "checks": {
+    "archive_readable_and_safe": true,
+    "archive_sha256_exact": true,
+    "archive_single_expected_root": true,
+    "archive_size_exact": true,
+    "capture_claim_boundary_preserved": true,
+    "capture_json_canonical": true,
+    "declared_api_ndk_exact": true,
+    "dependency_archive_safe_bzip2": true,
+    "dependency_archive_safe_libffi": true,
+    "dependency_archive_safe_openssl": true,
+    "dependency_archive_safe_sqlite": true,
+    "dependency_archive_safe_xz": true,
+    "dependency_archive_safe_zstd": true,
+    "dependency_count_exact": true,
+    "dependency_name_set_exact": true,
+    "dependency_release_tag_bzip2_exact": true,
+    "dependency_release_tag_libffi_exact": true,
+    "dependency_release_tag_openssl_exact": true,
+    "dependency_release_tag_sqlite_exact": true,
+    "dependency_release_tag_xz_exact": true,
+    "dependency_release_tag_zstd_exact": true,
+    "expected_result_root_present": true,
+    "http_observation_bzip2_exact": true,
+    "http_observation_libffi_exact": true,
+    "http_observation_openssl_exact": true,
+    "http_observation_sqlite_exact": true,
+    "http_observation_xz_exact": true,
+    "http_observation_zstd_exact": true,
+    "official_official-android-reference_archive_safe": true,
+    "official_official-android-reference_identity_exact": true,
+    "official_source-tar-xz_archive_safe": true,
+    "official_source-tar-xz_identity_exact": true,
+    "openssl_3020_exact": true,
+    "openssl_differs_from_first_product": true,
+    "original_repository_branch_exact": true,
+    "original_repository_clean": true,
+    "original_repository_head_exact": true,
+    "original_repository_tree_exact": true,
+    "original_verification_json_canonical": true,
+    "original_verifier_44_of_49_exact": true,
+    "original_verifier_failure_preserved": true,
+    "producer_blob_android-env.sh_exact": true,
+    "producer_blob_android.py_exact": true,
+    "producer_sha256_android-env.sh_exact": true,
+    "producer_sha256_android.py_exact": true,
+    "release_asset_identity_bzip2": true,
+    "release_asset_identity_libffi": true,
+    "release_asset_identity_openssl": true,
+    "release_asset_identity_sqlite": true,
+    "release_asset_identity_xz": true,
+    "release_asset_identity_zstd": true,
+    "release_asset_unique_bzip2": true,
+    "release_asset_unique_libffi": true,
+    "release_asset_unique_openssl": true,
+    "release_asset_unique_sqlite": true,
+    "release_asset_unique_xz": true,
+    "release_asset_unique_zstd": true,
+    "repository_binding_exact": true,
+    "repository_sidecars_exact": true,
+    "required_control_files_present": true,
+    "result_index_canonical": true,
+    "result_index_file_count_exact": true,
+    "result_index_identities_exact": true,
+    "result_index_membership_exact": true,
+    "result_index_schema_exact": true,
+    "reused_first_lock_projected_exact_bzip2": true,
+    "reused_first_lock_projected_exact_libffi": true,
+    "reused_first_lock_projected_exact_sqlite": true,
+    "reused_first_lock_projected_exact_xz": true,
+    "reused_first_lock_projected_exact_zstd": true,
+    "reused_first_lock_safety_extension_valid_bzip2": true,
+    "reused_first_lock_safety_extension_valid_libffi": true,
+    "reused_first_lock_safety_extension_valid_sqlite": true,
+    "reused_first_lock_safety_extension_valid_xz": true,
+    "reused_first_lock_safety_extension_valid_zstd": true,
+    "run_log_failure_markers_exact": true,
+    "source_tag_commit_exact": true,
+    "source_tag_object_present": true,
+    "source_tar_match_android-env.sh": true,
+    "source_tar_match_android.py": true,
+    "toolchain_witness_pending_exact": true
+  },
+  "details": {
+    "archive_members": {
+      "count": 53,
+      "directory": 2,
+      "problems": [],
+      "regular": 51
+    },
+    "archive_sha256_exact": {
+      "expected": "e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf",
+      "observed": "e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf"
+    },
+    "archive_single_expected_root": {
+      "roots": [
+        "20260713-gate4a-a2a-remote-input-capture-20260713T132628Z"
+      ]
+    },
+    "archive_size_exact": {
+      "expected": 26218,
+      "observed": 26218
+    },
+    "dependency_name_set_exact": {
+      "expected": [
+        "bzip2",
+        "libffi",
+        "openssl",
+        "sqlite",
+        "xz",
+        "zstd"
+      ],
+      "observed": [
+        "bzip2",
+        "libffi",
+        "openssl",
+        "sqlite",
+        "xz",
+        "zstd"
+      ]
+    },
+    "original_verifier_failure_preserved": {
+      "failed_checks": [
+        "reused_first_lock_exact_bzip2",
+        "reused_first_lock_exact_libffi",
+        "reused_first_lock_exact_sqlite",
+        "reused_first_lock_exact_xz",
+        "reused_first_lock_exact_zstd"
+      ],
+      "pass": false
+    },
+    "repository_binding_exact": {
+      "branch": "agent/phase5-gate4-second-product-authority",
+      "head": "b807c2964b408adc954a7f5a2155030e7442ed05",
+      "tree": "2f0106dc6f19ab2190dcb9c15454f6e041e44fa7"
+    },
+    "required_control_files_present": {
+      "missing": []
+    },
+    "result_index_file_count_exact": {
+      "actual": 50,
+      "declared": 50,
+      "entries": 50
+    },
+    "result_index_identities_exact": [],
+    "result_index_membership_exact": {
+      "extra": [],
+      "missing": []
+    },
+    "reused_dependency_projection": {
+      "bzip2": {
+        "added_safety_fields": {
+          "other_count": 0,
+          "unsafe_link_targets": [],
+          "unsafe_member_names": []
+        },
+        "core_archive_diff": {},
+        "stable_diff": {}
+      },
+      "libffi": {
+        "added_safety_fields": {
+          "other_count": 0,
+          "unsafe_link_targets": [],
+          "unsafe_member_names": []
+        },
+        "core_archive_diff": {},
+        "stable_diff": {}
+      },
+      "sqlite": {
+        "added_safety_fields": {
+          "other_count": 0,
+          "unsafe_link_targets": [],
+          "unsafe_member_names": []
+        },
+        "core_archive_diff": {},
+        "stable_diff": {}
+      },
+      "xz": {
+        "added_safety_fields": {
+          "other_count": 0,
+          "unsafe_link_targets": [],
+          "unsafe_member_names": []
+        },
+        "core_archive_diff": {},
+        "stable_diff": {}
+      },
+      "zstd": {
+        "added_safety_fields": {
+          "other_count": 0,
+          "unsafe_link_targets": [],
+          "unsafe_member_names": []
+        },
+        "core_archive_diff": {},
+        "stable_diff": {}
+      }
+    }
+  },
+  "failed_checks": [],
+  "original_collector_result": {
+    "checks": "44/49",
+    "classification": "false-negative-schema-comparison",
+    "failed_checks": [
+      "reused_first_lock_exact_bzip2",
+      "reused_first_lock_exact_libffi",
+      "reused_first_lock_exact_sqlite",
+      "reused_first_lock_exact_xz",
+      "reused_first_lock_exact_zstd"
+    ],
+    "status": "fail"
+  },
+  "package_sha256": "1b95da93389c9586d80db8501caa92bb4f213105bcc33febaf33fefb8215c187",
+  "pass": true,
+  "pass_count": 81,
+  "repository_binding": {
+    "branch": "agent/phase5-gate4-second-product-authority",
+    "head": "b807c2964b408adc954a7f5a2155030e7442ed05",
+    "tree": "2f0106dc6f19ab2190dcb9c15454f6e041e44fa7"
+  },
+  "schema_version": 1,
+  "verification_kind": "external-gate4a-a2a-remote-input-capture-audit"
+}

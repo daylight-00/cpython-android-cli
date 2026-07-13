@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 4A Second-Product Authority Design Result
 
-> **Status:** DESIGN FROZEN — exact input capture pending
+> **Status:** DESIGN FROZEN — A2a remote inputs accepted; A2b toolchain witness pending
 > **Claim class:** repository design only
 
 ## Selected input
@@ -37,7 +37,9 @@ The dependency delta proves that a copied or relabeled first-product payload can
 
 ```text
 A1 selection and repository design          DESIGN FROZEN
-A2 exact input and toolchain capture         pending
+A2 exact input and toolchain capture         PARTIAL
+  A2a immutable remote inputs               FROZEN PASS — 81/81 external audit
+  A2b Linux-workstation toolchain witness   pending
 A3 clean upstream Android replay             pending
 A4 three-artifact materialization            pending
 A5 standalone Termux validation              pending
@@ -50,6 +52,22 @@ Machine authorities:
 experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
 experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
 ```
+
+
+## A2a accepted progress
+
+```text
+result archive sha256
+  e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf
+
+root result-index sha256
+  5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edcda17fbe
+
+external audit
+  81/81 PASS
+```
+
+The original collector FAIL at 44/49 is preserved. Independent audit classified its five reused-dependency failures as a schema-comparison false negative and verified all intended stable fields plus the newly added safety diagnostics. This accepts only A2a; the second-product artifact authority is not yet created.
 
 ## Claim boundary
 

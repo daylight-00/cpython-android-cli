@@ -2,7 +2,7 @@
 
 > **Status:** Current handoff context
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 3D
-> **Active boundary:** Gate 4 second-product authority acquisition — CPython 3.14.5 selected; exact input capture pending
+> **Active boundary:** Gate 4 second-product authority acquisition — CPython 3.14.5 A2a remote inputs accepted; A2b Linux-workstation toolchain witness pending
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
 > **First-product baseline:** CPython 3.14.6
@@ -72,7 +72,7 @@ Stage 2    native bootstrap/workflow architecture       FROZEN
 Stage 3-A  runtime closure and host-data boundaries     FROZEN
 Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
-Gate 4A    second-product authority acquisition         ACTIVE — 3.14.5 selected, input capture pending
+Gate 4A    second-product authority acquisition         ACTIVE — A2a accepted, A2b pending
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -241,12 +241,30 @@ The acquisition sequence is:
 
 ```text
 A1  selection and repository design          DESIGN FROZEN
-A2  exact input and toolchain capture         pending
+A2  exact input and toolchain capture         PARTIAL
+  A2a immutable remote inputs                 FROZEN PASS — 81/81 external audit
+  A2b Linux-workstation toolchain witness     pending
 A3  clean upstream Android replay             pending
 A4  three-artifact materialization            pending
 A5  standalone Termux validation              pending
 A6  independent archive audit and freeze      pending
 ```
+
+
+### Accepted A2a remote-input authority
+
+```text
+result archive sha256
+  e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf
+
+root result-index sha256
+  5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edcda17fbe
+
+external audit
+  81/81 PASS
+```
+
+The original collector's 44/49 FAIL is preserved. Its five failures were caused by comparing an older lock `archive` object directly against a captured inventory that added valid safety fields. Independent audit verified every legacy identity/inventory field exactly and required the new safety fields separately. A2a is accepted without claiming A2b or any product artifact.
 
 The authority must ultimately contain:
 

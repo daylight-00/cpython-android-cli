@@ -101,6 +101,19 @@ compiler, linker, make, host Python, and relevant host tool versions
 
 No product archive is claimed by input capture.
 
+
+#### A2a accepted progress
+
+The immutable remote-input sub-witness is accepted:
+
+```text
+result archive sha256  e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf
+root result-index      5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edcda17fbe
+external audit         81/81 PASS
+```
+
+The collector's original 44/49 FAIL is retained and classified as a schema-comparison false negative. A2 remains pending until the separate Linux-workstation NDK binary/path and host-tool witness (A2b) is captured. No product archive is claimed by A2a.
+
 ### A3 — upstream replay
 
 Replay from an isolated clean worktree and empty build/output roots. Preserve raw commands, stdout, stderr, and real process return codes for dependency unpack, build-Python, target configure/build/install, and packaging.

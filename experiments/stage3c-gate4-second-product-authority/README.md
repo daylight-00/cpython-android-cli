@@ -6,7 +6,9 @@ This directory contains the authority-acquisition work that must finish before a
 
 ```text
 A1 selection and design          DESIGN FROZEN — input capture pending
-A2 input capture                pending
+A2 input capture                PARTIAL
+  A2a remote inputs             FROZEN PASS — 81/81 external audit
+  A2b workstation toolchain     pending
 A3 upstream replay              pending
 A4 three-artifact materialize   pending
 A5 standalone Termux validate   pending
@@ -28,4 +30,10 @@ Run the repository design verifier:
 bash experiments/stage3c-gate4-second-product-authority/run-gate4a-second-product-authority-design.sh
 ```
 
-A design PASS is not a second-product or Gate 4 target PASS. The next operation is exact source/producer/dependency/toolchain input capture.
+A design PASS is not a second-product or Gate 4 target PASS. A2a source/producer/dependency remote-input capture is accepted; the next operation is the separate A2b Linux-workstation NDK binary/path and host-tool witness.
+
+Audit an A2a result archive:
+
+```sh
+bash experiments/stage3c-gate4-second-product-authority/run-gate4a-a2a-remote-input-capture-audit.sh /path/to/result.tar.zst
+```

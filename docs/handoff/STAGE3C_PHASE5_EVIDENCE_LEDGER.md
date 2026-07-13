@@ -377,7 +377,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 
 ```text
 status
-  DESIGN FROZEN — exact input capture pending
+  ACTIVE — A2a FROZEN PASS; A2b toolchain witness pending
 
 selected second product
   CPython 3.14.5 / v3.14.5
@@ -392,9 +392,21 @@ producer dependency delta
   second product OpenSSL 3.0.20-0
   first product  OpenSSL 3.5.7-0
 
+A2a result archive sha256
+  e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf
+
+A2a root result-index sha256
+  5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edcda17fbe
+
+A2a external audit
+  81/81 PASS
+
+A2 overall input capture pending
+  A2b Linux-workstation NDK binary/path and host-tool witness
+
 acquisition sequence
-  A1 design -> A2 input capture -> A3 replay -> A4 materialization
-  -> A5 standalone Termux validation -> A6 independent freeze
+  A1 design -> A2a remote inputs -> A2b toolchain -> A3 replay
+  -> A4 materialization -> A5 standalone Termux validation -> A6 independent freeze
 ```
 
 Design authority:

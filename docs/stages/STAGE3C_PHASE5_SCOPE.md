@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3D frozen; Gate 4A CPython 3.14.5 authority acquisition active, input capture pending
+> **Status:** ACTIVE — Gate 3D frozen; Gate 4A A2a remote inputs accepted, A2b toolchain witness pending
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -45,7 +45,7 @@ Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
 Gate 3D   runtime uninstall and final ownership boundary          FROZEN
 Gate 4    upgrade and downgrade with second frozen product        ACTIVE — AUTHORITY / DESIGN PENDING
-Gate 4A   CPython 3.14.5 authority acquisition                    ACTIVE — INPUT CAPTURE PENDING
+Gate 4A   CPython 3.14.5 authority acquisition                    ACTIVE — A2a PASS / A2b PENDING
 ```
 
 ## Frozen prior gates
@@ -254,7 +254,7 @@ The exact v3.14.5 Android producer declares OpenSSL 3.0.20-0, while the first pr
 
 The six acquisition stages are A1 selection/design, A2 exact input capture, A3 clean replay, A4 three-artifact materialization, A5 standalone Termux validation, and A6 independent audit/freeze. A second complete frozen product identity must have its own runtime-base, development-addon, test-addon, manifests, product lock, ownership contract, native closure, runtime behavior, and provenance. A synthetic version label, manually edited first-product copy, or official reference package used directly as project authority is not authority.
 
-A1 is design-frozen; A2 input capture is next. Upgrade/downgrade ordering, compatibility, collision, residual, recovery, and target acceptance policy remain unclaimed until A6 freezes the second authority.
+A1 is design-frozen. A2a immutable remote inputs are accepted from result archive `e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf` with an 81/81 independent audit. A2 remains open for A2b, the separate Linux-workstation NDK binary/path and host-tool witness. Upgrade/downgrade ordering, compatibility, collision, residual, recovery, and target acceptance policy remain unclaimed until A6 freezes the second authority.
 
 ## Non-reopening rule
 
