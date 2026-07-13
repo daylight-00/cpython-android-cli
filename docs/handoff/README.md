@@ -7,12 +7,13 @@ Use these documents to continue the project without relying on prior chat contex
 ```text
 1. COLLABORATION_PROTOCOL.md
 2. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
-3. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
-4. ../stages/STAGE3C_PHASE5_SCOPE.md
-5. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-6. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
-7. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
-8. ../evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
+3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
+4. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
+5. ../stages/STAGE3C_PHASE5_SCOPE.md
+6. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+7. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+8. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
+9. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
 ```
 
 ## Current state
@@ -26,7 +27,8 @@ Gate 3A reinstall/repair product acceptance          FROZEN 29/29 + 80/80 + 69/6
 Gate 2R corrected-engine relocation                  FROZEN 80/80 + 46/46 + 15/15
 Gate 3B0 preservation diagnostic                     FROZEN 16/16 + 40/40
 Gate 3B preserve-and-report product acceptance       FROZEN 29/29 + 62/62
-Gate 3C addon lifecycle/dependency enforcement       ACTIVE
+Gate 3C design                                       FROZEN 73/73, 50 scenarios
+Gate 3C target lifecycle/dependency enforcement      ACTIVE
 Gate 3D final uninstall                              DEFERRED
 Gate 4 upgrade/downgrade                             DEFERRED
 ```
@@ -49,11 +51,13 @@ Crash boundaries are PREPARED rc 90, late APPLYING rc 93, and COMMITTED rc 92. M
 ## Active Gate 3C boundary
 
 ```text
-runtime-base → development-addon → test-addon
-dependency-invalid operation rejection without mutation
-ordered addon removal
+development-addon -> runtime-base only
+test-addon -> runtime-base only
+no inter-addon dependency
+both install and addon-removal orders
+50-scenario target matrix
 registry and ownership separation
-transaction recovery and idempotence
+12 addon crash-recovery scenarios
 runtime-base exactness and behavior after addon removal
 ```
 

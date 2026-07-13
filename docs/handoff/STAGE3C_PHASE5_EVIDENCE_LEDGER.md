@@ -244,16 +244,35 @@ docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 Gate 3C addon lifecycle and dependency enforcement
 ```
 
-Required proof:
+Frozen repository-side design:
 
 ```text
-runtime-base → development-addon → test-addon
+verification             73/73 PASS
+matrix sha256            52c622450e9664c6738a75fbc947b809cf1f4766e61b04a68a1a8dcc24b6c14a
+scenario matrix          50
+preflight/composition    10/10
+uninstall/recovery        9/12
+locking/behavior          2/7
+```
+
+Required target proof:
+
+```text
+both addon install orders
+both addon removal orders
+exact runtime-base prerequisite identity
 exact registry and ownership transitions
 dependency-invalid operation rejection without mutation
-addon uninstall ordering and recovery
+addon repair, uninstall preservation, and recovery
 shared-path and collision-policy enforcement
 runtime-base identity and behavior after addon removal
 no Gate 3D final-runtime-uninstall claim
+```
+
+Design evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 ```
 
 ## Deferred boundaries
@@ -274,4 +293,5 @@ docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 ```

@@ -1,6 +1,6 @@
 # Phase 5 Gate 3C Addon Lifecycle and Dependency Enforcement Handoff — 2026-07-13
 
-> **Status:** ACTIVE — design and target evidence pending
+> **Status:** ACTIVE — design frozen, target implementation and evidence pending
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -27,16 +27,41 @@ happy / crash topology
 
 > Can the frozen development-addon and test-addon artifacts compose over runtime-base, enforce dependency order and ownership boundaries, recover transactionally, and leave runtime-base exact and functional after addon removal?
 
-## Required lifecycle
+## Frozen dependency interpretation
 
 ```text
-install runtime-base
-install development-addon
-install test-addon
-reject removal or installation orders that violate declared dependencies
-remove test-addon
-remove development-addon
-revalidate runtime-base
+development-addon -> exact runtime-base
+test-addon        -> exact runtime-base
+inter-addon edge  -> none
+```
+
+The target matrix must run both install orders and both addon-removal orders. `development -> test` is a convenient sequence, not a test-to-development dependency. Runtime-base uninstall remains rejected while either addon is installed.
+
+## Frozen design result
+
+```text
+design verification
+  73/73 PASS
+
+matrix sha256
+  52c622450e9664c6738a75fbc947b809cf1f4766e61b04a68a1a8dcc24b6c14a
+
+scenario matrix
+  50 total
+  10 preflight
+  10 composition and repair
+  9 addon uninstall
+  12 crash recovery
+  2 lock exclusion
+  7 behavior and final audit
+```
+
+Design authority:
+
+```text
+experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
+experiments/stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 ```
 
 ## Required evidence surfaces
@@ -71,4 +96,6 @@ A future target workflow must use one Termux wrapper that verifies accepted inpu
 
 ## Immediate repository task
 
-Design the Gate 3C matrix and verifier against the frozen runtime-base, development-addon, and test-addon manifests before authorizing any target claim. Local fixtures may validate orchestration, but only a complete independently inspected Termux archive can close Gate 3C.
+Implement the single-wrapper Termux scenario runner and independent verifier for the frozen 50-scenario matrix. Reuse the corrected durability engine without changing frozen prerequisite, registry, journal, recovery, preservation, or collision policy.
+
+The wrapper must create fresh inode-separated roots, capture raw process outputs and real return codes, emit canonical machine evidence and a root result-index, and package a `.tar.zst` archive on PASS or FAIL. Only a complete independently inspected Termux archive can close Gate 3C.

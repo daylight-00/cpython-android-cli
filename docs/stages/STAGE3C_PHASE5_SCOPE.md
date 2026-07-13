@@ -196,19 +196,35 @@ docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 
 > Can development-addon and test-addon be installed and removed over the frozen runtime-base while enforcing manifest dependencies, ownership separation, transaction recovery, and runtime-base revalidation?
 
-Required order and rejection surface:
+Frozen design boundary:
 
 ```text
-runtime-base
-→ development-addon
-→ test-addon
-→ reject dependency-invalid removals
-→ remove test-addon
-→ remove development-addon
-→ revalidate runtime-base
+manifest prerequisites
+  development-addon -> runtime-base
+  test-addon        -> runtime-base
+
+inter-addon dependency
+  none
+
+accepted composition orders
+  runtime-base -> development-addon -> test-addon
+  runtime-base -> test-addon -> development-addon
+
+accepted addon-removal orders
+  remove test-addon first
+  remove development-addon first
 ```
 
-Gate 3C must prove exact registry transitions, addon-owned path identity, shared-path collision policy, dependency-order rejection without mutation, crash recovery at accepted transaction boundaries, and final runtime-base identity and behavior. It must not claim final runtime-base uninstall.
+The repository-side design verifier is frozen at 73/73 PASS over a 50-scenario matrix: 10 preflight, 10 composition/repair, 9 uninstall, 12 recovery, 2 locking, and 7 behavior/final-audit scenarios.
+
+Gate 3C must prove exact registry transitions, addon-owned path identity, shared-path collision policy, exact runtime prerequisite rejection without mutation, both addon orders, crash recovery at accepted transaction boundaries, and final runtime-base identity and behavior. It must not invent a test-addon-to-development-addon dependency or claim final runtime-base uninstall.
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
+experiments/stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json
+```
 
 ## Deferred Gate 3D
 

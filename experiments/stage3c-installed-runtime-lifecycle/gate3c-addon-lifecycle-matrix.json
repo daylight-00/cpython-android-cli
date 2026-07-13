@@ -1,0 +1,1087 @@
+{
+  "authority": {
+    "artifact_order": [
+      "runtime-base",
+      "development-addon",
+      "test-addon"
+    ],
+    "artifacts": {
+      "development-addon": {
+        "archive_sha256": "f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-development-addon",
+        "manifest_sha256": "9a01655d63044ab126fd71236ca2cb814221317ee9b6b44fd2417fa5535a8b2a",
+        "owned_paths": 454,
+        "prerequisite": "runtime-base",
+        "structural_parents": 2
+      },
+      "runtime-base": {
+        "archive_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base",
+        "manifest_sha256": "ce48849c9c88c9296264d6a917c3b55b0433e0d67bdda06579d6f18d701f285a",
+        "owned_paths": 714,
+        "prerequisite": null,
+        "structural_parents": 0
+      },
+      "test-addon": {
+        "archive_sha256": "02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1",
+        "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-test-addon",
+        "manifest_sha256": "47d9f2e24e74b23e34ae6bfa95a0df22ec7cf9505e3e189dc3d6bdf2dc1c8b5f",
+        "owned_paths": 1788,
+        "prerequisite": "runtime-base",
+        "structural_parents": 2
+      }
+    },
+    "contract_index_sha256": "79e3c173639047bc23b7dbe3c2135abe8f0b868d787735c094cbe06749c7dde3",
+    "corrected_engine_sha256": {
+      "recovery_engine_missing_leaf.py": "33b55d94714fb96f401caefe0e72d6587da955a9d0c201f4eb18dfc5193eb87a",
+      "recovery_operations_missing_leaf.py": "61d20c68c7c5234a00328104914b83adc69859acca9791f3b14d9ff969e24021"
+    },
+    "gate3b_archive_sha256": "0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b",
+    "gate3b_result_index_sha256": "f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9",
+    "integrated_engine_git_blobs": {
+      "recovery_common.py": "3183ba0861ef45e7a395201bec0085f3f69fb248",
+      "recovery_durability.py": "61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f",
+      "recovery_engine.py": "aebf5b9a33d163f7f8758f785ca621c94c0e478b",
+      "recovery_operations.py": "8a307065e00fd7a7332541f4911c5478945374ee"
+    },
+    "manifest_index_sha256": "540adfaacf9387e80a258dfa3db8c299ad775d99e771c475a89dfc61de6868c1",
+    "registered_owned_path_total": 2956,
+    "shared_structural_namespace": [
+      "lib",
+      "lib/python3.14"
+    ],
+    "states": {
+      "composed": {
+        "artifact_count": 3,
+        "artifacts": [
+          "runtime-base",
+          "development-addon",
+          "test-addon"
+        ],
+        "owned_path_count": 2956
+      },
+      "empty": {
+        "artifact_count": 0,
+        "artifacts": [],
+        "owned_path_count": 0
+      },
+      "runtime": {
+        "artifact_count": 1,
+        "artifacts": [
+          "runtime-base"
+        ],
+        "owned_path_count": 714
+      },
+      "runtime-development": {
+        "artifact_count": 2,
+        "artifacts": [
+          "runtime-base",
+          "development-addon"
+        ],
+        "owned_path_count": 1168
+      },
+      "runtime-test": {
+        "artifact_count": 2,
+        "artifacts": [
+          "runtime-base",
+          "test-addon"
+        ],
+        "owned_path_count": 2502
+      }
+    },
+    "structural_reference_total": 4
+  },
+  "claim_boundary": {
+    "gate3c_close_requires": "A complete independently inspected Termux result archive.",
+    "not_proved_by_design": "No target addon lifecycle, recovery, dependency enforcement, runtime behavior, Gate 3D final uninstall, upgrade, or downgrade claim is made.",
+    "proved_by_design": "The frozen authorities and fifty-scenario Gate 3C acceptance matrix are internally consistent and policy-bounded."
+  },
+  "execution_contract": {
+    "historical_tgz_immutable": true,
+    "new_archive_suffix": ".tar.zst",
+    "single_termux_wrapper": true
+  },
+  "matrix_kind": "stage3c-phase5-gate3c-addon-lifecycle-design",
+  "policy": {
+    "addon_prerequisites": {
+      "development-addon": [
+        "runtime-base"
+      ],
+      "test-addon": [
+        "runtime-base"
+      ]
+    },
+    "addon_uninstall_order": "either-addon-may-be-removed-first",
+    "inter_addon_dependency": null,
+    "modified_owned_leaf": "preserve-report-deregister",
+    "other_owner_or_unowned_leaf_collision": "reject-before-mutation",
+    "owned_directory": "remove-only-when-empty",
+    "runtime_uninstall_with_any_addon": "reject-before-mutation",
+    "same_owner_mismatch": "backup-and-repair",
+    "same_version_exact": "noop",
+    "structural_parent": "non-owning-preserve-namespace",
+    "unowned_descendant": "preserve"
+  },
+  "scenario_count": 50,
+  "scenario_group_counts": {
+    "behavior": 7,
+    "composition": 10,
+    "locking": 2,
+    "preflight": 10,
+    "recovery": 12,
+    "uninstall": 9
+  },
+  "scenarios": [
+    {
+      "error_contains": "prerequisite not installed",
+      "expected_result": "REJECT_PREREQUISITE",
+      "expected_state": "empty",
+      "group": "preflight",
+      "id": "P01",
+      "initial_state": "empty",
+      "mutation_count": 0,
+      "operation": "install development-addon",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "prerequisite not installed",
+      "expected_result": "REJECT_PREREQUISITE",
+      "expected_state": "empty",
+      "group": "preflight",
+      "id": "P02",
+      "initial_state": "empty",
+      "mutation_count": 0,
+      "operation": "install test-addon",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "prerequisite not installed",
+      "expected_result": "REJECT_RUNTIME_IDENTITY",
+      "expected_state": "forged-runtime-id",
+      "group": "preflight",
+      "id": "P03",
+      "initial_state": "forged-runtime-id",
+      "mutation_count": 0,
+      "operation": "install development-addon",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "prerequisite not installed",
+      "expected_result": "REJECT_RUNTIME_IDENTITY",
+      "expected_state": "forged-runtime-id",
+      "group": "preflight",
+      "id": "P04",
+      "initial_state": "forged-runtime-id",
+      "mutation_count": 0,
+      "operation": "install test-addon",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "runtime-development",
+      "group": "preflight",
+      "id": "P05",
+      "initial_state": "runtime-development",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "runtime-test",
+      "group": "preflight",
+      "id": "P06",
+      "initial_state": "runtime-test",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "dependent addons installed",
+      "expected_result": "REJECT_DEPENDENTS",
+      "expected_state": "composed",
+      "group": "preflight",
+      "id": "P07",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "uninstall runtime-base",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "unowned collision",
+      "expected_result": "REJECT_UNOWNED_COLLISION",
+      "expected_state": "runtime",
+      "group": "preflight",
+      "id": "P08",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "install development-addon over unowned required leaf",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "unowned collision",
+      "expected_result": "REJECT_UNOWNED_COLLISION",
+      "expected_state": "runtime",
+      "group": "preflight",
+      "id": "P09",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "install test-addon over unowned required leaf",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "error_contains": "other owner",
+      "expected_result": "REJECT_OTHER_OWNER",
+      "expected_state": "runtime",
+      "group": "preflight",
+      "id": "P10",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "install addon over adversarial other-owner row",
+      "required_evidence": [
+        "process_output",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "create": 714
+      },
+      "expected_result": "PASS_CREATE_714",
+      "expected_state": "runtime",
+      "group": "composition",
+      "id": "C01",
+      "initial_state": "empty",
+      "operation": "install runtime-base",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "create": 454
+      },
+      "expected_result": "PASS_CREATE_454",
+      "expected_state": "runtime-development",
+      "group": "composition",
+      "id": "C02",
+      "initial_state": "runtime",
+      "operation": "install development-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "create": 1788
+      },
+      "expected_result": "PASS_CREATE_1788",
+      "expected_state": "runtime-test",
+      "group": "composition",
+      "id": "C03",
+      "initial_state": "runtime",
+      "operation": "install test-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "create": 1788
+      },
+      "expected_result": "PASS_CREATE_1788",
+      "expected_state": "composed",
+      "group": "composition",
+      "id": "C04",
+      "initial_state": "runtime-development",
+      "operation": "install test-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "create": 454
+      },
+      "expected_result": "PASS_CREATE_454",
+      "expected_state": "composed",
+      "group": "composition",
+      "id": "C05",
+      "initial_state": "runtime-test",
+      "operation": "install development-addon",
+      "policy_note": "proves no test-addon -> development-addon dependency",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "noop": 454
+      },
+      "expected_result": "PASS_NOOP",
+      "expected_state": "runtime-development",
+      "group": "composition",
+      "id": "C06",
+      "initial_state": "runtime-development",
+      "mutation_count": 0,
+      "operation": "reinstall development-addon exact",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "noop": 1788
+      },
+      "expected_result": "PASS_NOOP",
+      "expected_state": "runtime-test",
+      "group": "composition",
+      "id": "C07",
+      "initial_state": "runtime-test",
+      "mutation_count": 0,
+      "operation": "reinstall test-addon exact",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "action_counts": {
+        "noop": 714
+      },
+      "expected_result": "PASS_NOOP",
+      "expected_state": "composed",
+      "group": "composition",
+      "id": "C08",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "reinstall runtime-base exact with both addons",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_bad_paths": 1,
+      "expected_repairs": 1,
+      "expected_result": "PASS_REPAIR_ONE",
+      "expected_state": "runtime-development",
+      "group": "composition",
+      "id": "C09",
+      "initial_state": "runtime-development",
+      "operation": "repair one modified development-addon regular leaf",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_bad_paths": 1,
+      "expected_repairs": 1,
+      "expected_result": "PASS_REPAIR_MISSING_ONE",
+      "expected_state": "runtime-test",
+      "group": "composition",
+      "id": "C10",
+      "initial_state": "runtime-test",
+      "operation": "repair one missing test-addon regular leaf",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS",
+      "expected_state": "runtime-development",
+      "group": "uninstall",
+      "id": "U01",
+      "initial_state": "composed",
+      "operation": "uninstall test-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS",
+      "expected_state": "runtime-test",
+      "group": "uninstall",
+      "id": "U02",
+      "initial_state": "composed",
+      "operation": "uninstall development-addon",
+      "policy_note": "allowed because both addons depend only on runtime-base",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS",
+      "expected_state": "runtime",
+      "group": "uninstall",
+      "id": "U03",
+      "initial_state": "runtime-development",
+      "operation": "uninstall development-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS",
+      "expected_state": "runtime",
+      "group": "uninstall",
+      "id": "U04",
+      "initial_state": "runtime-test",
+      "operation": "uninstall test-addon",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_preserved_count": 1,
+      "expected_result": "PASS_PRESERVE_AND_DEREGISTER",
+      "expected_state": "runtime",
+      "group": "uninstall",
+      "id": "U05",
+      "initial_state": "runtime-development",
+      "operation": "uninstall development-addon with modified owned leaf",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_preserved_count": 1,
+      "expected_result": "PASS_PRESERVE_AND_DEREGISTER",
+      "expected_state": "runtime",
+      "group": "uninstall",
+      "id": "U06",
+      "initial_state": "runtime-test",
+      "operation": "uninstall test-addon with modified owned leaf",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS_UNOWNED_PRESERVED",
+      "expected_state": "runtime-development",
+      "group": "uninstall",
+      "id": "U07",
+      "initial_state": "composed",
+      "operation": "uninstall test-addon with unowned file and directory sentinels",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS_EMPTY_ONLY_AND_STRUCTURAL_PRESERVED",
+      "expected_state": "runtime-test",
+      "group": "uninstall",
+      "id": "U08",
+      "initial_state": "composed",
+      "operation": "uninstall development-addon and retain shared structural namespace",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ],
+      "structural_paths": [
+        "lib",
+        "lib/python3.14"
+      ]
+    },
+    {
+      "error_contains": "unowned collision",
+      "expected_result": "REJECT_UNOWNED_COLLISION",
+      "expected_state": "runtime",
+      "group": "uninstall",
+      "id": "U09",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "reinstall addon over preserved modified residual",
+      "precondition": "preserved modified test-addon leaf remains unowned at a required payload path",
+      "required_evidence": [
+        "process_output",
+        "registry_before",
+        "registry_after",
+        "owned_path_snapshot",
+        "residual_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "crash_boundary": "PREPARED",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R01",
+      "initial_state": "runtime",
+      "operation": "install development-addon",
+      "operation_key": "development-install",
+      "process_rc": 90,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "LATE_APPLYING",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R02",
+      "initial_state": "runtime",
+      "operation": "install development-addon",
+      "operation_key": "development-install",
+      "process_rc": 93,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "COMMITTED",
+      "expected_result": "FINALIZE_COMMIT",
+      "expected_state": "runtime-development",
+      "group": "recovery",
+      "id": "R03",
+      "initial_state": "runtime",
+      "operation": "install development-addon",
+      "operation_key": "development-install",
+      "process_rc": 92,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "PREPARED",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R04",
+      "initial_state": "runtime",
+      "operation": "install test-addon",
+      "operation_key": "test-install",
+      "process_rc": 90,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "LATE_APPLYING",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R05",
+      "initial_state": "runtime",
+      "operation": "install test-addon",
+      "operation_key": "test-install",
+      "process_rc": 93,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "COMMITTED",
+      "expected_result": "FINALIZE_COMMIT",
+      "expected_state": "runtime-test",
+      "group": "recovery",
+      "id": "R06",
+      "initial_state": "runtime",
+      "operation": "install test-addon",
+      "operation_key": "test-install",
+      "process_rc": 92,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "PREPARED",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime-development",
+      "group": "recovery",
+      "id": "R07",
+      "initial_state": "runtime-development",
+      "operation": "uninstall development-addon",
+      "operation_key": "development-uninstall",
+      "process_rc": 90,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "LATE_APPLYING",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime-development",
+      "group": "recovery",
+      "id": "R08",
+      "initial_state": "runtime-development",
+      "operation": "uninstall development-addon",
+      "operation_key": "development-uninstall",
+      "process_rc": 93,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "COMMITTED",
+      "expected_result": "FINALIZE_COMMIT",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R09",
+      "initial_state": "runtime-development",
+      "operation": "uninstall development-addon",
+      "operation_key": "development-uninstall",
+      "process_rc": 92,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "PREPARED",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime-test",
+      "group": "recovery",
+      "id": "R10",
+      "initial_state": "runtime-test",
+      "operation": "uninstall test-addon",
+      "operation_key": "test-uninstall",
+      "process_rc": 90,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "LATE_APPLYING",
+      "expected_result": "ROLL_BACK_PRIOR",
+      "expected_state": "runtime-test",
+      "group": "recovery",
+      "id": "R11",
+      "initial_state": "runtime-test",
+      "operation": "uninstall test-addon",
+      "operation_key": "test-uninstall",
+      "process_rc": 93,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "crash_boundary": "COMMITTED",
+      "expected_result": "FINALIZE_COMMIT",
+      "expected_state": "runtime",
+      "group": "recovery",
+      "id": "R12",
+      "initial_state": "runtime-test",
+      "operation": "uninstall test-addon",
+      "operation_key": "test-uninstall",
+      "process_rc": 92,
+      "required_evidence": [
+        "raw_process_output",
+        "journal_before_recovery",
+        "registry_before",
+        "registry_after",
+        "payload_before",
+        "payload_after",
+        "first_recovery",
+        "second_recovery",
+        "transaction_inventory"
+      ],
+      "second_recovery": "NOOP"
+    },
+    {
+      "expected_result": "REJECT_LOCK_BUSY",
+      "expected_state": "runtime",
+      "group": "locking",
+      "id": "L01",
+      "initial_state": "runtime",
+      "mutation_count": 0,
+      "operation": "nonblocking addon install contender while lock held",
+      "required_evidence": [
+        "holder_log",
+        "contender_log",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "REJECT_LOCK_BUSY",
+      "expected_state": "composed",
+      "group": "locking",
+      "id": "L02",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "nonblocking addon uninstall contender while lock held",
+      "required_evidence": [
+        "holder_log",
+        "contender_log",
+        "before_snapshot",
+        "after_snapshot",
+        "registry_snapshot",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "expected_result": "PASS_PYTHON_H_PRESENT",
+      "expected_state": "runtime-development",
+      "group": "behavior",
+      "id": "B01",
+      "initial_state": "runtime-development",
+      "operation": "development-addon header probe",
+      "probe": "include/python3.14/Python.h",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_IMPORT_TEST_SUPPORT",
+      "expected_state": "runtime-test",
+      "group": "behavior",
+      "id": "B02",
+      "initial_state": "runtime-test",
+      "operation": "test-addon import probe",
+      "probe": "import test.support",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_SELECTED_TESTS",
+      "expected_state": "runtime-test",
+      "group": "behavior",
+      "id": "B03",
+      "initial_state": "runtime-test",
+      "operation": "selected offline CPython regression tests",
+      "probe": "python -m test -j1 test_json test_hashlib",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_TEST_PAYLOAD_ABSENT",
+      "expected_state": "runtime",
+      "group": "behavior",
+      "id": "B04",
+      "initial_state": "runtime",
+      "operation": "test payload absence after test-addon removal",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_DEVELOPMENT_PAYLOAD_ABSENT",
+      "expected_state": "runtime",
+      "group": "behavior",
+      "id": "B05",
+      "initial_state": "runtime",
+      "operation": "development header absence after development-addon removal",
+      "probe": "include/python3.14/Python.h absent",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_RUNTIME_REGRESSION",
+      "expected_state": "runtime",
+      "group": "behavior",
+      "id": "B06",
+      "initial_state": "runtime",
+      "operation": "full frozen runtime regression after all addon removals",
+      "probe": "Gate 1 runtime/HTTPS/uv/native-closure/extension-import surface",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    },
+    {
+      "expected_result": "PASS_FINAL_1_714_ZERO_TRANSACTIONS",
+      "expected_state": "runtime",
+      "group": "behavior",
+      "id": "B07",
+      "initial_state": "runtime",
+      "operation": "final state and residue audit",
+      "required_evidence": [
+        "command",
+        "stdout",
+        "stderr",
+        "returncode",
+        "before_snapshot",
+        "after_snapshot"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "status": "DESIGN_FROZEN_TARGET_EVIDENCE_PENDING",
+  "target": "Termux on Android arm64",
+  "target_evidence_requirements": [
+    "accepted input hashes",
+    "archive safety inspection",
+    "fresh extraction",
+    "inode-separated roots",
+    "synchronous raw stdout/stderr",
+    "real process return codes",
+    "registry and owned-path snapshots",
+    "journal and transaction inventory",
+    "canonical machine JSON",
+    "root result-index recomputation",
+    "independent verifier",
+    "runtime behavior probes",
+    "explicit claim boundary"
+  ]
+}

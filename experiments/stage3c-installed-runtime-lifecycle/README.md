@@ -1,3 +1,32 @@
+# Stage 3-C Phase 5 Installed Runtime Lifecycle
+
+> **Current boundary:** Gate 3C addon lifecycle design frozen; target implementation pending
+
+Current authority:
+
+```text
+Gate 3B preserve-and-report product acceptance   FROZEN
+Gate 3C design verifier                          73/73 PASS
+Gate 3C target matrix                            50 scenarios
+Gate 3D final runtime-base uninstall             DEFERRED
+upgrade/downgrade                                DEFERRED
+```
+
+Gate 3C design files:
+
+```text
+GATE3C_ADDON_LIFECYCLE_DESIGN.md
+gate3c-addon-lifecycle-matrix.json
+verify-gate3c-addon-lifecycle-design.py
+run-gate3c-addon-lifecycle-design.sh
+```
+
+The two addons independently require exact runtime-base and do not depend on each other. Target acceptance must test both install and removal orders.
+
+---
+
+The remaining Gate 3A diagnostic section is retained as historical workflow text. Its old `ACTIVE` marker is superseded by the frozen Gate 3A, Gate 2R, Gate 3B0, and Gate 3B results listed above.
+
 # Stage 3-C Phase 5 Gate 3A: Reinstall and Repair Diagnostic Census
 
 > **Status:** ACTIVE — authoritative Termux diagnostic pending
