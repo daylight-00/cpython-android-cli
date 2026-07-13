@@ -1,6 +1,6 @@
 # Phase 5 Gate 3D Final Uninstall and Ownership Boundary Handoff — 2026-07-13
 
-> **Status:** TARGET IMPLEMENTATION READY — authoritative Termux evidence pending
+> **Status:** FROZEN PASS — authoritative Termux archive independently accepted
 > **Prerequisites:** frozen Gate 3B preserve-and-report acceptance and frozen Gate 3C addon lifecycle acceptance
 > **Target:** Termux on Android arm64
 
@@ -140,8 +140,41 @@ experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-termu
 docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
 ```
 
-The next task is one complete Termux execution followed by independent archive inspection. Do not authorize a target PASS from console markers alone.
+## Frozen target acceptance
+
+```text
+archive
+  stage3c-phase5-gate3d-final-uninstall-results-20260713T053801Z.tar.zst
+
+archive sha256
+  579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143
+
+root result-index sha256
+  5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60
+
+result-tree-safety sha256
+  47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00
+
+checks
+  44/44 scenarios
+  138/138 independent verifier
+  37/37 external archive audit
+```
+
+The accepted archive contains 909 safe members, a complete 845-file root index, 177 raw process records, and no link or special entry. PREPARED/APPLYING rollback and COMMITTED finalization match the frozen recovery policy.
+
+Canonical acceptance files:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
+```
+
+## Successor boundary
+
+Gate 4 upgrade/downgrade is now active only for second-product authority acquisition and repository design. It must not use synthetic version labels or infer compatibility from Gate 3D. No Gate 4 target claim exists.
 
 ## Claim boundary
 
-Gate 3D does not include upgrade or downgrade. Gate 4 remains deferred until a second complete frozen product identity exists; synthetic version labels are not accepted.
+Gate 3D final uninstall and ownership handling is frozen PASS. Upgrade and downgrade require a second complete frozen product identity plus separate design, target execution, and independent archive inspection.

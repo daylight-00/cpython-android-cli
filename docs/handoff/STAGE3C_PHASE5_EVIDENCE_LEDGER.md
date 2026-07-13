@@ -292,44 +292,65 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 
 ```text
 status
-  TARGET IMPLEMENTATION READY — authoritative Termux evidence pending
+  FROZEN PASS
 
-design verifier
-  108/108 PASS
+archive
+  stage3c-phase5-gate3d-final-uninstall-results-20260713T053801Z.tar.zst
 
-scenario matrix
-  44 total
-  6 preflight / 8 teardown / 10 residual / 12 recovery / 2 locking / 6 audit
+archive sha256
+  579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143
+
+accepted implementation tree
+  5d54f8e0ab69ab5923949b9a5a34d71e2ab3da36
+
+root result-index sha256
+  5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60
+
+result-tree-safety sha256
+  47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00
+
+checks
+  design 108/108
+  target scenarios 44/44
+  independent verifier 138/138
+  external archive audit 37/37
 ```
 
-Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report authority with the frozen Gate 3C composed-product lifecycle. It fixes valid addon teardown orders, runtime-base preflight rejection while addons remain, exact final registry transition, owned-payload absence, approved residual census, recovery, and archive/index integrity without reopening frozen policy.
+Accepted evidence surface:
 
-Design and target files:
+```text
+archive members                   909
+root indexed files            845/845
+canonical generated JSON      442/442
+raw process records                177
+unsafe / link / special        0 / 0 / 0
+```
+
+Gate 3D freezes both complete addon teardown orders, final runtime-base removal, rejection while dependencies remain, exact-owned teardown, modified-owned and unowned residual classes, PREPARED/APPLYING rollback tombstones, COMMITTED cleanup, lock exclusion, and empty-registry versus physically-empty-prefix distinctions.
+
+Design and acceptance authority:
 
 ```text
 experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
 experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
-experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall-design.py
-experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
-experiments/stage3c-installed-runtime-lifecycle/gate3d_final_uninstall_support.py
-experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall.py
-experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall.py
-experiments/stage3c-installed-runtime-lifecycle/finalize-gate3d-evidence.py
-experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-termux.sh
-docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
 ```
 
+## Gate 4 — upgrade and downgrade
+
 ```text
-local semantic scenarios  44/44 PASS
-independent verifier     138/138 PASS
+status
+  ACTIVE — second product authority and design pending
 ```
 
-No target Gate 3D PASS is authorized until the single Termux wrapper produces a complete `.tar.zst` result archive and that archive is independently inspected.
+Gate 4 requires a second complete independently frozen three-artifact product. No version choice, transition ordering, compatibility rule, recovery matrix, scenario count, or target claim is frozen yet. Synthetic version labels are rejected as authority.
 
-## Deferred boundary
+Handoff:
 
 ```text
-Gate 4 upgrade and downgrade
+docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
 ```
 
 ## Evidence paths
@@ -348,4 +369,6 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 ```

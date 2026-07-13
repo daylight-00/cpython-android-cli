@@ -1,0 +1,85 @@
+{
+  "accepted_repository": {
+    "observed_head": "d147a577fce60005890c04d8a0fec34a8a37190b",
+    "semantic_tree": "5d54f8e0ab69ab5923949b9a5a34d71e2ab3da36"
+  },
+  "archive": {
+    "directory_members": 63,
+    "hardlinks": 0,
+    "member_count": 909,
+    "name": "stage3c-phase5-gate3d-final-uninstall-results-20260713T053801Z.tar.zst",
+    "regular_members": 846,
+    "sha256": "579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143",
+    "size_bytes": 23270627,
+    "special_entries": 0,
+    "symlinks": 0,
+    "unsafe_paths": 0
+  },
+  "authority_kind": "stage3c-phase5-gate3d-final-uninstall-acceptance",
+  "checks": {
+    "accepted_authorities": "22/22 PASS",
+    "external_archive_audit": "37/37 PASS",
+    "generated_canonical_json": "442/442 PASS",
+    "independent_verifier": "138/138 PASS",
+    "root_index": "845/845 PASS",
+    "target_scenarios": "44/44 PASS"
+  },
+  "claim_boundary": "Gate 3D final uninstall and ownership boundary is frozen PASS. Gate 4 upgrade/downgrade requires a second complete frozen product identity and separate design and target evidence; no Gate 4 claim is made.",
+  "external_audit": {
+    "check_count": 37,
+    "pass_count": 37,
+    "path": "docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json",
+    "sha256": "55f1411cb6ef88f8641d6b3ef74324d07e1be20080070dfe0cf8ead1aae25c63"
+  },
+  "raw_process_evidence": {
+    "output_records": 164,
+    "process_records": 177,
+    "returncode_counts": {
+      "0": 144,
+      "44": 20,
+      "90": 5,
+      "92": 4,
+      "93": 4
+    },
+    "stdout_output_byte_exact": 164
+  },
+  "recovery_contract": {
+    "committed_first_recovery": "FINALIZED_COMMIT",
+    "committed_returncode": 92,
+    "committed_second_recovery": "ZERO_TRANSACTIONS",
+    "late_applying_returncode": 93,
+    "precommit_first_recovery": "ROLLED_BACK",
+    "precommit_second_recovery": "NOOP_ROLLED_BACK",
+    "prepared_returncode": 90
+  },
+  "registry_intent_ordinals": {
+    "exact-owned": 715,
+    "modified-owned-regular": 714,
+    "modified-owned-symlink": 714,
+    "unowned-file": 715
+  },
+  "result_tree_safety": {
+    "directory_count": 62,
+    "regular_count_before_self": 844,
+    "sha256": "47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00",
+    "special_count": 0,
+    "symlink_count": 0
+  },
+  "root_result_index": {
+    "identities_exact": true,
+    "indexed_files": 845,
+    "membership_exact": true,
+    "sha256": "5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60"
+  },
+  "scenario_group_counts": {
+    "audit": 6,
+    "locking": 2,
+    "preflight": 6,
+    "recovery": 12,
+    "residual": 10,
+    "teardown": 8
+  },
+  "schema_version": 1,
+  "status": "FROZEN_PASS",
+  "target": "Termux on Android arm64"
+}

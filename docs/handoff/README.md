@@ -6,18 +6,16 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
-3. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
-4. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
-5. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
-6. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
-7. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
-8. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
-9. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-10. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-11. ../stages/STAGE3C_PHASE5_SCOPE.md
-12. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-13. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+2. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+3. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+4. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
+5. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
+6. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+7. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+8. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+9. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+10. ../stages/STAGE3C_PHASE5_SCOPE.md
+11. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
 ```
 
 ## Current state
@@ -34,9 +32,9 @@ Gate 3B preserve-and-report product acceptance       FROZEN 29/29 + 62/62
 Gate 3C design                                       FROZEN 73/73, 50 scenarios
 Gate 3C target implementation                       FROZEN 50/50 + 103/103
 Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
-Gate 3D final uninstall design                       DESIGN FROZEN — 108/108, 44 scenarios
-Gate 3D target implementation                       READY — 44/44 local + 138/138 verifier; Termux pending
-Gate 4 upgrade/downgrade                             DEFERRED
+Gate 3D final uninstall design                       FROZEN 108/108, 44 scenarios
+Gate 3D final uninstall target                       FROZEN 44/44 + 138/138 + 37/37
+Gate 4 upgrade/downgrade                             ACTIVE — second product authority/design pending
 ```
 
 ## Frozen Gate 3B identity
@@ -69,22 +67,27 @@ scenario / verifier / external audit
 
 Gate 3C accepts both addon install and removal orders, exact runtime-base prerequisites, dependency rejection without mutation, addon preservation/recovery, and complete runtime revalidation after addon removal.
 
-## Frozen Gate 3D design boundary
+## Frozen Gate 3D identity
 
 ```text
-consume frozen Gate 3B runtime-base uninstall semantics
-consume frozen Gate 3C composed-product lifecycle
-remove all addons before runtime-base
-final registry / owned-payload / residual separation
-modified-owned and unowned residual census
-transaction recovery and second-recovery idempotence
-no upgrade or downgrade claim
+archive sha256
+  579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143
 
-canonical design matrix: 44 scenarios
-target runner/verifier implemented
-local semantic validation: 44/44 + 138/138
-authoritative Termux archive and external inspection still required
+root result-index sha256
+  5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60
+
+result-tree-safety sha256
+  47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00
+
+scenario / verifier / external audit
+  44/44 / 138/138 / 37/37 PASS
 ```
+
+Gate 3D accepts complete addon teardown, final runtime-base uninstall, exact registry and owned-payload removal, approved residual preservation, recovery, lock exclusion, and final archive/index integrity.
+
+## Active Gate 4 boundary
+
+Gate 4 begins with second-product authority acquisition. No upgrade/downgrade matrix or target claim is frozen. A synthetic version label or edited copy of the first product is not an acceptable second authority.
 
 ## Evidence and transport rule
 

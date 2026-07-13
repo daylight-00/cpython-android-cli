@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3D target implementation ready; authoritative Termux evidence pending
+> **Status:** ACTIVE — Gate 3D frozen; Gate 4 second-product authority and design pending
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -43,8 +43,8 @@ Gate 2R   corrected-engine complete-root relocation regression    FROZEN
 Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
-Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — TARGET READY / EVIDENCE PENDING
-Gate 4    upgrade and downgrade with second frozen product        DEFERRED
+Gate 3D   runtime uninstall and final ownership boundary          FROZEN
+Gate 4    upgrade and downgrade with second frozen product        ACTIVE — AUTHORITY / DESIGN PENDING
 ```
 
 ## Frozen prior gates
@@ -217,27 +217,40 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```
 
-## Active Gate 3D final uninstall and ownership boundary — design frozen
-
-Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report behavior with the frozen Gate 3C composed-product lifecycle. It must begin from explicit composed/runtime-plus-addon/runtime-only states, reject runtime-base removal while addons remain, remove addons through accepted orders, and then audit final runtime-base removal.
-
-Required final distinctions:
+## Frozen Gate 3D final uninstall and ownership boundary
 
 ```text
-registry empty
-matching owned payload absent
-approved modified-owned residual preserved and reported
-unowned sentinel preserved and unchanged
-required non-empty ancestors retained
-transaction cleanup or accepted rollback tombstone
+archive sha256
+  579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143
+
+root result-index sha256
+  5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60
+
+result-tree-safety sha256
+  47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00
+
+checks
+  design 108/108
+  target 44/44
+  verifier 138/138
+  external audit 37/37
 ```
 
-The repository-side design is frozen at 108/108 verifier checks and 44 scenarios: 6 preflight, 8 teardown, 10 residual, 12 recovery, 2 locking, and 6 final-audit cases. The target runner, result finalizer, single Termux wrapper, and 138-check independent verifier are implemented; non-authoritative local semantic validation passes 44/44 and 138/138. The immediate task is one complete Termux execution and independent archive inspection. No target Gate 3D claim is authorized yet.
+Gate 3D accepts dependency-ordered complete teardown, final runtime-base removal, exact and approved-residual final states, crash recovery, lock exclusion, and complete archive/index evidence. It freezes the distinction between an empty registry, absence of matching owned payload, approved residual presence, transaction/tombstone state, and a physically empty prefix.
 
-## Deferred Gate 4
+Evidence:
 
-Upgrade and downgrade remain deferred until a second complete frozen product identity exists. Synthetic version labels are not accepted.
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+```
+
+## Active Gate 4 upgrade and downgrade — authority/design pending
+
+Gate 4 requires a second complete frozen product identity with its own runtime-base, development-addon, test-addon, manifests, product lock, ownership contract, native closure, runtime behavior, and provenance. A synthetic version label or manually edited first-product copy is not authority.
+
+The immediate task is second-product acquisition/build and independent freeze. Upgrade/downgrade ordering, compatibility, collision, residual, recovery, and target acceptance policy remain unclaimed until that authority exists.
 
 ## Non-reopening rule
 
-Gate 3D must consume Gate 3B and Gate 3C as frozen authorities. It must not reopen preserve-and-report behavior, addon dependency policy, journal schema, registry schema, or manifest/archive identity. Any policy-changing intervention requires a separate authority decision.
+Gate 4 must consume Gates 3B, 3C, and 3D as frozen first-product authorities. It must not reopen preserve-and-report behavior, addon dependency policy, final-uninstall ownership policy, journal schema, registry schema, or accepted archive identity. Any policy-changing intervention requires a separate authority decision.

@@ -1,0 +1,116 @@
+{
+  "archive_sha256": "579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143",
+  "archive_size": 23270627,
+  "check_count": 37,
+  "checks": {
+    "all_scenario_json_pass_matrix_exact": true,
+    "archive_no_duplicate_members": true,
+    "archive_no_links": true,
+    "archive_no_special_entries": true,
+    "archive_no_unsafe_paths": true,
+    "archive_single_root": true,
+    "authority_22_22": true,
+    "authority_hashes_exact": true,
+    "claim_boundary_preserved": true,
+    "clone_separation_44_exact": true,
+    "external_applied_head_exact": true,
+    "external_applied_tree_exact": true,
+    "external_log_markers_exact": true,
+    "external_sidecar_exact": true,
+    "external_workflow_rc_zero": true,
+    "final_audits_empty_registry_owned_absent": true,
+    "generated_json_canonical": true,
+    "independent_verifier_138_138": true,
+    "locking_contenders_rc44": true,
+    "matrix_identity_exact": true,
+    "preflight_rejections_rc44": true,
+    "raw_process_records_consistent": true,
+    "recovery_rc_actions_exact": true,
+    "registry_intent_ordinals_exact": true,
+    "root_index_identities_exact": true,
+    "root_index_membership_exact": true,
+    "root_index_schema_count": true,
+    "safety_counts_exact_pre_self": true,
+    "safety_report_pass": true,
+    "scenario_group_counts_exact": true,
+    "scenario_group_dirs_exact": true,
+    "scenario_ids_exact": true,
+    "scenario_summary_44_44": true,
+    "seed_summaries_pass": true,
+    "target_did_not_enable_fast_success": true,
+    "workflow_all_rc_zero": true,
+    "wrapper_target_executed_not_preaccepted": true
+  },
+  "details": {
+    "all_scenario_json_pass_matrix_exact": [],
+    "archive_member_counts": {
+      "directory": 63,
+      "regular": 846
+    },
+    "archive_no_links": [],
+    "archive_no_special_entries": [],
+    "archive_no_unsafe_paths": [],
+    "clone_separation_44_exact": [],
+    "external_sidecar_exact": {
+      "expected": "579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143",
+      "observed": "579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143"
+    },
+    "final_audits_empty_registry_owned_absent": [],
+    "final_state_class_counts": {
+      "exact-owned-teardown": 10,
+      "mixed-approved-residual": 1,
+      "modified-owned-residual": 8,
+      "unowned-sentinel-residual": 6
+    },
+    "generated_json_canonical": {
+      "count": 442,
+      "noncanonical": []
+    },
+    "process_returncode_counts": {
+      "0": 144,
+      "44": 20,
+      "90": 5,
+      "92": 4,
+      "93": 4
+    },
+    "raw_process_records_consistent": {
+      "errors": [],
+      "output_count": 164,
+      "process_count": 177,
+      "stdout_equals_output": 164
+    },
+    "recovery_rc_actions_exact": [],
+    "result_tree_safety_sha256": "47b571d79990cf6c5f1157f7784a5acfa47478b04a7c6f55185d3c4f38ab8a00",
+    "root_index_identities_exact": [],
+    "root_index_membership_exact": {
+      "actual": 845,
+      "extra": [],
+      "indexed": 845,
+      "missing": []
+    },
+    "root_index_sha256": "5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60",
+    "scenario_group_dirs_exact": {
+      "audit": 6,
+      "locking": 2,
+      "preflight": 6,
+      "recovery": 12,
+      "residual": 10,
+      "teardown": 8
+    },
+    "seed_summaries_pass": {
+      "errors": [],
+      "seeds": [
+        "composed",
+        "runtime",
+        "runtime-development",
+        "runtime-test"
+      ]
+    },
+    "target_did_not_enable_fast_success": []
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 37,
+  "schema_version": 1,
+  "verification_kind": "external-gate3d-target-archive-acceptance-audit"
+}
