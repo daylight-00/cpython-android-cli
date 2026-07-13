@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 3C Target Implementation Result
 
-> **Status:** CORRECTED IMPLEMENTATION READY — first target archive not accepted; rerun pending
+> **Status:** FROZEN TARGET PASS — corrected archive independently accepted
 
 ## Result
 
@@ -17,7 +17,7 @@ scenario groups
   total                     50
 ```
 
-This is an implementation readiness result, not target acceptance.
+The corrected implementation and its independently inspected Termux archive are now accepted as the Gate 3C target authority.
 
 ## Input authority
 
@@ -170,8 +170,32 @@ includes safe symlink-directory entries in the root result-index
 records result-tree-safety and result-index return codes in workflow status
 ```
 
-A fresh Termux rerun and independent inspection are required. The first archive remains immutable non-accepting evidence.
+The fresh corrected Termux rerun is accepted. The first archive remains immutable non-accepting evidence.
+
+## Corrected authoritative target archive
+
+```text
+archive
+  stage3c-phase5-gate3c-addon-lifecycle-results-20260713T033412Z.tar.zst
+
+archive sha256
+  43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a
+
+root result-index sha256
+  fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c
+
+indexed files
+  731/731 exact
+
+archive safety
+  801 members / 0 links / 0 special / 0 unsafe
+
+scenario / verifier / external audit
+  50/50 PASS / 103/103 PASS / 27/27 PASS
+```
+
+The B06 transient venv is not archived. All critical JSON is canonical, all raw process references resolve, and every indexed regular file matches its recorded size, mode, and SHA-256.
 
 ## Claim boundary
 
-This result proves repository implementation readiness only. It does not prove the target addon lifecycle, close Gate 3C, or claim Gate 3D final runtime-base uninstall, upgrade, or downgrade. Gate 3C can close only after a complete Termux `.tar.zst` archive is independently checked for safety, root-index identity, scenario evidence, verifier output, and raw process consistency.
+This result, together with the independently inspected corrected archive, closes Gate 3C addon lifecycle and dependency enforcement. It does not prove Gate 3D final multi-artifact/runtime-base uninstall, upgrade, or downgrade.

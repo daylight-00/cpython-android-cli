@@ -238,87 +238,67 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
 
-## Active boundary
-
-```text
-Gate 3C addon lifecycle and dependency enforcement
-```
-
-Frozen repository-side design:
-
-```text
-verification             73/73 PASS
-matrix sha256            52c622450e9664c6738a75fbc947b809cf1f4766e61b04a68a1a8dcc24b6c14a
-scenario matrix          50
-preflight/composition    10/10
-uninstall/recovery        9/12
-locking/behavior          2/7
-```
-
-Required target proof:
-
-```text
-both addon install orders
-both addon removal orders
-exact runtime-base prerequisite identity
-exact registry and ownership transitions
-dependency-invalid operation rejection without mutation
-addon repair, uninstall preservation, and recovery
-shared-path and collision-policy enforcement
-runtime-base identity and behavior after addon removal
-no Gate 3D final-runtime-uninstall claim
-```
-
-Design evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-```
-
-
-## Gate 3C target implementation
+## Gate 3C — addon lifecycle and dependency enforcement
 
 ```text
 status
-  ARCHIVE-INTEGRITY CORRECTED — target rerun pending
+  FROZEN PASS
 
-input authority
-  Gate 3B archive 0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
-  Gate 3B result-index f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9
+archive
+  stage3c-phase5-gate3c-addon-lifecycle-results-20260713T033412Z.tar.zst
 
-scenario topology
-  50 total
-  10 preflight / 10 composition / 9 uninstall
-  12 recovery / 2 locking / 7 behavior
+archive sha256
+  43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a
 
-execution surfaces
-  single Termux wrapper
-  raw stdout and stderr plus real process return codes
-  payload, registry, and transaction snapshots
-  independent verifier (103 checks after correction)
-  result-tree safety gate
-  complete root result-index including safe symlinks
-  PASS-or-FAIL .tar.zst archive
+archive size
+  23,994,806 bytes
 
-recovery retention
-  PREPARED/APPLYING -> exact prior state + one ROLLED_BACK audit tombstone
-  second rollback recovery -> NOOP_ROLLED_BACK
-  COMMITTED -> exact new state + transaction cleanup
+archive members
+  801
+
+root result-index sha256
+  fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c
+
+root indexed files
+  731/731 exact
+
+checks
+  design 73/73
+  scenarios 50/50
+  independent verifier 103/103
+  external archive audit 27/27
 ```
 
-Implementation evidence:
+Accepted boundaries:
 
 ```text
-docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+development-addon -> exact runtime-base
+test-addon -> exact runtime-base
+no inter-addon dependency
+both addon install and removal orders
+runtime-base removal rejected while any addon remains
+rollback audit tombstone and committed cleanup semantics preserved
+complete runtime regression after addon removal
+```
+
+Evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 ```
 
-## Deferred boundaries
+## Active boundary
 
 ```text
-Gate 3D runtime uninstall and final ownership boundary
+Gate 3D runtime uninstall and final ownership boundary design
+```
+
+Gate 3D must integrate the frozen Gate 3B runtime-base preserve-and-report authority with the frozen Gate 3C composed-product lifecycle. Required design surfaces include valid addon teardown orders, runtime-base preflight rejection while addons remain, exact final registry transition, owned-payload absence, approved residual census, recovery, and archive/index integrity.
+
+## Deferred boundary
+
+```text
 Gate 4 upgrade and downgrade
 ```
 
@@ -336,4 +316,5 @@ docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```

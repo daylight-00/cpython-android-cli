@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 3C: Addon Lifecycle and Dependency Enforcement Design
 
-> **Status:** DESIGN FROZEN — target implementation ready; authoritative Termux evidence pending
+> **Status:** FROZEN PASS — design and corrected Termux target evidence accepted
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -193,4 +193,4 @@ STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN=PASS
 
 The design PASS freezes the policy-bounded matrix and verifies its consistency with frozen Phase 2, Phase 3, Phase 4, corrected-engine, and Gate 3B authorities.
 
-It does not prove target addon lifecycle, target recovery, target dependency enforcement, final runtime-base uninstall, upgrade, or downgrade. Gate 3C closes only after a complete independently inspected Termux result archive.
+The independently inspected corrected Termux archive closes the target addon lifecycle, recovery, dependency-enforcement, and post-addon runtime regression claims. Final multi-artifact/runtime-base uninstall, upgrade, and downgrade remain separate Gate 3D and Gate 4 boundaries.

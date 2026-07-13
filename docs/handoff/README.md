@@ -6,16 +6,15 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
-3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
-4. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
-5. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-6. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-7. ../stages/STAGE3C_PHASE5_SCOPE.md
-8. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-9. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
-10. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
-11. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+2. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
+3. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+4. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
+5. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
+6. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
+7. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+8. ../stages/STAGE3C_PHASE5_SCOPE.md
+9. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+10. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
 
 ## Current state
@@ -30,9 +29,9 @@ Gate 2R corrected-engine relocation                  FROZEN 80/80 + 46/46 + 15/1
 Gate 3B0 preservation diagnostic                     FROZEN 16/16 + 40/40
 Gate 3B preserve-and-report product acceptance       FROZEN 29/29 + 62/62
 Gate 3C design                                       FROZEN 73/73, 50 scenarios
-Gate 3C target implementation                       CORRECTED / RERUN REQUIRED
-Gate 3C target lifecycle/dependency enforcement      ACTIVE
-Gate 3D final uninstall                              DEFERRED
+Gate 3C target implementation                       FROZEN 50/50 + 103/103
+Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
+Gate 3D final uninstall                              ACTIVE — design pending
 Gate 4 upgrade/downgrade                             DEFERRED
 ```
 
@@ -51,30 +50,31 @@ happy reinstall / uninstall / crash
 
 Crash boundaries are PREPARED rc 90, late APPLYING rc 93, and COMMITTED rc 92. Modified-owned pre-commit states intentionally verify with exactly the modified leaf and rc 44; unowned pre-commit and committed states verify rc 0.
 
-## Active Gate 3C boundary
+## Frozen Gate 3C identity
 
 ```text
-development-addon -> runtime-base only
-test-addon -> runtime-base only
-no inter-addon dependency
-both install and addon-removal orders
-50-scenario target matrix
-registry and ownership separation
-12 addon crash-recovery scenarios
-rollback audit tombstone / committed cleanup distinction
-runtime-base exactness and behavior after addon removal
+archive sha256
+  43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a
+
+root result-index sha256
+  fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c
+
+scenario / verifier / external audit
+  50/50 / 103/103 / 27/27 PASS
 ```
 
-Gate 3C does not claim final runtime-base uninstall, upgrade, or downgrade.
+Gate 3C accepts both addon install and removal orders, exact runtime-base prerequisites, dependency rejection without mutation, addon preservation/recovery, and complete runtime revalidation after addon removal.
 
-First target archive inspection:
+## Active Gate 3D boundary
 
 ```text
-50/50 target scenarios / 102/102 verifier checks     PASS
-archive safety and complete root-index               FAIL
-external absolute venv symlink                       1
-unindexed symlink-directory member                   1
-Gate 3C acceptance                                    NOT CLOSED
+consume frozen Gate 3B runtime-base uninstall semantics
+consume frozen Gate 3C composed-product lifecycle
+remove all addons before runtime-base
+final registry / owned-payload / residual separation
+modified-owned and unowned residual census
+transaction recovery and second-recovery idempotence
+no upgrade or downgrade claim
 ```
 
 ## Evidence and transport rule

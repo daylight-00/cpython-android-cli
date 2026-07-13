@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3C addon lifecycle and dependency enforcement
+> **Status:** ACTIVE — Gate 3D final uninstall and ownership boundary design
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -42,8 +42,8 @@ Gate 3A   corrected reinstall and repair product acceptance       FROZEN
 Gate 2R   corrected-engine complete-root relocation regression    FROZEN
 Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
-Gate 3C   addon lifecycle and dependency enforcement              ACTIVE
-Gate 3D   runtime uninstall and final ownership boundary          DEFERRED
+Gate 3C   addon lifecycle and dependency enforcement              FROZEN
+Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — DESIGN PENDING
 Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
 
@@ -190,58 +190,49 @@ Evidence:
 docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 ```
 
-## Active Gate 3C addon lifecycle and dependency enforcement
-
-### Policy-bounded question
-
-> Can development-addon and test-addon be installed and removed over the frozen runtime-base while enforcing manifest dependencies, ownership separation, transaction recovery, and runtime-base revalidation?
-
-Frozen design boundary:
+## Frozen Gate 3C addon lifecycle and dependency enforcement
 
 ```text
-manifest prerequisites
-  development-addon -> runtime-base
-  test-addon        -> runtime-base
+archive
+  stage3c-phase5-gate3c-addon-lifecycle-results-20260713T033412Z.tar.zst
 
-inter-addon dependency
-  none
+archive sha256
+  43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a
 
-accepted composition orders
-  runtime-base -> development-addon -> test-addon
-  runtime-base -> test-addon -> development-addon
+root result-index sha256
+  fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c
 
-accepted addon-removal orders
-  remove test-addon first
-  remove development-addon first
+checks
+  design 73/73
+  target 50/50
+  verifier 103/103
+  external audit 27/27
 ```
 
-The repository-side design verifier is frozen at 73/73 PASS over a 50-scenario matrix: 10 preflight, 10 composition/repair, 9 uninstall, 12 recovery, 2 locking, and 7 behavior/final-audit scenarios.
-
-The first target run completed 50/50 scenarios and 102/102 verifier checks, but independent inspection rejected the archive layer: one smoke venv symlink targeted an external absolute path and one symlink-directory member was absent from the root result-index. The corrected runner moves smoke scratch state outside the evidence tree, adds result-tree safety enforcement, and indexes symlinks before directory classification. Target Gate 3C remains ACTIVE until a corrected rerun is independently inspected.
-
-Recovery policy is not broadened: PREPARED/APPLYING rollback retains one durable `ROLLED_BACK` audit tombstone and second recovery is `NOOP_ROLLED_BACK`; COMMITTED recovery cleans its transaction. Zero transaction residue applies to normal successful lifecycle roots and committed recovery, not to the frozen rollback audit record.
-
-Gate 3C must prove exact registry transitions, addon-owned path identity, shared-path collision policy, exact runtime prerequisite rejection without mutation, both addon orders, crash recovery at accepted transaction boundaries, and final runtime-base identity and behavior. It must not invent a test-addon-to-development-addon dependency or claim final runtime-base uninstall.
+Gate 3C freezes exact runtime-base prerequisites for both addons, no inter-addon dependency, both install/removal orders, dependency-invalid rejection without mutation, addon preservation and recovery, and complete runtime regression after addon removal.
 
 Evidence:
 
 ```text
-docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-experiments/stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json
+docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```
 
-## Deferred Gate 3D
+## Active Gate 3D final uninstall and ownership boundary
+
+Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report behavior with the frozen Gate 3C composed-product lifecycle. It must begin from explicit composed/runtime-plus-addon/runtime-only states, reject runtime-base removal while addons remain, remove addons through accepted orders, and then audit final runtime-base removal.
+
+Required final distinctions:
 
 ```text
-runtime-base-only state
-approved residual sentinels
-matching owned payload removal
-preserved modified-path reporting
-registry transition
-transaction residue check
-final empty-state verification
+registry empty
+matching owned payload absent
+approved modified-owned residual preserved and reported
+unowned sentinel preserved and unchanged
+required non-empty ancestors retained
+transaction cleanup or accepted rollback tombstone
 ```
+
+The immediate task is repository-side matrix and verifier design only. No target Gate 3D claim is authorized.
 
 ## Deferred Gate 4
 
@@ -249,4 +240,4 @@ Upgrade and downgrade remain deferred until a second complete frozen product ide
 
 ## Non-reopening rule
 
-Gate 3C must consume Gate 3B as frozen authority. It must not reopen preserve-and-report behavior or silently broaden journal schema, registry schema, manifest/archive identity, final-uninstall policy, or upgrade/downgrade policy. Any policy-changing intervention requires a separate authority decision.
+Gate 3D must consume Gate 3B and Gate 3C as frozen authorities. It must not reopen preserve-and-report behavior, addon dependency policy, journal schema, registry schema, or manifest/archive identity. Any policy-changing intervention requires a separate authority decision.

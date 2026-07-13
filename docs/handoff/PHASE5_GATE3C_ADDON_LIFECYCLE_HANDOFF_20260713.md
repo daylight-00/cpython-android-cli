@@ -1,6 +1,6 @@
 # Phase 5 Gate 3C Addon Lifecycle and Dependency Enforcement Handoff — 2026-07-13
 
-> **Status:** ACTIVE — first target run scenario-complete but archive-integrity correction and rerun pending
+> **Status:** FROZEN PASS — corrected target archive independently accepted
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -98,6 +98,24 @@ The repository now provides one Termux wrapper that verifies accepted inputs, ex
 
 The frozen engine does not delete a pre-commit rollback journal. PREPARED and late APPLYING recovery restore the prior payload and registry, persist one `ROLLED_BACK` audit tombstone, and return `NOOP_ROLLED_BACK` on the second recovery. COMMITTED recovery finalizes the new state and cleans the transaction. This is the already accepted Gate 3B behavior and is not an implementation defect.
 
-## Immediate target task
+## Authoritative target result
 
-Run the archive-integrity-corrected `run-gate3c-addon-lifecycle-termux.sh` through the supplied single user wrapper against the exact Gate 3B authority archive. The first target archive passed 50/50 scenarios and 102/102 verifier checks but is non-accepting because it contained one external absolute venv symlink and one unindexed symlink-directory member. The corrected rerun must pass result-tree safety, complete root-index recomputation, 50/50 scenarios, 103/103 verifier checks, raw-process cross-checks, and independent external archive inspection.
+```text
+archive
+  stage3c-phase5-gate3c-addon-lifecycle-results-20260713T033412Z.tar.zst
+
+archive sha256
+  43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a
+
+root result-index sha256
+  fb51d53ab0a4605159e58208c374017c2de9fed6ba924f08d98cfabf82ce6c7c
+
+scenario / verifier / external audit
+  50/50 / 103/103 / 27/27 PASS
+```
+
+Gate 3C is closed. The first target archive remains immutable non-accepting diagnostic evidence; the corrected archive is the target authority.
+
+## Successor
+
+Continue with `PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md`. Gate 3D is design-pending and must consume Gate 3B and Gate 3C as frozen authorities.
