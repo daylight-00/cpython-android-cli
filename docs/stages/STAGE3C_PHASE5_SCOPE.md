@@ -217,7 +217,7 @@ accepted addon-removal orders
 
 The repository-side design verifier is frozen at 73/73 PASS over a 50-scenario matrix: 10 preflight, 10 composition/repair, 9 uninstall, 12 recovery, 2 locking, and 7 behavior/final-audit scenarios.
 
-The single target runner and independent verifier are now repository-ready. They consume the exact Gate 3B archive, create inode-separated scenario roots, preserve raw stdout/stderr and real return codes, verify both addon orders, and package PASS or FAIL evidence as `.tar.zst`. Target Gate 3C remains ACTIVE until that archive is executed and independently inspected.
+The first target run completed 50/50 scenarios and 102/102 verifier checks, but independent inspection rejected the archive layer: one smoke venv symlink targeted an external absolute path and one symlink-directory member was absent from the root result-index. The corrected runner moves smoke scratch state outside the evidence tree, adds result-tree safety enforcement, and indexes symlinks before directory classification. Target Gate 3C remains ACTIVE until a corrected rerun is independently inspected.
 
 Recovery policy is not broadened: PREPARED/APPLYING rollback retains one durable `ROLLED_BACK` audit tombstone and second recovery is `NOOP_ROLLED_BACK`; COMMITTED recovery cleans its transaction. Zero transaction residue applies to normal successful lifecycle roots and committed recovery, not to the frozen rollback audit record.
 
@@ -227,6 +227,7 @@ Evidence:
 
 ```text
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 experiments/stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json
 ```
 

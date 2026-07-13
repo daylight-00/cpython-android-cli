@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 3C Target Implementation Result
 
-> **Status:** READY FOR TERMUX — authoritative target archive pending
+> **Status:** CORRECTED IMPLEMENTATION READY — first target archive not accepted; rerun pending
 
 ## Result
 
@@ -118,10 +118,59 @@ lock exclusion                 2/2 PASS
 non-executable behavior        4/4 PASS
 executable-independent total  47/47 PASS
 local executable behavior      3 target-only / intentionally not accepted
-independent verifier surface  102 checks
+independent verifier surface  103 checks after archive-integrity correction
 ```
 
 The three target-only checks are `import test.support`, selected CPython regression tests, and the complete runtime HTTPS/uv/closure/extension regression. Their absence from local acceptance is deliberate and must be closed only by the Termux archive.
+
+
+## First target archive inspection
+
+The first complete Termux execution produced valid scenario evidence but did not close Gate 3C.
+
+```text
+archive
+  stage3c-phase5-gate3c-addon-lifecycle-results-20260713T020629Z.tar.zst
+
+archive sha256
+  e92c2de3537c1258910b77301d52ef4a671e7775282061013a5f5b8f76094609
+
+root result-index sha256
+  9fc7de3b604dc52fb99b823c465a03221b38e80982fa400f1ecbfc4e023bcf20
+
+scenario / verifier / workflow
+  50/50 PASS / 102/102 PASS / rc 0
+
+external inspection
+  26/28 PASS
+```
+
+Two archive-layer blockers remained:
+
+```text
+external absolute symlink
+  scenarios/B06/smoke-results/venv/bin/python
+
+unindexed archive member
+  scenarios/B06/smoke-results/venv/lib64
+```
+
+The lifecycle, recovery, dependency, behavior, and raw-process evidence remain useful diagnostic evidence, but the archive is not accepting authority because safe extraction and complete root-index coverage are mandatory.
+
+## Archive-integrity correction
+
+The correction does not change the transaction engine or the 50-scenario matrix. It:
+
+```text
+moves smoke-test scratch/venv output under the non-archived scenario work root
+rejects absolute or escaping result-tree symlink targets before packaging
+rejects special filesystem entries before packaging
+classifies symlinks before directories during result-index generation
+includes safe symlink-directory entries in the root result-index
+records result-tree-safety and result-index return codes in workflow status
+```
+
+A fresh Termux rerun and independent inspection are required. The first archive remains immutable non-accepting evidence.
 
 ## Claim boundary
 

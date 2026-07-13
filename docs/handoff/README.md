@@ -9,12 +9,13 @@ Use these documents to continue the project without relying on prior chat contex
 2. PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md
 3. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md
 4. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
-5. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-6. ../stages/STAGE3C_PHASE5_SCOPE.md
-7. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-8. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
-9. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
-10. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
+5. ../evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
+6. ../evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+7. ../stages/STAGE3C_PHASE5_SCOPE.md
+8. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+9. ../evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
+10. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md
+11. PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md
 ```
 
 ## Current state
@@ -29,7 +30,7 @@ Gate 2R corrected-engine relocation                  FROZEN 80/80 + 46/46 + 15/1
 Gate 3B0 preservation diagnostic                     FROZEN 16/16 + 40/40
 Gate 3B preserve-and-report product acceptance       FROZEN 29/29 + 62/62
 Gate 3C design                                       FROZEN 73/73, 50 scenarios
-Gate 3C target implementation                       READY
+Gate 3C target implementation                       CORRECTED / RERUN REQUIRED
 Gate 3C target lifecycle/dependency enforcement      ACTIVE
 Gate 3D final uninstall                              DEFERRED
 Gate 4 upgrade/downgrade                             DEFERRED
@@ -65,6 +66,16 @@ runtime-base exactness and behavior after addon removal
 ```
 
 Gate 3C does not claim final runtime-base uninstall, upgrade, or downgrade.
+
+First target archive inspection:
+
+```text
+50/50 target scenarios / 102/102 verifier checks     PASS
+archive safety and complete root-index               FAIL
+external absolute venv symlink                       1
+unindexed symlink-directory member                   1
+Gate 3C acceptance                                    NOT CLOSED
+```
 
 ## Evidence and transport rule
 

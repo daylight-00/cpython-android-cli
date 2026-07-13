@@ -617,7 +617,7 @@ def main() -> int:
         py = root / "prefix/bin/python"
         env = clean_runtime_env(out)
         probe = run_command([str(py), "-I", "-B", "-S", str(SCRIPT_DIR.parent / "stage3c-installed-runtime-baseline/probe-installed-runtime.py"), "--output", str(out / "runtime-probe.json"), "--https"], output_prefix=out / "runtime-probe-command", env=env)
-        smoke = run_command(["bash", str(SCRIPT_DIR.parent.parent / "scripts/test/smoke-termux.sh")], output_prefix=out / "smoke", env={**env, "RUNTIME_ROOT_OVERRIDE": str(root), "TERMUX_RESULTS_ROOT_OVERRIDE": str(out / "smoke-results")})
+        smoke = run_command(["bash", str(SCRIPT_DIR.parent.parent / "scripts/test/smoke-termux.sh")], output_prefix=out / "smoke", env={**env, "RUNTIME_ROOT_OVERRIDE": str(root), "TERMUX_RESULTS_ROOT_OVERRIDE": str(root / "smoke-results")})
         closure_dir = out / "closure"
         inventory = run_command(["bash", str(SCRIPT_DIR.parent / "stage3a-runtime-closure/inventory-runtime.sh")], output_prefix=out / "closure-inventory", env={**env, "RUNTIME_PREFIX": str(root / "prefix"), "PYTHON_BIN": str(py), "OUTPUT_DIR": str(closure_dir)})
         analyze = run_command(["bash", str(SCRIPT_DIR.parent / "stage3a-runtime-closure/analyze-and-probe.sh")], output_prefix=out / "closure-analysis", env={**env, "RUNTIME_PREFIX": str(root / "prefix"), "PYTHON_BIN": str(py), "RESULTS_DIR": str(closure_dir)})

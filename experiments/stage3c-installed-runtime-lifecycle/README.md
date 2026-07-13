@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Installed Runtime Lifecycle
 
-> **Current boundary:** Gate 3C target implementation ready; authoritative Termux archive pending
+> **Current boundary:** Gate 3C archive-integrity correction ready; corrected authoritative Termux archive pending
 
 Current authority:
 
@@ -8,7 +8,7 @@ Current authority:
 Gate 3B preserve-and-report product acceptance   FROZEN
 Gate 3C design verifier                          FROZEN 73/73
 Gate 3C target matrix                            50 scenarios
-Gate 3C target runner/verifier                   READY FOR TERMUX
+Gate 3C target runner/verifier                   CORRECTED / RERUN REQUIRED
 Gate 3D final runtime-base uninstall             DEFERRED
 upgrade/downgrade                                DEFERRED
 ```
@@ -21,10 +21,13 @@ gate3c-addon-lifecycle-matrix.json
 gate3c_addon_lifecycle_support.py
 run-gate3c-addon-lifecycle.py
 verify-gate3c-addon-lifecycle.py
+finalize-gate3c-evidence.py
 run-gate3c-addon-lifecycle-termux.sh
 ```
 
 The target wrapper consumes the byte-exact frozen Gate 3B archive, independently verifies its root index and three artifact identities, executes all 50 scenarios, then emits a `.tar.zst` archive on PASS or FAIL. The two addons independently require exact runtime-base and do not depend on each other.
+
+The first complete target execution passed all 50 scenarios and all 102 repository verifier checks, but independent archive inspection did not accept it. The archive contained one external absolute venv symlink and omitted one symlink-directory entry from the root result-index. The correction moves smoke-test scratch state outside the evidence tree, adds a pre-archive result-tree safety gate, and indexes symlinks before directory classification. The corrected verifier surface is 103 checks.
 
 Recovery retention follows the frozen engine: PREPARED/APPLYING rollback retains one `ROLLED_BACK` audit tombstone; COMMITTED recovery cleans its transaction. Normal successful lifecycle roots still require zero transaction residue.
 

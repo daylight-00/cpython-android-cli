@@ -172,7 +172,7 @@ after all addon removals
 
 ## Evidence contract
 
-One Termux wrapper must verify accepted input hashes, extract inputs freshly, create inode-separated roots, capture stdout and stderr synchronously, preserve real process return codes, write canonical JSON, recompute a root result-index, and create a new `.tar.zst` archive on PASS or FAIL.
+One Termux wrapper must verify accepted input hashes, extract inputs freshly, create inode-separated roots, capture stdout and stderr synchronously, preserve real process return codes, write canonical JSON, reject external/special result-tree entries, recompute a complete root result-index including safe symlinks, and create a new `.tar.zst` archive on PASS or FAIL.
 
 Historical `.tgz` evidence remains immutable.
 

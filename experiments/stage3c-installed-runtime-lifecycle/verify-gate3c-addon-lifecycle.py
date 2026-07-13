@@ -115,6 +115,7 @@ def main() -> int:
             if name and not (process_path.parent / name).is_file():
                 referenced_ok = False
     checks["raw_process_files"] = referenced_ok and len(list(root.glob("scenarios/*/*-process.json"))) >= 100
+    checks["smoke_transient_not_archived"] = not (root / "scenarios/B06/smoke-results").exists()
 
     failed = sorted(key for key, value in checks.items() if not value)
     result = {

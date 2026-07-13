@@ -1,6 +1,6 @@
 # Phase 5 Gate 3C Addon Lifecycle and Dependency Enforcement Handoff — 2026-07-13
 
-> **Status:** ACTIVE — design and target implementation frozen; authoritative Termux evidence pending
+> **Status:** ACTIVE — first target run scenario-complete but archive-integrity correction and rerun pending
 > **Prerequisite:** frozen Gate 3B preserve-and-report product acceptance
 > **Target:** Termux on Android arm64
 
@@ -100,4 +100,4 @@ The frozen engine does not delete a pre-commit rollback journal. PREPARED and la
 
 ## Immediate target task
 
-Run `run-gate3c-addon-lifecycle-termux.sh` through the supplied single user wrapper against the exact Gate 3B authority archive. Inspect the resulting `.tar.zst` for archive safety, root-index identity, 50/50 scenario evidence, independent verifier results, raw process return codes, and claim-boundary integrity. Only that independent inspection can close Gate 3C.
+Run the archive-integrity-corrected `run-gate3c-addon-lifecycle-termux.sh` through the supplied single user wrapper against the exact Gate 3B authority archive. The first target archive passed 50/50 scenarios and 102/102 verifier checks but is non-accepting because it contained one external absolute venv symlink and one unindexed symlink-directory member. The corrected rerun must pass result-tree safety, complete root-index recomputation, 50/50 scenarios, 103/103 verifier checks, raw-process cross-checks, and independent external archive inspection.

@@ -274,6 +274,7 @@ Design evidence:
 ```text
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 ```
 
 
@@ -281,7 +282,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 
 ```text
 status
-  READY FOR TERMUX — target evidence pending
+  ARCHIVE-INTEGRITY CORRECTED — target rerun pending
 
 input authority
   Gate 3B archive 0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b
@@ -296,8 +297,9 @@ execution surfaces
   single Termux wrapper
   raw stdout and stderr plus real process return codes
   payload, registry, and transaction snapshots
-  independent verifier
-  root result-index
+  independent verifier (103 checks after correction)
+  result-tree safety gate
+  complete root result-index including safe symlinks
   PASS-or-FAIL .tar.zst archive
 
 recovery retention
@@ -310,6 +312,7 @@ Implementation evidence:
 
 ```text
 docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 ```
 
 ## Deferred boundaries
@@ -332,4 +335,5 @@ docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 ```

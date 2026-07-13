@@ -11,7 +11,8 @@ source "$SCRIPT_DIR/../../scripts/lib/project-env.sh"
 GATE3B_ARCHIVE="${GATE3B_ARCHIVE:-$HOME/.cache/hw-t/authorities/stage3c-phase5-gate3b-preservation-acceptance-results-20260713-024946.tgz}"
 GATE3B_SHA256='0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b'
 GATE3B_INDEX_SHA256='f3e0bd34c61f5b1e0960d002175478b112641fa71f0e914ec712e6c514e52fe9'
-GATE3B_EXTRACT="${GATE3B_EXTRACT:-${PREFIX:-/data/data/com.termux/files/usr}/tmp/stage3c-phase5-gate3b-authority-gate3c}"
+TMP_ROOT="${TMPDIR:-${PREFIX:-/data/data/com.termux/files/usr}/tmp}"
+GATE3B_EXTRACT="${GATE3B_EXTRACT:-$TMP_ROOT/stage3c-phase5-gate3b-authority-gate3c}"
 RESULTS_DIR="${RESULTS_DIR:-$RESULTS_ROOT/termux/stage3c-phase5-gate3c-addon-lifecycle}"
 WORK_DIR="${WORK_DIR:-$WORK_ROOT/termux/stage3c-phase5-gate3c-addon-lifecycle}"
 STAMP="${STAMP:-$(date -u +%Y%m%dT%H%M%SZ)}"
@@ -19,19 +20,23 @@ ARCHIVE="${ARCHIVE:-$HOME/Downloads/stage3c-phase5-gate3c-addon-lifecycle-result
 META_PYTHON="${META_PYTHON:-${PREFIX:-/data/data/com.termux/files/usr}/bin/python}"
 RUNNER="$SCRIPT_DIR/run-gate3c-addon-lifecycle.py"
 VERIFIER="$SCRIPT_DIR/verify-gate3c-addon-lifecycle.py"
+FINALIZER="$SCRIPT_DIR/finalize-gate3c-evidence.py"
 MATRIX="$SCRIPT_DIR/gate3c-addon-lifecycle-matrix.json"
 ENGINE="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_engine_missing_leaf.py"
 OPERATIONS="$PROJECT_ROOT/experiments/stage3c-installation-recovery/recovery_operations_missing_leaf.py"
 LOCAL_SCRIPT_RUNNER="$PROJECT_ROOT/experiments/stage3c-artifact-manifest/run-isolated-local-script.py"
-TMP_LOG="${PREFIX:-/data/data/com.termux/files/usr}/tmp/stage3c-phase5-gate3c-wrapper-$$.log"
+TMP_LOG="$TMP_ROOT/stage3c-phase5-gate3c-wrapper-$$.log"
 
 runner_rc=125
 verifier_rc=125
+tree_safety_rc=125
+index_rc=125
 workflow_rc=125
 observed_gate3b_sha=''
 gate3b_results=''
 contract_results=''
 
+mkdir -p "$TMP_ROOT"
 rm -f "$TMP_LOG" "${TMP_LOG}.runner" "${TMP_LOG}.verifier"
 rm -rf "$RESULTS_DIR" "$WORK_DIR"
 mkdir -p "$RESULTS_DIR" "$WORK_DIR" "$(dirname "$ARCHIVE")"
@@ -51,7 +56,7 @@ mkdir -p "$RESULTS_DIR" "$WORK_DIR" "$(dirname "$ARCHIVE")"
             missing=1
         fi
     done
-    for file in "$META_PYTHON" "$GATE3B_ARCHIVE" "$RUNNER" "$VERIFIER" "$MATRIX" "$ENGINE" "$OPERATIONS" "$LOCAL_SCRIPT_RUNNER"; do
+    for file in "$META_PYTHON" "$GATE3B_ARCHIVE" "$RUNNER" "$VERIFIER" "$FINALIZER" "$MATRIX" "$ENGINE" "$OPERATIONS" "$LOCAL_SCRIPT_RUNNER"; do
         if [[ ! -f "$file" ]]; then
             echo "ERROR: required file missing: $file" >&2
             missing=1
@@ -157,11 +162,24 @@ PY
         fi
     fi
 
-    "$META_PYTHON" -I -B -S - "$RESULTS_DIR/workflow-status.json" "$runner_rc" "$verifier_rc" "$workflow_rc" <<'PY'
+    rm -f "$RESULTS_DIR/result-tree-safety.json" "$RESULTS_DIR/result-index.json"
+    set +e
+    "$META_PYTHON" -I -B -S "$FINALIZER" \
+        --results-dir "$RESULTS_DIR" \
+        --phase audit \
+        --safety-output "$RESULTS_DIR/result-tree-safety.json" \
+        --index-output "$RESULTS_DIR/result-index.json"
+    tree_safety_rc=$?
+    set +e
+    if [[ $workflow_rc -eq 0 && $tree_safety_rc -ne 0 ]]; then
+        workflow_rc=$tree_safety_rc
+    fi
+
+    "$META_PYTHON" -I -B -S - "$RESULTS_DIR/workflow-status.json" "$runner_rc" "$verifier_rc" "$tree_safety_rc" "$workflow_rc" <<'PY'
 import json,sys
 from pathlib import Path
-runner=int(sys.argv[2]); verifier=int(sys.argv[3]); workflow=int(sys.argv[4])
-value={'schema_version':1,'pass':workflow==0 and runner==0 and verifier==0,'returncodes':{'target_scenario_runner':runner,'independent_verifier':verifier},'workflow_returncode':workflow,'claim_boundary':'Target Gate 3C evidence generated; acceptance remains pending independent archive inspection. Gate 3D final uninstall, upgrade, and downgrade remain unclaimed.'}
+runner=int(sys.argv[2]); verifier=int(sys.argv[3]); safety=int(sys.argv[4]); workflow=int(sys.argv[5])
+value={'schema_version':1,'pass':workflow==0 and runner==0 and verifier==0 and safety==0,'returncodes':{'target_scenario_runner':runner,'independent_verifier':verifier,'result_tree_safety':safety},'workflow_returncode':workflow,'claim_boundary':'Target Gate 3C evidence generated; acceptance remains pending independent archive inspection. Gate 3D final uninstall, upgrade, and downgrade remain unclaimed.'}
 Path(sys.argv[1]).write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
 print(json.dumps(value,indent=2,sort_keys=True))
 PY
@@ -191,34 +209,49 @@ rm -f "${TMP_LOG}.runner" "${TMP_LOG}.verifier"
 
 "$META_PYTHON" -I -B -S - \
     "$RESULTS_DIR/termux-wrapper-status.json" "$GATE3B_ARCHIVE" "$GATE3B_SHA256" "$observed_gate3b_sha" \
-    "$gate3b_results" "$ARCHIVE" "$runner_rc" "$verifier_rc" "$workflow_rc" <<'PY'
+    "$gate3b_results" "$ARCHIVE" "$runner_rc" "$verifier_rc" "$tree_safety_rc" "$workflow_rc" <<'PY'
 import json,sys
 from pathlib import Path
-runner=int(sys.argv[7]); verifier=int(sys.argv[8]); workflow=int(sys.argv[9])
-value={'schema_version':1,'pass':workflow==0,'gate3b_archive':sys.argv[2],'gate3b_expected_sha256':sys.argv[3],'gate3b_observed_sha256':sys.argv[4],'gate3b_sha256_pass':bool(sys.argv[4]) and sys.argv[3]==sys.argv[4],'gate3b_results':sys.argv[5],'evidence_archive':sys.argv[6],'target_scenario_runner_returncode':runner,'independent_verifier_returncode':verifier,'workflow_returncode':workflow,'target_gate3c_executed':runner not in (125,),'gate3c_accepted':False,'claim_boundary':'Archive production does not itself close Gate 3C; independent external archive inspection is required.'}
+runner=int(sys.argv[7]); verifier=int(sys.argv[8]); safety=int(sys.argv[9]); workflow=int(sys.argv[10])
+value={'schema_version':1,'pass':workflow==0,'gate3b_archive':sys.argv[2],'gate3b_expected_sha256':sys.argv[3],'gate3b_observed_sha256':sys.argv[4],'gate3b_sha256_pass':bool(sys.argv[4]) and sys.argv[3]==sys.argv[4],'gate3b_results':sys.argv[5],'evidence_archive':sys.argv[6],'target_scenario_runner_returncode':runner,'independent_verifier_returncode':verifier,'result_tree_safety_returncode':safety,'workflow_returncode':workflow,'target_gate3c_executed':runner not in (125,),'gate3c_accepted':False,'claim_boundary':'Archive production does not itself close Gate 3C; independent external archive inspection is required.'}
 Path(sys.argv[1]).write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
 print(json.dumps(value,indent=2,sort_keys=True))
 PY
 
 rm -f "$RESULTS_DIR/result-index.json"
-"$META_PYTHON" -I -B -S - "$RESULTS_DIR" "$RESULTS_DIR/result-index.json" <<'PY'
-import hashlib,json,os,stat,sys
+set +e
+"$META_PYTHON" -I -B -S "$FINALIZER" \
+    --results-dir "$RESULTS_DIR" \
+    --phase index \
+    --safety-output "$RESULTS_DIR/result-tree-safety.json" \
+    --index-output "$RESULTS_DIR/result-index.json" \
+    > "${TMP_LOG}.index" 2>&1
+index_rc=$?
+set +e
+cat "${TMP_LOG}.index" | tee -a "$TMP_LOG"
+rm -f "${TMP_LOG}.index"
+if [[ $workflow_rc -eq 0 && $index_rc -ne 0 ]]; then
+    workflow_rc=$index_rc
+fi
+
+"$META_PYTHON" -I -B -S - "$RESULTS_DIR/workflow-status.json" "$RESULTS_DIR/termux-wrapper-status.json" "$index_rc" "$workflow_rc" <<'PY'
+import json,sys
 from pathlib import Path
-root=Path(sys.argv[1]).resolve(); output=Path(sys.argv[2]).resolve(); files=[]
-for path in sorted(root.rglob('*'),key=lambda p:p.relative_to(root).as_posix()):
-    if path==output or path.is_dir(): continue
-    rel=path.relative_to(root).as_posix(); st=path.lstat(); mode=f'{stat.S_IMODE(st.st_mode):04o}'
-    if path.is_symlink(): files.append({'path':rel,'type':'symlink','mode':mode,'target':os.readlink(path)})
-    elif path.is_file():
-        h=hashlib.sha256()
-        with path.open('rb') as stream:
-            for block in iter(lambda:stream.read(1024*1024),b''): h.update(block)
-        files.append({'path':rel,'type':'regular','mode':mode,'size':st.st_size,'sha256':h.hexdigest()})
-    else: raise SystemExit(f'unsupported result entry: {path}')
-value={'schema_version':1,'index_kind':'stage3c-phase5-gate3c-addon-lifecycle-result-index','file_count':len(files),'files':files}
-output.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
-print(json.dumps({'file_count':len(files)},indent=2,sort_keys=True))
+workflow_path=Path(sys.argv[1]); wrapper_path=Path(sys.argv[2]); index_rc=int(sys.argv[3]); workflow_rc=int(sys.argv[4])
+workflow=json.loads(workflow_path.read_text()); workflow['returncodes']['result_index']=index_rc; workflow['workflow_returncode']=workflow_rc; workflow['pass']=workflow_rc==0 and all(value==0 for value in workflow['returncodes'].values()); workflow_path.write_text(json.dumps(workflow,indent=2,sort_keys=True)+'\n')
+wrapper=json.loads(wrapper_path.read_text()); wrapper['result_index_returncode']=index_rc; wrapper['workflow_returncode']=workflow_rc; wrapper['pass']=workflow_rc==0; wrapper_path.write_text(json.dumps(wrapper,indent=2,sort_keys=True)+'\n')
 PY
+
+cp -f "$TMP_LOG" "$RESULTS_DIR/termux-wrapper.log"
+if [[ $index_rc -eq 0 ]]; then
+    "$META_PYTHON" -I -B -S "$FINALIZER" \
+        --results-dir "$RESULTS_DIR" \
+        --phase index \
+        --safety-output "$RESULTS_DIR/result-tree-safety.json" \
+        --index-output "$RESULTS_DIR/result-index.json"
+else
+    echo "ERROR: result-index generation failed rc=$index_rc" >&2
+fi
 
 case "$ARCHIVE" in
     *.tar.zst) ;;
