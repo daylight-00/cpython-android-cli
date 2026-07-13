@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3D design frozen; target implementation pending
+> **Status:** ACTIVE — Gate 3D target implementation ready; authoritative Termux evidence pending
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -43,7 +43,7 @@ Gate 2R   corrected-engine complete-root relocation regression    FROZEN
 Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
-Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — DESIGN FROZEN / TARGET PENDING
+Gate 3D   runtime uninstall and final ownership boundary          ACTIVE — TARGET READY / EVIDENCE PENDING
 Gate 4    upgrade and downgrade with second frozen product        DEFERRED
 ```
 
@@ -232,7 +232,7 @@ required non-empty ancestors retained
 transaction cleanup or accepted rollback tombstone
 ```
 
-The repository-side design is frozen at 108/108 verifier checks and 44 scenarios: 6 preflight, 8 teardown, 10 residual, 12 recovery, 2 locking, and 6 final-audit cases. The immediate task is target runner and independent verifier implementation. No target Gate 3D claim is authorized.
+The repository-side design is frozen at 108/108 verifier checks and 44 scenarios: 6 preflight, 8 teardown, 10 residual, 12 recovery, 2 locking, and 6 final-audit cases. The target runner, result finalizer, single Termux wrapper, and 138-check independent verifier are implemented; non-authoritative local semantic validation passes 44/44 and 138/138. The immediate task is one complete Termux execution and independent archive inspection. No target Gate 3D claim is authorized yet.
 
 ## Deferred Gate 4
 

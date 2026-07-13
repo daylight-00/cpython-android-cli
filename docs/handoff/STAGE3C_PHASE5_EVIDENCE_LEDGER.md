@@ -292,7 +292,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 
 ```text
 status
-  DESIGN FROZEN — target implementation and evidence pending
+  TARGET IMPLEMENTATION READY — authoritative Termux evidence pending
 
 design verifier
   108/108 PASS
@@ -304,16 +304,27 @@ scenario matrix
 
 Gate 3D integrates the frozen Gate 3B runtime-base preserve-and-report authority with the frozen Gate 3C composed-product lifecycle. It fixes valid addon teardown orders, runtime-base preflight rejection while addons remain, exact final registry transition, owned-payload absence, approved residual census, recovery, and archive/index integrity without reopening frozen policy.
 
-Design files:
+Design and target files:
 
 ```text
 experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
 experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json
 experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall-design.py
 experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
+experiments/stage3c-installed-runtime-lifecycle/gate3d_final_uninstall_support.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall.py
+experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall.py
+experiments/stage3c-installed-runtime-lifecycle/finalize-gate3d-evidence.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-termux.sh
+docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
 ```
 
-No target Gate 3D PASS is authorized until a complete `.tar.zst` result archive is independently inspected.
+```text
+local semantic scenarios  44/44 PASS
+independent verifier     138/138 PASS
+```
+
+No target Gate 3D PASS is authorized until the single Termux wrapper produces a complete `.tar.zst` result archive and that archive is independently inspected.
 
 ## Deferred boundary
 
@@ -336,4 +347,5 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
 docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
 ```

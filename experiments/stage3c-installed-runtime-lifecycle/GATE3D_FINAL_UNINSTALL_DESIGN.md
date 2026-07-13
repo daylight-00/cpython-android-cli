@@ -216,6 +216,20 @@ Historical `.tgz` evidence remains immutable.
 bash experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
 ```
 
+## Target implementation readiness
+
+The frozen matrix now has a target runner, independent verifier, result-tree safety/index finalizer, and one-command Termux wrapper. Local semantic validation passes 44/44 scenarios and 138/138 verifier checks. The local development run used fast-success only for successful setup operations; the target wrapper preserves real target operations and does not set that development flag.
+
+```text
+gate3d_final_uninstall_support.py
+run-gate3d-final-uninstall.py
+verify-gate3d-final-uninstall.py
+finalize-gate3d-evidence.py
+run-gate3d-final-uninstall-termux.sh
+```
+
+This is implementation readiness, not target acceptance.
+
 ## Claim boundary
 
 A design PASS proves only that the frozen authorities and 44-scenario matrix are internally consistent and policy-bounded. It does not prove target final uninstall, close Gate 3D, or authorize upgrade/downgrade. Gate 3D closes only after a complete Termux `.tar.zst` archive is independently inspected. Gate 4 remains deferred until a second complete frozen product identity exists.

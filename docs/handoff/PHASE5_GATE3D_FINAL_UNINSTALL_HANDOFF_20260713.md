@@ -1,6 +1,6 @@
 # Phase 5 Gate 3D Final Uninstall and Ownership Boundary Handoff — 2026-07-13
 
-> **Status:** DESIGN FROZEN — target implementation and evidence pending
+> **Status:** TARGET IMPLEMENTATION READY — authoritative Termux evidence pending
 > **Prerequisites:** frozen Gate 3B preserve-and-report acceptance and frozen Gate 3C addon lifecycle acceptance
 > **Target:** Termux on Android arm64
 
@@ -127,7 +127,20 @@ experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall-de
 experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-design.sh
 ```
 
-The next repository task is target runner and independent verifier implementation. Do not authorize a target PASS until a complete independently inspected Termux `.tar.zst` archive exists.
+The target runner, independent verifier, result-tree finalizer, and single Termux wrapper are implemented. Non-authoritative local semantic validation passes 44/44 scenarios and the independent verifier passes 138/138 checks. The local development run used fast-success only for successful setup operations; the target wrapper does not enable it.
+
+Canonical target files:
+
+```text
+experiments/stage3c-installed-runtime-lifecycle/gate3d_final_uninstall_support.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall.py
+experiments/stage3c-installed-runtime-lifecycle/verify-gate3d-final-uninstall.py
+experiments/stage3c-installed-runtime-lifecycle/finalize-gate3d-evidence.py
+experiments/stage3c-installed-runtime-lifecycle/run-gate3d-final-uninstall-termux.sh
+docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+```
+
+The next task is one complete Termux execution followed by independent archive inspection. Do not authorize a target PASS from console markers alone.
 
 ## Claim boundary
 

@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Installed Runtime Lifecycle
 
-> **Current boundary:** Gate 3C frozen; Gate 3D design frozen and target implementation pending
+> **Current boundary:** Gate 3C frozen; Gate 3D target implementation ready and Termux evidence pending
 
 Current authority:
 
@@ -10,7 +10,7 @@ Gate 3C design verifier                          FROZEN 73/73
 Gate 3C target matrix                            50 scenarios
 Gate 3C target runner/verifier                   FROZEN 50/50 + 103/103 + 27/27
 Gate 3D final runtime-base uninstall design      DESIGN FROZEN — 108/108, 44 scenarios
-Gate 3D target runner/verifier                    ACTIVE — PENDING
+Gate 3D target runner/verifier                    READY — 44/44 local + 138/138; TERMUX PENDING
 upgrade/downgrade                                DEFERRED
 ```
 
@@ -25,6 +25,18 @@ run-gate3d-final-uninstall-design.sh
 ```
 
 The Gate 3D matrix contains 44 scenarios across preflight rejection, valid/guarded teardown, residual ownership, crash recovery, locking, and final-state/evidence audit. It explicitly separates an empty registry, absence of matching owned payload, approved residual presence, transaction/tombstone state, and whether the prefix root is physically empty.
+
+Gate 3D target files:
+
+```text
+gate3d_final_uninstall_support.py
+run-gate3d-final-uninstall.py
+verify-gate3d-final-uninstall.py
+finalize-gate3d-evidence.py
+run-gate3d-final-uninstall-termux.sh
+```
+
+The target workflow consumes both frozen archives, executes all 44 scenarios with raw process evidence, runs 138 independent checks, writes safety and complete root-index records, and emits `.tar.zst` evidence on PASS or FAIL. Local semantic validation is 44/44 + 138/138; it is not target authority. The Termux wrapper does not enable the development fast-success path.
 
 Gate 3C implementation files:
 
