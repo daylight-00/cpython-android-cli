@@ -63,6 +63,10 @@ rollback authority when a transition cannot commit
 
 No scenario count, operation ordering, or acceptance policy is frozen yet.
 
+## Repository control-plane prerequisite
+
+Before creating the second-product authority branch, reconcile the root README, current context, collaboration protocol, and default branch with the frozen Gate 3D state. This documentation/main alignment is repository governance work only and does not change any frozen product or target claim.
+
 ## Immediate repository task
 
 Acquire or build the second complete product authority and freeze its archives, manifests, product lock, ownership counts, native closure, runtime behavior, and provenance. Only then design the upgrade/downgrade matrix and repository verifier.

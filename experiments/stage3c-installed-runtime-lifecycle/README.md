@@ -64,7 +64,7 @@ The remaining Gate 3A diagnostic section is retained as historical workflow text
 
 # Stage 3-C Phase 5 Gate 3A: Reinstall and Repair Diagnostic Census
 
-> **Status:** ACTIVE — authoritative Termux diagnostic pending
+> **Status:** HISTORICAL — diagnostic completed and superseded by frozen Gate 3A / Gate 2R / Gate 3B results
 > **Prerequisites:** frozen Phase 5 Gates 1–2 and frozen Phase 4 engine
 > **This workflow is diagnostic evidence, not Gate 3A product acceptance.**
 

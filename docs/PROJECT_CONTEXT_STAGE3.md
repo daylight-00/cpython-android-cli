@@ -1,8 +1,8 @@
 # CPython Android CLI + uv: Stage 3 Project Context
 
-> **Status:** Current handoff context
-> **Architecture:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B frozen
-> **Next work:** Stage 3-C archive and installation contract design
+> **Status:** HISTORICAL SNAPSHOT — superseded by `PROJECT_CONTEXT_STAGE3C.md`
+> **Snapshot boundary:** Stage 2 frozen, Stage 3-A frozen, Stage 3-B frozen
+> **Recorded next work at this snapshot:** Stage 3-C archive and installation contract design
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Separate Linux workstation
 > **Python baseline:** CPython 3.14.6

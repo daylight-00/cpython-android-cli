@@ -17,7 +17,8 @@ Stage 2-C  synthesis and project workflow               complete
 Stage 2    native bootstrap and workflow architecture   frozen
 Stage 3-A  runtime closure census and boundary model    frozen
 Stage 3-B  reproducible build-input promotion           frozen
-Stage 3-C  distribution archive/installation contract  next
+Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
+Stage 3-C  Gate 4 cross-version transition              active — second-product authority pending
 Stage 3-D  consumer integration                         deferred
 ```
 
@@ -266,32 +267,32 @@ Directory `st_size` is filesystem allocation metadata and is not part of cross-t
 
 The frozen historical runtime has `3280` entries and the promoted runtime has `3155`. Both complete inventories are retained; acceptance is based on runtime behavior, native closure, extension surface, active identity, host/data boundaries, relocation, source immutability, and product fidelity.
 
-## Stage 3-C entry boundary
+## Current Stage 3-C boundary
 
-Stage 3-C may now consume the frozen Stage 3-B promoted product model and design the distribution archive and installation contract.
-
-The first work is contract design, not immediate archive implementation:
+Stage 3-C has frozen the archive, installation, transaction, recovery, ownership, addon-composition, and final-uninstall contracts for the first complete three-artifact product.
 
 ```text
-select archive payload boundary
-select installation-prefix and ownership model
-select metadata and manifest format
-select archive reproducibility definition
-select installer/upgrade/uninstall transaction model
-select validation matrix for unpacked and installed forms
+runtime-base + development-addon + test-addon
+
+Gate 3B  preserve-and-report ownership policy       FROZEN
+Gate 3C  addon lifecycle and dependency policy      FROZEN
+Gate 3D  complete teardown and final ownership      FROZEN
+Gate 4   upgrade/downgrade                          ACTIVE — authority/design pending
 ```
 
-Packaging must not silently reopen frozen producer or runtime semantics. Any transformation must preserve or explicitly revalidate:
+Gate 4 must begin by acquiring and independently freezing a second complete product authority. A synthetic version label or manually edited copy of the first product is not authority. Upgrade/downgrade ordering, mixed-product compatibility, collision behavior, recovery, and target acceptance remain unclaimed until the second product exists.
+
+Packaging or transition work must not silently reopen frozen producer or runtime semantics. Every new product or transformation must preserve or explicitly revalidate:
 
 ```text
 runtime and subprocess identity
-native closure
-extension surface
-CA integration policy
-timezone data boundary
+native closure and extension surface
+CA and timezone-data boundaries
 uv and venv workflows
 whole-prefix relocatability
-product path/content/symlink fidelity
+archive and manifest identities
+installation ownership and dependency rules
+transaction, recovery, and residual policy
 ```
 
 ## Repository map
@@ -350,7 +351,7 @@ Canonical launcher artifact:
 out/aarch64-linux-android24/release/bin/python3.14
 ```
 
-Generated launcher artifacts use rsync rather than Git.
+Generated launcher artifacts use the tracked workstation/device sync scripts rather than Git. This build-product transport is separate from assistant/user project exchange.
 
 ## Termux workflow
 
@@ -359,14 +360,15 @@ bash scripts/termux/prepare-runtime.sh
 bash scripts/test/smoke-termux.sh
 ```
 
-Synchronization split:
+Transport split:
 
 ```text
-source, scripts, docs, experiment history  -> Git
-generated out/<target>/<profile>/          -> rsync
+source, scripts, docs, experiment history       -> Git
+generated workstation/device build products     -> tracked rsync workflows when applicable
+assistant/user repository and evidence exchange -> Google Drive, normally one .tar.zst per direction
 ```
 
-The GitHub/Termux/assistant operating contract is documented in:
+The Git/Termux/Drive/assistant operating contract is documented in:
 
 ```text
 docs/GITHUB_COLLABORATION_WORKFLOW.md
@@ -378,7 +380,7 @@ docs/GITHUB_COLLABORATION_WORKFLOW.md
 README.md
     |
     v
-docs/PROJECT_CONTEXT_STAGE3.md
+docs/PROJECT_CONTEXT_STAGE3C.md
     |
     +--> docs/stages/STAGE2_FINAL.md
     +--> docs/stages/STAGE3A_FINAL.md
@@ -389,7 +391,7 @@ docs/PROJECT_CONTEXT_STAGE3.md
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the current Stage 3 context.
+`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3C.md` is the current context.
 
 ## Design principle
 
@@ -397,4 +399,4 @@ docs/PROJECT_CONTEXT_STAGE3.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-The next work is Stage 3-C archive and installation contract design. It is not a launcher redesign and not an unreviewed packaging shortcut.
+The next work is project-control reconciliation followed by independent acquisition and freeze of a second complete product authority. Upgrade/downgrade policy design starts only after that authority exists; this is not a launcher redesign or an unreviewed packaging shortcut.

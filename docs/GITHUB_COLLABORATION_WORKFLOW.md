@@ -1,387 +1,284 @@
-# GitHub, Termux, and Assistant Collaboration Workflow
+# Git, Termux, Drive, and Assistant Collaboration Workflow
 
 > **Status:** Active project workflow
 > **Repository:** `daylight-00/cpython-android-cli`
 > **Default branch:** `main`
 > **Canonical device checkout:** `$HOME/projects/cpython-android-cli`
+> **Compatibility note:** this historical filename is retained so existing links remain valid.
 
 ## Purpose
 
-This document defines how the user, the real Termux device, GitHub, and the assistant environment collaborate on this project.
-
-The workflow separates three kinds of authority:
+This document defines how the project owner, the real Termux target, local Git work, Google Drive transport, and the assistant environment collaborate.
 
 ```text
-GitHub repository
-  shared source, scripts, documentation, and commit history
+Git repository
+  source, scripts, documentation, experiment history, and commit topology
 
-Termux device checkout
-  authoritative Android runtime execution and generated target evidence
+Termux device
+  authoritative Android execution and target-generated evidence
 
 assistant environment
-  repository inspection, reasoning, text/code preparation, and connector-mediated publication
+  repository reconstruction, design, implementation, audit, and package preparation
+
+Google Drive
+  connector-visible transport for bounded archives and repository packages
 ```
 
-No one layer substitutes for the others.
+No layer substitutes for another.
 
-## Source-of-truth order
+## Authority order
 
 For architecture and project state:
 
 ```text
-1. current GitHub default-branch commits
-2. current handoff and stage documents
-3. selected evidence documents
-4. experiment recipes and machine-readable verifier contracts
+1. current canonical Git history and default-branch content
+2. current context, scope, handoff, and evidence documents
+3. frozen machine-readable contracts and exact identities
+4. experiment recipes and source analysis
 5. chat transcript as temporary coordination context
 ```
 
-Do not reconstruct the project from chat memory alone.
+For target behavior:
 
-Current reading path:
+```text
+complete independently inspected Termux evidence
+  > local reconstruction
+  > static assumptions
+```
+
+## Current reading path
 
 ```text
 README.md
-  -> docs/PROJECT_CONTEXT_STAGE3.md
-  -> docs/stages/STAGE3B_SCOPE.md
-  -> docs/stages/STAGE3B_PHASE5_SCOPE.md
-  -> docs/evidence/
+  -> docs/PROJECT_CONTEXT_STAGE3C.md
+  -> docs/stages/STAGE3C_PHASE5_SCOPE.md
+  -> docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+  -> docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+  -> docs/handoff/COLLABORATION_PROTOCOL.md
 ```
 
-For target behavior, real-device output outranks assistant-side assumptions.
+Do not reconstruct current state from chat memory alone.
 
-## GitHub connector execution model
+## Roles
 
-The assistant's GitHub integration is API-mediated. It is not necessarily a local clone with a working tree and index.
-
-Conceptual read path:
+The project owner:
 
 ```text
-assistant
-  -> authenticated GitHub connector
-  -> repository / commit / file API
-  -> remote repository object
+operates the authoritative Termux target
+makes final scope and policy decisions
+runs bounded wrappers
+transports complete archives through rclone
 ```
 
-Typical read operations include:
+The assistant:
 
 ```text
-repository metadata
-recent commits
-commit diffs
-file content at a ref
-pull-request metadata and patches
+inspects and reconstructs the repository
+implements narrow changes
+creates commits, patches, or bundles as appropriate
+builds one-shot wrappers and machine verifiers
+publishes connector-visible packages
+retrieves and independently audits target archives
+keeps claim boundaries explicit
 ```
 
-A file read returns both content and its current blob SHA.
+The owner should perform the minimum manual work needed to bridge the real device and the connector.
 
-## Text write model and optimistic concurrency
+## Git execution model
 
-Text-file updates use the current blob SHA as an optimistic concurrency token.
+The assistant works from a real local Git repository or an exact bundle reconstruction. GitHub connector operations are not the default project workflow.
 
-Conceptual update:
+Use normal Git object and ref semantics:
 
 ```text
-fetch current file at branch
-  -> receive content + blob SHA
-  -> prepare complete replacement text
-  -> update only if SHA still matches
+commit/tree identity checks
+clean-working-tree preconditions
+explicit parent topology
+bounded branches
+git bundle verify
+git fsck
+atomic or force-with-lease push only when topology requires it
 ```
 
-If the file changed after it was fetched, the update must not overwrite the newer version blindly. Re-fetch, compare, and reapply the intended change.
+Do not rewrite or force-update history without an exact backup bundle, old-to-new maps, remote precondition checks, and rollback behavior.
 
-Rules:
+## Authorship policy
+
+Future project commits use one identity for both author and committer:
 
 ```text
-never force-push as a normal workflow
-never overwrite concurrent user work silently
-prefer small intentional commits
-preserve failed experiments and their explanations
-keep result claims narrower than the evidence
+daylight-00 <hwjang00@snu.ac.kr>
 ```
 
-## Branch and pull-request policy
+Set both global and repository-local configuration when a wrapper establishes the working environment.
 
-For multi-file changes, probe-contract changes, or architecture/status updates, the default assistant publication path is:
+Historical policy:
 
 ```text
-main
-  -> agent/<bounded-description> branch
-  -> small commits
-  -> pull request
-  -> review of changed files and diff
-  -> non-force merge to main
+existing user identities                 preserve
+existing GitHub committers/signatures    preserve
+OpenAI/Codex/agent metadata              correct only when explicitly requested
 ```
 
-A narrow one-file correction may use a direct contents update only when that is already the agreed workflow and concurrency risk is low. A branch and PR remain preferred when changes alter executable probes, validation contracts, or multiple authoritative documents.
+When correction is required, modify only the commits and metadata fields actually affected by non-user identities. Preserve trees, messages, parent topology, timestamps, timezones, unaffected commit OIDs, and unaffected signatures whenever topology permits.
 
-Do not rewrite or squash evidence history merely to make the graph look tidy. A PR may be squash-merged when it represents one coherent publication unit, but the branch's intermediate commits should still be intentional and reviewable.
+## Choosing patch, partial bundle, or full bundle
 
-## Authorship and attribution
-
-Connector-created commits are made through the authenticated GitHub account and may appear with the repository owner's normal author/committer identity.
-
-Do not infer from Git commit authorship alone whether text was typed on the device, prepared by the assistant, or created through the connector. The commit message, PR description, and project evidence should explain the change's purpose and provenance.
-
-## Real-device responsibility
-
-The authoritative target experiments run on the user's Termux device.
-
-Typical prompt:
+The assistant chooses the smallest transport that safely represents the intended change.
 
 ```text
-u0_a534@localhost:~/projects/cpython-android-cli$
+patch
+  narrow linear source/docs change on an exact expected base
+
+partial bundle
+  selected commits or refs where topology matters
+
+full bundle
+  complete repository reconstruction, history rewrite, broad ref movement,
+  or exact backup/rollback authority
 ```
 
-The assistant must not claim that an unrelated Linux sandbox reproduces:
+Commit and push timing is deliberately flexible. It depends on gate risk, target validation needs, and ref topology rather than a fixed PR ritual.
+
+## Drive exchange rule
+
+For ordinary assistant/user file exchange, minimize connector calls and preserve an archive record by using one `.tar.zst` per direction whenever practical.
+
+Agent-to-user archive normally contains:
 
 ```text
-Android linker behavior
-Termux host paths
-Android/APEX provider state
-Termux CA integration
-target uv behavior
-whole-prefix relocation on Android
+patch or bundle
+manifest and SHA-256 inventory
+verification contracts and maps
+one APPLY_AND_RUN.sh wrapper
+rollback or backup material when needed
 ```
 
-Normal target loop:
-
-```text
-assistant
-  inspect current GitHub state
-  derive the smallest discriminating next gate
-  repair or add bounded helpers
-  record rationale and claim boundary
-  publish through GitHub
-  provide exact Termux commands
-
-user
-  fast-forward the device checkout
-  run commands on the real device
-  paste complete stdout/stderr and requested result files
-
-assistant
-  classify the exact result
-  distinguish product failure from probe failure
-  update evidence and status documents
-  publish the next bounded step
-```
-
-## Device synchronization
-
-Normal synchronization from the canonical checkout:
-
-```sh
-cd "$HOME/projects/cpython-android-cli"
-git pull --ff-only
-```
-
-When an explicit remote branch must be followed before merge:
-
-```sh
-git fetch origin
-git merge --ff-only origin/<branch>
-```
-
-The assistant should not instruct the user to use `git reset --hard` to accommodate rewritten remote history.
-
-Before running a new target gate, the user may verify:
-
-```sh
-git status --short
-git log -1 --oneline
-```
-
-Local user modifications must not be discarded silently.
-
-## Git versus generated-artifact transport
-
-The project intentionally separates tracked source state from generated target products.
-
-```text
-Git
-  src/
-  scripts/
-  config/
-  docs/
-  experiments/
-
-ignored generated state
-  out/
-  work/
-  results/
-  dist/
-  cache/
-  tools/
-```
-
-Generated launcher and package products use the project's declared transport workflow, commonly rsync, rather than being committed to Git.
-
-The current high-level split is:
-
-```text
-source, scripts, docs, experiment history
-  -> GitHub
-
-generated out/<target>/<profile>/ products
-  -> declared workstation/Termux transport
-```
-
-Do not upload ignored runtime trees or bulk result directories merely to move them between machines.
-
-## Assistant sandbox boundary
-
-Files created in an assistant sandbox such as `/mnt/data` or `/tmp` are not automatically repository state.
-
-```text
-GitHub file or commit
-  shared project truth
-
-assistant-local file
-  temporary design, validation, or artifact material
-```
-
-A local assistant file becomes project state only after its content is deliberately published to the correct repository path and branch.
-
-Do not invent `sandbox:` download links for files that exist only on GitHub. Conversely, do not cite a GitHub path as if an assistant-local file were already committed.
-
-## Evidence preservation
-
-Generated target evidence normally remains under ignored `results/` or `work/` paths on the device.
-
-For each bounded gate, preserve at minimum:
+User-to-agent archive normally contains:
 
 ```text
 complete stdout/stderr
-exact command and input paths
-machine-readable summary JSON
-row-level TSV when aggregates hide detail
-runtime fingerprint before and after
-final marker lines
+raw return codes
+applied HEAD and tree
+machine-readable summaries
+result indexes and safety reports
+all bounded scenario evidence
 ```
 
-Selected conclusions are promoted into `docs/evidence/` as compact, reviewable records.
+Historical `.tgz` authorities remain immutable. Do not recompress or rename them as replacement evidence. New archives use `.tar.zst`.
 
-Distinguish:
+## Standard bounded workflow
 
 ```text
-raw generated evidence
-  detailed device-local result tree
-
-selected evidence document
-  durable interpretation and claim boundary
-
-stage scope/status document
-  sequence, acceptance conditions, and next action
+1. read current context, scope, handoff, and frozen identities
+2. choose one narrow repository or target claim
+3. reconstruct the exact expected base
+4. implement code and low-level English documentation
+5. run local/static and repository regression checks
+6. package one bounded .tar.zst with one wrapper
+7. user downloads with rclone and runs the wrapper once
+8. wrapper preserves PASS or FAIL evidence and uploads one result .tar.zst
+9. assistant retrieves and independently audits the archive
+10. accept/freeze or issue the smallest correction
+11. commit/push/main integration at the safest point for that gate
+12. open only the next smallest authority boundary
 ```
 
-Do not rerun expensive target work merely because a downstream summarizer changed when the raw evidence remains valid.
+A failed target run is evidence. Never overwrite or hide it.
 
-## Probe-failure discipline
+## Wrapper requirements
 
-A failed validation run may mean:
+A wrapper should, where applicable:
 
 ```text
-product defect
-host/environment difference
-probe implementation defect
-invalid control design
-mutation introduced by validation
-missing or stale input
+verify package SHA-256 identities
+verify expected repository HEAD and tree
+require a clean worktree
+set the approved Git identity
+create a bounded backup/ref map before mutation
+apply the patch or import the bundle
+verify the resulting tree and refs
+run repository regressions
+run the target workflow when requested
+create a complete PASS-or-FAIL result archive
+write an exact root result-index
+upload archive/checksum/status through rclone
+print one final status block
 ```
 
-Do not collapse these categories.
+Mutation must stop before application or push when a precondition differs.
 
-When a probe is wrong:
+## Push discipline
+
+Push behavior is selected by topology:
 
 ```text
-record the failed boundary
-identify the invalid assumption
-repair the smallest contract
-preserve the original incident
-freshly reassemble mutable candidates when metadata may have changed
-rerun only the necessary gate
+new branch
+  normal push, preferably atomic when multiple refs move
+
+fast-forward integration
+  ordinary fast-forward push
+
+history correction
+  exact leases, atomic update when supported, backup bundle, rollback plan
 ```
 
-The Stage 3-B Phase 5 bytecode incident is the reference example: semantic closure passed, but an isolated child ignored shell-level `PYTHON*` controls and mutated the candidate. The probe was repaired and the candidate was freshly reassembled rather than surgically cleaned.
+Never claim CI passed when no registered CI status exists. Repository-local validation and target evidence must be named precisely.
 
-## Documentation and commit discipline
+## Target evidence acceptance
 
-For each meaningful transition:
+Every accepted target archive is independently inspected for:
 
 ```text
-1. inspect current branch content and recent commits
-2. identify the authoritative status documents
-3. make the smallest executable change required
-4. document the rationale and claim boundary
-5. publish through a bounded branch/PR when appropriate
-6. run on the real target
-7. record exact result in docs/evidence
-8. update stage acceptance conditions and next action
+archive SHA-256 and byte size
+valid compression and single safe root
+no absolute or parent-traversal paths
+no unexpected links, special entries, or duplicate members
+exact result-index membership, type, mode, size, and SHA-256
+canonical JSON/JSONL where claimed
+raw process-record/output consistency
+all return codes and failed-check arrays
+input fingerprints before and after
+exact archive, manifest, source, product-lock, and contract identities
+independent reconstruction of the most important semantic checks
 ```
 
-Do not leave major conclusions only in chat.
+A console marker alone is never acceptance.
 
-Experiment recipe and result document have different responsibilities:
+## Tracked versus generated state
 
 ```text
-experiment recipe
-  how evidence is generated
+tracked in Git
+  source, scripts, docs, small machine contracts, selected evidence conclusions
 
-verifier
-  machine-readable pass/fail contract
+generated and ignored
+  runtime trees, bulk results, target scratch roots, caches, packaged products
 
-result document
-  what was observed and what follows
-
-scope document
-  where the result sits in the stage sequence
+transported through Drive
+  bounded repository packages and complete evidence archives
 ```
 
-## Current project-specific operating contract
+Workstation/device build-product synchronization may still use the tracked `scripts/sync/` rsync workflows. That is distinct from assistant/user Drive exchange.
 
-For the active Stage 3-B Phase 5 work:
+## Sandbox boundary
+
+Assistant-local paths such as `/mnt/data` are temporary working material, not repository truth. They become project state only after deliberate commit or inclusion in a verified transport package.
+
+Do not infer a repository commit from a sandbox file, and do not invent a sandbox link for a file that exists only in Drive or Git.
+
+## Claim discipline
+
+Every gate states both what is proved and what remains unproved.
+
+Never promote:
 
 ```text
-candidate runtime
-  work/termux/stage3b-promoted-runtime/prefix
-
-frozen runtime control
-  work/termux/stage2c/runtime/prefix
-
-candidate-specific result roots
-  results/termux/stage3b-*
-
-frozen Stage 3-A result root
-  read-only evidence
+process exit into power-loss durability
+trace order into physical persistence
+source inventory into runtime integration
+archive extraction into installation correctness
+installation correctness into installed-runtime behavior
+design verification into target acceptance
 ```
 
-Both candidate and frozen runtime trees receive before/after mutation fingerprints during validation workflows.
-
-The next gate should be selected from the open Phase 5 acceptance conditions rather than from packaging or consumer-integration work.
-
-## References used to establish this workflow
-
-This project workflow incorporates lessons from:
-
-```text
-daylight-00/termux-native-desktop
-  docs/refactor/0062-next-session-handoff-vscode-control-and-collaboration-workflow.md
-
-  real-device authority
-  ff-only synchronization
-  evidence-preserving small commits
-  GitHub documents as shared truth
-  assistant sandbox as non-authoritative working material
-
-daylight-00/chatgpt-session-workspace-study
-  docs/part-1-project-workflow/github-connector.md
-
-  API-mediated connector model
-  blob-SHA optimistic concurrency
-  branch/ref and contents operations
-  branch + pull request publication path
-  connector capability boundaries
-```
-
-The CPython Android CLI project adopts those ideas only where they fit its own tracked/generated-state split and target-validation workflow.
+The real Termux target and independent archive audit remain mandatory for target claims.

@@ -5,17 +5,20 @@ Use these documents to continue the project without relying on prior chat contex
 ## Read in order
 
 ```text
-1. COLLABORATION_PROTOCOL.md
-2. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
-3. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
-4. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
-5. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
-6. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
-7. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
-8. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
-9. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
-10. ../stages/STAGE3C_PHASE5_SCOPE.md
-11. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+1. ../../README.md
+2. ../PROJECT_CONTEXT_STAGE3C.md
+3. COLLABORATION_PROTOCOL.md
+4. ../GITHUB_COLLABORATION_WORKFLOW.md
+5. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+6. ../stages/STAGE3C_PHASE5_SCOPE.md
+7. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+8. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
+9. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
+10. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
+11. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
+12. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
+13. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
+14. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 ```
 
 ## Current state

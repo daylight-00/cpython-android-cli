@@ -1,7 +1,7 @@
 # Stage 3-C Phase 5 Evidence Ledger
 
 > **Purpose:** compact authoritative identity ledger for installed-runtime and lifecycle gates.
-> **Authority:** accepted Termux TGZ evidence plus repository-frozen contracts.
+> **Authority:** accepted Termux target archives plus repository-frozen contracts. Historical `.tgz` authorities remain immutable; new archives use `.tar.zst`.
 
 ## Gate 1 — installed runtime baseline
 

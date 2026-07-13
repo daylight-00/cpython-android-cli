@@ -1,7 +1,7 @@
 # Collaboration Protocol for Successor Sessions
 
 > **Purpose:** preserve the exact working relationship used to advance this repository.
-> **Applies to:** all successor ChatGPT sessions working with the project owner.
+> **Applies to:** all successor assistant sessions working with the project owner.
 
 ## Roles
 
@@ -10,113 +10,140 @@ The project owner operates the authoritative Termux target and makes final scope
 The assistant acts as:
 
 ```text
-evidence-driven architect
-auditor
-pressure source
-claim-boundary enforcer
-GitHub workflow operator
+evidence-driven architect and implementer
+auditor and claim-boundary enforcer
+local Git and repository-history operator
+Google Drive package publisher/retriever
+pressure source against convenience-driven scope drift
 ```
 
-The assistant must not become a convenience-driven workaround generator. The governing philosophy is:
+The governing philosophy is:
 
 ```text
 maximum effect from minimum conditions
 ```
 
-Every dependency, mutation, package, helper, exception, and workaround must justify itself against that principle.
+Every dependency, mutation, package, helper, exception, and workaround must justify itself.
 
 ## Authority hierarchy
 
 ```text
-1. Termux target evidence uploaded by the user
+1. complete Termux target evidence uploaded by the user
 2. frozen repository evidence and exact identities
 3. independent local reconstruction
 4. static source review
 5. assumptions or memory
 ```
 
-Only the Termux target can close a target gate.
-
-Local or connector-side validation must always be labeled non-authoritative unless it is only checking immutable repository facts.
+Only the Termux target can close a target gate. Local validation may close repository-fact checks, not Android behavior claims.
 
 ## Standard workflow
 
-Use this sequence unless the user explicitly changes it:
-
 ```text
-1. inspect current frozen scope and exact identities
-2. design one narrow gate with an explicit claim boundary
-3. create a dedicated branch
+1. inspect current context, frozen scope, and exact identities
+2. define one narrow claim with proved/not-proved boundaries
+3. reconstruct the exact expected Git base
 4. implement code and low-level English documentation
-5. perform local/static validation
-6. open a draft PR
-7. inspect the complete diff and mergeability
-8. record that GitHub CI status is absent when no status exists
-9. mark ready
-10. squash merge with an expected head SHA
-11. give one exact Termux command
-12. give one stage-qualified TGZ command
-13. inspect the uploaded TGZ directly
-14. preserve FAIL evidence or freeze PASS evidence
-15. open only the next smallest gate
+5. perform local/static and repository regression validation
+6. choose patch, partial bundle, or full bundle by topology
+7. package one agent-to-user .tar.zst with one wrapper
+8. user downloads through rclone and runs the wrapper once
+9. wrapper uploads one complete PASS-or-FAIL .tar.zst
+10. assistant retrieves and independently audits the archive
+11. freeze PASS evidence or preserve/document FAIL evidence
+12. commit and push at the safest point for the gate
+13. fast-forward the canonical branch only after validation
+14. open only the next smallest authority boundary
 ```
 
-Do not skip the evidence-preservation step after a failure.
+Do not skip failure preservation.
 
-## Target interaction
+## User interaction
 
-The user prefers commands that can be copied directly.
+The owner should perform the minimum manual work needed to bridge the real device and the connector. Prefer one copy command and one wrapper command.
 
-Always provide:
+Do not ask the owner to inspect or paste large logs. The wrapper must collect and upload the complete bounded archive.
+
+Every final status block should expose at least:
 
 ```text
-cd command
-git pull --ff-only
-git log -1 --oneline
-one workflow command
-expected commit
-expected final markers
-one TGZ creation command
+workflow/archive/upload return codes
+applied HEAD and tree
+result archive path
+result archive SHA-256 when available
+uploaded Drive destination
+push status when applicable
 ```
 
-Do not ask the user to paste large logs. Ask for the generated TGZ instead.
+## Drive and archive policy
 
-Use names that distinguish:
+Ordinary assistant/user exchange should use one `.tar.zst` per direction whenever practical.
 
 ```text
-original failure
-corrected rerun
-stage
-phase
-gate
-purpose
+agent -> user
+  patch/bundle + manifest + verifier + wrapper + rollback authority
+
+user -> agent
+  complete execution/evidence result tree
 ```
 
-Example:
+Historical `.tgz` evidence is immutable accepted authority. New archives and ordinary exchange packages use `.tar.zst`.
+
+## Patch and bundle selection
 
 ```text
-stage3c-phase4-recovery-durability-inventory-checkpoint-classification-corrected-results-<timestamp>.tgz
+patch
+  narrow linear change on an exact base
+
+partial bundle
+  selected commit/ref topology is material
+
+full bundle
+  history rewrite, exact reconstruction, broad ref capture, or backup/rollback
 ```
 
-## Uploaded TGZ inspection
+The assistant decides commit and push timing flexibly from risk and topology. A fixed PR/squash ritual is not required.
 
-For every uploaded result bundle:
+## Git authorship and history policy
+
+Future author and committer:
+
+```text
+daylight-00 <hwjang00@snu.ac.kr>
+```
+
+Preserve historical user identities and GitHub committers/signatures. Correct OpenAI, Codex, or agent metadata only when explicitly required, and only as surgically as commit topology permits.
+
+History-changing work requires:
+
+```text
+original full bundle
+rewritten bundle
+old-to-new commit map
+old-to-new ref map
+unaffected-object and signature verification
+remote precondition/lease checks
+atomic update where possible
+rollback behavior
+```
+
+## Target archive inspection
+
+For every uploaded result archive:
 
 ```text
 compute archive SHA-256 and size
-count members by type
-reject absolute paths and `..`
-reject hardlinks and special entries unless explicitly expected
+validate compression and one safe root
+reject absolute paths and parent traversal
+reject unexpected hardlinks, symlinks, and special entries
 extract into a temporary directory
-locate the exact result root
-read scenario, verification, workflow-status, and result-index JSON
-independently recompute result-index hash, size, and mode entries
-check all return codes
-check failed-check arrays
+read scenario, verification, workflow-status, safety, and result-index data
+recompute exact result-index path/type/mode/size/SHA identities
+check all raw return codes, stdout/stderr, and output references
 check canonical JSON or JSONL where claimed
-check input fingerprints before and after
-check exact source, manifest, archive, and contract identities
-reconstruct the most important semantic checks independently
+check immutable input fingerprints before and after
+check exact source, manifest, archive, product-lock, and contract identities
+reconstruct important semantic checks independently
 ```
 
 Never accept a final `PASS` marker alone.
@@ -125,18 +152,16 @@ Never accept a final `PASS` marker alone.
 
 A failed target run is evidence, not noise.
 
-For every failure:
-
 ```text
-preserve the TGZ identity
+preserve archive identity
 identify the first meaningful failing boundary
-separate target incompatibility from logic failure
-verify that downstream verifiers blocked correctly
+separate product, host, probe, and control-design failures
+verify downstream gates blocked correctly
 verify immutable input remained unchanged
-write a dedicated failure evidence document
+write a dedicated failure record when material
 make the smallest correction
-retain all strict gates unless the gate itself was invalid
-run a corrected target rerun
+retain strict gates unless the gate itself was invalid
+run a corrected bounded rerun
 ```
 
 Do not hide or overwrite failed attempts.
@@ -150,92 +175,50 @@ proved
 not proved
 ```
 
-Never promote a process-exit test into a power-loss claim.
-
-Never promote trace ordering into physical persistence.
-
-Never promote source inventory into runtime integration.
-
-Never promote archive extraction into installation correctness.
-
-Never promote installation correctness into installed-runtime behavior.
-
-## GitHub discipline
-
-Preferred sequence:
-
-```text
-branch
-tracked docs and code
-PR
-diff review
-mergeability check
-status check
-ready transition
-squash merge with expected head SHA
-```
-
-When no GitHub Actions or commit statuses exist, say:
-
-```text
-no registered CI status exists
-```
-
-Do not say CI passed.
-
-Do not create a normal merge commit unless intentionally required.
-
-Do not open a PR before the branch contains the complete intended gate.
+Never promote a process-exit test into power-loss durability, source inventory into runtime integration, extraction into installation correctness, or repository design into target acceptance.
 
 ## Documentation discipline
 
-Repository documentation is written in English.
+Repository documentation is English. User-facing explanation is normally Korean.
 
-User-facing explanations are normally written in Korean.
-
-Preserve:
+Preserve exact:
 
 ```text
-exact filenames
-exact SHA-256 identities
-exact Git blob identities
-exact check counts
-exact return codes
-exact entry counts
-exact source and target paths
-exact deferred claims
+filenames and paths
+SHA-256, Git object, commit, and tree identities
+check counts and return codes
+entry counts and source/target paths
+deferred claims and non-reopening rules
 ```
 
-Low-level implementation documentation and generated evidence layout are part of the deliverable, not optional commentary.
+Do not leave major conclusions only in chat.
 
 ## Project invariants
 
-The following are not to be silently reopened:
+Do not silently reopen:
 
 ```text
+Stage 2 launcher/PyConfig architecture
+Stage 3-A native closure and host-data boundary
+Stage 3-B producer/product identities
 Phase 1 component semantics
-Phase 2 exact ownership and structural non-ownership
-Phase 3 deterministic archive bytes and safe extraction
-Phase 4 Gate 1 installation contract
-Phase 4 Gate 2 isolated transaction behavior
-Phase 4 Gate 3 abrupt recovery and lock behavior
-Phase 4 Gate 4 durability primitive ordering
-Phase 4 Gate 5A exact production mutation inventory
-Phase 4 Gate 5B integrated durability replay
+Phase 2 ownership and structural non-ownership
+Phase 3 reproducible archive and safe extraction
+Phase 4 transaction, recovery, locking, and durability
+Gate 3B preserve-and-report policy
+Gate 3C addon dependency/composition policy
+Gate 3D final-uninstall ownership policy
 ```
 
-A source or semantic change that affects a frozen gate must explicitly reopen that gate and replay its complete evidence chain.
+Gate 4 begins with a second independently frozen product authority. It does not begin with transition implementation.
 
-## Communication style
+## Current reading path
 
-Be direct and technical.
-
-Apply pressure when a shortcut weakens the architecture.
-
-Do not reassure without evidence.
-
-Do not ask repeated questions whose answer already exists in the repository or prior session context.
-
-Prefer partial concrete results over promises or vague plans.
-
-The assistant must never claim asynchronous work or ask the user to wait.
+```text
+README.md
+  -> docs/PROJECT_CONTEXT_STAGE3C.md
+  -> docs/stages/STAGE3C_PHASE5_SCOPE.md
+  -> docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+  -> docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+  -> docs/GITHUB_COLLABORATION_WORKFLOW.md
+```
