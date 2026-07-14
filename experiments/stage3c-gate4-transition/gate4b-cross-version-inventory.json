@@ -1,0 +1,160 @@
+{
+  "claim_boundary": "Static manifest and engine-gap inventory only. No transition implementation or target behavior is proved.",
+  "comparison": "OWNED_PAYLOAD paths compared by type, mode, size, SHA-256, and symlink target; directory identity is type+mode",
+  "frozen_engine_gap_inventory": {
+    "decision": "Cross-product change requires a dedicated whole-product transition operation; ordinary install remains a same-product lifecycle operation.",
+    "direct_cross_product_install": [
+      "source-only owned paths are dropped from the registry but remain on disk",
+      "runtime-base replacement does not reject installed addons from the other product",
+      "artifact-by-artifact commits do not provide product-level rollback",
+      "registry schema 1 does not store a separate product-lock field"
+    ]
+  },
+  "global": {
+    "byte_identity_same": 216,
+    "classification_sha256": "1daad3ef9c99eba060852962231e12e6361877709f15e0cb2f18952574f4310b",
+    "first_only": 12,
+    "first_only_paths": [
+      "include/openssl/byteorder.h",
+      "include/openssl/e_ostime.h",
+      "include/openssl/hpke.h",
+      "include/openssl/indicator.h",
+      "include/openssl/ml_kem.h",
+      "include/openssl/quic.h",
+      "include/openssl/thread.h",
+      "include/openssl/x509_acert.h",
+      "lib/python3.14/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl",
+      "lib/python3.14/test/test_capi/test_weakref.py",
+      "lib/python3.14/test/test_free_threading/test_dict_watcher.py",
+      "lib/python3.14/test/test_free_threading/test_pickle.py"
+    ],
+    "first_owned_paths": 2956,
+    "owner_transfer_count": 0,
+    "owner_transfers": [],
+    "replacement_required": 2728,
+    "second_only": 2,
+    "second_only_paths": [
+      "include/openssl/asn1_mac.h",
+      "lib/python3.14/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl"
+    ],
+    "second_owned_paths": 2946,
+    "shared_paths": 2944,
+    "union_paths": 2958
+  },
+  "inventory_kind": "stage3c-phase5-gate4b-cross-version-manifest-inventory",
+  "per_artifact": {
+    "development-addon": {
+      "byte_identity_same": 11,
+      "changed_paths_sha256": "976ba566dc4ab6ff507a9fd90312c03563b1b6bbba901a4a4044d294d025f679",
+      "first_only": 8,
+      "first_only_paths": [
+        "include/openssl/byteorder.h",
+        "include/openssl/e_ostime.h",
+        "include/openssl/hpke.h",
+        "include/openssl/indicator.h",
+        "include/openssl/ml_kem.h",
+        "include/openssl/quic.h",
+        "include/openssl/thread.h",
+        "include/openssl/x509_acert.h"
+      ],
+      "first_owned": 454,
+      "replacement_required": 435,
+      "same_paths_sha256": "a531bcfe0ea5f055a1065273a3b426ea17b21ba336a67a0734f659aa1a1eb170",
+      "second_only": 1,
+      "second_only_paths": [
+        "include/openssl/asn1_mac.h"
+      ],
+      "second_owned": 447,
+      "shared_paths": 446
+    },
+    "runtime-base": {
+      "byte_identity_same": 60,
+      "changed_paths_sha256": "33c982f06563c39ab259db5d8bf7d69b6cea6c49b26ede48faf25a3a9f335560",
+      "first_only": 1,
+      "first_only_paths": [
+        "lib/python3.14/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl"
+      ],
+      "first_owned": 714,
+      "replacement_required": 653,
+      "same_paths_sha256": "fc0b4012da975b2351960139ea35e872d62af2c93cd65435d5d292b8f8b72e56",
+      "second_only": 1,
+      "second_only_paths": [
+        "lib/python3.14/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl"
+      ],
+      "second_owned": 714,
+      "shared_paths": 713
+    },
+    "test-addon": {
+      "byte_identity_same": 145,
+      "changed_paths_sha256": "dfc4b5f2a8aa0f530669f25ea71a3b7000f836b5dfcada0da5f62a9d0b0b2987",
+      "first_only": 3,
+      "first_only_paths": [
+        "lib/python3.14/test/test_capi/test_weakref.py",
+        "lib/python3.14/test/test_free_threading/test_dict_watcher.py",
+        "lib/python3.14/test/test_free_threading/test_pickle.py"
+      ],
+      "first_owned": 1788,
+      "replacement_required": 1640,
+      "same_paths_sha256": "7da2ea01e87e2048491bcc30ecfb1ec138c38c721f287c06992511ce1e24f520",
+      "second_only": 0,
+      "second_only_paths": [],
+      "second_owned": 1785,
+      "shared_paths": 1785
+    }
+  },
+  "products": {
+    "first": {
+      "artifacts": {
+        "development-addon": {
+          "archive_sha256": "f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea",
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-development-addon",
+          "manifest_sha256": "9a01655d63044ab126fd71236ca2cb814221317ee9b6b44fd2417fa5535a8b2a",
+          "owned_paths": 454
+        },
+        "runtime-base": {
+          "archive_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743",
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base",
+          "manifest_sha256": "ce48849c9c88c9296264d6a917c3b55b0433e0d67bdda06579d6f18d701f285a",
+          "owned_paths": 714
+        },
+        "test-addon": {
+          "archive_sha256": "02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1",
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-test-addon",
+          "manifest_sha256": "47d9f2e24e74b23e34ae6bfa95a0df22ec7cf9505e3e189dc3d6bdf2dc1c8b5f",
+          "owned_paths": 1788
+        }
+      },
+      "authority_archive_sha256": "43fa4bbbfdfb7fc7562c3881771a625662422980b352482da19ab2b3a07dee7a",
+      "product_lock_sha256": "83f6b1fd3b610c22606f8dd4108a86cf2454e5997d0d0ada4124a209bfb091b7",
+      "python_version": "3.14.6",
+      "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45"
+    },
+    "second": {
+      "artifacts": {
+        "development-addon": {
+          "archive_sha256": "623d776bd9a987aac0417c360746b4917d666a5829a522ef43574b66493387e0",
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-development-addon",
+          "manifest_sha256": "30a840feb2922684604d87b206617243a4ddce2fdff10053c720a52bae5fc671",
+          "owned_paths": 447
+        },
+        "runtime-base": {
+          "archive_sha256": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d",
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-runtime-base",
+          "manifest_sha256": "2e5efbc9fe765c1b7a4d1bc7375a74d27bcf6d1a56557e3be11cffb9f451e815",
+          "owned_paths": 714
+        },
+        "test-addon": {
+          "archive_sha256": "7d397ab12cf1d70b2922754b8121936ae56270c45c7929f69656984cd6a0eb1d",
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-test-addon",
+          "manifest_sha256": "1d6f2c2fd48fa258f9fd982c84732118a012b977a50399395913d13e72c63877",
+          "owned_paths": 1785
+        }
+      },
+      "authority_archive_sha256": "4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa",
+      "product_lock_sha256": "e8c189d4a7386f1c522cc1479515b266fff60fdffedb3b7e842d9730ec21faeb",
+      "python_version": "3.14.5",
+      "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115"
+    }
+  },
+  "schema_version": 1
+}

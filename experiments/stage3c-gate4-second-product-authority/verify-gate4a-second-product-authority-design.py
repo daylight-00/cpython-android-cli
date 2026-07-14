@@ -153,12 +153,12 @@ def main():
   'handoff':'docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md','ledger':'docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md',
   'handoff_readme':'docs/handoff/README.md','evidence':'docs/evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md'}
  texts={k:(root/v).read_text() for k,v in doc_paths.items()}
- ck('design_status','DESIGN FROZEN — exact input capture pending' in texts['design'])
+ ck('design_status',('DESIGN FROZEN — exact input capture pending' in texts['design']) or ('FROZEN PASS — A1-A6 complete' in texts['design']))
  ck('design_second_identity',SECOND_VERSION in texts['design'] and SECOND_HEAD in texts['design'])
  ck('design_openssl_delta','OpenSSL 3.0.20-0' in texts['design'] and 'OpenSSL 3.5.7-0' in texts['design'])
  ck('design_six_stages',all(f'{x} ' in texts['design'] for x in expected_stage_ids))
  ck('design_no_transition','does not freeze' in texts['design'] and 'upgrade' in texts['design'] and 'downgrade' in texts['design'])
- ck('experiment_readme_selected',SECOND_HEAD in texts['readme'] and ('input capture pending' in texts['readme'] or 'A2 input capture                   FROZEN PASS' in texts['readme']))
+ ck('experiment_readme_selected',SECOND_HEAD in texts['readme'] and ('input capture pending' in texts['readme'] or 'A2 input capture                 FROZEN PASS' in texts['readme'] or 'A6 independent freeze            FROZEN PASS' in texts['readme']))
  ck('root_readme_gate4a','CPython 3.14.5' in texts['root_readme'] and 'Gate 4A' in texts['root_readme'])
  ck('context_gate4a',('CPython 3.14.5' in texts['context'] or 'CPython version  3.14.5' in texts['context']) and 'A1' in texts['context'] and 'A6' in texts['context'])
  ck('scope_gate4a','Gate 4A' in texts['scope'] and '3.14.5' in texts['scope'])

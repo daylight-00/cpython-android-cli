@@ -1,0 +1,61 @@
+{
+  "claim_boundary": {
+    "not_accepted": [
+      "transition coordinator implementation",
+      "upgrade target behavior",
+      "downgrade target behavior",
+      "mixed-version runtime behavior",
+      "migration",
+      "transition recovery target evidence"
+    ],
+    "proved": "The exact two-product path delta, non-reopening whole-product transition policy, and sixty-six-scenario bidirectional validation matrix are internally consistent."
+  },
+  "decision_kind": "stage3c-phase5-gate4b-transition-contract-design-freeze",
+  "inputs": {
+    "first_product_lock_sha256": "83f6b1fd3b610c22606f8dd4108a86cf2454e5997d0d0ada4124a209bfb091b7",
+    "second_product_authority_sha256": "4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa",
+    "second_product_lock_sha256": "e8c189d4a7386f1c522cc1479515b266fff60fdffedb3b7e842d9730ec21faeb"
+  },
+  "inventory": {
+    "classification_sha256": "1daad3ef9c99eba060852962231e12e6361877709f15e0cb2f18952574f4310b",
+    "file_sha256": "c06855780ca4df3c14cc765aec3e61a0a7d0ace4a156d03bf697243bab090993",
+    "first_only": 12,
+    "owner_transfers": 0,
+    "replacement_required": 2728,
+    "same": 216,
+    "second_only": 2,
+    "shared": 2944,
+    "union": 2958
+  },
+  "matrix": {
+    "file_sha256": "7e30fe98996781c86ea719d9fd8512f054a8dfeae5e1328e17264595d6abb55a",
+    "group_counts": {
+      "audit": 6,
+      "collision": 12,
+      "happy": 8,
+      "locking": 2,
+      "preflight": 14,
+      "recovery": 24
+    },
+    "scenario_count": 66
+  },
+  "next_state": {
+    "gate4a": "FROZEN PASS",
+    "gate4b": "DESIGN FROZEN",
+    "gate4c": "READY - not started"
+  },
+  "policy": {
+    "active_product": "derived from exact runtime-base artifact ID and frozen authority mapping",
+    "artifact_topology": "preserved",
+    "operation": "dedicated whole-product transition",
+    "registry_schema": 1,
+    "source_owned_modification": "reject before mutation",
+    "transition_journal": "recovery-compatible PREPARED/APPLYING/COMMITTED"
+  },
+  "schema_version": 1,
+  "status": "design-frozen",
+  "verifier": {
+    "checks": "106/106 PASS",
+    "output_sha256": "74e0c4b723e22f3e09d6586e0d194e72cc5e41b1c3e29f802fd82614601a7956"
+  }
+}

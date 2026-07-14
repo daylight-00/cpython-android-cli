@@ -24,7 +24,7 @@ v3.14.5
 aarch64-linux-android / API 24 / NDK 27.3.13750724
 ```
 
-Gate 4A is complete. The exact runtime-base, development-addon, and test-addon artifacts, standalone Termux behavior, product lock, manifests, ownership registry, recovery semantics, and byte identities are frozen. Transition-policy design may begin, but no upgrade, downgrade, mixed-version, migration, collision, or transition-recovery behavior is accepted yet.
+Gate 4A is complete. The exact runtime-base, development-addon, and test-addon artifacts, standalone Termux behavior, product lock, manifests, ownership registry, recovery semantics, and byte identities are frozen. Gate 4B now freezes the transition contract; implementation and target behavior remain pending.
 
 Authority records:
 
@@ -54,4 +54,10 @@ Verify the A2b authority decision:
 
 ```sh
 bash experiments/stage3c-gate4-second-product-authority/run-gate4a-a2b-termux-native-toolchain-authority.sh
+```
+
+Next design authority:
+
+```text
+experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
 ```

@@ -1,0 +1,1989 @@
+{
+  "authority": {
+    "frozen_engine_git_blobs": {
+      "recovery_common.py": "3183ba0861ef45e7a395201bec0085f3f69fb248",
+      "recovery_durability.py": "61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f",
+      "recovery_engine.py": "aebf5b9a33d163f7f8758f785ca621c94c0e478b",
+      "recovery_operations.py": "8a307065e00fd7a7332541f4911c5478945374ee"
+    },
+    "manifest_inventory": "gate4b-cross-version-inventory.json",
+    "manifest_inventory_classification_sha256": "1daad3ef9c99eba060852962231e12e6361877709f15e0cb2f18952574f4310b",
+    "products": {
+      "3.14.5": {
+        "product_lock_sha256": "e8c189d4a7386f1c522cc1479515b266fff60fdffedb3b7e842d9730ec21faeb",
+        "role": "second",
+        "runtime_id": "cpython-android-cli-3.14.5-android24-aarch64-runtime-base"
+      },
+      "3.14.6": {
+        "product_lock_sha256": "83f6b1fd3b610c22606f8dd4108a86cf2454e5997d0d0ada4124a209bfb091b7",
+        "role": "first",
+        "runtime_id": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base"
+      }
+    },
+    "topologies": {
+      "composed": {
+        "3.14.5": 2946,
+        "3.14.6": 2956,
+        "artifacts": [
+          "runtime-base",
+          "development-addon",
+          "test-addon"
+        ],
+        "first_only": 12,
+        "mutations": 2743,
+        "replace": 2728,
+        "same": 216,
+        "second_only": 2
+      },
+      "runtime": {
+        "3.14.5": 714,
+        "3.14.6": 714,
+        "artifacts": [
+          "runtime-base"
+        ],
+        "first_only": 1,
+        "mutations": 656,
+        "replace": 653,
+        "same": 60,
+        "second_only": 1
+      },
+      "runtime-development": {
+        "3.14.5": 1161,
+        "3.14.6": 1168,
+        "artifacts": [
+          "runtime-base",
+          "development-addon"
+        ],
+        "first_only": 9,
+        "mutations": 1100,
+        "replace": 1088,
+        "same": 71,
+        "second_only": 2
+      },
+      "runtime-test": {
+        "3.14.5": 2499,
+        "3.14.6": 2502,
+        "artifacts": [
+          "runtime-base",
+          "test-addon"
+        ],
+        "first_only": 4,
+        "mutations": 2299,
+        "replace": 2293,
+        "same": 205,
+        "second_only": 1
+      }
+    }
+  },
+  "claim_boundary": {
+    "gate4b_close_requires": "A repository implementation gate followed by a complete independently inspected Termux result archive.",
+    "not_proved_by_design": "No transition implementation, upgrade, downgrade, mixed-version runtime behavior, migration, or target recovery behavior is proved.",
+    "proved_by_design": "The exact two-product path delta, non-reopening whole-product transition policy, and sixty-six-scenario bidirectional validation matrix are internally consistent."
+  },
+  "execution_contract": {
+    "historical_archives_immutable": true,
+    "new_archive_suffix": ".tar.zst",
+    "no_transition_execution_in_design_gate": true,
+    "pass_or_fail_archive_required": true,
+    "single_termux_wrapper": true
+  },
+  "matrix_kind": "stage3c-phase5-gate4b-cross-version-transition-contract-design",
+  "policy": {
+    "active_product_identity": "derive from the exact runtime-base artifact ID and frozen authority mapping; verify the target product lock as an input, do not install a separate mutable product lock",
+    "implementation_boundary": "new transition coordinator may import frozen durability/common helpers but must not modify the frozen Phase 4 engine files, registry schema, artifact manifests, or archive bytes",
+    "journal": "use the frozen schema-2 mutation vocabulary and recovery-compatible PREPARED/APPLYING/COMMITTED states with operation=transition",
+    "lock": "reuse the frozen exclusive installation lock",
+    "modified_owned": "reject before mutation; transition never discards or silently carries modified owned content",
+    "operation": "dedicated whole-product transition; ordinary artifact install is same-product only",
+    "path_plan": {
+      "owner_transfer": "unsupported and absent in this authority pair",
+      "shared_changed": "replace transactionally",
+      "shared_exact": "noop",
+      "source_only": "remove transactionally",
+      "target_only": "create transactionally"
+    },
+    "recovery": {
+      "committed": "finalize exact target and clean transaction",
+      "committed_second": "ZERO_TRANSACTIONS",
+      "precommit": "restore exact source and retain one ROLLED_BACK tombstone",
+      "precommit_second": "NOOP_ROLLED_BACK"
+    },
+    "registry": "retain frozen schema version 1; atomically replace the registry with the exact target artifact tuple",
+    "source_precondition": "exact recognized frozen product with exact owned payload and no outstanding transaction",
+    "topology": "preserve the installed artifact set across the transition",
+    "unowned_descendant": "preserve unchanged unless it collides with a target-owned path",
+    "unowned_target_collision": "reject before mutation"
+  },
+  "scenario_count": 66,
+  "scenario_group_counts": {
+    "audit": 6,
+    "collision": 12,
+    "happy": 8,
+    "locking": 2,
+    "preflight": 14,
+    "recovery": 24
+  },
+  "scenarios": [
+    {
+      "direction": "either",
+      "error_contains": "no exact runtime-base authority installed",
+      "expected_result": "REJECT_NO_ACTIVE_PRODUCT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P01",
+      "initial_state": "empty",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "source artifact tuple is not a frozen authority",
+      "expected_result": "REJECT_UNKNOWN_PRODUCT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P02",
+      "initial_state": "unknown-product",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "registry combines artifact IDs from different products",
+      "expected_result": "REJECT_MIXED_PRODUCT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P03",
+      "initial_state": "mixed-product",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "runtime-base is required",
+      "expected_result": "REJECT_INVALID_TOPOLOGY",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P04",
+      "initial_state": "addon-without-runtime",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "source-owned regular file differs",
+      "expected_result": "REJECT_SOURCE_NOT_EXACT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P05",
+      "initial_state": "modified-owned-regular",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "source-owned symlink differs",
+      "expected_result": "REJECT_SOURCE_NOT_EXACT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P06",
+      "initial_state": "modified-owned-symlink",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "source-owned path is absent",
+      "expected_result": "REJECT_SOURCE_NOT_EXACT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P07",
+      "initial_state": "missing-owned-leaf",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "source-owned path type differs",
+      "expected_result": "REJECT_SOURCE_NOT_EXACT",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P08",
+      "initial_state": "wrong-owned-type",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "target product lock mismatch",
+      "expected_result": "REJECT_TARGET_AUTHORITY",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P09",
+      "initial_state": "wrong-target-product-lock",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "target manifest mismatch",
+      "expected_result": "REJECT_TARGET_AUTHORITY",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P10",
+      "initial_state": "wrong-target-manifest",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "target archive mismatch",
+      "expected_result": "REJECT_TARGET_AUTHORITY",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P11",
+      "initial_state": "wrong-target-archive",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "transition preserves the installed artifact set",
+      "expected_result": "REJECT_TOPOLOGY_CHANGE",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P12",
+      "initial_state": "topology-expansion",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "transition preserves the installed artifact set",
+      "expected_result": "REJECT_TOPOLOGY_CHANGE",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P13",
+      "initial_state": "topology-contraction",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "direction": "either",
+      "error_contains": "recover existing transaction before transition",
+      "expected_result": "REJECT_RECOVERY_REQUIRED",
+      "expected_state": "unchanged",
+      "group": "preflight",
+      "id": "P14",
+      "initial_state": "transaction-residue",
+      "mutation_count": 0,
+      "operation": "transition",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "direction": "upgrade",
+      "expected_owned_paths": 714,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime",
+      "group": "happy",
+      "id": "H01",
+      "initial_state": "runtime",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 1,
+        "mutation_count": 656,
+        "noop": 60,
+        "registry_replace": 1,
+        "remove_source_only": 1,
+        "replace": 653
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "direction": "upgrade",
+      "expected_owned_paths": 1168,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime-development",
+      "group": "happy",
+      "id": "H02",
+      "initial_state": "runtime-development",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 9,
+        "mutation_count": 1100,
+        "noop": 71,
+        "registry_replace": 1,
+        "remove_source_only": 2,
+        "replace": 1088
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "direction": "upgrade",
+      "expected_owned_paths": 2502,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime-test",
+      "group": "happy",
+      "id": "H03",
+      "initial_state": "runtime-test",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 4,
+        "mutation_count": 2299,
+        "noop": 205,
+        "registry_replace": 1,
+        "remove_source_only": 1,
+        "replace": 2293
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "direction": "upgrade",
+      "expected_owned_paths": 2956,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "composed",
+      "group": "happy",
+      "id": "H04",
+      "initial_state": "composed",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 12,
+        "mutation_count": 2743,
+        "noop": 216,
+        "registry_replace": 1,
+        "remove_source_only": 2,
+        "replace": 2728
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6"
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "direction": "downgrade",
+      "expected_owned_paths": 714,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime",
+      "group": "happy",
+      "id": "H05",
+      "initial_state": "runtime",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 1,
+        "mutation_count": 656,
+        "noop": 60,
+        "registry_replace": 1,
+        "remove_source_only": 1,
+        "replace": 653
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "direction": "downgrade",
+      "expected_owned_paths": 1161,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime-development",
+      "group": "happy",
+      "id": "H06",
+      "initial_state": "runtime-development",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 2,
+        "mutation_count": 1100,
+        "noop": 71,
+        "registry_replace": 1,
+        "remove_source_only": 9,
+        "replace": 1088
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "direction": "downgrade",
+      "expected_owned_paths": 2499,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "runtime-test",
+      "group": "happy",
+      "id": "H07",
+      "initial_state": "runtime-test",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 1,
+        "mutation_count": 2299,
+        "noop": 205,
+        "registry_replace": 1,
+        "remove_source_only": 4,
+        "replace": 2293
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5"
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "direction": "downgrade",
+      "expected_owned_paths": 2946,
+      "expected_registry_schema": 1,
+      "expected_result": "COMMITTED_TARGET_EXACT",
+      "expected_state": "composed",
+      "group": "happy",
+      "id": "H08",
+      "initial_state": "composed",
+      "operation": "whole-product transition",
+      "plan": {
+        "create_target_only": 2,
+        "mutation_count": 2743,
+        "noop": 216,
+        "registry_replace": 1,
+        "remove_source_only": 12,
+        "replace": 2728
+      },
+      "post_behavior": [
+        "runtime_identity",
+        "native_closure",
+        "https_timezone",
+        "subprocess",
+        "venv_uv",
+        "relocation",
+        "installed_addons"
+      ],
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C01",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "unowned-file",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C02",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "unowned-file",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C03",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "unowned-directory",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C04",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "unowned-directory",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C05",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "unowned-under-shared-namespace",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "preserve unchanged",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C06",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "unowned-under-shared-namespace",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "reject before mutation",
+      "expected_state": "source-exact",
+      "group": "collision",
+      "id": "C07",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "target-only-unowned-collision",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "reject before mutation",
+      "expected_state": "source-exact",
+      "group": "collision",
+      "id": "C08",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "target-only-unowned-collision",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "reject: use transition",
+      "expected_state": "source-exact",
+      "group": "collision",
+      "id": "C09",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "ordinary-install-cross-product",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "reject: use transition",
+      "expected_state": "source-exact",
+      "group": "collision",
+      "id": "C10",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "ordinary-install-cross-product",
+      "target_product": "3.14.5"
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "remove all; no stale source path",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C11",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "subject": "source-only-exact-paths",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "remove all; no stale source path",
+      "expected_state": "target-exact-with-approved-unowned",
+      "group": "collision",
+      "id": "C12",
+      "initial_state": "composed",
+      "mutation_count": null,
+      "operation": "transition policy",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "subject": "source-only-exact-paths",
+      "target_product": "3.14.5"
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "upgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R01",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "upgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R02",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "committed",
+      "direction": "upgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R03",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "upgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 1161,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R04",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "upgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 1161,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R05",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "upgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 1168,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R06",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "upgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 2499,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R07",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "upgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 2499,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R08",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "upgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 2502,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R09",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "upgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 2946,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R10",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2743
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "upgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 2946,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R11",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2743
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "upgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 2956,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R12",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6",
+      "transition_mutation_count": 2743
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "downgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R13",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "downgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R14",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base"
+      ],
+      "crash_boundary": "committed",
+      "direction": "downgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 714,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R15",
+      "initial_state": "runtime",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 656
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "downgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 1168,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R16",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "downgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 1168,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R17",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "downgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 1161,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R18",
+      "initial_state": "runtime-development",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 1100
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "downgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 2502,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R19",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "downgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 2502,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R20",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "test-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "downgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 2499,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R21",
+      "initial_state": "runtime-test",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2299
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "prepared",
+      "direction": "downgrade",
+      "expected_crash_returncode": 90,
+      "expected_owned_paths": 2956,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R22",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2743
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "applying-late",
+      "direction": "downgrade",
+      "expected_crash_returncode": 93,
+      "expected_owned_paths": 2956,
+      "expected_recovery_action": "ROLLED_BACK",
+      "expected_second_recovery": "NOOP_ROLLED_BACK",
+      "expected_state": "source-exact",
+      "group": "recovery",
+      "id": "R23",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2743
+    },
+    {
+      "artifact_set": [
+        "runtime-base",
+        "development-addon",
+        "test-addon"
+      ],
+      "crash_boundary": "committed",
+      "direction": "downgrade",
+      "expected_crash_returncode": 92,
+      "expected_owned_paths": 2946,
+      "expected_recovery_action": "FINALIZED_COMMIT",
+      "expected_second_recovery": "ZERO_TRANSACTIONS",
+      "expected_state": "target-exact",
+      "group": "recovery",
+      "id": "R24",
+      "initial_state": "composed",
+      "operation": "transition then recover",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5",
+      "transition_mutation_count": 2743
+    },
+    {
+      "direction": "upgrade",
+      "expected_result": "REJECT_LOCK_BUSY",
+      "expected_returncode": 44,
+      "expected_state": "source-exact",
+      "group": "locking",
+      "id": "L01",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition with held installation lock",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.5",
+      "target_product": "3.14.6"
+    },
+    {
+      "direction": "downgrade",
+      "expected_result": "REJECT_LOCK_BUSY",
+      "expected_returncode": 44,
+      "expected_state": "source-exact",
+      "group": "locking",
+      "id": "L02",
+      "initial_state": "composed",
+      "mutation_count": 0,
+      "operation": "transition with held installation lock",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ],
+      "source_product": "3.14.6",
+      "target_product": "3.14.5"
+    },
+    {
+      "assertions": [
+        "both product locks exact",
+        "all six artifact identities exact",
+        "engine blobs exact"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A01",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "union 2958",
+        "shared 2944",
+        "same 216",
+        "replace 2728",
+        "first-only 12",
+        "second-only 2",
+        "owner transfers 0"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A02",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "schema remains 1",
+        "target artifact tuple exact",
+        "active product derived from runtime artifact ID",
+        "no separate mutable product state"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A03",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "source-only absent",
+        "target-only exact",
+        "target registry exact",
+        "transactions empty",
+        "unowned sentinels unchanged"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A04",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "precommit restores exact source",
+        "committed finalizes exact target",
+        "second recovery idempotent"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A05",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    },
+    {
+      "assertions": [
+        "raw stdout/stderr",
+        "real returncodes",
+        "canonical JSON",
+        "archive safety",
+        "complete result index",
+        "independent verifier",
+        "explicit claim boundary"
+      ],
+      "direction": "both",
+      "expected_result": "PASS",
+      "expected_state": "audited",
+      "group": "audit",
+      "id": "A06",
+      "initial_state": "all-supported-topologies",
+      "operation": "independent audit",
+      "required_evidence": [
+        "process_output",
+        "real_returncode",
+        "before_registry",
+        "after_registry",
+        "owned_payload_inventory",
+        "unowned_inventory",
+        "transition_journal",
+        "transaction_inventory"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "status": "design-frozen-target-evidence-pending",
+  "target_evidence_requirements": [
+    "fresh exact extraction of both product authorities",
+    "inode-separated roots for every scenario",
+    "synchronous raw stdout and stderr",
+    "real process return codes",
+    "before and after registry snapshots",
+    "complete owned and unowned inventories",
+    "transition journal and transaction snapshots",
+    "first and second recovery evidence",
+    "post-transition runtime/native/HTTPS/timezone/subprocess/venv/uv/relocation probes",
+    "canonical machine JSON",
+    "archive safety report",
+    "complete root result-index recomputation",
+    "independent verifier",
+    "explicit claim boundary"
+  ]
+}

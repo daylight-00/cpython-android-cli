@@ -2,7 +2,7 @@
 
 > **Status:** Current handoff context
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, Stage 3-C Phase 5 through Gate 3D, and Gate 4A second-product authority
-> **Active boundary:** Gate 4 transition-policy design — no transition behavior frozen
+> **Active boundary:** Gate 4C transition coordinator implementation — Gate 4B design frozen
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6
@@ -73,6 +73,8 @@ Stage 3-A  runtime closure and host-data boundaries     FROZEN
 Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
 Gate 4A    second-product authority acquisition         FROZEN — A1-A6 complete
+Gate 4B    cross-version transition contract            DESIGN FROZEN — 66 scenarios
+Gate 4C    transition coordinator implementation        READY — not started
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -262,6 +264,26 @@ A5  standalone Termux validation              FROZEN PASS — 34/34 independent 
 A6  independent archive audit and freeze      FROZEN PASS — 28/28 external audit
 ```
 
+### Frozen Gate 4B transition contract
+
+The exact manifest comparison contains 2,958 union paths: 2,944 shared, 216 byte-identical, 2,728 requiring replacement, 12 unique to 3.14.6, 2 unique to 3.14.5, and no cross-artifact ownership transfers.
+
+Gate 4B rejects direct cross-product artifact installation. A dedicated whole-product transition must preserve the installed artifact topology, require an exact source, preserve non-colliding unowned descendants, reject modified owned paths before mutation, replace the registry atomically without changing schema version 1, and use one recovery-compatible PREPARED/APPLYING/COMMITTED journal.
+
+```text
+Gate 4B design verifier  repository-only; no transition execution
+scenario matrix           66
+next gate                 Gate 4C coordinator implementation
+```
+
+Design authority:
+
+```text
+experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
+experiments/stage3c-gate4-transition/gate4b-transition-matrix.json
+experiments/stage3c-gate4-transition/gate4b-cross-version-inventory.json
+docs/evidence/STAGE3C_PHASE5_GATE4B_TRANSITION_CONTRACT_DESIGN_RESULT.md
+```
 
 ### Accepted A2a remote-input authority
 
@@ -305,19 +327,9 @@ byte-exact archive and manifest identities
 
 A synthetic version label, manually edited first-product copy, or the official Python.org Android package used directly as project authority is rejected.
 
-Because the second authority is now frozen, the repository may now design:
+Gate 4B has frozen those choices as a dedicated whole-product, topology-preserving transition with exact-source preflight, zero owner transfers, transactional replace/remove/create planning, schema-1 registry replacement, and bidirectional recovery. Ordinary artifact install remains same-product only.
 
-```text
-whole-product or artifact transition ordering
-mixed-product compatibility policy
-collision and residual policy
-registry/product-lock replacement
-bidirectional PREPARED/APPLYING/COMMITTED recovery
-second-recovery idempotence
-post-upgrade and post-downgrade runtime behavior
-```
-
-No upgrade, downgrade, compatibility, migration, or Gate 4 transition target claim is currently frozen. The next work is design and evidence planning, not an immediate transition execution.
+No upgrade, downgrade, compatibility, migration, or Gate 4 transition target claim is currently frozen. The next work is Gate 4C repository implementation of the frozen coordinator contract, followed by Termux execution only after independent repository review.
 
 ## 11. Repository and transport control plane
 

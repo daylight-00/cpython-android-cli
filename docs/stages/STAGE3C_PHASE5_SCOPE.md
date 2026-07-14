@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 3D frozen; Gate 4A A2 complete, A3 clean replay ready
+> **Status:** ACTIVE — Gate 4A frozen; Gate 4B design frozen; Gate 4C implementation ready
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -44,8 +44,10 @@ Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
 Gate 3D   runtime uninstall and final ownership boundary          FROZEN
-Gate 4    upgrade and downgrade with second frozen product        ACTIVE — AUTHORITY / DESIGN PENDING
-Gate 4A   CPython 3.14.5 authority acquisition                    ACTIVE — A2 PASS / A3 READY
+Gate 4    upgrade and downgrade with second frozen product        ACTIVE — DESIGN FROZEN / IMPLEMENTATION PENDING
+Gate 4A   CPython 3.14.5 authority acquisition                    FROZEN — A1-A6
+Gate 4B   cross-version transition contract                       DESIGN FROZEN — 66 scenarios
+Gate 4C   transition coordinator implementation                   READY — not started
 ```
 
 ## Frozen prior gates
@@ -246,15 +248,43 @@ docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 ```
 
-## Active Gate 4 upgrade and downgrade — authority/design pending
+## Active Gate 4 upgrade and downgrade — Gate 4B design frozen
 
-Gate 4A selects CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the immediate stable predecessor of the frozen 3.14.6 first product. Target, API, and NDK remain `aarch64-linux-android`, 24, and `27.3.13750724`.
+Gate 4A froze CPython 3.14.5 as the second complete authority. Gate 4B compares it against the frozen 3.14.6 first product and freezes the transition contract.
 
-The exact v3.14.5 Android producer declares OpenSSL 3.0.20-0, while the first product declares 3.5.7-0. Gate 4A must therefore capture and replay the source-native dependency graph rather than relabel first-product bytes.
+```text
+union owned paths       2958
+shared paths            2944
+byte-identical shared    216
+replacement required    2728
+3.14.6-only                12
+3.14.5-only                 2
+owner transfers              0
+```
 
-The six acquisition stages are A1 selection/design, A2 exact input capture, A3 clean replay, A4 three-artifact materialization, A5 standalone Termux validation, and A6 independent audit/freeze. A second complete frozen product identity must have its own runtime-base, development-addon, test-addon, manifests, product lock, ownership contract, native closure, runtime behavior, and provenance. A synthetic version label, manually edited first-product copy, or official reference package used directly as project authority is not authority.
+Direct installation of the other product is not a valid transition: it can leave source-only paths on disk, permit a mixed runtime/addon registry, and split product replacement across independent commits.
 
-A1 is design-frozen. A2a immutable remote inputs are accepted from result archive `e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf` with an 81/81 independent audit. A scoped authority decision accepts A2b through the exact preserved custom-r27d Android/aarch64 binary asset, installed-tree and producer-run binding, captured host tools, and ephemeral linker overlay; its combined audit passes 46/46. A2 is complete and A3 clean replay is ready. Upgrade/downgrade ordering, compatibility, collision, residual, recovery, and target acceptance policy remain unclaimed until A6 freezes the second authority.
+The accepted design therefore requires:
+
+```text
+dedicated whole-product transition operation
+exact recognized source product
+installed artifact topology preserved
+modified owned path -> reject before mutation
+non-colliding unowned descendant -> preserve unchanged
+target-owned unowned collision -> reject before mutation
+shared exact -> noop
+shared changed -> transactional replace
+source-only -> transactional remove
+target-only -> transactional create
+schema-1 registry atomically replaced with exact target tuple
+one recovery-compatible PREPARED/APPLYING/COMMITTED journal
+exclusive frozen installation lock
+```
+
+Gate 4B does not modify the frozen Phase 4 engine sources, registry schema, archive bytes, or artifact manifests. Gate 4C may add a transition coordinator that imports frozen common/durability helpers and implements only the frozen 66-scenario contract.
+
+No upgrade, downgrade, migration, mixed-version runtime behavior, or target recovery claim is frozen until later Termux and independent-audit gates.
 
 ## Non-reopening rule
 

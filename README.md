@@ -18,7 +18,7 @@ Stage 2    native bootstrap and workflow architecture   frozen
 Stage 3-A  runtime closure census and boundary model    frozen
 Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
-Stage 3-C  Gate 4 cross-version transition              active — two product authorities frozen; design ready
+Stage 3-C  Gate 4 cross-version transition              active — Gate 4B design frozen; implementation pending
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         deferred
 ```
@@ -400,10 +400,11 @@ docs/PROJECT_CONTEXT_STAGE3C.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-Project-control reconciliation is complete. Gate 4A independently froze CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second complete product authority. A1-A6 are frozen, including exact producer inputs, clean replay, three-artifact identities, standalone Termux validation, and external archive audit. The accepted HACL memzero fallback carries an explicit no-secure-erasure-guarantee limitation, and bundled libmpdec is accepted only for the exact 3.14.5 authority. Gate 4 transition-policy design may now begin, but no upgrade, downgrade, mixed-version, migration, collision, or transition-recovery behavior is frozen.
+Project-control reconciliation is complete. Gate 4A independently froze CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second complete product authority. Gate 4B now freezes the non-reopening whole-product transition contract and a 66-scenario bidirectional validation matrix. The design preserves the registry schema and frozen Phase 4 engine sources, rejects modified source-owned content before mutation, and requires one recovery-compatible transaction. No transition implementation, upgrade, downgrade, migration, or target behavior is frozen yet.
 
-Gate 4A design:
+Gate 4 designs:
 
 ```text
 experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
+experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
 ```
