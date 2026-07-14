@@ -18,8 +18,8 @@ Stage 2    native bootstrap and workflow architecture   frozen
 Stage 3-A  runtime closure census and boundary model    frozen
 Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
-Stage 3-C  Gate 4 cross-version transition              active — second-product authority pending
-Stage 3-C  Gate 4A authority acquisition                 active — A2 complete; A3 clean replay ready
+Stage 3-C  Gate 4 cross-version transition              active — two product authorities frozen; design ready
+Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         deferred
 ```
 
@@ -278,10 +278,10 @@ runtime-base + development-addon + test-addon
 Gate 3B  preserve-and-report ownership policy       FROZEN
 Gate 3C  addon lifecycle and dependency policy      FROZEN
 Gate 3D  complete teardown and final ownership      FROZEN
-Gate 4   upgrade/downgrade                          ACTIVE — authority/design pending
+Gate 4   upgrade/downgrade                          ACTIVE — two authorities frozen; transition design ready
 ```
 
-Gate 4 must begin by acquiring and independently freezing a second complete product authority. A synthetic version label or manually edited copy of the first product is not authority. Upgrade/downgrade ordering, mixed-product compatibility, collision behavior, recovery, and target acceptance remain unclaimed until the second product exists.
+Gate 4A has independently frozen a second complete product authority for CPython 3.14.5 alongside the existing CPython 3.14.6 authority. The exact three-artifact identities, standalone Termux behavior, ownership and recovery semantics are frozen for both products. Upgrade/downgrade ordering, mixed-product compatibility, collision behavior, transition recovery, and post-transition target acceptance remain unclaimed until their own design and evidence gates complete.
 
 Packaging or transition work must not silently reopen frozen producer or runtime semantics. Every new product or transformation must preserve or explicitly revalidate:
 
@@ -400,7 +400,7 @@ docs/PROJECT_CONTEXT_STAGE3C.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-Project-control reconciliation is complete. Gate 4A selected CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. A2a immutable remote inputs and the scoped A2b Termux-native exact-binary toolchain authority are independently accepted, so A2 is complete and A3 clean replay is ready. The A2b decision preserves the frozen first-product Victor/Linux provenance and accepts only the exact preserved custom-r27d asset plus an ephemeral one-byte linker overlay; it does not claim custom-NDK source rebuild reproducibility. The second-product authority remains pending until clean replay, three-artifact materialization, standalone Termux validation, and independent freeze complete. Upgrade/downgrade policy design starts only after that authority exists; this is not a launcher redesign or an unreviewed packaging shortcut.
+Project-control reconciliation is complete. Gate 4A independently froze CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second complete product authority. A1-A6 are frozen, including exact producer inputs, clean replay, three-artifact identities, standalone Termux validation, and external archive audit. The accepted HACL memzero fallback carries an explicit no-secure-erasure-guarantee limitation, and bundled libmpdec is accepted only for the exact 3.14.5 authority. Gate 4 transition-policy design may now begin, but no upgrade, downgrade, mixed-version, migration, collision, or transition-recovery behavior is frozen.
 
 Gate 4A design:
 

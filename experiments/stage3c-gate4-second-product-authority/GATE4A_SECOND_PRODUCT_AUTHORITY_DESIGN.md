@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 4A: Second-Product Authority Acquisition Design
 
-> **Status:** DESIGN FROZEN — exact input capture pending
+> **Status:** FROZEN PASS — A1-A6 complete
 > **Selected second product:** CPython 3.14.5 / android24 / aarch64
 > **First-product authority:** CPython 3.14.6 / android24 / aarch64, frozen through Gate 3D
 > **Target:** Termux on Android arm64
@@ -80,10 +80,10 @@ Every dependency asset, including apparently unchanged releases, must be freshly
 ```text
 A1  selection and repository design          DESIGN FROZEN
 A2  exact input and toolchain capture         FROZEN PASS
-A3  clean upstream Android replay             READY — not started
-A4  three-artifact materialization            pending
-A5  standalone Termux validation              pending
-A6  independent archive audit and freeze      pending
+A3  clean upstream Android replay             FROZEN PASS
+A4  three-artifact materialization            FROZEN PASS — 26/26 adjudication
+A5  standalone Termux validation              FROZEN PASS — 34/34 independent audit
+A6  independent archive audit and freeze      FROZEN PASS — 28/28 external audit
 ```
 
 ### A2 — exact input capture
@@ -155,11 +155,13 @@ complete final teardown
 
 A5 must not execute upgrade or downgrade operations.
 
+Accepted A5 evidence is the exact corrected v2 result archive `851026d08d18dcef03b30d7ccf3f437a8712ba5cbdecde5e9d4478ba996ecc76`: candidate 10/10 PASS, archived verifier 41/41 PASS, and independent A6 input audit 34/34 PASS. The preserved v1 FAIL remains evidence of two harness false negatives.
+
 ### A6 — independent freeze
 
 A complete pass-or-fail `.tar.zst` result archive must include raw logs, real return codes, canonical JSON, complete indexes, and archive safety evidence. Independent audit recomputes artifact and manifest identities, product lock, ownership counts, native closure, runtime behavior, and claim boundaries.
 
-Only A6 may declare the second product frozen.
+The accepted A6 archive is `4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa`: 40/40 indexed files, candidate 18/18 PASS, archived verifier 18/18 PASS, and external audit 28/28 PASS. A6 declares the exact CPython 3.14.5 second product frozen.
 
 ## Forbidden shortcuts
 
@@ -173,7 +175,7 @@ starting mixed-version or transition scenarios before A6 freeze
 
 ## Transition boundary
 
-Gate 4 upgrade/downgrade design remains closed until A6. In particular, this design does not freeze:
+Gate 4A is complete, so upgrade/downgrade policy design may now begin. This authority still does not freeze:
 
 ```text
 whole-product versus artifact-by-artifact transition order
@@ -191,13 +193,17 @@ scenario count
 ```text
 experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
 experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a5-standalone-authority.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a6-external-audit.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a6-second-product-authority.json
 ```
 
 ## Claim boundary
 
-A Gate 4A design PASS proves only that the repository selected a genuine v3.14.5 source-native producer input and froze a six-stage contract for acquiring a second authority.
+Gate 4A A6 PASS proves that the repository acquired and independently froze a genuine v3.14.5 source-native three-artifact product with exact archives, manifests, product lock, ownership, target behavior, recovery behavior, and evidence lineage.
 
-It does not prove a second-product archive, manifest, product lock, target behavior, compatibility, upgrade, downgrade, migration, or transition recovery.
+It does not prove compatibility, upgrade, downgrade, migration, cross-version collision policy, transition recovery, or post-transition behavior.
 
 ## Scoped A2b producer-host exception
 

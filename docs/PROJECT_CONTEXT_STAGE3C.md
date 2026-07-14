@@ -1,8 +1,8 @@
 # CPython Android CLI + uv: Current Stage 3-C Project Context
 
 > **Status:** Current handoff context
-> **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 3D
-> **Active boundary:** Gate 4 second-product authority acquisition — A2 complete; A3 clean replay ready
+> **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, Stage 3-C Phase 5 through Gate 3D, and Gate 4A second-product authority
+> **Active boundary:** Gate 4 transition-policy design — no transition behavior frozen
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6
@@ -72,7 +72,7 @@ Stage 2    native bootstrap/workflow architecture       FROZEN
 Stage 3-A  runtime closure and host-data boundaries     FROZEN
 Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
-Gate 4A    second-product authority acquisition         ACTIVE — A2 complete, A3 ready
+Gate 4A    second-product authority acquisition         FROZEN — A1-A6 complete
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -219,13 +219,25 @@ scenario / verifier / external audit
   44/44 / 138/138 / 37/37 PASS
 ```
 
+### Gate 4A — second-product authority
+
+```text
+product             CPython 3.14.5 / android24 / aarch64
+A4 materialization  25/25 PASS; static adjudication 26/26 PASS
+A5 target evidence  10/10 candidate; 41/41 verifier; 34/34 independent audit
+A6 freeze evidence  18/18 candidate; 18/18 verifier; 28/28 external audit
+A6 archive sha256   4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa
+```
+
+The authority freezes 2,946 disjoint owned paths across runtime-base, development-addon, and test-addon. HACL memzero uses the upstream fallback path with no secure-erasure guarantee, and bundled libmpdec is accepted for 3.14.5 only.
+
 Historical `.tgz` evidence remains immutable. New evidence and ordinary assistant/user exchange archives use `.tar.zst`.
 
 ## 10. Active Gate 4 boundary
 
 Gate 4 asks whether one complete frozen three-artifact product can transition to and from a second complete frozen product while preserving dependency, ownership, residual, collision, transaction, recovery, and runtime-behavior boundaries.
 
-The immediate task is **not** an upgrade runner. Gate 4A has selected the immediate stable predecessor as the second-product input:
+Gate 4A has now frozen the immediate stable predecessor as the second complete product authority:
 
 ```text
 CPython version  3.14.5
@@ -244,10 +256,10 @@ A1  selection and repository design          DESIGN FROZEN
 A2  exact input and toolchain capture         FROZEN PASS
   A2a immutable remote inputs                 FROZEN PASS — 81/81 external audit
   A2b Termux-native binary toolchain          FROZEN PASS — 46/46 combined audit
-A3  clean upstream Android replay             READY — not started
-A4  three-artifact materialization            pending
-A5  standalone Termux validation              pending
-A6  independent archive audit and freeze      pending
+A3  clean upstream Android replay             FROZEN PASS
+A4  three-artifact materialization            FROZEN PASS — 26/26 adjudication
+A5  standalone Termux validation              FROZEN PASS — 34/34 independent audit
+A6  independent archive audit and freeze      FROZEN PASS — 28/28 external audit
 ```
 
 
@@ -278,7 +290,7 @@ combined audit  46/46 PASS
 
 A repository authority decision accepts the exact preserved Android/aarch64 custom-r27d binary asset and an ephemeral `PT_TLS.p_align` overlay for the Gate 4A second-product producer. The original NDK remains unchanged. This scoped exception does not alter the frozen first-product workstation provenance or claim source-rebuild reproducibility for the custom NDK.
 
-The authority must ultimately contain:
+The frozen second-product authority contains:
 
 ```text
 runtime-base archive and manifest
@@ -293,7 +305,7 @@ byte-exact archive and manifest identities
 
 A synthetic version label, manually edited first-product copy, or the official Python.org Android package used directly as project authority is rejected.
 
-Only after the second authority is frozen may the repository decide:
+Because the second authority is now frozen, the repository may now design:
 
 ```text
 whole-product or artifact transition ordering
@@ -305,7 +317,7 @@ second-recovery idempotence
 post-upgrade and post-downgrade runtime behavior
 ```
 
-No upgrade, downgrade, compatibility, migration, or Gate 4 target claim is currently frozen.
+No upgrade, downgrade, compatibility, migration, or Gate 4 transition target claim is currently frozen. The next work is design and evidence planning, not an immediate transition execution.
 
 ## 11. Repository and transport control plane
 

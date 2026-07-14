@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "decision_kind": "gate4a-a5-standalone-termux-authority",
+  "status": "frozen-pass",
+  "preserved_v1_failure": {
+    "archive_sha256": "783dbbbea38b338f2c337cda0bc8cac8ed9d042a5dbabd08db7a061d67b48072",
+    "archive_size": 100956,
+    "classification": "two harness false negatives",
+    "diagnostic": "18/18 PASS",
+    "root_causes": [
+      "sysconfig data path equal to prefix was rejected by a descendant-only assertion",
+      "inline -c was passed as a uv option rather than as a script command"
+    ]
+  },
+  "accepted_v2_result": {
+    "archive_sha256": "851026d08d18dcef03b30d7ccf3f437a8712ba5cbdecde5e9d4478ba996ecc76",
+    "archive_size": 101148,
+    "result_index_entries": 734,
+    "candidate": "10/10 PASS",
+    "archived_verifier": "41/41 PASS",
+    "independent_a6_input_audit": "34/34 PASS",
+    "command_count": 225,
+    "command_returncodes": {
+      "0": 218,
+      "44": 4,
+      "90": 1,
+      "92": 1,
+      "93": 1
+    }
+  },
+  "accepted": [
+    "standalone runtime and CLI identity",
+    "67 native extension imports and ELF closure",
+    "HTTPS, timezone, subprocess, venv and uv workflows",
+    "whole-prefix relocation",
+    "both addon composition and teardown orders",
+    "same-version noop and repair behavior",
+    "preserve-and-report ownership",
+    "PREPARED, APPLYING and COMMITTED recovery",
+    "lock exclusion and complete teardown"
+  ],
+  "not_accepted": [
+    "upgrade or downgrade behavior",
+    "mixed-version compatibility",
+    "transition ordering or recovery"
+  ]
+}

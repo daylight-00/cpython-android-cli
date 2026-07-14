@@ -1,0 +1,82 @@
+{
+  "audit_kind": "external-gate4a-a6-second-product-freeze-audit",
+  "check_count": 28,
+  "checks": {
+    "a3_result_index_exact": true,
+    "a3_sha256_exact": true,
+    "a3_size_exact": true,
+    "a4_adjudication_9_of_9": true,
+    "a4_fresh_26_of_26": true,
+    "a5_fresh_34_of_34": true,
+    "a5_result_index_exact": true,
+    "a5_sha256_exact": true,
+    "a5_size_exact": true,
+    "a5_v1_diagnostic_18_of_18": true,
+    "a6_archived_safety": true,
+    "a6_candidate_18_of_18": true,
+    "a6_result_index_exact": true,
+    "a6_sha256_exact": true,
+    "a6_size_exact": true,
+    "a6_verifier_18_of_18": true,
+    "a6_workflow_all_zero": true,
+    "artifact_identities_exact": true,
+    "bundled_libmpdec_extension_import_pass": true,
+    "hacl_warning_exact": true,
+    "hashlib_target_validation_pass": true,
+    "libmpdec_warning_exact": true,
+    "ownership_exact": true,
+    "product_identity_exact": true,
+    "repository_exact": true,
+    "secure_zero_apis_unavailable": true,
+    "target_build_completed_with_fallback": true,
+    "transition_boundary_closed_in_candidate": true
+  },
+  "claim_boundary": "Accepts the exact CPython 3.14.5 second-product authority after external inspection. It does not accept any upgrade, downgrade, mixed-version, migration, or transition behavior.",
+  "details": {
+    "a3_index_problems": [],
+    "a5_index_problems": [],
+    "a6_index_problems": [],
+    "archives": {
+      "a3": {
+        "sha256": "bfd241f959cb081a91f4866cb07cf2773d1028919de0ea0959ed0d95c8984202",
+        "size": 62379269
+      },
+      "a5": {
+        "sha256": "851026d08d18dcef03b30d7ccf3f437a8712ba5cbdecde5e9d4478ba996ecc76",
+        "size": 101148
+      },
+      "a6": {
+        "sha256": "4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa",
+        "size": 9964
+      }
+    }
+  },
+  "dispositions": {
+    "bundled_libmpdec": {
+      "behavior": "system libmpdec probe failed and exact upstream bundled libmpdec was compiled into _decimal",
+      "evidence": "target configure/build passed and isolated _decimal import returned 0",
+      "follow_up": "system libmpdec becomes a producer prerequisite before any Python 3.16 product authority",
+      "not_claimed": "Python 3.16 compatibility",
+      "status": "accepted-for-cpython-3.14.5"
+    },
+    "hacl_memzero": {
+      "accepted_claim": "the exact CPython 3.14.5 product built and passed _hashlib import plus selected test_hashlib validation with this fallback",
+      "behavior": "the upstream no-safe-memzero fallback path was selected after explicit_bzero and explicit_memset were unavailable",
+      "evidence_path": "Modules/_hacl/Lib_Memzero0.c:66 in the exact A3 build logs",
+      "follow_up": "track upstream/Android explicit zeroization support; changing implementation requires a new producer authority",
+      "not_claimed": "cryptographically guaranteed or platform-provided secure erasure",
+      "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115",
+      "status": "accepted-with-explicit-security-limitation"
+    }
+  },
+  "failed_checks": [],
+  "input": {
+    "filename": "20260714-gate4a-a6-independent-freeze-candidate-v1-results-20260714T140413Z.tar.zst",
+    "sha256": "4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa",
+    "size": 9964
+  },
+  "pass": true,
+  "pass_count": 28,
+  "schema_version": 1,
+  "status": "second-product-authority-freeze-approved"
+}

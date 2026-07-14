@@ -11,11 +11,11 @@ A2 input capture                 FROZEN PASS
   A2b Termux-native toolchain    FROZEN PASS — 46/46 combined audit
 A3 upstream replay               FROZEN PASS
 A4 three-artifact materialize    FROZEN PASS — static adjudication 26/26
-A5 standalone Termux validate    READY — not started
-A6 independent freeze            pending
+A5 standalone Termux validate    FROZEN PASS — independent audit 34/34
+A6 independent freeze            FROZEN PASS — external audit 28/28
 ```
 
-Selected second product:
+Selected and frozen second product:
 
 ```text
 CPython 3.14.5
@@ -24,19 +24,24 @@ v3.14.5
 aarch64-linux-android / API 24 / NDK 27.3.13750724
 ```
 
+Gate 4A is complete. The exact runtime-base, development-addon, and test-addon artifacts, standalone Termux behavior, product lock, manifests, ownership registry, recovery semantics, and byte identities are frozen. Transition-policy design may begin, but no upgrade, downgrade, mixed-version, migration, collision, or transition-recovery behavior is accepted yet.
+
+Authority records:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE4A_A4_MATERIALIZATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE4A_A5_STANDALONE_VALIDATION_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE4A_A6_SECOND_PRODUCT_FREEZE.md
+experiments/stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a5-standalone-authority.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a6-external-audit.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a6-second-product-authority.json
+```
+
 Run the repository design verifier:
 
 ```sh
 bash experiments/stage3c-gate4-second-product-authority/run-gate4a-second-product-authority-design.sh
-```
-
-A4 froze the exact runtime-base, development-addon, and test-addon materialization identities after an independent static adjudication isolated the archived `archive_payload_matches_manifests` failure as a verifier false negative. The next operation is A5 standalone Termux validation. A6 remains required before the second product itself is frozen, and all upgrade/downgrade or mixed-version work remains closed.
-
-A4 authority record:
-
-```text
-docs/evidence/STAGE3C_PHASE5_GATE4A_A4_MATERIALIZATION_RESULT.md
-experiments/stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json
 ```
 
 Audit an A2a result archive:

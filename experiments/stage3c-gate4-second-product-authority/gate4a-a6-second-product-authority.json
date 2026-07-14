@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "decision_kind": "gate4a-a6-second-product-authority-freeze",
+  "status": "frozen-pass",
+  "product": {
+    "python_version": "3.14.5",
+    "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115",
+    "target_host": "aarch64-linux-android",
+    "canonical_host": "aarch64-unknown-linux-android",
+    "android_api": 24,
+    "ndk_version": "27.3.13750724",
+    "soabi": "cpython-314-aarch64-linux-android",
+    "runtime_fingerprint": "6ce6e4cad493c1334fb10d893d7bcc6d49564cbe44081422ea346ce4c73ca537"
+  },
+  "a6_result": {
+    "archive_sha256": "4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa",
+    "archive_size": 9964,
+    "result_index_entries": 40,
+    "candidate": "18/18 PASS",
+    "archived_verifier": "18/18 PASS",
+    "external_audit": "28/28 PASS",
+    "external_audit_sha256": "90f36932535c79482c7125752a832a18f1f5e052bfeaa8dca9990140cfe01512"
+  },
+  "artifacts": {
+    "runtime-base": {
+      "archive_sha256": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d",
+      "manifest_sha256": "2e5efbc9fe765c1b7a4d1bc7375a74d27bcf6d1a56557e3be11cffb9f451e815",
+      "owned_paths": 714
+    },
+    "development-addon": {
+      "archive_sha256": "623d776bd9a987aac0417c360746b4917d666a5829a522ef43574b66493387e0",
+      "manifest_sha256": "30a840feb2922684604d87b206617243a4ddce2fdff10053c720a52bae5fc671",
+      "owned_paths": 447,
+      "structural_namespaces": 2
+    },
+    "test-addon": {
+      "archive_sha256": "7d397ab12cf1d70b2922754b8121936ae56270c45c7929f69656984cd6a0eb1d",
+      "manifest_sha256": "1d6f2c2fd48fa258f9fd982c84732118a012b977a50399395913d13e72c63877",
+      "owned_paths": 1785,
+      "structural_namespaces": 2
+    }
+  },
+  "dispositions": {
+    "hacl_memzero": {
+      "status": "accepted-with-explicit-security-limitation",
+      "behavior": "upstream no-safe-memzero fallback path selected because explicit_bzero and explicit_memset are unavailable",
+      "not_claimed": "platform-provided or cryptographically guaranteed secure erasure",
+      "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115",
+      "evidence_path": "Modules/_hacl/Lib_Memzero0.c:66 in the exact A3 build logs"
+    },
+    "bundled_libmpdec": {
+      "status": "accepted-for-cpython-3.14.5",
+      "behavior": "upstream bundled libmpdec compiled into _decimal after the system probe failed",
+      "not_claimed": "Python 3.16 compatibility",
+      "future_requirement": "provide system libmpdec before any Python 3.16 product authority"
+    }
+  },
+  "transition_boundary": {
+    "design_may_begin": true,
+    "behavior_frozen": false,
+    "not_accepted": [
+      "upgrade",
+      "downgrade",
+      "mixed-version compatibility",
+      "migration",
+      "cross-version collision policy",
+      "transition recovery"
+    ]
+  }
+}
