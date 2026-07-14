@@ -44,7 +44,7 @@ experiment = text("experiments/stage3c-installed-runtime-lifecycle/README.md")
 
 checks: dict[str, bool] = {
     "readme_gate3d_frozen": "frozen through Gate 3D" in readme,
-    "readme_gate4b_design_frozen": "Gate 4B design frozen; implementation pending" in readme,
+    "readme_gate4c_implemented": "Gate 4C implemented; Gate 4D target validation ready" in readme,
     "readme_current_context_path": "docs/PROJECT_CONTEXT_STAGE3C.md" in readme,
     "readme_drive_tar_zst_exchange": "Google Drive, normally one .tar.zst per direction" in readme,
     "readme_no_stage3c_next": "Stage 3-C  distribution archive/installation contract  next" not in readme,
@@ -52,13 +52,13 @@ checks: dict[str, bool] = {
     "historical_context_marked": "HISTORICAL SNAPSHOT" in historical,
     "historical_context_points_current": "PROJECT_CONTEXT_STAGE3C.md" in historical,
     "current_context_status": "> **Status:** Current handoff context" in current,
-    "current_context_gate4_active": "Gate 4C transition coordinator implementation" in current,
+    "current_context_gate4_active": "Gate 4D bidirectional Termux validation" in current,
     "current_context_authority_hierarchy": "complete independently inspected Termux target evidence" in current,
     "current_context_three_artifacts": all(x in current for x in ("runtime-base", "development-addon", "test-addon")),
     "current_context_preserve_report": "preserve-and-report" in current,
     "current_context_recovery_rcs": all(x in current for x in ("rc 90", "rc 93", "rc 92")),
     "current_context_transition_design_first": "Gate 4B has frozen those choices" in current,
-    "current_context_no_gate4_target_claim": "No upgrade, downgrade, compatibility, migration, or Gate 4 transition target claim" in current,
+    "current_context_no_gate4_target_claim": "No upgrade, downgrade, compatibility, migration, post-transition runtime behavior, or Gate 4 transition target claim" in current,
     "current_context_patch_bundle_policy": all(x in current for x in ("patch", "partial bundle", "full bundle")),
     "current_context_single_archive_policy": "one `.tar.zst` per direction" in current,
     "current_context_authorship_policy": "daylight-00 <hwjang00@snu.ac.kr>" in current,
@@ -80,8 +80,8 @@ checks: dict[str, bool] = {
     "handoff_reading_workflow": "../GITHUB_COLLABORATION_WORKFLOW.md" in handoff_index,
     "ledger_archive_generic": "accepted Termux target archives" in ledger,
     "ledger_historical_tgz_immutable": "Historical `.tgz` authorities remain immutable" in ledger,
-    "gate4_control_plane_prerequisite": "Repository control-plane prerequisite" in gate4,
-    "gate4_second_product_required": "second product must have its own complete, reproducible authority" in gate4,
+    "gate4_control_plane_prerequisite": "## Operating contract" in gate4 and "GitHub connector/API operations are not part of this workflow" in gate4,
+    "gate4_second_product_required": "Both products independently passed standalone Termux lifecycle validation" in gate4 and "CPython 3.14.5" in gate4,
     "experiment_old_active_removed": "> **Status:** ACTIVE — authoritative Termux diagnostic pending" not in experiment,
     "experiment_historical_marker": "HISTORICAL — diagnostic completed" in experiment,
 }
@@ -100,6 +100,9 @@ checks["all_current_reading_paths_exist"] = all(
         "docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md",
         "docs/GITHUB_COLLABORATION_WORKFLOW.md",
         "docs/handoff/COLLABORATION_PROTOCOL.md",
+        "experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md",
+        "docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md",
+        "experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.json",
     )
 )
 checks["old_context_not_called_current_in_readme"] = (

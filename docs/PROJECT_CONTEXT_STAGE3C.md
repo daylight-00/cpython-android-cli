@@ -2,7 +2,7 @@
 
 > **Status:** Current handoff context
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, Stage 3-C Phase 5 through Gate 3D, and Gate 4A second-product authority
-> **Active boundary:** Gate 4C transition coordinator implementation — Gate 4B design frozen
+> **Active boundary:** Gate 4D bidirectional Termux validation — Gate 4C implementation complete
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6
@@ -74,7 +74,8 @@ Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
 Gate 4A    second-product authority acquisition         FROZEN — A1-A6 complete
 Gate 4B    cross-version transition contract            DESIGN FROZEN — 66 scenarios
-Gate 4C    transition coordinator implementation        READY — not started
+Gate 4C    transition coordinator implementation        IMPLEMENTED — 69/69
+Gate 4D    bidirectional Termux target validation       READY — not started
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -273,7 +274,8 @@ Gate 4B rejects direct cross-product artifact installation. A dedicated whole-pr
 ```text
 Gate 4B design verifier  repository-only; no transition execution
 scenario matrix           66
-next gate                 Gate 4C coordinator implementation
+Gate 4C verifier          69/69 PASS
+next gate                 Gate 4D bidirectional Termux validation
 ```
 
 Design authority:
@@ -283,6 +285,9 @@ experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
 experiments/stage3c-gate4-transition/gate4b-transition-matrix.json
 experiments/stage3c-gate4-transition/gate4b-cross-version-inventory.json
 docs/evidence/STAGE3C_PHASE5_GATE4B_TRANSITION_CONTRACT_DESIGN_RESULT.md
+experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md
+docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
+experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.json
 ```
 
 ### Accepted A2a remote-input authority
@@ -329,7 +334,7 @@ A synthetic version label, manually edited first-product copy, or the official P
 
 Gate 4B has frozen those choices as a dedicated whole-product, topology-preserving transition with exact-source preflight, zero owner transfers, transactional replace/remove/create planning, schema-1 registry replacement, and bidirectional recovery. Ordinary artifact install remains same-product only.
 
-No upgrade, downgrade, compatibility, migration, or Gate 4 transition target claim is currently frozen. The next work is Gate 4C repository implementation of the frozen coordinator contract, followed by Termux execution only after independent repository review.
+Gate 4C now implements the frozen coordinator contract and passes 69/69 repository checks while preserving the frozen engine sources and schema-1 registry. No upgrade, downgrade, compatibility, migration, post-transition runtime behavior, or Gate 4 transition target claim is currently frozen. The next work is Gate 4D bidirectional Termux execution and evidence acquisition.
 
 ## 11. Repository and transport control plane
 

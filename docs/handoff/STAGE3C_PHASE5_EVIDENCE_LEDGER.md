@@ -342,16 +342,114 @@ experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptanc
 
 ```text
 status
-  ACTIVE — second product authority and design pending
+  ACTIVE — Gate 4C implemented; Gate 4D target validation ready
+
+Gate 4A second-product authority
+  FROZEN PASS — CPython 3.14.5 / android24 / aarch64
+
+Gate 4B transition contract
+  DESIGN FROZEN — 66 scenarios
+
+Gate 4C coordinator
+  IMPLEMENTED — repository verifier 69/69 PASS
+
+Gate 4D target validation
+  READY — not started
+
+Gate 4E independent freeze
+  pending
 ```
 
-Gate 4 requires a second complete independently frozen three-artifact product. No version choice, transition ordering, compatibility rule, recovery matrix, scenario count, or target claim is frozen yet. Synthetic version labels are rejected as authority.
-
-Handoff:
+### Gate 4A frozen second product
 
 ```text
-docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+product
+  cpython-android-cli 3.14.5 / android24 / aarch64
+
+source commit
+  5607950ef232dad16d75c0cf53101d9649d89115
+
+product lock sha256
+  e8c189d4a7386f1c522cc1479515b266fff60fdffedb3b7e842d9730ec21faeb
+
+runtime / development / test owned paths
+  714 / 447 / 1785
+
+A6 independent candidate result sha256
+  4565b69e78c618f58fda59f928c086bbcf1cd02cfb28252f419e42e8cbc266aa
+
+repository freeze result sha256
+  5daf2d05ddbaa3cba5f9fec183a92f967f50502dbddc73bbf7c25b77fd0e0158
 ```
+
+Authority records:
+
+```text
+experiments/stage3c-gate4-second-product-authority/gate4a-a6-second-product-freeze-authority.json
+docs/evidence/STAGE3C_PHASE5_GATE4A_A6_SECOND_PRODUCT_FREEZE_RESULT.md
+```
+
+### Gate 4B frozen transition contract
+
+The exact product delta contains 2,958 union owned paths: 2,944 shared, 216 byte-exact shared, 2,728 replacements, 12 first-product-only, 2 second-product-only, and zero cross-artifact owner transfers.
+
+```text
+scenario matrix
+  66
+
+design verifier
+  106/106 PASS
+
+design-freeze result sha256
+  f1b4670feccafa70824eb359bd835b9fba9e436513a482511565dda32404c915
+```
+
+The frozen policy requires a dedicated whole-product transition, exact-source preflight, topology preservation, unowned collision rejection, one recovery-compatible transaction, schema-1 registry replacement, and bidirectional PREPARED/APPLYING/COMMITTED recovery.
+
+Authority records:
+
+```text
+experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
+experiments/stage3c-gate4-transition/gate4b-transition-matrix.json
+experiments/stage3c-gate4-transition/gate4b-cross-version-inventory.json
+experiments/stage3c-gate4-transition/gate4b-transition-design-authority.json
+docs/evidence/STAGE3C_PHASE5_GATE4B_TRANSITION_CONTRACT_DESIGN_RESULT.md
+```
+
+### Gate 4C implemented coordinator
+
+```text
+repository verifier
+  69/69 PASS
+
+verification result sha256
+  6c97a9cf0d97c8f3f24a7931a995e54bc9d57b209db144774bb73f2a42325073
+
+frozen engine source changes
+  none
+
+registry schema
+  remains 1
+```
+
+Gate 4C accepts repository implementation and synthetic transaction semantics only. No real CPython upgrade, downgrade, runtime behavior, or target crash recovery is frozen.
+
+Implementation records:
+
+```text
+experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md
+experiments/stage3c-gate4-transition/gate4c-transition-authorities.json
+experiments/stage3c-gate4-transition/transition_coordinator.py
+experiments/stage3c-gate4-transition/verify-gate4c-transition-implementation.py
+experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.json
+docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
+```
+
+## Immediate next boundary
+
+Gate 4D must execute both directions on Termux across all four frozen artifact topologies, including happy paths, preflight rejection, collision handling, lock exclusion, and PREPARED/APPLYING/COMMITTED recovery. It must collect post-transition CLI, native closure, HTTPS, timezone, subprocess, venv, uv, relocation, registry, payload, residual, journal, and second-recovery evidence.
+
+No Gate 4 target claim exists until Gate 4D evidence is independently accepted and Gate 4E freezes it.
 
 ## Evidence paths
 
@@ -371,61 +469,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
-```
-
-## Gate 4A — second-product authority acquisition design
-
-```text
-status
-  ACTIVE — A2 FROZEN PASS; A3 clean replay ready
-
-selected second product
-  CPython 3.14.5 / v3.14.5
-
-upstream source commit
-  5607950ef232dad16d75c0cf53101d9649d89115
-
-target held constant
-  aarch64-linux-android / API 24 / NDK 27.3.13750724
-
-producer dependency delta
-  second product OpenSSL 3.0.20-0
-  first product  OpenSSL 3.5.7-0
-
-A2a result archive sha256
-  e9c9ed69098017017b3cbf70e8237c040ede26d378f6530043cc5ff4e7469caf
-
-A2a root result-index sha256
-  5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edcda17fbe
-
-A2a external audit
-  81/81 PASS
-
-A2 exact input and toolchain capture
-  FROZEN PASS
-  A2b exact preserved Termux-native binary toolchain plus ephemeral linker overlay
-  combined external audit 46/46 PASS
-
-acquisition sequence
-  A1 design -> A2a remote inputs -> A2b scoped toolchain authority -> A3 replay
-  -> A4 materialization -> A5 standalone Termux validation -> A6 independent freeze
-```
-
-Design authority:
-
-```text
-experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
-experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
-experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
-docs/evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md
-```
-
-The design selects a genuine source-native input and freezes the acquisition contract only. The second-product archive, three manifests, product lock, target behavior, and independent freeze are not yet authority. Upgrade/downgrade policy remains closed until A6.
-
-A2b authority evidence:
-
-```text
-docs/evidence/STAGE3C_PHASE5_GATE4A_A2B_TERMUX_NATIVE_TOOLCHAIN_AUTHORITY_DECISION.md
-docs/evidence/STAGE3C_PHASE5_GATE4A_A2B_TERMUX_NATIVE_TOOLCHAIN_EXTERNAL_AUDIT.json
-experiments/stage3c-gate4-second-product-authority/gate4a-a2b-termux-native-toolchain-authority.json
+docs/evidence/STAGE3C_PHASE5_GATE4A_A6_SECOND_PRODUCT_FREEZE_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE4B_TRANSITION_CONTRACT_DESIGN_RESULT.md
+docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
 ```

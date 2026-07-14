@@ -1,0 +1,54 @@
+{
+  "accepted": [
+    "dedicated whole-product transition coordinator",
+    "exact two-product authority binding",
+    "topology-preserving noop/replace/remove/create plan",
+    "exact-source and target-collision preflight",
+    "schema-2 recovery-compatible transition journal",
+    "schema-1 atomic target registry replacement",
+    "frozen recovery-engine reuse without source modification",
+    "same-product versus cross-product install guard",
+    "synthetic bidirectional transaction and recovery semantics"
+  ],
+  "claim_boundary": "Repository implementation and synthetic transaction semantics only. Gate 4D Termux execution and Gate 4E independent freeze remain required.",
+  "decision_kind": "stage3c-phase5-gate4c-transition-coordinator-implementation",
+  "frozen_design": {
+    "cross_version_inventory_sha256": "c06855780ca4df3c14cc765aec3e61a0a7d0ace4a156d03bf697243bab090993",
+    "scenario_count": 66,
+    "transition_matrix_sha256": "7e30fe98996781c86ea719d9fd8512f054a8dfeae5e1328e17264595d6abb55a"
+  },
+  "frozen_engine_blobs": {
+    "recovery_common.py": "3183ba0861ef45e7a395201bec0085f3f69fb248",
+    "recovery_durability.py": "61bfb859f73acccb0dfcce1d2a630bfd1ffc2d3f",
+    "recovery_engine.py": "aebf5b9a33d163f7f8758f785ca621c94c0e478b",
+    "recovery_operations.py": "8a307065e00fd7a7332541f4911c5478945374ee"
+  },
+  "implementation": {
+    "authority_spec_sha256": "5f32eeb72c3bd7a8e97795a7052052ac3f7f03dfd8e523be28344276f735ddd8",
+    "coordinator_sha256": "440457672e9975bdabf7a774518a0c68e566e7b87fca516a0057ac9b26a932b6",
+    "runner_sha256": "a9c74943e7d9736ab90c471b2db5a30ebbf93fbe91ee3df4475a527380cab1b0",
+    "verifier_sha256": "cf2268065313d712033264f76b026bf691ccb7ba2805ce14210ef981f937c1ea"
+  },
+  "next_state": {
+    "gate4c": "IMPLEMENTED - 69/69 PASS",
+    "gate4d": "READY - not started",
+    "gate4e": "pending"
+  },
+  "not_accepted": [
+    "CPython 3.14.5 to 3.14.6 target transition",
+    "CPython 3.14.6 to 3.14.5 target transition",
+    "post-transition runtime or native behavior",
+    "target crash recovery",
+    "mixed-version compatibility or migration",
+    "final Gate 4 transition authority"
+  ],
+  "schema_version": 1,
+  "status": "implemented-target-validation-pending",
+  "verification": {
+    "check_count": 69,
+    "failed_checks": [],
+    "pass_count": 69,
+    "result_sha256": "6c97a9cf0d97c8f3f24a7931a995e54bc9d57b209db144774bb73f2a42325073",
+    "result_size": 3048
+  }
+}

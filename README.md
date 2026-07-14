@@ -18,7 +18,7 @@ Stage 2    native bootstrap and workflow architecture   frozen
 Stage 3-A  runtime closure census and boundary model    frozen
 Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
-Stage 3-C  Gate 4 cross-version transition              active — Gate 4B design frozen; implementation pending
+Stage 3-C  Gate 4 cross-version transition              active — Gate 4C implemented; Gate 4D target validation ready
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         deferred
 ```
@@ -278,7 +278,7 @@ runtime-base + development-addon + test-addon
 Gate 3B  preserve-and-report ownership policy       FROZEN
 Gate 3C  addon lifecycle and dependency policy      FROZEN
 Gate 3D  complete teardown and final ownership      FROZEN
-Gate 4   upgrade/downgrade                          ACTIVE — two authorities frozen; transition design ready
+Gate 4   upgrade/downgrade                          ACTIVE — coordinator implemented; target validation ready
 ```
 
 Gate 4A has independently frozen a second complete product authority for CPython 3.14.5 alongside the existing CPython 3.14.6 authority. The exact three-artifact identities, standalone Termux behavior, ownership and recovery semantics are frozen for both products. Upgrade/downgrade ordering, mixed-product compatibility, collision behavior, transition recovery, and post-transition target acceptance remain unclaimed until their own design and evidence gates complete.
@@ -400,11 +400,12 @@ docs/PROJECT_CONTEXT_STAGE3C.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-Project-control reconciliation is complete. Gate 4A independently froze CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second complete product authority. Gate 4B now freezes the non-reopening whole-product transition contract and a 66-scenario bidirectional validation matrix. The design preserves the registry schema and frozen Phase 4 engine sources, rejects modified source-owned content before mutation, and requires one recovery-compatible transaction. No transition implementation, upgrade, downgrade, migration, or target behavior is frozen yet.
+Project-control reconciliation is complete. Gate 4A independently froze CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second complete product authority. Gate 4B freezes the non-reopening whole-product transition contract and a 66-scenario bidirectional validation matrix. Gate 4C implements the dedicated topology-preserving coordinator while retaining registry schema 1 and the frozen Phase 4 engine sources; its repository verifier passes 69/69. No real upgrade, downgrade, migration, post-transition runtime behavior, or target recovery claim is frozen yet. Gate 4D target validation is ready.
 
-Gate 4 designs:
+Gate 4 design and implementation records:
 
 ```text
 experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
 experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
+experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md
 ```

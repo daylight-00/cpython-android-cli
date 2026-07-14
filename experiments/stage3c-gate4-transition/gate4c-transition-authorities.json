@@ -1,0 +1,70 @@
+{
+  "authority_kind": "stage3c-phase5-gate4c-transition-product-authorities",
+  "products": {
+    "3.14.5": {
+      "artifacts": {
+        "development-addon": {
+          "archive_filename": "cpython-android-cli-3.14.5-android24-aarch64-development-addon.tar.zst",
+          "archive_sha256": "623d776bd9a987aac0417c360746b4917d666a5829a522ef43574b66493387e0",
+          "archive_size": 870030,
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-development-addon",
+          "manifest_sha256": "30a840feb2922684604d87b206617243a4ddce2fdff10053c720a52bae5fc671",
+          "owned_paths": 447
+        },
+        "runtime-base": {
+          "archive_filename": "cpython-android-cli-3.14.5-android24-aarch64-runtime-base.tar.zst",
+          "archive_sha256": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d",
+          "archive_size": 9803730,
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-runtime-base",
+          "manifest_sha256": "2e5efbc9fe765c1b7a4d1bc7375a74d27bcf6d1a56557e3be11cffb9f451e815",
+          "owned_paths": 714
+        },
+        "test-addon": {
+          "archive_filename": "cpython-android-cli-3.14.5-android24-aarch64-test-addon.tar.zst",
+          "archive_sha256": "7d397ab12cf1d70b2922754b8121936ae56270c45c7929f69656984cd6a0eb1d",
+          "archive_size": 6264999,
+          "artifact_id": "cpython-android-cli-3.14.5-android24-aarch64-test-addon",
+          "manifest_sha256": "1d6f2c2fd48fa258f9fd982c84732118a012b977a50399395913d13e72c63877",
+          "owned_paths": 1785
+        }
+      },
+      "product_lock_sha256": "e8c189d4a7386f1c522cc1479515b266fff60fdffedb3b7e842d9730ec21faeb",
+      "product_lock_size": 2376,
+      "role": "second",
+      "source_head": "5607950ef232dad16d75c0cf53101d9649d89115"
+    },
+    "3.14.6": {
+      "artifacts": {
+        "development-addon": {
+          "archive_filename": "cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.gz",
+          "archive_sha256": "f77ea24c92fdd982cd32e172b2d38134f1d785b1f106d1bfe36a9bffa9cc8eea",
+          "archive_size": 1037544,
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-development-addon",
+          "manifest_sha256": "9a01655d63044ab126fd71236ca2cb814221317ee9b6b44fd2417fa5535a8b2a",
+          "owned_paths": 454
+        },
+        "runtime-base": {
+          "archive_filename": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.gz",
+          "archive_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743",
+          "archive_size": 13684443,
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base",
+          "manifest_sha256": "ce48849c9c88c9296264d6a917c3b55b0433e0d67bdda06579d6f18d701f285a",
+          "owned_paths": 714
+        },
+        "test-addon": {
+          "archive_filename": "cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.gz",
+          "archive_sha256": "02a1fad1af5528a4e910f0eb3370f4a2696da4f78067586e8b62f2a10fb4c9b1",
+          "archive_size": 7135813,
+          "artifact_id": "cpython-android-cli-3.14.6-android24-aarch64-test-addon",
+          "manifest_sha256": "47d9f2e24e74b23e34ae6bfa95a0df22ec7cf9505e3e189dc3d6bdf2dc1c8b5f",
+          "owned_paths": 1788
+        }
+      },
+      "product_lock_sha256": "83f6b1fd3b610c22606f8dd4108a86cf2454e5997d0d0ada4124a209bfb091b7",
+      "product_lock_size": 911,
+      "role": "first",
+      "source_head": "c63aec69bd59c55314c06c23f4c22c03de76fe45"
+    }
+  },
+  "schema_version": 1
+}

@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Installed Runtime Lifecycle
 
-> **Current boundary:** Gate 3D and Gate 4A frozen; Gate 4B transition design frozen
+> **Current boundary:** Gate 3D and Gate 4A frozen; Gate 4C coordinator implemented
 
 Current authority:
 
@@ -11,7 +11,7 @@ Gate 3C target matrix                            50 scenarios
 Gate 3C target runner/verifier                   FROZEN 50/50 + 103/103 + 27/27
 Gate 3D final runtime-base uninstall design      FROZEN 108/108, 44 scenarios
 Gate 3D target acceptance                        FROZEN 44/44 + 138/138 + 37/37
-upgrade/downgrade                                ACTIVE — Gate 4B design frozen; implementation pending
+upgrade/downgrade                                ACTIVE — Gate 4C implemented; Gate 4D target validation ready
 ```
 
 
@@ -38,7 +38,7 @@ run-gate3d-final-uninstall-termux.sh
 
 The authoritative Termux workflow consumed both frozen archives, executed all 44 scenarios with raw process evidence, passed 138 independent checks, and emitted a safe `.tar.zst` archive with an exact 845-file root index. External audit passed 37/37. The accepted archive SHA-256 is `579b880495098e9a46b40e2d96c9555178d0ad8c725d40768e6b854227d66143`; the root result-index SHA-256 is `5f9aa64cb4e0679a4784c9c3b8ebd6d8d91829704984672186dc9f9c0d96ed60`.
 
-Gate 4A froze the second product and Gate 4B froze the 66-scenario whole-product transition contract. No transition implementation or target claim is frozen.
+Gate 4A froze the second product, Gate 4B froze the 66-scenario whole-product transition contract, and Gate 4C implements the coordinator with 69/69 repository checks. No target transition or runtime-behavior claim is frozen.
 
 Gate 3C implementation files:
 
