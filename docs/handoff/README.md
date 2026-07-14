@@ -1,5 +1,8 @@
 # Successor Session Handoff
 
+> **Canonical entry:** use [`../SESSION_ONBOARDING.md`](../SESSION_ONBOARDING.md).
+> This directory now contains dated project-state snapshots and historical compatibility documents; stable collaboration mechanics live in `docs/session-operations/`.
+
 Use these documents to continue the project without relying on prior chat context.
 
 ## Read in order

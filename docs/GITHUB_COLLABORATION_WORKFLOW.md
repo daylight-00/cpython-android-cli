@@ -5,6 +5,8 @@
 > **Default branch:** `main`
 > **Canonical device checkout:** `$HOME/projects/cpython-android-cli`
 > **Compatibility note:** this historical filename is retained so existing links remain valid.
+> **Canonical cross-session rules:** [`session-operations/README.md`](session-operations/README.md).
+> This file remains a detailed compatibility reference; stable session mechanics are maintained in `docs/session-operations/`.
 
 ## Purpose
 

@@ -1,5 +1,8 @@
 # Collaboration Protocol for Successor Sessions
 
+> **Compatibility notice:** canonical cross-session rules moved to [`../session-operations/README.md`](../session-operations/README.md).
+> Keep this historical document for prior links and context; update stable mechanics only in `docs/session-operations/`.
+
 > **Purpose:** preserve the exact working relationship used to advance this repository.
 > **Applies to:** all successor assistant sessions working with the project owner.
 
