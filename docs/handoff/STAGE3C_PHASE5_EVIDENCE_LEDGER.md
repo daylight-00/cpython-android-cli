@@ -377,7 +377,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 
 ```text
 status
-  ACTIVE — A2a FROZEN PASS; A2b toolchain witness pending
+  ACTIVE — A2 FROZEN PASS; A3 clean replay ready
 
 selected second product
   CPython 3.14.5 / v3.14.5
@@ -401,11 +401,13 @@ A2a root result-index sha256
 A2a external audit
   81/81 PASS
 
-A2 overall input capture pending
-  A2b Linux-workstation NDK binary/path and host-tool witness
+A2 exact input and toolchain capture
+  FROZEN PASS
+  A2b exact preserved Termux-native binary toolchain plus ephemeral linker overlay
+  combined external audit 46/46 PASS
 
 acquisition sequence
-  A1 design -> A2a remote inputs -> A2b toolchain -> A3 replay
+  A1 design -> A2a remote inputs -> A2b scoped toolchain authority -> A3 replay
   -> A4 materialization -> A5 standalone Termux validation -> A6 independent freeze
 ```
 
@@ -419,3 +421,11 @@ docs/evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md
 ```
 
 The design selects a genuine source-native input and freezes the acquisition contract only. The second-product archive, three manifests, product lock, target behavior, and independent freeze are not yet authority. Upgrade/downgrade policy remains closed until A6.
+
+A2b authority evidence:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE4A_A2B_TERMUX_NATIVE_TOOLCHAIN_AUTHORITY_DECISION.md
+docs/evidence/STAGE3C_PHASE5_GATE4A_A2B_TERMUX_NATIVE_TOOLCHAIN_EXTERNAL_AUDIT.json
+experiments/stage3c-gate4-second-product-authority/gate4a-a2b-termux-native-toolchain-authority.json
+```

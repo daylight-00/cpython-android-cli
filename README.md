@@ -19,7 +19,7 @@ Stage 3-A  runtime closure census and boundary model    frozen
 Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              active — second-product authority pending
-Stage 3-C  Gate 4A authority acquisition                 active — A2a accepted; A2b toolchain witness pending
+Stage 3-C  Gate 4A authority acquisition                 active — A2 complete; A3 clean replay ready
 Stage 3-D  consumer integration                         deferred
 ```
 
@@ -400,7 +400,7 @@ docs/PROJECT_CONTEXT_STAGE3C.md
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-Project-control reconciliation is complete. Gate 4A selected CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. A2a immutable remote-input capture is independently accepted; A2 remains open for the separate Linux-workstation NDK binary/path and host-tool witness (A2b). The second-product authority remains pending until clean replay, three-artifact materialization, standalone Termux validation, and independent freeze complete. Upgrade/downgrade policy design starts only after that authority exists; this is not a launcher redesign or an unreviewed packaging shortcut.
+Project-control reconciliation is complete. Gate 4A selected CPython 3.14.5 (`v3.14.5`, commit `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. A2a immutable remote inputs and the scoped A2b Termux-native exact-binary toolchain authority are independently accepted, so A2 is complete and A3 clean replay is ready. The A2b decision preserves the frozen first-product Victor/Linux provenance and accepts only the exact preserved custom-r27d asset plus an ephemeral one-byte linker overlay; it does not claim custom-NDK source rebuild reproducibility. The second-product authority remains pending until clean replay, three-artifact materialization, standalone Termux validation, and independent freeze complete. Upgrade/downgrade policy design starts only after that authority exists; this is not a launcher redesign or an unreviewed packaging shortcut.
 
 Gate 4A design:
 

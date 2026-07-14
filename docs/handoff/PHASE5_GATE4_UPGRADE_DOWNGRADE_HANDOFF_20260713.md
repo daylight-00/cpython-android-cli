@@ -1,7 +1,7 @@
 # Phase 5 Gate 4 Upgrade and Downgrade Handoff — 2026-07-13
 
 > **Status:** ACTIVE — second product authority and design pending
-> **Gate 4A detail:** design frozen; A2a remote inputs accepted; A2b Linux-workstation toolchain witness pending
+> **Gate 4A detail:** design frozen; A2 complete; A3 clean replay ready
 > **Prerequisite:** frozen Gate 3D final uninstall and ownership acceptance
 > **Target:** Termux on Android arm64
 
@@ -48,7 +48,7 @@ Gate 4A sequence:
 A1 selection/design                  DESIGN FROZEN
 A2 exact input/toolchain capture     PARTIAL
   A2a immutable remote inputs       FROZEN PASS — 81/81 external audit
-  A2b workstation toolchain witness pending
+  A2b Termux-native binary toolchain FROZEN PASS
 A3 clean upstream replay             pending
 A4 three-artifact materialization    pending
 A5 standalone Termux validation      pending
@@ -74,7 +74,7 @@ external audit
   81/81 PASS
 ```
 
-The collector's original 44/49 FAIL remains immutable diagnostic evidence. The five failed checks were a schema-comparison false negative: reused dependency identities and legacy archive inventory fields matched the first-product lock exactly, while the fresh capture added three valid archive-safety fields. A2a is accepted only; A2b and A3-A6 remain open.
+The A2a collector's original 44/49 FAIL remains immutable diagnostic evidence. The five failed checks were a schema-comparison false negative: reused dependency identities and legacy archive inventory fields matched the first-product lock exactly, while the fresh capture added three valid archive-safety fields. A2a is accepted. A scoped repository authority decision also accepts A2b using the exact preserved custom-r27d Android/aarch64 binary asset and ephemeral linker overlay. A3-A6 remain open.
 
 ## Required second-product authority
 
@@ -118,7 +118,7 @@ Before creating the second-product authority branch, reconcile the root README, 
 
 ## Immediate repository task
 
-Complete Gate 4A A2b on the separate Linux workstation: capture the installed NDK `27.3.13750724` root, exact compiler/linker binary paths and hashes, Android SDK paths, make, host Python, and relevant host-tool versions. A2a already accepts the v3.14.5 tag/commit, producer hashes, official references, and all six source-dependency asset identities and archive inventories. After A2b, proceed to clean replay, three-artifact materialization, standalone Termux validation, and independent freeze. Only after A6 may the upgrade/downgrade matrix and repository verifier be designed.
+Begin Gate 4A A3 clean replay on the accepted Termux-native producer host. Recreate the ephemeral r27d linker overlay from the preserved original linker, verify its exact identity, then replay the v3.14.5 producer from isolated source/build/output roots using the already accepted A2a inputs. Preserve raw commands and return codes. Do not claim a product archive until A4, and do not design upgrade/downgrade policy until A6 freezes the complete second authority.
 
 Gate 4A machine design:
 

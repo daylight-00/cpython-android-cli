@@ -1,0 +1,86 @@
+{
+  "acceptance": {
+    "a2_exact_input_and_toolchain_capture": "complete",
+    "a2a_remote_inputs": "frozen-pass",
+    "a2b_termux_native_binary_toolchain": "frozen-pass",
+    "a3_clean_replay": "ready-not-started",
+    "a4_through_a6": "pending"
+  },
+  "authority_class": "scoped-exact-binary-producer-toolchain",
+  "authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/gate4a/toolchains/android-ndk-custom/r27/android-aarch64",
+  "base_design": {
+    "historical_first_product_authority_unchanged": true,
+    "original_workstation_design_preserved_as_history": true,
+    "scoped_exception": "Gate 4A second-product A2b through A4 may execute on the accepted Termux-native producer host; this does not rewrite frozen first-product provenance."
+  },
+  "claim_boundary": {
+    "accepted": [
+      "exact preserved android-ndk-custom r27d Android/aarch64 host asset",
+      "installed NDK tree identity against the preserved release archive",
+      "exact producer workflow run, job, commit, and fetched recipe files",
+      "ephemeral one-byte r27d lld PT_TLS alignment overlay",
+      "exact v3.14.5 android-env tool selection",
+      "C, shared-library, and C++ link and execution witnesses",
+      "Termux SDK, host Python, make, and relevant host-tool identities"
+    ],
+    "not_accepted": [
+      "source-rebuild reproducibility of android-ndk-custom",
+      "equivalence with the official Linux-host NDK binary set",
+      "mutation of the installed NDK or its original lld",
+      "A3 replay or any product artifact",
+      "A4 through A6",
+      "upgrade, downgrade, compatibility, or transition behavior"
+    ]
+  },
+  "decision_id": "stage3c-phase5-gate4a-a2b-termux-native-toolchain-authority-20260714",
+  "evidence": {
+    "external_audit": {
+      "checks": "46/46",
+      "path": "docs/evidence/STAGE3C_PHASE5_GATE4A_A2B_TERMUX_NATIVE_TOOLCHAIN_EXTERNAL_AUDIT.json",
+      "sha256": "5f44ce69e3fa8db5da661fbbc85cef13e58cf58ca3457497134526d9f9b2fc13"
+    },
+    "result_archives": {
+      "census": "9721c17248b181a934acdf28204df51b7fe3ac308239fed41265948f1ff5b45d",
+      "linker_diagnostic": "b9a0c998b4a3059be80f93f5808e547141937920ce64a08910113fb81e80f2d3",
+      "overlay_witness": "d71828ede5925d550000666f0a86906682bed8b9c3dca1d004bc4cda2cb1fb59",
+      "producer_binding": "bba0ea4c8df4115fee0c5a5c24c33cfa1114f5acf81a1644cfdeeb4810715a2e",
+      "provenance_diagnostic": "585fdca325a621eb580e8f56016d1e389ca58a2713fe08fa3a2873fafb38284c"
+    }
+  },
+  "producer": {
+    "asset": {
+      "md5": "ab87309abc53830892e0556b91438fa5",
+      "name": "android-ndk-r27d-aarch64-linux-android.tar.xz",
+      "sha256": "7aac94c85931c698ef13f8679c3472d3d6c7a4566e4c8bff112be91aff527bd7",
+      "size": 156427268
+    },
+    "host_class": "termux-native-android-bionic-aarch64",
+    "installed_root": "/home/oai/opt/android-ndk-r27d",
+    "ndk_revision": "27.3.13750724",
+    "prebuilt_host": "linux-arm64",
+    "workflow": {
+      "commit": "63b097b4db9b1d2ab445d6637eab16718f6c513b",
+      "job_id": 86867844060,
+      "run_id": 29265009312
+    }
+  },
+  "repository_binding": {
+    "branch": "agent/phase5-gate4-second-product-authority",
+    "pre_decision_head": "33d86c97f630a780e7d9c61421e0c2ba57b0ad6a",
+    "pre_decision_tree": "f4ad419e9f9476355dd80a663b5e010149de51ba"
+  },
+  "schema_version": 1,
+  "status": "accepted",
+  "toolchain_overlay": {
+    "ephemeral": true,
+    "original_lld_sha256": "cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b",
+    "original_ndk_mutated": false,
+    "patch": {
+      "after": 64,
+      "before": 8,
+      "offset": 392,
+      "semantic": "ELF64 PT_TLS p_align"
+    },
+    "patched_lld_sha256": "eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09"
+  }
+}

@@ -2,9 +2,9 @@
 
 > **Status:** Current handoff context
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 3D
-> **Active boundary:** Gate 4 second-product authority acquisition — CPython 3.14.5 A2a remote inputs accepted; A2b Linux-workstation toolchain witness pending
+> **Active boundary:** Gate 4 second-product authority acquisition — A2 complete; A3 clean replay ready
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
-> **Host build environment:** Separate Linux workstation
+> **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6
 
 ## 1. Project identity
@@ -72,7 +72,7 @@ Stage 2    native bootstrap/workflow architecture       FROZEN
 Stage 3-A  runtime closure and host-data boundaries     FROZEN
 Stage 3-B  reproducible producer/product promotion      FROZEN
 Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
-Gate 4A    second-product authority acquisition         ACTIVE — A2a accepted, A2b pending
+Gate 4A    second-product authority acquisition         ACTIVE — A2 complete, A3 ready
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -241,10 +241,10 @@ The acquisition sequence is:
 
 ```text
 A1  selection and repository design          DESIGN FROZEN
-A2  exact input and toolchain capture         PARTIAL
+A2  exact input and toolchain capture         FROZEN PASS
   A2a immutable remote inputs                 FROZEN PASS — 81/81 external audit
-  A2b Linux-workstation toolchain witness     pending
-A3  clean upstream Android replay             pending
+  A2b Termux-native binary toolchain          FROZEN PASS — 46/46 combined audit
+A3  clean upstream Android replay             READY — not started
 A4  three-artifact materialization            pending
 A5  standalone Termux validation              pending
 A6  independent archive audit and freeze      pending
@@ -265,6 +265,18 @@ external audit
 ```
 
 The original collector's 44/49 FAIL is preserved. Its five failures were caused by comparing an older lock `archive` object directly against a captured inventory that added valid safety fields. Independent audit verified every legacy identity/inventory field exactly and required the new safety fields separately. A2a is accepted without claiming A2b or any product artifact.
+
+### Accepted A2b scoped toolchain authority
+
+```text
+asset sha256    7aac94c85931c698ef13f8679c3472d3d6c7a4566e4c8bff112be91aff527bd7
+producer commit 63b097b4db9b1d2ab445d6637eab16718f6c513b
+original lld    cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b
+overlay lld     eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09
+combined audit  46/46 PASS
+```
+
+A repository authority decision accepts the exact preserved Android/aarch64 custom-r27d binary asset and an ephemeral `PT_TLS.p_align` overlay for the Gate 4A second-product producer. The original NDK remains unchanged. This scoped exception does not alter the frozen first-product workstation provenance or claim source-rebuild reproducibility for the custom NDK.
 
 The authority must ultimately contain:
 

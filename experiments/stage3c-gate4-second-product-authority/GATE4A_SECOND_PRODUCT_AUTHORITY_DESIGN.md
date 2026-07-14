@@ -79,8 +79,8 @@ Every dependency asset, including apparently unchanged releases, must be freshly
 
 ```text
 A1  selection and repository design          DESIGN FROZEN
-A2  exact input and toolchain capture         pending
-A3  clean upstream Android replay             pending
+A2  exact input and toolchain capture         FROZEN PASS
+A3  clean upstream Android replay             READY — not started
 A4  three-artifact materialization            pending
 A5  standalone Termux validation              pending
 A6  independent archive audit and freeze      pending
@@ -112,7 +112,7 @@ root result-index      5d87e7727aef99b793ac8ddacf5e9d77f96701caf2377094013753edc
 external audit         81/81 PASS
 ```
 
-The collector's original 44/49 FAIL is retained and classified as a schema-comparison false negative. A2 remains pending until the separate Linux-workstation NDK binary/path and host-tool witness (A2b) is captured. No product archive is claimed by A2a.
+The A2a collector's original 44/49 FAIL is retained and classified as a schema-comparison false negative. A scoped authority decision accepts A2b through the exact preserved custom-r27d Android/aarch64 binary asset and ephemeral linker overlay. A2 is complete. No product archive is claimed by A2.
 
 ### A3 — upstream replay
 
@@ -198,3 +198,7 @@ experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authori
 A Gate 4A design PASS proves only that the repository selected a genuine v3.14.5 source-native producer input and froze a six-stage contract for acquiring a second authority.
 
 It does not prove a second-product archive, manifest, product lock, target behavior, compatibility, upgrade, downgrade, migration, or transition recovery.
+
+## Scoped A2b producer-host exception
+
+The original workstation topology remains historical design authority and the frozen first-product provenance is unchanged. For Gate 4A second-product acquisition only, A2b through A4 may execute on the accepted Termux-native producer host. The authority is binary-defined and does not claim custom-NDK source rebuild reproducibility. See `gate4a-a2b-termux-native-toolchain-authority.json`.

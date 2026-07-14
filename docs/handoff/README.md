@@ -42,7 +42,7 @@ Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
 Gate 3D final uninstall design                       FROZEN 108/108, 44 scenarios
 Gate 3D final uninstall target                       FROZEN 44/44 + 138/138 + 37/37
 Gate 4 upgrade/downgrade                             ACTIVE — second product authority/design pending
-Gate 4A authority acquisition                          DESIGN FROZEN — 3.14.5 input capture pending
+Gate 4A authority acquisition                          ACTIVE — A2 complete; A3 clean replay ready
 ```
 
 ## Frozen Gate 3B identity
@@ -95,7 +95,7 @@ Gate 3D accepts complete addon teardown, final runtime-base uninstall, exact reg
 
 ## Active Gate 4 boundary
 
-Gate 4A selected CPython 3.14.5 (`v3.14.5`, `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. Exact source/producer/dependency/toolchain capture is next, followed by clean replay, three-artifact materialization, standalone Termux validation, and independent freeze.
+Gate 4A selected CPython 3.14.5 (`v3.14.5`, `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. A2 exact source, dependency, and scoped Termux-native exact-binary toolchain capture is frozen. A3 clean replay is next, followed by three-artifact materialization, standalone Termux validation, and independent freeze.
 
 No second-product artifact authority is frozen. No upgrade/downgrade matrix or target claim is frozen. A synthetic version label, edited copy of the first product, or official reference package used directly as project authority is not acceptable.
 

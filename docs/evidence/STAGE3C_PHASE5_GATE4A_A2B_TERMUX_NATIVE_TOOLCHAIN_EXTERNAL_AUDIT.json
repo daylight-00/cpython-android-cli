@@ -1,0 +1,175 @@
+{
+  "acceptance": {
+    "a2_exact_input_and_toolchain_capture": "complete",
+    "a2a_remote_inputs": "accepted",
+    "a2b_termux_native_binary_toolchain": "accepted",
+    "a3_clean_replay": "ready-not-started"
+  },
+  "check_count": 46,
+  "checks": {
+    "all_repository_bindings_exact": true,
+    "binding_archive_present": true,
+    "binding_archive_sha256": true,
+    "binding_asset_exact": true,
+    "binding_binary_candidate": true,
+    "binding_capture_canonical": true,
+    "binding_index_canonical": true,
+    "binding_index_exact": true,
+    "binding_limitations_explicit": true,
+    "binding_pass": true,
+    "binding_producer_exact": true,
+    "census_archive_present": true,
+    "census_archive_sha256": true,
+    "census_capture_canonical": true,
+    "census_failure_preserved": true,
+    "census_index_canonical": true,
+    "census_index_exact": true,
+    "census_r27d_link_failure_exact": true,
+    "diagnostic_archive_present": true,
+    "diagnostic_archive_sha256": true,
+    "diagnostic_capture_canonical": true,
+    "diagnostic_index_canonical": true,
+    "diagnostic_index_exact": true,
+    "diagnostic_pass": true,
+    "diagnostic_root_cause": true,
+    "preservation_pass": true,
+    "preservation_remote_exact": true,
+    "provenance_archive_present": true,
+    "provenance_archive_sha256": true,
+    "provenance_capture_canonical": true,
+    "provenance_failure_preserved": true,
+    "provenance_index_canonical": true,
+    "provenance_index_exact": true,
+    "provenance_installed_tree_exact": true,
+    "remote_main_unchanged": true,
+    "witness_archive_present": true,
+    "witness_archive_sha256": true,
+    "witness_capture_canonical": true,
+    "witness_index_canonical": true,
+    "witness_index_exact": true,
+    "witness_mechanical_operations": true,
+    "witness_original_lld": true,
+    "witness_pass": true,
+    "witness_patched_lld": true,
+    "witness_repository_binding": true,
+    "witness_single_byte": true
+  },
+  "claim_boundary": "Accepts a scoped exact-binary Termux-native producer toolchain for Gate 4A A2b only. It does not claim source-rebuild provenance for android-ndk-custom, product artifacts, A3 execution, A4-A6, or upgrade/downgrade behavior.",
+  "details": {
+    "archives": {
+      "binding": {
+        "index": {
+          "actual": 79,
+          "declared": 79,
+          "entries": 79,
+          "exact": true,
+          "problems": [],
+          "sha256": "eed3db16a8c5cfc1b94f6a3b0de90093cf1faa7ea7640a24411dd0c51273888c"
+        },
+        "members": {
+          "directory": 11,
+          "other": 0,
+          "regular": 80
+        },
+        "name": "20260714-gate4a-termux-native-r27d-producer-binding-results-20260714T010035Z.tar.zst",
+        "root": "20260714-gate4a-termux-native-r27d-producer-binding-20260714T010035Z",
+        "sha256": "bba0ea4c8df4115fee0c5a5c24c33cfa1114f5acf81a1644cfdeeb4810715a2e",
+        "size": 48051
+      },
+      "census": {
+        "index": {
+          "actual": 415,
+          "declared": 415,
+          "entries": 415,
+          "exact": true,
+          "problems": [],
+          "sha256": "22fc2e495b4fbf71d771ee0f105aad4e6caf44d4a741ef17e6c2deaa03cbf837"
+        },
+        "members": {
+          "directory": 9,
+          "other": 0,
+          "regular": 416
+        },
+        "name": "20260714-gate4a-termux-native-toolchain-census-results-20260713T234254Z.tar.zst",
+        "root": "20260714-gate4a-termux-native-toolchain-census-20260713T234254Z",
+        "sha256": "9721c17248b181a934acdf28204df51b7fe3ac308239fed41265948f1ff5b45d",
+        "size": 496575
+      },
+      "diagnostic": {
+        "index": {
+          "actual": 120,
+          "declared": 120,
+          "entries": 120,
+          "exact": true,
+          "problems": [],
+          "sha256": "bbbc07a8b8e1dbd5ab35ea81df08026fd4f84c1fadfd7897fee80f693a4dc284"
+        },
+        "members": {
+          "directory": 11,
+          "other": 0,
+          "regular": 121
+        },
+        "name": "20260714-gate4a-termux-native-r27d-linker-diagnostic-results-20260713T235552Z.tar.zst",
+        "root": "20260714-gate4a-termux-native-r27d-linker-diagnostic-20260713T235552Z",
+        "sha256": "b9a0c998b4a3059be80f93f5808e547141937920ce64a08910113fb81e80f2d3",
+        "size": 351891
+      },
+      "provenance": {
+        "index": {
+          "actual": 48,
+          "declared": 48,
+          "entries": 48,
+          "exact": true,
+          "problems": [],
+          "sha256": "809828d4e6ab09efc5fec322cd0e929955737b7cd98972bd598a00f245aef118"
+        },
+        "members": {
+          "directory": 10,
+          "other": 0,
+          "regular": 49
+        },
+        "name": "20260714-gate4a-termux-native-r27d-provenance-results-20260714T002502Z.tar.zst",
+        "root": "20260714-gate4a-termux-native-r27d-provenance-20260714T002502Z",
+        "sha256": "585fdca325a621eb580e8f56016d1e389ca58a2713fe08fa3a2873fafb38284c",
+        "size": 1314826
+      },
+      "witness": {
+        "index": {
+          "actual": 103,
+          "declared": 103,
+          "entries": 103,
+          "exact": true,
+          "problems": [],
+          "sha256": "d88def781a3207c0e66e695bab87c485e2c7368ca7823f5c473b12de7817fd87"
+        },
+        "members": {
+          "directory": 7,
+          "other": 0,
+          "regular": 104
+        },
+        "name": "20260714-gate4a-termux-native-r27d-overlay-witness-results-20260714T001052Z.tar.zst",
+        "root": "20260714-gate4a-termux-native-r27d-overlay-witness-20260714T001052Z",
+        "sha256": "d71828ede5925d550000666f0a86906682bed8b9c3dca1d004bc4cda2cb1fb59",
+        "size": 560323
+      }
+    },
+    "authority": {
+      "asset_sha256": "7aac94c85931c698ef13f8679c3472d3d6c7a4566e4c8bff112be91aff527bd7",
+      "asset_size": 156427268,
+      "original_lld_sha256": "cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b",
+      "patch_after": 64,
+      "patch_before": 8,
+      "patch_offset": 392,
+      "patched_lld_sha256": "eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09",
+      "producer_commit": "63b097b4db9b1d2ab445d6637eab16718f6c513b",
+      "producer_job": 86867844060,
+      "producer_run": 29265009312,
+      "remote": "gdrive:HW-T/cpython-android-cli/authorities/gate4a/toolchains/android-ndk-custom/r27/android-aarch64"
+    }
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 46,
+  "schema_version": 1,
+  "verification_kind": "external-gate4a-a2b-termux-native-toolchain-evidence-audit"
+}
