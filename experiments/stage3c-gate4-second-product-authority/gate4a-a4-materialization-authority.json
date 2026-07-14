@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "decision_kind": "gate4a-a4-materialization-authority-freeze",
+  "status": "frozen-pass",
+  "original_result": {
+    "sha256": "7a2b15403f216fcd391e6ee3ef46e678a5ae9f1b010180c26d7785042b86e571",
+    "size": 17542978,
+    "materializer": "25/25 PASS",
+    "archived_verifier": "26/27 FAIL",
+    "archived_failure": "archive_payload_matches_manifests"
+  },
+  "adjudication": {
+    "result_sha256": "c4dcef52b86d181badd0775b11c2bc2d3f7b29b142c81e33811a02fc927632ce",
+    "result_size": 2180,
+    "checks": "26/26 PASS",
+    "classification": "isolated verifier false negative"
+  },
+  "accepted": [
+    "three exact and disjoint artifact archives",
+    "three exact manifests and manifest index",
+    "product lock and ownership registry template",
+    "payload-to-manifest identity",
+    "complete reconstruction of the selected replay prefix",
+    "original NDK and repository non-mutation"
+  ],
+  "not_accepted": [
+    "A5 standalone Termux behavior",
+    "A6 independent product freeze",
+    "upgrade or downgrade behavior",
+    "mixed-version compatibility",
+    "transition policy"
+  ],
+  "next_state": {
+    "A4": "FROZEN PASS",
+    "A5": "READY - not started",
+    "A6": "pending"
+  }
+}

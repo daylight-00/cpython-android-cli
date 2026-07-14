@@ -6,13 +6,13 @@ This directory contains the authority-acquisition work that must finish before a
 
 ```text
 A1 selection and design          DESIGN FROZEN
-A2 input capture                   FROZEN PASS
-  A2a remote inputs                FROZEN PASS — 81/81 external audit
-  A2b Termux-native toolchain      FROZEN PASS — 46/46 combined audit
-A3 upstream replay                 READY — not started
-A4 three-artifact materialize   pending
-A5 standalone Termux validate   pending
-A6 independent freeze           pending
+A2 input capture                 FROZEN PASS
+  A2a remote inputs              FROZEN PASS — 81/81 external audit
+  A2b Termux-native toolchain    FROZEN PASS — 46/46 combined audit
+A3 upstream replay               FROZEN PASS
+A4 three-artifact materialize    FROZEN PASS — static adjudication 26/26
+A5 standalone Termux validate    READY — not started
+A6 independent freeze            pending
 ```
 
 Selected second product:
@@ -30,7 +30,14 @@ Run the repository design verifier:
 bash experiments/stage3c-gate4-second-product-authority/run-gate4a-second-product-authority-design.sh
 ```
 
-A design or A2 PASS is not a second-product or Gate 4 target PASS. A2a source/producer/dependency remote inputs and the scoped A2b Termux-native exact-binary toolchain authority are accepted. The next operation is A3 clean replay on the accepted producer host.
+A4 froze the exact runtime-base, development-addon, and test-addon materialization identities after an independent static adjudication isolated the archived `archive_payload_matches_manifests` failure as a verifier false negative. The next operation is A5 standalone Termux validation. A6 remains required before the second product itself is frozen, and all upgrade/downgrade or mixed-version work remains closed.
+
+A4 authority record:
+
+```text
+docs/evidence/STAGE3C_PHASE5_GATE4A_A4_MATERIALIZATION_RESULT.md
+experiments/stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json
+```
 
 Audit an A2a result archive:
 
