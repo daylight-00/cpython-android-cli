@@ -1,6 +1,6 @@
 # Phase 5 Gate 4 Upgrade and Downgrade Handoff — initiated 2026-07-13
 
-> **Status:** ACTIVE — Gate 4C implemented; Gate 4D bidirectional Termux validation ready
+> **Status:** FROZEN — Gate 4E independent transition freeze complete
 > **Frozen inputs:** CPython 3.14.6 and CPython 3.14.5 complete three-artifact authorities
 > **Target:** Termux on Android arm64
 
@@ -30,8 +30,8 @@ Both products independently passed standalone Termux lifecycle validation. The s
 Gate 4A  second-product authority                 FROZEN PASS
 Gate 4B  transition contract design               DESIGN FROZEN — 66 scenarios
 Gate 4C  transition coordinator implementation    IMPLEMENTED — 69/69
-Gate 4D  bidirectional Termux target validation   READY — not started
-Gate 4E  independent transition freeze            pending
+Gate 4D  bidirectional Termux target validation   ACCEPTED — 66/66
+Gate 4E  independent transition freeze            FROZEN PASS
 ```
 
 ## Frozen transition contract
@@ -77,42 +77,19 @@ The coordinator validates exact product locks, manifests, archives, artifact IDs
 
 Target archives are staged only after rejecting unsafe or duplicate member names, hardlinks and special files, missing members, member-type mismatches, symlink-target mismatches, and staged-payload identity mismatches.
 
-## Immediate task: Gate 4D
+## Frozen Gate 4D and Gate 4E authority
 
-Prepare one Termux wrapper that consumes both exact frozen product authorities and executes the 66-scenario matrix or an explicitly justified exact implementation mapping of it.
-
-Required target evidence includes:
+Gate 4D preserves two target archives. The first complete run is an immutable FAIL record with 55 unaffected PASS scenarios and 11 classified harness false negatives. The second archive independently verifies the first archive, reruns H01–H08 with corrected probes, replays C11–C12 from raw state evidence, derives A04, and produces a final 66/66 adjudication.
 
 ```text
-both directions across all four artifact topologies
-source and target product-lock/manifest/archive verification
-before/after registry and complete owned-payload inventory
-unowned descendant and collision evidence
-PREPARED, late APPLYING, and COMMITTED recovery
-first and second recovery results
-lock exclusion
-CLI and subprocess identity
-native closure and extension imports
-HTTPS trust and timezone boundaries
-venv and uv explicit-interpreter workflow
-whole-prefix relocation
-complete raw stdout/stderr and real return codes
-safe single-root .tar.zst and exact self-excluding result index
-explicit claim boundary
+v1 archive sha256  ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c
+v1 self-index      1223/1223 exact
+v2 archive sha256  98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2
+v2 self-index      529/529 exact
+final scenarios    66/66 PASS
 ```
 
-No real upgrade, downgrade, post-transition runtime behavior, target recovery behavior, mixed-version compatibility, migration, or final transition authority is frozen yet.
-
-## Authority records
-
-```text
-experiments/stage3c-gate4-second-product-authority/gate4a-a6-second-product-freeze-authority.json
-experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
-experiments/stage3c-gate4-transition/gate4b-transition-design-authority.json
-experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md
-experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.json
-docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
-```
+Accepted scope includes both directions, all four frozen topologies, exact-source preflight, collision and lock rejection, PREPARED/APPLYING rollback, COMMITTED finalization, second-recovery idempotence, exact target registry/payload, CLI, extensions, HTTPS/base runtime, timezone, venv, uv, and relocation. Third-product compatibility, registry-schema migration, arbitrary mixed-product repair, and consumer integration remain unaccepted.
 
 ## Operating contract
 

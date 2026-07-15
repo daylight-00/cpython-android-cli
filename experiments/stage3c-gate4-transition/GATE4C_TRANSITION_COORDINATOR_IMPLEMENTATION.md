@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 4C: Transition Coordinator Implementation
 
-> **Status:** IMPLEMENTED — repository verification 69/69 PASS; Gate 4D target evidence pending
+> **Status:** IMPLEMENTED — repository verification 69/69 PASS; target authority frozen through Gate 4E
 > **Products:** CPython 3.14.5 ↔ CPython 3.14.6
 > **Target topology:** preserve the currently installed runtime/addon set
 > **Frozen design:** Gate 4B, 66 scenarios
@@ -155,12 +155,12 @@ Result:
 Gate 4A  second-product authority                 FROZEN
 Gate 4B  transition contract design               DESIGN FROZEN
 Gate 4C  transition coordinator implementation    IMPLEMENTED — 69/69
-Gate 4D  bidirectional Termux target validation   READY — not started
-Gate 4E  independent transition freeze            pending
+Gate 4D  bidirectional Termux target validation   ACCEPTED — 66/66
+Gate 4E  independent transition freeze            FROZEN PASS
 ```
 
 ## Claim boundary
 
 Gate 4C proves that the repository contains an implementation conforming to the frozen design under isolated synthetic transaction tests while preserving the frozen engine sources and registry schema.
 
-It does not prove CPython 3.14.5 → 3.14.6 or 3.14.6 → 3.14.5 target behavior, native closure, HTTPS, timezone, subprocess, venv, uv, relocation, target crash recovery, mixed-version compatibility, migration, or Gate 4 transition acceptance. Those claims require Gate 4D Termux evidence and Gate 4E independent freeze.
+Gate 4C by itself does not prove target behavior. Those claims are supplied separately by the frozen Gate 4D Termux evidence and Gate 4E independent freeze. Third-product compatibility, registry-schema migration, arbitrary mixed-version repair, and consumer integration remain unaccepted.

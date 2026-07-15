@@ -1,0 +1,79 @@
+{
+  "baseline": {
+    "archive_sha256": "ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c",
+    "archive_size": 493427,
+    "failed_ids": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "C11",
+      "C12",
+      "A04"
+    ],
+    "pass_count": 55,
+    "scenario_count": 66,
+    "self_index_count": 1223
+  },
+  "claim_boundary": "Exact two-product, four-topology authority only; no third product, registry migration, arbitrary mixed-product repair, or consumer integration.",
+  "corrective": {
+    "adjudicated_results_sha256": "78ea97fbd902c7dc4bf58f9acdc43e62fb4b2a5a66597066f01f7e09f02ba662",
+    "adjudicated_summary_sha256": "c9637d13587fa7fe0a3e418ea2003dc33d54b21c04c0f20c7531dd03a01a8c6b",
+    "archive_sha256": "98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2",
+    "archive_size": 720554,
+    "focused_pass_count": 8,
+    "focused_scenario_count": 8,
+    "focused_summary_sha256": "7e1f2cfdc8cb57145a13d8ce6f4e6b1cbd62c91b8467b807fee7ea30d183028a",
+    "independent_verification_sha256": "20524377e6cac5c942c71b72b37d869672988c0ad6480e4c2632649c53482ed0",
+    "self_index_count": 529
+  },
+  "decision_kind": "stage3c-phase5-gate4d-bidirectional-termux-target-validation",
+  "final": {
+    "disposition_counts": {
+      "baseline-evidence-replay": 2,
+      "baseline-pass-unchanged": 55,
+      "derived-audit-after-corrections": 1,
+      "focused-corrective-retest": 8
+    },
+    "failed_scenarios": [],
+    "group_counts": {
+      "audit": {
+        "count": 6,
+        "pass": 6
+      },
+      "collision": {
+        "count": 12,
+        "pass": 12
+      },
+      "happy": {
+        "count": 8,
+        "pass": 8
+      },
+      "locking": {
+        "count": 2,
+        "pass": 2
+      },
+      "preflight": {
+        "count": 14,
+        "pass": 14
+      },
+      "recovery": {
+        "count": 24,
+        "pass": 24
+      }
+    },
+    "pass_count": 66,
+    "scenario_count": 66
+  },
+  "repository": {
+    "branch": "agent/phase5-gate4-second-product-authority",
+    "head": "0f3103efe5b07a992b339e8b1dff6aa02b8d65a4",
+    "tree": "dcfa04898268528045ecbd230cffd48021dbb3b3"
+  },
+  "schema_version": 1,
+  "status": "accepted-66-of-66"
+}

@@ -44,7 +44,7 @@ experiment = text("experiments/stage3c-installed-runtime-lifecycle/README.md")
 
 checks: dict[str, bool] = {
     "readme_gate3d_frozen": "frozen through Gate 3D" in readme,
-    "readme_gate4c_implemented": "Gate 4C implemented; Gate 4D target validation ready" in readme,
+    "readme_gate4_frozen": "Gate 4E independent freeze complete" in readme,
     "readme_current_context_path": "docs/PROJECT_CONTEXT_STAGE3C.md" in readme,
     "readme_drive_tar_zst_exchange": "Google Drive, normally one .tar.zst per direction" in readme,
     "readme_no_stage3c_next": "Stage 3-C  distribution archive/installation contract  next" not in readme,
@@ -52,13 +52,13 @@ checks: dict[str, bool] = {
     "historical_context_marked": "HISTORICAL SNAPSHOT" in historical,
     "historical_context_points_current": "PROJECT_CONTEXT_STAGE3C.md" in historical,
     "current_context_status": "> **Status:** Current handoff context" in current,
-    "current_context_gate4_active": "Gate 4D bidirectional Termux validation" in current,
+    "current_context_gate4_frozen": "Gate 4D target evidence and Gate 4E freeze" in current,
     "current_context_authority_hierarchy": "complete independently inspected Termux target evidence" in current,
     "current_context_three_artifacts": all(x in current for x in ("runtime-base", "development-addon", "test-addon")),
     "current_context_preserve_report": "preserve-and-report" in current,
     "current_context_recovery_rcs": all(x in current for x in ("rc 90", "rc 93", "rc 92")),
     "current_context_transition_design_first": "Gate 4B has frozen those choices" in current,
-    "current_context_no_gate4_target_claim": "No upgrade, downgrade, compatibility, migration, post-transition runtime behavior, or Gate 4 transition target claim" in current,
+    "current_context_gate4_claim_boundary": "This does not accept a third product, schema migration, arbitrary mixed-version state, or Stage 3-D consumer integration" in current,
     "current_context_patch_bundle_policy": all(x in current for x in ("patch", "partial bundle", "full bundle")),
     "current_context_single_archive_policy": "one `.tar.zst` per direction" in current,
     "current_context_authorship_policy": "daylight-00 <hwjang00@snu.ac.kr>" in current,
@@ -103,6 +103,11 @@ checks["all_current_reading_paths_exist"] = all(
         "experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md",
         "docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md",
         "experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.json",
+        "experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md",
+        "experiments/stage3c-gate4-transition/gate4d-transition-target-authority.json",
+        "experiments/stage3c-gate4-transition/gate4e-transition-freeze-authority.json",
+        "docs/evidence/STAGE3C_PHASE5_GATE4D_BIDIRECTIONAL_TERMUX_VALIDATION_RESULT.md",
+        "docs/evidence/STAGE3C_PHASE5_GATE4E_INDEPENDENT_TRANSITION_FREEZE.md",
     )
 )
 checks["old_context_not_called_current_in_readme"] = (
@@ -145,7 +150,7 @@ result = {
     },
     "claim_boundary": (
         "This verifier checks repository documentation and workflow alignment only. "
-        "It does not implement or prove any Gate 4 transition target behavior."
+        "It verifies documentation alignment for the frozen Gate 4 authority; target behavior remains proved only by the exact external archives."
     ),
 }
 print(json.dumps(result, indent=2, sort_keys=True))

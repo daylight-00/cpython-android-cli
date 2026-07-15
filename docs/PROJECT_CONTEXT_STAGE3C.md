@@ -1,8 +1,8 @@
 # CPython Android CLI + uv: Current Stage 3-C Project Context
 
 > **Status:** Current handoff context
-> **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, Stage 3-C Phase 5 through Gate 3D, and Gate 4A second-product authority
-> **Active boundary:** Gate 4D bidirectional Termux validation — Gate 4C implementation complete
+> **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 4E
+> **Active boundary:** none — Gate 4 cross-version transition is frozen; Stage 3-D consumer integration remains deferred
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6
@@ -75,7 +75,8 @@ Stage 3-C  archive/install/recovery/ownership contract  FROZEN through Gate 3D
 Gate 4A    second-product authority acquisition         FROZEN — A1-A6 complete
 Gate 4B    cross-version transition contract            DESIGN FROZEN — 66 scenarios
 Gate 4C    transition coordinator implementation        IMPLEMENTED — 69/69
-Gate 4D    bidirectional Termux target validation       READY — not started
+Gate 4D    bidirectional Termux target validation       ACCEPTED — 66/66
+Gate 4E    independent transition freeze                FROZEN PASS
 Stage 3-D  consumer integration                         DEFERRED
 ```
 
@@ -275,7 +276,8 @@ Gate 4B rejects direct cross-product artifact installation. A dedicated whole-pr
 Gate 4B design verifier  repository-only; no transition execution
 scenario matrix           66
 Gate 4C verifier          69/69 PASS
-next gate                 Gate 4D bidirectional Termux validation
+Gate 4D adjudication      66/66 PASS
+Gate 4E verifier          independent archive and repository freeze PASS
 ```
 
 Design authority:
@@ -334,9 +336,32 @@ A synthetic version label, manually edited first-product copy, or the official P
 
 Gate 4B has frozen those choices as a dedicated whole-product, topology-preserving transition with exact-source preflight, zero owner transfers, transactional replace/remove/create planning, schema-1 registry replacement, and bidirectional recovery. Ordinary artifact install remains same-product only.
 
-Gate 4C now implements the frozen coordinator contract and passes 69/69 repository checks while preserving the frozen engine sources and schema-1 registry. No upgrade, downgrade, compatibility, migration, post-transition runtime behavior, or Gate 4 transition target claim is currently frozen. The next work is Gate 4D bidirectional Termux execution and evidence acquisition.
+Gate 4C implements the frozen coordinator contract and passes 69/69 repository checks while preserving the frozen engine sources and schema-1 registry. Gate 4D accepted both directions across all four frozen topologies: 55 unaffected v1 scenarios remain authoritative, H01–H08 were rerun with corrected timezone and development-addon probes, C11–C12 were accepted by exact before/after evidence replay, and A04 was re-derived. Gate 4E freezes the resulting 66/66 authority. This does not accept a third product, schema migration, arbitrary mixed-version state, or Stage 3-D consumer integration.
 
-## 11. Repository and transport control plane
+## 11. Gate 4D target evidence and Gate 4E freeze
+
+Gate 4D is accepted by two immutable target archives rather than by replacing the initial failure record.
+
+```text
+v1 full target run
+  archive sha256       ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c
+  result size          493427
+  self-index           1223/1223 exact
+  unaffected PASS      55
+  classified harness false negatives  H01-H08, C11-C12, A04
+
+v2 corrective focused retest
+  archive sha256       98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2
+  result size          720554
+  self-index           529/529 exact
+  focused happy paths  8/8 PASS
+  final adjudication   66/66 PASS
+  independent audit   16/16 PASS
+```
+
+The corrected timezone probe uses explicit `tzdata` through uv with an empty system TZ path. Development-addon acceptance compiles and imports a native extension against the installed target. C11 and C12 are accepted from their preserved before/after state evidence because the original expectation incorrectly required a collision path in source-only removal cases. A04 is derived only after the corrected happy and collision groups pass. Gate 4E freezes this provenance and the exact repository coordinator. The v1 FAIL archive remains part of the authority.
+
+## 12. Repository and transport control plane
 
 Repository source, scripts, documentation, and experiment history live in Git. Target-generated evidence is not committed wholesale.
 
@@ -374,7 +399,7 @@ OpenAI/Codex/agent metadata
   correct only when explicitly required, and as surgically as topology permits
 ```
 
-## 12. Non-reopening rule
+## 13. Non-reopening rule
 
 Gate 4 consumes the first-product authorities as frozen inputs. It must not implicitly reopen:
 
@@ -390,7 +415,7 @@ accepted recovery behavior
 
 A policy-changing intervention requires its own explicit authority decision and evidence gate.
 
-## 13. Current reading path
+## 14. Current reading path
 
 ```text
 README.md

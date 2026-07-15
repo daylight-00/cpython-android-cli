@@ -342,7 +342,7 @@ experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptanc
 
 ```text
 status
-  ACTIVE — Gate 4C implemented; Gate 4D target validation ready
+  FROZEN — Gate 4E independent transition freeze complete
 
 Gate 4A second-product authority
   FROZEN PASS — CPython 3.14.5 / android24 / aarch64
@@ -354,10 +354,10 @@ Gate 4C coordinator
   IMPLEMENTED — repository verifier 69/69 PASS
 
 Gate 4D target validation
-  READY — not started
+  ACCEPTED — 66/66
 
 Gate 4E independent freeze
-  pending
+  FROZEN PASS
 ```
 
 ### Gate 4A frozen second product
@@ -445,31 +445,18 @@ experiments/stage3c-gate4-transition/gate4c-transition-implementation-authority.
 docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
 ```
 
-## Immediate next boundary
-
-Gate 4D must execute both directions on Termux across all four frozen artifact topologies, including happy paths, preflight rejection, collision handling, lock exclusion, and PREPARED/APPLYING/COMMITTED recovery. It must collect post-transition CLI, native closure, HTTPS, timezone, subprocess, venv, uv, relocation, registry, payload, residual, journal, and second-recovery evidence.
-
-No Gate 4 target claim exists until Gate 4D evidence is independently accepted and Gate 4E freezes it.
-
-## Evidence paths
+### Gate 4D target validation and Gate 4E freeze
 
 ```text
-docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_BASELINE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_INSTALLED_RUNTIME_RELOCATION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3A_REINSTALL_REPAIR_DIAGNOSTIC_RESULT.md
-docs/evidence/STAGE3C_PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3A_PRODUCT_ACCEPTANCE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3B_PRESERVATION_ACCEPTANCE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_DESIGN_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_TARGET_IMPLEMENTATION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_ARCHIVE_INTEGRITY_CORRECTION.md
-docs/evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
-docs/evidence/STAGE3C_PHASE5_GATE4A_A6_SECOND_PRODUCT_FREEZE_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE4B_TRANSITION_CONTRACT_DESIGN_RESULT.md
-docs/evidence/STAGE3C_PHASE5_GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION_RESULT.md
+v1 target archive  ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c  493427  1223/1223
+v2 corrective     98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2  720554  529/529
+focused retest    8/8 PASS
+final matrix      66/66 PASS
+independent audit 16/16 PASS
 ```
+
+The v1 archive remains immutable. H01-H08 were corrected by focused target retest, C11-C12 by exact baseline evidence replay, and A04 by derivation after corrected group acceptance.
+
+## Immediate next boundary
+
+Gate 4 is closed. Stage 3-D consumer integration remains deferred and must begin with its own scope and authority decision.

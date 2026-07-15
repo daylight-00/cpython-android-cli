@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Gate 4B: Cross-Version Transition Contract Design
 
-> **Status:** DESIGN FROZEN — Gate 4C implementation complete; Gate 4D target evidence pending
+> **Status:** DESIGN FROZEN — implemented by Gate 4C and target-accepted through Gate 4E
 > **Products:** CPython 3.14.5 ↔ CPython 3.14.6
 > **Target:** Termux on Android arm64, API 24, NDK 27.3.13750724
 > **Scenario matrix:** 66 bidirectional scenarios
@@ -219,8 +219,8 @@ The eight happy paths cover both directions across all four artifact topologies.
 Gate 4A  second-product authority                 FROZEN
 Gate 4B  transition contract design               DESIGN FROZEN
 Gate 4C  transition coordinator implementation    IMPLEMENTED — 69/69
-Gate 4D  bidirectional Termux target validation   READY — not started
-Gate 4E  independent transition freeze            pending
+Gate 4D  bidirectional Termux target validation   ACCEPTED — 66/66
+Gate 4E  independent transition freeze            FROZEN PASS
 ```
 
 Gate 4C implements only this design and passes its repository verifier. A design change still requires a new authority decision rather than silent implementation drift.

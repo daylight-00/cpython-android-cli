@@ -163,7 +163,7 @@ def main():
  ck('context_gate4a',('CPython 3.14.5' in texts['context'] or 'CPython version  3.14.5' in texts['context']) and 'A1' in texts['context'] and 'A6' in texts['context'])
  ck('scope_gate4a','Gate 4A' in texts['scope'] and '3.14.5' in texts['scope'])
  ck('handoff_selection','## Frozen products' in texts['handoff'] and SECOND_HEAD in texts['handoff'])
- ck('handoff_no_target','No real upgrade, downgrade, post-transition runtime behavior, target recovery behavior' in texts['handoff'])
+ ck('handoff_no_target','Third-product compatibility, registry-schema migration, arbitrary mixed-product repair, and consumer integration remain unaccepted' in texts['handoff'])
  ck('ledger_design_entry','### Gate 4A frozen second product' in texts['ledger'] and 'FROZEN PASS — CPython 3.14.5' in texts['ledger'])
  ck('handoff_reading_path','GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md' in texts['handoff_readme'])
  ck('evidence_design_pass','DESIGN FROZEN' in texts['evidence'] and 'second-product artifact authority is not yet created' in texts['evidence'])

@@ -1,0 +1,33 @@
+{
+  "accepted": [
+    "bidirectional exact-product transition",
+    "four frozen artifact topologies",
+    "exact-source preflight",
+    "collision and lock rejection",
+    "PREPARED/APPLYING rollback",
+    "COMMITTED finalization",
+    "second-recovery idempotence",
+    "exact target registry and payload",
+    "post-transition runtime, extension, timezone, venv, uv, and relocation probes"
+  ],
+  "decision_kind": "stage3c-phase5-gate4e-independent-transition-freeze",
+  "inputs": {
+    "baseline_archive_sha256": "ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c",
+    "corrective_archive_sha256": "98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2",
+    "gate4b_matrix_sha256": "7e30fe98996781c86ea719d9fd8512f054a8dfeae5e1328e17264595d6abb55a",
+    "gate4c_authority_sha256": "b88758fb416ae37784259a9208ff6ac26bd32545c0b8eaccb3939d8e8149b76d",
+    "gate4d_authority_sha256": "09de93bb3fc106bb14af292d4446def396aa4c80fc33cbb40471ada2b52e52b5"
+  },
+  "next_state": {
+    "gate4": "FROZEN",
+    "stage3d": "DEFERRED"
+  },
+  "not_accepted": [
+    "third-product compatibility",
+    "registry-schema migration",
+    "arbitrary mixed-product repair",
+    "Stage 3-D consumer integration"
+  ],
+  "schema_version": 1,
+  "status": "frozen-pass"
+}

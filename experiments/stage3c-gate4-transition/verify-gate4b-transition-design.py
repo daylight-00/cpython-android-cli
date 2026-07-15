@@ -240,12 +240,12 @@ def main() -> int:
         "readme": root / "experiments/stage3c-gate4-transition/README.md",
     }
     texts = {name: path.read_text() for name, path in docs.items()}
-    ck("docs_root_state", "Gate 4C implemented; Gate 4D target validation ready" in texts["root"])
+    ck("docs_root_state", "Gate 4E independent freeze complete" in texts["root"])
     ck("docs_context_state", "Gate 4B    cross-version transition contract            DESIGN FROZEN — 66 scenarios" in texts["context"])
     ck("docs_scope_state", "Gate 4B   cross-version transition contract                       DESIGN FROZEN — 66 scenarios" in texts["scope"])
     ck("docs_lifecycle_state", "Gate 4C coordinator implemented" in texts["lifecycle"])
     ck("docs_gate4a_next", "experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md" in texts["gate4a"])
-    ck("docs_design_status", "DESIGN FROZEN — Gate 4C implementation complete; Gate 4D target evidence pending" in texts["design"])
+    ck("docs_design_status", "DESIGN FROZEN — implemented by Gate 4C and target-accepted through Gate 4E" in texts["design"])
     ck("docs_design_inventory", all(term in texts["design"] for term in ["union owned paths       2958", "replacement required    2728", "cross-artifact transfers    0"]))
     ck("docs_design_non_reopening", "does not modify the frozen Phase 4 engine files" in texts["design"] and "registry remains schema version 1" in texts["design"])
     ck("docs_design_66", "exactly 66 scenarios" in texts["design"])
