@@ -54,6 +54,37 @@ Gate 4 correction lineage
   v1 d7ba3e42af9ecefd89475f39c3e7d87e7d5265b0edbd59e42317526d84bdfc4d  45740 bytes  invalid
   v2 5f99ad5f61a6b57768e9631b8955cad8bd4d1bd68697f66ff787cba5f9e31072  58910 bytes  invalid
   v3 13ed73fdeaf5ea13339b2df70b69a4c79aa2920fb1d9207229fb64db828b283c  58525 bytes  accepted
+
+Gate 6 repository input
+  9d70ea1d3468ed02fa9684f61609c2cb5caf4ebc
+  fade17abba57b38f99c87368efc96b4e0aaa930a
+
+Gate 6-A read-only catalog census
+  result fa582b372b81feed68b76ee64bf304d364f9280b10a5569da6cb6fd9f9d43694
+  4883 bytes
+  53 safe members
+  48/48 exact index
+  Drive file 1DM9MSX42zXAcLFUQRanmKyGN0RTCGUc9
+  built-in current CPython 3.14 entries 0
+  custom linux-aarch64-none current entries 1
+  managed-only empty discovery expected-negative PASS
+
+Gate 6-B isolated managed install rehearsal
+  v1 a42d61f70537ea836c7b92d406864dffa77c37478782fda4fd2e6250128d36cd  2083 bytes  policy-preflight negative
+  v2 73ef934e3a2346546c79032a80a4a791ac55f4858a02100301afd33f9bc8fa03  5756 bytes  accepted
+  v2 35 safe members
+  v2 30/30 exact index
+  Drive file 1NUQHqlQZ5xsQBVJRCmrTCmnxmpwtouf_
+  isolated install/discovery/launch/venv PASS
+
+Gate 6-C isolated managed lifecycle
+  result a0e15ef45171af409df27fb2265bb7afed7c1631176ebe6e563be04725fd72d6
+  32769 bytes
+  39 safe members
+  34/34 exact index
+  Drive file 1l9tiuQgzwFHeRWPejen3rcHpfbF79Nd-
+  exact reinstall no-op and install-tree identity PASS
+  uninstall/list-empty/find-negative PASS
 ```
 
-Gate 5 freezes the exact system-Python consumer surface for both frozen products and all four topologies. Gate 6 managed-Python feasibility remains deferred and requires a separate authority decision.
+Gate 5 freezes the exact system-Python consumer surface for both frozen products and all four topologies. Gate 6 separately freezes bounded managed-Python feasibility for one exact CPython 3.14.5 runtime-only product using a custom local catalog and fully isolated paths. Production catalog distribution, persistent registration, automatic downloads, CPython 3.14.6, multi-version operation, and upgrade policy remain outside Stage 3-D authority.

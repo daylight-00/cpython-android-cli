@@ -58,9 +58,15 @@ This records collaboration/tooling lessons, not project acceptance history.
 - A state-transition verifier must validate the intended post-state; stale pre-state wording is not a valid invariant.
 - Ordinary append-only fast-forward repository transactions need exact base/content, focused repository checks, commit/push/readback, and clean post-state—not a target rerun or backup bundle.
 
-
 ## 2026-07-15 — Drive upload fallback discipline
 
 - Use the normal Google Drive connector raw-file upload as the single first attempt for assistant-generated artifacts.
 - If that attempt fails, stop connector upload work for that artifact in the current turn. Do not try Docs import, format conversion, native-file creation, alternate upload endpoints, or repeated retries.
 - Expose the exact local artifact through a user-visible file link immediately. A later Drive retry requires a later turn or explicit user request.
+
+## 2026-07-15 — artifact naming and wrapper state discipline
+
+- The project Termux download directory is `$HOME/Downloads`, and execution commands must use the artifact's actual file name. A user-visible display label is not the saved file name.
+- Do not `source` generated status or manifest data unless every value is shell-quoted by construction. Prefer JSON or explicit parsing for values that may contain spaces or punctuation.
+- Never remove a directory while the wrapper or one of its child processes still uses it as the current working directory. Move to a stable directory before cleanup.
+- Apply isolated `HOME` and XDG values only to the target child commands that require them. Restore the real user environment before rclone upload or any operation that depends on user configuration.

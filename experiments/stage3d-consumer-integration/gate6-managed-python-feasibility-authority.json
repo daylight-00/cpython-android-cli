@@ -1,0 +1,114 @@
+{
+  "accepted_claims": [
+    "A custom downloads JSON entry keyed cpython-3.14.5-linux-aarch64-none is accepted as a current-platform candidate by uv 0.11.28 on the tested Termux Android arm64 host.",
+    "The exact frozen CPython 3.14.5 runtime-only product can be installed, discovered, launched, used to create a uv virtual environment, reinstalled as an exact no-op, and uninstalled through fully isolated local-file managed-Python paths without uv patching.",
+    "The tested workflows preserve repository state, the real uv managed-install directory, global executable paths, shell startup files, and canonical product inputs."
+  ],
+  "accepted_results": {
+    "gate6a": {
+      "archive_sha256": "fa582b372b81feed68b76ee64bf304d364f9280b10a5569da6cb6fd9f9d43694",
+      "archive_size": 4883,
+      "drive_file_id": "1DM9MSX42zXAcLFUQRanmKyGN0RTCGUc9",
+      "member_count": 53,
+      "observations": {
+        "builtin_all_platform_linux_aarch64_gnu": 7,
+        "builtin_all_platform_linux_aarch64_musl": 7,
+        "builtin_all_platform_linux_aarch64_none": 0,
+        "builtin_current_cpython_3_14": 0,
+        "custom_current_count": 1,
+        "custom_current_key": "cpython-3.14.5-linux-aarch64-none",
+        "managed_find_empty_returncode": 2
+      },
+      "result_index_count": 48,
+      "result_index_sha256": "5fbcc30cfa27439935fee3a3f6cadf4f77c4b328aced4e49dad8d83175c05d29",
+      "work_id": "20260715-stage3d-gate6a-managed-python-readonly-census-v1"
+    },
+    "gate6b": {
+      "archive_sha256": "73ef934e3a2346546c79032a80a4a791ac55f4858a02100301afd33f9bc8fa03",
+      "archive_size": 5756,
+      "drive_file_id": "1NUQHqlQZ5xsQBVJRCmrTCmnxmpwtouf_",
+      "member_count": 35,
+      "observations": {
+        "direct_launch": "pass",
+        "install": "pass",
+        "key": "cpython-3.14.5-linux-aarch64-none",
+        "managed_discovery": "pass",
+        "multiarch": "aarch64-linux-android",
+        "platform": "android-24-arm64_v8a",
+        "soabi": "cpython-314-aarch64-linux-android",
+        "uv_venv": "pass",
+        "version": "3.14.5"
+      },
+      "result_index_count": 30,
+      "result_index_sha256": "ea4da7d6d519257b3abcb3dfb74af92039e164a4e7d35ff30830c9e5c65d71d3",
+      "work_id": "20260715-stage3d-gate6b-isolated-managed-install-rehearsal-v2"
+    },
+    "gate6c": {
+      "archive_sha256": "a0e15ef45171af409df27fb2265bb7afed7c1631176ebe6e563be04725fd72d6",
+      "archive_size": 32769,
+      "drive_file_id": "1l9tiuQgzwFHeRWPejen3rcHpfbF79Nd-",
+      "member_count": 39,
+      "observations": {
+        "direct_launch": "pass",
+        "first_install": "pass",
+        "install_manifest_identity": true,
+        "managed_discovery": "pass",
+        "post_uninstall_find_returncode": 2,
+        "post_uninstall_list": [],
+        "second_install": "exact-noop",
+        "uninstall": "pass"
+      },
+      "result_index_count": 34,
+      "result_index_sha256": "788828e4350b91dc20231b14400caa6471848281f02d7e420c8aa1afbf599a2c",
+      "work_id": "20260715-stage3d-gate6c-isolated-managed-lifecycle-v1"
+    }
+  },
+  "authority_kind": "stage3d-gate6-managed-python-feasibility",
+  "correction_lineage": [
+    {
+      "classification": "accepted-evidence-after-transport-recovery",
+      "summary": "The census completed and preserved exact evidence; wrapper cwd and isolated-rclone-environment defects affected transport only and were recovered without rerunning the census.",
+      "work_id": "20260715-stage3d-gate6a-managed-python-readonly-census-v1"
+    },
+    {
+      "archive_sha256": "a42d61f70537ea836c7b92d406864dffa77c37478782fda4fd2e6250128d36cd",
+      "archive_size": 2083,
+      "classification": "valid-policy-preflight-negative-not-acceptance",
+      "summary": "UV_PYTHON_DOWNLOADS=never blocked the explicit local-file install before payload extraction; v2 limits manual policy to the explicit install command.",
+      "work_id": "20260715-stage3d-gate6b-isolated-managed-install-rehearsal-v1"
+    }
+  ],
+  "excluded_claims": [
+    "built-in uv catalog support for Android CPython",
+    "automatic or network Python downloads",
+    "production catalog publication or artifact distribution",
+    "persistent registration in the real user managed-Python directory",
+    "global interpreter links or shell integration",
+    "CPython 3.14.6 or multi-version managed operation",
+    "upgrade or downgrade policy",
+    "third-product compatibility",
+    "general upstream uv Android platform support"
+  ],
+  "repository_input": {
+    "branch": "agent/stage3d-consumer-integration",
+    "head": "9d70ea1d3468ed02fa9684f61609c2cb5caf4ebc",
+    "remote": "9d70ea1d3468ed02fa9684f61609c2cb5caf4ebc",
+    "tree": "fade17abba57b38f99c87368efc96b4e0aaa930a"
+  },
+  "required_conditions": {
+    "archive_transport": "local file://",
+    "cache_and_data": "isolated disposable paths",
+    "catalog": "custom JSON with linux-aarch64-none key",
+    "global_bin_links": false,
+    "install_dir": "isolated disposable path",
+    "install_download_policy": "manual for explicit install only",
+    "network": "offline",
+    "non_install_download_policy": "never"
+  },
+  "schema_version": 1,
+  "status": "accepted-bounded-feasibility",
+  "uv": {
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}
