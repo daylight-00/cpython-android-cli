@@ -1,0 +1,91 @@
+{
+  "accepted_result": {
+    "archive": {
+      "drive_file_id": "17VOggZuTQ_enTuE9JSDCHvU_d6UO7Lp3",
+      "drive_folder_id": "1w-nvUeE242kR8FI4DRe4MNa9W1EAQJzT",
+      "member_count": 757,
+      "name": "20260715-stage3d-gate4-consumer-integration-target-validation-v3-results-20260715T104741Z.tar.zst",
+      "result_index_count": 697,
+      "result_index_sha256": "4351a25986ebb9192542eafe79ad1d8a209d33931ea82a85bf908e5d2bf25acc",
+      "sha256": "13ed73fdeaf5ea13339b2df70b69a4c79aa2920fb1d9207229fb64db828b283c",
+      "size": 58525
+    },
+    "outputs": {
+      "independent_verification_sha256": "c9361f9c148c3d1a170b940a756b6f6b71d15ca957bb4d37e3ac3ea38664ebe5",
+      "result_tree_safety_sha256": "450e8b9c6198885509f0b520a002a3226ce0728f457c0565d792a09b02de969a",
+      "scenario_results_sha256": "d6cd2fe5e751476a2935962f8c0ec88bbb6beb41bf56449e23526d0dd2544def",
+      "uv_metadata_sha256": "91da8ab9d7b53f6794a5ea768a094d2a9e638c12aac33baba51c56a09c039dd8",
+      "validation_summary_sha256": "b1a7864d2144df44ee6cf65e33243592420c659d0069d198f87bc3727566c4a7"
+    },
+    "work_id": "20260715-stage3d-gate4-consumer-integration-target-validation-v3",
+    "work_package": {
+      "sha256": "9114d855f31fce475c619ef3c7b5a653ba1bd1d863385d4ef8bd59a92fb16143",
+      "size": 39657027
+    }
+  },
+  "acceptance": {
+    "expectation_match": "48/48",
+    "harness_complete": "48/48",
+    "independent_verification": "27/27",
+    "pending_command_surface": {
+      "exact_product": 16,
+      "uv_run": "8/8",
+      "uv_sync": "8/8"
+    },
+    "process_record_count": 150,
+    "scenario_groups": {
+      "bounded_discovery": 8,
+      "explicit_reconfirmation": 8,
+      "pending_command_surface": 16,
+      "precedence_negative_invariant": 12,
+      "transition_continuity": 4
+    },
+    "transition_continuity": "4/4 exact",
+    "verifier": "experiments/stage3d-consumer-integration/verify-gate4-consumer-integration.py"
+  },
+  "authority_kind": "stage3d-gate4-consumer-integration-target-evidence",
+  "claim_boundary": "Accepts the frozen system-Python consumer-integration surface for the exact CPython 3.14.5 and 3.14.6 products and four frozen topologies. Managed-Python feasibility, third-product compatibility, global interpreter links, shell integration, uv patching, and schema migration remain unaccepted.",
+  "frozen_inputs": {
+    "contract_sha256": "c24f8af1d0af8cf2212a1e40ea0887cc7856fbd725e71759e9969ad8e07acb9e",
+    "matrix_sha256": "9b99beb060573ac2557a16bd3ec7e758b34f0769f417c1967cefdf5cd05a7faa",
+    "repository": {
+      "branch": "agent/stage3d-consumer-integration",
+      "head": "64a2066d464e437407bc84c85d21e3f04495d02a",
+      "remote": "64a2066d464e437407bc84c85d21e3f04495d02a",
+      "tree": "2063517d5786ba179f71faa121e54c3e9b035239"
+    },
+    "uv": {
+      "path": "/data/data/com.termux/files/usr/bin/uv",
+      "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+      "version": "uv 0.11.28 (aarch64-linux-android)"
+    }
+  },
+  "invariants": {
+    "authority_immutable": true,
+    "global_managed_install_dir_immutable": true,
+    "global_paths_immutable": true,
+    "network_clean": true,
+    "python_downloads_disabled": true,
+    "repository_immutable": true,
+    "seed_products_immutable": true,
+    "transient_workspace_pruned": true
+  },
+  "preserved_correction_lineage": [
+    {
+      "classification": "invalid-for-gate-acceptance-harness-correction-required",
+      "result_sha256": "d7ba3e42af9ecefd89475f39c3e7d87e7d5265b0edbd59e42317526d84bdfc4d",
+      "result_size": 45740,
+      "summary": "35/48; uv run and transition working-directory creation was incomplete and the independent verifier failed on missing outcomes",
+      "work_id": "20260715-stage3d-gate4-consumer-integration-target-validation-v1"
+    },
+    {
+      "classification": "invalid-for-gate-acceptance-single-control-isolation-correction-required",
+      "result_sha256": "5f99ad5f61a6b57768e9631b8955cad8bd4d1bd68697f66ff787cba5f9e31072",
+      "result_size": 58910,
+      "summary": "47/48; X05 admitted the authoritative user-home virtual environment through physical working-directory ancestry",
+      "work_id": "20260715-stage3d-gate4-consumer-integration-target-validation-v2"
+    }
+  ],
+  "schema_version": 1,
+  "status": "accepted"
+}

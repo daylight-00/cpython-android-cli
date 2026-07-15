@@ -20,7 +20,7 @@ Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
-Stage 3-D  consumer integration                         active — Gate 3 contract frozen; Gate 4 next
+Stage 3-D  consumer integration                         frozen — Gate 5 independent freeze complete; Gate 6 deferred
 ```
 
 ## Frozen runtime architecture
@@ -412,15 +412,18 @@ experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATI
 docs/evidence/STAGE3C_PHASE5_GATE4E_INDEPENDENT_TRANSITION_FREEZE.md
 ```
 
-## Stage 3-D active boundary
+## Stage 3-D frozen consumer-integration result
 
-Gate 2 accepted a 64-scenario Termux census and Gate 3 froze the exact uv system-Python contract for `uv python find` and `uv venv` using an absolute interpreter path. The census recorded zero `uv run` and zero `uv sync` executions, so those commands remain Gate 4 obligations. Global links, shell edits, managed-install registration, Python downloads, uv patching, and managed-Python emulation remain prohibited.
+Gate 2 accepted a 64-scenario Termux census and Gate 3 froze the exact uv system-Python contract using an absolute interpreter path. Gate 4 then accepted a safe self-indexed 48-scenario Termux result: 8/8 explicit `find`/`venv`, 8/8 `uv run`, 8/8 `uv sync`, 8/8 bounded discovery, 4/4 transition continuity, and 12/12 precedence, negative, and invariant controls. The independent verifier passed 27/27 checks, and Gate 5 freezes the exact two-product, four-topology system-Python consumer surface.
+
+Global links, shell edits, managed-install registration, Python downloads, uv patching, product mutation, schema migration, managed-Python feasibility, and third-product compatibility remain outside the accepted authority.
 
 See:
 
 ```text
 docs/PROJECT_CONTEXT_STAGE3D.md
 docs/stages/STAGE3D_SCOPE.md
-experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
-experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
+experiments/stage3d-consumer-integration/gate4-consumer-integration-authority.json
+experiments/stage3d-consumer-integration/verify-gate4-consumer-integration.py
+docs/evidence/STAGE3D_GATE4_CONSUMER_INTEGRATION_TARGET_VALIDATION_RESULT.md
 ```
