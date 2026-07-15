@@ -9,23 +9,18 @@ Use these documents to continue the project without relying on prior chat contex
 
 ```text
 1. ../../README.md
-2. ../PROJECT_CONTEXT_STAGE3C.md
-3. COLLABORATION_PROTOCOL.md
-4. ../GITHUB_COLLABORATION_WORKFLOW.md
-5. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
-6. ../../experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
-7. ../../experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json
-8. ../../experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json
-9. ../evidence/STAGE3C_PHASE5_GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN_RESULT.md
-10. ../stages/STAGE3C_PHASE5_SCOPE.md
-11. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-12. ../evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
-13. PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md
-14. ../../experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json
-15. ../evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
-16. ../evidence/STAGE3C_PHASE5_GATE3D_TARGET_IMPLEMENTATION_RESULT.md
-17. ../../experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md
-18. ../evidence/STAGE3C_PHASE5_GATE3C_ADDON_LIFECYCLE_ACCEPTANCE_RESULT.md
+2. ../PROJECT_CONTEXT_STAGE3D.md
+3. ../stages/STAGE3D_SCOPE.md
+4. ../../experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
+5. ../../experiments/stage3d-consumer-integration/gate1-consumer-authority.json
+6. ../../experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
+7. ../evidence/STAGE3D_GATE1_CONSUMER_AUTHORITY_DESIGN_RESULT.md
+8. COLLABORATION_PROTOCOL.md
+9. ../GITHUB_COLLABORATION_WORKFLOW.md
+10. ../evidence/STAGE3C_PHASE5_GATE4E_INDEPENDENT_TRANSITION_FREEZE.md
+11. PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+12. STAGE3C_PHASE5_EVIDENCE_LEDGER.md
+13. ../../experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
 ```
 
 ## Current state
@@ -44,8 +39,9 @@ Gate 3C target implementation                       FROZEN 50/50 + 103/103
 Gate 3C target lifecycle/dependency enforcement      FROZEN 27/27 external audit
 Gate 3D final uninstall design                       FROZEN 108/108, 44 scenarios
 Gate 3D final uninstall target                       FROZEN 44/44 + 138/138 + 37/37
-Gate 4 upgrade/downgrade                             ACTIVE — second product authority/design pending
-Gate 4A authority acquisition                          ACTIVE — A2 complete; A3 clean replay ready
+Gate 4 upgrade/downgrade                             FROZEN — Gate 4E, 66/66
+Stage 3-D Gate 1 consumer authority design             FROZEN
+Stage 3-D Gate 2 read-only Termux discovery census     ACTIVE NEXT
 ```
 
 ## Frozen Gate 3B identity
@@ -96,11 +92,9 @@ scenario / verifier / external audit
 
 Gate 3D accepts complete addon teardown, final runtime-base uninstall, exact registry and owned-payload removal, approved residual preservation, recovery, lock exclusion, and final archive/index integrity.
 
-## Active Gate 4 boundary
+## Active Stage 3-D boundary
 
-Gate 4A selected CPython 3.14.5 (`v3.14.5`, `5607950ef232dad16d75c0cf53101d9649d89115`) as the genuine second-product input. A2 exact source, dependency, and scoped Termux-native exact-binary toolchain capture is frozen. A3 clean replay is next, followed by three-artifact materialization, standalone Termux validation, and independent freeze.
-
-No second-product artifact authority is frozen. No upgrade/downgrade matrix or target claim is frozen. A synthetic version label, edited copy of the first product, or official reference package used directly as project authority is not acceptable.
+Gate 4 is frozen at commit `68b67dcc3b65872e1034c487747d3fcd1ad5a319`. Stage 3-D Gate 1 selects uv system-Python integration first and freezes a 64-scenario read-only Termux census. The explicit absolute interpreter path remains the control. No global links, managed-install registration, Python download fallback, or uv patching is permitted.
 
 ## Evidence and transport rule
 

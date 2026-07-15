@@ -1,8 +1,8 @@
 # CPython Android CLI + uv: Current Stage 3-C Project Context
 
-> **Status:** Current handoff context
+> **Status:** HISTORICAL FROZEN SNAPSHOT — superseded by `PROJECT_CONTEXT_STAGE3D.md`
 > **Frozen boundary:** Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C Phase 5 through Gate 4E
-> **Active boundary:** none — Gate 4 cross-version transition is frozen; Stage 3-D consumer integration remains deferred
+> **Active boundary:** historical Gate 4 freeze; current work moved to Stage 3-D
 > **Primary target:** Termux on Android arm64 (`aarch64-linux-android`)
 > **Host build environment:** Frozen first product: separate Linux workstation; Gate 4A second product: accepted Termux-native producer exception
 > **First-product baseline:** CPython 3.14.6

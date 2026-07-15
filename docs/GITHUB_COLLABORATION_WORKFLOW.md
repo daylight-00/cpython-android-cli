@@ -52,10 +52,10 @@ complete independently inspected Termux evidence
 
 ```text
 README.md
-  -> docs/PROJECT_CONTEXT_STAGE3C.md
-  -> docs/stages/STAGE3C_PHASE5_SCOPE.md
-  -> docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-  -> docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md
+  -> docs/PROJECT_CONTEXT_STAGE3D.md
+  -> docs/stages/STAGE3D_SCOPE.md
+  -> experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
+  -> experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
   -> docs/handoff/COLLABORATION_PROTOCOL.md
 ```
 

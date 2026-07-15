@@ -5,7 +5,7 @@
 > **Input:** frozen Stage 2 architecture
 > **Primary target:** Termux on Android arm64
 > **Current Python baseline:** CPython 3.14.6
-> **Current active sub-stage:** Stage 3-C contract design
+> **Current active sub-stage:** Stage 3-D consumer integration
 
 ## 1. Stage 3 question
 
@@ -54,12 +54,12 @@ Stage 3-B
   FROZEN
 
 Stage 3-C
-  Distribution archive and installation contract
-  ACTIVE — contract design
+  Distribution archive, installation, lifecycle, and transition contract
+  FROZEN through Gate 4E
 
 Stage 3-D
   Consumer integration and optional managed-Python research
-  DEFERRED
+  ACTIVE — Gate 1 design frozen
 ```
 
 Authoritative sub-stage documents:
@@ -376,7 +376,7 @@ source archive versus extracted product fidelity -> PASS
 install -> verify -> upgrade -> uninstall transaction tests
 ```
 
-## 9. Stage 3-D remains deferred
+## 9. Stage 3-D consumer integration is active
 
 Questions may include:
 
@@ -394,7 +394,7 @@ Explicit interpreter selection remains a valid frozen integration model:
 uv ... --python /absolute/path/to/python
 ```
 
-The project must not imitate uv-managed distribution metadata before the archive and installation contract is stable.
+The archive and installation contract is now stable through Gate 4E. Stage 3-D starts with a read-only system-Python discovery census and still must not imitate uv-managed distribution metadata before an independent managed-provider authority exists.
 
 ## 10. Current first action
 

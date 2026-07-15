@@ -20,7 +20,7 @@ Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
-Stage 3-D  consumer integration                         deferred
+Stage 3-D  consumer integration                         active — Gate 1 design frozen
 ```
 
 ## Frozen runtime architecture
@@ -381,7 +381,7 @@ docs/GITHUB_COLLABORATION_WORKFLOW.md
 README.md
     |
     v
-docs/PROJECT_CONTEXT_STAGE3C.md
+docs/PROJECT_CONTEXT_STAGE3D.md
     |
     +--> docs/stages/STAGE2_FINAL.md
     +--> docs/stages/STAGE3A_FINAL.md
@@ -392,7 +392,7 @@ docs/PROJECT_CONTEXT_STAGE3C.md
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3C.md` is the current context.
+`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md` is the current context.
 
 ## Design principle
 
@@ -410,4 +410,16 @@ experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md
 experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md
 experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md
 docs/evidence/STAGE3C_PHASE5_GATE4E_INDEPENDENT_TRANSITION_FREEZE.md
+```
+
+## Stage 3-D active boundary
+
+Gate 1 selects uv system-Python integration as the primary authority path and freezes a 64-scenario read-only Termux discovery census. The explicit absolute interpreter path remains the control. Python downloads, global prefix links, shell edits, uv managed-install registration, uv patching, and managed-Python emulation are prohibited in the census. Optional managed-Python feasibility remains deferred until system integration is independently frozen.
+
+See:
+
+```text
+docs/PROJECT_CONTEXT_STAGE3D.md
+docs/stages/STAGE3D_SCOPE.md
+experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
 ```

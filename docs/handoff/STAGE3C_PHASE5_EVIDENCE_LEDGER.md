@@ -459,4 +459,4 @@ The v1 archive remains immutable. H01-H08 were corrected by focused target retes
 
 ## Immediate next boundary
 
-Gate 4 is closed. Stage 3-D consumer integration remains deferred and must begin with its own scope and authority decision.
+Gate 4 is closed. Stage 3-D Gate 1 freezes the system-Python-first scope and authority design. The next boundary is the 64-scenario read-only Termux consumer discovery census.

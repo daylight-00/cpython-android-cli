@@ -64,9 +64,9 @@ The immediate task is to audit the existing A4 result. Do not rebuild or advance
 After verifying the repository identity, read only as needed:
 
 ```text
-docs/PROJECT_CONTEXT_STAGE3C.md
-docs/stages/STAGE3C_PHASE5_SCOPE.md
-docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md
-docs/handoff/2026-07-14-gate4a-a4-pending-result.md
-experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md
+docs/PROJECT_CONTEXT_STAGE3D.md
+docs/stages/STAGE3D_SCOPE.md
+experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
+experiments/stage3d-consumer-integration/gate1-consumer-authority.json
+experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
 ```

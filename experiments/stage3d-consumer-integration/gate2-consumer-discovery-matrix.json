@@ -1,0 +1,602 @@
+{
+  "claim_boundary": "Scenario design only; no target result is accepted.",
+  "global_requirements": [
+    "python-downloads-disabled",
+    "raw-stdout-stderr-exit-recorded",
+    "selected-realpath-recorded",
+    "python-metadata-recorded",
+    "repository-invariant",
+    "canonical-installation-invariant",
+    "no-global-prefix-mutation",
+    "pass-or-fail-archive-preserved"
+  ],
+  "group_counts": {
+    "explicit": 8,
+    "natural": 32,
+    "precedence-negative": 12,
+    "project": 8,
+    "transition-continuity": 4
+  },
+  "matrix_kind": "stage3d-gate2-consumer-discovery-census",
+  "scenario_count": 64,
+  "scenarios": [
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E01",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "absolute-executable-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E02",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "absolute-executable-path",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E03",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "absolute-executable-path",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E04",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "absolute-executable-path",
+      "topology": "full"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E05",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "absolute-executable-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E06",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "absolute-executable-path",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E07",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "absolute-executable-path",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "select-exact-product",
+      "group": "explicit",
+      "id": "E08",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "absolute-executable-path",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N01",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "executable-name",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N02",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "install-directory",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N03",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "path-python3.14",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N04",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "version-3.14",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N05",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "executable-name",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N06",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "install-directory",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N07",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "path-python3.14",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N08",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "version-3.14",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N09",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "executable-name",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N10",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "install-directory",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N11",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "path-python3.14",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N12",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "version-3.14",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N13",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "executable-name",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N14",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "install-directory",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N15",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "path-python3.14",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N16",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.5",
+      "request": "version-3.14",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N17",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "executable-name",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N18",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "install-directory",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N19",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "path-python3.14",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N20",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "version-3.14",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N21",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "executable-name",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N22",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "install-directory",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N23",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "path-python3.14",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N24",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "version-3.14",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N25",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "executable-name",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N26",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "install-directory",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N27",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "path-python3.14",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N28",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "version-3.14",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N29",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "executable-name",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N30",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "install-directory",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N31",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "path-python3.14",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "natural",
+      "id": "N32",
+      "mutation": "temporary-fixture-only",
+      "product": "3.14.6",
+      "request": "version-3.14",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P01",
+      "mutation": "temporary-project-only",
+      "product": "3.14.5",
+      "request": "python-version-file",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P02",
+      "mutation": "temporary-project-only",
+      "product": "3.14.5",
+      "request": "project-requires-python",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P03",
+      "mutation": "temporary-project-only",
+      "product": "3.14.5",
+      "request": "python-version-file",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P04",
+      "mutation": "temporary-project-only",
+      "product": "3.14.5",
+      "request": "project-requires-python",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P05",
+      "mutation": "temporary-project-only",
+      "product": "3.14.6",
+      "request": "project-requires-python",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P06",
+      "mutation": "temporary-project-only",
+      "product": "3.14.6",
+      "request": "python-version-file",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P07",
+      "mutation": "temporary-project-only",
+      "product": "3.14.6",
+      "request": "project-requires-python",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "observe-selection",
+      "group": "project",
+      "id": "P08",
+      "mutation": "temporary-project-only",
+      "product": "3.14.6",
+      "request": "python-version-file",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-precedence",
+      "group": "precedence-negative",
+      "id": "X01",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "venv-precedence",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-system",
+      "group": "precedence-negative",
+      "id": "X02",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "system-flag-ignores-venv",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "first-compatible-system",
+      "group": "precedence-negative",
+      "id": "X03",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "path-conflicting-python",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "no-managed-fallback",
+      "group": "precedence-negative",
+      "id": "X04",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "managed-decoy-no-download",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-system-or-fail",
+      "group": "precedence-negative",
+      "id": "X05",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "only-system",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-managed-install",
+      "group": "precedence-negative",
+      "id": "X06",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "only-managed",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative",
+      "id": "X07",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "incompatible-version",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative",
+      "id": "X08",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "wrong-implementation",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "ignore-candidate",
+      "group": "precedence-negative",
+      "id": "X09",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "non-executable-candidate",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "ignore-or-diagnose",
+      "group": "precedence-negative",
+      "id": "X10",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "broken-executable-candidate",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-relocated-product",
+      "group": "precedence-negative",
+      "id": "X11",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "moved-prefix-explicit-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative",
+      "id": "X12",
+      "mutation": "temporary-fixture-only",
+      "product": "matrix-selected",
+      "request": "empty-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-current-exact-product",
+      "group": "transition-continuity",
+      "id": "T01",
+      "mutation": "disposable-installation-fixture",
+      "product": "3.14.6->3.14.5",
+      "request": "explicit-and-natural-before-after",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-current-exact-product",
+      "group": "transition-continuity",
+      "id": "T02",
+      "mutation": "disposable-installation-fixture",
+      "product": "3.14.5->3.14.6",
+      "request": "explicit-and-natural-before-after",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-current-exact-product",
+      "group": "transition-continuity",
+      "id": "T03",
+      "mutation": "disposable-installation-fixture",
+      "product": "3.14.6->3.14.5",
+      "request": "explicit-and-natural-before-after",
+      "topology": "full"
+    },
+    {
+      "expected": "select-current-exact-product",
+      "group": "transition-continuity",
+      "id": "T04",
+      "mutation": "disposable-installation-fixture",
+      "product": "3.14.5->3.14.6",
+      "request": "explicit-and-natural-before-after",
+      "topology": "full"
+    }
+  ],
+  "schema_version": 1,
+  "status": "design-frozen-not-executed"
+}

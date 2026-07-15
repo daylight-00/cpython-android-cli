@@ -1,0 +1,88 @@
+{
+  "authority_kind": "stage3d-gate1-consumer-authority-design",
+  "canonical_control": "explicit-absolute-interpreter-path",
+  "claim_boundary": "Design only. No Termux discovery, link policy, managed-Python provider, or consumer integration behavior is accepted.",
+  "discovery_surfaces": [
+    "executable-path",
+    "executable-name",
+    "install-directory",
+    "path-python",
+    "path-python3",
+    "path-python3.14",
+    "version-request",
+    "implementation-version-request",
+    "python-version-file",
+    "project-requires-python",
+    "uv-python-find",
+    "uv-venv",
+    "uv-run",
+    "uv-sync"
+  ],
+  "download_policy": "disabled-for-all-system-integration-scenarios",
+  "frozen_at": "2026-07-15",
+  "gate_sequence": {
+    "gate1": "FROZEN",
+    "gate2": "PENDING_READ_ONLY_TERMUX_CENSUS",
+    "gate3": "PENDING_SYSTEM_INTEGRATION_CONTRACT",
+    "gate4": "PENDING_TARGET_IMPLEMENTATION_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_FREEZE",
+    "gate6": "DEFERRED_OPTIONAL_MANAGED_PYTHON_RESEARCH"
+  },
+  "input_authority": {
+    "gate4_scenarios": {
+      "count": 66,
+      "pass": 66
+    },
+    "gate4d_v1_sha256": "ef24baca1f01d3e106825fb99e537d68ba0beffa9cd4e92577e43bd35421e77c",
+    "gate4d_v2_sha256": "98ab810732dd2eb35bff9180dcb8fa1ec872eb09103d58670edb481cc9e3e5b2",
+    "gate4e_commit": "68b67dcc3b65872e1034c487747d3fcd1ad5a319",
+    "gate4e_tree": "2115f6fa3b923c9fcf21a1b8343cb6149afb6cc7"
+  },
+  "mutation_policy": {
+    "forbidden": [
+      "global-prefix-links",
+      "shell-startup-edits",
+      "managed-install-dir-registration",
+      "uv-patching",
+      "python-download-fallback",
+      "canonical-product-mutation",
+      "registry-schema-change",
+      "journal-schema-change",
+      "root",
+      "proot",
+      "shizuku",
+      "docker"
+    ],
+    "gate2": "isolated-temporary-fixtures-only"
+  },
+  "primary_model": "uv-system-python",
+  "products": [
+    {
+      "python": "3.14.5",
+      "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115"
+    },
+    {
+      "python": "3.14.6",
+      "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45"
+    }
+  ],
+  "schema_version": 1,
+  "status": "design-frozen",
+  "topologies": [
+    "runtime-only",
+    "runtime+development",
+    "runtime+test",
+    "full"
+  ],
+  "upstream_observations": {
+    "android_listed_in_uv_platform_tiers": false,
+    "discovery_includes_managed_dir_and_path": true,
+    "downloads_can_be_disabled": true,
+    "local_request_forms_include_path_name_and_install_dir": true,
+    "managed_cpython_source": "python-build-standalone",
+    "non_uv_installation_is_system_python": true,
+    "platform_support_url": "https://docs.astral.sh/uv/reference/policies/platforms/",
+    "python_versions_url": "https://docs.astral.sh/uv/concepts/python-versions/",
+    "reviewed": "2026-07-15"
+  }
+}

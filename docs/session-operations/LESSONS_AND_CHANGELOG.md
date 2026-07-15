@@ -33,3 +33,10 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Local upload paths must be below `/mnt/data`; first-turn rewrite may be blocked.
 - A verifier PASS can describe a valid failure capture, not a project PASS.
 - Review maintenance warnings after build success unless they explain the active failure.
+
+## 2026-07-15 — post-commit idempotency verification
+
+- An `already-applied` runner must not compare the empty post-commit index against the package patch.
+- Staged-patch and `git write-tree` checks belong only to the pre-commit `apply-pending` branch.
+- The idempotent branch must verify the committed parent, tree, subject, author/committer, signoff, exact committed diff, remote ref, and clean worktree.
+- A rerun-only status failure does not invalidate an earlier complete PASS archive, but the contradictory result must be preserved and classified.

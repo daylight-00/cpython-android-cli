@@ -1,6 +1,6 @@
 # Stage 3-C Phase 5 Scope: Installed Runtime and Lifecycle Validation
 
-> **Status:** ACTIVE — Gate 4C implemented; Gate 4D target validation ready
+> **Status:** FROZEN — Gate 4E independent transition freeze complete
 > **Primary target:** Termux on Android arm64
 
 ## Phase question
@@ -44,11 +44,11 @@ Gate 3B0  preservation-boundary diagnostic census                 FROZEN
 Gate 3B   preserve-and-report product acceptance                  FROZEN
 Gate 3C   addon lifecycle and dependency enforcement              FROZEN
 Gate 3D   runtime uninstall and final ownership boundary          FROZEN
-Gate 4    upgrade and downgrade with second frozen product        ACTIVE — IMPLEMENTED / TARGET EVIDENCE PENDING
+Gate 4    upgrade and downgrade with second frozen product        FROZEN — 66/66
 Gate 4A   CPython 3.14.5 authority acquisition                    FROZEN — A1-A6
 Gate 4B   cross-version transition contract                       DESIGN FROZEN — 66 scenarios
 Gate 4C   transition coordinator implementation                   IMPLEMENTED — 69/69
-Gate 4D   bidirectional Termux target validation                  READY — not started
+Gate 4D   bidirectional Termux target validation                  FROZEN — v1 + corrective v2
 ```
 
 ## Frozen prior gates
@@ -249,7 +249,7 @@ docs/evidence/STAGE3C_PHASE5_GATE3D_FINAL_UNINSTALL_ACCEPTANCE_RESULT.md
 docs/evidence/STAGE3C_PHASE5_GATE3D_EXTERNAL_AUDIT.json
 ```
 
-## Active Gate 4 upgrade and downgrade — Gate 4C implemented
+## Frozen Gate 4 upgrade and downgrade — Gate 4E complete
 
 Gate 4A froze CPython 3.14.5 as the second complete authority. Gate 4B compares it against the frozen 3.14.6 first product and freezes the transition contract.
 
@@ -283,9 +283,9 @@ one recovery-compatible PREPARED/APPLYING/COMMITTED journal
 exclusive frozen installation lock
 ```
 
-Gate 4B does not modify the frozen Phase 4 engine sources, registry schema, archive bytes, or artifact manifests. Gate 4C adds a transition coordinator that imports frozen common/durability helpers and implements only the frozen 66-scenario contract. Its repository verifier passes 69/69; Gate 4D target evidence remains pending.
+Gate 4B does not modify the frozen Phase 4 engine sources, registry schema, archive bytes, or artifact manifests. Gate 4C adds a transition coordinator that imports frozen common/durability helpers and implements only the frozen 66-scenario contract. Its repository verifier passes 69/69. Gate 4D accepted the exact 66-scenario target matrix using the preserved v1 archive and corrective v2 archive, and Gate 4E independently froze the combined authority.
 
-No upgrade, downgrade, migration, mixed-version runtime behavior, or target recovery claim is frozen until later Termux and independent-audit gates.
+Upgrade and downgrade are frozen only for the exact two products and four topologies. Third products, schema migration, arbitrary mixed-version repair, and Stage 3-D consumer integration remain outside the authority.
 
 ## Non-reopening rule
 
