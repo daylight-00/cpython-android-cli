@@ -1,7 +1,7 @@
 # Stage 3-E Scope: Managed-Python Distribution
 
-> **Status:** ACTIVE — Gate 3 contract frozen; Gate 4 next
-> **Input:** frozen Stage 3-D Gate 6 feasibility plus accepted Stage 3-E Gate 2 dual-version census
+> **Status:** FROZEN — Gate 5 independent distribution freeze complete
+> **Input:** frozen Stage 3-D Gate 6 feasibility and exact CPython 3.14.5/3.14.6 runtime-only products
 > **Primary target:** Termux on Android arm64
 > **Primary consumer:** uv managed-Python workflows for exact HW-T products
 
@@ -15,60 +15,60 @@ How should exact HW-T Android CPython products become a reproducible, persistent
 Gate 1  authority and productization-boundary design    FROZEN
 Gate 2  isolated dual-version boundary census           FROZEN — external re-audit 117/117
 Gate 3  managed-Python distribution contract            FROZEN
-Gate 4  target implementation and lifecycle validation  ACTIVE NEXT
-Gate 5  independent distribution freeze                 pending
+Gate 4  project-owned persistent-root validation        FROZEN — target 37/37, independent 74/74
+Gate 5  independent distribution freeze                 FROZEN
 ```
 
-## Gate 2 authority
+## Frozen result
 
-Gate 2 accepts one safe self-indexed target archive with 173 safe members and a 168/168 exact result index. The original target verifier is retained as a false-negative. External re-audit resolves only the invalid verifier assumptions and passes 117/117 without mutating the original result.
+Exact patch-version requests are canonical. Both exact runtime-only products coexist under one immutable local catalog and one explicit project-owned persistent root. Fresh-session discovery, direct launch, uv virtual environments, root relocation, failed-operation preservation, exact backup rollback, peer removal/reinstall, final teardown, and all protected-state invariants are accepted for the tested uv 0.11.28 Android host.
 
-Accepted observations:
+The accepted Gate 4 archive is `4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112`. It is safe and self-indexed with 191 members and 186/186 exact entries. The target verifier passes 37/37 and the independent freeze audit passes 74/74.
+
+## Correction lineage
+
+The v1 36/37 result is retained. Default tar extraction narrowed archived modes under the caller umask, and strict pre-swap comparison correctly rejected the candidate. The v2 rerun used permission-preserving extraction and passed the unchanged strict comparison and complete lifecycle.
+
+## Proved
 
 ```text
-both exact custom keys install in either order
-side-by-side exact discovery and Android identity pass
-uv venv creation and launch pass for both versions
-exact reinstall is a byte/mode/link no-op for both versions
-removing one version preserves the other
-final uninstall produces an empty managed list and expected-negative finds
-minor and unspecified selection choose the 3.14 alias mapped to 3.14.6
-install order does not change installed-list order or selection
-real/global/frozen state remains byte-identical
+local immutable exact-key catalog binding
+exact 3.14.5 and 3.14.6 managed selection
+conditional latest-patch minor/default alias behavior
+project-owned explicit persistent root
+process and fresh-session continuity
+root-level relocation
+failure preservation for a corrupt third artifact
+mode/content/path/symlink-exact backup candidate verification
+atomic live-root rollback after candidate acceptance
+peer-preserving uninstall and exact reinstall
+complete final teardown
+repository, real managed root, global bin, shell, registry, journal, and product invariants
 ```
 
-## Gate 3 contract
-
-Exact patch-version requests are canonical.
-
-Authoritative selectors:
+## Not proved
 
 ```text
-cpython-3.14.5-linux-aarch64-none + exact request 3.14.5
-cpython-3.14.6-linux-aarch64-none + exact request 3.14.6
+uv default managed-root adoption
+catalog or artifact network publication
+automatic downloads or mutable endpoints
+global executable links or shell integration
+upgrade/downgrade and version-transition policy
+crash, concurrent-writer, or power-loss recovery
+third products or broader platform compatibility
+upstream uv Android support
 ```
 
-Conditional selectors:
+## Authoritative files
 
 ```text
-3.14        latest patch through uv minor alias; observed 3.14.6
-unspecified latest eligible managed interpreter; observed 3.14.6
-```
-
-Conditional selectors must not be used when exact product identity is required. Catalog rows must bind immutable artifact hashes. Global links and shell integration are separate, currently forbidden authorities.
-
-## Gate 4 selected boundary
-
-Gate 4 first validates a project-owned persistent managed root with local immutable catalog/artifact inputs and explicit install directory. It must cover both versions, exact selection, venvs, idempotent reinstall, peer-preserving uninstall, final teardown, failed-operation preservation, and rollback.
-
-Gate 4 does not yet authorize:
-
-```text
-uv default managed directory
-network or automatic downloads
-published mirrors or mutable catalog endpoints
-$PREFIX/bin links or shell startup edits
-power-loss durability
-upgrade/downgrade or crash recovery claims
-third-product or general upstream Android support
+docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
+experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
+experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
+docs/evidence/STAGE3E_GATE4_PROJECT_OWNED_PERSISTENT_ROOT_RESULT.md
+experiments/stage3e-managed-python-distribution/gate4-project-owned-persistent-root-authority.json
+experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json
+experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
+experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
+docs/evidence/STAGE3E_FINAL_SUMMARY.md
 ```

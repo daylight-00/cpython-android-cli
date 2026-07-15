@@ -1,0 +1,79 @@
+{
+  "accepted_lifecycle": [
+    "dual-exact-install",
+    "fresh-session-reentry",
+    "dual-venv",
+    "managed-root-relocation",
+    "corrupt-third-install-expected-negative",
+    "existing-product-preservation",
+    "permission-exact-backup-restore-candidate",
+    "candidate-verification-before-atomic-swap",
+    "post-rollback-dual-launch",
+    "peer-preserving-uninstall",
+    "exact-reinstall",
+    "complete-teardown",
+    "parent-state-restoration"
+  ],
+  "accepted_result": {
+    "archive_sha256": "4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112",
+    "archive_size": 54299,
+    "independent_audit": {
+      "check_count": 74,
+      "failed_checks": [],
+      "pass_count": 74,
+      "sha256": "794f124b5b00e30b00e26121f01e06fee9e49b7f1c1ac29bdcd775b28c85981a"
+    },
+    "result_index_count": 186,
+    "safe_member_count": 191,
+    "target_verification": {
+      "check_count": 37,
+      "failed_checks": [],
+      "pass_count": 37
+    },
+    "work_id": "20260716-stage3e-gate4-project-owned-persistent-root-v2"
+  },
+  "authority_kind": "stage3e-gate4-project-owned-persistent-root-validation",
+  "claim_boundary": "Project-owned explicit persistent-root lifecycle only. No uv default root, network publication, global links, upgrade/downgrade, crash/concurrency/power-loss durability, third-product, or upstream Android-support claim.",
+  "correction_lineage": {
+    "correction": "preserve archived permissions during non-root backup extraction; retain strict pre-swap and post-swap manifest equality",
+    "v1": {
+      "archive_sha256": "009114528a72d504659ab30a8a4659add6099ede0a3553f3edc7105786f761cf",
+      "archive_size": 54561,
+      "classification": "backup-restore-candidate-rejected-before-swap-due-to-umask-mode-narrowing",
+      "verification": "36/37"
+    }
+  },
+  "persistent_root": "$HOME/.local/share/hw-t/cpython-managed/gate4-validation-v2",
+  "products": {
+    "3.14.5": {
+      "catalog_key": "cpython-3.14.5-linux-aarch64-none",
+      "derived_archive_sha256": "b144d2e1792b1a9fa4b8b8bf37f418682ea6c190024e067ca013e0579b3ed84b",
+      "derived_archive_size": 9761522
+    },
+    "3.14.6": {
+      "catalog_key": "cpython-3.14.6-linux-aarch64-none",
+      "derived_archive_sha256": "2e0365b483e78c2fdeb05fcd755bf555557a688aa96b105b1d654bd0514cc97d",
+      "derived_archive_size": 11789074,
+      "installed_alias": "cpython-3.14-linux-aarch64-none"
+    }
+  },
+  "protected_state": [
+    "repository-and-remote",
+    "real-uv-managed-root",
+    "$PREFIX/bin",
+    "shell-startup-files",
+    "registry-and-journal",
+    "canonical-product-inputs"
+  ],
+  "repository_input": {
+    "branch": "agent/stage3e-managed-python-distribution",
+    "head": "0b9ba82428f3ee15486fe689a5a8dd267ae399fe",
+    "tree": "6136a1a08b860b0572d768ce64ab3d357b783783"
+  },
+  "schema_version": 1,
+  "status": "accepted-target-evidence",
+  "uv": {
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}

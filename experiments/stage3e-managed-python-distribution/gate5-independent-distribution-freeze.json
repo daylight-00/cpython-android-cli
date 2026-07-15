@@ -1,0 +1,55 @@
+{
+  "accepted_surface": {
+    "catalog": "local immutable exact-key rows",
+    "global_exposure": false,
+    "installation": "project-owned explicit persistent root",
+    "lifecycle": [
+      "fresh-session",
+      "relocation",
+      "failure-preservation",
+      "strict-backup-rollback",
+      "peer-lifecycle",
+      "complete-teardown"
+    ],
+    "network": false,
+    "products": [
+      "CPython 3.14.5 runtime-only",
+      "CPython 3.14.6 runtime-only"
+    ],
+    "selector": "exact-patch-version canonical",
+    "system_python_contract": "unchanged-and-independent"
+  },
+  "authority_kind": "stage3e-gate5-independent-distribution-freeze",
+  "claim_boundary": "Stage 3-E is frozen only for the exact local project-owned persistent-root authority. Deferred publication and operations questions require a new stage.",
+  "deferred_to_new_stage": [
+    "catalog-publication",
+    "artifact-network-transport",
+    "automatic-downloads",
+    "uv-default-managed-root",
+    "global-links",
+    "shell-integration",
+    "upgrade-downgrade",
+    "crash-recovery",
+    "concurrent-writers",
+    "power-loss-durability",
+    "third-products",
+    "upstream-uv-android-support"
+  ],
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "FROZEN_TARGET_EVIDENCE_EXTERNAL_REAUDIT",
+    "gate3": "FROZEN_DISTRIBUTION_CONTRACT",
+    "gate4": "FROZEN_PROJECT_OWNED_PERSISTENT_ROOT_37_OF_37",
+    "gate5": "FROZEN_INDEPENDENT_DISTRIBUTION_FREEZE_74_OF_74"
+  },
+  "input_authorities": {
+    "gate2_archive_sha256": "3fe68808e2a770f93a6cfe2feba2517b9ac7a42be04c22349fd1c6f375b6cac2",
+    "gate2_external_audit_sha256": "5813305c22528354e6af686330e8f635db2b90a8a7a48ed5ed3c9ad4d1a4fb4d",
+    "gate3_contract_status": "contract-frozen",
+    "gate4_archive_sha256": "4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112",
+    "gate4_independent_audit_sha256": "794f124b5b00e30b00e26121f01e06fee9e49b7f1c1ac29bdcd775b28c85981a"
+  },
+  "schema_version": 1,
+  "stage": "stage3e-managed-python-distribution",
+  "status": "independent-freeze-complete"
+}

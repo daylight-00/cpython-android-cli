@@ -21,7 +21,7 @@ Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
-Stage 3-E  managed-Python distribution                  active — Gate 3 contract frozen; Gate 4 next
+Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
 ```
 
 ## Frozen runtime architecture
@@ -386,9 +386,13 @@ docs/PROJECT_CONTEXT_STAGE3E.md
     |
     +--> docs/stages/STAGE3E_SCOPE.md
     +--> docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
-    +--> experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json
     +--> experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
-    +--> experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
+    +--> docs/evidence/STAGE3E_GATE4_PROJECT_OWNED_PERSISTENT_ROOT_RESULT.md
+    +--> experiments/stage3e-managed-python-distribution/gate4-project-owned-persistent-root-authority.json
+    +--> experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json
+    +--> experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
+    +--> experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
+    +--> docs/evidence/STAGE3E_FINAL_SUMMARY.md
     +--> docs/PROJECT_CONTEXT_STAGE3D.md
     +--> docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
     +--> docs/session-operations/README.md
@@ -435,11 +439,13 @@ experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-author
 docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
 ```
 
-## Stage 3-E active managed-Python distribution boundary
+## Stage 3-E frozen managed-Python distribution authority
 
-Stage 3-E begins from the exact Gate 6 feasibility authority and asks how catalog publication, artifact transport, persistent installation, multi-version selection, lifecycle policy, recovery, and coexistence with the frozen system-Python contract should be separated and proved.
+Stage 3-E is frozen through Gate 5. Gate 2 accepts dual-version isolated behavior through external 117/117 re-audit, Gate 3 freezes exact-key policy, and Gate 4 accepts project-owned persistent-root lifecycle evidence with target 37/37 and independent 74/74 verification.
 
-Gate 1 freezes the authority design. Gate 2 is accepted through an external 117/117 re-audit of the preserved target archive. Gate 3 freezes exact-key selection and distribution boundaries. Gate 4 is the active next boundary and validates a project-owned persistent managed root.
+The accepted surface is local, offline, exact-key, and project-owned. uv's default managed root, network publication, global links, upgrades, recovery, concurrency, durability, third products, and general upstream Android support remain outside the authority and require a new stage.
+
+The accepted Gate 4 target archive is `4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112`; its target verifier passes 37/37 and the independent freeze audit passes 74/74.
 
 See:
 
@@ -447,7 +453,11 @@ See:
 docs/PROJECT_CONTEXT_STAGE3E.md
 docs/stages/STAGE3E_SCOPE.md
 docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
-experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json
 experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
-experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
+docs/evidence/STAGE3E_GATE4_PROJECT_OWNED_PERSISTENT_ROOT_RESULT.md
+experiments/stage3e-managed-python-distribution/gate4-project-owned-persistent-root-authority.json
+experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json
+experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
+experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
+docs/evidence/STAGE3E_FINAL_SUMMARY.md
 ```
