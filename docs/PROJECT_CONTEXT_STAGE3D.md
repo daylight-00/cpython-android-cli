@@ -1,98 +1,46 @@
 # Project Context: Stage 3-D Consumer Integration
 
 > **Status:** Current handoff context
-> **Active boundary:** Gate 2 read-only Termux consumer discovery census
+> **Active boundary:** Gate 4 target implementation and validation
 > **Canonical branch:** `agent/stage3d-consumer-integration`
-> **Frozen input branch/commit:** `agent/phase5-gate4-second-product-authority` at `68b67dcc3b65872e1034c487747d3fcd1ad5a319`
-
-## Project identity
-
-```text
-A CLI adaptation of upstream CPython Android builds for Termux,
-with uv integration and an evidence-driven distribution lifecycle.
-```
+> **Current frozen repository input:** `b0b938b6f8d4eea67e2fac1eca83f69c835a9cac`, tree `3b86355f3236a850512e8e1bdb6b3e1df73362f5`
 
 ## Frozen foundation
 
-```text
-Stage 2    launcher and runtime architecture             FROZEN
-Stage 3-A  runtime closure                               FROZEN
-Stage 3-B  reproducible producer/product authority       FROZEN
-Stage 3-C  archives, ownership, lifecycle, transition    FROZEN through Gate 4E
-```
+Stage 2, Stage 3-A, Stage 3-B, and Stage 3-C through Gate 4E remain frozen. Gate 4 accepts exact CPython 3.14.5 ↔ 3.14.6 transitions for runtime-only, runtime+development, runtime+test, and full topologies with 66/66 scenarios.
 
-Gate 4 exact authority:
-
-```text
-products         CPython 3.14.5 and 3.14.6
-artifact roles   runtime-base, development-addon, test-addon
-topologies       runtime-only, runtime+development, runtime+test, full
-matrix           66/66 PASS
-Gate 4E commit   68b67dcc3b65872e1034c487747d3fcd1ad5a319
-Gate 4E tree     2115f6fa3b923c9fcf21a1b8343cb6149afb6cc7
-```
-
-The preserved Gate 4D v1 FAIL archive and corrective v2 PASS archive are both part of the authority. The v1 false negatives were not overwritten.
-
-## Current Stage 3-D decision
-
-Stage 3-D begins with uv's **system Python** model. The project runtime was not installed by uv, so it is a system Python under uv terminology. The canonical control remains explicit absolute interpreter selection.
+## Stage 3-D state
 
 ```text
 Gate 1  scope and authority design             FROZEN
-Gate 2  read-only Termux discovery census      ACTIVE NEXT
-Gate 3  system integration contract            pending
-Gate 4  target implementation/validation       pending
+Gate 2  read-only Termux discovery census      FROZEN — 64/64, strict 12/12
+Gate 3  system-Python integration contract     FROZEN
+Gate 4  target implementation/validation       ACTIVE NEXT
 Gate 5  independent freeze                     pending
 Gate 6  managed-Python feasibility             deferred
 ```
 
-Managed-Python emulation is not accepted. Android is not listed in upstream uv's documented platform tiers, and uv's managed CPython distributions are based on bundled `python-build-standalone` downloads for its supported desktop/server platforms.
-
-## Gate 2 scope
-
-Gate 2 executes 64 isolated scenarios over both products and all four topologies. It observes:
+Gate 2 authority:
 
 ```text
-explicit executable paths and names
-install-directory requests
-PATH discovery names
-version and implementation requests
-.python-version and requires-python
-uv python find
-uv venv, uv run, uv sync
-virtual-environment precedence
-system/managed preference controls
-negative and incompatible requests
-both frozen transition directions
+archive sha256   4958b3e669950035f21baf5783fa54029366182cdc36ecf1fb909dfb8276e98c
+archive size     61374
+self-index       780/780 exact
+uv               0.11.28 (aarch64-linux-android)
+process records  172
 ```
 
-All Python downloads are disabled. No scenario may alter `$PREFIX/bin`, shell startup files, uv's managed installation directory, canonical product archives, registry schema 1, journal schema 2, or frozen transition behavior.
+## Frozen system-Python contract
 
-## Required Gate 2 evidence
+The exact selector is `<installed-prefix>/bin/python`. `uv python find` uses system-only, offline, download-disabled, managed-disabled selection. `uv venv` receives the same absolute interpreter and must verify exact realpath, CPython implementation, patch version, Android platform, and base prefix.
 
-```text
-exact uv identity and Termux environment
-exact product/topology and interpreter identity
-request flags and configuration environment
-stdout, stderr, exit code
-selected interpreter and realpath
-queried implementation/version/platform metadata
-repository and installation pre/post invariants
-one safe self-indexed .tar.zst result archive
-```
+Install-directory and unique executable names are bounded secondary forms. PATH `python3.14`, request `3.14`, `.python-version`, and `requires-python` are conditional compatibility surfaces, not patch-exact selectors. Active virtual environments can outrank natural discovery; use `--system` when that is not intended.
 
-A successful observation does not become product policy automatically. Gate 3 chooses the supported integration surface only after Gate 2 is independently audited.
+Gate 2 executed no `uv run` and no `uv sync`. Gate 4 must validate them before support can be claimed.
 
-## Collaboration and transport
+## Non-reopening boundary
 
-Repository writes, commit, push, and target execution occur through the user's Termux local Git and one runner. GitHub connector/API operations are not part of this workflow. Agent/user exchange normally uses one `.tar.zst` per direction through Google Drive. New commits use local Git identity:
-
-```text
-daylight-00 <hwjang00@snu.ac.kr>
-```
-
-The runner uses `git commit -s`; the signoff trailer is not manually duplicated.
+No global `$PREFIX/bin/python*` links, shell startup edits, uv managed-install registration, Python download fallback, uv patching, product mutation, registry schema change, journal schema change, root, proot, Shizuku, or Docker is authorized.
 
 ## Current reading path
 
@@ -100,16 +48,15 @@ The runner uses `git commit -s`; the signoff trailer is not manually duplicated.
 README.md
   -> docs/PROJECT_CONTEXT_STAGE3D.md
   -> docs/stages/STAGE3D_SCOPE.md
-  -> experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
-  -> experiments/stage3d-consumer-integration/gate1-consumer-authority.json
-  -> experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
-  -> docs/evidence/STAGE3D_GATE1_CONSUMER_AUTHORITY_DESIGN_RESULT.md
-  -> docs/GITHUB_COLLABORATION_WORKFLOW.md
-  -> docs/handoff/COLLABORATION_PROTOCOL.md
+  -> experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
+  -> experiments/stage3d-consumer-integration/gate2-consumer-census-authority.json
+  -> experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
+  -> experiments/stage3d-consumer-integration/gate3-system-python-contract.json
+  -> experiments/stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json
+  -> docs/evidence/STAGE3D_GATE2_READ_ONLY_CONSUMER_CENSUS_RESULT.md
+  -> docs/evidence/STAGE3D_GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT_RESULT.md
 ```
-
-`docs/PROJECT_CONTEXT_STAGE3C.md` is the historical frozen Stage 3-C snapshot.
 
 ## Immediate next boundary
 
-Prepare and execute Gate 2 as a read-only Termux census. Do not create global interpreter links or managed-Python metadata before the census is accepted.
+Implement and execute Gate 4 without modifying global links or managed-Python state. Preserve complete PASS-or-FAIL evidence and treat `uv run` and `uv sync` as unaccepted until target results are independently audited.

@@ -1,0 +1,107 @@
+{
+  "authority_kind": "stage3d-gate3-system-python-integration-contract",
+  "canonical_contract": {
+    "find_flags": [
+      "--no-python-downloads",
+      "--offline",
+      "--no-managed-python",
+      "--system"
+    ],
+    "interpreter": "<installed-prefix>/bin/python",
+    "required_identity_checks": [
+      "selected-realpath",
+      "implementation=CPython",
+      "exact-patch-version",
+      "android-platform",
+      "expected-base-prefix"
+    ],
+    "selector": "explicit-absolute-interpreter-path",
+    "transition_rule": "The same absolute path names the current installed product before and after a frozen whole-product transition; identity must be reprobed after transition.",
+    "venv_flags": [
+      "--no-python-downloads",
+      "--offline",
+      "--no-managed-python",
+      "--no-cache",
+      "--python <absolute-interpreter>"
+    ]
+  },
+  "claim_boundary": "Freezes the supported system-Python selection contract for uv python find and uv venv only. uv run and uv sync require Gate 4 target evidence.",
+  "conditional_rules": [
+    "exactly one eligible project product is exposed",
+    "active virtual-environment precedence is either intended or bypassed with --system",
+    "Python downloads remain disabled",
+    "uv managed-Python fallback remains disabled",
+    "selected interpreter metadata is verified before use"
+  ],
+  "frozen_at": "2026-07-15",
+  "gate_sequence": {
+    "gate1": "FROZEN",
+    "gate2": "FROZEN_TARGET_EVIDENCE",
+    "gate3": "FROZEN_SYSTEM_PYTHON_CONTRACT",
+    "gate4": "ACTIVE_NEXT_TARGET_IMPLEMENTATION_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_FREEZE",
+    "gate6": "DEFERRED_OPTIONAL_MANAGED_PYTHON_RESEARCH"
+  },
+  "input_authority": {
+    "gate1_commit": "b0b938b6f8d4eea67e2fac1eca83f69c835a9cac",
+    "gate1_tree": "3b86355f3236a850512e8e1bdb6b3e1df73362f5",
+    "gate2_archive_sha256": "4958b3e669950035f21baf5783fa54029366182cdc36ecf1fb909dfb8276e98c",
+    "gate2_archive_size": 61374,
+    "gate2_scenarios": {
+      "count": 64,
+      "pass": 64
+    },
+    "gate2_strict_controls": {
+      "count": 12,
+      "pass": 12
+    },
+    "observed_uv": "uv 0.11.28 (aarch64-linux-android)"
+  },
+  "mutation_policy": {
+    "forbidden": [
+      "global-prefix-links",
+      "shell-startup-edits",
+      "managed-install-dir-registration",
+      "uv-patching",
+      "python-download-fallback",
+      "canonical-product-mutation",
+      "registry-schema-change",
+      "journal-schema-change",
+      "root",
+      "proot",
+      "shizuku",
+      "docker"
+    ]
+  },
+  "not_yet_supported": [
+    "uv run",
+    "uv sync",
+    "generic global python/python3 links",
+    "unrestricted ambient PATH selection",
+    "patch-exact selection through a 3.14-only request",
+    "managed-Python registration or emulation",
+    "Android product placement in UV_PYTHON_INSTALL_DIR",
+    "uv patching"
+  ],
+  "primary_model": "uv-system-python",
+  "schema_version": 1,
+  "status": "contract-frozen",
+  "supported_surfaces": {
+    "bounded_secondary": [
+      "install-directory request in a controlled system-only search environment",
+      "unique executable name on a controlled PATH"
+    ],
+    "canonical_exact": [
+      "uv python find with an absolute interpreter path",
+      "uv venv with --python <absolute interpreter>",
+      "relocated-prefix absolute interpreter path",
+      "both frozen transition directions for runtime-only and full topologies"
+    ],
+    "conditional_not_product_exact": [
+      "PATH python3.14",
+      "version request 3.14",
+      ".python-version 3.14",
+      "requires-python within 3.14"
+    ]
+  }
+}

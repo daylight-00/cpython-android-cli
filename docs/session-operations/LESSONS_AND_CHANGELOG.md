@@ -40,3 +40,9 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Staged-patch and `git write-tree` checks belong only to the pre-commit `apply-pending` branch.
 - The idempotent branch must verify the committed parent, tree, subject, author/committer, signoff, exact committed diff, remote ref, and clean worktree.
 - A rerun-only status failure does not invalidate an earlier complete PASS archive, but the contradictory result must be preserved and classified.
+
+## 2026-07-15 — transient workspace versus evidence archive
+
+- Temporary uv virtual environments, copied prefixes, shims, caches, and managed-directory decoys may contain normal symlinks and must not be archived as evidence payload.
+- Preserve root-level definitions, process records, stdout/stderr, selected-path metadata, summaries, and invariant snapshots; hash them before pruning transient workspaces.
+- Run result-tree safety after pruning and before the self-excluding index. A packaging failure after target PASS does not require target re-execution when retained evidence is exact and independently verified.

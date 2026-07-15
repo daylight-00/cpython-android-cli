@@ -1,0 +1,56 @@
+{
+  "accepted_at": "2026-07-15",
+  "authority_kind": "stage3d-gate2-read-only-consumer-census",
+  "bound_outputs": {
+    "census_summary_sha256": "c36998ad55a9a835afbc5ce10e3cf00a2671cb9586281496ab7853a24cc2fede",
+    "independent_verification_sha256": "e5169e6a4483ae48fb227accb47fe17ba78c3bf6ce9fbd3045b23013ae2a1835",
+    "scenario_results_sha256": "d7f9f41bf4370a19c021bfdf23258c124c4d2cf573981c6efdc401b74b602162"
+  },
+  "claim_boundary": "Accepts the exact Termux census and its repository/global invariants. It does not by itself support uv run, uv sync, unrestricted PATH discovery, global links, or uv-managed Python on Android.",
+  "input_repository": {
+    "branch": "agent/stage3d-consumer-integration",
+    "head": "b0b938b6f8d4eea67e2fac1eca83f69c835a9cac",
+    "tree": "3b86355f3236a850512e8e1bdb6b3e1df73362f5"
+  },
+  "packaging_recovery": {
+    "census_reexecuted": false,
+    "kind": "packaging-only",
+    "original_failure": "normal uv-created symlinks were incompatible with the result-archive no-link policy",
+    "retained_evidence_file_count": 734,
+    "transient_workspace_pruned": true
+  },
+  "process_coverage": {
+    "process_records": 172,
+    "uv_python_find": 72,
+    "uv_run": 0,
+    "uv_sync": 0,
+    "uv_venv": 14
+  },
+  "result_archive": {
+    "safe_member_count": 849,
+    "self_index_entry_count": 780,
+    "self_index_sha256": "929b8e6120621eceb2ac4f2fecd8642291f2a2145ad2b226231bb919b9973f22",
+    "sha256": "4958b3e669950035f21baf5783fa54029366182cdc36ecf1fb909dfb8276e98c",
+    "size": 61374
+  },
+  "scenario_results": {
+    "count": 64,
+    "expectation_match": 64,
+    "groups": {
+      "explicit": 8,
+      "natural": 32,
+      "precedence-negative": 12,
+      "project": 8,
+      "transition-continuity": 4
+    },
+    "strict_controls": 12,
+    "strict_pass": 12
+  },
+  "schema_version": 1,
+  "status": "target-evidence-accepted",
+  "uv": {
+    "path": "/data/data/com.termux/files/usr/bin/uv",
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}

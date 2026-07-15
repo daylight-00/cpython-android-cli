@@ -1,0 +1,460 @@
+{
+  "claim_boundary": "Gate 4 validation design only. No uv run or uv sync support is accepted until target execution and independent audit.",
+  "global_requirements": [
+    "python-downloads-disabled",
+    "managed-python-disabled",
+    "raw-process-evidence",
+    "selected-realpath-and-python-metadata",
+    "all-four-topologies",
+    "both-products",
+    "repository-invariant",
+    "canonical-product-invariant",
+    "global-links-invariant",
+    "pass-or-fail-safe-archive"
+  ],
+  "group_counts": {
+    "bounded-discovery": 8,
+    "explicit-reconfirmation": 8,
+    "pending-command-surface": 16,
+    "precedence-negative-invariant": 12,
+    "transition-continuity": 4
+  },
+  "matrix_kind": "stage3d-gate4-consumer-integration-target-validation",
+  "scenario_count": 48,
+  "scenarios": [
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E01",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E02",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E03",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E04",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E05",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E06",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E07",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product",
+      "group": "explicit-reconfirmation",
+      "id": "E08",
+      "operation": "uv-python-find-and-venv",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R01",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R02",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R03",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R04",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R05",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R06",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R07",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "R08",
+      "operation": "uv-run-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S01",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S02",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S03",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S04",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.5",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S05",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S06",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S07",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-or-explicit-preflight-rejection",
+      "group": "pending-command-surface",
+      "id": "S08",
+      "operation": "uv-sync-explicit-interpreter",
+      "product": "3.14.6",
+      "selector": "absolute-interpreter",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D01",
+      "operation": "uv-python-find",
+      "product": "3.14.5",
+      "selector": "install-directory",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D02",
+      "operation": "uv-python-find",
+      "product": "3.14.5",
+      "selector": "unique-executable-name",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D03",
+      "operation": "uv-python-find",
+      "product": "3.14.5",
+      "selector": "install-directory",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D04",
+      "operation": "uv-python-find",
+      "product": "3.14.5",
+      "selector": "unique-executable-name",
+      "topology": "full"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D05",
+      "operation": "uv-python-find",
+      "product": "3.14.6",
+      "selector": "install-directory",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D06",
+      "operation": "uv-python-find",
+      "product": "3.14.6",
+      "selector": "unique-executable-name",
+      "topology": "runtime+development"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D07",
+      "operation": "uv-python-find",
+      "product": "3.14.6",
+      "selector": "install-directory",
+      "topology": "runtime+test"
+    },
+    {
+      "expected": "exact-product-under-controlled-search",
+      "group": "bounded-discovery",
+      "id": "D08",
+      "operation": "uv-python-find",
+      "product": "3.14.6",
+      "selector": "unique-executable-name",
+      "topology": "full"
+    },
+    {
+      "expected": "current-exact-product",
+      "group": "transition-continuity",
+      "id": "T01",
+      "operation": "find-venv-run-sync-before-after",
+      "product": "3.14.6->3.14.5",
+      "selector": "same-absolute-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "current-exact-product",
+      "group": "transition-continuity",
+      "id": "T02",
+      "operation": "find-venv-run-sync-before-after",
+      "product": "3.14.5->3.14.6",
+      "selector": "same-absolute-path",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "current-exact-product",
+      "group": "transition-continuity",
+      "id": "T03",
+      "operation": "find-venv-run-sync-before-after",
+      "product": "3.14.6->3.14.5",
+      "selector": "same-absolute-path",
+      "topology": "full"
+    },
+    {
+      "expected": "current-exact-product",
+      "group": "transition-continuity",
+      "id": "T04",
+      "operation": "find-venv-run-sync-before-after",
+      "product": "3.14.5->3.14.6",
+      "selector": "same-absolute-path",
+      "topology": "full"
+    },
+    {
+      "expected": "observe-venv-precedence",
+      "group": "precedence-negative-invariant",
+      "id": "X01",
+      "operation": "active-venv-without-system",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "select-system",
+      "group": "precedence-negative-invariant",
+      "id": "X02",
+      "operation": "active-venv-with-system",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "first-compatible-not-product-exact",
+      "group": "precedence-negative-invariant",
+      "id": "X03",
+      "operation": "two-products-path-order",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative-invariant",
+      "id": "X04",
+      "operation": "empty-path",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-managed",
+      "group": "precedence-negative-invariant",
+      "id": "X05",
+      "operation": "only-managed-decoy",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative-invariant",
+      "id": "X06",
+      "operation": "incompatible-patch",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "fail-without-download",
+      "group": "precedence-negative-invariant",
+      "id": "X07",
+      "operation": "wrong-implementation",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "ignore-first",
+      "group": "precedence-negative-invariant",
+      "id": "X08",
+      "operation": "non-executable-first",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "ignore-or-diagnose",
+      "group": "precedence-negative-invariant",
+      "id": "X09",
+      "operation": "broken-executable-first",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "remain-absent",
+      "group": "precedence-negative-invariant",
+      "id": "X10",
+      "operation": "global-link-absence",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "remain-unchanged",
+      "group": "precedence-negative-invariant",
+      "id": "X11",
+      "operation": "managed-dir-invariant",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    },
+    {
+      "expected": "remain-unchanged",
+      "group": "precedence-negative-invariant",
+      "id": "X12",
+      "operation": "repository-and-product-invariant",
+      "product": "matrix-selected",
+      "selector": "controlled-fixture",
+      "topology": "runtime-only"
+    }
+  ],
+  "schema_version": 1,
+  "status": "design-frozen-not-executed"
+}

@@ -54,8 +54,9 @@ complete independently inspected Termux evidence
 README.md
   -> docs/PROJECT_CONTEXT_STAGE3D.md
   -> docs/stages/STAGE3D_SCOPE.md
-  -> experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
-  -> experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
+  -> experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
+  -> experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
+  -> experiments/stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json
   -> docs/handoff/COLLABORATION_PROTOCOL.md
 ```
 

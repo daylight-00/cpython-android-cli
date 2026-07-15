@@ -1,12 +1,6 @@
 # Project Orientation
 
-This is the minimum conceptual model required before acting on `HW-T/cpython-android-cli`.
-
-## Identity
-
-The project is a CLI adaptation of an upstream CPython Android build for Termux, with uv integration and an evidence-driven distribution lifecycle. It preserves normal CPython CLI behavior while adapting launcher, discovery, packaging, installation, recovery, and ownership boundaries for the Android/Termux environment.
-
-It is not a Termux Python replacement, a general-purpose distribution, a CPython fork, a synthetic version relabel, or an upgrade runner built before both products are independently frozen.
+This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, and consumer integration as separate authorities.
 
 ## Governing method
 
@@ -14,59 +8,20 @@ It is not a Termux Python replacement, a general-purpose distribution, a CPython
 understand -> reproduce -> measure -> compare -> design -> optimize
 ```
 
-Use the smallest justified dependency, mutation, helper, exception, and claim. A success in one domain never proves another domain.
+Complete independently audited Termux evidence outranks repository design, local reconstruction, static analysis, and chat memory. Never infer a broader claim from a narrower PASS.
 
-## Authority hierarchy
+## Current boundary
 
-```text
-1. complete independently inspected Termux target evidence
-2. frozen repository contracts and exact identities
-3. independent local reconstruction
-4. static source analysis
-5. assumptions or chat memory
-```
+Stage 3-C Gate 4E is frozen for CPython 3.14.5 and 3.14.6 transitions. Stage 3-D Gate 2 accepted a 64-scenario uv census and Gate 3 froze an exact system-Python contract for `uv python find` and `uv venv`. Gate 4 must validate `uv run`, `uv sync`, transition continuity, and invariants across both products and all four topologies.
 
-A console `PASS`, filename, or verifier exit code alone never closes a target gate.
-
-## Claim and non-reopening discipline
-
-Always state what a result proves and does not prove. Keep runtime behavior, native closure, source/build provenance, archive identity, ownership, transaction/recovery, and consumer integration separate.
-
-Do not silently reopen frozen launcher/PyConfig architecture, first-product identities, ownership policy, addon dependency policy, final-uninstall policy, or accepted transaction/recovery behavior. A policy change needs its own authority decision.
-
-## Product model
-
-A complete product has three independently owned artifacts:
-
-```text
-runtime-base
-development-addon
-test-addon
-```
-
-The addons require the exact runtime-base. Product identity includes exact archives, manifests, product lock, ownership contract, provenance, native closure, runtime behavior, and SHA-256 identities—not only a version string.
-
-## Current boundary at this handoff
-
-```text
-A1 selection/design                 FROZEN PASS
-A2 inputs/toolchain                 FROZEN PASS
-A3 clean upstream Android replay    FROZEN PASS
-A4 three-artifact materialization   RESULT EXISTS — UNAUDITED
-A5 standalone validation            BLOCKED
-A6 independent audit/freeze         pending
-```
-
-The immediate task is to audit the existing A4 result. Do not rebuild or advance A5 unless that exact result requires it.
-
-## Authoritative repository reading path
-
-After verifying the repository identity, read only as needed:
+## Current reading path
 
 ```text
 docs/PROJECT_CONTEXT_STAGE3D.md
 docs/stages/STAGE3D_SCOPE.md
-experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
-experiments/stage3d-consumer-integration/gate1-consumer-authority.json
-experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json
+experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
+experiments/stage3d-consumer-integration/gate2-consumer-census-authority.json
+experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
+experiments/stage3d-consumer-integration/gate3-system-python-contract.json
+experiments/stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json
 ```

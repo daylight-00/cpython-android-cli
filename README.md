@@ -20,7 +20,7 @@ Stage 3-B  reproducible build-input promotion           frozen
 Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
-Stage 3-D  consumer integration                         active — Gate 1 design frozen
+Stage 3-D  consumer integration                         active — Gate 3 contract frozen; Gate 4 next
 ```
 
 ## Frozen runtime architecture
@@ -414,12 +414,13 @@ docs/evidence/STAGE3C_PHASE5_GATE4E_INDEPENDENT_TRANSITION_FREEZE.md
 
 ## Stage 3-D active boundary
 
-Gate 1 selects uv system-Python integration as the primary authority path and freezes a 64-scenario read-only Termux discovery census. The explicit absolute interpreter path remains the control. Python downloads, global prefix links, shell edits, uv managed-install registration, uv patching, and managed-Python emulation are prohibited in the census. Optional managed-Python feasibility remains deferred until system integration is independently frozen.
+Gate 2 accepted a 64-scenario Termux census and Gate 3 froze the exact uv system-Python contract for `uv python find` and `uv venv` using an absolute interpreter path. The census recorded zero `uv run` and zero `uv sync` executions, so those commands remain Gate 4 obligations. Global links, shell edits, managed-install registration, Python downloads, uv patching, and managed-Python emulation remain prohibited.
 
 See:
 
 ```text
 docs/PROJECT_CONTEXT_STAGE3D.md
 docs/stages/STAGE3D_SCOPE.md
-experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md
+experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
+experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
 ```
