@@ -1,0 +1,78 @@
+{
+  "accepted_observations": {
+    "catalog_keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "direct_launch": "both-pass",
+    "exact_reinstall": "both-exact-noop",
+    "exact_selection": {
+      "3.14.5": "cpython-3.14.5-linux-aarch64-none",
+      "3.14.6": "cpython-3.14.6-linux-aarch64-none"
+    },
+    "final_empty": "pass",
+    "installation_orders": [
+      "3.14.5->3.14.6",
+      "3.14.6->3.14.5"
+    ],
+    "installed_list_order": [
+      "3.14.6",
+      "3.14.5"
+    ],
+    "minor_selection": {
+      "alias": "cpython-3.14-linux-aarch64-none",
+      "order_independent": true,
+      "request": "3.14",
+      "resolved_version": "3.14.6"
+    },
+    "peer_preserving_uninstall": "both-orders-pass",
+    "real_state_identity": true,
+    "unspecified_selection": {
+      "alias": "cpython-3.14-linux-aarch64-none",
+      "order_independent": true,
+      "resolved_version": "3.14.6"
+    },
+    "uv_venv": "both-pass"
+  },
+  "accepted_result": {
+    "archive_sha256": "3fe68808e2a770f93a6cfe2feba2517b9ac7a42be04c22349fd1c6f375b6cac2",
+    "archive_size": 46759,
+    "drive_file_id": "1dMOGFamGmybm6qPx_BNR0eAhJvMzeprZ",
+    "external_audit": {
+      "check_count": 117,
+      "pass_count": 117,
+      "sha256": "5813305c22528354e6af686330e8f635db2b90a8a7a48ed5ed3c9ad4d1a4fb4d"
+    },
+    "original_action": "isolated-dual-version-census-fail",
+    "result_index_count": 168,
+    "result_index_sha256": "c3b8b0ea714adaf49f8e7a7ea7079763a2b72ac5a71212a46afca2e8d0ea2257",
+    "safe_member_count": 173,
+    "work_id": "20260716-stage3e-gate2-isolated-dual-version-census-v2"
+  },
+  "authority_kind": "stage3e-gate2-isolated-dual-version-census",
+  "claim_boundary": "Isolated offline dual-version behavior only; no persistent installation, publication, network distribution, global links, upgrade/recovery, or upstream uv Android support.",
+  "correction_lineage": [
+    {
+      "classification": "wrapper-preflight-failure-before-install",
+      "summary": "set -u local-variable expansion defects stopped execution before installation.",
+      "work_id": "20260716-stage3e-gate2-isolated-dual-version-census-v1"
+    },
+    {
+      "classification": "valid-target-evidence-with-verifier-false-negative",
+      "summary": "Complete target workflow succeeded; catalog preflight, minor-alias recognition, and snapshot timing were invalid verifier assumptions.",
+      "work_id": "20260716-stage3e-gate2-isolated-dual-version-census-v2"
+    }
+  ],
+  "repository_input": {
+    "branch": "agent/stage3e-managed-python-distribution",
+    "head": "af930acdcbd5054733bfaa480d1eb18ecdc557bb",
+    "remote": "af930acdcbd5054733bfaa480d1eb18ecdc557bb",
+    "tree": "c0bb501656b82b4a43f94548e6080e993dabf974"
+  },
+  "schema_version": 1,
+  "status": "target-evidence-accepted-by-external-reaudit",
+  "uv": {
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}

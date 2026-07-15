@@ -21,7 +21,7 @@ Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
 Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
-Stage 3-E  managed-Python distribution                  active — Gate 1 authority frozen; Gate 2 next
+Stage 3-E  managed-Python distribution                  active — Gate 3 contract frozen; Gate 4 next
 ```
 
 ## Frozen runtime architecture
@@ -385,8 +385,10 @@ README.md
 docs/PROJECT_CONTEXT_STAGE3E.md
     |
     +--> docs/stages/STAGE3E_SCOPE.md
-    +--> experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
-    +--> experiments/stage3e-managed-python-distribution/gate1-authority.json
+    +--> docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
+    +--> experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json
+    +--> experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
+    +--> experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
     +--> docs/PROJECT_CONTEXT_STAGE3D.md
     +--> docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
     +--> docs/session-operations/README.md
@@ -437,13 +439,15 @@ docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
 
 Stage 3-E begins from the exact Gate 6 feasibility authority and asks how catalog publication, artifact transport, persistent installation, multi-version selection, lifecycle policy, recovery, and coexistence with the frozen system-Python contract should be separated and proved.
 
-Gate 1 freezes the authority design. Gate 2 is the active next boundary and remains isolated, offline, and disposable while testing both exact CPython 3.14.5 and 3.14.6 runtime-only products in one custom catalog.
+Gate 1 freezes the authority design. Gate 2 is accepted through an external 117/117 re-audit of the preserved target archive. Gate 3 freezes exact-key selection and distribution boundaries. Gate 4 is the active next boundary and validates a project-owned persistent managed root.
 
 See:
 
 ```text
 docs/PROJECT_CONTEXT_STAGE3E.md
 docs/stages/STAGE3E_SCOPE.md
-experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
-experiments/stage3e-managed-python-distribution/gate1-authority.json
+docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
+experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json
+experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
+experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
 ```

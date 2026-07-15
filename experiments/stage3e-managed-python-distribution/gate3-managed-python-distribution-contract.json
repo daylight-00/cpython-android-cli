@@ -1,0 +1,74 @@
+{
+  "accepted_isolated_lifecycle": [
+    "exact-install",
+    "dual-version-coexistence",
+    "exact-reinstall-noop",
+    "peer-preserving-uninstall",
+    "final-empty-teardown"
+  ],
+  "authority_kind": "stage3e-gate3-managed-python-distribution-contract",
+  "catalog_contract": {
+    "exact_keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "immutable_sha256_required": true,
+    "mutable_key_redefinition": false,
+    "publication": "pending-gate4-or-later"
+  },
+  "claim_boundary": "No default uv managed directory, network publication, global links, upgrade/recovery, third-product, or upstream uv Android-support acceptance.",
+  "coexistence": {
+    "canonical_product_mutation": false,
+    "registry_or_journal_change": false,
+    "stage3d_system_python_contract": "unchanged-and-independent",
+    "termux_python": "ambient-system-python"
+  },
+  "deferred_lifecycle": [
+    "persistent-transaction-recovery",
+    "interruption-recovery",
+    "upgrade",
+    "downgrade",
+    "residue-policy",
+    "power-loss-durability"
+  ],
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "FROZEN_TARGET_EVIDENCE_EXTERNAL_REAUDIT",
+    "gate3": "FROZEN_DISTRIBUTION_CONTRACT",
+    "gate4": "ACTIVE_NEXT_PROJECT_OWNED_PERSISTENT_ROOT_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_DISTRIBUTION_FREEZE"
+  },
+  "input_authority": {
+    "external_audit_checks": "117/117",
+    "external_audit_sha256": "5813305c22528354e6af686330e8f635db2b90a8a7a48ed5ed3c9ad4d1a4fb4d",
+    "gate2_archive_sha256": "3fe68808e2a770f93a6cfe2feba2517b9ac7a42be04c22349fd1c6f375b6cac2",
+    "gate2_status": "target-evidence-accepted-by-external-reaudit"
+  },
+  "installation_contract": {
+    "first_persistent_root": "project-owned-explicit-install-dir",
+    "global_bin_links": false,
+    "shell_edits": false,
+    "uv_default_managed_dir": false
+  },
+  "schema_version": 1,
+  "selection_contract": {
+    "canonical": "exact-patch-version-request",
+    "exact": {
+      "3.14.5": "cpython-3.14.5-linux-aarch64-none",
+      "3.14.6": "cpython-3.14.6-linux-aarch64-none"
+    },
+    "identity_reprobe_required": true,
+    "minor": {
+      "classification": "conditional-latest-patch",
+      "observed": "3.14.6",
+      "patch_exact": false,
+      "request": "3.14"
+    },
+    "unspecified": {
+      "classification": "conditional-latest-eligible",
+      "observed": "3.14.6",
+      "patch_exact": false
+    }
+  },
+  "status": "contract-frozen"
+}

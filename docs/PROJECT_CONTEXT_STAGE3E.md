@@ -1,65 +1,66 @@
 # Project Context: Stage 3-E Managed-Python Distribution
 
-> **Status:** Stage 3-E active — Gate 1 authority design frozen
-> **Active boundary:** Gate 2 isolated dual-version managed-Python boundary census
+> **Status:** Stage 3-E active — Gate 3 managed-Python distribution contract frozen
+> **Active boundary:** Gate 4 project-owned persistent managed-root implementation and lifecycle validation
 > **Canonical branch:** `agent/stage3e-managed-python-distribution`
-> **Stage input:** `c4f0333db196b7bf0e074b9556d566e0d33c91aa`, tree `593695ee66270cb9f496df10bef624717ba7fc98`
+> **Stage input:** `af930acdcbd5054733bfaa480d1eb18ecdc557bb`, tree `c0bb501656b82b4a43f94548e6080e993dabf974`
 
 ## Frozen foundation
 
-Stage 2, Stage 3-A, Stage 3-B, Stage 3-C through Gate 4E, and Stage 3-D through Gate 6 remain frozen. Stage 3-D preserves two distinct authorities:
-
-```text
-system-Python consumer integration
-  CPython 3.14.5 and 3.14.6
-  runtime-only, runtime+development, runtime+test, full
-  uv python find, uv venv, uv run, uv sync
-
-bounded managed-Python feasibility
-  CPython 3.14.5 runtime-only only
-  custom cpython-3.14.5-linux-aarch64-none catalog entry
-  local file:// archive
-  isolated install, discovery, launch, venv, exact no-op reinstall, uninstall
-```
-
-The feasibility result does not authorize production distribution.
-
-## Stage question
-
-How can exact HW-T Android CPython products be distributed and maintained through uv's managed-Python machinery without weakening the frozen system-Python contract or silently inventing upstream Android platform support?
+Stage 2, Stage 3-A, Stage 3-B, Stage 3-C through Gate 4E, and Stage 3-D through Gate 6 remain frozen. The Stage 3-D system-Python contract remains the production-safe consumer surface and is not replaced by Stage 3-E.
 
 ## Gate state
 
 ```text
 Gate 1  authority and productization-boundary design    FROZEN
-Gate 2  isolated dual-version boundary census           ACTIVE NEXT
-Gate 3  managed-Python distribution contract            pending
-Gate 4  target implementation and lifecycle validation  pending
+Gate 2  isolated dual-version boundary census           FROZEN — external re-audit 117/117
+Gate 3  managed-Python distribution contract            FROZEN
+Gate 4  target implementation and lifecycle validation  ACTIVE NEXT
 Gate 5  independent distribution freeze                 pending
 ```
 
-## Gate 1 decision
+## Gate 2 accepted observation
 
-The first target boundary remains isolated and offline. Gate 2 will construct one exact custom catalog containing the frozen CPython 3.14.5 and 3.14.6 runtime-only products and exercise side-by-side behavior only inside disposable install, cache, configuration, and data directories.
-
-Gate 2 must observe:
+The accepted target result is the preserved v2 archive `3fe68808e2a770f93a6cfe2feba2517b9ac7a42be04c22349fd1c6f375b6cac2`. Its original verifier returned false because it tested three invalid assumptions:
 
 ```text
-catalog recognition for both exact linux-aarch64-none keys
-install order 3.14.5 -> 3.14.6 and 3.14.6 -> 3.14.5
-installed list and exact-version discovery
-minor-version and unspecified selection behavior
-one-version uninstall while the peer remains usable
-exact reinstall/no-op behavior for each product
-interpreter identity and uv venv execution for both products
-absence of writes to real managed, global-bin, shell, registry, and product state
+catalog preflight
+  uv python list observed ambient system Python rather than the custom downloadable catalog
+  both exact install successes independently prove both custom keys were accepted
+
+minor/default selection
+  verifier required an exact-key directory path
+  uv returned cpython-3.14-linux-aarch64-none, the canonical minor alias
+  installed-list output maps that alias to CPython 3.14.6 in both install orders
+
+real-state snapshots
+  verifier ran before after.txt was created
+  the archived before.txt and after.txt are byte-identical
 ```
 
-Gate 2 does not publish a catalog, use network acquisition, or create a persistent user installation.
+An independent external re-audit passes 117/117 checks. Both exact products install side by side in either order, retain Android identity, create and run uv virtual environments, preserve exact reinstall manifests, survive peer removal, uninstall cleanly, and leave real repository, managed, global-bin, shell, registry, journal, and product state unchanged.
+
+Observed selection is order-independent:
+
+```text
+exact 3.14.5    -> cpython-3.14.5-linux-aarch64-none
+exact 3.14.6    -> cpython-3.14.6-linux-aarch64-none
+minor 3.14      -> cpython-3.14-linux-aarch64-none alias -> 3.14.6
+unspecified     -> cpython-3.14-linux-aarch64-none alias -> 3.14.6
+installed list -> 3.14.6, then 3.14.5
+```
+
+## Gate 3 frozen contract
+
+Exact patch-version catalog keys and exact version requests are the authoritative managed-Python selectors. Minor and unspecified requests resolve to uv's latest-patch minor alias and are conditional convenience surfaces, not patch-exact selectors.
+
+Each catalog key must bind one immutable artifact identity. Catalog metadata, artifact bytes, installation root, executable exposure, and lifecycle policy remain separate authorities. The system-Python exact-path contract continues to coexist independently.
+
+Gate 4 begins with a project-owned persistent managed root supplied through an explicit install directory. It does not begin in uv's default real managed directory and does not create `$PREFIX/bin/python*` links or shell edits.
 
 ## Non-reopening boundary
 
-Do not modify the Stage 3-D system-Python selector contract, canonical product bytes, Stage 3-C registry or journal schemas, the real uv managed directory, `$PREFIX/bin/python*`, or shell startup files. Do not patch uv, use root/proot/Shizuku/Docker, enable automatic Python downloads, or claim production recovery and upgrade behavior from an isolated census.
+Do not modify canonical product bytes, Stage 3-C registry or journal schemas, the Stage 3-D system-Python selector contract, uv source or built-in catalog, the default real uv managed directory, `$PREFIX/bin/python*`, or shell startup files. Network distribution, catalog publication, crash recovery, upgrade/downgrade, global executable exposure, and upstream uv Android-support claims remain unaccepted.
 
 ## Current reading path
 
@@ -67,14 +68,14 @@ Do not modify the Stage 3-D system-Python selector contract, canonical product b
 README.md
   -> docs/PROJECT_CONTEXT_STAGE3E.md
   -> docs/stages/STAGE3E_SCOPE.md
-  -> experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
-  -> experiments/stage3e-managed-python-distribution/gate1-authority.json
+  -> docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
+  -> experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json
+  -> experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
+  -> experiments/stage3e-managed-python-distribution/gate3-managed-python-distribution-contract.json
   -> docs/PROJECT_CONTEXT_STAGE3D.md
-  -> experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json
-  -> docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
   -> docs/session-operations/README.md
 ```
 
 ## Immediate next boundary
 
-Design and execute Gate 2 as one bounded Termux target package. Preserve complete PASS-or-FAIL evidence, use both exact frozen runtime-only products, keep all managed-Python state disposable, and treat every production or persistent behavior as unaccepted.
+Design Gate 4 as a bounded Termux target validation against one project-owned persistent managed root. Validate installation, coexistence, exact selection, virtual environments, peer-preserving uninstall, complete teardown, failure preservation, and rollback without using the default uv managed directory or global links.
