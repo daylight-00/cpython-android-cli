@@ -1,0 +1,83 @@
+{
+  "authority_kind": "stage3e-gate1-managed-python-distribution-design",
+  "claim_boundary": "Freezes the authority design for an isolated offline dual-version managed-Python census. It does not accept production catalog publication, persistent installation, network distribution, upgrades, recovery, or upstream uv Android support.",
+  "forbidden_mutations": [
+    "real uv managed-Python directory",
+    "$PREFIX/bin/python*",
+    "shell startup files",
+    "canonical CPython product bytes",
+    "Stage 3-C registry or journal schemas",
+    "uv source or built-in downloads catalog"
+  ],
+  "frozen_inputs": {
+    "stage3d_gate6_authority": {
+      "git_blob": "92f1fb56f237661d9eeba934ad02f8c275f5c1cb",
+      "path": "experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json",
+      "status": "accepted-bounded-feasibility"
+    },
+    "stage3d_gate6_freeze": {
+      "commit": "c4f0333db196b7bf0e074b9556d566e0d33c91aa",
+      "tree": "593695ee66270cb9f496df10bef624717ba7fc98"
+    },
+    "uv": {
+      "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+      "version": "uv 0.11.28 (aarch64-linux-android)"
+    }
+  },
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "ACTIVE_NEXT_ISOLATED_DUAL_VERSION_BOUNDARY_CENSUS",
+    "gate3": "PENDING_MANAGED_PYTHON_DISTRIBUTION_CONTRACT",
+    "gate4": "PENDING_TARGET_IMPLEMENTATION_LIFECYCLE_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_DISTRIBUTION_FREEZE"
+  },
+  "repository_transition": {
+    "active_branch": "agent/stage3e-managed-python-distribution",
+    "source_branch": "agent/stage3d-consumer-integration",
+    "source_head": "c4f0333db196b7bf0e074b9556d566e0d33c91aa",
+    "source_tree": "593695ee66270cb9f496df10bef624717ba7fc98"
+  },
+  "schema_version": 1,
+  "selected_gate2": {
+    "catalog_keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "download_policy": {
+      "explicit_install": "manual",
+      "other_commands": "never"
+    },
+    "installation_orders": [
+      [
+        "3.14.5",
+        "3.14.6"
+      ],
+      [
+        "3.14.6",
+        "3.14.5"
+      ]
+    ],
+    "kind": "isolated-dual-version-managed-python-boundary-census",
+    "mutations": "disposable isolated paths only",
+    "network": "offline",
+    "operations": [
+      "catalog-list",
+      "install",
+      "installed-list",
+      "exact-find",
+      "minor-find",
+      "unspecified-find",
+      "direct-launch",
+      "uv-venv",
+      "exact-reinstall",
+      "single-version-uninstall",
+      "final-empty-negative"
+    ],
+    "products": [
+      "CPython 3.14.5 runtime-only",
+      "CPython 3.14.6 runtime-only"
+    ]
+  },
+  "stage": "stage3e-managed-python-distribution",
+  "status": "design-frozen"
+}

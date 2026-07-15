@@ -219,10 +219,11 @@ Gate 4 begins with a second independently frozen product authority. It does not 
 
 ```text
 README.md
+  -> docs/PROJECT_CONTEXT_STAGE3E.md
+  -> docs/stages/STAGE3E_SCOPE.md
+  -> experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
+  -> experiments/stage3e-managed-python-distribution/gate1-authority.json
   -> docs/PROJECT_CONTEXT_STAGE3D.md
-  -> docs/stages/STAGE3D_SCOPE.md
-  -> experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md
-  -> experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md
-  -> experiments/stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json
+  -> experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json
   -> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
