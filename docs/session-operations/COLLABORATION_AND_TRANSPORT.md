@@ -56,4 +56,5 @@ Do not copy unchanged accepted target evidence into repository-only receipts. Re
 - Binary downloads may be mounted with `.bin`; content identity, not suffix, is authority.
 - Local upload paths must be anywhere under `/mnt/data`.
 - A new chat may block local-path rewrite on the first assistant turn. Do not repeatedly retry in that turn; expose the artifact and retry on a later turn.
+- For assistant-generated artifacts, attempt the normal Google Drive connector raw-file upload once. If that attempt fails, do not try conversion imports, native Google files, alternate upload actions, or repeated connector calls; immediately expose the exact local artifact as a user-visible file.
 - Do not embed mutable post-upload claims such as “not uploaded” inside an immutable handoff archive. Record intended destination in the archive and the actual upload/readback receipt externally.

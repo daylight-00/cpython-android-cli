@@ -57,3 +57,10 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Discovery-sensitive tests must isolate physical cwd ancestry and ambient virtual environments, not only `HOME` and `PATH` variables.
 - A state-transition verifier must validate the intended post-state; stale pre-state wording is not a valid invariant.
 - Ordinary append-only fast-forward repository transactions need exact base/content, focused repository checks, commit/push/readback, and clean post-state—not a target rerun or backup bundle.
+
+
+## 2026-07-15 — Drive upload fallback discipline
+
+- Use the normal Google Drive connector raw-file upload as the single first attempt for assistant-generated artifacts.
+- If that attempt fails, stop connector upload work for that artifact in the current turn. Do not try Docs import, format conversion, native-file creation, alternate upload endpoints, or repeated retries.
+- Expose the exact local artifact through a user-visible file link immediately. A later Drive retry requires a later turn or explicit user request.
