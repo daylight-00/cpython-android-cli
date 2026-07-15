@@ -22,7 +22,7 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Outer `set -e` can bypass status/archive/upload; capture fallible workflows in a controlled child context.
 - Optional absence must return `0` and be recorded.
 - Resolve repository paths explicitly; scripts invoked by absolute path may still run Git in the caller directory.
-- Derive expected post-tree with an isolated index after every patch change.
+- Derive expected post-tree with an isolated index after every patch change when a predeclared post-tree is part of the contract.
 - Avoid logging patterns that keep inherited descriptors open and appear hung.
 
 ## Connector and evidence lessons
@@ -46,3 +46,14 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Temporary uv virtual environments, copied prefixes, shims, caches, and managed-directory decoys may contain normal symlinks and must not be archived as evidence payload.
 - Preserve root-level definitions, process records, stdout/stderr, selected-path metadata, summaries, and invariant snapshots; hash them before pruning transient workspaces.
 - Run result-tree safety after pruning and before the self-excluding index. A packaging failure after target PASS does not require target re-execution when retained evidence is exact and independently verified.
+
+## 2026-07-15 — minimum sufficient validation
+
+- Gate 4 and Gate 5 corrections showed that extra validation layers can create false-negative surface without increasing product assurance.
+- Classify work as repository-only, locally provable behavior, or target authority; require evidence proportional to that class.
+- Reuse frozen evidence by exact SHA-256 and Git identity instead of rerunning or copying it into unrelated transactions.
+- Use one semantic verifier per authority boundary. Add meta-verification only when that verifier changes or fails.
+- A changed harness or verifier must pass three fixtures before target use: success, expected negative, and incomplete or missing outcome.
+- Discovery-sensitive tests must isolate physical cwd ancestry and ambient virtual environments, not only `HOME` and `PATH` variables.
+- A state-transition verifier must validate the intended post-state; stale pre-state wording is not a valid invariant.
+- Ordinary append-only fast-forward repository transactions need exact base/content, focused repository checks, commit/push/readback, and clean post-state—not a target rerun or backup bundle.

@@ -4,7 +4,7 @@
 
 The project owner operates the authoritative Termux/device environment, runs target wrappers, controls final scope, pushes from the authoritative checkout, and provides the minimum bridge between device and Drive.
 
-The assistant inspects exact state, implements bounded changes in isolation, creates one-command packages and independent verifiers, audits complete PASS-or-FAIL archives, preserves claim boundaries, publishes/retrieves Drive packages, and prepares successor handoffs.
+The assistant inspects exact state, implements bounded changes in isolation, creates one-command packages and independent verifiers where a target claim requires them, audits complete PASS-or-FAIL evidence, preserves claim boundaries, publishes/retrieves Drive packages, and prepares successor handoffs.
 
 Do not ask the owner to inspect large logs, edit many files, or run loosely coupled commands when one wrapper can do the work.
 
@@ -22,11 +22,13 @@ gdrive:HW-T/cpython-android-cli/
 
 ## Package classes
 
-1. **Work package:** one `.tar.zst`, one safe root, one wrapper, manifest, hashes, and all bounded inputs. It uploads a complete PASS-or-FAIL result.
-2. **Mandatory handoff:** the successor starts here. It carries orientation, current coordinates, immediate task, stable operation snapshots, and repository documentation patch when needed.
-3. **Miscellaneous backup:** only non-redundant session-local reconstruction material.
+1. **Repository transaction:** one small package with exact base identities, replacement/patch hashes, one wrapper, and a lightweight result receipt. Use it for class R changes that make no target claim.
+2. **Local-behavior package:** a repository transaction plus focused unit or reconstruction evidence for class L behavior.
+3. **Target work package:** one safe `.tar.zst`, one wrapper, manifest, hashes, bounded target inputs, and a complete PASS-or-FAIL result archive for class T authority.
+4. **Mandatory handoff:** the successor starts here. It carries orientation, current coordinates, immediate task, stable operation snapshots, and a repository documentation patch when needed.
+5. **Miscellaneous backup:** only non-redundant session-local reconstruction material.
 
-When a prior work package is unexecuted or a result exists but is intentionally left unaudited, create only the mandatory handoff and optional backup. Reference the exact pending object instead of duplicating it.
+Do not copy unchanged accepted target evidence into repository-only receipts. Reference it by exact SHA-256 and Drive/Git coordinates. When a prior work package is unexecuted or a result exists but is intentionally left unaudited, create only the mandatory handoff and optional backup.
 
 ## Archive rules
 
@@ -34,12 +36,15 @@ When a prior work package is unexecuted or a result exists but is intentionally 
 - Require one root, no absolute/traversal/duplicate/unexpected-link/special members.
 - Use a self-excluding result index when an archive contains its own index.
 - Record final SHA-256 and size outside the archive; an archive cannot reliably contain its own final hash.
+- Archive claim-bearing outputs and receipts, not disposable workspaces, copied products, caches, or unchanged authorities.
 
 ## Repository rules
 
 - The assistant does not mutate the owner's authoritative checkout directly.
 - Use exact local Git for edits, patches, bundles, and validation.
-- Patch for narrow linear change; partial bundle for selected topology; full bundle for reconstruction/history rewrite/rollback.
+- Patch or exact replacements for narrow linear change; partial bundle for selected topology; full bundle for reconstruction/history rewrite/rollback.
+- An ordinary append-only fast-forward transaction needs exact base, exact changed content, commit/push, remote readback, and clean post-state. It does not need a backup bundle.
+- History rewrite or destructive ref movement requires an exact backup bundle, ref map, leases, and rollback behavior.
 - Cross-session content identity is the Git tree when commit metadata can vary.
 - Future author and committer: `daylight-00 <hwjang00@snu.ac.kr>` unless explicitly changed.
 
