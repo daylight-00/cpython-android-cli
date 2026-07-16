@@ -44,6 +44,9 @@ RA146 = "f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208"
 F4_HEAD = "1e7797218473463bc85f6413c49080301eda2ad7"
 F4_TREE = "a3a1cb90f12b20ab47203b4f6b47d8a9694b0e04"
 F4_RESULT = "daaf64255fce6d9c1ef2f5eb5e57d8dcc85472a4be48e56c47f21b94dee891f8"
+G5_BAD_HEAD = "71ded3869f38ed59118435f119a35591aee29f75"
+G5_BAD_TREE = "78459cd8a561a72f6d5f41e0c46dc327da715d35"
+G5_BAD_RESULT = "a338b903d78f3cfa34ae8cddae45b1cb83cb3a89953c0804994e4110691cb5e1"
 
 
 def dig(value: Any, *keys: str, default: Any = None) -> Any:
@@ -118,6 +121,13 @@ def verify(root: Path) -> dict[str, Any]:
     g5ev = text("docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md")
     fsummary = text("docs/evidence/STAGE3F_FINAL_SUMMARY.md")
     g5handoff = text("docs/handoff/2026-07-16-stage3f-independent-freeze.md")
+    g5docfix = text("experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md")
+    g5docfixverify = text("experiments/stage3f-publication-acquisition/verify-gate5-documentation-integrity-correction.py")
+    g5docfixtest = text("experiments/stage3f-publication-acquisition/test-verify-gate5-documentation-integrity-correction.py")
+    g5docfixrun = text("experiments/stage3f-publication-acquisition/run-gate5-documentation-integrity-correction.sh")
+    g5docfixev = text("docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md")
+    g5docfixhandoff = text("docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md")
+    collaboration = text("docs/GITHUB_COLLABORATION_WORKFLOW.md")
 
     g1doc = text("experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md")
     g2doc = text("experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md")
@@ -141,6 +151,7 @@ def verify(root: Path) -> dict[str, Any]:
     correction = data("experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json")
     f4 = data("experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json")
     f5 = data("experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json")
+    f5docfix = data("experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json")
     snap = data("experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json")
     retained = data("experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json")
 
@@ -200,6 +211,13 @@ def verify(root: Path) -> dict[str, Any]:
         "docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md",
         "docs/evidence/STAGE3F_FINAL_SUMMARY.md",
         "docs/handoff/2026-07-16-stage3f-independent-freeze.md",
+        "docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md",
+        "docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md",
+        "experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md",
+        "experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json",
+        "experiments/stage3f-publication-acquisition/verify-gate5-documentation-integrity-correction.py",
+        "experiments/stage3f-publication-acquisition/test-verify-gate5-documentation-integrity-correction.py",
+        "experiments/stage3f-publication-acquisition/run-gate5-documentation-integrity-correction.sh",
         "docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md",
         "docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md",
         "docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md",
@@ -228,7 +246,7 @@ def verify(root: Path) -> dict[str, Any]:
         "branch_active": branch.returncode == 0 and branch.stdout.strip() == BRANCH,
         "readme_stage3e_frozen": "frozen — Gate 5 independent distribution freeze complete" in readme,
         "readme_gate4": G4 in readme and "37/37" in readme and "74/74" in readme,
-        "readme_stage3f": "Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete" in readme,
+        "readme_stage3f": "Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete; documentation integrity corrected" in readme,
         "context3e_status": "> **Status:** Stage 3-E frozen through Gate 5 independent distribution freeze" in ctx3e,
         "scope3e_status": "> **Status:** FROZEN — Gate 5 independent distribution freeze complete" in scope3e,
         "orientation_stage3e": "Stage 3-E is complete" in orient and "target 37/37 and independent 74/74" in orient,
@@ -250,9 +268,9 @@ def verify(root: Path) -> dict[str, Any]:
         "stage3e_gate5_doc": "> **Status:** FROZEN" in e5doc and "Gate 5 closes Stage 3-E" in e5doc,
         "stage3e_gate5_status": e5.get("status") == "independent-freeze-complete",
         "stage3e_gate5_boundary": "require a new stage" in dig(e5, "claim_boundary", default=""),
-        "context3f_status": "> **Status:** Stage 3-F frozen through Gate 5 independent publication/acquisition freeze" in ctx3f,
+        "context3f_status": "> **Status:** Stage 3-F frozen through Gate 5 independent freeze with documentation-integrity correction" in ctx3f,
         "context3f_gate5": "Gate 5  independent publication/acquisition freeze       FROZEN" in ctx3f,
-        "scope3f_status": "> **Status:** FROZEN — Gate 5 independent publication/acquisition freeze complete" in scope3f,
+        "scope3f_status": "> **Status:** FROZEN — Gate 5 independent freeze complete with documentation-integrity correction" in scope3f,
         "gate1_doc": "> **Status:** DESIGN FROZEN" in g1doc,
         "gate1_evidence": "> **Status:** FROZEN — repository-only authority design" in g1ev,
         "stage_start": S3E_HEAD in start and S3E_TREE in start and MAIN in start and "control-wrapper false negative" in start,
@@ -317,7 +335,7 @@ def verify(root: Path) -> dict[str, Any]:
         "gate5_evidence": "> **Status:** FROZEN — independent publication/acquisition freeze complete" in g5ev and F4_HEAD in g5ev,
         "gate5_final_summary": "> **Status:** COMPLETE — frozen through Gate 5" in fsummary and G4_RESULT in fsummary and F4_RESULT in fsummary,
         "gate5_handoff": F4_HEAD in g5handoff and F4_TREE in g5handoff and "No gate is active" in g5handoff,
-        "gate5_status": f5.get("status") == "independent-freeze-complete",
+        "gate5_status": f5.get("status") == "independent-freeze-complete-with-documentation-integrity-correction",
         "gate5_class": f5.get("class") == "R-repository-independent-freeze",
         "gate5_repository_input": dig(f5, "repository_input", "head") == F4_HEAD and dig(f5, "repository_input", "tree") == F4_TREE and dig(f5, "repository_input", "main") == MAIN,
         "gate5_record_result": dig(f5, "repository_record_result", "archive_sha256") == F4_RESULT and dig(f5, "repository_record_result", "archive_size") == 20514,
@@ -330,13 +348,34 @@ def verify(root: Path) -> dict[str, Any]:
         "gate5_verification": dig(f5, "verification", "check_count") == 44 and dig(f5, "verification", "pass_count") == 44 and dig(f5, "verification", "failed_checks") == [],
         "gate5_run_bounded": "PYTHONDONTWRITEBYTECODE=1" in g5run and "verify-gate5-independent-freeze.py" in g5run and "test-verify-gate5-independent-freeze.py" in g5run,
         "gate5_fixture_source": "expected_negative" in g5test and "incomplete" in g5test and "gate5_status" in g5test and "REQUIRED" in g5verify,
+        "gate5_docfix_status": f5docfix.get("status") == "correction-v2-defined-and-locally-verified",
+        "gate5_docfix_class": f5docfix.get("class") == "R-repository-corrective-fast-forward",
+        "gate5_docfix_precondition": dig(f5docfix, "repository_precondition", "head") == G5_BAD_HEAD and dig(f5docfix, "repository_precondition", "tree") == G5_BAD_TREE,
+        "gate5_docfix_failed_result": dig(f5docfix, "failed_gate5_transaction", "result_archive_sha256") == G5_BAD_RESULT and dig(f5docfix, "failed_gate5_transaction", "acceptance") is False,
+        "gate5_docfix_restoration": dig(f5docfix, "restoration_source", "commit") == F4_HEAD and dig(f5docfix, "restoration_source", "tree") == F4_TREE,
+        "gate5_docfix_authority_link": dig(f5, "documentation_integrity_correction", "initial_commit") == G5_BAD_HEAD and dig(f5, "documentation_integrity_correction", "initial_result_archive_sha256") == G5_BAD_RESULT,
+        "gate5_docfix_doc": "> **Status:** CORRECTION V2 DEFINED" in g5docfix and "1,017" in g5docfix,
+        "gate5_docfix_evidence": G5_BAD_HEAD in g5docfixev and G5_BAD_RESULT in g5docfixev and "1,017" in g5docfixev,
+        "gate5_docfix_handoff": G5_BAD_HEAD in g5docfixhandoff and "fast-forward" in g5docfixhandoff,
+        "gate5_docfix_run": "PYTHONDONTWRITEBYTECODE=1" in g5docfixrun and "verify-gate5-documentation-integrity-correction.py" in g5docfixrun,
+        "gate5_docfix_fixture": "shortened_document" in g5docfixtest and "expected_negative" in g5docfixtest and "incomplete" in g5docfixtest,
+        "gate5_docfix_verifier": "readme_minimum_lines" in g5docfixverify and "collaboration_minimum_lines" in g5docfixverify and "no_new_bytecode_residue" in g5docfixverify,
+        "gate5_docfix_bytecode_policy": dig(f5docfix, "integrity_contract", "bytecode_residue", "policy") == "no-new-relative-to-preflight-baseline" and "STAGE3F_BYTECODE_BASELINE" in g5docfixverify,
+        "gate5_docfix_v1_false_negative": dig(f5docfix, "failed_correction_attempt", "result_archive_sha256") == "69bfe223c5fb4f0dec42cf5b99ac35d346be9aaddb7438b82ce59e1d38af494a" and dig(f5docfix, "failed_correction_attempt", "repository_mutation") is False,
+        "readme_production_shape": len(readme.splitlines()) >= 480 and all(marker in readme for marker in ("## Frozen runtime architecture", "## Stage 3-B frozen result", "## Repository map", "## Stage 3-F frozen publication and acquisition authority")),
+        "collaboration_production_shape": len(collaboration.splitlines()) >= 280 and all(marker in collaboration for marker in ("## Git execution model", "## Authorship policy", "## Drive exchange rule", "## Sandbox boundary")),
+        "context_production_shape": len(ctx3f.splitlines()) >= 95 and "## Frozen foundation" in ctx3f and "## Gate 5 freeze and documentation correction" in ctx3f,
+        "orientation_production_shape": len(orient.splitlines()) >= 40 and "## Governing method" in orient and "## Current reading path" in orient,
+        "handoff_production_shape": len(handoff.splitlines()) >= 50 and "# Successor Session Handoff" in handoff,
+        "scope_production_shape": len(scope3f.splitlines()) >= 125 and "## Frozen authority separation" in scope3f and "## Gate 5 frozen result and integrity correction" in scope3f,
+        "gate5_initial_failure_preserved": G5_BAD_HEAD in fsummary and G5_BAD_HEAD in g5ev and G5_BAD_HEAD in g5handoff,
         "git_diff_check": diff.returncode == 0,
     }
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     return {
-        "schema_version": 6,
-        "verification_kind": "project-control-plane-through-stage3f-gate5-independent-freeze",
+        "schema_version": 7,
+        "verification_kind": "project-control-plane-through-stage3f-gate5-documentation-integrity-correction",
         "pass": not failed and not missing and not parse_errors,
         "check_count": len(checks),
         "pass_count": sum(checks.values()),
@@ -344,7 +383,7 @@ def verify(root: Path) -> dict[str, Any]:
         "missing_files": sorted(set(missing)),
         "parse_errors": parse_errors,
         "checks": dict(sorted(checks.items())),
-        "claim_boundary": "Stage 3-F is frozen through Gate 5 for the corrected retained-snapshot loopback acquisition authority. Public hosting, origin trust, uv acquisition, execution, installation, recovery, concurrency, durability, third products, and upstream support require a new stage.",
+        "claim_boundary": "Stage 3-F is frozen through Gate 5 after documentation-integrity correction. Public hosting, origin trust, uv acquisition, execution, installation, recovery, concurrency, durability, third products, and upstream support require a new stage.",
     }
 
 

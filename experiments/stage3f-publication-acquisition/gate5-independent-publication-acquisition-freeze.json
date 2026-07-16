@@ -39,6 +39,41 @@
     "uv_acquisition": false
   },
   "class": "R-repository-independent-freeze",
+  "documentation_integrity_correction": {
+    "affected_paths": [
+      "README.md",
+      "docs/GITHUB_COLLABORATION_WORKFLOW.md",
+      "docs/PROJECT_CONTEXT_STAGE3F.md",
+      "docs/PROJECT_ORIENTATION.md",
+      "docs/handoff/README.md",
+      "docs/stages/STAGE3F_SCOPE.md"
+    ],
+    "correction_authority": "experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json",
+    "failure_kind": "fixture-derived-production-document-replacement",
+    "first_correction_attempt": {
+      "failure_kind": "pre-existing-ignored-bytecode-false-negative",
+      "repository_mutation": false,
+      "result_archive_sha256": "69bfe223c5fb4f0dec42cf5b99ac35d346be9aaddb7438b82ce59e1d38af494a",
+      "work_id": "20260716-stage3f-gate5-documentation-integrity-correction-v1"
+    },
+    "initial_commit": "71ded3869f38ed59118435f119a35591aee29f75",
+    "initial_diff": {
+      "collaboration_lines_after": 14,
+      "collaboration_lines_before": 293,
+      "deletions": 1017,
+      "insertions": 485,
+      "readme_lines_after": 32,
+      "readme_lines_before": 498
+    },
+    "initial_mechanical_verification": {
+      "gate5": "44/44",
+      "project_control": "108/108"
+    },
+    "initial_result_archive_sha256": "a338b903d78f3cfa34ae8cddae45b1cb83cb3a89953c0804994e4110691cb5e1",
+    "initial_result_archive_size": 31078,
+    "initial_tree": "78459cd8a561a72f6d5f41e0c46dc327da715d35",
+    "repair_policy": "restore exact Gate 4 parent documents, apply bounded Gate 5 status edits, retain initial failure commit, enforce structural production-document sentinels"
+  },
   "freeze_decision": {
     "active_gate": null,
     "gate1": "frozen",
@@ -70,7 +105,7 @@
     "work_id": "20260716-stage3f-gate4-retention-correction-acceptance-v1"
   },
   "schema_version": 1,
-  "status": "independent-freeze-complete",
+  "status": "independent-freeze-complete-with-documentation-integrity-correction",
   "verification": {
     "check_count": 44,
     "failed_checks": [],

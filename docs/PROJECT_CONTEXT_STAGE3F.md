@@ -1,47 +1,90 @@
 # Project Context: Stage 3-F Publication and Acquisition Boundaries
 
-> **Status:** Stage 3-F frozen through Gate 5 independent publication/acquisition freeze
-> **Active boundary:** none — a new stage is required for broader work
+> **Status:** Stage 3-F frozen through Gate 5 independent freeze with documentation-integrity correction
+> **Active boundary:** none — broader work requires a new stage authority
 > **Canonical branch:** `agent/stage3f-publication-acquisition`
 > **Stage input:** `6419e107e4aa8400ebd3d98f3583999075b8b935`, tree `e16edd99bfadf2135d0b632ddef4d292c0d80ea6`
-> **Final pre-freeze input:** `1e7797218473463bc85f6413c49080301eda2ad7`, tree `a3a1cb90f12b20ab47203b4f6b47d8a9694b0e04`
+> **Gate 2 input:** `39e5c6d56a45495a4f23b73b6fa0704ba28fbc74`, tree `7a0c476e60280c23dd8edd2627b25b42e3fa1429`
+> **Gate 3 input:** `82c21757e08b040fb7167c90e60fa48af323efb0`, tree `ba85ac5bf09bdfc2aac7482077535ac2942cbc38`
+> **Resolved main at stage start:** `b5a2ca39d1250122312355dd3dbc6165b9409786`
+> **Gate 5 initial commit:** `71ded3869f38ed59118435f119a35591aee29f75`, tree `78459cd8a561a72f6d5f41e0c46dc327da715d35` — preserved documentation-integrity failure
 
-## Final gate state
+## Frozen foundation
+
+Stage 2, Stage 3-A, Stage 3-B, Stage 3-C through Gate 4E, Stage 3-D through Gate 6, and Stage 3-E through Gate 5 remain frozen. Stage 3-F does not mutate accepted CPython products, Stage 3-C ownership and transition authorities, the Stage 3-D exact-path system-Python contract, or the Stage 3-E project-owned persistent-root contract.
+
+Stage 3-E proved a local, offline, exact-key managed-Python surface for CPython 3.14.5 and 3.14.6. Stage 3-F separates publication metadata, endpoint state, transport observations, candidate verification, verified caches, and installation authority.
+
+## Gate state
 
 ```text
 Gate 1  publication/acquisition authority design        FROZEN
-Gate 2  immutable publication snapshot contract         FROZEN — 18/18, explicit retention correction
-Gate 3  loopback transport/acquisition implementation   FROZEN — 31/31
-Gate 4  Termux target acquisition validation             FROZEN — retained bytes, 16/16 + 31/31
-Gate 5  independent publication/acquisition freeze       FROZEN
+Gate 2  immutable publication snapshot contract         FROZEN — 18/18 local verification
+Gate 3  loopback transport/acquisition implementation   FROZEN — 31/31 local verification
+Gate 4  Termux target network-acquisition validation     FROZEN — retained actual bytes, 16/16 + 31/31
+Gate 5  independent publication/acquisition freeze       FROZEN — 44/44, documentation integrity corrected
 ```
 
-## Frozen authority
-
-Product identity is exact bytes, byte size, SHA-256, provenance, and platform identity. Catalog rows bind exact keys to immutable products. A publication snapshot is canonical immutable metadata with a separate digest. Endpoint locators are pointers only. Transport bytes remain untrusted candidates until exact size, SHA-256, and snapshot binding pass. Verified cache objects are content-addressed. Installation remains a separate Stage 3-E authority.
-
-## Correction lineage
-
-Gate 2 freezes canonicalization behavior, but its original concrete archive bytes were not retained. Gate 4 v1 failed closed at derivation and preserved result `2a076288652f1c342da49eccbe4507291df05d1d596b5c6f1d5646610b5990be`. The original snapshot remains historical and unselectable.
-
-Gate 4A retained exact archive bytes and established the selectable snapshot:
+## Gate 1 frozen authority model
 
 ```text
-3.14.5  9761545   2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
-3.14.6  11788907  f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208
-snapshot body    dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233
-snapshot file    419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3
+product identity       exact bytes, size, SHA-256, provenance, platform
+catalog row            exact key bound to one immutable product
+publication snapshot   canonical immutable complete row set with its own digest
+endpoint locator       mutable pointer, never product identity
+transport observation  received bytes and transport metadata
+acquisition candidate  untrusted until exact checks pass
+verified cache         content-addressed by artifact SHA-256
+installation root      unchanged Stage 3-E project-owned root
 ```
 
-Both payloads pass 714/714 strict fidelity. Result `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b` passes a 16/16 target matrix and 31/31 independent audit, with exact bytes retained in its self-indexed evidence.
+## Gate 2 historical snapshot and retention correction
 
-## Gate 5 freeze
+Gate 2 remains frozen as a deterministic canonicalization and candidate-observation contract with 18/18 local verification. Its original concrete snapshot recorded transient archive identities but did not retain those exact bytes. Gate 4 v1 therefore failed closed at derivation; the historical snapshot is preserved but is no longer selectable for acquisition.
 
-The repository record at `1e7797218473463bc85f6413c49080301eda2ad7` / `a3a1cb90f12b20ab47203b4f6b47d8a9694b0e04` was independently audited through result `daaf64255fce6d9c1ef2f5eb5e57d8dcc85472a4be48e56c47f21b94dee891f8`: 49 safe members, 46/46 self-index, project control 91/91, canonical authorship, exact remote readback, and clean post-state. Gate 5 freezes this complete lineage. No gate remains active.
+Gate 4A establishes the active retained snapshot from exact bytes preserved in the accepted target result:
+
+```text
+cpython-3.14.5-linux-aarch64-none
+  size    9761545
+  sha256  2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
+
+cpython-3.14.6-linux-aarch64-none
+  size    11788907
+  sha256  f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208
+
+retained snapshot body SHA-256  dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233
+retained snapshot file SHA-256  419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3
+retained snapshot file size    2997
+```
+
+This is an explicit authority repair after preserved failure evidence, not permission for mutable endpoint-driven exact-key redefinition.
+
+## Gate 3 frozen implementation
+
+Gate 3 freezes the 31/31 loopback publisher and fail-closed content-addressed acquisition engine using synthetic fixtures. Redirects and non-loopback hosts are rejected, candidate residue is removed, verified objects are not overwritten, and repeat acquisition is a no-request cache hit.
+
+## Gate 4 frozen target result
+
+Gate 4A executes the same policy on Termux with the retained actual archive bytes. The result archive `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b` is safe with 62 members and 46/46 exact self-index entries. Its raw target matrix passes 16/16 and the independent verifier passes 31/31.
+
+Both payloads pass 714/714 strict source fidelity. Complete transfers, independent size/hash observations, content-addressed promotion, repeat cache hits, truncated/corrupt rejection, peer preservation, candidate cleanup, and protected-state identity are accepted. The exact archive bytes remain retained inside the result evidence.
+
+No uv command or product was executed, no archive was installed, no public or external endpoint was used, and the Stage 3-E managed root remained unchanged.
+
+## Gate 5 freeze and documentation correction
+
+Gate 5 independently freezes the corrected authority lineage and accepted Gate 4 evidence. The target-independent freeze verifier passed 44/44 and project control passed 108/108 in result archive `a338b903d78f3cfa34ae8cddae45b1cb83cb3a89953c0804994e4110691cb5e1`.
+
+That result was not accepted immediately. Independent diff inspection found the commit had replaced six long-lived documents with short fixture-derived copies: `README.md`, `docs/GITHUB_COLLABORATION_WORKFLOW.md`, `docs/PROJECT_CONTEXT_STAGE3F.md`, `docs/PROJECT_ORIENTATION.md`, `docs/handoff/README.md`, and `docs/stages/STAGE3F_SCOPE.md`. The commit removed 1,017 lines overall and reduced the README from 498 lines to 32 and the collaboration workflow from 293 lines to 14. The boolean verifiers had checked marker presence but not preservation of the production documents.
+
+The correction restores those six files from the exact Gate 4 parent state, applies only the final Gate 5 status changes, preserves all Gate 5 authority/evidence additions, and extends verification with structural sentinels and minimum production-document bounds. The initial commit remains in history as evidence; it is not treated as the accepted final documentation tree.
+
+No target, uv, product, cache, installation, public network, or external network operation is part of the correction.
 
 ## Deferred boundary
 
-Public hosting, DNS/TLS/origin authentication, signatures, production redirects and mirrors, uv automatic acquisition, resumable transfer, cache eviction, installation, default-root adoption, global links, upgrades, recovery, concurrency, durability, third products, and upstream uv Android support require a new stage.
+Public hosting, DNS/TLS/origin authenticity, signatures, production redirect and mirror policy, automatic uv acquisition, resumable transfer, cache eviction, default managed-root adoption, global exposure, installation, upgrades, crash recovery, concurrency, durability, third products, and upstream uv Android support remain unaccepted.
 
 ## Current reading path
 
@@ -54,7 +97,13 @@ README.md
   -> experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
   -> experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md
   -> experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json
+  -> experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json
   -> docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md
+  -> docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md
   -> docs/evidence/STAGE3F_FINAL_SUMMARY.md
-  -> docs/handoff/2026-07-16-stage3f-independent-freeze.md
+  -> docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md
 ```
+
+## Immediate next boundary
+
+Stage 3-F has no active gate. Public hosting, DNS/TLS/origin authenticity, signatures, production redirect or mirror policy, uv automatic acquisition, product execution, installation, recovery, concurrency, durability, third products, or upstream uv Android support require a newly opened stage with explicit authority.

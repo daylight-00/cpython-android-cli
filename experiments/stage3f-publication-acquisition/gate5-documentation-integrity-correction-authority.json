@@ -1,0 +1,107 @@
+{
+  "authority_kind": "stage3f-gate5-documentation-integrity-correction",
+  "claim_boundary": "This correction repairs repository documentation and verifier coverage only. It does not expand the Stage 3-F publication or acquisition authority.",
+  "class": "R-repository-corrective-fast-forward",
+  "failed_correction_attempt": {
+    "diagnosis": "absolute repository-wide residue check conflated pre-existing ignored bytecode with newly created residue",
+    "failed_check": "no_bytecode_residue",
+    "repository_mutation": false,
+    "result_archive_sha256": "69bfe223c5fb4f0dec42cf5b99ac35d346be9aaddb7438b82ce59e1d38af494a",
+    "result_archive_size": 3243,
+    "work_id": "20260716-stage3f-gate5-documentation-integrity-correction-v1"
+  },
+  "failed_gate5_transaction": {
+    "acceptance": false,
+    "commit": "71ded3869f38ed59118435f119a35591aee29f75",
+    "mechanical_checks": {
+      "gate5": "44/44",
+      "project_control": "108/108"
+    },
+    "reason": "independent diff audit found fixture-shortened production documentation",
+    "result_archive_sha256": "a338b903d78f3cfa34ae8cddae45b1cb83cb3a89953c0804994e4110691cb5e1",
+    "result_archive_size": 31078,
+    "tree": "78459cd8a561a72f6d5f41e0c46dc327da715d35",
+    "work_id": "20260716-stage3f-gate5-independent-publication-acquisition-freeze-v1"
+  },
+  "integrity_contract": {
+    "bytecode_residue": {
+      "baseline_capture": "before payload application",
+      "policy": "no-new-relative-to-preflight-baseline",
+      "standalone_fallback": "no-tracked-bytecode"
+    },
+    "fixture_requirement": "a shortened production document must fail the correction verifier and project-control verifier",
+    "minimum_line_counts": {
+      "README.md": 480,
+      "docs/GITHUB_COLLABORATION_WORKFLOW.md": 280,
+      "docs/PROJECT_CONTEXT_STAGE3F.md": 95,
+      "docs/PROJECT_ORIENTATION.md": 40,
+      "docs/handoff/README.md": 50,
+      "docs/stages/STAGE3F_SCOPE.md": 125
+    },
+    "required_sentinels": {
+      "README.md": [
+        "## Frozen runtime architecture",
+        "## Stage 3-B frozen result",
+        "## Repository map",
+        "## Stage 3-F frozen publication and acquisition authority"
+      ],
+      "docs/GITHUB_COLLABORATION_WORKFLOW.md": [
+        "## Git execution model",
+        "## Authorship policy",
+        "## Drive exchange rule",
+        "## Sandbox boundary"
+      ],
+      "docs/PROJECT_CONTEXT_STAGE3F.md": [
+        "## Frozen foundation",
+        "## Gate 5 freeze and documentation correction",
+        "## Deferred boundary"
+      ],
+      "docs/PROJECT_ORIENTATION.md": [
+        "## Governing method",
+        "## Current boundary",
+        "## Current reading path"
+      ],
+      "docs/handoff/README.md": [
+        "# Successor Session Handoff",
+        "Stage 3-F Gate 5 independent publication freeze"
+      ],
+      "docs/stages/STAGE3F_SCOPE.md": [
+        "## Stage question",
+        "## Frozen authority separation",
+        "## Gate 5 frozen result and integrity correction",
+        "## Explicitly not proved"
+      ]
+    }
+  },
+  "protected_state": {
+    "cache_mutation": false,
+    "external_network": false,
+    "history_rewrite": false,
+    "installation_mutation": false,
+    "network_publication": false,
+    "target_execution": false,
+    "uv_invocation": false
+  },
+  "repository_precondition": {
+    "branch": "agent/stage3f-publication-acquisition",
+    "head": "71ded3869f38ed59118435f119a35591aee29f75",
+    "main": "b5a2ca39d1250122312355dd3dbc6165b9409786",
+    "remote_head": "71ded3869f38ed59118435f119a35591aee29f75",
+    "tree": "78459cd8a561a72f6d5f41e0c46dc327da715d35"
+  },
+  "restoration_source": {
+    "commit": "1e7797218473463bc85f6413c49080301eda2ad7",
+    "method": "reverse exact candidate patch for six paths, then apply surgical Gate 5 final-state edits",
+    "tree": "a3a1cb90f12b20ab47203b4f6b47d8a9694b0e04"
+  },
+  "restored_paths": [
+    "README.md",
+    "docs/GITHUB_COLLABORATION_WORKFLOW.md",
+    "docs/PROJECT_CONTEXT_STAGE3F.md",
+    "docs/PROJECT_ORIENTATION.md",
+    "docs/handoff/README.md",
+    "docs/stages/STAGE3F_SCOPE.md"
+  ],
+  "schema_version": 1,
+  "status": "correction-v2-defined-and-locally-verified"
+}

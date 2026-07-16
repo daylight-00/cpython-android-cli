@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise corrected Stage 3-F Gate 4 project-control fixtures."""
+"""Exercise project-control fixtures through the Gate 5 documentation correction."""
 from __future__ import annotations
 
 import sys
@@ -41,12 +41,8 @@ def load_module():
 
 
 def make_fixture(root: Path) -> None:
-    write(
-        root / "README.md",
-        "frozen — Gate 5 independent distribution freeze complete\n"
-        "4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112 37/37 74/74\n"
-        "Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete\n",
-    )
+    copy("README.md", root)
+    copy("docs/GITHUB_COLLABORATION_WORKFLOW.md", root)
     write(root / "docs/PROJECT_CONTEXT_STAGE3D.md", "frozen\n")
     write(root / "docs/PROJECT_CONTEXT_STAGE3E.md", "> **Status:** Stage 3-E frozen through Gate 5 independent distribution freeze\n")
     write(root / "docs/stages/STAGE3E_SCOPE.md", "> **Status:** FROZEN — Gate 5 independent distribution freeze complete\n")
@@ -89,6 +85,13 @@ def make_fixture(root: Path) -> None:
         "docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md",
         "docs/evidence/STAGE3F_FINAL_SUMMARY.md",
         "docs/handoff/2026-07-16-stage3f-independent-freeze.md",
+        "docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md",
+        "docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md",
+        "experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md",
+        "experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json",
+        "experiments/stage3f-publication-acquisition/verify-gate5-documentation-integrity-correction.py",
+        "experiments/stage3f-publication-acquisition/test-verify-gate5-documentation-integrity-correction.py",
+        "experiments/stage3f-publication-acquisition/run-gate5-documentation-integrity-correction.sh",
     ]
     for rel in copy_paths:
         copy(rel, root)
@@ -137,16 +140,23 @@ def main() -> int:
         if not success["pass"]:
             raise SystemExit(success)
 
-        authority = root / "experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json"
+        authority = root / "experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json"
         value = json.loads(authority.read_text(encoding="utf-8"))
         value["status"] = "broken"
         write_json(authority, value)
-        negative = module.verify(root)
-        if negative["pass"] or negative["failed_checks"] != ["gate5_status"]:
-            raise SystemExit(negative)
+        expected_negative = module.verify(root)
+        if expected_negative["pass"] or expected_negative["failed_checks"] != ["gate5_docfix_status"]:
+            raise SystemExit(expected_negative)
 
-        value["status"] = "independent-freeze-complete"
+        value["status"] = "correction-v2-defined-and-locally-verified"
         write_json(authority, value)
+        readme = root / "README.md"
+        readme.write_text("Stage 3-F frozen\n", encoding="utf-8")
+        shortened_document = module.verify(root)
+        if shortened_document["pass"] or "readme_production_shape" not in shortened_document["failed_checks"]:
+            raise SystemExit(shortened_document)
+
+        copy("README.md", root)
         retained = root / "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json"
         retained.unlink()
         incomplete = module.verify(root)
@@ -156,11 +166,12 @@ def main() -> int:
 
         print(json.dumps({
             "schema_version": 1,
-            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate5-independent-freeze",
+            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate5-documentation-integrity-correction",
             "pass": True,
             "fixtures": {
                 "success": success["check_count"],
-                "expected_negative": negative["failed_checks"],
+                "expected_negative": expected_negative["failed_checks"],
+                "shortened_document": shortened_document["failed_checks"],
                 "incomplete": incomplete["missing_files"],
             },
         }, indent=2, sort_keys=True))
