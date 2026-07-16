@@ -1,0 +1,95 @@
+{
+  "contract_version": 1,
+  "facade_kind": "hw-t-standalone-build-package-verify-facade",
+  "operations": {
+    "build": {
+      "host_role": "workstation",
+      "outputs": [
+        "out/{target_id}/{build_profile}/cpython/python-{python_version}-{target_host}.tar.gz",
+        "out/{target_id}/{build_profile}/cpython/SHA256SUMS",
+        "out/{target_id}/{build_profile}/metadata/cpython-product.json",
+        "out/{target_id}/{build_profile}/bin/python3.14",
+        "out/{target_id}/{build_profile}/metadata/build-info.txt"
+      ],
+      "receipt": "results/workstation/epoch2-standalone/build-receipt.json",
+      "steps": [
+        {
+          "blob_sha": "2393771fbac945bd15cdeeef9a37fddcc625df47",
+          "id": "prepare-replay",
+          "marker": "STAGE3B_REPLAY_PREPARE=PASS",
+          "path": "experiments/stage3b-upstream-replay/prepare-replay.sh"
+        },
+        {
+          "blob_sha": "a509cb796de93e9e5284af9100fff53eff3b7253",
+          "id": "run-replay",
+          "marker": "STAGE3B_UPSTREAM_REPLAY=PASS",
+          "path": "experiments/stage3b-upstream-replay/run-replay.sh"
+        },
+        {
+          "blob_sha": "a1c441d071b88ca5029ec87472659c1b460acadc",
+          "id": "promote-product",
+          "marker": "STAGE3B_CPYTHON_PRODUCT_PROMOTION=PASS",
+          "path": "experiments/stage3b-product-promotion/promote-replay-package.sh"
+        },
+        {
+          "blob_sha": "c1d8124c81183255b3e2070af6b27877ed2b7e9c",
+          "id": "build-launcher",
+          "marker": "Built:",
+          "path": "scripts/build/build-launcher.sh"
+        }
+      ]
+    },
+    "package": {
+      "archive_root": "python/",
+      "host_role": "workstation",
+      "implementation": "components/standalone/lib/package_e2p1.py",
+      "input_launcher": "out/{target_id}/{build_profile}/bin/python3.14",
+      "input_prefix": "work/workstation/stage3b-promoted-cpython/prefix",
+      "output_dir": "dist/{target_id}/{build_profile}/standalone",
+      "payload_classes": [
+        "runtime",
+        "development"
+      ],
+      "primary_flavor": "install_only_stripped"
+    },
+    "verify": {
+      "envelope_implementation": "components/standalone/lib/verify_envelope.py",
+      "repository_implementation": "experiments/epoch2-standalone-build-facade/verify-e2p2-standalone-facade.py",
+      "scopes": [
+        "repository",
+        "envelope"
+      ]
+    }
+  },
+  "predecessor": {
+    "e2p1_commit": "68828691fcae382cf49b9dbc2b5231f9e21f9282",
+    "e2p1_tree": "eea4b6e7c8ffb3b49f2b3c45e9ac0639055bb118",
+    "epoch1_commit": "e1de252740a96c40f3d587269136235a2c84ea16",
+    "epoch1_tree": "66c976f3fc182496d2843771b46faaf98fc267da",
+    "stage3b_authority": "docs/stages/STAGE3B_FINAL.md"
+  },
+  "schema_version": 1,
+  "stable_command": "components/standalone/bin/cpython-android-standalone",
+  "tracked_inputs": [
+    {
+      "blob_sha": "7aa4fdd98690fef34559e9c352614d0da114ce06",
+      "path": "config/defaults.env"
+    },
+    {
+      "blob_sha": "4b31a1f6c7c843ba8c5b652047a24e813c63fade",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json"
+    },
+    {
+      "blob_sha": "32ca2e40f8917ca2b52bc9fb1a4840cab5b85686",
+      "path": "scripts/lib/project-env.sh"
+    },
+    {
+      "blob_sha": "7370797fa849b7459c5b0c34f096d7d53b960d44",
+      "path": "src/launcher/python.c"
+    },
+    {
+      "blob_sha": "65e245f597e15ac20c6031ccf885a4a0feed1469",
+      "path": "experiments/stage3b-product-promotion/promote-cpython-product.py"
+    }
+  ]
+}
