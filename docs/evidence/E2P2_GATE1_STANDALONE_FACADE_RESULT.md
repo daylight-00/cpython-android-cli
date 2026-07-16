@@ -31,6 +31,12 @@ regression capture so compiler or compressor descendants cannot hold a pipe open
 The retained failed result archive has SHA-256
 `3cb8e27e9ec9b8abcadc5fd342f29c8cc05bbdc66efa548cf31da74cb2492e50`.
 
+## Gate 2 preflight correction
+
+The first read-only Gate 2 preflight completed without a build and retained result archive SHA-256 `3b11605e4711adde6d52f11c7b38454ee0110528175bc3c74c45664b5dc36361`. It exposed an exec-boundary defect: `config/defaults.env` and ordinary `.local/env` assignments were visible to shell callers but were not exported to the Python façade. Consequently the public `plan build` and `plan package` commands failed before producer inspection, and the reported 18 blockers included cascading plan/provenance failures rather than 18 independent host deficiencies.
+
+The correction exports the tracked target/version defaults and machine-local façade inputs from `scripts/lib/project-env.sh`, pins the corrected loader blob in the façade contract, and adds an isolated shell-to-Python regression. No CPython build, package, Android execution, or qualification occurred during this correction.
+
 ## Real-product status
 
 ```text

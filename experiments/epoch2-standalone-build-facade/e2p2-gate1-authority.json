@@ -34,22 +34,36 @@
       "correction": "scope bytecode checks and cleanup to E2-P2-owned paths, use file-backed regression capture, and support exact failed-worktree recovery",
       "result_archive_sha256": "3cb8e27e9ec9b8abcadc5fd342f29c8cc05bbdc66efa548cf31da74cb2492e50",
       "work_id": "20260716-epoch2-p2-gate1-standalone-build-facade"
+    },
+    {
+      "cause": "project environment assignments remained shell-local across the stable command exec boundary",
+      "classification": "read-only-gate2-preflight-discovered-repository-boundary-defect-no-build-no-package",
+      "correction": "export tracked defaults and machine-local facade inputs in project-env.sh, pin the corrected loader blob, and verify an isolated shell-to-Python exec boundary",
+      "result_archive_sha256": "3b11605e4711adde6d52f11c7b38454ee0110528175bc3c74c45664b5dc36361",
+      "work_id": "20260717-e2p2-gate2-workstation-preflight-v1"
+    },
+    {
+      "cause": "authority metadata declared 24 independent checks while the verifier still compared against the pre-correction count of 23",
+      "classification": "valid-repository-transaction-negative-automatic-rollback-no-commit-no-push",
+      "correction": "align the verifier authority count with the 24-check corrected Gate 1 contract while preserving the environment propagation change",
+      "result_archive_sha256": "d8705f8bd645087097b7f3cb662c5a3172b3dc7835eb6d6ed303b36a240e7c54",
+      "work_id": "20260717-e2p2-gate1-environment-propagation-correction-v1"
     }
   ],
   "file_identities": {
     "components/standalone/bin/cpython-android-standalone": "bd82d451f2d8e10f63a67efcc722592022a67a8092c2a0c9fee98f7bbb2187ed",
-    "components/standalone/contracts/facade-v1.json": "c3bf60a676d40a27790816c3d4612cd9d48291572672532af786318226df9e13",
+    "components/standalone/contracts/facade-v1.json": "3dbcef7a8631f715ea817d6fc55353b1ed1bd1ac7276cce51d08a0d9b3766f65",
     "components/standalone/lib/facade.py": "3c68c43c21435cb2f70bc713e2338d7c0ea4bd3bd82e41c018ac14baa92cb742",
     "components/standalone/lib/package_e2p1.py": "03727f8fb5a37f0adaa3d864e76d62284dd20d666f004e3c55e0fb9dce21cbd5",
     "components/standalone/lib/verify_envelope.py": "89aa5c341e36539f2fa94f7c9a4c5f5ac85f95aa5730f4655a8d93aca3edd1d8",
-    "docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md": "39a1ea917755050f0bbf5862b3d3fffc6a6f19555e0cd4507989adcb8436911d",
-    "docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md": "0f413aee2f83d2732b5cb8f23fe9115a0b2beb84ed88aef6c23c791982edd472",
-    "docs/handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md": "e71ade6be1ffb4950f218199f7855db1dbb14e8487029ee7d4df3cb1c601c347",
+    "docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md": "26f8bb360db6ac5c6e7686daed703f0d050e43afec057f39333ad70837725072",
+    "docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md": "90ded9647dc561d9c853d19b23486df0d7ab1a3df8c1b441816c0e2f491e3a69",
+    "docs/handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md": "01d0117085e44509c63e05d836cc72edc7ea87cecb4dc5fb705b6146c32a1c61",
     "experiments/epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md": "0a770a7301ae33e9328c406b32496ce80c74f7f021686bba2d33bb40524e56ad",
     "experiments/epoch2-standalone-build-facade/README.md": "9b91c5d56f32271ccef872395395e8d0be6ba938f131797cbf0d696d7504befd",
     "experiments/epoch2-standalone-build-facade/run-e2p2-standalone-facade.sh": "c6babd156e39659c58a324e3eb00da14d5169f84b9619d339353c40fca30346d",
     "experiments/epoch2-standalone-build-facade/test-e2p2-standalone-facade.py": "ca3897e61c2fcbf027e9151f6e9dc72b41b13e32a6dc4a7ffd9f769c2f126f1a",
-    "experiments/epoch2-standalone-build-facade/verify-e2p2-standalone-facade.py": "a8d8915903eb0609d94dedfcb40534c31f4286012379994dfec9cbe545a8eff2"
+    "experiments/epoch2-standalone-build-facade/verify-e2p2-standalone-facade.py": "d39cc742745266cfdb2641e37ef505aef34984ac47d379c397b223728491af54"
   },
   "next_gate": {
     "id": "E2-P2-GATE2",
@@ -69,7 +83,7 @@
   "schema_version": 1,
   "status": "gate1-frozen-repository-facade",
   "verification": {
-    "independent_check_count": 23,
+    "independent_check_count": 24,
     "regression_pass_count": 3,
     "regression_test_count": 3
   }

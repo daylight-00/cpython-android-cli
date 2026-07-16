@@ -85,6 +85,12 @@ Target runtime qualification is deliberately absent from façade contract versio
 
 `build` and `package` require `PROJECT_ROLE=workstation`. Repository and envelope verification are host-independent when Python, Git, zstd, and the required fixture compiler are available.
 
+## Environment propagation
+
+The stable shell command sources `scripts/lib/project-env.sh` and then replaces itself with the Python façade. Tracked defaults and machine-local values consumed after that `exec` boundary must therefore be exported by the loader. Callers may continue to use ordinary assignments in `.local/env`; they are not required to duplicate `export` on every line.
+
+The independently checked boundary includes the tracked target/version defaults plus `PROJECT_ROLE`, `ANDROID_CC`, and `ANDROID_STRIP`. Gate 2 must fail before producer execution when those values are absent or inconsistent.
+
 ## Compatibility and evolution
 
 The stable command and operation names are version-1 interfaces. Internal script paths may change only with an explicit contract update and independent verification. Adding target verification requires a new accepted scope rather than silently broadening `verify --scope envelope`.

@@ -106,6 +106,57 @@ def project_env(root: Path) -> dict[str, str]:
     return env
 
 
+def project_env_exec_boundary_passes(root: Path) -> bool:
+    """Require tracked defaults and plain .local/env assignments to survive exec."""
+    source = root / "scripts/lib/project-env.sh"
+    defaults = root / "config/defaults.env"
+    if not source.is_file() or not defaults.is_file():
+        return False
+    with tempfile.TemporaryDirectory(prefix="e2p2-project-env-") as temp_name:
+        fixture = Path(temp_name)
+        (fixture / "scripts/lib").mkdir(parents=True)
+        (fixture / "config").mkdir(parents=True)
+        (fixture / ".local").mkdir(parents=True)
+        (fixture / "scripts/lib/project-env.sh").write_bytes(source.read_bytes())
+        (fixture / "config/defaults.env").write_bytes(defaults.read_bytes())
+        (fixture / ".local/env").write_text(
+            "PROJECT_ROLE=workstation\n"
+            "ANDROID_CC=/tmp/hw-t-android-cc\n"
+            "ANDROID_STRIP=/tmp/hw-t-android-strip\n",
+            encoding="utf-8",
+        )
+        probe = r"""set -euo pipefail
+source "$1"
+exec python3 - <<'INNERPY'
+import json, os
+keys = [
+    "TARGET_ID", "TARGET_HOST", "ANDROID_API", "PYTHON_VERSION",
+    "PYTHON_MM", "BUILD_PROFILE", "PROJECT_ROLE", "ANDROID_CC",
+    "ANDROID_STRIP",
+]
+print(json.dumps({key: os.environ.get(key) for key in keys}, sort_keys=True))
+INNERPY
+"""
+        proc = run(
+            ["bash", "-c", probe, "bash", str(fixture / "scripts/lib/project-env.sh")],
+            fixture,
+            env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
+        )
+        observed = parse_json_stdout(proc)
+        expected = {
+            "TARGET_ID": "aarch64-linux-android24",
+            "TARGET_HOST": "aarch64-linux-android",
+            "ANDROID_API": "24",
+            "PYTHON_VERSION": "3.14.6",
+            "PYTHON_MM": "3.14",
+            "BUILD_PROFILE": "release",
+            "PROJECT_ROLE": "workstation",
+            "ANDROID_CC": "/tmp/hw-t-android-cc",
+            "ANDROID_STRIP": "/tmp/hw-t-android-strip",
+        }
+        return proc.returncode == 0 and observed == expected
+
+
 def verify(root: Path) -> dict[str, Any]:
     root = root.resolve()
     experiment = root / "experiments/epoch2-standalone-build-facade"
@@ -192,13 +243,24 @@ def verify(root: Path) -> dict[str, Any]:
     checks["python_syntax"] = all(path.is_file() and source_compiles(path) for path in python_files)
 
     env = project_env(root)
+    progress("environment-boundary")
+    checks["project_environment_exec_boundary"] = project_env_exec_boundary_passes(root)
+
     progress("facade-plans")
-    facade = root / "components/standalone/lib/facade.py"
+    stable = root / "components/standalone/bin/cpython-android-standalone"
+    boundary_env = os.environ.copy()
+    for key in (
+        "TARGET_ID", "TARGET_HOST", "ANDROID_API", "PYTHON_VERSION",
+        "PYTHON_MM", "BUILD_PROFILE", "PROJECT_ROLE", "ANDROID_CC",
+        "ANDROID_STRIP",
+    ):
+        boundary_env.pop(key, None)
+    boundary_env["PYTHONDONTWRITEBYTECODE"] = "1"
     plan_results = []
-    if facade.is_file() and contract_path.is_file():
+    if stable.is_file() and contract_path.is_file():
         for operation in ("build", "package", "verify"):
-            command = [sys.executable, str(facade), "--root", str(root), "--contract", str(contract_path), "plan", operation]
-            proc = run(command, root, env=env)
+            command = [str(stable), "plan", operation]
+            proc = run(command, root, env=boundary_env)
             plan_results.append((proc, parse_json_stdout(proc)))
     checks["facade_plans"] = len(plan_results) == 3 and all(proc.returncode == 0 and data.get("contract_validation", {}).get("pass") is True for proc, data in plan_results)
 
@@ -240,7 +302,7 @@ def verify(root: Path) -> dict[str, Any]:
         and authority.get("repository_input") == {"branch": "agent/epoch2-p1-standalone-artifact-contract", "head": E2P1_HEAD, "tree": E2P1_TREE}
     )
     checks["authority_file_identities"] = isinstance(file_identities, dict) and bool(file_identities) and all((root / path).is_file() and sha256_file(root / path) == digest for path, digest in file_identities.items())
-    checks["authority_verification"] = authority.get("verification") == {"independent_check_count": 23, "regression_test_count": 3, "regression_pass_count": 3}
+    checks["authority_verification"] = authority.get("verification") == {"independent_check_count": 24, "regression_test_count": 3, "regression_pass_count": 3}
     checks["authority_claim_boundary"] = authority.get("claim_boundary") == {
         "real_cpython_build": False,
         "real_release_envelope": False,

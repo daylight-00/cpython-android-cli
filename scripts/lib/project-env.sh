@@ -47,9 +47,18 @@ TERMUX_RESULTS_ROOT="$RESULTS_ROOT/termux/stage2c"
 
 DIST_ROOT="$PROJECT_ROOT/dist/$TARGET_ID/$BUILD_PROFILE"
 
+# The stable facade execs Python after sourcing this file. Export every
+# tracked default consumed by that Python boundary; shell-local assignments are
+# otherwise lost even though they remain visible to shell-only callers.
 export \
     PROJECT_ROOT \
+    DEFAULTS_ENV \
+    LOCAL_ENV \
     TARGET_ID \
+    TARGET_HOST \
+    ANDROID_API \
+    PYTHON_VERSION \
+    PYTHON_MM \
     BUILD_PROFILE \
     OUT_ROOT \
     OUT_BIN \
@@ -62,3 +71,24 @@ export \
     RESULTS_ROOT \
     TERMUX_RESULTS_ROOT \
     DIST_ROOT
+
+# Machine-local configuration intentionally uses ordinary assignments in
+# .local/env. Mark the names consumed after an exec boundary for export without
+# requiring every host configuration to repeat `export`.
+export \
+    PROJECT_ROLE \
+    ANDROID_HOME \
+    ANDROID_SDK_ROOT \
+    ANDROID_NDK_HOME \
+    ANDROID_NDK_ROOT \
+    ANDROID_CC \
+    ANDROID_CXX \
+    ANDROID_AR \
+    ANDROID_RANLIB \
+    ANDROID_STRIP \
+    DRIVER_PYTHON \
+    CPYTHON_SOURCE_REPO \
+    CPYTHON_SRC \
+    CPYTHON_DEV_PREFIX_OVERRIDE \
+    SYNC_REMOTE \
+    SYNC_REMOTE_PROJECT_ROOT

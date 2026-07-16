@@ -23,9 +23,13 @@ over-broad checkout-global bytecode-residue check. The accepted verifier is
 bounded to E2-P2-owned paths; do not reintroduce a repository-global cleanliness
 claim for ignored interpreter caches.
 
+## Gate 2 preflight correction
+
+A read-only preflight found that the stable shell command did not export tracked defaults or ordinary `.local/env` assignments before execing the Python façade. The preflight performed no build and preserved result SHA-256 `3b11605e4711adde6d52f11c7b38454ee0110528175bc3c74c45664b5dc36361`. The corrected loader and regression must remain intact; do not work around the boundary by injecting target/version variables in an outer shell.
+
 ## Next bounded work
 
-E2-P2 Gate 2 must execute the stable build and package operations on the configured Linux workstation. Do not call the historical scripts directly unless diagnosing a façade failure. Preserve the generated build receipt, complete release envelope, logs, repository identity, and tool versions.
+Rerun the Gate 2 producer census through the corrected public command. Separate façade-plan readiness from genuine producer inputs such as Stage 3-B provenance, source checkout, SDK/NDK, executable host toolchain, dependency cache, and free space. Only after that census passes may E2-P2 Gate 2 execute the stable build and package operations. Do not call the historical scripts directly unless diagnosing a façade failure. Preserve the generated build receipt, complete release envelope, logs, repository identity, and tool versions.
 
 The Gate 2 envelope must remain:
 

@@ -80,7 +80,7 @@
       "path": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json"
     },
     {
-      "blob_sha": "32ca2e40f8917ca2b52bc9fb1a4840cab5b85686",
+      "blob_sha": "191cb727a1dd328881be74d61a82db7653d9e521",
       "path": "scripts/lib/project-env.sh"
     },
     {
