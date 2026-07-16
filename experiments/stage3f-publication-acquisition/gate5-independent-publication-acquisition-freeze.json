@@ -1,0 +1,81 @@
+{
+  "accepted_authority": {
+    "artifact_identities": {
+      "cpython-3.14.5-linux-aarch64-none": {
+        "sha256": "2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2",
+        "size": 9761545
+      },
+      "cpython-3.14.6-linux-aarch64-none": {
+        "sha256": "f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208",
+        "size": 11788907
+      }
+    },
+    "gate4_independent_checks": "31/31",
+    "gate4_target_checks": "16/16",
+    "gate4_target_result_sha256": "6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b",
+    "historical_snapshot_selectable": false,
+    "historical_snapshot_sha256": "a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c",
+    "retained_snapshot_file_sha256": "419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3",
+    "retained_snapshot_selectable": true,
+    "retained_snapshot_sha256": "dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233"
+  },
+  "authority_kind": "stage3f-gate5-independent-publication-acquisition-freeze",
+  "claim": "Stage 3-F is complete for one corrected retained-snapshot, loopback-only, isolated-cache acquisition authority over the two frozen exact products. Every broader publication, trust, automatic acquisition, execution, or installation claim requires a new stage.",
+  "claim_boundary": {
+    "concurrency": false,
+    "default_managed_root": false,
+    "durability": false,
+    "global_links": false,
+    "installation": false,
+    "origin_authentication": false,
+    "product_execution": false,
+    "production_redirects_or_mirrors": false,
+    "public_endpoint": false,
+    "recovery": false,
+    "signature_policy": false,
+    "third_products": false,
+    "upgrades": false,
+    "upstream_uv_android_support": false,
+    "uv_acquisition": false
+  },
+  "class": "R-repository-independent-freeze",
+  "freeze_decision": {
+    "active_gate": null,
+    "gate1": "frozen",
+    "gate2": "frozen-with-explicit-retention-correction",
+    "gate3": "frozen",
+    "gate4": "frozen-retained-actual-bytes",
+    "gate5": "independent-freeze-complete",
+    "stage": "stage3f-publication-acquisition",
+    "stage_complete": true
+  },
+  "repository_input": {
+    "branch": "agent/stage3f-publication-acquisition",
+    "head": "1e7797218473463bc85f6413c49080301eda2ad7",
+    "main": "b5a2ca39d1250122312355dd3dbc6165b9409786",
+    "remote_head": "1e7797218473463bc85f6413c49080301eda2ad7",
+    "tree": "a3a1cb90f12b20ab47203b4f6b47d8a9694b0e04"
+  },
+  "repository_record_result": {
+    "archive_sha256": "daaf64255fce6d9c1ef2f5eb5e57d8dcc85472a4be48e56c47f21b94dee891f8",
+    "archive_size": 20514,
+    "fixture_classes": [
+      "success",
+      "expected-negative",
+      "incomplete"
+    ],
+    "project_control": "91/91",
+    "result_index_count": 46,
+    "safe_member_count": 49,
+    "work_id": "20260716-stage3f-gate4-retention-correction-acceptance-v1"
+  },
+  "schema_version": 1,
+  "status": "independent-freeze-complete",
+  "verification": {
+    "check_count": 44,
+    "failed_checks": [],
+    "fixture_runner": "experiments/stage3f-publication-acquisition/test-verify-gate5-independent-freeze.py",
+    "pass_count": 44,
+    "verifier": "experiments/stage3f-publication-acquisition/verify-gate5-independent-freeze.py"
+  }
+}

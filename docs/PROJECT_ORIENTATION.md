@@ -12,13 +12,9 @@ Complete independently audited Termux evidence outranks repository design, local
 
 ## Current boundary
 
-Stage 3-D is frozen through Gate 6. Stage 3-E is complete and frozen through Gate 5: its exact local catalog and explicit project-owned persistent root are accepted for CPython 3.14.5 and 3.14.6, including target 37/37 and independent 74/74 Gate 4 evidence.
+Stage 3-D remains frozen through Gate 6. Stage 3-E is complete with target 37/37 and independent 74/74 evidence. Stage 3-F is complete and frozen through Gate 5.
 
-Stage 3-F Gates 1–3 freeze authority separation, deterministic snapshot behavior, and the 31/31 loopback acquisition engine.
-
-Gate 4 v1 then exposed a retention gap: the Gate 2 concrete archive hashes referred to transient bytes that were not preserved, so byte-identical regeneration failed closed before acquisition. The failure is retained rather than erased.
-
-Corrected Gate 4A retains exact archive bytes and freezes the active acquisition snapshot:
+The final retained acquisition authority is:
 
 ```text
 3.14.5  9761545   2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
@@ -26,30 +22,21 @@ Corrected Gate 4A retains exact archive bytes and freezes the active acquisition
 snapshot body    dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233
 ```
 
-Both payloads pass 714/714 strict fidelity. The target matrix passes 16/16 and independent audit passes 31/31. Exact bytes, snapshot, observations, negative preservation evidence, and verified cache are retained in result archive `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b`.
+Gate 4 actual-byte evidence `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b` passes 16/16 target and 31/31 independent checks, with 714/714 strict payload fidelity for each product. Gate 4 repository recording result `daaf64255fce6d9c1ef2f5eb5e57d8dcc85472a4be48e56c47f21b94dee891f8` passes project control 91/91 with exact remote readback and clean post-state.
 
-Gate 5 is active next as the independent Stage 3-F freeze. Public endpoints, origin trust, uv automatic acquisition, product execution, installation, recovery, concurrency, durability, and third products remain closed.
+The historical Gate 2 concrete snapshot remains preserved but unselectable. No gate is active. Public publication, origin trust, uv automatic acquisition, execution, installation, recovery, concurrency, durability, or third-product work requires a new stage.
 
 ## Current reading path
 
 ```text
 docs/PROJECT_CONTEXT_STAGE3F.md
 docs/stages/STAGE3F_SCOPE.md
-experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
-experiments/stage3f-publication-acquisition/gate1-authority.json
-docs/evidence/STAGE3F_GATE1_REPOSITORY_TRANSACTION_RESULT.md
-experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
-experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
-experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
-experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
-experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
-docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
 experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
-experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md
+experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
 experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
-docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md
-docs/PROJECT_CONTEXT_STAGE3E.md
-docs/evidence/STAGE3E_FINAL_SUMMARY.md
+experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md
+experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json
+docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md
+docs/evidence/STAGE3F_FINAL_SUMMARY.md
 docs/session-operations/README.md
 ```

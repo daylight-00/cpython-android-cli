@@ -45,7 +45,7 @@ def make_fixture(root: Path) -> None:
         root / "README.md",
         "frozen — Gate 5 independent distribution freeze complete\n"
         "4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112 37/37 74/74\n"
-        "Stage 3-F  publication and acquisition boundaries active — Gate 4 retained acquisition frozen; Gate 5 next\n",
+        "Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete\n",
     )
     write(root / "docs/PROJECT_CONTEXT_STAGE3D.md", "frozen\n")
     write(root / "docs/PROJECT_CONTEXT_STAGE3E.md", "> **Status:** Stage 3-E frozen through Gate 5 independent distribution freeze\n")
@@ -81,6 +81,14 @@ def make_fixture(root: Path) -> None:
         "experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md",
         "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json",
         "experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json",
+        "experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md",
+        "experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json",
+        "experiments/stage3f-publication-acquisition/verify-gate5-independent-freeze.py",
+        "experiments/stage3f-publication-acquisition/test-verify-gate5-independent-freeze.py",
+        "experiments/stage3f-publication-acquisition/run-gate5-independent-freeze.sh",
+        "docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md",
+        "docs/evidence/STAGE3F_FINAL_SUMMARY.md",
+        "docs/handoff/2026-07-16-stage3f-independent-freeze.md",
     ]
     for rel in copy_paths:
         copy(rel, root)
@@ -129,15 +137,15 @@ def main() -> int:
         if not success["pass"]:
             raise SystemExit(success)
 
-        authority = root / "experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json"
+        authority = root / "experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json"
         value = json.loads(authority.read_text(encoding="utf-8"))
         value["status"] = "broken"
         write_json(authority, value)
         negative = module.verify(root)
-        if negative["pass"] or negative["failed_checks"] != ["gate4_authority_status"]:
+        if negative["pass"] or negative["failed_checks"] != ["gate5_status"]:
             raise SystemExit(negative)
 
-        value["status"] = "accepted-target-evidence-independent-audit-complete"
+        value["status"] = "independent-freeze-complete"
         write_json(authority, value)
         retained = root / "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json"
         retained.unlink()
@@ -148,7 +156,7 @@ def main() -> int:
 
         print(json.dumps({
             "schema_version": 1,
-            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate4-retention-correction",
+            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate5-independent-freeze",
             "pass": True,
             "fixtures": {
                 "success": success["check_count"],
