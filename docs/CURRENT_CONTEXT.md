@@ -44,6 +44,8 @@ operations
 
 Gate 1 uses synthetic producer inputs. It proves fail-closed command routing, deterministic package implementation, exact sidecar linkage, excluded payload policy, and archive mutation rejection. It does not prove a real CPython build or Android execution.
 
+A repository-only provenance audit resolved the remembered custom-NDK boundary before Gate 2. CPython 3.14.5 was produced under the Stage 3-C Gate 4A scoped exact-binary `android-ndk-custom` r27d authority, including the preserved Android-host asset and ephemeral `lld` overlay. That authority applies only to the frozen second-product line; it did not promote the custom NDK to project-wide canonical authority and did not replace the frozen Stage 3-B CPython 3.14.6 workstation producer. The E2-P2 façade inputs therefore remain unchanged, and Gate 2 is unblocked only for the pinned Stage 3-B producer.
+
 ## Current claim boundary
 
 ```text
@@ -60,13 +62,14 @@ installer conversion     not started
 
 1. [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 2. [`evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md)
-3. [`../experiments/epoch2-standalone-build-facade/`](../experiments/epoch2-standalone-build-facade/)
-4. [`contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
-5. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
-6. [`architecture/COMPONENT_OWNERSHIP.md`](architecture/COMPONENT_OWNERSHIP.md)
-7. [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
-8. [`epochs/EPOCH1_CLOSURE.md`](epochs/EPOCH1_CLOSURE.md)
-9. [`PROJECT_CONTEXT_STAGE3F.md`](PROJECT_CONTEXT_STAGE3F.md) when exact predecessor authority is required
+3. [`evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md`](evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md)
+4. [`../experiments/epoch2-standalone-build-facade/`](../experiments/epoch2-standalone-build-facade/)
+5. [`contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
+6. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
+7. [`architecture/COMPONENT_OWNERSHIP.md`](architecture/COMPONENT_OWNERSHIP.md)
+8. [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
+9. [`epochs/EPOCH1_CLOSURE.md`](epochs/EPOCH1_CLOSURE.md)
+10. [`PROJECT_CONTEXT_STAGE3F.md`](PROJECT_CONTEXT_STAGE3F.md) when exact predecessor authority is required
 
 ## Next bounded gate
 

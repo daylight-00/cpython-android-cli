@@ -22,7 +22,9 @@ The first canonical flavor is `install_only_stripped`: a `pax-tar+zstd` archive 
 
 E2-P2 Gate 1 is frozen. The stable command provides `plan`, `build`, `package`, and repository/envelope `verify` operations while pinning the direct Stage 3-B entry points. Synthetic regression proves deterministic E2-P1 envelope construction and fail-closed drift and mutation handling.
 
-E2-P2 Gate 2 is next. It must execute the real workstation producer and package operations through the façade, preserve exact receipts and release assets, and keep the output unqualified and unselectable.
+The pre-Gate-2 provenance audit confirms a narrower historical fact: Stage 3-C Gate 4A built the frozen CPython 3.14.5 second product with a preserved custom r27d Android-host NDK asset and an ephemeral linker overlay. That exact-binary authority did not become the project-wide canonical NDK, did not rewrite the first-product workstation provenance, and does not change the façade's Stage 3-B CPython 3.14.6 tracked inputs.
+
+E2-P2 Gate 2 is next. It must execute the real pinned Stage 3-B workstation producer and package operations through the façade, preserve exact receipts and release assets, and keep the output unqualified and unselectable.
 
 The final Epoch 1 retained acquisition authority is:
 
@@ -44,6 +46,7 @@ No Epoch 1 gate is active. Epoch 2 work must open and close its own bounded phas
 docs/CURRENT_CONTEXT.md
 docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md
 docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md
+docs/evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md
 experiments/epoch2-standalone-build-facade/
 docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
 docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md

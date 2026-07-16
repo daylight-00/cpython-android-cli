@@ -1,0 +1,103 @@
+{
+  "authority_kind": "e2p2-gate1-custom-ndk-python3145-provenance-audit",
+  "canonical_promotion_finding": {
+    "historical_first_product_authority_unchanged": true,
+    "project_wide_custom_ndk_canonical": false,
+    "reason": "The accepted custom NDK is an exact-binary scoped exception for Gate 4A second-product acquisition only.",
+    "stage3b_python3146_producer_replaced": false
+  },
+  "claim_boundary": {
+    "accepted": [
+      "repository record proves scoped custom-NDK use for the exact CPython 3.14.5 Gate 4A product",
+      "the custom NDK authority is binary-defined with an exact preserved asset and ephemeral linker overlay",
+      "E2-P2 Gate 2 may proceed with unchanged Stage 3-B CPython 3.14.6 fa\u00e7ade inputs"
+    ],
+    "not_accepted": [
+      "project-wide canonical promotion of android-ndk-custom",
+      "source-rebuild reproducibility of android-ndk-custom",
+      "equivalence with the official Linux-host NDK binary set",
+      "replacement of the frozen Stage 3-B CPython 3.14.6 producer",
+      "real E2-P2 Gate 2 build, package, qualification, selectability, or publication"
+    ]
+  },
+  "collector_evidence": {
+    "archive": "20260716-stage3-custom-ndk-python3145-audit-v1-results-20260716T151049Z.tar.zst",
+    "archive_sha256": "f24470ae0bb1450b1c555fbd63bbb9584c5e8dcc5fb72663075fda3de9c301b3",
+    "drive_file_id": "18nhxfAbbg5QYBKrGPMCwCRhr11WoA8Tx",
+    "tracked_match_line_count": 426,
+    "tracked_matched_path_count": 126,
+    "work_id": "20260716-stage3-custom-ndk-python3145-audit-v1"
+  },
+  "consumer_boundary": {
+    "compile_provenance_source": "Stage 3-C Gate 4A A2b/A3/A6 lineage, not Stage 3-D Gate 6",
+    "managed_python_key": "cpython-3.14.5-linux-aarch64-none",
+    "stage3d_gate6_role": "bounded consumption of an already-frozen CPython 3.14.5 runtime-only product"
+  },
+  "custom_ndk_producer_finding": {
+    "asset": {
+      "md5": "ab87309abc53830892e0556b91438fa5",
+      "name": "android-ndk-r27d-aarch64-linux-android.tar.xz",
+      "sha256": "7aac94c85931c698ef13f8679c3472d3d6c7a4566e4c8bff112be91aff527bd7",
+      "size": 156427268
+    },
+    "authority_class": "scoped-exact-binary-producer-toolchain",
+    "authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/gate4a/toolchains/android-ndk-custom/r27/android-aarch64",
+    "linker_overlay": {
+      "ephemeral": true,
+      "original_lld_sha256": "cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b",
+      "original_ndk_mutated": false,
+      "patch": {
+        "after": 64,
+        "before": 8,
+        "offset": 392,
+        "semantic": "ELF64 PT_TLS p_align"
+      },
+      "patched_lld_sha256": "eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09"
+    },
+    "ndk_revision": "27.3.13750724",
+    "official_linux_host_equivalence_claimed": false,
+    "producer_binding": {
+      "commit": "63b097b4db9b1d2ab445d6637eab16718f6c513b",
+      "job": 86867844060,
+      "workflow_run": 29265009312
+    },
+    "proven": true,
+    "scope": "stage3c-gate4a-second-product-cpython-3.14.5",
+    "source_rebuild_reproducibility_claimed": false
+  },
+  "e2p2_decision": {
+    "facade_inputs_change": false,
+    "gate2_producer": "frozen-stage3b-workstation-cpython-3.14.6",
+    "gate2_unblocked": true,
+    "qualification": "not-qualified",
+    "selectable": false,
+    "tracked_product_lock": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json"
+  },
+  "python3145_product": {
+    "a3_clean_replay_archive": {
+      "sha256": "bfd241f959cb081a91f4866cb07cf2773d1028919de0ea0959ed0d95c8984202",
+      "size": 62379269
+    },
+    "android_api": 24,
+    "artifacts": {
+      "development-addon": "623d776bd9a987aac0417c360746b4917d666a5829a522ef43574b66493387e0",
+      "runtime-base": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d",
+      "test-addon": "7d397ab12cf1d70b2922754b8121936ae56270c45c7929f69656984cd6a0eb1d"
+    },
+    "canonical_host": "aarch64-unknown-linux-android",
+    "ndk_version": "27.3.13750724",
+    "python_version": "3.14.5",
+    "runtime_fingerprint": "6ce6e4cad493c1334fb10d893d7bcc6d49564cbe44081422ea346ce4c73ca537",
+    "soabi": "cpython-314-aarch64-linux-android",
+    "source_commit": "5607950ef232dad16d75c0cf53101d9649d89115",
+    "status": "frozen-pass",
+    "target_host": "aarch64-linux-android"
+  },
+  "repository_input": {
+    "branch": "agent/epoch2-p2-standalone-build-facade",
+    "head": "16a0d6713eff05447b3b2e328581f6884a14c3e8",
+    "tree": "733f92196f4ea36e2029caf366da802513f6a30d"
+  },
+  "schema_version": 1,
+  "status": "frozen-repository-audit-pass"
+}

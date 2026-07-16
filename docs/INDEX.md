@@ -15,6 +15,8 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 - [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 - [`evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md)
+- [`evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md`](evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md)
+- [`handoff/2026-07-17-e2p2-custom-ndk-provenance-audit.md`](handoff/2026-07-17-e2p2-custom-ndk-provenance-audit.md)
 - [`handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md`](handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md)
 - [`../experiments/epoch2-standalone-build-facade/`](../experiments/epoch2-standalone-build-facade/)
 - [`contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)

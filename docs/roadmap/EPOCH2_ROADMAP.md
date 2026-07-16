@@ -32,6 +32,8 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 **Gate 2 next:** execute `build` and `package` on the configured Linux workstation and independently verify the returned unqualified E2-P1 envelope.
 
+**Gate 2 provenance precondition:** resolved. The custom Android-host r27d NDK was a scoped Stage 3-C Gate 4A authority for CPython 3.14.5 only; it was not promoted project-wide. Gate 2 remains bound to the unchanged Stage 3-B CPython 3.14.6 workstation inputs pinned by `facade-v1.json`.
+
 **Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
 
 ## E2-P3 — Metadata and qualification
