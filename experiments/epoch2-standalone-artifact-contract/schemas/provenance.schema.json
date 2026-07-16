@@ -1,0 +1,168 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/provenance-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "archive_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "frame_checksum": {
+          "const": true
+        },
+        "tar_format": {
+          "const": "pax"
+        },
+        "zstd_level": {
+          "type": "integer"
+        },
+        "zstd_threads": {
+          "const": 1
+        },
+        "zstd_tool": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tar_format",
+        "zstd_tool",
+        "zstd_level",
+        "zstd_threads",
+        "frame_checksum"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "build": {
+      "additionalProperties": false,
+      "properties": {
+        "build_options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "fixture_only": {
+          "type": "boolean"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "commit",
+        "tree",
+        "build_options",
+        "fixture_only"
+      ],
+      "type": "object"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "metadata_kind": {
+      "const": "hw-t-standalone-provenance"
+    },
+    "predecessor_authority": {
+      "additionalProperties": false,
+      "properties": {
+        "epoch1_commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "epoch1_tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "stage3c_archive_contract": {
+          "type": "string"
+        },
+        "stage3f_publication_snapshot": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "epoch1_commit",
+        "epoch1_tree",
+        "stage3c_archive_contract",
+        "stage3f_publication_snapshot"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "implementation": {
+          "const": "cpython"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "implementation",
+        "version",
+        "tag",
+        "commit"
+      ],
+      "type": "object"
+    },
+    "toolchain": {
+      "additionalProperties": false,
+      "properties": {
+        "android_api": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "ndk_version": {
+          "type": "string"
+        },
+        "target_compiler": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ndk_version",
+        "target_compiler",
+        "android_api"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata_kind",
+    "artifact_id",
+    "source",
+    "toolchain",
+    "build",
+    "archive_serialization",
+    "predecessor_authority",
+    "extensions"
+  ],
+  "title": "HW-T Android CPython standalone provenance v1",
+  "type": "object"
+}

@@ -1,0 +1,89 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/qualification-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "emulator": {
+          "enum": [
+            "not-run",
+            "passed",
+            "failed"
+          ]
+        },
+        "static": {
+          "enum": [
+            "not-run",
+            "passed",
+            "failed"
+          ]
+        },
+        "termux": {
+          "enum": [
+            "not-run",
+            "passed",
+            "failed"
+          ]
+        }
+      },
+      "required": [
+        "static",
+        "emulator",
+        "termux"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "metadata_kind": {
+      "const": "hw-t-standalone-qualification"
+    },
+    "profiles": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "selectable": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "not-qualified",
+        "passed",
+        "failed"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata_kind",
+    "artifact_id",
+    "status",
+    "selectable",
+    "profiles",
+    "checks",
+    "claim_boundary",
+    "extensions"
+  ],
+  "title": "HW-T Android CPython standalone qualification v1",
+  "type": "object"
+}

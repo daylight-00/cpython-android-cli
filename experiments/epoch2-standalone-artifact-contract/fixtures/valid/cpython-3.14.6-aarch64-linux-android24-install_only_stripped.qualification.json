@@ -1,0 +1,20 @@
+{
+  "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+  "checks": {
+    "emulator": "not-run",
+    "static": "not-run",
+    "termux": "not-run"
+  },
+  "claim_boundary": [
+    "The fixture proves metadata and archive-contract validation only.",
+    "The fixture archive is not CPython and must never be selected or executed as a runtime."
+  ],
+  "extensions": {},
+  "metadata_kind": "hw-t-standalone-qualification",
+  "profiles": [
+    "termux-cli"
+  ],
+  "schema_version": 1,
+  "selectable": false,
+  "status": "not-qualified"
+}

@@ -1,0 +1,102 @@
+{
+  "archive": {
+    "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.tar.zst",
+    "root": "python/",
+    "sha256": "92ed769dbd729318a5e68651c8c7d1aad9895fa4c886862b09d15bcc7bf956a1",
+    "size": 396
+  },
+  "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+  "entries": [
+    {
+      "mode": "0755",
+      "path": "python",
+      "payload_class": "runtime",
+      "type": "directory"
+    },
+    {
+      "mode": "0755",
+      "path": "python/bin",
+      "payload_class": "runtime",
+      "type": "directory"
+    },
+    {
+      "mode": "0755",
+      "path": "python/bin/python3.14",
+      "payload_class": "runtime",
+      "sha256": "0a58ddf1b1dd6690621368a4c29d37c230b96cc21e4343118dfb8adf505147f4",
+      "size": 75,
+      "type": "regular"
+    },
+    {
+      "mode": "0755",
+      "path": "python/include",
+      "payload_class": "development",
+      "type": "directory"
+    },
+    {
+      "mode": "0755",
+      "path": "python/include/python3.14",
+      "payload_class": "development",
+      "type": "directory"
+    },
+    {
+      "mode": "0644",
+      "path": "python/include/python3.14/Python.h",
+      "payload_class": "development",
+      "sha256": "b336a4cda21e2593c01c2d853c63ef69773c9781f4755ca41e30c2823ac490d5",
+      "size": 59,
+      "type": "regular"
+    },
+    {
+      "mode": "0755",
+      "path": "python/lib",
+      "payload_class": "runtime",
+      "type": "directory"
+    },
+    {
+      "mode": "0644",
+      "path": "python/lib/libpython3.14.so",
+      "payload_class": "runtime",
+      "sha256": "a09fa49b0699c8095c4fc619532ab80d89ca9362a024c6b920ca0b2c08020458",
+      "size": 40,
+      "type": "regular"
+    },
+    {
+      "mode": "0755",
+      "path": "python/lib/python3.14",
+      "payload_class": "runtime",
+      "type": "directory"
+    },
+    {
+      "mode": "0644",
+      "path": "python/lib/python3.14/LICENSE.txt",
+      "payload_class": "runtime",
+      "sha256": "5ad7328d05f7d116908ab80db511e55ee678b43f47d6815c742b684c50facbbc",
+      "size": 66,
+      "type": "regular"
+    }
+  ],
+  "extensions": {},
+  "metadata_kind": "hw-t-standalone-manifest",
+  "ownership": {
+    "directory_removal_rule": "remove-owned-directory-only-when-empty",
+    "installer_repacking": "forbidden",
+    "unit": "exact-manifest-path",
+    "unowned_descendant_policy": "preserve"
+  },
+  "schema_version": 1,
+  "serialization": {
+    "compression_profile_recorded_in_provenance": true,
+    "format": "pax-tar+zstd",
+    "gid": 0,
+    "gname": "",
+    "hardlinks": "forbidden",
+    "member_order": "lexicographic-posix-path",
+    "mtime": 0,
+    "pax_headers": "path-and-linkpath-only-when-required",
+    "special_entries": "forbidden",
+    "symlink_policy": "relative-non-escaping",
+    "uid": 0,
+    "uname": ""
+  }
+}

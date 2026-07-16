@@ -1,0 +1,252 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/release-index-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "release": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "enum": [
+            "fixture",
+            "prerelease",
+            "stable"
+          ]
+        },
+        "checksums": {
+          "additionalProperties": false,
+          "properties": {
+            "filename": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "size": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "filename",
+            "sha256",
+            "size"
+          ],
+          "type": "object"
+        },
+        "contract_version": {
+          "const": 1
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "format": {
+          "const": "hw-t-standalone-release-v1"
+        },
+        "products": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "archive": {
+                "additionalProperties": false,
+                "properties": {
+                  "filename": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "type": "string"
+                  },
+                  "size": {
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "filename",
+                  "sha256",
+                  "size"
+                ],
+                "type": "object"
+              },
+              "artifact_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "metadata": {
+                "additionalProperties": false,
+                "properties": {
+                  "artifact": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "filename": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "size": {
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "filename",
+                      "sha256",
+                      "size"
+                    ],
+                    "type": "object"
+                  },
+                  "licenses": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "filename": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "size": {
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "filename",
+                      "sha256",
+                      "size"
+                    ],
+                    "type": "object"
+                  },
+                  "manifest": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "filename": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "size": {
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "filename",
+                      "sha256",
+                      "size"
+                    ],
+                    "type": "object"
+                  },
+                  "provenance": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "filename": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "size": {
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "filename",
+                      "sha256",
+                      "size"
+                    ],
+                    "type": "object"
+                  },
+                  "qualification": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "filename": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "size": {
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "filename",
+                      "sha256",
+                      "size"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "artifact",
+                  "manifest",
+                  "provenance",
+                  "qualification",
+                  "licenses"
+                ],
+                "type": "object"
+              },
+              "selectable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "artifact_id",
+              "archive",
+              "metadata",
+              "selectable"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "selectable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "format",
+        "contract_version",
+        "channel",
+        "selectable",
+        "products",
+        "checksums",
+        "extensions"
+      ],
+      "type": "object"
+    },
+    "release_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "release",
+    "release_sha256"
+  ],
+  "title": "HW-T Android CPython standalone release index v1",
+  "type": "object"
+}

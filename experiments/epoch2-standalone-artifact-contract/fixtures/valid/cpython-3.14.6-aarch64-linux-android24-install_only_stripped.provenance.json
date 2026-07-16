@@ -1,0 +1,39 @@
+{
+  "archive_serialization": {
+    "frame_checksum": true,
+    "tar_format": "pax",
+    "zstd_level": 19,
+    "zstd_threads": 1,
+    "zstd_tool": "zstd-cli-1.5.7"
+  },
+  "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+  "build": {
+    "build_options": [],
+    "commit": "a34e5fdc6224e66aa7ed335e921780fbadd728dc",
+    "fixture_only": true,
+    "repository": "daylight-00/cpython-android-cli",
+    "tree": "7543e0a8ff86a3bee1fcda33fc86b11692c90b92"
+  },
+  "extensions": {
+    "fixture_notice": "No runtime build or target qualification is claimed."
+  },
+  "metadata_kind": "hw-t-standalone-provenance",
+  "predecessor_authority": {
+    "epoch1_commit": "e1de252740a96c40f3d587269136235a2c84ea16",
+    "epoch1_tree": "66c976f3fc182496d2843771b46faaf98fc267da",
+    "stage3c_archive_contract": "pax-tar+gzip-schema-v1",
+    "stage3f_publication_snapshot": "dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233"
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "implementation": "cpython",
+    "tag": "v3.14.6",
+    "version": "3.14.6"
+  },
+  "toolchain": {
+    "android_api": 24,
+    "ndk_version": "27.3.13750724",
+    "target_compiler": "aarch64-linux-android24-clang"
+  }
+}

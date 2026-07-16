@@ -1,0 +1,70 @@
+{
+  "artifact": {
+    "archive_filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.tar.zst",
+    "archive_format": "pax-tar+zstd",
+    "archive_sha256": "92ed769dbd729318a5e68651c8c7d1aad9895fa4c886862b09d15bcc7bf956a1",
+    "archive_size": 396,
+    "build_options": [],
+    "excluded_payload_classes": [
+      "tests",
+      "build",
+      "debug_symbols"
+    ],
+    "flavor": "install_only_stripped",
+    "native_debug": "stripped",
+    "payload_classes": [
+      "runtime",
+      "development"
+    ]
+  },
+  "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+  "compatibility": {
+    "android_api_rule": "host-api-greater-than-or-equal-to-minimum",
+    "consumer_mappings": {
+      "uv_catalog_key": "cpython-3.14.6-linux-aarch64-none",
+      "uv_catalog_key_is_canonical_identity": false
+    },
+    "required_abi": "arm64-v8a",
+    "required_libc": "bionic",
+    "required_os": "android"
+  },
+  "distribution": {
+    "implementation": "cpython",
+    "multiarch": "aarch64-linux-android",
+    "python_abi_tag": "cp314",
+    "python_major_minor": "3.14",
+    "python_tag": "cp314",
+    "python_version": "3.14.6",
+    "soabi": "cpython-314-aarch64-linux-android"
+  },
+  "extensions": {
+    "fixture_notice": "Archive bytes are a tiny deterministic contract fixture and are not executable CPython."
+  },
+  "layout": {
+    "archive_root": "python/",
+    "direct_extract_runnable": true,
+    "install_root": "python/",
+    "prefix_model": "whole-prefix-relocatable",
+    "python_executable": "python/bin/python3.14"
+  },
+  "metadata_kind": "hw-t-standalone-artifact",
+  "profiles": {
+    "binary_identity_requires_termux": false,
+    "primary": "termux-cli",
+    "qualified": [
+      "termux-cli"
+    ]
+  },
+  "schema_version": 1,
+  "target": {
+    "android_abi": "arm64-v8a",
+    "android_api_min": 24,
+    "architecture": "aarch64",
+    "kernel": "linux",
+    "libc": "bionic",
+    "os": "android",
+    "sysconfig_platform": "android-24-arm64_v8a",
+    "target_triple": "aarch64-linux-android",
+    "wheel_platform_tag": "android_24_arm64_v8a"
+  }
+}

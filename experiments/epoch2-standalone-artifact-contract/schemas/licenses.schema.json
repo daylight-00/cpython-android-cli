@@ -1,0 +1,71 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/licenses-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "complete_for_published_payload": {
+      "type": "boolean"
+    },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "archive_path": {
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)(?!.*//)[^\\x00]+$",
+            "type": "string"
+          },
+          "component": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "license_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "size": {
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "component",
+          "license_id",
+          "archive_path",
+          "sha256",
+          "size"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "metadata_kind": {
+      "const": "hw-t-standalone-licenses"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata_kind",
+    "artifact_id",
+    "entries",
+    "complete_for_published_payload",
+    "extensions"
+  ],
+  "title": "HW-T Android CPython standalone license inventory v1",
+  "type": "object"
+}

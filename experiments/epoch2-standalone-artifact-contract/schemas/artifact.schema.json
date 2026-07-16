@@ -1,0 +1,290 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/artifact-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_filename": {
+          "pattern": "^[A-Za-z0-9._-]+\\.tar\\.zst$",
+          "type": "string"
+        },
+        "archive_format": {
+          "const": "pax-tar+zstd"
+        },
+        "archive_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "archive_size": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_options": {
+          "items": {
+            "pattern": "^[a-z0-9_+-]+$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "excluded_payload_classes": {
+          "items": {
+            "enum": [
+              "runtime",
+              "development",
+              "tests",
+              "build",
+              "debug_symbols"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "flavor": {
+          "const": "install_only_stripped"
+        },
+        "native_debug": {
+          "const": "stripped"
+        },
+        "payload_classes": {
+          "items": {
+            "enum": [
+              "runtime",
+              "development",
+              "tests",
+              "build",
+              "debug_symbols"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "flavor",
+        "archive_filename",
+        "archive_format",
+        "archive_sha256",
+        "archive_size",
+        "build_options",
+        "native_debug",
+        "payload_classes",
+        "excluded_payload_classes"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "pattern": "^cpython-[0-9]+\\.[0-9]+\\.[0-9]+-aarch64-linux-android[0-9]+-[a-z0-9_]+$",
+      "type": "string"
+    },
+    "compatibility": {
+      "additionalProperties": false,
+      "properties": {
+        "android_api_rule": {
+          "const": "host-api-greater-than-or-equal-to-minimum"
+        },
+        "consumer_mappings": {
+          "additionalProperties": false,
+          "properties": {
+            "uv_catalog_key": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "uv_catalog_key_is_canonical_identity": {
+              "const": false
+            }
+          },
+          "required": [
+            "uv_catalog_key",
+            "uv_catalog_key_is_canonical_identity"
+          ],
+          "type": "object"
+        },
+        "required_abi": {
+          "const": "arm64-v8a"
+        },
+        "required_libc": {
+          "const": "bionic"
+        },
+        "required_os": {
+          "const": "android"
+        }
+      },
+      "required": [
+        "android_api_rule",
+        "required_os",
+        "required_libc",
+        "required_abi",
+        "consumer_mappings"
+      ],
+      "type": "object"
+    },
+    "distribution": {
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "const": "cpython"
+        },
+        "multiarch": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "python_abi_tag": {
+          "pattern": "^cp[0-9]+$",
+          "type": "string"
+        },
+        "python_major_minor": {
+          "pattern": "^[0-9]+\\.[0-9]+$",
+          "type": "string"
+        },
+        "python_tag": {
+          "pattern": "^cp[0-9]+$",
+          "type": "string"
+        },
+        "python_version": {
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+          "type": "string"
+        },
+        "soabi": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "implementation",
+        "python_version",
+        "python_major_minor",
+        "python_tag",
+        "python_abi_tag",
+        "soabi",
+        "multiarch"
+      ],
+      "type": "object"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "layout": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_root": {
+          "const": "python/"
+        },
+        "direct_extract_runnable": {
+          "const": true
+        },
+        "install_root": {
+          "const": "python/"
+        },
+        "prefix_model": {
+          "const": "whole-prefix-relocatable"
+        },
+        "python_executable": {
+          "const": "python/bin/python3.14"
+        }
+      },
+      "required": [
+        "archive_root",
+        "install_root",
+        "python_executable",
+        "direct_extract_runnable",
+        "prefix_model"
+      ],
+      "type": "object"
+    },
+    "metadata_kind": {
+      "const": "hw-t-standalone-artifact"
+    },
+    "profiles": {
+      "additionalProperties": false,
+      "properties": {
+        "binary_identity_requires_termux": {
+          "const": false
+        },
+        "primary": {
+          "const": "termux-cli"
+        },
+        "qualified": {
+          "items": {
+            "pattern": "^[a-z0-9_-]+$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "primary",
+        "qualified",
+        "binary_identity_requires_termux"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "target": {
+      "additionalProperties": false,
+      "properties": {
+        "android_abi": {
+          "const": "arm64-v8a"
+        },
+        "android_api_min": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "architecture": {
+          "const": "aarch64"
+        },
+        "kernel": {
+          "const": "linux"
+        },
+        "libc": {
+          "const": "bionic"
+        },
+        "os": {
+          "const": "android"
+        },
+        "sysconfig_platform": {
+          "pattern": "^android-[0-9]+-arm64_v8a$",
+          "type": "string"
+        },
+        "target_triple": {
+          "const": "aarch64-linux-android"
+        },
+        "wheel_platform_tag": {
+          "pattern": "^android_[0-9]+_arm64_v8a$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "os",
+        "kernel",
+        "libc",
+        "architecture",
+        "target_triple",
+        "android_abi",
+        "android_api_min",
+        "wheel_platform_tag",
+        "sysconfig_platform"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata_kind",
+    "artifact_id",
+    "distribution",
+    "target",
+    "artifact",
+    "layout",
+    "profiles",
+    "compatibility",
+    "extensions"
+  ],
+  "title": "HW-T Android CPython standalone artifact metadata v1",
+  "type": "object"
+}

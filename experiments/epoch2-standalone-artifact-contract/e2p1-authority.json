@@ -1,0 +1,106 @@
+{
+  "authority_kind": "epoch2-p1-standalone-artifact-contract",
+  "claim_boundary": "Repository contract and deterministic fixture only; no real product, target runtime, release, installer, or upstream uv claim.",
+  "contract": {
+    "android_abi": "arm64-v8a",
+    "android_api_min": 24,
+    "archive_format": "pax-tar+zstd",
+    "archive_root": "python/",
+    "payload_classes": [
+      "runtime",
+      "development"
+    ],
+    "primary_flavor": "install_only_stripped",
+    "primary_profile": "termux-cli",
+    "target_triple": "aarch64-linux-android",
+    "version": 1,
+    "wheel_platform_tag": "android_24_arm64_v8a"
+  },
+  "file_identities": {
+    "E2P1_STANDALONE_ARTIFACT_CONTRACT.md": {
+      "sha256": "c422e3b8be2b01d3d1f1d5bd273e8ffc3a845617cc74ca93b9ff57c45946c2ed",
+      "size": 2383
+    },
+    "fixtures/valid/SHA256SUMS": {
+      "sha256": "a805130cea32b60d0268ed0b7ab3e2492df9a72ad4762ad1e029b65de00cf761",
+      "size": 847
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.artifact.json": {
+      "sha256": "cf4a49c92f0d31f94a3977db356b56b625958ba1652916bd780bb54859503c49",
+      "size": 2099
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.licenses.json": {
+      "sha256": "bf3bb50995f84bf6bbe9c55e22e5a7d1e7067ed21adc7baa969ab1748a30c598",
+      "size": 533
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.manifest.json": {
+      "sha256": "136435c1ed31348e75d104fbca511ac991fda3dacdc6c2347ad95b89126a9815",
+      "size": 2787
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.provenance.json": {
+      "sha256": "b09f270bba769e24ab9040121198fe6cb4929ec119645c5817b4af6daf0e0337",
+      "size": 1272
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.qualification.json": {
+      "sha256": "b41b79a3601800a0a843767dc562c35a9eb842d18c29e230f3ce4a9a1f19c337",
+      "size": 558
+    },
+    "fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.tar.zst": {
+      "sha256": "92ed769dbd729318a5e68651c8c7d1aad9895fa4c886862b09d15bcc7bf956a1",
+      "size": 396
+    },
+    "fixtures/valid/release-index.json": {
+      "sha256": "aa34c242e74dabf6a81c5f11799cd65624c729fb2c7b3a52047d6f35d01a9481",
+      "size": 2226
+    },
+    "run-e2p1-standalone-artifact-contract.sh": {
+      "sha256": "4490e93e619b3728167554266d1921b71ce23c5cb53bc9c85b8bf7c27d7c6b4b",
+      "size": 1817
+    },
+    "schemas/artifact.schema.json": {
+      "sha256": "9411b20578c33ff53ee16773c46ed3427cfeb9f629940fbe3e29b862aeef99a8",
+      "size": 6836
+    },
+    "schemas/licenses.schema.json": {
+      "sha256": "6d10a616dd1230b966fab8b33d0e06fc131c95e8b3fab600146fca15b5bfaec0",
+      "size": 1669
+    },
+    "schemas/manifest.schema.json": {
+      "sha256": "14794e84802a5a9e9f7001707e4797a10a67d38f908a759ae29b62fb26280092",
+      "size": 4299
+    },
+    "schemas/provenance.schema.json": {
+      "sha256": "efeae984dfae9c695dfb74b9fa64d557e7c9baf07c957450bcd565a7bc9472d2",
+      "size": 3652
+    },
+    "schemas/qualification.schema.json": {
+      "sha256": "8ad5ff975fc922552741699bba6a8007c8a974a38331141df884adf2f4cc696f",
+      "size": 1725
+    },
+    "schemas/release-index.schema.json": {
+      "sha256": "f0d4b28ff88e40b25dd666c962706dfbf2f95bdc78086cf60bbf0c441cbc410a",
+      "size": 7327
+    },
+    "test-verify-e2p1-standalone-artifact-contract.py": {
+      "sha256": "97e92e3f5e886e59bd71ddfc6f2fe7a605fc2eab107c9f4d2eb3ef0c2fb13b88",
+      "size": 5917
+    },
+    "verify-e2p1-standalone-artifact-contract.py": {
+      "sha256": "e5752f58c191b78c755bffdb47ff05a060aebb1fd68b1a88df5a4ae2e74c0df0",
+      "size": 24618
+    }
+  },
+  "repository_input": {
+    "branch": "agent/epoch2-documentation-foundation",
+    "head": "a34e5fdc6224e66aa7ed335e921780fbadd728dc",
+    "tree": "7543e0a8ff86a3bee1fcda33fc86b11692c90b92"
+  },
+  "schema_version": 1,
+  "status": "frozen-repository-contract",
+  "verification": {
+    "independent_check_count": 68,
+    "independent_pass_count": 68,
+    "negative_case_count": 15,
+    "negative_pass_count": 15
+  }
+}

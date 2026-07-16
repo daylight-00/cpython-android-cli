@@ -1,0 +1,190 @@
+{
+  "$id": "https://daylight-00.github.io/cpython-android-cli/schemas/e2p1/manifest-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "archive": {
+      "additionalProperties": false,
+      "properties": {
+        "filename": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "root": {
+          "const": "python/"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "size": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "filename",
+        "sha256",
+        "size",
+        "root"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "pattern": "^[0-7]{4}$",
+            "type": "string"
+          },
+          "path": {
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)(?!.*//)[^\\x00]+$",
+            "type": "string"
+          },
+          "payload_class": {
+            "enum": [
+              "runtime",
+              "development"
+            ]
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "size": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "symlink_target": {
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)(?!.*//)[^\\x00]+$",
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "directory",
+              "regular",
+              "symlink"
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "type",
+          "mode",
+          "payload_class"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "metadata_kind": {
+      "const": "hw-t-standalone-manifest"
+    },
+    "ownership": {
+      "additionalProperties": false,
+      "properties": {
+        "directory_removal_rule": {
+          "const": "remove-owned-directory-only-when-empty"
+        },
+        "installer_repacking": {
+          "const": "forbidden"
+        },
+        "unit": {
+          "const": "exact-manifest-path"
+        },
+        "unowned_descendant_policy": {
+          "const": "preserve"
+        }
+      },
+      "required": [
+        "unit",
+        "unowned_descendant_policy",
+        "directory_removal_rule",
+        "installer_repacking"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "compression_profile_recorded_in_provenance": {
+          "const": true
+        },
+        "format": {
+          "const": "pax-tar+zstd"
+        },
+        "gid": {
+          "const": 0
+        },
+        "gname": {
+          "const": ""
+        },
+        "hardlinks": {
+          "const": "forbidden"
+        },
+        "member_order": {
+          "const": "lexicographic-posix-path"
+        },
+        "mtime": {
+          "const": 0
+        },
+        "pax_headers": {
+          "const": "path-and-linkpath-only-when-required"
+        },
+        "special_entries": {
+          "const": "forbidden"
+        },
+        "symlink_policy": {
+          "const": "relative-non-escaping"
+        },
+        "uid": {
+          "const": 0
+        },
+        "uname": {
+          "const": ""
+        }
+      },
+      "required": [
+        "format",
+        "member_order",
+        "mtime",
+        "uid",
+        "gid",
+        "uname",
+        "gname",
+        "hardlinks",
+        "special_entries",
+        "symlink_policy",
+        "pax_headers",
+        "compression_profile_recorded_in_provenance"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata_kind",
+    "artifact_id",
+    "archive",
+    "serialization",
+    "ownership",
+    "entries",
+    "extensions"
+  ],
+  "title": "HW-T Android CPython standalone payload manifest v1",
+  "type": "object"
+}

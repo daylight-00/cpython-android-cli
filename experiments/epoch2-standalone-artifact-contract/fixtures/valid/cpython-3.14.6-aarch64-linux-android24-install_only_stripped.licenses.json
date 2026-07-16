@@ -1,0 +1,18 @@
+{
+  "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+  "complete_for_published_payload": false,
+  "entries": [
+    {
+      "archive_path": "python/lib/python3.14/LICENSE.txt",
+      "component": "CPython",
+      "license_id": "PSF-2.0-fixture",
+      "sha256": "5ad7328d05f7d116908ab80db511e55ee678b43f47d6815c742b684c50facbbc",
+      "size": 66
+    }
+  ],
+  "extensions": {
+    "fixture_notice": "Placeholder inventory only."
+  },
+  "metadata_kind": "hw-t-standalone-licenses",
+  "schema_version": 1
+}

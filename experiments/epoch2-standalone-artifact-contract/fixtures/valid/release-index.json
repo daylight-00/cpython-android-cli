@@ -1,0 +1,56 @@
+{
+  "release": {
+    "channel": "fixture",
+    "checksums": {
+      "filename": "SHA256SUMS",
+      "sha256": "a805130cea32b60d0268ed0b7ab3e2492df9a72ad4762ad1e029b65de00cf761",
+      "size": 847
+    },
+    "contract_version": 1,
+    "extensions": {
+      "fixture_notice": "Metadata-contract fixture; not a release candidate."
+    },
+    "format": "hw-t-standalone-release-v1",
+    "products": [
+      {
+        "archive": {
+          "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.tar.zst",
+          "sha256": "92ed769dbd729318a5e68651c8c7d1aad9895fa4c886862b09d15bcc7bf956a1",
+          "size": 396
+        },
+        "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+        "metadata": {
+          "artifact": {
+            "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.artifact.json",
+            "sha256": "cf4a49c92f0d31f94a3977db356b56b625958ba1652916bd780bb54859503c49",
+            "size": 2099
+          },
+          "licenses": {
+            "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.licenses.json",
+            "sha256": "bf3bb50995f84bf6bbe9c55e22e5a7d1e7067ed21adc7baa969ab1748a30c598",
+            "size": 533
+          },
+          "manifest": {
+            "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.manifest.json",
+            "sha256": "136435c1ed31348e75d104fbca511ac991fda3dacdc6c2347ad95b89126a9815",
+            "size": 2787
+          },
+          "provenance": {
+            "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.provenance.json",
+            "sha256": "b09f270bba769e24ab9040121198fe6cb4929ec119645c5817b4af6daf0e0337",
+            "size": 1272
+          },
+          "qualification": {
+            "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.qualification.json",
+            "sha256": "b41b79a3601800a0a843767dc562c35a9eb842d18c29e230f3ce4a9a1f19c337",
+            "size": 558
+          }
+        },
+        "selectable": false
+      }
+    ],
+    "selectable": false
+  },
+  "release_sha256": "6d67d821ceb3b783591bcefec42753267772cd4ccc7cfa31731233237f76527d",
+  "schema_version": 1
+}
