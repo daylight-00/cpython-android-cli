@@ -22,6 +22,7 @@ Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E indep
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
 Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
+Stage 3-F  publication and acquisition boundaries       active — Gate 1 authority design frozen; Gate 2 next
 ```
 
 ## Frozen runtime architecture
@@ -382,24 +383,20 @@ docs/GITHUB_COLLABORATION_WORKFLOW.md
 README.md
     |
     v
-docs/PROJECT_CONTEXT_STAGE3E.md
+docs/PROJECT_CONTEXT_STAGE3F.md
     |
-    +--> docs/stages/STAGE3E_SCOPE.md
-    +--> docs/evidence/STAGE3E_GATE2_ISOLATED_DUAL_VERSION_CENSUS_RESULT.md
-    +--> experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md
-    +--> docs/evidence/STAGE3E_GATE4_PROJECT_OWNED_PERSISTENT_ROOT_RESULT.md
-    +--> experiments/stage3e-managed-python-distribution/gate4-project-owned-persistent-root-authority.json
-    +--> experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json
-    +--> experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
-    +--> experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
+    +--> docs/stages/STAGE3F_SCOPE.md
+    +--> experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
+    +--> experiments/stage3f-publication-acquisition/gate1-authority.json
+    +--> docs/evidence/STAGE3F_GATE1_AUTHORITY_DESIGN_RESULT.md
+    +--> docs/PROJECT_CONTEXT_STAGE3E.md
     +--> docs/evidence/STAGE3E_FINAL_SUMMARY.md
     +--> docs/PROJECT_CONTEXT_STAGE3D.md
-    +--> docs/evidence/STAGE3D_GATE6_MANAGED_PYTHON_FEASIBILITY_RESULT.md
     +--> docs/session-operations/README.md
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md` is the frozen Stage 3-D record. `docs/PROJECT_CONTEXT_STAGE3E.md` is the current context.
+`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md` and `docs/PROJECT_CONTEXT_STAGE3E.md` are frozen records. `docs/PROJECT_CONTEXT_STAGE3F.md` is the current context.
 
 ## Design principle
 
@@ -460,4 +457,22 @@ experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audi
 experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
 experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
 docs/evidence/STAGE3E_FINAL_SUMMARY.md
+```
+
+## Stage 3-F active publication and acquisition boundary
+
+Stage 3-F Gate 1 freezes a repository-only authority model that keeps immutable product identity, exact catalog rows, canonical publication snapshots, endpoint locators, transport observations, untrusted acquisition candidates, verified content-addressed caches, and installation roots separate.
+
+A URL, server, filename, redirect, or cache path is not product identity. Candidate bytes must match the expected exact size and SHA-256 before promotion, and failed acquisition must not mutate verified cache state or the frozen Stage 3-E managed root.
+
+Gate 2 is active next as a deterministic repository-local publication-snapshot contract and fixture census. It opens no socket, invokes no uv command, executes no target product, and changes no installation state.
+
+See:
+
+```text
+docs/PROJECT_CONTEXT_STAGE3F.md
+docs/stages/STAGE3F_SCOPE.md
+experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
+experiments/stage3f-publication-acquisition/gate1-authority.json
+docs/evidence/STAGE3F_GATE1_AUTHORITY_DESIGN_RESULT.md
 ```

@@ -1,6 +1,6 @@
 # Project Orientation
 
-This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, consumer integration, and managed-Python distribution as separate authorities.
+This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, consumer integration, managed-Python distribution, publication, and acquisition as separate authorities.
 
 ## Governing method
 
@@ -12,23 +12,23 @@ Complete independently audited Termux evidence outranks repository design, local
 
 ## Current boundary
 
-Stage 3-D is frozen through Gate 6. Stage 3-E is frozen through Gate 5: Gate 2 has an external 117/117 re-audit, Gate 3 freezes exact-key distribution policy, and Gate 4 accepts project-owned persistent-root lifecycle evidence with target 37/37 and independent 74/74 verification.
+Stage 3-D is frozen through Gate 6. Stage 3-E is complete and frozen through Gate 5: its exact local catalog and explicit project-owned persistent root are accepted for CPython 3.14.5 and 3.14.6, including target 37/37 and independent 74/74 Gate 4 evidence.
 
-Exact patch-version requests are authoritative. Minor and unspecified requests remain conditional latest-patch surfaces. The accepted persistent installation boundary is an explicit project-owned root, not uv's default managed directory or a global executable surface.
+Stage 3-F Gate 1 is frozen as a repository-only publication/acquisition authority design. It separates product identity, catalog rows, immutable publication snapshots, endpoint locators, transport observations, acquisition candidates, verified caches, and installation roots.
 
-Stage 3-E is complete. Publication, default-root integration, network transport, global links, upgrades, recovery, concurrency, and durability require a new stage authority.
+Stage 3-F Gate 2 is active next. It is a deterministic repository-local publication-snapshot contract and fixture census. It opens no network endpoint, invokes no uv command, executes no target product, and does not mutate a managed root.
+
+Stage 3-E is complete and unchanged. Network transport, origin trust, automatic acquisition, default-root integration, global links, upgrades, recovery, concurrency, and durability remain unaccepted.
 
 ## Current reading path
 
 ```text
+docs/PROJECT_CONTEXT_STAGE3F.md
+docs/stages/STAGE3F_SCOPE.md
+experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
+experiments/stage3f-publication-acquisition/gate1-authority.json
+docs/evidence/STAGE3F_GATE1_AUTHORITY_DESIGN_RESULT.md
 docs/PROJECT_CONTEXT_STAGE3E.md
-docs/stages/STAGE3E_SCOPE.md
-docs/evidence/STAGE3E_GATE4_PROJECT_OWNED_PERSISTENT_ROOT_RESULT.md
-experiments/stage3e-managed-python-distribution/gate4-project-owned-persistent-root-authority.json
-experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json
-experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md
-experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json
 docs/evidence/STAGE3E_FINAL_SUMMARY.md
-docs/PROJECT_CONTEXT_STAGE3D.md
 docs/session-operations/README.md
 ```

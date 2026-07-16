@@ -1,0 +1,121 @@
+{
+  "acquisition_contract": {
+    "failed_candidate_mutates_installation": false,
+    "failed_candidate_mutates_verified_state": false,
+    "receive_state": "untrusted-candidate",
+    "required_before_promotion": [
+      "exact-expected-size",
+      "exact-expected-sha256",
+      "catalog-snapshot-binding"
+    ]
+  },
+  "authority_kind": "stage3f-gate1-publication-acquisition-design",
+  "authority_separation": [
+    "product-identity",
+    "catalog-row",
+    "publication-snapshot",
+    "endpoint-locator",
+    "transport-observation",
+    "acquisition-candidate",
+    "verified-cache",
+    "installation-root"
+  ],
+  "cache_contract": {
+    "locator_key_authoritative": false,
+    "unverified_partial_authoritative": false,
+    "verified_key": "artifact-sha256"
+  },
+  "claim_boundary": "Authority design only. No endpoint, network, uv automatic acquisition, target behavior, origin authentication, installation, upgrade, recovery, concurrency, durability, third-product, or upstream support claim.",
+  "class": "R-repository-only",
+  "forbidden_mutations": [
+    "canonical CPython product bytes",
+    "Stage 3-C registry or journal schemas",
+    "Stage 3-D system-Python contract",
+    "Stage 3-E managed root",
+    "real uv managed-Python directory",
+    "$PREFIX/bin/python*",
+    "shell startup files",
+    "uv source or built-in downloads catalog"
+  ],
+  "frozen_inputs": {
+    "exact_keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "stage3e_gate5_authority": {
+      "git_blob": "651789e14f899b852f8fb8b4cbeceeaca318b19a",
+      "path": "experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json",
+      "status": "independent-freeze-complete"
+    },
+    "stage3e_gate5_freeze": {
+      "commit": "6419e107e4aa8400ebd3d98f3583999075b8b935",
+      "tree": "e16edd99bfadf2135d0b632ddef4d292c0d80ea6"
+    }
+  },
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "ACTIVE_NEXT_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT",
+    "gate3": "PENDING_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION",
+    "gate4": "PENDING_TERMUX_NETWORK_ACQUISITION_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE"
+  },
+  "identity_contract": {
+    "artifact_canonical_identity": [
+      "exact-byte-size",
+      "sha256",
+      "frozen-provenance",
+      "platform-identity"
+    ],
+    "endpoint_is_identity": false,
+    "existing_exact_key_redefinition": false,
+    "filename_is_identity": false,
+    "locator_is_identity": false
+  },
+  "installation_contract": {
+    "global_links": false,
+    "shell_edits": false,
+    "stage3e_project_owned_root": "unchanged-and-independent",
+    "uv_default_managed_root": false
+  },
+  "publication_contract": {
+    "catalog_row": "exact-key-bound-to-one-immutable-product",
+    "mutable_endpoint": "may-select-immutable-snapshot-only",
+    "snapshot": "canonical-immutable-metadata",
+    "snapshot_digest": "sha256-of-canonical-snapshot-bytes"
+  },
+  "repository_transition": {
+    "active_branch": "agent/stage3f-publication-acquisition",
+    "resolved_main": "b5a2ca39d1250122312355dd3dbc6165b9409786",
+    "source_branch": "agent/stage3e-managed-python-distribution",
+    "source_head": "6419e107e4aa8400ebd3d98f3583999075b8b935",
+    "source_tree": "e16edd99bfadf2135d0b632ddef4d292c0d80ea6"
+  },
+  "schema_version": 1,
+  "selected_gate2": {
+    "class": "L-local-behavior",
+    "keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "kind": "deterministic-immutable-publication-snapshot-contract-and-fixture-census",
+    "managed_root_mutation": "none",
+    "network": "none",
+    "required_behaviors": [
+      "trace-frozen-artifact-identities",
+      "canonical-json",
+      "snapshot-sha256",
+      "unique-immutable-keys",
+      "candidate-size-and-hash-before-promotion",
+      "deterministic-repeat"
+    ],
+    "required_fixtures": [
+      "success",
+      "expected-negative",
+      "incomplete"
+    ],
+    "target_execution": "none",
+    "uv_invocation": "none"
+  },
+  "stage": "stage3f-publication-acquisition",
+  "status": "design-frozen"
+}

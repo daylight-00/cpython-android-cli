@@ -52,12 +52,12 @@ complete independently inspected Termux evidence
 
 ```text
 README.md
+  -> docs/PROJECT_CONTEXT_STAGE3F.md
+  -> docs/stages/STAGE3F_SCOPE.md
+  -> experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
+  -> experiments/stage3f-publication-acquisition/gate1-authority.json
   -> docs/PROJECT_CONTEXT_STAGE3E.md
-  -> docs/stages/STAGE3E_SCOPE.md
-  -> experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
-  -> experiments/stage3e-managed-python-distribution/gate1-authority.json
-  -> docs/PROJECT_CONTEXT_STAGE3D.md
-  -> experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json
+  -> docs/evidence/STAGE3E_FINAL_SUMMARY.md
   -> docs/handoff/COLLABORATION_PROTOCOL.md
 ```
 
