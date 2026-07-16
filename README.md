@@ -22,7 +22,7 @@ Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E indep
 Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
 Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
-Stage 3-F  publication and acquisition boundaries       active — Gate 2 snapshot contract frozen; Gate 3 next
+Stage 3-F  publication and acquisition boundaries       active — Gate 3 loopback acquisition frozen; Gate 4 next
 ```
 
 ## Frozen runtime architecture
@@ -392,7 +392,12 @@ docs/PROJECT_CONTEXT_STAGE3F.md
     +--> experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
     +--> experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
     +--> experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-    +--> docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
+    +--> docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
+    +--> experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
+    +--> experiments/stage3f-publication-acquisition/loopback_acquisition.py
+    +--> experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py
+    +--> experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
+    +--> docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
     +--> docs/PROJECT_CONTEXT_STAGE3E.md
     +--> docs/evidence/STAGE3E_FINAL_SUMMARY.md
     +--> docs/PROJECT_CONTEXT_STAGE3D.md
@@ -467,9 +472,11 @@ docs/evidence/STAGE3E_FINAL_SUMMARY.md
 
 Stage 3-F Gate 1 freezes the separation between immutable product identity, catalog rows, publication snapshots, endpoint locators, transport observations, acquisition candidates, verified caches, and installation roots.
 
-Gate 2 freezes the deterministic canonical two-row publication snapshot. Its body digest is `a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c`; the local verifier passes 18/18 success, expected-negative, and incomplete checks. Exact artifact identity remains size plus SHA-256 and never comes from a locator.
+Gate 2 freezes the deterministic canonical two-row publication snapshot. Its body digest is `a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c`; the local verifier passes 18/18 checks. Exact artifact identity remains size plus SHA-256 and never comes from a locator.
 
-Gate 3 is active next for a loopback-only transport and acquisition implementation using isolated synthetic fixtures. Public endpoints, uv automatic acquisition, target product execution, cache durability, and Stage 3-E managed-root mutation remain outside the boundary.
+Gate 3 freezes a 31/31 loopback-only publisher and acquisition implementation. It rejects redirects and non-loopback hosts, receives synthetic fixture bytes into isolated candidates, verifies exact response length, size, SHA-256, and snapshot binding, then promotes through an exclusive content-addressed cache path. Failure preserves verified objects and leaves no candidate residue.
+
+Gate 4 is active next on the authoritative Termux host using actual frozen CPython archive bytes, loopback-only HTTP, and an isolated cache. Public endpoints, uv invocation, product execution, installation, and Stage 3-E managed-root mutation remain outside the boundary.
 
 See:
 
@@ -482,5 +489,10 @@ docs/evidence/STAGE3F_GATE1_REPOSITORY_TRANSACTION_RESULT.md
 experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
+docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
+experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
+experiments/stage3f-publication-acquisition/loopback_acquisition.py
+experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py
+experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
+docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
 ```

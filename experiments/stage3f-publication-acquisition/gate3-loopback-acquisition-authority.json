@@ -1,0 +1,90 @@
+{
+  "authority_kind": "stage3f-gate3-loopback-transport-acquisition-implementation",
+  "cache_contract": {
+    "candidate_directory": "isolated-cache-root/.candidates",
+    "existing_mismatch": "fail-closed-no-overwrite",
+    "installation_permitted": false,
+    "promotion": "exact-size-and-sha256-before-exclusive-create",
+    "verified_layout": "sha256/<first-two-hex>/<full-sha256>"
+  },
+  "claim_boundary": "Loopback-only synthetic transport and isolated content-addressed cache behavior. No public endpoint, external network, uv invocation, Android target, real CPython artifact acquisition, installation, origin authentication, recovery, concurrency, power-loss durability, third-product, or upstream support claim.",
+  "class": "L-local-behavior",
+  "fixture_artifacts": {
+    "fixture-a": {
+      "sha256": "c40fe3e0affea04d95a55601be476f46aa74561c4108e80f1dfcf4a010316cf9",
+      "size": 344
+    },
+    "fixture-b": {
+      "sha256": "5a09b2f32ae9d2cc5b90f48ae24f69fb518bbadb675a90331e78e72241ee5f75",
+      "size": 504
+    },
+    "fixture-c-cache-conflict": {
+      "sha256": "f060b4c69b634a36ab1247d6fc5160776d58792d6168cf2593b6c44f7f07559a",
+      "size": 165
+    }
+  },
+  "frozen_inputs": {
+    "gate2_commit": "82c21757e08b040fb7167c90e60fa48af323efb0",
+    "gate2_result_archive_sha256": "c8175e85a738a3decb078b5a6f858c175bead1ecd46608366dff3b27acf61d5d",
+    "gate2_result_archive_size": 26503,
+    "gate2_result_self_index": "46/46",
+    "gate2_tree": "ba85ac5bf09bdfc2aac7482077535ac2942cbc38",
+    "snapshot_file_sha256": "c942b9863e33c2edf7d628780bfeef0957b427fb12259ba49e708cb4858c52bc",
+    "snapshot_file_size": 2328,
+    "snapshot_sha256": "a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c"
+  },
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "FROZEN_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT",
+    "gate3": "FROZEN_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION",
+    "gate4": "ACTIVE_NEXT_TERMUX_TARGET_NETWORK_ACQUISITION_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE"
+  },
+  "implementation": {
+    "artifact_receive_state": "untrusted-candidate",
+    "content_length": "required-and-exact",
+    "endpoint": "http://127.0.0.1:<ephemeral-port>",
+    "external_addresses": "rejected-before-socket",
+    "redirects": "rejected",
+    "snapshot": "fetched-and-verified-against-gate2-file-and-body-digests",
+    "transport": "python-standard-library-http-loopback-only"
+  },
+  "protected_state": {
+    "canonical_product_bytes": "not-read-or-written",
+    "real_uv_managed_root": "not-accessed",
+    "stage3e_managed_root": "not-accessed",
+    "target_product_execution": false,
+    "uv_invocation": false
+  },
+  "schema_version": 1,
+  "selected_gate4": {
+    "kind": "termux-target-loopback-network-acquisition-validation",
+    "required_boundary": [
+      "real-termux-python-host",
+      "loopback-only-http",
+      "actual-frozen-cpython-artifact-bytes",
+      "isolated-content-addressed-cache",
+      "no-uv-invocation",
+      "no-product-execution-before-verification",
+      "no-stage3e-managed-root-mutation",
+      "complete-pass-or-fail-evidence"
+    ],
+    "still_forbidden": [
+      "public-endpoint",
+      "dns-or-tls-origin-claim",
+      "automatic-uv-acquisition",
+      "installation",
+      "global-links",
+      "upgrade-or-recovery"
+    ]
+  },
+  "status": "implementation-frozen-local-loopback-verified",
+  "verification": {
+    "check_count": 31,
+    "expected_negative_count": 14,
+    "failed_checks": [],
+    "incomplete_count": 5,
+    "pass_count": 31,
+    "success_count": 12
+  }
+}

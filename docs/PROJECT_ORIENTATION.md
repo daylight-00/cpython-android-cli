@@ -1,6 +1,6 @@
 # Project Orientation
 
-This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, consumer integration, managed-Python distribution, publication, and acquisition as separate authorities.
+This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, consumer integration, managed-Python distribution, publication, transport, acquisition, cache, and installation as separate authorities.
 
 ## Governing method
 
@@ -22,7 +22,9 @@ snapshot body SHA-256  a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a
 3.14.6 artifact SHA    9575edef24d84b2fce32c55093ab01cb8b2b1a41b521d2011653fae87b5bcb64
 ```
 
-Stage 3-F Gate 3 is active next for a loopback-only transport and acquisition implementation using isolated synthetic fixtures. Public network claims, uv integration, target product execution, and managed-root mutation remain closed.
+Gate 3 freezes a 31/31 loopback-only implementation: exact snapshot fetch, strict response length, independent candidate size/hash verification, snapshot binding, content-addressed no-replacement promotion, repeat cache no-op, and failure preservation. Its artifacts are synthetic fixtures, not CPython products.
+
+Gate 4 is active next on the authoritative Termux host with actual frozen archive bytes and loopback-only HTTP. Public endpoints, uv integration, product execution, installation, and managed-root mutation remain closed.
 
 ## Current reading path
 
@@ -35,7 +37,10 @@ docs/evidence/STAGE3F_GATE1_REPOSITORY_TRANSACTION_RESULT.md
 experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
+docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
+experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
+experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
+docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
 docs/PROJECT_CONTEXT_STAGE3E.md
 docs/evidence/STAGE3E_FINAL_SUMMARY.md
 docs/session-operations/README.md

@@ -59,7 +59,11 @@ README.md
   -> experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
   -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
   -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-  -> docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
+  -> docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
+  -> experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
+  -> experiments/stage3f-publication-acquisition/loopback_acquisition.py
+  -> experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
+  -> docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
   -> docs/PROJECT_CONTEXT_STAGE3E.md
   -> docs/evidence/STAGE3E_FINAL_SUMMARY.md
   -> docs/handoff/COLLABORATION_PROTOCOL.md

@@ -12,8 +12,13 @@ docs/evidence/STAGE3F_GATE1_REPOSITORY_TRANSACTION_RESULT.md
 experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
 experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
-docs/handoff/2026-07-16-stage3f-gate2-contract-freeze.md
+docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
+experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
+experiments/stage3f-publication-acquisition/loopback_acquisition.py
+experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py
+experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
+docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
+docs/handoff/2026-07-16-stage3f-gate3-loopback-freeze.md
 docs/PROJECT_CONTEXT_STAGE3E.md
 docs/evidence/STAGE3E_FINAL_SUMMARY.md
 docs/PROJECT_CONTEXT_STAGE3D.md
@@ -31,9 +36,10 @@ Stage 3-E Gate 4 persistent-root target validation      FROZEN — 37/37, indepe
 Stage 3-E Gate 5 independent distribution freeze        FROZEN
 Stage 3-F Gate 1 publication/acquisition authority      FROZEN — repository-only design
 Stage 3-F Gate 2 immutable publication snapshot         FROZEN — 18/18 local verification
-Stage 3-F Gate 3 loopback transport/acquisition         ACTIVE NEXT
+Stage 3-F Gate 3 loopback transport/acquisition         FROZEN — 31/31 local verification
+Stage 3-F Gate 4 Termux target acquisition              ACTIVE NEXT
 ```
 
-Gate 2 freezes metadata and candidate-observation behavior only. The next action is a bounded loopback publisher/acquisition implementation using isolated synthetic artifacts and an isolated verified-cache fixture.
+Gate 3 freezes implementation behavior using synthetic artifacts and isolated cache roots only. The next action is a bounded Termux loopback matrix using the actual frozen CPython archive bytes.
 
-Do not use public endpoints, invoke uv automatic acquisition, execute target products, or mutate the Stage 3-E managed root in Gate 3. Termux network-acquisition validation remains Gate 4.
+Do not use public endpoints, invoke uv, execute products, install archives, or mutate the Stage 3-E managed root in Gate 4. Preserve complete PASS-or-FAIL evidence and independently audit the target archive before acceptance.
