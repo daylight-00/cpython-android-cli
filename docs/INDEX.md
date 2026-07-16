@@ -13,6 +13,10 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 ## Epoch 2 contracts and evidence
 
+- [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
+- [`evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md)
+- [`handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md`](handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md)
+- [`../experiments/epoch2-standalone-build-facade/`](../experiments/epoch2-standalone-build-facade/)
 - [`contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
 - [`evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md`](evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md)
 - [`handoff/2026-07-16-epoch2-p1-standalone-artifact-contract.md`](handoff/2026-07-16-epoch2-p1-standalone-artifact-contract.md)

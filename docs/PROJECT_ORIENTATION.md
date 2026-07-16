@@ -20,7 +20,9 @@ Epoch 2 Phase 0 is frozen. Epoch 2 Phase 1 is frozen as a repository-level stand
 
 The first canonical flavor is `install_only_stripped`: a `pax-tar+zstd` archive with one `python/` root, runtime and development payloads, and external versioned metadata, manifest, provenance, qualification, license, checksum, and release-index authorities.
 
-E2-P2 is next. It must place stable build/package/verify façades over the existing proven producer without changing frozen runtime behavior or moving installer implementation.
+E2-P2 Gate 1 is frozen. The stable command provides `plan`, `build`, `package`, and repository/envelope `verify` operations while pinning the direct Stage 3-B entry points. Synthetic regression proves deterministic E2-P1 envelope construction and fail-closed drift and mutation handling.
+
+E2-P2 Gate 2 is next. It must execute the real workstation producer and package operations through the façade, preserve exact receipts and release assets, and keep the output unqualified and unselectable.
 
 The final Epoch 1 retained acquisition authority is:
 
@@ -40,6 +42,9 @@ No Epoch 1 gate is active. Epoch 2 work must open and close its own bounded phas
 
 ```text
 docs/CURRENT_CONTEXT.md
+docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md
+docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md
+experiments/epoch2-standalone-build-facade/
 docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
 docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md
 experiments/epoch2-standalone-artifact-contract/

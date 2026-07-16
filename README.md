@@ -13,10 +13,10 @@ Epoch 1  Android CPython CLI adaptation, installation lifecycle,
          managed-Python consumption, publication, and acquisition   FROZEN
 
 Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — Phase 1 frozen; Phase 2 next
+         installer-consumer separation, and repository promotion    ACTIVE — Phase 2 Gate 1 frozen; Gate 2 next
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership; Phase 1 now freezes the standalone release-envelope contract without making a real runtime, target, release, or upstream-support claim.
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, and Phase 2 Gate 1 now freezes stable build/package/verify façade implementation without claiming a real product run.
 
 Current entry points:
 
@@ -24,6 +24,7 @@ Current entry points:
 - [`docs/INDEX.md`](docs/INDEX.md)
 - [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
 - [`docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
+- [`docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 
 ## Current status
 
@@ -44,7 +45,8 @@ Stage 3-E  managed-Python distribution                  frozen — Gate 5 indepe
 Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete; documentation integrity corrected
 Epoch 2 P0 documentation and component boundaries       frozen
 Epoch 2 P1 canonical standalone artifact contract       frozen — 68/68 + 15/15
-Epoch 2 P2 standalone build and package façade          next
+Epoch 2 P2 Gate 1 standalone façade implementation        frozen — synthetic verification
+Epoch 2 P2 Gate 2 workstation build and package execution next
 ```
 
 ## Frozen runtime architecture
@@ -409,6 +411,9 @@ README.md
     v
 docs/CURRENT_CONTEXT.md
     |
+    +--> docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md
+    +--> docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md
+    +--> experiments/epoch2-standalone-build-facade/
     +--> docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
     +--> docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md
     +--> experiments/epoch2-standalone-artifact-contract/

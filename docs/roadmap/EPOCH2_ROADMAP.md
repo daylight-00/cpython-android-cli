@@ -24,11 +24,15 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P2 — Standalone build and package façade
 
-> **Status:** NEXT
+> **Status:** ACTIVE — Gate 1 frozen; Gate 2 next
 
 **Goal:** provide stable `build`, `package`, and `verify` entry points over the existing proven producer and runtime assembly.
 
-**Acceptance:** same frozen runtime behavior and closure; deterministic E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
+**Gate 1 frozen result:** the repository command, pinned predecessor entry points, deterministic package implementation, general envelope verifier, synthetic double-build byte identity, drift rejection, and archive-mutation rejection are accepted. No real producer run is claimed.
+
+**Gate 2 next:** execute `build` and `package` on the configured Linux workstation and independently verify the returned unqualified E2-P1 envelope.
+
+**Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
 
 ## E2-P3 — Metadata and qualification
 
