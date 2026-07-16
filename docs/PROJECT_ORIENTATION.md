@@ -16,7 +16,11 @@ Complete independently audited Termux evidence outranks repository design, local
 
 Epoch 1 is frozen through Stage 3-F. Stage 3-D remains frozen through Gate 6. Stage 3-E is complete with target 37/37 and independent 74/74 evidence. Stage 3-F is complete through Gate 5 after a documentation-integrity correction.
 
-Epoch 2 Phase 0 is active. Its authority is limited to documentation, terminology, repository topology decisions, component ownership, and a no-code-movement directory skeleton. Runtime behavior, archives, installation semantics, target evidence, release assets, and upstream integration remain unchanged.
+Epoch 2 Phase 0 is frozen. Epoch 2 Phase 1 is frozen as a repository-level standalone artifact contract with 68/68 independent checks and 15/15 mutation-based negative fixtures. E2-P1 defines no real CPython archive or target acceptance.
+
+The first canonical flavor is `install_only_stripped`: a `pax-tar+zstd` archive with one `python/` root, runtime and development payloads, and external versioned metadata, manifest, provenance, qualification, license, checksum, and release-index authorities.
+
+E2-P2 is next. It must place stable build/package/verify façades over the existing proven producer without changing frozen runtime behavior or moving installer implementation.
 
 The final Epoch 1 retained acquisition authority is:
 
@@ -30,17 +34,18 @@ Gate 4 actual-byte evidence `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca47
 
 The first Gate 5 commit passed marker-based verification but accidentally installed fixture-shortened documentation. Independent post-push diff audit rejected that state. The correction restores the complete production documents and adds preservation sentinels. The historical Gate 2 concrete snapshot remains preserved but unselectable.
 
-No Epoch 1 gate is active. Epoch 2 work must open and close its own bounded phases without treating design documents as runtime or target acceptance.
+No Epoch 1 gate is active. Epoch 2 work must open and close its own bounded phases without treating design documents or fixtures as runtime or target acceptance.
 
 ## Current reading path
 
 ```text
 docs/CURRENT_CONTEXT.md
-docs/epochs/EPOCH2_CHARTER.md
+docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
+docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md
+experiments/epoch2-standalone-artifact-contract/
 docs/roadmap/EPOCH2_ROADMAP.md
 docs/architecture/COMPONENT_OWNERSHIP.md
-docs/decisions/
-docs/references/
+docs/epochs/EPOCH2_CHARTER.md
 docs/epochs/EPOCH1_CLOSURE.md
 docs/PROJECT_CONTEXT_STAGE3F.md
 docs/session-operations/README.md

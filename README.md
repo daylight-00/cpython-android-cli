@@ -13,16 +13,17 @@ Epoch 1  Android CPython CLI adaptation, installation lifecycle,
          managed-Python consumption, publication, and acquisition   FROZEN
 
 Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — Phase 0
+         installer-consumer separation, and repository promotion    ACTIVE — Phase 1 frozen; Phase 2 next
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 changes documentation and logical component ownership only; it makes no new runtime, target, release, or upstream-support claim.
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership; Phase 1 now freezes the standalone release-envelope contract without making a real runtime, target, release, or upstream-support claim.
 
 Current entry points:
 
 - [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
 - [`docs/INDEX.md`](docs/INDEX.md)
 - [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
+- [`docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
 
 ## Current status
 
@@ -41,7 +42,9 @@ Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 comple
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
 Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
 Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete; documentation integrity corrected
-Epoch 2 P0 documentation and component boundaries       active — no implementation movement
+Epoch 2 P0 documentation and component boundaries       frozen
+Epoch 2 P1 canonical standalone artifact contract       frozen — 68/68 + 15/15
+Epoch 2 P2 standalone build and package façade          next
 ```
 
 ## Frozen runtime architecture
@@ -406,6 +409,9 @@ README.md
     v
 docs/CURRENT_CONTEXT.md
     |
+    +--> docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
+    +--> docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md
+    +--> experiments/epoch2-standalone-artifact-contract/
     +--> docs/epochs/EPOCH2_CHARTER.md
     +--> docs/roadmap/EPOCH2_ROADMAP.md
     +--> docs/architecture/COMPONENT_OWNERSHIP.md
