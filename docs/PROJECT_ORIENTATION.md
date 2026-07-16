@@ -14,17 +14,21 @@ Complete independently audited Termux evidence outranks repository design, local
 
 Stage 3-D is frozen through Gate 6. Stage 3-E is complete and frozen through Gate 5: its exact local catalog and explicit project-owned persistent root are accepted for CPython 3.14.5 and 3.14.6, including target 37/37 and independent 74/74 Gate 4 evidence.
 
-Stage 3-F Gate 1 freezes publication/acquisition authority separation. Gate 2 freezes the deterministic two-row immutable publication snapshot contract with 18/18 local verification.
+Stage 3-F Gates 1–3 freeze authority separation, deterministic snapshot behavior, and the 31/31 loopback acquisition engine.
+
+Gate 4 v1 then exposed a retention gap: the Gate 2 concrete archive hashes referred to transient bytes that were not preserved, so byte-identical regeneration failed closed before acquisition. The failure is retained rather than erased.
+
+Corrected Gate 4A retains exact archive bytes and freezes the active acquisition snapshot:
 
 ```text
-snapshot body SHA-256  a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c
-3.14.5 artifact SHA    18832bb7982a679fcee067e2d33e106dac84307687b63803be105714596d422f
-3.14.6 artifact SHA    9575edef24d84b2fce32c55093ab01cb8b2b1a41b521d2011653fae87b5bcb64
+3.14.5  9761545   2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
+3.14.6  11788907  f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208
+snapshot body    dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233
 ```
 
-Gate 3 freezes a 31/31 loopback-only implementation: exact snapshot fetch, strict response length, independent candidate size/hash verification, snapshot binding, content-addressed no-replacement promotion, repeat cache no-op, and failure preservation. Its artifacts are synthetic fixtures, not CPython products.
+Both payloads pass 714/714 strict fidelity. The target matrix passes 16/16 and independent audit passes 31/31. Exact bytes, snapshot, observations, negative preservation evidence, and verified cache are retained in result archive `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b`.
 
-Gate 4 is active next on the authoritative Termux host with actual frozen archive bytes and loopback-only HTTP. Public endpoints, uv integration, product execution, installation, and managed-root mutation remain closed.
+Gate 5 is active next as the independent Stage 3-F freeze. Public endpoints, origin trust, uv automatic acquisition, product execution, installation, recovery, concurrency, durability, and third products remain closed.
 
 ## Current reading path
 
@@ -41,6 +45,10 @@ docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
 experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
 experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
 docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
+experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
+experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md
+experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
+docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md
 docs/PROJECT_CONTEXT_STAGE3E.md
 docs/evidence/STAGE3E_FINAL_SUMMARY.md
 docs/session-operations/README.md

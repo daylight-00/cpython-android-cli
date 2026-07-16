@@ -1,0 +1,53 @@
+{
+  "artifact_rows": {
+    "cpython-3.14.5-linux-aarch64-none": {
+      "payload_fidelity": "714/714 strict",
+      "sha256": "2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2",
+      "size": 9761545,
+      "source_runtime_base_sha256": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d"
+    },
+    "cpython-3.14.6-linux-aarch64-none": {
+      "payload_fidelity": "714/714 strict",
+      "sha256": "f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208",
+      "size": 11788907,
+      "source_runtime_base_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743"
+    }
+  },
+  "authority_kind": "stage3f-gate2-retention-correction",
+  "claim_boundary": "This corrects retention and acquisition authority only. It does not authorize mutable exact-key publication, public hosting, origin authentication, uv automatic acquisition, product execution, installation, global exposure, recovery, concurrency, durability, third products, or upstream support.",
+  "class": "R-repository-record-after-target-audit",
+  "correction_policy": {
+    "correction_kind": "explicit-authority-repair-after-preserved-failure",
+    "endpoint_or_locator_caused_change": false,
+    "historical_snapshot_selectable": false,
+    "ordinary_exact_key_redefinition_allowed": false,
+    "retained_snapshot_selectable": true,
+    "same_key_change_must_be_read_as_correction_not_mutable_publication_semantics": true,
+    "source_payload_fidelity_required": true
+  },
+  "historical_snapshot": {
+    "canonical_file_sha256": "c942b9863e33c2edf7d628780bfeef0957b427fb12259ba49e708cb4858c52bc",
+    "canonical_file_size": 2328,
+    "exact_bytes_retained": false,
+    "path": "experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json",
+    "snapshot_sha256": "a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c",
+    "status": "historical-local-contract-fixture-not-selectable-for-acquisition"
+  },
+  "retained_snapshot": {
+    "canonical_file_sha256": "419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3",
+    "canonical_file_size": 2997,
+    "exact_bytes_retained_in_result_archive": true,
+    "path": "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json",
+    "snapshot_sha256": "dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233",
+    "status": "active-retained-acquisition-authority"
+  },
+  "schema_version": 1,
+  "status": "accepted-explicit-authority-correction",
+  "trigger": {
+    "derive_rc": 1,
+    "finding": "Gate 2 recorded transient managed-archive hashes without retaining the exact bytes; byte-identical regeneration was not proved and failed closed before target acquisition.",
+    "gate4_v1_result_archive_sha256": "2a076288652f1c342da49eccbe4507291df05d1d596b5c6f1d5646610b5990be",
+    "gate4_v1_result_archive_size": 3484,
+    "repository_mutation": "none-or-rolled-back"
+  }
+}

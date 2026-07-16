@@ -1,0 +1,84 @@
+{
+  "accepted_result": {
+    "archive_sha256": "6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b",
+    "archive_size": 42968242,
+    "independent_audit": {
+      "check_count": 31,
+      "failed_checks": [],
+      "pass_count": 31
+    },
+    "payload_fidelity": {
+      "cpython-3.14.5-linux-aarch64-none": "714/714 strict",
+      "cpython-3.14.6-linux-aarch64-none": "714/714 strict"
+    },
+    "result_index_count": 46,
+    "safe_member_count": 62,
+    "target_matrix": {
+      "check_count": 16,
+      "failed_checks": [],
+      "pass_count": 16
+    },
+    "work_id": "20260716-stage3f-gate4a-retained-artifact-acquisition-v2"
+  },
+  "artifact_identities": {
+    "cpython-3.14.5-linux-aarch64-none": {
+      "payload_fidelity": "714/714 strict",
+      "sha256": "2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2",
+      "size": 9761545,
+      "source_runtime_base_sha256": "d01e142dae90cdca8681c6674999acc197d05bb1bec9a75468fe9b8cf4fff52d"
+    },
+    "cpython-3.14.6-linux-aarch64-none": {
+      "payload_fidelity": "714/714 strict",
+      "sha256": "f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208",
+      "size": 11788907,
+      "source_runtime_base_sha256": "2ba7c309b1700926dc423eb4305a9eba1a53c023a11617e490b151be71e49743"
+    }
+  },
+  "authority_kind": "stage3f-gate4-termux-retained-artifact-acquisition",
+  "claim_boundary": "Gate 4 accepts retained actual archive acquisition over Termux loopback and isolated cache only. Public hosting, DNS/TLS/origin trust, signatures, uv automatic acquisition, product execution, installation, default-root adoption, global links, upgrades, recovery, concurrency, durability, third products, and upstream support remain unaccepted.",
+  "class": "T-target-evidence-plus-independent-archive-audit",
+  "gate_sequence": {
+    "gate1": "FROZEN",
+    "gate2": "FROZEN_WITH_RETENTION_CORRECTION",
+    "gate3": "FROZEN",
+    "gate4": "FROZEN_RETAINED_ACTUAL_BYTES",
+    "gate5": "ACTIVE_NEXT_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE"
+  },
+  "protected_state": {
+    "cache_scope": "isolated-result-only",
+    "external_network": false,
+    "installation_mutation": false,
+    "product_execution": false,
+    "public_endpoint": false,
+    "repository_mutation_during_target_run": false,
+    "uv_invocation": false
+  },
+  "proved": [
+    "retained exact archive bytes in self-indexed target result",
+    "canonical retained snapshot loopback fetch",
+    "both actual archive transfers through 127.0.0.1",
+    "independent observed size and sha256",
+    "isolated content-addressed promotion",
+    "repeat cache hit without another request",
+    "truncated transfer rejection and peer preservation",
+    "same-size corrupt transfer rejection and peer preservation",
+    "candidate cleanup",
+    "repository and protected-state identity"
+  ],
+  "repository_input": {
+    "branch": "agent/stage3f-publication-acquisition",
+    "head": "72713db607bbead29f45e86617edc7ca05617fc4",
+    "main": "b5a2ca39d1250122312355dd3dbc6165b9409786",
+    "remote_head": "72713db607bbead29f45e86617edc7ca05617fc4",
+    "tree": "8c1b67d4dfebbc9266213f8374db0a3cf912fd91"
+  },
+  "schema_version": 1,
+  "snapshot": {
+    "canonical_file_sha256": "419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3",
+    "canonical_file_size": 2997,
+    "path": "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json",
+    "row_count": 2,
+    "snapshot_sha256": "dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233"
+  },
+  "status": "accepted-target-evidence-independent-audit-complete"
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise Stage 3-F Gate 3 project-control success, negative, and incomplete fixtures."""
+"""Exercise corrected Stage 3-F Gate 4 project-control fixtures."""
 from __future__ import annotations
 
 import sys
@@ -45,7 +45,7 @@ def make_fixture(root: Path) -> None:
         root / "README.md",
         "frozen — Gate 5 independent distribution freeze complete\n"
         "4553c5aae0ef3a34979a1678112b01dcdebe7087ba370aea69c44dcbce4fe112 37/37 74/74\n"
-        "Stage 3-F  publication and acquisition boundaries active — Gate 3 loopback acquisition frozen; Gate 4 next\n",
+        "Stage 3-F  publication and acquisition boundaries active — Gate 4 retained acquisition frozen; Gate 5 next\n",
     )
     write(root / "docs/PROJECT_CONTEXT_STAGE3D.md", "frozen\n")
     write(root / "docs/PROJECT_CONTEXT_STAGE3E.md", "> **Status:** Stage 3-E frozen through Gate 5 independent distribution freeze\n")
@@ -62,6 +62,9 @@ def make_fixture(root: Path) -> None:
         "docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md",
         "docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md",
         "docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md",
+        "docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md",
+        "docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md",
+        "docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md",
         "experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md",
         "experiments/stage3f-publication-acquisition/publication_snapshot.py",
         "experiments/stage3f-publication-acquisition/generate-gate2-publication-snapshot.py",
@@ -74,6 +77,10 @@ def make_fixture(root: Path) -> None:
         "experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py",
         "experiments/stage3f-publication-acquisition/run-gate3-loopback-acquisition.sh",
         "experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json",
+        "experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json",
+        "experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md",
+        "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json",
+        "experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json",
     ]
     for rel in copy_paths:
         copy(rel, root)
@@ -122,25 +129,26 @@ def main() -> int:
         if not success["pass"]:
             raise SystemExit(success)
 
-        authority = root / "experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json"
+        authority = root / "experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json"
         value = json.loads(authority.read_text(encoding="utf-8"))
         value["status"] = "broken"
         write_json(authority, value)
         negative = module.verify(root)
-        if negative["pass"] or negative["failed_checks"] != ["stage3f_gate3_status"]:
+        if negative["pass"] or negative["failed_checks"] != ["gate4_authority_status"]:
             raise SystemExit(negative)
 
-        value["status"] = "implementation-frozen-local-loopback-verified"
+        value["status"] = "accepted-target-evidence-independent-audit-complete"
         write_json(authority, value)
-        authority.unlink()
+        retained = root / "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json"
+        retained.unlink()
         incomplete = module.verify(root)
-        rel = str(authority.relative_to(root))
+        rel = str(retained.relative_to(root))
         if incomplete["pass"] or "required_files" not in incomplete["failed_checks"] or rel not in incomplete["missing_files"]:
             raise SystemExit(incomplete)
 
         print(json.dumps({
             "schema_version": 1,
-            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate3",
+            "verification_kind": "project-control-plane-fixtures-through-stage3f-gate4-retention-correction",
             "pass": True,
             "fixtures": {
                 "success": success["check_count"],

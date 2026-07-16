@@ -54,16 +54,13 @@ complete independently inspected Termux evidence
 README.md
   -> docs/PROJECT_CONTEXT_STAGE3F.md
   -> docs/stages/STAGE3F_SCOPE.md
-  -> experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
-  -> experiments/stage3f-publication-acquisition/gate1-authority.json
-  -> experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
-  -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
-  -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-  -> docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
-  -> experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
-  -> experiments/stage3f-publication-acquisition/loopback_acquisition.py
-  -> experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
-  -> docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
+  -> experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
+  -> experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md
+  -> experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
+  -> experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
+  -> docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md
+  -> docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md
+  -> docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md
   -> docs/PROJECT_CONTEXT_STAGE3E.md
   -> docs/evidence/STAGE3E_FINAL_SUMMARY.md
   -> docs/handoff/COLLABORATION_PROTOCOL.md

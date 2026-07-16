@@ -1,7 +1,7 @@
 # Project Context: Stage 3-F Publication and Acquisition Boundaries
 
-> **Status:** Stage 3-F frozen through Gate 3 loopback transport/acquisition implementation
-> **Active boundary:** Gate 4 Termux target loopback network-acquisition validation
+> **Status:** Stage 3-F frozen through corrected Gate 4 retained-artifact acquisition
+> **Active boundary:** Gate 5 independent publication/acquisition freeze
 > **Canonical branch:** `agent/stage3f-publication-acquisition`
 > **Stage input:** `6419e107e4aa8400ebd3d98f3583999075b8b935`, tree `e16edd99bfadf2135d0b632ddef4d292c0d80ea6`
 > **Gate 2 input:** `39e5c6d56a45495a4f23b73b6fa0704ba28fbc74`, tree `7a0c476e60280c23dd8edd2627b25b42e3fa1429`
@@ -20,8 +20,8 @@ Stage 3-E proved a local, offline, exact-key managed-Python surface for CPython 
 Gate 1  publication/acquisition authority design        FROZEN
 Gate 2  immutable publication snapshot contract         FROZEN — 18/18 local verification
 Gate 3  loopback transport/acquisition implementation   FROZEN — 31/31 local verification
-Gate 4  Termux target network-acquisition validation     ACTIVE NEXT — loopback-only actual bytes
-Gate 5  independent publication/acquisition freeze       pending
+Gate 4  Termux target network-acquisition validation     FROZEN — retained actual bytes, 16/16 + 31/31
+Gate 5  independent publication/acquisition freeze       ACTIVE NEXT
 ```
 
 ## Gate 1 frozen authority model
@@ -37,68 +37,43 @@ verified cache         content-addressed by artifact SHA-256
 installation root      unchanged Stage 3-E project-owned root
 ```
 
-## Gate 2 frozen snapshot
+## Gate 2 historical snapshot and retention correction
 
-The canonical snapshot binds the two accepted Stage 3-E runtime-only products:
+Gate 2 remains frozen as a deterministic canonicalization and candidate-observation contract with 18/18 local verification. Its original concrete snapshot recorded transient archive identities but did not retain those exact bytes. Gate 4 v1 therefore failed closed at derivation; the historical snapshot is preserved but is no longer selectable for acquisition.
+
+Gate 4A establishes the active retained snapshot from exact bytes preserved in the accepted target result:
 
 ```text
 cpython-3.14.5-linux-aarch64-none
-  size    9761522
-  sha256  18832bb7982a679fcee067e2d33e106dac84307687b63803be105714596d422f
+  size    9761545
+  sha256  2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
 
 cpython-3.14.6-linux-aarch64-none
-  size    11789074
-  sha256  9575edef24d84b2fce32c55093ab01cb8b2b1a41b521d2011653fae87b5bcb64
+  size    11788907
+  sha256  f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208
+
+retained snapshot body SHA-256  dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233
+retained snapshot file SHA-256  419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3
+retained snapshot file size    2997
 ```
 
-```text
-snapshot body SHA-256  a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c
-canonical file SHA-256 c942b9863e33c2edf7d628780bfeef0957b427fb12259ba49e708cb4858c52bc
-canonical file size    2328
-rows                   2
-verification           18/18 PASS
-```
-
-Canonical JSON uses sorted keys, no insignificant whitespace, and one trailing LF. The snapshot body digest, complete envelope digest, and artifact digests remain separate identities.
+This is an explicit authority repair after preserved failure evidence, not permission for mutable endpoint-driven exact-key redefinition.
 
 ## Gate 3 frozen implementation
 
-Gate 3 implements one bounded loopback publisher and acquisition engine with synthetic fixture bytes:
+Gate 3 freezes the 31/31 loopback publisher and fail-closed content-addressed acquisition engine using synthetic fixtures. Redirects and non-loopback hosts are rejected, candidate residue is removed, verified objects are not overwritten, and repeat acquisition is a no-request cache hit.
 
-```text
-publisher          http://127.0.0.1:<ephemeral-port>
-redirects          rejected
-external hosts     rejected before socket
-response length    required and exact
-candidate          isolated and untrusted
-promotion          exact size, SHA-256, and snapshot binding
-cache              sha256/<prefix>/<digest>, exclusive no-replacement
-repeat acquisition exact cache no-op without another request
-verification       31/31 PASS
-```
+## Gate 4 frozen target result
 
-Failed, truncated, oversized, wrong-hash, wrong-size, redirect, missing-route, and mismatched-snapshot cases fail closed. Candidate residue is removed, existing verified objects remain unchanged, and a mismatched object at the target content-addressed path is never replaced.
+Gate 4A executes the same policy on Termux with the retained actual archive bytes. The result archive `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b` is safe with 62 members and 46/46 exact self-index entries. Its raw target matrix passes 16/16 and the independent verifier passes 31/31.
 
-The synthetic fixture bytes are implementation evidence only and are not CPython product identities.
+Both payloads pass 714/714 strict source fidelity. Complete transfers, independent size/hash observations, content-addressed promotion, repeat cache hits, truncated/corrupt rejection, peer preservation, candidate cleanup, and protected-state identity are accepted. The exact archive bytes remain retained inside the result evidence.
 
-## Selected Gate 4
+No uv command or product was executed, no archive was installed, no public or external endpoint was used, and the Stage 3-E managed root remained unchanged.
 
-Gate 4 moves the same acquisition policy to the authoritative Termux host using the actual frozen CPython 3.14.5 and 3.14.6 archive bytes. Transport remains loopback-only and cache state remains isolated.
+## Selected Gate 5
 
-Gate 4 must prove:
-
-```text
-exact Gate 2 snapshot fetch and validation
-actual archive transfer through 127.0.0.1
-independent observed size and SHA-256
-content-addressed promotion for both artifacts
-repeat cache no-op
-truncated and corrupt transfer failure preservation
-repository and all protected state unchanged
-complete result archive and independent audit
-```
-
-It must not invoke uv, execute an unverified product, install into the Stage 3-E managed root, expose global links, or use a public endpoint.
+Gate 5 independently freezes the corrected authority lineage and accepted Gate 4 evidence. It is repository/audit work only and must stop before public publication, uv acquisition, execution, installation, origin authentication, recovery, concurrency, or durability.
 
 ## Deferred boundary
 
@@ -120,6 +95,12 @@ README.md
   -> experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
   -> experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
   -> docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
+  -> experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
+  -> experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md
+  -> experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
+  -> experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
+  -> docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md
+  -> docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md
   -> docs/PROJECT_CONTEXT_STAGE3E.md
   -> docs/evidence/STAGE3E_FINAL_SUMMARY.md
   -> docs/session-operations/README.md
@@ -127,4 +108,4 @@ README.md
 
 ## Immediate next boundary
 
-Prepare and run the bounded Gate 4 Termux target loopback acquisition matrix with actual frozen archive bytes. Stop before uv invocation, product execution, installation, public networking, or managed-root mutation.
+Run the independent Gate 5 Stage 3-F freeze over the corrected retention authority, Gate 4 target archive, repository transaction, and clean remote state. Stop before public publication, uv acquisition, product execution, installation, or managed-root mutation.

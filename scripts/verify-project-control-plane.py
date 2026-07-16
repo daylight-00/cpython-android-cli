@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify frozen Stage 3-E and active Stage 3-F through Gate 3."""
+"""Verify frozen Stage 3-E and active Stage 3-F through corrected Gate 4."""
 from __future__ import annotations
 
 import argparse
@@ -32,6 +32,15 @@ K145 = "cpython-3.14.5-linux-aarch64-none"
 K146 = "cpython-3.14.6-linux-aarch64-none"
 FIXTURE_A = "c40fe3e0affea04d95a55601be476f46aa74561c4108e80f1dfcf4a010316cf9"
 FIXTURE_B = "5a09b2f32ae9d2cc5b90f48ae24f69fb518bbadb675a90331e78e72241ee5f75"
+G3_HEAD = "72713db607bbead29f45e86617edc7ca05617fc4"
+G3_TREE = "8c1b67d4dfebbc9266213f8374db0a3cf912fd91"
+G3_RESULT = "c6305495f6a1b21031dd0469e43273bb87de5b0e11d3fad722f0ee4c75bdeb09"
+G4_V1_RESULT = "2a076288652f1c342da49eccbe4507291df05d1d596b5c6f1d5646610b5990be"
+G4_RESULT = "6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca4712e09b8e1977b"
+RETAINED_SNAPSHOT = "dbdc0edd20eeca1506066c6ec95078d9ad4fe231b81a13aa1236b480d3faa233"
+RETAINED_SNAPSHOT_FILE = "419a9d4303fd6b3d7686400c7a275117ae6fe3421c93c30ff356529fc483b9e3"
+RA145 = "2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2"
+RA146 = "f0c449f7bc5b5bd740f4776f43bec4418645d5f33da220fa523409b6aa0af208"
 
 
 def dig(value: Any, *keys: str, default: Any = None) -> Any:
@@ -95,6 +104,10 @@ def verify(root: Path) -> dict[str, Any]:
     g2result = text("docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md")
     g2tx = text("docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md")
     g3result = text("docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md")
+    g4fail = text("docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md")
+    g4result = text("docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md")
+    g4doc = text("experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md")
+    g4handoff = text("docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md")
 
     g1doc = text("experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md")
     g2doc = text("experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md")
@@ -115,7 +128,10 @@ def verify(root: Path) -> dict[str, Any]:
     f1 = data("experiments/stage3f-publication-acquisition/gate1-authority.json")
     f2 = data("experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json")
     f3 = data("experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json")
+    correction = data("experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json")
+    f4 = data("experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json")
     snap = data("experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json")
+    retained = data("experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json")
 
     required = [
         "README.md",
@@ -161,6 +177,13 @@ def verify(root: Path) -> dict[str, Any]:
         "experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py",
         "experiments/stage3f-publication-acquisition/run-gate3-loopback-acquisition.sh",
         "experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json",
+        "experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json",
+        "experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md",
+        "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json",
+        "experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json",
+        "docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md",
+        "docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md",
+        "docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md",
         "scripts/test-verify-project-control-plane.py",
     ]
 
@@ -172,6 +195,11 @@ def verify(root: Path) -> dict[str, Any]:
     snap_path = root / "experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json"
     snap_raw = snap_path.read_bytes() if snap_path.is_file() else b""
     snap_body = dig(snap, "snapshot", default={})
+    retained_path = root / "experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json"
+    retained_raw = retained_path.read_bytes() if retained_path.is_file() else b""
+    retained_body = dig(retained, "snapshot", default={})
+    retained_rows = dig(retained, "snapshot", "rows", default=[])
+    retained_rowmap = {row.get("key"): row for row in retained_rows if isinstance(row, dict)} if isinstance(retained_rows, list) else {}
     snap_rows = dig(snap, "snapshot", "rows", default=[])
     rowmap = {row.get("key"): row for row in snap_rows if isinstance(row, dict)} if isinstance(snap_rows, list) else {}
 
@@ -181,7 +209,7 @@ def verify(root: Path) -> dict[str, Any]:
         "branch_active": branch.returncode == 0 and branch.stdout.strip() == BRANCH,
         "readme_stage3e_frozen": "frozen — Gate 5 independent distribution freeze complete" in readme,
         "readme_gate4": G4 in readme and "37/37" in readme and "74/74" in readme,
-        "readme_stage3f": "Stage 3-F  publication and acquisition boundaries" in readme and "Gate 3 loopback acquisition frozen" in readme and "Gate 4 next" in readme,
+        "readme_stage3f": "Stage 3-F  publication and acquisition boundaries" in readme and "Gate 4 retained acquisition frozen" in readme and "Gate 5 next" in readme,
         "context3e_status": "> **Status:** Stage 3-E frozen through Gate 5 independent distribution freeze" in ctx3e,
         "scope3e_status": "> **Status:** FROZEN — Gate 5 independent distribution freeze complete" in scope3e,
         "orientation_stage3e": "Stage 3-E is complete" in orient and "target 37/37 and independent 74/74" in orient,
@@ -203,9 +231,9 @@ def verify(root: Path) -> dict[str, Any]:
         "stage3e_gate5_doc": "> **Status:** FROZEN" in e5doc and "Gate 5 closes Stage 3-E" in e5doc,
         "stage3e_gate5_status": e5.get("status") == "independent-freeze-complete",
         "stage3e_gate5_boundary": "require a new stage" in dig(e5, "claim_boundary", default=""),
-        "context3f_status": "> **Status:** Stage 3-F frozen through Gate 3 loopback transport/acquisition implementation" in ctx3f,
-        "context3f_gate4": "Gate 4  Termux target network-acquisition validation     ACTIVE NEXT" in ctx3f,
-        "scope3f_status": "> **Status:** ACTIVE — Gates 1, 2, and 3 frozen; Gate 4 active next" in scope3f,
+        "context3f_status": "> **Status:** Stage 3-F frozen through corrected Gate 4 retained-artifact acquisition" in ctx3f,
+        "context3f_gate5": "Gate 5  independent publication/acquisition freeze       ACTIVE NEXT" in ctx3f,
+        "scope3f_status": "> **Status:** ACTIVE — corrected Gate 4 frozen; Gate 5 active next" in scope3f,
         "gate1_doc": "> **Status:** DESIGN FROZEN" in g1doc,
         "gate1_evidence": "> **Status:** FROZEN — repository-only authority design" in g1ev,
         "stage_start": S3E_HEAD in start and S3E_TREE in start and MAIN in start and "control-wrapper false negative" in start,
@@ -246,13 +274,33 @@ def verify(root: Path) -> dict[str, Any]:
         "gate3_verifier_matrix": "expected_negative" in g3verify and "incomplete" in g3verify and "deterministic-repeat" in g3verify,
         "gate3_run_bounded": "PYTHONDONTWRITEBYTECODE=1" in g3run and "verify-gate3-loopback-acquisition.py" in g3run,
         "stage3f_no_external_or_install": dig(f3, "protected_state", "target_product_execution") is False and dig(f3, "protected_state", "uv_invocation") is False and dig(f3, "cache_contract", "installation_permitted") is False and "No public endpoint" in dig(f3, "claim_boundary", default=""),
+        "gate4_failure_preserved": G4_V1_RESULT in g4fail and "derive rc        1" in g4fail and "target rc        not run" in g4fail,
+        "gate4_result_doc": G4_RESULT in g4result and "16/16 PASS" in g4result and "31/31 PASS" in g4result and "46/46 exact" in g4result,
+        "gate4_contract_doc": "> **Status:** FROZEN" in g4doc and RETAINED_SNAPSHOT in g4doc and RA145 in g4doc and RA146 in g4doc,
+        "gate4_handoff": G3_HEAD in g4handoff and G3_TREE in g4handoff and G4_V1_RESULT in g4handoff and G4_RESULT in g4handoff,
+        "retention_correction_status": correction.get("status") == "accepted-explicit-authority-correction",
+        "retention_correction_history": dig(correction, "historical_snapshot", "snapshot_sha256") == SNAPSHOT and dig(correction, "historical_snapshot", "exact_bytes_retained") is False and dig(correction, "historical_snapshot", "status") == "historical-local-contract-fixture-not-selectable-for-acquisition",
+        "retention_correction_policy": dig(correction, "correction_policy", "ordinary_exact_key_redefinition_allowed") is False and dig(correction, "correction_policy", "historical_snapshot_selectable") is False and dig(correction, "correction_policy", "retained_snapshot_selectable") is True,
+        "retention_correction_v1": dig(correction, "trigger", "gate4_v1_result_archive_sha256") == G4_V1_RESULT and dig(correction, "trigger", "derive_rc") == 1,
+        "gate4_authority_status": f4.get("status") == "accepted-target-evidence-independent-audit-complete",
+        "gate4_authority_input": dig(f4, "repository_input", "head") == G3_HEAD and dig(f4, "repository_input", "tree") == G3_TREE and dig(f4, "repository_input", "main") == MAIN,
+        "gate4_authority_archive": dig(f4, "accepted_result", "archive_sha256") == G4_RESULT and dig(f4, "accepted_result", "archive_size") == 42968242 and dig(f4, "accepted_result", "safe_member_count") == 62 and dig(f4, "accepted_result", "result_index_count") == 46,
+        "gate4_authority_checks": dig(f4, "accepted_result", "target_matrix", "check_count") == 16 and dig(f4, "accepted_result", "target_matrix", "pass_count") == 16 and dig(f4, "accepted_result", "independent_audit", "check_count") == 31 and dig(f4, "accepted_result", "independent_audit", "pass_count") == 31,
+        "gate4_authority_boundary": dig(f4, "protected_state", "uv_invocation") is False and dig(f4, "protected_state", "product_execution") is False and dig(f4, "protected_state", "installation_mutation") is False and dig(f4, "protected_state", "external_network") is False,
+        "retained_snapshot_envelope": set(retained) == {"schema_version", "snapshot", "snapshot_sha256"} and retained.get("schema_version") == 1,
+        "retained_snapshot_digest": retained.get("snapshot_sha256") == RETAINED_SNAPSHOT and hashlib.sha256(canonical_bytes(retained_body)).hexdigest() == RETAINED_SNAPSHOT,
+        "retained_snapshot_file": len(retained_raw) == 2997 and hashlib.sha256(retained_raw).hexdigest() == RETAINED_SNAPSHOT_FILE and retained_raw == canonical_bytes(retained),
+        "retained_snapshot_rows": isinstance(retained_rows, list) and [row.get("key") for row in retained_rows if isinstance(row, dict)] == [K145, K146],
+        "retained_snapshot_145": dig(retained_rowmap.get(K145, {}), "artifact", "size") == 9761545 and dig(retained_rowmap.get(K145, {}), "artifact", "sha256") == RA145,
+        "retained_snapshot_146": dig(retained_rowmap.get(K146, {}), "artifact", "size") == 11788907 and dig(retained_rowmap.get(K146, {}), "artifact", "sha256") == RA146,
+        "gate4_gate5_transition": dig(f4, "gate_sequence", "gate4") == "FROZEN_RETAINED_ACTUAL_BYTES" and dig(f4, "gate_sequence", "gate5") == "ACTIVE_NEXT_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE",
         "git_diff_check": diff.returncode == 0,
     }
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     return {
-        "schema_version": 4,
-        "verification_kind": "project-control-plane-through-stage3f-gate3",
+        "schema_version": 5,
+        "verification_kind": "project-control-plane-through-stage3f-gate4-retention-correction",
         "pass": not failed and not missing and not parse_errors,
         "check_count": len(checks),
         "pass_count": sum(checks.values()),
@@ -260,7 +308,7 @@ def verify(root: Path) -> dict[str, Any]:
         "missing_files": sorted(set(missing)),
         "parse_errors": parse_errors,
         "checks": dict(sorted(checks.items())),
-        "claim_boundary": "Stage 3-F Gate 3 freezes loopback-only synthetic transport and isolated content-addressed cache behavior. Public networking, uv acquisition, Android target behavior, actual product transport, installation, origin trust, recovery, concurrency, durability, third products, and upstream support remain unaccepted.",
+        "claim_boundary": "Stage 3-F Gate 4 accepts retained actual archive acquisition over Termux loopback and isolated cache, with explicit correction of the non-retained Gate 2 concrete snapshot. Public hosting, origin trust, uv acquisition, execution, installation, recovery, concurrency, durability, third products, and upstream support remain unaccepted.",
     }
 
 
