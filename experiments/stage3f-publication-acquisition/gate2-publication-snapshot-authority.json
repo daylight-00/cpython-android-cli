@@ -1,0 +1,78 @@
+{
+  "artifact_identities": {
+    "cpython-3.14.5-linux-aarch64-none": {
+      "evidence_member": "research/derived-145.json",
+      "evidence_member_sha256": "7b5d545a52965c965da8f50ba917e764b7dcc08c4a0277320a0827117618992c",
+      "sha256": "18832bb7982a679fcee067e2d33e106dac84307687b63803be105714596d422f",
+      "size": 9761522,
+      "version": "3.14.5"
+    },
+    "cpython-3.14.6-linux-aarch64-none": {
+      "evidence_member": "research/derived-146.json",
+      "evidence_member_sha256": "20e5ab521148a6a0bf1536a70f1c5b55eec8b3244343bf87e2b53f1d3d76b9e0",
+      "sha256": "9575edef24d84b2fce32c55093ab01cb8b2b1a41b521d2011653fae87b5bcb64",
+      "size": 11789074,
+      "version": "3.14.6"
+    }
+  },
+  "authority_kind": "stage3f-gate2-immutable-publication-snapshot-contract",
+  "candidate_observation_contract": {
+    "actual_cache_mutation": false,
+    "actual_installation": false,
+    "required": [
+      "valid-canonical-snapshot",
+      "exact-snapshot-binding",
+      "exact-key-present",
+      "observed-size-equals-expected-size",
+      "observed-sha256-equals-expected-sha256"
+    ],
+    "verified_cache_key_if_later_promoted": "artifact-sha256"
+  },
+  "canonicalization_contract": {
+    "encoding": "utf-8",
+    "json_object_keys": "lexicographically-sorted",
+    "newline": "exactly-one-trailing-lf",
+    "snapshot_digest_input": "canonical-snapshot-object-bytes",
+    "whitespace": "no-insignificant-whitespace"
+  },
+  "claim_boundary": "Repository-local immutable snapshot and candidate-observation policy only. No socket, uv, target execution, cache mutation, installation, origin trust, automatic acquisition, recovery, concurrency, durability, third product, or upstream support claim.",
+  "class": "L-local-behavior",
+  "frozen_inputs": {
+    "gate1_commit": "39e5c6d56a45495a4f23b73b6fa0704ba28fbc74",
+    "gate1_result_archive_sha256": "eb6f1356fa09473bc4564e0e3a1ae1d7940ecac287d69baa2abf4bd8c494a438",
+    "gate1_tree": "7a0c476e60280c23dd8edd2627b25b42e3fa1429",
+    "stage3e_gate2_authority_blob": "4d631ee6e2a4814e5936279c0a9f86b144473013",
+    "stage3e_gate2_authority_path": "experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json",
+    "stage3e_gate2_evidence_archive_sha256": "3fe68808e2a770f93a6cfe2feba2517b9ac7a42be04c22349fd1c6f375b6cac2"
+  },
+  "gate_sequence": {
+    "gate1": "FROZEN_AUTHORITY_DESIGN",
+    "gate2": "FROZEN_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT",
+    "gate3": "ACTIVE_NEXT_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION",
+    "gate4": "PENDING_TERMUX_NETWORK_ACQUISITION_VALIDATION",
+    "gate5": "PENDING_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE"
+  },
+  "schema_version": 1,
+  "snapshot": {
+    "canonical_file_sha256": "c942b9863e33c2edf7d628780bfeef0957b427fb12259ba49e708cb4858c52bc",
+    "canonical_file_size": 2328,
+    "keys": [
+      "cpython-3.14.5-linux-aarch64-none",
+      "cpython-3.14.6-linux-aarch64-none"
+    ],
+    "path": "experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json",
+    "row_count": 2,
+    "snapshot_sha256": "a00027a81956ef175bf537eff3a92286e26c1120fa536d0a8ad6a096a1760f8c"
+  },
+  "stage": "stage3f-publication-acquisition",
+  "status": "contract-frozen-local-behavior-verified",
+  "verification": {
+    "check_count": 18,
+    "deterministic_repeat": true,
+    "expected_negative_count": 8,
+    "failed_checks": [],
+    "incomplete_count": 4,
+    "pass_count": 18,
+    "verifier": "experiments/stage3f-publication-acquisition/verify-gate2-publication-snapshot.py"
+  }
+}

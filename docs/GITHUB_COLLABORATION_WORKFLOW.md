@@ -56,6 +56,10 @@ README.md
   -> docs/stages/STAGE3F_SCOPE.md
   -> experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
   -> experiments/stage3f-publication-acquisition/gate1-authority.json
+  -> experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
+  -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
+  -> experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
+  -> docs/evidence/STAGE3F_GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_RESULT.md
   -> docs/PROJECT_CONTEXT_STAGE3E.md
   -> docs/evidence/STAGE3E_FINAL_SUMMARY.md
   -> docs/handoff/COLLABORATION_PROTOCOL.md
