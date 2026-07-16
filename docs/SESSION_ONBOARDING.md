@@ -18,7 +18,11 @@ python3 tools/handoff_cycle.py onboard .
 
 ## Stable repository documents
 
+- [`CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
+- [`INDEX.md`](INDEX.md)
 - [`PROJECT_ORIENTATION.md`](PROJECT_ORIENTATION.md)
+- [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
+- [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
 - [`session-operations/README.md`](session-operations/README.md)
 - [`session-operations/COLLABORATION_AND_TRANSPORT.md`](session-operations/COLLABORATION_AND_TRANSPORT.md)
 - [`session-operations/AGENT_WORK_METHOD.md`](session-operations/AGENT_WORK_METHOD.md)
@@ -27,8 +31,8 @@ python3 tools/handoff_cycle.py onboard .
 - [`session-operations/HANDOFF_PACKAGE_SPEC.md`](session-operations/HANDOFF_PACKAGE_SPEC.md)
 - [`session-operations/LESSONS_AND_CHANGELOG.md`](session-operations/LESSONS_AND_CHANGELOG.md)
 
-These files describe collaboration and session mechanics. They are not project-stage authority.
+The epoch, orientation, and roadmap files describe current project direction. The `session-operations/` files describe collaboration mechanics and are not runtime or target authority.
 
 ## Project authority
 
-The dated handoff selects the minimum project reading path. Do not infer current status from an older handoff, chat memory, a console marker, a file name, or an uninspected result archive.
+`CURRENT_CONTEXT.md` identifies the active epoch and predecessor authority. The dated handoff selects the minimum immediate task and exact repository topology. Do not infer current status from an older handoff, chat memory, a console marker, a file name, or an uninspected result archive.

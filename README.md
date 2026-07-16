@@ -6,6 +6,24 @@ The project studies how an upstream-built CPython Android runtime can behave as 
 
 This is a research and engineering project, not a new general-purpose Python distribution and not a replacement for CPython, Termux Python, uv, Conda, or `python-build-standalone`.
 
+## Architecture epochs
+
+```text
+Epoch 1  Android CPython CLI adaptation, installation lifecycle,
+         managed-Python consumption, publication, and acquisition   FROZEN
+
+Epoch 2  Android/Bionic standalone product authority,
+         installer-consumer separation, and repository promotion    ACTIVE — Phase 0
+```
+
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 changes documentation and logical component ownership only; it makes no new runtime, target, release, or upstream-support claim.
+
+Current entry points:
+
+- [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
+- [`docs/INDEX.md`](docs/INDEX.md)
+- [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
+
 ## Current status
 
 ```text
@@ -23,6 +41,7 @@ Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 comple
 Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
 Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
 Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete; documentation integrity corrected
+Epoch 2 P0 documentation and component boundaries       active — no implementation movement
 ```
 
 ## Frozen runtime architecture
@@ -379,6 +398,23 @@ docs/GITHUB_COLLABORATION_WORKFLOW.md
 
 ## Documentation reading order
 
+Current Epoch 2 entry:
+
+```text
+README.md
+    |
+    v
+docs/CURRENT_CONTEXT.md
+    |
+    +--> docs/epochs/EPOCH2_CHARTER.md
+    +--> docs/roadmap/EPOCH2_ROADMAP.md
+    +--> docs/architecture/COMPONENT_OWNERSHIP.md
+    +--> docs/decisions/
+    +--> docs/references/
+```
+
+Frozen Epoch 1 predecessor detail:
+
 ```text
 README.md
     |
@@ -417,7 +453,7 @@ docs/PROJECT_CONTEXT_STAGE3F.md
     +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
 
-`docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md` and `docs/PROJECT_CONTEXT_STAGE3E.md` are frozen records. `docs/PROJECT_CONTEXT_STAGE3F.md` is the current context.
+`docs/CURRENT_CONTEXT.md` is the mutable Epoch 2 pointer. `docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md`, `docs/PROJECT_CONTEXT_STAGE3E.md`, and `docs/PROJECT_CONTEXT_STAGE3F.md` are frozen Epoch 1 records.
 
 ## Design principle
 

@@ -52,22 +52,22 @@ complete independently inspected Termux evidence
 
 ```text
 README.md
+  -> docs/CURRENT_CONTEXT.md
+  -> docs/epochs/EPOCH2_CHARTER.md
+  -> docs/roadmap/EPOCH2_ROADMAP.md
+  -> docs/architecture/COMPONENT_OWNERSHIP.md
+  -> docs/decisions/
+  -> docs/references/
+  -> docs/epochs/EPOCH1_CLOSURE.md
   -> docs/PROJECT_CONTEXT_STAGE3F.md
   -> docs/stages/STAGE3F_SCOPE.md
-  -> experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
-  -> experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
-  -> experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
-  -> experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md
-  -> experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json
-  -> experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json
-  -> docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md
-  -> docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md
   -> docs/evidence/STAGE3F_FINAL_SUMMARY.md
   -> docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md
+  -> docs/session-operations/README.md
   -> docs/handoff/COLLABORATION_PROTOCOL.md
 ```
 
-Do not reconstruct current state from chat memory alone. The initial Gate 5 commit is retained as failed documentation-integrity evidence; the correction commit is the accepted final Stage 3-F record.
+Do not reconstruct current state from chat memory alone. The initial Stage 3-F Gate 5 commit is retained as failed documentation-integrity evidence; its correction is the accepted Epoch 1 predecessor tree. Epoch 2 Phase 0 is documentation and logical-boundary work only.
 
 ## Roles
 

@@ -1,6 +1,8 @@
 # Project Orientation
 
-This project adapts upstream CPython Android products for practical Termux CLI use while keeping launcher, native closure, provenance, archive identity, ownership, recovery, transition, consumer integration, managed-Python distribution, publication, transport, acquisition, cache, and installation as separate authorities.
+This repository is the engineering authority for practical Android/Bionic CPython CLI work under Termux. It keeps launcher behavior, native closure, provenance, archive identity, installation ownership, recovery, cross-version transition, uv consumption, managed-Python distribution, publication, transport, acquisition, cache, and installation as separate authorities.
+
+Epoch 2 adds a new product boundary: the standalone runtime archive becomes the lower-level product authority and the installer becomes its consumer. The repository remains the incubator and evidence archive until the standalone component is mature enough for history-preserving promotion into a separate product repository.
 
 ## Governing method
 
@@ -12,9 +14,11 @@ Complete independently audited Termux evidence outranks repository design, local
 
 ## Current boundary
 
-Stage 3-D remains frozen through Gate 6. Stage 3-E is complete with target 37/37 and independent 74/74 evidence. Stage 3-F is complete through Gate 5 after a documentation-integrity correction.
+Epoch 1 is frozen through Stage 3-F. Stage 3-D remains frozen through Gate 6. Stage 3-E is complete with target 37/37 and independent 74/74 evidence. Stage 3-F is complete through Gate 5 after a documentation-integrity correction.
 
-The final retained acquisition authority is:
+Epoch 2 Phase 0 is active. Its authority is limited to documentation, terminology, repository topology decisions, component ownership, and a no-code-movement directory skeleton. Runtime behavior, archives, installation semantics, target evidence, release assets, and upstream integration remain unchanged.
+
+The final Epoch 1 retained acquisition authority is:
 
 ```text
 3.14.5  9761545   2edec6cfaf20a44b2458567856c1d505e6942d0e43da0e8ba2a36761ebc05be2
@@ -26,21 +30,18 @@ Gate 4 actual-byte evidence `6cba95839a5dc05a7d4261467f1b7693e9d232fd44abe21ca47
 
 The first Gate 5 commit passed marker-based verification but accidentally installed fixture-shortened documentation. Independent post-push diff audit rejected that state. The correction restores the complete production documents and adds preservation sentinels. The historical Gate 2 concrete snapshot remains preserved but unselectable.
 
-No gate is active. Public publication, origin trust, uv automatic acquisition, execution, installation, recovery, concurrency, durability, or third-product work requires a new stage.
+No Epoch 1 gate is active. Epoch 2 work must open and close its own bounded phases without treating design documents as runtime or target acceptance.
 
 ## Current reading path
 
 ```text
+docs/CURRENT_CONTEXT.md
+docs/epochs/EPOCH2_CHARTER.md
+docs/roadmap/EPOCH2_ROADMAP.md
+docs/architecture/COMPONENT_OWNERSHIP.md
+docs/decisions/
+docs/references/
+docs/epochs/EPOCH1_CLOSURE.md
 docs/PROJECT_CONTEXT_STAGE3F.md
-docs/stages/STAGE3F_SCOPE.md
-experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
-experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
-experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
-experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md
-experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json
-experiments/stage3f-publication-acquisition/gate5-documentation-integrity-correction-authority.json
-docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md
-docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md
-docs/evidence/STAGE3F_FINAL_SUMMARY.md
 docs/session-operations/README.md
 ```

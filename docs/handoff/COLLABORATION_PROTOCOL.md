@@ -213,17 +213,17 @@ Gate 3C addon dependency/composition policy
 Gate 3D final-uninstall ownership policy
 ```
 
-Gate 4 begins with a second independently frozen product authority. It does not begin with transition implementation.
+Gate 4 began with a second independently frozen product authority and is now frozen through Gate 4E. Epoch 2 must consume that authority without silently reopening it.
 
 ## Current reading path
 
 ```text
 README.md
-  -> docs/PROJECT_CONTEXT_STAGE3E.md
-  -> docs/stages/STAGE3E_SCOPE.md
-  -> experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md
-  -> experiments/stage3e-managed-python-distribution/gate1-authority.json
-  -> docs/PROJECT_CONTEXT_STAGE3D.md
-  -> experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json
+  -> docs/CURRENT_CONTEXT.md
+  -> docs/epochs/EPOCH2_CHARTER.md
+  -> docs/roadmap/EPOCH2_ROADMAP.md
+  -> docs/architecture/COMPONENT_OWNERSHIP.md
+  -> docs/epochs/EPOCH1_CLOSURE.md
+  -> docs/PROJECT_CONTEXT_STAGE3F.md
   -> docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
