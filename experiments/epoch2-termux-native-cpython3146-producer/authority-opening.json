@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "authority_kind": "epoch2-p2-termux-native-cpython3146-producer-authority-opening",
+  "status": "open-preflight-only",
+  "repository_base": {
+    "branch": "agent/epoch2-p2-standalone-build-facade",
+    "head": "c70d5a8e3f07e3c6892459a5390ab284521b3868",
+    "tree": "5010c35ec3de20336d39f7344a1dd92dde7231f9",
+    "main": "b5a2ca39d1250122312355dd3dbc6165b9409786"
+  },
+  "selected_product": {
+    "python_version": "3.14.6",
+    "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "target_host": "aarch64-linux-android",
+    "android_api": 24,
+    "producer_host_class": "termux-native-android-bionic-aarch64",
+    "ndk_revision": "27.3.13750724"
+  },
+  "predecessor_authorities": {
+    "stage3b_frozen_acceptance_archive_sha256": "0be850523ddc9b0fcb652d47f4414d0772dea1d8767f23490c3655576683270b",
+    "stage3b_product_archive_sha256": "a16e0433b6f7e69c4634b52ce582d4d387447fbcfed797425f669ac224631f4f",
+    "stage3b_reacquisition_result_sha256": "dadd0bc377c88ce1a51300930cf0d1768b30f29aa01b14e2683bd8384290cd26",
+    "gate4a_cpython3145_freeze_result_sha256": "5daf2d05ddbaa3cba5f9fec183a92f967f50502dbddc73bbf7c25b77fd0e0158",
+    "gate4a_cpython3145_freeze_commit": "4a75116c58de8d32c321c26fa25b0fff3cece3f9"
+  },
+  "tracked_inputs": {
+    "dependency_lock_path": "config/dependencies/android-source-deps-aarch64-linux-android.lock.json",
+    "dependency_lock_sha256": "8d414416de820271f06027e26bca612ca0dcb5a3dbfd144b7454663fa3985d21",
+    "android_py_sha256": "1dfe8fe9f6187819f83319916f77e27eaf8df43a73a0696e31c3d9c0950fcd09",
+    "android_env_sha256": "fbe3d49cfdf074d1aff493974b07f5781ce7eb8c9d6df6c7824674b16f94fe4e",
+    "termux_shell_adapter_sha256": "0566bc1a4fb44306c3130705c32a139693f6d2c953903909fd68b795682a59da"
+  },
+  "toolchain_census_expectations": {
+    "target_driver_sha256": "551ef4280536d51df74cde88e5d29878e2e3e478e0bdba8ea12cbaf598f76eb2",
+    "resolved_clang_sha256": "d8e576c0fed9e2a0c13c01d92f8bc066a7d57a93fc5d46f6de2496460d4341ab",
+    "original_lld_sha256": "cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b",
+    "ephemeral_patched_lld_sha256": "eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09",
+    "tls_p_align_patch": {
+      "offset": 392,
+      "before": 8,
+      "after": 64
+    }
+  },
+  "reused_from_cpython3145": [
+    "Termux shell=True executable adaptation without upstream source mutation",
+    "bounded build-Python configure-cache adaptation derived from strict host probes and compiler diagnostics",
+    "ephemeral lld PT_TLS p_align overlay while preserving the installed NDK",
+    "fresh source, dependency, build, output, and result roots",
+    "real Termux runtime identity verification before authority freeze"
+  ],
+  "not_reused_from_cpython3145": [
+    "CPython source identity",
+    "OpenSSL dependency identity",
+    "package and prefix byte identities",
+    "runtime fingerprint",
+    "A3-A6 acceptance conclusions"
+  ],
+  "claim_boundary": "This record opens a distinct Termux-native CPython 3.14.6 producer track and authorizes bounded preflight only. It does not reclassify the Stage 3-B Linux product, execute a build, bind the E2-P2 facade to a new producer, qualify an envelope, select a product, or publish anything."
+}
