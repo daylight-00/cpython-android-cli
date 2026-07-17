@@ -13,10 +13,10 @@ Epoch 1  Android CPython CLI adaptation, installation lifecycle,
          managed-Python consumption, publication, and acquisition   FROZEN
 
 Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — Phase 2 Gate 1 frozen; Gate 2 next
+         installer-consumer separation, and repository promotion    ACTIVE — Termux-native CPython 3.14.6 producer frozen; binding next
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, and Phase 2 Gate 1 now freezes stable build/package/verify façade implementation without claiming a real product run.
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are now frozen as a separate authority. The façade producer binding remains unchanged until the next explicit transaction.
 
 Current entry points:
 
@@ -46,7 +46,8 @@ Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 indepe
 Epoch 2 P0 documentation and component boundaries       frozen
 Epoch 2 P1 canonical standalone artifact contract       frozen — 68/68 + 15/15
 Epoch 2 P2 Gate 1 standalone façade implementation        frozen — synthetic verification
-Epoch 2 P2 Gate 2 workstation build and package execution next
+Epoch 2 P2 Termux-native CPython 3.14.6 producer authority frozen
+Epoch 2 P2 façade producer-binding transition                  next
 ```
 
 ## Frozen runtime architecture

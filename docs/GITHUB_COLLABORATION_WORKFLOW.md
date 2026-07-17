@@ -104,13 +104,15 @@ Use normal Git object and ref semantics:
 commit/tree identity checks
 clean-working-tree preconditions
 explicit parent topology
-bounded branches
+single active integration branch `main`
 git bundle verify
 git fsck
 atomic or force-with-lease push only when topology requires it
 ```
 
 Do not rewrite or force-update history without an exact backup bundle, old-to-new maps, remote precondition checks, and rollback behavior.
+
+Effective with the E2-P2 Termux-native CPython 3.14.6 producer freeze, all new local work and remote pushes use `main`. Every non-`main` remote branch ref is explicitly deleted through `gh api` under owner authorization, and every non-`main` local ref is removed after the successful `main` push; later transactions do not create replacement work branches.
 
 ## Authorship policy
 

@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "development-addon": {
+      "filename": "cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.zst",
+      "manifest_sha256": "d0dc69fc03552117e1f0d19df09c3230d6eb0436f50595274e8dde60f983e2ce",
+      "owned_paths": 454,
+      "sha256": "73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f",
+      "size": 899721,
+      "structural_parents": 2
+    },
+    "runtime-base": {
+      "filename": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.zst",
+      "manifest_sha256": "c8e182282605eeda874805a4c4b1847a82c24252443c59770337e2c0379739ca",
+      "owned_paths": 714,
+      "sha256": "7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03",
+      "size": 11838261,
+      "structural_parents": 0
+    },
+    "test-addon": {
+      "filename": "cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.zst",
+      "manifest_sha256": "a2d90bc30139337f4d3106a0a5a21f6ade3208cb307e0b46d9f25ced57af4697",
+      "owned_paths": 1788,
+      "sha256": "5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03",
+      "size": 6270973,
+      "structural_parents": 2
+    }
+  },
+  "decision_kind": "epoch2-p2-termux-native-cpython3146-producer-authority-freeze",
+  "evidence": {
+    "canonical-identity": {
+      "sha256": "fbfaf7b46b11ee6eed0c922587ac9440a0dcf907e274dd03a4e8552f7cef8ef6",
+      "size": 14298
+    },
+    "clean-replay": {
+      "sha256": "99dfc80c2b02d8745db984728c382df6c85bcb9a24980a2c0be2d02d50d764b4",
+      "size": 64243829
+    },
+    "failed-freeze-v1": {
+      "sha256": "c5a7b834abf97a74dc875d7713aa59d8bc1de4d94af9cbaa243ec6596382072f",
+      "size": 16406
+    },
+    "materialization": {
+      "sha256": "af7e45a9fbbb51d72ca6d696ac40e3c0504f6c8dd9b2b21feda759446802115b",
+      "size": 19655989
+    },
+    "materialization-adjudication": {
+      "sha256": "0b9bbe5662880467def953c56aaf6a870cfff57d5e4ff2a284dd3707bf7e49a4",
+      "size": 8247
+    },
+    "setpwent-correction": {
+      "sha256": "63f18ae9b1fe5ea639c4a58bacad4ce3ada16c23a08adaf2ac5502c7e1a5e47e",
+      "size": 14351
+    },
+    "standalone": {
+      "sha256": "5c55d7b33dd7d85b9368d800d55e138fa2634e691fead279357eeedaf814bd94",
+      "size": 96822
+    },
+    "standalone-closure": {
+      "sha256": "fc5f988e672a41cc13ee0189055d64701604aed5d39dcfd2613e07e3cb00f8ad",
+      "size": 4780
+    }
+  },
+  "next_action_class": "bind-termux-native-cpython3146-producer-to-standalone-facade",
+  "not_accepted": [
+    "implicit facade producer rebinding",
+    "real E2-P1 envelope production through the facade",
+    "qualification or selectability",
+    "publication",
+    "upgrade, downgrade, migration, mixed-version, collision, or transition behavior"
+  ],
+  "product": {
+    "android_api": 24,
+    "canonical_host": "aarch64-unknown-linux-android",
+    "launcher_sha256": "bcaf6dd6eb6b156f202ef7c59056f9b0c3f2b9a4ed687f38cf7970f46d40c1bc",
+    "ndk_version": "27.3.13750724",
+    "package_sha256": "517f4b0d113c4c1cf6931c230b6b517bee7a2b7f8b4f0f099a148260fa3ac8e7",
+    "prefix_snapshot_sha256": "3081a1b150473ff6d6896589a2898cb38baf831e0f811af2bd0447c29b36bb89",
+    "producer_host_class": "termux-native-android-bionic-aarch64",
+    "python_version": "3.14.6",
+    "soabi": "cpython-314-aarch64-linux-android",
+    "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "target_host": "aarch64-linux-android"
+  },
+  "repository": {
+    "active_branch_policy": "local main and origin/main only; no replacement work branch",
+    "authority_lineage_head": "62b2a935f04dc5c02f0a7676f9a0093682b1ec97",
+    "authority_lineage_tree": "98d65c48bcce16022d8210bd9e2877df41f60ce1",
+    "integration": "fast-forward main by 41 commits, add one signed-off freeze commit, and delete every non-main remote ref through `gh api`, then fast-forward `main`",
+    "predecessor_main": "b5a2ca39d1250122312355dd3dbc6165b9409786"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass",
+  "verification": {
+    "canonical_identity": "24/24 + 10/10",
+    "external_freeze_audit": "23/23",
+    "invariant_closure": "21/21 + fa\u00e7ade 24/24 twice + custom-NDK 49/49 twice",
+    "materialization": "25/25 + 23/23 adjudication + 12/12 verification",
+    "setpwent_preflight": "25/25",
+    "standalone": "10/10 + 41/41"
+  }
+}

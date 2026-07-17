@@ -13,6 +13,10 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 ## Epoch 2 contracts and evidence
 
+- [`contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md`](contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md)
+- [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md)
+- [`handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md`](handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md)
+- [`../experiments/epoch2-termux-native-cpython3146-producer/`](../experiments/epoch2-termux-native-cpython3146-producer/)
 - [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 - [`evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md)
 - [`evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md`](evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md)

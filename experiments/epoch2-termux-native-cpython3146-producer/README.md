@@ -1,34 +1,34 @@
 # E2-P2 Termux-native CPython 3.14.6 producer
 
-This experiment opens a producer authority for rebuilding the pinned CPython
-3.14.6 Android product directly in Termux.
+> **Status:** FROZEN producer authority
 
-It is a new authority. It does not rename the frozen Stage 3-B Linux producer,
-and it does not treat matching NDK release numbers as matching compiler bytes.
+This experiment records the exact CPython 3.14.6 Android product rebuilt directly in Termux under the bounded custom-NDK r27d authority.
 
-The first bounded operation is `preflight.py`. It verifies the reacquired
-Stage 3-B source and product lock, the tracked dependency lock, the current
-custom NDK identities, the ephemeral lld patch, the retained 3.14.5 shell
-adapter, host API probe mappings, SDK availability, tools, and storage.
+It is a new authority. It does not rename the frozen Stage 3-B Linux producer, and it does not treat matching NDK release numbers as matching compiler bytes.
 
-The 3.14.5 authority contributes only proven host-execution techniques:
+## Frozen lineage
 
-- route only implicit `subprocess.run(shell=True)` calls through Termux bash;
-- apply build-Python configure-cache negatives only from bounded evidence;
-- patch lld only in an ephemeral overlay;
-- use clean source, dependency, build, output, and result roots;
-- verify the candidate on Android before freezing it.
+```text
+source commit                    c63aec69bd59c55314c06c23f4c22c03de76fe45
+setpwent correction              25/25
+clean replay                     accepted after canonical-host adjudication
+materialization                  25/25 + 23/23 adjudication
+standalone validation            10/10 + 41/41
+invariant closure                21/21
+façade verifier closure          24/24 before and after
+custom-NDK audit closure         49/49 before and after
+```
 
-The 3.14.5 source, OpenSSL 3.0.20 input, package hashes, runtime fingerprint,
-and acceptance decisions are not inputs to the 3.14.6 product.
+## Frozen artifacts
 
-After a successful preflight, the next operation is a clean 3.14.6 replay
-candidate. A façade producer-binding change remains a later, independently
-reviewed transaction.
+```text
+runtime-base        7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03
+development-addon   73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f
+test-addon          5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03
+```
 
-## Legacy cache exception
+The complete machine-readable authority is [`producer-authority.json`](producer-authority.json). The external freeze audit is [`producer-authority-external-audit.json`](producer-authority-external-audit.json).
 
-The initial profile distinguishes six source-mapped negative cache variables
-from one historically proven inert entry, `ac_cv_func_setpwent=no`. The latter
-is restricted to build-Python configuration and does not imply a
-`HAVE_SETPWENT` source mapping. Dynamic additions remain mapping-gated.
+## Boundary
+
+The producer and standalone three-artifact set are frozen. The E2-P2 façade still has its previous producer binding. Rebinding, real E2-P1 envelope production, qualification, selection, and publication are later independent transactions.

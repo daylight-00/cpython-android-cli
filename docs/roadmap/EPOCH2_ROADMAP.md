@@ -24,15 +24,15 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P2 — Standalone build and package façade
 
-> **Status:** ACTIVE — Gate 1 frozen; Gate 2 next
+> **Status:** ACTIVE — Gate 1 frozen; Termux-native CPython 3.14.6 producer authority frozen; binding next
 
 **Goal:** provide stable `build`, `package`, and `verify` entry points over the existing proven producer and runtime assembly.
 
 **Gate 1 frozen result:** the repository command, pinned predecessor entry points, deterministic package implementation, general envelope verifier, synthetic double-build byte identity, drift rejection, and archive-mutation rejection are accepted. No real producer run is claimed.
 
-**Gate 2 next:** execute `build` and `package` on the configured Linux workstation and independently verify the returned unqualified E2-P1 envelope.
+**Producer authority result:** a new CPython 3.14.6 producer was executed directly in Termux under the exact custom-NDK r27d binary authority. Clean replay, canonical-host adjudication, three-artifact materialization, standalone validation, and invariant closure are frozen. This does not relabel the Stage 3-B Linux producer and does not yet change `facade-v1.json`.
 
-**Gate 2 provenance precondition:** resolved. The custom Android-host r27d NDK was a scoped Stage 3-C Gate 4A authority for CPython 3.14.5 only; it was not promoted project-wide. Gate 2 remains bound to the unchanged Stage 3-B CPython 3.14.6 workstation inputs pinned by `facade-v1.json`.
+**Next bounded gate:** explicitly bind the frozen Termux-native producer authority to the façade. Real `build` and `package` execution and independent E2-P1 envelope review remain later transactions.
 
 **Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
 
