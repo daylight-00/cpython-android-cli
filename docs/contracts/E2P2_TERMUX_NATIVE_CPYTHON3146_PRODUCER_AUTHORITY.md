@@ -26,10 +26,27 @@ Only host-execution methods may be reused:
 
 1. an ephemeral Python launcher that routes implicit `shell=True` calls through
    Termux bash;
-2. bounded build-Python configure-cache adaptation;
+2. bounded build-Python configure-cache adaptation, including the retained
+   `setpwent` inert cache entry described below;
 3. an ephemeral lld PT_TLS alignment overlay;
 4. clean isolated roots and full command/result capture;
 5. Android runtime validation before freezing.
+
+## Legacy build-Python cache model
+
+The initial negative cache profile contains seven functions. Six functions
+(`fexecve`, `getloadavg`, `getlogin_r`, `getpwent`, `pthread_getname_np`, and
+`sem_clockwait`) must have exact `configure` cache-variable and
+`pyconfig.h.in` macro mappings.
+
+`setpwent` is the sole exception. The retained CPython 3.14.5 A3 successful
+replay proves that passing `ac_cv_func_setpwent=no` records `no` in the build
+Python config log, emits no `HAVE_SETPWENT` definition, and allows the complete
+build and target replay to succeed. It is therefore an inert build-Python cache
+entry, not a claim that CPython exposes a `HAVE_SETPWENT` mapping.
+
+Any new dynamically discovered function still requires both exact source
+mappings before it may be added.
 
 ## Forbidden substitutions
 

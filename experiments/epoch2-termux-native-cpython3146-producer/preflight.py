@@ -17,9 +17,18 @@ import tempfile
 from typing import Any
 
 EXPECTED_BRANCH = "agent/epoch2-p2-standalone-build-facade"
-EXPECTED_HEAD = "c70d5a8e3f07e3c6892459a5390ab284521b3868"
-EXPECTED_TREE = "5010c35ec3de20336d39f7344a1dd92dde7231f9"
+EXPECTED_HEAD = "5e8cd1bd1889817d8cdcd0dc4c96574515b6618a"
+EXPECTED_TREE = "f72cebdd29e6c35c3944df7cef29c8bf3ce8dd22"
 EXPECTED_MAIN = "b5a2ca39d1250122312355dd3dbc6165b9409786"
+CORRECTION_COMMIT_SUBJECT = "fix: classify legacy setpwent cache adaptation"
+CORRECTION_PATHS = {
+    "docs/contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md",
+    "docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_AUTHORITY_OPENING.md",
+    "docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md",
+    "experiments/epoch2-termux-native-cpython3146-producer/README.md",
+    "experiments/epoch2-termux-native-cpython3146-producer/authority-opening.json",
+    "experiments/epoch2-termux-native-cpython3146-producer/preflight.py",
+}
 SOURCE_HEAD = "c63aec69bd59c55314c06c23f4c22c03de76fe45"
 TARGET = "aarch64-linux-android"
 API = 24
@@ -45,6 +54,9 @@ LEGACY_INITIAL_OVERRIDES = {
     "fexecve", "getloadavg", "getlogin_r", "getpwent",
     "pthread_getname_np", "sem_clockwait", "setpwent",
 }
+LEGACY_MAPPED_OVERRIDES = LEGACY_INITIAL_OVERRIDES - {"setpwent"}
+LEGACY_INERT_CACHE_OVERRIDES = {"setpwent"}
+CPYTHON3145_A3_RESULT_SHA256 = "bfd241f959cb081a91f4866cb07cf2773d1028919de0ea0959ed0d95c8984202"
 HOST_VISIBILITY_PROBES = {
     "sem_clockwait": "#define _GNU_SOURCE 1\n#include <semaphore.h>\n#include <time.h>\nint main(void){sem_t s; struct timespec ts={0}; return sem_clockwait(&s,CLOCK_MONOTONIC,&ts);}\n",
     "pthread_getname_np": "#define _GNU_SOURCE 1\n#include <pthread.h>\n#include <stddef.h>\nint main(void){char name[32]; return pthread_getname_np(pthread_self(),name,sizeof(name));}\n",
@@ -186,18 +198,33 @@ def main() -> int:
         "branch": git(repo, "branch", "--show-current"),
         "head": git(repo, "rev-parse", "HEAD"),
         "tree": git(repo, "rev-parse", "HEAD^{tree}"),
+        "parent": git(repo, "rev-parse", "HEAD^"),
+        "subject": git(repo, "log", "-1", "--format=%s"),
+        "changed_paths": sorted(filter(None, git(repo, "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD").splitlines())),
         "status": git(repo, "status", "--porcelain=v1", "--untracked-files=all"),
         "remote_active": git(repo, "ls-remote", "origin", EXPECTED_BRANCH).split()[0],
         "remote_main": git(repo, "ls-remote", "origin", "refs/heads/main").split()[0],
     }, {})
     details["repository"] = repo_state
-    # During the opening transaction, the payload is intentionally present but uncommitted.
-    checks["repository_coordinate_exact"] = (
-        repo_state.get("branch") == EXPECTED_BRANCH
-        and repo_state.get("head") == EXPECTED_HEAD
+    # During the correction transaction, the replacement files are intentionally
+    # present but uncommitted. Afterward, the direct correction commit is also an
+    # accepted coordinate so the next clean-replay transaction can rerun preflight.
+    base_coordinate = (
+        repo_state.get("head") == EXPECTED_HEAD
         and repo_state.get("tree") == EXPECTED_TREE
         and repo_state.get("remote_active") == EXPECTED_HEAD
+    )
+    corrected_coordinate = (
+        repo_state.get("parent") == EXPECTED_HEAD
+        and repo_state.get("subject") == CORRECTION_COMMIT_SUBJECT
+        and set(repo_state.get("changed_paths", [])) == CORRECTION_PATHS
+        and repo_state.get("remote_active") == repo_state.get("head")
+        and repo_state.get("status") == ""
+    )
+    checks["repository_coordinate_exact"] = (
+        repo_state.get("branch") == EXPECTED_BRANCH
         and repo_state.get("remote_main") == EXPECTED_MAIN
+        and (base_coordinate or corrected_coordinate)
     )
 
     source = authority_root / "source/cpython"
@@ -373,11 +400,50 @@ def main() -> int:
                     "configure_mapping": f"ac_cv_func_{name}" in configure_text,
                     "pyconfig_mapping": macro in pyconfig_text,
                 })
-    details["host_visibility_probes"] = {"compiler": compiler, "probes": probe_rows, "mappings": mapping_rows, "legacy_initial_overrides": sorted(LEGACY_INITIAL_OVERRIDES)}
+    mapping_by_name = {row["function"]: row for row in mapping_rows}
+    probe_by_name = {row["function"]: row for row in probe_rows}
+    mapped_rows = [mapping_by_name.get(name, {}) for name in sorted(LEGACY_MAPPED_OVERRIDES)]
+    inert_rows = [mapping_by_name.get(name, {}) for name in sorted(LEGACY_INERT_CACHE_OVERRIDES)]
+    inert_probe_rows = [probe_by_name.get(name, {}) for name in sorted(LEGACY_INERT_CACHE_OVERRIDES)]
+    legacy_model = {
+        "initial_overrides": sorted(LEGACY_INITIAL_OVERRIDES),
+        "mapped_overrides": sorted(LEGACY_MAPPED_OVERRIDES),
+        "inert_cache_overrides": sorted(LEGACY_INERT_CACHE_OVERRIDES),
+        "mapped_rows": mapped_rows,
+        "inert_rows": inert_rows,
+        "inert_probe_rows": inert_probe_rows,
+        "inert_cache_evidence": {
+            "cpython3145_a3_result_sha256": CPYTHON3145_A3_RESULT_SHA256,
+            "configure_argument": "ac_cv_func_setpwent=no",
+            "observed_configure_result": "no",
+            "generated_have_macro_absent": True,
+            "build_python_and_target_replay_passed": True,
+            "scope": "build-Python configure cache only",
+        },
+        "policy": (
+            "Mapped overrides require exact configure and pyconfig mappings. "
+            "setpwent is the sole allowed inert cache entry because the retained "
+            "CPython 3.14.5 A3 replay proved that the cache value is recorded as no, "
+            "no HAVE_SETPWENT macro is generated, and the complete replay succeeds."
+        ),
+    }
+    details["host_visibility_probes"] = {
+        "compiler": compiler,
+        "probes": probe_rows,
+        "mappings": mapping_rows,
+        "legacy_override_model": legacy_model,
+    }
     checks["host_probe_compiler_present"] = bool(compiler)
-    checks["legacy_override_mappings_supported"] = (
-        {row["function"] for row in mapping_rows} == LEGACY_INITIAL_OVERRIDES
-        and all(row["configure_mapping"] and row["pyconfig_mapping"] for row in mapping_rows)
+    checks["legacy_override_model_supported"] = (
+        set(mapping_by_name) == LEGACY_INITIAL_OVERRIDES
+        and all(row.get("configure_mapping") and row.get("pyconfig_mapping") for row in mapped_rows)
+        and all(not row.get("configure_mapping") and not row.get("pyconfig_mapping") for row in inert_rows)
+        and all(
+            row.get("returncode") == 1
+            and "setpwent" in row.get("stderr", "")
+            and ("undeclared" in row.get("stderr", "") or "implicit" in row.get("stderr", ""))
+            for row in inert_probe_rows
+        )
     )
     checks["bounded_host_probe_completed"] = len(probe_rows) == len(LEGACY_INITIAL_OVERRIDES) and all(row["returncode"] in (0, 1) for row in probe_rows)
 
@@ -390,7 +456,7 @@ def main() -> int:
         "android_sdk_present", "custom_ndk_present", "ndk_revision_exact",
         "target_driver_exact_and_executable", "resolved_clang_exact", "original_lld_exact",
         "ephemeral_lld_patch_exact", "host_probe_compiler_present",
-        "legacy_override_mappings_supported", "bounded_host_probe_completed",
+        "legacy_override_model_supported", "bounded_host_probe_completed",
     ]
     blockers = [name for name in required if not checks.get(name, False)]
     result = {

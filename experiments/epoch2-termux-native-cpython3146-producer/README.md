@@ -25,3 +25,10 @@ and acceptance decisions are not inputs to the 3.14.6 product.
 After a successful preflight, the next operation is a clean 3.14.6 replay
 candidate. A façade producer-binding change remains a later, independently
 reviewed transaction.
+
+## Legacy cache exception
+
+The initial profile distinguishes six source-mapped negative cache variables
+from one historically proven inert entry, `ac_cv_func_setpwent=no`. The latter
+is restricted to build-Python configuration and does not imply a
+`HAVE_SETPWENT` source mapping. Dynamic additions remain mapping-gated.

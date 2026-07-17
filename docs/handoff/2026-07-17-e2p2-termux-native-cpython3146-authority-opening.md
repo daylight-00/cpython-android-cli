@@ -14,3 +14,10 @@ Required local authority root:
 
 Do not run E2-P2 Gate 2 yet. Review the opening preflight first. If it is ready,
 the next bounded operation is the clean Termux-native CPython 3.14.6 replay.
+
+## Corrected preflight boundary
+
+The original 24/25 result was a verifier-model false blocker for `setpwent`.
+After the correction transaction, require 25/25, zero blockers, and
+`NEXT_ACTION_CLASS=run-termux-native-cpython3146-clean-replay` before starting
+the clean replay. The façade producer binding remains unchanged.
