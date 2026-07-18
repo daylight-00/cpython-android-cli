@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the frozen E2-P3 qualification contract plus harness correction authority."""
+"""Verify the frozen E2-P3 contract, harness correction, and real-Termux authority."""
 from __future__ import annotations
 
 import argparse
@@ -16,6 +16,8 @@ ORIGINAL_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/qualificatio
 ORIGINAL_AUDIT_PATH = "experiments/epoch2-archive-qualification/qualification-contract-external-audit.json"
 CORRECTION_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/qualification-harness-correction-authority.json"
 CORRECTION_AUDIT_PATH = "experiments/epoch2-archive-qualification/qualification-harness-correction-external-audit.json"
+REAL_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json"
+REAL_AUDIT_PATH = "experiments/epoch2-archive-qualification/real-termux-qualification-external-audit.json"
 CONTRACT_PATH = "components/standalone/contracts/qualification-v1.json"
 SCHEMA_PATH = "components/standalone/schemas/qualification-result-v1.schema.json"
 VERIFY_PATH = "experiments/epoch2-archive-qualification/verify-qualification-contract.py"
@@ -27,12 +29,25 @@ PRE_CORRECTION_COMMIT = "ecfe4fafb048e9649f9cb91657c36b45b838ab7d"
 PRE_CORRECTION_TREE = "be86487e89d7335421cf71ebfc73361f17f6bac2"
 PRIOR_CONTRACT_RESULT_SHA = "ec38ed8bb5b42dbcd32c106ae6887433e59e17b0cb9573491761443683b85caf"
 FAILED_REAL_RESULT_SHA = "0864173ef3b6b735ef3168b26aed6c5052296289a7c0771cb05754318fb63a79"
+HARNESS_CORRECTION_RESULT_SHA = "938466af2d5dc58e1551a1ef4a66cab38b85d847f06e4dde3214335f3f432a1b"
+REAL_RESULT_ARCHIVE_SHA = "b92b041b78b21e0a3b402e54a15e008008db13320a264284d604f39046907e0b"
+REAL_TARGET_INDEX_SHA = "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1"
+PRE_REAL_COMMIT = "2a60dfa977e6f14e34203f876dcb1cafaf83f15c"
+PRE_REAL_TREE = "acd6c00d96e3831aabc23a80508489c3a2e4eb7c"
 EXPECTED_ARCHIVE = "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727"
 EXPECTED_RELEASE = "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85"
 EXPECTED_PRIVATE = "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5"
-EXPECTED_HISTORICAL_FAILURES = {"file_identities", "regression"}
+EXPECTED_HISTORICAL_FAILURES = {"documentation", "file_identities", "regression"}
 EXPECTED_EXECUTION_FAILURES = {"binding_adjudication", "documentation", "file_identities", "verify_route"}
 EXPECTED_BINDING_FAILURES = {"documentation", "file_identities", "historical_facade_adjudication", "verify_route"}
+EXPECTED_CORRECTION_DRIFT = {
+    "README.md",
+    "docs/CURRENT_CONTEXT.md",
+    "docs/INDEX.md",
+    "docs/roadmap/EPOCH2_ROADMAP.md",
+    "experiments/epoch2-archive-qualification/README.md",
+    VERIFY_PATH,
+}
 EXPECTED_ORIGINAL_DRIFT = {
     "README.md",
     QUALIFIER_PATH,
@@ -108,6 +123,8 @@ def main() -> int:
         "original_audit": ORIGINAL_AUDIT_PATH,
         "correction_authority": CORRECTION_AUTHORITY_PATH,
         "correction_audit": CORRECTION_AUDIT_PATH,
+        "real_authority": REAL_AUTHORITY_PATH,
+        "real_audit": REAL_AUDIT_PATH,
         "contract": CONTRACT_PATH,
         "schema": SCHEMA_PATH,
         "facade": "components/standalone/contracts/facade-v1.json",
@@ -123,6 +140,8 @@ def main() -> int:
     original_audit = values["original_audit"]
     correction = values["correction_authority"]
     correction_audit = values["correction_audit"]
+    real_authority = values["real_authority"]
+    real_audit = values["real_audit"]
     contract = values["contract"]
     schema = values["schema"]
     facade = values["facade"]
@@ -148,8 +167,31 @@ def main() -> int:
     ck("correction_harness_semantics", correction.get("harness") == {"check_matrix_unchanged": True, "venv_identity": "lexical-symlink-aware", "wheel_tag_source": "created-venv-pip-vendored-packaging"})
     ck("correction_claim_boundary", correction.get("claim_boundary") == {"combined_target_qualification": False, "installer_conversion": False, "metadata_finalization": False, "publication": False, "selectability": False, "target_execution": False, "transition_behavior": False})
     correction_ids = correction.get("file_identities", {})
-    ck("correction_file_identities", isinstance(correction_ids, dict) and bool(correction_ids) and all((root / path).is_file() and sha(root / path) == digest for path, digest in correction_ids.items()))
+    correction_drift = {
+        path for path, digest in correction_ids.items()
+        if not (root / path).is_file() or sha(root / path) != digest
+    } if isinstance(correction_ids, dict) else set()
+    ck("correction_authority_drift_adjudication", correction_drift == EXPECTED_CORRECTION_DRIFT)
     ck("correction_external_audit", correction_audit.get("schema_version") == 1 and correction_audit.get("audit_kind") == "e2p3-archive-qualification-harness-correction-external-audit" and correction_audit.get("source_failed_real_result_sha256") == FAILED_REAL_RESULT_SHA and correction_audit.get("pass") is True and correction_audit.get("check_count") == 31 and correction_audit.get("pass_count") == 31 and correction_audit.get("failed_checks") == [])
+
+    ck("real_authority_identity", real_authority.get("schema_version") == 1 and real_authority.get("authority_kind") == "e2p3-real-termux-archive-qualification-freeze" and real_authority.get("authority_version") == 1 and real_authority.get("status") == "frozen-pass-individual-real-termux-profile")
+    ck("real_authority_predecessor", real_authority.get("predecessor") == {"commit": PRE_REAL_COMMIT, "tree": PRE_REAL_TREE})
+    real_input = real_authority.get("input_authority", {})
+    ck("real_authority_input", real_input == {"artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped", "contract_result_sha256": PRIOR_CONTRACT_RESULT_SHA, "envelope_archive_sha256": EXPECTED_ARCHIVE, "failed_real_result_sha256": FAILED_REAL_RESULT_SHA, "harness_correction_result_sha256": HARNESS_CORRECTION_RESULT_SHA, "private_authority_index_sha256": EXPECTED_PRIVATE, "release_index_sha256": EXPECTED_RELEASE})
+    real_profile = real_authority.get("profile", {})
+    real_observations = real_profile.get("observations", {})
+    ck("real_authority_profile", real_profile.get("name") == "termux-real" and real_profile.get("status") == "passed-individual-profile" and real_profile.get("device_kind") == "real" and real_profile.get("host_role") == "termux" and real_profile.get("machine") == "aarch64" and real_profile.get("android_api") == 36 and real_profile.get("check_count") == 35)
+    ck("real_authority_observations", real_observations == {"elf_count": 81, "extension_import_count": 67, "https_status": 200, "manifest_entry_count": 1169, "needed_edge_count": 329, "uv_version": "uv 0.11.28 (aarch64-linux-android)"})
+    real_result = real_authority.get("result_archive", {})
+    ck("real_authority_result_archive", real_result == {"drive_file_id": "1V91v9v0jELPbnH42w10-FNKzQMMsVjl6", "drive_folder_id": "10ce2TUR0P2K8Ams5eGWP2-Ajrb-S1FDw", "filename": "20260718-e2p3-real-termux-archive-qualification-v2-results.tar.zst", "sha256": REAL_RESULT_ARCHIVE_SHA, "size": 68447})
+    real_target = real_authority.get("target_authority", {})
+    ck("real_authority_target", real_target == {"drive_folder_id": "1zKPFqqcGF-Y8HzblRZBl_aFweKoSsdMb", "index_file_id": "1xG3fjjNx3yqHhmeVjvly5S3mRkBmDAUw", "index_sha256": REAL_TARGET_INDEX_SHA, "remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p3/qualifications/termux-native-cpython3146/termux-real-v1"})
+    real_boundary = {"combined_target_qualification": False, "emulator_profile": False, "individual_real_termux_profile": True, "installer_conversion": False, "metadata_finalization": False, "publication": False, "selectability": False, "transition_behavior": False}
+    ck("real_authority_claim_boundary", real_authority.get("claim_boundary") == real_boundary)
+    ck("real_authority_verification", real_authority.get("verification") == {"external_audit": "34/34", "independent_review": "38/38", "qualification": "35/35", "repository": "44/44-staged-and-commit", "result_verifier": "19/19"})
+    real_ids = real_authority.get("file_identities", {})
+    ck("real_authority_file_identities", isinstance(real_ids, dict) and bool(real_ids) and all((root / path).is_file() and sha(root / path) == digest for path, digest in real_ids.items()))
+    ck("real_external_audit", real_audit.get("schema_version") == 1 and real_audit.get("audit_kind") == "e2p3-real-termux-archive-qualification-external-audit" and real_audit.get("source", {}).get("result_archive_sha256") == REAL_RESULT_ARCHIVE_SHA and real_audit.get("source", {}).get("target_authority_index_sha256") == REAL_TARGET_INDEX_SHA and real_audit.get("claim_boundary") == real_boundary and real_audit.get("pass") is True and real_audit.get("check_count") == 34 and real_audit.get("pass_count") == 34 and real_audit.get("failed_checks") == [] and all(real_audit.get("checks", {}).values()))
 
     ck("contract_identity", contract.get("schema_version") == 1 and contract.get("contract_version") == 1 and contract.get("qualification_kind") == "hw-t-standalone-archive-qualification" and contract.get("status") == "frozen-design-no-target-evidence")
     input_authority = contract.get("input_authority", {})
@@ -182,20 +224,22 @@ def main() -> int:
     historical_proc, historical_data = historical_verifier(root)
     historical_execution = historical_data.get("historical", {}).get("execution_authority", {})
     historical_binding = historical_execution.get("binding", {})
-    ck("historical_contract_adjudication", historical_proc.returncode == 1 and historical_data.get("check_count") == 26 and historical_data.get("pass_count") == 24 and set(historical_data.get("failed_checks", [])) == EXPECTED_HISTORICAL_FAILURES and historical_execution.get("raw_rc") == 1 and set(historical_execution.get("failed_checks", [])) == EXPECTED_EXECUTION_FAILURES and historical_binding.get("raw_rc") == 1 and set(historical_binding.get("failed_checks", [])) == EXPECTED_BINDING_FAILURES)
+    ck("historical_contract_adjudication", historical_proc.returncode == 1 and historical_data.get("check_count") == 26 and historical_data.get("pass_count") == 23 and set(historical_data.get("failed_checks", [])) == EXPECTED_HISTORICAL_FAILURES and historical_execution.get("raw_rc") == 1 and set(historical_execution.get("failed_checks", [])) == EXPECTED_EXECUTION_FAILURES and historical_binding.get("raw_rc") == 1 and set(historical_binding.get("failed_checks", [])) == EXPECTED_BINDING_FAILURES)
 
     current = (root / "docs/CURRENT_CONTEXT.md").read_text(encoding="utf-8")
     roadmap = (root / "docs/roadmap/EPOCH2_ROADMAP.md").read_text(encoding="utf-8")
     contract_doc = (root / "docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md").read_text(encoding="utf-8")
     experiment = (root / "experiments/epoch2-archive-qualification/README.md").read_text(encoding="utf-8")
-    ck("documentation", "E2-P3 archive qualification contract frozen — qualification harness correction frozen" in current and "qualification harness correction frozen" in roadmap and "Harness correction v1" in contract_doc and "33/35" in experiment)
-    ck("no_target_claim", correction.get("verification", {}).get("target_execution") == "failed-result-adjudicated-not-qualified" and correction_audit.get("claim_boundary", {}).get("target_execution") is False)
-    ck("next_action", correction.get("next_action_class") == "retry-e2p3-real-termux-archive-qualification")
+    evidence_doc = root / "docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md"
+    handoff_doc = root / "docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md"
+    ck("documentation", "E2-P3 real Termux archive qualification authority frozen" in current and "real Termux profile frozen; emulator qualification next" in roadmap and "Harness correction v1" in contract_doc and "corrected retry passed 35/35" in experiment and evidence_doc.is_file() and handoff_doc.is_file())
+    ck("real_target_claim", real_authority.get("claim_boundary", {}).get("individual_real_termux_profile") is True and real_authority.get("claim_boundary", {}).get("emulator_profile") is False and real_authority.get("claim_boundary", {}).get("selectability") is False)
+    ck("next_action", real_authority.get("next_action_class") == "execute-e2p3-termux-emulator-archive-qualification")
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
         "schema_version": 1,
-        "verification_kind": "e2p3-archive-qualification-harness-correction",
+        "verification_kind": "e2p3-real-termux-archive-qualification-freeze",
         "pass": not failed and not errors,
         "check_count": len(checks),
         "pass_count": sum(checks.values()),
@@ -209,7 +253,7 @@ def main() -> int:
                 "execution_authority": historical_execution,
             }
         },
-        "claim_boundary": "Harness correction only; no target profile is qualified. Emulator qualification, combined qualification, metadata finalization, selectability, publication, installer conversion, and transitions remain unclaimed.",
+        "claim_boundary": "The individual real-Termux profile is frozen as qualified and remains unselectable. Emulator qualification, combined qualification, metadata finalization, publication, installer conversion, and transitions remain unclaimed.",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["pass"] else 1

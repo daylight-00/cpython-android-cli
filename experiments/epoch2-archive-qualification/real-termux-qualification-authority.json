@@ -1,0 +1,78 @@
+{
+  "authority_kind": "e2p3-real-termux-archive-qualification-freeze",
+  "authority_version": 1,
+  "claim_boundary": {
+    "combined_target_qualification": false,
+    "emulator_profile": false,
+    "individual_real_termux_profile": true,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "publication": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "file_identities": {
+    "README.md": "cfe79cbcb18f81b4c36ff26d19d770e62a3c8d8a905f1819393531a4422551bc",
+    "docs/CURRENT_CONTEXT.md": "7f267435990514e5618c5c0c114e2ae9609d39dfcbafdf99c183bafeda92674f",
+    "docs/INDEX.md": "b6bc9ca2df9f276762e5796041bdc1a09310ea7822a8a81d982dc83928cfe983",
+    "docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md": "a900dab2254303b80a18ec8bf40ef25d3aee1725ef925d96d3556d05b08bc811",
+    "docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md": "d1818ddcf38f9a38bddae8c771a6785ec710f6f340f23e8ed88a744ff903282a",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "21f950dbd584ec6aab97948c6edf271fbcd38469321d89dec6674098fcd4a85f",
+    "experiments/epoch2-archive-qualification/README.md": "dcbd8338e95539972a940e95abfe61862175ca09e1b176224d884964014b1625",
+    "experiments/epoch2-archive-qualification/real-termux-qualification-external-audit.json": "c10a81660f4bfcf7d0ed73a141a96a960802e7e9aa9ff69e1062539c703a5ba1",
+    "experiments/epoch2-archive-qualification/verify-qualification-contract.py": "634c201189541e023bab776d3c6942a667956863f130717e2e06e22918b89b06"
+  },
+  "input_authority": {
+    "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+    "contract_result_sha256": "ec38ed8bb5b42dbcd32c106ae6887433e59e17b0cb9573491761443683b85caf",
+    "envelope_archive_sha256": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727",
+    "failed_real_result_sha256": "0864173ef3b6b735ef3168b26aed6c5052296289a7c0771cb05754318fb63a79",
+    "harness_correction_result_sha256": "938466af2d5dc58e1551a1ef4a66cab38b85d847f06e4dde3214335f3f432a1b",
+    "private_authority_index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "release_index_sha256": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85"
+  },
+  "next_action_class": "execute-e2p3-termux-emulator-archive-qualification",
+  "predecessor": {
+    "commit": "2a60dfa977e6f14e34203f876dcb1cafaf83f15c",
+    "tree": "acd6c00d96e3831aabc23a80508489c3a2e4eb7c"
+  },
+  "profile": {
+    "android_api": 36,
+    "check_count": 35,
+    "device_kind": "real",
+    "host_role": "termux",
+    "machine": "aarch64",
+    "name": "termux-real",
+    "observations": {
+      "elf_count": 81,
+      "extension_import_count": 67,
+      "https_status": 200,
+      "manifest_entry_count": 1169,
+      "needed_edge_count": 329,
+      "uv_version": "uv 0.11.28 (aarch64-linux-android)"
+    },
+    "status": "passed-individual-profile"
+  },
+  "result_archive": {
+    "drive_file_id": "1V91v9v0jELPbnH42w10-FNKzQMMsVjl6",
+    "drive_folder_id": "10ce2TUR0P2K8Ams5eGWP2-Ajrb-S1FDw",
+    "filename": "20260718-e2p3-real-termux-archive-qualification-v2-results.tar.zst",
+    "sha256": "b92b041b78b21e0a3b402e54a15e008008db13320a264284d604f39046907e0b",
+    "size": 68447
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-individual-real-termux-profile",
+  "target_authority": {
+    "drive_folder_id": "1zKPFqqcGF-Y8HzblRZBl_aFweKoSsdMb",
+    "index_file_id": "1xG3fjjNx3yqHhmeVjvly5S3mRkBmDAUw",
+    "index_sha256": "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1",
+    "remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p3/qualifications/termux-native-cpython3146/termux-real-v1"
+  },
+  "verification": {
+    "external_audit": "34/34",
+    "independent_review": "38/38",
+    "qualification": "35/35",
+    "repository": "44/44-staged-and-commit",
+    "result_verifier": "19/19"
+  }
+}

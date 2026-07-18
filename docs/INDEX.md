@@ -13,6 +13,8 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 ## Epoch 2 contracts and evidence
 
+- [`evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
+- [`handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md)
 - [`evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
 - [`handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md`](handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md)
 - [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
