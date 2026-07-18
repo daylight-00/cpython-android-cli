@@ -1,5 +1,14 @@
 {
   "contract_version": 1,
+  "execution_authority": {
+    "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+    "authority_version": 1,
+    "execution_input_commit": "863dccbb31acf4ffe32dd0e26630dd861f96d992",
+    "execution_input_tree": "560267eb71d3a26dab019802f0dd2427fe81a774",
+    "private_authority_index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "result_archive_sha256": "1e0ee255513c7695285d2051bcc6044f7f5052f9a0480c6775170b006abfbb97",
+    "status": "frozen-pass-unqualified-envelope"
+  },
   "facade_kind": "hw-t-standalone-build-package-verify-facade",
   "operations": {
     "build": {
@@ -37,7 +46,7 @@
     },
     "verify": {
       "envelope_implementation": "components/standalone/lib/verify_envelope.py",
-      "repository_implementation": "experiments/epoch2-termux-native-cpython3146-facade-binding/verify-facade-binding.py",
+      "repository_implementation": "experiments/epoch2-termux-native-cpython3146-facade-execution/verify-execution-authority.py",
       "scopes": [
         "repository",
         "envelope"

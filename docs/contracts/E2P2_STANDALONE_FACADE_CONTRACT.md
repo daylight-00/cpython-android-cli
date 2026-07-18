@@ -1,8 +1,9 @@
 # E2-P2 Standalone Build/Package/Verify Façade Contract
 
-> **Status:** producer binding frozen — real façade execution next
+> **Status:** frozen — real execution authority accepted; E2-P3 qualification next
 > **Façade contract version:** 1
 > **Producer binding version:** 1
+> **Execution authority version:** 1
 > **Artifact contract:** E2-P1 version 1
 
 ## Stable command
@@ -29,6 +30,29 @@ gdrive:HW-T/cpython-android-cli/authorities/e2p2/producers/termux-native-cpython
 ```
 
 This is internal producer authority storage, not a public release, selectable catalog, or publication claim.
+
+## Frozen execution authority
+
+The exact bound façade execution is recorded by:
+
+```text
+experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json
+```
+
+The private unqualified envelope authority is:
+
+```text
+gdrive:HW-T/cpython-android-cli/authorities/e2p2/envelopes/termux-native-cpython3146/install-only-stripped-v1
+```
+
+```text
+execution input commit   863dccbb31acf4ffe32dd0e26630dd861f96d992
+envelope archive         66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727
+release index            64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85
+private authority index  5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5
+```
+
+Canonical and replay package executions are byte-identical across all eight envelope files. This execution authority is accepted only as a real unqualified E2-P1 envelope plus static review.
 
 ## Operations
 
@@ -94,7 +118,7 @@ verify --scope repository
 verify --scope envelope --release-dir <directory>
 ```
 
-Repository scope uses the current producer-binding verifier. It preserves the historical Gate 1 verifier and custom-NDK audit as immutable authorities, requiring only their exact, adjudicated current-state failure sets. Envelope scope remains the independent E2-P1 static verifier.
+Repository scope uses the current execution-authority verifier. It preserves the producer-binding verifier, historical Gate 1 verifier, and custom-NDK audit as immutable predecessor authorities, requiring only their exact adjudicated current-state failure sets. Envelope scope remains the independent E2-P1 static verifier.
 
 ## Host roles
 
@@ -102,8 +126,8 @@ Repository scope uses the current producer-binding verifier. It preserves the hi
 
 ## Compatibility and evolution
 
-Contract version 1 retains the stable command and operation names. The producer-binding transition changes internal producer acquisition and package-input paths without broadening target qualification or publication claims.
+Contract version 1 retains the stable command and operation names. The execution freeze changes only current repository authority and verifier routing; build/package behavior and the producer binding remain unchanged. The frozen envelope must be consumed by E2-P3 rather than silently regenerated or promoted.
 
 ## Claim boundary
 
-This transaction freezes only producer binding and repository routing. It does not claim that the real stable `build` or `package` operations have completed, that a real E2-P1 envelope has been accepted, or that the product is qualified, selectable, publishable, or installer-ready. Those remain later bounded gates.
+This authority accepts the real stable `build` and `package` executions, deterministic canonical/replay assembly, the complete unqualified E2-P1 envelope, and independent static review. The product is not target-qualified, selectable, publishable, or installer-ready; installer conversion and transition behavior remain separate later gates.

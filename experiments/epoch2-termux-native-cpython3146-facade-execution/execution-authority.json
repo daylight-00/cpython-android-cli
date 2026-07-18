@@ -1,0 +1,104 @@
+{
+  "authority_kind": "e2p2-termux-native-cpython3146-bound-facade-execution-authority-freeze",
+  "authority_version": 1,
+  "claim_boundary": {
+    "e2p1_envelope_produced": true,
+    "installer_conversion": false,
+    "publication": false,
+    "selectability": false,
+    "static_envelope_review": true,
+    "target_qualification": false,
+    "transition_behavior": false
+  },
+  "envelope": {
+    "archive": {
+      "filename": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped.tar.zst",
+      "sha256": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727",
+      "size": 9933746
+    },
+    "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+    "file_count": 8,
+    "manifest_entry_count": 1169,
+    "payload_classes": [
+      "runtime",
+      "development"
+    ],
+    "publication_allowed": false,
+    "release_index": {
+      "filename": "release-index.json",
+      "sha256": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85",
+      "size": 2259
+    },
+    "release_sha256": "fb5cdbb41a2e8500765c335c1eb3f7f31f3e081653428a4c37d967c4f11c778a",
+    "selectable": false,
+    "stripped_elf_count": 81
+  },
+  "file_identities": {
+    "README.md": "89ad62744f906eb1033e5d173751eb9076a7b7ca8239af3ddd0632974f8366b4",
+    "components/standalone/bin/cpython-android-standalone": "bd82d451f2d8e10f63a67efcc722592022a67a8092c2a0c9fee98f7bbb2187ed",
+    "components/standalone/contracts/facade-v1.json": "43e60b1943f88583eed5b964ced2a37b5b98528ec18dd9367c4409c33ba98fd4",
+    "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json": "9ca09c83ecb95dd8dc75a22a201735cd913776b2825f7869d6e16e61d5824b5c",
+    "components/standalone/lib/facade.py": "3c68c43c21435cb2f70bc713e2338d7c0ea4bd3bd82e41c018ac14baa92cb742",
+    "components/standalone/lib/materialize_frozen_producer.py": "d4381d9b409d56ca50367385b7e67612a053abe5908785c637531dc66b03ded4",
+    "components/standalone/lib/package_e2p1.py": "ac7c3cc1a7fc9ab45c7c7a13c4631a6be3e63a3f02556d3d246545bd3552425a",
+    "components/standalone/lib/verify_envelope.py": "89aa5c341e36539f2fa94f7c9a4c5f5ac85f95aa5730f4655a8d93aca3edd1d8",
+    "config/products/cpython-3.14.6-aarch64-linux-android.lock.json": "f75f3584bda53ae5e3b84c86dfeeba2176f06c0d64d11f78eca0eec9466f2ec3",
+    "docs/CURRENT_CONTEXT.md": "a08219281e4e2da3e4b0a3212f606ea19f2a1570771ba2e63e254c92f49810b1",
+    "docs/INDEX.md": "a5070306987b9eca4bf14230fd1fbd0446de25f9c5783ae28385d31364b0a1d2",
+    "docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md": "778eeaa197e9e30af50d599eeae79bc4e593028f65647cd9d4e1fa64b20e8498",
+    "docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md": "91d946d0fccfee211f5b5dc91ee4df257e70e4695d173d5abea27055108b1d12",
+    "docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md": "d77aa8d6989a2da25ee44f60fdb324bbbf3ad6a57f7cc44b3ad547a2f2947b39",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "c39669bbeeb5403cb65903c5f9c7e6291ff29d272a112a3c6fdcc272f86dcad0",
+    "experiments/epoch2-termux-native-cpython3146-facade-binding/verify-facade-binding.py": "11f98989e8a17e38d5202eade8c944e17f02c43664d5e6c8d108aa3bf106aee3",
+    "experiments/epoch2-termux-native-cpython3146-facade-execution/README.md": "e9e24e17f6f48b2f0a477ce0daff4755d8b8a193d803751bf82bbcc95a09bc4f",
+    "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority-external-audit.json": "01acb2e3c981b61212017a70e153bcc0cd5cf525aa704337df235475272cc8d3",
+    "experiments/epoch2-termux-native-cpython3146-facade-execution/verify-execution-authority.py": "f79077aa5630659222540e0b715a2206e3e4a41606cf90fb12a93cbf47525e90",
+    "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json": "891670c2e49495ccd0d42e9530076db5e1cb59ec05d220ffa08a35f2d8540930"
+  },
+  "next_action_class": "qualify-frozen-termux-native-cpython3146-envelope",
+  "predecessor": {
+    "commit": "863dccbb31acf4ffe32dd0e26630dd861f96d992",
+    "facade_binding_authority": "experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json",
+    "result_archive_sha256": "1e0ee255513c7695285d2051bcc6044f7f5052f9a0480c6775170b006abfbb97",
+    "tree": "560267eb71d3a26dab019802f0dd2427fe81a774"
+  },
+  "private_authority": {
+    "file_count": 20,
+    "index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "index_size": 4988,
+    "readback_pass": true,
+    "remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p2/envelopes/termux-native-cpython3146/install-only-stripped-v1"
+  },
+  "product": {
+    "android_api": 24,
+    "canonical_host": "aarch64-unknown-linux-android",
+    "launcher_sha256": "bcaf6dd6eb6b156f202ef7c59056f9b0c3f2b9a4ed687f38cf7970f46d40c1bc",
+    "ndk_version": "27.3.13750724",
+    "python_version": "3.14.6",
+    "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "standalone_artifacts": {
+      "development-addon": "73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f",
+      "runtime-base": "7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03",
+      "test-addon": "5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03"
+    },
+    "target_host": "aarch64-linux-android"
+  },
+  "schema_version": 1,
+  "stable_command": "components/standalone/bin/cpython-android-standalone",
+  "status": "frozen-pass-unqualified-envelope",
+  "toolchain": {
+    "compiler": "aarch64-linux-android24-clang",
+    "ndk_revision": "27.3.13750724",
+    "prebuilt_tag": "linux-arm64",
+    "strip_tool": "llvm-objcopy",
+    "zstd": "1.5.7"
+  },
+  "verification": {
+    "build": "9/9",
+    "determinism": "4/4",
+    "envelope": "52/52-canonical-and-replay",
+    "external_audit": "33/33",
+    "independent": "27/27",
+    "repository": "20/20-before-and-after"
+  }
+}

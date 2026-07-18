@@ -24,7 +24,7 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P2 — Standalone build and package façade
 
-> **Status:** ACTIVE — Gate 1 frozen; producer authority and binding frozen; real façade execution next
+> **Status:** FROZEN — Gate 1, producer authority/binding, real façade execution, deterministic envelope, and independent review accepted
 
 **Goal:** provide stable `build`, `package`, and `verify` entry points over the existing proven producer and runtime assembly.
 
@@ -32,11 +32,15 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 **Producer authority and binding result:** a new CPython 3.14.6 producer was executed directly in Termux under the exact custom-NDK r27d binary authority. Clean replay, canonical-host adjudication, three-artifact materialization, standalone validation, and invariant closure are frozen. The stable façade is now explicitly bound to that authority while the Stage 3-B Linux producer remains unchanged historical provenance.
 
-**Next bounded gate:** execute the bound stable `build` and `package` operations on the canonical Termux host and independently review the resulting unqualified E2-P1 envelope.
+**Real façade execution authority frozen:** canonical and replay package executions produced an exact 8-file unqualified E2-P1 envelope. Repository verification passed 20/20 before and after, both envelope verifiers passed 52/52, the independent review passed 27/27, and private authority readback was byte-identical.
+
+**Next bounded gate:** consume the frozen envelope authority in E2-P3 archive-only target qualification. Do not rerun or relabel E2-P2 producer/package authority as qualification evidence.
 
 **Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
 
 ## E2-P3 — Metadata and qualification
+
+> **Status:** NEXT
 
 **Goal:** qualify relocation, ELF closure, extension imports, HTTPS, venv, pip, uv explicit-interpreter workflows, wheel tags, and product fidelity from extracted artifacts.
 

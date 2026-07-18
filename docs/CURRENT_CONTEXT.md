@@ -1,8 +1,8 @@
 # Current Project Context
 
 > **Current epoch:** Epoch 2
-> **Current phase:** E2-P2 façade producer binding frozen
-> **Next phase:** real façade build/package execution and independent envelope review on `main`
+> **Current phase:** E2-P2 bound façade execution authority frozen
+> **Next phase:** E2-P3 archive-only qualification of the frozen envelope
 > **Frozen predecessor:** Epoch 1 through Stage 3-F
 > **Epoch 1 predecessor commit:** `e1de252740a96c40f3d587269136235a2c84ea16`
 > **Epoch 2 Phase 0 commit:** `a34e5fdc6224e66aa7ed335e921780fbadd728dc`
@@ -79,30 +79,51 @@ custom-NDK invariant closure      49/49 before and after
 external freeze audit             23/23
 ```
 
+## Frozen bound façade execution authority
+
+```text
+execution input commit   863dccbb31acf4ffe32dd0e26630dd861f96d992
+execution input tree     560267eb71d3a26dab019802f0dd2427fe81a774
+artifact id              cpython-3.14.6-aarch64-linux-android24-install_only_stripped
+envelope archive         66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727
+release index            64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85
+private authority index  5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5
+manifest entries         1169
+stripped ELF objects     81
+canonical/replay         8/8 files byte-identical
+repository verifier      20/20 before and after
+envelope verifier        52/52 canonical and replay
+independent review       27/27
+```
+
+The real stable façade `build` and `package` operations completed on the canonical Termux host. The private authority stores the exact unqualified E2-P1 envelope and supporting receipts. This is an execution and static-review authority, not target qualification, selectability, or publication authority.
+
 ## Current claim boundary
 
 ```text
-producer authority       frozen
-three-artifact authority frozen
-standalone Termux        accepted
-façade producer binding  frozen
-real E2-P1 envelope      not produced through façade
-E2-P3 qualification      not started
-selectability            false
-publication              not permitted
-transition behavior      not reopened
+producer authority          frozen
+three-artifact authority    frozen
+standalone Termux           accepted
+façade producer binding     frozen
+bound façade execution      frozen
+real E2-P1 envelope         frozen — unqualified
+static envelope review      frozen — 52/52 + 27/27
+E2-P3 target qualification  not started
+selectability               false
+publication                 not permitted
+transition behavior         not reopened
 ```
 
 ## Immediate reading path
 
-1. [`contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md`](contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md)
-2. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md)
-3. [`../experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json`](../experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json)
-4. [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
-5. [`evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md)
+1. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
+2. [`../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json`](../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json)
+3. [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
+4. [`contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md`](contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md)
+5. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md)
 6. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
 7. [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
 
 ## Next bounded gate
 
-Execute the bound stable façade on the canonical Termux host. Preserve the build receipt and complete unqualified E2-P1 envelope, then perform an independent envelope review. Keep E2-P3 qualification, selection, publication, installer conversion, and transition behavior separate.
+Consume the frozen private envelope authority without rerunning the producer or package step. Perform E2-P3 archive-only qualification on emulator and real Termux evidence, while keeping selectability, publication, installer conversion, and transition behavior separate.
