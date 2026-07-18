@@ -40,13 +40,15 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P3 — Metadata and qualification
 
-> **Status:** ACTIVE — contract and harness frozen; real Termux execution next
+> **Status:** ACTIVE — contract and harness frozen; qualification harness correction frozen; real Termux retry next
 
 **Goal:** qualify relocation, ELF closure, extension imports, HTTPS, venv, pip, uv explicit-interpreter workflows, wheel tags, and product fidelity from extracted artifacts.
 
 **Gate 1 frozen result:** the exact private E2-P2 envelope input, stable qualification command, static/real/emulator profile matrices, independent result verifier, 19/19 regression behavior, and 9/9 static replay with 19/19 result verification are accepted. No Android target execution is claimed.
 
-**Next bounded gate:** execute only the `termux-real` profile against the frozen private envelope and independently review the target evidence.
+**Qualification harness correction frozen:** the first real-Termux execution reached 33/35. The two failures were adjudicated as venv-symlink containment and base-pip wheel-tag source defects in the harness. The corrected semantics pass 21/21 regression while preserving the exact 35-check matrix and all frozen product identities. No target profile is qualified by the correction.
+
+**Next bounded gate:** retry only the `termux-real` profile with the corrected harness against the same frozen private envelope and independently review the target evidence.
 
 **Acceptance:** archive-only qualification on emulator and real Termux evidence where the claim is target-specific. Qualification metadata becomes selectable only after all required classes pass and a separate metadata-finalization gate succeeds.
 

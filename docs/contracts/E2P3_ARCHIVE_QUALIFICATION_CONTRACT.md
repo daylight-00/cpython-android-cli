@@ -1,6 +1,6 @@
 # E2-P3 Archive-Only Qualification Contract
 
-> **Status:** Gate 1 design and harness frozen — target execution next
+> **Status:** Gate 1 design and harness frozen — Harness correction v1 frozen; target retry next
 > **Contract version:** 1
 > **Input:** frozen unqualified E2-P1 envelope from E2-P2
 
@@ -63,6 +63,15 @@ No test package, producer tree, installed-prefix registry, or installer is used.
 Each profile writes canonical JSON evidence and one `qualification-result.json`. The independent result verifier requires the exact profile check set, exact evidence references, exact frozen input identities, coherent pass accounting, and `selectable=false`.
 
 Individual profile results never make the product selectable. E2-P3 combined acceptance requires both target profiles to pass and be frozen. A later metadata-finalization gate must then create and independently verify an updated qualification sidecar and release index.
+
+## Harness correction v1
+
+The first `termux-real` execution produced 33/35 with all runtime, relocation, closure, extension, HTTPS, pip, uv, and product-fidelity classes otherwise passing. Two harness-only false negatives were corrected without changing the contract matrix or product:
+
+- `venv_relocation` compares the reported venv executable and prefix lexically, because `venv/bin/python` is normally a symlink to the base interpreter. Resolved equality remains required for `base_prefix`.
+- `wheel_tag_android24` obtains compatible tags from pip's vendored packaging in the newly created venv. The base `install_only_stripped` runtime remains intentionally pip-free.
+
+The correction authorizes a retry only. It is not target qualification evidence.
 
 ## Claim boundary
 

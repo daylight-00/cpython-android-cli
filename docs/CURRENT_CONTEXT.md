@@ -1,8 +1,8 @@
 # Current Project Context
 
 > **Current epoch:** Epoch 2
-> **Current phase:** E2-P3 archive qualification contract frozen
-> **Next phase:** real Termux archive-only qualification of the frozen envelope
+> **Current phase:** E2-P3 archive qualification contract frozen — qualification harness correction frozen
+> **Next phase:** retry real Termux archive-only qualification of the frozen envelope
 > **Frozen predecessor:** Epoch 1 through Stage 3-F
 > **Epoch 1 predecessor commit:** `e1de252740a96c40f3d587269136235a2c84ea16`
 > **Epoch 2 Phase 0 commit:** `a34e5fdc6224e66aa7ed335e921780fbadd728dc`
@@ -107,11 +107,15 @@ static checks           9
 termux-real checks      35
 termux-emulator checks  35
 result verifier         19
-regression              19/19
+regression              21/21 after harness correction
 static replay           9/9 + 19/19
 ```
 
 The contract consumes the frozen private envelope without rerunning E2-P2. Gate 1 freezes design and harness behavior only; no Android target evidence is claimed.
+
+## Frozen E2-P3 qualification harness correction
+
+The first real-Termux execution reached 33/35. `venv_relocation` followed a normal venv symlink during path containment, and `wheel_tag_android24` queried pip from the intentionally pip-free base runtime. Both were harness false negatives. The corrected harness uses lexical venv identity and reads wheel tags from pip inside the created venv. The 35-check target matrix and frozen product bytes are unchanged. No target profile is qualified by this correction.
 
 ## Current claim boundary
 
@@ -124,7 +128,8 @@ bound façade execution      frozen
 real E2-P1 envelope         frozen — unqualified
 static envelope review      frozen — 52/52 + 27/27
 E2-P3 contract              frozen — no target evidence
-real Termux qualification    next
+qualification harness        correction frozen
+real Termux qualification    retry next
 selectability               false
 publication                 not permitted
 transition behavior         not reopened
@@ -132,8 +137,10 @@ transition behavior         not reopened
 
 ## Immediate reading path
 
-1. [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
-2. [`evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
+1. [`evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
+2. [`handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md`](handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md)
+3. [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
+4. [`evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
 3. [`../experiments/epoch2-archive-qualification/`](../experiments/epoch2-archive-qualification/)
 4. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
 5. [`../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json`](../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json)
@@ -145,4 +152,4 @@ transition behavior         not reopened
 
 ## Next bounded gate
 
-Execute only the `termux-real` profile from the frozen private envelope authority. Preserve archive-only target evidence and independent result verification while keeping emulator qualification, combined metadata finalization, selectability, publication, installer conversion, and transition behavior separate.
+Retry only the `termux-real` profile with the corrected frozen harness and the exact same private envelope. Preserve archive-only target evidence and independent result verification while keeping emulator qualification, combined metadata finalization, selectability, publication, installer conversion, and transition behavior separate.

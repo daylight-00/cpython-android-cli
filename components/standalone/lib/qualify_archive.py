@@ -339,11 +339,7 @@ for name in ("ssl","sqlite3","bz2","ctypes","lzma","zlib"):
         __import__(name); imports[name]=True
     except Exception as exc:
         imports[name]=f"{type(exc).__name__}: {exc}"
-try:
-    from pip._vendor.packaging.tags import sys_tags
-    tags=[str(tag) for _,tag in zip(range(50),sys_tags())]
-except Exception as exc:
-    tags=[f"ERROR:{type(exc).__name__}:{exc}"]
+tags=[]
 child_code="import json,sys;print(json.dumps({'executable':sys.executable,'prefix':sys.prefix,'base_prefix':sys.base_prefix},sort_keys=True))"
 child=json.loads(subprocess.check_output([sys.executable,"-B","-c",child_code],text=True))
 print(json.dumps({
@@ -365,6 +361,20 @@ def path_within(value: Any, root: Path) -> bool:
         return True
     except (OSError, ValueError):
         return False
+
+
+def lexical_same_path(value: Any, expected: Path) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    return os.path.abspath(value) == os.path.abspath(os.fspath(expected))
+
+
+def has_wheel_platform_tag(tags: Any, platform_tag: str) -> bool:
+    return (
+        isinstance(tags, list)
+        and bool(platform_tag)
+        and any(isinstance(tag, str) and tag.endswith("-" + platform_tag) for tag in tags)
+    )
 
 
 def resolve_readelf() -> str:
@@ -529,15 +539,31 @@ def venv_pip_uv_probe(prefix: Path, python: Path, cwd: Path, env: dict[str, str]
     venv_dir = cwd / "venv"
     proc = run([str(python), "-B", "-m", "venv", "--clear", str(venv_dir)], cwd, env, 300)
     vpy = venv_dir / "bin/python"
-    identity = {}
+    identity: dict[str, Any] = {}
+    wheel_tags: list[str] = []
     if proc.returncode == 0 and vpy.is_file():
         identity = run_json_python(vpy, "import json,sys;print(json.dumps({'executable':sys.executable,'prefix':sys.prefix,'base_prefix':sys.base_prefix},sort_keys=True))", cwd, env)
+        tag_probe = run_json_python(
+            vpy,
+            "from pip._vendor.packaging.tags import sys_tags; import json; print(json.dumps({'wheel_tags':[str(tag) for _,tag in zip(range(50),sys_tags())]},sort_keys=True))",
+            cwd,
+            env,
+        )
+        wheel_tags = [tag for tag in tag_probe.get("wheel_tags", []) if isinstance(tag, str)]
     venv_result = {
         "schema_version": 1,
-        "pass": proc.returncode == 0 and vpy.is_file() and path_within(identity.get("executable"), venv_dir) and Path(identity.get("base_prefix", "")).resolve() == prefix.resolve(),
+        "pass": (
+            proc.returncode == 0
+            and vpy.is_file()
+            and lexical_same_path(identity.get("executable"), vpy)
+            and lexical_same_path(identity.get("prefix"), venv_dir)
+            and Path(identity.get("base_prefix", "")).resolve() == prefix.resolve()
+        ),
         "returncode": proc.returncode,
         "stderr": proc.stderr.strip(),
         "identity": identity,
+        "wheel_tags": wheel_tags,
+        "wheel_tag_source": "created-venv-pip-vendored-packaging",
     }
     pip_proc = run([str(vpy), "-B", "-m", "pip", "install", "--no-index", "--no-deps", "--force-reinstall", str(fixture)], cwd, env, 300) if vpy.is_file() else subprocess.CompletedProcess([], 99, "", "venv missing")
     pip_import = run([str(vpy), "-B", "-c", "import e2p3_fixture; print(e2p3_fixture.VALUE)"], cwd, env) if vpy.is_file() else subprocess.CompletedProcess([], 99, "", "venv missing")
@@ -708,7 +734,6 @@ def qualify(args: argparse.Namespace) -> dict[str, Any]:
             "child_identity": Path(identity_b.get("child", {}).get("executable", "")).resolve() == expected_b and Path(identity_b.get("child", {}).get("prefix", "")).resolve() == prefix_b.resolve(),
             "stale_prefix_absent": str(prefix_a) not in json.dumps(identity_b, sort_keys=True),
             "sysconfig_paths_relocated": identity_a.get("sysconfig_platform") == required["sysconfig_platform"] and identity_b.get("sysconfig_platform") == required["sysconfig_platform"] and all(path_within(value, prefix_a) for value in identity_a.get("sysconfig_paths", {}).values()) and all(path_within(value, prefix_b) for value in identity_b.get("sysconfig_paths", {}).values()),
-            "wheel_tag_android24": any(tag.endswith("-" + required["wheel_platform_tag"]) for tag in identity_a.get("wheel_tags", [])) and any(tag.endswith("-" + required["wheel_platform_tag"]) for tag in identity_b.get("wheel_tags", [])),
         })
 
         closure = closure_probe(prefix_b, py_b, work_root, env, required["android_system_sonames"])
@@ -736,6 +761,7 @@ def qualify(args: argparse.Namespace) -> dict[str, Any]:
             "uv_explicit_venv": uv.get("venv_pass") is True,
             "uv_explicit_install": uv.get("install_pass") is True,
             "uv_explicit_run": uv.get("run_pass") is True,
+            "wheel_tag_android24": has_wheel_platform_tag(venv.get("wheel_tags"), required["wheel_platform_tag"]),
         })
         snap_a_after = snapshot(location_a)
         snap_b_after = snapshot(location_b)

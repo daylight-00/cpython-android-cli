@@ -1,0 +1,61 @@
+{
+  "authority_kind": "e2p3-archive-qualification-harness-correction",
+  "claim_boundary": {
+    "combined_target_qualification": false,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "publication": false,
+    "selectability": false,
+    "target_execution": false,
+    "transition_behavior": false
+  },
+  "correction_version": 1,
+  "defect_adjudication": {
+    "failed_checks": [
+      "venv_relocation",
+      "wheel_tag_android24"
+    ],
+    "harness_defect": true,
+    "passed_checks": 33,
+    "runtime_defect": false,
+    "total_checks": 35
+  },
+  "file_identities": {
+    "README.md": "56faa301440831d91c361c73a1452a8db261f0d1f9b0b336c4f7ad2226e4ff5a",
+    "components/standalone/lib/qualify_archive.py": "79b7058cd169b4a3a78be8bfaac4e3ce3020cdaf00634e70eb6bd87587dc5602",
+    "docs/CURRENT_CONTEXT.md": "69cdf1d8f5b521f878e4cc36fddfd41720a1f3ea13978e5258523c0dda05a570",
+    "docs/INDEX.md": "46883775a711cafcfca86d1bafdae6d07715a58be789c1a7500e66fb6dc06f39",
+    "docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md": "53fc82cc2e9ff24dc1f411d10be86fbfd1a82e07a261759790b741de2e337369",
+    "docs/evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md": "310255a306046394d4195798cde3124a2555d6ef70f29df6010f8f36c93fdf53",
+    "docs/handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md": "5cbee3992dbd538a371ca320ffffc60be87ad2f08c757ce206ace97090900e59",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "ad6e8089abae6f86cace0fdcb5d53945c071fe1d243be04122690ee6d3d9ee39",
+    "experiments/epoch2-archive-qualification/README.md": "98bac39c4df14a51d887a6e7787c29b36ea20fccc3e82eae2f4e13d575f78e88",
+    "experiments/epoch2-archive-qualification/qualification-harness-correction-external-audit.json": "a91088206c2e2ef7b4a3d29a762ff4ed03888120939e4bb3c2c85946fde6bf83",
+    "experiments/epoch2-archive-qualification/test-qualification-contract.py": "91e373b1318c9639bf8ae202321e58e9365147645df06580c783d2dbc285f09b",
+    "experiments/epoch2-archive-qualification/verify-qualification-contract.py": "56989dd731ac908d2ccbba334c6f3e316a3705beefdc199ddc5bc50512f49f47"
+  },
+  "harness": {
+    "check_matrix_unchanged": true,
+    "venv_identity": "lexical-symlink-aware",
+    "wheel_tag_source": "created-venv-pip-vendored-packaging"
+  },
+  "next_action_class": "retry-e2p3-real-termux-archive-qualification",
+  "predecessor": {
+    "commit": "ecfe4fafb048e9649f9cb91657c36b45b838ab7d",
+    "contract_result_sha256": "ec38ed8bb5b42dbcd32c106ae6887433e59e17b0cb9573491761443683b85caf",
+    "failed_real_result_sha256": "0864173ef3b6b735ef3168b26aed6c5052296289a7c0771cb05754318fb63a79",
+    "tree": "be86487e89d7335421cf71ebfc73361f17f6bac2"
+  },
+  "schema_version": 1,
+  "status": "frozen-corrected-design-no-target-evidence",
+  "verification": {
+    "external_audit": "31/31",
+    "failed_real_audit": "24/24",
+    "historical_contract_verifier": "24/26-adjudicated",
+    "regression": "21/21",
+    "repository": "33/33-staged-and-commit",
+    "static_qualification": "9/9",
+    "static_result_verifier": "19/19",
+    "target_execution": "failed-result-adjudicated-not-qualified"
+  }
+}

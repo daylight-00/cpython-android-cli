@@ -195,6 +195,31 @@ def main() -> int:
         order_archive, order_manifest = archive_fixture(order_root, valid_members, manifest_order=["python", "python/bin/python3.14", "python/bin", "python/bin/python"])
         record("archive-order-mismatch", rejected(lambda: QUALIFY.inspect_archive(order_archive, order_manifest)))
 
+        venv_identity_root = temp / "venv-symlink-identity"
+        base_python = venv_identity_root / "base/python/bin/python3.14"
+        venv_python = venv_identity_root / "consumer/venv/bin/python"
+        base_python.parent.mkdir(parents=True)
+        venv_python.parent.mkdir(parents=True)
+        base_python.write_bytes(b"python")
+        venv_python.symlink_to(base_python)
+        record(
+            "venv-symlink-lexical-identity",
+            QUALIFY.lexical_same_path(str(venv_python), venv_python)
+            and not QUALIFY.path_within(str(venv_python), venv_python.parent.parent),
+        )
+
+        record(
+            "wheel-tag-created-venv-source",
+            QUALIFY.has_wheel_platform_tag(
+                ["cp314-cp314-android_24_arm64_v8a"],
+                "android_24_arm64_v8a",
+            )
+            and not QUALIFY.has_wheel_platform_tag(
+                ["ERROR:ModuleNotFoundError:No module named 'pip'"],
+                "android_24_arm64_v8a",
+            ),
+        )
+
         counts = {name: len(CONTRACT["profile_checks"][name]) for name in CONTRACT["profile_checks"]}
         sorted_checks = all(CONTRACT["profile_checks"][name] == sorted(CONTRACT["profile_checks"][name]) for name in CONTRACT["profile_checks"])
         record("profile-matrix", counts == {"static": 9, "termux-real": 35, "termux-emulator": 35} and sorted_checks, counts)
