@@ -472,6 +472,8 @@ def create_release(args: argparse.Namespace) -> dict[str, Any]:
         "extensions": {
             "e2p2": {
                 "copy_counts": copy_counts,
+                "producer_authority": lock.get("producer_authority", {}),
+                "standalone_artifacts": lock.get("standalone_artifacts", {}),
                 "strip_tool": tool_version(str(strip_tool)),
                 "stripped_elf_count": len(strip_rows),
                 "stripped_elf": strip_rows,

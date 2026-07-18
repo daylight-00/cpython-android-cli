@@ -14,6 +14,9 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 ## Epoch 2 contracts and evidence
 
 - [`contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md`](contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md)
+- [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md)
+- [`handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md`](handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md)
+- [`../experiments/epoch2-termux-native-cpython3146-facade-binding/`](../experiments/epoch2-termux-native-cpython3146-facade-binding/)
 - [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md)
 - [`handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md`](handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md)
 - [`../experiments/epoch2-termux-native-cpython3146-producer/`](../experiments/epoch2-termux-native-cpython3146-producer/)

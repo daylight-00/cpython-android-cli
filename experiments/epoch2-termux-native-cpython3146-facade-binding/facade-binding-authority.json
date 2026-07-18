@@ -1,0 +1,75 @@
+{
+  "authority_kind": "e2p2-termux-native-cpython3146-facade-binding",
+  "binding": {
+    "contract": "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json",
+    "expected_owned_paths": 1168,
+    "expected_structural_references": 2,
+    "preserved_unselected_artifacts": [
+      "test-addon"
+    ],
+    "selected_artifacts": [
+      "runtime-base",
+      "development-addon"
+    ]
+  },
+  "claim_boundary": {
+    "installer_conversion": false,
+    "publication": false,
+    "qualification": false,
+    "real_e2p1_envelope_produced": false,
+    "real_facade_build_executed": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "file_identities": {
+    "README.md": "8e71c41c35e84d8bffd2f9debdde68604641b6280290770be1d37c2beafc1616",
+    "components/standalone/contracts/facade-v1.json": "4aba406a3d77e0c68564048ef6efa393a643f81dbaf7c8d5b68b1098748f9636",
+    "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json": "9ca09c83ecb95dd8dc75a22a201735cd913776b2825f7869d6e16e61d5824b5c",
+    "components/standalone/lib/materialize_frozen_producer.py": "d4381d9b409d56ca50367385b7e67612a053abe5908785c637531dc66b03ded4",
+    "components/standalone/lib/package_e2p1.py": "ac7c3cc1a7fc9ab45c7c7a13c4631a6be3e63a3f02556d3d246545bd3552425a",
+    "config/products/cpython-3.14.6-aarch64-linux-android.lock.json": "f75f3584bda53ae5e3b84c86dfeeba2176f06c0d64d11f78eca0eec9466f2ec3",
+    "docs/CURRENT_CONTEXT.md": "7c16a11c65ec7724ad71aa7a451a1d97f7908b4cd718e23ac7219d2acc7a96c0",
+    "docs/INDEX.md": "f45121bb80bfd19e2a4e7afa8cfc49d02c98788069117e89e2352687fe10b405",
+    "docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md": "0fa66a45c59eae5ccffa4dc933fb9fa344a5fd9ece5cfd93ef62f5940aca35cb",
+    "docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md": "fb50117b504b913c893749379b8227eea5c337be34c7fd2bca55eb6bc35c1f3d",
+    "docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md": "4b7133aa8a8e50fd04f3ca49d5d59ab70e7f4e3461c4c4884694334916e8edf6",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "c7a88d5c32962c89b2806e531bd47bae6a1b35c164f061e04931adb6848b163b",
+    "experiments/epoch2-termux-native-cpython3146-facade-binding/README.md": "e958654a3f902f70fa78b7bb371d2d40c4d25d18d1889eb198680a5ed96d7c85",
+    "experiments/epoch2-termux-native-cpython3146-facade-binding/materialize-frozen-producer.sh": "c5ecdd4fd0eaa96b53a80c1f9d621300fa4f4102d2e21b4969d035b516fbba0c",
+    "experiments/epoch2-termux-native-cpython3146-facade-binding/test-facade-binding.py": "7cdd83dbcff564c683ce917b52990657c386a114c6e7ec2e995af6d6c60b71b1",
+    "experiments/epoch2-termux-native-cpython3146-facade-binding/verify-facade-binding.py": "11f98989e8a17e38d5202eade8c944e17f02c43664d5e6c8d108aa3bf106aee3"
+  },
+  "historical_adjudication": {
+    "custom_ndk_expected_failures": [
+      "branch",
+      "current_context",
+      "facade_lock_pinned",
+      "facade_stage3b_steps",
+      "roadmap"
+    ],
+    "facade_expected_failures": [
+      "authority_file_identities",
+      "branch_active",
+      "build_contract",
+      "documentation_status",
+      "package_contract"
+    ]
+  },
+  "next_action_class": "execute-bound-termux-native-cpython3146-facade-build-package",
+  "predecessor": {
+    "commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
+    "tree": "a1c092813c12aeff00c661277a48d0d6339b9f88"
+  },
+  "private_authority": {
+    "index_sha256": "1ef9bf7cfac11dd592241ad08e0c2eb8105148782044d78c48a7481d0f93f4f2",
+    "remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p2/producers/termux-native-cpython3146/frozen-product-v1",
+    "source_materialization_result_sha256": "af7e45a9fbbb51d72ca6d696ac40e3c0504f6c8dd9b2b21feda759446802115b"
+  },
+  "producer_authority": {
+    "external_audit": "23/23",
+    "freeze_commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
+    "path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass"
+}

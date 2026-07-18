@@ -24,15 +24,15 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P2 — Standalone build and package façade
 
-> **Status:** ACTIVE — Gate 1 frozen; Termux-native CPython 3.14.6 producer authority frozen; binding next
+> **Status:** ACTIVE — Gate 1 frozen; producer authority and binding frozen; real façade execution next
 
 **Goal:** provide stable `build`, `package`, and `verify` entry points over the existing proven producer and runtime assembly.
 
 **Gate 1 frozen result:** the repository command, pinned predecessor entry points, deterministic package implementation, general envelope verifier, synthetic double-build byte identity, drift rejection, and archive-mutation rejection are accepted. No real producer run is claimed.
 
-**Producer authority result:** a new CPython 3.14.6 producer was executed directly in Termux under the exact custom-NDK r27d binary authority. Clean replay, canonical-host adjudication, three-artifact materialization, standalone validation, and invariant closure are frozen. This does not relabel the Stage 3-B Linux producer and does not yet change `facade-v1.json`.
+**Producer authority and binding result:** a new CPython 3.14.6 producer was executed directly in Termux under the exact custom-NDK r27d binary authority. Clean replay, canonical-host adjudication, three-artifact materialization, standalone validation, and invariant closure are frozen. The stable façade is now explicitly bound to that authority while the Stage 3-B Linux producer remains unchanged historical provenance.
 
-**Next bounded gate:** explicitly bind the frozen Termux-native producer authority to the façade. Real `build` and `package` execution and independent E2-P1 envelope review remain later transactions.
+**Next bounded gate:** execute the bound stable `build` and `package` operations on the canonical Termux host and independently review the resulting unqualified E2-P1 envelope.
 
 **Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
 

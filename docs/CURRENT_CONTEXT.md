@@ -1,8 +1,8 @@
 # Current Project Context
 
 > **Current epoch:** Epoch 2
-> **Current phase:** E2-P2 Termux-native CPython 3.14.6 producer authority frozen
-> **Next phase:** explicit façade producer-binding transition on `main`
+> **Current phase:** E2-P2 façade producer binding frozen
+> **Next phase:** real façade build/package execution and independent envelope review on `main`
 > **Frozen predecessor:** Epoch 1 through Stage 3-F
 > **Epoch 1 predecessor commit:** `e1de252740a96c40f3d587269136235a2c84ea16`
 > **Epoch 2 Phase 0 commit:** `a34e5fdc6224e66aa7ed335e921780fbadd728dc`
@@ -40,7 +40,7 @@ operations
   verify --scope envelope
 ```
 
-Gate 1 remains frozen at repository and synthetic-envelope authority. Its producer binding has not yet been changed.
+Gate 1 remains frozen as historical repository and synthetic-envelope authority. The current façade is explicitly bound to the frozen Termux-native producer authority without rewriting Gate 1.
 
 ## Frozen Termux-native CPython 3.14.6 producer authority
 
@@ -85,7 +85,7 @@ external freeze audit             23/23
 producer authority       frozen
 three-artifact authority frozen
 standalone Termux        accepted
-façade producer binding  unchanged
+façade producer binding  frozen
 real E2-P1 envelope      not produced through façade
 E2-P3 qualification      not started
 selectability            false
@@ -105,4 +105,4 @@ transition behavior      not reopened
 
 ## Next bounded gate
 
-Perform one explicit producer-binding transaction on `main`. It must replace the façade's frozen Stage 3-B producer input only after verifying this authority, preserve Gate 1 command semantics, and remain separate from real E2-P1 envelope production.
+Execute the bound stable façade on the canonical Termux host. Preserve the build receipt and complete unqualified E2-P1 envelope, then perform an independent envelope review. Keep E2-P3 qualification, selection, publication, installer conversion, and transition behavior separate.

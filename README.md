@@ -13,10 +13,10 @@ Epoch 1  Android CPython CLI adaptation, installation lifecycle,
          managed-Python consumption, publication, and acquisition   FROZEN
 
 Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — Termux-native CPython 3.14.6 producer frozen; binding next
+         installer-consumer separation, and repository promotion    ACTIVE — producer bound; real façade execution next
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are now frozen as a separate authority. The façade producer binding remains unchanged until the next explicit transaction.
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are now frozen as a separate authority. The façade is now explicitly bound to the frozen Termux-native authority. Real stable façade build/package execution and independent envelope review remain the next gate.
 
 Current entry points:
 
@@ -25,6 +25,7 @@ Current entry points:
 - [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
 - [`docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
 - [`docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
+- [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md)
 
 ## Current status
 
@@ -47,7 +48,8 @@ Epoch 2 P0 documentation and component boundaries       frozen
 Epoch 2 P1 canonical standalone artifact contract       frozen — 68/68 + 15/15
 Epoch 2 P2 Gate 1 standalone façade implementation        frozen — synthetic verification
 Epoch 2 P2 Termux-native CPython 3.14.6 producer authority frozen
-Epoch 2 P2 façade producer-binding transition                  next
+Epoch 2 P2 façade producer binding                             frozen
+Epoch 2 P2 real façade build/package + envelope review         next
 ```
 
 ## Frozen runtime architecture

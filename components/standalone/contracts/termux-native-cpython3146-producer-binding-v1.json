@@ -1,0 +1,135 @@
+{
+  "artifacts": {
+    "development-addon": {
+      "archive": {
+        "filename": "cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.zst",
+        "path": "artifacts/cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.zst",
+        "sha256": "73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f",
+        "size": 899721
+      },
+      "manifest": {
+        "path": "manifests/development-addon.manifest.json",
+        "sha256": "d0dc69fc03552117e1f0d19df09c3230d6eb0436f50595274e8dde60f983e2ce",
+        "size": 177776
+      }
+    },
+    "runtime-base": {
+      "archive": {
+        "filename": "cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.zst",
+        "path": "artifacts/cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.zst",
+        "sha256": "7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03",
+        "size": 11838261
+      },
+      "manifest": {
+        "path": "manifests/runtime-base.manifest.json",
+        "sha256": "c8e182282605eeda874805a4c4b1847a82c24252443c59770337e2c0379739ca",
+        "size": 273367
+      }
+    },
+    "test-addon": {
+      "archive": {
+        "filename": "cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.zst",
+        "path": "artifacts/cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.zst",
+        "sha256": "5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03",
+        "size": 6270973
+      },
+      "manifest": {
+        "path": "manifests/test-addon.manifest.json",
+        "sha256": "a2d90bc30139337f4d3106a0a5a21f6ade3208cb307e0b46d9f25ced57af4697",
+        "size": 735401
+      }
+    }
+  },
+  "authority": {
+    "files": {
+      "artifacts/cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.zst": {
+        "sha256": "73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f",
+        "size": 899721
+      },
+      "artifacts/cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.zst": {
+        "sha256": "7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03",
+        "size": 11838261
+      },
+      "artifacts/cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.zst": {
+        "sha256": "5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03",
+        "size": 6270973
+      },
+      "manifests/development-addon.manifest.json": {
+        "sha256": "d0dc69fc03552117e1f0d19df09c3230d6eb0436f50595274e8dde60f983e2ce",
+        "size": 177776
+      },
+      "manifests/runtime-base.manifest.json": {
+        "sha256": "c8e182282605eeda874805a4c4b1847a82c24252443c59770337e2c0379739ca",
+        "size": 273367
+      },
+      "manifests/test-addon.manifest.json": {
+        "sha256": "a2d90bc30139337f4d3106a0a5a21f6ade3208cb307e0b46d9f25ced57af4697",
+        "size": 735401
+      },
+      "product-lock.json": {
+        "sha256": "2658d90d1966d28d0da8c67bb98a8817980474a20186e9d5bde057767af15594",
+        "size": 2376
+      }
+    },
+    "index": {
+      "path": "authority-index.json",
+      "sha256": "1ef9bf7cfac11dd592241ad08e0c2eb8105148782044d78c48a7481d0f93f4f2",
+      "size": 2161
+    },
+    "kind": "e2p2-termux-native-cpython3146-frozen-product-v1",
+    "remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p2/producers/termux-native-cpython3146/frozen-product-v1"
+  },
+  "binding_kind": "e2p2-termux-native-cpython3146-standalone-facade-producer-binding",
+  "binding_version": 1,
+  "claim_boundary": {
+    "publication": false,
+    "qualification": false,
+    "real_e2p1_envelope_produced": false,
+    "real_facade_build_executed": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "composition": {
+    "expected_owned_paths": 1168,
+    "expected_structural_references": 2,
+    "package_input_payload_classes": [
+      "runtime",
+      "development"
+    ],
+    "preserved_unselected_artifacts": [
+      "test-addon"
+    ],
+    "selected_artifacts": [
+      "runtime-base",
+      "development-addon"
+    ]
+  },
+  "materialization": {
+    "authority_cache": "~/.cache/hw-t-authorities/cpython-android-cli/e2p2-termux-native-cpython3146-frozen-product-v1",
+    "prefix": "work/termux/e2p2-termux-native-cpython3146-facade/prefix",
+    "receipt": "work/termux/e2p2-termux-native-cpython3146-facade/producer-binding.json",
+    "work_root": "work/termux/e2p2-termux-native-cpython3146-facade"
+  },
+  "producer_authority": {
+    "external_audit_checks": "23/23",
+    "external_audit_path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json",
+    "freeze_commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
+    "git_blob": "24857f2e82d02ffcfbd85101da952476113249be",
+    "path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json"
+  },
+  "product": {
+    "android_api": 24,
+    "canonical_host": "aarch64-unknown-linux-android",
+    "launcher_sha256": "bcaf6dd6eb6b156f202ef7c59056f9b0c3f2b9a4ed687f38cf7970f46d40c1bc",
+    "ndk_version": "27.3.13750724",
+    "prefix_snapshot_sha256": "3081a1b150473ff6d6896589a2898cb38baf831e0f811af2bd0447c29b36bb89",
+    "python_version": "3.14.6",
+    "soabi": "cpython-314-aarch64-linux-android",
+    "source_archive_sha256": "517f4b0d113c4c1cf6931c230b6b517bee7a2b7f8b4f0f099a148260fa3ac8e7",
+    "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "target_host": "aarch64-linux-android"
+  },
+  "repository_product_lock": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json",
+  "schema_version": 1,
+  "status": "frozen-authority-bound"
+}

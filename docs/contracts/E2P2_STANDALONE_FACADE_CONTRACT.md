@@ -1,7 +1,8 @@
 # E2-P2 Standalone Build/Package/Verify Façade Contract
 
-> **Status:** Gate 1 frozen — repository implementation
+> **Status:** producer binding frozen — real façade execution next
 > **Façade contract version:** 1
+> **Producer binding version:** 1
 > **Artifact contract:** E2-P1 version 1
 
 ## Stable command
@@ -10,63 +11,81 @@
 components/standalone/bin/cpython-android-standalone
 ```
 
-The command is the public repository entry point for standalone production. Callers must not depend on the experiment paths behind it.
+The stable command and operation names remain unchanged. Internal producer paths are hidden behind the contract.
+
+## Frozen producer binding
+
+The façade is explicitly bound to the frozen Termux-native CPython 3.14.6 authority recorded by:
+
+```text
+experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json
+components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json
+```
+
+The private authority storage is:
+
+```text
+gdrive:HW-T/cpython-android-cli/authorities/e2p2/producers/termux-native-cpython3146/frozen-product-v1
+```
+
+This is internal producer authority storage, not a public release, selectable catalog, or publication claim.
 
 ## Operations
 
 ### `plan`
 
-Resolves the selected operation, inputs, outputs, and pinned internal commands without executing them. Contract or predecessor-entry-point drift fails before an operation can run.
+Resolves the selected operation, exact authority inputs, outputs, and internal command without execution. Contract or tracked-input drift fails closed.
 
 ### `build`
 
-`build` is a Linux-workstation operation. Version 1 delegates to the frozen Stage 3-B producer chain:
+`build` is now a `termux` host-role operation. It acquires and verifies the frozen authority index, exact artifact archives, manifests, and product lock. It then reconstructs the package input from:
 
 ```text
-experiments/stage3b-upstream-replay/prepare-replay.sh
-experiments/stage3b-upstream-replay/run-replay.sh
-experiments/stage3b-product-promotion/promote-replay-package.sh
-scripts/build/build-launcher.sh
+runtime-base + development-addon
 ```
 
-The façade does not duplicate these scripts. It pins their Git blob identities, checks their completion markers, verifies the canonical output set, and writes:
+The `test-addon` remains preserved in the authority and output artifact set but is not included in the E2-P1 package input.
+
+The build step is:
 
 ```text
-results/workstation/epoch2-standalone/build-receipt.json
+experiments/epoch2-termux-native-cpython3146-facade-binding/materialize-frozen-producer.sh
 ```
 
-The receipt records exact output size and SHA-256 without making generated paths part of product identity.
+It writes the exact selected prefix under:
+
+```text
+work/termux/e2p2-termux-native-cpython3146-facade/prefix
+```
+
+and records:
+
+```text
+work/termux/e2p2-termux-native-cpython3146-facade/producer-binding.json
+results/termux/epoch2-standalone/build-receipt.json
+```
+
+Materialization validates archive safety, exact archive and manifest identities, disjoint ownership, structural-parent references, complete path coverage, file modes, regular-file SHA-256 values, symlink targets, launcher identity, and absence of extra paths.
 
 ### `package`
 
-`package` consumes only:
+`package` is a `termux` host-role operation. It consumes only:
 
 ```text
-work/workstation/stage3b-promoted-cpython/prefix
+work/termux/e2p2-termux-native-cpython3146-facade/prefix
 out/<target>/<profile>/bin/python3.14
-tracked product lock
+tracked Termux-native product lock
 repository commit and tree
 explicit strip and zstd tools
 ```
 
-It creates the E2-P1 `install_only_stripped` envelope under:
+It creates an unqualified E2-P1 `install_only_stripped` envelope under:
 
 ```text
 dist/<target>/<profile>/standalone
 ```
 
-Transformation rules:
-
-- use one `python/` archive root;
-- overlay the canonical launcher and `python3`/`python` symlinks;
-- retain runtime and development surfaces;
-- exclude CPython tests, `__phello__`, unsupported Tk/IDLE/turtle sources, bytecode residue, build workspaces, and detached debug symbols;
-- strip ELF files with one recorded tool and `--strip-unneeded`;
-- serialize twice and require byte-identical `pax-tar+zstd` output;
-- generate E2-P1 artifact, manifest, provenance, qualification, license, checksum, and release-index sidecars;
-- leave qualification `not-qualified` and all selectability fields false.
-
-The package implementation must not invoke the installer or mutate the promoted source prefix.
+The package implementation records the selected producer authority and three-artifact identities in provenance. It does not invoke the installer or mutate the materialized prefix.
 
 ### `verify`
 
@@ -75,26 +94,16 @@ verify --scope repository
 verify --scope envelope --release-dir <directory>
 ```
 
-Repository scope verifies the façade contract, pinned predecessor entry points, regression tests, E2-P1 preservation, Epoch 1 control-plane preservation, documentation, and tracked authority.
-
-Envelope scope independently verifies archive safety, normalized headers, exact manifest fidelity, metadata linkage, checksum coverage, noncanonical Termux/uv mappings, excluded paths, stripping provenance, and unselectable qualification state.
-
-Target runtime qualification is deliberately absent from façade contract version 1 and belongs to E2-P3.
+Repository scope uses the current producer-binding verifier. It preserves the historical Gate 1 verifier and custom-NDK audit as immutable authorities, requiring only their exact, adjudicated current-state failure sets. Envelope scope remains the independent E2-P1 static verifier.
 
 ## Host roles
 
-`build` and `package` require `PROJECT_ROLE=workstation`. Repository and envelope verification are host-independent when Python, Git, zstd, and the required fixture compiler are available.
-
-## Environment propagation
-
-The stable shell command sources `scripts/lib/project-env.sh` and then replaces itself with the Python façade. Tracked defaults and machine-local values consumed after that `exec` boundary must therefore be exported by the loader. Callers may continue to use ordinary assignments in `.local/env`; they are not required to duplicate `export` on every line.
-
-The independently checked boundary includes the tracked target/version defaults plus `PROJECT_ROLE`, `ANDROID_CC`, and `ANDROID_STRIP`. Gate 2 must fail before producer execution when those values are absent or inconsistent.
+`build` and `package` require `PROJECT_ROLE=termux`. Repository and envelope verification remain host-independent when their declared tools and fixtures are available.
 
 ## Compatibility and evolution
 
-The stable command and operation names are version-1 interfaces. Internal script paths may change only with an explicit contract update and independent verification. Adding target verification requires a new accepted scope rather than silently broadening `verify --scope envelope`.
+Contract version 1 retains the stable command and operation names. The producer-binding transition changes internal producer acquisition and package-input paths without broadening target qualification or publication claims.
 
 ## Claim boundary
 
-Gate 1 freezes the repository façade implementation and synthetic deterministic package behavior. It does not claim that the real producer has run through the façade or that any emitted product is executable, qualified, selectable, publishable, or installer-ready.
+This transaction freezes only producer binding and repository routing. It does not claim that the real stable `build` or `package` operations have completed, that a real E2-P1 envelope has been accepted, or that the product is qualified, selectable, publishable, or installer-ready. Those remain later bounded gates.

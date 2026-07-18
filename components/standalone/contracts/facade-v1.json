@@ -3,48 +3,31 @@
   "facade_kind": "hw-t-standalone-build-package-verify-facade",
   "operations": {
     "build": {
-      "host_role": "workstation",
+      "host_role": "termux",
       "outputs": [
-        "out/{target_id}/{build_profile}/cpython/python-{python_version}-{target_host}.tar.gz",
-        "out/{target_id}/{build_profile}/cpython/SHA256SUMS",
+        "out/{target_id}/{build_profile}/producer-artifacts/cpython-android-cli-3.14.6-android24-aarch64-runtime-base.tar.zst",
+        "out/{target_id}/{build_profile}/producer-artifacts/cpython-android-cli-3.14.6-android24-aarch64-development-addon.tar.zst",
+        "out/{target_id}/{build_profile}/producer-artifacts/cpython-android-cli-3.14.6-android24-aarch64-test-addon.tar.zst",
         "out/{target_id}/{build_profile}/metadata/cpython-product.json",
         "out/{target_id}/{build_profile}/bin/python3.14",
-        "out/{target_id}/{build_profile}/metadata/build-info.txt"
+        "work/termux/e2p2-termux-native-cpython3146-facade/producer-binding.json"
       ],
-      "receipt": "results/workstation/epoch2-standalone/build-receipt.json",
+      "receipt": "results/termux/epoch2-standalone/build-receipt.json",
       "steps": [
         {
-          "blob_sha": "2393771fbac945bd15cdeeef9a37fddcc625df47",
-          "id": "prepare-replay",
-          "marker": "STAGE3B_REPLAY_PREPARE=PASS",
-          "path": "experiments/stage3b-upstream-replay/prepare-replay.sh"
-        },
-        {
-          "blob_sha": "a509cb796de93e9e5284af9100fff53eff3b7253",
-          "id": "run-replay",
-          "marker": "STAGE3B_UPSTREAM_REPLAY=PASS",
-          "path": "experiments/stage3b-upstream-replay/run-replay.sh"
-        },
-        {
-          "blob_sha": "a1c441d071b88ca5029ec87472659c1b460acadc",
-          "id": "promote-product",
-          "marker": "STAGE3B_CPYTHON_PRODUCT_PROMOTION=PASS",
-          "path": "experiments/stage3b-product-promotion/promote-replay-package.sh"
-        },
-        {
-          "blob_sha": "c1d8124c81183255b3e2070af6b27877ed2b7e9c",
-          "id": "build-launcher",
-          "marker": "Built:",
-          "path": "scripts/build/build-launcher.sh"
+          "blob_sha": "6ac6b993aff7989f17aa61d6f1eb24f5e58a8525",
+          "id": "materialize-frozen-producer",
+          "marker": "E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_MATERIALIZATION=PASS",
+          "path": "experiments/epoch2-termux-native-cpython3146-facade-binding/materialize-frozen-producer.sh"
         }
       ]
     },
     "package": {
       "archive_root": "python/",
-      "host_role": "workstation",
+      "host_role": "termux",
       "implementation": "components/standalone/lib/package_e2p1.py",
       "input_launcher": "out/{target_id}/{build_profile}/bin/python3.14",
-      "input_prefix": "work/workstation/stage3b-promoted-cpython/prefix",
+      "input_prefix": "work/termux/e2p2-termux-native-cpython3146-facade/prefix",
       "output_dir": "dist/{target_id}/{build_profile}/standalone",
       "payload_classes": [
         "runtime",
@@ -54,7 +37,7 @@
     },
     "verify": {
       "envelope_implementation": "components/standalone/lib/verify_envelope.py",
-      "repository_implementation": "experiments/epoch2-standalone-build-facade/verify-e2p2-standalone-facade.py",
+      "repository_implementation": "experiments/epoch2-termux-native-cpython3146-facade-binding/verify-facade-binding.py",
       "scopes": [
         "repository",
         "envelope"
@@ -68,6 +51,12 @@
     "epoch1_tree": "66c976f3fc182496d2843771b46faaf98fc267da",
     "stage3b_authority": "docs/stages/STAGE3B_FINAL.md"
   },
+  "producer_binding": {
+    "binding_contract": "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json",
+    "binding_version": 1,
+    "freeze_commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
+    "producer_authority": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json"
+  },
   "schema_version": 1,
   "stable_command": "components/standalone/bin/cpython-android-standalone",
   "tracked_inputs": [
@@ -76,7 +65,7 @@
       "path": "config/defaults.env"
     },
     {
-      "blob_sha": "4b31a1f6c7c843ba8c5b652047a24e813c63fade",
+      "blob_sha": "18df0ca2db6646642bddafb8d67d133726a4d8d7",
       "path": "config/products/cpython-3.14.6-aarch64-linux-android.lock.json"
     },
     {
@@ -84,12 +73,20 @@
       "path": "scripts/lib/project-env.sh"
     },
     {
-      "blob_sha": "7370797fa849b7459c5b0c34f096d7d53b960d44",
-      "path": "src/launcher/python.c"
+      "blob_sha": "24857f2e82d02ffcfbd85101da952476113249be",
+      "path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json"
     },
     {
-      "blob_sha": "65e245f597e15ac20c6031ccf885a4a0feed1469",
-      "path": "experiments/stage3b-product-promotion/promote-cpython-product.py"
+      "blob_sha": "22b679aa7b8c668528a927858482626d15051eba",
+      "path": "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json"
+    },
+    {
+      "blob_sha": "471951cf5214868d1f85474e7956fa69f0332a54",
+      "path": "components/standalone/lib/materialize_frozen_producer.py"
+    },
+    {
+      "blob_sha": "450ef2df594ad30f2c461fea567d71c7a1e4ca33",
+      "path": "components/standalone/lib/package_e2p1.py"
     }
   ]
 }

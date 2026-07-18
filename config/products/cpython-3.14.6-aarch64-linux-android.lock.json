@@ -1,17 +1,19 @@
 {
-  "schema_version": 1,
-  "product_kind": "upstream-cpython-android-package",
-  "python_version": "3.14.6",
-  "source_head": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
-  "target_host": "aarch64-linux-android",
   "android_api": 24,
-  "ndk_version": "27.3.13750724",
   "archive": {
     "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
-    "size_bytes": 22346066,
-    "sha256": "a16e0433b6f7e69c4634b52ce582d4d387447fbcfed797425f669ac224631f4f"
+    "sha256": "517f4b0d113c4c1cf6931c230b6b517bee7a2b7f8b4f0f099a148260fa3ac8e7",
+    "size_bytes": 22346012
   },
-  "package_prefix_root": "prefix",
+  "canonical_host": "aarch64-unknown-linux-android",
+  "launcher": {
+    "architecture": "R2 conditional self re-exec + B0 PyConfig auto-discovery",
+    "binary_sha256": "bcaf6dd6eb6b156f202ef7c59056f9b0c3f2b9a4ed687f38cf7970f46d40c1bc",
+    "build_info_sha256": "bf80a4e7439e5086fbd89582d0f544940a33aa47bce3761edcc00290d48af0f3",
+    "size_bytes": 11064,
+    "source": "src/launcher/python.c",
+    "source_sha256": "f16ad4e089d836a1e5bfaf11b426f004f674f182c4a73fab1b0a9f6ca5afd542"
+  },
   "launcher_development_contract": {
     "include/python3.14/Python.h": {
       "sha256": "e39aad93d70c3ea1a63b77ec5795ff59a5c177745aedace6f83bbf4275a20d9f"
@@ -20,7 +22,68 @@
       "sha256": "f92a48f0cfce0f5f687590ed9c485d3381dfaaff16ba320e0be5a413b7b98fb5"
     },
     "lib/libpython3.14.so": {
-      "sha256": "f7d1a53e32186eb304ce1192f408994b557fe78e6e05c0c0c4d0934998b894a9"
+      "sha256": "6602e6cd634344f8caa5e578f32e2c2e86884644d30fca3cd4e2fc56aa58415a"
     }
+  },
+  "ndk_version": "27.3.13750724",
+  "package_prefix_root": "prefix",
+  "prefix_snapshot_sha256": "3081a1b150473ff6d6896589a2898cb38baf831e0f811af2bd0447c29b36bb89",
+  "producer_authority": {
+    "authority_index_sha256": "1ef9bf7cfac11dd592241ad08e0c2eb8105148782044d78c48a7481d0f93f4f2",
+    "authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p2/producers/termux-native-cpython3146/frozen-product-v1",
+    "binding_contract": "components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json",
+    "freeze_commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
+    "kind": "e2p2-termux-native-cpython3146-producer-authority-freeze",
+    "path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json",
+    "preserved_unselected_artifacts": [
+      "test-addon"
+    ],
+    "selected_artifacts": [
+      "runtime-base",
+      "development-addon"
+    ]
+  },
+  "product_fingerprints": {
+    "canonical_promoted": "b404bd57aae0fb08d5844af5b077630a0e39aba61456a6e7db96aafb277b4a19",
+    "excluded": "e884c792c0600c30db659e6400f27f22da1a8f018f12a29f62e26ad0285c064e",
+    "runtime_base": "33aff855e8cd855fb4eab729a4f2b653d3c2e7eb1df7693c07f26f4ea6d25f8c",
+    "selected_complete": "88d5062d24575a8c787ac6154165a773b1aade9f230cfe1e23d0ec2b050db428"
+  },
+  "product_kind": "upstream-cpython-android-package",
+  "python_version": "3.14.6",
+  "schema_version": 1,
+  "soabi": "cpython-314-aarch64-linux-android",
+  "source_archive": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "517f4b0d113c4c1cf6931c230b6b517bee7a2b7f8b4f0f099a148260fa3ac8e7",
+    "size_bytes": 22346012
+  },
+  "source_head": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+  "standalone_artifacts": {
+    "development-addon": {
+      "manifest_sha256": "d0dc69fc03552117e1f0d19df09c3230d6eb0436f50595274e8dde60f983e2ce",
+      "owned_paths": 454,
+      "sha256": "73dc90a8ead6c58d040a2fc31386f1c00ff38ce84fd4507229e8e9bc18902b6f",
+      "size": 899721,
+      "structural_references": 2
+    },
+    "runtime-base": {
+      "manifest_sha256": "c8e182282605eeda874805a4c4b1847a82c24252443c59770337e2c0379739ca",
+      "owned_paths": 714,
+      "sha256": "7119e97cb43fb19ef4dce3eec145bb867b8070b9f8b7772c74a5885f4fe53c03",
+      "size": 11838261
+    },
+    "test-addon": {
+      "manifest_sha256": "a2d90bc30139337f4d3106a0a5a21f6ade3208cb307e0b46d9f25ced57af4697",
+      "owned_paths": 1788,
+      "sha256": "5bb4c1a45a2c04031c8c8c1a0be05fc02ad4653f21492b63559039105be5ce03",
+      "size": 6270973,
+      "structural_references": 2
+    }
+  },
+  "target_host": "aarch64-linux-android",
+  "toolchain": {
+    "original_lld_sha256": "cf9f6f56dfcb286d52425a73f5ba7c7a17966cc2c71bea0ccb0f16c21d07b15b",
+    "overlay_lld_sha256": "eee71a33b1c9924eeb576673d033008b1e520f84a112a7102cc9482142bf5a09"
   }
 }
