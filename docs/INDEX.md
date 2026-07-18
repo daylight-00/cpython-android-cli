@@ -13,6 +13,10 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 ## Epoch 2 contracts and evidence
 
+- [`contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md`](contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md)
+- [`evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md`](evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md)
+- [`handoff/2026-07-18-e2p3-secondary-real-device-amendment.md`](handoff/2026-07-18-e2p3-secondary-real-device-amendment.md)
+
 - [`evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
 - [`handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md)
 - [`evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)

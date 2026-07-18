@@ -13,10 +13,10 @@ Epoch 1  Android CPython CLI adaptation, installation lifecycle,
          managed-Python consumption, publication, and acquisition   FROZEN
 
 Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — E2-P3 real Termux qualification frozen; emulator next
+         installer-consumer separation, and repository promotion    ACTIVE — E2-P3 dual-real-device amendment frozen; Note9 qualification next
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are frozen as a separate authority. The façade is explicitly bound to that authority. Real stable façade build/package execution, the deterministic unqualified E2-P1 envelope, and independent static review are frozen. The E2-P3 archive qualification contract is frozen. The first real-Termux run reached 33/35 and exposed two harness-only false negatives. The corrected retry passed 35/35, result verification passed 19/19, and independent review passed 38/38. This individual real-device profile is frozen while emulator qualification and combined acceptance remain open.
+Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are frozen as a separate authority. The façade is explicitly bound to that authority. Real stable façade build/package execution, the deterministic unqualified E2-P1 envelope, and independent static review are frozen. The original E2-P3 archive qualification contract is preserved. The first real-Termux run reached 33/35 and exposed two harness-only false negatives. The corrected retry passed 35/35, result verification passed 19/19, and independent review passed 38/38 on the primary Galaxy S22 Ultra. Native ARM64 Android Emulator execution proved infeasible on the available x86_64 host. An explicit amendment replaces that remaining experiment with a second physical-device qualification on an Exynos 9810 Galaxy Note9 running Android API 29. Emulator qualification is waived rather than claimed, and the secondary-device run is next.
 
 Current entry points:
 
@@ -28,6 +28,7 @@ Current entry points:
 - [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md)
 - [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
 - [`docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
+- [`docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md`](docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md)
 - [`docs/evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](docs/evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
 - [`docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
 - [`docs/evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](docs/evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
@@ -55,7 +56,8 @@ Epoch 2 P2 Gate 1 standalone façade implementation        frozen — synthetic 
 Epoch 2 P2 Termux-native CPython 3.14.6 producer authority frozen
 Epoch 2 P2 façade producer binding                             frozen
 Epoch 2 P2 bound façade execution authority                    frozen — 52/52 + 27/27
-Epoch 2 P3 real Termux archive qualification                  frozen — 35/35 + 19/19 + 38/38; emulator next
+Epoch 2 P3 primary real-device qualification                 frozen — 35/35 + 19/19 + 38/38
+Epoch 2 P3 secondary-device amendment                         frozen — Note9 API 29 qualification next; emulator waived
 ```
 
 ## Frozen runtime architecture

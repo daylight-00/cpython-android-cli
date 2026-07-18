@@ -40,7 +40,7 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 ## E2-P3 — Metadata and qualification
 
-> **Status:** ACTIVE — real Termux profile frozen; emulator qualification next
+> **Status:** ACTIVE — primary real-device profile frozen; secondary Note9 profile next; emulator waived
 
 **Goal:** qualify relocation, ELF closure, extension imports, HTTPS, venv, pip, uv explicit-interpreter workflows, wheel tags, and product fidelity from extracted artifacts.
 
@@ -50,9 +50,11 @@ Each phase defines one bounded authority. A later phase may consume a frozen ear
 
 **Real-Termux authority frozen:** the corrected retry passed 35/35, result verification passed 19/19, and independent review passed 38/38 on a real aarch64 Android API 36 Termux host. The result remains individually unselectable and claims no emulator or combined qualification.
 
-**Next bounded gate:** run only the separate `termux-emulator` profile with the same frozen envelope and harness. Do not rerun the accepted real-device profile or begin metadata finalization.
+**Environment disposition amendment:** the available x86_64 workstation cannot boot the required ARM64 Android Emulator image, and an x86_64 guest cannot natively qualify the frozen aarch64 product. The emulator objective is waived rather than passed. It is replaced by an independent second physical-device profile on an Exynos 9810 Galaxy Note9 running Android API 29. The original emulator and combined real-plus-emulator claims remain unmet.
 
-**Acceptance:** archive-only qualification on emulator and real Termux evidence where the claim is target-specific. Qualification metadata becomes selectable only after all required classes pass and a separate metadata-finalization gate succeeds.
+**Next bounded gate:** run only the secondary physical-device package on the Note9. The wrapper must enforce the exact device identity and invoke the unchanged `termux-real` 35-check matrix against the same frozen envelope. Do not rerun the accepted S22 Ultra profile or begin metadata finalization.
+
+**Amended acceptance:** primary and secondary physical-device profiles pass independently, followed by a separate dual-real-device closure. This permits only an API 29/API 36 dual-device aarch64 Termux compatibility claim. Emulator coverage, selectability, and publication remain unclaimed.
 
 ## E2-P4 — Installer artifact-only conversion
 

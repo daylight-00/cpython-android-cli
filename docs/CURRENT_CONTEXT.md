@@ -1,8 +1,8 @@
 # Current Project Context
 
 > **Current epoch:** Epoch 2
-> **Current phase:** E2-P3 real Termux archive qualification authority frozen
-> **Next phase:** run the separate `termux-emulator` archive-only qualification against the same frozen envelope
+> **Current phase:** E2-P3 secondary real-device amendment frozen
+> **Next phase:** qualify the same frozen envelope on the Exynos 9810 Galaxy Note9 / Android API 29
 > **Frozen predecessor:** Epoch 1 through Stage 3-F
 > **Epoch 1 predecessor commit:** `e1de252740a96c40f3d587269136235a2c84ea16`
 > **Epoch 2 Phase 0 commit:** `a34e5fdc6224e66aa7ed335e921780fbadd728dc`
@@ -135,6 +135,40 @@ selectable                    false
 
 The accepted target result proves only the individual real-Termux profile. Emulator qualification, combined acceptance, metadata finalization, selectability, publication, installer conversion, and transition behavior remain open.
 
+## Frozen E2-P3 secondary real-device amendment
+
+The primary real-device authority was produced on the Samsung Galaxy S22 Ultra:
+
+```text
+machine        aarch64
+ABI            arm64-v8a
+Android API    36
+Android        16
+hardware       qcom
+kernel         5.10.236-android12-9-31998796-abS908NKSS9GZE5
+qemu           0
+```
+
+The original second target was an ARM64 Android Emulator. The available Linux workstation is x86_64. Its x86_64 AVD boots but cannot natively qualify the frozen aarch64 product, while the ARM64 AVD is rejected by Android Emulator QEMU2 before boot because the guest architecture does not match the host. The emulator objective is therefore explicitly waived, not passed.
+
+E2-P3 now substitutes an independent second physical-device run on the Samsung Galaxy Note9 / Exynos 9810:
+
+```text
+profile authority              termux-real-secondary-exynos9810-api29
+qualifier execution profile    termux-real
+machine                        aarch64
+ABI                            arm64-v8a
+Android API                    29
+Android                        10
+hardware                       samsungexynos9810
+kernel                         4.9.118-24343300
+qemu                           0
+qualification matrix           unchanged 35 checks
+selectable                     false
+```
+
+This amendment preserves the original contract as historical authority and does not claim emulator coverage. If the Note9 run passes, E2-P3 may claim dual-real-device aarch64 Termux compatibility across API 29 and API 36, but not real-plus-emulator acceptance.
+
 ## Current claim boundary
 
 ```text
@@ -148,8 +182,10 @@ static envelope review      frozen — 52/52 + 27/27
 E2-P3 contract              frozen
 qualification harness        correction frozen
 real Termux qualification    frozen — 35/35 + 19/19 + 38/38
-emulator qualification       next
-combined qualification       not yet claimed
+emulator qualification       waived — infrastructure infeasible; not claimed
+secondary real qualification next — Note9 / Exynos 9810 / API 29
+dual-real-device acceptance  not yet claimed
+original combined acceptance not claimed
 selectability                false
 publication                 not permitted
 transition behavior         not reopened
@@ -157,15 +193,18 @@ transition behavior         not reopened
 
 ## Immediate reading path
 
-1. [`evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
-2. [`handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md)
-3. [`evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
-4. [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
-5. [`../experiments/epoch2-archive-qualification/`](../experiments/epoch2-archive-qualification/)
-6. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
-7. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
-8. [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
+1. [`contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md`](contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md)
+2. [`evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md`](evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md)
+3. [`handoff/2026-07-18-e2p3-secondary-real-device-amendment.md`](handoff/2026-07-18-e2p3-secondary-real-device-amendment.md)
+4. [`evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
+5. [`handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md)
+6. [`evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
+7. [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
+8. [`../experiments/epoch2-archive-qualification/`](../experiments/epoch2-archive-qualification/)
+9. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
+10. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
+11. [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
 
 ## Next bounded gate
 
-Run only the separate `termux-emulator` profile with the frozen contract, corrected harness, and exact same private envelope. Do not rerun producer/build/package or the accepted real-Termux profile. Keep combined acceptance, metadata finalization, selectability, publication, installer conversion, transition behavior, and the post-E2-P3 scope redesign separate.
+Run only the secondary physical-device qualification package on the Exynos 9810 Galaxy Note9. It must preflight the exact Note9 identity and then invoke the unchanged `termux-real` 35-check matrix against the exact same private envelope. Do not rerun producer/build/package or the accepted S22 Ultra profile. Keep dual-real-device closure, metadata finalization, selectability, publication, installer conversion, transition behavior, and the post-E2-P3 scope redesign separate.

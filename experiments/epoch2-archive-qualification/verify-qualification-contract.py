@@ -18,6 +18,8 @@ CORRECTION_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/qualificat
 CORRECTION_AUDIT_PATH = "experiments/epoch2-archive-qualification/qualification-harness-correction-external-audit.json"
 REAL_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json"
 REAL_AUDIT_PATH = "experiments/epoch2-archive-qualification/real-termux-qualification-external-audit.json"
+AMENDMENT_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json"
+AMENDMENT_AUDIT_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-amendment-external-audit.json"
 CONTRACT_PATH = "components/standalone/contracts/qualification-v1.json"
 SCHEMA_PATH = "components/standalone/schemas/qualification-result-v1.schema.json"
 VERIFY_PATH = "experiments/epoch2-archive-qualification/verify-qualification-contract.py"
@@ -32,6 +34,10 @@ FAILED_REAL_RESULT_SHA = "0864173ef3b6b735ef3168b26aed6c5052296289a7c0771cb05754
 HARNESS_CORRECTION_RESULT_SHA = "938466af2d5dc58e1551a1ef4a66cab38b85d847f06e4dde3214335f3f432a1b"
 REAL_RESULT_ARCHIVE_SHA = "b92b041b78b21e0a3b402e54a15e008008db13320a264284d604f39046907e0b"
 REAL_TARGET_INDEX_SHA = "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1"
+PRE_AMENDMENT_COMMIT = "c05cf9b608b69903aabaf42047cfa921276a6069"
+PRE_AMENDMENT_TREE = "8ed6e6ed6b00378324d6774132e211353b7caa75"
+EMULATOR_PHYSICAL_FAILURE_SHA = "ff30d1ddc9be0102c9daf759e6a0b1bed08cf334edfe6a042f9a6959b4c57e73"
+ARM64_AVD_X86_NEGATIVE_SHA = "74523e3743353cb83a750ab4ae7606213ef276568fafba9e4e697d057d5302fe"
 PRE_REAL_COMMIT = "2a60dfa977e6f14e34203f876dcb1cafaf83f15c"
 PRE_REAL_TREE = "acd6c00d96e3831aabc23a80508489c3a2e4eb7c"
 EXPECTED_ARCHIVE = "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727"
@@ -40,6 +46,14 @@ EXPECTED_PRIVATE = "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84f
 EXPECTED_HISTORICAL_FAILURES = {"documentation", "file_identities", "regression"}
 EXPECTED_EXECUTION_FAILURES = {"binding_adjudication", "documentation", "file_identities", "verify_route"}
 EXPECTED_BINDING_FAILURES = {"documentation", "file_identities", "historical_facade_adjudication", "verify_route"}
+EXPECTED_REAL_DRIFT = {
+    "README.md",
+    "docs/CURRENT_CONTEXT.md",
+    "docs/INDEX.md",
+    "docs/roadmap/EPOCH2_ROADMAP.md",
+    "experiments/epoch2-archive-qualification/README.md",
+    VERIFY_PATH,
+}
 EXPECTED_CORRECTION_DRIFT = {
     "README.md",
     "docs/CURRENT_CONTEXT.md",
@@ -125,6 +139,8 @@ def main() -> int:
         "correction_audit": CORRECTION_AUDIT_PATH,
         "real_authority": REAL_AUTHORITY_PATH,
         "real_audit": REAL_AUDIT_PATH,
+        "amendment_authority": AMENDMENT_AUTHORITY_PATH,
+        "amendment_audit": AMENDMENT_AUDIT_PATH,
         "contract": CONTRACT_PATH,
         "schema": SCHEMA_PATH,
         "facade": "components/standalone/contracts/facade-v1.json",
@@ -142,6 +158,8 @@ def main() -> int:
     correction_audit = values["correction_audit"]
     real_authority = values["real_authority"]
     real_audit = values["real_audit"]
+    amendment = values["amendment_authority"]
+    amendment_audit = values["amendment_audit"]
     contract = values["contract"]
     schema = values["schema"]
     facade = values["facade"]
@@ -190,8 +208,46 @@ def main() -> int:
     ck("real_authority_claim_boundary", real_authority.get("claim_boundary") == real_boundary)
     ck("real_authority_verification", real_authority.get("verification") == {"external_audit": "34/34", "independent_review": "38/38", "qualification": "35/35", "repository": "44/44-staged-and-commit", "result_verifier": "19/19"})
     real_ids = real_authority.get("file_identities", {})
-    ck("real_authority_file_identities", isinstance(real_ids, dict) and bool(real_ids) and all((root / path).is_file() and sha(root / path) == digest for path, digest in real_ids.items()))
+    real_drift = {
+        path for path, digest in real_ids.items()
+        if not (root / path).is_file() or sha(root / path) != digest
+    } if isinstance(real_ids, dict) else set()
+    ck("real_authority_drift_adjudication", real_drift == EXPECTED_REAL_DRIFT)
     ck("real_external_audit", real_audit.get("schema_version") == 1 and real_audit.get("audit_kind") == "e2p3-real-termux-archive-qualification-external-audit" and real_audit.get("source", {}).get("result_archive_sha256") == REAL_RESULT_ARCHIVE_SHA and real_audit.get("source", {}).get("target_authority_index_sha256") == REAL_TARGET_INDEX_SHA and real_audit.get("claim_boundary") == real_boundary and real_audit.get("pass") is True and real_audit.get("check_count") == 34 and real_audit.get("pass_count") == 34 and real_audit.get("failed_checks") == [] and all(real_audit.get("checks", {}).values()))
+
+    amendment_boundary = {
+        "combined_real_emulator_acceptance": False,
+        "dual_real_device_acceptance": False,
+        "emulator_profile": False,
+        "installer_conversion": False,
+        "metadata_finalization": False,
+        "original_contract_fully_satisfied": False,
+        "primary_real_device_profile": True,
+        "publication": False,
+        "secondary_real_device_profile": False,
+        "selectability": False,
+        "transition_behavior": False,
+    }
+    ck("amendment_identity", amendment.get("schema_version") == 1 and amendment.get("authority_kind") == "e2p3-secondary-real-device-amendment" and amendment.get("amendment_version") == 1 and amendment.get("status") == "frozen-design-secondary-real-device-next")
+    ck("amendment_predecessor", amendment.get("predecessor") == {"commit": PRE_AMENDMENT_COMMIT, "tree": PRE_AMENDMENT_TREE})
+    original_contract = amendment.get("original_contract", {})
+    ck("amendment_original_contract_preserved", original_contract == {"path": CONTRACT_PATH, "preserved_unchanged": True, "required_profiles": ["termux-real", "termux-emulator"], "original_combined_acceptance_met": False})
+    primary = amendment.get("primary_profile", {})
+    ck("amendment_primary_identity", primary.get("authority_name") == "termux-real-primary-s22-ultra-api36" and primary.get("qualifier_profile") == "termux-real" and primary.get("machine") == "aarch64" and primary.get("android_api") == 36 and primary.get("android_release") == "16" and primary.get("hardware") == "qcom" and primary.get("qemu") is False and primary.get("kernel") == "5.10.236-android12-9-31998796-abS908NKSS9GZE5")
+    ck("amendment_primary_authority", primary.get("qualification") == "35/35" and primary.get("result_verifier") == "19/19" and primary.get("independent_review") == "38/38" and primary.get("result_archive_sha256") == REAL_RESULT_ARCHIVE_SHA and primary.get("target_authority_index_sha256") == REAL_TARGET_INDEX_SHA)
+    emulator = amendment.get("emulator_disposition", {})
+    ck("amendment_emulator_infeasibility", emulator == {"status": "waived-infrastructure-infeasible-not-qualified", "physical_device_attempt_result_sha256": EMULATOR_PHYSICAL_FAILURE_SHA, "arm64_avd_x86_host_negative_archive_sha256": ARM64_AVD_X86_NEGATIVE_SHA, "x86_64_avd_product_fidelity": False, "emulator_claim": False})
+    secondary = amendment.get("secondary_profile", {})
+    ck("amendment_secondary_identity", secondary.get("authority_name") == "termux-real-secondary-exynos9810-api29" and secondary.get("qualifier_profile") == "termux-real" and secondary.get("device") == "Samsung Galaxy Note9" and secondary.get("soc") == "Exynos 9810" and secondary.get("machine") == "aarch64" and secondary.get("abilist") == ["arm64-v8a", "armeabi-v7a", "armeabi"] and secondary.get("android_api") == 29 and secondary.get("android_release") == "10" and secondary.get("hardware") == "samsungexynos9810" and secondary.get("qemu") is False and secondary.get("kernel") == "4.9.118-24343300" and secondary.get("prefix") == "/data/data/com.termux/files/usr")
+    ck("amendment_secondary_matrix", secondary.get("check_count") == 35 and secondary.get("evidence_count") == 14 and secondary.get("authority_remote") == "gdrive:HW-T/cpython-android-cli/authorities/e2p3/qualifications/termux-native-cpython3146/termux-real-secondary-exynos9810-api29-v1")
+    ck("amendment_harness_preserved", amendment.get("harness") == {"stable_command": "components/standalone/bin/cpython-android-qualify", "matrix_unchanged": True, "qualifier_profile": "termux-real", "wrapper_exact_device_preflight": True})
+    ck("amendment_closure_policy", amendment.get("closure_policy") == {"required_profiles": ["termux-real-primary-s22-ultra-api36", "termux-real-secondary-exynos9810-api29"], "accepted_claim_after_secondary_freeze": "dual-real-device-aarch64-termux-compatibility", "emulator_claim": False, "real_emulator_combined_claim": False})
+    ck("amendment_claim_boundary", amendment.get("claim_boundary") == amendment_boundary)
+    amendment_ids = amendment.get("file_identities", {})
+    ck("amendment_file_identities", isinstance(amendment_ids, dict) and bool(amendment_ids) and all((root / path).is_file() and sha(root / path) == digest for path, digest in amendment_ids.items()))
+    audit_sources = amendment_audit.get("sources", {})
+    ck("amendment_external_audit", amendment_audit.get("schema_version") == 1 and amendment_audit.get("audit_kind") == "e2p3-secondary-real-device-amendment-external-audit" and amendment_audit.get("pass") is True and amendment_audit.get("check_count") == 30 and amendment_audit.get("pass_count") == 30 and amendment_audit.get("failed_checks") == [] and all(amendment_audit.get("checks", {}).values()) and amendment_audit.get("claim_boundary") == amendment_boundary and audit_sources.get("primary_result_archive_sha256") == REAL_RESULT_ARCHIVE_SHA and audit_sources.get("primary_target_authority_index_sha256") == REAL_TARGET_INDEX_SHA and audit_sources.get("physical_device_emulator_attempt_sha256") == EMULATOR_PHYSICAL_FAILURE_SHA and audit_sources.get("arm64_avd_x86_host_negative_archive_sha256") == ARM64_AVD_X86_NEGATIVE_SHA)
+    ck("amendment_next_action", amendment.get("next_action_class") == "execute-e2p3-secondary-real-device-archive-qualification")
 
     ck("contract_identity", contract.get("schema_version") == 1 and contract.get("contract_version") == 1 and contract.get("qualification_kind") == "hw-t-standalone-archive-qualification" and contract.get("status") == "frozen-design-no-target-evidence")
     input_authority = contract.get("input_authority", {})
@@ -232,14 +288,17 @@ def main() -> int:
     experiment = (root / "experiments/epoch2-archive-qualification/README.md").read_text(encoding="utf-8")
     evidence_doc = root / "docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md"
     handoff_doc = root / "docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md"
-    ck("documentation", "E2-P3 real Termux archive qualification authority frozen" in current and "real Termux profile frozen; emulator qualification next" in roadmap and "Harness correction v1" in contract_doc and "corrected retry passed 35/35" in experiment and evidence_doc.is_file() and handoff_doc.is_file())
+    amendment_contract_doc = root / "docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md"
+    amendment_evidence_doc = root / "docs/evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md"
+    amendment_handoff_doc = root / "docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md"
+    ck("documentation", "E2-P3 secondary real-device amendment frozen" in current and "secondary Note9 profile next; emulator waived" in roadmap and "Harness correction v1" in contract_doc and "second physical-device run" in experiment and evidence_doc.is_file() and handoff_doc.is_file() and amendment_contract_doc.is_file() and amendment_evidence_doc.is_file() and amendment_handoff_doc.is_file())
     ck("real_target_claim", real_authority.get("claim_boundary", {}).get("individual_real_termux_profile") is True and real_authority.get("claim_boundary", {}).get("emulator_profile") is False and real_authority.get("claim_boundary", {}).get("selectability") is False)
-    ck("next_action", real_authority.get("next_action_class") == "execute-e2p3-termux-emulator-archive-qualification")
+    ck("next_action", amendment.get("next_action_class") == "execute-e2p3-secondary-real-device-archive-qualification")
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
         "schema_version": 1,
-        "verification_kind": "e2p3-real-termux-archive-qualification-freeze",
+        "verification_kind": "e2p3-secondary-real-device-amendment",
         "pass": not failed and not errors,
         "check_count": len(checks),
         "pass_count": sum(checks.values()),
@@ -253,7 +312,7 @@ def main() -> int:
                 "execution_authority": historical_execution,
             }
         },
-        "claim_boundary": "The individual real-Termux profile is frozen as qualified and remains unselectable. Emulator qualification, combined qualification, metadata finalization, publication, installer conversion, and transitions remain unclaimed.",
+        "claim_boundary": "The primary real-device profile is frozen. The emulator objective is waived without qualification and a Note9 secondary physical-device run is next. Dual-device acceptance, original real-plus-emulator acceptance, metadata finalization, selectability, publication, installer conversion, and transitions remain unclaimed.",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["pass"] else 1

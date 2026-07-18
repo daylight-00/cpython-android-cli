@@ -1,0 +1,111 @@
+{
+  "amendment_version": 1,
+  "authority_kind": "e2p3-secondary-real-device-amendment",
+  "claim_boundary": {
+    "combined_real_emulator_acceptance": false,
+    "dual_real_device_acceptance": false,
+    "emulator_profile": false,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "original_contract_fully_satisfied": false,
+    "primary_real_device_profile": true,
+    "publication": false,
+    "secondary_real_device_profile": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "closure_policy": {
+    "accepted_claim_after_secondary_freeze": "dual-real-device-aarch64-termux-compatibility",
+    "emulator_claim": false,
+    "real_emulator_combined_claim": false,
+    "required_profiles": [
+      "termux-real-primary-s22-ultra-api36",
+      "termux-real-secondary-exynos9810-api29"
+    ]
+  },
+  "emulator_disposition": {
+    "arm64_avd_x86_host_negative_archive_sha256": "74523e3743353cb83a750ab4ae7606213ef276568fafba9e4e697d057d5302fe",
+    "emulator_claim": false,
+    "physical_device_attempt_result_sha256": "ff30d1ddc9be0102c9daf759e6a0b1bed08cf334edfe6a042f9a6959b4c57e73",
+    "status": "waived-infrastructure-infeasible-not-qualified",
+    "x86_64_avd_product_fidelity": false
+  },
+  "file_identities": {
+    "README.md": "57fb9908d680ed60b25a40d37e67d32b5af6159d8aa2faed354bb8a8d0914502",
+    "docs/CURRENT_CONTEXT.md": "f82a726d1e4ec51fe9261c23f19a6c4513ec8f6069766d022673a0feea055f1c",
+    "docs/INDEX.md": "42f638c7fc56fdaa7cc6fe83660edbf8062899c142351e86cb0aeb83d4cc94ce",
+    "docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md": "be6dd23d1acea714474713bb0f664edbfea527a60caff3e4582658b8d2a4aaa4",
+    "docs/evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md": "b9e222b9eb91fc2308f562684f56c8e324b2935ff4865f5cb8423434d529a0fc",
+    "docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md": "0562c9b3fadcb5f15b96ab4a7ee61824d7db17bfd39dd5402d00819760111ea8",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "b66df0c5361827e57964560137b4e1b2a88249008c6aa207a4bc71f06a084f62",
+    "experiments/epoch2-archive-qualification/README.md": "ad6ec737823bdb437236a94e1462877ade4b3840391facaeedacdc06702677dc",
+    "experiments/epoch2-archive-qualification/secondary-real-device-amendment-external-audit.json": "53640fd08efc796ac017dc3a211bcb0089371e794e784f3f525a28fd977eba54",
+    "experiments/epoch2-archive-qualification/verify-qualification-contract.py": "36a0954973149fd8edd41e0d69838f5da9bad0a548bb3de71194304bced6298d"
+  },
+  "harness": {
+    "matrix_unchanged": true,
+    "qualifier_profile": "termux-real",
+    "stable_command": "components/standalone/bin/cpython-android-qualify",
+    "wrapper_exact_device_preflight": true
+  },
+  "next_action_class": "execute-e2p3-secondary-real-device-archive-qualification",
+  "original_contract": {
+    "original_combined_acceptance_met": false,
+    "path": "components/standalone/contracts/qualification-v1.json",
+    "preserved_unchanged": true,
+    "required_profiles": [
+      "termux-real",
+      "termux-emulator"
+    ]
+  },
+  "predecessor": {
+    "commit": "c05cf9b608b69903aabaf42047cfa921276a6069",
+    "tree": "8ed6e6ed6b00378324d6774132e211353b7caa75"
+  },
+  "primary_profile": {
+    "abilist": [
+      "arm64-v8a"
+    ],
+    "android_api": 36,
+    "android_release": "16",
+    "authority_name": "termux-real-primary-s22-ultra-api36",
+    "device": "Samsung Galaxy S22 Ultra",
+    "hardware": "qcom",
+    "independent_review": "38/38",
+    "kernel": "5.10.236-android12-9-31998796-abS908NKSS9GZE5",
+    "machine": "aarch64",
+    "qemu": false,
+    "qualification": "35/35",
+    "qualifier_profile": "termux-real",
+    "result_archive_sha256": "b92b041b78b21e0a3b402e54a15e008008db13320a264284d604f39046907e0b",
+    "result_verifier": "19/19",
+    "target_authority_index_sha256": "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1"
+  },
+  "schema_version": 1,
+  "secondary_profile": {
+    "abilist": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "android_api": 29,
+    "android_release": "10",
+    "authority_name": "termux-real-secondary-exynos9810-api29",
+    "authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p3/qualifications/termux-native-cpython3146/termux-real-secondary-exynos9810-api29-v1",
+    "check_count": 35,
+    "device": "Samsung Galaxy Note9",
+    "evidence_count": 14,
+    "hardware": "samsungexynos9810",
+    "kernel": "4.9.118-24343300",
+    "machine": "aarch64",
+    "prefix": "/data/data/com.termux/files/usr",
+    "qemu": false,
+    "qualifier_profile": "termux-real",
+    "soc": "Exynos 9810"
+  },
+  "status": "frozen-design-secondary-real-device-next",
+  "verification": {
+    "external_audit": "30/30",
+    "repository": "pending-transaction"
+  }
+}
