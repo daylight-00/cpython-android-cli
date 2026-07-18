@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "const": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped"
+    },
+    "check_count": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "checks": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "combined_target_qualification": {
+          "const": false
+        },
+        "installer_conversion": {
+          "const": false
+        },
+        "metadata_finalization": {
+          "const": false
+        },
+        "publication": {
+          "const": false
+        },
+        "selectability": {
+          "const": false
+        },
+        "transition_behavior": {
+          "const": false
+        }
+      },
+      "required": [
+        "combined_target_qualification",
+        "installer_conversion",
+        "metadata_finalization",
+        "publication",
+        "selectability",
+        "transition_behavior"
+      ],
+      "type": "object"
+    },
+    "contract_version": {
+      "const": 1
+    },
+    "evidence": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "filename": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "size": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "filename",
+          "sha256",
+          "size"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "failed_checks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "host": {
+      "type": "object"
+    },
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_sha256": {
+          "const": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727"
+        },
+        "execution_authority": {
+          "const": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json"
+        },
+        "private_authority_index_sha256": {
+          "const": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5"
+        },
+        "release_index_sha256": {
+          "const": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85"
+        }
+      },
+      "required": [
+        "archive_sha256",
+        "execution_authority",
+        "private_authority_index_sha256",
+        "release_index_sha256"
+      ],
+      "type": "object"
+    },
+    "observations": {
+      "type": "object"
+    },
+    "pass": {
+      "type": "boolean"
+    },
+    "pass_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "profile": {
+      "enum": [
+        "static",
+        "termux-real",
+        "termux-emulator"
+      ]
+    },
+    "qualification_kind": {
+      "const": "hw-t-standalone-archive-qualification-result"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "selectable": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "failed",
+        "passed-individual-profile"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "qualification_kind",
+    "contract_version",
+    "profile",
+    "artifact_id",
+    "input",
+    "host",
+    "checks",
+    "check_count",
+    "pass_count",
+    "failed_checks",
+    "pass",
+    "status",
+    "selectable",
+    "observations",
+    "evidence",
+    "claim_boundary"
+  ],
+  "title": "HW-T E2-P3 archive qualification result v1",
+  "type": "object"
+}

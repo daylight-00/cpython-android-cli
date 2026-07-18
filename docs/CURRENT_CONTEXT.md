@@ -1,8 +1,8 @@
 # Current Project Context
 
 > **Current epoch:** Epoch 2
-> **Current phase:** E2-P2 bound façade execution authority frozen
-> **Next phase:** E2-P3 archive-only qualification of the frozen envelope
+> **Current phase:** E2-P3 archive qualification contract frozen
+> **Next phase:** real Termux archive-only qualification of the frozen envelope
 > **Frozen predecessor:** Epoch 1 through Stage 3-F
 > **Epoch 1 predecessor commit:** `e1de252740a96c40f3d587269136235a2c84ea16`
 > **Epoch 2 Phase 0 commit:** `a34e5fdc6224e66aa7ed335e921780fbadd728dc`
@@ -98,6 +98,21 @@ independent review       27/27
 
 The real stable façade `build` and `package` operations completed on the canonical Termux host. The private authority stores the exact unqualified E2-P1 envelope and supporting receipts. This is an execution and static-review authority, not target qualification, selectability, or publication authority.
 
+## Frozen E2-P3 qualification contract
+
+```text
+stable command          components/standalone/bin/cpython-android-qualify
+contract version        1
+static checks           9
+termux-real checks      35
+termux-emulator checks  35
+result verifier         19
+regression              19/19
+static replay           9/9 + 19/19
+```
+
+The contract consumes the frozen private envelope without rerunning E2-P2. Gate 1 freezes design and harness behavior only; no Android target evidence is claimed.
+
 ## Current claim boundary
 
 ```text
@@ -108,7 +123,8 @@ façade producer binding     frozen
 bound façade execution      frozen
 real E2-P1 envelope         frozen — unqualified
 static envelope review      frozen — 52/52 + 27/27
-E2-P3 target qualification  not started
+E2-P3 contract              frozen — no target evidence
+real Termux qualification    next
 selectability               false
 publication                 not permitted
 transition behavior         not reopened
@@ -116,9 +132,12 @@ transition behavior         not reopened
 
 ## Immediate reading path
 
-1. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
-2. [`../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json`](../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json)
-3. [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
+1. [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
+2. [`evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
+3. [`../experiments/epoch2-archive-qualification/`](../experiments/epoch2-archive-qualification/)
+4. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
+5. [`../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json`](../experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json)
+6. [`contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 4. [`contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md`](contracts/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY.md)
 5. [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_PRODUCER_AUTHORITY_FREEZE.md)
 6. [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
@@ -126,4 +145,4 @@ transition behavior         not reopened
 
 ## Next bounded gate
 
-Consume the frozen private envelope authority without rerunning the producer or package step. Perform E2-P3 archive-only qualification on emulator and real Termux evidence, while keeping selectability, publication, installer conversion, and transition behavior separate.
+Execute only the `termux-real` profile from the frozen private envelope authority. Preserve archive-only target evidence and independent result verification while keeping emulator qualification, combined metadata finalization, selectability, publication, installer conversion, and transition behavior separate.

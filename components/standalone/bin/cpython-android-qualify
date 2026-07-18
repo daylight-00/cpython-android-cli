@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd -P)"
+exec python3 "$PROJECT_ROOT/components/standalone/lib/qualify_archive.py" \
+  --root "$PROJECT_ROOT" \
+  --contract "$PROJECT_ROOT/components/standalone/contracts/qualification-v1.json" \
+  "$@"

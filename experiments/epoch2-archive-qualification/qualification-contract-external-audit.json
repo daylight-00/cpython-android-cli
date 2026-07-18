@@ -1,0 +1,50 @@
+{
+  "audit_kind": "e2p3-archive-qualification-contract-external-audit",
+  "check_count": 25,
+  "checks": {
+    "archive_immutable": true,
+    "archive_safety": true,
+    "artifact_identity": true,
+    "elf_count": true,
+    "emulator_matrix": true,
+    "envelope_archive": true,
+    "manifest_count": true,
+    "manifest_fidelity": true,
+    "no_target_execution": true,
+    "predecessor_commit": true,
+    "prior_freeze_archive": true,
+    "private_index": true,
+    "profile_set": true,
+    "real_matrix": true,
+    "regression": true,
+    "release_index": true,
+    "schema_unselectable": true,
+    "selection_policy": true,
+    "stable_command": true,
+    "static_evidence_matrix": true,
+    "static_matrix": true,
+    "static_qualification": true,
+    "static_result_unselectable": true,
+    "static_result_verifier": true,
+    "target_evidence_matrix": true
+  },
+  "claim_boundary": {
+    "combined_target_qualification": false,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "publication": false,
+    "selectability": false,
+    "target_execution": false,
+    "transition_behavior": false
+  },
+  "evidence": {
+    "regression": "19/19",
+    "static_qualification": "9/9",
+    "static_result_verifier": "19/19"
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 25,
+  "schema_version": 1,
+  "source_freeze_result_sha256": "d21fd87f2ca29c1a987bd8b008ac0a60db9a6663e504220ca417e26283338085"
+}

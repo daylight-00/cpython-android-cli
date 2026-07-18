@@ -1,0 +1,68 @@
+{
+  "authority_kind": "e2p3-archive-qualification-contract",
+  "claim_boundary": {
+    "combined_target_qualification": false,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "publication": false,
+    "selectability": false,
+    "target_execution": false,
+    "transition_behavior": false
+  },
+  "contract_version": 1,
+  "file_identities": {
+    "README.md": "cffe3e3f771c2011b65db644c77386e08af8ffa084aaee613c269478bb742fe9",
+    "components/standalone/bin/cpython-android-qualify": "b3b4e46daffa7e77d1653080b588bd623fe30f10a792feeff0294588bdebc409",
+    "components/standalone/contracts/facade-v1.json": "9ee170183dc4a49ec6e9880f59735ac902828f24877d1a6dd83891f66a15d709",
+    "components/standalone/contracts/qualification-v1.json": "a2775c1f737c29d72a68d98500253e9b0be208d190f6e1f70394a3b513834746",
+    "components/standalone/lib/qualify_archive.py": "ec1c6a37e0ab91c8a888020d073ce5a97716247b50e9fe334a495180222b7dbc",
+    "components/standalone/lib/verify_qualification_result.py": "d1fbb87a57118d03b18b227771c24015dd70a9f129359027e95b13c45a1bdf3d",
+    "components/standalone/schemas/qualification-result-v1.schema.json": "22e9fc19eea96eedcbb4c9223fda426f800429f032a4b3eae49ecb8bc7f2e8d8",
+    "docs/CURRENT_CONTEXT.md": "ffd3065d1f1b15fc52575aee932ee3551b8a7002aaef0efc996c2451102dcac3",
+    "docs/INDEX.md": "71ddddcb7e95e9ecc68678e2d428541261cab4ac86a0e4de67a837dc077612c4",
+    "docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md": "aa9846345daf78a78f3ba1298d44f59318869c0d78cfcff4aaa8281394fa5119",
+    "docs/evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md": "41e9ba6f57e925b46b8fb92cd3d2b8f6cf3cd7b9aa8b25a7df8813567a9add2d",
+    "docs/handoff/2026-07-18-e2p3-archive-qualification-contract.md": "7d161b13542bf2286750113054c244abff402a8fbd37533e9ec85955346f0346",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "5ade0d0a17c3ff5fecbc93ca9203239f6e74615cc84cc027804e6157d1362da5",
+    "experiments/epoch2-archive-qualification/README.md": "17c0528f99fbaa2eae15de4ee1990e21ef90b43044cec69fb037aecaf5ce58a0",
+    "experiments/epoch2-archive-qualification/qualification-contract-external-audit.json": "3ea114b1b95f0d659bda7fe74ef7665c85eb34dba2e71bbf258b0c662b86ceca",
+    "experiments/epoch2-archive-qualification/test-qualification-contract.py": "5a128cf6555fcba009ab25a0cf87c6bb074db8c115be28fe18bc70b1d0c8986d",
+    "experiments/epoch2-archive-qualification/verify-qualification-contract.py": "e8567ef715a769d31ed5dc0fb6151b33540e86d83bad60beda1c4c1c7801be98"
+  },
+  "input_authority": {
+    "archive_sha256": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727",
+    "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+    "execution_authority": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+    "private_authority_index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "release_index_sha256": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85"
+  },
+  "next_action_class": "execute-e2p3-real-termux-archive-qualification",
+  "predecessor": {
+    "commit": "f1e7390f3bb3e4d074e45d0f274ef116b1411efe",
+    "tree": "0ed8a6521529e647430af867cb9be6fe11dbaa00"
+  },
+  "profiles": {
+    "static": {
+      "check_count": 9,
+      "target_execution": false
+    },
+    "termux-emulator": {
+      "check_count": 35,
+      "target_execution": true
+    },
+    "termux-real": {
+      "check_count": 35,
+      "target_execution": true
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-design-no-target-evidence",
+  "verification": {
+    "external_audit": "25/25",
+    "regression": "19/19",
+    "repository": "26/26-staged-and-commit",
+    "static_qualification": "9/9",
+    "static_result_verifier": "19/19",
+    "target_execution": "not-run"
+  }
+}

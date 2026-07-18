@@ -46,7 +46,7 @@
     },
     "verify": {
       "envelope_implementation": "components/standalone/lib/verify_envelope.py",
-      "repository_implementation": "experiments/epoch2-termux-native-cpython3146-facade-execution/verify-execution-authority.py",
+      "repository_implementation": "experiments/epoch2-archive-qualification/verify-qualification-contract.py",
       "scopes": [
         "repository",
         "envelope"
@@ -65,6 +65,12 @@
     "binding_version": 1,
     "freeze_commit": "d1f19039af727344c77f2d0fac0806553da86bcc",
     "producer_authority": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json"
+  },
+  "qualification_contract": {
+    "contract_path": "components/standalone/contracts/qualification-v1.json",
+    "contract_version": 1,
+    "execution_authority": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+    "status": "frozen-design-no-target-evidence"
   },
   "schema_version": 1,
   "stable_command": "components/standalone/bin/cpython-android-standalone",

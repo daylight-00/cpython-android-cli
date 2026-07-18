@@ -1,0 +1,205 @@
+{
+  "artifact": {
+    "archive_sha256": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727",
+    "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+    "manifest_entry_count": 1169,
+    "release_index_sha256": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85",
+    "stripped_elf_count": 81
+  },
+  "claim_boundary": {
+    "combined_target_qualification": false,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "publication": false,
+    "selectability": false,
+    "target_execution": false,
+    "transition_behavior": false
+  },
+  "contract_version": 1,
+  "evidence": {
+    "canonical_json": true,
+    "evidence_directory": "results/{host_role}/e2p3-archive-qualification/evidence",
+    "result": "results/{host_role}/e2p3-archive-qualification/qualification-result.json",
+    "result_schema": "components/standalone/schemas/qualification-result-v1.schema.json"
+  },
+  "input_authority": {
+    "execution_authority": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+    "execution_authority_status": "frozen-pass-unqualified-envelope",
+    "private_authority_index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "private_authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p2/envelopes/termux-native-cpython3146/install-only-stripped-v1"
+  },
+  "profile_checks": {
+    "static": [
+      "archive_safe",
+      "archive_sha256",
+      "authority_files_exact",
+      "authority_index_identity",
+      "envelope_static_verifier",
+      "execution_authority_identity",
+      "input_archive_immutable",
+      "manifest_exact_location_a",
+      "release_index_sha256"
+    ],
+    "termux-emulator": [
+      "archive_safe",
+      "archive_sha256",
+      "authority_files_exact",
+      "authority_index_identity",
+      "child_identity",
+      "device_android",
+      "device_api_floor",
+      "device_profile",
+      "direct_entrypoint_a",
+      "direct_entrypoint_b",
+      "elf_closure",
+      "elf_count_81",
+      "envelope_static_verifier",
+      "execution_authority_identity",
+      "extension_imports_67_67",
+      "https_status_200",
+      "input_archive_immutable",
+      "manifest_exact_location_a",
+      "manifest_exact_location_b",
+      "needed_edges_329",
+      "needed_sonames_9",
+      "no_pycache_mutation",
+      "pip_offline_wheel",
+      "product_fidelity_locations",
+      "release_index_sha256",
+      "runtime_identity_a",
+      "runtime_identity_b",
+      "stale_prefix_absent",
+      "sysconfig_paths_relocated",
+      "system_sonames_5_5",
+      "uv_explicit_install",
+      "uv_explicit_run",
+      "uv_explicit_venv",
+      "venv_relocation",
+      "wheel_tag_android24"
+    ],
+    "termux-real": [
+      "archive_safe",
+      "archive_sha256",
+      "authority_files_exact",
+      "authority_index_identity",
+      "child_identity",
+      "device_android",
+      "device_api_floor",
+      "device_profile",
+      "direct_entrypoint_a",
+      "direct_entrypoint_b",
+      "elf_closure",
+      "elf_count_81",
+      "envelope_static_verifier",
+      "execution_authority_identity",
+      "extension_imports_67_67",
+      "https_status_200",
+      "input_archive_immutable",
+      "manifest_exact_location_a",
+      "manifest_exact_location_b",
+      "needed_edges_329",
+      "needed_sonames_9",
+      "no_pycache_mutation",
+      "pip_offline_wheel",
+      "product_fidelity_locations",
+      "release_index_sha256",
+      "runtime_identity_a",
+      "runtime_identity_b",
+      "stale_prefix_absent",
+      "sysconfig_paths_relocated",
+      "system_sonames_5_5",
+      "uv_explicit_install",
+      "uv_explicit_run",
+      "uv_explicit_venv",
+      "venv_relocation",
+      "wheel_tag_android24"
+    ]
+  },
+  "profile_evidence": {
+    "static": [
+      "authority.json",
+      "extraction-a.json",
+      "fidelity.json",
+      "static-envelope.json"
+    ],
+    "termux-emulator": [
+      "authority.json",
+      "closure.json",
+      "extraction-a.json",
+      "extraction-b.json",
+      "extensions.json",
+      "fidelity.json",
+      "host.json",
+      "https.json",
+      "identity-a.json",
+      "identity-b.json",
+      "pip.json",
+      "static-envelope.json",
+      "uv.json",
+      "venv.json"
+    ],
+    "termux-real": [
+      "authority.json",
+      "closure.json",
+      "extraction-a.json",
+      "extraction-b.json",
+      "extensions.json",
+      "fidelity.json",
+      "host.json",
+      "https.json",
+      "identity-a.json",
+      "identity-b.json",
+      "pip.json",
+      "static-envelope.json",
+      "uv.json",
+      "venv.json"
+    ]
+  },
+  "profiles": {
+    "static": {
+      "host_role": "host-independent",
+      "target_execution": false
+    },
+    "termux-emulator": {
+      "android_emulator_required": true,
+      "host_role": "termux",
+      "target_execution": true
+    },
+    "termux-real": {
+      "android_emulator_required": false,
+      "host_role": "termux",
+      "target_execution": true
+    }
+  },
+  "qualification_kind": "hw-t-standalone-archive-qualification",
+  "required_observations": {
+    "android_api_min": 24,
+    "android_system_sonames": [
+      "libc.so",
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libz.so"
+    ],
+    "architecture": "aarch64",
+    "elf_needed_edge_count": 329,
+    "extension_import_count": 67,
+    "multiarch": "aarch64-linux-android",
+    "needed_soname_count": 9,
+    "python_version": "3.14.6",
+    "soabi": "cpython-314-aarch64-linux-android",
+    "sysconfig_platform": "android-24-arm64_v8a",
+    "wheel_platform_tag": "android_24_arm64_v8a"
+  },
+  "schema_version": 1,
+  "selection_policy": {
+    "individual_result_selectable": false,
+    "required_profiles": [
+      "termux-real",
+      "termux-emulator"
+    ],
+    "selectability_requires_metadata_finalization": true
+  },
+  "stable_command": "components/standalone/bin/cpython-android-qualify",
+  "status": "frozen-design-no-target-evidence"
+}

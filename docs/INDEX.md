@@ -13,6 +13,10 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 
 ## Epoch 2 contracts and evidence
 
+- [`contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
+- [`evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
+- [`handoff/2026-07-18-e2p3-archive-qualification-contract.md`](handoff/2026-07-18-e2p3-archive-qualification-contract.md)
+- [`../experiments/epoch2-archive-qualification/`](../experiments/epoch2-archive-qualification/)
 - [`evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
 - [`handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md`](handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md)
 - [`../experiments/epoch2-termux-native-cpython3146-facade-execution/`](../experiments/epoch2-termux-native-cpython3146-facade-execution/)
