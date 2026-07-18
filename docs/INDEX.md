@@ -1,6 +1,6 @@
 # Documentation Index
 
-This index separates mutable current navigation, the frozen Epoch 1 authority, Epoch 2 design and contract authorities, external references, and cross-session operating rules.
+This index separates mutable current navigation, Epoch 2 research conclusions, the frozen Epoch 1 authority, Epoch 2 design and contract authorities, external references, and cross-session operating rules.
 
 ## Current
 
@@ -10,6 +10,13 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 - [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md): Epoch 2 product philosophy and scope.
 - [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md): bounded implementation sequence.
 - [`architecture/COMPONENT_OWNERSHIP.md`](architecture/COMPONENT_OWNERSHIP.md): future standalone and installer ownership.
+
+## Epoch 2 research conclusions
+
+- [`research/README.md`](research/README.md): verified research set and reading order.
+- [`research/E2_CPYTHON_ANDROID_API_LEVEL_MATRIX.md`](research/E2_CPYTHON_ANDROID_API_LEVEL_MATRIX.md): CPython 3.14/3.15 behavior across API 24 and 29–36.
+- [`research/E2_UPSTREAM_PROVENANCE_AND_STANDALONE_MODELS.md`](research/E2_UPSTREAM_PROVENANCE_AND_STANDALONE_MODELS.md): CPython, BeeWare, Astral, uv, and project responsibility boundaries.
+- [`research/E2_RESEARCH_SCOPE_AND_DIRECTION.md`](research/E2_RESEARCH_SCOPE_AND_DIRECTION.md): accepted results, experiments to pause, and remaining fundamental Epoch 2 work.
 
 ## Epoch 2 contracts and evidence
 
