@@ -1,91 +1,46 @@
 # Epoch 2 Roadmap
 
-Each phase defines one bounded authority. A later phase may consume a frozen earlier phase but must not silently broaden its claims.
+> **Recalibrated:** 2026-07-19 by ADR-0006
+> **Detailed sequence:** [`EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md)
 
-## E2-P0 — Documentation and component boundaries
+## Historical authorities
 
-> **Status:** FROZEN
-
-**Goal:** define the epoch, terminology, repository topology, artifact authority, installer boundary, and ownership map.
-
-**Deliverables:** charter, ADRs, references, roadmap, navigation, and component README skeleton.
-
-**Acceptance:** exact documentation-only change set; no implementation, experiment, frozen stage, evidence, archive, or target mutation.
-
-## E2-P1 — Canonical standalone artifact contract
-
-> **Status:** FROZEN — 68/68 independent checks and 15/15 negative fixtures
-
-**Goal:** define archive root, payload classes, metadata schema, checksums, licenses, provenance, target/API/profile fields, compatibility rules, selectability, and installer input boundaries.
-
-**Frozen result:** contract version 1 defines `install_only_stripped` with a single `python/` root, `pax-tar+zstd`, runtime plus development payloads, and separate metadata, manifest, provenance, qualification, license, checksum, and release-index authorities.
-
-**Acceptance:** machine-readable JSON Schemas, deterministic safe archive fixture, exact sidecar linkage, independent semantic/archive verification, and mutation-based fail-closed tests. No producer refactor or target execution is required to close design.
-
-## E2-P2 — Standalone build and package façade
-
-> **Status:** FROZEN — Gate 1, producer authority/binding, real façade execution, deterministic envelope, and independent review accepted
-
-**Goal:** provide stable `build`, `package`, and `verify` entry points over the existing proven producer and runtime assembly.
-
-**Gate 1 frozen result:** the repository command, pinned predecessor entry points, deterministic package implementation, general envelope verifier, synthetic double-build byte identity, drift rejection, and archive-mutation rejection are accepted. No real producer run is claimed.
-
-**Producer authority and binding result:** a new CPython 3.14.6 producer was executed directly in Termux under the exact custom-NDK r27d binary authority. Clean replay, canonical-host adjudication, three-artifact materialization, standalone validation, and invariant closure are frozen. The stable façade is now explicitly bound to that authority while the Stage 3-B Linux producer remains unchanged historical provenance.
-
-**Real façade execution authority frozen:** canonical and replay package executions produced an exact 8-file unqualified E2-P1 envelope. Repository verification passed 20/20 before and after, both envelope verifiers passed 52/52, the independent review passed 27/27, and private authority readback was byte-identical.
-
-**Next bounded gate:** consume the frozen envelope authority in E2-P3 archive-only target qualification. Do not rerun or relabel E2-P2 producer/package authority as qualification evidence.
-
-**Phase acceptance:** same frozen runtime behavior and closure; deterministic real E2-P1 release-envelope output; internal implementation paths hidden behind the façade; the fixture is never promoted as a product.
-
-## E2-P3 — Metadata and qualification
-
-> **Status:** ACTIVE — primary real-device profile frozen; secondary Note9 profile next; emulator waived
-
-**Goal:** qualify relocation, ELF closure, extension imports, HTTPS, venv, pip, uv explicit-interpreter workflows, wheel tags, and product fidelity from extracted artifacts.
-
-**Gate 1 frozen result:** the exact private E2-P2 envelope input, stable qualification command, static/real/emulator profile matrices, independent result verifier, 19/19 regression behavior, and 9/9 static replay with 19/19 result verification are accepted. No Android target execution is claimed.
-
-**Qualification harness correction frozen:** the first real-Termux execution reached 33/35. The two failures were adjudicated as venv-symlink containment and base-pip wheel-tag source defects in the harness. The corrected semantics pass 21/21 regression while preserving the exact 35-check matrix and all frozen product identities. No target profile is qualified by the correction.
-
-**Real-Termux authority frozen:** the corrected retry passed 35/35, result verification passed 19/19, and independent review passed 38/38 on a real aarch64 Android API 36 Termux host. The result remains individually unselectable and claims no emulator or combined qualification.
-
-**Environment disposition amendment:** the available x86_64 workstation cannot boot the required ARM64 Android Emulator image, and an x86_64 guest cannot natively qualify the frozen aarch64 product. The emulator objective is waived rather than passed. It is replaced by an independent second physical-device profile on an Exynos 9810 Galaxy Note9 running Android API 29. The original emulator and combined real-plus-emulator claims remain unmet.
-
-**Next bounded gate:** run only the secondary physical-device package on the Note9. The wrapper must enforce the exact device identity and invoke the unchanged `termux-real` 35-check matrix against the same frozen envelope. Do not rerun the accepted S22 Ultra profile or begin metadata finalization.
-
-**Amended acceptance:** primary and secondary physical-device profiles pass independently, followed by a separate dual-real-device closure. This permits only an API 29/API 36 dual-device aarch64 Termux compatibility claim. Emulator coverage, selectability, and publication remain unclaimed.
-
-## E2-P4 — Installer artifact-only conversion
-
-**Goal:** make the installer an artifact-only consumer: installation, acquisition, cache, registry, recovery, uninstall, and version transition consume the release envelope only.
-
-**Acceptance:** producer source and build trees are absent; complete lifecycle and cross-version tests still pass; installer repacking remains forbidden.
-
-## E2-P5 — Automated prerelease
-
-**Goal:** produce reproducible GitHub prerelease assets from an exact tag or release authority.
-
-**Acceptance:** archives, metadata, checksums, licenses, static verification, emulator smoke, and asset upload are automated. Stable promotion remains explicit until real-device policy is accepted.
-
-## E2-P6 — Standalone repository promotion
-
-**Goal:** extract the standalone component into a focused product repository with relevant history preserved.
-
-**Acceptance:** independent clone can build, package, verify, and prerelease; installer consumes published artifacts; no repository-relative dependency remains.
-
-## E2-P7 — uv managed-Python integration
-
-**Goal:** map the stable Android product into upstream or downstream uv download metadata and managed-Python workflows.
-
-**Acceptance:** exact catalog identity, acquisition, discovery, launch, venv, package installation, reinstall, uninstall, and claim boundaries on supported Android/Termux targets.
-
-## Phase rule
+E2-P0 through E2-P3 remain preserved in their original contracts, evidence, experiments, and handoffs.
 
 ```text
-design authority
-  -> independent verifier
-  -> implementation
-  -> target evidence where required
-  -> freeze
+E2-P0  documentation and component boundaries          frozen
+E2-P1  standalone artifact contract                     frozen
+E2-P2  façade and Termux-native producer authority      frozen
+E2-P3  primary real-device qualification                frozen
+        emulator                                        waived, not claimed
+        Note9 secondary                                 optional, deferred
+```
+
+The prepared Note9 run may later add API 29/Exynos cross-device evidence. It is not required to begin or complete the recalibrated research sequence, and no dual-device claim exists until it is executed and separately frozen.
+
+## Retired prospective phases
+
+The former E2-P4 installer conversion, E2-P5 prerelease automation, E2-P6 repository promotion, and E2-P7 uv integration sequence is superseded. Those topics may reappear under the Epoch 3 clean product repository but are not canonical Epoch 2 phase authorities.
+
+## Active sequence
+
+```text
+E2-R0  recalibration authority and raw research intake
+E2-R1  exact official upstream control and direct adaptation
+E2-R2  patch-update rehearsal and Python 3.15 preview
+E2-R3  API control / CPython API 36 / complete API 36 comparison
+E2-R4  minimum floor, 16 KiB pages, SDK/wheel, host boundaries,
+       cross-context probes, licenses, and uv consumer contract
+E2-R5  evidence export and clean Epoch 3 product seed
+```
+
+## Governing rule
+
+```text
+upstream control
+  -> bounded Android adaptation evidence
+  -> explicit comparison and decision
+  -> producer-independent product contract
+  -> clean Epoch 3 release repository
+  -> Epoch 4 source-producer substitution
 ```

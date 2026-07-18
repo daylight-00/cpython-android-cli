@@ -17,7 +17,7 @@ Current CPython tooling builds, packages, and tests Android products under `Plat
 
 ## Project relevance
 
-Epoch 2 should follow official CPython source, toolchain, package structure, and release behavior as closely as practical. Its additional responsibility is CLI productization:
+Epoch 2 and Epoch 3 adopt the official Python.org Android package as the primary runtime input and inherit the BeeWare dependency products selected by CPython. Epoch 2 tests the thinnest CLI adaptation and bounded API variants; Epoch 3 productizes the accepted upstream input:
 
 ```text
 official CPython Android lineage
@@ -29,3 +29,7 @@ official CPython Android lineage
 ```
 
 The project does not need to compete with CPython's embedding support. It builds a different consumer-facing contract from the same upstream lineage.
+
+## Adopted epoch policy
+
+The official upstream API/product combination is the control. Epoch 2 additionally compares CPython/launcher API 36 and complete same-source API 36 variants. Full project-owned source production is deferred to Epoch 4.

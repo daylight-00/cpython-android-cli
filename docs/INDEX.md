@@ -7,9 +7,21 @@ This index separates mutable current navigation, the frozen Epoch 1 authority, E
 - [`CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md): active epoch and immediate boundary.
 - [`PROJECT_ORIENTATION.md`](PROJECT_ORIENTATION.md): stable high-level orientation.
 - [`SESSION_ONBOARDING.md`](SESSION_ONBOARDING.md): successor-session entry.
-- [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md): Epoch 2 product philosophy and scope.
-- [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md): bounded implementation sequence.
+- [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md): recalibrated Epoch 2 research charter.
+- [`epochs/EPOCH3_CHARTER.md`](epochs/EPOCH3_CHARTER.md): clean upstream-derived release repository charter.
+- [`epochs/EPOCH4_CHARTER.md`](epochs/EPOCH4_CHARTER.md): full Astral-like source-producer charter.
+- [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md): canonical Epoch 2 phase status.
+- [`roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md): complete recalibrated sequence.
 - [`architecture/COMPONENT_OWNERSHIP.md`](architecture/COMPONENT_OWNERSHIP.md): future standalone and installer ownership.
+
+## Recalibration authority and research intake
+
+- [`decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
+- [`evidence/E2_RECALIBRATION_AUTHORITY_FREEZE.md`](evidence/E2_RECALIBRATION_AUTHORITY_FREEZE.md)
+- [`handoff/2026-07-19-epoch2-epoch4-recalibration.md`](handoff/2026-07-19-epoch2-epoch4-recalibration.md)
+- [`references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md`](references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md)
+- [`references/raw/2026-07-19-epoch2-epoch4-recalibration/`](references/raw/2026-07-19-epoch2-epoch4-recalibration/)
+- [`../experiments/epoch2-recalibration/`](../experiments/epoch2-recalibration/)
 
 ## Epoch 2 contracts and evidence
 
@@ -65,12 +77,15 @@ Existing Stage documents, evidence, and experiments retain their original paths.
 - [`decisions/ADR-0003-REPOSITORY-TOPOLOGY.md`](decisions/ADR-0003-REPOSITORY-TOPOLOGY.md)
 - [`decisions/ADR-0004-ARTIFACT-AUTHORITY.md`](decisions/ADR-0004-ARTIFACT-AUTHORITY.md)
 - [`decisions/ADR-0005-INSTALLER-CONSUMER-BOUNDARY.md`](decisions/ADR-0005-INSTALLER-CONSUMER-BOUNDARY.md)
+- [`decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
 
 ## External references
 
 - [`references/CPYTHON_ANDROID_RELEASE_MODEL.md`](references/CPYTHON_ANDROID_RELEASE_MODEL.md)
 - [`references/UV_ANDROID_STATUS.md`](references/UV_ANDROID_STATUS.md)
 - [`references/PYTHON_BUILD_STANDALONE_MODEL.md`](references/PYTHON_BUILD_STANDALONE_MODEL.md)
+- [`references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md`](references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md)
+- [`references/raw/2026-07-19-epoch2-epoch4-recalibration/`](references/raw/2026-07-19-epoch2-epoch4-recalibration/)
 
 ## Session and collaboration rules
 

@@ -1,66 +1,56 @@
-# Epoch 2 Component Ownership
+# Component ownership across Epoch 2, Epoch 3, and Epoch 4
 
-> **Status:** Phase 0 logical map; implementation files do not move in this phase.
+> **Status:** recalibrated by ADR-0006
 
-## Ownership classes
+## Permanent research laboratory — `cpython-android-cli`
 
-### Standalone-owned
+Owns:
 
-- CPython source/version selection and Android patches.
-- NDK, API level, dependency recipes, and producer provenance.
-- Native launcher and prefix relocation behavior.
-- Runtime and development payload assembly.
-- Native closure, extension inventory, sysconfig, and wheel-tag qualification.
-- Archive flavors, metadata, checksums, licenses, symbols, and release index.
-- Artifact extraction and standalone-runtime verification.
+- historical experiments, failures, contracts, evidence, and handoffs;
+- upstream and Android adaptation research;
+- API-level comparisons and source-producer experiments;
+- rejected alternatives and architecture decisions;
+- the future Epoch 4 full source producer;
+- raw external research inputs and adjudication records.
 
-### Installer-owned
+## Epoch 3 clean release repository
 
-- Release selection, acquisition, and verified cache consumption.
-- Project-owned installation root and version layout.
-- Ownership registry, journals, locks, transaction, recovery, and residual policy.
-- Install, repair, uninstall, upgrade, and downgrade coordination.
-- Termux shell exposure and coexistence policy.
-- uv discovery integration around installed interpreters.
+Owns:
 
-### Consumer qualification
+- pinned Python.org Android input discovery and checksums;
+- inherited BeeWare dependency identity;
+- project launcher and bounded standalone adaptation;
+- deterministic artifact transformation;
+- Astral-structured `full`, `install_only`, and `install_only_stripped` products;
+- metadata, release index, checksums, licenses, qualification, CI, and releases;
+- uv-facing and direct-consumer documentation;
+- maintenance of project-owned delta.
 
-- uv system-Python discovery and explicit-interpreter workflows.
-- uv managed-Python catalog feasibility and downstream integration tests.
-- pip, venv, package installation, and Python CLI package scenarios.
+Does not own:
 
-Qualification consumes products; it does not own producer or installer internals.
+- CPython source production;
+- dependency source recipes;
+- independent NDK/API/linkage policy;
+- producer PGO/LTO.
 
-### Historical experiment and evidence
+## Epoch 4 source producer
 
-- Existing `experiments/`, `docs/stages/`, `docs/evidence/`, and dated handoffs.
-- Failed, superseded, and corrective attempts that explain accepted decisions.
+Owns:
 
-These records remain in their existing paths unless a later evidence-preserving migration is explicitly approved.
+- CPython and dependency source inputs;
+- NDK/toolchain and build recipes;
+- Android patches and extension configuration;
+- linkage policy, optimization, reproducibility, and source attestations;
+- full source-build artifacts and install-only derivation.
 
-### Collaboration infrastructure
+It must preserve the Epoch 3 consumer-facing contract unless a separate ADR changes the product.
 
-- `docs/session-operations/`, collaboration protocols, handoff tooling, and Drive package rules.
+## Consumer boundary
 
-This infrastructure is external to product runtime claims.
+Termux, uv, direct extraction, adb, root, installer/lifecycle tooling, and later APK consumers consume released artifacts and versioned metadata. They do not consume producer workspaces.
 
-## Current-to-future map
+Termux is a primary execution profile, not an ELF ABI provider.
 
-| Capability | Current location class | Future owner | Phase 0 action |
-|---|---|---|---|
-| launcher | `src/` and build scripts | standalone | document only |
-| CPython/dependency producer | scripts and Stage 3-B experiments | standalone | document only |
-| runtime assembly and closure | scripts/experiments | standalone | document only |
-| archive and product metadata | Stage 3-C/E/F implementation | standalone | define E2-P1 boundary |
-| publication envelope | Stage 3-F | standalone release | preserve predecessor authority |
-| acquisition and cache | Stage 3-F | installer | consume release envelope |
-| transaction and registry | Stage 3-C/E | installer | preserve frozen semantics |
-| cross-version transition | Stage 3-C Gate 4 | installer | preserve frozen semantics |
-| uv system-Python workflows | Stage 3-D | consumer qualification | reuse tests |
-| managed-Python feasibility | Stage 3-D/E | consumer qualification and installer | refine after artifact contract |
+## Historical ownership
 
-## Migration rule
-
-No implementation files move merely to match this document. Movement begins only after E2-P1 freezes the artifact boundary and a stable façade proves which paths belong to each component.
-
-Avoid permanent `shared` ownership. When both components need one schema, one side owns the versioned contract and the other declares supported versions.
+Existing Epoch 1 and early Epoch 2 paths retain their original authority. This document changes future responsibility; it does not relabel prior evidence.

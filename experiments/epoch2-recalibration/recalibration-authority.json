@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "authority": "epoch2-epoch4-recalibration",
+  "status": "frozen-by-repository-commit",
+  "base": {
+    "commit": "7e9210ce21b31ed2b2c9008d6c1b1dbe6daf6214",
+    "tree": "a232ec4daab0a71ba8137750e2b30df60d39b83e"
+  },
+  "decisions": {
+    "epoch2_primary_inputs": ["python.org CPython Android product", "BeeWare dependency products selected by CPython"],
+    "epoch2_api36_comparison_required": true,
+    "epoch3": "clean upstream-derived Astral-structured release repository",
+    "epoch4": "full Astral-like CPython and dependency source producer",
+    "epoch3_epoch4_consumer_contract_equivalent": true,
+    "note9": "optional-deferred-evidence",
+    "emulator": "waived-unclaimed"
+  },
+  "raw_archive_directory": "docs/references/raw/2026-07-19-epoch2-epoch4-recalibration",
+  "next_action_class": "design-e2-r1-official-upstream-control-and-direct-adaptation"
+}

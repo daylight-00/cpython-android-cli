@@ -1,6 +1,6 @@
 # ADR-0003: Incubate Logically, Then Promote the Standalone Product
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-0006
 - **Date:** 2026-07-16
 
 ## Context
@@ -25,3 +25,7 @@ The current repository remains the installer, engineering-history, and evidence 
 - Experiments and failed evidence remain available without cluttering the eventual product surface.
 - Repository promotion has explicit acceptance gates.
 - A third shared-code repository is avoided unless concrete duplication later justifies it.
+
+## Supersession
+
+ADR-0006 replaces history-preserving component promotion with a clean Epoch 3 product repository initialized from an accepted upstream-derived product seed. The current repository remains the permanent research and source-producer laboratory.

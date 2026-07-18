@@ -1,0 +1,44 @@
+{
+  "archive_count": 4,
+  "archives": [
+    {
+      "file": "epoch2-android-cpython-research.zip",
+      "file_count": 5,
+      "member_count": 5,
+      "role": "API-level, upstream provenance, and Epoch 2 scope research",
+      "sha256": "a21ad6708f4910cfa86d5f55d86572d0c964eabc1b659aebbac57b295e7db02c",
+      "single_root": "epoch2-android-cpython-research",
+      "size": 16908
+    },
+    {
+      "file": "cpython-android-cli-e2-e3-research-plan.zip",
+      "file_count": 18,
+      "member_count": 18,
+      "role": "laboratory/clean-repository boundary and E2/E3 research plan",
+      "sha256": "d5c3cd3d5172bc46b80c5630711cd37adbe994018504822e9076d620a082424c",
+      "single_root": "cpython-android-cli-e2-e3-research-plan",
+      "size": 33260
+    },
+    {
+      "file": "android-bionic-python-abcd-plan.zip",
+      "file_count": 15,
+      "member_count": 15,
+      "role": "Astral A/B/C/D classification and implementation gates",
+      "sha256": "992be63461623164ae6dd5d21872bd3b60d53d3fab5ea3afa01c717d81dd1511",
+      "single_root": "android-bionic-python-abcd-plan",
+      "size": 44993
+    },
+    {
+      "file": "android-bionic-python-design-docs.zip",
+      "file_count": 15,
+      "member_count": 16,
+      "role": "Android/Bionic product, consumer, relocation, and linkage design",
+      "sha256": "9a255166cc1cc897f74a7524074d0c23a612399c810448620d81c67058103d46",
+      "single_root": "android-bionic-python-design-docs",
+      "size": 38031
+    }
+  ],
+  "captured_at": "2026-07-19",
+  "provenance": "project-owner supplied external-session research archives",
+  "schema_version": 1
+}

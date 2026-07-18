@@ -9,20 +9,29 @@ This is a research and engineering project, not a new general-purpose Python dis
 ## Architecture epochs
 
 ```text
-Epoch 1  Android CPython CLI adaptation, installation lifecycle,
-         managed-Python consumption, publication, and acquisition   FROZEN
+Epoch 1  Android CPython CLI adaptation, lifecycle, publication,
+         acquisition, and consumer evidence                         FROZEN
 
-Epoch 2  Android/Bionic standalone product authority,
-         installer-consumer separation, and repository promotion    ACTIVE — E2-P3 dual-real-device amendment frozen; Note9 qualification next
+Epoch 2  Python.org/BeeWare upstream control, Android adaptation,
+         and API comparison research                                ACTIVE — RECALIBRATED
+
+Epoch 3  clean upstream-derived Astral-structured release repo       PLANNED
+
+Epoch 4  full Astral-like Android source producer                    PLANNED
 ```
 
-Epoch 1 is preserved as the complete evidence-bearing predecessor through Stage 3-F. Epoch 2 changes the center of gravity from an installation-oriented adaptation project to a Termux-first, uv-oriented standalone CPython product model. Phase 0 established documentation and logical ownership, Phase 1 froze the standalone release-envelope contract, Phase 2 Gate 1 froze stable build/package/verify façade implementation, and the exact Termux-native CPython 3.14.6 producer plus standalone three-artifact set are frozen as a separate authority. The façade is explicitly bound to that authority. Real stable façade build/package execution, the deterministic unqualified E2-P1 envelope, and independent static review are frozen. The original E2-P3 archive qualification contract is preserved. The first real-Termux run reached 33/35 and exposed two harness-only false negatives. The corrected retry passed 35/35, result verification passed 19/19, and independent review passed 38/38 on the primary Galaxy S22 Ultra. Native ARM64 Android Emulator execution proved infeasible on the available x86_64 host. An explicit amendment replaces that remaining experiment with a second physical-device qualification on an Exynos 9810 Galaxy Note9 running Android API 29. Emulator qualification is waived rather than claimed, and the secondary-device run is next.
+Epoch 1 remains the complete evidence-bearing predecessor. E2-P0 through E2-P3 are preserved historical authorities, including the accepted S22 Ultra archive qualification, explicit emulator waiver, and prepared but deferred Note9 secondary-device package. The project was recalibrated on 2026-07-19: Epoch 2 now trusts the Python.org Android product and the BeeWare dependencies selected by CPython as the primary control, completes direct-adaptation and Android API research, and requires a controlled API 36 comparison. Epoch 3 creates a clean upstream-derived release repository whose artifact structure primarily follows Astral's standalone distribution. Epoch 4 builds the full Astral-like CPython and dependency source producer while preserving the Epoch 3 consumer contract. The Note9 run remains optional deferred evidence and no emulator or dual-device claim is made.
 
 Current entry points:
 
 - [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
 - [`docs/INDEX.md`](docs/INDEX.md)
 - [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
+- [`docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
+- [`docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md)
+- [`docs/epochs/EPOCH3_CHARTER.md`](docs/epochs/EPOCH3_CHARTER.md)
+- [`docs/epochs/EPOCH4_CHARTER.md`](docs/epochs/EPOCH4_CHARTER.md)
+- [`docs/references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md`](docs/references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md)
 - [`docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
 - [`docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
 - [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md)
@@ -57,7 +66,8 @@ Epoch 2 P2 Termux-native CPython 3.14.6 producer authority frozen
 Epoch 2 P2 façade producer binding                             frozen
 Epoch 2 P2 bound façade execution authority                    frozen — 52/52 + 27/27
 Epoch 2 P3 primary real-device qualification                 frozen — 35/35 + 19/19 + 38/38
-Epoch 2 P3 secondary-device amendment                         frozen — Note9 API 29 qualification next; emulator waived
+Epoch 2 recalibration authority                                active — upstream-first E2, clean E3, source-producer E4
+Epoch 2 P3 secondary-device amendment                         frozen — Note9 API 29 optional/deferred; emulator waived
 ```
 
 ## Frozen runtime architecture

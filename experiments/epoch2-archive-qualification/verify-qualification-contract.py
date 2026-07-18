@@ -291,7 +291,9 @@ def main() -> int:
     amendment_contract_doc = root / "docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md"
     amendment_evidence_doc = root / "docs/evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md"
     amendment_handoff_doc = root / "docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md"
-    ck("documentation", "E2-P3 secondary real-device amendment frozen" in current and "secondary Note9 profile next; emulator waived" in roadmap and "Harness correction v1" in contract_doc and "second physical-device run" in experiment and evidence_doc.is_file() and handoff_doc.is_file() and amendment_contract_doc.is_file() and amendment_evidence_doc.is_file() and amendment_handoff_doc.is_file())
+    historical_navigation = "E2-P3 secondary real-device amendment frozen" in current and "secondary Note9 profile next; emulator waived" in roadmap
+    recalibrated_navigation = "E2-R0 recalibration authority" in current and "Note9 API 29 optional/deferred" in roadmap and "former E2-P4" in roadmap
+    ck("documentation", (historical_navigation or recalibrated_navigation) and "Harness correction v1" in contract_doc and "second physical-device run" in experiment and evidence_doc.is_file() and handoff_doc.is_file() and amendment_contract_doc.is_file() and amendment_evidence_doc.is_file() and amendment_handoff_doc.is_file())
     ck("real_target_claim", real_authority.get("claim_boundary", {}).get("individual_real_termux_profile") is True and real_authority.get("claim_boundary", {}).get("emulator_profile") is False and real_authority.get("claim_boundary", {}).get("selectability") is False)
     ck("next_action", amendment.get("next_action_class") == "execute-e2p3-secondary-real-device-archive-qualification")
 
