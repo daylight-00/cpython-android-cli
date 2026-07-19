@@ -1,0 +1,64 @@
+{
+  "$id": "urn:cpython-android-cli:agent-task:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "type": "object"
+    },
+    "default_exclusions": {
+      "type": "array"
+    },
+    "deliverable": {
+      "type": "object"
+    },
+    "generated_from": {
+      "type": "object"
+    },
+    "input_routing": {
+      "type": "object"
+    },
+    "manifest_kind": {
+      "const": "generated-current-agent-task"
+    },
+    "onboarding_certificate_required": {
+      "const": true
+    },
+    "program_gate": {
+      "type": "object"
+    },
+    "required_authorities": {
+      "type": "array"
+    },
+    "required_reads": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "state_revision": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "task": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "manifest_kind",
+    "generated_from",
+    "state_revision",
+    "program_gate",
+    "task",
+    "required_reads",
+    "required_authorities",
+    "input_routing",
+    "default_exclusions",
+    "claim_boundary",
+    "deliverable",
+    "onboarding_certificate_required"
+  ],
+  "title": "Generated current agent task manifest",
+  "type": "object"
+}

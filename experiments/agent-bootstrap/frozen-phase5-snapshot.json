@@ -1,0 +1,39 @@
+{
+  "claim_boundary": {
+    "bootstrap_transition_changes_phase5_claim": false,
+    "documentation_lifecycle_migration_complete": true,
+    "legacy_authority_decoupled": true
+  },
+  "file_count": 19,
+  "file_identities": {
+    "docs/current/STATE-v4.schema.json": "ff45379e6bbed67dd1a5421462f84b6a5053b43707512874e3edc7efc717f106",
+    "docs/documentation/LEGACY_AUTHORITY_DECOUPLING.md": "c83400d397e4e54d2801c26944b62d357229fdf3c780f3c7fb7d1a32143668c0",
+    "docs/documentation/LEGACY_AUTHORITY_DECOUPLING_DESIGN.md": "c08a1c38f5289e41b3c6b510b9c47320f66054922236e6b71a588f83a037cc5c",
+    "docs/documentation/document-registry-v5.schema.json": "934fbaf968b4ee16ad71cbc3a76df29005ff95cfff8d32319996f37506c6677f",
+    "docs/documentation/legacy-authority-decoupling-map.json": "ebf992c6d2a9adcae02e7d6138b3b2bc78e6410dce79a302d48e7892035f0756",
+    "docs/documentation/legacy-authority-decoupling-map.schema.json": "581c300bc8bee218272f07abdb8a9a30e6ea124e59dce5a5fc47755476cdb59d",
+    "docs/documentation/legacy-live-binding-baseline.json": "3ef4c1cf44b6ae101e99ed07dd3f4d704f95124e924160e3ecd6cb881b4214ab",
+    "docs/evidence/DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md": "820f4e7d34e5f4db690fca56f6ad0c9900ec6b59428e4eacc7c02b70203fd1ad",
+    "experiments/document-legacy-authority-decoupling/README.md": "2c345e6c2192c641cf9fbb38ce0986ff29578933214eeeda49b72a02711999b1",
+    "experiments/document-legacy-authority-decoupling/frozen-phase4-snapshot.json": "c388682f1dcd9bd0537b763ff9a3c7182939c1f121a5bcd4bb55c52112573af2",
+    "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json": "c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924",
+    "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json": "b95dc7c7b5d786dc4d9477e5a7bddb541a18ce5debe4badc5acaff9ea5cdcdee",
+    "experiments/document-legacy-authority-decoupling/navigation-targets.json": "4a02efcbc47bd123c38efb2cd18320966bb04391371928d6b42387bfa0f9a455",
+    "experiments/document-legacy-authority-decoupling/render-document-views.py": "5ff33201a12508cc565f127957fd635d477145a64dd4e885d27dcbb40501a3b3",
+    "experiments/document-legacy-authority-decoupling/test-legacy-authority-decoupling.py": "d8833c077c29a91af7e823c40988bbf123effbcb9f403765528579c81d5d784d",
+    "experiments/document-legacy-authority-decoupling/verify-document-legacy-authority-decoupling-authority.py": "49eb95f03cea122080e5e3799ac7480a5c2f616b1226eba41307bfd37f5579ab",
+    "experiments/document-legacy-authority-decoupling/verify-frozen-phase4-snapshot.py": "ba9fe71f10fc6719958d0dfbf57de82dacdef4725f5eddc99e3fe45f354e95bd",
+    "experiments/document-legacy-authority-decoupling/verify-legacy-authority-decoupling.py": "d7157fd352086d9ed1bb4913d5a380bf22023001a3777439743231fe28cd71ee",
+    "experiments/document-legacy-authority-decoupling/verify-legacy-binding-resolution.py": "118d9b92f22cf6357e1298f59c2536627e9b24e3ccf4628710d682221b86a302"
+  },
+  "phase5_authority": {
+    "path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json",
+    "sha256": "c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924"
+  },
+  "predecessor": {
+    "commit": "34695ed741411067302bd7372e3b7024b5fab541",
+    "tree": "8537ad0495915491fce158abe1f25851f5149708"
+  },
+  "schema_version": 1,
+  "snapshot_kind": "frozen-document-lifecycle-phase5-predecessor"
+}

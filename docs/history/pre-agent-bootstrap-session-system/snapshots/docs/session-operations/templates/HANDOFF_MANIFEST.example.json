@@ -1,0 +1,33 @@
+{
+  "audit_order": [],
+  "delivery_intent": {
+    "drive_path": "gdrive:HW-T/cpython-android-cli/handoff/<HANDOFF_ID>/",
+    "status_authority": "external upload/readback receipt"
+  },
+  "full_cycle": {
+    "close_instruction": "reference-docs/session-operations/SESSION_CLOSE_INITIALIZATION.md",
+    "validator": "tools/handoff_cycle.py"
+  },
+  "gate_state": {},
+  "handoff_id": "YYYY-MM-DD-boundary",
+  "immediate_task": "",
+  "open_dispositions": {},
+  "package_class": "mandatory-handoff",
+  "pending_inputs": [],
+  "project": "HW-T/cpython-android-cli",
+  "reading_order": [
+    "START_HERE.md",
+    "PROJECT_ORIENTATION.md",
+    "project-state/PACKAGE_HANDOFF.md"
+  ],
+  "repository": {
+    "branch": "",
+    "documentation_update": "none-or-included",
+    "head": "",
+    "main": "",
+    "remote_active": "",
+    "tree": ""
+  },
+  "repository_paths": [],
+  "schema_version": 2
+}

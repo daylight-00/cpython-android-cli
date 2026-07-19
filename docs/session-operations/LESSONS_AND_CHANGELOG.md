@@ -70,3 +70,12 @@ This records collaboration/tooling lessons, not project acceptance history.
 - Do not `source` generated status or manifest data unless every value is shell-quoted by construction. Prefer JSON or explicit parsing for values that may contain spaces or punctuation.
 - Never remove a directory while the wrapper or one of its child processes still uses it as the current working directory. Move to a stable directory before cleanup.
 - Apply isolated `HOME` and XDG values only to the target child commands that require them. Restore the real user environment before rclone upload or any operation that depends on user configuration.
+
+## Agent bootstrap transition — bundle-native session authority
+
+- Ordinary mandatory handoff packages are retired.
+- Every new session starts from a full Git bundle and root `AGENT_BOOTSTRAP.md`.
+- `docs/agent/SESSION_PROTOCOL.md` is the sole mandatory operating ABI.
+- GitHub connector/API and command-line network downloads are not repository or artifact transport paths.
+- Google Drive connector inspection is the first transport/readback attempt.
+- Current task loading is generated at section granularity in `docs/current/AGENT_TASK.json`.

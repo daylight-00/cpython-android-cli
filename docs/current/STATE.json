@@ -47,6 +47,12 @@
       "path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json",
       "role": "legacy authority compatibility snapshots and completed documentation lifecycle migration",
       "sha256": "c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924"
+    },
+    {
+      "id": "immutable-agent-bootstrap-bundle-session-protocol",
+      "path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
+      "role": "immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol",
+      "sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79"
     }
   ],
   "active_plan": {
@@ -56,6 +62,23 @@
     "sha256": "ec5f36ed15bcfdf9a20b675b8d08c267237246c17600907c2a081825e55f69a4"
   },
   "active_work_package": null,
+  "agent_onboarding": {
+    "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
+    "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
+    "bootstrap_contract_path": "docs/agent/BOOTSTRAP_CONTRACT.json",
+    "bootstrap_path": "AGENT_BOOTSTRAP.md",
+    "bootstrap_sha256": "64c4ab8331e6696788fd6d34e1113177e99963373d81abae0130502b89fc0e11",
+    "ordinary_handoff_packages_required": false,
+    "project_model_path": "docs/agent/PROJECT_MODEL.md",
+    "project_model_revision": 1,
+    "session_input": "full-git-bundle-plus-sha256-sidecar",
+    "session_output": "one-runner-transaction-package-and-complete-receipt",
+    "session_protocol_path": "docs/agent/SESSION_PROTOCOL.md",
+    "session_protocol_revision": 1,
+    "status": "established",
+    "task_catalog_path": "docs/agent/TASK_CATALOG.json",
+    "task_manifest_path": "docs/current/AGENT_TASK.json"
+  },
   "blockers": [],
   "claim_boundaries": {
     "dual_real_device_aarch64_termux_compatibility": true,
@@ -65,10 +88,10 @@
     "selectable": false
   },
   "control_work": {
-    "completed_phase": 5,
-    "id": "DOC-LIFECYCLE",
+    "completed_phase": 1,
+    "id": "AGENT-BOOTSTRAP",
     "migration_complete": true,
-    "name": "documentation lifecycle migration",
+    "name": "immutable agent bootstrap and bundle session protocol",
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "next_phase": null,
     "physical_moves_decision": "not-required",
@@ -77,13 +100,15 @@
   },
   "documentation_layers": {
     "active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+    "agent_bootstrap": "AGENT_BOOTSTRAP.md",
+    "agent_task": "docs/current/AGENT_TASK.json",
     "authority_root": "docs/evidence/README.md",
     "current_source": "docs/current/STATE.json",
     "history_root": "docs/history/README.md",
     "legacy_compatibility_map": "docs/documentation/legacy-authority-decoupling-map.json",
     "stable": [
-      "docs/PROJECT_GUIDE.md",
-      "docs/documentation/DOCUMENTATION_SYSTEM.md"
+      "docs/agent/PROJECT_MODEL.md",
+      "docs/agent/SESSION_PROTOCOL.md"
     ]
   },
   "navigation": {
@@ -92,12 +117,12 @@
     "legacy_compatibility_root": "docs/history/legacy-authority-bindings/README.md",
     "root": "docs/navigation/README.md",
     "status": "generated-and-verified",
-    "target_count": 15
+    "target_count": 16
   },
   "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
   "predecessor": {
-    "commit": "d201957a11861147bdbe11b6a91bf68fb6714a4d",
-    "tree": "1c0c692d7763487ad2ba0d91a7f2bf04b6e0b423"
+    "commit": "34695ed741411067302bd7372e3b7024b5fab541",
+    "tree": "8537ad0495915491fce158abe1f25851f5149708"
   },
   "program": {
     "epoch": {
@@ -113,19 +138,20 @@
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "status": "active"
   },
-  "project_guide": {
-    "path": "docs/PROJECT_GUIDE.md",
-    "sha256": "a44dcc07ae0f3201029c7cc639cf75aa771cfba4700bb1c6514fbfaabdd5cb33"
+  "project_model": {
+    "path": "docs/agent/PROJECT_MODEL.md",
+    "sha256": "e2c75f6bbef5f3b2e00c131a0f7e46ddbdb10143f9757f02c6086a41704fa456"
   },
   "render_targets": {
     "current": [
       "README.md",
       "docs/CURRENT_CONTEXT.md",
       "docs/INDEX.md",
-      "docs/SESSION_ONBOARDING.md"
+      "docs/current/AGENT_TASK.json"
     ],
     "navigation": [
       "docs/navigation/README.md",
+      "docs/agent/README.md",
       "docs/current/README.md",
       "docs/documentation/README.md",
       "docs/decisions/README.md",
@@ -142,12 +168,12 @@
       "experiments/README.md"
     ]
   },
-  "schema_path": "docs/current/STATE-v4.schema.json",
-  "schema_version": 4,
+  "schema_path": "docs/current/STATE-v5.schema.json",
+  "schema_version": 5,
   "state_kind": "project-current-state",
-  "state_revision": 4,
+  "state_revision": 5,
   "unresolved_risks": [
     "official upstream package and BeeWare dependency identities are not yet frozen under UT-0"
   ],
-  "updated_by_transaction": "20260719-document-legacy-authority-decoupling-phase5-v1"
+  "updated_by_transaction": "20260719-immutable-agent-bootstrap-bundle-session-protocol-v1"
 }

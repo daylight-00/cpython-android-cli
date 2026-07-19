@@ -1,0 +1,39 @@
+{
+  "$id": "urn:cpython-android-cli:document-registry:v6",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "basis": {
+      "type": "object"
+    },
+    "documents": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "lifecycle_classes": {
+      "type": "array",
+      "uniqueItems": true
+    },
+    "registry_kind": {
+      "const": "document-lifecycle-registry"
+    },
+    "schema_path": {
+      "const": "docs/documentation/document-registry-v6.schema.json"
+    },
+    "schema_version": {
+      "const": 6
+    }
+  },
+  "required": [
+    "schema_version",
+    "registry_kind",
+    "schema_path",
+    "basis",
+    "lifecycle_classes",
+    "documents"
+  ],
+  "title": "CPython Android CLI document lifecycle registry v6",
+  "type": "object"
+}

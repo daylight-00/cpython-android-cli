@@ -1,6 +1,6 @@
 # Architecture
 
-> **Generated view:** registry v5. Do not hand-edit.
+> **Generated view:** document registry v6. Do not hand-edit.
 > Stable architecture and ownership documents.
 
 ```text

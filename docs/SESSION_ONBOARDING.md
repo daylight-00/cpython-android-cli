@@ -1,51 +1,9 @@
-# Session Onboarding
+# Session Onboarding Compatibility Redirect
 
-This is the stable repository entry for a successor session.
+> **Status:** compatibility redirect
+> **Canonical current source:** [`../AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md)
+> **Pre-bootstrap snapshot:** [`history/pre-agent-bootstrap-session-system/INDEX.md`](history/pre-agent-bootstrap-session-system/INDEX.md)
 
-## Start from the mandatory handoff package
+Agent sessions now start from the full Git bundle at repository-root `AGENT_BOOTSTRAP.md`. Mandatory handoff packages are retired.
 
-1. Obtain the latest mandatory handoff `.tar.zst`.
-2. Extract it into a new directory and run:
-
-```bash
-python3 tools/handoff_cycle.py verify .
-python3 tools/handoff_cycle.py onboard .
-```
-
-3. Read `START_HERE.md` and `PROJECT_ORIENTATION.md` in the package.
-4. Confirm repository branch, HEAD, tree, remote active ref, and `main` from `HANDOFF_MANIFEST.json`.
-5. Read the package's dated snapshot and perform only its immediate bounded task.
-
-<!-- BEGIN GENERATED CURRENT STATE -->
-## Current reading path
-
-> Generated from [`docs/current/STATE.json`](current/STATE.json).
-
-1. [`docs/PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
-2. [`docs/current/STATE.json`](current/STATE.json)
-3. [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
-4. [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](roadmap/EPOCH2_PROGRAM_PLAN.md)
-5. [`docs/navigation/README.md`](navigation/README.md)
-6. [`docs/INDEX.md`](INDEX.md)
-
-```text
-immediate repository action  execute-e2-r1-ut0-exact-official-upstream-control
-program gate held ready      E2-R1/UT-0 — exact official upstream control
-program resume action        execute-e2-r1-ut0-exact-official-upstream-control
-```
-<!-- END GENERATED CURRENT STATE -->
-
-## Stable repository documents
-
-- [`PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
-- [`documentation/DOCUMENTATION_SYSTEM.md`](documentation/DOCUMENTATION_SYSTEM.md)
-- [`documentation/CURRENT_STATE_AUTHORITY.md`](documentation/CURRENT_STATE_AUTHORITY.md)
-- [`documentation/document-registry.json`](documentation/document-registry.json)
-- [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
-- [`decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
-- [`decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md`](decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md)
-- [`session-operations/README.md`](session-operations/README.md)
-
-## Authority rule
-
-`current/STATE.json` is the sole temporal source. `CURRENT_CONTEXT.md`, `INDEX.md`, and the generated block above are renderings. The dated handoff supplies exact repository topology and execution scope for its transaction. Older handoffs, chat memory, console markers, and filenames do not override current state or frozen evidence.
+Do not use this path as an independent source of session policy or current state.

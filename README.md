@@ -10,11 +10,11 @@ This repository is the laboratory, governance record, and historical evidence ar
 > Generated from [`docs/current/STATE.json`](docs/current/STATE.json). Do not hand-edit this block.
 
 ```text
-immediate repository action  execute-e2-r1-ut0-exact-official-upstream-control
-document migration           Phase 5 complete; migration closed
-program epoch                E2 — upstream-thin research program
-program gate held ready      E2-R1/UT-0 — exact official upstream control
-program resume action        execute-e2-r1-ut0-exact-official-upstream-control
+agent bootstrap       established — AGENT_BOOTSTRAP.md
+session transport     full Git bundle -> one runner -> complete receipt
+immediate action      execute-e2-r1-ut0-exact-official-upstream-control
+program epoch         E2 — upstream-thin research program
+program gate          E2-R1/UT-0 — exact official upstream control
 ```
 
 ### Current claim boundary
@@ -45,34 +45,38 @@ none
 - [`experiments/document-navigation/document-navigation-authority.json`](experiments/document-navigation/document-navigation-authority.json): complete generated documentation navigation and reachability (`28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23`)
 - [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](experiments/document-mixed-correction/document-mixed-correction-authority.json): stable/current/plan/history layer separation and snapshot interpretation (`45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf`)
 - [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json): legacy authority compatibility snapshots and completed documentation lifecycle migration (`c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924`)
+- [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](experiments/agent-bootstrap/agent-bootstrap-authority.json): immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol (`86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79`)
 
-### Current entry points
+### Agent entry
 
-- [`docs/PROJECT_GUIDE.md`](docs/PROJECT_GUIDE.md)
-- [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
-- [`docs/INDEX.md`](docs/INDEX.md)
-- [`docs/navigation/README.md`](docs/navigation/README.md)
-- [`docs/SESSION_ONBOARDING.md`](docs/SESSION_ONBOARDING.md)
+- [`AGENT_BOOTSTRAP.md`](AGENT_BOOTSTRAP.md)
+- [`docs/current/AGENT_TASK.json`](docs/current/AGENT_TASK.json)
+- [`docs/agent/PROJECT_MODEL.md`](docs/agent/PROJECT_MODEL.md)
+- [`docs/agent/SESSION_PROTOCOL.md`](docs/agent/SESSION_PROTOCOL.md)
 <!-- END GENERATED CURRENT STATE -->
 
-## Stable entry points
+## Agent session entry
 
-- [`docs/PROJECT_GUIDE.md`](docs/PROJECT_GUIDE.md) — project identity, authority model, and reading rules
-- [`docs/documentation/DOCUMENTATION_SYSTEM.md`](docs/documentation/DOCUMENTATION_SYSTEM.md) — lifecycle, update, supersession, and machine-binding rules
-- [`docs/navigation/README.md`](docs/navigation/README.md) — exhaustive generated navigation
-- [`docs/SESSION_ONBOARDING.md`](docs/SESSION_ONBOARDING.md) — successor-session procedure
+A new agent session starts from the full Git bundle at [`AGENT_BOOTSTRAP.md`](AGENT_BOOTSTRAP.md). The owner does not need to provide a separate handoff package or a large prompt.
+
+## Stable human entry points
+
+- [`docs/agent/PROJECT_MODEL.md`](docs/agent/PROJECT_MODEL.md) — project philosophy, epoch roles, authority, and reading discipline
+- [`docs/agent/SESSION_PROTOCOL.md`](docs/agent/SESSION_PROTOCOL.md) — mandatory bundle, Drive, Git, runner, evidence, and session rules
+- [`docs/current/STATE.json`](docs/current/STATE.json) — sole current-state authority
+- [`docs/current/AGENT_TASK.json`](docs/current/AGENT_TASK.json) — generated current task and section-level read manifest
+- [`docs/navigation/README.md`](docs/navigation/README.md) — exhaustive lookup, excluded from ordinary onboarding
 
 ## Authority model
 
 ```text
 present coordinates   -> docs/current/STATE.json
+agent task routing    -> docs/current/AGENT_TASK.json
 program design        -> canonical active plan + ADRs + epoch charters
 proven result         -> frozen contract + evidence + machine authority
 past statement        -> historical snapshot at its recorded boundary
 where to read         -> generated navigation
 ```
-
-Current state and navigation are generated views. Historical documents may contain words such as `active`, `next`, or `pending`; those words remain relative to the document's original snapshot and never override `docs/current/STATE.json`.
 
 ## Engineering principle
 

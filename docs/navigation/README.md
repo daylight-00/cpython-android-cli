@@ -1,38 +1,20 @@
 # Documentation Navigation
 
-> **Generated root:** registry v5 + [`docs/current/STATE.json`](../current/STATE.json).
-> Start with the stable project guide, then use typed indexes for current state, plans, authority, and history.
-
-## Primary entry
-
-- [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md)
+> **Generated lookup root:** registry v6 + [`docs/current/STATE.json`](../current/STATE.json).
+> Agent sessions do not start here. Start at [`AGENT_BOOTSTRAP.md`](../../AGENT_BOOTSTRAP.md).
 
 ## Current coordinates
 
 ```text
-immediate action  execute-e2-r1-ut0-exact-official-upstream-control
-program gate      E2-R1/UT-0 — exact official upstream control
-tracked docs      501
-index targets     15
+action       execute-e2-r1-ut0-exact-official-upstream-control
+gate         E2-R1/UT-0 — exact official upstream control
+tracked docs 536
+indexes      16
 ```
 
-## Lifecycle distribution
+## Generated indexes
 
-- `ACTIVE_PLAN`: 2
-- `APPEND_ONLY_LOG`: 1
-- `CURRENT_INPUT_LOCK`: 2
-- `CURRENT_REGISTRY`: 1
-- `CURRENT_SOURCE`: 1
-- `FROZEN_AUTHORITY`: 258
-- `GENERATED_VIEW`: 18
-- `HISTORICAL_SNAPSHOT`: 170
-- `RAW_REFERENCE`: 5
-- `REFERENCE`: 5
-- `STABLE`: 36
-- `STABLE_WITH_GENERATED_SECTION`: 2
-
-## Generated entrypoints
-
+- [`docs/agent/README.md`](../agent/README.md) — mandatory agent bootstrap and protocol index
 - [`docs/current/README.md`](../current/README.md) — current-state directory index
 - [`docs/documentation/README.md`](../documentation/README.md) — documentation governance index
 - [`docs/decisions/README.md`](../decisions/README.md) — decision index
@@ -42,14 +24,15 @@ index targets     15
 - [`docs/contracts/README.md`](../contracts/README.md) — contract index
 - [`docs/evidence/README.md`](../evidence/README.md) — evidence index
 - [`docs/stages/README.md`](../stages/README.md) — stage snapshot index
-- [`docs/handoff/README.md`](../handoff/README.md) — handoff index
-- [`docs/history/README.md`](../history/README.md) — legacy context and orientation history
+- [`docs/handoff/README.md`](../handoff/README.md) — historical handoff index
+- [`docs/history/README.md`](../history/README.md) — historical snapshot index
 - [`docs/history/legacy-authority-bindings/README.md`](../history/legacy-authority-bindings/README.md) — legacy authority compatibility snapshot index
 - [`docs/references/README.md`](../references/README.md) — reference index
 - [`experiments/README.md`](../../experiments/README.md) — experiment index
 
 ## Other canonical roots
 
+- [`AGENT_BOOTSTRAP.md`](../../AGENT_BOOTSTRAP.md) — `FROZEN_AUTHORITY` · `agent_bootstrap` · owner `session-operations`
 - [`README.md`](../../README.md) — `STABLE_WITH_GENERATED_SECTION` · `public_orientation` · owner `project-governance`
 - [`components/README.md`](../../components/README.md) — `STABLE` · `component_contract` · owner `component-governance`
 - [`components/installer/README.md`](../../components/installer/README.md) — `STABLE` · `component_contract` · owner `installer-component`
@@ -61,20 +44,27 @@ index targets     15
 - [`config/dependencies/android-source-deps-aarch64-linux-android.lock.json`](../../config/dependencies/android-source-deps-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`
-- [`docs/GITHUB_COLLABORATION_WORKFLOW.md`](../GITHUB_COLLABORATION_WORKFLOW.md) — `STABLE` · `session_operations` · owner `session-operations`
+- [`docs/GITHUB_COLLABORATION_WORKFLOW.md`](../GITHUB_COLLABORATION_WORKFLOW.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
 - [`docs/INDEX.md`](../INDEX.md) — `GENERATED_VIEW` · `navigation` · owner `program-governance`
-- [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md) — `STABLE` · `project_orientation` · owner `architecture-governance`
-- [`docs/SESSION_ONBOARDING.md`](../SESSION_ONBOARDING.md) — `STABLE_WITH_GENERATED_SECTION` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/AGENT_WORK_METHOD.md`](../session-operations/AGENT_WORK_METHOD.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/COLLABORATION_AND_TRANSPORT.md`](../session-operations/COLLABORATION_AND_TRANSPORT.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/HANDOFF_PACKAGE_SPEC.md`](../session-operations/HANDOFF_PACKAGE_SPEC.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/LESSONS_AND_CHANGELOG.md`](../session-operations/LESSONS_AND_CHANGELOG.md) — `APPEND_ONLY_LOG` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/README.md`](../session-operations/README.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/SESSION_CLOSE_INITIALIZATION.md`](../session-operations/SESSION_CLOSE_INITIALIZATION.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/SESSION_CYCLE.md`](../session-operations/SESSION_CYCLE.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md`](../session-operations/templates/DATED_HANDOFF_TEMPLATE.md) — `STABLE` · `session_operations` · owner `session-operations`
-- [`docs/session-operations/templates/HANDOFF_MANIFEST.example.json`](../session-operations/templates/HANDOFF_MANIFEST.example.json) — `STABLE` · `session_operations` · owner `session-operations`
+- [`docs/PROJECT_CONTEXT.md`](../PROJECT_CONTEXT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_CONTEXT_STAGE3.md`](../PROJECT_CONTEXT_STAGE3.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_CONTEXT_STAGE3C.md`](../PROJECT_CONTEXT_STAGE3C.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_CONTEXT_STAGE3D.md`](../PROJECT_CONTEXT_STAGE3D.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_CONTEXT_STAGE3E.md`](../PROJECT_CONTEXT_STAGE3E.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_CONTEXT_STAGE3F.md`](../PROJECT_CONTEXT_STAGE3F.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md) — `STABLE` · `project_orientation_compatibility` · owner `project-governance`
+- [`docs/PROJECT_ORIENTATION.md`](../PROJECT_ORIENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-transition-history` · snapshot-relative; never current authority
+- [`docs/SESSION_ONBOARDING.md`](../SESSION_ONBOARDING.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/AGENT_WORK_METHOD.md`](../session-operations/AGENT_WORK_METHOD.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/COLLABORATION_AND_TRANSPORT.md`](../session-operations/COLLABORATION_AND_TRANSPORT.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/HANDOFF_PACKAGE_SPEC.md`](../session-operations/HANDOFF_PACKAGE_SPEC.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/LESSONS_AND_CHANGELOG.md`](../session-operations/LESSONS_AND_CHANGELOG.md) — `APPEND_ONLY_LOG` · `session_operations_history` · owner `session-operations`
+- [`docs/session-operations/README.md`](../session-operations/README.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/SESSION_CLOSE_INITIALIZATION.md`](../session-operations/SESSION_CLOSE_INITIALIZATION.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/SESSION_CYCLE.md`](../session-operations/SESSION_CYCLE.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
+- [`docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md`](../session-operations/templates/DATED_HANDOFF_TEMPLATE.md) — `HISTORICAL_SNAPSHOT` · `retired_handoff_template` · owner `session-operations` · snapshot-relative; never current authority
+- [`docs/session-operations/templates/HANDOFF_MANIFEST.example.json`](../session-operations/templates/HANDOFF_MANIFEST.example.json) — `HISTORICAL_SNAPSHOT` · `retired_handoff_template` · owner `session-operations` · snapshot-relative; never current authority
 
-## Interpretation rule
+## Interpretation
 
-`STATE.json` owns present coordinates. Active plans own future structure. Frozen authority owns accepted claims. Historical status language is snapshot-relative and never overrides current state.
+Current state and the generated task manifest control onboarding. Stable modules control rules. Frozen authority controls accepted claims. History remains snapshot-relative.

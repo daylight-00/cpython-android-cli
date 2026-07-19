@@ -1,0 +1,23 @@
+{
+  "audit_kind": "immutable-agent-bootstrap-external-audit",
+  "blockers": [],
+  "checks": {
+    "curl_wget_not_authority_path": true,
+    "default_deny_context_policy": true,
+    "drive_first": true,
+    "full_bundle_session_input": true,
+    "github_and_network_git_forbidden": true,
+    "mandatory_session_protocol": true,
+    "one_document_entry": true,
+    "ordinary_handoff_retired": true,
+    "phase5_predecessor_preserved": true,
+    "product_or_target_claim_unchanged": true,
+    "section_level_task_router": true,
+    "single_runner_owner_interface": true
+  },
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "pass": true,
+  "schema_version": 1,
+  "source_authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
+  "source_authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79"
+}

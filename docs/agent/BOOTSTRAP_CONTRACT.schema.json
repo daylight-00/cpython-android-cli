@@ -1,0 +1,59 @@
+{
+  "$id": "urn:cpython-android-cli:agent-bootstrap-contract:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bootstrap": {
+      "type": "object"
+    },
+    "compatibility_redirects": {
+      "type": "array"
+    },
+    "contract_kind": {
+      "const": "immutable-agent-bootstrap-contract"
+    },
+    "current_state_path": {
+      "const": "docs/current/STATE.json"
+    },
+    "current_task_path": {
+      "const": "docs/current/AGENT_TASK.json"
+    },
+    "default_exclusions": {
+      "type": "array"
+    },
+    "mandatory_read_order": {
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "required_project_rule_ids": {
+      "minItems": 8,
+      "type": "array"
+    },
+    "required_session_rule_ids": {
+      "minItems": 20,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "session_transport": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract_kind",
+    "bootstrap",
+    "mandatory_read_order",
+    "required_project_rule_ids",
+    "required_session_rule_ids",
+    "current_state_path",
+    "current_task_path",
+    "default_exclusions",
+    "compatibility_redirects",
+    "session_transport"
+  ],
+  "title": "Immutable agent bootstrap contract",
+  "type": "object"
+}

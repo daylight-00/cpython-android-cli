@@ -1,13 +1,14 @@
 # Evidence
 
-> **Generated view:** registry v5. Do not hand-edit.
+> **Generated view:** document registry v6. Do not hand-edit.
 > Frozen evidence records; ordering implies no precedence.
 
 ```text
-entry count  137
-lifecycle    `FROZEN_AUTHORITY` 137
+entry count  138
+lifecycle    `FROZEN_AUTHORITY` 138
 ```
 
+- [`docs/evidence/AGENT_BOOTSTRAP_AND_BUNDLE_SESSION_PROTOCOL_AUTHORITY_FREEZE.md`](AGENT_BOOTSTRAP_AND_BUNDLE_SESSION_PROTOCOL_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_evidence` · owner `session-operations`
 - [`docs/evidence/DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md`](DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md`](DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md`](DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `evidence` · owner `documentation-system`

@@ -1,0 +1,69 @@
+{
+  "claim_boundary": {
+    "android_runtime_claim": false,
+    "device_qualification_claim": false,
+    "epoch3_selection_claim": false,
+    "official_upstream_identity_claim": "pending-evidence",
+    "product_selectability_claim": false,
+    "publication_claim": false
+  },
+  "default_exclusions": [
+    "docs/history/**",
+    "docs/handoff/**",
+    "docs/stages/**",
+    "unrelated-evidence",
+    "unrelated-experiments",
+    "roadmap-outside-selected-section",
+    "past-chat-transcripts"
+  ],
+  "deliverable": {
+    "class": "local-artifact-evidence-and-repository-transaction",
+    "owner_interface": "one-runner",
+    "result": "complete-pass-or-fail-receipt"
+  },
+  "generated_from": {
+    "state": "docs/current/STATE.json",
+    "task_catalog": "docs/agent/TASK_CATALOG.json"
+  },
+  "input_routing": {
+    "fallback": "one bounded owner-run acquisition runner",
+    "first_attempt": "google-drive-connector",
+    "forbidden": [
+      "curl-or-wget-in-assistant-environment",
+      "github-connector-or-api",
+      "network-git"
+    ]
+  },
+  "manifest_kind": "generated-current-agent-task",
+  "onboarding_certificate_required": true,
+  "program_gate": {
+    "id": "E2-R1/UT-0",
+    "name": "exact official upstream control",
+    "status": "ready"
+  },
+  "required_authorities": [
+    {
+      "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+      "reason": "Frozen authority for the detailed remaining-work and completion-gate plan.",
+      "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+    }
+  ],
+  "required_reads": [
+    {
+      "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+      "reason": "Current gate work, required outputs, and exit condition.",
+      "scope": "section",
+      "section_heading": "## UT-0 — Exact official upstream control",
+      "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
+    }
+  ],
+  "schema_version": 1,
+  "state_revision": 5,
+  "task": {
+    "action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "goal": "Freeze the exact unmodified official Python.org Android package, inherited BeeWare dependency set, package topology, metadata, and bounded delta against the reconstructed producer authority.",
+    "id": "E2-R1-UT-0",
+    "title": "Exact official upstream control",
+    "work_class": "L"
+  }
+}

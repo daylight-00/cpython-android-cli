@@ -1,50 +1,59 @@
 # Experiments
 
-> **Generated view:** registry v5. Do not hand-edit.
+> **Generated view:** registry v6. Do not hand-edit.
+> Experiments are excluded from onboarding unless AGENT_TASK selects them.
 
-## `experiments/bootstrap-android-build`
+## `agent-bootstrap`
 
-- [`experiments/bootstrap-android-build/android-python-work/README.md`](bootstrap-android-build/android-python-work/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `project-governance` · snapshot-relative status; does not override STATE.json
+- [`experiments/agent-bootstrap/README.md`](agent-bootstrap/README.md) — `STABLE` · `experiment_design` · owner `session-operations`
+- [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](agent-bootstrap/agent-bootstrap-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `session-operations`
+- [`experiments/agent-bootstrap/agent-bootstrap-external-audit.json`](agent-bootstrap/agent-bootstrap-external-audit.json) — `FROZEN_AUTHORITY` · `external_audit` · owner `session-operations`
+- [`experiments/agent-bootstrap/frozen-phase5-snapshot.json`](agent-bootstrap/frozen-phase5-snapshot.json) — `FROZEN_AUTHORITY` · `predecessor_snapshot` · owner `session-operations`
+- [`experiments/agent-bootstrap/navigation-targets.json`](agent-bootstrap/navigation-targets.json) — `FROZEN_AUTHORITY` · `navigation_manifest` · owner `documentation-governance`
 
-## `experiments/document-current-state`
+## `bootstrap-android-build`
+
+- [`experiments/bootstrap-android-build/android-python-work/README.md`](bootstrap-android-build/android-python-work/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `project-governance` · snapshot-relative; never current authority
+
+## `document-current-state`
 
 - [`experiments/document-current-state/README.md`](document-current-state/README.md) — `FROZEN_AUTHORITY` · `documentation_governance_experiment` · owner `documentation-governance`
 - [`experiments/document-current-state/baseline-current-state.json`](document-current-state/baseline-current-state.json) — `FROZEN_AUTHORITY` · `temporal_state_snapshot` · owner `program-governance`
 - [`experiments/document-current-state/document-current-state-authority.json`](document-current-state/document-current-state-authority.json) — `FROZEN_AUTHORITY` · `documentation_governance_authority` · owner `documentation-governance`
 - [`experiments/document-current-state/document-current-state-external-audit.json`](document-current-state/document-current-state-external-audit.json) — `FROZEN_AUTHORITY` · `documentation_governance_audit` · owner `independent-review`
 
-## `experiments/document-legacy-authority-decoupling`
+## `document-legacy-authority-decoupling`
 
-- [`experiments/document-legacy-authority-decoupling/README.md`](document-legacy-authority-decoupling/README.md) — `HISTORICAL_SNAPSHOT` · `experiment_history` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`experiments/document-legacy-authority-decoupling/README.md`](document-legacy-authority-decoupling/README.md) — `HISTORICAL_SNAPSHOT` · `experiment_history` · owner `documentation-system` · snapshot-relative; never current authority
 - [`experiments/document-legacy-authority-decoupling/frozen-phase4-snapshot.json`](document-legacy-authority-decoupling/frozen-phase4-snapshot.json) — `FROZEN_AUTHORITY` · `snapshot_authority` · owner `documentation-system`
 - [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `documentation-system`
 - [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json`](document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json) — `FROZEN_AUTHORITY` · `external_audit` · owner `documentation-system`
 - [`experiments/document-legacy-authority-decoupling/navigation-targets.json`](document-legacy-authority-decoupling/navigation-targets.json) — `FROZEN_AUTHORITY` · `navigation_manifest` · owner `documentation-system`
 
-## `experiments/document-lifecycle-control`
+## `document-lifecycle-control`
 
 - [`experiments/document-lifecycle-control/README.md`](document-lifecycle-control/README.md) — `FROZEN_AUTHORITY` · `documentation_control_experiment` · owner `documentation-system`
 - [`experiments/document-lifecycle-control/baseline-document-registry.json`](document-lifecycle-control/baseline-document-registry.json) — `FROZEN_AUTHORITY` · `documentation_registry_snapshot` · owner `documentation-system`
 - [`experiments/document-lifecycle-control/document-lifecycle-control-authority.json`](document-lifecycle-control/document-lifecycle-control-authority.json) — `FROZEN_AUTHORITY` · `documentation_control_authority` · owner `documentation-system`
 - [`experiments/document-lifecycle-control/document-lifecycle-control-external-audit.json`](document-lifecycle-control/document-lifecycle-control-external-audit.json) — `FROZEN_AUTHORITY` · `documentation_control_audit` · owner `independent-review`
 
-## `experiments/document-mixed-correction`
+## `document-mixed-correction`
 
-- [`experiments/document-mixed-correction/README.md`](document-mixed-correction/README.md) — `HISTORICAL_SNAPSHOT` · `experiment_history` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`experiments/document-mixed-correction/README.md`](document-mixed-correction/README.md) — `HISTORICAL_SNAPSHOT` · `experiment_history` · owner `documentation-system` · snapshot-relative; never current authority
 - [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](document-mixed-correction/document-mixed-correction-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `documentation-system`
 - [`experiments/document-mixed-correction/document-mixed-correction-external-audit.json`](document-mixed-correction/document-mixed-correction-external-audit.json) — `FROZEN_AUTHORITY` · `external_audit` · owner `documentation-system`
 - [`experiments/document-mixed-correction/frozen-phase3-snapshot.json`](document-mixed-correction/frozen-phase3-snapshot.json) — `FROZEN_AUTHORITY` · `authority_snapshot` · owner `documentation-system`
 - [`experiments/document-mixed-correction/legacy-mixed-paths.json`](document-mixed-correction/legacy-mixed-paths.json) — `FROZEN_AUTHORITY` · `authority_manifest` · owner `documentation-system`
 - [`experiments/document-mixed-correction/navigation-targets.json`](document-mixed-correction/navigation-targets.json) — `FROZEN_AUTHORITY` · `authority_manifest` · owner `documentation-system`
 
-## `experiments/document-navigation`
+## `document-navigation`
 
 - [`experiments/document-navigation/README.md`](document-navigation/README.md) — `FROZEN_AUTHORITY` · `documentation_governance_experiment` · owner `documentation-governance`
 - [`experiments/document-navigation/document-navigation-authority.json`](document-navigation/document-navigation-authority.json) — `FROZEN_AUTHORITY` · `documentation_governance_authority` · owner `documentation-governance`
 - [`experiments/document-navigation/document-navigation-external-audit.json`](document-navigation/document-navigation-external-audit.json) — `FROZEN_AUTHORITY` · `documentation_governance_audit` · owner `independent-review`
 - [`experiments/document-navigation/navigation-targets.json`](document-navigation/navigation-targets.json) — `FROZEN_AUTHORITY` · `machine_contract` · owner `documentation-governance`
 
-## `experiments/epoch2-archive-qualification`
+## `epoch2-archive-qualification`
 
 - [`experiments/epoch2-archive-qualification/README.md`](epoch2-archive-qualification/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-archive-qualification/qualification-contract-authority.json`](epoch2-archive-qualification/qualification-contract-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
@@ -58,15 +67,15 @@
 - [`experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json`](epoch2-archive-qualification/secondary-real-device-qualification-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-archive-qualification/secondary-real-device-qualification-external-audit.json`](epoch2-archive-qualification/secondary-real-device-qualification-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-recalibration`
+## `epoch2-recalibration`
 
 - [`experiments/epoch2-recalibration/README.md`](epoch2-recalibration/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-recalibration/recalibration-authority.json`](epoch2-recalibration/recalibration-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-recalibration/recalibration-external-audit.json`](epoch2-recalibration/recalibration-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-standalone-artifact-contract`
+## `epoch2-standalone-artifact-contract`
 
-- [`experiments/epoch2-standalone-artifact-contract/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](epoch2-standalone-artifact-contract/E2P1_STANDALONE_ARTIFACT_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-research` · snapshot-relative status; does not override STATE.json
+- [`experiments/epoch2-standalone-artifact-contract/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](epoch2-standalone-artifact-contract/E2P1_STANDALONE_ARTIFACT_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-research` · snapshot-relative; never current authority
 - [`experiments/epoch2-standalone-artifact-contract/README.md`](epoch2-standalone-artifact-contract/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-standalone-artifact-contract/e2p1-authority.json`](epoch2-standalone-artifact-contract/e2p1-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-standalone-artifact-contract/fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.artifact.json`](epoch2-standalone-artifact-contract/fixtures/valid/cpython-3.14.6-aarch64-linux-android24-install_only_stripped.artifact.json) — `FROZEN_AUTHORITY` · `test_authority` · owner `epoch2-research`
@@ -82,97 +91,97 @@
 - [`experiments/epoch2-standalone-artifact-contract/schemas/qualification.schema.json`](epoch2-standalone-artifact-contract/schemas/qualification.schema.json) — `STABLE` · `machine_contract` · owner `epoch2-research`
 - [`experiments/epoch2-standalone-artifact-contract/schemas/release-index.schema.json`](epoch2-standalone-artifact-contract/schemas/release-index.schema.json) — `STABLE` · `machine_contract` · owner `epoch2-research`
 
-## `experiments/epoch2-standalone-build-facade`
+## `epoch2-standalone-build-facade`
 
-- [`experiments/epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md`](epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-research` · snapshot-relative status; does not override STATE.json
+- [`experiments/epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md`](epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-research` · snapshot-relative; never current authority
 - [`experiments/epoch2-standalone-build-facade/README.md`](epoch2-standalone-build-facade/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-standalone-build-facade/e2p2-custom-ndk-python3145-provenance-audit.json`](epoch2-standalone-build-facade/e2p2-custom-ndk-python3145-provenance-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-standalone-build-facade/e2p2-gate1-authority.json`](epoch2-standalone-build-facade/e2p2-gate1-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-termux-native-cpython3146-facade-binding`
+## `epoch2-termux-native-cpython3146-facade-binding`
 
 - [`experiments/epoch2-termux-native-cpython3146-facade-binding/README.md`](epoch2-termux-native-cpython3146-facade-binding/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json`](epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-termux-native-cpython3146-facade-execution`
+## `epoch2-termux-native-cpython3146-facade-execution`
 
 - [`experiments/epoch2-termux-native-cpython3146-facade-execution/README.md`](epoch2-termux-native-cpython3146-facade-execution/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority-external-audit.json`](epoch2-termux-native-cpython3146-facade-execution/execution-authority-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json`](epoch2-termux-native-cpython3146-facade-execution/execution-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-termux-native-cpython3146-producer`
+## `epoch2-termux-native-cpython3146-producer`
 
 - [`experiments/epoch2-termux-native-cpython3146-producer/README.md`](epoch2-termux-native-cpython3146-producer/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/authority-opening.json`](epoch2-termux-native-cpython3146-producer/authority-opening.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json`](epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json`](epoch2-termux-native-cpython3146-producer/producer-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/epoch2-upstream-thin-plan`
+## `epoch2-upstream-thin-plan`
 
 - [`experiments/epoch2-upstream-thin-plan/README.md`](epoch2-upstream-thin-plan/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-plan/external-audit.json`](epoch2-upstream-thin-plan/external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-plan/plan-authority.json`](epoch2-upstream-thin-plan/plan-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
-## `experiments/stage1b-pyconfig`
+## `stage1b-pyconfig`
 
-- [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage2a-bootstrap-strategies`
+## `stage2a-bootstrap-strategies`
 
-- [`experiments/stage2a-bootstrap-strategies/README.md`](stage2a-bootstrap-strategies/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage2a-bootstrap-strategies/README.md`](stage2a-bootstrap-strategies/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage2b-conditional-reexec`
+## `stage2b-conditional-reexec`
 
-- [`experiments/stage2b-conditional-reexec/README.md`](stage2b-conditional-reexec/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage2b-conditional-reexec/README.md`](stage2b-conditional-reexec/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3a-runtime-closure`
+## `stage3a-runtime-closure`
 
-- [`experiments/stage3a-runtime-closure/README.md`](stage3a-runtime-closure/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3a-runtime-closure/README.md`](stage3a-runtime-closure/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-build-input-provenance`
+## `stage3b-build-input-provenance`
 
-- [`experiments/stage3b-build-input-provenance/README.md`](stage3b-build-input-provenance/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-build-input-provenance/README.md`](stage3b-build-input-provenance/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-dependency-promotion`
+## `stage3b-dependency-promotion`
 
-- [`experiments/stage3b-dependency-promotion/README.md`](stage3b-dependency-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-dependency-promotion/README.md`](stage3b-dependency-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-launcher-promotion`
+## `stage3b-launcher-promotion`
 
-- [`experiments/stage3b-launcher-promotion/README.md`](stage3b-launcher-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-launcher-promotion/README.md`](stage3b-launcher-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-product-boundary`
+## `stage3b-product-boundary`
 
-- [`experiments/stage3b-product-boundary/README.md`](stage3b-product-boundary/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-product-boundary/README.md`](stage3b-product-boundary/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-product-promotion`
+## `stage3b-product-promotion`
 
-- [`experiments/stage3b-product-promotion/README.md`](stage3b-product-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-product-promotion/README.md`](stage3b-product-promotion/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-target-assembly`
+## `stage3b-target-assembly`
 
-- [`experiments/stage3b-target-assembly/README.md`](stage3b-target-assembly/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-target-assembly/README.md`](stage3b-target-assembly/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-target-validation`
+## `stage3b-target-validation`
 
-- [`experiments/stage3b-target-validation/README.md`](stage3b-target-validation/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-target-validation/README.md`](stage3b-target-validation/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3b-upstream-replay`
+## `stage3b-upstream-replay`
 
-- [`experiments/stage3b-upstream-replay/README.md`](stage3b-upstream-replay/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3b-upstream-replay/README.md`](stage3b-upstream-replay/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-archive-ownership`
+## `stage3c-archive-ownership`
 
-- [`experiments/stage3c-archive-ownership/README.md`](stage3c-archive-ownership/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-archive-ownership/README.md`](stage3c-archive-ownership/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-artifact-manifest`
+## `stage3c-artifact-manifest`
 
-- [`experiments/stage3c-artifact-manifest/README.md`](stage3c-artifact-manifest/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-artifact-manifest/README.md`](stage3c-artifact-manifest/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-gate4-second-product-authority`
+## `stage3c-gate4-second-product-authority`
 
-- [`experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md`](stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-gate4-second-product-authority/README.md`](stage3c-gate4-second-product-authority/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md`](stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-gate4-second-product-authority/README.md`](stage3c-gate4-second-product-authority/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3c-gate4-second-product-authority/gate4a-a2b-termux-native-toolchain-authority.json`](stage3c-gate4-second-product-authority/gate4a-a2b-termux-native-toolchain-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json`](stage3c-gate4-second-product-authority/gate4a-a4-materialization-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-second-product-authority/gate4a-a5-standalone-authority.json`](stage3c-gate4-second-product-authority/gate4a-a5-standalone-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
@@ -181,12 +190,12 @@
 - [`experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json`](stage3c-gate4-second-product-authority/gate4a-second-product-authority-input.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json`](stage3c-gate4-second-product-authority/gate4a-second-product-authority-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 
-## `experiments/stage3c-gate4-transition`
+## `stage3c-gate4-transition`
 
-- [`experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md`](stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md`](stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md`](stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-gate4-transition/README.md`](stage3c-gate4-transition/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md`](stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md`](stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md`](stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-gate4-transition/README.md`](stage3c-gate4-transition/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3c-gate4-transition/gate4b-cross-version-inventory.json`](stage3c-gate4-transition/gate4b-cross-version-inventory.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-transition/gate4b-transition-design-authority.json`](stage3c-gate4-transition/gate4b-transition-design-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-transition/gate4b-transition-matrix.json`](stage3c-gate4-transition/gate4b-transition-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
@@ -195,66 +204,66 @@
 - [`experiments/stage3c-gate4-transition/gate4d-transition-target-authority.json`](stage3c-gate4-transition/gate4d-transition-target-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-gate4-transition/gate4e-transition-freeze-authority.json`](stage3c-gate4-transition/gate4e-transition-freeze-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 
-## `experiments/stage3c-installation-contract`
+## `stage3c-installation-contract`
 
-- [`experiments/stage3c-installation-contract/README.md`](stage3c-installation-contract/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installation-contract/README.md`](stage3c-installation-contract/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installation-durability`
+## `stage3c-installation-durability`
 
-- [`experiments/stage3c-installation-durability/README.md`](stage3c-installation-durability/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installation-durability/README.md`](stage3c-installation-durability/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installation-durability-integration`
+## `stage3c-installation-durability-integration`
 
-- [`experiments/stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md`](stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installation-durability-integration/README.md`](stage3c-installation-durability-integration/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md`](stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installation-durability-integration/README.md`](stage3c-installation-durability-integration/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installation-recovery`
+## `stage3c-installation-recovery`
 
-- [`experiments/stage3c-installation-recovery/README.md`](stage3c-installation-recovery/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installation-recovery/README.md`](stage3c-installation-recovery/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installation-transaction`
+## `stage3c-installation-transaction`
 
-- [`experiments/stage3c-installation-transaction/README.md`](stage3c-installation-transaction/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installation-transaction/README.md`](stage3c-installation-transaction/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installed-runtime-baseline`
+## `stage3c-installed-runtime-baseline`
 
-- [`experiments/stage3c-installed-runtime-baseline/README.md`](stage3c-installed-runtime-baseline/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installed-runtime-baseline/README.md`](stage3c-installed-runtime-baseline/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-installed-runtime-lifecycle`
+## `stage3c-installed-runtime-lifecycle`
 
-- [`experiments/stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md`](stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md`](stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md`](stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md`](stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md`](stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-lifecycle/README.md`](stage3c-installed-runtime-lifecycle/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md`](stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md`](stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md`](stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md`](stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md`](stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-lifecycle/README.md`](stage3c-installed-runtime-lifecycle/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json`](stage3c-installed-runtime-lifecycle/gate3c-addon-lifecycle-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json`](stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-acceptance.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json`](stage3c-installed-runtime-lifecycle/gate3d-final-uninstall-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 
-## `experiments/stage3c-installed-runtime-relocation`
+## `stage3c-installed-runtime-relocation`
 
-- [`experiments/stage3c-installed-runtime-relocation/GATE2R_CORRECTED_ENGINE_RELOCATION.md`](stage3c-installed-runtime-relocation/GATE2R_CORRECTED_ENGINE_RELOCATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3c-installed-runtime-relocation/README.md`](stage3c-installed-runtime-relocation/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-installed-runtime-relocation/GATE2R_CORRECTED_ENGINE_RELOCATION.md`](stage3c-installed-runtime-relocation/GATE2R_CORRECTED_ENGINE_RELOCATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3c-installed-runtime-relocation/README.md`](stage3c-installed-runtime-relocation/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-missing-leaf-repair-intervention`
+## `stage3c-missing-leaf-repair-intervention`
 
-- [`experiments/stage3c-missing-leaf-repair-intervention/README.md`](stage3c-missing-leaf-repair-intervention/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-missing-leaf-repair-intervention/README.md`](stage3c-missing-leaf-repair-intervention/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-product-role-inventory`
+## `stage3c-product-role-inventory`
 
-- [`experiments/stage3c-product-role-inventory/README.md`](stage3c-product-role-inventory/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-product-role-inventory/README.md`](stage3c-product-role-inventory/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3c-reproducible-archives`
+## `stage3c-reproducible-archives`
 
-- [`experiments/stage3c-reproducible-archives/README.md`](stage3c-reproducible-archives/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3c-reproducible-archives/README.md`](stage3c-reproducible-archives/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 
-## `experiments/stage3d-consumer-integration`
+## `stage3d-consumer-integration`
 
-- [`experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md`](stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md`](stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md`](stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3d-consumer-integration/README.md`](stage3d-consumer-integration/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md`](stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md`](stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md`](stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3d-consumer-integration/README.md`](stage3d-consumer-integration/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3d-consumer-integration/gate1-consumer-authority.json`](stage3d-consumer-integration/gate1-consumer-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3d-consumer-integration/gate2-consumer-census-authority.json`](stage3d-consumer-integration/gate2-consumer-census-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3d-consumer-integration/gate2-consumer-discovery-matrix.json`](stage3d-consumer-integration/gate2-consumer-discovery-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
@@ -263,11 +272,11 @@
 - [`experiments/stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json`](stage3d-consumer-integration/gate4-consumer-integration-validation-matrix.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json`](stage3d-consumer-integration/gate6-managed-python-feasibility-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 
-## `experiments/stage3e-managed-python-distribution`
+## `stage3e-managed-python-distribution`
 
-- [`experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md`](stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md`](stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md`](stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md`](stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md`](stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md`](stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3e-managed-python-distribution/gate1-authority.json`](stage3e-managed-python-distribution/gate1-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json`](stage3e-managed-python-distribution/gate2-isolated-dual-version-census-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3e-managed-python-distribution/gate2-v2-external-reaudit.json`](stage3e-managed-python-distribution/gate2-v2-external-reaudit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
@@ -276,14 +285,14 @@
 - [`experiments/stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json`](stage3e-managed-python-distribution/gate4-v2-independent-freeze-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json`](stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 
-## `experiments/stage3f-publication-acquisition`
+## `stage3f-publication-acquisition`
 
-- [`experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md`](stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md`](stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md`](stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md`](stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md`](stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
-- [`experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md`](stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative status; does not override STATE.json
+- [`experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md`](stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md`](stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md`](stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md`](stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md`](stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
+- [`experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md`](stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority
 - [`experiments/stage3f-publication-acquisition/gate1-authority.json`](stage3f-publication-acquisition/gate1-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json`](stage3f-publication-acquisition/gate2-publication-snapshot-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`
 - [`experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json`](stage3f-publication-acquisition/gate2-publication-snapshot.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch1-history`

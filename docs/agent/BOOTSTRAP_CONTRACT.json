@@ -1,0 +1,78 @@
+{
+  "bootstrap": {
+    "mutability": "immutable-in-place",
+    "path": "AGENT_BOOTSTRAP.md",
+    "sha256": "64c4ab8331e6696788fd6d34e1113177e99963373d81abae0130502b89fc0e11",
+    "supersession": "new explicit bootstrap ABI path and authority only"
+  },
+  "compatibility_redirects": [
+    "docs/SESSION_ONBOARDING.md",
+    "docs/GITHUB_COLLABORATION_WORKFLOW.md",
+    "docs/PROJECT_GUIDE.md",
+    "docs/documentation/DOCUMENTATION_SYSTEM.md",
+    "docs/session-operations/README.md",
+    "docs/session-operations/AGENT_WORK_METHOD.md",
+    "docs/session-operations/COLLABORATION_AND_TRANSPORT.md",
+    "docs/session-operations/SESSION_CYCLE.md",
+    "docs/session-operations/SESSION_CLOSE_INITIALIZATION.md",
+    "docs/session-operations/HANDOFF_PACKAGE_SPEC.md"
+  ],
+  "contract_kind": "immutable-agent-bootstrap-contract",
+  "current_state_path": "docs/current/STATE.json",
+  "current_task_path": "docs/current/AGENT_TASK.json",
+  "default_exclusions": [
+    "docs/history/**",
+    "docs/handoff/**",
+    "docs/stages/**",
+    "legacy-project-context-and-orientation",
+    "unrelated-evidence",
+    "unrelated-experiments",
+    "unselected-roadmap-sections",
+    "past-chat-transcripts"
+  ],
+  "mandatory_read_order": [
+    "docs/agent/PROJECT_MODEL.md",
+    "docs/agent/SESSION_PROTOCOL.md",
+    "docs/current/STATE.json",
+    "docs/current/AGENT_TASK.json"
+  ],
+  "required_project_rule_ids": [
+    "PM-01",
+    "PM-02",
+    "PM-03",
+    "PM-04",
+    "PM-05",
+    "PM-06",
+    "PM-07",
+    "PM-08"
+  ],
+  "required_session_rule_ids": [
+    "SP-01",
+    "SP-02",
+    "SP-03",
+    "SP-04",
+    "SP-05",
+    "SP-06",
+    "SP-07",
+    "SP-08",
+    "SP-09",
+    "SP-10",
+    "SP-11",
+    "SP-12",
+    "SP-13",
+    "SP-14",
+    "SP-15",
+    "SP-16",
+    "SP-17",
+    "SP-18",
+    "SP-19",
+    "SP-20"
+  ],
+  "schema_version": 1,
+  "session_transport": {
+    "agent_output": "one-tar-zst-transaction-package-plus-sidecar-and-one-runner",
+    "input": "full-git-bundle-plus-sha256-sidecar",
+    "ordinary_handoff_package": "retired",
+    "owner_result": "one-pass-or-fail-receipt-archive-plus-sidecar"
+  }
+}

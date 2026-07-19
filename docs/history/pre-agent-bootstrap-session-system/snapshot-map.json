@@ -1,0 +1,120 @@
+{
+  "entries": [
+    {
+      "sha256": "becfb51217bf8b595b208231be2b1ceb17fc2adcef95b394d03f18d2d10448fe",
+      "size": 2391,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/SESSION_ONBOARDING.md",
+      "source_path": "docs/SESSION_ONBOARDING.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "fb3e16c7e98b1ae5b864e20b65bcc478267119192efd14f31a35209fb726cb40",
+      "size": 9808,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/GITHUB_COLLABORATION_WORKFLOW.md",
+      "source_path": "docs/GITHUB_COLLABORATION_WORKFLOW.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "a44dcc07ae0f3201029c7cc639cf75aa771cfba4700bb1c6514fbfaabdd5cb33",
+      "size": 2448,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/PROJECT_GUIDE.md",
+      "source_path": "docs/PROJECT_GUIDE.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "8667792128fe672dadee745bf63d830c2f5384d6d532ab0b244ec6cfa2c5d284",
+      "size": 2418,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/documentation/DOCUMENTATION_SYSTEM.md",
+      "source_path": "docs/documentation/DOCUMENTATION_SYSTEM.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "101054c23bc199b0a8dc9e9354ea376334185f844dcfde364f82e78cdc9a2ec5",
+      "size": 2023,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/README.md",
+      "source_path": "docs/session-operations/README.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "182f236a4c0083999334ef986be86404b996b309dac233ab0922cbd906138978",
+      "size": 3947,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/AGENT_WORK_METHOD.md",
+      "source_path": "docs/session-operations/AGENT_WORK_METHOD.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "a50986d6b689b493b4b676b79cbb242ff13134c527667ada8e899131298fef99",
+      "size": 4869,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/COLLABORATION_AND_TRANSPORT.md",
+      "source_path": "docs/session-operations/COLLABORATION_AND_TRANSPORT.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "94e7fe03cd09492b1085d66744495cb1d915b38acefa2369581b718f6eb8711b",
+      "size": 3109,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/SESSION_CYCLE.md",
+      "source_path": "docs/session-operations/SESSION_CYCLE.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "63db4ffdc3929f2f7f359cab5e2f15a0fdf887e489c2d07396297df6e3f5d113",
+      "size": 2554,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/SESSION_CLOSE_INITIALIZATION.md",
+      "source_path": "docs/session-operations/SESSION_CLOSE_INITIALIZATION.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "f2f673d83e09fa007e16f2179cc0378c42d0aec1569d077640438db9c1e234d4",
+      "size": 1690,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/HANDOFF_PACKAGE_SPEC.md",
+      "source_path": "docs/session-operations/HANDOFF_PACKAGE_SPEC.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "6ff8072c7512188b918f74aa392a9138dcf4d93fe600ac0867caf69bf7c97e5f",
+      "size": 5740,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/LESSONS_AND_CHANGELOG.md",
+      "source_path": "docs/session-operations/LESSONS_AND_CHANGELOG.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "aae3d1ec666f3a52720f40a265fa76ddbf705938f0036a907e75104b4a94bb58",
+      "size": 749,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md",
+      "source_path": "docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    },
+    {
+      "sha256": "9352190109f5c122cc9230eaca0a7b0ce15e7446a1a70a95bf3f946f0babf068",
+      "size": 886,
+      "snapshot_path": "docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/HANDOFF_MANIFEST.example.json",
+      "source_path": "docs/session-operations/templates/HANDOFF_MANIFEST.example.json",
+      "source_tree": "8537ad0495915491fce158abe1f25851f5149708",
+      "status": "byte-exact-pre-bootstrap-snapshot"
+    }
+  ],
+  "entry_count": 13,
+  "interpretation": {
+    "current_authority": "AGENT_BOOTSTRAP.md and docs/agent/SESSION_PROTOCOL.md",
+    "ordinary_handoff_packages_required": false,
+    "snapshot_status_language": "historical-only"
+  },
+  "predecessor": {
+    "commit": "34695ed741411067302bd7372e3b7024b5fab541",
+    "tree": "8537ad0495915491fce158abe1f25851f5149708"
+  },
+  "schema_version": 1,
+  "snapshot_kind": "pre-agent-bootstrap-session-system"
+}

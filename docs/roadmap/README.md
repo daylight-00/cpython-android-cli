@@ -1,7 +1,6 @@
 # Plans and Roadmaps
 
-> **Generated view:** registry v5. Do not hand-edit.
-> Current progress belongs to STATE.json; historical plan status is snapshot-relative.
+> **Generated view:** registry v6. Current progress belongs to STATE.json.
 
 ## Canonical active plans
 
@@ -10,9 +9,9 @@
 
 ## Historical plan snapshots
 
-- [`docs/roadmap/EPOCH2_ROADMAP.md`](EPOCH2_ROADMAP.md) — `HISTORICAL_SNAPSHOT` · `historical_plan_snapshot` · owner `epoch2-transition-history` · snapshot-relative status; does not override STATE.json
-- [`docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md) — `HISTORICAL_SNAPSHOT` · `historical_plan_snapshot` · owner `epoch2-transition-history` · snapshot-relative status; does not override STATE.json
+- [`docs/roadmap/EPOCH2_ROADMAP.md`](EPOCH2_ROADMAP.md) — `HISTORICAL_SNAPSHOT` · `historical_plan_snapshot` · owner `epoch2-transition-history` · snapshot-relative; never current authority
+- [`docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md) — `HISTORICAL_SNAPSHOT` · `historical_plan_snapshot` · owner `epoch2-transition-history` · snapshot-relative; never current authority
 
-## Other
+## Other records
 
 - None.

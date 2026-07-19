@@ -1,39 +1,32 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 4
-> **Do not hand-edit.** Run the Phase 5 renderer after a state or registry transition.
+> **State revision:** 5
+> **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
+> **Do not hand-edit.**
 
-## Immediate repository work
+## Current agent route
 
 ```text
-completed phase  5
-migration       completed
-next action      execute-e2-r1-ut0-exact-official-upstream-control
+bootstrap       AGENT_BOOTSTRAP.md
+task manifest   docs/current/AGENT_TASK.json
+action          execute-e2-r1-ut0-exact-official-upstream-control
+work gate       E2-R1/UT-0 — exact official upstream control
 ```
 
-## Program position resumed
+## Mandatory project and session modules
+
+- [`docs/agent/PROJECT_MODEL.md`](agent/PROJECT_MODEL.md)
+- [`docs/agent/SESSION_PROTOCOL.md`](agent/SESSION_PROTOCOL.md)
+- [`docs/current/STATE.json`](current/STATE.json)
+- [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
+
+## Program position
 
 ```text
-epoch          E2 — upstream-thin research program
-gate           E2-R1/UT-0 — exact official upstream control
-resume action  execute-e2-r1-ut0-exact-official-upstream-control
-```
-
-## Stable orientation and active plan
-
-- Project guide: [`docs/PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
-- Program plan: [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](roadmap/EPOCH2_PROGRAM_PLAN.md)
-- Detailed plan: [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
-
-## Current claim boundary
-
-```text
-S22 Ultra and Galaxy Note9 evidence  accepted and frozen
-bounded dual-device claim            AArch64 Termux compatibility
-Android Emulator                     waived, unqualified, unclaimed
-selectability                         false
-publication                           not authorized
+epoch   E2 — upstream-thin research program
+gate    E2-R1/UT-0 — exact official upstream control
+status  ready
 ```
 
 ## Accepted authorities
@@ -46,6 +39,7 @@ publication                           not authorized
 6. [`experiments/document-navigation/document-navigation-authority.json`](../experiments/document-navigation/document-navigation-authority.json) — complete generated documentation navigation and reachability
 7. [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](../experiments/document-mixed-correction/document-mixed-correction-authority.json) — stable/current/plan/history layer separation and snapshot interpretation
 8. [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](../experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — legacy authority compatibility snapshots and completed documentation lifecycle migration
+9. [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](../experiments/agent-bootstrap/agent-bootstrap-authority.json) — immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol
 
 ## Blockers
 
@@ -55,10 +49,4 @@ None.
 
 - official upstream package and BeeWare dependency identities are not yet frozen under UT-0
 
-## Immediate reading path
-
-1. [`docs/PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
-2. [`docs/current/STATE.json`](current/STATE.json)
-3. [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](roadmap/EPOCH2_PROGRAM_PLAN.md)
-4. [`docs/navigation/README.md`](navigation/README.md)
-5. [`docs/INDEX.md`](INDEX.md)
+History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.
