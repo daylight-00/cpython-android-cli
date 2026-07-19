@@ -1,20 +1,26 @@
 {
-  "schema_version": 1,
   "authority": "epoch2-epoch4-recalibration",
-  "status": "frozen-by-repository-commit",
   "base": {
     "commit": "7e9210ce21b31ed2b2c9008d6c1b1dbe6daf6214",
     "tree": "a232ec4daab0a71ba8137750e2b30df60d39b83e"
   },
   "decisions": {
-    "epoch2_primary_inputs": ["python.org CPython Android product", "BeeWare dependency products selected by CPython"],
+    "emulator": "waived-unclaimed",
     "epoch2_api36_comparison_required": true,
-    "epoch3": "clean upstream-derived Astral-structured release repository",
-    "epoch4": "full Astral-like CPython and dependency source producer",
+    "epoch2_api36_uses_upstream_sources_patches_recipes": true,
+    "epoch2_primary_inputs": [
+      "python.org CPython Android product",
+      "BeeWare dependency products selected by CPython"
+    ],
+    "epoch3": "clean selected upstream-derived Astral-structured release repository",
     "epoch3_epoch4_consumer_contract_equivalent": true,
-    "note9": "optional-deferred-evidence",
-    "emulator": "waived-unclaimed"
+    "epoch4": "full Astral-like CPython and dependency source producer",
+    "experiment_success_implies_epoch3_inclusion": false,
+    "note9": "optional-deferred-evidence"
   },
+  "detailed_plan_authority": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
   "raw_archive_directory": "docs/references/raw/2026-07-19-epoch2-epoch4-recalibration",
-  "next_action_class": "design-e2-r1-official-upstream-control-and-direct-adaptation"
+  "schema_version": 2,
+  "status": "frozen-by-repository-commit"
 }

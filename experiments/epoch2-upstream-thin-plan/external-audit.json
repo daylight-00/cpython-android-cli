@@ -1,0 +1,23 @@
+{
+  "audit": "epoch2-upstream-thin-plan-independent-static-review",
+  "negative_fixtures": [
+    "api36-not-required",
+    "success-auto-inclusion",
+    "raw-input-mutation",
+    "missing-e3-g10",
+    "base-pip-mandatory",
+    "epoch3-source-producer"
+  ],
+  "reviewed": {
+    "api36_epoch2_required": true,
+    "api36_epoch3_automatic_adoption": false,
+    "epoch2_gate_count": 8,
+    "epoch3_completion_gate_count": 10,
+    "epoch3_initialization_gate_count": 4,
+    "epoch4_source_producer_boundary": "preserved",
+    "experiment_success_automatic_inclusion": false,
+    "raw_plan_sha256": "bebc4dc1fcd793775eb2a8a50c9d0b58e738f1e2f83282c597255aae196500ea"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

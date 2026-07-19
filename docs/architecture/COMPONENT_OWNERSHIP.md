@@ -1,6 +1,6 @@
 # Component ownership across Epoch 2, Epoch 3, and Epoch 4
 
-> **Status:** recalibrated by ADR-0006
+> **Status:** recalibrated by ADR-0006 and ADR-0007
 
 ## Permanent research laboratory — `cpython-android-cli`
 
@@ -9,9 +9,12 @@ Owns:
 - historical experiments, failures, contracts, evidence, and handoffs;
 - upstream and Android adaptation research;
 - API-level comparisons and source-producer experiments;
+- UT-0 through UT-7 evidence and E2-G1 through E2-G8 closure;
 - rejected alternatives and architecture decisions;
 - the future Epoch 4 full source producer;
 - raw external research inputs and adjudication records.
+
+The laboratory produces evidence dispositions and product-selection inputs. It does not automatically authorize Epoch 3 inclusion.
 
 ## Epoch 3 clean release repository
 
@@ -19,18 +22,21 @@ Owns:
 
 - pinned Python.org Android input discovery and checksums;
 - inherited BeeWare dependency identity;
+- the complete selection register;
 - project launcher and bounded standalone adaptation;
 - deterministic artifact transformation;
-- Astral-structured `full`, `install_only`, and `install_only_stripped` products;
+- selected Astral-structured `full`, `install_only`, `install_only_stripped`, and optional products;
+- selected runtime, SDK, CA, timezone, pip, uv, venv, and capability surface;
 - metadata, release index, checksums, licenses, qualification, CI, and releases;
-- uv-facing and direct-consumer documentation;
-- maintenance of project-owned delta.
+- consumer documentation and maintenance of project-owned delta and bundled data.
+
+Every selectable item must be marked `adopt`, `adopt-with-redesign`, `exclude`, or `defer-to-epoch4`. Passing Epoch 2 evidence is not automatic inclusion.
 
 Does not own:
 
 - CPython source production;
 - dependency source recipes;
-- independent NDK/API/linkage policy;
+- independent NDK/API/linkage policy without a separate product decision;
 - producer PGO/LTO.
 
 ## Epoch 4 source producer
@@ -43,7 +49,7 @@ Owns:
 - linkage policy, optimization, reproducibility, and source attestations;
 - full source-build artifacts and install-only derivation.
 
-It must preserve the Epoch 3 consumer-facing contract unless a separate ADR changes the product.
+It must preserve the selected Epoch 3 consumer-facing contract unless a separate ADR changes the product.
 
 ## Consumer boundary
 

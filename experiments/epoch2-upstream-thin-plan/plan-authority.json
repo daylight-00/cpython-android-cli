@@ -1,0 +1,86 @@
+{
+  "authority": "epoch2-remaining-work-and-epoch3-completion-gates",
+  "base": {
+    "commit": "35bf8fc705304545e29097a0aaf8de35cc2ed032",
+    "tree": "4b6f7bd3a2a61155083fce3b518e79ccb1e68071"
+  },
+  "canonical_plan": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+  "decisions": {
+    "api36_epoch2_required": true,
+    "api36_epoch3_auto_adopt": false,
+    "api36_reason": "same-upstream-sources-patches-recipes-and-topology-with-compile-api-controlled",
+    "epoch2_evidence_dispositions": [
+      "pass",
+      "bounded-pass",
+      "fail",
+      "unavailable"
+    ],
+    "epoch3_selection_dispositions": [
+      "adopt",
+      "adopt-with-redesign",
+      "exclude",
+      "defer-to-epoch4"
+    ],
+    "epoch4_owns_full_source_producer": true,
+    "experiment_success_implies_epoch3_inclusion": false
+  },
+  "epoch2_closure_gates": [
+    "E2-G1",
+    "E2-G2",
+    "E2-G3",
+    "E2-G4",
+    "E2-G5",
+    "E2-G6",
+    "E2-G7",
+    "E2-G8"
+  ],
+  "epoch3_completion_gates": [
+    "E3-G1",
+    "E3-G2",
+    "E3-G3",
+    "E3-G4",
+    "E3-G5",
+    "E3-G6",
+    "E3-G7",
+    "E3-G8",
+    "E3-G9",
+    "E3-G10"
+  ],
+  "epoch3_initialization_gates": [
+    "E3-I1",
+    "E3-I2",
+    "E3-I3",
+    "E3-I4"
+  ],
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "raw_input": {
+    "path": "docs/references/raw/2026-07-19-upstream-thin-plan/UPSTREAM_THIN_RESEARCH_AND_DESIGN_PLAN.md",
+    "sha256": "bebc4dc1fcd793775eb2a8a50c9d0b58e738f1e2f83282c597255aae196500ea",
+    "size": 41858
+  },
+  "schema_version": 1,
+  "selectable_minimum": [
+    "base-pip",
+    "pip-command-wrappers",
+    "ca-policy",
+    "timezone-policy",
+    "sdk-modes",
+    "multiprocessing",
+    "venv-relocation-cases",
+    "uv-integration",
+    "optional-artifacts",
+    "api36-input"
+  ],
+  "status": "frozen-by-repository-commit",
+  "work_program": [
+    "UT-0",
+    "UT-1",
+    "UT-2",
+    "UT-3",
+    "UT-4",
+    "UT-5",
+    "UT-6",
+    "UT-7",
+    "API36-A-B-C"
+  ]
+}

@@ -3,6 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-07-19
 - **Supersedes:** the prospective repository-promotion and source-producer sequence in ADR-0003 and the former E2-P4 through E2-P7 roadmap
+- **Extended by:** ADR-0007, which defines the Epoch 2 evidence dispositions and Epoch 3 selection gates
 
 ## Context
 
@@ -22,7 +23,7 @@ That mixture made the source-producer decision appear to be an immediate prerequ
 
 Epoch 2 uses the official Python.org Android product and the BeeWare dependency products selected by CPython as the primary control. It determines the minimum local adaptation required for an Android/Bionic standalone CLI and finishes bounded Android-specific evidence.
 
-The official upstream API policy remains the control. Epoch 2 must additionally run a controlled API 36 comparison while holding source revisions, dependency versions, upstream patches, module surface, NDK identity, and linkage topology as constant as practical.
+The official upstream API policy remains the control. Epoch 2 must additionally run a controlled API 36 comparison while holding source revisions, dependency versions, upstream patches, module surface, NDK identity, linkage topology, and build recipes as constant as practical.
 
 Required comparison classes are:
 
@@ -30,20 +31,25 @@ Required comparison classes are:
 A  exact official Python.org/BeeWare binary control
 B  same CPython and launcher sources rebuilt for API 36,
    retaining the upstream BeeWare dependency binaries
-C  same CPython and BeeWare dependency source revisions rebuilt for API 36
+C  same CPython and BeeWare dependency source revisions,
+   patches, recipes, and topology rebuilt for API 36
 ```
+
+API-36 comparison success does not automatically select an API-36 Epoch 3 product.
 
 ### Epoch 3 — clean upstream-derived release repository
 
 Epoch 3 creates a new clean product repository. It consumes verified Python.org and BeeWare products, applies only enumerated standalone adaptation, and releases an Android/Bionic distribution whose artifact and metadata structure primarily follows Astral's standalone distribution.
 
-Epoch 3 owns distribution assembly, launcher/adaptation, archive transformation, metadata, checksums, licenses, qualification, CI, release catalog, uv-facing consumption, and public maintenance of the project-owned delta. It does not own CPython or dependency source production.
+Epoch 3 owns distribution assembly, launcher/adaptation, archive transformation, metadata, checksums, licenses, qualification, CI, release catalog, selected uv-facing consumption, and public maintenance of the project-owned delta. It does not own CPython or dependency source production.
+
+Epoch 3 selects its product surface through ADR-0007. Experimental success in Epoch 2 is evidence, not automatic product inclusion.
 
 ### Epoch 4 — full Astral-like source producer
 
 Epoch 4 remains in the research laboratory and builds the complete source-producing system: CPython, dependency recipes, NDK/toolchain materialization, extension configuration, linkage policy, optimization profiles, reproducibility, and source provenance.
 
-Epoch 4 must reproduce the Epoch 3 consumer-facing product contract. Source-production details may differ; archive classes, target identity, runtime layout, module surface, wheel behavior, relocation, metadata semantics, and consumer behavior should not differ without a separate product-architecture decision.
+Epoch 4 must reproduce the Epoch 3 consumer-facing product contract. Source-production details may differ; archive classes, target identity, runtime layout, selected module surface, wheel behavior, relocation, metadata semantics, and consumer behavior should not differ without a separate product-architecture decision.
 
 ## Structural reference
 
@@ -78,5 +84,6 @@ The S22 Ultra primary qualification remains accepted. Emulator qualification rem
 - Epoch 3 can deliver a clean Astral-structured Android distribution before source production is owned;
 - Epoch 4 can compare source-produced output against a stable external contract;
 - exact upstream control and API 36 variants become explicit Epoch 2 experiments;
+- experiment success is separated from Epoch 3 product adoption;
 - former installer-first, prerelease, promotion, and uv phases are retired as the canonical Epoch 2 sequence;
 - historical contracts and evidence remain valid within their original claim boundaries.
