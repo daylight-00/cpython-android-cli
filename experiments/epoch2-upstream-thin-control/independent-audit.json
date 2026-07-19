@@ -1,0 +1,40 @@
+{
+  "audit_kind": "e2-r1-ut0-independent-audit",
+  "blockers": [],
+  "check_count": 17,
+  "checks": {
+    "archive_identity": true,
+    "beeware_dependency_set": true,
+    "build_details": true,
+    "dependency_closure": true,
+    "elf_machine": true,
+    "elf_shape": true,
+    "identity_checks": true,
+    "license_provenance": true,
+    "member_manifest_nonempty": true,
+    "no_extraction_mismatch": true,
+    "no_local_mutation": true,
+    "parse": true,
+    "prefix_topology": true,
+    "producer_delta_bounded": true,
+    "provider_classification": true,
+    "required_primary_outputs": true,
+    "sysconfig_identity": true
+  },
+  "errors": {},
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 17,
+  "schema_version": 1,
+  "source_file_identities": {
+    "dependency-provider-map.json": "3f05bbc13daa2e4db8dfc9820ff4936432de94559c5fdde115134ea213d3c256",
+    "elf-and-extension-inventory.json": "a23f170df3a408b2b3757598c45c757815053b688212c466e51cbffe0444e2ab",
+    "gate-contract.json": "f46e76acc14f65cb0690e19bff10fe46da6aaed816fc030bdee6ae66cd62f6ea",
+    "package-and-file-hashes.json": "b6e935c3c0649b5a82cea87d88d6c332be70caa70a8d360e4f796508a883ecea",
+    "package-layout-map.json": "964118649404650b6f954375e728d93ee9d9c2a9facad3cdd3e0f83c34a39a18",
+    "producer-delta.json": "d73b8a01f97a813bb52481c026f55f7d32a7fc69d0daaa86cf2308b001f3ffe2",
+    "provenance-map.json": "6226dde1cb35f0fe78e66ce486740741222a84a381991e2377c9f55be82b864f",
+    "sysconfig-census.json": "e24ceb4bb614e4a078b3c93647ca9aaae209040bafc49b9d315649cbf0b836ea",
+    "upstream-input-manifest.json": "d253baac6dffe0f5f1228147db1cf13cb48eb264f764698cff988bb840c07130"
+  }
+}

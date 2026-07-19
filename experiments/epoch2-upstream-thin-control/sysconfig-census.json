@@ -1,0 +1,288 @@
+{
+  "api_candidates": [
+    {
+      "kind": "android-api-assignment",
+      "source": "prefix/include/python3.14/pyconfig.h",
+      "value": 24
+    },
+    {
+      "kind": "android-api-assignment",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+      "value": 24
+    },
+    {
+      "kind": "android-api-assignment",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "value": 24
+    },
+    {
+      "kind": "android-platform",
+      "source": "prefix/lib/python3.14/build-details.json",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+      "value": 24
+    },
+    {
+      "kind": "compiler-target",
+      "source": "prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+      "value": 24
+    },
+    {
+      "kind": "android-platform",
+      "source": "prefix/lib/python3.14/sysconfig/__init__.py",
+      "value": 24
+    },
+    {
+      "kind": "build-details",
+      "source": "prefix/lib/python3.14/build-details.json",
+      "value": 24
+    }
+  ],
+  "build_details": [
+    {
+      "data": {
+        "abi": {
+          "extension_suffix": ".cpython-314-aarch64-linux-android.so",
+          "flags": [],
+          "stable_abi_suffix": ".abi3.so"
+        },
+        "base_interpreter": "/usr/local/bin/python3.14",
+        "base_prefix": "/usr/local",
+        "c_api": {
+          "headers": "/usr/local/include/python3.14",
+          "pkgconfig_path": "/usr/local/lib/pkgconfig"
+        },
+        "implementation": {
+          "_multiarch": "aarch64-linux-android",
+          "cache_tag": "cpython-314",
+          "hexversion": 51250928,
+          "name": "cpython",
+          "supports_isolated_interpreters": true,
+          "version": {
+            "major": 3,
+            "micro": 6,
+            "minor": 14,
+            "releaselevel": "final",
+            "serial": 0
+          }
+        },
+        "language": {
+          "version": "3.14",
+          "version_info": {
+            "major": 3,
+            "micro": 6,
+            "minor": 14,
+            "releaselevel": "final",
+            "serial": 0
+          }
+        },
+        "libpython": {
+          "dynamic": "/usr/local/lib/libpython3.14.so",
+          "dynamic_stableabi": "/usr/local/lib/libpython3.so",
+          "link_extensions": true
+        },
+        "platform": "android-24-arm64_v8a",
+        "schema_version": "1.0",
+        "suffixes": {
+          "bytecode": [
+            ".pyc"
+          ],
+          "extensions": [
+            ".cpython-314-darwin.so",
+            ".abi3.so",
+            ".so"
+          ],
+          "source": [
+            ".py"
+          ]
+        }
+      },
+      "path": "prefix/lib/python3.14/build-details.json"
+    }
+  ],
+  "evidence_kind": "sysconfig-census",
+  "schema_version": 1,
+  "selected_build_time_vars": {
+    "ABIFLAGS": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": ""
+      }
+    ],
+    "ANDROID_API_LEVEL": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": 24
+      }
+    ],
+    "BUILD_GNU_TYPE": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "aarch64-apple-darwin24.6.0"
+      }
+    ],
+    "CC": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+      }
+    ],
+    "CFLAGS": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+      }
+    ],
+    "CONFIG_ARGS": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'"
+      }
+    ],
+    "EXT_SUFFIX": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": ".cpython-314-aarch64-linux-android.so"
+      }
+    ],
+    "HOST_GNU_TYPE": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "aarch64-unknown-linux-android"
+      }
+    ],
+    "LDFLAGS": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+      }
+    ],
+    "MULTIARCH": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "aarch64-linux-android"
+      }
+    ],
+    "Py_ENABLE_SHARED": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": 1
+      }
+    ],
+    "SHLIB_SUFFIX": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": ".so"
+      }
+    ],
+    "SOABI": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "cpython-314-aarch64-linux-android"
+      }
+    ],
+    "exec_prefix": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "/usr/local"
+      }
+    ],
+    "prefix": [
+      {
+        "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "value": "/usr/local"
+      }
+    ]
+  },
+  "selected_extension_suffix": ".cpython-314-aarch64-linux-android.so",
+  "selected_minimum_android_api": 24,
+  "selected_multiarch": "aarch64-linux-android",
+  "selected_platform": "android-24-arm64_v8a",
+  "selected_target": "aarch64-linux-android",
+  "selected_version": "3.14.6",
+  "sysconfigdata": [
+    {
+      "build_time_vars_sha256": "00dd011eeb448e91c6036c9f5c77dd3dcc69473566c2fe5ace66b57ac5e11c61",
+      "path": "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+      "variable_count": 1083
+    }
+  ]
+}

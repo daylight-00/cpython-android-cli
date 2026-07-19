@@ -1,0 +1,3671 @@
+{
+  "android_system_sonames": [
+    "libEGL.so",
+    "libGLESv2.so",
+    "libGLESv3.so",
+    "libOpenSLES.so",
+    "libaaudio.so",
+    "libandroid.so",
+    "libc.so",
+    "libcamera2ndk.so",
+    "libdl.so",
+    "libgcc.so",
+    "libjnigraphics.so",
+    "liblog.so",
+    "libm.so",
+    "libmediandk.so",
+    "libnativewindow.so",
+    "libpthread.so",
+    "libresolv.so",
+    "librt.so",
+    "libvulkan.so",
+    "libz.so"
+  ],
+  "dependency_products": [
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_asyncio.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_bisect.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_blake2.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_bz2.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_csv.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_ctypes.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_decimal.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_elementtree.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_hashlib.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_heapq.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_hmac.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_interpchannels.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_interpqueues.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_interpreters.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_json.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_lsprof.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_lzma.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_md5.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_pickle.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_queue.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_random.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_sha1.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_sha2.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_sha3.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_socket.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_sqlite3.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_ssl.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_statistics.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_struct.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testbuffer.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testcapi.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testclinic.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "_zstd.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-openssl-component",
+      "paths": [
+        "prefix/lib/engines-3/afalg.so"
+      ],
+      "soname": "afalg.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "array.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "binascii.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-openssl-component",
+      "paths": [
+        "prefix/lib/engines-3/capi.so"
+      ],
+      "soname": "capi.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "cmath.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "fcntl.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-openssl-component",
+      "paths": [
+        "prefix/lib/ossl-modules/legacy.so"
+      ],
+      "soname": "legacy.so",
+      "version_string_candidates": [
+        "1.0.10118",
+        "3.0.55",
+        "3.14.3",
+        "3.36.3",
+        "3.5.7",
+        "3.6.1"
+      ]
+    },
+    {
+      "classification": "beeware-inherited-dependency",
+      "paths": [
+        "prefix/lib/libcrypto.so",
+        "prefix/lib/libcrypto_python.so"
+      ],
+      "soname": "libcrypto_python.so",
+      "version_string_candidates": [
+        "1.0.9797",
+        "3.1.2",
+        "3.1.9",
+        "3.14.3",
+        "3.36.3",
+        "3.4.1",
+        "3.4.2",
+        "3.4.3",
+        "3.4.4",
+        "3.5.7",
+        "3.6.1",
+        "3.7.9",
+        "OpenSSL 3.5.7 9 Jun 2026"
+      ]
+    },
+    {
+      "classification": "cpython-runtime",
+      "paths": [
+        "prefix/lib/libpython3.14.so"
+      ],
+      "soname": "libpython3.14.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-runtime",
+      "paths": [
+        "prefix/lib/libpython3.so"
+      ],
+      "soname": "libpython3.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-dependency",
+      "paths": [
+        "prefix/lib/libsqlite3.so",
+        "prefix/lib/libsqlite3_python.so"
+      ],
+      "soname": "libsqlite3_python.so",
+      "version_string_candidates": [
+        "3.50.4"
+      ]
+    },
+    {
+      "classification": "beeware-inherited-dependency",
+      "paths": [
+        "prefix/lib/libssl.so",
+        "prefix/lib/libssl_python.so"
+      ],
+      "soname": "libssl_python.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-openssl-component",
+      "paths": [
+        "prefix/lib/engines-3/loader_attic.so"
+      ],
+      "soname": "loader_attic.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "math.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "mmap.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "beeware-inherited-openssl-component",
+      "paths": [
+        "prefix/lib/engines-3/padlock.so"
+      ],
+      "soname": "padlock.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "pyexpat.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "resource.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "select.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "syslog.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "termios.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "unicodedata.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "xxlimited.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "xxsubtype.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    },
+    {
+      "classification": "cpython-extension",
+      "paths": [
+        "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so"
+      ],
+      "soname": "zlib.cpython-314-aarch64-linux-android.so",
+      "version_string_candidates": []
+    }
+  ],
+  "edges": [
+    {
+      "consumer": "prefix/lib/engines-3/afalg.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/afalg.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/afalg.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/afalg.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/capi.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/capi.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/capi.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/capi.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/loader_attic.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/loader_attic.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/loader_attic.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/loader_attic.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/padlock.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/padlock.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/padlock.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/engines-3/padlock.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto_python.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto_python.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libcrypto_python.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.14.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.14.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.14.so",
+      "needed": "liblog.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.14.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libpython3.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3.so",
+      "needed": "libz.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3_python.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3_python.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3_python.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libsqlite3_python.so",
+      "needed": "libz.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl_python.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl_python.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl_python.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/libssl_python.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/ossl-modules/legacy.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/ossl-modules/legacy.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/ossl-modules/legacy.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/ossl-modules/legacy.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "needed": "libsqlite3_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libsqlite3.so",
+          "prefix/lib/libsqlite3_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libcrypto_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libcrypto.so",
+          "prefix/lib/libcrypto_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "needed": "libssl_python.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libssl.so",
+          "prefix/lib/libssl_python.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "needed": "libz.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libc.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libdl.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libm.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libpython3.14.so",
+      "provider": {
+        "kind": "archive-member",
+        "paths": [
+          "prefix/lib/libpython3.14.so"
+        ]
+      }
+    },
+    {
+      "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "needed": "libz.so",
+      "provider": {
+        "kind": "android-system",
+        "paths": []
+      }
+    }
+  ],
+  "evidence_kind": "dependency-provider-map",
+  "providers": {
+    "_asyncio.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so"
+    ],
+    "_bisect.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so"
+    ],
+    "_blake2.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so"
+    ],
+    "_bz2.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_cn.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_hk.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_iso2022.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_jp.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_kr.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so"
+    ],
+    "_codecs_tw.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so"
+    ],
+    "_csv.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so"
+    ],
+    "_ctypes.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so"
+    ],
+    "_ctypes_test.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so"
+    ],
+    "_decimal.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so"
+    ],
+    "_elementtree.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so"
+    ],
+    "_hashlib.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so"
+    ],
+    "_heapq.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so"
+    ],
+    "_hmac.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so"
+    ],
+    "_interpchannels.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so"
+    ],
+    "_interpqueues.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so"
+    ],
+    "_interpreters.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so"
+    ],
+    "_json.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so"
+    ],
+    "_lsprof.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so"
+    ],
+    "_lzma.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so"
+    ],
+    "_md5.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so"
+    ],
+    "_multibytecodec.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so"
+    ],
+    "_pickle.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so"
+    ],
+    "_posixsubprocess.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so"
+    ],
+    "_queue.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so"
+    ],
+    "_random.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so"
+    ],
+    "_remote_debugging.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so"
+    ],
+    "_sha1.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so"
+    ],
+    "_sha2.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so"
+    ],
+    "_sha3.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so"
+    ],
+    "_socket.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so"
+    ],
+    "_sqlite3.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so"
+    ],
+    "_ssl.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so"
+    ],
+    "_statistics.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so"
+    ],
+    "_struct.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testbuffer.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testcapi.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testclinic.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testclinic_limited.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testimportmultiple.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testinternalcapi.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testlimitedcapi.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testmultiphase.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so"
+    ],
+    "_testsinglephase.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so"
+    ],
+    "_xxtestfuzz.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so"
+    ],
+    "_zoneinfo.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so"
+    ],
+    "_zstd.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so"
+    ],
+    "afalg.so": [
+      "prefix/lib/engines-3/afalg.so"
+    ],
+    "array.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so"
+    ],
+    "binascii.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so"
+    ],
+    "capi.so": [
+      "prefix/lib/engines-3/capi.so"
+    ],
+    "cmath.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so"
+    ],
+    "fcntl.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so"
+    ],
+    "legacy.so": [
+      "prefix/lib/ossl-modules/legacy.so"
+    ],
+    "libcrypto_python.so": [
+      "prefix/lib/libcrypto.so",
+      "prefix/lib/libcrypto_python.so"
+    ],
+    "libpython3.14.so": [
+      "prefix/lib/libpython3.14.so"
+    ],
+    "libpython3.so": [
+      "prefix/lib/libpython3.so"
+    ],
+    "libsqlite3_python.so": [
+      "prefix/lib/libsqlite3.so",
+      "prefix/lib/libsqlite3_python.so"
+    ],
+    "libssl_python.so": [
+      "prefix/lib/libssl.so",
+      "prefix/lib/libssl_python.so"
+    ],
+    "loader_attic.so": [
+      "prefix/lib/engines-3/loader_attic.so"
+    ],
+    "math.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so"
+    ],
+    "mmap.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so"
+    ],
+    "padlock.so": [
+      "prefix/lib/engines-3/padlock.so"
+    ],
+    "pyexpat.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so"
+    ],
+    "resource.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so"
+    ],
+    "select.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so"
+    ],
+    "syslog.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so"
+    ],
+    "termios.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so"
+    ],
+    "unicodedata.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so"
+    ],
+    "xxlimited.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so"
+    ],
+    "xxlimited_35.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so"
+    ],
+    "xxsubtype.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so"
+    ],
+    "zlib.cpython-314-aarch64-linux-android.so": [
+      "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so"
+    ]
+  },
+  "schema_version": 1,
+  "unclassified_packaged_elf": [],
+  "unresolved_edges": []
+}

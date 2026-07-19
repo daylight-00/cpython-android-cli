@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 6
+> **State revision:** 7
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut0-exact-official-upstream-control
-work gate       E2-R1/UT-0 — exact official upstream control
+action          execute-e2-r1-ut1-astral-artifact-and-metadata-prototype
+work gate       E2-R1/UT-1 — Astral artifact and metadata prototype
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-0 — exact official upstream control
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-0 — exact official upstream control
+gate    E2-R1/UT-1 — Astral artifact and metadata prototype
 status  ready
 ```
 
@@ -41,6 +41,7 @@ status  ready
 8. [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](../experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — legacy authority compatibility snapshots and completed documentation lifecycle migration
 9. [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](../experiments/agent-bootstrap/agent-bootstrap-authority.json) — immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol
 10. [`experiments/agent-task-completion/agent-task-completion-authority.json`](../experiments/agent-task-completion/agent-task-completion-authority.json) — task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement
+11. [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](../experiments/epoch2-upstream-thin-control/upstream-control-authority.json) — exact official Python.org Android package, topology, dependency, and provenance control
 
 ## Blockers
 
@@ -48,6 +49,6 @@ None.
 
 ## Unresolved risks
 
-- official upstream package and BeeWare dependency identities are not yet frozen under UT-0
+- UT-1 must represent the binary-derived official upstream runtime truthfully without fabricating unavailable build, object, static-link, or relinkable surfaces
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

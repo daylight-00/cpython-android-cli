@@ -1,0 +1,64 @@
+{
+  "authority_kind": "e2-r1-ut0-exact-official-upstream-control",
+  "claim_boundary": {
+    "android_runtime": false,
+    "complete_package_topology": true,
+    "dependency_provider_closure": true,
+    "device_qualification": false,
+    "launcher": false,
+    "no_mutation_fingerprint": true,
+    "official_upstream_identity": true,
+    "product_selection": false,
+    "provenance_closure": true,
+    "publication": false,
+    "relocation": false
+  },
+  "file_identities": {
+    "dependency-provider-map.json": "3f05bbc13daa2e4db8dfc9820ff4936432de94559c5fdde115134ea213d3c256",
+    "elf-and-extension-inventory.json": "a23f170df3a408b2b3757598c45c757815053b688212c466e51cbffe0444e2ab",
+    "gate-contract.json": "f46e76acc14f65cb0690e19bff10fe46da6aaed816fc030bdee6ae66cd62f6ea",
+    "independent-audit.json": "997ef127e1d54f70355c5d5d9685f59058b8f3d1edcf31dcf70dd9305ea41717",
+    "package-and-file-hashes.json": "b6e935c3c0649b5a82cea87d88d6c332be70caa70a8d360e4f796508a883ecea",
+    "package-layout-map.json": "964118649404650b6f954375e728d93ee9d9c2a9facad3cdd3e0f83c34a39a18",
+    "producer-delta.json": "d73b8a01f97a813bb52481c026f55f7d32a7fc69d0daaa86cf2308b001f3ffe2",
+    "provenance-map.json": "6226dde1cb35f0fe78e66ce486740741222a84a381991e2377c9f55be82b864f",
+    "sysconfig-census.json": "e24ceb4bb614e4a078b3c93647ca9aaae209040bafc49b9d315649cbf0b836ea",
+    "upstream-input-manifest.json": "d253baac6dffe0f5f1228147db1cf13cb48eb264f764698cff988bb840c07130"
+  },
+  "inventory": {
+    "archive_members": 3193,
+    "build_details_count": 1,
+    "elf_objects": 80,
+    "inherited_dependency_products": [
+      "libcrypto_python.so",
+      "libsqlite3_python.so",
+      "libssl_python.so"
+    ],
+    "native_extensions": 67,
+    "prefix_snapshot_sha256": "82a7cc61dcbf8b8ed1237f961d271d478713b3a2f44d8648de54f195d3d2eb08",
+    "regular_files": 2952,
+    "unclassified_packaged_elf": 0,
+    "unresolved_dependencies": 0
+  },
+  "next_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+  "official_input": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "minimum_android_api": 24,
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size": 22358404,
+    "target": "aarch64-linux-android",
+    "url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-aarch64-linux-android.tar.gz",
+    "version": "3.14.6"
+  },
+  "predecessor": {
+    "commit": "edd9c81706f544c38d7918639ff32bebca7a1f35",
+    "tree": "31b61404988627f6e83590aeeb9e4b8ece9ad1ce"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-exact-official-upstream-control",
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "17/17",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

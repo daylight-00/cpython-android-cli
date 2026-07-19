@@ -1,0 +1,56 @@
+{
+  "comparison_boundary": "official binary-derived control versus reconstructed Termux-native producer authority; reconstructed producer is not an input",
+  "differences": {
+    "minimum_api_equal": true,
+    "package_bytes_equal": false,
+    "prefix_snapshot_equal": false,
+    "target_equal": true,
+    "topology": "official single embeddable package versus reconstructed runtime-base/development-addon/test-addon split",
+    "version_equal": true
+  },
+  "evidence_kind": "producer-delta",
+  "non_claims": [
+    "reconstructed producer equivalence",
+    "runtime execution",
+    "relocation",
+    "device qualification",
+    "product selection",
+    "publication"
+  ],
+  "official": {
+    "dependency_products": [
+      "afalg.so",
+      "capi.so",
+      "legacy.so",
+      "libcrypto_python.so",
+      "libsqlite3_python.so",
+      "libssl_python.so",
+      "loader_attic.so",
+      "padlock.so"
+    ],
+    "elf_count": 80,
+    "extension_count": 67,
+    "member_count": 3193,
+    "minimum_android_api": 24,
+    "package_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "prefix_snapshot_sha256": "82a7cc61dcbf8b8ed1237f961d271d478713b3a2f44d8648de54f195d3d2eb08",
+    "target": "aarch64-linux-android",
+    "version": "3.14.6"
+  },
+  "reconstructed_producer": {
+    "artifact_topology": [
+      "development-addon",
+      "runtime-base",
+      "test-addon"
+    ],
+    "authority_path": "experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json",
+    "authority_sha256": "891670c2e49495ccd0d42e9530076db5e1cb59ec05d220ffa08a35f2d8540930",
+    "minimum_android_api": 24,
+    "package_sha256": "517f4b0d113c4c1cf6931c230b6b517bee7a2b7f8b4f0f099a148260fa3ac8e7",
+    "prefix_snapshot_sha256": "3081a1b150473ff6d6896589a2898cb38baf831e0f811af2bd0447c29b36bb89",
+    "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "target": "aarch64-linux-android",
+    "version": "3.14.6"
+  },
+  "schema_version": 1
+}

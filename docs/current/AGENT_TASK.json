@@ -3,7 +3,7 @@
     "android_runtime_claim": false,
     "device_qualification_claim": false,
     "epoch3_selection_claim": false,
-    "official_upstream_identity_claim": "pending-evidence",
+    "official_upstream_identity_claim": true,
     "product_selectability_claim": false,
     "publication_claim": false
   },
@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -45,21 +45,20 @@
     },
     "pass": {
       "required_catalog_updates": [
-        "bind-accepted-ut0-authority-into-successor",
+        "bind-accepted-ut1-authority-into-successor",
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-control/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-artifact-prototype/",
       "required_output_roles": [
-        "gate-contract",
-        "upstream-input-manifest",
-        "package-and-file-hashes",
-        "elf-and-extension-inventory",
-        "dependency-provider-map",
-        "sysconfig-census",
-        "package-layout-map",
-        "provenance-map",
-        "producer-delta",
+        "artifact-contract",
+        "python-json-schema-mapping",
+        "unavailable-field-policy",
+        "deterministic-derivation-rules",
+        "archive-root-and-path-contract",
+        "member-manifests-and-checksums",
+        "artifact-flavor-decision-inputs",
+        "consumer-extraction-contract",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -76,9 +75,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+      "successor_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-1"
+      "successor_task_id": "E2-R1-UT-2"
     }
   },
   "default_exclusions": [
@@ -111,8 +110,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-0",
-    "name": "exact official upstream control",
+    "id": "E2-R1/UT-1",
+    "name": "Astral artifact and metadata prototype",
     "status": "ready"
   },
   "required_authorities": [
@@ -120,24 +119,29 @@
       "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
       "reason": "Frozen authority for the detailed remaining-work and completion-gate plan.",
       "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+      "reason": "Frozen exact official Python.org Android package, topology, dependency, and provenance authority.",
+      "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Current gate work, required outputs, and exit condition.",
+      "reason": "Successor gate work, required variants, outputs, and exit condition.",
       "scope": "section",
-      "section_heading": "## UT-0 — Exact official upstream control",
-      "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
+      "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+      "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
     }
   ],
   "schema_version": 2,
-  "state_revision": 6,
+  "state_revision": 7,
   "task": {
-    "action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "goal": "Freeze the exact unmodified official Python.org Android package, inherited BeeWare dependency set, package topology, metadata, and bounded delta against the reconstructed producer authority.",
-    "id": "E2-R1-UT-0",
-    "title": "Exact official upstream control",
+    "action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+    "goal": "Prototype a truthful Astral-style standalone artifact and metadata representation for the accepted binary-derived official upstream runtime.",
+    "id": "E2-R1-UT-1",
+    "title": "Astral artifact and metadata prototype",
     "work_class": "L"
   }
 }

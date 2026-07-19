@@ -1,0 +1,41 @@
+{
+  "archive_types": {
+    "directory": 238,
+    "file": 2952,
+    "symlink": 3
+  },
+  "build_details_paths": [
+    "prefix/lib/python3.14/build-details.json"
+  ],
+  "evidence_kind": "package-layout-map",
+  "has_prefix_root": true,
+  "license_paths": [
+    "prefix/lib/python3.14/LICENSE.txt"
+  ],
+  "metadata_paths": [
+    "README.md",
+    "prefix/include/python3.14/pyconfig.h",
+    "prefix/lib/pkgconfig/libcrypto.pc",
+    "prefix/lib/pkgconfig/libssl.pc",
+    "prefix/lib/pkgconfig/openssl.pc",
+    "prefix/lib/pkgconfig/python-3.14-embed.pc",
+    "prefix/lib/pkgconfig/python-3.14.pc",
+    "prefix/lib/pkgconfig/sqlite3.pc",
+    "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+    "prefix/lib/python3.14/build-details.json",
+    "prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+    "prefix/lib/python3.14/test/archivetestdata/README.md"
+  ],
+  "prefix_member_count": 3152,
+  "schema_version": 1,
+  "sysconfigdata_paths": [
+    "prefix/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py"
+  ],
+  "top_level_counts": {
+    "README.md": 1,
+    "android-env.sh": 1,
+    "android.py": 1,
+    "prefix": 3152,
+    "testbed": 38
+  }
+}

@@ -1,6 +1,6 @@
 # Session Protocol
 
-> **Revision:** 1
+> **Revision:** 2
 > **Role:** mandatory collaboration, transport, execution, and evidence ABI
 > **Read requirement:** every agent session reads this file in full before work
 
@@ -12,13 +12,20 @@ The owner's full Git bundle and matching SHA-256 sidecar are the session's sole 
 
 Use local Git to reconstruct a separate workspace. Record bundle refs, branch, HEAD, tree, and cleanliness. The agent never assumes access to or mutates the owner's canonical S22 checkout.
 
-## SP-03 — Google Drive first
+## SP-03 — Directional Google Drive transport
 
-Use the Google Drive connector as the first attempt for project artifact discovery, result retrieval, direct-child folder inspection, and raw-byte readback when the connector is available. Resolve duplicate names with parent, folder ID, creation time, and direct-child listing. Compare reported size and SHA-256 whenever raw bytes can be fetched.
+The transport direction determines the responsible interface:
+
+- **agent → owner:** the agent attempts one raw-file upload through the Google Drive connector. The owner receives the package with `rclone` from the designated Drive location.
+- **owner → agent:** the owner uploads one complete result archive and sidecar with `rclone` to the designated Drive folder. The agent discovers the folder, lists direct children when needed, and fetches the exact raw bytes through the Google Drive connector.
+
+The Google Drive connector is always the agent's first transport and receipt-readback interface when available. Resolve duplicate names with parent, folder ID, creation time, and direct-child listing. Compare reported size and SHA-256 whenever raw bytes can be fetched.
 
 ## SP-04 — Connector failure boundary
 
-For assistant-generated files, attempt the normal raw-file Drive path once when supported. If it fails, do not retry through format conversion, native Google files, unrelated endpoints, or repeated calls. Expose the exact artifact under `/mnt/data` with its real filename. A later retry requires a later turn or an explicit request.
+For agent-generated files, attempt the normal raw-file Drive upload exactly once when supported. If that connector call fails, do not retry, convert formats, use a native Google file, call another endpoint, invoke command-line upload, or attempt another transport. Expose the exact artifact under `/mnt/data` with its real filename as the user-visible fallback.
+
+For owner-generated results, attempt retrieval through the Google Drive connector. If connector discovery or raw-byte fetch fails, stop and report the exact connector failure. Do not substitute `curl`, `wget`, network Git, assistant-side `rclone`, web download, or an unrelated attachment path in the same turn.
 
 ## SP-05 — Network and artifact acquisition
 
@@ -60,10 +67,11 @@ repository or local change
   agent -> owner: one .tar.zst package + sidecar + one apply.sh or RUN.sh
 
 execution result
-  owner -> agent: one complete receipt/result .tar.zst + sidecar, normally uploaded to Drive
+  owner -> agent: owner uploads one complete receipt/result .tar.zst + sidecar with rclone;
+                  agent retrieves it through the Google Drive connector
 ```
 
-Group related artifacts into one archive per direction whenever practical. Binary connector mounts may use a `.bin` suffix; content identity, not suffix, is authority.
+The designated default exchange folder is `HW-T-results` unless a task explicitly names another folder. Group related artifacts into one archive per direction whenever practical. Binary connector mounts may use a `.bin` suffix; content identity, not suffix, is authority. A connector-fetched `.bin` file is accepted only after its SHA-256 matches the owner-supplied sidecar.
 
 ## SP-09 — One-runner owner interface
 

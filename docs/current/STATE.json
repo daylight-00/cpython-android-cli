@@ -59,6 +59,12 @@
       "path": "experiments/agent-task-completion/agent-task-completion-authority.json",
       "role": "task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement",
       "sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539"
+    },
+    {
+      "id": "e2-r1-ut0-exact-official-upstream-control",
+      "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+      "role": "exact official Python.org Android package, topology, dependency, and provenance control",
+      "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
     }
   ],
   "active_plan": {
@@ -78,9 +84,9 @@
     "project_model_path": "docs/agent/PROJECT_MODEL.md",
     "project_model_revision": 1,
     "session_input": "full-git-bundle-plus-sha256-sidecar",
-    "session_output": "one-runner-transaction-package-and-complete-receipt",
+    "session_output": "agent-connector-upload-owner-rclone-download-owner-rclone-upload-agent-connector-readback",
     "session_protocol_path": "docs/agent/SESSION_PROTOCOL.md",
-    "session_protocol_revision": 1,
+    "session_protocol_revision": 2,
     "status": "established",
     "task_catalog_path": "docs/agent/TASK_CATALOG.json",
     "task_catalog_schema_version": 2,
@@ -100,10 +106,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "next_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "resume_program_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
     "status": "completed"
   },
   "documentation_layers": {
@@ -127,10 +133,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "next_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
   "predecessor": {
-    "commit": "2b5b0b9ef742c36d5a29d4643fb53bf471000415",
-    "tree": "e16010a5712c6c098b29887958e1352469436cba"
+    "commit": "edd9c81706f544c38d7918639ff32bebca7a1f35",
+    "tree": "31b61404988627f6e83590aeeb9e4b8ece9ad1ce"
   },
   "program": {
     "epoch": {
@@ -139,11 +145,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/UT-0",
-      "name": "exact official upstream control",
+      "id": "E2-R1/UT-1",
+      "name": "Astral artifact and metadata prototype",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "next_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
     "status": "active"
   },
   "project_model": {
@@ -180,26 +186,26 @@
   "schema_version": 6,
   "session_protocol": {
     "path": "docs/agent/SESSION_PROTOCOL.md",
-    "revision": 1,
-    "sha256": "49e1f896f4840690b863b3cf27ad59e67fb423eabd72eee8c51f684e5ef95d8b"
+    "revision": 2,
+    "sha256": "216f4c5e4e2c3c5a1930d8bcbeb6b43c4fe3417bac49cfebad8801f0c8ed1f15"
   },
   "state_kind": "project-current-state",
-  "state_revision": 6,
+  "state_revision": 7,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "6e9120c1b33141efa0fa90cb3a7e5b83fc9b950b6daa0b0b775ea144b3d504fe"
+    "sha256": "e560ca08f566efe953f498b69de6c86452f35461c350dd9ff21c31572565dbcb"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "pass_successor_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+    "current_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+    "pass_successor_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "official upstream package and BeeWare dependency identities are not yet frozen under UT-0"
+    "UT-1 must represent the binary-derived official upstream runtime truthfully without fabricating unavailable build, object, static-link, or relinkable surfaces"
   ],
-  "updated_by_transaction": "20260719-agent-task-completion-contract-hardening-v1"
+  "updated_by_transaction": "20260720-e2-r1-ut0-exact-official-upstream-control-v2"
 }

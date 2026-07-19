@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut0-exact-official-upstream-control
-gate         E2-R1/UT-0 — exact official upstream control
-tracked docs 550
+action       execute-e2-r1-ut1-astral-artifact-and-metadata-prototype
+gate         E2-R1/UT-1 — Astral artifact and metadata prototype
+tracked docs 563
 indexes      16
 ```
 

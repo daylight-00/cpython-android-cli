@@ -1,0 +1,33 @@
+{
+  "claim_boundary": {
+    "android_runtime": false,
+    "archive_mutation": false,
+    "device_qualification": false,
+    "official_upstream_identity": true,
+    "product_selection": false,
+    "publication": false
+  },
+  "gate_id": "E2-R1/UT-0",
+  "predecessor": {
+    "commit": "edd9c81706f544c38d7918639ff32bebca7a1f35",
+    "tree": "31b61404988627f6e83590aeeb9e4b8ece9ad1ce"
+  },
+  "question": "What exactly exists in the unmodified official Python.org Android package and its inherited BeeWare dependency set?",
+  "required_roles": [
+    "gate-contract",
+    "upstream-input-manifest",
+    "package-and-file-hashes",
+    "elf-and-extension-inventory",
+    "dependency-provider-map",
+    "sysconfig-census",
+    "package-layout-map",
+    "provenance-map",
+    "producer-delta",
+    "independent-audit",
+    "machine-authority",
+    "evidence-freeze"
+  ],
+  "schema_version": 1,
+  "status": "executed",
+  "work_class": "L"
+}

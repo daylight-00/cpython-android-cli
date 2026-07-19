@@ -123,6 +123,22 @@
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json`](epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json`](epoch2-termux-native-cpython3146-producer/producer-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-control`
+
+- [`experiments/epoch2-upstream-thin-control/README.md`](epoch2-upstream-thin-control/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/dependency-provider-map.json`](epoch2-upstream-thin-control/dependency-provider-map.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/elf-and-extension-inventory.json`](epoch2-upstream-thin-control/elf-and-extension-inventory.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/evidence-freeze.md`](epoch2-upstream-thin-control/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/gate-contract.json`](epoch2-upstream-thin-control/gate-contract.json) — `FROZEN_AUTHORITY` · `machine_contract` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/independent-audit.json`](epoch2-upstream-thin-control/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/package-and-file-hashes.json`](epoch2-upstream-thin-control/package-and-file-hashes.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/package-layout-map.json`](epoch2-upstream-thin-control/package-layout-map.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/producer-delta.json`](epoch2-upstream-thin-control/producer-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/provenance-map.json`](epoch2-upstream-thin-control/provenance-map.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/sysconfig-census.json`](epoch2-upstream-thin-control/sysconfig-census.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](epoch2-upstream-thin-control/upstream-control-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-control/upstream-input-manifest.json`](epoch2-upstream-thin-control/upstream-input-manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-plan`
 
 - [`experiments/epoch2-upstream-thin-plan/README.md`](epoch2-upstream-thin-plan/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`

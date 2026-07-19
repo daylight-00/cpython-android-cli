@@ -1,0 +1,39 @@
+{
+  "acquisition": {
+    "drive_search_result": "exact archive absent",
+    "method": "bounded-owner-run-https"
+  },
+  "architecture": "aarch64",
+  "evidence_kind": "upstream-input-manifest",
+  "expected_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+  "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+  "identity_checks": {
+    "build_details_present": true,
+    "checksum_match": true,
+    "minimum_api_identified": true,
+    "prefix_present": true,
+    "target_match": true,
+    "version_match": true
+  },
+  "minimum_android_api": 24,
+  "package_url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-aarch64-linux-android.tar.gz",
+  "product": "CPython Android embeddable package",
+  "release_date": "2026-06-10",
+  "release_page_url": "https://www.python.org/downloads/release/python-3146/",
+  "schema_version": 1,
+  "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+  "sigstore": {
+    "path": "python-3.14.6-aarch64-linux-android.tar.gz.sigstore",
+    "role": "upstream verification material captured; release-page SHA-256 is the byte acceptance authority",
+    "sha256": "c7ac761686eded04a3bf8c7a9be83916e673c1c230bcd22f6cdf5fa415b0feb7",
+    "verified_identity": false
+  },
+  "size": 22358404,
+  "source_release": {
+    "sha256": "143b1dddefaec3bd2e21e3b839b34a2b7fb9842272883c576420d605e9f30c63",
+    "tag": "v3.14.6",
+    "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tar.xz"
+  },
+  "target": "aarch64-linux-android",
+  "version": "3.14.6"
+}

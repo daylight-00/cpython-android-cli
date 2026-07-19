@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      execute-e2-r1-ut0-exact-official-upstream-control
+immediate action      execute-e2-r1-ut1-astral-artifact-and-metadata-prototype
 program epoch         E2 — upstream-thin research program
-program gate          E2-R1/UT-0 — exact official upstream control
+program gate          E2-R1/UT-1 — Astral artifact and metadata prototype
 ```
 
 ### Current claim boundary
@@ -33,7 +33,7 @@ none
 
 ### Unresolved risks
 
-- official upstream package and BeeWare dependency identities are not yet frozen under UT-0
+- UT-1 must represent the binary-derived official upstream runtime truthfully without fabricating unavailable build, object, static-link, or relinkable surfaces
 
 ### Accepted authorities
 
@@ -47,6 +47,7 @@ none
 - [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json): legacy authority compatibility snapshots and completed documentation lifecycle migration (`c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924`)
 - [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](experiments/agent-bootstrap/agent-bootstrap-authority.json): immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol (`86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79`)
 - [`experiments/agent-task-completion/agent-task-completion-authority.json`](experiments/agent-task-completion/agent-task-completion-authority.json): task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement (`c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539`)
+- [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](experiments/epoch2-upstream-thin-control/upstream-control-authority.json): exact official Python.org Android package, topology, dependency, and provenance control (`6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c`)
 
 ### Agent entry
 

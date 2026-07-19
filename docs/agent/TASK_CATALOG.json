@@ -126,8 +126,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 \u2014 Exact official upstream control",
-          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 — Exact official upstream control",
+          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -137,18 +137,93 @@
     {
       "action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
       "activation": {
-        "prerequisites_satisfied": false,
+        "accepted_authority_path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+        "accepted_authority_sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c",
+        "prerequisites_satisfied": true,
         "required_authority_role": "exact-official-upstream-control",
         "required_predecessor_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-        "status": "blocked-on-predecessor-authority"
+        "status": "ready"
       },
       "claim_boundary": {
         "android_runtime_claim": false,
         "device_qualification_claim": false,
         "epoch3_selection_claim": false,
-        "official_upstream_identity_claim": "required-predecessor-authority",
+        "official_upstream_identity_claim": true,
         "product_selectability_claim": false,
         "publication_claim": false
+      },
+      "completion_contract": {
+        "always": {
+          "all_required_verifiers_must_pass": true,
+          "clean_main_and_bundle_export_ready_on_close": true,
+          "forbidden_new_authority_bindings": [
+            "docs/current/STATE.json",
+            "docs/current/AGENT_TASK.json",
+            "README.md",
+            "docs/CURRENT_CONTEXT.md",
+            "docs/INDEX.md"
+          ],
+          "generated_views_must_be_regenerated": true,
+          "new_markdown_or_json_requires_registry_update": true,
+          "one_runner_and_complete_receipt_required": true
+        },
+        "contract_version": 1,
+        "fail": {
+          "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
+          "complete_receipt_required": true,
+          "correction_task_must_be_cataloged": true,
+          "correction_task_must_resume_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+          "required_failure_records": [
+            "first-meaningful-failure",
+            "failure-classification",
+            "blocked-downstream",
+            "claim-boundary"
+          ],
+          "required_state_updates": [
+            "state_revision",
+            "predecessor",
+            "active_work_package",
+            "blockers",
+            "unresolved_risks",
+            "updated_by_transaction"
+          ]
+        },
+        "pass": {
+          "required_catalog_updates": [
+            "bind-accepted-ut1-authority-into-successor",
+            "activate-successor-task",
+            "define-successor-completion-contract-before-selection"
+          ],
+          "required_output_namespace": "experiments/epoch2-upstream-thin-artifact-prototype/",
+          "required_output_roles": [
+            "artifact-contract",
+            "python-json-schema-mapping",
+            "unavailable-field-policy",
+            "deterministic-derivation-rules",
+            "archive-root-and-path-contract",
+            "member-manifests-and-checksums",
+            "artifact-flavor-decision-inputs",
+            "consumer-extraction-contract",
+            "independent-audit",
+            "machine-authority",
+            "evidence-freeze"
+          ],
+          "required_state_updates": [
+            "state_revision",
+            "predecessor",
+            "accepted_authorities",
+            "program.gate",
+            "program.next_action_class",
+            "next_action_class",
+            "control_work.next_action_class",
+            "control_work.resume_program_action_class",
+            "unresolved_risks",
+            "updated_by_transaction"
+          ],
+          "successor_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+          "successor_must_exist": true,
+          "successor_task_id": "E2-R1-UT-2"
+        }
       },
       "default_exclusions": [
         "docs/history/**",
@@ -179,6 +254,11 @@
           "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
           "reason": "Frozen authority for the detailed remaining-work and completion-gate plan.",
           "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "reason": "Frozen exact official Python.org Android package, topology, dependency, and provenance authority.",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
         }
       ],
       "required_reads": [
@@ -186,12 +266,77 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
       "title": "Astral artifact and metadata prototype",
+      "work_class": "L"
+    },
+    {
+      "action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+      "activation": {
+        "prerequisites_satisfied": false,
+        "required_authority_role": "astral-artifact-and-metadata-prototype",
+        "required_predecessor_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+        "status": "blocked-on-predecessor-authority"
+      },
+      "claim_boundary": {
+        "android_runtime_claim": false,
+        "device_qualification_claim": false,
+        "epoch3_selection_claim": false,
+        "official_upstream_identity_claim": true,
+        "product_selectability_claim": false,
+        "publication_claim": false
+      },
+      "default_exclusions": [
+        "docs/history/**",
+        "docs/handoff/**",
+        "docs/stages/**",
+        "unrelated-evidence",
+        "unrelated-experiments",
+        "roadmap-outside-selected-section",
+        "past-chat-transcripts"
+      ],
+      "deliverable": {
+        "class": "local-artifact-evidence-and-repository-transaction",
+        "owner_interface": "one-runner",
+        "result": "complete-pass-or-fail-receipt"
+      },
+      "goal": "Determine whether the official binaries satisfy the standalone relocation contract without process-global loader workarounds, and select only evidenced launcher/getpath behavior.",
+      "input_routing": {
+        "fallback": "one bounded owner-run acquisition runner",
+        "first_attempt": "google-drive-connector",
+        "forbidden": [
+          "curl-or-wget-in-assistant-environment",
+          "github-connector-or-api",
+          "network-git"
+        ]
+      },
+      "required_authorities": [
+        {
+          "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+          "reason": "Frozen authority for the detailed remaining-work and completion-gate plan.",
+          "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "reason": "Frozen exact official Python.org Android package, topology, dependency, and provenance authority.",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+        }
+      ],
+      "required_reads": [
+        {
+          "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+          "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
+          "scope": "section",
+          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 — CLI semantics, supported upstream limits, and one unsupported experiment"
+        }
+      ],
+      "task_id": "E2-R1-UT-2",
+      "title": "Loader, relocation, launcher, and getpath",
       "work_class": "L"
     }
   ]
