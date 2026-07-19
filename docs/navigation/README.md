@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut1-astral-artifact-and-metadata-prototype
-gate         E2-R1/UT-1 — Astral artifact and metadata prototype
-tracked docs 563
+action       execute-e2-r1-ut2-loader-relocation-launcher-getpath
+gate         E2-R1/UT-2 — Loader, relocation, launcher, and getpath
+tracked docs 581
 indexes      16
 ```
 

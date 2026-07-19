@@ -1,0 +1,81 @@
+{
+  "artifact_set_kind": "e2-r1-ut1-local-prototype",
+  "artifacts": [
+    {
+      "archive": {
+        "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-full.tar.zst",
+        "sha256": "048d3ecfba3aeb84ac4bba7ac645a58dbdb88f3af1c3db2a4b7c935bc7c33eb8",
+        "size": 38100074
+      },
+      "flavor": "full",
+      "manifest": {
+        "filename": "full.manifest.json",
+        "sha256": "9deb5ae94c9f44b8e9b97681e31e9ffbbb45644f562466daa52e9b3e59542a3e",
+        "size": 732972
+      },
+      "selectable": false,
+      "serialization": {
+        "format": "pax-tar+zstd",
+        "frame_checksum": true,
+        "level": 19,
+        "threads": 1,
+        "tool": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
+      }
+    },
+    {
+      "archive": {
+        "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-install_only.tar.gz",
+        "sha256": "d2b070f5bc10f42c879eea498a699ae232ada0a14a57e6309b8fe3278465dfee",
+        "size": 22177407
+      },
+      "flavor": "install_only",
+      "manifest": {
+        "filename": "install_only.manifest.json",
+        "sha256": "ba1635dafaa9e340e4cd8f43a2148bf6276fb9599a442ef7df403ceb2329ded0",
+        "size": 697105
+      },
+      "selectable": false,
+      "serialization": {
+        "filename_header": "",
+        "format": "pax-tar+gzip",
+        "level": 9,
+        "mtime": 0,
+        "tool": "python-gzip-3.14"
+      }
+    },
+    {
+      "archive": {
+        "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-install_only_stripped.tar.gz",
+        "sha256": "d2b070f5bc10f42c879eea498a699ae232ada0a14a57e6309b8fe3278465dfee",
+        "size": 22177407
+      },
+      "flavor": "install_only_stripped",
+      "manifest": {
+        "filename": "install_only_stripped.manifest.json",
+        "sha256": "cd66d8f286d54795431fa216d645e2cd4715e95f3b7eafdaeb1d7ba76c340705",
+        "size": 697114
+      },
+      "selectable": false,
+      "serialization": {
+        "filename_header": "",
+        "format": "pax-tar+gzip",
+        "level": 9,
+        "mtime": 0,
+        "tool": "python-gzip-3.14"
+      }
+    }
+  ],
+  "official_input": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size": 22358404
+  },
+  "publication": false,
+  "python_json": {
+    "filename": "PYTHON.json",
+    "sha256": "da5c8a97b116877393913d3e887e89fc2d0e39c25ccb48b535403f492f405f2b",
+    "size": 110744
+  },
+  "schema_version": 1,
+  "selectable": false
+}

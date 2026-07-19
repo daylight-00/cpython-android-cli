@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `execute-e2-r1-ut1-astral-artifact-and-metadata-prototype`
-- gate: `E2-R1/UT-1` — Astral artifact and metadata prototype
+- action class: `execute-e2-r1-ut2-loader-relocation-launcher-getpath`
+- gate: `E2-R1/UT-2` — Loader, relocation, launcher, and getpath
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `563`
+- tracked Markdown/JSON: `581`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

@@ -1,0 +1,8 @@
+{
+  "errors": [],
+  "expected_manifest_sha256": "6c5c64a921dd7a7f2db58d7e519dee61550a7852ecff05f24c16414be7280255",
+  "expected_member_count": 3193,
+  "expected_prefix_snapshot_sha256": "82a7cc61dcbf8b8ed1237f961d271d478713b3a2f44d8648de54f195d3d2eb08",
+  "member_count": 3193,
+  "pass": true
+}

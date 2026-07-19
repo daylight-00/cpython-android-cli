@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 7
+> **State revision:** 8
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut1-astral-artifact-and-metadata-prototype
-work gate       E2-R1/UT-1 — Astral artifact and metadata prototype
+action          execute-e2-r1-ut2-loader-relocation-launcher-getpath
+work gate       E2-R1/UT-2 — Loader, relocation, launcher, and getpath
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-1 — Astral artifact and metadata prototype
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-1 — Astral artifact and metadata prototype
+gate    E2-R1/UT-2 — Loader, relocation, launcher, and getpath
 status  ready
 ```
 
@@ -42,6 +42,7 @@ status  ready
 9. [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](../experiments/agent-bootstrap/agent-bootstrap-authority.json) — immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol
 10. [`experiments/agent-task-completion/agent-task-completion-authority.json`](../experiments/agent-task-completion/agent-task-completion-authority.json) — task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement
 11. [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](../experiments/epoch2-upstream-thin-control/upstream-control-authority.json) — exact official Python.org Android package, topology, dependency, and provenance control
+12. [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json`](../experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json) — truthful Astral-style local artifact and metadata prototype for the official binary-derived package
 
 ## Blockers
 
@@ -49,6 +50,6 @@ None.
 
 ## Unresolved risks
 
-- UT-1 must represent the binary-derived official upstream runtime truthfully without fabricating unavailable build, object, static-link, or relinkable surfaces
+- The official package has no interpreter executable; UT-2 must select and qualify only evidenced launcher, loader, getpath, and relocation behavior before any artifact can become runnable or selectable.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

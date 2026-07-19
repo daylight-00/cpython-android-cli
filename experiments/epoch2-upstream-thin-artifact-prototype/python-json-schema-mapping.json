@@ -1,0 +1,27 @@
+{
+  "astral_format_version": 8,
+  "field_sources": {
+    "build_info.*.links": "UT-0 dependency-provider map",
+    "build_info.core.shared_lib": "observed packaged shared libpython",
+    "build_info.extensions.*.shared_lib": "UT-0 native extension inventory",
+    "libpython_link_mode": "observed packaged shared libpython",
+    "licenses": "official CPython license file",
+    "python_abi_tag": "CPython version and non-free-threaded ABI deterministic derivation",
+    "python_config_vars": "official _sysconfig_vars__android_aarch64-linux-android.json normalized to strings",
+    "python_implementation_*": "official build-details.json",
+    "python_paths": "observed prefix topology rewritten from python/install",
+    "python_platform_tag": "official build-details platform normalized to Android wheel platform syntax",
+    "python_suffixes": "official sysconfig EXT_SUFFIX plus stable/generic suffixes",
+    "python_tag": "CPython version deterministic derivation",
+    "target_triple": "UT-0 selected_target"
+  },
+  "mapping_kind": "astral-python-json-v8-to-official-android-package",
+  "project_extension_key": "hw_t",
+  "prototype_python_json_sha256": "da5c8a97b116877393913d3e887e89fc2d0e39c25ccb48b535403f492f405f2b",
+  "python_exe": {
+    "availability": "unavailable-official-package",
+    "must_not_be_fabricated": true,
+    "value": null
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,43 @@
+{
+  "claim_boundary": {
+    "Android_execution": false,
+    "archive_extraction": true,
+    "launcher": false,
+    "product_selection": false,
+    "relocation": false
+  },
+  "consumer_kind": "astral-style-prototype-extraction",
+  "full": {
+    "direct_runtime_entry": null,
+    "install_subdirectory": "python/install",
+    "metadata_path": "python/PYTHON.json"
+  },
+  "install_only": {
+    "direct_runtime_entry": null,
+    "install_subdirectory": "python",
+    "metadata_external": true
+  },
+  "install_only_stripped": {
+    "direct_runtime_entry": null,
+    "install_subdirectory": "python",
+    "metadata_external": true
+  },
+  "must_reject": [
+    "unknown manifest schema",
+    "hash mismatch",
+    "unsafe paths",
+    "escaping symlink",
+    "missing python root",
+    "selectable=true",
+    "invented python executable"
+  ],
+  "schema_version": 1,
+  "verification_order": [
+    "verify archive SHA-256 and size",
+    "verify exact member manifest",
+    "reject unsafe member types and paths",
+    "extract into staging",
+    "for full read python/PYTHON.json and hw_t.availability before use",
+    "treat all UT-1 flavors as unselectable"
+  ]
+}

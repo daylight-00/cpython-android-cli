@@ -1,0 +1,35 @@
+{
+  "full": [
+    "copy prefix/* to python/install/* byte-for-byte",
+    "retain original archive and sigstore under python/build/upstream/package",
+    "retain non-prefix extracted metadata under python/build/upstream/extracted-metadata",
+    "generate only evidence-backed project metadata under python/build/project",
+    "write python/PYTHON.json"
+  ],
+  "input": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size": 22358404
+  },
+  "install_only": [
+    "copy prefix/* to python/* byte-for-byte",
+    "exclude PYTHON.json and build area exactly as Astral install-only derivation"
+  ],
+  "install_only_stripped": [
+    "derive from install_only",
+    "run one recorded strip --strip-unneeded operation per observed ELF regular file",
+    "preserve non-ELF bytes and symlink topology"
+  ],
+  "normalization": {
+    "gid": 0,
+    "gname": "",
+    "hardlinks": "forbidden",
+    "member_order": "lexicographic",
+    "mtime": 0,
+    "special_files": "forbidden",
+    "uid": 0,
+    "uname": ""
+  },
+  "rules_kind": "deterministic-artifact-derivation",
+  "schema_version": 1
+}

@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "build_info.core.inittab_cflags": "omit",
+    "build_info.core.inittab_object": "omit",
+    "build_info.core.inittab_source": "omit",
+    "build_info.core.objs": "omit",
+    "build_info.core.static_lib": "omit",
+    "build_info.extensions.*.objs": "omit",
+    "build_info.extensions.*.static_lib": "omit",
+    "build_options": "empty-string-and-hw_t-not-evidenced",
+    "crt_features": "omit-no-standard-Astral-Android-value",
+    "python_bytecode_magic_number": "omit-not-observed",
+    "python_exe": "null-with-hw_t-availability",
+    "run_tests": "omit-no-evidenced-compatible-script"
+  },
+  "policy_kind": "explicit-unavailable-field-policy",
+  "rules": [
+    "Never synthesize a path to a file absent from the accepted package.",
+    "Never translate a shared library into a static or object-file surface.",
+    "Unknown and unavailable are distinct from false or empty producer output.",
+    "A downstream consumer must inspect hw_t.availability before assuming Astral producer completeness."
+  ],
+  "schema_version": 1
+}

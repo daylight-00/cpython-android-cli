@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -45,20 +45,17 @@
     },
     "pass": {
       "required_catalog_updates": [
-        "bind-accepted-ut1-authority-into-successor",
+        "bind-accepted-authority-into-successor",
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-artifact-prototype/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-loader-relocation/",
       "required_output_roles": [
-        "artifact-contract",
-        "python-json-schema-mapping",
-        "unavailable-field-policy",
-        "deterministic-derivation-rules",
-        "archive-root-and-path-contract",
-        "member-manifests-and-checksums",
-        "artifact-flavor-decision-inputs",
-        "consumer-extraction-contract",
+        "loader-variant-matrix",
+        "launcher-variant-matrix",
+        "executable-discovery-matrix",
+        "native-loader-evidence",
+        "relocation-results",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -75,9 +72,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+      "successor_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-2"
+      "successor_task_id": "E2-R1-UT-3"
     }
   },
   "default_exclusions": [
@@ -110,8 +107,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-1",
-    "name": "Astral artifact and metadata prototype",
+    "id": "E2-R1/UT-2",
+    "name": "Loader, relocation, launcher, and getpath",
     "status": "ready"
   },
   "required_authorities": [
@@ -124,24 +121,29 @@
       "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
       "reason": "Frozen exact official Python.org Android package, topology, dependency, and provenance authority.",
       "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+      "reason": "Frozen truthful Astral-style artifact and metadata prototype for the binary-derived official package.",
+      "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Successor gate work, required variants, outputs, and exit condition.",
+      "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
       "scope": "section",
-      "section_heading": "## UT-1 — Astral artifact and metadata prototype",
-      "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
+      "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+      "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
     }
   ],
   "schema_version": 2,
-  "state_revision": 7,
+  "state_revision": 8,
   "task": {
-    "action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
-    "goal": "Prototype a truthful Astral-style standalone artifact and metadata representation for the accepted binary-derived official upstream runtime.",
-    "id": "E2-R1-UT-1",
-    "title": "Astral artifact and metadata prototype",
+    "action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+    "goal": "Determine whether the official binaries satisfy the standalone relocation contract without process-global loader workarounds, and select only evidenced launcher/getpath behavior.",
+    "id": "E2-R1-UT-2",
+    "title": "Loader, relocation, launcher, and getpath",
     "work_class": "L"
   }
 }

@@ -1,0 +1,40 @@
+{
+  "canonical_full_root": {
+    "build": "python/build/",
+    "install": "python/install/",
+    "metadata": "python/PYTHON.json",
+    "root": "python/"
+  },
+  "contract_kind": "e2-r1-ut1-astral-artifact-prototype",
+  "flavors": {
+    "full": {
+      "compression": "zstd",
+      "install_bytes": "official-byte-exact",
+      "required": true,
+      "self_describing": true
+    },
+    "install_only": {
+      "compression": "gzip",
+      "derivation": "rewrite python/install/* to python/*",
+      "install_bytes": "official-byte-exact",
+      "required": true
+    },
+    "install_only_stripped": {
+      "compression": "gzip",
+      "derivation": "install_only plus recorded --strip-unneeded mutation",
+      "install_bytes": "recorded-mutation",
+      "required": true
+    }
+  },
+  "forbidden_fabrications": [
+    "core object files",
+    "static libpython",
+    "extension object lists",
+    "static dependency archives",
+    "relinkable inittab material",
+    "interpreter executable"
+  ],
+  "reason_unselectable": "The official package contains no interpreter executable; launcher, getpath, native loader, and relocation remain UT-2 work.",
+  "schema_version": 1,
+  "selectable": false
+}

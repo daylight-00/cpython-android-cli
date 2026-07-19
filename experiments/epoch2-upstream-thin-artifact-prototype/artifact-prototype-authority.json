@@ -1,0 +1,163 @@
+{
+  "artifact_set": {
+    "artifact_set_kind": "e2-r1-ut1-local-prototype",
+    "artifacts": [
+      {
+        "archive": {
+          "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-full.tar.zst",
+          "sha256": "048d3ecfba3aeb84ac4bba7ac645a58dbdb88f3af1c3db2a4b7c935bc7c33eb8",
+          "size": 38100074
+        },
+        "flavor": "full",
+        "manifest": {
+          "filename": "full.manifest.json",
+          "sha256": "9deb5ae94c9f44b8e9b97681e31e9ffbbb45644f562466daa52e9b3e59542a3e",
+          "size": 732972
+        },
+        "selectable": false,
+        "serialization": {
+          "format": "pax-tar+zstd",
+          "frame_checksum": true,
+          "level": 19,
+          "threads": 1,
+          "tool": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
+        }
+      },
+      {
+        "archive": {
+          "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-install_only.tar.gz",
+          "sha256": "d2b070f5bc10f42c879eea498a699ae232ada0a14a57e6309b8fe3278465dfee",
+          "size": 22177407
+        },
+        "flavor": "install_only",
+        "manifest": {
+          "filename": "install_only.manifest.json",
+          "sha256": "ba1635dafaa9e340e4cd8f43a2148bf6276fb9599a442ef7df403ceb2329ded0",
+          "size": 697105
+        },
+        "selectable": false,
+        "serialization": {
+          "filename_header": "",
+          "format": "pax-tar+gzip",
+          "level": 9,
+          "mtime": 0,
+          "tool": "python-gzip-3.14"
+        }
+      },
+      {
+        "archive": {
+          "filename": "cpython-3.14.6+aarch64-linux-android24-upstream-install_only_stripped.tar.gz",
+          "sha256": "d2b070f5bc10f42c879eea498a699ae232ada0a14a57e6309b8fe3278465dfee",
+          "size": 22177407
+        },
+        "flavor": "install_only_stripped",
+        "manifest": {
+          "filename": "install_only_stripped.manifest.json",
+          "sha256": "cd66d8f286d54795431fa216d645e2cd4715e95f3b7eafdaeb1d7ba76c340705",
+          "size": 697114
+        },
+        "selectable": false,
+        "serialization": {
+          "filename_header": "",
+          "format": "pax-tar+gzip",
+          "level": 9,
+          "mtime": 0,
+          "tool": "python-gzip-3.14"
+        }
+      }
+    ],
+    "official_input": {
+      "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+      "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+      "size": 22358404
+    },
+    "publication": false,
+    "python_json": {
+      "filename": "PYTHON.json",
+      "sha256": "da5c8a97b116877393913d3e887e89fc2d0e39c25ccb48b535403f492f405f2b",
+      "size": 110744
+    },
+    "schema_version": 1,
+    "selectable": false
+  },
+  "authority_kind": "e2-r1-ut1-astral-artifact-and-metadata-prototype",
+  "claim_boundary": {
+    "android_runtime": false,
+    "consumer_readable_metadata_and_limitations": true,
+    "deterministic_artifact_derivation": true,
+    "device_qualification": false,
+    "epoch3_selection": false,
+    "launcher": false,
+    "official_install_bytes": true,
+    "product_selectability": false,
+    "publication": false,
+    "python_executable": false,
+    "relocation": false
+  },
+  "file_identities": {
+    "PYTHON.json": "da5c8a97b116877393913d3e887e89fc2d0e39c25ccb48b535403f492f405f2b",
+    "archive-root-and-path-contract.json": "b5fd97e38cef287986223b8267522a3279ae99277c18b38ed19d5638b824698f",
+    "artifact-contract.json": "e11a3cfd3f76dcdaef9d177dffe7a4adbbbb3278a97fc480ad14440e83560b67",
+    "artifact-flavor-decision-inputs.json": "31f274172506199f3b8c7f636a65b8b5b474afc22b94d9c118df85f7aed60f49",
+    "artifact-set.json": "415c6726dd3180143c65609ea23058df6d158635a34526857dc010d1ba8ced3d",
+    "audit_artifact_prototype.py": "3671a6f002d160028d3e79d4a2d7be5ca43c22d1097189d94457d5204322750b",
+    "consumer-extraction-contract.json": "178e65b5903f4cb14b2cac52998ef92c4106635356d6e08631c82ae5ff80cbc1",
+    "deterministic-derivation-rules.json": "f910a9823dc7883721b9eadb85c1225c0196437dc5082010ae23615e08838bca",
+    "finalize_artifact_prototype.py": "1e16de7ac56115a90f814bac6de22d8d4777db133c07c568666053e86601ee9e",
+    "full.manifest.json": "9deb5ae94c9f44b8e9b97681e31e9ffbbb45644f562466daa52e9b3e59542a3e",
+    "generate_artifact_prototype.py": "9ea5e87d4b52bc6ff99e5e6e7d499ed68ecce81fdadfe9c3409b383d07062937",
+    "independent-audit.json": "68549635f4c8232b884229a46d85bc2fcbf9bf59b02f23ce8bc7b2b60c816b00",
+    "install_only.manifest.json": "ba1635dafaa9e340e4cd8f43a2148bf6276fb9599a442ef7df403ceb2329ded0",
+    "install_only_stripped.manifest.json": "cd66d8f286d54795431fa216d645e2cd4715e95f3b7eafdaeb1d7ba76c340705",
+    "official-extraction-verification.json": "30550ea9f68aeac576c7a4611d946b609374a0364f1d1f12116d536325f71999",
+    "python-json-schema-mapping.json": "09b1f27c7d50e336d09231b025dde3cf8cf5006c133dd84182a99a28df44ab54",
+    "run-ut1-astral-artifact-and-metadata-prototype.sh": "56cb7906e6f5305544f2b242a31b4ef56ee80bf9dd3d0da2a05a189f354bc15d",
+    "strip-mutations.json": "690fabc5c4c0a1e875d0d19d7ed1ee9ffcad98689a80c2d28c65c331d5d2c080",
+    "test_verify_artifact_prototype.py": "23dccef9661fd83272640e4e6ed4817eea71f72cf700a4065ae0fe75211601b5",
+    "unavailable-field-policy.json": "3b58e7b8cb2b3ae254e85a381656b11520724038f488dfa86b7a7f982981efed",
+    "verify_artifact_prototype.py": "d7a0bc0a3884d139a94c94f86386eefdbfd21204ba878655a2a4adf9cedb7d6e"
+  },
+  "flavor_decision_inputs": {
+    "official_package_has_core_objects": false,
+    "official_package_has_headers": true,
+    "official_package_has_pkgconfig": true,
+    "official_package_has_python_executable": false,
+    "official_package_has_shared_libpython": true,
+    "official_package_has_static_libpython": false,
+    "stripped_changed_count": 0,
+    "stripped_elf_count": 80
+  },
+  "next_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+  "predecessor": {
+    "commit": "1f697d9363a60eac0655499fd0baf7db80ee9703",
+    "tree": "3b3a398f4d027b6963ebd11a167bb5d085388b29"
+  },
+  "python_json": {
+    "extension_count": 67,
+    "format_version": 8,
+    "python_exe": null,
+    "python_version": "3.14.6",
+    "target_triple": "aarch64-linux-android",
+    "unavailable": {
+      "bytecode_magic_number": "not-observed-without-target-runtime",
+      "core_object_files": "unavailable-official-package",
+      "extension_object_files": "unavailable-official-package",
+      "optimization_profile": "not-evidenced",
+      "python_exe": "unavailable-official-package",
+      "relinkable_inittab": "unavailable-official-package",
+      "static_dependency_archives": "unavailable-official-package",
+      "static_libpython": "unavailable-official-package"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-local-prototype-unselectable",
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "27/27",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

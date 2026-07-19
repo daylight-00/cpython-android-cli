@@ -1,0 +1,28 @@
+{
+  "full": {
+    "archive_root": "python/",
+    "build_root": "python/build/",
+    "install_root": "python/install/",
+    "metadata": "python/PYTHON.json"
+  },
+  "install_only": {
+    "archive_root": "python/",
+    "contains_build_root": false,
+    "contains_python_json": false,
+    "install_root": "python/"
+  },
+  "install_only_stripped": {
+    "archive_root": "python/",
+    "contains_build_root": false,
+    "contains_python_json": false,
+    "install_root": "python/"
+  },
+  "path_safety": {
+    "absolute_paths": "forbidden",
+    "dotdot_components": "forbidden",
+    "hardlinks": "forbidden",
+    "special_files": "forbidden",
+    "symlinks": "relative-and-non-escaping"
+  },
+  "schema_version": 1
+}

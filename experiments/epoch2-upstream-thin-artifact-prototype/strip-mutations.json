@@ -1,0 +1,650 @@
+{
+  "changed_count": 0,
+  "claim_boundary": "Recorded binary mutation only; no runtime or relocation qualification.",
+  "elf_count": 80,
+  "operation": "--strip-unneeded",
+  "rows": [
+    {
+      "after_sha256": "f0d68aa8e3875b317acea5ff8610eda9ac042076a4768bfe17de85591aa36861",
+      "after_size": 16280,
+      "before_sha256": "f0d68aa8e3875b317acea5ff8610eda9ac042076a4768bfe17de85591aa36861",
+      "before_size": 16280,
+      "changed": false,
+      "path": "python/lib/engines-3/afalg.so"
+    },
+    {
+      "after_sha256": "d007096a850434ecc75d00a9bfc81f2ef23c53681e4201470c69990f546b5b1a",
+      "after_size": 3624,
+      "before_sha256": "d007096a850434ecc75d00a9bfc81f2ef23c53681e4201470c69990f546b5b1a",
+      "before_size": 3624,
+      "changed": false,
+      "path": "python/lib/engines-3/capi.so"
+    },
+    {
+      "after_sha256": "b20fe600a2097436e80c9c08371d021bafc834673cdcc77fe259a1cc859f23df",
+      "after_size": 45680,
+      "before_sha256": "b20fe600a2097436e80c9c08371d021bafc834673cdcc77fe259a1cc859f23df",
+      "before_size": 45680,
+      "changed": false,
+      "path": "python/lib/engines-3/loader_attic.so"
+    },
+    {
+      "after_sha256": "0776694bc2ab17dad56f7bb3712e4cdc6f207f4d6ab327a2b98d471f76d11b2e",
+      "after_size": 3624,
+      "before_sha256": "0776694bc2ab17dad56f7bb3712e4cdc6f207f4d6ab327a2b98d471f76d11b2e",
+      "before_size": 3624,
+      "changed": false,
+      "path": "python/lib/engines-3/padlock.so"
+    },
+    {
+      "after_sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+      "after_size": 4537384,
+      "before_sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+      "before_size": 4537384,
+      "changed": false,
+      "path": "python/lib/libcrypto.so"
+    },
+    {
+      "after_sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+      "after_size": 4537384,
+      "before_sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+      "before_size": 4537384,
+      "changed": false,
+      "path": "python/lib/libcrypto_python.so"
+    },
+    {
+      "after_sha256": "45ebdbf5a70a63c87d1d4aab2c82fdf20f9bc7035dee53a77c4f74ffd9e38008",
+      "after_size": 5821368,
+      "before_sha256": "45ebdbf5a70a63c87d1d4aab2c82fdf20f9bc7035dee53a77c4f74ffd9e38008",
+      "before_size": 5821368,
+      "changed": false,
+      "path": "python/lib/libpython3.14.so"
+    },
+    {
+      "after_sha256": "dc03985487f45969d02010cf6ae1b2796d22f0df7685b66cdf4227928bf88eb7",
+      "after_size": 3768,
+      "before_sha256": "dc03985487f45969d02010cf6ae1b2796d22f0df7685b66cdf4227928bf88eb7",
+      "before_size": 3768,
+      "changed": false,
+      "path": "python/lib/libpython3.so"
+    },
+    {
+      "after_sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+      "after_size": 886520,
+      "before_sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+      "before_size": 886520,
+      "changed": false,
+      "path": "python/lib/libsqlite3.so"
+    },
+    {
+      "after_sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+      "after_size": 886520,
+      "before_sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+      "before_size": 886520,
+      "changed": false,
+      "path": "python/lib/libsqlite3_python.so"
+    },
+    {
+      "after_sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+      "after_size": 955984,
+      "before_sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+      "before_size": 955984,
+      "changed": false,
+      "path": "python/lib/libssl.so"
+    },
+    {
+      "after_sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+      "after_size": 955984,
+      "before_sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+      "before_size": 955984,
+      "changed": false,
+      "path": "python/lib/libssl_python.so"
+    },
+    {
+      "after_sha256": "f5f8125c2551f8b2a7d4cc0b743b250fef3770aefda567d4ae36ea7acef600fc",
+      "after_size": 117352,
+      "before_sha256": "f5f8125c2551f8b2a7d4cc0b743b250fef3770aefda567d4ae36ea7acef600fc",
+      "before_size": 117352,
+      "changed": false,
+      "path": "python/lib/ossl-modules/legacy.so"
+    },
+    {
+      "after_sha256": "7c29691a67d568f9a818f56af3f59341fa1dbd6e871062c82961152f234f6094",
+      "after_size": 74632,
+      "before_sha256": "7c29691a67d568f9a818f56af3f59341fa1dbd6e871062c82961152f234f6094",
+      "before_size": 74632,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "9b885de1c1d9469d6c0287aa8b2bf256ed5b9815d60e4be146e0568ccdebfc36",
+      "after_size": 15344,
+      "before_sha256": "9b885de1c1d9469d6c0287aa8b2bf256ed5b9815d60e4be146e0568ccdebfc36",
+      "before_size": 15344,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "b0f1235d9a261cfda40327f798db08159da6b6a84ec457544cfaa4ab290b4b6f",
+      "after_size": 45208,
+      "before_sha256": "b0f1235d9a261cfda40327f798db08159da6b6a84ec457544cfaa4ab290b4b6f",
+      "before_size": 45208,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "934d178edb046dd6c026d4fc728abf8501d3a46abf7ddc6f948312e21e85b4f9",
+      "after_size": 82888,
+      "before_sha256": "934d178edb046dd6c026d4fc728abf8501d3a46abf7ddc6f948312e21e85b4f9",
+      "before_size": 82888,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "dd51c920e577b57c1e799bedb17537e1a512aacf830ce4afca8e3fb9e63653ab",
+      "after_size": 146416,
+      "before_sha256": "dd51c920e577b57c1e799bedb17537e1a512aacf830ce4afca8e3fb9e63653ab",
+      "before_size": 146416,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "df437ff6eba53cd252f745cce6166adfeb4b58dc7a66a9e6c55847406b32b633",
+      "after_size": 155304,
+      "before_sha256": "df437ff6eba53cd252f745cce6166adfeb4b58dc7a66a9e6c55847406b32b633",
+      "before_size": 155304,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "fec7673fe1718c84cd9a1c1e5d3b9e4654ff32cddb7b0ce6835b5da6e0ebae1a",
+      "after_size": 21568,
+      "before_sha256": "fec7673fe1718c84cd9a1c1e5d3b9e4654ff32cddb7b0ce6835b5da6e0ebae1a",
+      "before_size": 21568,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "46fd0b62d48c93c90f63a89982a83c4197fe989c9b3b322fb4751a0ae58c4004",
+      "after_size": 261768,
+      "before_sha256": "46fd0b62d48c93c90f63a89982a83c4197fe989c9b3b322fb4751a0ae58c4004",
+      "before_size": 261768,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "7941c483c6e5a494d2dcaaf724d067610aa774046603b3a9d2dead45f0d67c91",
+      "after_size": 133456,
+      "before_sha256": "7941c483c6e5a494d2dcaaf724d067610aa774046603b3a9d2dead45f0d67c91",
+      "before_size": 133456,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "11d9dd2ae3a1d5a34db96c675f2db43ce489d3d302e7d6bc1f0d492964480f5c",
+      "after_size": 108848,
+      "before_sha256": "11d9dd2ae3a1d5a34db96c675f2db43ce489d3d302e7d6bc1f0d492964480f5c",
+      "before_size": 108848,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "a7c069e95f552c843c79984d19c83dec30905e1e50aa898fa567df75d03af76b",
+      "after_size": 34336,
+      "before_sha256": "a7c069e95f552c843c79984d19c83dec30905e1e50aa898fa567df75d03af76b",
+      "before_size": 34336,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "ace6d15ab097fb30dc49d94e566337ea0a84c799beb4f21998237c5f2d424351",
+      "after_size": 228984,
+      "before_sha256": "ace6d15ab097fb30dc49d94e566337ea0a84c799beb4f21998237c5f2d424351",
+      "before_size": 228984,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "2d85b10012ca5199682ab43772f988c1ace420dce40800c57260a8b9b44859a8",
+      "after_size": 95864,
+      "before_sha256": "2d85b10012ca5199682ab43772f988c1ace420dce40800c57260a8b9b44859a8",
+      "before_size": 95864,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "c2563e150b921b6cc18b319917149dc9e9446096d96545cc95d5e8320e889898",
+      "after_size": 349432,
+      "before_sha256": "c2563e150b921b6cc18b319917149dc9e9446096d96545cc95d5e8320e889898",
+      "before_size": 349432,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "166888589b3b15eb65056e6811974c1746d784038b38a16da1ec8d5a5cb33f71",
+      "after_size": 73296,
+      "before_sha256": "166888589b3b15eb65056e6811974c1746d784038b38a16da1ec8d5a5cb33f71",
+      "before_size": 73296,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "1a6194fea12e95b84dfc344019d6635fc908415a41b13d1c250f2f435d9675a7",
+      "after_size": 58168,
+      "before_sha256": "1a6194fea12e95b84dfc344019d6635fc908415a41b13d1c250f2f435d9675a7",
+      "before_size": 58168,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "44f18f29c2838592d9850f6f68eb68d357fdab72dea5017f1bc8f87ed051275b",
+      "after_size": 19832,
+      "before_sha256": "44f18f29c2838592d9850f6f68eb68d357fdab72dea5017f1bc8f87ed051275b",
+      "before_size": 19832,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "3260d0606b09773a2952f27f04411723e4cda75b653c97a7a14495f5e91ffe9c",
+      "after_size": 131088,
+      "before_sha256": "3260d0606b09773a2952f27f04411723e4cda75b653c97a7a14495f5e91ffe9c",
+      "before_size": 131088,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "13e0c5e714622ecf949e9f2e37b4da20aad906ad2573d37a28ed120bbe7fb5d7",
+      "after_size": 43296,
+      "before_sha256": "13e0c5e714622ecf949e9f2e37b4da20aad906ad2573d37a28ed120bbe7fb5d7",
+      "before_size": 43296,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "a717f94216f80816945d7c744920eea33708f80a62d41d3a5fd64ebb9711cd8b",
+      "after_size": 27840,
+      "before_sha256": "a717f94216f80816945d7c744920eea33708f80a62d41d3a5fd64ebb9711cd8b",
+      "before_size": 27840,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "fe5ad9c03d49a9dfc88d37457a3bf8be8a863e8ef4d94dd7f5d8fde12bf9164b",
+      "after_size": 34096,
+      "before_sha256": "fe5ad9c03d49a9dfc88d37457a3bf8be8a863e8ef4d94dd7f5d8fde12bf9164b",
+      "before_size": 34096,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "bf5c9f0062550859ecea59d210e951e773fb77dd15a052ecac4cddd5e036df08",
+      "after_size": 39064,
+      "before_sha256": "bf5c9f0062550859ecea59d210e951e773fb77dd15a052ecac4cddd5e036df08",
+      "before_size": 39064,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "d68985acd7b3c60de0bd7f17850f0a950f5604812c229df233ebd8dcde42cff9",
+      "after_size": 27552,
+      "before_sha256": "d68985acd7b3c60de0bd7f17850f0a950f5604812c229df233ebd8dcde42cff9",
+      "before_size": 27552,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "68acd8c38b4eaf08cdbe4ddb01dd8368ca3b50b4237a93050cb7a5bd19f776b8",
+      "after_size": 241560,
+      "before_sha256": "68acd8c38b4eaf08cdbe4ddb01dd8368ca3b50b4237a93050cb7a5bd19f776b8",
+      "before_size": 241560,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "9179e755633278091c20479aa3a34877d44afb63998cf9643971f5697bc2ff1c",
+      "after_size": 20872,
+      "before_sha256": "9179e755633278091c20479aa3a34877d44afb63998cf9643971f5697bc2ff1c",
+      "before_size": 20872,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "7e285dae588f3fa7cb1e1f7b8bac0bbd3fad5afd0d81cc327b81fe31374df921",
+      "after_size": 39792,
+      "before_sha256": "7e285dae588f3fa7cb1e1f7b8bac0bbd3fad5afd0d81cc327b81fe31374df921",
+      "before_size": 39792,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "c65216dd9c3284b6b993e1c14d61afaa9b5efcd46219caba3b9ad98953d85967",
+      "after_size": 121416,
+      "before_sha256": "c65216dd9c3284b6b993e1c14d61afaa9b5efcd46219caba3b9ad98953d85967",
+      "before_size": 121416,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "5b044e7607ba5443878ff2b9b854fd6c73f79520bc4ad86310f5d78ab5df8dee",
+      "after_size": 18616,
+      "before_sha256": "5b044e7607ba5443878ff2b9b854fd6c73f79520bc4ad86310f5d78ab5df8dee",
+      "before_size": 18616,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "ded4f84ab893a47edab6a4d5f2db4213c9c1356937b741043e5465783556a64c",
+      "after_size": 15192,
+      "before_sha256": "ded4f84ab893a47edab6a4d5f2db4213c9c1356937b741043e5465783556a64c",
+      "before_size": 15192,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "fadc8223ec2fe2d496c5c64635857524412209580edd48feddd52914c64f7441",
+      "after_size": 13648,
+      "before_sha256": "fadc8223ec2fe2d496c5c64635857524412209580edd48feddd52914c64f7441",
+      "before_size": 13648,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "695350722626be934daeeec776775fde1397c2e2add89a164afbc709fa446827",
+      "after_size": 61168,
+      "before_sha256": "695350722626be934daeeec776775fde1397c2e2add89a164afbc709fa446827",
+      "before_size": 61168,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "76ecb7e716c2cc0e0d2ff1b78339c19b06cf09eb99b49ee8cd33f42e5e648f6a",
+      "after_size": 17960,
+      "before_sha256": "76ecb7e716c2cc0e0d2ff1b78339c19b06cf09eb99b49ee8cd33f42e5e648f6a",
+      "before_size": 17960,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "553b92792b1ef030a51a64bf84ab6bd8f1b821318953535229f15fed3490bd98",
+      "after_size": 48952,
+      "before_sha256": "553b92792b1ef030a51a64bf84ab6bd8f1b821318953535229f15fed3490bd98",
+      "before_size": 48952,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "ad4a9d85586a65ecefbe84e9d27b53e5ae37e1ff95627baf1771c80afeb61f91",
+      "after_size": 41104,
+      "before_sha256": "ad4a9d85586a65ecefbe84e9d27b53e5ae37e1ff95627baf1771c80afeb61f91",
+      "before_size": 41104,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "505c9fd67cec35d401fe5de538be2ef4b9bb07947e23938c906b061931a90892",
+      "after_size": 98232,
+      "before_sha256": "505c9fd67cec35d401fe5de538be2ef4b9bb07947e23938c906b061931a90892",
+      "before_size": 98232,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "3d1009c82bd2f2ded10a5db54c4a03592e217c962a25401189c92d2c65cf2492",
+      "after_size": 125616,
+      "before_sha256": "3d1009c82bd2f2ded10a5db54c4a03592e217c962a25401189c92d2c65cf2492",
+      "before_size": 125616,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "f9d0e896ca551a221177dfde9c27332a338782c0ba1f2e7d2163247bcd63d838",
+      "after_size": 233008,
+      "before_sha256": "f9d0e896ca551a221177dfde9c27332a338782c0ba1f2e7d2163247bcd63d838",
+      "before_size": 233008,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "88293699b20f6d31090119411e7d9c5aa66a3765fb968694a449eeacafe0c174",
+      "after_size": 6560,
+      "before_sha256": "88293699b20f6d31090119411e7d9c5aa66a3765fb968694a449eeacafe0c174",
+      "before_size": 6560,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "b07249b137351f4be61e110e75d94b916aa36fd7c4202413ea9b5bd3ec3103d3",
+      "after_size": 51168,
+      "before_sha256": "b07249b137351f4be61e110e75d94b916aa36fd7c4202413ea9b5bd3ec3103d3",
+      "before_size": 51168,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "dfb64b74bc6bb317029e3d387fccacbf9ad371d96a9965ef7fe63e7d52a18262",
+      "after_size": 40688,
+      "before_sha256": "dfb64b74bc6bb317029e3d387fccacbf9ad371d96a9965ef7fe63e7d52a18262",
+      "before_size": 40688,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "ade060dfad35056aceb254e01a67b463a514008e67e5c1702393881338ab4dc0",
+      "after_size": 358976,
+      "before_sha256": "ade060dfad35056aceb254e01a67b463a514008e67e5c1702393881338ab4dc0",
+      "before_size": 358976,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "cf17db862d319469ce9effa9fe71f07b13205e3cf592716b8378c5f94778b9c9",
+      "after_size": 113000,
+      "before_sha256": "cf17db862d319469ce9effa9fe71f07b13205e3cf592716b8378c5f94778b9c9",
+      "before_size": 113000,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "96f09c3f14468bbc7e554f4d7cf25035307639c994c83d442be0bb6111b87fe7",
+      "after_size": 7208,
+      "before_sha256": "96f09c3f14468bbc7e554f4d7cf25035307639c994c83d442be0bb6111b87fe7",
+      "before_size": 7208,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "bb05f5ddaec2090d07bc520ba63cb2b83ef22db63e9a0b166eed3c31d1317d74",
+      "after_size": 4784,
+      "before_sha256": "bb05f5ddaec2090d07bc520ba63cb2b83ef22db63e9a0b166eed3c31d1317d74",
+      "before_size": 4784,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "cf307ee28eec040362d7738577e04cc2a93480c6b0789f1c09dc973d88a4419b",
+      "after_size": 94744,
+      "before_sha256": "cf307ee28eec040362d7738577e04cc2a93480c6b0789f1c09dc973d88a4419b",
+      "before_size": 94744,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "81278e78463cb9eeec16dd41d1a89513441566184fcbbe8c9651d3367f6615bd",
+      "after_size": 191904,
+      "before_sha256": "81278e78463cb9eeec16dd41d1a89513441566184fcbbe8c9651d3367f6615bd",
+      "before_size": 191904,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "aaef9131e72e95dc9f44a146c9301f39854a62cfea6a113027ac2c49b00a585b",
+      "after_size": 26192,
+      "before_sha256": "aaef9131e72e95dc9f44a146c9301f39854a62cfea6a113027ac2c49b00a585b",
+      "before_size": 26192,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "850d05a06212629dca669c2b49c40496e4440a8ce6ba0c64ceeab78b6601e79d",
+      "after_size": 14392,
+      "before_sha256": "850d05a06212629dca669c2b49c40496e4440a8ce6ba0c64ceeab78b6601e79d",
+      "before_size": 14392,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "c00f6f5a6843e2afb6e0dd2b2cc18446c8d31ef528934883416cba484f9bce8b",
+      "after_size": 13760,
+      "before_sha256": "c00f6f5a6843e2afb6e0dd2b2cc18446c8d31ef528934883416cba484f9bce8b",
+      "before_size": 13760,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "50fabbb703c87848864d90b07fb398b8b0ac6343c4602842dfebc90f98d76c95",
+      "after_size": 34600,
+      "before_sha256": "50fabbb703c87848864d90b07fb398b8b0ac6343c4602842dfebc90f98d76c95",
+      "before_size": 34600,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "d00a50816eb097760b065b3b26d26803bfc3e2c4a2a3e54fd19522211deb13f5",
+      "after_size": 1995256,
+      "before_sha256": "d00a50816eb097760b065b3b26d26803bfc3e2c4a2a3e54fd19522211deb13f5",
+      "before_size": 1995256,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "63b4ac7c0300e99f492c3c91051bd45b147175ec4f73000b63c61eb8f128f9bf",
+      "after_size": 59576,
+      "before_sha256": "63b4ac7c0300e99f492c3c91051bd45b147175ec4f73000b63c61eb8f128f9bf",
+      "before_size": 59576,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "d90b13e67647f6828ec93a441e14507a8ce7ba708d4fc94b92124f5b178dcdb0",
+      "after_size": 23928,
+      "before_sha256": "d90b13e67647f6828ec93a441e14507a8ce7ba708d4fc94b92124f5b178dcdb0",
+      "before_size": 23928,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "28fe3bd5cfb3b7edd5e8c6846702421633ae2f3c3c7263914b1c0bf22712f792",
+      "after_size": 36736,
+      "before_sha256": "28fe3bd5cfb3b7edd5e8c6846702421633ae2f3c3c7263914b1c0bf22712f792",
+      "before_size": 36736,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "00544ebb34a9d7872ca7201af170392e246a7877315a9d351bc3139d3fb0677a",
+      "after_size": 17864,
+      "before_sha256": "00544ebb34a9d7872ca7201af170392e246a7877315a9d351bc3139d3fb0677a",
+      "before_size": 17864,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "dbc128b15fed04814498d69fee5f89f1c9f1751d9d0697f5ac27eb2bbc2bc3fb",
+      "after_size": 65136,
+      "before_sha256": "dbc128b15fed04814498d69fee5f89f1c9f1751d9d0697f5ac27eb2bbc2bc3fb",
+      "before_size": 65136,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "b8441f04e2d54e0a891b0cc31360a93ef22642eee714568d227474dcccb0a9ca",
+      "after_size": 30784,
+      "before_sha256": "b8441f04e2d54e0a891b0cc31360a93ef22642eee714568d227474dcccb0a9ca",
+      "before_size": 30784,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "18ff8580dd017861337be73bdbd47fc5701bbf807b9c886b246fc466ac58308b",
+      "after_size": 234656,
+      "before_sha256": "18ff8580dd017861337be73bdbd47fc5701bbf807b9c886b246fc466ac58308b",
+      "before_size": 234656,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "e96e5bef2c6cc553bf4148453198879c8e6a94aa243b4993d5c7095332a3748c",
+      "after_size": 15344,
+      "before_sha256": "e96e5bef2c6cc553bf4148453198879c8e6a94aa243b4993d5c7095332a3748c",
+      "before_size": 15344,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "83082513ac140b7d9a2966b88e6ef2f08d8b29796e66c33ae9c28786ba5db336",
+      "after_size": 29008,
+      "before_sha256": "83082513ac140b7d9a2966b88e6ef2f08d8b29796e66c33ae9c28786ba5db336",
+      "before_size": 29008,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "38f30364553113e75decb9f9ad6f298ecc543181a6d46dcc5f247bfa33d5bbe3",
+      "after_size": 12752,
+      "before_sha256": "38f30364553113e75decb9f9ad6f298ecc543181a6d46dcc5f247bfa33d5bbe3",
+      "before_size": 12752,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "08dc631a6e93236f339e26284dafcedf573a5f97eb32f07860ce7b381dae7b93",
+      "after_size": 28064,
+      "before_sha256": "08dc631a6e93236f339e26284dafcedf573a5f97eb32f07860ce7b381dae7b93",
+      "before_size": 28064,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "1068318bf8dc933497793d878a1a0098cbdb6769ea4c99057355bf4f94e092b5",
+      "after_size": 743240,
+      "before_sha256": "1068318bf8dc933497793d878a1a0098cbdb6769ea4c99057355bf4f94e092b5",
+      "before_size": 743240,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "24521eae69c20c997cf95fa68a8d12895d064abd8ab66be199bd46b443f1e66e",
+      "after_size": 10800,
+      "before_sha256": "24521eae69c20c997cf95fa68a8d12895d064abd8ab66be199bd46b443f1e66e",
+      "before_size": 10800,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "b7da8e474bdfe350721b7df825ff2a1033a72e18ecaca99c3a29533ddbaa9ada",
+      "after_size": 9776,
+      "before_sha256": "b7da8e474bdfe350721b7df825ff2a1033a72e18ecaca99c3a29533ddbaa9ada",
+      "before_size": 9776,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "6d0b0f5e8909ae2d176f9b731a0997dd06da6959f082777533500ef193a25fe9",
+      "after_size": 9584,
+      "before_sha256": "6d0b0f5e8909ae2d176f9b731a0997dd06da6959f082777533500ef193a25fe9",
+      "before_size": 9584,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "after_sha256": "f07859d9032977ef9d471ada7192dc66ed893091a0c910d3ea822bba6edd592a",
+      "after_size": 43720,
+      "before_sha256": "f07859d9032977ef9d471ada7192dc66ed893091a0c910d3ea822bba6edd592a",
+      "before_size": 43720,
+      "changed": false,
+      "path": "python/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so"
+    }
+  ],
+  "schema_version": 1,
+  "tool": "/data/data/com.termux/files/usr/bin/llvm-strip"
+}

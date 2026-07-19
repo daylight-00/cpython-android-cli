@@ -123,6 +123,27 @@
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json`](epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json`](epoch2-termux-native-cpython3146-producer/producer-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-artifact-prototype`
+
+- [`experiments/epoch2-upstream-thin-artifact-prototype/PYTHON.json`](epoch2-upstream-thin-artifact-prototype/PYTHON.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/README.md`](epoch2-upstream-thin-artifact-prototype/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/archive-root-and-path-contract.json`](epoch2-upstream-thin-artifact-prototype/archive-root-and-path-contract.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-contract.json`](epoch2-upstream-thin-artifact-prototype/artifact-contract.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-flavor-decision-inputs.json`](epoch2-upstream-thin-artifact-prototype/artifact-flavor-decision-inputs.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json`](epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-set.json`](epoch2-upstream-thin-artifact-prototype/artifact-set.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/consumer-extraction-contract.json`](epoch2-upstream-thin-artifact-prototype/consumer-extraction-contract.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/deterministic-derivation-rules.json`](epoch2-upstream-thin-artifact-prototype/deterministic-derivation-rules.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/evidence-freeze.md`](epoch2-upstream-thin-artifact-prototype/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/full.manifest.json`](epoch2-upstream-thin-artifact-prototype/full.manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/independent-audit.json`](epoch2-upstream-thin-artifact-prototype/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/install_only.manifest.json`](epoch2-upstream-thin-artifact-prototype/install_only.manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/install_only_stripped.manifest.json`](epoch2-upstream-thin-artifact-prototype/install_only_stripped.manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/official-extraction-verification.json`](epoch2-upstream-thin-artifact-prototype/official-extraction-verification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/python-json-schema-mapping.json`](epoch2-upstream-thin-artifact-prototype/python-json-schema-mapping.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/strip-mutations.json`](epoch2-upstream-thin-artifact-prototype/strip-mutations.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-artifact-prototype/unavailable-field-policy.json`](epoch2-upstream-thin-artifact-prototype/unavailable-field-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-control`
 
 - [`experiments/epoch2-upstream-thin-control/README.md`](epoch2-upstream-thin-control/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
