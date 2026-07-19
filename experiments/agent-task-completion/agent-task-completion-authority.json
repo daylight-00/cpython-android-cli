@@ -1,0 +1,55 @@
+{
+  "authority_kind": "agent-task-completion-contract-hardening",
+  "authority_version": 1,
+  "claim_boundary": {
+    "bootstrap_changed": false,
+    "device_execution_required": false,
+    "next_program_action_changed": false,
+    "product_or_experiment_claim_change": false,
+    "stable_project_or_session_semantics_changed": false,
+    "task_completion_routing_enforced": true
+  },
+  "file_identities": {
+    "docs/agent/TASK_CATALOG.json": "6e9120c1b33141efa0fa90cb3a7e5b83fc9b950b6daa0b0b775ea144b3d504fe",
+    "docs/agent/TASK_CATALOG.schema.json": "2926fbc7dd45af71177c750c6516f48606ccfc0447ca8e71a3fd5ae84b75b6e3",
+    "docs/current/AGENT_TASK.schema.json": "68bf04e1c3f348a58c95505b9a761cf370c7837ed66f67f3509b1b41318e8db8",
+    "docs/current/STATE-v6.schema.json": "8e499e3e6b51d42e6f2a91ec5aadfd7cd301a331e66075c423b2d5773ec833b5",
+    "docs/documentation/AGENT_TASK_COMPLETION_CONTRACT.md": "b25ca5b4ce3a0a8f6aa4d382e81fe2ff675919d5b661f603773ea1de63567f5f",
+    "docs/documentation/document-registry-v7.schema.json": "481e3ba03f33414b90d8c58306c0bb98ea5102d5b2a3c4fa281740fbdbdb9780",
+    "docs/history/pre-agent-task-completion-hardening/INDEX.md": "7071670fef7418f8daa1ae9061a60204c66ce322e7475fdc43ac110af15cbc30",
+    "docs/history/pre-agent-task-completion-hardening/snapshot-map.json": "6cedf7221a2dffdae3cee258133fea45f1b1f2f8079ced0fb9e953e17370986b",
+    "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.json": "057372d0ec60c340e8f8a04d89a4850bc51ce6307c27fc5a399a8f36972fe8a2",
+    "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.schema.json": "b8003ccdc931b9bc4744714742dae2a66ced0b022ced54723275d89a560623a8",
+    "docs/history/pre-agent-task-completion-hardening/snapshots/docs/current/AGENT_TASK.schema.json": "b48a892dbdab91b57dd1b93008fd2fe160dc47a4eeb05acd888dd0d226cc6a90",
+    "docs/history/pre-agent-task-completion-hardening/snapshots/tools/agent_onboard.py": "08857567b266f019c30b8c1f41620e5d792a7c976a0a93d90307471919f7ced2",
+    "experiments/agent-task-completion/README.md": "1d6a459ec9b9814ec9f04d80f5a98cfae6a334b403759c669c6f7650e2157e86",
+    "experiments/agent-task-completion/frozen-agent-bootstrap-snapshot.json": "4b29fcd6b87ff70816fed0deb04ef17442e25e1a8c436924dd4aefebacdf80cc",
+    "experiments/agent-task-completion/render-document-views.py": "7b603f12e8a38fec94798e7247240c9423598000b83d51a44a295fbe10d13aa7",
+    "experiments/agent-task-completion/test-agent-task-completion.py": "b939d026ec8bf3ac68e99575ac623c743006c8264529472cd280ddb087adff75",
+    "experiments/agent-task-completion/verify-agent-task-completion-authority.py": "74405bb3501eb99358f5a3c8a47d7e3eda1f351f62eaf0d768eace347e8db4e4",
+    "experiments/agent-task-completion/verify-agent-task-completion.py": "5804ec464b27641f8060ce361b706064285b65684d2d82928c2a3ddceda49597",
+    "experiments/agent-task-completion/verify-frozen-agent-bootstrap-snapshot.py": "515cfb79ab8213f2acba6a0e4ea69eefca1fabae4043e8f9177ca7be4efe24d2",
+    "tools/agent_onboard.py": "fa3ecc1c59450517972df57b0b7cdd655c2f7aa3dae169f27de78509c6e22f0a"
+  },
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "predecessor": {
+    "commit": "2b5b0b9ef742c36d5a29d4643fb53bf471000415",
+    "tree": "e16010a5712c6c098b29887958e1352469436cba"
+  },
+  "schema_version": 1,
+  "scope": {
+    "cataloged_successor_count": 1,
+    "current_task_contract_count": 1,
+    "predecessor_binding_snapshot_count": 4,
+    "render_target_count": 20,
+    "state_action_field_count": 4
+  },
+  "status": "frozen-pass-task-completion-routing-enforced",
+  "verification": {
+    "authority": "18/18",
+    "bootstrap_snapshot": "10/10",
+    "live": "25/25",
+    "negative": "16/16",
+    "render": "20/20"
+  }
+}

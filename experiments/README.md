@@ -1,6 +1,6 @@
 # Experiments
 
-> **Generated view:** registry v6. Do not hand-edit.
+> **Generated view:** registry v7. Do not hand-edit.
 > Experiments are excluded from onboarding unless AGENT_TASK selects them.
 
 ## `agent-bootstrap`
@@ -10,6 +10,13 @@
 - [`experiments/agent-bootstrap/agent-bootstrap-external-audit.json`](agent-bootstrap/agent-bootstrap-external-audit.json) — `FROZEN_AUTHORITY` · `external_audit` · owner `session-operations`
 - [`experiments/agent-bootstrap/frozen-phase5-snapshot.json`](agent-bootstrap/frozen-phase5-snapshot.json) — `FROZEN_AUTHORITY` · `predecessor_snapshot` · owner `session-operations`
 - [`experiments/agent-bootstrap/navigation-targets.json`](agent-bootstrap/navigation-targets.json) — `FROZEN_AUTHORITY` · `navigation_manifest` · owner `documentation-governance`
+
+## `agent-task-completion`
+
+- [`experiments/agent-task-completion/README.md`](agent-task-completion/README.md) — `FROZEN_AUTHORITY` · `experiment` · owner `program-governance`
+- [`experiments/agent-task-completion/agent-task-completion-authority.json`](agent-task-completion/agent-task-completion-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `program-governance`
+- [`experiments/agent-task-completion/agent-task-completion-external-audit.json`](agent-task-completion/agent-task-completion-external-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `program-governance`
+- [`experiments/agent-task-completion/frozen-agent-bootstrap-snapshot.json`](agent-task-completion/frozen-agent-bootstrap-snapshot.json) — `FROZEN_AUTHORITY` · `compatibility_snapshot` · owner `program-governance`
 
 ## `bootstrap-android-build`
 

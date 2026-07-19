@@ -1,6 +1,6 @@
 # Plans and Roadmaps
 
-> **Generated view:** registry v6. Current progress belongs to STATE.json.
+> **Generated view:** registry v7. Current progress belongs to STATE.json.
 
 ## Canonical active plans
 

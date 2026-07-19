@@ -1,0 +1,35 @@
+{
+  "entries": [
+    {
+      "original_path": "docs/agent/TASK_CATALOG.json",
+      "sha256": "057372d0ec60c340e8f8a04d89a4850bc51ce6307c27fc5a399a8f36972fe8a2",
+      "snapshot_path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.json"
+    },
+    {
+      "original_path": "docs/agent/TASK_CATALOG.schema.json",
+      "sha256": "b8003ccdc931b9bc4744714742dae2a66ced0b022ced54723275d89a560623a8",
+      "snapshot_path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.schema.json"
+    },
+    {
+      "original_path": "docs/current/AGENT_TASK.schema.json",
+      "sha256": "b48a892dbdab91b57dd1b93008fd2fe160dc47a4eeb05acd888dd0d226cc6a90",
+      "snapshot_path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/current/AGENT_TASK.schema.json"
+    },
+    {
+      "original_path": "tools/agent_onboard.py",
+      "sha256": "08857567b266f019c30b8c1f41620e5d792a7c976a0a93d90307471919f7ced2",
+      "snapshot_path": "docs/history/pre-agent-task-completion-hardening/snapshots/tools/agent_onboard.py"
+    }
+  ],
+  "entry_count": 4,
+  "predecessor": {
+    "commit": "2b5b0b9ef742c36d5a29d4643fb53bf471000415",
+    "tree": "e16010a5712c6c098b29887958e1352469436cba"
+  },
+  "schema_version": 1,
+  "snapshot_kind": "pre-agent-task-completion-hardening-bound-file-snapshots",
+  "source_authority": {
+    "path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
+    "sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79"
+  }
+}

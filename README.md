@@ -46,6 +46,7 @@ none
 - [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](experiments/document-mixed-correction/document-mixed-correction-authority.json): stable/current/plan/history layer separation and snapshot interpretation (`45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf`)
 - [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json): legacy authority compatibility snapshots and completed documentation lifecycle migration (`c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924`)
 - [`experiments/agent-bootstrap/agent-bootstrap-authority.json`](experiments/agent-bootstrap/agent-bootstrap-authority.json): immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol (`86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79`)
+- [`experiments/agent-task-completion/agent-task-completion-authority.json`](experiments/agent-task-completion/agent-task-completion-authority.json): task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement (`c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539`)
 
 ### Agent entry
 

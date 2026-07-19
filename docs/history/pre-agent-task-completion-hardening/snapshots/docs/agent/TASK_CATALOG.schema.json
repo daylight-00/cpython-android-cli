@@ -1,0 +1,24 @@
+{
+  "$id": "urn:cpython-android-cli:agent-task-catalog:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "catalog_kind": {
+      "const": "agent-task-routing-catalog"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "tasks": {
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "catalog_kind",
+    "tasks"
+  ],
+  "title": "Agent task routing catalog",
+  "type": "object"
+}

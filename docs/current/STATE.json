@@ -53,6 +53,12 @@
       "path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
       "role": "immutable one-document agent onboarding, bundle-native session transport, and mandatory session-operation protocol",
       "sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79"
+    },
+    {
+      "id": "agent-task-completion-contract-hardening",
+      "path": "experiments/agent-task-completion/agent-task-completion-authority.json",
+      "role": "task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement",
+      "sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539"
     }
   ],
   "active_plan": {
@@ -77,6 +83,8 @@
     "session_protocol_revision": 1,
     "status": "established",
     "task_catalog_path": "docs/agent/TASK_CATALOG.json",
+    "task_catalog_schema_version": 2,
+    "task_completion_contract_version": 1,
     "task_manifest_path": "docs/current/AGENT_TASK.json"
   },
   "blockers": [],
@@ -89,9 +97,9 @@
   },
   "control_work": {
     "completed_phase": 1,
-    "id": "AGENT-BOOTSTRAP",
+    "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
-    "name": "immutable agent bootstrap and bundle session protocol",
+    "name": "agent task completion contract hardening",
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "next_phase": null,
     "physical_moves_decision": "not-required",
@@ -121,8 +129,8 @@
   },
   "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
   "predecessor": {
-    "commit": "34695ed741411067302bd7372e3b7024b5fab541",
-    "tree": "8537ad0495915491fce158abe1f25851f5149708"
+    "commit": "2b5b0b9ef742c36d5a29d4643fb53bf471000415",
+    "tree": "e16010a5712c6c098b29887958e1352469436cba"
   },
   "program": {
     "epoch": {
@@ -168,12 +176,30 @@
       "experiments/README.md"
     ]
   },
-  "schema_path": "docs/current/STATE-v5.schema.json",
-  "schema_version": 5,
+  "schema_path": "docs/current/STATE-v6.schema.json",
+  "schema_version": 6,
+  "session_protocol": {
+    "path": "docs/agent/SESSION_PROTOCOL.md",
+    "revision": 1,
+    "sha256": "49e1f896f4840690b863b3cf27ad59e67fb423eabd72eee8c51f684e5ef95d8b"
+  },
   "state_kind": "project-current-state",
-  "state_revision": 5,
+  "state_revision": 6,
+  "task_catalog": {
+    "path": "docs/agent/TASK_CATALOG.json",
+    "schema_version": 2,
+    "sha256": "6e9120c1b33141efa0fa90cb3a7e5b83fc9b950b6daa0b0b775ea144b3d504fe"
+  },
+  "task_completion": {
+    "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
+    "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
+    "contract_version": 1,
+    "current_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "pass_successor_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+    "status": "enforced"
+  },
   "unresolved_risks": [
     "official upstream package and BeeWare dependency identities are not yet frozen under UT-0"
   ],
-  "updated_by_transaction": "20260719-immutable-agent-bootstrap-bundle-session-protocol-v1"
+  "updated_by_transaction": "20260719-agent-task-completion-contract-hardening-v1"
 }

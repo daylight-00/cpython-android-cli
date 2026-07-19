@@ -1,6 +1,6 @@
 # Documentation Navigation
 
-> **Generated lookup root:** registry v6 + [`docs/current/STATE.json`](../current/STATE.json).
+> **Generated lookup root:** registry v7 + [`docs/current/STATE.json`](../current/STATE.json).
 > Agent sessions do not start here. Start at [`AGENT_BOOTSTRAP.md`](../../AGENT_BOOTSTRAP.md).
 
 ## Current coordinates
@@ -8,7 +8,7 @@
 ```text
 action       execute-e2-r1-ut0-exact-official-upstream-control
 gate         E2-R1/UT-0 — exact official upstream control
-tracked docs 536
+tracked docs 550
 indexes      16
 ```
 

@@ -1,5 +1,5 @@
 {
-  "$id": "urn:cpython-android-cli:agent-task-catalog:v1",
+  "$id": "urn:cpython-android-cli:agent-task-catalog:v2",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -7,10 +7,75 @@
       "const": "agent-task-routing-catalog"
     },
     "schema_version": {
-      "const": 1
+      "const": 2
     },
     "tasks": {
-      "minItems": 1,
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_class": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "activation": {
+            "type": "object"
+          },
+          "claim_boundary": {
+            "type": "object"
+          },
+          "completion_contract": {
+            "type": "object"
+          },
+          "default_exclusions": {
+            "type": "array"
+          },
+          "deliverable": {
+            "type": "object"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "input_routing": {
+            "type": "object"
+          },
+          "required_authorities": {
+            "type": "array"
+          },
+          "required_reads": {
+            "type": "array"
+          },
+          "task_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "work_class": {
+            "enum": [
+              "R",
+              "L",
+              "T"
+            ]
+          }
+        },
+        "required": [
+          "task_id",
+          "action_class",
+          "activation",
+          "work_class",
+          "title",
+          "goal",
+          "required_reads",
+          "required_authorities",
+          "input_routing",
+          "default_exclusions",
+          "claim_boundary",
+          "deliverable"
+        ],
+        "type": "object"
+      },
+      "minItems": 2,
       "type": "array"
     }
   },
@@ -19,6 +84,6 @@
     "catalog_kind",
     "tasks"
   ],
-  "title": "Agent task routing catalog",
+  "title": "Agent task routing and completion catalog",
   "type": "object"
 }

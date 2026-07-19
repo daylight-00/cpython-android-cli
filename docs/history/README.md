@@ -1,14 +1,15 @@
 # History
 
-> **Generated view:** document registry v6. Do not hand-edit.
+> **Generated view:** document registry v7. Do not hand-edit.
 > Snapshot-relative project, session, stage, and compatibility records.
 
 ```text
-entry count  41
-lifecycle    `FROZEN_AUTHORITY` 1, `HISTORICAL_SNAPSHOT` 40
+entry count  47
+lifecycle    `FROZEN_AUTHORITY` 2, `HISTORICAL_SNAPSHOT` 45
 ```
 
 - [`docs/history/2026-07-19-agent-bootstrap-and-bundle-session-transition.md`](2026-07-19-agent-bootstrap-and-bundle-session-transition.md) — `HISTORICAL_SNAPSHOT` · `session_history` · owner `session-operations` · snapshot-relative; never current authority
+- [`docs/history/2026-07-19-agent-task-completion-contract-hardening.md`](2026-07-19-agent-task-completion-contract-hardening.md) — `HISTORICAL_SNAPSHOT` · `history` · owner `program-governance` · snapshot-relative; never current authority
 - [`docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md`](2026-07-19-pre-phase4-root-readme-snapshot.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `documentation-history` · snapshot-relative; never current authority
 - [`docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/README.md`](legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/README.md) — `HISTORICAL_SNAPSHOT` · `legacy_compatibility` · owner `documentation-history` · snapshot-relative; never current authority
 - [`docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/docs/CURRENT_CONTEXT.md`](legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/docs/CURRENT_CONTEXT.md) — `HISTORICAL_SNAPSHOT` · `legacy_compatibility` · owner `documentation-history` · snapshot-relative; never current authority
@@ -49,3 +50,8 @@ lifecycle    `FROZEN_AUTHORITY` 1, `HISTORICAL_SNAPSHOT` 40
 - [`docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/SESSION_CYCLE.md`](pre-agent-bootstrap-session-system/snapshots/docs/session-operations/SESSION_CYCLE.md) — `HISTORICAL_SNAPSHOT` · `session_history` · owner `session-operations` · snapshot-relative; never current authority
 - [`docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md`](pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/DATED_HANDOFF_TEMPLATE.md) — `HISTORICAL_SNAPSHOT` · `session_history` · owner `session-operations` · snapshot-relative; never current authority
 - [`docs/history/pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/HANDOFF_MANIFEST.example.json`](pre-agent-bootstrap-session-system/snapshots/docs/session-operations/templates/HANDOFF_MANIFEST.example.json) — `HISTORICAL_SNAPSHOT` · `session_history` · owner `session-operations` · snapshot-relative; never current authority
+- [`docs/history/pre-agent-task-completion-hardening/INDEX.md`](pre-agent-task-completion-hardening/INDEX.md) — `HISTORICAL_SNAPSHOT` · `history` · owner `session-operations` · snapshot-relative; never current authority
+- [`docs/history/pre-agent-task-completion-hardening/snapshot-map.json`](pre-agent-task-completion-hardening/snapshot-map.json) — `FROZEN_AUTHORITY` · `compatibility_snapshot` · owner `session-operations`
+- [`docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.json`](pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.json) — `HISTORICAL_SNAPSHOT` · `compatibility_snapshot` · owner `program-governance` · snapshot-relative; never current authority
+- [`docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.schema.json`](pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.schema.json) — `HISTORICAL_SNAPSHOT` · `compatibility_snapshot` · owner `program-governance` · snapshot-relative; never current authority
+- [`docs/history/pre-agent-task-completion-hardening/snapshots/docs/current/AGENT_TASK.schema.json`](pre-agent-task-completion-hardening/snapshots/docs/current/AGENT_TASK.schema.json) — `HISTORICAL_SNAPSHOT` · `compatibility_snapshot` · owner `program-governance` · snapshot-relative; never current authority

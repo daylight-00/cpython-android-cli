@@ -1,14 +1,15 @@
 # Evidence
 
-> **Generated view:** document registry v6. Do not hand-edit.
+> **Generated view:** document registry v7. Do not hand-edit.
 > Frozen evidence records; ordering implies no precedence.
 
 ```text
-entry count  138
-lifecycle    `FROZEN_AUTHORITY` 138
+entry count  139
+lifecycle    `FROZEN_AUTHORITY` 139
 ```
 
 - [`docs/evidence/AGENT_BOOTSTRAP_AND_BUNDLE_SESSION_PROTOCOL_AUTHORITY_FREEZE.md`](AGENT_BOOTSTRAP_AND_BUNDLE_SESSION_PROTOCOL_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_evidence` · owner `session-operations`
+- [`docs/evidence/AGENT_TASK_COMPLETION_CONTRACT_AUTHORITY_FREEZE.md`](AGENT_TASK_COMPLETION_CONTRACT_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `evidence` · owner `program-governance`
 - [`docs/evidence/DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md`](DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md`](DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md`](DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `evidence` · owner `documentation-system`

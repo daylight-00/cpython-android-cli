@@ -1,6 +1,6 @@
 # Contracts
 
-> **Generated view:** document registry v6. Do not hand-edit.
+> **Generated view:** document registry v7. Do not hand-edit.
 > Frozen claim and experiment contracts.
 
 ```text

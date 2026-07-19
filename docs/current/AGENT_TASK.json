@@ -7,6 +7,80 @@
     "product_selectability_claim": false,
     "publication_claim": false
   },
+  "completion_contract": {
+    "always": {
+      "all_required_verifiers_must_pass": true,
+      "clean_main_and_bundle_export_ready_on_close": true,
+      "forbidden_new_authority_bindings": [
+        "docs/current/STATE.json",
+        "docs/current/AGENT_TASK.json",
+        "README.md",
+        "docs/CURRENT_CONTEXT.md",
+        "docs/INDEX.md"
+      ],
+      "generated_views_must_be_regenerated": true,
+      "new_markdown_or_json_requires_registry_update": true,
+      "one_runner_and_complete_receipt_required": true
+    },
+    "contract_version": 1,
+    "fail": {
+      "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
+      "complete_receipt_required": true,
+      "correction_task_must_be_cataloged": true,
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+      "required_failure_records": [
+        "first-meaningful-failure",
+        "failure-classification",
+        "blocked-downstream",
+        "claim-boundary"
+      ],
+      "required_state_updates": [
+        "state_revision",
+        "predecessor",
+        "active_work_package",
+        "blockers",
+        "unresolved_risks",
+        "updated_by_transaction"
+      ]
+    },
+    "pass": {
+      "required_catalog_updates": [
+        "bind-accepted-ut0-authority-into-successor",
+        "activate-successor-task",
+        "define-successor-completion-contract-before-selection"
+      ],
+      "required_output_namespace": "experiments/epoch2-upstream-thin-control/",
+      "required_output_roles": [
+        "gate-contract",
+        "upstream-input-manifest",
+        "package-and-file-hashes",
+        "elf-and-extension-inventory",
+        "dependency-provider-map",
+        "sysconfig-census",
+        "package-layout-map",
+        "provenance-map",
+        "producer-delta",
+        "independent-audit",
+        "machine-authority",
+        "evidence-freeze"
+      ],
+      "required_state_updates": [
+        "state_revision",
+        "predecessor",
+        "accepted_authorities",
+        "program.gate",
+        "program.next_action_class",
+        "next_action_class",
+        "control_work.next_action_class",
+        "control_work.resume_program_action_class",
+        "unresolved_risks",
+        "updated_by_transaction"
+      ],
+      "successor_action_class": "execute-e2-r1-ut1-astral-artifact-and-metadata-prototype",
+      "successor_must_exist": true,
+      "successor_task_id": "E2-R1-UT-1"
+    }
+  },
   "default_exclusions": [
     "docs/history/**",
     "docs/handoff/**",
@@ -57,8 +131,8 @@
       "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
     }
   ],
-  "schema_version": 1,
-  "state_revision": 5,
+  "schema_version": 2,
+  "state_revision": 6,
   "task": {
     "action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "goal": "Freeze the exact unmodified official Python.org Android package, inherited BeeWare dependency set, package topology, metadata, and bounded delta against the reconstructed producer authority.",

@@ -1,0 +1,107 @@
+{
+  "$id": "urn:cpython-android-cli:current-state:v6",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_authorities": {
+      "type": "array"
+    },
+    "active_plan": {
+      "type": "object"
+    },
+    "active_work_package": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "agent_onboarding": {
+      "type": "object"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "claim_boundaries": {
+      "type": "object"
+    },
+    "control_work": {
+      "type": "object"
+    },
+    "documentation_layers": {
+      "type": "object"
+    },
+    "navigation": {
+      "type": "object"
+    },
+    "next_action_class": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "predecessor": {
+      "type": "object"
+    },
+    "program": {
+      "type": "object"
+    },
+    "project_model": {
+      "type": "object"
+    },
+    "render_targets": {
+      "type": "object"
+    },
+    "schema_path": {
+      "const": "docs/current/STATE-v6.schema.json"
+    },
+    "schema_version": {
+      "const": 6
+    },
+    "session_protocol": {
+      "type": "object"
+    },
+    "state_kind": {
+      "const": "project-current-state"
+    },
+    "state_revision": {
+      "minimum": 6,
+      "type": "integer"
+    },
+    "task_catalog": {
+      "type": "object"
+    },
+    "task_completion": {
+      "type": "object"
+    },
+    "unresolved_risks": {
+      "type": "array"
+    },
+    "updated_by_transaction": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "schema_path",
+    "state_kind",
+    "state_revision",
+    "predecessor",
+    "program",
+    "control_work",
+    "agent_onboarding",
+    "next_action_class",
+    "project_model",
+    "session_protocol",
+    "task_catalog",
+    "task_completion",
+    "active_plan",
+    "accepted_authorities",
+    "blockers",
+    "unresolved_risks",
+    "claim_boundaries",
+    "render_targets",
+    "navigation",
+    "documentation_layers",
+    "updated_by_transaction"
+  ],
+  "title": "CPython Android CLI current project state v6",
+  "type": "object"
+}

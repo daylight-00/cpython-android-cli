@@ -1,12 +1,9 @@
 {
-  "$id": "urn:cpython-android-cli:agent-task:v2",
+  "$id": "urn:cpython-android-cli:agent-task:v1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "claim_boundary": {
-      "type": "object"
-    },
-    "completion_contract": {
       "type": "object"
     },
     "default_exclusions": {
@@ -37,10 +34,10 @@
       "type": "array"
     },
     "schema_version": {
-      "const": 2
+      "const": 1
     },
     "state_revision": {
-      "minimum": 6,
+      "minimum": 1,
       "type": "integer"
     },
     "task": {
@@ -60,9 +57,8 @@
     "default_exclusions",
     "claim_boundary",
     "deliverable",
-    "completion_contract",
     "onboarding_certificate_required"
   ],
-  "title": "Generated current agent task manifest with completion contract",
+  "title": "Generated current agent task manifest",
   "type": "object"
 }

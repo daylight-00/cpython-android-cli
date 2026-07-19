@@ -1,6 +1,6 @@
 # Stage Snapshots
 
-> **Generated view:** document registry v6. Do not hand-edit.
+> **Generated view:** document registry v7. Do not hand-edit.
 > Historical stage scope and completion snapshots.
 
 ```text

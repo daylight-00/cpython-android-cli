@@ -1,0 +1,19 @@
+{
+  "audit_kind": "agent-task-completion-contract-external-audit",
+  "blockers": [],
+  "checks": {
+    "active_plan_identity_enforced": true,
+    "bootstrap_predecessor_preserved": true,
+    "completion_contract_generated": true,
+    "device_execution_not_required": true,
+    "live_generated_authority_binding_absent": true,
+    "pass_and_fail_update_routing_declared": true,
+    "stable_module_identity_enforced": true,
+    "state_action_equality_enforced": true,
+    "successor_cataloged": true
+  },
+  "pass": true,
+  "schema_version": 1,
+  "source_authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
+  "source_authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539"
+}

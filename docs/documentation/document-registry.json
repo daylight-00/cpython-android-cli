@@ -6,6 +6,9 @@
     "agent_bootstrap_path": "AGENT_BOOTSTRAP.md",
     "agent_project_model": "docs/agent/PROJECT_MODEL.md",
     "agent_session_protocol": "docs/agent/SESSION_PROTOCOL.md",
+    "agent_task_completion_authority": "experiments/agent-task-completion/agent-task-completion-authority.json",
+    "agent_task_completion_authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
+    "agent_task_completion_contract_enabled": true,
     "agent_task_manifest": "docs/current/AGENT_TASK.json",
     "canonical_active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
     "control_plane_document_count": 10,
@@ -30,8 +33,8 @@
     "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
     "physical_moves_decision": "not-required",
-    "predecessor_head": "34695ed741411067302bd7372e3b7024b5fab541",
-    "predecessor_tree": "8537ad0495915491fce158abe1f25851f5149708",
+    "predecessor_head": "2b5b0b9ef742c36d5a29d4643fb53bf471000415",
+    "predecessor_tree": "e16010a5712c6c098b29887958e1352469436cba",
     "scope_extensions": [
       ".json",
       ".md"
@@ -39,7 +42,9 @@
     "session_input_authority": "full-git-bundle-plus-sha256-sidecar",
     "stable_documentation_system": "docs/documentation/DOCUMENTATION_SYSTEM.md",
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
-    "tracked_document_count": 536
+    "state_schema_version": 6,
+    "task_catalog_schema_version": 2,
+    "tracked_document_count": 550
   },
   "documents": [
     {
@@ -512,7 +517,7 @@
       "format": "json",
       "lifecycle_class": "STABLE",
       "machine_binding_policy": "stable-only",
-      "migration_action": "establish-task-catalog",
+      "migration_action": "add-task-completion-contract",
       "mutability": "controlled",
       "onboarding_visibility": "primary",
       "owner": "program-governance",
@@ -520,14 +525,14 @@
       "planned_canonical_parent": "AGENT_BOOTSTRAP.md",
       "rationale": "",
       "supersession_rule": "Update with task-routing verifier and state transition.",
-      "update_trigger": "New action class or task read/deliverable contract."
+      "update_trigger": "Task routing or completion contract change."
     },
     {
       "authority_domain": "agent_task_schema",
       "format": "json",
       "lifecycle_class": "FROZEN_AUTHORITY",
       "machine_binding_policy": "allowed",
-      "migration_action": "freeze-task-catalog-schema",
+      "migration_action": "add-task-completion-contract",
       "mutability": "immutable-versioned",
       "onboarding_visibility": "machine",
       "owner": "program-governance",
@@ -535,7 +540,7 @@
       "planned_canonical_parent": "docs/navigation/README.md",
       "rationale": "",
       "supersession_rule": "Do not mutate published schema.",
-      "update_trigger": "New catalog schema version only."
+      "update_trigger": "Task routing or completion contract change."
     },
     {
       "authority_domain": "normative_policy",
@@ -675,7 +680,7 @@
       "format": "json",
       "lifecycle_class": "FROZEN_AUTHORITY",
       "machine_binding_policy": "allowed",
-      "migration_action": "freeze-agent-task-schema",
+      "migration_action": "add-task-completion-contract",
       "mutability": "immutable-versioned",
       "onboarding_visibility": "machine",
       "owner": "program-governance",
@@ -683,7 +688,7 @@
       "planned_canonical_parent": "docs/navigation/README.md",
       "rationale": "",
       "supersession_rule": "Do not mutate published schema.",
-      "update_trigger": "New task manifest schema version only."
+      "update_trigger": "Task routing or completion contract change."
     },
     {
       "authority_domain": "navigation",
@@ -753,6 +758,21 @@
       "rationale": "",
       "supersession_rule": "Do not mutate published schema.",
       "update_trigger": "New state schema version only."
+    },
+    {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "docs/current/STATE-v6.schema.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
     },
     {
       "authority_domain": "temporal_state",
@@ -915,6 +935,21 @@
       "rationale": "",
       "supersession_rule": "Update through explicit bootstrap-system authority.",
       "update_trigger": "Bootstrap architecture or fixed path ABI change."
+    },
+    {
+      "authority_domain": "agent_task_completion",
+      "format": "md",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "stable-only",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "controlled",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "docs/documentation/AGENT_TASK_COMPLETION_CONTRACT.md",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Supersede with a new controlled revision.",
+      "update_trigger": "Completion semantics change."
     },
     {
       "authority_domain": "documentation_phase_contract",
@@ -1106,6 +1141,21 @@
       "update_trigger": "New registry schema version only."
     },
     {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-governance",
+      "path": "docs/documentation/document-registry-v7.schema.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
       "authority_domain": "documentation_registry",
       "format": "json",
       "lifecycle_class": "CURRENT_REGISTRY",
@@ -1282,6 +1332,21 @@
       "rationale": "",
       "supersession_rule": "Do not edit after freeze.",
       "update_trigger": "Correction or successor authority only."
+    },
+    {
+      "authority_domain": "evidence",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "docs/evidence/AGENT_TASK_COMPLETION_CONTRACT_AUTHORITY_FREEZE.md",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
     },
     {
       "authority_domain": "documentation_governance_evidence",
@@ -4110,6 +4175,21 @@
       "update_trigger": "Never."
     },
     {
+      "authority_domain": "history",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "program-governance",
+      "path": "docs/history/2026-07-19-agent-task-completion-contract-hardening.md",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
       "authority_domain": "historical_narrative",
       "current_successors": [
         "README.md",
@@ -4785,6 +4865,81 @@
       "rationale": "",
       "supersession_rule": "Superseded by fixed bootstrap/session protocol paths.",
       "update_trigger": "Never."
+    },
+    {
+      "authority_domain": "history",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "session-operations",
+      "path": "docs/history/pre-agent-task-completion-hardening/INDEX.md",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "compatibility_snapshot",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "session-operations",
+      "path": "docs/history/pre-agent-task-completion-hardening/snapshot-map.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "compatibility_snapshot",
+      "format": "json",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "program-governance",
+      "path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "compatibility_snapshot",
+      "format": "json",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "program-governance",
+      "path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/agent/TASK_CATALOG.schema.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "compatibility_snapshot",
+      "format": "json",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "program-governance",
+      "path": "docs/history/pre-agent-task-completion-hardening/snapshots/docs/current/AGENT_TASK.schema.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
     },
     {
       "authority_domain": "navigation",
@@ -5832,6 +5987,66 @@
       "rationale": "",
       "supersession_rule": "Never mutate after authority freeze.",
       "update_trigger": "New navigation generation version only."
+    },
+    {
+      "authority_domain": "experiment",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "experiments/agent-task-completion/README.md",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "experiments/agent-task-completion/agent-task-completion-authority.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "experiments/agent-task-completion/agent-task-completion-external-audit.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
+    },
+    {
+      "authority_domain": "compatibility_snapshot",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "agent-task-completion-hardening",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "program-governance",
+      "path": "experiments/agent-task-completion/frozen-agent-bootstrap-snapshot.json",
+      "planned_canonical_parent": "docs/navigation/README.md",
+      "rationale": "",
+      "supersession_rule": "Never edit after freeze.",
+      "update_trigger": "Successor authority only."
     },
     {
       "authority_domain": "historical_narrative",
@@ -8276,5 +8491,5 @@
   ],
   "registry_kind": "document-lifecycle-registry",
   "schema_path": "docs/documentation/document-registry-v6.schema.json",
-  "schema_version": 6
+  "schema_version": 7
 }
