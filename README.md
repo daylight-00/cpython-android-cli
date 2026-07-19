@@ -6,69 +6,55 @@ The project studies how an upstream-built CPython Android runtime can behave as 
 
 This is a research and engineering project, not a new general-purpose Python distribution and not a replacement for CPython, Termux Python, uv, Conda, or `python-build-standalone`.
 
-## Architecture epochs
+<!-- BEGIN GENERATED CURRENT STATE -->
+## Current project coordinates
+
+> Generated from [`docs/current/STATE.json`](docs/current/STATE.json). Do not hand-edit this block.
 
 ```text
-Epoch 1  Android CPython CLI adaptation, lifecycle, publication,
-         acquisition, and consumer evidence                         FROZEN
-
-Epoch 2  Python.org/BeeWare upstream control, Android adaptation,
-         and API comparison research                                ACTIVE — RECALIBRATED
-
-Epoch 3  clean upstream-derived Astral-structured release repo       PLANNED
-
-Epoch 4  full Astral-like Android source producer                    PLANNED
+immediate repository action  execute-document-lifecycle-phase3-generated-navigation
+document migration           Phase 2 complete; Phase 3 ready
+program epoch                E2 — upstream-thin research program
+program gate held ready      E2-R1/UT-0 — exact official upstream control
+program resume action        execute-e2-r1-ut0-exact-official-upstream-control
 ```
 
-Epoch 1 remains the complete evidence-bearing predecessor. E2-P0 through E2-P3 are preserved historical authorities, including accepted S22 Ultra/API 36 and Note9/API 29 real-device archive qualifications and the explicit emulator waiver. The project was recalibrated on 2026-07-19: Epoch 2 now trusts the Python.org Android product and the BeeWare dependencies selected by CPython as the primary control, completes direct-adaptation and Android API research, and requires a controlled API 36 comparison. Epoch 3 creates a clean upstream-derived release repository whose artifact structure primarily follows Astral's standalone distribution. Epoch 4 builds the full Astral-like CPython and dependency source producer while preserving the Epoch 3 consumer contract. The same product is frozen as dual-real-device AArch64 Termux compatibility evidence; no emulator, selectability, or publication claim is made.
+### Current claim boundary
 
-Current entry points:
+```text
+dual-device claim     accepted — AArch64 Termux compatibility
+emulator qualified    false
+selectable            false
+publication           false
+Epoch 3 selection     false
+```
+
+### Active blockers
+
+none
+
+### Unresolved risks
+
+- official upstream package and BeeWare dependency identities are not yet frozen under UT-0
+- directory-level generated navigation and historical indexes remain Phase 3 work
+- mixed legacy documents remain byte-preserved historical snapshots pending Phase 4 normalization
+
+### Accepted authorities
+
+- [`epoch2-epoch4-recalibration`](experiments/epoch2-recalibration/recalibration-authority.json): program architecture and epoch boundary (`24578fea080cf700d2bbdd607b448fd48fd6f759250d4a9a49986f8cb4e37c01`)
+- [`epoch2-remaining-work-and-epoch3-completion-gates`](experiments/epoch2-upstream-thin-plan/plan-authority.json): active research plan and completion gates (`62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa`)
+- [`e2p3-secondary-real-device-qualification-freeze`](experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json): bounded dual-real-device compatibility evidence (`e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c`)
+- [`document-lifecycle-control-plane-phase1`](experiments/document-lifecycle-control/document-lifecycle-control-authority.json): documentation lifecycle registry control plane (`d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf`)
+- [`document-current-state-authority-phase2`](experiments/document-current-state/document-current-state-authority.json): single current-state authority and generated-view contract (`77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6`)
+
+### Current entry points
 
 - [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
 - [`docs/INDEX.md`](docs/INDEX.md)
-- [`docs/epochs/EPOCH2_CHARTER.md`](docs/epochs/EPOCH2_CHARTER.md)
-- [`docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
-- [`docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md`](docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md)
-- [`docs/epochs/EPOCH3_CHARTER.md`](docs/epochs/EPOCH3_CHARTER.md)
-- [`docs/epochs/EPOCH4_CHARTER.md`](docs/epochs/EPOCH4_CHARTER.md)
-- [`docs/references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md`](docs/references/EXTERNAL_RESEARCH_ARCHIVE_INTAKE_20260719.md)
-- [`docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md`](docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md)
-- [`docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md`](docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md)
-- [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_BINDING_RESULT.md)
-- [`docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md`](docs/evidence/E2P2_TERMUX_NATIVE_CPYTHON3146_FACADE_EXECUTION_AUTHORITY_FREEZE.md)
-- [`docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md`](docs/contracts/E2P3_ARCHIVE_QUALIFICATION_CONTRACT.md)
-- [`docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md`](docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md)
-- [`docs/evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md`](docs/evidence/E2P3_ARCHIVE_QUALIFICATION_CONTRACT_RESULT.md)
-- [`docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md`](docs/evidence/E2P3_REAL_TERMUX_ARCHIVE_QUALIFICATION_AUTHORITY_FREEZE.md)
-- [`docs/evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md`](docs/evidence/E2P3_ARCHIVE_QUALIFICATION_HARNESS_CORRECTION.md)
-
-## Current status
-
-```text
-Stage 1-A  explicit runtime baseline                    frozen
-Stage 1-B  PyConfig frontend comparison                 frozen
-Stage 2-A  bootstrap strategy comparison                complete
-Stage 2-B  conditional re-exec and relocation           complete
-Stage 2-C  synthesis and project workflow               complete
-Stage 2    native bootstrap and workflow architecture   frozen
-Stage 3-A  runtime closure census and boundary model    frozen
-Stage 3-B  reproducible build-input promotion           frozen
-Stage 3-C  archive, installation, and lifecycle contract frozen through Gate 3D
-Stage 3-C  Gate 4 cross-version transition              frozen — Gate 4E independent freeze complete
-Stage 3-C  Gate 4A authority acquisition                 frozen — A1-A6 complete
-Stage 3-D  consumer integration                         frozen — Gate 6 bounded managed-Python feasibility complete
-Stage 3-E  managed-Python distribution                  frozen — Gate 5 independent distribution freeze complete
-Stage 3-F  publication and acquisition boundaries       frozen — Gate 5 independent freeze complete; documentation integrity corrected
-Epoch 2 P0 documentation and component boundaries       frozen
-Epoch 2 P1 canonical standalone artifact contract       frozen — 68/68 + 15/15
-Epoch 2 P2 Gate 1 standalone façade implementation        frozen — synthetic verification
-Epoch 2 P2 Termux-native CPython 3.14.6 producer authority frozen
-Epoch 2 P2 façade producer binding                             frozen
-Epoch 2 P2 bound façade execution authority                    frozen — 52/52 + 27/27
-Epoch 2 P3 primary real-device qualification                 frozen — 35/35 + 19/19 + 38/38
-Epoch 2 recalibration authority                                active — upstream-first E2, clean E3, source-producer E4
-Epoch 2 P3 secondary-device qualification                     frozen — Note9 35/35 + 19/19 + 41/41; dual-real-device compatibility; emulator waived
-```
+- [`docs/SESSION_ONBOARDING.md`](docs/SESSION_ONBOARDING.md)
+- [`docs/documentation/CURRENT_STATE_AUTHORITY.md`](docs/documentation/CURRENT_STATE_AUTHORITY.md)
+- [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
+<!-- END GENERATED CURRENT STATE -->
 
 ## Frozen runtime architecture
 
@@ -315,7 +301,7 @@ Directory `st_size` is filesystem allocation metadata and is not part of cross-t
 
 The frozen historical runtime has `3280` entries and the promoted runtime has `3155`. Both complete inventories are retained; acceptance is based on runtime behavior, native closure, extension surface, active identity, host/data boundaries, relocation, source immutability, and product fidelity.
 
-## Current Stage 3-C boundary
+## Historical Stage 3-C boundary
 
 Stage 3-C has frozen the archive, installation, transaction, recovery, ownership, addon-composition, and final-uninstall contracts for the first complete three-artifact product.
 
@@ -421,71 +407,6 @@ The Git/Termux/Drive/assistant operating contract is documented in:
 ```text
 docs/GITHUB_COLLABORATION_WORKFLOW.md
 ```
-
-## Documentation reading order
-
-Current Epoch 2 entry:
-
-```text
-README.md
-    |
-    v
-docs/CURRENT_CONTEXT.md
-    |
-    +--> docs/contracts/E2P2_STANDALONE_FACADE_CONTRACT.md
-    +--> docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md
-    +--> experiments/epoch2-standalone-build-facade/
-    +--> docs/contracts/E2P1_STANDALONE_ARTIFACT_CONTRACT.md
-    +--> docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md
-    +--> experiments/epoch2-standalone-artifact-contract/
-    +--> docs/epochs/EPOCH2_CHARTER.md
-    +--> docs/roadmap/EPOCH2_ROADMAP.md
-    +--> docs/architecture/COMPONENT_OWNERSHIP.md
-    +--> docs/decisions/
-    +--> docs/references/
-```
-
-Frozen Epoch 1 predecessor detail:
-
-```text
-README.md
-    |
-    v
-docs/PROJECT_CONTEXT_STAGE3F.md
-    |
-    +--> docs/stages/STAGE3F_SCOPE.md
-    +--> experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md
-    +--> experiments/stage3f-publication-acquisition/gate1-authority.json
-    +--> docs/evidence/STAGE3F_GATE1_REPOSITORY_TRANSACTION_RESULT.md
-    +--> experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md
-    +--> experiments/stage3f-publication-acquisition/gate2-publication-snapshot.json
-    +--> experiments/stage3f-publication-acquisition/gate2-publication-snapshot-authority.json
-    +--> docs/evidence/STAGE3F_GATE2_REPOSITORY_TRANSACTION_RESULT.md
-    +--> experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md
-    +--> experiments/stage3f-publication-acquisition/loopback_acquisition.py
-    +--> experiments/stage3f-publication-acquisition/verify-gate3-loopback-acquisition.py
-    +--> experiments/stage3f-publication-acquisition/gate3-loopback-acquisition-authority.json
-    +--> docs/evidence/STAGE3F_GATE3_LOOPBACK_TRANSPORT_ACQUISITION_RESULT.md
-    +--> experiments/stage3f-publication-acquisition/gate2-retention-correction-authority.json
-    +--> experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md
-    +--> experiments/stage3f-publication-acquisition/gate4-retained-publication-snapshot.json
-    +--> experiments/stage3f-publication-acquisition/gate4-retained-artifact-acquisition-authority.json
-    +--> docs/evidence/STAGE3F_GATE4_V1_DERIVATION_FAILURE.md
-    +--> docs/evidence/STAGE3F_GATE4_RETAINED_ARTIFACT_ACQUISITION_RESULT.md
-    +--> experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md
-    +--> experiments/stage3f-publication-acquisition/gate5-independent-publication-acquisition-freeze.json
-    +--> docs/evidence/STAGE3F_GATE5_INDEPENDENT_FREEZE.md
-    +--> docs/evidence/STAGE3F_GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md
-    +--> docs/evidence/STAGE3F_FINAL_SUMMARY.md
-    +--> docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md
-    +--> docs/PROJECT_CONTEXT_STAGE3E.md
-    +--> docs/evidence/STAGE3E_FINAL_SUMMARY.md
-    +--> docs/PROJECT_CONTEXT_STAGE3D.md
-    +--> docs/session-operations/README.md
-    +--> docs/GITHUB_COLLABORATION_WORKFLOW.md
-```
-
-`docs/CURRENT_CONTEXT.md` is the mutable Epoch 2 pointer. `docs/PROJECT_CONTEXT.md` remains the Stage 2-era handoff record. `docs/PROJECT_CONTEXT_STAGE3.md` is the historical Stage 3-A/3-B snapshot. `docs/PROJECT_CONTEXT_STAGE3D.md`, `docs/PROJECT_CONTEXT_STAGE3E.md`, and `docs/PROJECT_CONTEXT_STAGE3F.md` are frozen Epoch 1 records.
 
 ## Design principle
 

@@ -1,0 +1,257 @@
+{
+  "$id": "urn:cpython-android-cli:current-state:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_authorities": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "path",
+          "sha256",
+          "role"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "active_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "active_work_package": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blockers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "claim_boundaries": {
+      "additionalProperties": false,
+      "properties": {
+        "dual_real_device_aarch64_termux_compatibility": {
+          "type": "boolean"
+        },
+        "emulator_qualified": {
+          "type": "boolean"
+        },
+        "epoch3_feature_selection_started": {
+          "type": "boolean"
+        },
+        "publication_authorized": {
+          "type": "boolean"
+        },
+        "selectable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "dual_real_device_aarch64_termux_compatibility",
+        "emulator_qualified",
+        "selectable",
+        "publication_authorized",
+        "epoch3_feature_selection_started"
+      ],
+      "type": "object"
+    },
+    "control_work": {
+      "additionalProperties": false,
+      "properties": {
+        "completed_phase": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "next_action_class": {
+          "type": "string"
+        },
+        "next_phase": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "resume_program_action_class": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "completed_phase",
+        "next_phase",
+        "status",
+        "next_action_class",
+        "resume_program_action_class"
+      ],
+      "type": "object"
+    },
+    "next_action_class": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "predecessor": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "tree"
+      ],
+      "type": "object"
+    },
+    "program": {
+      "additionalProperties": false,
+      "properties": {
+        "epoch": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "status"
+          ],
+          "type": "object"
+        },
+        "gate": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "status"
+          ],
+          "type": "object"
+        },
+        "next_action_class": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "epoch",
+        "gate",
+        "next_action_class",
+        "status"
+      ],
+      "type": "object"
+    },
+    "render_targets": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "state_kind": {
+      "const": "project-current-state"
+    },
+    "state_revision": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "unresolved_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "updated_by_transaction": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "state_kind",
+    "state_revision",
+    "predecessor",
+    "program",
+    "control_work",
+    "next_action_class",
+    "active_plan",
+    "accepted_authorities",
+    "blockers",
+    "unresolved_risks",
+    "claim_boundaries",
+    "render_targets",
+    "updated_by_transaction"
+  ],
+  "title": "CPython Android CLI current project state v1",
+  "type": "object"
+}

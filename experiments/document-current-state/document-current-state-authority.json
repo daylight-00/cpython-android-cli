@@ -1,0 +1,90 @@
+{
+  "authority_kind": "document-current-state-authority-phase2",
+  "authority_version": 1,
+  "claim_boundary": {
+    "current_state_single_writer": true,
+    "directory_level_generated_navigation": false,
+    "historical_authority_reinterpretation": false,
+    "physical_document_moves": false,
+    "product_or_experiment_claim_change": false
+  },
+  "file_identities": {
+    "docs/current/STATE.schema.json": "c4098e45b7e2e83d131ee4a0219d91de76bfe32e174a42934af7b0e9e8fee620",
+    "docs/documentation/CURRENT_STATE_AUTHORITY.md": "9c26a3148740f4b294352c16834edce86bd40d1c0533346c2d70ab6e5bb27504",
+    "docs/documentation/document-registry-v2.schema.json": "7320ce0d12e0bd8ff127d4df75291d71337c59e83b5eb1bcb142875bc6fac921",
+    "experiments/document-current-state/README.md": "a90a6a95df31d56538e630714b5d2b6feff3e03aa7a32131cab7480e31fb4c23",
+    "experiments/document-current-state/baseline-current-state.json": "c63f56ee4672fe24d4cc27adfe932442f584ba6582fc1dab20b18c72ce7d3cba",
+    "experiments/document-current-state/render-current-views.py": "b247bf6adeb374a69e7c7cf44032601b3f8538cb7c918aacb835cf2732093834",
+    "experiments/document-current-state/test-current-state.py": "e9cdbb17056008909a69da88c0e41ca231df4ea067c67686c757253f87e59aa7",
+    "experiments/document-current-state/verify-current-state.py": "6e4dd72e6cf567dce58435ac174ce1bdacd0a40e533e82d2be570143dc43903a",
+    "experiments/document-current-state/verify-document-current-state-authority.py": "dfffc6e57dadee011c13b6eac63acb9eb112fb0168bbc75aad67ef71168e030a",
+    "experiments/document-current-state/verify-frozen-e2p3-snapshot.py": "50208b8121baeda65bf789e902ea1a142d4515f6378d4bfdee3690bf3842087c"
+  },
+  "fixture_policy": {
+    "cleanup_authoritative": false,
+    "fixture_git_state": "index-only-no-commit",
+    "fixture_repository_count": 1,
+    "ignored_runtime_trees_included": false,
+    "index_restored_per_case": true,
+    "materialization": "exact-staged-index-selected-paths"
+  },
+  "historical_preservation": {
+    "mode": "exact-frozen-byte-preservation-plus-current-freeze-verifier",
+    "predecessor_commit": "7248859ff5c24990f6cc06ad696a21b2d2793202",
+    "predecessor_tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509",
+    "protected_paths": [
+      "docs/evidence/E2P3_SECONDARY_REAL_DEVICE_QUALIFICATION_AUTHORITY_FREEZE.md",
+      "docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md",
+      "docs/roadmap/EPOCH2_ROADMAP.md",
+      "docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md",
+      "experiments/epoch2-archive-qualification/README.md",
+      "experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json",
+      "experiments/epoch2-archive-qualification/secondary-real-device-qualification-external-audit.json",
+      "experiments/epoch2-archive-qualification/test-secondary-real-device-qualification-freeze.py",
+      "experiments/epoch2-archive-qualification/verify-qualification-contract.py",
+      "experiments/epoch2-archive-qualification/verify-secondary-real-device-qualification-freeze.py"
+    ],
+    "secondary_freeze_audit_sha256": "90784e8896479e4ae0db5e7d26a035ec91250b0028bc23638a470290f0976979",
+    "secondary_freeze_authority_sha256": "e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c"
+  },
+  "legacy_binding_boundary": {
+    "grandfathered_binding_count": 24,
+    "new_live_or_generated_bindings_allowed": false
+  },
+  "next_action_class": "execute-document-lifecycle-phase3-generated-navigation",
+  "predecessor": {
+    "commit": "7248859ff5c24990f6cc06ad696a21b2d2793202",
+    "tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509"
+  },
+  "render_targets": [
+    "README.md",
+    "docs/CURRENT_CONTEXT.md",
+    "docs/INDEX.md",
+    "docs/SESSION_ONBOARDING.md"
+  ],
+  "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "schema_version": 1,
+  "scope": {
+    "current_source": "docs/current/STATE.json",
+    "historical_byte_rewrites": false,
+    "historical_verification_mode": "exact-frozen-byte-preservation-plus-current-freeze-verifier",
+    "path_moves": false,
+    "registry_schema_version": 2,
+    "render_target_count": 4,
+    "state_schema_version": 1,
+    "tracked_markdown_json_count": 425
+  },
+  "state_snapshot": {
+    "path": "experiments/document-current-state/baseline-current-state.json",
+    "sha256": "a3afe4d74c247bd2e2bd682fc384535d4cc28b4ef469922639e50980f72cb6bd",
+    "state_revision": 1
+  },
+  "status": "frozen-pass-single-current-state-authority-established",
+  "verification": {
+    "current_state_and_registry": "31/31",
+    "frozen_e2p3_preservation": "12/12",
+    "negative_fixtures": "10/10 staged-index-no-commit-cleanup-independent",
+    "phase1_authority": "18/18",
+    "secondary_freeze_verifier": "28/28"
+  }
+}

@@ -1,33 +1,40 @@
 {
   "basis": {
     "control_plane_document_count": 10,
-    "current_source_present": false,
-    "generated_views_enabled": false,
+    "current_source_path": "docs/current/STATE.json",
+    "current_source_present": true,
+    "full_navigation_enabled": false,
+    "generated_views_enabled": true,
     "legacy_document_count": 405,
-    "migration_phase": 1,
-    "next_migration_phase": "execute-document-lifecycle-phase2-single-current-state-authority",
+    "migration_phase": 2,
+    "next_migration_phase": "execute-document-lifecycle-phase3-generated-navigation",
+    "phase1_tracked_document_count": 415,
+    "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
-    "predecessor_head": "e4e684ae8488df6e7b991d34c1da222c1ce3b900",
-    "predecessor_tree": "2df6889f498df57eceadaf57d24771c8b26e56c3",
+    "predecessor_head": "7248859ff5c24990f6cc06ad696a21b2d2793202",
+    "predecessor_tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509",
     "scope_extensions": [
       ".json",
       ".md"
     ],
-    "tracked_document_count": 415
+    "tracked_document_count": 425
   },
   "documents": [
     {
       "authority_domain": "public_orientation",
+      "current_successors": [
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "STABLE_WITH_GENERATED_SECTION",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
-      "migration_action": "split-stable-and-generated-sections+decouple-legacy-file-identities",
+      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "migration_action": "phase2-generated-current-capsule-established",
       "mutability": "controlled",
       "onboarding_visibility": "primary",
       "owner": "project-governance",
       "path": "README.md",
       "planned_canonical_parent": "docs/documentation/DOCUMENT_LIFECYCLE.md",
-      "rationale": "Currently mixes project identity, live state, and long historical ledger.",
+      "rationale": "Stable project introduction with a deterministic current-state capsule; historical body remains stable.",
       "supersession_rule": "Keep path stable; current section must derive from docs/current/STATE.json.",
       "update_trigger": "Change stable introduction only on project identity changes; regenerate current capsule on state transitions."
     },
@@ -168,16 +175,19 @@
     },
     {
       "authority_domain": "temporal_state_view",
+      "current_successors": [
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
-      "migration_action": "generate-from-state",
+      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "migration_action": "phase2-generated-from-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
       "owner": "program-governance",
       "path": "docs/CURRENT_CONTEXT.md",
       "planned_canonical_parent": "docs/current/STATE.json",
-      "rationale": "Current-state source is duplicated with README, INDEX, and roadmap.",
+      "rationale": "Complete human temporal view generated from the sole current source.",
       "supersession_rule": "Never hand-edit after generator adoption.",
       "update_trigger": "Regenerate after every accepted current-state transition."
     },
@@ -198,16 +208,20 @@
     },
     {
       "authority_domain": "navigation",
+      "current_successors": [
+        "docs/current/STATE.json",
+        "docs/documentation/document-registry.json"
+      ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
-      "migration_action": "generate-from-registry-and-state",
+      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "migration_action": "phase2-generated-from-registry-and-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
       "owner": "program-governance",
       "path": "docs/INDEX.md",
       "planned_canonical_parent": "docs/documentation/document-registry.json",
-      "rationale": "Current and historical navigation are manually co-maintained.",
+      "rationale": "Top-level navigation generated from state and registry; directory-level indexes remain Phase 3.",
       "supersession_rule": "Never carry claim prose; point to authoritative documents.",
       "update_trigger": "Regenerate when registry, state, or file inventory changes."
     },
@@ -302,32 +316,38 @@
       "update_trigger": "Never edit."
     },
     {
-      "authority_domain": "project_identity",
+      "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/current/STATE.json"
+      ],
       "format": "md",
-      "lifecycle_class": "STABLE",
-      "machine_binding_policy": "stable-only",
-      "migration_action": "split-remove-current-state",
-      "mutability": "controlled",
-      "onboarding_visibility": "primary",
-      "owner": "program-governance",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-reclassify-legacy-orientation-snapshot",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "epoch2-transition-history",
       "path": "docs/PROJECT_ORIENTATION.md",
       "planned_canonical_parent": "docs/governance/INDEX.md",
-      "rationale": "Currently advertised as stable but contains stale current coordinates.",
-      "supersession_rule": "Current gate and next action must be removed and linked to current state.",
-      "update_trigger": "Only project identity, scope philosophy, or architecture-model changes."
+      "rationale": "The byte-preserved file contains E2-P2-era current/next language and is coupled to historical verifiers.",
+      "supersession_rule": "Registry marks this snapshot superseded for current-state purposes by docs/current/STATE.json.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "session_operations",
+      "current_successors": [
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "STABLE_WITH_GENERATED_SECTION",
       "machine_binding_policy": "stable-only",
-      "migration_action": "split-procedure-and-generated-reading-list",
+      "migration_action": "phase2-stable-procedure-generated-current-reading",
       "mutability": "controlled",
       "onboarding_visibility": "primary",
       "owner": "session-operations",
       "path": "docs/SESSION_ONBOARDING.md",
       "planned_canonical_parent": "docs/session-operations/README.md",
-      "rationale": "Stable onboarding mechanics and mutable current reading path are mixed.",
+      "rationale": "Stable onboarding procedure with deterministic current reading block.",
       "supersession_rule": "Keep stable procedure, derive current reading order.",
       "update_trigger": "Change procedure on collaboration-policy changes; regenerate reading list from registry/state."
     },
@@ -420,6 +440,34 @@
       "rationale": "",
       "supersession_rule": "Explicit amendment/supersedes edge.",
       "update_trigger": "Never edit after acceptance; create amendment or new version."
+    },
+    {
+      "authority_domain": "temporal_state",
+      "format": "json",
+      "lifecycle_class": "CURRENT_SOURCE",
+      "machine_binding_policy": "forbidden-live-source",
+      "migration_action": "phase2-establish-single-current-source",
+      "mutability": "single-writer-current",
+      "onboarding_visibility": "primary",
+      "owner": "program-governance",
+      "path": "docs/current/STATE.json",
+      "rationale": "Sole writable temporal authority.",
+      "supersession_rule": "Increment state_revision in place; historical authorities bind immutable snapshots, never this path.",
+      "update_trigger": "Accepted transition of current repository work, program gate, blockers, risks, or authority identities."
+    },
+    {
+      "authority_domain": "temporal_state_schema",
+      "format": "json",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "allowed-versioned",
+      "migration_action": "phase2-add-state-schema",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "program-governance",
+      "path": "docs/current/STATE.schema.json",
+      "rationale": "Versioned schema for the sole temporal source.",
+      "supersession_rule": "Do not mutate v1 after freeze; add a new schema version.",
+      "update_trigger": "New state schema version only."
     },
     {
       "authority_domain": "normative_policy",
@@ -530,6 +578,20 @@
       "authority_domain": "documentation_governance",
       "format": "md",
       "lifecycle_class": "STABLE",
+      "machine_binding_policy": "stable-only",
+      "migration_action": "phase2-add-current-state-contract",
+      "mutability": "controlled-versioned",
+      "onboarding_visibility": "primary",
+      "owner": "documentation-governance",
+      "path": "docs/documentation/CURRENT_STATE_AUTHORITY.md",
+      "rationale": "Defines the single-writer and generated-view contract.",
+      "supersession_rule": "Amend by a new versioned governance record; preserve prior authority bytes.",
+      "update_trigger": "Explicit change to temporal authority or rendering rules."
+    },
+    {
+      "authority_domain": "documentation_governance",
+      "format": "md",
+      "lifecycle_class": "STABLE",
       "machine_binding_policy": "allowed",
       "migration_action": "keep",
       "mutability": "controlled-versioned",
@@ -540,6 +602,20 @@
       "rationale": "Normative documentation lifecycle constitution.",
       "supersession_rule": "Supersede through an explicit documentation-governance version or ADR.",
       "update_trigger": "Lifecycle class, authority-domain, or migration-rule change."
+    },
+    {
+      "authority_domain": "documentation_governance",
+      "format": "json",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "allowed-versioned",
+      "migration_action": "phase2-add-versioned-schema",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "docs/documentation/document-registry-v2.schema.json",
+      "rationale": "Phase 2 schema permits a current source and generated views.",
+      "supersession_rule": "Do not mutate after Phase 2 freeze; add a new schema version.",
+      "update_trigger": "New registry schema version only."
     },
     {
       "authority_domain": "documentation_registry",
@@ -660,6 +736,20 @@
       "rationale": "",
       "supersession_rule": "Amend via ADR and preserve prior version semantics.",
       "update_trigger": "Epoch boundary or explicit charter amendment."
+    },
+    {
+      "authority_domain": "documentation_governance_evidence",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-freeze-evidence",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-governance",
+      "path": "docs/evidence/DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md",
+      "rationale": "Human evidence for the Phase 2 authority.",
+      "supersession_rule": "Correct through a new evidence record.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "documentation_governance_evidence",
@@ -2946,6 +3036,20 @@
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
+      "migration_action": "phase2-dated-handoff",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "session-operations",
+      "path": "docs/handoff/2026-07-19-document-current-state-authority.md",
+      "rationale": "Phase 2 transition snapshot.",
+      "supersession_rule": "Create a newer dated handoff.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "session_handoff",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
       "migration_action": "keep",
       "mutability": "immutable",
       "onboarding_visibility": "history",
@@ -4140,6 +4244,62 @@
       "rationale": "",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
+    },
+    {
+      "authority_domain": "documentation_governance_experiment",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-experiment-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-governance",
+      "path": "experiments/document-current-state/README.md",
+      "rationale": "Design and verification boundary for Phase 2.",
+      "supersession_rule": "Create a versioned successor experiment.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "temporal_state_snapshot",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-freeze-initial-state-snapshot",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "program-governance",
+      "path": "experiments/document-current-state/baseline-current-state.json",
+      "rationale": "Immutable snapshot bound by the historical Phase 2 authority.",
+      "supersession_rule": "Each later state freeze creates a new immutable snapshot.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "documentation_governance_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-freeze-authority",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "experiments/document-current-state/document-current-state-authority.json",
+      "rationale": "Machine authority for the single current-state transition.",
+      "supersession_rule": "Correct through a new authority version.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "documentation_governance_audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase2-freeze-audit",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "independent-review",
+      "path": "experiments/document-current-state/document-current-state-external-audit.json",
+      "rationale": "Independent structural audit of Phase 2.",
+      "supersession_rule": "Create a new external audit for a successor authority.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "documentation_control_experiment",
@@ -6257,5 +6417,6 @@
     "RAW_REFERENCE"
   ],
   "registry_kind": "document-lifecycle-registry",
-  "schema_version": 1
+  "schema_path": "docs/documentation/document-registry-v2.schema.json",
+  "schema_version": 2
 }

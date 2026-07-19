@@ -14,27 +14,36 @@ python3 tools/handoff_cycle.py onboard .
 
 3. Read `START_HERE.md` and `PROJECT_ORIENTATION.md` in the package.
 4. Confirm repository branch, HEAD, tree, remote active ref, and `main` from `HANDOFF_MANIFEST.json`.
-5. Read the package's dated project-state snapshot and perform only its immediate bounded task.
+5. Read the package's dated snapshot and perform only its immediate bounded task.
+
+<!-- BEGIN GENERATED CURRENT STATE -->
+## Current reading path
+
+> Generated from [`current/STATE.json`](current/STATE.json).
+
+1. [`current/STATE.json`](current/STATE.json)
+2. [`CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
+3. [`documentation/CURRENT_STATE_AUTHORITY.md`](documentation/CURRENT_STATE_AUTHORITY.md)
+4. [`roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
+5. [`INDEX.md`](INDEX.md)
+
+```text
+immediate repository action  execute-document-lifecycle-phase3-generated-navigation
+program gate held ready      E2-R1/UT-0 — exact official upstream control
+program resume action        execute-e2-r1-ut0-exact-official-upstream-control
+```
+<!-- END GENERATED CURRENT STATE -->
 
 ## Stable repository documents
 
-- [`CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
-- [`INDEX.md`](INDEX.md)
-- [`PROJECT_ORIENTATION.md`](PROJECT_ORIENTATION.md)
+- [`documentation/DOCUMENT_LIFECYCLE.md`](documentation/DOCUMENT_LIFECYCLE.md)
+- [`documentation/CURRENT_STATE_AUTHORITY.md`](documentation/CURRENT_STATE_AUTHORITY.md)
+- [`documentation/document-registry.json`](documentation/document-registry.json)
 - [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
-- [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
+- [`decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md)
+- [`decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md`](decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md)
 - [`session-operations/README.md`](session-operations/README.md)
-- [`documentation/DOCUMENT_LIFECYCLE.md`](documentation/DOCUMENT_LIFECYCLE.md): document lifecycle, authority domains, registry rules, and migration phases.
-- [`documentation/document-registry.json`](documentation/document-registry.json): complete machine-readable Markdown/JSON lifecycle registry.
-- [`session-operations/COLLABORATION_AND_TRANSPORT.md`](session-operations/COLLABORATION_AND_TRANSPORT.md)
-- [`session-operations/AGENT_WORK_METHOD.md`](session-operations/AGENT_WORK_METHOD.md)
-- [`session-operations/SESSION_CYCLE.md`](session-operations/SESSION_CYCLE.md)
-- [`session-operations/SESSION_CLOSE_INITIALIZATION.md`](session-operations/SESSION_CLOSE_INITIALIZATION.md)
-- [`session-operations/HANDOFF_PACKAGE_SPEC.md`](session-operations/HANDOFF_PACKAGE_SPEC.md)
-- [`session-operations/LESSONS_AND_CHANGELOG.md`](session-operations/LESSONS_AND_CHANGELOG.md)
 
-The epoch, orientation, and roadmap files describe current project direction. The `session-operations/` files describe collaboration mechanics and are not runtime or target authority.
+## Authority rule
 
-## Project authority
-
-`CURRENT_CONTEXT.md` identifies the active epoch and predecessor authority. The dated handoff selects the minimum immediate task and exact repository topology. Do not infer current status from an older handoff, chat memory, a console marker, a file name, or an uninspected result archive.
+`current/STATE.json` is the sole temporal source. `CURRENT_CONTEXT.md`, `INDEX.md`, and the generated block above are renderings. The dated handoff supplies exact repository topology and execution scope for its transaction. Older handoffs, chat memory, console markers, and filenames do not override current state or frozen evidence.

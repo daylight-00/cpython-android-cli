@@ -1,0 +1,84 @@
+{
+  "accepted_authorities": [
+    {
+      "id": "epoch2-epoch4-recalibration",
+      "path": "experiments/epoch2-recalibration/recalibration-authority.json",
+      "role": "program architecture and epoch boundary",
+      "sha256": "24578fea080cf700d2bbdd607b448fd48fd6f759250d4a9a49986f8cb4e37c01"
+    },
+    {
+      "id": "epoch2-remaining-work-and-epoch3-completion-gates",
+      "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+      "role": "active research plan and completion gates",
+      "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+    },
+    {
+      "id": "e2p3-secondary-real-device-qualification-freeze",
+      "path": "experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json",
+      "role": "bounded dual-real-device compatibility evidence",
+      "sha256": "e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c"
+    },
+    {
+      "id": "document-lifecycle-control-plane-phase1",
+      "path": "experiments/document-lifecycle-control/document-lifecycle-control-authority.json",
+      "role": "documentation lifecycle registry control plane",
+      "sha256": "d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf"
+    }
+  ],
+  "active_plan": {
+    "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+    "sha256": "81fc0baaa996952c3caab86ea4abc7168b04e4aea357bc98530a332ea3ceef0a"
+  },
+  "active_work_package": null,
+  "blockers": [],
+  "claim_boundaries": {
+    "dual_real_device_aarch64_termux_compatibility": true,
+    "emulator_qualified": false,
+    "epoch3_feature_selection_started": false,
+    "publication_authorized": false,
+    "selectable": false
+  },
+  "control_work": {
+    "completed_phase": 2,
+    "id": "DOC-LIFECYCLE",
+    "name": "documentation lifecycle migration",
+    "next_action_class": "execute-document-lifecycle-phase3-generated-navigation",
+    "next_phase": 3,
+    "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "status": "phase2-frozen-phase3-ready"
+  },
+  "next_action_class": "execute-document-lifecycle-phase3-generated-navigation",
+  "predecessor": {
+    "commit": "7248859ff5c24990f6cc06ad696a21b2d2793202",
+    "tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509"
+  },
+  "program": {
+    "epoch": {
+      "id": "E2",
+      "name": "upstream-thin research program",
+      "status": "active-recalibrated"
+    },
+    "gate": {
+      "id": "E2-R1/UT-0",
+      "name": "exact official upstream control",
+      "status": "ready-held-during-document-migration"
+    },
+    "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "status": "ready-after-document-lifecycle-migration"
+  },
+  "render_targets": [
+    "README.md",
+    "docs/CURRENT_CONTEXT.md",
+    "docs/INDEX.md",
+    "docs/SESSION_ONBOARDING.md"
+  ],
+  "schema_version": 1,
+  "state_kind": "project-current-state",
+  "state_revision": 1,
+  "unresolved_risks": [
+    "official upstream package and BeeWare dependency identities are not yet frozen under UT-0",
+    "directory-level generated navigation and historical indexes remain Phase 3 work",
+    "mixed legacy documents remain byte-preserved historical snapshots pending Phase 4 normalization"
+  ],
+  "updated_by_transaction": "20260719-document-current-state-authority-phase2-v4"
+}

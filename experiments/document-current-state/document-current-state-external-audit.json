@@ -1,0 +1,49 @@
+{
+  "audit_kind": "document-current-state-authority-phase2-external-audit",
+  "check_count": 28,
+  "checks": {
+    "current_context_generated": true,
+    "fixture_cleanup_non_authoritative": true,
+    "fixture_index_only_no_commit": true,
+    "fixture_single_materialization": true,
+    "frozen_e2p3_protected_paths_preserved": true,
+    "historical_nested_replay_not_required": true,
+    "historical_rewrites_false": true,
+    "immutable_state_snapshot_bound": true,
+    "index_generated": true,
+    "legacy_bindings_24_exact": true,
+    "live_registry_not_bound": true,
+    "live_state_not_bound": true,
+    "new_live_binding_forbidden": true,
+    "next_phase_three": true,
+    "no_self_referential_commit": true,
+    "onboarding_generated_block": true,
+    "orientation_reclassified_historical": true,
+    "path_moves_false": true,
+    "phase1_authority_preserved": true,
+    "product_claim_change_false": true,
+    "program_and_control_work_separated": true,
+    "readme_generated_capsule": true,
+    "registry_schema_v2": true,
+    "render_targets_four": true,
+    "secondary_freeze_verifier_28_of_28": true,
+    "single_current_source": true,
+    "state_schema_versioned": true,
+    "tracked_documents_425": true
+  },
+  "claim_boundary": {
+    "current_state_single_writer": true,
+    "directory_level_generated_navigation": false,
+    "historical_authority_reinterpretation": false,
+    "physical_document_moves": false,
+    "product_or_experiment_claim_change": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 28,
+  "schema_version": 1,
+  "source": {
+    "authority_path": "experiments/document-current-state/document-current-state-authority.json",
+    "authority_sha256": "77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6"
+  }
+}
