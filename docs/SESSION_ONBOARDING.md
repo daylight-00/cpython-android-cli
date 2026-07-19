@@ -19,16 +19,17 @@ python3 tools/handoff_cycle.py onboard .
 <!-- BEGIN GENERATED CURRENT STATE -->
 ## Current reading path
 
-> Generated from [`current/STATE.json`](current/STATE.json).
+> Generated from [`docs/current/STATE.json`](current/STATE.json).
 
-1. [`current/STATE.json`](current/STATE.json)
-2. [`CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
-3. [`documentation/CURRENT_STATE_AUTHORITY.md`](documentation/CURRENT_STATE_AUTHORITY.md)
-4. [`roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
-5. [`INDEX.md`](INDEX.md)
+1. [`docs/current/STATE.json`](current/STATE.json)
+2. [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
+3. [`docs/navigation/README.md`](navigation/README.md)
+4. [`docs/documentation/GENERATED_NAVIGATION.md`](documentation/GENERATED_NAVIGATION.md)
+5. [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
+6. [`docs/INDEX.md`](INDEX.md)
 
 ```text
-immediate repository action  execute-document-lifecycle-phase3-generated-navigation
+immediate repository action  execute-document-lifecycle-phase4-mixed-document-correction
 program gate held ready      E2-R1/UT-0 — exact official upstream control
 program resume action        execute-e2-r1-ut0-exact-official-upstream-control
 ```

@@ -1,0 +1,73 @@
+{
+  "authority_kind": "document-generated-navigation-phase3",
+  "authority_version": 1,
+  "claim_boundary": {
+    "complete_generated_navigation": true,
+    "current_state_single_writer": true,
+    "mixed_document_normalization": false,
+    "physical_document_moves": false,
+    "product_or_experiment_claim_change": false
+  },
+  "file_identities": {
+    "docs/current/STATE-v2.schema.json": "7e823beac14a2825ad037542dc190e1edaeb99fc35d8140c884eb2ea5989d042",
+    "docs/documentation/GENERATED_NAVIGATION.md": "a92e3ddf25fc671bb6bb942c1a194731c3ae011237f35e5a4ea1511014518b18",
+    "docs/documentation/document-registry-v3.schema.json": "e36548eeb00f3ab8db0e20f55fa6a9b33c20bb74a76dc0e4182df8b1ba207ed5",
+    "experiments/document-navigation/README.md": "51a29b456e7ab7bb3506689144647f0936a23003b087cc6b081366f6e3ad47fa",
+    "experiments/document-navigation/navigation-targets.json": "108ebece950358d3362f95f36c52353f12bb3dbe295965c5302d9f9043896c72",
+    "experiments/document-navigation/render-document-views.py": "61f8bdf300907f9e80bd05da07e820a2269645f2c2761464c520efd9ae002cab",
+    "experiments/document-navigation/test-document-navigation.py": "27cd4a6e612998a3c335b22a96aa2217f166a1181cec3babcf8e9c3a6aae61ef",
+    "experiments/document-navigation/verify-document-navigation-authority.py": "e7271ef6e178175db457b1ff0390d61338b07beb467d253dced28e32ffb52028",
+    "experiments/document-navigation/verify-document-navigation.py": "eb620fa574f1acbad77a68d642ba28e39c8cec908b08ab31abcf20e35b23b8d3",
+    "experiments/document-navigation/verify-frozen-phase2-snapshot.py": "18e84c170c258b5db502fa69bf28d230e3373fe02a5ce3eae9ebf79f7d85d55d"
+  },
+  "generated_targets": [
+    "docs/navigation/README.md",
+    "docs/current/README.md",
+    "docs/documentation/README.md",
+    "docs/decisions/README.md",
+    "docs/epochs/README.md",
+    "docs/architecture/README.md",
+    "docs/roadmap/README.md",
+    "docs/contracts/README.md",
+    "docs/evidence/README.md",
+    "docs/stages/README.md",
+    "docs/handoff/README.md",
+    "docs/references/README.md",
+    "experiments/README.md"
+  ],
+  "historical_preservation": {
+    "device_execution_required": false,
+    "mode": "exact-phase2-byte-preservation-plus-current-authority-verifiers",
+    "phase1_authority_sha256": "d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf",
+    "phase2_authority_sha256": "77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6",
+    "protected_path_count": 14
+  },
+  "legacy_binding_boundary": {
+    "grandfathered_binding_count": 24,
+    "new_live_or_generated_bindings_allowed": false
+  },
+  "next_action_class": "execute-document-lifecycle-phase4-mixed-document-correction",
+  "predecessor": {
+    "commit": "909c600e2f822b82be2cfab807c14836991ba0e3",
+    "tree": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9"
+  },
+  "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "schema_version": 1,
+  "scope": {
+    "current_render_target_count": 4,
+    "historical_byte_rewrites": false,
+    "navigation_target_count": 13,
+    "path_moves": false,
+    "physical_moves": false,
+    "registry_schema_version": 3,
+    "state_schema_version": 2,
+    "tracked_markdown_json_count": 447
+  },
+  "status": "frozen-pass-complete-generated-navigation-established",
+  "verification": {
+    "navigation_and_registry": "39/39",
+    "negative_fixtures": "12/12 staged-index single fixture",
+    "phase2_snapshot": "9/9 with Phase 2 19/19 and E2-P3 12/12 and no recursive current-tree replay",
+    "phase3_authority": "19/19"
+  }
+}

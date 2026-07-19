@@ -1,0 +1,197 @@
+{
+  "$id": "urn:cpython-android-cli:document-registry:v3",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "basis": {
+      "additionalProperties": true,
+      "properties": {
+        "current_source_path": {
+          "const": "docs/current/STATE.json"
+        },
+        "current_source_present": {
+          "const": true
+        },
+        "full_navigation_enabled": {
+          "const": true
+        },
+        "generated_views_enabled": {
+          "const": true
+        },
+        "migration_phase": {
+          "const": 3
+        },
+        "navigation_root": {
+          "const": "docs/navigation/README.md"
+        },
+        "navigation_target_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "next_migration_phase": {
+          "const": "phase4-mixed-document-correction"
+        },
+        "physical_moves_allowed": {
+          "const": false
+        },
+        "predecessor_head": {
+          "const": "909c600e2f822b82be2cfab807c14836991ba0e3"
+        },
+        "predecessor_tree": {
+          "const": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9"
+        },
+        "scope_extensions": {
+          "const": [
+            ".json",
+            ".md"
+          ]
+        },
+        "tracked_document_count": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "predecessor_head",
+        "predecessor_tree",
+        "tracked_document_count",
+        "scope_extensions",
+        "migration_phase",
+        "current_source_present",
+        "current_source_path",
+        "generated_views_enabled",
+        "full_navigation_enabled",
+        "navigation_root",
+        "navigation_target_count",
+        "physical_moves_allowed",
+        "next_migration_phase"
+      ],
+      "type": "object"
+    },
+    "documents": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_domain": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "md",
+              "json"
+            ]
+          },
+          "lifecycle_class": {
+            "enum": [
+              "STABLE",
+              "STABLE_WITH_GENERATED_SECTION",
+              "CURRENT_SOURCE",
+              "CURRENT_REGISTRY",
+              "CURRENT_INPUT_LOCK",
+              "ACTIVE_PLAN",
+              "APPEND_ONLY_LOG",
+              "FROZEN_AUTHORITY",
+              "HISTORICAL_SNAPSHOT",
+              "GENERATED_VIEW",
+              "REFERENCE",
+              "RAW_REFERENCE"
+            ]
+          },
+          "machine_binding_policy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "migration_action": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "mutability": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "onboarding_visibility": {
+            "enum": [
+              "primary",
+              "secondary",
+              "contextual",
+              "history",
+              "hidden",
+              "machine"
+            ]
+          },
+          "owner": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "supersession_rule": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "update_trigger": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "format",
+          "lifecycle_class",
+          "authority_domain",
+          "owner",
+          "mutability",
+          "update_trigger",
+          "supersession_rule",
+          "onboarding_visibility",
+          "machine_binding_policy",
+          "migration_action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "lifecycle_classes": {
+      "items": {
+        "enum": [
+          "STABLE",
+          "STABLE_WITH_GENERATED_SECTION",
+          "CURRENT_SOURCE",
+          "CURRENT_REGISTRY",
+          "CURRENT_INPUT_LOCK",
+          "ACTIVE_PLAN",
+          "APPEND_ONLY_LOG",
+          "FROZEN_AUTHORITY",
+          "HISTORICAL_SNAPSHOT",
+          "GENERATED_VIEW",
+          "REFERENCE",
+          "RAW_REFERENCE"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "registry_kind": {
+      "const": "document-lifecycle-registry"
+    },
+    "schema_path": {
+      "const": "docs/documentation/document-registry-v3.schema.json"
+    },
+    "schema_version": {
+      "const": 3
+    }
+  },
+  "required": [
+    "schema_version",
+    "registry_kind",
+    "schema_path",
+    "basis",
+    "lifecycle_classes",
+    "documents"
+  ],
+  "title": "CPython Android CLI document lifecycle registry v3",
+  "type": "object"
+}

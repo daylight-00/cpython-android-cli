@@ -12,8 +12,8 @@ This is a research and engineering project, not a new general-purpose Python dis
 > Generated from [`docs/current/STATE.json`](docs/current/STATE.json). Do not hand-edit this block.
 
 ```text
-immediate repository action  execute-document-lifecycle-phase3-generated-navigation
-document migration           Phase 2 complete; Phase 3 ready
+immediate repository action  execute-document-lifecycle-phase4-mixed-document-correction
+document migration           Phase 3 complete; Phase 4 ready
 program epoch                E2 — upstream-thin research program
 program gate held ready      E2-R1/UT-0 — exact official upstream control
 program resume action        execute-e2-r1-ut0-exact-official-upstream-control
@@ -36,24 +36,26 @@ none
 ### Unresolved risks
 
 - official upstream package and BeeWare dependency identities are not yet frozen under UT-0
-- directory-level generated navigation and historical indexes remain Phase 3 work
-- mixed legacy documents remain byte-preserved historical snapshots pending Phase 4 normalization
+- mixed legacy documents retain snapshot-relative active/next/pending language pending Phase 4 normalization
+- legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling
 
 ### Accepted authorities
 
-- [`epoch2-epoch4-recalibration`](experiments/epoch2-recalibration/recalibration-authority.json): program architecture and epoch boundary (`24578fea080cf700d2bbdd607b448fd48fd6f759250d4a9a49986f8cb4e37c01`)
-- [`epoch2-remaining-work-and-epoch3-completion-gates`](experiments/epoch2-upstream-thin-plan/plan-authority.json): active research plan and completion gates (`62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa`)
-- [`e2p3-secondary-real-device-qualification-freeze`](experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json): bounded dual-real-device compatibility evidence (`e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c`)
-- [`document-lifecycle-control-plane-phase1`](experiments/document-lifecycle-control/document-lifecycle-control-authority.json): documentation lifecycle registry control plane (`d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf`)
-- [`document-current-state-authority-phase2`](experiments/document-current-state/document-current-state-authority.json): single current-state authority and generated-view contract (`77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6`)
+- [`experiments/epoch2-recalibration/recalibration-authority.json`](experiments/epoch2-recalibration/recalibration-authority.json): program architecture and epoch boundary (`24578fea080cf700d2bbdd607b448fd48fd6f759250d4a9a49986f8cb4e37c01`)
+- [`experiments/epoch2-upstream-thin-plan/plan-authority.json`](experiments/epoch2-upstream-thin-plan/plan-authority.json): active research plan and completion gates (`62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa`)
+- [`experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json`](experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json): bounded dual-real-device compatibility evidence (`e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c`)
+- [`experiments/document-lifecycle-control/document-lifecycle-control-authority.json`](experiments/document-lifecycle-control/document-lifecycle-control-authority.json): documentation lifecycle registry control plane (`d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf`)
+- [`experiments/document-current-state/document-current-state-authority.json`](experiments/document-current-state/document-current-state-authority.json): single current-state authority and generated-view contract (`77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6`)
+- [`experiments/document-navigation/document-navigation-authority.json`](experiments/document-navigation/document-navigation-authority.json): complete generated documentation navigation and reachability (`28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23`)
 
 ### Current entry points
 
 - [`docs/CURRENT_CONTEXT.md`](docs/CURRENT_CONTEXT.md)
 - [`docs/INDEX.md`](docs/INDEX.md)
+- [`docs/navigation/README.md`](docs/navigation/README.md)
 - [`docs/SESSION_ONBOARDING.md`](docs/SESSION_ONBOARDING.md)
 - [`docs/documentation/CURRENT_STATE_AUTHORITY.md`](docs/documentation/CURRENT_STATE_AUTHORITY.md)
-- [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
+- [`docs/documentation/GENERATED_NAVIGATION.md`](docs/documentation/GENERATED_NAVIGATION.md)
 <!-- END GENERATED CURRENT STATE -->
 
 ## Frozen runtime architecture

@@ -1,0 +1,151 @@
+{
+  "$id": "urn:cpython-android-cli:current-state:v2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_authorities": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "active_plan": {
+      "type": "object"
+    },
+    "active_work_package": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blockers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "claim_boundaries": {
+      "type": "object"
+    },
+    "control_work": {
+      "type": "object"
+    },
+    "navigation": {
+      "additionalProperties": false,
+      "properties": {
+        "coverage": {
+          "const": "all-tracked-markdown-json"
+        },
+        "root": {
+          "const": "docs/navigation/README.md"
+        },
+        "status": {
+          "const": "generated-and-verified"
+        },
+        "target_count": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "root",
+        "status",
+        "coverage",
+        "target_count"
+      ],
+      "type": "object"
+    },
+    "next_action_class": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "predecessor": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "tree"
+      ],
+      "type": "object"
+    },
+    "program": {
+      "type": "object"
+    },
+    "render_targets": {
+      "additionalProperties": false,
+      "properties": {
+        "current": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "navigation": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "current",
+        "navigation"
+      ],
+      "type": "object"
+    },
+    "schema_path": {
+      "const": "docs/current/STATE-v2.schema.json"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "state_kind": {
+      "const": "project-current-state"
+    },
+    "state_revision": {
+      "minimum": 2,
+      "type": "integer"
+    },
+    "unresolved_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "updated_by_transaction": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "schema_path",
+    "state_kind",
+    "state_revision",
+    "predecessor",
+    "program",
+    "control_work",
+    "next_action_class",
+    "active_plan",
+    "accepted_authorities",
+    "blockers",
+    "unresolved_risks",
+    "claim_boundaries",
+    "render_targets",
+    "navigation",
+    "updated_by_transaction"
+  ],
+  "title": "CPython Android CLI current project state v2",
+  "type": "object"
+}

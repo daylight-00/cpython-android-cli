@@ -1,0 +1,84 @@
+{
+  "manifest_kind": "document-navigation-targets",
+  "schema_version": 1,
+  "targets": [
+    {
+      "path": "docs/navigation/README.md",
+      "role": "canonical navigation root",
+      "selector": "navigation-root-and-unassigned",
+      "sort": "path"
+    },
+    {
+      "path": "docs/current/README.md",
+      "role": "current-state directory index",
+      "selector": "prefix:docs/current/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/documentation/README.md",
+      "role": "documentation governance index",
+      "selector": "prefix:docs/documentation/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/decisions/README.md",
+      "role": "decision index",
+      "selector": "prefix:docs/decisions/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/epochs/README.md",
+      "role": "epoch charter and history index",
+      "selector": "prefix:docs/epochs/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/architecture/README.md",
+      "role": "architecture index",
+      "selector": "prefix:docs/architecture/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/roadmap/README.md",
+      "role": "plan index",
+      "selector": "prefix:docs/roadmap/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/contracts/README.md",
+      "role": "contract index",
+      "selector": "prefix:docs/contracts/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/evidence/README.md",
+      "role": "evidence index",
+      "selector": "prefix:docs/evidence/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/stages/README.md",
+      "role": "stage snapshot index",
+      "selector": "prefix:docs/stages/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/handoff/README.md",
+      "role": "chronological handoff index",
+      "selector": "prefix:docs/handoff/",
+      "sort": "reverse-path"
+    },
+    {
+      "path": "docs/references/README.md",
+      "role": "reference and raw-source index",
+      "selector": "prefix:docs/references/",
+      "sort": "path"
+    },
+    {
+      "path": "experiments/README.md",
+      "role": "experiment index",
+      "selector": "prefix:experiments/",
+      "sort": "experiment-then-path"
+    }
+  ]
+}

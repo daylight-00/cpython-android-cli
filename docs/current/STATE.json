@@ -29,6 +29,12 @@
       "path": "experiments/document-current-state/document-current-state-authority.json",
       "role": "single current-state authority and generated-view contract",
       "sha256": "77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6"
+    },
+    {
+      "id": "document-generated-navigation-phase3",
+      "path": "experiments/document-navigation/document-navigation-authority.json",
+      "role": "complete generated documentation navigation and reachability",
+      "sha256": "28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23"
     }
   ],
   "active_plan": {
@@ -45,18 +51,24 @@
     "selectable": false
   },
   "control_work": {
-    "completed_phase": 2,
+    "completed_phase": 3,
     "id": "DOC-LIFECYCLE",
     "name": "documentation lifecycle migration",
-    "next_action_class": "execute-document-lifecycle-phase3-generated-navigation",
-    "next_phase": 3,
+    "next_action_class": "execute-document-lifecycle-phase4-mixed-document-correction",
+    "next_phase": 4,
     "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "status": "phase2-frozen-phase3-ready"
+    "status": "phase3-frozen-phase4-ready"
   },
-  "next_action_class": "execute-document-lifecycle-phase3-generated-navigation",
+  "navigation": {
+    "coverage": "all-tracked-markdown-json",
+    "root": "docs/navigation/README.md",
+    "status": "generated-and-verified",
+    "target_count": 13
+  },
+  "next_action_class": "execute-document-lifecycle-phase4-mixed-document-correction",
   "predecessor": {
-    "commit": "7248859ff5c24990f6cc06ad696a21b2d2793202",
-    "tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509"
+    "commit": "909c600e2f822b82be2cfab807c14836991ba0e3",
+    "tree": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9"
   },
   "program": {
     "epoch": {
@@ -72,19 +84,37 @@
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "status": "ready-after-document-lifecycle-migration"
   },
-  "render_targets": [
-    "README.md",
-    "docs/CURRENT_CONTEXT.md",
-    "docs/INDEX.md",
-    "docs/SESSION_ONBOARDING.md"
-  ],
-  "schema_version": 1,
+  "render_targets": {
+    "current": [
+      "README.md",
+      "docs/CURRENT_CONTEXT.md",
+      "docs/INDEX.md",
+      "docs/SESSION_ONBOARDING.md"
+    ],
+    "navigation": [
+      "docs/navigation/README.md",
+      "docs/current/README.md",
+      "docs/documentation/README.md",
+      "docs/decisions/README.md",
+      "docs/epochs/README.md",
+      "docs/architecture/README.md",
+      "docs/roadmap/README.md",
+      "docs/contracts/README.md",
+      "docs/evidence/README.md",
+      "docs/stages/README.md",
+      "docs/handoff/README.md",
+      "docs/references/README.md",
+      "experiments/README.md"
+    ]
+  },
+  "schema_path": "docs/current/STATE-v2.schema.json",
+  "schema_version": 2,
   "state_kind": "project-current-state",
-  "state_revision": 1,
+  "state_revision": 2,
   "unresolved_risks": [
     "official upstream package and BeeWare dependency identities are not yet frozen under UT-0",
-    "directory-level generated navigation and historical indexes remain Phase 3 work",
-    "mixed legacy documents remain byte-preserved historical snapshots pending Phase 4 normalization"
+    "mixed legacy documents retain snapshot-relative active/next/pending language pending Phase 4 normalization",
+    "legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling"
   ],
-  "updated_by_transaction": "20260719-document-current-state-authority-phase2-v4"
+  "updated_by_transaction": "20260719-document-generated-navigation-phase3-v1"
 }

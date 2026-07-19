@@ -3,21 +3,23 @@
     "control_plane_document_count": 10,
     "current_source_path": "docs/current/STATE.json",
     "current_source_present": true,
-    "full_navigation_enabled": false,
+    "full_navigation_enabled": true,
     "generated_views_enabled": true,
     "legacy_document_count": 405,
-    "migration_phase": 2,
-    "next_migration_phase": "execute-document-lifecycle-phase3-generated-navigation",
+    "migration_phase": 3,
+    "navigation_root": "docs/navigation/README.md",
+    "navigation_target_count": 13,
+    "next_migration_phase": "phase4-mixed-document-correction",
     "phase1_tracked_document_count": 415,
     "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
-    "predecessor_head": "7248859ff5c24990f6cc06ad696a21b2d2793202",
-    "predecessor_tree": "3a85792eec9c8e78e4955aa1a227e737d9c4c509",
+    "predecessor_head": "909c600e2f822b82be2cfab807c14836991ba0e3",
+    "predecessor_tree": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9",
     "scope_extensions": [
       ".json",
       ".md"
     ],
-    "tracked_document_count": 425
+    "tracked_document_count": 447
   },
   "documents": [
     {
@@ -27,7 +29,7 @@
       ],
       "format": "md",
       "lifecycle_class": "STABLE_WITH_GENERATED_SECTION",
-      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
       "migration_action": "phase2-generated-current-capsule-established",
       "mutability": "controlled",
       "onboarding_visibility": "primary",
@@ -180,7 +182,7 @@
       ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
       "migration_action": "phase2-generated-from-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
@@ -214,7 +216,7 @@
       ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT\u2014future-binding-forbidden",
+      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
       "migration_action": "phase2-generated-from-registry-and-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
@@ -367,6 +369,20 @@
       "update_trigger": "Accepted architecture ownership or component-boundary change."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/architecture/README.md",
+      "rationale": "architecture index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "claim_contract",
       "format": "md",
       "lifecycle_class": "FROZEN_AUTHORITY",
@@ -440,6 +456,48 @@
       "rationale": "",
       "supersession_rule": "Explicit amendment/supersedes edge.",
       "update_trigger": "Never edit after acceptance; create amendment or new version."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/contracts/README.md",
+      "rationale": "contract index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/current/README.md",
+      "rationale": "current-state directory index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
+      "authority_domain": "temporal_state_schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-state-schema-v2",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "docs/current/STATE-v2.schema.json",
+      "rationale": "Schema for state revision 2 and split current/navigation render targets.",
+      "supersession_rule": "Supersede with a versioned schema.",
+      "update_trigger": "Never edit; add a new schema version."
     },
     {
       "authority_domain": "temporal_state",
@@ -575,6 +633,20 @@
       "update_trigger": "New accepted architecture decision or explicit superseding ADR."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/decisions/README.md",
+      "rationale": "decision index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "documentation_governance",
       "format": "md",
       "lifecycle_class": "STABLE",
@@ -605,6 +677,34 @@
     },
     {
       "authority_domain": "documentation_governance",
+      "format": "md",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-generated-navigation-governance",
+      "mutability": "controlled",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-governance",
+      "path": "docs/documentation/GENERATED_NAVIGATION.md",
+      "rationale": "Normative generated-navigation contract.",
+      "supersession_rule": "Supersede with a versioned governance contract.",
+      "update_trigger": "Change only through a documentation-governance transition."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/documentation/README.md",
+      "rationale": "documentation governance index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
+      "authority_domain": "documentation_governance",
       "format": "json",
       "lifecycle_class": "STABLE",
       "machine_binding_policy": "allowed-versioned",
@@ -616,6 +716,20 @@
       "rationale": "Phase 2 schema permits a current source and generated views.",
       "supersession_rule": "Do not mutate after Phase 2 freeze; add a new schema version.",
       "update_trigger": "New registry schema version only."
+    },
+    {
+      "authority_domain": "documentation_governance",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-registry-schema-v3",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "docs/documentation/document-registry-v3.schema.json",
+      "rationale": "Schema for full generated navigation.",
+      "supersession_rule": "Supersede with a versioned schema.",
+      "update_trigger": "Never edit; add a new schema version."
     },
     {
       "authority_domain": "documentation_registry",
@@ -738,6 +852,20 @@
       "update_trigger": "Epoch boundary or explicit charter amendment."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/epochs/README.md",
+      "rationale": "epoch charter and history index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "documentation_governance_evidence",
       "format": "md",
       "lifecycle_class": "FROZEN_AUTHORITY",
@@ -748,6 +876,20 @@
       "owner": "documentation-governance",
       "path": "docs/evidence/DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md",
       "rationale": "Human evidence for the Phase 2 authority.",
+      "supersession_rule": "Correct through a new evidence record.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "documentation_governance_evidence",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-freeze-evidence",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-governance",
+      "path": "docs/evidence/DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md",
+      "rationale": "Human evidence for Phase 3.",
       "supersession_rule": "Correct through a new evidence record.",
       "update_trigger": "Never edit."
     },
@@ -975,6 +1117,20 @@
       "rationale": "",
       "supersession_rule": "Link corrections and final freezes through registry.",
       "update_trigger": "Never edit; corrections are separate evidence records."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/evidence/README.md",
+      "rationale": "evidence index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
     },
     {
       "authority_domain": "claim_evidence",
@@ -2898,6 +3054,24 @@
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/handoff/README.md",
+        "docs/current/STATE.json"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-preserve-replaced-handoff-entrypoint",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "handoff-history",
+      "path": "docs/handoff/2026-07-16-stage3f-successor-session-reading-path-snapshot.md",
+      "rationale": "Exact predecessor bytes of the stale Stage 3-F handoff README.",
+      "supersession_rule": "Superseded for current navigation by docs/handoff/README.md.",
+      "update_trigger": "Never edit; create a separate correction snapshot."
+    },
+    {
+      "authority_domain": "historical_narrative",
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
@@ -3042,6 +3216,20 @@
       "owner": "session-operations",
       "path": "docs/handoff/2026-07-19-document-current-state-authority.md",
       "rationale": "Phase 2 transition snapshot.",
+      "supersession_rule": "Create a newer dated handoff.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "session_handoff",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-session-handoff",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-governance",
+      "path": "docs/handoff/2026-07-19-document-generated-navigation.md",
+      "rationale": "Phase 3 completion handoff.",
       "supersession_rule": "Create a newer dated handoff.",
       "update_trigger": "Never edit."
     },
@@ -3320,15 +3508,15 @@
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
       "machine_binding_policy": "forbidden-live-view",
-      "migration_action": "replace-with-generated-chronological-index",
+      "migration_action": "phase3-generated-chronological-index-established",
       "mutability": "generated",
       "onboarding_visibility": "secondary",
       "owner": "handoff-history",
       "path": "docs/handoff/README.md",
       "planned_canonical_parent": "docs/documentation/document-registry.json",
-      "rationale": "Natural directory entry is a stale Stage 3-F reading path.",
-      "supersession_rule": "Move existing Stage 3-F-specific prose into a dated historical snapshot.",
-      "update_trigger": "Regenerate from registry whenever handoff snapshots change."
+      "rationale": "Neutral chronological generated handoff index; previous Stage 3-F-specific bytes preserved as dated snapshot.",
+      "supersession_rule": "Regenerate from registry; never own current state.",
+      "update_trigger": "Regenerate when handoff inventory or lifecycle metadata changes."
     },
     {
       "authority_domain": "historical_narrative",
@@ -3391,6 +3579,20 @@
       "update_trigger": "Freeze existing ledger; future cross-document ledgers are generated from registry."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-navigation",
+      "path": "docs/navigation/README.md",
+      "rationale": "canonical navigation root",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "reference_interpretation",
       "format": "md",
       "lifecycle_class": "REFERENCE",
@@ -3434,6 +3636,20 @@
       "rationale": "",
       "supersession_rule": "Record source/version; preserve raw intake.",
       "update_trigger": "External source revision or accepted reinterpretation."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/references/README.md",
+      "rationale": "reference and raw-source index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
     },
     {
       "authority_domain": "reference_interpretation",
@@ -3586,6 +3802,20 @@
       "update_trigger": "Change only when work decomposition, gates, stop conditions, or sequencing changes; not on ordinary result completion."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/roadmap/README.md",
+      "rationale": "plan index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "session_operations",
       "format": "md",
       "lifecycle_class": "STABLE",
@@ -3719,6 +3949,20 @@
       "rationale": "",
       "supersession_rule": "Update procedure and append lessons/changelog entry.",
       "update_trigger": "Accepted session/process change."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "docs/stages/README.md",
+      "rationale": "stage snapshot index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
     },
     {
       "authority_domain": "historical_narrative",
@@ -4231,6 +4475,20 @@
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
     {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden-live-view",
+      "migration_action": "phase3-generated-navigation-entrypoint",
+      "mutability": "generated",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-navigation",
+      "path": "experiments/README.md",
+      "rationale": "experiment index",
+      "supersession_rule": "Never hand-edit; generated from registry v3.",
+      "update_trigger": "Regenerate when registry, state, or document inventory changes."
+    },
+    {
       "authority_domain": "historical_narrative",
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
@@ -4360,6 +4618,62 @@
       "rationale": "Independent structural audit of the Phase 1 authority.",
       "supersession_rule": "New audit with exact source authority identity.",
       "update_trigger": "Never; create a new audit for a new authority."
+    },
+    {
+      "authority_domain": "documentation_governance_experiment",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-experiment-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "contextual",
+      "owner": "documentation-governance",
+      "path": "experiments/document-navigation/README.md",
+      "rationale": "Phase 3 design and scope.",
+      "supersession_rule": "Create a versioned successor experiment.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "documentation_governance_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-machine-authority",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "experiments/document-navigation/document-navigation-authority.json",
+      "rationale": "Machine authority for generated navigation.",
+      "supersession_rule": "Amend or supersede with a new authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "documentation_governance_audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-external-audit",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "independent-review",
+      "path": "experiments/document-navigation/document-navigation-external-audit.json",
+      "rationale": "External audit of Phase 3 authority.",
+      "supersession_rule": "Create a new audit for a successor authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "machine_contract",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase3-navigation-target-manifest",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-governance",
+      "path": "experiments/document-navigation/navigation-targets.json",
+      "rationale": "Exact generated target contract.",
+      "supersession_rule": "Create a versioned target manifest.",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "claim_evidence",
@@ -6417,6 +6731,6 @@
     "RAW_REFERENCE"
   ],
   "registry_kind": "document-lifecycle-registry",
-  "schema_path": "docs/documentation/document-registry-v2.schema.json",
-  "schema_version": 2
+  "schema_path": "docs/documentation/document-registry-v3.schema.json",
+  "schema_version": 3
 }

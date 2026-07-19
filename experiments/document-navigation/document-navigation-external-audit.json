@@ -1,0 +1,34 @@
+{
+  "audit_kind": "document-generated-navigation-phase3-external-audit",
+  "check_count": 20,
+  "checks": {
+    "all_documents_canonically_assigned": true,
+    "all_documents_registered": true,
+    "authority_identity": true,
+    "claim_boundary_unchanged": true,
+    "current_state_single_writer": true,
+    "current_views_generated": true,
+    "directory_indexes_generated": true,
+    "e2p3_authority_preserved": true,
+    "generated_links_resolve": true,
+    "generated_target_manifest": true,
+    "handoff_history_preserved": true,
+    "legacy_bindings_preserved": true,
+    "new_live_bindings_forbidden": true,
+    "no_device_execution_required": true,
+    "no_physical_moves": true,
+    "phase1_authority_preserved": true,
+    "phase2_authority_preserved": true,
+    "phase4_boundary_explicit": true,
+    "predecessor_identity": true,
+    "scope_boundary": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 20,
+  "schema_version": 1,
+  "source": {
+    "authority_path": "experiments/document-navigation/document-navigation-authority.json",
+    "authority_sha256": "28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23"
+  }
+}
