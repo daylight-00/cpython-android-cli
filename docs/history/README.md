@@ -1,6 +1,6 @@
 # Historical Snapshots
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Every `active`, `next`, `pending`, or `current` statement below is relative to the file's recorded snapshot. Present coordinates come only from [`docs/current/STATE.json`](../current/STATE.json).
 
 ## Current successors
@@ -8,6 +8,7 @@
 - [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md) — stable project meaning
 - [`docs/current/STATE.json`](../current/STATE.json) — present coordinates
 - [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](../roadmap/EPOCH2_PROGRAM_PLAN.md) — canonical program plan
+- [`docs/history/legacy-authority-bindings/README.md`](legacy-authority-bindings/README.md) — legacy authority compatibility snapshots
 
 ## Snapshot inventory
 

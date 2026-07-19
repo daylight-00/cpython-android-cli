@@ -1,0 +1,67 @@
+{
+  "$id": "urn:cpython-android-cli:legacy-authority-decoupling-map:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "binding_count": {
+      "const": 24
+    },
+    "bindings": {
+      "items": {
+        "required": [
+          "authority_path",
+          "authority_file_sha256",
+          "location",
+          "target_path",
+          "recorded_sha256",
+          "snapshot_path",
+          "snapshot_sha256",
+          "snapshot_size",
+          "source_commit",
+          "source_tree",
+          "source_blob_sha1",
+          "source_commit_subject",
+          "resolution_status"
+        ],
+        "type": "object"
+      },
+      "maxItems": 24,
+      "minItems": 24,
+      "type": "array"
+    },
+    "map_kind": {
+      "const": "legacy-live-binding-decoupling-map"
+    },
+    "predecessor": {
+      "type": "object"
+    },
+    "resolution_semantics": {
+      "type": "object"
+    },
+    "schema_path": {
+      "const": "docs/documentation/legacy-authority-decoupling-map.schema.json"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "source_baseline": {
+      "type": "object"
+    },
+    "unique_snapshot_count": {
+      "const": 24
+    }
+  },
+  "required": [
+    "schema_version",
+    "map_kind",
+    "schema_path",
+    "predecessor",
+    "source_baseline",
+    "resolution_semantics",
+    "binding_count",
+    "unique_snapshot_count",
+    "bindings"
+  ],
+  "title": "Legacy live binding decoupling map",
+  "type": "object"
+}

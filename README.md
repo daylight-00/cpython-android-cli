@@ -10,8 +10,8 @@ This repository is the laboratory, governance record, and historical evidence ar
 > Generated from [`docs/current/STATE.json`](docs/current/STATE.json). Do not hand-edit this block.
 
 ```text
-immediate repository action  execute-document-lifecycle-phase5-legacy-authority-decoupling
-document migration           Phase 4 complete; Phase 5 ready
+immediate repository action  execute-e2-r1-ut0-exact-official-upstream-control
+document migration           Phase 5 complete; migration closed
 program epoch                E2 — upstream-thin research program
 program gate held ready      E2-R1/UT-0 — exact official upstream control
 program resume action        execute-e2-r1-ut0-exact-official-upstream-control
@@ -34,7 +34,6 @@ none
 ### Unresolved risks
 
 - official upstream package and BeeWare dependency identities are not yet frozen under UT-0
-- legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling
 
 ### Accepted authorities
 
@@ -45,6 +44,7 @@ none
 - [`experiments/document-current-state/document-current-state-authority.json`](experiments/document-current-state/document-current-state-authority.json): single current-state authority and generated-view contract (`77345393b51d1f7807f77884990838598d2520c6dca3426107c580a1fcb041b6`)
 - [`experiments/document-navigation/document-navigation-authority.json`](experiments/document-navigation/document-navigation-authority.json): complete generated documentation navigation and reachability (`28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23`)
 - [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](experiments/document-mixed-correction/document-mixed-correction-authority.json): stable/current/plan/history layer separation and snapshot interpretation (`45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf`)
+- [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json): legacy authority compatibility snapshots and completed documentation lifecycle migration (`c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924`)
 
 ### Current entry points
 

@@ -1,0 +1,58 @@
+{
+  "authority_kind": "document-legacy-authority-decoupling-phase5",
+  "authority_version": 1,
+  "claim_boundary": {
+    "documentation_lifecycle_migration_complete": true,
+    "historical_authority_bytes_rewritten": false,
+    "legacy_authority_decoupling": true,
+    "live_paths_bound_to_historical_digests": false,
+    "new_live_generated_bindings_allowed": false,
+    "physical_document_moves": false,
+    "product_or_experiment_claim_change": false
+  },
+  "completion_decision": {
+    "phase6_physical_relocation_required": false,
+    "reason": "registry classification, generated navigation, immutable compatibility snapshots, and successor metadata provide layer separation without path churn"
+  },
+  "file_identities": {
+    "docs/current/STATE-v4.schema.json": "ff45379e6bbed67dd1a5421462f84b6a5053b43707512874e3edc7efc717f106",
+    "docs/documentation/LEGACY_AUTHORITY_DECOUPLING.md": "c83400d397e4e54d2801c26944b62d357229fdf3c780f3c7fb7d1a32143668c0",
+    "docs/documentation/LEGACY_AUTHORITY_DECOUPLING_DESIGN.md": "c08a1c38f5289e41b3c6b510b9c47320f66054922236e6b71a588f83a037cc5c",
+    "docs/documentation/document-registry-v5.schema.json": "934fbaf968b4ee16ad71cbc3a76df29005ff95cfff8d32319996f37506c6677f",
+    "docs/documentation/legacy-authority-decoupling-map.json": "ebf992c6d2a9adcae02e7d6138b3b2bc78e6410dce79a302d48e7892035f0756",
+    "docs/documentation/legacy-authority-decoupling-map.schema.json": "581c300bc8bee218272f07abdb8a9a30e6ea124e59dce5a5fc47755476cdb59d",
+    "docs/documentation/legacy-live-binding-baseline.json": "3ef4c1cf44b6ae101e99ed07dd3f4d704f95124e924160e3ecd6cb881b4214ab",
+    "experiments/document-legacy-authority-decoupling/README.md": "2c345e6c2192c641cf9fbb38ce0986ff29578933214eeeda49b72a02711999b1",
+    "experiments/document-legacy-authority-decoupling/frozen-phase4-snapshot.json": "c388682f1dcd9bd0537b763ff9a3c7182939c1f121a5bcd4bb55c52112573af2",
+    "experiments/document-legacy-authority-decoupling/navigation-targets.json": "4a02efcbc47bd123c38efb2cd18320966bb04391371928d6b42387bfa0f9a455",
+    "experiments/document-legacy-authority-decoupling/render-document-views.py": "5ff33201a12508cc565f127957fd635d477145a64dd4e885d27dcbb40501a3b3",
+    "experiments/document-legacy-authority-decoupling/test-legacy-authority-decoupling.py": "d8833c077c29a91af7e823c40988bbf123effbcb9f403765528579c81d5d784d",
+    "experiments/document-legacy-authority-decoupling/verify-document-legacy-authority-decoupling-authority.py": "49eb95f03cea122080e5e3799ac7480a5c2f616b1226eba41307bfd37f5579ab",
+    "experiments/document-legacy-authority-decoupling/verify-frozen-phase4-snapshot.py": "ba9fe71f10fc6719958d0dfbf57de82dacdef4725f5eddc99e3fe45f354e95bd",
+    "experiments/document-legacy-authority-decoupling/verify-legacy-authority-decoupling.py": "d7157fd352086d9ed1bb4913d5a380bf22023001a3777439743231fe28cd71ee",
+    "experiments/document-legacy-authority-decoupling/verify-legacy-binding-resolution.py": "118d9b92f22cf6357e1298f59c2536627e9b24e3ccf4628710d682221b86a302"
+  },
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "predecessor": {
+    "commit": "d201957a11861147bdbe11b6a91bf68fb6714a4d",
+    "tree": "1c0c692d7763487ad2ba0d91a7f2bf04b6e0b423"
+  },
+  "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "schema_version": 1,
+  "scope": {
+    "compatibility_snapshot_count": 24,
+    "legacy_binding_count": 24,
+    "navigation_target_count": 15,
+    "original_authority_count": 6,
+    "physical_moves": false,
+    "tracked_markdown_json_count": 501
+  },
+  "status": "frozen-pass-legacy-authority-decoupled-document-migration-complete",
+  "verification": {
+    "binding_resolution": "12/12",
+    "negative_fixtures": "12/12",
+    "phase4_snapshot": "9/9",
+    "phase5_authority": "21/21",
+    "phase5_live": "21/21"
+  }
+}

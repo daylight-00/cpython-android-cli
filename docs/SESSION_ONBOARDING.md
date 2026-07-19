@@ -29,7 +29,7 @@ python3 tools/handoff_cycle.py onboard .
 6. [`docs/INDEX.md`](INDEX.md)
 
 ```text
-immediate repository action  execute-document-lifecycle-phase5-legacy-authority-decoupling
+immediate repository action  execute-e2-r1-ut0-exact-official-upstream-control
 program gate held ready      E2-R1/UT-0 — exact official upstream control
 program resume action        execute-e2-r1-ut0-exact-official-upstream-control
 ```

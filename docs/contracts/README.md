@@ -1,6 +1,6 @@
 # Contracts
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Frozen claim and experiment contracts.
 
 ```text

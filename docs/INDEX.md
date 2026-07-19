@@ -1,12 +1,12 @@
 # Documentation Index
 
-> **Generated view:** registry v4 + [`docs/current/STATE.json`](current/STATE.json).
+> **Generated view:** registry v5 + [`docs/current/STATE.json`](current/STATE.json).
 > Exhaustive navigation starts at [`docs/navigation/README.md`](navigation/README.md).
 
 ## Current
 
 ```text
-immediate action  execute-document-lifecycle-phase5-legacy-authority-decoupling
+immediate action  execute-e2-r1-ut0-exact-official-upstream-control
 program gate      E2-R1/UT-0 — exact official upstream control
 blocker count     0
 ```
@@ -24,6 +24,7 @@ blocker count     0
 - [`docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md`](decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md) — `STABLE` · `normative_policy` · owner `architecture-governance`
 - [`docs/decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md`](decisions/ADR-0007-EPOCH2-EVIDENCE-AND-EPOCH3-SELECTION-GATES.md) — `STABLE` · `normative_policy` · owner `architecture-governance`
 - [`docs/documentation/DOCUMENTATION_SYSTEM.md`](documentation/DOCUMENTATION_SYSTEM.md) — `STABLE` · `documentation_governance` · owner `documentation-system`
+- [`docs/documentation/LEGACY_AUTHORITY_DECOUPLING.md`](documentation/LEGACY_AUTHORITY_DECOUPLING.md) — `STABLE` · `documentation_governance` · owner `documentation-system`
 - [`docs/epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md) — `STABLE` · `normative_policy` · owner `architecture-governance`
 - [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](roadmap/EPOCH2_PROGRAM_PLAN.md) — `ACTIVE_PLAN` · `program_plan` · owner `program-governance`
 - [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md) — `ACTIVE_PLAN` · `program_plan` · owner `program-governance`
@@ -42,6 +43,7 @@ blocker count     0
 - [`experiments/document-current-state/document-current-state-authority.json`](../experiments/document-current-state/document-current-state-authority.json) — single current-state authority and generated-view contract
 - [`experiments/document-navigation/document-navigation-authority.json`](../experiments/document-navigation/document-navigation-authority.json) — complete generated documentation navigation and reachability
 - [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](../experiments/document-mixed-correction/document-mixed-correction-authority.json) — stable/current/plan/history layer separation and snapshot interpretation
+- [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](../experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — legacy authority compatibility snapshots and completed documentation lifecycle migration
 
 ## Layer indexes
 

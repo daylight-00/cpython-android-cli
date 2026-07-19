@@ -7,24 +7,30 @@
     "full_navigation_enabled": true,
     "generated_views_enabled": true,
     "history_root": "docs/history/README.md",
+    "legacy_binding_count": 24,
+    "legacy_decoupling_map": "docs/documentation/legacy-authority-decoupling-map.json",
     "legacy_document_count": 405,
-    "migration_phase": 4,
+    "legacy_snapshot_root": "docs/history/legacy-authority-bindings/",
+    "migration_complete": true,
+    "migration_phase": 5,
     "mixed_document_correction_enabled": true,
     "navigation_root": "docs/navigation/README.md",
-    "navigation_target_count": 14,
-    "next_migration_phase": "phase5-legacy-authority-decoupling",
+    "navigation_target_count": 15,
+    "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "next_migration_phase": null,
     "phase1_tracked_document_count": 415,
     "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
-    "predecessor_head": "38889c8ec1daf26ac029a230bb2281296ef92680",
-    "predecessor_tree": "64a5d860c92235a5a857cc97f473b436fb2db468",
+    "physical_moves_decision": "not-required",
+    "predecessor_head": "d201957a11861147bdbe11b6a91bf68fb6714a4d",
+    "predecessor_tree": "1c0c692d7763487ad2ba0d91a7f2bf04b6e0b423",
     "scope_extensions": [
       ".json",
       ".md"
     ],
     "stable_documentation_system": "docs/documentation/DOCUMENTATION_SYSTEM.md",
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
-    "tracked_document_count": 463
+    "tracked_document_count": 501
   },
   "documents": [
     {
@@ -34,7 +40,7 @@
       ],
       "format": "md",
       "lifecycle_class": "STABLE_WITH_GENERATED_SECTION",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
+      "machine_binding_policy": "legacy-symbolic-binding-resolved-through-map; future-binding-forbidden",
       "migration_action": "phase2-generated-current-capsule-established",
       "mutability": "controlled",
       "onboarding_visibility": "primary",
@@ -187,7 +193,7 @@
       ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
+      "machine_binding_policy": "legacy-symbolic-binding-resolved-through-map; future-binding-forbidden",
       "migration_action": "phase2-generated-from-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
@@ -221,7 +227,7 @@
       ],
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "LEGACY_CONFLICT—future-binding-forbidden",
+      "machine_binding_policy": "legacy-symbolic-binding-resolved-through-map; future-binding-forbidden",
       "migration_action": "phase2-generated-from-registry-and-state",
       "mutability": "generated",
       "onboarding_visibility": "primary",
@@ -563,6 +569,19 @@
       "update_trigger": "State schema version transition."
     },
     {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-schema",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "docs/current/STATE-v4.schema.json",
+      "supersession_rule": "Add a new versioned schema.",
+      "update_trigger": "Never edit after Phase 5 freeze."
+    },
+    {
       "authority_domain": "temporal_state",
       "format": "json",
       "lifecycle_class": "CURRENT_SOURCE",
@@ -775,6 +794,32 @@
       "update_trigger": "Never edit."
     },
     {
+      "authority_domain": "documentation_governance",
+      "format": "md",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-stable-policy",
+      "mutability": "controlled-stable",
+      "onboarding_visibility": "primary",
+      "owner": "documentation-system",
+      "path": "docs/documentation/LEGACY_AUTHORITY_DECOUPLING.md",
+      "supersession_rule": "Version through explicit governance transition.",
+      "update_trigger": "Legacy authority compatibility policy changes."
+    },
+    {
+      "authority_domain": "documentation_contract",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-contract",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "docs/documentation/LEGACY_AUTHORITY_DECOUPLING_DESIGN.md",
+      "supersession_rule": "Add a new authority.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
       "authority_domain": "documentation_phase_contract",
       "format": "md",
       "lifecycle_class": "FROZEN_AUTHORITY",
@@ -843,6 +888,19 @@
       "update_trigger": "Registry schema version transition."
     },
     {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-schema",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "docs/documentation/document-registry-v5.schema.json",
+      "supersession_rule": "Add a new versioned schema.",
+      "update_trigger": "Never edit after Phase 5 freeze."
+    },
+    {
       "authority_domain": "documentation_registry",
       "format": "json",
       "lifecycle_class": "CURRENT_REGISTRY",
@@ -877,14 +935,43 @@
       "format": "json",
       "lifecycle_class": "FROZEN_AUTHORITY",
       "machine_binding_policy": "allowed",
-      "migration_action": "keep",
+      "migration_action": "phase5-freeze-decoupling-map",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "docs/documentation/legacy-authority-decoupling-map.json",
+      "supersession_rule": "Create a new map authority without rewriting this one.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-schema",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "docs/documentation/legacy-authority-decoupling-map.schema.json",
+      "supersession_rule": "Add a new versioned schema.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/documentation/legacy-authority-decoupling-map.json"
+      ],
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-resolved-through-immutable-snapshot-map",
       "mutability": "immutable",
       "onboarding_visibility": "machine",
       "owner": "documentation-system",
       "path": "docs/documentation/legacy-live-binding-baseline.json",
       "planned_canonical_parent": "docs/documentation/DOCUMENT_LIFECYCLE.md",
       "rationale": "Exact grandfathered live-document file-identity bindings.",
-      "supersession_rule": "Create a new versioned baseline with explicit predecessor and adjudication.",
+      "supersession_rule": "Preserve bytes; interpret through the frozen decoupling map.",
       "update_trigger": "Never for ordinary work; correct only through a new baseline authority."
     },
     {
@@ -1003,6 +1090,19 @@
       "rationale": "Human evidence for Phase 3.",
       "supersession_rule": "Correct through a new evidence record.",
       "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "evidence",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "docs/evidence/DOCUMENT_LEGACY_AUTHORITY_DECOUPLING_AUTHORITY_FREEZE.md",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "documentation_governance_evidence",
@@ -3380,6 +3480,20 @@
       "update_trigger": "Never edit."
     },
     {
+      "authority_domain": "handoff",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "docs/handoff/2026-07-19-document-legacy-authority-decoupling.md",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
       "authority_domain": "session_handoff",
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
@@ -3685,7 +3799,7 @@
       "authority_domain": "navigation",
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
-      "machine_binding_policy": "forbidden-live-view",
+      "machine_binding_policy": "legacy-symbolic-binding-resolved-through-map; future-binding-forbidden",
       "migration_action": "phase3-generated-chronological-index-established",
       "mutability": "generated",
       "onboarding_visibility": "secondary",
@@ -3790,6 +3904,427 @@
       "path": "docs/history/README.md",
       "supersession_rule": "Regenerate; never edit by hand.",
       "update_trigger": "Registry or history inventory changes."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden",
+      "migration_action": "phase5-generated-compatibility-index",
+      "mutability": "generated",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-system",
+      "path": "docs/history/legacy-authority-bindings/README.md",
+      "supersession_rule": "Regenerate; never hand-edit.",
+      "update_trigger": "Registry or compatibility snapshot inventory changes."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-contract-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-harness-correction-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-harness-correction-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-harness-correction-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/qualification-harness-correction-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/real-termux-qualification-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/real-termux-qualification-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/real-termux-qualification-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/real-termux-qualification-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/secondary-real-device-amendment-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/secondary-real-device-amendment-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/secondary-real-device-amendment-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-archive-qualification/secondary-real-device-amendment-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "README.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-execution/execution-authority/README.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/CURRENT_CONTEXT.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-execution/execution-authority/docs/CURRENT_CONTEXT.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/INDEX.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-execution/execution-authority/docs/INDEX.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "legacy_compatibility",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_ROADMAP.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-immutable-compatibility-snapshot",
+      "migration_action": "phase5-materialize-legacy-binding",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/legacy-authority-bindings/epoch2-termux-native-cpython3146-facade-execution/execution-authority/docs/roadmap/EPOCH2_ROADMAP.md",
+      "snapshot_semantics": "byte-exact historical file-identity target; never current state",
+      "supersession_rule": "Add a corrected snapshot and new map authority.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "navigation",
@@ -4010,7 +4545,7 @@
       ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
-      "machine_binding_policy": "allowed-as-existing-snapshot-only",
+      "machine_binding_policy": "legacy-symbolic-binding-resolved-through-map; future-binding-forbidden",
       "migration_action": "phase4-freeze-mixed-plan-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
@@ -4834,6 +5369,72 @@
       "rationale": "Independent structural audit of Phase 2.",
       "supersession_rule": "Create a new external audit for a successor authority.",
       "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "experiment_history",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "experiments/document-legacy-authority-decoupling/README.md",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "snapshot_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-legacy-authority-decoupling/frozen-phase4-snapshot.json",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "external_audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "navigation_manifest",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase5-freeze-record",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-legacy-authority-decoupling/navigation-targets.json",
+      "supersession_rule": "Add a successor record. ",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "documentation_control_experiment",
@@ -7139,6 +7740,6 @@
     "RAW_REFERENCE"
   ],
   "registry_kind": "document-lifecycle-registry",
-  "schema_path": "docs/documentation/document-registry-v4.schema.json",
-  "schema_version": 4
+  "schema_path": "docs/documentation/document-registry-v5.schema.json",
+  "schema_version": 5
 }

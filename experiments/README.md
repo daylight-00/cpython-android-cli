@@ -1,6 +1,6 @@
 # Experiments
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 
 ## `experiments/bootstrap-android-build`
 
@@ -12,6 +12,14 @@
 - [`experiments/document-current-state/baseline-current-state.json`](document-current-state/baseline-current-state.json) — `FROZEN_AUTHORITY` · `temporal_state_snapshot` · owner `program-governance`
 - [`experiments/document-current-state/document-current-state-authority.json`](document-current-state/document-current-state-authority.json) — `FROZEN_AUTHORITY` · `documentation_governance_authority` · owner `documentation-governance`
 - [`experiments/document-current-state/document-current-state-external-audit.json`](document-current-state/document-current-state-external-audit.json) — `FROZEN_AUTHORITY` · `documentation_governance_audit` · owner `independent-review`
+
+## `experiments/document-legacy-authority-decoupling`
+
+- [`experiments/document-legacy-authority-decoupling/README.md`](document-legacy-authority-decoupling/README.md) — `HISTORICAL_SNAPSHOT` · `experiment_history` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`experiments/document-legacy-authority-decoupling/frozen-phase4-snapshot.json`](document-legacy-authority-decoupling/frozen-phase4-snapshot.json) — `FROZEN_AUTHORITY` · `snapshot_authority` · owner `documentation-system`
+- [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `documentation-system`
+- [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json`](document-legacy-authority-decoupling/legacy-authority-decoupling-external-audit.json) — `FROZEN_AUTHORITY` · `external_audit` · owner `documentation-system`
+- [`experiments/document-legacy-authority-decoupling/navigation-targets.json`](document-legacy-authority-decoupling/navigation-targets.json) — `FROZEN_AUTHORITY` · `navigation_manifest` · owner `documentation-system`
 
 ## `experiments/document-lifecycle-control`
 

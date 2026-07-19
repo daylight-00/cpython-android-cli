@@ -41,6 +41,12 @@
       "path": "experiments/document-mixed-correction/document-mixed-correction-authority.json",
       "role": "stable/current/plan/history layer separation and snapshot interpretation",
       "sha256": "45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf"
+    },
+    {
+      "id": "document-legacy-authority-decoupling-phase5",
+      "path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json",
+      "role": "legacy authority compatibility snapshots and completed documentation lifecycle migration",
+      "sha256": "c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924"
     }
   ],
   "active_plan": {
@@ -59,19 +65,22 @@
     "selectable": false
   },
   "control_work": {
-    "completed_phase": 4,
+    "completed_phase": 5,
     "id": "DOC-LIFECYCLE",
+    "migration_complete": true,
     "name": "documentation lifecycle migration",
-    "next_action_class": "execute-document-lifecycle-phase5-legacy-authority-decoupling",
-    "next_phase": 5,
+    "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+    "next_phase": null,
+    "physical_moves_decision": "not-required",
     "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "status": "phase4-frozen-phase5-ready"
+    "status": "completed"
   },
   "documentation_layers": {
     "active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
     "authority_root": "docs/evidence/README.md",
     "current_source": "docs/current/STATE.json",
     "history_root": "docs/history/README.md",
+    "legacy_compatibility_map": "docs/documentation/legacy-authority-decoupling-map.json",
     "stable": [
       "docs/PROJECT_GUIDE.md",
       "docs/documentation/DOCUMENTATION_SYSTEM.md"
@@ -80,14 +89,15 @@
   "navigation": {
     "coverage": "all-tracked-markdown-json",
     "history_root": "docs/history/README.md",
+    "legacy_compatibility_root": "docs/history/legacy-authority-bindings/README.md",
     "root": "docs/navigation/README.md",
     "status": "generated-and-verified",
-    "target_count": 14
+    "target_count": 15
   },
-  "next_action_class": "execute-document-lifecycle-phase5-legacy-authority-decoupling",
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
   "predecessor": {
-    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
-    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
+    "commit": "d201957a11861147bdbe11b6a91bf68fb6714a4d",
+    "tree": "1c0c692d7763487ad2ba0d91a7f2bf04b6e0b423"
   },
   "program": {
     "epoch": {
@@ -98,10 +108,10 @@
     "gate": {
       "id": "E2-R1/UT-0",
       "name": "exact official upstream control",
-      "status": "ready-held-during-document-migration"
+      "status": "ready"
     },
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "status": "ready-after-document-lifecycle-migration"
+    "status": "active"
   },
   "project_guide": {
     "path": "docs/PROJECT_GUIDE.md",
@@ -127,17 +137,17 @@
       "docs/stages/README.md",
       "docs/handoff/README.md",
       "docs/history/README.md",
+      "docs/history/legacy-authority-bindings/README.md",
       "docs/references/README.md",
       "experiments/README.md"
     ]
   },
-  "schema_path": "docs/current/STATE-v3.schema.json",
-  "schema_version": 3,
+  "schema_path": "docs/current/STATE-v4.schema.json",
+  "schema_version": 4,
   "state_kind": "project-current-state",
-  "state_revision": 3,
+  "state_revision": 4,
   "unresolved_risks": [
-    "official upstream package and BeeWare dependency identities are not yet frozen under UT-0",
-    "legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling"
+    "official upstream package and BeeWare dependency identities are not yet frozen under UT-0"
   ],
-  "updated_by_transaction": "20260719-document-mixed-document-correction-phase4-v1"
+  "updated_by_transaction": "20260719-document-legacy-authority-decoupling-phase5-v1"
 }

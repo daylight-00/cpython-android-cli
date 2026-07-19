@@ -40,10 +40,10 @@ Historical bytes are not rewritten to look current. Snapshot-relative words such
 
 New authorities may bind immutable governance, versioned schemas, frozen authority, historical snapshots, and raw references when required. They must not bind live state, the live registry, generated views, or mutable sections of mixed documents.
 
-Legacy bindings remain historical facts until an explicit decoupling authority replaces their verifier assumptions.
+Legacy bindings remain historical facts, but their verifier assumptions are resolved through `legacy-authority-decoupling-map.json`. Historical recorded digests bind immutable compatibility snapshots, not today's live paths.
 
 ## Update transaction
 
 A documentation transition must update all affected sources, registry metadata, generated views, verification fixtures, and authority records in one exact repository transaction. A new session alone does not change project state.
 
-Completed migration-phase contracts remain frozen at their original paths. This document is the stable successor for ongoing documentation-system rules.
+Completed migration-phase contracts remain frozen at their original paths. Bulk physical relocation is not required: registry classification, generated navigation, immutable snapshots, and explicit successor metadata provide the canonical layer structure. This document is the stable successor for ongoing documentation-system rules.

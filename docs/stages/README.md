@@ -1,6 +1,6 @@
 # Stage Snapshots
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Historical stage scope and completion snapshots.
 
 ```text

@@ -1,6 +1,6 @@
 # References
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Interpreted references and byte-preserved raw captures.
 
 ```text

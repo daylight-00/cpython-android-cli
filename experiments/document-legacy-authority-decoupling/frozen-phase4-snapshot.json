@@ -1,0 +1,39 @@
+{
+  "file_identities": {
+    "docs/PROJECT_GUIDE.md": "a44dcc07ae0f3201029c7cc639cf75aa771cfba4700bb1c6514fbfaabdd5cb33",
+    "docs/current/STATE-v3.schema.json": "4acf95d9e5f202038d443e85277f2b3be83c02a53d4ab3dc24f401a12e82433e",
+    "docs/documentation/DOCUMENTATION_SYSTEM.md": "8667792128fe672dadee745bf63d830c2f5384d6d532ab0b244ec6cfa2c5d284",
+    "docs/documentation/MIXED_DOCUMENT_CORRECTION.md": "9d21bac8cbdcb5fd90d73fb3fe555e8151cef24f3a387b3fabf27eb4defdb0f0",
+    "docs/documentation/document-registry-v4.schema.json": "57470c141a13b5633c3b85dce12c3ea0f72323afbf44bb3c8f73a78af9d2079c",
+    "docs/evidence/DOCUMENT_MIXED_DOCUMENT_CORRECTION_AUTHORITY_FREEZE.md": "556b0446079e8dbaa0178c38642c63884c80f6d1b930cb0be990db0f55ae4a64",
+    "docs/handoff/2026-07-19-document-mixed-document-correction.md": "04b24a8e20570e8b8ffaaa30a7e3e5fd6907813fd470828a228990f5b7d1f78c",
+    "docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md": "c5bde678567427ceabe7a615904bf2d99aa62fde2a1f4d59cf247605eefc8da0",
+    "docs/roadmap/EPOCH2_PROGRAM_PLAN.md": "ec5f36ed15bcfdf9a20b675b8d08c267237246c17600907c2a081825e55f69a4",
+    "experiments/document-mixed-correction/README.md": "22e35d68433083067d6ffeabfb8c8b6516b46def83b8f9a9e54ddbc99dc6daca",
+    "experiments/document-mixed-correction/document-mixed-correction-authority.json": "45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf",
+    "experiments/document-mixed-correction/document-mixed-correction-external-audit.json": "6badb440b909154b9d395f20bc3c08f73242a6a0300943bd4522e4b703212eaa",
+    "experiments/document-mixed-correction/frozen-phase3-snapshot.json": "0985bf42b3d04aa85141508aa2d9fc05e931f93e763c195dc9a8b5a20a87a55e",
+    "experiments/document-mixed-correction/legacy-mixed-paths.json": "93534971f4dee57e4d9063148b8cef83980bfa25f93f04d9e502eaae038a9c48",
+    "experiments/document-mixed-correction/navigation-targets.json": "6bef64d9dae936b52c58464deaef02c6375c5103f32ad33959ca9eefdfa93bd8",
+    "experiments/document-mixed-correction/render-document-views.py": "a1ca5e43a798c19c77b268ddb1591c21b70ca0a93eacd6ab2457142b1f46b9e0",
+    "experiments/document-mixed-correction/test-mixed-document-correction.py": "dd79c4035dc334a6cb5fbfaf6a63dfcc54152d6b84ec9a573b3303589e4c0d82",
+    "experiments/document-mixed-correction/verify-document-mixed-correction-authority.py": "c5913637fc0c6da7470c953be55301e00eb05e7c55bb55be9101f95ee95007e6",
+    "experiments/document-mixed-correction/verify-frozen-phase3-snapshot.py": "21c7d745964eadee6077e5cbc8adf7fd2981ba099a096142719b100583472190",
+    "experiments/document-mixed-correction/verify-mixed-document-correction.py": "e463e8429a61fee57898430c53ec138cf1734f3302a9c63a3c93e4484b80ad7a"
+  },
+  "phase4_authority_sha256": "45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf",
+  "predecessor": {
+    "commit": "d201957a11861147bdbe11b6a91bf68fb6714a4d",
+    "tree": "1c0c692d7763487ad2ba0d91a7f2bf04b6e0b423"
+  },
+  "recorded_results": {
+    "mixed_document_verifier": "27/27",
+    "negative_fixtures": "12/12",
+    "phase3_snapshot": "10/10",
+    "phase4_authority": "22/22",
+    "render": "18/18"
+  },
+  "recursive_current_tree_replay": false,
+  "schema_version": 1,
+  "snapshot_kind": "frozen-phase4-mixed-document-correction"
+}

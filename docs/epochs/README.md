@@ -1,6 +1,6 @@
 # Epoch Charters and History
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Epoch-level governance and history.
 
 ```text

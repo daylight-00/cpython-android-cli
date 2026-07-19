@@ -1,0 +1,19 @@
+{
+  "audit_kind": "document-legacy-authority-decoupling-external-audit",
+  "blockers": [],
+  "checks": {
+    "baseline_24_exact": true,
+    "live_paths_decoupled": true,
+    "map_24_exact": true,
+    "new_live_bindings_forbidden": true,
+    "original_authorities_6_preserved": true,
+    "phase4_snapshot_preserved": true,
+    "physical_moves_not_required": true,
+    "program_resume_e2_r1_ut0": true,
+    "snapshots_24_byte_exact": true
+  },
+  "pass": true,
+  "schema_version": 1,
+  "source_authority_path": "experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json",
+  "source_authority_sha256": "c24beeaf69bcdbbc1f73fabc7ec1195b6f0b5a416b33ad2bfa0c7f386c70f924"
+}

@@ -1,18 +1,18 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 3
-> **Do not hand-edit.** Run the Phase 4 renderer after a state or registry transition.
+> **State revision:** 4
+> **Do not hand-edit.** Run the Phase 5 renderer after a state or registry transition.
 
 ## Immediate repository work
 
 ```text
-completed phase  4
-next phase       5
-next action      execute-document-lifecycle-phase5-legacy-authority-decoupling
+completed phase  5
+migration       completed
+next action      execute-e2-r1-ut0-exact-official-upstream-control
 ```
 
-## Program position held ready
+## Program position resumed
 
 ```text
 epoch          E2 — upstream-thin research program
@@ -45,6 +45,7 @@ publication                           not authorized
 5. [`experiments/document-current-state/document-current-state-authority.json`](../experiments/document-current-state/document-current-state-authority.json) — single current-state authority and generated-view contract
 6. [`experiments/document-navigation/document-navigation-authority.json`](../experiments/document-navigation/document-navigation-authority.json) — complete generated documentation navigation and reachability
 7. [`experiments/document-mixed-correction/document-mixed-correction-authority.json`](../experiments/document-mixed-correction/document-mixed-correction-authority.json) — stable/current/plan/history layer separation and snapshot interpretation
+8. [`experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json`](../experiments/document-legacy-authority-decoupling/legacy-authority-decoupling-authority.json) — legacy authority compatibility snapshots and completed documentation lifecycle migration
 
 ## Blockers
 
@@ -53,7 +54,6 @@ None.
 ## Unresolved risks
 
 - official upstream package and BeeWare dependency identities are not yet frozen under UT-0
-- legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling
 
 ## Immediate reading path
 

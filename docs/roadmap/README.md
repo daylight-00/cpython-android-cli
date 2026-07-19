@@ -1,6 +1,6 @@
 # Plans and Roadmaps
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Current progress belongs to STATE.json; historical plan status is snapshot-relative.
 
 ## Canonical active plans

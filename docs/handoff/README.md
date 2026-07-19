@@ -1,11 +1,11 @@
 # Session Handoffs
 
-> **Generated view:** registry v4. Do not hand-edit.
+> **Generated view:** registry v5. Do not hand-edit.
 > Historical handoffs, newest filename first.
 
 ```text
-entry count  45
-lifecycle    `HISTORICAL_SNAPSHOT` 45
+entry count  46
+lifecycle    `HISTORICAL_SNAPSHOT` 46
 ```
 
 - [`docs/handoff/STAGE3D_EVIDENCE_LEDGER.md`](STAGE3D_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
@@ -31,6 +31,7 @@ lifecycle    `HISTORICAL_SNAPSHOT` 45
 - [`docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md`](2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
 - [`docs/handoff/2026-07-19-document-mixed-document-correction.md`](2026-07-19-document-mixed-document-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
 - [`docs/handoff/2026-07-19-document-lifecycle-control-plane.md`](2026-07-19-document-lifecycle-control-plane.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-document-legacy-authority-decoupling.md`](2026-07-19-document-legacy-authority-decoupling.md) — `HISTORICAL_SNAPSHOT` · `handoff` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
 - [`docs/handoff/2026-07-19-document-generated-navigation.md`](2026-07-19-document-generated-navigation.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-governance` · snapshot-relative status; does not override STATE.json
 - [`docs/handoff/2026-07-19-document-current-state-authority.md`](2026-07-19-document-current-state-authority.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `session-operations` · snapshot-relative status; does not override STATE.json
 - [`docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md`](2026-07-18-e2p3-secondary-real-device-amendment.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json

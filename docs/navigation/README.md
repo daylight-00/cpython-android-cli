@@ -1,6 +1,6 @@
 # Documentation Navigation
 
-> **Generated root:** registry v4 + [`docs/current/STATE.json`](../current/STATE.json).
+> **Generated root:** registry v5 + [`docs/current/STATE.json`](../current/STATE.json).
 > Start with the stable project guide, then use typed indexes for current state, plans, authority, and history.
 
 ## Primary entry
@@ -10,10 +10,10 @@
 ## Current coordinates
 
 ```text
-immediate action  execute-document-lifecycle-phase5-legacy-authority-decoupling
+immediate action  execute-e2-r1-ut0-exact-official-upstream-control
 program gate      E2-R1/UT-0 — exact official upstream control
-tracked docs      463
-index targets     14
+tracked docs      501
+index targets     15
 ```
 
 ## Lifecycle distribution
@@ -23,12 +23,12 @@ index targets     14
 - `CURRENT_INPUT_LOCK`: 2
 - `CURRENT_REGISTRY`: 1
 - `CURRENT_SOURCE`: 1
-- `FROZEN_AUTHORITY`: 248
-- `GENERATED_VIEW`: 17
-- `HISTORICAL_SNAPSHOT`: 144
+- `FROZEN_AUTHORITY`: 258
+- `GENERATED_VIEW`: 18
+- `HISTORICAL_SNAPSHOT`: 170
 - `RAW_REFERENCE`: 5
 - `REFERENCE`: 5
-- `STABLE`: 35
+- `STABLE`: 36
 - `STABLE_WITH_GENERATED_SECTION`: 2
 
 ## Generated entrypoints
@@ -44,6 +44,7 @@ index targets     14
 - [`docs/stages/README.md`](../stages/README.md) — stage snapshot index
 - [`docs/handoff/README.md`](../handoff/README.md) — handoff index
 - [`docs/history/README.md`](../history/README.md) — legacy context and orientation history
+- [`docs/history/legacy-authority-bindings/README.md`](../history/legacy-authority-bindings/README.md) — legacy authority compatibility snapshot index
 - [`docs/references/README.md`](../references/README.md) — reference index
 - [`experiments/README.md`](../../experiments/README.md) — experiment index
 
