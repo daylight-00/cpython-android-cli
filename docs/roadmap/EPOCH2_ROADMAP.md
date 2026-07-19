@@ -12,12 +12,13 @@ E2-P0 through E2-P3 remain preserved in their original contracts, evidence, expe
 E2-P0  documentation and component boundaries          frozen
 E2-P1  standalone artifact contract                     frozen
 E2-P2  façade and Termux-native producer authority      frozen
-E2-P3  primary real-device qualification                frozen
+E2-P3  primary S22 Ultra/API 36 qualification           frozen
+        secondary Note9/API 29 qualification            frozen
+        dual-real-device AArch64 Termux compatibility   accepted
         emulator                                        waived, not claimed
-        Note9 secondary                                 optional, deferred
 ```
 
-The prepared Note9 run may later add API 29/Exynos cross-device evidence. It is not required to begin or complete the recalibrated research sequence, and no dual-device claim exists until it is executed and separately frozen.
+The Note9/API 29/Exynos run passed the unchanged 35-check matrix and is separately frozen. Together with the S22 Ultra/API 36 result, E2-P3 accepts bounded dual-real-device AArch64 Termux compatibility for the exact same product bytes. The emulator and original real-plus-emulator contract remain unqualified, and this historical closure does not change the recalibrated research sequence.
 
 ## Retired prospective phases
 

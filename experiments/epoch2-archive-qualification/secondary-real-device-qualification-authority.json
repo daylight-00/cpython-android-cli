@@ -1,0 +1,93 @@
+{
+  "authority_kind": "e2p3-secondary-real-device-qualification-freeze",
+  "authority_version": 1,
+  "claim_boundary": {
+    "combined_real_emulator_acceptance": false,
+    "dual_real_device_acceptance": true,
+    "emulator_profile": false,
+    "individual_primary_real_profile": true,
+    "individual_secondary_real_profile": true,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "original_contract_fully_satisfied": false,
+    "publication": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "closure": {
+    "accepted_claim": "dual-real-device-aarch64-termux-compatibility",
+    "profiles": [
+      "termux-real-primary-s22-ultra-api36",
+      "termux-real-secondary-exynos9810-api29"
+    ],
+    "same_product_bytes": true,
+    "same_qualifier_matrix": true,
+    "upstream_thin_roadmap_affected": false
+  },
+  "emulator_disposition": {
+    "emulator_claim": false,
+    "original_real_plus_emulator_contract_satisfied": false,
+    "status": "waived-infrastructure-infeasible-not-qualified"
+  },
+  "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "predecessor": {
+    "commit": "054f9a154b5f0438d78835edda506ec4df5247e6",
+    "tree": "194b31aac8e07afa6c654ff22f5954ceff1388ed"
+  },
+  "primary_profile": {
+    "android_api": 36,
+    "android_release": "16",
+    "authority_name": "termux-real-primary-s22-ultra-api36",
+    "device": "Samsung Galaxy S22 Ultra",
+    "hardware": "qcom",
+    "independent_review": "38/38",
+    "kernel": "5.10.236-android12-9-31998796-abS908NKSS9GZE5",
+    "machine": "aarch64",
+    "qemu": false,
+    "qualification": "35/35",
+    "result_verifier": "19/19",
+    "target_authority_index_sha256": "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1"
+  },
+  "product": {
+    "artifact_id": "cpython-3.14.6-aarch64-linux-android24-install_only_stripped",
+    "envelope_archive_sha256": "66c2a39b7164701d3a14cff538be298abcf30c696150f6abf7785e212c1b4727",
+    "private_authority_index_sha256": "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84fe0b5",
+    "release_index_sha256": "64825d3afabbda7c90992debfb11e771baeff5514f2b6e6d13584dc7ac6fcf85"
+  },
+  "schema_version": 1,
+  "secondary_profile": {
+    "abilist": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "android_api": 29,
+    "android_release": "10",
+    "authority_name": "termux-real-secondary-exynos9810-api29",
+    "device": "Samsung Galaxy Note9",
+    "hardware": "samsungexynos9810",
+    "independent_review": "41/41",
+    "kernel": "4.9.118-24343300",
+    "machine": "aarch64",
+    "prefix": "/data/data/com.termux/files/usr",
+    "qemu": false,
+    "qualification": "35/35",
+    "result_archive_sha256": "a3231adb62c47cb17dda16b66207f3c976aa20593e2288a7d381052154147c10",
+    "result_archive_size": 17319,
+    "result_remote": "gdrive:HW-T/cpython-android-cli/exchange/user-to-agent/20260719-e2p3-secondary-real-device-archive-qualification-rebound-v6",
+    "result_verifier": "19/19",
+    "soc": "Exynos 9810",
+    "target_authority_index_sha256": "6f869abe00b6e5fd50d85965dea84a12f7b6ce4c90ef20182f24831ed4b03d5d",
+    "target_authority_index_size": 8692,
+    "target_authority_indexed_file_count": 36,
+    "target_authority_remote": "gdrive:HW-T/cpython-android-cli/authorities/e2p3/qualifications/termux-native-cpython3146/termux-real-secondary-exynos9810-api29-v1"
+  },
+  "status": "frozen-pass-dual-real-device-aarch64-termux-compatibility",
+  "verification": {
+    "primary": "35/35 + 19/19 + 38/38",
+    "secondary": "35/35 + 19/19 + 41/41",
+    "secondary_authority_readback": "PASS-36-files",
+    "secondary_repository_compatibility_post": "58/58",
+    "secondary_repository_compatibility_pre": "58/58"
+  }
+}

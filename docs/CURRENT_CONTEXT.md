@@ -57,16 +57,17 @@ Android Emulator
   status              infrastructure-infeasible, waived, unclaimed
 
 Galaxy Note9 / API 29 / Exynos 9810
-  package             prepared
-  execution           deferred
-  roadmap role        optional additional evidence
+  qualification       35/35
+  result verifier     19/19
+  independent review  41/41
+  status              accepted and frozen
 
-dual-device claim     not made
+dual-device claim     accepted — AArch64 Termux compatibility
 selectability         false
 publication           not authorized
 ```
 
-The Note9 package may be executed later against its exact frozen repository binding. It does not block the upstream-thin research program or Epoch 3 planning.
+The Note9 profile is frozen together with the primary S22 Ultra profile as bounded dual-real-device AArch64 Termux compatibility evidence. The emulator remains unqualified and the original real-plus-emulator contract remains unsatisfied. This historical closure does not alter the upstream-thin research program or select any Epoch 3 feature.
 
 ## Active Epoch 2 sequence
 
@@ -137,4 +138,4 @@ Epoch 4 work in this repository
 
 Execute only UT-0 under E2-R1: acquire and verify the exact official upstream package, freeze its no-mutation inventory, map the inherited BeeWare dependency identities, and compare it with the reconstructed-product baseline.
 
-Do not select Epoch 3 features, begin Epoch 4 source-producer implementation, or relabel deferred Note9 evidence as accepted.
+Do not select Epoch 3 features or begin Epoch 4 source-producer implementation. E2-P3 dual-real-device evidence is historical compatibility evidence, not an Epoch 3 product-selection decision.

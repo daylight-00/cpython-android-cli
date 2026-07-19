@@ -20,7 +20,7 @@ Epoch 3  clean upstream-derived Astral-structured release repo       PLANNED
 Epoch 4  full Astral-like Android source producer                    PLANNED
 ```
 
-Epoch 1 remains the complete evidence-bearing predecessor. E2-P0 through E2-P3 are preserved historical authorities, including the accepted S22 Ultra archive qualification, explicit emulator waiver, and prepared but deferred Note9 secondary-device package. The project was recalibrated on 2026-07-19: Epoch 2 now trusts the Python.org Android product and the BeeWare dependencies selected by CPython as the primary control, completes direct-adaptation and Android API research, and requires a controlled API 36 comparison. Epoch 3 creates a clean upstream-derived release repository whose artifact structure primarily follows Astral's standalone distribution. Epoch 4 builds the full Astral-like CPython and dependency source producer while preserving the Epoch 3 consumer contract. The Note9 run remains optional deferred evidence and no emulator or dual-device claim is made.
+Epoch 1 remains the complete evidence-bearing predecessor. E2-P0 through E2-P3 are preserved historical authorities, including accepted S22 Ultra/API 36 and Note9/API 29 real-device archive qualifications and the explicit emulator waiver. The project was recalibrated on 2026-07-19: Epoch 2 now trusts the Python.org Android product and the BeeWare dependencies selected by CPython as the primary control, completes direct-adaptation and Android API research, and requires a controlled API 36 comparison. Epoch 3 creates a clean upstream-derived release repository whose artifact structure primarily follows Astral's standalone distribution. Epoch 4 builds the full Astral-like CPython and dependency source producer while preserving the Epoch 3 consumer contract. The same product is frozen as dual-real-device AArch64 Termux compatibility evidence; no emulator, selectability, or publication claim is made.
 
 Current entry points:
 
@@ -67,7 +67,7 @@ Epoch 2 P2 façade producer binding                             frozen
 Epoch 2 P2 bound façade execution authority                    frozen — 52/52 + 27/27
 Epoch 2 P3 primary real-device qualification                 frozen — 35/35 + 19/19 + 38/38
 Epoch 2 recalibration authority                                active — upstream-first E2, clean E3, source-producer E4
-Epoch 2 P3 secondary-device amendment                         frozen — Note9 API 29 optional/deferred; emulator waived
+Epoch 2 P3 secondary-device qualification                     frozen — Note9 35/35 + 19/19 + 41/41; dual-real-device compatibility; emulator waived
 ```
 
 ## Frozen runtime architecture

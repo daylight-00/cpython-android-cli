@@ -20,6 +20,8 @@ REAL_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/real-termux-qual
 REAL_AUDIT_PATH = "experiments/epoch2-archive-qualification/real-termux-qualification-external-audit.json"
 AMENDMENT_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json"
 AMENDMENT_AUDIT_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-amendment-external-audit.json"
+SECONDARY_FREEZE_AUTHORITY_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json"
+SECONDARY_FREEZE_AUDIT_PATH = "experiments/epoch2-archive-qualification/secondary-real-device-qualification-external-audit.json"
 CONTRACT_PATH = "components/standalone/contracts/qualification-v1.json"
 SCHEMA_PATH = "components/standalone/schemas/qualification-result-v1.schema.json"
 VERIFY_PATH = "experiments/epoch2-archive-qualification/verify-qualification-contract.py"
@@ -46,6 +48,9 @@ EXPECTED_PRIVATE = "5fd8c03b53bcb749cfa221277e75f16b2392e6cec3a184b716f98e24d84f
 EXPECTED_HISTORICAL_FAILURES = {"documentation", "file_identities", "regression"}
 EXPECTED_EXECUTION_FAILURES = {"binding_adjudication", "documentation", "file_identities", "verify_route"}
 EXPECTED_BINDING_FAILURES = {"documentation", "file_identities", "historical_facade_adjudication", "verify_route"}
+SECONDARY_RESULT_ARCHIVE_SHA = "a3231adb62c47cb17dda16b66207f3c976aa20593e2288a7d381052154147c10"
+SECONDARY_TARGET_INDEX_SHA = "6f869abe00b6e5fd50d85965dea84a12f7b6ce4c90ef20182f24831ed4b03d5d"
+EXPECTED_AMENDMENT_DRIFT = {"README.md", "docs/CURRENT_CONTEXT.md", "docs/INDEX.md", "docs/roadmap/EPOCH2_ROADMAP.md", "experiments/epoch2-archive-qualification/README.md", VERIFY_PATH}
 EXPECTED_REAL_DRIFT = {
     "README.md",
     "docs/CURRENT_CONTEXT.md",
@@ -141,6 +146,8 @@ def main() -> int:
         "real_audit": REAL_AUDIT_PATH,
         "amendment_authority": AMENDMENT_AUTHORITY_PATH,
         "amendment_audit": AMENDMENT_AUDIT_PATH,
+        "secondary_freeze": SECONDARY_FREEZE_AUTHORITY_PATH,
+        "secondary_freeze_audit": SECONDARY_FREEZE_AUDIT_PATH,
         "contract": CONTRACT_PATH,
         "schema": SCHEMA_PATH,
         "facade": "components/standalone/contracts/facade-v1.json",
@@ -160,6 +167,8 @@ def main() -> int:
     real_audit = values["real_audit"]
     amendment = values["amendment_authority"]
     amendment_audit = values["amendment_audit"]
+    secondary_freeze = values["secondary_freeze"]
+    secondary_freeze_audit = values["secondary_freeze_audit"]
     contract = values["contract"]
     schema = values["schema"]
     facade = values["facade"]
@@ -244,10 +253,21 @@ def main() -> int:
     ck("amendment_closure_policy", amendment.get("closure_policy") == {"required_profiles": ["termux-real-primary-s22-ultra-api36", "termux-real-secondary-exynos9810-api29"], "accepted_claim_after_secondary_freeze": "dual-real-device-aarch64-termux-compatibility", "emulator_claim": False, "real_emulator_combined_claim": False})
     ck("amendment_claim_boundary", amendment.get("claim_boundary") == amendment_boundary)
     amendment_ids = amendment.get("file_identities", {})
-    ck("amendment_file_identities", isinstance(amendment_ids, dict) and bool(amendment_ids) and all((root / path).is_file() and sha(root / path) == digest for path, digest in amendment_ids.items()))
+    amendment_drift = {path for path, digest in amendment_ids.items() if not (root / path).is_file() or sha(root / path) != digest} if isinstance(amendment_ids, dict) else set()
+    ck("amendment_file_identities", amendment_drift == EXPECTED_AMENDMENT_DRIFT)
     audit_sources = amendment_audit.get("sources", {})
     ck("amendment_external_audit", amendment_audit.get("schema_version") == 1 and amendment_audit.get("audit_kind") == "e2p3-secondary-real-device-amendment-external-audit" and amendment_audit.get("pass") is True and amendment_audit.get("check_count") == 30 and amendment_audit.get("pass_count") == 30 and amendment_audit.get("failed_checks") == [] and all(amendment_audit.get("checks", {}).values()) and amendment_audit.get("claim_boundary") == amendment_boundary and audit_sources.get("primary_result_archive_sha256") == REAL_RESULT_ARCHIVE_SHA and audit_sources.get("primary_target_authority_index_sha256") == REAL_TARGET_INDEX_SHA and audit_sources.get("physical_device_emulator_attempt_sha256") == EMULATOR_PHYSICAL_FAILURE_SHA and audit_sources.get("arm64_avd_x86_host_negative_archive_sha256") == ARM64_AVD_X86_NEGATIVE_SHA)
     ck("amendment_next_action", amendment.get("next_action_class") == "execute-e2p3-secondary-real-device-archive-qualification")
+    ck("secondary_freeze_identity", secondary_freeze.get("schema_version") == 1 and secondary_freeze.get("authority_kind") == "e2p3-secondary-real-device-qualification-freeze" and secondary_freeze.get("status") == "frozen-pass-dual-real-device-aarch64-termux-compatibility")
+    ck("secondary_freeze_predecessor", secondary_freeze.get("predecessor") == {"commit": "054f9a154b5f0438d78835edda506ec4df5247e6", "tree": "194b31aac8e07afa6c654ff22f5954ceff1388ed"})
+    sf_secondary = secondary_freeze.get("secondary_profile", {})
+    ck("secondary_freeze_result", sf_secondary.get("qualification") == "35/35" and sf_secondary.get("result_verifier") == "19/19" and sf_secondary.get("independent_review") == "41/41" and sf_secondary.get("result_archive_sha256") == SECONDARY_RESULT_ARCHIVE_SHA and sf_secondary.get("target_authority_index_sha256") == SECONDARY_TARGET_INDEX_SHA)
+    sf_boundary = secondary_freeze.get("claim_boundary", {})
+    ck("secondary_freeze_claim", sf_boundary.get("dual_real_device_acceptance") is True and sf_boundary.get("individual_primary_real_profile") is True and sf_boundary.get("individual_secondary_real_profile") is True and sf_boundary.get("emulator_profile") is False and sf_boundary.get("original_contract_fully_satisfied") is False and sf_boundary.get("selectability") is False and sf_boundary.get("publication") is False)
+    ck("secondary_freeze_closure", secondary_freeze.get("closure") == {"accepted_claim": "dual-real-device-aarch64-termux-compatibility", "profiles": ["termux-real-primary-s22-ultra-api36", "termux-real-secondary-exynos9810-api29"], "same_product_bytes": True, "same_qualifier_matrix": True, "upstream_thin_roadmap_affected": False})
+    sf_audit_source = secondary_freeze_audit.get("source", {})
+    ck("secondary_freeze_audit", secondary_freeze_audit.get("pass") is True and secondary_freeze_audit.get("check_count") == secondary_freeze_audit.get("pass_count") and secondary_freeze_audit.get("failed_checks") == [] and sf_audit_source.get("authority_sha256") == sha(root / SECONDARY_FREEZE_AUTHORITY_PATH) and sf_audit_source.get("result_archive_sha256") == SECONDARY_RESULT_ARCHIVE_SHA and sf_audit_source.get("secondary_target_authority_index_sha256") == SECONDARY_TARGET_INDEX_SHA)
+    ck("secondary_freeze_next_action", secondary_freeze.get("next_action_class") == "execute-e2-r1-ut0-exact-official-upstream-control")
 
     ck("contract_identity", contract.get("schema_version") == 1 and contract.get("contract_version") == 1 and contract.get("qualification_kind") == "hw-t-standalone-archive-qualification" and contract.get("status") == "frozen-design-no-target-evidence")
     input_authority = contract.get("input_authority", {})
@@ -291,11 +311,12 @@ def main() -> int:
     amendment_contract_doc = root / "docs/contracts/E2P3_SECONDARY_REAL_DEVICE_AMENDMENT.md"
     amendment_evidence_doc = root / "docs/evidence/E2P3_EMULATOR_INFEASIBILITY_AND_SECONDARY_REAL_DEVICE_AMENDMENT.md"
     amendment_handoff_doc = root / "docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md"
-    historical_navigation = "E2-P3 secondary real-device amendment frozen" in current and "secondary Note9 profile next; emulator waived" in roadmap
-    recalibrated_navigation = "E2-R0 recalibration authority" in current and "Note9 API 29 optional/deferred" in roadmap and "former E2-P4" in roadmap
-    ck("documentation", (historical_navigation or recalibrated_navigation) and "Harness correction v1" in contract_doc and "second physical-device run" in experiment and evidence_doc.is_file() and handoff_doc.is_file() and amendment_contract_doc.is_file() and amendment_evidence_doc.is_file() and amendment_handoff_doc.is_file())
+    final_navigation = "dual-device claim     accepted — AArch64 Termux compatibility" in current and "dual-real-device AArch64 Termux compatibility" in roadmap
+    secondary_evidence_doc = root / "docs/evidence/E2P3_SECONDARY_REAL_DEVICE_QUALIFICATION_AUTHORITY_FREEZE.md"
+    secondary_handoff_doc = root / "docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md"
+    ck("documentation", final_navigation and "Harness correction v1" in contract_doc and "Secondary real-device freeze" in experiment and evidence_doc.is_file() and handoff_doc.is_file() and amendment_contract_doc.is_file() and amendment_evidence_doc.is_file() and amendment_handoff_doc.is_file() and secondary_evidence_doc.is_file() and secondary_handoff_doc.is_file())
     ck("real_target_claim", real_authority.get("claim_boundary", {}).get("individual_real_termux_profile") is True and real_authority.get("claim_boundary", {}).get("emulator_profile") is False and real_authority.get("claim_boundary", {}).get("selectability") is False)
-    ck("next_action", amendment.get("next_action_class") == "execute-e2p3-secondary-real-device-archive-qualification")
+    ck("next_action", secondary_freeze.get("next_action_class") == "execute-e2-r1-ut0-exact-official-upstream-control")
 
     failed = sorted(name for name, passed in checks.items() if not passed)
     result = {
@@ -314,7 +335,7 @@ def main() -> int:
                 "execution_authority": historical_execution,
             }
         },
-        "claim_boundary": "The primary real-device profile is frozen. The emulator objective is waived without qualification and a Note9 secondary physical-device run is next. Dual-device acceptance, original real-plus-emulator acceptance, metadata finalization, selectability, publication, installer conversion, and transitions remain unclaimed.",
+        "claim_boundary": "Both primary and secondary real-device profiles are frozen as bounded dual-real-device AArch64 Termux compatibility evidence. Emulator qualification, original real-plus-emulator acceptance, metadata finalization, selectability, publication, installer conversion, and transitions remain unclaimed.",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["pass"] else 1

@@ -15,7 +15,8 @@ The former prospective E2-P4 through E2-P7 sequence is retired. Installer conver
 ```text
 S22 Ultra API 36 primary qualification    accepted
 emulator qualification                     waived and unclaimed
-Note9 API 29 secondary qualification       prepared, optional, deferred
+dual-real-device AArch64 Termux evidence    accepted for same product bytes
+Note9 API 29 secondary qualification       frozen pass — 35/35 + 19/19 + 41/41
 dual-real-device closure                    not claimed
 selectability/publication                   not claimed
 ```

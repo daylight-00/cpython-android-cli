@@ -1,0 +1,53 @@
+{
+  "audit_kind": "e2p3-secondary-real-device-qualification-freeze-external-audit",
+  "check_count": 24,
+  "checks": {
+    "authority_identity": true,
+    "authority_readback_pass": true,
+    "dual_real_device_claim": true,
+    "emulator_remains_unclaimed": true,
+    "installer_conversion_false": true,
+    "metadata_finalization_false": true,
+    "next_action_ut0": true,
+    "original_contract_remains_unsatisfied": true,
+    "predecessor_identity": true,
+    "primary_profile_identity": true,
+    "primary_profile_verification": true,
+    "product_identity": true,
+    "publication_false": true,
+    "repository_unchanged_during_execution": true,
+    "result_archive_readback_pass": true,
+    "same_product_bytes": true,
+    "same_qualification_matrix": true,
+    "secondary_profile_identity": true,
+    "secondary_profile_verification": true,
+    "secondary_result_archive_identity": true,
+    "secondary_target_authority_identity": true,
+    "selectability_false": true,
+    "transition_false": true,
+    "upstream_thin_roadmap_unaffected": true
+  },
+  "claim_boundary": {
+    "combined_real_emulator_acceptance": false,
+    "dual_real_device_acceptance": true,
+    "emulator_profile": false,
+    "individual_primary_real_profile": true,
+    "individual_secondary_real_profile": true,
+    "installer_conversion": false,
+    "metadata_finalization": false,
+    "original_contract_fully_satisfied": false,
+    "publication": false,
+    "selectability": false,
+    "transition_behavior": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 24,
+  "schema_version": 1,
+  "source": {
+    "authority_sha256": "e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c",
+    "primary_target_authority_index_sha256": "9fbd2ce1f9c288bcdb92b19c0fffce24086671d40b2cce658f524935ad473ab1",
+    "result_archive_sha256": "a3231adb62c47cb17dda16b66207f3c976aa20593e2288a7d381052154147c10",
+    "secondary_target_authority_index_sha256": "6f869abe00b6e5fd50d85965dea84a12f7b6ce4c90ef20182f24831ed4b03d5d"
+  }
+}
