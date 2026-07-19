@@ -1,0 +1,172 @@
+{
+  "baseline_kind": "legacy-live-document-file-identity-bindings",
+  "bindings": [
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-contract-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "cffe3e3f771c2011b65db644c77386e08af8ffa084aaee613c269478bb742fe9",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-harness-correction-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "56faa301440831d91c361c73a1452a8db261f0d1f9b0b336c4f7ad2226e4ff5a",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "cfe79cbcb18f81b4c36ff26d19d770e62a3c8d8a905f1819393531a4422551bc",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "57fb9908d680ed60b25a40d37e67d32b5af6159d8aa2faed354bb8a8d0914502",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "8e71c41c35e84d8bffd2f9debdde68604641b6280290770be1d37c2beafc1616",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "89ad62744f906eb1033e5d173751eb9076a7b7ca8239af3ddd0632974f8366b4",
+      "target_path": "README.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-contract-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "ffd3065d1f1b15fc52575aee932ee3551b8a7002aaef0efc996c2451102dcac3",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-harness-correction-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "69cdf1d8f5b521f878e4cc36fddfd41720a1f3ea13978e5258523c0dda05a570",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "7f267435990514e5618c5c0c114e2ae9609d39dfcbafdf99c183bafeda92674f",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "f82a726d1e4ec51fe9261c23f19a6c4513ec8f6069766d022673a0feea055f1c",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "7c16a11c65ec7724ad71aa7a451a1d97f7908b4cd718e23ac7219d2acc7a96c0",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "a08219281e4e2da3e4b0a3212f606ea19f2a1570771ba2e63e254c92f49810b1",
+      "target_path": "docs/CURRENT_CONTEXT.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-contract-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "71ddddcb7e95e9ecc68678e2d428541261cab4ac86a0e4de67a837dc077612c4",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-harness-correction-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "46883775a711cafcfca86d1bafdae6d07715a58be789c1a7500e66fb6dc06f39",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "b6bc9ca2df9f276762e5796041bdc1a09310ea7822a8a81d982dc83928cfe983",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "42f638c7fc56fdaa7cc6fe83660edbf8062899c142351e86cb0aeb83d4cc94ce",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "f45121bb80bfd19e2a4e7afa8cfc49d02c98788069117e89e2352687fe10b405",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "a5070306987b9eca4bf14230fd1fbd0446de25f9c5783ae28385d31364b0a1d2",
+      "target_path": "docs/INDEX.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-contract-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "5ade0d0a17c3ff5fecbc93ca9203239f6e74615cc84cc027804e6157d1362da5",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/qualification-harness-correction-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "ad6e8089abae6f86cace0fdcb5d53945c071fe1d243be04122690ee6d3d9ee39",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/real-termux-qualification-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "21f950dbd584ec6aab97948c6edf271fbcd38469321d89dec6674098fcd4a85f",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-archive-qualification/secondary-real-device-amendment-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "b66df0c5361827e57964560137b4e1b2a88249008c6aa207a4bc71f06a084f62",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-binding/facade-binding-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "c7a88d5c32962c89b2806e531bd47bae6a1b35c164f061e04931adb6848b163b",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    },
+    {
+      "authority_path": "experiments/epoch2-termux-native-cpython3146-facade-execution/execution-authority.json",
+      "location": "file_identities",
+      "recorded_sha256": "c39669bbeeb5403cb65903c5f9c7e6291ff29d272a112a3c6fdcc272f86dcad0",
+      "target_path": "docs/roadmap/EPOCH2_ROADMAP.md"
+    }
+  ],
+  "expected_binding_count": 24,
+  "forbidden_live_targets": [
+    "README.md",
+    "docs/CURRENT_CONTEXT.md",
+    "docs/INDEX.md",
+    "docs/epochs/EPOCH1_INDEX.md",
+    "docs/handoff/README.md",
+    "docs/roadmap/EPOCH2_ROADMAP.md"
+  ],
+  "policy": {
+    "grandfathered_only": true,
+    "matching_key": [
+      "authority_path",
+      "target_path",
+      "recorded_sha256"
+    ],
+    "new_bindings_forbidden": true
+  },
+  "predecessor": {
+    "head": "e4e684ae8488df6e7b991d34c1da222c1ce3b900",
+    "tree": "2df6889f498df57eceadaf57d24771c8b26e56c3"
+  },
+  "schema_version": 1
+}

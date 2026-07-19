@@ -1,0 +1,43 @@
+{
+  "audit_kind": "document-lifecycle-control-plane-phase1-external-audit",
+  "check_count": 20,
+  "checks": {
+    "authority_identity": true,
+    "control_plane_document_count": true,
+    "file_identities_exact": true,
+    "frozen_registry_snapshot_bound": true,
+    "legacy_binding_baseline_exact": true,
+    "legacy_binding_count": true,
+    "legacy_document_count": true,
+    "live_registry_not_bound": true,
+    "negative_fixtures_pass": true,
+    "new_live_binding_forbidden": true,
+    "next_action_phase2": true,
+    "no_current_quartet_generation": true,
+    "no_current_source_yet": true,
+    "no_historical_rewrites": true,
+    "no_path_moves": true,
+    "predecessor_identity": true,
+    "product_claim_unchanged": true,
+    "registry_coverage_exact": true,
+    "registry_pass": true,
+    "tracked_document_count": true
+  },
+  "claim_boundary": {
+    "current_state_single_writer": false,
+    "document_content_migration": false,
+    "documentation_control_plane": true,
+    "generated_navigation": false,
+    "historical_authority_reinterpretation": false,
+    "product_or_experiment_claim_change": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 20,
+  "schema_version": 1,
+  "source": {
+    "authority_sha256": "d8e71c1c9ba387a17323fafc7c16a0c3fe5002cdac5045c76aa6e86282bc08cf",
+    "predecessor_head": "e4e684ae8488df6e7b991d34c1da222c1ce3b900",
+    "predecessor_tree": "2df6889f498df57eceadaf57d24771c8b26e56c3"
+  }
+}

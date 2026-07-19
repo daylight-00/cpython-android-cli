@@ -1,0 +1,51 @@
+{
+  "authority_kind": "document-lifecycle-control-plane-phase1",
+  "authority_version": 1,
+  "claim_boundary": {
+    "current_state_single_writer": false,
+    "document_content_migration": false,
+    "documentation_control_plane": true,
+    "generated_navigation": false,
+    "historical_authority_reinterpretation": false,
+    "product_or_experiment_claim_change": false
+  },
+  "file_identities": {
+    "docs/documentation/DOCUMENT_LIFECYCLE.md": "efee5cbd54dfae8eb992a6660b971be0634b9b2ac679baa6caf14ad6996a2f8c",
+    "docs/documentation/document-registry.schema.json": "8cf899e1a2805420aeed3afa4b70cee9476ee690308fd09ef5d102643789f330",
+    "docs/documentation/legacy-live-binding-baseline.json": "3ef4c1cf44b6ae101e99ed07dd3f4d704f95124e924160e3ecd6cb881b4214ab",
+    "experiments/document-lifecycle-control/README.md": "82ff09ae1386e0acab2d0fa3c79748cee6e6da429d15fcef6058826ba3ee47e2",
+    "experiments/document-lifecycle-control/baseline-document-registry.json": "0aade991430c311beabf8eb95b1baa39b7636d915c9b8ea61d74289c5ee530cf",
+    "experiments/document-lifecycle-control/test-document-registry.py": "88dd1043a759c37a369a0ec48c4e8d3e9241902201e740105daabffad4da830f",
+    "experiments/document-lifecycle-control/verify-document-lifecycle-control-authority.py": "cc383312de5b8ace9d6ee442e5905617445d18af02e9c480b5087e327c5bc34b",
+    "experiments/document-lifecycle-control/verify-document-registry.py": "e85276b13d8e6351ed3ff56b96741aa1dccf25ba1de0e3d9aa8e874c98bbb085"
+  },
+  "legacy_binding_boundary": {
+    "baseline_path": "docs/documentation/legacy-live-binding-baseline.json",
+    "grandfathered_binding_count": 24,
+    "new_live_generated_bindings_allowed": false
+  },
+  "lifecycle_class_count": 12,
+  "next_action_class": "execute-document-lifecycle-phase2-single-current-state-authority",
+  "phase1_registry_snapshot_sha256": "0aade991430c311beabf8eb95b1baa39b7636d915c9b8ea61d74289c5ee530cf",
+  "predecessor": {
+    "commit": "e4e684ae8488df6e7b991d34c1da222c1ce3b900",
+    "tree": "2df6889f498df57eceadaf57d24771c8b26e56c3"
+  },
+  "schema_version": 1,
+  "scope": {
+    "current_quartet_regenerated": false,
+    "current_source_introduced": false,
+    "historical_byte_rewrites": false,
+    "legacy_document_count": 405,
+    "new_control_plane_document_count": 10,
+    "path_moves": false,
+    "tracked_markdown_json_count": 415
+  },
+  "status": "frozen-pass-control-plane-established",
+  "verification": {
+    "legacy_bindings_exact": true,
+    "negative_fixtures": "8/8",
+    "registry": "24/24",
+    "tracked_documents_exact": true
+  }
+}

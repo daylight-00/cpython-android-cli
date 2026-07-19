@@ -1,0 +1,184 @@
+{
+  "$id": "urn:cpython-android-cli:document-registry:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "basis": {
+      "additionalProperties": true,
+      "properties": {
+        "current_source_present": {
+          "const": false
+        },
+        "migration_phase": {
+          "const": 1
+        },
+        "next_migration_phase": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "physical_moves_allowed": {
+          "const": false
+        },
+        "predecessor_head": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "predecessor_tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "scope_extensions": {
+          "const": [
+            ".json",
+            ".md"
+          ]
+        },
+        "tracked_document_count": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "predecessor_head",
+        "predecessor_tree",
+        "tracked_document_count",
+        "scope_extensions",
+        "migration_phase"
+      ],
+      "type": "object"
+    },
+    "documents": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_domain": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "json",
+              "md"
+            ]
+          },
+          "lifecycle_class": {
+            "enum": [
+              "STABLE",
+              "STABLE_WITH_GENERATED_SECTION",
+              "CURRENT_SOURCE",
+              "CURRENT_REGISTRY",
+              "CURRENT_INPUT_LOCK",
+              "ACTIVE_PLAN",
+              "APPEND_ONLY_LOG",
+              "FROZEN_AUTHORITY",
+              "HISTORICAL_SNAPSHOT",
+              "GENERATED_VIEW",
+              "REFERENCE",
+              "RAW_REFERENCE"
+            ]
+          },
+          "machine_binding_policy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "migration_action": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "mutability": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "onboarding_visibility": {
+            "enum": [
+              "primary",
+              "secondary",
+              "contextual",
+              "history",
+              "hidden",
+              "machine"
+            ]
+          },
+          "owner": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "planned_canonical_parent": {
+            "type": "string"
+          },
+          "planned_successors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "supersession_rule": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "update_trigger": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "format",
+          "lifecycle_class",
+          "authority_domain",
+          "owner",
+          "mutability",
+          "update_trigger",
+          "supersession_rule",
+          "onboarding_visibility",
+          "machine_binding_policy",
+          "migration_action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "lifecycle_classes": {
+      "items": {
+        "enum": [
+          "STABLE",
+          "STABLE_WITH_GENERATED_SECTION",
+          "CURRENT_SOURCE",
+          "CURRENT_REGISTRY",
+          "CURRENT_INPUT_LOCK",
+          "ACTIVE_PLAN",
+          "APPEND_ONLY_LOG",
+          "FROZEN_AUTHORITY",
+          "HISTORICAL_SNAPSHOT",
+          "GENERATED_VIEW",
+          "REFERENCE",
+          "RAW_REFERENCE"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "registry_kind": {
+      "const": "document-lifecycle-registry"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "registry_kind",
+    "basis",
+    "lifecycle_classes",
+    "documents"
+  ],
+  "title": "CPython Android CLI document lifecycle registry v1",
+  "type": "object"
+}

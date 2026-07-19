@@ -20,3 +20,11 @@ It covers responsibility split, Drive/local-Git transport, package classes, sele
 - `HANDOFF_PACKAGE_SPEC.md`: machine- and human-readable handoff package contract.
 - `LESSONS_AND_CHANGELOG.md`: accumulated operational lessons and changes.
 - `templates/`: reusable dated-handoff and manifest starting points.
+
+## Documentation lifecycle control
+
+- [`../documentation/DOCUMENT_LIFECYCLE.md`](../documentation/DOCUMENT_LIFECYCLE.md): lifecycle classes, typed authority, update triggers, supersession, and machine-binding policy.
+- [`../documentation/document-registry.json`](../documentation/document-registry.json): complete tracked Markdown/JSON registry.
+- [`../../experiments/document-lifecycle-control/`](../../experiments/document-lifecycle-control/): verifier, negative fixtures, authority, and external audit.
+
+The lifecycle registry changes with the document set. Frozen and historical content remains byte-preserved unless an explicit later migration proves an edit safe.

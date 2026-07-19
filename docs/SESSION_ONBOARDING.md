@@ -24,6 +24,8 @@ python3 tools/handoff_cycle.py onboard .
 - [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)
 - [`roadmap/EPOCH2_ROADMAP.md`](roadmap/EPOCH2_ROADMAP.md)
 - [`session-operations/README.md`](session-operations/README.md)
+- [`documentation/DOCUMENT_LIFECYCLE.md`](documentation/DOCUMENT_LIFECYCLE.md): document lifecycle, authority domains, registry rules, and migration phases.
+- [`documentation/document-registry.json`](documentation/document-registry.json): complete machine-readable Markdown/JSON lifecycle registry.
 - [`session-operations/COLLABORATION_AND_TRANSPORT.md`](session-operations/COLLABORATION_AND_TRANSPORT.md)
 - [`session-operations/AGENT_WORK_METHOD.md`](session-operations/AGENT_WORK_METHOD.md)
 - [`session-operations/SESSION_CYCLE.md`](session-operations/SESSION_CYCLE.md)
