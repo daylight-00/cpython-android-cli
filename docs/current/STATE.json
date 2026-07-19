@@ -35,11 +35,19 @@
       "path": "experiments/document-navigation/document-navigation-authority.json",
       "role": "complete generated documentation navigation and reachability",
       "sha256": "28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23"
+    },
+    {
+      "id": "document-mixed-document-correction-phase4",
+      "path": "experiments/document-mixed-correction/document-mixed-correction-authority.json",
+      "role": "stable/current/plan/history layer separation and snapshot interpretation",
+      "sha256": "45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf"
     }
   ],
   "active_plan": {
-    "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-    "sha256": "81fc0baaa996952c3caab86ea4abc7168b04e4aea357bc98530a332ea3ceef0a"
+    "detail_path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+    "detail_sha256": "81fc0baaa996952c3caab86ea4abc7168b04e4aea357bc98530a332ea3ceef0a",
+    "path": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+    "sha256": "ec5f36ed15bcfdf9a20b675b8d08c267237246c17600907c2a081825e55f69a4"
   },
   "active_work_package": null,
   "blockers": [],
@@ -51,24 +59,35 @@
     "selectable": false
   },
   "control_work": {
-    "completed_phase": 3,
+    "completed_phase": 4,
     "id": "DOC-LIFECYCLE",
     "name": "documentation lifecycle migration",
-    "next_action_class": "execute-document-lifecycle-phase4-mixed-document-correction",
-    "next_phase": 4,
+    "next_action_class": "execute-document-lifecycle-phase5-legacy-authority-decoupling",
+    "next_phase": 5,
     "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
-    "status": "phase3-frozen-phase4-ready"
+    "status": "phase4-frozen-phase5-ready"
+  },
+  "documentation_layers": {
+    "active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+    "authority_root": "docs/evidence/README.md",
+    "current_source": "docs/current/STATE.json",
+    "history_root": "docs/history/README.md",
+    "stable": [
+      "docs/PROJECT_GUIDE.md",
+      "docs/documentation/DOCUMENTATION_SYSTEM.md"
+    ]
   },
   "navigation": {
     "coverage": "all-tracked-markdown-json",
+    "history_root": "docs/history/README.md",
     "root": "docs/navigation/README.md",
     "status": "generated-and-verified",
-    "target_count": 13
+    "target_count": 14
   },
-  "next_action_class": "execute-document-lifecycle-phase4-mixed-document-correction",
+  "next_action_class": "execute-document-lifecycle-phase5-legacy-authority-decoupling",
   "predecessor": {
-    "commit": "909c600e2f822b82be2cfab807c14836991ba0e3",
-    "tree": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9"
+    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
   },
   "program": {
     "epoch": {
@@ -83,6 +102,10 @@
     },
     "next_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
     "status": "ready-after-document-lifecycle-migration"
+  },
+  "project_guide": {
+    "path": "docs/PROJECT_GUIDE.md",
+    "sha256": "a44dcc07ae0f3201029c7cc639cf75aa771cfba4700bb1c6514fbfaabdd5cb33"
   },
   "render_targets": {
     "current": [
@@ -103,18 +126,18 @@
       "docs/evidence/README.md",
       "docs/stages/README.md",
       "docs/handoff/README.md",
+      "docs/history/README.md",
       "docs/references/README.md",
       "experiments/README.md"
     ]
   },
-  "schema_path": "docs/current/STATE-v2.schema.json",
-  "schema_version": 2,
+  "schema_path": "docs/current/STATE-v3.schema.json",
+  "schema_version": 3,
   "state_kind": "project-current-state",
-  "state_revision": 2,
+  "state_revision": 3,
   "unresolved_risks": [
     "official upstream package and BeeWare dependency identities are not yet frozen under UT-0",
-    "mixed legacy documents retain snapshot-relative active/next/pending language pending Phase 4 normalization",
     "legacy live-document file-identity bindings remain grandfathered and require Phase 5 decoupling"
   ],
-  "updated_by_transaction": "20260719-document-generated-navigation-phase3-v1"
+  "updated_by_transaction": "20260719-document-mixed-document-correction-phase4-v1"
 }

@@ -1,0 +1,34 @@
+{
+  "audit_kind": "document-mixed-correction-phase4-external-audit",
+  "check_count": 20,
+  "checks": {
+    "authority_identity": true,
+    "canonical_active_plan": true,
+    "claim_boundary_unchanged": true,
+    "current_state_selects_successors": true,
+    "generated_history_index": true,
+    "generated_plan_layering": true,
+    "historical_status_snapshot_relative": true,
+    "legacy_bindings_unchanged": true,
+    "legacy_contexts_preserved": true,
+    "legacy_orientation_preserved": true,
+    "legacy_roadmaps_preserved": true,
+    "new_live_bindings_forbidden": true,
+    "no_device_execution": true,
+    "phase3_snapshot_preserved": true,
+    "phase_contracts_preserved": true,
+    "predecessor_identity": true,
+    "predecessor_readme_preserved": true,
+    "registry_coverage": true,
+    "stable_documentation_system": true,
+    "stable_project_guide": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 20,
+  "schema_version": 1,
+  "source": {
+    "authority_path": "experiments/document-mixed-correction/document-mixed-correction-authority.json",
+    "authority_sha256": "45df6e86f0164df8c1d81746af9ca5c44f7921e5a14fc17967213d65a4a43aaf"
+  }
+}

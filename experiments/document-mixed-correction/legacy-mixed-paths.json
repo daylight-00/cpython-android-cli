@@ -1,0 +1,55 @@
+{
+  "byte_preserved_paths": {
+    "README.md": "c5bde678567427ceabe7a615904bf2d99aa62fde2a1f4d59cf247605eefc8da0",
+    "docs/PROJECT_CONTEXT.md": "f6907010440dec9d2831f7459353a07bb80b16d309bda89a59517ca2a343c84a",
+    "docs/PROJECT_CONTEXT_STAGE3.md": "8d7ad213c637418d08c19fe2cbf7831f3a554c909ebc134d8a8daf7f2e9ee55d",
+    "docs/PROJECT_CONTEXT_STAGE3C.md": "ef2116ba67d160f6a773dc97313852c653c6c14b282bb168534b780d323d5820",
+    "docs/PROJECT_CONTEXT_STAGE3D.md": "02f55816bcec650c03383acb80d202bd56a857e58ca8d33a9133e8e48b6f5e16",
+    "docs/PROJECT_CONTEXT_STAGE3E.md": "cda3266d50845334dcd91507677a7c7e3eeab1422128d0980b83f396c0c588f4",
+    "docs/PROJECT_CONTEXT_STAGE3F.md": "5e68f06993289630522ae8321652a94e40ec57aab2a9f22dce9c3f53c477e138",
+    "docs/PROJECT_ORIENTATION.md": "98313af58a175a9d106c31aba834136d7b9950b372f0f0523883b72b4c2542ff",
+    "docs/documentation/CURRENT_STATE_AUTHORITY.md": "9c26a3148740f4b294352c16834edce86bd40d1c0533346c2d70ab6e5bb27504",
+    "docs/documentation/DOCUMENT_LIFECYCLE.md": "efee5cbd54dfae8eb992a6660b971be0634b9b2ac679baa6caf14ad6996a2f8c",
+    "docs/documentation/GENERATED_NAVIGATION.md": "a92e3ddf25fc671bb6bb942c1a194731c3ae011237f35e5a4ea1511014518b18",
+    "docs/roadmap/EPOCH2_ROADMAP.md": "521ce6520a9b7fab5b90c02148e9d13a7941e202410575f98f7cd80b886d8642",
+    "docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md": "054ed6b48f7e8bbe139ec4b186efa4e26a05c19a9bd351db242c2c1cc919b3ac"
+  },
+  "manifest_kind": "document-mixed-path-predecessor-manifest",
+  "predecessor": {
+    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
+  },
+  "schema_version": 1,
+  "snapshot_relative_language_policy": "active-next-pending-language-is-valid-only-at-the-recorded-snapshot",
+  "successors": {
+    "README.md": [
+      "README.md",
+      "docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md"
+    ],
+    "docs/PROJECT_CONTEXT.md": [
+      "docs/PROJECT_GUIDE.md",
+      "docs/current/STATE.json"
+    ],
+    "docs/PROJECT_ORIENTATION.md": [
+      "docs/PROJECT_GUIDE.md",
+      "docs/current/STATE.json"
+    ],
+    "docs/documentation/CURRENT_STATE_AUTHORITY.md": [
+      "docs/documentation/DOCUMENTATION_SYSTEM.md"
+    ],
+    "docs/documentation/DOCUMENT_LIFECYCLE.md": [
+      "docs/documentation/DOCUMENTATION_SYSTEM.md"
+    ],
+    "docs/documentation/GENERATED_NAVIGATION.md": [
+      "docs/documentation/DOCUMENTATION_SYSTEM.md"
+    ],
+    "docs/roadmap/EPOCH2_ROADMAP.md": [
+      "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+      "docs/current/STATE.json"
+    ],
+    "docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md": [
+      "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+      "docs/current/STATE.json"
+    ]
+  }
+}

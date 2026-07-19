@@ -1,7 +1,7 @@
 # References
 
-> **Generated view:** registry v3. Do not hand-edit.
-> Interpreted references and byte-preserved raw source captures.
+> **Generated view:** registry v4. Do not hand-edit.
+> Interpreted references and byte-preserved raw captures.
 
 ```text
 entry count  10

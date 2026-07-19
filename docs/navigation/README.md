@@ -1,31 +1,34 @@
 # Documentation Navigation
 
-> **Generated root:** registry v3 + [`docs/current/STATE.json`](../current/STATE.json).
-> Every tracked Markdown or JSON document is a generated entrypoint or has one canonical index assignment.
+> **Generated root:** registry v4 + [`docs/current/STATE.json`](../current/STATE.json).
+> Start with the stable project guide, then use typed indexes for current state, plans, authority, and history.
+
+## Primary entry
+
+- [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md)
 
 ## Current coordinates
 
 ```text
-immediate action  execute-document-lifecycle-phase4-mixed-document-correction
+immediate action  execute-document-lifecycle-phase5-legacy-authority-decoupling
 program gate      E2-R1/UT-0 — exact official upstream control
-program resume    execute-e2-r1-ut0-exact-official-upstream-control
-tracked docs      447
-index targets     13
+tracked docs      463
+index targets     14
 ```
 
 ## Lifecycle distribution
 
-- `ACTIVE_PLAN`: 3
+- `ACTIVE_PLAN`: 2
 - `APPEND_ONLY_LOG`: 1
 - `CURRENT_INPUT_LOCK`: 2
 - `CURRENT_REGISTRY`: 1
 - `CURRENT_SOURCE`: 1
-- `FROZEN_AUTHORITY`: 236
-- `GENERATED_VIEW`: 16
-- `HISTORICAL_SNAPSHOT`: 139
+- `FROZEN_AUTHORITY`: 248
+- `GENERATED_VIEW`: 17
+- `HISTORICAL_SNAPSHOT`: 144
 - `RAW_REFERENCE`: 5
 - `REFERENCE`: 5
-- `STABLE`: 36
+- `STABLE`: 35
 - `STABLE_WITH_GENERATED_SECTION`: 2
 
 ## Generated entrypoints
@@ -35,12 +38,13 @@ index targets     13
 - [`docs/decisions/README.md`](../decisions/README.md) — decision index
 - [`docs/epochs/README.md`](../epochs/README.md) — epoch charter and history index
 - [`docs/architecture/README.md`](../architecture/README.md) — architecture index
-- [`docs/roadmap/README.md`](../roadmap/README.md) — plan index
+- [`docs/roadmap/README.md`](../roadmap/README.md) — current plans and historical plan snapshots
 - [`docs/contracts/README.md`](../contracts/README.md) — contract index
 - [`docs/evidence/README.md`](../evidence/README.md) — evidence index
 - [`docs/stages/README.md`](../stages/README.md) — stage snapshot index
-- [`docs/handoff/README.md`](../handoff/README.md) — chronological handoff index
-- [`docs/references/README.md`](../references/README.md) — reference and raw-source index
+- [`docs/handoff/README.md`](../handoff/README.md) — handoff index
+- [`docs/history/README.md`](../history/README.md) — legacy context and orientation history
+- [`docs/references/README.md`](../references/README.md) — reference index
 - [`experiments/README.md`](../../experiments/README.md) — experiment index
 
 ## Other canonical roots
@@ -58,13 +62,7 @@ index targets     13
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`
 - [`docs/GITHUB_COLLABORATION_WORKFLOW.md`](../GITHUB_COLLABORATION_WORKFLOW.md) — `STABLE` · `session_operations` · owner `session-operations`
 - [`docs/INDEX.md`](../INDEX.md) — `GENERATED_VIEW` · `navigation` · owner `program-governance`
-- [`docs/PROJECT_CONTEXT.md`](../PROJECT_CONTEXT.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_CONTEXT_STAGE3.md`](../PROJECT_CONTEXT_STAGE3.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_CONTEXT_STAGE3C.md`](../PROJECT_CONTEXT_STAGE3C.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_CONTEXT_STAGE3D.md`](../PROJECT_CONTEXT_STAGE3D.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_CONTEXT_STAGE3E.md`](../PROJECT_CONTEXT_STAGE3E.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_CONTEXT_STAGE3F.md`](../PROJECT_CONTEXT_STAGE3F.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history`
-- [`docs/PROJECT_ORIENTATION.md`](../PROJECT_ORIENTATION.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch2-transition-history`
+- [`docs/PROJECT_GUIDE.md`](../PROJECT_GUIDE.md) — `STABLE` · `project_orientation` · owner `architecture-governance`
 - [`docs/SESSION_ONBOARDING.md`](../SESSION_ONBOARDING.md) — `STABLE_WITH_GENERATED_SECTION` · `session_operations` · owner `session-operations`
 - [`docs/session-operations/AGENT_WORK_METHOD.md`](../session-operations/AGENT_WORK_METHOD.md) — `STABLE` · `session_operations` · owner `session-operations`
 - [`docs/session-operations/COLLABORATION_AND_TRANSPORT.md`](../session-operations/COLLABORATION_AND_TRANSPORT.md) — `STABLE` · `session_operations` · owner `session-operations`
@@ -78,4 +76,4 @@ index targets     13
 
 ## Interpretation rule
 
-Generated navigation creates no claim. Frozen authority answers what was proven; historical snapshots answer what a past boundary recorded; `STATE.json` answers where the project is now.
+`STATE.json` owns present coordinates. Active plans own future structure. Frozen authority owns accepted claims. Historical status language is snapshot-relative and never overrides current state.

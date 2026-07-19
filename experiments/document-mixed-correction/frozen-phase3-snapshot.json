@@ -1,0 +1,35 @@
+{
+  "file_identities": {
+    "docs/current/STATE-v2.schema.json": "7e823beac14a2825ad037542dc190e1edaeb99fc35d8140c884eb2ea5989d042",
+    "docs/documentation/GENERATED_NAVIGATION.md": "a92e3ddf25fc671bb6bb942c1a194731c3ae011237f35e5a4ea1511014518b18",
+    "docs/documentation/document-registry-v3.schema.json": "e36548eeb00f3ab8db0e20f55fa6a9b33c20bb74a76dc0e4182df8b1ba207ed5",
+    "docs/evidence/DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md": "d60df0e5f73759c3cf1dfc1a9b43352016509da373cd64657791528ec84317ed",
+    "docs/handoff/2026-07-19-document-generated-navigation.md": "1457d3a20bfd7a6925539847a08393573025ded5644918612b8fb95c16d413e4",
+    "experiments/document-navigation/README.md": "51a29b456e7ab7bb3506689144647f0936a23003b087cc6b081366f6e3ad47fa",
+    "experiments/document-navigation/document-navigation-authority.json": "28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23",
+    "experiments/document-navigation/document-navigation-external-audit.json": "6a98c937477a120e494c4fcd863128c48aa8c05c192b4fb25d4c7456dbcef520",
+    "experiments/document-navigation/navigation-targets.json": "108ebece950358d3362f95f36c52353f12bb3dbe295965c5302d9f9043896c72",
+    "experiments/document-navigation/render-document-views.py": "61f8bdf300907f9e80bd05da07e820a2269645f2c2761464c520efd9ae002cab",
+    "experiments/document-navigation/test-document-navigation.py": "27cd4a6e612998a3c335b22a96aa2217f166a1181cec3babcf8e9c3a6aae61ef",
+    "experiments/document-navigation/verify-document-navigation-authority.py": "e7271ef6e178175db457b1ff0390d61338b07beb467d253dced28e32ffb52028",
+    "experiments/document-navigation/verify-document-navigation.py": "eb620fa574f1acbad77a68d642ba28e39c8cec908b08ab31abcf20e35b23b8d3",
+    "experiments/document-navigation/verify-frozen-phase2-snapshot.py": "18e84c170c258b5db502fa69bf28d230e3373fe02a5ce3eae9ebf79f7d85d55d"
+  },
+  "phase3_authority_sha256": "28faa2ba26dbded39ecd581a849288d87f030a25b81a1639796f863db86b1f23",
+  "predecessor": {
+    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
+  },
+  "recorded_results": {
+    "navigation": "39/39",
+    "negative_fixtures": "12/12",
+    "phase1_authority": "18/18",
+    "phase2_authority": "19/19",
+    "phase2_snapshot": "9/9",
+    "phase3_authority": "19/19",
+    "render": "17/17"
+  },
+  "recursive_current_tree_replay": false,
+  "schema_version": 1,
+  "snapshot_kind": "frozen-phase3-document-navigation"
+}

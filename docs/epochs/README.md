@@ -1,7 +1,7 @@
 # Epoch Charters and History
 
-> **Generated view:** registry v3. Do not hand-edit.
-> Epoch-level charters and historical indexes.
+> **Generated view:** registry v4. Do not hand-edit.
+> Epoch-level governance and history.
 
 ```text
 entry count  5

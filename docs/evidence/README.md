@@ -1,16 +1,17 @@
 # Evidence
 
-> **Generated view:** registry v3. Do not hand-edit.
-> Frozen evidence records. Generated index ordering does not imply authority precedence.
+> **Generated view:** registry v4. Do not hand-edit.
+> Frozen evidence records; ordering implies no precedence.
 
 ```text
-entry count  135
-lifecycle    `FROZEN_AUTHORITY` 135
+entry count  136
+lifecycle    `FROZEN_AUTHORITY` 136
 ```
 
 - [`docs/evidence/DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md`](DOCUMENT_CURRENT_STATE_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md`](DOCUMENT_GENERATED_NAVIGATION_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-governance`
 - [`docs/evidence/DOCUMENT_LIFECYCLE_CONTROL_PLANE_AUTHORITY_FREEZE.md`](DOCUMENT_LIFECYCLE_CONTROL_PLANE_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `documentation_governance_evidence` · owner `documentation-system`
+- [`docs/evidence/DOCUMENT_MIXED_DOCUMENT_CORRECTION_AUTHORITY_FREEZE.md`](DOCUMENT_MIXED_DOCUMENT_CORRECTION_AUTHORITY_FREEZE.md) — `FROZEN_AUTHORITY` · `evidence` · owner `documentation-system`
 - [`docs/evidence/E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md`](E2P1_STANDALONE_ARTIFACT_CONTRACT_RESULT.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`docs/evidence/E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md`](E2P2_GATE1_CUSTOM_NDK_PYTHON3145_PROVENANCE_AUDIT.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
 - [`docs/evidence/E2P2_GATE1_STANDALONE_FACADE_RESULT.md`](E2P2_GATE1_STANDALONE_FACADE_RESULT.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`

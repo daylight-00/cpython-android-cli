@@ -1,0 +1,56 @@
+{
+  "authority_kind": "document-mixed-correction-phase4",
+  "authority_version": 1,
+  "claim_boundary": {
+    "legacy_authority_decoupling": false,
+    "mixed_document_normalization": true,
+    "physical_document_moves": false,
+    "product_or_experiment_claim_change": false
+  },
+  "file_identities": {
+    "docs/PROJECT_GUIDE.md": "a44dcc07ae0f3201029c7cc639cf75aa771cfba4700bb1c6514fbfaabdd5cb33",
+    "docs/current/STATE-v3.schema.json": "4acf95d9e5f202038d443e85277f2b3be83c02a53d4ab3dc24f401a12e82433e",
+    "docs/documentation/DOCUMENTATION_SYSTEM.md": "77aa83fb566d502f8af16c170db5614e83eecd83c4480d5c8d9004b05aadf18b",
+    "docs/documentation/MIXED_DOCUMENT_CORRECTION.md": "9d21bac8cbdcb5fd90d73fb3fe555e8151cef24f3a387b3fabf27eb4defdb0f0",
+    "docs/documentation/document-registry-v4.schema.json": "57470c141a13b5633c3b85dce12c3ea0f72323afbf44bb3c8f73a78af9d2079c",
+    "docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md": "c5bde678567427ceabe7a615904bf2d99aa62fde2a1f4d59cf247605eefc8da0",
+    "docs/roadmap/EPOCH2_PROGRAM_PLAN.md": "ec5f36ed15bcfdf9a20b675b8d08c267237246c17600907c2a081825e55f69a4",
+    "experiments/document-mixed-correction/README.md": "22e35d68433083067d6ffeabfb8c8b6516b46def83b8f9a9e54ddbc99dc6daca",
+    "experiments/document-mixed-correction/frozen-phase3-snapshot.json": "0985bf42b3d04aa85141508aa2d9fc05e931f93e763c195dc9a8b5a20a87a55e",
+    "experiments/document-mixed-correction/legacy-mixed-paths.json": "93534971f4dee57e4d9063148b8cef83980bfa25f93f04d9e502eaae038a9c48",
+    "experiments/document-mixed-correction/navigation-targets.json": "6bef64d9dae936b52c58464deaef02c6375c5103f32ad33959ca9eefdfa93bd8",
+    "experiments/document-mixed-correction/render-document-views.py": "a1ca5e43a798c19c77b268ddb1591c21b70ca0a93eacd6ab2457142b1f46b9e0",
+    "experiments/document-mixed-correction/test-mixed-document-correction.py": "dd79c4035dc334a6cb5fbfaf6a63dfcc54152d6b84ec9a573b3303589e4c0d82",
+    "experiments/document-mixed-correction/verify-document-mixed-correction-authority.py": "c5913637fc0c6da7470c953be55301e00eb05e7c55bb55be9101f95ee95007e6",
+    "experiments/document-mixed-correction/verify-frozen-phase3-snapshot.py": "21c7d745964eadee6077e5cbc8adf7fd2981ba099a096142719b100583472190",
+    "experiments/document-mixed-correction/verify-mixed-document-correction.py": "e463e8429a61fee57898430c53ec138cf1734f3302a9c63a3c93e4484b80ad7a"
+  },
+  "historical_policy": {
+    "original_bytes_rewritten": false,
+    "root_readme_snapshot": "docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md",
+    "status_language": "snapshot-relative"
+  },
+  "next_action_class": "execute-document-lifecycle-phase5-legacy-authority-decoupling",
+  "predecessor": {
+    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
+  },
+  "resume_program_action_class": "execute-e2-r1-ut0-exact-official-upstream-control",
+  "schema_version": 1,
+  "scope": {
+    "byte_preserved_mixed_path_count": 13,
+    "current_render_target_count": 4,
+    "historical_byte_rewrites": false,
+    "navigation_target_count": 14,
+    "physical_moves": false,
+    "stable_successor_count": 3,
+    "tracked_markdown_json_count": 463
+  },
+  "status": "frozen-pass-mixed-document-layers-separated",
+  "verification": {
+    "authority": "22/22",
+    "mixed_document_verifier": "27/27",
+    "negative_fixtures": "12/12",
+    "phase3_snapshot": "10/10"
+  }
+}

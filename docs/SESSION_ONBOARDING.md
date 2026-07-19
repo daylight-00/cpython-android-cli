@@ -21,15 +21,15 @@ python3 tools/handoff_cycle.py onboard .
 
 > Generated from [`docs/current/STATE.json`](current/STATE.json).
 
-1. [`docs/current/STATE.json`](current/STATE.json)
-2. [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
-3. [`docs/navigation/README.md`](navigation/README.md)
-4. [`docs/documentation/GENERATED_NAVIGATION.md`](documentation/GENERATED_NAVIGATION.md)
-5. [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
+1. [`docs/PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
+2. [`docs/current/STATE.json`](current/STATE.json)
+3. [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
+4. [`docs/roadmap/EPOCH2_PROGRAM_PLAN.md`](roadmap/EPOCH2_PROGRAM_PLAN.md)
+5. [`docs/navigation/README.md`](navigation/README.md)
 6. [`docs/INDEX.md`](INDEX.md)
 
 ```text
-immediate repository action  execute-document-lifecycle-phase4-mixed-document-correction
+immediate repository action  execute-document-lifecycle-phase5-legacy-authority-decoupling
 program gate held ready      E2-R1/UT-0 — exact official upstream control
 program resume action        execute-e2-r1-ut0-exact-official-upstream-control
 ```
@@ -37,7 +37,8 @@ program resume action        execute-e2-r1-ut0-exact-official-upstream-control
 
 ## Stable repository documents
 
-- [`documentation/DOCUMENT_LIFECYCLE.md`](documentation/DOCUMENT_LIFECYCLE.md)
+- [`PROJECT_GUIDE.md`](PROJECT_GUIDE.md)
+- [`documentation/DOCUMENTATION_SYSTEM.md`](documentation/DOCUMENTATION_SYSTEM.md)
 - [`documentation/CURRENT_STATE_AUTHORITY.md`](documentation/CURRENT_STATE_AUTHORITY.md)
 - [`documentation/document-registry.json`](documentation/document-registry.json)
 - [`epochs/EPOCH2_CHARTER.md`](epochs/EPOCH2_CHARTER.md)

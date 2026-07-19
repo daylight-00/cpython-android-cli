@@ -1,0 +1,155 @@
+{
+  "$id": "urn:cpython-android-cli:document-registry:v4",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "basis": {
+      "additionalProperties": true,
+      "required": [
+        "predecessor_head",
+        "predecessor_tree",
+        "tracked_document_count",
+        "scope_extensions",
+        "migration_phase",
+        "current_source_path",
+        "stable_project_guide",
+        "stable_documentation_system",
+        "canonical_active_plan",
+        "full_navigation_enabled",
+        "navigation_root",
+        "history_root",
+        "navigation_target_count",
+        "physical_moves_allowed",
+        "next_migration_phase"
+      ],
+      "type": "object"
+    },
+    "documents": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_domain": {
+            "type": "string"
+          },
+          "current_successors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "format": {
+            "enum": [
+              "md",
+              "json"
+            ]
+          },
+          "lifecycle_class": {
+            "enum": [
+              "STABLE",
+              "STABLE_WITH_GENERATED_SECTION",
+              "CURRENT_SOURCE",
+              "CURRENT_REGISTRY",
+              "CURRENT_INPUT_LOCK",
+              "ACTIVE_PLAN",
+              "APPEND_ONLY_LOG",
+              "FROZEN_AUTHORITY",
+              "HISTORICAL_SNAPSHOT",
+              "GENERATED_VIEW",
+              "REFERENCE",
+              "RAW_REFERENCE"
+            ]
+          },
+          "machine_binding_policy": {
+            "type": "string"
+          },
+          "migration_action": {
+            "type": "string"
+          },
+          "mutability": {
+            "type": "string"
+          },
+          "onboarding_visibility": {
+            "enum": [
+              "primary",
+              "secondary",
+              "contextual",
+              "history",
+              "hidden",
+              "machine"
+            ]
+          },
+          "owner": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "snapshot_semantics": {
+            "type": "string"
+          },
+          "supersession_rule": {
+            "type": "string"
+          },
+          "update_trigger": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "format",
+          "lifecycle_class",
+          "authority_domain",
+          "owner",
+          "mutability",
+          "update_trigger",
+          "supersession_rule",
+          "onboarding_visibility",
+          "machine_binding_policy",
+          "migration_action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "lifecycle_classes": {
+      "items": {
+        "enum": [
+          "STABLE",
+          "STABLE_WITH_GENERATED_SECTION",
+          "CURRENT_SOURCE",
+          "CURRENT_REGISTRY",
+          "CURRENT_INPUT_LOCK",
+          "ACTIVE_PLAN",
+          "APPEND_ONLY_LOG",
+          "FROZEN_AUTHORITY",
+          "HISTORICAL_SNAPSHOT",
+          "GENERATED_VIEW",
+          "REFERENCE",
+          "RAW_REFERENCE"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "registry_kind": {
+      "const": "document-lifecycle-registry"
+    },
+    "schema_path": {
+      "const": "docs/documentation/document-registry-v4.schema.json"
+    },
+    "schema_version": {
+      "const": 4
+    }
+  },
+  "required": [
+    "schema_version",
+    "registry_kind",
+    "schema_path",
+    "basis",
+    "lifecycle_classes",
+    "documents"
+  ],
+  "title": "CPython Android CLI document lifecycle registry v4",
+  "type": "object"
+}

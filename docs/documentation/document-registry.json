@@ -1,25 +1,30 @@
 {
   "basis": {
+    "canonical_active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
     "control_plane_document_count": 10,
     "current_source_path": "docs/current/STATE.json",
     "current_source_present": true,
     "full_navigation_enabled": true,
     "generated_views_enabled": true,
+    "history_root": "docs/history/README.md",
     "legacy_document_count": 405,
-    "migration_phase": 3,
+    "migration_phase": 4,
+    "mixed_document_correction_enabled": true,
     "navigation_root": "docs/navigation/README.md",
-    "navigation_target_count": 13,
-    "next_migration_phase": "phase4-mixed-document-correction",
+    "navigation_target_count": 14,
+    "next_migration_phase": "phase5-legacy-authority-decoupling",
     "phase1_tracked_document_count": 415,
     "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
-    "predecessor_head": "909c600e2f822b82be2cfab807c14836991ba0e3",
-    "predecessor_tree": "e12ab142db1a7b3c9dfe063d3db26d83e1cb58a9",
+    "predecessor_head": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "predecessor_tree": "64a5d860c92235a5a857cc97f473b436fb2db468",
     "scope_extensions": [
       ".json",
       ".md"
     ],
-    "tracked_document_count": 447
+    "stable_documentation_system": "docs/documentation/DOCUMENTATION_SYSTEM.md",
+    "stable_project_guide": "docs/PROJECT_GUIDE.md",
+    "tracked_document_count": 463
   },
   "documents": [
     {
@@ -229,110 +234,155 @@
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT_STAGE3.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT_STAGE3C.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT_STAGE3D.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT_STAGE3E.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
+      "current_successors": [
+        "docs/PROJECT_GUIDE.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "mark-superseded-in-registry",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch1-history",
       "path": "docs/PROJECT_CONTEXT_STAGE3F.md",
       "planned_canonical_parent": "docs/history/contexts/INDEX.md",
       "rationale": "Legacy files contain active/next language relative to old commits.",
-      "supersession_rule": "Registry must mark snapshot date/commit and superseded_by current state.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "project_orientation",
+      "format": "md",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-stable-successor",
+      "mutability": "controlled-stable",
+      "onboarding_visibility": "primary",
+      "owner": "architecture-governance",
+      "path": "docs/PROJECT_GUIDE.md",
+      "supersession_rule": "Version through an explicit governance transition.",
+      "update_trigger": "Project identity or authority model changes."
     },
     {
       "authority_domain": "historical_narrative",
       "current_successors": [
+        "docs/PROJECT_GUIDE.md",
         "docs/current/STATE.json"
       ],
       "format": "md",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
       "machine_binding_policy": "allowed",
-      "migration_action": "phase2-reclassify-legacy-orientation-snapshot",
+      "migration_action": "phase4-register-byte-preserved-mixed-snapshot",
       "mutability": "immutable",
       "onboarding_visibility": "history",
       "owner": "epoch2-transition-history",
       "path": "docs/PROJECT_ORIENTATION.md",
       "planned_canonical_parent": "docs/governance/INDEX.md",
       "rationale": "The byte-preserved file contains E2-P2-era current/next language and is coupled to historical verifiers.",
-      "supersession_rule": "Registry marks this snapshot superseded for current-state purposes by docs/current/STATE.json.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Current project meaning comes from PROJECT_GUIDE.md; present coordinates come from STATE.json.",
       "update_trigger": "Never edit."
     },
     {
@@ -500,6 +550,19 @@
       "update_trigger": "Never edit; add a new schema version."
     },
     {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-add-schema",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "program-governance",
+      "path": "docs/current/STATE-v3.schema.json",
+      "supersession_rule": "Add a new schema version.",
+      "update_trigger": "State schema version transition."
+    },
+    {
       "authority_domain": "temporal_state",
       "format": "json",
       "lifecycle_class": "CURRENT_SOURCE",
@@ -647,47 +710,82 @@
       "update_trigger": "Regenerate when registry, state, or document inventory changes."
     },
     {
-      "authority_domain": "documentation_governance",
+      "authority_domain": "documentation_phase_contract",
+      "current_successors": [
+        "docs/documentation/DOCUMENTATION_SYSTEM.md"
+      ],
       "format": "md",
-      "lifecycle_class": "STABLE",
-      "machine_binding_policy": "stable-only",
-      "migration_action": "phase2-add-current-state-contract",
-      "mutability": "controlled-versioned",
-      "onboarding_visibility": "primary",
-      "owner": "documentation-governance",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-completed-phase-contract",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
       "path": "docs/documentation/CURRENT_STATE_AUTHORITY.md",
       "rationale": "Defines the single-writer and generated-view contract.",
-      "supersession_rule": "Amend by a new versioned governance record; preserve prior authority bytes.",
-      "update_trigger": "Explicit change to temporal authority or rendering rules."
+      "supersession_rule": "Retained as the exact contract for its completed migration phase; ongoing rules live in DOCUMENTATION_SYSTEM.md.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "documentation_governance",
       "format": "md",
       "lifecycle_class": "STABLE",
       "machine_binding_policy": "allowed",
-      "migration_action": "keep",
-      "mutability": "controlled-versioned",
+      "migration_action": "phase4-stable-successor",
+      "mutability": "controlled-stable",
       "onboarding_visibility": "primary",
       "owner": "documentation-system",
+      "path": "docs/documentation/DOCUMENTATION_SYSTEM.md",
+      "supersession_rule": "Version through an explicit documentation governance transition.",
+      "update_trigger": "Documentation lifecycle rules change."
+    },
+    {
+      "authority_domain": "documentation_phase_contract",
+      "current_successors": [
+        "docs/documentation/DOCUMENTATION_SYSTEM.md"
+      ],
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-completed-phase-contract",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
       "path": "docs/documentation/DOCUMENT_LIFECYCLE.md",
       "planned_canonical_parent": "docs/governance/INDEX.md",
       "rationale": "Normative documentation lifecycle constitution.",
-      "supersession_rule": "Supersede through an explicit documentation-governance version or ADR.",
-      "update_trigger": "Lifecycle class, authority-domain, or migration-rule change."
+      "supersession_rule": "Retained as the exact contract for its completed migration phase; ongoing rules live in DOCUMENTATION_SYSTEM.md.",
+      "update_trigger": "Never edit."
     },
     {
-      "authority_domain": "documentation_governance",
+      "authority_domain": "documentation_phase_contract",
+      "current_successors": [
+        "docs/documentation/DOCUMENTATION_SYSTEM.md"
+      ],
       "format": "md",
-      "lifecycle_class": "STABLE",
+      "lifecycle_class": "FROZEN_AUTHORITY",
       "machine_binding_policy": "allowed",
-      "migration_action": "phase3-generated-navigation-governance",
-      "mutability": "controlled",
-      "onboarding_visibility": "secondary",
-      "owner": "documentation-governance",
+      "migration_action": "phase4-freeze-completed-phase-contract",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
       "path": "docs/documentation/GENERATED_NAVIGATION.md",
       "rationale": "Normative generated-navigation contract.",
-      "supersession_rule": "Supersede with a versioned governance contract.",
-      "update_trigger": "Change only through a documentation-governance transition."
+      "supersession_rule": "Retained as the exact contract for its completed migration phase; ongoing rules live in DOCUMENTATION_SYSTEM.md.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "documentation_phase_contract",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-contract",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-system",
+      "path": "docs/documentation/MIXED_DOCUMENT_CORRECTION.md",
+      "supersession_rule": "Amend or add a new version.",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "navigation",
@@ -730,6 +828,19 @@
       "rationale": "Schema for full generated navigation.",
       "supersession_rule": "Supersede with a versioned schema.",
       "update_trigger": "Never edit; add a new schema version."
+    },
+    {
+      "authority_domain": "schema",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-add-schema",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "docs/documentation/document-registry-v4.schema.json",
+      "supersession_rule": "Add a new schema version.",
+      "update_trigger": "Registry schema version transition."
     },
     {
       "authority_domain": "documentation_registry",
@@ -907,6 +1018,19 @@
       "rationale": "Human freeze record for Phase 1 control plane.",
       "supersession_rule": "Supersede through a later documentation migration authority.",
       "update_trigger": "Never; create an amendment or new phase authority."
+    },
+    {
+      "authority_domain": "evidence",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-evidence",
+      "mutability": "immutable",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-system",
+      "path": "docs/evidence/DOCUMENT_MIXED_DOCUMENT_CORRECTION_AUTHORITY_FREEZE.md",
+      "supersession_rule": "Add a correction evidence record.",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "claim_evidence",
@@ -2914,6 +3038,7 @@
       "path": "docs/handoff/2026-07-14-gate4a-a4-pending-result.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -2929,6 +3054,7 @@
       "path": "docs/handoff/2026-07-16-epoch2-p1-standalone-artifact-contract.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -2944,6 +3070,7 @@
       "path": "docs/handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -2959,6 +3086,7 @@
       "path": "docs/handoff/2026-07-16-stage3e-frozen-session-close.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -2974,6 +3102,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-gate1-authority-start.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -2989,6 +3118,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-gate2-contract-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3004,6 +3134,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-gate3-loopback-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3019,6 +3150,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3034,6 +3166,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3049,6 +3182,7 @@
       "path": "docs/handoff/2026-07-16-stage3f-independent-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3067,6 +3201,7 @@
       "owner": "handoff-history",
       "path": "docs/handoff/2026-07-16-stage3f-successor-session-reading-path-snapshot.md",
       "rationale": "Exact predecessor bytes of the stale Stage 3-F handoff README.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Superseded for current navigation by docs/handoff/README.md.",
       "update_trigger": "Never edit; create a separate correction snapshot."
     },
@@ -3082,6 +3217,7 @@
       "path": "docs/handoff/2026-07-17-e2p2-custom-ndk-provenance-audit.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3097,6 +3233,7 @@
       "path": "docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3112,6 +3249,7 @@
       "path": "docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3127,6 +3265,7 @@
       "path": "docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3142,6 +3281,7 @@
       "path": "docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3157,6 +3297,7 @@
       "path": "docs/handoff/2026-07-18-e2p3-archive-qualification-contract.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3172,6 +3313,7 @@
       "path": "docs/handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3187,6 +3329,7 @@
       "path": "docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3202,6 +3345,7 @@
       "path": "docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3216,6 +3360,7 @@
       "owner": "session-operations",
       "path": "docs/handoff/2026-07-19-document-current-state-authority.md",
       "rationale": "Phase 2 transition snapshot.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Create a newer dated handoff.",
       "update_trigger": "Never edit."
     },
@@ -3230,6 +3375,7 @@
       "owner": "documentation-governance",
       "path": "docs/handoff/2026-07-19-document-generated-navigation.md",
       "rationale": "Phase 3 completion handoff.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Create a newer dated handoff.",
       "update_trigger": "Never edit."
     },
@@ -3245,8 +3391,23 @@
       "path": "docs/handoff/2026-07-19-document-lifecycle-control-plane.md",
       "planned_canonical_parent": "docs/history/INDEX.md",
       "rationale": "Phase 1 completion and Phase 2 bounded handoff.",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "A later dated handoff supersedes current-action guidance only.",
       "update_trigger": "Never; create a new dated handoff."
+    },
+    {
+      "authority_domain": "historical_narrative",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-handoff",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "docs/handoff/2026-07-19-document-mixed-document-correction.md",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Create a newer dated handoff.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "historical_narrative",
@@ -3260,6 +3421,7 @@
       "path": "docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3275,6 +3437,7 @@
       "path": "docs/handoff/2026-07-19-epoch2-epoch4-recalibration.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3290,6 +3453,7 @@
       "path": "docs/handoff/COLLABORATION_PROTOCOL.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Mark superseded_by session-operations documents.",
       "update_trigger": "Never edit; active procedure is in docs/session-operations."
     },
@@ -3305,6 +3469,7 @@
       "path": "docs/handoff/PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3320,6 +3485,7 @@
       "path": "docs/handoff/PHASE5_GATE1_CORRECTION_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3335,6 +3501,7 @@
       "path": "docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3350,6 +3517,7 @@
       "path": "docs/handoff/PHASE5_GATE2_CORRECTION_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3365,6 +3533,7 @@
       "path": "docs/handoff/PHASE5_GATE2_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3380,6 +3549,7 @@
       "path": "docs/handoff/PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3395,6 +3565,7 @@
       "path": "docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3410,6 +3581,7 @@
       "path": "docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3425,6 +3597,7 @@
       "path": "docs/handoff/PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3440,6 +3613,7 @@
       "path": "docs/handoff/PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3455,6 +3629,7 @@
       "path": "docs/handoff/PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3470,6 +3645,7 @@
       "path": "docs/handoff/PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3485,6 +3661,7 @@
       "path": "docs/handoff/PHASE5_GATE3_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3500,6 +3677,7 @@
       "path": "docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3530,6 +3708,7 @@
       "path": "docs/handoff/SESSION_HANDOFF_20260712.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New dated handoff; registry links predecessor/successor.",
       "update_trigger": "Never edit after session close."
     },
@@ -3545,6 +3724,7 @@
       "path": "docs/handoff/STAGE3C_EVIDENCE_LEDGER.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Generated history index replaces live ledger role.",
       "update_trigger": "Freeze existing ledger; future cross-document ledgers are generated from registry."
     },
@@ -3560,6 +3740,7 @@
       "path": "docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Generated history index replaces live ledger role.",
       "update_trigger": "Freeze existing ledger; future cross-document ledgers are generated from registry."
     },
@@ -3575,8 +3756,40 @@
       "path": "docs/handoff/STAGE3D_EVIDENCE_LEDGER.md",
       "planned_canonical_parent": "docs/history/handoffs/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Generated history index replaces live ledger role.",
       "update_trigger": "Freeze existing ledger; future cross-document ledgers are generated from registry."
+    },
+    {
+      "authority_domain": "historical_narrative",
+      "current_successors": [
+        "README.md",
+        "docs/current/STATE.json"
+      ],
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-preserve-predecessor-readme",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-history",
+      "path": "docs/history/2026-07-19-pre-phase4-root-readme-snapshot.md",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Superseded as root entry by README.md and for current coordinates by STATE.json.",
+      "update_trigger": "Never edit."
+    },
+    {
+      "authority_domain": "navigation",
+      "format": "md",
+      "lifecycle_class": "GENERATED_VIEW",
+      "machine_binding_policy": "forbidden",
+      "migration_action": "phase4-generated-history-index",
+      "mutability": "generated",
+      "onboarding_visibility": "secondary",
+      "owner": "documentation-system",
+      "path": "docs/history/README.md",
+      "supersession_rule": "Regenerate; never edit by hand.",
+      "update_trigger": "Registry or history inventory changes."
     },
     {
       "authority_domain": "navigation",
@@ -3761,45 +3974,73 @@
       "format": "md",
       "lifecycle_class": "ACTIVE_PLAN",
       "machine_binding_policy": "snapshot-only",
-      "migration_action": "remove-live-status-and-bind-versioned-plan",
+      "migration_action": "phase4-canonical-summary-plan",
+      "mutability": "controlled-plan",
+      "onboarding_visibility": "primary",
+      "owner": "program-governance",
+      "path": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+      "supersession_rule": "Supersede through a versioned plan authority.",
+      "update_trigger": "Work decomposition, ordering, invariants, or acceptance model changes."
+    },
+    {
+      "authority_domain": "program_plan",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+        "docs/current/STATE.json"
+      ],
+      "format": "md",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "snapshot-only",
+      "migration_action": "phase4-retain-status-free-detailed-plan",
       "mutability": "controlled-plan",
       "onboarding_visibility": "primary",
       "owner": "program-governance",
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+      "plan_role": "canonical-detailed-plan",
       "planned_canonical_parent": "docs/plans/INDEX.md",
       "rationale": "Plans currently absorb current progress and become co-updated on every gate.",
       "supersession_rule": "Current completion status lives in STATE.json; plan changes require ADR/plan authority.",
       "update_trigger": "Change only when work decomposition, gates, stop conditions, or sequencing changes; not on ordinary result completion."
     },
     {
-      "authority_domain": "program_plan",
+      "authority_domain": "historical_plan_snapshot",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
-      "lifecycle_class": "ACTIVE_PLAN",
-      "machine_binding_policy": "LEGACY_OR_SNAPSHOT_ONLY",
-      "migration_action": "remove-live-status-and-bind-versioned-plan",
-      "mutability": "controlled-plan",
-      "onboarding_visibility": "primary",
-      "owner": "program-governance",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-as-existing-snapshot-only",
+      "migration_action": "phase4-freeze-mixed-plan-snapshot",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "epoch2-transition-history",
       "path": "docs/roadmap/EPOCH2_ROADMAP.md",
       "planned_canonical_parent": "docs/plans/INDEX.md",
       "rationale": "Plans currently absorb current progress and become co-updated on every gate.",
-      "supersession_rule": "Current completion status lives in STATE.json; plan changes require ADR/plan authority.",
-      "update_trigger": "Change only when work decomposition, gates, stop conditions, or sequencing changes; not on ordinary result completion."
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Canonical program design comes from EPOCH2_PROGRAM_PLAN.md and the detailed plan; progress comes from STATE.json.",
+      "update_trigger": "Never edit."
     },
     {
-      "authority_domain": "program_plan",
+      "authority_domain": "historical_plan_snapshot",
+      "current_successors": [
+        "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+        "docs/current/STATE.json"
+      ],
       "format": "md",
-      "lifecycle_class": "ACTIVE_PLAN",
-      "machine_binding_policy": "snapshot-only",
-      "migration_action": "remove-live-status-and-bind-versioned-plan",
-      "mutability": "controlled-plan",
-      "onboarding_visibility": "primary",
-      "owner": "program-governance",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed-as-existing-snapshot-only",
+      "migration_action": "phase4-freeze-mixed-plan-snapshot",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "epoch2-transition-history",
       "path": "docs/roadmap/EPOCH2_TO_EPOCH4_RECALIBRATED_ROADMAP.md",
       "planned_canonical_parent": "docs/plans/INDEX.md",
       "rationale": "Plans currently absorb current progress and become co-updated on every gate.",
-      "supersession_rule": "Current completion status lives in STATE.json; plan changes require ADR/plan authority.",
-      "update_trigger": "Change only when work decomposition, gates, stop conditions, or sequencing changes; not on ordinary result completion."
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Canonical program design comes from EPOCH2_PROGRAM_PLAN.md and the detailed plan; progress comes from STATE.json.",
+      "update_trigger": "Never edit."
     },
     {
       "authority_domain": "navigation",
@@ -3976,6 +4217,7 @@
       "path": "docs/stages/STAGE1A_BASELINE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -3991,6 +4233,7 @@
       "path": "docs/stages/STAGE1B_PYCONFIG.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4006,6 +4249,7 @@
       "path": "docs/stages/STAGE2C_DESIGN.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4021,6 +4265,7 @@
       "path": "docs/stages/STAGE2_CA_POLICY_CLARIFICATION.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4036,6 +4281,7 @@
       "path": "docs/stages/STAGE2_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4051,6 +4297,7 @@
       "path": "docs/stages/STAGE3A_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4066,6 +4313,7 @@
       "path": "docs/stages/STAGE3B_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4081,6 +4329,7 @@
       "path": "docs/stages/STAGE3B_PHASE1_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4096,6 +4345,7 @@
       "path": "docs/stages/STAGE3B_PHASE2_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4111,6 +4361,7 @@
       "path": "docs/stages/STAGE3B_PHASE3_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4126,6 +4377,7 @@
       "path": "docs/stages/STAGE3B_PHASE4_3_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4141,6 +4393,7 @@
       "path": "docs/stages/STAGE3B_PHASE4_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4156,6 +4409,7 @@
       "path": "docs/stages/STAGE3B_PHASE5_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4171,6 +4425,7 @@
       "path": "docs/stages/STAGE3B_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4186,6 +4441,7 @@
       "path": "docs/stages/STAGE3C_PHASE1_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4201,6 +4457,7 @@
       "path": "docs/stages/STAGE3C_PHASE1_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4216,6 +4473,7 @@
       "path": "docs/stages/STAGE3C_PHASE2_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4231,6 +4489,7 @@
       "path": "docs/stages/STAGE3C_PHASE2_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4246,6 +4505,7 @@
       "path": "docs/stages/STAGE3C_PHASE3_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4261,6 +4521,7 @@
       "path": "docs/stages/STAGE3C_PHASE3_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4276,6 +4537,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4291,6 +4553,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_GATE1_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4306,6 +4569,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_GATE2_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4321,6 +4585,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_GATE3_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4336,6 +4601,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_GATE4_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4351,6 +4617,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_GATE5A_FINAL.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4366,6 +4633,7 @@
       "path": "docs/stages/STAGE3C_PHASE4_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4381,6 +4649,7 @@
       "path": "docs/stages/STAGE3C_PHASE5_GATE3A_DIAGNOSTIC_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4396,6 +4665,7 @@
       "path": "docs/stages/STAGE3C_PHASE5_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4411,6 +4681,7 @@
       "path": "docs/stages/STAGE3C_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4426,6 +4697,7 @@
       "path": "docs/stages/STAGE3D_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4441,6 +4713,7 @@
       "path": "docs/stages/STAGE3E_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4456,6 +4729,7 @@
       "path": "docs/stages/STAGE3F_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4471,6 +4745,7 @@
       "path": "docs/stages/STAGE3_SCOPE.md",
       "planned_canonical_parent": "docs/history/stages/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "Registry edge to later result/freeze.",
       "update_trigger": "Never edit after stage close; new correction evidence must be separate."
     },
@@ -4500,6 +4775,7 @@
       "path": "experiments/bootstrap-android-build/android-python-work/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -4618,6 +4894,85 @@
       "rationale": "Independent structural audit of the Phase 1 authority.",
       "supersession_rule": "New audit with exact source authority identity.",
       "update_trigger": "Never; create a new audit for a new authority."
+    },
+    {
+      "authority_domain": "experiment_history",
+      "format": "md",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-experiment",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/README.md",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
+      "supersession_rule": "Add a new version or authority. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-experiment",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/document-mixed-correction-authority.json",
+      "supersession_rule": "Add a new version or authority. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "external_audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-experiment",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/document-mixed-correction-external-audit.json",
+      "supersession_rule": "Add a new version or authority. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "authority_snapshot",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-predecessor",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/frozen-phase3-snapshot.json",
+      "supersession_rule": "Add a new snapshot.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "authority_manifest",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-experiment",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/legacy-mixed-paths.json",
+      "supersession_rule": "Add a new version or authority. ",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "authority_manifest",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "phase4-freeze-navigation-targets",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "documentation-system",
+      "path": "experiments/document-mixed-correction/navigation-targets.json",
+      "supersession_rule": "Add a new version.",
+      "update_trigger": "Never edit after freeze."
     },
     {
       "authority_domain": "documentation_governance_experiment",
@@ -4897,6 +5252,7 @@
       "path": "experiments/epoch2-standalone-artifact-contract/E2P1_STANDALONE_ARTIFACT_CONTRACT.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5122,6 +5478,7 @@
       "path": "experiments/epoch2-standalone-build-facade/E2P2_GATE1_STANDALONE_FACADE.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5362,6 +5719,7 @@
       "path": "experiments/stage1b-pyconfig/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5377,6 +5735,7 @@
       "path": "experiments/stage2a-bootstrap-strategies/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5392,6 +5751,7 @@
       "path": "experiments/stage2b-conditional-reexec/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5407,6 +5767,7 @@
       "path": "experiments/stage3a-runtime-closure/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5422,6 +5783,7 @@
       "path": "experiments/stage3b-build-input-provenance/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5437,6 +5799,7 @@
       "path": "experiments/stage3b-dependency-promotion/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5452,6 +5815,7 @@
       "path": "experiments/stage3b-launcher-promotion/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5467,6 +5831,7 @@
       "path": "experiments/stage3b-product-boundary/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5482,6 +5847,7 @@
       "path": "experiments/stage3b-product-promotion/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5497,6 +5863,7 @@
       "path": "experiments/stage3b-target-assembly/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5512,6 +5879,7 @@
       "path": "experiments/stage3b-target-validation/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5527,6 +5895,7 @@
       "path": "experiments/stage3b-upstream-replay/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5542,6 +5911,7 @@
       "path": "experiments/stage3c-archive-ownership/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5557,6 +5927,7 @@
       "path": "experiments/stage3c-artifact-manifest/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5572,6 +5943,7 @@
       "path": "experiments/stage3c-gate4-second-product-authority/GATE4A_SECOND_PRODUCT_AUTHORITY_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5587,6 +5959,7 @@
       "path": "experiments/stage3c-gate4-second-product-authority/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5707,6 +6080,7 @@
       "path": "experiments/stage3c-gate4-transition/GATE4B_TRANSITION_CONTRACT_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5722,6 +6096,7 @@
       "path": "experiments/stage3c-gate4-transition/GATE4C_TRANSITION_COORDINATOR_IMPLEMENTATION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5737,6 +6112,7 @@
       "path": "experiments/stage3c-gate4-transition/GATE4D_BIDIRECTIONAL_TERMUX_TARGET_VALIDATION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5752,6 +6128,7 @@
       "path": "experiments/stage3c-gate4-transition/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5872,6 +6249,7 @@
       "path": "experiments/stage3c-installation-contract/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5887,6 +6265,7 @@
       "path": "experiments/stage3c-installation-durability-integration/INTEGRATED_DURABILITY.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5902,6 +6281,7 @@
       "path": "experiments/stage3c-installation-durability-integration/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5917,6 +6297,7 @@
       "path": "experiments/stage3c-installation-durability/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5932,6 +6313,7 @@
       "path": "experiments/stage3c-installation-recovery/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5947,6 +6329,7 @@
       "path": "experiments/stage3c-installation-transaction/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5962,6 +6345,7 @@
       "path": "experiments/stage3c-installed-runtime-baseline/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5977,6 +6361,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/GATE3A_PRODUCT_ACCEPTANCE.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -5992,6 +6377,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/GATE3B0_PRESERVATION_DIAGNOSTIC.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6007,6 +6393,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/GATE3B_PRESERVATION_ACCEPTANCE.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6022,6 +6409,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/GATE3C_ADDON_LIFECYCLE_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6037,6 +6425,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/GATE3D_FINAL_UNINSTALL_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6052,6 +6441,7 @@
       "path": "experiments/stage3c-installed-runtime-lifecycle/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6112,6 +6502,7 @@
       "path": "experiments/stage3c-installed-runtime-relocation/GATE2R_CORRECTED_ENGINE_RELOCATION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6127,6 +6518,7 @@
       "path": "experiments/stage3c-installed-runtime-relocation/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6142,6 +6534,7 @@
       "path": "experiments/stage3c-missing-leaf-repair-intervention/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6157,6 +6550,7 @@
       "path": "experiments/stage3c-product-role-inventory/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6172,6 +6566,7 @@
       "path": "experiments/stage3c-reproducible-archives/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6187,6 +6582,7 @@
       "path": "experiments/stage3d-consumer-integration/GATE1_CONSUMER_AUTHORITY_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6202,6 +6598,7 @@
       "path": "experiments/stage3d-consumer-integration/GATE2_READ_ONLY_CONSUMER_CENSUS.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6217,6 +6614,7 @@
       "path": "experiments/stage3d-consumer-integration/GATE3_SYSTEM_PYTHON_INTEGRATION_CONTRACT.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6232,6 +6630,7 @@
       "path": "experiments/stage3d-consumer-integration/README.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New experiment directory or correction record.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6352,6 +6751,7 @@
       "path": "experiments/stage3e-managed-python-distribution/GATE1_AUTHORITY_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6367,6 +6767,7 @@
       "path": "experiments/stage3e-managed-python-distribution/GATE3_MANAGED_PYTHON_DISTRIBUTION_CONTRACT.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6382,6 +6783,7 @@
       "path": "experiments/stage3e-managed-python-distribution/GATE5_INDEPENDENT_DISTRIBUTION_FREEZE.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6502,6 +6904,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE1_AUTHORITY_DESIGN.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6517,6 +6920,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE2_IMMUTABLE_PUBLICATION_SNAPSHOT_CONTRACT.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6532,6 +6936,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE3_LOOPBACK_TRANSPORT_ACQUISITION_IMPLEMENTATION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6547,6 +6952,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE4_TERMUX_RETAINED_ARTIFACT_ACQUISITION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6562,6 +6968,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE5_DOCUMENTATION_INTEGRITY_CORRECTION.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6577,6 +6984,7 @@
       "path": "experiments/stage3f-publication-acquisition/GATE5_INDEPENDENT_PUBLICATION_ACQUISITION_FREEZE.md",
       "planned_canonical_parent": "docs/history/experiments/INDEX.md",
       "rationale": "",
+      "snapshot_semantics": "status-language-is-relative-to-the-recorded-snapshot",
       "supersession_rule": "New version/correction.",
       "update_trigger": "Never edit after experiment close."
     },
@@ -6731,6 +7139,6 @@
     "RAW_REFERENCE"
   ],
   "registry_kind": "document-lifecycle-registry",
-  "schema_path": "docs/documentation/document-registry-v3.schema.json",
-  "schema_version": 3
+  "schema_path": "docs/documentation/document-registry-v4.schema.json",
+  "schema_version": 4
 }

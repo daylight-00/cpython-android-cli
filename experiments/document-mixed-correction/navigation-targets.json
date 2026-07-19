@@ -1,0 +1,94 @@
+{
+  "manifest_kind": "document-navigation-targets-phase4",
+  "predecessor": {
+    "commit": "38889c8ec1daf26ac029a230bb2281296ef92680",
+    "tree": "64a5d860c92235a5a857cc97f473b436fb2db468"
+  },
+  "schema_version": 1,
+  "targets": [
+    {
+      "path": "docs/navigation/README.md",
+      "role": "canonical navigation root",
+      "selector": "navigation-root-and-unassigned",
+      "sort": "path"
+    },
+    {
+      "path": "docs/current/README.md",
+      "role": "current-state directory index",
+      "selector": "prefix:docs/current/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/documentation/README.md",
+      "role": "documentation governance index",
+      "selector": "prefix:docs/documentation/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/decisions/README.md",
+      "role": "decision index",
+      "selector": "prefix:docs/decisions/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/epochs/README.md",
+      "role": "epoch charter and history index",
+      "selector": "prefix:docs/epochs/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/architecture/README.md",
+      "role": "architecture index",
+      "selector": "prefix:docs/architecture/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/roadmap/README.md",
+      "role": "current plans and historical plan snapshots",
+      "selector": "prefix:docs/roadmap/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/contracts/README.md",
+      "role": "contract index",
+      "selector": "prefix:docs/contracts/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/evidence/README.md",
+      "role": "evidence index",
+      "selector": "prefix:docs/evidence/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/stages/README.md",
+      "role": "stage snapshot index",
+      "selector": "prefix:docs/stages/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/handoff/README.md",
+      "role": "handoff index",
+      "selector": "prefix:docs/handoff/",
+      "sort": "path"
+    },
+    {
+      "path": "docs/history/README.md",
+      "role": "legacy context and orientation history",
+      "selector": "root-historical-snapshots",
+      "sort": "path"
+    },
+    {
+      "path": "docs/references/README.md",
+      "role": "reference index",
+      "selector": "prefix:docs/references/",
+      "sort": "path"
+    },
+    {
+      "path": "experiments/README.md",
+      "role": "experiment index",
+      "selector": "prefix:experiments/",
+      "sort": "path"
+    }
+  ]
+}

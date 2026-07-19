@@ -1,54 +1,55 @@
 # Session Handoffs
 
-> **Generated view:** registry v3. Do not hand-edit.
-> Historical handoffs, newest filename first. Current state is not owned here.
+> **Generated view:** registry v4. Do not hand-edit.
+> Historical handoffs, newest filename first.
 
 ```text
-entry count  44
-lifecycle    `HISTORICAL_SNAPSHOT` 44
+entry count  45
+lifecycle    `HISTORICAL_SNAPSHOT` 45
 ```
 
-- [`docs/handoff/STAGE3D_EVIDENCE_LEDGER.md`](STAGE3D_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md`](STAGE3C_PHASE5_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/STAGE3C_EVIDENCE_LEDGER.md`](STAGE3C_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/SESSION_HANDOFF_20260712.md`](SESSION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md`](PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3_HANDOFF_20260712.md`](PHASE5_GATE3_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md`](PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md`](PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md`](PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md`](PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md`](PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md`](PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md`](PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE2_HANDOFF_20260712.md`](PHASE5_GATE2_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE2_CORRECTION_20260712.md`](PHASE5_GATE2_CORRECTION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md`](PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE5_GATE1_CORRECTION_20260712.md`](PHASE5_GATE1_CORRECTION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md`](PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/COLLABORATION_PROTOCOL.md`](COLLABORATION_PROTOCOL.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-19-epoch2-epoch4-recalibration.md`](2026-07-19-epoch2-epoch4-recalibration.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md`](2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-19-document-lifecycle-control-plane.md`](2026-07-19-document-lifecycle-control-plane.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-system`
-- [`docs/handoff/2026-07-19-document-generated-navigation.md`](2026-07-19-document-generated-navigation.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-governance`
-- [`docs/handoff/2026-07-19-document-current-state-authority.md`](2026-07-19-document-current-state-authority.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `session-operations`
-- [`docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md`](2026-07-18-e2p3-secondary-real-device-amendment.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md`](2026-07-18-e2p3-archive-qualification-harness-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-18-e2p3-archive-qualification-contract.md`](2026-07-18-e2p3-archive-qualification-contract.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md`](2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md`](2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md`](2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md`](2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-17-e2p2-custom-ndk-provenance-audit.md`](2026-07-17-e2p2-custom-ndk-provenance-audit.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-successor-session-reading-path-snapshot.md`](2026-07-16-stage3f-successor-session-reading-path-snapshot.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-independent-freeze.md`](2026-07-16-stage3f-independent-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md`](2026-07-16-stage3f-gate5-documentation-integrity-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md`](2026-07-16-stage3f-gate4-retention-correction-acceptance.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-gate3-loopback-freeze.md`](2026-07-16-stage3f-gate3-loopback-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-gate2-contract-freeze.md`](2026-07-16-stage3f-gate2-contract-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3f-gate1-authority-start.md`](2026-07-16-stage3f-gate1-authority-start.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-stage3e-frozen-session-close.md`](2026-07-16-stage3e-frozen-session-close.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md`](2026-07-16-epoch2-p2-gate1-standalone-facade.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-16-epoch2-p1-standalone-artifact-contract.md`](2026-07-16-epoch2-p1-standalone-artifact-contract.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
-- [`docs/handoff/2026-07-14-gate4a-a4-pending-result.md`](2026-07-14-gate4a-a4-pending-result.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history`
+- [`docs/handoff/STAGE3D_EVIDENCE_LEDGER.md`](STAGE3D_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/STAGE3C_PHASE5_EVIDENCE_LEDGER.md`](STAGE3C_PHASE5_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/STAGE3C_EVIDENCE_LEDGER.md`](STAGE3C_EVIDENCE_LEDGER.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/SESSION_HANDOFF_20260712.md`](SESSION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md`](PHASE5_GATE4_UPGRADE_DOWNGRADE_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3_HANDOFF_20260712.md`](PHASE5_GATE3_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md`](PHASE5_GATE3D_FINAL_UNINSTALL_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md`](PHASE5_GATE3C_ADDON_LIFECYCLE_HANDOFF_20260713.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md`](PHASE5_GATE3B_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md`](PHASE5_GATE3B0_PRESERVATION_DIAGNOSTIC_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md`](PHASE5_GATE3A_PRODUCT_ACCEPTANCE_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md`](PHASE5_GATE3A_INTERVENTION_DECISION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md`](PHASE5_GATE3A_DIAGNOSTIC_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE2_HANDOFF_20260712.md`](PHASE5_GATE2_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE2_CORRECTION_20260712.md`](PHASE5_GATE2_CORRECTION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md`](PHASE5_GATE2R_CORRECTED_ENGINE_RELOCATION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE5_GATE1_CORRECTION_20260712.md`](PHASE5_GATE1_CORRECTION_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md`](PHASE4_MISSING_LEAF_REPAIR_INTERVENTION_HANDOFF_20260712.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/COLLABORATION_PROTOCOL.md`](COLLABORATION_PROTOCOL.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-epoch2-epoch4-recalibration.md`](2026-07-19-epoch2-epoch4-recalibration.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md`](2026-07-19-e2p3-secondary-real-device-qualification-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-document-mixed-document-correction.md`](2026-07-19-document-mixed-document-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-document-lifecycle-control-plane.md`](2026-07-19-document-lifecycle-control-plane.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-system` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-document-generated-navigation.md`](2026-07-19-document-generated-navigation.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `documentation-governance` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-19-document-current-state-authority.md`](2026-07-19-document-current-state-authority.md) — `HISTORICAL_SNAPSHOT` · `session_handoff` · owner `session-operations` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p3-secondary-real-device-amendment.md`](2026-07-18-e2p3-secondary-real-device-amendment.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md`](2026-07-18-e2p3-real-termux-archive-qualification-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p3-archive-qualification-harness-correction.md`](2026-07-18-e2p3-archive-qualification-harness-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p3-archive-qualification-contract.md`](2026-07-18-e2p3-archive-qualification-contract.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md`](2026-07-18-e2p2-termux-native-cpython3146-facade-execution-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md`](2026-07-18-e2p2-termux-native-cpython3146-facade-binding.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md`](2026-07-17-e2p2-termux-native-cpython3146-producer-authority-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md`](2026-07-17-e2p2-termux-native-cpython3146-authority-opening.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-17-e2p2-custom-ndk-provenance-audit.md`](2026-07-17-e2p2-custom-ndk-provenance-audit.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-successor-session-reading-path-snapshot.md`](2026-07-16-stage3f-successor-session-reading-path-snapshot.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-independent-freeze.md`](2026-07-16-stage3f-independent-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-gate5-documentation-integrity-correction.md`](2026-07-16-stage3f-gate5-documentation-integrity-correction.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-gate4-retention-correction-acceptance.md`](2026-07-16-stage3f-gate4-retention-correction-acceptance.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-gate3-loopback-freeze.md`](2026-07-16-stage3f-gate3-loopback-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-gate2-contract-freeze.md`](2026-07-16-stage3f-gate2-contract-freeze.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3f-gate1-authority-start.md`](2026-07-16-stage3f-gate1-authority-start.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-stage3e-frozen-session-close.md`](2026-07-16-stage3e-frozen-session-close.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-epoch2-p2-gate1-standalone-facade.md`](2026-07-16-epoch2-p2-gate1-standalone-facade.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-16-epoch2-p1-standalone-artifact-contract.md`](2026-07-16-epoch2-p1-standalone-artifact-contract.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json
+- [`docs/handoff/2026-07-14-gate4a-a4-pending-result.md`](2026-07-14-gate4a-a4-pending-result.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `handoff-history` · snapshot-relative status; does not override STATE.json

@@ -1,6 +1,6 @@
 # Architecture Decisions
 
-> **Generated view:** registry v3. Do not hand-edit.
+> **Generated view:** registry v4. Do not hand-edit.
 > Stable decision records.
 
 ```text
