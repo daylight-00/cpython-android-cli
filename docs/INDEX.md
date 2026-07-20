@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `execute-e2-r1-ut2-loader-relocation-launcher-getpath`
-- gate: `E2-R1/UT-2` — Loader, relocation, launcher, and getpath
+- action class: `execute-e2-r1-ut3-sysconfig-and-native-extension-sdk`
+- gate: `E2-R1/UT-3` — Sysconfig and native-extension SDK
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `581`
+- tracked Markdown/JSON: `593`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

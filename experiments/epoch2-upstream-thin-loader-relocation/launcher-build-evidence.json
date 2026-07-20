@@ -1,0 +1,656 @@
+{
+  "compiler": [
+    "clang version 21.1.8"
+  ],
+  "patchelf_capabilities": {
+    "command": "patchelf",
+    "help_excerpt": [
+      "  [--page-size SIZE]"
+    ],
+    "help_returncode": 0,
+    "page_size_supported": true
+  },
+  "schema_version": 1,
+  "variants": {
+    "LA-0": {
+      "build_command": [
+        "clang",
+        "-fPIE",
+        "-pie",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-pthread",
+        "-Wl,-z,max-page-size=16384",
+        "-Wl,-z,common-page-size=16384",
+        "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/include/python3.14",
+        "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la0_pyconfig.c",
+        "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/lib",
+        "-lpython3.14",
+        "-ldl",
+        "-lm",
+        "-llog",
+        "-Wl,--enable-new-dtags",
+        "-Wl,-rpath,$ORIGIN/../lib",
+        "-o",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_0"
+      ],
+      "runpath_normalization": {
+        "action": "patchelf-set-runpath",
+        "alignment_policy": {
+          "after_all_16k": true,
+          "after_load_count": 3,
+          "before_all_16k": true,
+          "before_load_count": 3,
+          "load_count_not_reduced": true,
+          "preserved": true
+        },
+        "classification": {
+          "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+          "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+          "desired": "$ORIGIN/../lib",
+          "entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib",
+            "$ORIGIN/../lib"
+          ],
+          "requires_normalization": true,
+          "toolchain_default_entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ]
+        },
+        "command": [
+          "patchelf",
+          "--page-size",
+          "16384",
+          "--set-rpath",
+          "$ORIGIN/../lib",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_0"
+        ],
+        "compile_surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+          ],
+          "sha256": "d0ef65ac07c06b4e5e13529db4e9aaa54f699a89cb8ae7cc5044fbc2b8d23a98",
+          "size": 7008,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        },
+        "exact_normalization_check": true,
+        "surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "8a56ca88395d16bef90c18532e8df0f77df43e5e510381788b5be515a029c648",
+          "size": 7008,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        }
+      },
+      "source": "launcher_la0_pyconfig.c",
+      "source_sha256": "b60f1955fd8dab127b61d6923ee69c1776a07eefc300184637e472bfaa854e18",
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "8a56ca88395d16bef90c18532e8df0f77df43e5e510381788b5be515a029c648",
+        "size": 7008,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    },
+    "LA-1": {
+      "build_command": [
+        "clang",
+        "-fPIE",
+        "-pie",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-pthread",
+        "-Wl,-z,max-page-size=16384",
+        "-Wl,-z,common-page-size=16384",
+        "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/include/python3.14",
+        "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la1_bytesmain.c",
+        "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/lib",
+        "-lpython3.14",
+        "-ldl",
+        "-lm",
+        "-llog",
+        "-Wl,--enable-new-dtags",
+        "-Wl,-rpath,$ORIGIN/../lib",
+        "-o",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_1"
+      ],
+      "runpath_normalization": {
+        "action": "patchelf-set-runpath",
+        "alignment_policy": {
+          "after_all_16k": true,
+          "after_load_count": 3,
+          "before_all_16k": true,
+          "before_load_count": 3,
+          "load_count_not_reduced": true,
+          "preserved": true
+        },
+        "classification": {
+          "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+          "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+          "desired": "$ORIGIN/../lib",
+          "entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib",
+            "$ORIGIN/../lib"
+          ],
+          "requires_normalization": true,
+          "toolchain_default_entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ]
+        },
+        "command": [
+          "patchelf",
+          "--page-size",
+          "16384",
+          "--set-rpath",
+          "$ORIGIN/../lib",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_1"
+        ],
+        "compile_surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+          ],
+          "sha256": "6af88e225d0f83c35eee3f27391d1e53632e545aa80bef314d19fd5e6cc8583e",
+          "size": 5744,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        },
+        "exact_normalization_check": true,
+        "surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "727dc889949012915651469321205e78b2eed8ad172fff8cc24e2d3b28055e5a",
+          "size": 5744,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        }
+      },
+      "source": "launcher_la1_bytesmain.c",
+      "source_sha256": "afb46812b73e4684e225c3bd9670a689ad56b6ccc670fa5b0a42880a5cae5b3d",
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "727dc889949012915651469321205e78b2eed8ad172fff8cc24e2d3b28055e5a",
+        "size": 5744,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    },
+    "LA-2": {
+      "build_command": [
+        "clang",
+        "-fPIE",
+        "-pie",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-pthread",
+        "-Wl,-z,max-page-size=16384",
+        "-Wl,-z,common-page-size=16384",
+        "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/include/python3.14",
+        "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la2_programs_python.c",
+        "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/lib",
+        "-lpython3.14",
+        "-ldl",
+        "-lm",
+        "-llog",
+        "-Wl,--enable-new-dtags",
+        "-Wl,-rpath,$ORIGIN/../lib",
+        "-o",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_2"
+      ],
+      "runpath_normalization": {
+        "action": "patchelf-set-runpath",
+        "alignment_policy": {
+          "after_all_16k": true,
+          "after_load_count": 3,
+          "before_all_16k": true,
+          "before_load_count": 3,
+          "load_count_not_reduced": true,
+          "preserved": true
+        },
+        "classification": {
+          "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+          "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+          "desired": "$ORIGIN/../lib",
+          "entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib",
+            "$ORIGIN/../lib"
+          ],
+          "requires_normalization": true,
+          "toolchain_default_entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ]
+        },
+        "command": [
+          "patchelf",
+          "--page-size",
+          "16384",
+          "--set-rpath",
+          "$ORIGIN/../lib",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_2"
+        ],
+        "compile_surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+          ],
+          "sha256": "f80e08eb05fdae76fa520c0b58b95749535ca4474e93486d330e410fdab0a710",
+          "size": 5752,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        },
+        "exact_normalization_check": true,
+        "surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+          "size": 5752,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        }
+      },
+      "source": "launcher_la2_programs_python.c",
+      "source_sha256": "15b38b3acf1e3861fb036fe593de1e002e30bdb1be113c005330055bc6dbfbfd",
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+        "size": 5752,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    },
+    "LA-3": {
+      "build_command": [
+        "clang",
+        "-fPIE",
+        "-pie",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-pthread",
+        "-Wl,-z,max-page-size=16384",
+        "-Wl,-z,common-page-size=16384",
+        "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/include/python3.14",
+        "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la3_android_signal.c",
+        "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/lib",
+        "-lpython3.14",
+        "-ldl",
+        "-lm",
+        "-llog",
+        "-Wl,--enable-new-dtags",
+        "-Wl,-rpath,$ORIGIN/../lib",
+        "-o",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_3"
+      ],
+      "runpath_normalization": {
+        "action": "patchelf-set-runpath",
+        "alignment_policy": {
+          "after_all_16k": true,
+          "after_load_count": 3,
+          "before_all_16k": true,
+          "before_load_count": 3,
+          "load_count_not_reduced": true,
+          "preserved": true
+        },
+        "classification": {
+          "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+          "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+          "desired": "$ORIGIN/../lib",
+          "entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib",
+            "$ORIGIN/../lib"
+          ],
+          "requires_normalization": true,
+          "toolchain_default_entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ]
+        },
+        "command": [
+          "patchelf",
+          "--page-size",
+          "16384",
+          "--set-rpath",
+          "$ORIGIN/../lib",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/la_3"
+        ],
+        "compile_surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+          ],
+          "sha256": "fff3925faecd9c6b7e4f9b0b55bc115b7e9eb91fe48a0269ca491581510bc4c6",
+          "size": 6760,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        },
+        "exact_normalization_check": true,
+        "surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "21b9d21aa930a276abffa14eeb612faeb77ab8f7d1e234e9530535e80120d99d",
+          "size": 6760,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        }
+      },
+      "source": "launcher_la3_android_signal.c",
+      "source_sha256": "7a86351914d4ec5ba1a23126f0ef003e497d370b39b41c85313b5e68fb1b8dc9",
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "21b9d21aa930a276abffa14eeb612faeb77ab8f7d1e234e9530535e80120d99d",
+        "size": 6760,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    },
+    "LR-0": {
+      "build_command": [
+        "clang",
+        "-fPIE",
+        "-pie",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-pthread",
+        "-Wl,-z,max-page-size=16384",
+        "-Wl,-z,common-page-size=16384",
+        "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/include/python3.14",
+        "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_lr0_self_reexec.c",
+        "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/official/prefix/lib",
+        "-lpython3.14",
+        "-ldl",
+        "-lm",
+        "-llog",
+        "-Wl,--enable-new-dtags",
+        "-Wl,-rpath,$ORIGIN/../lib",
+        "-o",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/lr_0"
+      ],
+      "runpath_normalization": {
+        "action": "patchelf-set-runpath",
+        "alignment_policy": {
+          "after_all_16k": true,
+          "after_load_count": 3,
+          "before_all_16k": true,
+          "before_load_count": 3,
+          "load_count_not_reduced": true,
+          "preserved": true
+        },
+        "classification": {
+          "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+          "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+          "desired": "$ORIGIN/../lib",
+          "entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib",
+            "$ORIGIN/../lib"
+          ],
+          "requires_normalization": true,
+          "toolchain_default_entries": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ]
+        },
+        "command": [
+          "patchelf",
+          "--page-size",
+          "16384",
+          "--set-rpath",
+          "$ORIGIN/../lib",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/launchers/lr_0"
+        ],
+        "compile_surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+          ],
+          "sha256": "49c6dc0c9e10dfa208e0538766cbdf4341e367e850694d6f69eb91ad566a761e",
+          "size": 8880,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        },
+        "exact_normalization_check": true,
+        "surface": {
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "machine": "AArch64",
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "rpath": [],
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "070254288c604d8a5606e9516a4ee1a71dc4da7dea493774a7df1250dc29ddf9",
+          "size": 8880,
+          "soname": [],
+          "type": "DYN (Shared object file)"
+        }
+      },
+      "source": "launcher_lr0_self_reexec.c",
+      "source_sha256": "876e3653e27c15136f962d213269a0f76658985fd65956b8cfae632303f36d46",
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "070254288c604d8a5606e9516a4ee1a71dc4da7dea493774a7df1250dc29ddf9",
+        "size": 8880,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    }
+  }
+}

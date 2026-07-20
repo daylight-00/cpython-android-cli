@@ -1,0 +1,396 @@
+{
+  "cases": {
+    "absolute_in_tree_symlink": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": {
+        "argv0": "-c",
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs",
+        "ld": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix"
+      },
+      "pass": true,
+      "path_state": {
+        "exists": true,
+        "is_symlink": true,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-abs\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\"}\n"
+    },
+    "altered_argv0": {
+      "command": [
+        "bash",
+        "-c",
+        "exec -a \"$1\" \"$2\" -c \"$3\"",
+        "--",
+        "hw-t-altered-python",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": null,
+      "pass": false,
+      "path_state": {
+        "exists": true,
+        "is_symlink": false,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": null
+      },
+      "returncode": 1,
+      "stderr": "Could not find platform independent libraries <prefix>\nCould not find platform dependent libraries <exec_prefix>\nFatal Python error: Failed to import encodings module\nPython runtime state: core initialized\nModuleNotFoundError: No module named 'encodings'\n\nCurrent thread 0x0000007768d62098 (most recent call first):\n  <no Python frame>\n",
+      "stdout": ""
+    },
+    "copied_executable_without_prefix": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python-copy",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": null,
+      "pass": false,
+      "path_state": {
+        "exists": true,
+        "is_symlink": false,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python-copy",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python-copy",
+        "symlink_target": null
+      },
+      "returncode": 1,
+      "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python-copy\": library \"libpython3.14.so\" not found: needed by main executable\n",
+      "stdout": ""
+    },
+    "direct_real_path": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": {
+        "argv0": "-c",
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "ld": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix"
+      },
+      "pass": true,
+      "path_state": {
+        "exists": true,
+        "is_symlink": false,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": null
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\"}\n"
+    },
+    "external_symlink": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": {
+        "argv0": "-c",
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python",
+        "ld": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix"
+      },
+      "pass": true,
+      "path_state": {
+        "exists": true,
+        "is_symlink": true,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/external/python\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\"}\n"
+    },
+    "patch_level_base_replacement": {
+      "after_launcher_sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+      "before_launcher_sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+      "run": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/bin/python",
+          "-c",
+          "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+        ],
+        "data": {
+          "argv0": "-c",
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix",
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/bin/python",
+          "ld": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement"
+        },
+        "pass": true,
+        "path_state": {
+          "exists": true,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/bin/python",
+          "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/bin/python\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/replacement/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-replacement\"}\n"
+      }
+    },
+    "pre_existing_copy_venv_after_base_move": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": null,
+      "pass": false,
+      "path_state": {
+        "exists": true,
+        "is_symlink": false,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+        "symlink_target": null
+      },
+      "returncode": 1,
+      "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+      "stdout": "",
+      "venv_mode": "copies"
+    },
+    "pre_existing_venv_after_base_move": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": null,
+      "execution_error": {
+        "errno": 2,
+        "filename": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+        "message": "[Errno 2] No such file or directory: '/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python'",
+        "type": "FileNotFoundError"
+      },
+      "pass": false,
+      "path_state": {
+        "exists": false,
+        "is_symlink": true,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": "python3.14"
+      },
+      "returncode": null,
+      "stderr": "",
+      "stdout": "",
+      "venv_mode": "symlinks"
+    },
+    "relative_in_tree_symlink": {
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel",
+        "-c",
+        "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+      ],
+      "data": {
+        "argv0": "-c",
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel",
+        "ld": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix"
+      },
+      "pass": true,
+      "path_state": {
+        "exists": true,
+        "is_symlink": true,
+        "lexists": true,
+        "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel",
+        "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+        "symlink_target": "python3.14"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python-rel\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\"}\n"
+    },
+    "runtime_moved_before_fresh_venv_creation": {
+      "create_rc": 0,
+      "create_stderr": "",
+      "create_stdout": "",
+      "mode": "symlinks",
+      "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/bin/python",
+      "run": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/bin/python",
+          "-c",
+          "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+        ],
+        "data": {
+          "argv0": "-c",
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix",
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/bin/python",
+          "ld": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh"
+        },
+        "pass": true,
+        "path_state": {
+          "exists": true,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/bin/python",
+          "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/bin/python\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-post-move-fresh\"}\n"
+      }
+    },
+    "venv_copy_mode": {
+      "create_rc": 0,
+      "create_stderr": "",
+      "create_stdout": "",
+      "mode": "copies",
+      "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+      "run": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+          "-c",
+          "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+        ],
+        "data": null,
+        "pass": false,
+        "path_state": {
+          "exists": true,
+          "is_symlink": false,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+          "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python",
+          "symlink_target": null
+        },
+        "returncode": 1,
+        "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-copy/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+        "stdout": ""
+      }
+    },
+    "venv_symlink_mode": {
+      "create_rc": 0,
+      "create_stderr": "",
+      "create_stdout": "",
+      "mode": "symlinks",
+      "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+      "run": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+          "-c",
+          "\nimport json, os, sys\nprint(json.dumps({\"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"path\":sys.path,\"argv0\":sys.argv[0],\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")},sort_keys=True))\n"
+        ],
+        "data": {
+          "argv0": "-c",
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+          "ld": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink"
+        },
+        "pass": true,
+        "path_state": {
+          "exists": true,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python",
+          "resolved_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"argv0\": \"-c\", \"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/bin/python\", \"ld\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/venv-pre-move-symlink\"}\n"
+      }
+    }
+  },
+  "schema_version": 1,
+  "selected_launcher": "LA-2",
+  "selected_loader": "LR-3",
+  "supported_boundary": {
+    "absolute_in_tree_symlink": true,
+    "altered_argv0": false,
+    "copied_executable_without_prefix": false,
+    "direct_real_path": true,
+    "external_symlink": true,
+    "patch_level_base_replacement": true,
+    "pre_existing_copy_venv_after_base_move": false,
+    "pre_existing_venv_after_base_move": false,
+    "relative_in_tree_symlink": true,
+    "runtime_moved_before_fresh_venv_creation": true,
+    "venv_copy_mode": false,
+    "venv_symlink_mode": true
+  }
+}

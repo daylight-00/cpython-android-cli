@@ -1,0 +1,5676 @@
+{
+  "alignment_policy": "Existing PT_LOAD count may grow but may not shrink; every pre/post PT_LOAD p_align must remain exactly 0x4000.",
+  "all_16k_compatible": true,
+  "all_alignment_preserved": true,
+  "all_exact_mutations": true,
+  "bounded_bionic_checks": {
+    "dlopen": true,
+    "minimum_api": true,
+    "modern_linker_namespace": true,
+    "origin_direct_lookup": true,
+    "transitive_extension_lookup": true
+  },
+  "device": {
+    "android_api": 36,
+    "api_compatible": true,
+    "api_probe": {
+      "command": [
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "parsed_android_api": 36,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "36\n"
+    },
+    "execution_context": "Termux app process in Android linker namespace",
+    "minimum_package_api": 24,
+    "uname": "Linux localhost 5.10.236-android12-9-31998796-abS908NKSS9GZE5 #1 SMP PREEMPT Tue May 12 12:31:59 UTC 2026 aarch64 Android"
+  },
+  "objects": [
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "8a56ca88395d16bef90c18532e8df0f77df43e5e510381788b5be515a029c648",
+        "size": 7008,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "8a56ca88395d16bef90c18532e8df0f77df43e5e510381788b5be515a029c648",
+        "size": 7008,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../lib",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../lib",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14"
+      ],
+      "path": "prefix/bin/python3.14",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/.."
+        ],
+        "sha256": "a3bf894ca5468d41ec12e73a86d1e7caa7086e8edbbcf0d31e31f1dd007b8601",
+        "size": 19745,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "f0d68aa8e3875b317acea5ff8610eda9ac042076a4768bfe17de85591aa36861",
+        "size": 16280,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/engines-3/afalg.so"
+      ],
+      "path": "prefix/lib/engines-3/afalg.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/.."
+        ],
+        "sha256": "8043f3ec7dcc2b2e633a9b20e6256c92ee90b1f4e5fb541928c14e369bde1a62",
+        "size": 18465,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 2,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "d007096a850434ecc75d00a9bfc81f2ef23c53681e4201470c69990f546b5b1a",
+        "size": 3624,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/engines-3/capi.so"
+      ],
+      "path": "prefix/lib/engines-3/capi.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/.."
+        ],
+        "sha256": "bb66e9c4a3bf542a3f72f47c4ed384d713ab663171fc09ec9d8c44613a7359e3",
+        "size": 54521,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "b20fe600a2097436e80c9c08371d021bafc834673cdcc77fe259a1cc859f23df",
+        "size": 45680,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/engines-3/loader_attic.so"
+      ],
+      "path": "prefix/lib/engines-3/loader_attic.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/.."
+        ],
+        "sha256": "2ae0cd57c34bb2e0700a434530b41f2567339b2cf432879aeb21db5d3f000d4d",
+        "size": 18465,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 2,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "0776694bc2ab17dad56f7bb3712e4cdc6f207f4d6ab327a2b98d471f76d11b2e",
+        "size": 3624,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/engines-3/padlock.so"
+      ],
+      "path": "prefix/lib/engines-3/padlock.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "a45df9867808dd80793d1451fa5d908f272cd7d2146eecf60545b32cd5c3cde3",
+        "size": 4666689,
+        "soname": [
+          "libcrypto_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+        "size": 4537384,
+        "soname": [
+          "libcrypto_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libcrypto.so"
+      ],
+      "path": "prefix/lib/libcrypto.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "a45df9867808dd80793d1451fa5d908f272cd7d2146eecf60545b32cd5c3cde3",
+        "size": 4666689,
+        "soname": [
+          "libcrypto_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "a0dd60d620cd61bac7306a8293bcb82103971a4dcfc8c11fd55be3653beb42c4",
+        "size": 4537384,
+        "soname": [
+          "libcrypto_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libcrypto_python.so"
+      ],
+      "path": "prefix/lib/libcrypto_python.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "6499c0cd9c33f120f0ac33c09f3625abafe430b6cc72e5b3234762ddff82cf8b",
+        "size": 5876465,
+        "soname": [
+          "libpython3.14.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "45ebdbf5a70a63c87d1d4aab2c82fdf20f9bc7035dee53a77c4f74ffd9e38008",
+        "size": 5821368,
+        "soname": [
+          "libpython3.14.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libpython3.14.so"
+      ],
+      "path": "prefix/lib/libpython3.14.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "bf3e09cfd6d301c8490fefe1e14ae3af6cb1a6aa50c639727b43800135016ba7",
+        "size": 18521,
+        "soname": [
+          "libpython3.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 2,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "dc03985487f45969d02010cf6ae1b2796d22f0df7685b66cdf4227928bf88eb7",
+        "size": 3768,
+        "soname": [
+          "libpython3.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libpython3.so"
+      ],
+      "path": "prefix/lib/libpython3.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "6bc699816894ab7e9ace2c00dcbdfd43d2ed0ec0cf2fd8d7a087cb9c9d529cec",
+        "size": 886520,
+        "soname": [
+          "libsqlite3_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "/usr/local/lib"
+        ],
+        "sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+        "size": 886520,
+        "soname": [
+          "libsqlite3_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libsqlite3.so"
+      ],
+      "path": "prefix/lib/libsqlite3.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "6bc699816894ab7e9ace2c00dcbdfd43d2ed0ec0cf2fd8d7a087cb9c9d529cec",
+        "size": 886520,
+        "soname": [
+          "libsqlite3_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "/usr/local/lib"
+        ],
+        "sha256": "6b0f0012ffff95d2420e88fd420d0d65dc4d63d943c1011567978f6203d118dd",
+        "size": 886520,
+        "soname": [
+          "libsqlite3_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libsqlite3_python.so"
+      ],
+      "path": "prefix/lib/libsqlite3_python.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "882a4d18722c1446c0871b16af82d35667333047eaf4c3c0d78f7695384bf52c",
+        "size": 994153,
+        "soname": [
+          "libssl_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+        "size": 955984,
+        "soname": [
+          "libssl_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libssl.so"
+      ],
+      "path": "prefix/lib/libssl.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN"
+        ],
+        "sha256": "882a4d18722c1446c0871b16af82d35667333047eaf4c3c0d78f7695384bf52c",
+        "size": 994153,
+        "soname": [
+          "libssl_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "123743cc94922308a44a5a7d98854ca51fc708529d73f48ac1a380d7b7f04a2f",
+        "size": 955984,
+        "soname": [
+          "libssl_python.so"
+        ],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/libssl_python.so"
+      ],
+      "path": "prefix/lib/libssl_python.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/.."
+        ],
+        "sha256": "ea30949f4397853412f414d65e96ef0c27584879fd4d0bb8d84b560af91c708d",
+        "size": 135217,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "f5f8125c2551f8b2a7d4cc0b743b250fef3770aefda567d4ae36ea7acef600fc",
+        "size": 117352,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/ossl-modules/legacy.so"
+      ],
+      "path": "prefix/lib/ossl-modules/legacy.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "a278483432c9a019100c652b7894fe7fd79768558b69255af3b2d4a0d0de55f1",
+        "size": 86353,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "7c29691a67d568f9a818f56af3f59341fa1dbd6e871062c82961152f234f6094",
+        "size": 74632,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "48d006fc6b47703b99faf559038522351f29c3cdaf1a318c2d6adfa8ed94801b",
+        "size": 19089,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "9b885de1c1d9469d6c0287aa8b2bf256ed5b9815d60e4be146e0568ccdebfc36",
+        "size": 15344,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3a21b5d7fd1fe727ca1374885b4e0d7ce440548af3315be7e37251696629f402",
+        "size": 52241,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "b0f1235d9a261cfda40327f798db08159da6b6a84ec457544cfaa4ab290b4b6f",
+        "size": 45208,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "a4bdb24b5f3a2d755f3fb98b0f6576e6c0549a997c36297caf76f499675c2d33",
+        "size": 101905,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "934d178edb046dd6c026d4fc728abf8501d3a46abf7ddc6f948312e21e85b4f9",
+        "size": 82888,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "c666f66a2f4b330f4f31497803a466655f4f68c83ef6d60d8811c5868666406f",
+        "size": 149977,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "dd51c920e577b57c1e799bedb17537e1a512aacf830ce4afca8e3fb9e63653ab",
+        "size": 146416,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "19a67fade28d7a2c0e8198c2c1363f88d28a13ae3b939524e47930937f9d5153",
+        "size": 166473,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "df437ff6eba53cd252f745cce6166adfeb4b58dc7a66a9e6c55847406b32b633",
+        "size": 155304,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3c245393189976300f857a6f21f8898b23f2994bd8448a605f099189b67605ab",
+        "size": 35465,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "fec7673fe1718c84cd9a1c1e5d3b9e4654ff32cddb7b0ce6835b5da6e0ebae1a",
+        "size": 21568,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "0aee2d8c93bf3e276d321b02ed544f3ee7a72f89d3a4469fd16fdcd2602d5eb9",
+        "size": 264697,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "46fd0b62d48c93c90f63a89982a83c4197fe989c9b3b322fb4751a0ae58c4004",
+        "size": 261768,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b0c0ebdde0888d2822a16ea7d9d2af28a373dcc5dc4bd0348fbe7418008b2bc1",
+        "size": 149977,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "7941c483c6e5a494d2dcaaf724d067610aa774046603b3a9d2dead45f0d67c91",
+        "size": 133456,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "149e96781b73fd1668bbd3c59837e0fdb98b319228a625b45e1893b201b69b01",
+        "size": 117209,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "11d9dd2ae3a1d5a34db96c675f2db43ce489d3d302e7d6bc1f0d492964480f5c",
+        "size": 108848,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "44a5e76351b80f9ff2cc5198e576b90ffa15da5f1288199de82cee6d1d0d949f",
+        "size": 52481,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "a7c069e95f552c843c79984d19c83dec30905e1e50aa898fa567df75d03af76b",
+        "size": 34336,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libpython3.14.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "ae1121a55fdc08dd9f81da944e312a99909eeb9111c68e529e16370213ef2377",
+        "size": 235665,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libpython3.14.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "ace6d15ab097fb30dc49d94e566337ea0a84c799beb4f21998237c5f2d424351",
+        "size": 228984,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libpython3.14.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "439205c34d66cea2cd14efbbe4b54cdfc3bec160b4b5043c3d3b47241e38ba71",
+        "size": 102561,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libdl.so",
+          "libpython3.14.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "2d85b10012ca5199682ab43772f988c1ace420dce40800c57260a8b9b44859a8",
+        "size": 95864,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "75766d5a81cae069688d1dcdbb241aecf8854cf682fd505fb8cd00d3f100dc98",
+        "size": 364921,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "c2563e150b921b6cc18b319917149dc9e9446096d96545cc95d5e8320e889898",
+        "size": 349432,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "4d3349dd1057b16f4a6fd621add175fccba60944fe3b7edebb5a434605c6c3aa",
+        "size": 86241,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "166888589b3b15eb65056e6811974c1746d784038b38a16da1ec8d5a5cb33f71",
+        "size": 73296,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "810dc05c66c806f724a57371a5dcb20404a6911d3aeb989807dfab60479e6e14",
+        "size": 69705,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libcrypto_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "1a6194fea12e95b84dfc344019d6635fc908415a41b13d1c250f2f435d9675a7",
+        "size": 58168,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "c13b132a4217c9ed6f8d3c9facd1b2ccb8000a5b5b2afd44c53d9e40fef721be",
+        "size": 35241,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "44f18f29c2838592d9850f6f68eb68d357fdab72dea5017f1bc8f87ed051275b",
+        "size": 19832,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "4a4c9fb02e3bcbdb99297c0215183c7ea331794107d6901f1438448ee0f685b8",
+        "size": 150801,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "3260d0606b09773a2952f27f04411723e4cda75b653c97a7a14495f5e91ffe9c",
+        "size": 131088,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "d8600ceee33963a62052363adf64492a24c2fa8eefb817850525fa7c1d45ecd8",
+        "size": 53121,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "13e0c5e714622ecf949e9f2e37b4da20aad906ad2573d37a28ed120bbe7fb5d7",
+        "size": 43296,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "02c847be0e0db97f054bcbd2e1e1817a7b91d39ef38db88a5754da0948c32175",
+        "size": 36233,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "a717f94216f80816945d7c744920eea33708f80a62d41d3a5fd64ebb9711cd8b",
+        "size": 27840,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "2486dd61cffdc680f18b684c671e0a4de27498f849de5024adc4a7b8ce9dd020",
+        "size": 53625,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "fe5ad9c03d49a9dfc88d37457a3bf8be8a863e8ef4d94dd7f5d8fde12bf9164b",
+        "size": 34096,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "d7d00b71cc91660403d0b9452803cca35c34b80e0f3fa2483f827de10cd2c9ff",
+        "size": 52617,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "bf5c9f0062550859ecea59d210e951e773fb77dd15a052ecac4cddd5e036df08",
+        "size": 39064,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "61686f5b2203c2a2e3784f569e5b4801b14be8deec877239ce20434712abaaa5",
+        "size": 36169,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "d68985acd7b3c60de0bd7f17850f0a950f5604812c229df233ebd8dcde42cff9",
+        "size": 27552,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "4786979e43858f1576b50bb9ab470e01e367494e44039cef4b7e2751623fc2f3",
+        "size": 250761,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "68acd8c38b4eaf08cdbe4ddb01dd8368ca3b50b4237a93050cb7a5bd19f776b8",
+        "size": 241560,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b463f5bdae4e15417a79edc65a54f61b2c54d8aa901355beb190f424b4a67187",
+        "size": 35745,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "9179e755633278091c20479aa3a34877d44afb63998cf9643971f5697bc2ff1c",
+        "size": 20872,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "14eb6de1cd847672604074a0e581271b851cbfe14074764c9f56fc1269bb4098",
+        "size": 53025,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "7e285dae588f3fa7cb1e1f7b8bac0bbd3fad5afd0d81cc327b81fe31374df921",
+        "size": 39792,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "74701df484210e57eecc18128732db270cc4d926915c1485a01570c5b9e34ae2",
+        "size": 136489,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "c65216dd9c3284b6b993e1c14d61afaa9b5efcd46219caba3b9ad98953d85967",
+        "size": 121416,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "8a446e0190c77adb058b35f417ce820177cdf782d1f6ae8a51fe670335656487",
+        "size": 35993,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "5b044e7607ba5443878ff2b9b854fd6c73f79520bc4ad86310f5d78ab5df8dee",
+        "size": 18616,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "676aa56d3baa795d62fe02d8bdd350e217ab1f1bf546722c4c1e26a7c0319512",
+        "size": 19177,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "ded4f84ab893a47edab6a4d5f2db4213c9c1356937b741043e5465783556a64c",
+        "size": 15192,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "ea395a9f8cfc2dd973e43d4169a04f3809b6a9edd6ae6f161f68c828ab1ef08d",
+        "size": 19273,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "fadc8223ec2fe2d496c5c64635857524412209580edd48feddd52914c64f7441",
+        "size": 13648,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "9955ddb12b15fa978c5b9228a0163c9de496cb5466c83c69a5727c9f7bdc14f7",
+        "size": 69025,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "695350722626be934daeeec776775fde1397c2e2add89a164afbc709fa446827",
+        "size": 61168,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "557bd0ea2d8c651fc9156d53225ee18b27887dc973c423186e9bfd06f0315132",
+        "size": 35729,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "76ecb7e716c2cc0e0d2ff1b78339c19b06cf09eb99b49ee8cd33f42e5e648f6a",
+        "size": 17960,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3ee9681c2248a5087e18c12ce9297bfa5bd774f0c8684a04997f685543a3f785",
+        "size": 52089,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "553b92792b1ef030a51a64bf84ab6bd8f1b821318953535229f15fed3490bd98",
+        "size": 48952,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b82ec1fe05b4f8a9faeebf42783cf28e9a50645dc04da0106211a7b6db6e5ff5",
+        "size": 52241,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "ad4a9d85586a65ecefbe84e9d27b53e5ae37e1ff95627baf1771c80afeb61f91",
+        "size": 41104,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3a29e64caa45af1c5acc8c1878fa40d7650ab27fd0b253659c673841bb8c3608",
+        "size": 102817,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "505c9fd67cec35d401fe5de538be2ef4b9bb07947e23938c906b061931a90892",
+        "size": 98232,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libsqlite3_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b95fd86de046f6e4bca4ec535fd7c80fed53d9bded28ac07f9879a910e8dc14b",
+        "size": 137769,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libsqlite3_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "3d1009c82bd2f2ded10a5db54c4a03592e217c962a25401189c92d2c65cf2492",
+        "size": 125616,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libssl_python.so",
+          "libcrypto_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "65f412b1338f9b5c66c1c5ba6f5e004e3f979d5df0e9ff5798d0b498229e39f7",
+        "size": 254801,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libssl_python.so",
+          "libcrypto_python.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "f9d0e896ca551a221177dfde9c27332a338782c0ba1f2e7d2163247bcd63d838",
+        "size": 233008,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "72cd00a1de2ad44a379adf22f4521ad33ec8efbc04e82f095609a6151e210d6b",
+        "size": 18729,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "88293699b20f6d31090119411e7d9c5aa66a3765fb968694a449eeacafe0c174",
+        "size": 6560,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "a79cbc80090bee23cd08d018a0a558ae7d97e8306ea314e97b9367cc557c26eb",
+        "size": 69385,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "b07249b137351f4be61e110e75d94b916aa36fd7c4202413ea9b5bd3ec3103d3",
+        "size": 51168,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "c20312d3b8fd6f4120dc70f0e3f33e40b30b1d9dd60ec4e4cb9f4e5c354213e1",
+        "size": 52561,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "dfb64b74bc6bb317029e3d387fccacbf9ad371d96a9965ef7fe63e7d52a18262",
+        "size": 40688,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3b28c5a19dd3bf96a837d9db938c6a78003b3365dff91fa3f59aca2c30111c3d",
+        "size": 373425,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "ade060dfad35056aceb254e01a67b463a514008e67e5c1702393881338ab4dc0",
+        "size": 358976,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "40b3e2640265ee9a19e64f90fcde01c3bde66ac443f1c982d4685fbc8df5c683",
+        "size": 118313,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "cf17db862d319469ce9effa9fe71f07b13205e3cf592716b8378c5f94778b9c9",
+        "size": 113000,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b0c04e43ee59cf0df239062c6e59fb24555246922559d6df4f54e14b931d6b0c",
+        "size": 18777,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "96f09c3f14468bbc7e554f4d7cf25035307639c994c83d442be0bb6111b87fe7",
+        "size": 7208,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "7385d5970d3876e781cb806f67b4c29f75832fa344b6615f8e6f3a7b0771122f",
+        "size": 18617,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "bb05f5ddaec2090d07bc520ba63cb2b83ef22db63e9a0b166eed3c31d1317d74",
+        "size": 4784,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "65d622789c8338c200a0f0d4110de35a5ec59974778da7723f74a51417d2890b",
+        "size": 105401,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "cf307ee28eec040362d7738577e04cc2a93480c6b0789f1c09dc973d88a4419b",
+        "size": 94744,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "4ee2f3e484ec4e0976bb8901af42ae40e64cae3cc4537d3f44db29c7f0ff0573",
+        "size": 205257,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "81278e78463cb9eeec16dd41d1a89513441566184fcbbe8c9651d3367f6615bd",
+        "size": 191904,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "5584680b5b58620a912dc03fd61b20c2a89afc63134a12ba2e9c40ed8e64e292",
+        "size": 36873,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "aaef9131e72e95dc9f44a146c9301f39854a62cfea6a113027ac2c49b00a585b",
+        "size": 26192,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "e3b53e7fe602217075eef6a2d9bbff5c3a415a3a8acda69377febb0051a295b7",
+        "size": 19377,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "850d05a06212629dca669c2b49c40496e4440a8ce6ba0c64ceeab78b6601e79d",
+        "size": 14392,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "2b1d22dbfd172feb8be7f544f99da918ab3007b4a1d812a388bedd7623992334",
+        "size": 19553,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "c00f6f5a6843e2afb6e0dd2b2cc18446c8d31ef528934883416cba484f9bce8b",
+        "size": 13760,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "5775a8c9ccd3422bb273ea27e740431b7d0db5e51973c737332dc5d75fdfb6b4",
+        "size": 52609,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "50fabbb703c87848864d90b07fb398b8b0ac6343c4602842dfebc90f98d76c95",
+        "size": 34600,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "0294556483aeb375b193591c0fa380f4f5c54d5cf9981327c6bcf6638a7d495f",
+        "size": 2015433,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "d00a50816eb097760b065b3b26d26803bfc3e2c4a2a3e54fd19522211deb13f5",
+        "size": 1995256,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "6522a5dcc88cc70343184543f385cc89ed0a6748f308cce17d512f6ea9819294",
+        "size": 69689,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "63b4ac7c0300e99f492c3c91051bd45b147175ec4f73000b63c61eb8f128f9bf",
+        "size": 59576,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "8f29fa281538dc47c1190e07c0b98e1c5f7b4613a45c5e28ce1cda0ff2c08cdc",
+        "size": 35577,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "d90b13e67647f6828ec93a441e14507a8ce7ba708d4fc94b92124f5b178dcdb0",
+        "size": 23928,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "02936255c271c8ed0a5c80a6cb6ceb01e62024f34ebb97f2b26ea832bcf8791b",
+        "size": 51761,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "28fe3bd5cfb3b7edd5e8c6846702421633ae2f3c3c7263914b1c0bf22712f792",
+        "size": 36736,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "3ae86d5c81264bfa33276f74796692b5beffcb5a757ff3c406e81ae33acd6f2b",
+        "size": 35561,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "00544ebb34a9d7872ca7201af170392e246a7877315a9d351bc3139d3fb0677a",
+        "size": 17864,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "f97fac2d82392fae3ac0c3cf2c3f64f3e40a835deadf63ed80b8edf092176219",
+        "size": 68905,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "dbc128b15fed04814498d69fee5f89f1c9f1751d9d0697f5ac27eb2bbc2bc3fb",
+        "size": 65136,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "cfbcd9a6b0abad2a197192d9c2ce69bd45afc06e22aef22259d52e0a117ab8fe",
+        "size": 36041,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "b8441f04e2d54e0a891b0cc31360a93ef22642eee714568d227474dcccb0a9ca",
+        "size": 30784,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "93e575c4a8eca019a85b0a2311f2171ed196ad262ac1c1c210432ddca99e8526",
+        "size": 249489,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "18ff8580dd017861337be73bdbd47fc5701bbf807b9c886b246fc466ac58308b",
+        "size": 234656,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "618c7ad855a7d646292c4cf86604a7e54687be1e7538f1c7ca797f5090107388",
+        "size": 19209,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "e96e5bef2c6cc553bf4148453198879c8e6a94aa243b4993d5c7095332a3748c",
+        "size": 15344,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "a56054554955617095622d2128a77e5ed69d18b82b1d95c6b60bdd3758e8f200",
+        "size": 36145,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "83082513ac140b7d9a2966b88e6ef2f08d8b29796e66c33ae9c28786ba5db336",
+        "size": 29008,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "b9f1f53e0c6a61b996fbb2ee17fddef540067059c013ec67845abb4e46ed9258",
+        "size": 19137,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "38f30364553113e75decb9f9ad6f298ecc543181a6d46dcc5f247bfa33d5bbe3",
+        "size": 12752,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "f2d234a12bf95e07d0367225b1244a498f16fdb5bcb6e08f9d2c9ab1b9a46e97",
+        "size": 35577,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "08dc631a6e93236f339e26284dafcedf573a5f97eb32f07860ce7b381dae7b93",
+        "size": 28064,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "163ac2e994c37248d3ed5325e26350b1794fbce9e2507ec1efd8ada4ed09b889",
+        "size": 756705,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "1068318bf8dc933497793d878a1a0098cbdb6769ea4c99057355bf4f94e092b5",
+        "size": 743240,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "d33430b0564176780de9b536b75d7dced28a56ee98f22c00c109227ab88b3c89",
+        "size": 19177,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "24521eae69c20c997cf95fa68a8d12895d064abd8ab66be199bd46b443f1e66e",
+        "size": 10800,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "e30326750bb1cd71e96a95aa85fbc233f9b71107bcd75232671601dfda800db7",
+        "size": 19089,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "b7da8e474bdfe350721b7df825ff2a1033a72e18ecaca99c3a29533ddbaa9ada",
+        "size": 9776,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "4a478271718aae94a2ee990bd769e2e59b7ebea73adf634298ddc0d82589976b",
+        "size": 18785,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "6d0b0f5e8909ae2d176f9b731a0997dd06da6959f082777533500ef193a25fe9",
+        "size": 9584,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    },
+    {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../.."
+        ],
+        "sha256": "d65b668a6d8aa111b24e8795f6549de806445e4d47ae2bfb1199d42354bda7b5",
+        "size": 52489,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_16k_compatible": true,
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 4,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "alignment_preserved": true,
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libm.so",
+          "libz.so",
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "f07859d9032977ef9d471ada7192dc66ed893091a0c910d3ea822bba6edd592a",
+        "size": 43720,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_mutation_check": true,
+      "expected_runpath": "$ORIGIN/../..",
+      "mutated": true,
+      "mutation": "set-dt-runpath",
+      "mutation_command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../..",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so"
+      ],
+      "path": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+      "reason": "complete-per-object-relative-native-closure"
+    }
+  ],
+  "patchelf_capabilities": {
+    "command": "patchelf",
+    "help_excerpt": [
+      "  [--page-size SIZE]"
+    ],
+    "help_returncode": 0,
+    "page_size_supported": true
+  },
+  "patchelf_version": "patchelf 0.19.1",
+  "readelf_version": [
+    "LLVM (http://llvm.org/):"
+  ],
+  "schema_version": 1,
+  "selected_launcher_variant": "LA-2",
+  "selected_loader_variant": "LR-3",
+  "transformed_elf_count": 81
+}

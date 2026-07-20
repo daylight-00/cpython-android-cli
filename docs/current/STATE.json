@@ -71,6 +71,12 @@
       "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
       "role": "truthful Astral-style local artifact and metadata prototype for the official binary-derived package",
       "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+    },
+    {
+      "id": "e2-r1-ut2-loader-relocation-launcher-getpath",
+      "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+      "role": "bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence",
+      "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
     }
   ],
   "active_plan": {
@@ -112,10 +118,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+    "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+    "resume_program_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
     "status": "completed"
   },
   "documentation_layers": {
@@ -139,10 +145,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+  "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
   "predecessor": {
-    "commit": "1f697d9363a60eac0655499fd0baf7db80ee9703",
-    "tree": "3b3a398f4d027b6963ebd11a167bb5d085388b29"
+    "commit": "ffdc2ebe65cf2e11a74c08bbdaab5cba1a54351f",
+    "tree": "bec2af6ce3894d34b109cf5ea532364843404c15"
   },
   "program": {
     "epoch": {
@@ -151,11 +157,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/UT-2",
-      "name": "Loader, relocation, launcher, and getpath",
+      "id": "E2-R1/UT-3",
+      "name": "Sysconfig and native-extension SDK",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+    "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
     "status": "active"
   },
   "project_model": {
@@ -196,22 +202,22 @@
     "sha256": "216f4c5e4e2c3c5a1930d8bcbeb6b43c4fe3417bac49cfebad8801f0c8ed1f15"
   },
   "state_kind": "project-current-state",
-  "state_revision": 8,
+  "state_revision": 9,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "aac7129cbb11fd6a1126787774f2f7da1cac77bbd72523226aecfed35ef9b1ed"
+    "sha256": "81446eb1f20a8e8f22fdd1e9df8b3f6f0eadf43442a25ca1fb2c245824443467"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
-    "pass_successor_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "current_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "pass_successor_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "The official package has no interpreter executable; UT-2 must select and qualify only evidenced launcher, loader, getpath, and relocation behavior before any artifact can become runnable or selectable."
+    "UT-3 must normalize every active runtime and consumer metadata path and prove a real Android-tagged native-extension wheel build/install/import/relocation path before any SDK or product surface is selectable."
   ],
-  "updated_by_transaction": "20260720-e2-r1-ut1-astral-artifact-and-metadata-prototype-v1"
+  "updated_by_transaction": "20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5"
 }

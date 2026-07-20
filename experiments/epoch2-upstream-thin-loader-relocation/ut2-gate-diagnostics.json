@@ -1,0 +1,25 @@
+{
+  "exit_condition": {
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures": 0,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges": 0,
+    "whole_prefix_relocation_pass": true
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "all_16k_compatible": true,
+    "all_alignment_preserved": true,
+    "all_exact_mutations": true,
+    "android_api_compatible": true,
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures_zero": true,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges_zero": true,
+    "whole_prefix_relocation_pass": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

@@ -126,8 +126,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 — Exact official upstream control",
-          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 \u2014 Exact official upstream control",
+          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -266,8 +266,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -408,8 +408,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -419,18 +419,90 @@
     {
       "action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
       "activation": {
-        "prerequisites_satisfied": false,
+        "accepted_authority_path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+        "accepted_authority_sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2",
+        "prerequisites_satisfied": true,
         "required_authority_role": "loader-relocation-launcher-getpath",
         "required_predecessor_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
-        "status": "blocked-on-predecessor-authority"
+        "status": "ready"
       },
       "claim_boundary": {
-        "android_runtime_claim": false,
+        "android_runtime_claim": true,
         "device_qualification_claim": false,
         "epoch3_selection_claim": false,
         "official_upstream_identity_claim": true,
         "product_selectability_claim": false,
         "publication_claim": false
+      },
+      "completion_contract": {
+        "always": {
+          "all_required_verifiers_must_pass": true,
+          "clean_main_and_bundle_export_ready_on_close": true,
+          "forbidden_new_authority_bindings": [
+            "docs/current/STATE.json",
+            "docs/current/AGENT_TASK.json",
+            "README.md",
+            "docs/CURRENT_CONTEXT.md",
+            "docs/INDEX.md"
+          ],
+          "generated_views_must_be_regenerated": true,
+          "new_markdown_or_json_requires_registry_update": true,
+          "one_runner_and_complete_receipt_required": true
+        },
+        "contract_version": 1,
+        "fail": {
+          "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
+          "complete_receipt_required": true,
+          "correction_task_must_be_cataloged": true,
+          "correction_task_must_resume_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+          "required_failure_records": [
+            "first-meaningful-failure",
+            "failure-classification",
+            "blocked-downstream",
+            "claim-boundary"
+          ],
+          "required_state_updates": [
+            "state_revision",
+            "predecessor",
+            "active_work_package",
+            "blockers",
+            "unresolved_risks",
+            "updated_by_transaction"
+          ]
+        },
+        "pass": {
+          "required_catalog_updates": [
+            "bind-accepted-authority-into-successor",
+            "activate-successor-task",
+            "define-successor-completion-contract-before-selection"
+          ],
+          "required_output_namespace": "experiments/epoch2-upstream-thin-sysconfig-sdk/",
+          "required_output_roles": [
+            "absolute-path-census",
+            "runtime-path-normalization",
+            "consumer-metadata-normalization",
+            "native-extension-wheel-evidence",
+            "sdk-flavor-decision",
+            "independent-audit",
+            "machine-authority",
+            "evidence-freeze"
+          ],
+          "required_state_updates": [
+            "state_revision",
+            "predecessor",
+            "accepted_authorities",
+            "program.gate",
+            "program.next_action_class",
+            "next_action_class",
+            "control_work.next_action_class",
+            "control_work.resume_program_action_class",
+            "unresolved_risks",
+            "updated_by_transaction"
+          ],
+          "successor_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+          "successor_must_exist": true,
+          "successor_task_id": "E2-R1-UT-4"
+        }
       },
       "default_exclusions": [
         "docs/history/**",
@@ -471,6 +543,11 @@
           "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
           "reason": "Frozen truthful Astral-style artifact and metadata prototype for the binary-derived official package.",
           "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "reason": "Frozen Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation authority.",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
         }
       ],
       "required_reads": [
@@ -478,12 +555,87 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
       "title": "Sysconfig and native-extension SDK",
+      "work_class": "L"
+    },
+    {
+      "action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+      "activation": {
+        "prerequisites_satisfied": false,
+        "required_authority_role": "sysconfig-and-native-extension-sdk",
+        "required_predecessor_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+        "status": "blocked-on-predecessor-authority"
+      },
+      "claim_boundary": {
+        "android_runtime_claim": true,
+        "device_qualification_claim": false,
+        "epoch3_selection_claim": false,
+        "official_upstream_identity_claim": true,
+        "product_selectability_claim": false,
+        "publication_claim": false
+      },
+      "default_exclusions": [
+        "docs/history/**",
+        "docs/handoff/**",
+        "docs/stages/**",
+        "unrelated-evidence",
+        "unrelated-experiments",
+        "roadmap-outside-selected-section",
+        "past-chat-transcripts"
+      ],
+      "deliverable": {
+        "class": "local-artifact-evidence-and-repository-transaction",
+        "owner_interface": "one-runner",
+        "result": "complete-pass-or-fail-receipt"
+      },
+      "goal": "Define host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv writable-state, and read-only-install policies for Android.",
+      "input_routing": {
+        "fallback": "one bounded owner-run acquisition runner",
+        "first_attempt": "google-drive-connector",
+        "forbidden": [
+          "curl-or-wget-in-assistant-environment",
+          "github-connector-or-api",
+          "network-git"
+        ]
+      },
+      "required_authorities": [
+        {
+          "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+          "reason": "Frozen authority for the detailed remaining-work and completion-gate plan.",
+          "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "reason": "Frozen exact official Python.org Android package, topology, dependency, and provenance authority.",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+          "reason": "Frozen truthful Astral-style artifact and metadata prototype for the binary-derived official package.",
+          "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "reason": "Frozen Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation authority.",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        }
+      ],
+      "required_reads": [
+        {
+          "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
+          "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
+          "scope": "section",
+          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
+        }
+      ],
+      "task_id": "E2-R1-UT-4",
+      "title": "Android-mandatory data and writable-state policy",
       "work_class": "L"
     }
   ]

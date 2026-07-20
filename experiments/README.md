@@ -160,6 +160,21 @@
 - [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](epoch2-upstream-thin-control/upstream-control-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-control/upstream-input-manifest.json`](epoch2-upstream-thin-control/upstream-input-manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-loader-relocation`
+
+- [`experiments/epoch2-upstream-thin-loader-relocation/README.md`](epoch2-upstream-thin-loader-relocation/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/evidence-freeze.md`](epoch2-upstream-thin-loader-relocation/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/executable-discovery-matrix.json`](epoch2-upstream-thin-loader-relocation/executable-discovery-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/independent-audit.json`](epoch2-upstream-thin-loader-relocation/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/launcher-build-evidence.json`](epoch2-upstream-thin-loader-relocation/launcher-build-evidence.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/launcher-variant-matrix.json`](epoch2-upstream-thin-loader-relocation/launcher-variant-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json`](epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/loader-variant-matrix.json`](epoch2-upstream-thin-loader-relocation/loader-variant-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/native-loader-evidence.json`](epoch2-upstream-thin-loader-relocation/native-loader-evidence.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/official-extraction-verification.json`](epoch2-upstream-thin-loader-relocation/official-extraction-verification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/relocation-results.json`](epoch2-upstream-thin-loader-relocation/relocation-results.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-loader-relocation/ut2-gate-diagnostics.json`](epoch2-upstream-thin-loader-relocation/ut2-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-plan`
 
 - [`experiments/epoch2-upstream-thin-plan/README.md`](epoch2-upstream-thin-plan/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`

@@ -1,0 +1,115 @@
+{
+  "exit_condition": {
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures": 0,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges": 0,
+    "whole_prefix_relocation_pass": true
+  },
+  "gate_condition": {
+    "all_16k_compatible": true,
+    "all_alignment_preserved": true,
+    "all_exact_mutations": true,
+    "android_api_compatible": true,
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures_zero": true,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges_zero": true,
+    "whole_prefix_relocation_pass": true
+  },
+  "location_a": {
+    "child_reentry_pass": true,
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+      "-c",
+      "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+    ],
+    "data": {
+      "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+      "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+      "child": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"ld\": null}\n"
+      },
+      "dlopen": {
+        "lib/engines-3/afalg.so": "pass",
+        "lib/ossl-modules/legacy.so": "pass",
+        "libcrypto_python.so": "pass",
+        "libsqlite3_python.so": "pass",
+        "libssl_python.so": "pass"
+      },
+      "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14",
+      "extension_count": 67,
+      "extension_failures": {},
+      "ld_library_path": null,
+      "path": [
+        "",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages"
+      ],
+      "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix",
+      "self_reexec": null
+    },
+    "dlopen_pass": true,
+    "ld_library_path_absent": true,
+    "required_extension_failures": 0,
+    "returncode": 0,
+    "self_reexec_absent": true,
+    "startup_pass": true,
+    "stderr": "",
+    "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-a/prefix\", \"self_reexec\": null}\n"
+  },
+  "location_b_after_whole_prefix_move": {
+    "child_reentry_pass": true,
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14",
+      "-c",
+      "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+    ],
+    "data": {
+      "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14",
+      "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix",
+      "child": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\", \"ld\": null}\n"
+      },
+      "dlopen": {
+        "lib/engines-3/afalg.so": "pass",
+        "lib/ossl-modules/legacy.so": "pass",
+        "libcrypto_python.so": "pass",
+        "libsqlite3_python.so": "pass",
+        "libssl_python.so": "pass"
+      },
+      "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14",
+      "extension_count": 67,
+      "extension_failures": {},
+      "ld_library_path": null,
+      "path": [
+        "",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python314.zip",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/lib-dynload",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/site-packages"
+      ],
+      "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix",
+      "self_reexec": null
+    },
+    "dlopen_pass": true,
+    "ld_library_path_absent": true,
+    "required_extension_failures": 0,
+    "returncode": 0,
+    "self_reexec_absent": true,
+    "startup_pass": true,
+    "stderr": "",
+    "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/discovery/location-b/prefix\", \"self_reexec\": null}\n"
+  },
+  "schema_version": 1,
+  "subprocess_child_reentry_pass": true,
+  "whole_prefix_relocation_pass": true
+}

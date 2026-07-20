@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+  "extraction": {
+    "material_member_count": 3193,
+    "normalized_unique_count": 3193
+  },
+  "prefix_verification": {
+    "checked": 3152,
+    "errors": [],
+    "expected": 3152,
+    "pass": true
+  },
+  "schema_version": 1
+}

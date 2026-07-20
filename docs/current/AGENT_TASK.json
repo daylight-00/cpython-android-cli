@@ -1,6 +1,6 @@
 {
   "claim_boundary": {
-    "android_runtime_claim": false,
+    "android_runtime_claim": true,
     "device_qualification_claim": false,
     "epoch3_selection_claim": false,
     "official_upstream_identity_claim": true,
@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -49,13 +49,13 @@
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-loader-relocation/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-sysconfig-sdk/",
       "required_output_roles": [
-        "loader-variant-matrix",
-        "launcher-variant-matrix",
-        "executable-discovery-matrix",
-        "native-loader-evidence",
-        "relocation-results",
+        "absolute-path-census",
+        "runtime-path-normalization",
+        "consumer-metadata-normalization",
+        "native-extension-wheel-evidence",
+        "sdk-flavor-decision",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -72,9 +72,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+      "successor_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-3"
+      "successor_task_id": "E2-R1-UT-4"
     }
   },
   "default_exclusions": [
@@ -107,8 +107,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-2",
-    "name": "Loader, relocation, launcher, and getpath",
+    "id": "E2-R1/UT-3",
+    "name": "Sysconfig and native-extension SDK",
     "status": "ready"
   },
   "required_authorities": [
@@ -126,24 +126,29 @@
       "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
       "reason": "Frozen truthful Astral-style artifact and metadata prototype for the binary-derived official package.",
       "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+      "reason": "Frozen Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation authority.",
+      "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
+      "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
       "scope": "section",
-      "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
-      "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
+      "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
+      "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
     }
   ],
   "schema_version": 2,
-  "state_revision": 8,
+  "state_revision": 9,
   "task": {
-    "action_class": "execute-e2-r1-ut2-loader-relocation-launcher-getpath",
-    "goal": "Determine whether the official binaries satisfy the standalone relocation contract without process-global loader workarounds, and select only evidenced launcher/getpath behavior.",
-    "id": "E2-R1-UT-2",
-    "title": "Loader, relocation, launcher, and getpath",
+    "action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "goal": "Normalize runtime and development metadata and prove a real Android native-extension wheel build, install, import, and supported relocation path.",
+    "id": "E2-R1-UT-3",
+    "title": "Sysconfig and native-extension SDK",
     "work_class": "L"
   }
 }

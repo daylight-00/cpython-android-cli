@@ -1,0 +1,1669 @@
+{
+  "exit_condition": {
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures": 0,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges": 0,
+    "whole_prefix_relocation_pass": true
+  },
+  "gate_condition": {
+    "all_16k_compatible": true,
+    "all_alignment_preserved": true,
+    "all_exact_mutations": true,
+    "android_api_compatible": true,
+    "loader_bootstrap_self_reexec_absent": true,
+    "project_required_LD_LIBRARY_PATH_absent": true,
+    "required_extension_failures_zero": true,
+    "subprocess_child_reentry_pass": true,
+    "unresolved_internal_edges_zero": true,
+    "whole_prefix_relocation_pass": true
+  },
+  "lr4": {
+    "launcher": "LA-2",
+    "pass": true,
+    "probe": {
+      "child_reentry_pass": true,
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix",
+        "child": {
+          "rc": 0,
+          "stderr": "",
+          "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\", \"ld\": null}\n"
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass",
+          "libcrypto_python.so": "pass",
+          "libsqlite3_python.so": "pass",
+          "libssl_python.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix",
+        "self_reexec": null
+      },
+      "dlopen_pass": true,
+      "ld_library_path_absent": true,
+      "required_extension_failures": 0,
+      "returncode": 0,
+      "self_reexec_absent": true,
+      "startup_pass": true,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr4/prefix\", \"self_reexec\": null}\n"
+    },
+    "selected_from": "LR-3"
+  },
+  "pass": true,
+  "schema_version": 1,
+  "selected_input_variant": "LR-3",
+  "variants": [
+    {
+      "closure": {
+        "checked_internal_edges": 79,
+        "unresolved": [
+          {
+            "consumer": "prefix/lib/engines-3/afalg.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/capi.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/loader_attic.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/padlock.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libpython3.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl_python.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/ossl-modules/legacy.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libsqlite3_python.so",
+            "provider_paths": [
+              "prefix/lib/libsqlite3.so",
+              "prefix/lib/libsqlite3_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libssl_python.so",
+            "provider_paths": [
+              "prefix/lib/libssl.so",
+              "prefix/lib/libssl_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          }
+        ],
+        "unresolved_internal_edges": 79
+      },
+      "control_pass": false,
+      "description": "lr0",
+      "exit_candidate_pass": false,
+      "probe": {
+        "child_reentry_pass": true,
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14",
+          "-c",
+          "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+        ],
+        "data": {
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix",
+          "child": {
+            "rc": 0,
+            "stderr": "",
+            "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\", \"ld\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib\"}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass",
+            "libcrypto_python.so": "pass",
+            "libsqlite3_python.so": "pass",
+            "libssl_python.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib",
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix",
+          "self_reexec": "1"
+        },
+        "dlopen_pass": true,
+        "ld_library_path_absent": false,
+        "required_extension_failures": 0,
+        "returncode": 0,
+        "self_reexec_absent": false,
+        "startup_pass": true,
+        "stderr": "",
+        "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\\\", \\\"ld\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib\\\"}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib\", \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix\", \"self_reexec\": \"1\"}\n"
+      },
+      "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_0/prefix",
+      "variant": "LR-0"
+    },
+    {
+      "closure": {
+        "checked_internal_edges": 79,
+        "unresolved": [
+          {
+            "consumer": "prefix/lib/engines-3/afalg.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/capi.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/loader_attic.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/padlock.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libpython3.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl_python.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/ossl-modules/legacy.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libsqlite3_python.so",
+            "provider_paths": [
+              "prefix/lib/libsqlite3.so",
+              "prefix/lib/libsqlite3_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libssl_python.so",
+            "provider_paths": [
+              "prefix/lib/libssl.so",
+              "prefix/lib/libssl_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          }
+        ],
+        "unresolved_internal_edges": 79
+      },
+      "control_pass": false,
+      "description": "lr1",
+      "exit_candidate_pass": false,
+      "probe": {
+        "child_reentry_pass": false,
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/bin/python3.14",
+          "-c",
+          "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+        ],
+        "data": {
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix",
+          "child": {
+            "rc": 1,
+            "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/ssl.py\", line 100, in <module>\n    import _ssl             # if we can't import it, let the error propagate\n    ^^^^^^^^^^^\nImportError: dlopen failed: library \"libssl_python.so\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so in namespace (default)\n",
+            "stdout": ""
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass",
+            "libcrypto_python.so": "pass",
+            "libsqlite3_python.so": "pass",
+            "libssl_python.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {
+            "_hashlib": "ImportError:dlopen failed: library \"libcrypto_python.so\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so in namespace (default)",
+            "_sqlite3": "ImportError:dlopen failed: library \"libsqlite3_python.so\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so in namespace (default)",
+            "_ssl": "ImportError:dlopen failed: library \"libssl_python.so\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so in namespace (default)"
+          },
+          "ld_library_path": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix",
+          "self_reexec": null
+        },
+        "dlopen_pass": true,
+        "ld_library_path_absent": true,
+        "required_extension_failures": 3,
+        "returncode": 0,
+        "self_reexec_absent": true,
+        "startup_pass": true,
+        "stderr": "",
+        "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix\", \"child\": {\"rc\": 1, \"stderr\": \"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 1, in <module>\\n    import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\\\"executable\\\":sys.executable,\\\"prefix\\\":sys.prefix,\\\"base_prefix\\\":sys.base_prefix,\\\"ld\\\":os.environ.get(\\\"LD_LIBRARY_PATH\\\")}))\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/ssl.py\\\", line 100, in <module>\\n    import _ssl             # if we can't import it, let the error propagate\\n    ^^^^^^^^^^^\\nImportError: dlopen failed: library \\\"libssl_python.so\\\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so in namespace (default)\\n\", \"stdout\": \"\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {\"_hashlib\": \"ImportError:dlopen failed: library \\\"libcrypto_python.so\\\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so in namespace (default)\", \"_sqlite3\": \"ImportError:dlopen failed: library \\\"libsqlite3_python.so\\\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so in namespace (default)\", \"_ssl\": \"ImportError:dlopen failed: library \\\"libssl_python.so\\\" not found: needed by /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so in namespace (default)\"}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix\", \"self_reexec\": null}\n"
+      },
+      "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_1/prefix",
+      "variant": "LR-1"
+    },
+    {
+      "closure": {
+        "checked_internal_edges": 79,
+        "unresolved": [
+          {
+            "consumer": "prefix/lib/engines-3/afalg.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/capi.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/loader_attic.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/engines-3/padlock.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libpython3.so",
+            "consumer_runpath": [],
+            "needed": "libpython3.14.so",
+            "provider_paths": [
+              "prefix/lib/libpython3.14.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/libssl_python.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          },
+          {
+            "consumer": "prefix/lib/ossl-modules/legacy.so",
+            "consumer_runpath": [],
+            "needed": "libcrypto_python.so",
+            "provider_paths": [
+              "prefix/lib/libcrypto.so",
+              "prefix/lib/libcrypto_python.so"
+            ]
+          }
+        ],
+        "unresolved_internal_edges": 8
+      },
+      "control_pass": false,
+      "description": "lr2",
+      "exit_candidate_pass": false,
+      "probe": {
+        "child_reentry_pass": true,
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14",
+          "-c",
+          "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+        ],
+        "data": {
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix",
+          "child": {
+            "rc": 0,
+            "stderr": "",
+            "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\", \"ld\": null}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass",
+            "libcrypto_python.so": "pass",
+            "libsqlite3_python.so": "pass",
+            "libssl_python.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix",
+          "self_reexec": null
+        },
+        "dlopen_pass": true,
+        "ld_library_path_absent": true,
+        "required_extension_failures": 0,
+        "returncode": 0,
+        "self_reexec_absent": true,
+        "startup_pass": true,
+        "stderr": "",
+        "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix\", \"self_reexec\": null}\n"
+      },
+      "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_2/prefix",
+      "variant": "LR-2"
+    },
+    {
+      "closure": {
+        "checked_internal_edges": 79,
+        "unresolved": [],
+        "unresolved_internal_edges": 0
+      },
+      "control_pass": true,
+      "description": "lr3",
+      "exit_candidate_pass": true,
+      "probe": {
+        "child_reentry_pass": true,
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14",
+          "-c",
+          "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+        ],
+        "data": {
+          "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14",
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix",
+          "child": {
+            "rc": 0,
+            "stderr": "",
+            "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\", \"ld\": null}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass",
+            "libcrypto_python.so": "pass",
+            "libsqlite3_python.so": "pass",
+            "libssl_python.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": null,
+          "path": [
+            "",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python314.zip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/site-packages"
+          ],
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix",
+          "self_reexec": null
+        },
+        "dlopen_pass": true,
+        "ld_library_path_absent": true,
+        "required_extension_failures": 0,
+        "returncode": 0,
+        "self_reexec_absent": true,
+        "startup_pass": true,
+        "stderr": "",
+        "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix\", \"self_reexec\": null}\n"
+      },
+      "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5-20260720T020316Z-22111/ut2-experiment/runtimes/lr_3/prefix",
+      "variant": "LR-3"
+    }
+  ]
+}

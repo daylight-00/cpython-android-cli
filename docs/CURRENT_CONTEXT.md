@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 8
+> **State revision:** 9
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut2-loader-relocation-launcher-getpath
-work gate       E2-R1/UT-2 — Loader, relocation, launcher, and getpath
+action          execute-e2-r1-ut3-sysconfig-and-native-extension-sdk
+work gate       E2-R1/UT-3 — Sysconfig and native-extension SDK
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-2 — Loader, relocation, launcher, and getpath
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-2 — Loader, relocation, launcher, and getpath
+gate    E2-R1/UT-3 — Sysconfig and native-extension SDK
 status  ready
 ```
 
@@ -43,6 +43,7 @@ status  ready
 10. [`experiments/agent-task-completion/agent-task-completion-authority.json`](../experiments/agent-task-completion/agent-task-completion-authority.json) — task PASS/FAIL/update routing, successor readiness, and state/module/plan identity enforcement
 11. [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](../experiments/epoch2-upstream-thin-control/upstream-control-authority.json) — exact official Python.org Android package, topology, dependency, and provenance control
 12. [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json`](../experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json) — truthful Astral-style local artifact and metadata prototype for the official binary-derived package
+13. [`experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json`](../experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json) — bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence
 
 ## Blockers
 
@@ -50,6 +51,6 @@ None.
 
 ## Unresolved risks
 
-- The official package has no interpreter executable; UT-2 must select and qualify only evidenced launcher, loader, getpath, and relocation behavior before any artifact can become runnable or selectable.
+- UT-3 must normalize every active runtime and consumer metadata path and prove a real Android-tagged native-extension wheel build/install/import/relocation path before any SDK or product surface is selectable.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

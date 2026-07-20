@@ -1,0 +1,140 @@
+{
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut2-loader-relocation-launcher-getpath",
+  "claim_boundary": {
+    "artifact_representation": true,
+    "bounded_android_runtime": true,
+    "device_qualification": false,
+    "epoch3_selection": false,
+    "launcher_and_getpath_boundary": true,
+    "official_upstream_identity": true,
+    "product_selectability": false,
+    "publication": false,
+    "relative_native_loader_closure": true,
+    "whole_prefix_relocation": true
+  },
+  "device": {
+    "android_api": 36,
+    "api_compatible": true,
+    "api_probe": {
+      "command": [
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "parsed_android_api": 36,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "36\n"
+    },
+    "execution_context": "Termux app process in Android linker namespace",
+    "minimum_package_api": 24,
+    "uname": "Linux localhost 5.10.236-android12-9-31998796-abS908NKSS9GZE5 #1 SMP PREEMPT Tue May 12 12:31:59 UTC 2026 aarch64 Android"
+  },
+  "executable_boundary": {
+    "absolute_in_tree_symlink": true,
+    "altered_argv0": false,
+    "copied_executable_without_prefix": false,
+    "direct_real_path": true,
+    "external_symlink": true,
+    "patch_level_base_replacement": true,
+    "pre_existing_copy_venv_after_base_move": false,
+    "pre_existing_venv_after_base_move": false,
+    "relative_in_tree_symlink": true,
+    "runtime_moved_before_fresh_venv_creation": true,
+    "venv_copy_mode": false,
+    "venv_symlink_mode": true
+  },
+  "file_identities": {
+    "audit_loader_relocation.py": "fb19b75de61869a4565752e17cd26e6d15f4cb6082eb0d009dc990ebdff7f001",
+    "executable-discovery-matrix.json": "bf7fa4fcdf47ff93be4b47075a79be2953234593c5023ea7c57b82715efe799b",
+    "finalize_loader_relocation.py": "cb11d5638295ec6ab309a8293c4fa8af49406e300a9e568ba19bd0733fb1bc09",
+    "independent-audit.json": "2af72544be4da405f3fce5974d1871ede708eb0e8ced70f913977d88e2edc9a5",
+    "launcher-build-evidence.json": "a0c25cdfef6f657396cc1bc4b20ae76ffe37241f035d6b4faa8a043c3accf494",
+    "launcher-variant-matrix.json": "13848cd8130c9e096abad3c4b7b1e7471137ef32374b5d87adee2f4641a155d1",
+    "launcher_la0_pyconfig.c": "b60f1955fd8dab127b61d6923ee69c1776a07eefc300184637e472bfaa854e18",
+    "launcher_la1_bytesmain.c": "afb46812b73e4684e225c3bd9670a689ad56b6ccc670fa5b0a42880a5cae5b3d",
+    "launcher_la2_programs_python.c": "15b38b3acf1e3861fb036fe593de1e002e30bdb1be113c005330055bc6dbfbfd",
+    "launcher_la3_android_signal.c": "7a86351914d4ec5ba1a23126f0ef003e497d370b39b41c85313b5e68fb1b8dc9",
+    "launcher_lr0_self_reexec.c": "876e3653e27c15136f962d213269a0f76658985fd65956b8cfae632303f36d46",
+    "loader-variant-matrix.json": "6c0a71bf0b2613602f35f20524ada3a070a1d8f1924fad9d914a5015e0d534a5",
+    "native-loader-evidence.json": "def87a7e2d3130413615e145e05e4ef168f3d2966612a9550adda691e322cda8",
+    "official-extraction-verification.json": "f9e1b340cb340d68724e0fe895db6ea804285919230d37ed1bfa145a29029d3d",
+    "relocation-results.json": "4f3d1a4ab4ceb5e8c0718cbe052f5f7b3d507d034bec2fb169d004a84378a47f",
+    "run-ut2-loader-relocation-launcher-getpath.sh": "351a56b746a1c94b23f74fd393fd51aca5499cf3f64c259f2923e3e1b2ec5fa6",
+    "run_loader_relocation_experiment.py": "5bc48abbc2e0aa011230baa7abe4f8fc1dac64f24f6650e4f74ed495036605b1",
+    "test_verify_loader_relocation.py": "747dd0f916dfa4911d84d713c0d49a7da0637634acd0970c5976fdb374952103",
+    "ut2-gate-diagnostics.json": "300ad9987c57c29d4bfb4ebb36b2b7a456c29f965cbd4f084d584ed9be4952d2",
+    "verify_loader_relocation.py": "e755db326cd531b2ff0ecc4f87ea6ca6b3cbe5c4e696c1d919514cbc0cb412ba"
+  },
+  "native_loader": {
+    "alignment_policy": "Existing PT_LOAD count may grow but may not shrink; every pre/post PT_LOAD p_align must remain exactly 0x4000.",
+    "all_16k_compatible": true,
+    "all_alignment_preserved": true,
+    "all_exact_mutations": true,
+    "bounded_bionic_checks": {
+      "dlopen": true,
+      "minimum_api": true,
+      "modern_linker_namespace": true,
+      "origin_direct_lookup": true,
+      "transitive_extension_lookup": true
+    },
+    "patchelf_capabilities": {
+      "command": "patchelf",
+      "help_excerpt": [
+        "  [--page-size SIZE]"
+      ],
+      "help_returncode": 0,
+      "page_size_supported": true
+    },
+    "transformed_elf_count": 81
+  },
+  "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+  "predecessor": {
+    "commit": "ffdc2ebe65cf2e11a74c08bbdaab5cba1a54351f",
+    "tree": "bec2af6ce3894d34b109cf5ea532364843404c15"
+  },
+  "relocation": {
+    "subprocess_child_reentry_pass": true,
+    "whole_prefix_relocation_pass": true
+  },
+  "schema_version": 1,
+  "selection": {
+    "clean_candidate": "LR-4",
+    "exit_condition": {
+      "loader_bootstrap_self_reexec_absent": true,
+      "project_required_LD_LIBRARY_PATH_absent": true,
+      "required_extension_failures": 0,
+      "subprocess_child_reentry_pass": true,
+      "unresolved_internal_edges": 0,
+      "whole_prefix_relocation_pass": true
+    },
+    "gate_condition": {
+      "all_16k_compatible": true,
+      "all_alignment_preserved": true,
+      "all_exact_mutations": true,
+      "android_api_compatible": true,
+      "loader_bootstrap_self_reexec_absent": true,
+      "project_required_LD_LIBRARY_PATH_absent": true,
+      "required_extension_failures_zero": true,
+      "subprocess_child_reentry_pass": true,
+      "unresolved_internal_edges_zero": true,
+      "whole_prefix_relocation_pass": true
+    },
+    "launcher_sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+    "launcher_variant": "LA-2",
+    "loader_variant": "LR-3"
+  },
+  "status": "frozen-pass-bounded-android-runtime-and-relocation",
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "33/33",
+    "negative_fixtures": "required-before-transaction"
+  }
+}
