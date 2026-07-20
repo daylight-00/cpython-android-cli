@@ -1,0 +1,306 @@
+{
+  "extraction": {
+    "material_member_count": 3193,
+    "normalized_unique_count": 3193
+  },
+  "launcher": {
+    "binary": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/launcher-build/la_2",
+    "binary_sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+    "build_command": [
+      "clang",
+      "-fPIE",
+      "-pie",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-pthread",
+      "-Wl,-z,max-page-size=16384",
+      "-Wl,-z,common-page-size=16384",
+      "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14",
+      "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la2_programs_python.c",
+      "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib",
+      "-lpython3.14",
+      "-ldl",
+      "-lm",
+      "-llog",
+      "-Wl,--enable-new-dtags",
+      "-Wl,-rpath,$ORIGIN/../lib",
+      "-o",
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/launcher-build/la_2"
+    ],
+    "runpath_normalization": {
+      "action": "patchelf-set-runpath",
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "classification": {
+        "allowed_toolchain_default": "/data/data/com.termux/files/usr/lib",
+        "compiler_path": "/data/data/com.termux/files/usr/bin/clang",
+        "desired": "$ORIGIN/../lib",
+        "entries": [
+          "/data/data/com.termux/files/usr/bin/../../usr/lib",
+          "$ORIGIN/../lib"
+        ],
+        "requires_normalization": true,
+        "toolchain_default_entries": [
+          "/data/data/com.termux/files/usr/bin/../../usr/lib"
+        ]
+      },
+      "command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--set-rpath",
+        "$ORIGIN/../lib",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/launcher-build/la_2"
+      ],
+      "compile_surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "/data/data/com.termux/files/usr/bin/../../usr/lib:$ORIGIN/../lib"
+        ],
+        "sha256": "f80e08eb05fdae76fa520c0b58b95749535ca4474e93486d330e410fdab0a710",
+        "size": 5752,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "exact_normalization_check": true,
+      "surface": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libm.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "$ORIGIN/../lib"
+        ],
+        "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+        "size": 5752,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      }
+    },
+    "source": "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-loader-relocation/launcher_la2_programs_python.c",
+    "source_sha256": "15b38b3acf1e3861fb036fe593de1e002e30bdb1be113c005330055bc6dbfbfd"
+  },
+  "lr3_exact_and_16k": true,
+  "native_object_count": 80,
+  "runtime": {
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14",
+      "-c",
+      "<sysconfig-probe>"
+    ],
+    "data": {
+      "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+      "config_h": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14/pyconfig.h",
+      "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14",
+      "makefile": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+      "paths": {
+        "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14",
+        "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14",
+        "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages",
+        "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14",
+        "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages",
+        "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin",
+        "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14"
+      },
+      "platform": "android-24-arm64_v8a",
+      "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+      "vars": {
+        "ANDROID_API_LEVEL": 24,
+        "AR": "llvm-ar",
+        "BINDIR": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin",
+        "BINLIBDEST": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14",
+        "BLDLIBRARY": "-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib -lpython3.14",
+        "BLDSHARED": "clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+        "BUILD_GNU_TYPE": "aarch64-linux-android",
+        "CC": "clang",
+        "CCSHARED": "-fPIC",
+        "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO",
+        "CONFIG_ARGS": "--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived",
+        "CONFINCLUDEPY": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14",
+        "CPPFLAGS": "",
+        "CXX": "clang++",
+        "DESTSHARED": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/lib-dynload",
+        "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+        "HOST_GNU_TYPE": "aarch64-linux-android",
+        "INCLUDEPY": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14",
+        "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+        "LDSHARED": "clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+        "LIBDEST": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14",
+        "LIBDIR": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib",
+        "LIBPL": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android",
+        "LIBPYTHON": "",
+        "MULTIARCH": "aarch64-linux-android",
+        "Py_ENABLE_SHARED": 1,
+        "SHELL": "sh -e",
+        "SOABI": "cpython-314-aarch64-linux-android",
+        "TZPATH": "",
+        "base": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "exec_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "installed_base": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "installed_platbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "platbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+        "projectbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin"
+      }
+    },
+    "pass": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"config_h\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14/pyconfig.h\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14\", \"makefile\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile\", \"paths\": {\"data\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"include\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14\"}, \"platform\": \"android-24-arm64_v8a\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"vars\": {\"ANDROID_API_LEVEL\": 24, \"AR\": \"llvm-ar\", \"BINDIR\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin\", \"BINLIBDEST\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14\", \"BLDLIBRARY\": \"-L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib -lpython3.14\", \"BLDSHARED\": \"clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"BUILD_GNU_TYPE\": \"aarch64-linux-android\", \"CC\": \"clang\", \"CCSHARED\": \"-fPIC\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO\", \"CONFIG_ARGS\": \"--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived\", \"CONFINCLUDEPY\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14\", \"CPPFLAGS\": \"\", \"CXX\": \"clang++\", \"DESTSHARED\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/lib-dynload\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-linux-android\", \"INCLUDEPY\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/include/python3.14\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"LDSHARED\": \"clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"LIBDEST\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14\", \"LIBDIR\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib\", \"LIBPL\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android\", \"LIBPYTHON\": \"\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_ENABLE_SHARED\": 1, \"SHELL\": \"sh -e\", \"SOABI\": \"cpython-314-aarch64-linux-android\", \"TZPATH\": \"\", \"base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"exec_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"installed_base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"installed_platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"projectbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin\"}}\n"
+  },
+  "schema_version": 1,
+  "startup": {
+    "child_reentry_pass": true,
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14",
+      "-c",
+      "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+    ],
+    "data": {
+      "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14",
+      "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+      "child": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"ld\": null}\n"
+      },
+      "dlopen": {
+        "lib/engines-3/afalg.so": "pass",
+        "lib/ossl-modules/legacy.so": "pass",
+        "libcrypto_python.so": "pass",
+        "libsqlite3_python.so": "pass",
+        "libssl_python.so": "pass"
+      },
+      "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14",
+      "extension_count": 67,
+      "extension_failures": {},
+      "ld_library_path": null,
+      "path": [
+        "",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python314.zip",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/lib-dynload",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages"
+      ],
+      "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix",
+      "self_reexec": null
+    },
+    "dlopen_pass": true,
+    "ld_library_path_absent": true,
+    "required_extension_failures": 0,
+    "returncode": 0,
+    "self_reexec_absent": true,
+    "startup_pass": true,
+    "stderr": "",
+    "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/location-a/prefix\", \"self_reexec\": null}\n"
+  },
+  "sysconfig_normalization": {
+    "build_details": {
+      "after_sha256": "72941ecde6caf8ef4668845769d73a63eff129b4ac6c66178df1c08be220a62a",
+      "before_sha256": "4df4f5a8723cdded3fc1f4ff5b4ff326c28846dc5248d840c05b5396463f9652",
+      "path_semantics": "relative-to-runtime-root"
+    },
+    "makefile": {
+      "after_sha256": "db3f4230ae6e45d5adfc32ebf48d98dae1f06f21068dbd75d1d859829e62d30d",
+      "before_sha256": "2eda97362f0a97126d98eaf354e312d4ff6dc49c2452295584e8370c708c9c2c",
+      "dynamic_prefix": true,
+      "path": "Makefile"
+    },
+    "pkgconfig": [
+      {
+        "after_sha256": "eef6fdea81135bdc45bb99517d90f4da2de4d3a0bf320b0c72cc1078c2de79e5",
+        "before_sha256": "e7aa5409aa98e3d4f50e7cab92c562d3d333444d037d7b1fc0a86cce52b4145d",
+        "path": "libcrypto.pc",
+        "prefix": "${pcfiledir}/../.."
+      },
+      {
+        "after_sha256": "c57bb714a0d4e0adc51541acdd000fc30e07e9b7ddc54cc0143745c9262c9f50",
+        "before_sha256": "38d8c10fcab226f7f1c1139a88188862a88819465687bcb62371e7a6f5a71aa9",
+        "path": "libssl.pc",
+        "prefix": "${pcfiledir}/../.."
+      },
+      {
+        "after_sha256": "10818a97d40918dbd00d56de2a2516d7c98d35f48b12a245f37868ae4d0a1fbc",
+        "before_sha256": "8c39df1debef5b50caaf313278b7e9ed90dfadb00cbfc6800122f9e7fbfdc2f0",
+        "path": "openssl.pc",
+        "prefix": "${pcfiledir}/../.."
+      },
+      {
+        "after_sha256": "b5bf39161122473ff878529afdf7c4332f17f02d36fef75a33b1dd9e719c5196",
+        "before_sha256": "d30a57353b22fb5c07067a6297b58140917fb82de8469e83a22cf7dc30513f17",
+        "path": "python-3.14-embed.pc",
+        "prefix": "${pcfiledir}/../.."
+      },
+      {
+        "after_sha256": "b1e824d3a2503eb21098186910a5eee72c39f09b5d00a47dc4719cd7ec129653",
+        "before_sha256": "be5610a325e60b8b24a7a81dc9d995aec18e4706c2526244e9643f3f6718a279",
+        "path": "python-3.14.pc",
+        "prefix": "${pcfiledir}/../.."
+      },
+      {
+        "after_sha256": "e254b7840954ce3bd3ca727c1e85aadf41c249a9ea958c8eb6d7ad8e1519474c",
+        "before_sha256": "682fbd2a8fc83f8ef1def7e29dfbe92b917b13b5999a52757a632bba766c9c22",
+        "path": "sqlite3.pc",
+        "prefix": "${pcfiledir}/../.."
+      }
+    ],
+    "python_config": {
+      "invocation": "target-interpreter-explicit",
+      "sha256": "eb01c9941055b9ca7183818992ec85608640b88fe897fc8edf2fa1734fab11c3",
+      "shebang": null
+    },
+    "python_config_entry": {
+      "dynamic_bindir": true,
+      "path": "bin/python3.14-config",
+      "sha256": "8f90a1b718d3e614795a589919d0fcaf11ce43741d2a46a15c345c2cc573a5b6",
+      "shebang": "#!/system/bin/sh"
+    },
+    "schema_version": 1,
+    "sysconfig_vars_json": {
+      "path_semantics": "${prefix}-relative",
+      "sha256": "7735188cb948bd6744049942fb03a13ecc2a11112d74b05f0015278816388aa2"
+    },
+    "sysconfigdata": {
+      "after_sha256": "991a928bc2a42634f2084abdf2e7f7fa8da2620766b37eb36bcb2b563ad15b78",
+      "before_sha256": "d6ee606254072ae512667851cfc37a3af74f02f2d6fd46bfad74533836f5d575",
+      "dynamic_prefix": true
+    }
+  },
+  "verification": {
+    "checked": 3152,
+    "errors": [],
+    "expected": 3152,
+    "pass": true
+  }
+}

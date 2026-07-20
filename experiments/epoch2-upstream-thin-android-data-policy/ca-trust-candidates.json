@@ -1,0 +1,77 @@
+{
+  "candidates": {
+    "bundled-default-with-caller-override": {
+      "selected": true
+    },
+    "caller-supplied-only": {
+      "reason": "no deterministic default",
+      "selected": false
+    },
+    "generic-android-trust-extraction": {
+      "reason": "host layout and update semantics are not portable",
+      "selected": false
+    },
+    "native-android-trust-bridge": {
+      "reason": "requires Android-specific native adaptation not evidenced here",
+      "selected": false
+    },
+    "pinned-bundled-ca-bundle": {
+      "reason": "must preserve caller override",
+      "selected": false
+    }
+  },
+  "contract": {
+    "caller_override": "SSL_CERT_FILE",
+    "failure_mode": "fail TLS verification; never silently fall back to host-private paths",
+    "host_neutral": true,
+    "provenance": "public CA program bundle chosen in Epoch 3; probe certificate is not production data",
+    "relocation": "data root is independent of install root",
+    "source": "<DATA_ROOT>/ca/ca-bundle.pem",
+    "update_owner": "standalone data release process"
+  },
+  "pass": true,
+  "probe": {
+    "default": {
+      "client": {
+        "pass": true,
+        "reply": "y",
+        "ssl_cert_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/data-v1/ca/ca-bundle.pem"
+      },
+      "returncode": 0,
+      "server": {
+        "accepted": true,
+        "error": null
+      },
+      "stderr": ""
+    },
+    "invalid_override": {
+      "client": {
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1082)",
+        "error_type": "SSLCertVerificationError",
+        "pass": false,
+        "ssl_cert_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/caller-override/invalid-ca.pem"
+      },
+      "returncode": 0,
+      "server": {
+        "accepted": true,
+        "error": "SSLError:[SSL: TLSV1_ALERT_UNKNOWN_CA] tlsv1 alert unknown ca (_ssl.c:1082)"
+      },
+      "stderr": ""
+    },
+    "valid_external_override": {
+      "client": {
+        "pass": true,
+        "reply": "y",
+        "ssl_cert_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/caller-override/caller-ca.pem"
+      },
+      "returncode": 0,
+      "server": {
+        "accepted": true,
+        "error": null
+      },
+      "stderr": ""
+    }
+  },
+  "schema_version": 1,
+  "selected": "bundled-default-with-caller-override"
+}

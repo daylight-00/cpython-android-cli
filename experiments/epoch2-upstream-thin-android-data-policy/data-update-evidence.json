@@ -1,0 +1,24 @@
+{
+  "dataset_v1": {
+    "ca_provenance": "CPython test self-signed certificate; mechanism probe only",
+    "dataset_version": "probe-v1",
+    "python_update_independent": true,
+    "schema_version": 1,
+    "timezone_provenance": "generated fixed-offset TZif representing IANA-style raw zoneinfo mechanics",
+    "update_owner": "standalone data release process"
+  },
+  "dataset_v2": {
+    "ca_provenance": "same mechanism probe certificate",
+    "dataset_version": "probe-v2",
+    "python_update_independent": true,
+    "schema_version": 1,
+    "timezone_provenance": "generated fixed-offset TZif update",
+    "update_owner": "standalone data release process"
+  },
+  "pass": true,
+  "python_prefix_snapshot_unchanged": true,
+  "python_update_required": false,
+  "schema_version": 1,
+  "timezone_after_seconds": 7200,
+  "timezone_before_seconds": 3600
+}

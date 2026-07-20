@@ -1,0 +1,66 @@
+{
+  "candidates": {
+    "bundled-raw-zoneinfo-tree": {
+      "selected": true
+    },
+    "host-discovery": {
+      "reason": "not portable or provenance-stable",
+      "selected": false
+    },
+    "pinned-tzdata-in-install-tree": {
+      "reason": "couples data update to Python update",
+      "selected": false
+    },
+    "required-companion-dependency": {
+      "reason": "selection deferred to Epoch 3",
+      "selected": false
+    }
+  },
+  "contract": {
+    "environment": "PYTHONTZPATH",
+    "failure_mode": "ZoneInfoNotFoundError for absent key/data; no implicit host discovery",
+    "host_neutral": true,
+    "provenance": "IANA tzdata release selected in Epoch 3",
+    "relocation": "data root independent of install root",
+    "source": "<DATA_ROOT>/zoneinfo",
+    "update_owner": "standalone data release process"
+  },
+  "pass": true,
+  "probe": {
+    "host_discovery_disabled": {
+      "json": {
+        "error": "'No time zone found with key Etc/HWTest'",
+        "error_type": "ZoneInfoNotFoundError",
+        "pass": false,
+        "tzpath": ""
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"error\": \"'No time zone found with key Etc/HWTest'\", \"error_type\": \"ZoneInfoNotFoundError\", \"pass\": false, \"tzpath\": \"\"}\n"
+    },
+    "v1": {
+      "json": {
+        "offset_seconds": 3600,
+        "pass": true,
+        "tzname": "HWT1",
+        "tzpath": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/data-v1/zoneinfo"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"offset_seconds\": 3600, \"pass\": true, \"tzname\": \"HWT1\", \"tzpath\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/data-v1/zoneinfo\"}\n"
+    },
+    "v2": {
+      "json": {
+        "offset_seconds": 7200,
+        "pass": true,
+        "tzname": "HWT2",
+        "tzpath": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/data-v2/zoneinfo"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"offset_seconds\": 7200, \"pass\": true, \"tzname\": \"HWT2\", \"tzpath\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut4-android-data-and-writable-state-policy-v2-20260720T042512Z-31428/ut4-experiment/data-v2/zoneinfo\"}\n"
+    }
+  },
+  "schema_version": 1,
+  "selected": "bundled-raw-zoneinfo-tree"
+}

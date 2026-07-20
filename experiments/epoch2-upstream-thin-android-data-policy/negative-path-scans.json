@@ -1,0 +1,22 @@
+{
+  "active_metadata_classification_counts": {
+    "android-or-termux-system": 2,
+    "generic-unix-system": 4
+  },
+  "active_metadata_stale_install_zero": true,
+  "active_metadata_unknown_absolute_zero": true,
+  "forbidden_tokens": [
+    "/data/data/com.termux",
+    "/data/user/0/com.termux",
+    "com.termux",
+    "/usr/local",
+    "/opt/android-sdk",
+    "/opt/android-ndk",
+    "/home/runner/work",
+    "/tmp/cpython-build"
+  ],
+  "hit_count": 0,
+  "hits": {},
+  "pass": true,
+  "scope": "selected host-neutral policy contract and normalized active metadata only"
+}

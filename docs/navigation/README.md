@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut4-android-data-and-writable-state-policy
-gate         E2-R1/UT-4 — Android-mandatory data and writable-state policy
-tracked docs 606
+action       execute-e2-r1-ut5-feature-capability-and-product-surface-qualification
+gate         E2-R1/UT-5 — Feature capability and product-surface qualification
+tracked docs 620
 indexes      16
 ```
 

@@ -1,0 +1,141 @@
+{
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut4-android-data-and-writable-state-policy",
+  "claim_boundary": {
+    "android_data_policy": true,
+    "artifact_representation": true,
+    "bounded_android_runtime": true,
+    "data_packaging_selection": false,
+    "device_qualification": false,
+    "epoch3_selection": false,
+    "official_upstream_identity": true,
+    "product_selectability": false,
+    "publication": false,
+    "runtime_metadata_normalization": true,
+    "writable_state_policy": true
+  },
+  "data_update": {
+    "pass": true,
+    "python_update_required": false
+  },
+  "exit_condition": {
+    "complete_policy_count": 6,
+    "data_update_without_python_update": true,
+    "fresh_venv_after_move_pass": true,
+    "negative_path_hits": 0,
+    "read_only_prefix_unchanged": true,
+    "relocated_runtime_pass": true,
+    "required_policy_count": 6
+  },
+  "file_identities": {
+    "audit_android_data_policy.py": "102f521ccf14084feb24681066108db0a5b2c954a0fcb70e60530e05ced0317e",
+    "ca-trust-candidates.json": "a64043fcbf3bddbe9ff127bef58a2ed3025108e2903105096c78c38077d8dd2f",
+    "cache-bytecode-and-user-site-policy.json": "69321ae9df0bb53417f14bac623562f9094f7129d6b92e7285532ac46ff33975",
+    "data-update-evidence.json": "17dea6e74895f13ecad831a34ef9dffd8a77309482c8214f68e24c00881b79a1",
+    "finalize_android_data_policy.py": "4c3b64f8f59dbc471535160dd9a9eabaa240609708a9f2e0e5526946f26950be",
+    "independent-audit.json": "a6a88b0c8843956144d6dab8cedc2327f38a0f628336d22c5cf22893209b07fd",
+    "negative-path-scans.json": "c81998c224af45934ee23acd47cb2b38e0b19d10dc2dde2848048e4fc079b6ab",
+    "read-only-installation-behavior.json": "db7ba27ba5aea71d88ac909547ef23c859ca3b571876126f3880574770fcb9b7",
+    "run-ut4-android-data-and-writable-state-policy.sh": "bdba2361c2d1a311070f0384d180436edab65bb7d19f7b9b50b2cd3704ef6e0b",
+    "run_android_data_policy_experiment.py": "748ba9c20271a2b5d851d4f37404fbfb816111071e1025b7b6cd87fc75798ee6",
+    "runtime-reproduction.json": "ebf98baeb0a5991b3839167141ce43bc2f444ea133fabaae178e9d256140fcdc",
+    "temporary-directory-policy.json": "3161b681aae917eead233aaccd8b4c154e8193b227284145e784a3888989fbc3",
+    "test_verify_android_data_policy.py": "38bcfc86faaea0defca92d187ddd75a0250a2c1abbc01e9c5553d3cd12983406",
+    "timezone-candidates.json": "6213b2a1de98bd5c8555aedf3ba8fb55ec8f249616655046e5f047d126f93083",
+    "ut4-gate-diagnostics.json": "5931e6c392c630f5d772c2ff978583c384b84723f2e668ed3f37b83846de06d4",
+    "venv-writable-state-policy.json": "e43f3f8f500512d05145523b0b11cc581e77388b621cbfd06a0d8a4de108202d",
+    "verify_android_data_policy.py": "9b8aeb9176886fae27bdfc89719ca819a69b7631f344589bd5cb333b93a13914"
+  },
+  "gate_condition": {
+    "ca_policy": true,
+    "cache_bytecode_user_site_policy": true,
+    "data_update_independent": true,
+    "lr3_exact_and_16k": true,
+    "negative_path_scans": true,
+    "policy_completeness": true,
+    "read_only_installation": true,
+    "runtime_reproduction": true,
+    "subprocess_inheritance": true,
+    "temporary_policy": true,
+    "timezone_policy": true,
+    "venv_policy": true
+  },
+  "loader_relocation_authority": {
+    "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+    "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+  },
+  "negative_path_scan": {
+    "hit_count": 0,
+    "pass": true
+  },
+  "next_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+  "predecessor": {
+    "commit": "a1fdd7ea96f282504287abb864aaea8dbbe1aa54",
+    "tree": "a6d8e2da095cdd2fd6e9dfbfb3b220686a4fe093"
+  },
+  "schema_version": 1,
+  "selected_policy": {
+    "ca_trust": "bundled-default-with-caller-override",
+    "cache_bytecode_user_site": {
+      "bytecode": "<STATE_ROOT>/pycache via PYTHONPYCACHEPREFIX",
+      "cache": "<STATE_ROOT>/cache via XDG_CACHE_HOME and PIP_CACHE_DIR",
+      "failure_mode": "disable optional cache/user-site or fail write; never write install tree",
+      "host_neutral": true,
+      "provenance": "caller-supplied app-private writable root",
+      "relocation": "independent of install root",
+      "update_owner": "runtime caller/application",
+      "user_site_default": "disabled via PYTHONNOUSERSITE=1",
+      "user_site_opt_in": "<STATE_ROOT>/userbase via PYTHONUSERBASE"
+    },
+    "read_only_installation": {
+      "data_root": "<DATA_ROOT> is independently updateable",
+      "failure_mode": "fail closed when required writable or data roots are absent",
+      "host_neutral": true,
+      "install_root": "<INSTALL_ROOT> is immutable after assembly",
+      "provenance": "official Python artifact plus frozen transformations",
+      "relocation": "whole install root may move; state/data roots remain caller-selected",
+      "update_owner": "Python artifact release process; data release process is separate",
+      "writable_root": "<STATE_ROOT> is mandatory for temp/cache/bytecode/user-site/venv"
+    },
+    "root_model": {
+      "data_root": "independently updateable",
+      "install_root": "read-only and relocatable",
+      "state_root": "caller-owned app-private writable"
+    },
+    "temporary": {
+      "environment": "TMPDIR",
+      "failure_mode": "tempfile operation fails without writable root; no host-private fallback",
+      "host_neutral": true,
+      "path": "<STATE_ROOT>/tmp",
+      "provenance": "caller-supplied app-private writable root",
+      "relocation": "independent of install root",
+      "update_owner": "runtime caller/application"
+    },
+    "timezone": "bundled-raw-zoneinfo-tree",
+    "venv": {
+      "failure_mode": "stale pyvenv.cfg or dangling launcher after base movement",
+      "host_neutral": true,
+      "path": "<STATE_ROOT>/venvs/<name>",
+      "provenance": "created by selected runtime from caller-owned writable root",
+      "relocation": "new venv after base movement is supported; pre-existing venv is base-bound and must be recreated unless independently proven relocatable",
+      "update_owner": "runtime caller/application"
+    }
+  },
+  "status": "frozen-pass-host-neutral-data-and-state-contract",
+  "sysconfig_sdk_authority": {
+    "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+    "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "49/49",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

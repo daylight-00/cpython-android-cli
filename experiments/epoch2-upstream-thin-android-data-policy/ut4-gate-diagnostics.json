@@ -1,0 +1,28 @@
+{
+  "exit_condition": {
+    "complete_policy_count": 6,
+    "data_update_without_python_update": true,
+    "fresh_venv_after_move_pass": true,
+    "negative_path_hits": 0,
+    "read_only_prefix_unchanged": true,
+    "relocated_runtime_pass": true,
+    "required_policy_count": 6
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "ca_policy": true,
+    "cache_bytecode_user_site_policy": true,
+    "data_update_independent": true,
+    "lr3_exact_and_16k": true,
+    "negative_path_scans": true,
+    "policy_completeness": true,
+    "read_only_installation": true,
+    "runtime_reproduction": true,
+    "subprocess_inheritance": true,
+    "temporary_policy": true,
+    "timezone_policy": true,
+    "venv_policy": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

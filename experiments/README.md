@@ -123,6 +123,23 @@
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json`](epoch2-termux-native-cpython3146-producer/producer-authority-external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-termux-native-cpython3146-producer/producer-authority.json`](epoch2-termux-native-cpython3146-producer/producer-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-android-data-policy`
+
+- [`experiments/epoch2-upstream-thin-android-data-policy/README.md`](epoch2-upstream-thin-android-data-policy/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json`](epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/ca-trust-candidates.json`](epoch2-upstream-thin-android-data-policy/ca-trust-candidates.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/cache-bytecode-and-user-site-policy.json`](epoch2-upstream-thin-android-data-policy/cache-bytecode-and-user-site-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/data-update-evidence.json`](epoch2-upstream-thin-android-data-policy/data-update-evidence.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/evidence-freeze.md`](epoch2-upstream-thin-android-data-policy/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/independent-audit.json`](epoch2-upstream-thin-android-data-policy/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/negative-path-scans.json`](epoch2-upstream-thin-android-data-policy/negative-path-scans.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/read-only-installation-behavior.json`](epoch2-upstream-thin-android-data-policy/read-only-installation-behavior.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/runtime-reproduction.json`](epoch2-upstream-thin-android-data-policy/runtime-reproduction.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/temporary-directory-policy.json`](epoch2-upstream-thin-android-data-policy/temporary-directory-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/timezone-candidates.json`](epoch2-upstream-thin-android-data-policy/timezone-candidates.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/ut4-gate-diagnostics.json`](epoch2-upstream-thin-android-data-policy/ut4-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-android-data-policy/venv-writable-state-policy.json`](epoch2-upstream-thin-android-data-policy/venv-writable-state-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-artifact-prototype`
 
 - [`experiments/epoch2-upstream-thin-artifact-prototype/PYTHON.json`](epoch2-upstream-thin-artifact-prototype/PYTHON.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
