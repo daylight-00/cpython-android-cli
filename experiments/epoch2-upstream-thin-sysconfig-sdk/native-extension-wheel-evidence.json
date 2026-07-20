@@ -1,0 +1,193 @@
+{
+  "artifact_path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e2-r1-ut3-20260720T033913Z-results/artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+  "build_command": [
+    "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14",
+    "setup.py",
+    "bdist_wheel",
+    "--dist-dir",
+    "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/wheel-dist"
+  ],
+  "extension_normalization": {
+    "after": {
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "machine": "AArch64",
+      "needed": [
+        "libpython3.14.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "rpath": [],
+      "runpath": [],
+      "sha256": "4cce7d174fc10f4950b8a4f660b2b86790fd127b47d4e7c913190202b2686d2c",
+      "size": 6984,
+      "soname": [],
+      "type": "DYN (Shared object file)"
+    },
+    "alignment_policy": {
+      "after_all_16k": true,
+      "after_load_count": 3,
+      "before_all_16k": true,
+      "before_load_count": 3,
+      "load_count_not_reduced": true,
+      "preserved": true
+    },
+    "before": {
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "machine": "AArch64",
+      "needed": [
+        "libpython3.14.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "rpath": [],
+      "runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ],
+      "sha256": "96db91e01992212bd224f9dcca3476f7432ce5760fb1cc713c53f025dc2a7368",
+      "size": 6984,
+      "soname": [],
+      "type": "DYN (Shared object file)"
+    },
+    "command": [
+      "patchelf",
+      "--page-size",
+      "16384",
+      "--remove-rpath",
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/wheel-unpack/hw_t_native_probe.cpython-314-aarch64-linux-android.so"
+    ],
+    "exact_normalization": true,
+    "extension_path": "hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+    "normalized_wheel": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl.normalized.tmp",
+    "source_wheel": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+  },
+  "location_a": {
+    "import": {
+      "data": {
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "meaning": 42,
+        "module_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+        "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a",
+        "sys_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"meaning\": 42, \"module_file\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so\", \"runtime_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a\", \"sys_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a\"}\n"
+    },
+    "install": {
+      "data": {
+        "member_count": 5,
+        "pass": true,
+        "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages",
+        "wheel": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e2-r1-ut3-20260720T033913Z-results/artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"pass\": true, \"wheel\": \"/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e2-r1-ut3-20260720T033913Z-results/artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\", \"site_packages\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages\", \"member_count\": 5}\n"
+    },
+    "pass": true,
+    "venv": {
+      "create_command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14",
+        "-m",
+        "venv",
+        "--without-pip",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a"
+      ],
+      "paths": {
+        "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a",
+        "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14",
+        "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14",
+        "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages",
+        "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14",
+        "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages",
+        "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/bin",
+        "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14"
+      },
+      "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/bin/python",
+      "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-a/lib/python3.14/site-packages"
+    }
+  },
+  "location_b_after_base_move_fresh_venv": {
+    "import": {
+      "data": {
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix",
+        "meaning": 42,
+        "module_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+        "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b",
+        "sys_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix\", \"meaning\": 42, \"module_file\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so\", \"runtime_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b\", \"sys_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b\"}\n"
+    },
+    "install": {
+      "data": {
+        "member_count": 5,
+        "pass": true,
+        "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages",
+        "wheel": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e2-r1-ut3-20260720T033913Z-results/artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"pass\": true, \"wheel\": \"/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e2-r1-ut3-20260720T033913Z-results/artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\", \"site_packages\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages\", \"member_count\": 5}\n"
+    },
+    "pass": true,
+    "venv": {
+      "create_command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/bin/python3.14",
+        "-m",
+        "venv",
+        "--without-pip",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b"
+      ],
+      "paths": {
+        "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b",
+        "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14",
+        "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14",
+        "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages",
+        "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14",
+        "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages",
+        "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/bin",
+        "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/python3.14"
+      },
+      "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/bin/python",
+      "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/venv-b/lib/python3.14/site-packages"
+    }
+  },
+  "phase": "SC-3",
+  "raw_wheel": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/wheel-dist/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "sha256": "b628c4be3afb9ca95404041c331fd35be26b0c434f146636268e70e88a4bcb1a"
+  },
+  "relocated_extension_import_pass": true,
+  "returncode": 0,
+  "schema_version": 1,
+  "setuptools_wheel": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/test/wheeldata/setuptools-79.0.1-py3-none-any.whl",
+    "sha256": "e147c0549f27767ba362f9da434eab9c5dc0045d5304feb602a0af001089fc51"
+  },
+  "stderr": "native_probe.c:11:24: warning: 'Py_GetPrefix' is deprecated [-Wdeprecated-declarations]\n   11 |     const wchar_t *p = Py_GetPrefix();\n      |                        ^\n/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14/pylifecycle.h:44:1: note: 'Py_GetPrefix' has been explicitly marked deprecated here\n   44 | Py_DEPRECATED(3.13) PyAPI_FUNC(wchar_t *) Py_GetPrefix(void);\n      | ^\n/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'\n  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))\n      |                                                      ^\n1 warning generated.\n/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/setuptools-bootstrap/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n!!\n\n        ********************************************************************************\n        Please avoid running ``setup.py`` directly.\n        Instead, use pypa/build, pypa/installer or other\n        standards-based tools.\n\n        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n        ********************************************************************************\n\n!!\n  self.initialize_options()\nwarning: install_lib: byte-compiling is disabled, skipping.\n\n",
+  "stdout": "running bdist_wheel\nrunning build\nrunning build_ext\nbuilding 'hw_t_native_probe' extension\ncreating build/temp.android-24-arm64_v8a-cpython-314\nclang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -fPIC -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -c native_probe.c -o build/temp.android-24-arm64_v8a-cpython-314/native_probe.o\ncreating build/lib.android-24-arm64_v8a-cpython-314\nclang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384 build/temp.android-24-arm64_v8a-cpython-314/native_probe.o -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib -lpython3.14 -o build/lib.android-24-arm64_v8a-cpython-314/hw_t_native_probe.cpython-314-aarch64-linux-android.so\ninstalling to build/bdist.android-24-arm64_v8a/wheel\nrunning install\nrunning install_lib\ncreating build/bdist.android-24-arm64_v8a/wheel\ncopying build/lib.android-24-arm64_v8a-cpython-314/hw_t_native_probe.cpython-314-aarch64-linux-android.so -> build/bdist.android-24-arm64_v8a/wheel/.\nrunning install_egg_info\nrunning egg_info\ncreating hw_t_native_probe.egg-info\nwriting hw_t_native_probe.egg-info/PKG-INFO\nwriting dependency_links to hw_t_native_probe.egg-info/dependency_links.txt\nwriting top-level names to hw_t_native_probe.egg-info/top_level.txt\nwriting manifest file 'hw_t_native_probe.egg-info/SOURCES.txt'\nreading manifest file 'hw_t_native_probe.egg-info/SOURCES.txt'\nwriting manifest file 'hw_t_native_probe.egg-info/SOURCES.txt'\nCopying hw_t_native_probe.egg-info to build/bdist.android-24-arm64_v8a/wheel/./hw_t_native_probe-0.1.0-py3.14.egg-info\nrunning install_scripts\ncreating build/bdist.android-24-arm64_v8a/wheel/hw_t_native_probe-0.1.0.dist-info/WHEEL\ncreating '/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/wheel-dist/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl' and adding 'build/bdist.android-24-arm64_v8a/wheel' to it\nadding 'hw_t_native_probe.cpython-314-aarch64-linux-android.so'\nadding 'hw_t_native_probe-0.1.0.dist-info/METADATA'\nadding 'hw_t_native_probe-0.1.0.dist-info/WHEEL'\nadding 'hw_t_native_probe-0.1.0.dist-info/top_level.txt'\nadding 'hw_t_native_probe-0.1.0.dist-info/RECORD'\nremoving build/bdist.android-24-arm64_v8a/wheel\n",
+  "wheel": {
+    "extension_members": [
+      "hw_t_native_probe.cpython-314-aarch64-linux-android.so"
+    ],
+    "filename": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "filename_ok": true,
+    "pass": true,
+    "sha256": "68c639100b8bd55902a5d76ab54e643471bfe248e4bb3e4a59674081f9b881a9",
+    "size": 3630,
+    "tag_ok": true,
+    "tags": [
+      "cp314-cp314-android_24_arm64_v8a"
+    ]
+  }
+}

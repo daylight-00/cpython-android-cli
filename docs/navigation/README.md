@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut3-sysconfig-and-native-extension-sdk
-gate         E2-R1/UT-3 — Sysconfig and native-extension SDK
-tracked docs 593
+action       execute-e2-r1-ut4-android-data-and-writable-state-policy
+gate         E2-R1/UT-4 — Android-mandatory data and writable-state policy
+tracked docs 606
 indexes      16
 ```
 

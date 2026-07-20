@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 9
+> **State revision:** 10
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut3-sysconfig-and-native-extension-sdk
-work gate       E2-R1/UT-3 — Sysconfig and native-extension SDK
+action          execute-e2-r1-ut4-android-data-and-writable-state-policy
+work gate       E2-R1/UT-4 — Android-mandatory data and writable-state policy
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-3 — Sysconfig and native-extension SDK
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-3 — Sysconfig and native-extension SDK
+gate    E2-R1/UT-4 — Android-mandatory data and writable-state policy
 status  ready
 ```
 
@@ -44,6 +44,7 @@ status  ready
 11. [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](../experiments/epoch2-upstream-thin-control/upstream-control-authority.json) — exact official Python.org Android package, topology, dependency, and provenance control
 12. [`experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json`](../experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json) — truthful Astral-style local artifact and metadata prototype for the official binary-derived package
 13. [`experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json`](../experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json) — bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence
+14. [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](../experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json) — relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence
 
 ## Blockers
 
@@ -51,6 +52,6 @@ None.
 
 ## Unresolved risks
 
-- UT-3 must normalize every active runtime and consumer metadata path and prove a real Android-tagged native-extension wheel build/install/import/relocation path before any SDK or product surface is selectable.
+- UT-4 must define host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv writable-state, and read-only-install policies without importing Termux-private paths into the product contract.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

@@ -1,0 +1,25 @@
+{
+  "exit_condition": {
+    "native_extension_wheel_build": true,
+    "relocated_extension_import": true,
+    "runtime_paths_reroot_after_movement": true,
+    "stale_active_install_prefixes": 0,
+    "unknown_producer_absolute_paths": 0,
+    "wheel_identity_correct": true
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "consumer_metadata_location_a": true,
+    "consumer_metadata_location_b": true,
+    "lr3_exact_and_16k": true,
+    "native_extension_wheel_build": true,
+    "relocated_extension_import": true,
+    "runtime_paths_reroot_after_movement": true,
+    "runtime_reproduction": true,
+    "stale_active_install_prefixes_zero": true,
+    "unknown_producer_absolute_paths_zero": true,
+    "wheel_identity_correct": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

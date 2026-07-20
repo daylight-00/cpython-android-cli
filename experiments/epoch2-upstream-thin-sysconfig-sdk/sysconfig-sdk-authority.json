@@ -1,0 +1,176 @@
+{
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut3-sysconfig-and-native-extension-sdk",
+  "claim_boundary": {
+    "artifact_representation": true,
+    "bounded_android_runtime": true,
+    "consumer_metadata_normalization": true,
+    "cross_build_sdk": false,
+    "device_qualification": false,
+    "epoch3_selection": false,
+    "official_upstream_identity": true,
+    "on_device_native_extension_sdk": true,
+    "product_selectability": false,
+    "publication": false,
+    "runtime_metadata_normalization": true
+  },
+  "exit_condition": {
+    "native_extension_wheel_build": true,
+    "relocated_extension_import": true,
+    "runtime_paths_reroot_after_movement": true,
+    "stale_active_install_prefixes": 0,
+    "unknown_producer_absolute_paths": 0,
+    "wheel_identity_correct": true
+  },
+  "file_identities": {
+    "absolute-path-census.json": "b81d06b1491f56b65f21cadbf1261f7b99f6f23c33b12143842794898f54474e",
+    "audit_sysconfig_sdk.py": "37a8b6c428884ad2cc56cabc8b78600ebedb569171e82ed49ca18e66ba89fa8b",
+    "consumer-metadata-normalization.json": "5b251a310c870d851195aa9f2b7b0ad5caba18d2d21ac1d6d3148c3cd51a038a",
+    "finalize_sysconfig_sdk.py": "a412f7daf83fb9dc77bfa846ecd5d1571cfce4a47897d63d0f562d9bed631e8e",
+    "independent-audit.json": "bda10fb1ff2f3278151560150046dace489d281299192ba9c36084253297f41e",
+    "native-extension-wheel-evidence.json": "6c05695b85c386b31b330681a62f9682eb73b213c34774bd4434d48e8f15bc68",
+    "native_probe.c": "cdeacc3204e1c47ebc7ad09f4ff8d2e82aa2e913ae449fb599fc20a2ad3f3a6b",
+    "normalization-mutations.json": "5ebb0edf7512cf91215aa960047b594fd4cdf1e4fd00644cd5d4676dbf4d44ac",
+    "official-extraction-verification.json": "cb715d6b78d48c54385c5a48511c15e685d81edc4292a7769a0c94459b0c68c2",
+    "run-ut3-sysconfig-and-native-extension-sdk.sh": "5c338fb593212e1daab0a3fc66746fcd880c41f332b0462a33b286d1491beea5",
+    "run_sysconfig_sdk_experiment.py": "5098e57c7415d7de2ec220d6ef05c66767cc158d580c25c340416dcc49bbbd7d",
+    "runtime-path-normalization.json": "ed9881b3dfa2e71b8c154480c49eaa08c605f2eb7560ae4ec9b61adbd4e40269",
+    "runtime-reproduction.json": "2f829cdaa9e321f9ca6876e607f86e8ecef8cc3cd9405cefb8e6bbc77eebad65",
+    "sdk-flavor-decision.json": "51463f259dee10cf17d544a0673648d120ec0a128a50962adeaff647f7769d72",
+    "setup.py": "793f9d3443b1403060243053cb6ab4e2b38ebe3a67a57e2338fc77a73b8753b8",
+    "test_verify_sysconfig_sdk.py": "1c3680d12d94cbaae3a24cca096e2e43cd9f60f8e3ed02cb5ff1695db9f9f4c7",
+    "ut3-gate-diagnostics.json": "a27e30d97f1b2cac2d3e3012cfaf5bcda30453ee32cf605dd67648f32899e08b",
+    "verify_sysconfig_sdk.py": "a9313e085d7b72aab29c318d0e1dac4afcb32e7e5b6def9aaebf42ea204d711e"
+  },
+  "gate_condition": {
+    "consumer_metadata_location_a": true,
+    "consumer_metadata_location_b": true,
+    "lr3_exact_and_16k": true,
+    "native_extension_wheel_build": true,
+    "relocated_extension_import": true,
+    "runtime_paths_reroot_after_movement": true,
+    "runtime_reproduction": true,
+    "stale_active_install_prefixes_zero": true,
+    "unknown_producer_absolute_paths_zero": true,
+    "wheel_identity_correct": true
+  },
+  "loader_relocation_authority": {
+    "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+    "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+  },
+  "native_extension_wheel": {
+    "build_pass": true,
+    "extension_normalization": {
+      "after": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [],
+        "sha256": "4cce7d174fc10f4950b8a4f660b2b86790fd127b47d4e7c913190202b2686d2c",
+        "size": 6984,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "alignment_policy": {
+        "after_all_16k": true,
+        "after_load_count": 3,
+        "before_all_16k": true,
+        "before_load_count": 3,
+        "load_count_not_reduced": true,
+        "preserved": true
+      },
+      "before": {
+        "load_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "machine": "AArch64",
+        "needed": [
+          "libpython3.14.so",
+          "libdl.so",
+          "libc.so"
+        ],
+        "rpath": [],
+        "runpath": [
+          "/data/data/com.termux/files/usr/bin/../../usr/lib"
+        ],
+        "sha256": "96db91e01992212bd224f9dcca3476f7432ce5760fb1cc713c53f025dc2a7368",
+        "size": 6984,
+        "soname": [],
+        "type": "DYN (Shared object file)"
+      },
+      "command": [
+        "patchelf",
+        "--page-size",
+        "16384",
+        "--remove-rpath",
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/wheel-unpack/hw_t_native_probe.cpython-314-aarch64-linux-android.so"
+      ],
+      "exact_normalization": true,
+      "extension_path": "hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+      "normalized_wheel": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl.normalized.tmp",
+      "source_wheel": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+    },
+    "filename": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "relocated_fresh_venv_install_import_pass": true,
+    "sha256": "68c639100b8bd55902a5d76ab54e643471bfe248e4bb3e4a59674081f9b881a9",
+    "size": 3630,
+    "tags": [
+      "cp314-cp314-android_24_arm64_v8a"
+    ],
+    "venv_install_import_pass": true
+  },
+  "next_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+  "normalization": {
+    "consumer_location_a_pass": true,
+    "consumer_location_b_pass": true,
+    "producer_residue": [],
+    "runtime_paths_reroot_after_movement": true,
+    "stale_location_references": []
+  },
+  "predecessor": {
+    "commit": "6ab21000b89f75de66bf9cae8ffe31ebd30b34fd",
+    "tree": "7d7ef4fbf9b4252d52ae9c2141fd18aa186f211b"
+  },
+  "schema_version": 1,
+  "sdk_flavor_decision": {
+    "cross-build-sdk": {
+      "reason": "no explicit relocatable NDK/sysroot authority is packaged",
+      "status": "unavailable"
+    },
+    "on-device-sdk": {
+      "compiler": "clang",
+      "execution_context": "Termux Android app process",
+      "status": "experimentally-supported",
+      "wheel_build_install_import_relocate": true
+    },
+    "runtime-only": {
+      "includes_development_metadata": false,
+      "reason": "runtime consumers do not require producer/build surfaces",
+      "status": "representationally-required"
+    }
+  },
+  "status": "frozen-pass-runtime-and-on-device-sdk-metadata",
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "50/50",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

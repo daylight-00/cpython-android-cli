@@ -1,0 +1,72 @@
+{
+  "build_details": {
+    "after_sha256": "72941ecde6caf8ef4668845769d73a63eff129b4ac6c66178df1c08be220a62a",
+    "before_sha256": "4df4f5a8723cdded3fc1f4ff5b4ff326c28846dc5248d840c05b5396463f9652",
+    "path_semantics": "relative-to-runtime-root"
+  },
+  "makefile": {
+    "after_sha256": "db3f4230ae6e45d5adfc32ebf48d98dae1f06f21068dbd75d1d859829e62d30d",
+    "before_sha256": "2eda97362f0a97126d98eaf354e312d4ff6dc49c2452295584e8370c708c9c2c",
+    "dynamic_prefix": true,
+    "path": "Makefile"
+  },
+  "pkgconfig": [
+    {
+      "after_sha256": "eef6fdea81135bdc45bb99517d90f4da2de4d3a0bf320b0c72cc1078c2de79e5",
+      "before_sha256": "e7aa5409aa98e3d4f50e7cab92c562d3d333444d037d7b1fc0a86cce52b4145d",
+      "path": "libcrypto.pc",
+      "prefix": "${pcfiledir}/../.."
+    },
+    {
+      "after_sha256": "c57bb714a0d4e0adc51541acdd000fc30e07e9b7ddc54cc0143745c9262c9f50",
+      "before_sha256": "38d8c10fcab226f7f1c1139a88188862a88819465687bcb62371e7a6f5a71aa9",
+      "path": "libssl.pc",
+      "prefix": "${pcfiledir}/../.."
+    },
+    {
+      "after_sha256": "10818a97d40918dbd00d56de2a2516d7c98d35f48b12a245f37868ae4d0a1fbc",
+      "before_sha256": "8c39df1debef5b50caaf313278b7e9ed90dfadb00cbfc6800122f9e7fbfdc2f0",
+      "path": "openssl.pc",
+      "prefix": "${pcfiledir}/../.."
+    },
+    {
+      "after_sha256": "b5bf39161122473ff878529afdf7c4332f17f02d36fef75a33b1dd9e719c5196",
+      "before_sha256": "d30a57353b22fb5c07067a6297b58140917fb82de8469e83a22cf7dc30513f17",
+      "path": "python-3.14-embed.pc",
+      "prefix": "${pcfiledir}/../.."
+    },
+    {
+      "after_sha256": "b1e824d3a2503eb21098186910a5eee72c39f09b5d00a47dc4719cd7ec129653",
+      "before_sha256": "be5610a325e60b8b24a7a81dc9d995aec18e4706c2526244e9643f3f6718a279",
+      "path": "python-3.14.pc",
+      "prefix": "${pcfiledir}/../.."
+    },
+    {
+      "after_sha256": "e254b7840954ce3bd3ca727c1e85aadf41c249a9ea958c8eb6d7ad8e1519474c",
+      "before_sha256": "682fbd2a8fc83f8ef1def7e29dfbe92b917b13b5999a52757a632bba766c9c22",
+      "path": "sqlite3.pc",
+      "prefix": "${pcfiledir}/../.."
+    }
+  ],
+  "python_config": {
+    "invocation": "target-interpreter-explicit",
+    "sha256": "eb01c9941055b9ca7183818992ec85608640b88fe897fc8edf2fa1734fab11c3",
+    "shebang": null
+  },
+  "python_config_entry": {
+    "dynamic_bindir": true,
+    "path": "bin/python3.14-config",
+    "sha256": "8f90a1b718d3e614795a589919d0fcaf11ce43741d2a46a15c345c2cc573a5b6",
+    "shebang": "#!/system/bin/sh"
+  },
+  "schema_version": 1,
+  "sysconfig_vars_json": {
+    "path_semantics": "${prefix}-relative",
+    "sha256": "7735188cb948bd6744049942fb03a13ecc2a11112d74b05f0015278816388aa2"
+  },
+  "sysconfigdata": {
+    "after_sha256": "991a928bc2a42634f2084abdf2e7f7fa8da2620766b37eb36bcb2b563ad15b78",
+    "before_sha256": "d6ee606254072ae512667851cfc37a3af74f02f2d6fd46bfad74533836f5d575",
+    "dynamic_prefix": true
+  }
+}

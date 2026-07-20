@@ -1,0 +1,13 @@
+{
+  "extraction": {
+    "material_member_count": 3193,
+    "normalized_unique_count": 3193
+  },
+  "schema_version": 1,
+  "verification": {
+    "checked": 3152,
+    "errors": [],
+    "expected": 3152,
+    "pass": true
+  }
+}

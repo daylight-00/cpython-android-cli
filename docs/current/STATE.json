@@ -77,6 +77,12 @@
       "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
       "role": "bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence",
       "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+    },
+    {
+      "id": "e2-r1-ut3-sysconfig-and-native-extension-sdk",
+      "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+      "role": "relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence",
+      "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
     }
   ],
   "active_plan": {
@@ -118,10 +124,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "next_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "resume_program_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
     "status": "completed"
   },
   "documentation_layers": {
@@ -145,10 +151,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+  "next_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
   "predecessor": {
-    "commit": "ffdc2ebe65cf2e11a74c08bbdaab5cba1a54351f",
-    "tree": "bec2af6ce3894d34b109cf5ea532364843404c15"
+    "commit": "6ab21000b89f75de66bf9cae8ffe31ebd30b34fd",
+    "tree": "7d7ef4fbf9b4252d52ae9c2141fd18aa186f211b"
   },
   "program": {
     "epoch": {
@@ -157,11 +163,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/UT-3",
-      "name": "Sysconfig and native-extension SDK",
+      "id": "E2-R1/UT-4",
+      "name": "Android-mandatory data and writable-state policy",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+    "next_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
     "status": "active"
   },
   "project_model": {
@@ -202,22 +208,22 @@
     "sha256": "216f4c5e4e2c3c5a1930d8bcbeb6b43c4fe3417bac49cfebad8801f0c8ed1f15"
   },
   "state_kind": "project-current-state",
-  "state_revision": 9,
+  "state_revision": 10,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "81446eb1f20a8e8f22fdd1e9df8b3f6f0eadf43442a25ca1fb2c245824443467"
+    "sha256": "f9713b8299fa24aa540d155929a5a94e5089a6e832c95082774bf2847ce7037f"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
-    "pass_successor_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+    "current_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+    "pass_successor_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "UT-3 must normalize every active runtime and consumer metadata path and prove a real Android-tagged native-extension wheel build/install/import/relocation path before any SDK or product surface is selectable."
+    "UT-4 must define host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv writable-state, and read-only-install policies without importing Termux-private paths into the product contract."
   ],
-  "updated_by_transaction": "20260720-e2-r1-ut2-loader-relocation-launcher-getpath-v5"
+  "updated_by_transaction": "20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2"
 }

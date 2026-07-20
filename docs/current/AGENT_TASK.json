@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -49,13 +49,15 @@
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-sysconfig-sdk/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-android-data-policy/",
       "required_output_roles": [
-        "absolute-path-census",
-        "runtime-path-normalization",
-        "consumer-metadata-normalization",
-        "native-extension-wheel-evidence",
-        "sdk-flavor-decision",
+        "ca-trust-candidates",
+        "timezone-candidates",
+        "temporary-directory-policy",
+        "cache-bytecode-and-user-site-policy",
+        "venv-writable-state-policy",
+        "read-only-installation-behavior",
+        "negative-path-scans",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -72,9 +74,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+      "successor_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-4"
+      "successor_task_id": "E2-R1-UT-5"
     }
   },
   "default_exclusions": [
@@ -107,8 +109,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-3",
-    "name": "Sysconfig and native-extension SDK",
+    "id": "E2-R1/UT-4",
+    "name": "Android-mandatory data and writable-state policy",
     "status": "ready"
   },
   "required_authorities": [
@@ -131,24 +133,29 @@
       "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
       "reason": "Frozen Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation authority.",
       "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+      "reason": "Frozen relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel authority.",
+      "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
+      "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
       "scope": "section",
-      "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
-      "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
+      "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
+      "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
     }
   ],
   "schema_version": 2,
-  "state_revision": 9,
+  "state_revision": 10,
   "task": {
-    "action_class": "execute-e2-r1-ut3-sysconfig-and-native-extension-sdk",
-    "goal": "Normalize runtime and development metadata and prove a real Android native-extension wheel build, install, import, and supported relocation path.",
-    "id": "E2-R1-UT-3",
-    "title": "Sysconfig and native-extension SDK",
+    "action_class": "execute-e2-r1-ut4-android-data-and-writable-state-policy",
+    "goal": "Define host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv writable-state, and read-only-install policies for Android.",
+    "id": "E2-R1-UT-4",
+    "title": "Android-mandatory data and writable-state policy",
     "work_class": "L"
   }
 }

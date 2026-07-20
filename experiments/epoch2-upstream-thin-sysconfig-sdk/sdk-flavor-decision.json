@@ -1,0 +1,28 @@
+{
+  "epoch3_decision_enabled": true,
+  "flavors": {
+    "cross-build-sdk": {
+      "reason": "no explicit relocatable NDK/sysroot authority is packaged",
+      "status": "unavailable"
+    },
+    "on-device-sdk": {
+      "compiler": "clang",
+      "execution_context": "Termux Android app process",
+      "status": "experimentally-supported",
+      "wheel_build_install_import_relocate": true
+    },
+    "runtime-only": {
+      "includes_development_metadata": false,
+      "reason": "runtime consumers do not require producer/build surfaces",
+      "status": "representationally-required"
+    }
+  },
+  "non_claims": [
+    "Epoch 3 product selection",
+    "broad device qualification",
+    "publication"
+  ],
+  "phase": "SC-4",
+  "product_selectable": false,
+  "schema_version": 1
+}

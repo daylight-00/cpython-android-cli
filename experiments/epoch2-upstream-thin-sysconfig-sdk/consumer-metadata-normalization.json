@@ -1,0 +1,423 @@
+{
+  "location_a": {
+    "pass": true,
+    "pkg_config": [
+      {
+        "package": "python-3.14",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../lib"
+      },
+      {
+        "package": "python-3.14-embed",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../lib -lpython3.14"
+      },
+      {
+        "package": "openssl",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../include -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../lib -lssl -lcrypto"
+      },
+      {
+        "package": "sqlite3",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../include -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/pkgconfig/../../lib -lsqlite3"
+      }
+    ],
+    "producer_residue": [],
+    "python_config": [
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+        },
+        "option": "--prefix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+        },
+        "option": "--exec-prefix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14"
+        },
+        "option": "--includes",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        "option": "--cflags",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "option": "--libs",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "option": "--ldflags",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        "option": "--extension-suffix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".cpython-314-aarch64-linux-android.so"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+        },
+        "option": "--configdir",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+      }
+    ],
+    "schema_version": 1
+  },
+  "location_b_after_move": {
+    "pass": true,
+    "pkg_config": [
+      {
+        "package": "python-3.14",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../lib"
+      },
+      {
+        "package": "python-3.14-embed",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../lib -lpython3.14"
+      },
+      {
+        "package": "openssl",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../include -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../lib -lssl -lcrypto"
+      },
+      {
+        "package": "sqlite3",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../include -L/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/pkgconfig/../../lib -lsqlite3"
+      }
+    ],
+    "producer_residue": [],
+    "python_config": [
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+        },
+        "option": "--prefix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+        },
+        "option": "--exec-prefix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14"
+        },
+        "option": "--includes",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        "option": "--cflags",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -I/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "option": "--libs",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "option": "--ldflags",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        "option": "--extension-suffix",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".cpython-314-aarch64-linux-android.so"
+      },
+      {
+        "direct_entry": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+        },
+        "option": "--configdir",
+        "outputs_equal": true,
+        "python_invocation": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-b/prefix/lib/python3.14/config-3.14-aarch64-linux-android"
+      }
+    ],
+    "schema_version": 1
+  },
+  "pass": true,
+  "phase": "SC-2",
+  "schema_version": 1,
+  "text_location_a": {
+    "classification_counts": {
+      "android-or-termux-system": 2,
+      "generic-unix-system": 4
+    },
+    "rows": [
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/bin/sh"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptc"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptmx"
+      }
+    ],
+    "schema_version": 1,
+    "surface_count": 15
+  },
+  "text_location_b": {
+    "classification_counts": {
+      "android-or-termux-system": 2,
+      "generic-unix-system": 4
+    },
+    "rows": [
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/bin/sh"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptc"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptmx"
+      }
+    ],
+    "schema_version": 1,
+    "surface_count": 15
+  }
+}

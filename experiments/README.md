@@ -181,6 +181,22 @@
 - [`experiments/epoch2-upstream-thin-plan/external-audit.json`](epoch2-upstream-thin-plan/external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-plan/plan-authority.json`](epoch2-upstream-thin-plan/plan-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-sysconfig-sdk`
+
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/README.md`](epoch2-upstream-thin-sysconfig-sdk/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/absolute-path-census.json`](epoch2-upstream-thin-sysconfig-sdk/absolute-path-census.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/consumer-metadata-normalization.json`](epoch2-upstream-thin-sysconfig-sdk/consumer-metadata-normalization.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/evidence-freeze.md`](epoch2-upstream-thin-sysconfig-sdk/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/independent-audit.json`](epoch2-upstream-thin-sysconfig-sdk/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/native-extension-wheel-evidence.json`](epoch2-upstream-thin-sysconfig-sdk/native-extension-wheel-evidence.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/normalization-mutations.json`](epoch2-upstream-thin-sysconfig-sdk/normalization-mutations.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/official-extraction-verification.json`](epoch2-upstream-thin-sysconfig-sdk/official-extraction-verification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/runtime-path-normalization.json`](epoch2-upstream-thin-sysconfig-sdk/runtime-path-normalization.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/runtime-reproduction.json`](epoch2-upstream-thin-sysconfig-sdk/runtime-reproduction.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/sdk-flavor-decision.json`](epoch2-upstream-thin-sysconfig-sdk/sdk-flavor-decision.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-sysconfig-sdk/ut3-gate-diagnostics.json`](epoch2-upstream-thin-sysconfig-sdk/ut3-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `stage1b-pyconfig`
 
 - [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority

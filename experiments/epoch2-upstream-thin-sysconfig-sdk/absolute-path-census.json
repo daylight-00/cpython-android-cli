@@ -1,0 +1,580 @@
+{
+  "known_producer_roots": [
+    "/Users/runner/",
+    "/usr/local"
+  ],
+  "phase": "SC-0",
+  "producer_residue": [
+    "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'",
+    "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+    "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+    "/Users/runner/",
+    "/Users/runner/.local",
+    "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang",
+    "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+    "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++",
+    "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/../",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/coverage.info",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/lcov-report",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+    "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig",
+    "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe",
+    "/usr/local",
+    "/usr/local/bin",
+    "/usr/local/bin/python3.14",
+    "/usr/local/include",
+    "/usr/local/include/python3.14",
+    "/usr/local/lib",
+    "/usr/local/lib/libpython3.14.so",
+    "/usr/local/lib/libpython3.so",
+    "/usr/local/lib/pkgconfig",
+    "/usr/local/lib/python3.14",
+    "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android",
+    "/usr/local/lib/python3.14/lib-dynload",
+    "/usr/local/share",
+    "/usr/local/share/man",
+    "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"config_h\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14/pyconfig.h\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14\", \"makefile\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile\", \"paths\": {\"data\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"include\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14\"}, \"platform\": \"android-24-arm64_v8a\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"vars\": {\"ANDROID_API_LEVEL\": 24, \"AR\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar\", \"BINDIR\": \"/usr/local/bin\", \"BINLIBDEST\": \"/usr/local/lib/python3.14\", \"BLDLIBRARY\": \"-L. -lpython3.14\", \"BLDSHARED\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"BUILD_GNU_TYPE\": \"aarch64-apple-darwin24.6.0\", \"CC\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang\", \"CCSHARED\": \"-fPIC\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include\", \"CONFIG_ARGS\": \"'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'\", \"CONFINCLUDEPY\": \"/usr/local/include/python3.14\", \"CPPFLAGS\": \"-IObjects -IInclude -IPython -I. -I../../Include\", \"CXX\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++\", \"DESTSHARED\": \"/usr/local/lib/python3.14/lib-dynload\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-unknown-linux-android\", \"INCLUDEPY\": \"/usr/local/include/python3.14\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"LDSHARED\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"LIBDEST\": \"/usr/local/lib/python3.14\", \"LIBDIR\": \"/usr/local/lib\", \"LIBPL\": \"/usr/local/lib/python3.14/config-3.14-aarch64-linux-android\", \"LIBPYTHON\": \"-L. -lpython3.14\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_ENABLE_SHARED\": 1, \"SHELL\": \"/bin/sh -e\", \"SOABI\": \"cpython-314-aarch64-linux-android\", \"TZPATH\": \"/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo\", \"base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"exec_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"installed_base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"installed_platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"projectbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin\"}}\n"
+  ],
+  "runtime": {
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14",
+      "-c",
+      "<sysconfig-probe>"
+    ],
+    "data": {
+      "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+      "config_h": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14/pyconfig.h",
+      "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14",
+      "makefile": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+      "paths": {
+        "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14",
+        "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14",
+        "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages",
+        "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14",
+        "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages",
+        "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin",
+        "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14"
+      },
+      "platform": "android-24-arm64_v8a",
+      "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+      "vars": {
+        "ANDROID_API_LEVEL": 24,
+        "AR": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar",
+        "BINDIR": "/usr/local/bin",
+        "BINLIBDEST": "/usr/local/lib/python3.14",
+        "BLDLIBRARY": "-L. -lpython3.14",
+        "BLDSHARED": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+        "BUILD_GNU_TYPE": "aarch64-apple-darwin24.6.0",
+        "CC": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang",
+        "CCSHARED": "-fPIC",
+        "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+        "CONFIG_ARGS": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'",
+        "CONFINCLUDEPY": "/usr/local/include/python3.14",
+        "CPPFLAGS": "-IObjects -IInclude -IPython -I. -I../../Include",
+        "CXX": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++",
+        "DESTSHARED": "/usr/local/lib/python3.14/lib-dynload",
+        "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+        "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+        "INCLUDEPY": "/usr/local/include/python3.14",
+        "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+        "LDSHARED": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+        "LIBDEST": "/usr/local/lib/python3.14",
+        "LIBDIR": "/usr/local/lib",
+        "LIBPL": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android",
+        "LIBPYTHON": "-L. -lpython3.14",
+        "MULTIARCH": "aarch64-linux-android",
+        "Py_ENABLE_SHARED": 1,
+        "SHELL": "/bin/sh -e",
+        "SOABI": "cpython-314-aarch64-linux-android",
+        "TZPATH": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo",
+        "base": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "exec_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "installed_base": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "installed_platbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "platbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix",
+        "projectbase": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin"
+      }
+    },
+    "pass": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"config_h\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14/pyconfig.h\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin/python3.14\", \"makefile\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android/Makefile\", \"paths\": {\"data\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"include\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/lib/python3.14\"}, \"platform\": \"android-24-arm64_v8a\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"vars\": {\"ANDROID_API_LEVEL\": 24, \"AR\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar\", \"BINDIR\": \"/usr/local/bin\", \"BINLIBDEST\": \"/usr/local/lib/python3.14\", \"BLDLIBRARY\": \"-L. -lpython3.14\", \"BLDSHARED\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"BUILD_GNU_TYPE\": \"aarch64-apple-darwin24.6.0\", \"CC\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang\", \"CCSHARED\": \"-fPIC\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include\", \"CONFIG_ARGS\": \"'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'\", \"CONFINCLUDEPY\": \"/usr/local/include/python3.14\", \"CPPFLAGS\": \"-IObjects -IInclude -IPython -I. -I../../Include\", \"CXX\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++\", \"DESTSHARED\": \"/usr/local/lib/python3.14/lib-dynload\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-unknown-linux-android\", \"INCLUDEPY\": \"/usr/local/include/python3.14\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"LDSHARED\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"LIBDEST\": \"/usr/local/lib/python3.14\", \"LIBDIR\": \"/usr/local/lib\", \"LIBPL\": \"/usr/local/lib/python3.14/config-3.14-aarch64-linux-android\", \"LIBPYTHON\": \"-L. -lpython3.14\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_ENABLE_SHARED\": 1, \"SHELL\": \"/bin/sh -e\", \"SOABI\": \"cpython-314-aarch64-linux-android\", \"TZPATH\": \"/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo\", \"base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"exec_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"installed_base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"installed_platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"platbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix\", \"projectbase\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut3-sysconfig-and-native-extension-sdk-v2-20260720T033913Z-16534/ut3-experiment/location-a/prefix/bin\"}}\n"
+  },
+  "schema_version": 1,
+  "text_surfaces": {
+    "classification_counts": {
+      "android-or-termux-system": 2,
+      "generic-unix-system": 9,
+      "producer-ndk": 9,
+      "producer-workspace": 28,
+      "stale-install-prefix": 40,
+      "unknown-absolute": 3
+    },
+    "rows": [
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/bin"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/lib/python3.14"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/include"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/include/python3.14"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/coverage.info"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/lcov-report"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/lib"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/lib/python3.14/lib-dynload"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/bin/python3.14"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/lib/pkgconfig"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/share/man"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/bin/sh"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/../"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/usr/local/share"
+      },
+      {
+        "classification": "unknown-absolute",
+        "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py",
+        "token": "/Users/runner/"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/../"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/bin/sh"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/share"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/bin"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/lib"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/share/man"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/include"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/coverage.info"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/lcov-report"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/lib/pkgconfig"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/include/python3.14"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/bin/python3.14"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/lib/python3.14"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/usr/local/lib/python3.14/lib-dynload"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/.local"
+      },
+      {
+        "classification": "unknown-absolute",
+        "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json",
+        "token": "/Users/runner/"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local/bin/python3.14"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local/lib/libpython3.14.so"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local/lib/libpython3.so"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local/include/python3.14"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/build-details.json",
+        "token": "/usr/local/lib/pkgconfig"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/../"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++"
+      },
+      {
+        "classification": "producer-ndk",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/bin/sh"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/usr/bin/install"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "generic-unix-system",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix"
+      },
+      {
+        "classification": "producer-workspace",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig"
+      },
+      {
+        "classification": "unknown-absolute",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile",
+        "token": "/Users/runner/"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/python3.14/config-3.14-aarch64-linux-android/python-config.py",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptc"
+      },
+      {
+        "classification": "android-or-termux-system",
+        "path": "include/python3.14/pyconfig.h",
+        "token": "/dev/ptmx"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/libcrypto.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/libssl.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/openssl.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/python-3.14-embed.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/python-3.14.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/python3-embed.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/python3.pc",
+        "token": "/usr/local"
+      },
+      {
+        "classification": "stale-install-prefix",
+        "path": "lib/pkgconfig/sqlite3.pc",
+        "token": "/usr/local"
+      }
+    ],
+    "schema_version": 1,
+    "surface_count": 15
+  }
+}
