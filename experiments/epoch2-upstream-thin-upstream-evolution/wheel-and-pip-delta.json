@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "pass": true,
+  "patch_update": {
+    "compatibility_qualification_required": true,
+    "pip_strategy": "bundled-wheel inventory comparison; no base-pip product selection",
+    "python_json": {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "removed": [],
+      "removed_count": 0
+    },
+    "wheels": {
+      "added": [
+        "prefix/lib/python<PYVER>/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl"
+      ],
+      "added_count": 1,
+      "removed": [
+        "prefix/lib/python<PYVER>/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl"
+      ],
+      "removed_count": 1,
+      "unchanged_count": 3
+    }
+  },
+  "python315_preview": {
+    "expected_abi_tag_family": "cp315",
+    "pip_strategy": "preview bundled wheels are inventory evidence only; separate compatibility qualification required",
+    "python_json": {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "removed": [],
+      "removed_count": 0
+    },
+    "release_or_product_selection": false,
+    "wheels": {
+      "added": [],
+      "added_count": 0,
+      "removed": [],
+      "removed_count": 0,
+      "unchanged_count": 4
+    }
+  },
+  "schema_version": 1,
+  "ut5_base_pip_selected": false,
+  "ut5_uv_selected": false
+}

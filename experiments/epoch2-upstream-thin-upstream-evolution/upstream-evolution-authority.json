@@ -1,0 +1,1013 @@
+{
+  "acquisition_boundary": {
+    "exact_identity_required": true,
+    "input_count": 3,
+    "modes": [
+      "owner-local-cache-reuse"
+    ],
+    "network_acquisition_count": 0,
+    "scope": "bounded-owner-local"
+  },
+  "android_data_policy_authority": {
+    "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+    "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+  },
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+  "claim_boundary": {
+    "epoch3_selection": false,
+    "maintenance_delta": true,
+    "official_patch_update_rehearsal": true,
+    "official_upstream_identity": true,
+    "product_selectability": false,
+    "publication": false,
+    "python315_preview_evidence": true,
+    "python315_release_support": false,
+    "python315_runtime_qualification": false,
+    "release_cadence_selected": false,
+    "supported_version_policy_selected": false
+  },
+  "configuration_boundary": {
+    "automation_boundary": {
+      "configuration_only_may_not_bypass_runtime_qualification": true,
+      "parameterize_package_identity": true,
+      "parameterize_python_minor": true,
+      "re-run_full_authority_chain": true
+    },
+    "complete": true,
+    "pass": true,
+    "patch_update": {
+      "configuration_changes": [
+        "version",
+        "URL",
+        "checksum",
+        "upstream metadata",
+        "expected package identity"
+      ],
+      "configuration_only_candidate": false,
+      "non_configuration_delta_count": 14,
+      "qualification_replay_required": true
+    },
+    "schema_version": 1,
+    "version_specific_assumptions": {
+      "files_scanned": 43,
+      "files_with_version_literals": 20,
+      "hits": [
+        {
+          "counts": {
+            "3.14": 3,
+            "python3.14": 3
+          },
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/run_android_data_policy_experiment.py"
+        },
+        {
+          "counts": {
+            "3.14": 2,
+            "python3.14": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/test_verify_android_data_policy.py"
+        },
+        {
+          "counts": {
+            "3.14": 3,
+            "libpython3.14": 1,
+            "python3.14": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/audit_artifact_prototype.py"
+        },
+        {
+          "counts": {
+            "3.14": 4,
+            "cp314": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/generate_artifact_prototype.py"
+        },
+        {
+          "counts": {
+            "3.14": 2,
+            "libpython3.14": 1,
+            "python3.14": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/verify_artifact_prototype.py"
+        },
+        {
+          "counts": {
+            "3.15": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/finalize_feature_qualification.py"
+        },
+        {
+          "counts": {
+            "3.14": 19,
+            "python3.14": 19
+          },
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/run_feature_qualification_experiment.py"
+        },
+        {
+          "counts": {
+            "3.14": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/finalize_loader_relocation.py"
+        },
+        {
+          "counts": {
+            "3.14": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/launcher_la2_programs_python.c"
+        },
+        {
+          "counts": {
+            "3.14": 8,
+            "python3.14": 7
+          },
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/run_loader_relocation_experiment.py"
+        },
+        {
+          "counts": {
+            "3.14": 4,
+            "cpython-314": 1,
+            "python3.14": 4
+          },
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/test_verify_loader_relocation.py"
+        },
+        {
+          "counts": {
+            "3.14": 2,
+            "python3.14": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-platform-portability/audit_platform_portability.py"
+        },
+        {
+          "counts": {
+            "3.14": 1,
+            "3.15": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-platform-portability/finalize_platform_portability.py"
+        },
+        {
+          "counts": {
+            "3.14": 12,
+            "libpython3.14": 1,
+            "python3.14": 12
+          },
+          "path": "experiments/epoch2-upstream-thin-platform-portability/run_platform_portability_experiment.py"
+        },
+        {
+          "counts": {
+            "3.14": 2,
+            "python3.14": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-platform-portability/verify_platform_portability.py"
+        },
+        {
+          "counts": {
+            "cp314": 4
+          },
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/audit_sysconfig_sdk.py"
+        },
+        {
+          "counts": {
+            "3.14": 1
+          },
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/finalize_sysconfig_sdk.py"
+        },
+        {
+          "counts": {
+            "3.14": 40,
+            "cp314": 6,
+            "cpython-314": 4,
+            "libpython3.14": 1,
+            "python3.14": 29
+          },
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/run_sysconfig_sdk_experiment.py"
+        },
+        {
+          "counts": {
+            "cp314": 6,
+            "cpython-314": 2
+          },
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/test_verify_sysconfig_sdk.py"
+        },
+        {
+          "counts": {
+            "cp314": 4
+          },
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/verify_sysconfig_sdk.py"
+        }
+      ],
+      "parameterization_required": true,
+      "pass": true
+    }
+  },
+  "epoch3_decisions_enabled": [
+    "supported version policy",
+    "update automation",
+    "maintenance staffing",
+    "release cadence"
+  ],
+  "epoch3_selection_made": false,
+  "exit_condition": {
+    "epoch3_selection": false,
+    "patch_layout_added": 12,
+    "patch_layout_removed": 2,
+    "patch_normalized_changed_count": 239,
+    "patch_sysconfig_key_added": 0,
+    "patch_sysconfig_key_removed": 0,
+    "preview_extension_added": 2,
+    "preview_extension_removed": 2,
+    "preview_layout_added": 247,
+    "preview_layout_removed": 25,
+    "preview_release_claim": false,
+    "version_literal_file_count": 20
+  },
+  "feature_qualification_authority": {
+    "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+    "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+  },
+  "file_identities": {
+    "audit_upstream_evolution.py": "068e27877c68a2a9c2b39ab4d3037b9b1fe26ad62b7ed2a4dfedf53e6dd33c2e",
+    "configuration-only-delta.json": "619d6bfd5dce2893be90e151bd21cbcc736ea07504782d9d5ccd13c551e1d6ed",
+    "finalize_upstream_evolution.py": "c6e9b59e1e3c029896545ea148c7b6e23eba049e996893c802ad6e98568a802e",
+    "independent-audit.json": "3ab97726e103a20911b1f1d12bf7dcbb464db18edbaaa0b0ba57c3de35807a6d",
+    "input-identities.json": "bca11d891fdfde4b7642960b6262cc07c6a9f2e092059a4757b156817e9f8ba4",
+    "layout-and-extension-delta.json": "77c847ec46a9d9355bd4421a5fae3566f896bc1e4e74525c83b084f4193d5947",
+    "patch-update-rehearsal.json": "cc8b2921144cc5639d1fe408a4a5894ea3dcfe6063b10fb8792d5f45868372ba",
+    "python315-preview-delta.json": "c2b2577bf5fb6ac25b191c0bf26d8095d64ed2b31b65189e3f13066cf6acbd20",
+    "run-ut7-upstream-evolution.sh": "fa3a0470f3c7c1cf769788828be02635e43dec5fa48a3508486c9e310aefaed4",
+    "run_upstream_evolution_experiment.py": "904fa91f24a7e39c944ecce7de9177309a4733a5ca2e12af333a9cb5666d6e00",
+    "runpath-and-sysconfig-delta.json": "58d742a22b830c2e0cb0b4dfb53b3bdb613dab44378ea4bf7ee985a5fc981437",
+    "security-ownership.json": "d547d209ed6acc58a809d3bb34a8314fac09de356848343c463a84c5bdc57033",
+    "test_verify_upstream_evolution.py": "e05445ba56b48288c51536cde4260fd0bdad9b00af546965c27b37b875c97377",
+    "ut7-gate-diagnostics.json": "8dd7a44b2f7328564e8f3ec455c7529f75682f954c4178d123856b6c377b9aa0",
+    "verify_upstream_evolution.py": "1811851a6be2fd5036617862d048bcfcfa5efd6c8ee7c437d390bcd513df1670",
+    "wheel-and-pip-delta.json": "458313c0664d5a23e4ca08edcf7ab51222ab7cabece540d939eb223a8768ebdd"
+  },
+  "gate_condition": {
+    "authority_bindings_exact": true,
+    "configuration_only_boundary_explicit": true,
+    "epoch3_selection_absent": true,
+    "layout_and_extension_delta_complete": true,
+    "official_inputs_sigstore_bound": true,
+    "patch_update_rehearsal_complete": true,
+    "preview_release_claim_absent": true,
+    "python315_preview_delta_complete": true,
+    "runpath_and_sysconfig_delta_complete": true,
+    "security_ownership_explicit": true,
+    "update_burden_explicit": true,
+    "version_specific_assumptions_explicit": true,
+    "wheel_and_pip_delta_complete": true
+  },
+  "layout_and_extension_delta": {
+    "complete": true,
+    "pass": true,
+    "patch_update": {
+      "extension_modules": {
+        "added": [],
+        "added_count": 0,
+        "removed": [],
+        "removed_count": 0,
+        "unchanged_count": 67
+      },
+      "from": "3.14.5",
+      "normalized_layout": {
+        "added": [
+          "include/openssl/byteorder.h",
+          "include/openssl/e_ostime.h",
+          "include/openssl/hpke.h",
+          "include/openssl/indicator.h",
+          "include/openssl/ml_kem.h",
+          "include/openssl/quic.h",
+          "include/openssl/thread.h",
+          "include/openssl/x509_acert.h",
+          "lib/python<PYVER>/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl",
+          "lib/python<PYVER>/test/test_capi/test_weakref.py",
+          "lib/python<PYVER>/test/test_free_threading/test_dict_watcher.py",
+          "lib/python<PYVER>/test/test_free_threading/test_pickle.py"
+        ],
+        "added_count": 12,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [
+          "include/openssl/asn1_mac.h",
+          "lib/python<PYVER>/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl"
+        ],
+        "removed_count": 2
+      },
+      "raw_counts": {
+        "from_extensions": 67,
+        "from_paths": 3141,
+        "to_extensions": 67,
+        "to_paths": 3151
+      },
+      "shared_libraries": {
+        "added": [],
+        "added_count": 0,
+        "removed": [],
+        "removed_count": 0,
+        "unchanged_count": 76
+      },
+      "to": "3.14.6"
+    },
+    "python315_preview": {
+      "extension_modules": {
+        "added": [
+          "_math_integer",
+          "xxlimited_3_13"
+        ],
+        "added_count": 2,
+        "removed": [
+          "_asyncio",
+          "_decimal"
+        ],
+        "removed_count": 2,
+        "unchanged_count": 65
+      },
+      "from": "3.14.6",
+      "normalized_layout": {
+        "added": [
+          "include/python<PYVER>/cpython/marshal.h",
+          "include/python<PYVER>/cpython/pylock.h",
+          "include/python<PYVER>/cpython/sentinelobject.h",
+          "include/python<PYVER>/cpython/sliceobject.h",
+          "include/python<PYVER>/cpython/structseq.h",
+          "include/python<PYVER>/internal/pycore_jit_publish.h",
+          "include/python<PYVER>/internal/pycore_jit_unwind.h",
+          "include/python<PYVER>/internal/pycore_lazyimportobject.h",
+          "include/python<PYVER>/internal/pycore_mmap.h",
+          "include/python<PYVER>/internal/pycore_optimizer_types.h",
+          "include/python<PYVER>/internal/pycore_slots.h",
+          "include/python<PYVER>/internal/pycore_slots_generated.h",
+          "include/python<PYVER>/internal/pycore_unicodectype.h",
+          "include/python<PYVER>/internal/pycore_uop.h",
+          "include/python<PYVER>/pyabi.h",
+          "include/python<PYVER>/slots.h",
+          "include/python<PYVER>/slots_generated.h",
+          "lib/python<PYVER>/_missing_stdlib_info.py",
+          "lib/python<PYVER>/_pyrepl/content.py",
+          "lib/python<PYVER>/_pyrepl/fancycompleter.py",
+          "lib/python<PYVER>/_pyrepl/layout.py",
+          "lib/python<PYVER>/_pyrepl/render.py",
+          "lib/python<PYVER>/idlelib/idle_test/test_zzdummy_user.py",
+          "lib/python<PYVER>/importlib/metadata/_context.py",
+          "lib/python<PYVER>/importlib/metadata/_typing.py",
+          "lib/python<PYVER>/lib-dynload/_math_integer.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/lib-dynload/xxlimited_3_13.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/profiling",
+          "lib/python<PYVER>/profiling/__init__.py",
+          "lib/python<PYVER>/profiling/sampling",
+          "lib/python<PYVER>/profiling/sampling/__init__.py",
+          "lib/python<PYVER>/profiling/sampling/__main__.py",
+          "lib/python<PYVER>/profiling/sampling/_assets",
+          "lib/python<PYVER>/profiling/sampling/_assets/python-logo-only.png",
+          "lib/python<PYVER>/profiling/sampling/_assets/tachyon-logo.png",
+          "lib/python<PYVER>/profiling/sampling/_child_monitor.py",
+          "lib/python<PYVER>/profiling/sampling/_css_utils.py",
+          "lib/python<PYVER>/profiling/sampling/_flamegraph_assets",
+          "lib/python<PYVER>/profiling/sampling/_flamegraph_assets/flamegraph.css",
+          "lib/python<PYVER>/profiling/sampling/_flamegraph_assets/flamegraph.js",
+          "lib/python<PYVER>/profiling/sampling/_flamegraph_assets/flamegraph_template.html",
+          "lib/python<PYVER>/profiling/sampling/_format_utils.py",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap.css",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap.js",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap_index.js",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap_index_template.html",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap_pyfile_template.html",
+          "lib/python<PYVER>/profiling/sampling/_heatmap_assets/heatmap_shared.js",
+          "lib/python<PYVER>/profiling/sampling/_shared_assets",
+          "lib/python<PYVER>/profiling/sampling/_shared_assets/base.css",
+          "lib/python<PYVER>/profiling/sampling/_shared_assets/base.js",
+          "lib/python<PYVER>/profiling/sampling/_sync_coordinator.py",
+          "lib/python<PYVER>/profiling/sampling/_vendor",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3-flame-graph",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3-flame-graph/4.1.3",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3-flame-graph/4.1.3/d3-flamegraph-tooltip.min.js",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3-flame-graph/4.1.3/d3-flamegraph.css",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3-flame-graph/4.1.3/d3-flamegraph.min.js",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3/7.8.5",
+          "lib/python<PYVER>/profiling/sampling/_vendor/d3/7.8.5/d3.min.js",
+          "lib/python<PYVER>/profiling/sampling/binary_collector.py",
+          "lib/python<PYVER>/profiling/sampling/binary_reader.py",
+          "lib/python<PYVER>/profiling/sampling/cli.py",
+          "lib/python<PYVER>/profiling/sampling/collector.py",
+          "lib/python<PYVER>/profiling/sampling/constants.py",
+          "lib/python<PYVER>/profiling/sampling/dump.py",
+          "lib/python<PYVER>/profiling/sampling/errors.py",
+          "lib/python<PYVER>/profiling/sampling/gecko_collector.py",
+          "lib/python<PYVER>/profiling/sampling/heatmap_collector.py",
+          "lib/python<PYVER>/profiling/sampling/jsonl_collector.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector",
+          "lib/python<PYVER>/profiling/sampling/live_collector/__init__.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector/collector.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector/constants.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector/display.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector/trend_tracker.py",
+          "lib/python<PYVER>/profiling/sampling/live_collector/widgets.py",
+          "lib/python<PYVER>/profiling/sampling/module_utils.py",
+          "lib/python<PYVER>/profiling/sampling/opcode_utils.py",
+          "lib/python<PYVER>/profiling/sampling/pstats_collector.py",
+          "lib/python<PYVER>/profiling/sampling/sample.py",
+          "lib/python<PYVER>/profiling/sampling/stack_collector.py",
+          "lib/python<PYVER>/profiling/sampling/string_table.py",
+          "lib/python<PYVER>/profiling/tracing",
+          "lib/python<PYVER>/profiling/tracing/__init__.py",
+          "lib/python<PYVER>/profiling/tracing/__main__.py",
+          "lib/python<PYVER>/profiling/tracing/_utils.py",
+          "lib/python<PYVER>/sqlite3/_completer.py",
+          "lib/python<PYVER>/test/audiodata/pluck-float32.wav",
+          "lib/python<PYVER>/test/audit_test_data",
+          "lib/python<PYVER>/test/audit_test_data/__init__.py",
+          "lib/python<PYVER>/test/audit_test_data/submodule.py",
+          "lib/python<PYVER>/test/audit_test_data/submodule2.py",
+          "lib/python<PYVER>/test/mime.types2",
+          "lib/python<PYVER>/test/test_asyncio/test_server_context.py",
+          "lib/python<PYVER>/test/test_c_stack_unwind.py",
+          "lib/python<PYVER>/test/test_capi/test_modsupport.py",
+          "lib/python<PYVER>/test/test_capi/test_module.py",
+          "lib/python<PYVER>/test/test_capi/test_slots.py",
+          "lib/python<PYVER>/test/test_dataclasses/_types_proxy.py",
+          "lib/python<PYVER>/test/test_dataclasses/dataclass_module_3.py",
+          "lib/python<PYVER>/test/test_dataclasses/dataclass_module_3_str.py",
+          "lib/python<PYVER>/test/test_dataclasses/dataclass_module_4.py",
+          "lib/python<PYVER>/test/test_dataclasses/dataclass_module_4_str.py",
+          "lib/python<PYVER>/test/test_free_threading/test_bz2.py",
+          "lib/python<PYVER>/test/test_free_threading/test_exceptions.py",
+          "lib/python<PYVER>/test/test_free_threading/test_generators.py",
+          "lib/python<PYVER>/test/test_free_threading/test_itertools.py",
+          "lib/python<PYVER>/test/test_free_threading/test_itertools_combinatoric.py",
+          "lib/python<PYVER>/test/test_free_threading/test_json.py",
+          "lib/python<PYVER>/test/test_free_threading/test_lzma.py",
+          "lib/python<PYVER>/test/test_free_threading/test_pwd.py",
+          "lib/python<PYVER>/test/test_free_threading/test_string_template_race.py",
+          "lib/python<PYVER>/test/test_free_threading/test_suggestions.py",
+          "lib/python<PYVER>/test/test_free_threading/test_sys.py",
+          "lib/python<PYVER>/test/test_free_threading/test_syslog.py",
+          "lib/python<PYVER>/test/test_free_threading/test_threading.py",
+          "lib/python<PYVER>/test/test_free_threading/test_types.py",
+          "lib/python<PYVER>/test/test_free_threading/test_zlib.py",
+          "lib/python<PYVER>/test/test_gc_stats.py",
+          "lib/python<PYVER>/test/test_gdb/gdb_jit_sample.py",
+          "lib/python<PYVER>/test/test_gdb/test_jit.py",
+          "lib/python<PYVER>/test/test_import/data/syntax_warnings.py",
+          "lib/python<PYVER>/test/test_importlib/namespace_pkgs/foo",
+          "lib/python<PYVER>/test/test_importlib/namespace_pkgs/foo/README.md",
+          "lib/python<PYVER>/test/test_importlib/resources/test_util.py",
+          "lib/python<PYVER>/test/test_importlib/test_discover.py",
+          "lib/python<PYVER>/test/test_inspect/inspect_fodder3.py",
+          "lib/python<PYVER>/test/test_io",
+          "lib/python<PYVER>/test/test_io/__init__.py",
+          "lib/python<PYVER>/test/test_io/__main__.py",
+          "lib/python<PYVER>/test/test_io/test_bufferedio.py",
+          "lib/python<PYVER>/test/test_io/test_file.py",
+          "lib/python<PYVER>/test/test_io/test_fileio.py",
+          "lib/python<PYVER>/test/test_io/test_general.py",
+          "lib/python<PYVER>/test/test_io/test_largefile.py",
+          "lib/python<PYVER>/test/test_io/test_memoryio.py",
+          "lib/python<PYVER>/test/test_io/test_signals.py",
+          "lib/python<PYVER>/test/test_io/test_textio.py",
+          "lib/python<PYVER>/test/test_io/test_univnewlines.py",
+          "lib/python<PYVER>/test/test_io/utils.py",
+          "lib/python<PYVER>/test/test_lazy_import",
+          "lib/python<PYVER>/test/test_lazy_import/__init__.py",
+          "lib/python<PYVER>/test/test_lazy_import/__main__.py",
+          "lib/python<PYVER>/test/test_lazy_import/data",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_class_body.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_future_import.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_import_func.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_try_except.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_try_except_from.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/badsyntax/lazy_try_except_from_star.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic2.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_compatibility_mode.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_compatibility_mode_relative.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_compatibility_mode_used.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_dir.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_from_unused.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_unused.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/basic_used.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/broken_attr_module.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/broken_module.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/compatibility_mode_func.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/compatibility_mode_try_except.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/dunder_lazy_import.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/dunder_lazy_import_builtins.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/dunder_lazy_import_used.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/eager_import_func.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/global_filter.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/global_filter_from.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/global_filter_from_true.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/global_filter_true.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/global_on.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/globals_access.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/lazy_compat_from.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/lazy_get_value.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/lazy_import_pkg.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/lazy_with.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/lazy_with_from.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/module_with_getattr.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/modules_dict.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/modules_getattr.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/modules_getattr_other.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/multi_from_import.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/pkg",
+          "lib/python<PYVER>/test/test_lazy_import/data/pkg/__init__.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/pkg/b.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/pkg/bar.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/pkg/c.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/relative_lazy.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/relative_lazy_from.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/try_except_eager.py",
+          "lib/python<PYVER>/test/test_lazy_import/data/try_except_eager_from.py",
+          "lib/python<PYVER>/test/test_math_integer.py",
+          "lib/python<PYVER>/test/test_multiprocessing_forkserver/test_preload.py",
+          "lib/python<PYVER>/test/test_os",
+          "lib/python<PYVER>/test/test_os/__init__.py",
+          "lib/python<PYVER>/test/test_os/test_os.py",
+          "lib/python<PYVER>/test/test_os/test_posix.py",
+          "lib/python<PYVER>/test/test_os/test_windows.py",
+          "lib/python<PYVER>/test/test_os/utils.py",
+          "lib/python<PYVER>/test/test_profiling",
+          "lib/python<PYVER>/test/test_profiling/__init__.py",
+          "lib/python<PYVER>/test/test_profiling/__main__.py",
+          "lib/python<PYVER>/test/test_profiling/test_heatmap.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/__init__.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/_live_collector_helpers.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/helpers.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/mocks.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_advanced.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_async.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_binary_format.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_blocking.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_children.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_cli.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_collectors.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_dump.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_integration.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_live_collector_core.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_live_collector_interaction.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_live_collector_ui.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_modes.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_profiler.py",
+          "lib/python<PYVER>/test/test_profiling/test_sampling_profiler/test_trend_tracker.py",
+          "lib/python<PYVER>/test/test_profiling/test_tracing_profiler.py",
+          "lib/python<PYVER>/test/test_pyrepl/test_fancycompleter.py",
+          "lib/python<PYVER>/test/test_pyrepl/test_layout.py",
+          "lib/python<PYVER>/test/test_pyrepl/test_render.py",
+          "lib/python<PYVER>/test/test_pystats.py",
+          "lib/python<PYVER>/test/test_samply_profiler.py",
+          "lib/python<PYVER>/test/test_tkinter/test_dnd.py",
+          "lib/python<PYVER>/test/test_tkinter/test_filedialog.py",
+          "lib/python<PYVER>/test/test_tkinter/test_scrolledtext.py",
+          "lib/python<PYVER>/test/test_tkinter/test_tkinter_pipe.py",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/inline-table",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/inline-table/empty-inline-table.json",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/inline-table/empty-inline-table.toml",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/inline-table/multiline-inline-table.json",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/inline-table/multiline-inline-table.toml",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/multiline-basic-str/replacements.json",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/multiline-basic-str/replacements.toml",
+          "lib/python<PYVER>/test/test_xml.py",
+          "lib/python<PYVER>/xml/utils.py",
+          "lib/python<PYVER>/zipfile/_path/_functools.py"
+        ],
+        "added_count": 247,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [
+          "include/python<PYVER>/cpython/lock.h",
+          "include/python<PYVER>/lock.h",
+          "include/python<PYVER>/monitoring.h",
+          "include/python<PYVER>/typeslots.h",
+          "lib/python<PYVER>/lib-dynload/_asyncio.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/lib-dynload/_decimal.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/sre_compile.py",
+          "lib/python<PYVER>/sre_constants.py",
+          "lib/python<PYVER>/sre_parse.py",
+          "lib/python<PYVER>/test/dtracedata/line.d",
+          "lib/python<PYVER>/test/dtracedata/line.d.expected",
+          "lib/python<PYVER>/test/dtracedata/line.py",
+          "lib/python<PYVER>/test/test_bufio.py",
+          "lib/python<PYVER>/test/test_cprofile.py",
+          "lib/python<PYVER>/test/test_file.py",
+          "lib/python<PYVER>/test/test_fileio.py",
+          "lib/python<PYVER>/test/test_free_threading/test_itertools_batched.py",
+          "lib/python<PYVER>/test/test_io.py",
+          "lib/python<PYVER>/test/test_largefile.py",
+          "lib/python<PYVER>/test/test_memoryio.py",
+          "lib/python<PYVER>/test/test_os.py",
+          "lib/python<PYVER>/test/test_posix.py",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/empty-inline-table.json",
+          "lib/python<PYVER>/test/test_tomllib/data/valid/empty-inline-table.toml",
+          "lib/python<PYVER>/test/test_univnewlines.py"
+        ],
+        "removed_count": 25
+      },
+      "raw_counts": {
+        "from_extensions": 67,
+        "from_paths": 3151,
+        "to_extensions": 67,
+        "to_paths": 3373
+      },
+      "shared_libraries": {
+        "added": [
+          "lib/python<PYVER>/lib-dynload/_math_integer.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/lib-dynload/xxlimited_3_13.cpython-<PYTAG>-aarch64-linux-android.so"
+        ],
+        "added_count": 2,
+        "removed": [
+          "lib/python<PYVER>/lib-dynload/_asyncio.cpython-<PYTAG>-aarch64-linux-android.so",
+          "lib/python<PYVER>/lib-dynload/_decimal.cpython-<PYTAG>-aarch64-linux-android.so"
+        ],
+        "removed_count": 2,
+        "unchanged_count": 74
+      },
+      "to": "3.15.0b4"
+    },
+    "schema_version": 1
+  },
+  "loader_relocation_authority": {
+    "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+    "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+  },
+  "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+  "official_inputs": [
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "current-accepted",
+      "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.14.6-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "c7ac761686eded04a3bf8c7a9be83916e673c1c230bcd22f6cdf5fa415b0feb7",
+      "sigstore_size": 5439,
+      "size": 22358404,
+      "url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-aarch64-linux-android.tar.gz",
+      "version": "3.14.6"
+    },
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.14.5-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "official-patch-predecessor",
+      "sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.14.5-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "0d094fe223aa4b4bfbc0f25e5cd20a3294adbc2ac694af1024756e50a515b2a2",
+      "sigstore_size": 5319,
+      "size": 21479191,
+      "url": "https://www.python.org/ftp/python/3.14.5/python-3.14.5-aarch64-linux-android.tar.gz",
+      "version": "3.14.5"
+    },
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.15.0b4-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "python315-preview",
+      "sha256": "789d5ef9cc2d19fe93b8801b7e1e9073daa69807472da898323dae31facf3dfc",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.15.0b4-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "c3e249cf68e709e8b9e31d848a0781cfb871d78c4f8ff8f03745189858ca9ea2",
+      "sigstore_size": 7152,
+      "size": 23766878,
+      "url": "https://www.python.org/ftp/python/3.15.0/python-3.15.0b4-aarch64-linux-android.tar.gz",
+      "version": "3.15.0b4"
+    }
+  ],
+  "operation_protocol": {
+    "assistant_network_assumed": false,
+    "bootstrap_contract_sha256": "d213ed4cd7d5a625b6aa2eab2e6589631194e83a32b79f403dea8118e8052601",
+    "embedded_runner_required": true,
+    "owner_local_network_acquisition_allowed": true,
+    "revision": 3,
+    "session_protocol_sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47",
+    "single_archive_exchange": true
+  },
+  "patch_update": {
+    "configuration_only_candidate": false,
+    "from_version": "3.14.5",
+    "normalized_file_delta": {
+      "added_count": 12,
+      "changed_count": 239,
+      "removed_count": 2
+    },
+    "qualification_replay_required": [
+      "loader and native closure",
+      "relocation",
+      "sysconfig and native SDK",
+      "Android data and state policy",
+      "feature qualification",
+      "platform portability"
+    ],
+    "to_version": "3.14.6"
+  },
+  "plan_authority": {
+    "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+    "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+  },
+  "platform_portability_authority": {
+    "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+    "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+  },
+  "predecessor": {
+    "commit": "62cfef14e0dec602d3229e05b21a4ac0c7d4552f",
+    "tree": "c1f278294dc0ba842bb36841968352e88646eaab"
+  },
+  "python315_preview": {
+    "pidfd_related_subprocess_behavior": {
+      "direct_runtime_qualified": false,
+      "qualification_required": true,
+      "static_evidence": [
+        {
+          "occurrences": 16,
+          "path": "lib/python3.15/subprocess.py"
+        }
+      ]
+    },
+    "preview_only": true,
+    "product_selection": false,
+    "release_claim": false,
+    "runtime_support_claim": false,
+    "version": "3.15.0b4"
+  },
+  "runpath_and_sysconfig_delta": {
+    "complete": true,
+    "pass": true,
+    "patch_update": {
+      "runpaths": {
+        "added": [],
+        "added_count": 0,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [],
+        "removed_count": 0
+      },
+      "sysconfig_change_classes": {
+        "feature_flag": 0,
+        "other": 0,
+        "path_or_toolchain": 0,
+        "version_or_tag": 0
+      },
+      "sysconfig_keys": {
+        "added": [],
+        "added_count": 0,
+        "removed": [],
+        "removed_count": 0,
+        "unchanged_count": 1083
+      },
+      "sysconfig_selected": {
+        "added": [],
+        "added_count": 0,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [],
+        "removed_count": 0
+      }
+    },
+    "python315_preview": {
+      "runpaths": {
+        "added": [],
+        "added_count": 0,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [],
+        "removed_count": 0
+      },
+      "sysconfig_change_classes": {
+        "feature_flag": 0,
+        "other": 3,
+        "path_or_toolchain": 1,
+        "version_or_tag": 3
+      },
+      "sysconfig_keys": {
+        "added": [
+          "CONFIGURE_EXE_LDFLAGS",
+          "HAVE_CLEARENV",
+          "HAVE_CURSES_ESCDELAY",
+          "HAVE_CURSES_GETMOUSE",
+          "HAVE_CURSES_SET_ESCDELAY",
+          "HAVE_CURSES_SET_TABSIZE",
+          "HAVE_CURSES_TABSIZE",
+          "HAVE_DECL_PR_SET_VMA_ANON_NAME",
+          "HAVE_LINUX_CAN_ISOTP_H",
+          "HAVE_PPOLL",
+          "HAVE_STATX",
+          "HAVE_STRUCT_STATX_STX_ATOMIC_WRITE_UNIT_MAX_OPT",
+          "HAVE_STRUCT_STATX_STX_ATOMIC_WRITE_UNIT_MIN",
+          "HAVE_STRUCT_STATX_STX_DIO_MEM_ALIGN",
+          "HAVE_STRUCT_STATX_STX_DIO_READ_OFFSET_ALIGN",
+          "HAVE_STRUCT_STATX_STX_MNT_ID",
+          "HAVE_STRUCT_STATX_STX_SUBVOL",
+          "HAVE_SYSCTLBYNAME",
+          "HAVE_SYS_SYSCTL_H",
+          "JIT_BUILD_TARGETS",
+          "JIT_GENERATED_STAMP",
+          "JIT_OBJS",
+          "JIT_SHIM_BUILD_OBJS",
+          "JIT_TARGETS",
+          "JIT_UNWIND_INFO_H",
+          "MODULE_XXLIMITED_3_13_STATE",
+          "MODULE__ASYNCIO_LDFLAGS",
+          "MODULE__MATH_INTEGER_STATE",
+          "MODULE__REMOTE_DEBUGGING_CFLAGS",
+          "MODULE__REMOTE_DEBUGGING_DEPS",
+          "MODULE__REMOTE_DEBUGGING_LDFLAGS",
+          "PYMALLOC_USE_HUGEPAGES"
+        ],
+        "added_count": 32,
+        "removed": [
+          "DOUBLE_IS_ARM_MIXED_ENDIAN_IEEE754",
+          "MODULE__CTYPES_TEST_CFLAGS",
+          "MODULE__DECIMAL_CFLAGS",
+          "MODULE__DECIMAL_LDFLAGS",
+          "Py_TAIL_CALL_INTERP"
+        ],
+        "removed_count": 5,
+        "unchanged_count": 1078
+      },
+      "sysconfig_selected": {
+        "added": [],
+        "added_count": 0,
+        "changed": [
+          {
+            "from": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+            "key": "CFLAGS",
+            "to": "-fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+          },
+          {
+            "from": "/usr/local/lib/python3.14/lib-dynload",
+            "key": "DESTSHARED",
+            "to": "/usr/local/lib/python3.15/lib-dynload"
+          },
+          {
+            "from": ".cpython-314-aarch64-linux-android.so",
+            "key": "EXT_SUFFIX",
+            "to": ".cpython-315-aarch64-linux-android.so"
+          },
+          {
+            "from": "/usr/local/include/python3.14",
+            "key": "INCLUDEPY",
+            "to": "/usr/local/include/python3.15"
+          },
+          {
+            "from": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android",
+            "key": "LIBPL",
+            "to": "/usr/local/lib/python3.15/config-3.15-aarch64-linux-android"
+          },
+          {
+            "from": "cpython-314-aarch64-linux-android",
+            "key": "SOABI",
+            "to": "cpython-315-aarch64-linux-android"
+          },
+          {
+            "from": "3.14",
+            "key": "VERSION",
+            "to": "3.15"
+          }
+        ],
+        "changed_count": 7,
+        "removed": [],
+        "removed_count": 0
+      }
+    },
+    "schema_version": 1,
+    "selected_launcher_authority_sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2",
+    "sysconfig_authority_sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "schema_version": 1,
+  "security_ownership": {
+    "maintenance_model": {
+      "automatic_release_on_green": false,
+      "minimum_roles": [
+        "implementation maintainer",
+        "independent reviewer"
+      ],
+      "patch_update_steps": [
+        "acquire and bind official artifacts",
+        "run structural delta",
+        "review non-identity changes",
+        "replay qualification",
+        "freeze successor authority"
+      ],
+      "release_cadence_decision_enabled": true,
+      "staffing_decision_enabled": true
+    },
+    "ownership": [
+      {
+        "local_obligation": "consume signed official patch releases and review release notes",
+        "owner": "CPython upstream",
+        "surface": "CPython source security fixes and CVE response"
+      },
+      {
+        "local_obligation": "verify official identity and enumerate packaging deltas",
+        "owner": "Python.org/BeeWare release pipeline",
+        "surface": "Android package production and upstream Android patches"
+      },
+      {
+        "local_obligation": "replay full authority chain for each accepted update",
+        "owner": "local cpython-android-cli maintainers",
+        "surface": "launcher, RUNPATH, relocation, sysconfig and metadata transformations"
+      },
+      {
+        "local_obligation": "inventory changes and requalify selected surfaces",
+        "owner": "shared upstream plus local policy",
+        "surface": "bundled dependency versions, wheel and pip policy"
+      },
+      {
+        "local_obligation": "never convert preview evidence into a release or support claim",
+        "owner": "local research maintainers",
+        "surface": "preview interpretation"
+      }
+    ],
+    "pass": true,
+    "schema_version": 1
+  },
+  "status": "frozen-pass-bounded-patch-update-and-preview-delta",
+  "sysconfig_sdk_authority": {
+    "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+    "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "91/91",
+    "negative_fixtures": "required-before-transaction"
+  },
+  "wheel_and_pip_delta": {
+    "complete": true,
+    "pass": true,
+    "patch_update": {
+      "compatibility_qualification_required": true,
+      "pip_strategy": "bundled-wheel inventory comparison; no base-pip product selection",
+      "python_json": {
+        "added": [],
+        "added_count": 0,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [],
+        "removed_count": 0
+      },
+      "wheels": {
+        "added": [
+          "prefix/lib/python<PYVER>/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl"
+        ],
+        "added_count": 1,
+        "removed": [
+          "prefix/lib/python<PYVER>/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl"
+        ],
+        "removed_count": 1,
+        "unchanged_count": 3
+      }
+    },
+    "python315_preview": {
+      "expected_abi_tag_family": "cp315",
+      "pip_strategy": "preview bundled wheels are inventory evidence only; separate compatibility qualification required",
+      "python_json": {
+        "added": [],
+        "added_count": 0,
+        "changed": [],
+        "changed_count": 0,
+        "removed": [],
+        "removed_count": 0
+      },
+      "release_or_product_selection": false,
+      "wheels": {
+        "added": [],
+        "added_count": 0,
+        "removed": [],
+        "removed_count": 0,
+        "unchanged_count": 4
+      }
+    },
+    "schema_version": 1,
+    "ut5_base_pip_selected": false,
+    "ut5_uv_selected": false
+  }
+}

@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+      "correction_task_must_resume_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -45,19 +45,19 @@
     },
     "pass": {
       "required_catalog_updates": [
-        "bind-accepted-authority-into-successor",
-        "activate-successor-task",
-        "define-successor-completion-contract-before-selection"
+        "record-epoch2-closure-readiness",
+        "define-next-program-decision-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-upstream-evolution/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-api36-controlled-comparison/",
       "required_output_roles": [
-        "patch-update-rehearsal",
-        "configuration-only-delta",
-        "layout-and-extension-delta",
-        "runpath-and-sysconfig-delta",
-        "wheel-and-pip-delta",
-        "python315-preview-delta",
-        "security-ownership",
+        "control-class-a",
+        "control-class-b",
+        "control-class-c",
+        "controlled-delta-inventory",
+        "runtime-and-elf-measurements",
+        "benchmark-and-size",
+        "wheel-sysconfig-and-symbols",
+        "provenance-and-build-burden",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -74,9 +74,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
-      "successor_must_exist": true,
-      "successor_task_id": "E2-R1-API36-1"
+      "successor_action_class": "evaluate-epoch2-closure-gates",
+      "successor_must_exist": false,
+      "successor_task_id": "E2-CLOSURE"
     }
   },
   "default_exclusions": [
@@ -109,8 +109,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-7",
-    "name": "Upstream evolution and maintenance portability",
+    "id": "E2-R1/API36-1",
+    "name": "API-36 controlled source-equivalent comparison",
     "status": "ready"
   },
   "required_authorities": [
@@ -153,24 +153,29 @@
       "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
       "reason": "Frozen bounded platform portability and explicit withheld-claim authority.",
       "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+      "reason": "Frozen patch-update and preview maintenance-portability authority.",
+      "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Patch update and Python 3.15 preview maintenance portability.",
+      "reason": "API-36 controlled source-equivalent comparison track.",
       "scope": "section",
-      "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
-      "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
+      "section_heading": "## API-36 controlled source-equivalent comparison track",
+      "stop_before_heading": "## 7. Epoch 2 closure gates"
     }
   ],
   "schema_version": 2,
-  "state_revision": 13,
+  "state_revision": 14,
   "task": {
-    "action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
-    "goal": "Bound patch-update and Python 3.15 evolution burden without turning preview evidence into a release claim.",
-    "id": "E2-R1-UT-7",
-    "title": "Upstream evolution and maintenance portability",
+    "action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "goal": "Compare API-36 source-equivalent control classes while enumerating every delta beyond the compile API.",
+    "id": "E2-R1-API36-1",
+    "title": "API-36 controlled source-equivalent comparison",
     "work_class": "L"
   }
 }

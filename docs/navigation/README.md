@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability
-gate         E2-R1/UT-7 — Upstream evolution and maintenance portability
-tracked docs 645
+action       execute-e2-r1-api36-controlled-source-equivalent-comparison
+gate         E2-R1/API36-1 — API-36 controlled source-equivalent comparison
+tracked docs 658
 indexes      16
 ```
 

@@ -245,6 +245,22 @@
 - [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-sysconfig-sdk/ut3-gate-diagnostics.json`](epoch2-upstream-thin-sysconfig-sdk/ut3-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-upstream-evolution`
+
+- [`experiments/epoch2-upstream-thin-upstream-evolution/README.md`](epoch2-upstream-thin-upstream-evolution/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/configuration-only-delta.json`](epoch2-upstream-thin-upstream-evolution/configuration-only-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/evidence-freeze.md`](epoch2-upstream-thin-upstream-evolution/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/independent-audit.json`](epoch2-upstream-thin-upstream-evolution/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/input-identities.json`](epoch2-upstream-thin-upstream-evolution/input-identities.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/layout-and-extension-delta.json`](epoch2-upstream-thin-upstream-evolution/layout-and-extension-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/patch-update-rehearsal.json`](epoch2-upstream-thin-upstream-evolution/patch-update-rehearsal.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/python315-preview-delta.json`](epoch2-upstream-thin-upstream-evolution/python315-preview-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/runpath-and-sysconfig-delta.json`](epoch2-upstream-thin-upstream-evolution/runpath-and-sysconfig-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/security-ownership.json`](epoch2-upstream-thin-upstream-evolution/security-ownership.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json`](epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json`](epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json`](epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `stage1b-pyconfig`
 
 - [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority

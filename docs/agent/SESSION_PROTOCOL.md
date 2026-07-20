@@ -1,6 +1,6 @@
 # Session Protocol
 
-> **Revision:** 2
+> **Revision:** 3
 > **Role:** mandatory collaboration, transport, execution, and evidence ABI
 > **Read requirement:** every agent session reads this file in full before work
 
@@ -16,20 +16,22 @@ Use local Git to reconstruct a separate workspace. Record bundle refs, branch, H
 
 The transport direction determines the responsible interface:
 
-- **agent → owner:** the agent attempts one raw-file upload through the Google Drive connector. The owner receives the package with `rclone` from the designated Drive location.
-- **owner → agent:** the owner uploads one complete result archive and sidecar with `rclone` to the designated Drive folder. The agent discovers the folder, lists direct children when needed, and fetches the exact raw bytes through the Google Drive connector.
+- **agent → owner:** the agent attempts one raw-file upload of one self-contained `.tar.zst` package through the Google Drive connector. The package contains its manifest, payload, wrapper, and embedded `RUN.sh`. The SHA-256 and size are reported out of band in chat; no separate wrapper, runner, or checksum file is transferred by default.
+- **owner → agent:** the owner uploads one complete receipt/result `.tar.zst` with `rclone` to the designated Drive folder. The runner prints the result SHA-256 and size in final status. The agent discovers and fetches that exact archive through the Google Drive connector; a separate sidecar is optional and is not required for the normal exchange.
 
-The Google Drive connector is always the agent's first transport and receipt-readback interface when available. Resolve duplicate names with parent, folder ID, creation time, and direct-child listing. Compare reported size and SHA-256 whenever raw bytes can be fetched.
+Use the Google Drive connector as the first attempt for agent transport and receipt readback when available. Resolve duplicate names with parent, folder ID, creation time, and direct-child listing. Compare reported size and out-of-band SHA-256 whenever raw bytes can be fetched.
 
 ## SP-04 — Connector failure boundary
 
-For agent-generated files, attempt the normal raw-file Drive upload exactly once when supported. If that connector call fails, do not retry, convert formats, use a native Google file, call another endpoint, invoke command-line upload, or attempt another transport. Expose the exact artifact under `/mnt/data` with its real filename as the user-visible fallback.
+For agent-generated files, attempt the normal raw-file Drive upload exactly once when supported. If that connector call fails, do not retry, convert formats, use a native Google file, call another endpoint, invoke command-line upload, or attempt another transport. Expose the exact single archive under `/mnt/data` with its real filename as the user-visible fallback.
 
 For owner-generated results, attempt retrieval through the Google Drive connector. If connector discovery or raw-byte fetch fails, stop and report the exact connector failure. Do not substitute `curl`, `wget`, network Git, assistant-side `rclone`, web download, or an unrelated attachment path in the same turn.
 
 ## SP-05 — Network and artifact acquisition
 
-Do not assume DNS or outbound command-line downloads work. `curl`, `wget`, and network Git are not artifact authority paths in the assistant environment. Web search may establish metadata or locate an official reference, but exact claim-bearing bytes must arrive through Drive, a user attachment, or a bounded owner-run acquisition package.
+Do not assume DNS or outbound command-line downloads work in the assistant environment. `curl`, `wget`, and network Git are not artifact authority paths in the assistant environment. Web search may establish metadata or locate an official reference, but the assistant receives exact claim-bearing bytes through Drive, a user attachment, or the result of a bounded owner-run acquisition package.
+
+The owner local environment may use bounded network acquisition when an explicit runner requires external inputs. Such acquisition must use enumerated official URLs, fixed filenames, expected size and SHA-256, applicable signature or Sigstore binding, persistent cache reuse, fail-closed mismatch handling, and receipt evidence. Assistant sandbox network limitations must never be projected onto the owner's local device.
 
 ## SP-06 — GitHub prohibition
 
@@ -41,8 +43,9 @@ Do not use the GitHub connector, GitHub API, `gh`, or remote Git for repository 
 owner
   chooses final scope and policy
   operates canonical S22 checkout and real devices
-  runs one bounded wrapper
-  performs canonical commit/push through that wrapper
+  runs one bounded package entrypoint
+  may perform exact bounded network acquisition inside that runner
+  performs canonical commit/push through that runner
   supplies full bundles and PASS-or-FAIL receipts
 
 agent
@@ -50,12 +53,12 @@ agent
   reads only the mandated context
   designs and implements bounded changes in isolation
   writes semantic verifiers and negative fixtures
-  delivers one runner package
+  delivers one self-contained runner package
   retrieves and audits complete receipts
   preserves claim and non-claim boundaries
 ```
 
-Do not ask the owner to edit files, interpret large logs, or execute loosely coupled commands when one wrapper can perform the workflow.
+Do not ask the owner to edit files, interpret large logs, or execute loosely coupled commands when one package entrypoint can perform the workflow.
 
 ## SP-08 — Transport loop
 
@@ -64,18 +67,19 @@ new session
   owner -> agent: full Git bundle + SHA-256 sidecar
 
 repository or local change
-  agent -> owner: one .tar.zst package + sidecar + one apply.sh or RUN.sh
+  agent -> owner: one self-contained .tar.zst package containing manifest, wrapper, RUN.sh, and payload;
+                  SHA-256 and size are communicated out of band
 
 execution result
-  owner -> agent: owner uploads one complete receipt/result .tar.zst + sidecar with rclone;
-                  agent retrieves it through the Google Drive connector
+  owner -> agent: one complete receipt/result .tar.zst uploaded with rclone;
+                  SHA-256 and size are printed in final status and communicated out of band
 ```
 
-The designated default exchange folder is `HW-T-results` unless a task explicitly names another folder. Group related artifacts into one archive per direction whenever practical. Binary connector mounts may use a `.bin` suffix; content identity, not suffix, is authority. A connector-fetched `.bin` file is accepted only after its SHA-256 matches the owner-supplied sidecar.
+The designated default exchange folder is `HW-T-results` unless a task explicitly names another folder. Use exactly one claim-bearing `.tar.zst` per direction for a transaction. In the agent-to-owner direction, this is one .tar.zst package containing the embedded runner and payload. Do not transfer a separate wrapper, runner, payload archive, or sidecar unless a task explicitly requires it. Binary connector mounts may use a `.bin` suffix; content identity, not suffix, is authority.
 
 ## SP-09 — One-runner owner interface
 
-This is the mandatory one-runner owner interface. The owner should normally execute one command. The runner resolves its own paths and performs applicable checksum, repository precondition, apply, stage, verification, commit, push, remote readback, post-verification, receipt creation, Drive upload, rollback, and final status reporting.
+This is the mandatory one-runner owner interface. The owner should normally execute one command that extracts the package and invokes its embedded `RUN.sh`. The runner resolves its own paths and performs applicable checksum, repository precondition, acquisition, apply, stage, verification, commit, push, remote readback, post-verification, receipt creation, Drive upload, rollback, and final status reporting.
 
 Use `$HOME/Downloads/<actual-filename>` for Termux exchange. Display labels are not filenames.
 
@@ -118,23 +122,24 @@ Cross-session content authority is the Git tree when commit metadata differs. Pr
 
 ## SP-14 — Wrapper failure containment
 
-Do not let an outer `set -e` bypass final status, archive creation, upload, or rollback. Capture fallible stages and return codes explicitly. Resolve paths from the runner location and use explicit repository paths. Optional absence returns success and is recorded. Never remove a directory while the runner or child process uses it as its current working directory.
+Do not let an outer `set -e` bypass final status, archive creation, upload, or rollback. Capture fallible stages and return codes explicitly. Resolve paths from the embedded runner location and use explicit repository paths. Optional absence returns success and is recorded. Never remove a directory while the runner or child process uses it as its current working directory.
 
 ## SP-15 — Archive safety
 
-New archives use `.tar.zst`. Require one safe root, no absolute or parent-traversal paths, no duplicate members, no unexpected links, and no special file types. Record final SHA-256 and size outside the archive. Archive claim-bearing outputs and receipts, not disposable workspaces, caches, copied products, or unchanged authorities.
+New archives use `.tar.zst`. Require one safe root, no absolute or parent-traversal paths, no duplicate members, no unexpected links, and no special file types. Record final SHA-256 and size outside the archive in chat or final status. A local sidecar may be emitted for convenience, but it is not part of the default transfer. Archive claim-bearing outputs and receipts, not disposable workspaces, caches, copied products, or unchanged authorities.
 
 ## SP-16 — Result inspection order
 
 ```text
 1. Drive metadata and size
-2. archive safety and member table
-3. self-excluding result index
-4. final/workflow status
-5. summary JSON and return-code catalog
-6. single claim-bearing verifier or audit
-7. bounded output around the first meaningful failure
-8. full raw log only when bounded evidence is insufficient
+2. out-of-band SHA-256 versus fetched archive
+3. archive safety and member table
+4. self-excluding result index
+5. final/workflow status
+6. summary JSON and return-code catalog
+7. single claim-bearing verifier or audit
+8. bounded output around the first meaningful failure
+9. full raw log only when bounded evidence is insufficient
 ```
 
 A console marker alone is never acceptance.
@@ -161,4 +166,4 @@ A dated handoff is created only when the task itself is historical analysis or a
 
 ## SP-20 — Device and external-input boundaries
 
-Use S22, Note9, emulator, or another target only when `AGENT_TASK.json` explicitly requires class T evidence for that target. For exact upstream bytes that the assistant cannot acquire, search Drive first; if absent, create one bounded owner-run acquisition runner instead of improvising network workarounds. No device or external-input absence is silently converted into a broader claim.
+Use S22, Note9, emulator, or another target only when `AGENT_TASK.json` explicitly requires class T evidence for that target. For exact upstream bytes that the assistant cannot acquire, search Drive first. If absent and the task requires those bytes, create one bounded owner-run acquisition runner; that runner may use the owner's local network under SP-05 and must bind exact official inputs in its receipt. No device or external-input absence is silently converted into a broader claim.

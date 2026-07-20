@@ -101,6 +101,12 @@
       "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
       "role": "bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims",
       "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    {
+      "id": "e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+      "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+      "role": "official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership",
+      "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
     }
   ],
   "active_plan": {
@@ -120,9 +126,9 @@
     "project_model_path": "docs/agent/PROJECT_MODEL.md",
     "project_model_revision": 1,
     "session_input": "full-git-bundle-plus-sha256-sidecar",
-    "session_output": "agent-connector-upload-owner-rclone-download-owner-rclone-upload-agent-connector-readback",
+    "session_output": "single-self-contained-zst-both-directions-with-out-of-band-sha256",
     "session_protocol_path": "docs/agent/SESSION_PROTOCOL.md",
-    "session_protocol_revision": 2,
+    "session_protocol_revision": 3,
     "status": "established",
     "task_catalog_path": "docs/agent/TASK_CATALOG.json",
     "task_catalog_schema_version": 2,
@@ -142,10 +148,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+    "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+    "resume_program_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
     "status": "completed"
   },
   "documentation_layers": {
@@ -169,10 +175,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+  "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
   "predecessor": {
-    "commit": "5341a8942f8c4b9aae075ace1de53759f04d5bcd",
-    "tree": "dfd6479b338179a6cb3bbb5ed537d4bf5e8bfedd"
+    "commit": "62cfef14e0dec602d3229e05b21a4ac0c7d4552f",
+    "tree": "c1f278294dc0ba842bb36841968352e88646eaab"
   },
   "program": {
     "epoch": {
@@ -181,11 +187,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/UT-7",
-      "name": "Upstream evolution and maintenance portability",
+      "id": "E2-R1/API36-1",
+      "name": "API-36 controlled source-equivalent comparison",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+    "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
     "status": "active"
   },
   "project_model": {
@@ -222,27 +228,28 @@
   "schema_version": 6,
   "session_protocol": {
     "path": "docs/agent/SESSION_PROTOCOL.md",
-    "revision": 2,
-    "sha256": "216f4c5e4e2c3c5a1930d8bcbeb6b43c4fe3417bac49cfebad8801f0c8ed1f15"
+    "revision": 3,
+    "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 13,
+  "state_revision": 14,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "7f140e027266bca1973b80a26e394cc9609110d534edf86ecb918c185281266a"
+    "sha256": "86f333a93a32f6f21c7aa96f940b317431677f2832d1806b03c3c20ded964e45"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
-    "pass_successor_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "current_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "pass_successor_action_class": "evaluate-epoch2-closure-gates",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "UT-7 must rehearse an official 3.14 patch update and bound Python 3.15 preview deltas without converting preview evidence into a release claim.",
-    "UT-6 withholds a minimum release API and runtime 16 KiB support until direct target evidence exists."
+    "The API-36 comparison must keep compile API as the intended changed variable and enumerate every unavoidable additional delta.",
+    "Python 3.15.0b4 remains preview-only and requires a successor release/runtime qualification before any support claim.",
+    "UT-6 still withholds a minimum release API and runtime 16 KiB support until direct target evidence exists."
   ],
-  "updated_by_transaction": "20260720-e2-r1-ut6-platform-portability-v2"
+  "updated_by_transaction": "20260720-e2-r1-ut7-upstream-evolution-v4"
 }

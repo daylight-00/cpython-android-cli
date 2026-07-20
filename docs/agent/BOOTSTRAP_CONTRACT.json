@@ -70,9 +70,10 @@
   ],
   "schema_version": 1,
   "session_transport": {
-    "agent_output": "one-tar-zst-transaction-package-plus-sidecar-and-one-runner",
+    "agent_output": "one-self-contained-tar-zst-with-embedded-runner",
     "input": "full-git-bundle-plus-sha256-sidecar",
     "ordinary_handoff_package": "retired",
-    "owner_result": "one-pass-or-fail-receipt-archive-plus-sidecar"
+    "owner_external_input": "bounded-owner-local-network-or-cache-with-exact-identity",
+    "owner_result": "one-receipt-tar-zst-with-out-of-band-sha256"
   }
 }

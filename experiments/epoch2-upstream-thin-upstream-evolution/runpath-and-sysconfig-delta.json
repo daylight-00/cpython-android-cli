@@ -1,0 +1,144 @@
+{
+  "complete": true,
+  "pass": true,
+  "patch_update": {
+    "runpaths": {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "removed": [],
+      "removed_count": 0
+    },
+    "sysconfig_change_classes": {
+      "feature_flag": 0,
+      "other": 0,
+      "path_or_toolchain": 0,
+      "version_or_tag": 0
+    },
+    "sysconfig_keys": {
+      "added": [],
+      "added_count": 0,
+      "removed": [],
+      "removed_count": 0,
+      "unchanged_count": 1083
+    },
+    "sysconfig_selected": {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "removed": [],
+      "removed_count": 0
+    }
+  },
+  "python315_preview": {
+    "runpaths": {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "removed": [],
+      "removed_count": 0
+    },
+    "sysconfig_change_classes": {
+      "feature_flag": 0,
+      "other": 3,
+      "path_or_toolchain": 1,
+      "version_or_tag": 3
+    },
+    "sysconfig_keys": {
+      "added": [
+        "CONFIGURE_EXE_LDFLAGS",
+        "HAVE_CLEARENV",
+        "HAVE_CURSES_ESCDELAY",
+        "HAVE_CURSES_GETMOUSE",
+        "HAVE_CURSES_SET_ESCDELAY",
+        "HAVE_CURSES_SET_TABSIZE",
+        "HAVE_CURSES_TABSIZE",
+        "HAVE_DECL_PR_SET_VMA_ANON_NAME",
+        "HAVE_LINUX_CAN_ISOTP_H",
+        "HAVE_PPOLL",
+        "HAVE_STATX",
+        "HAVE_STRUCT_STATX_STX_ATOMIC_WRITE_UNIT_MAX_OPT",
+        "HAVE_STRUCT_STATX_STX_ATOMIC_WRITE_UNIT_MIN",
+        "HAVE_STRUCT_STATX_STX_DIO_MEM_ALIGN",
+        "HAVE_STRUCT_STATX_STX_DIO_READ_OFFSET_ALIGN",
+        "HAVE_STRUCT_STATX_STX_MNT_ID",
+        "HAVE_STRUCT_STATX_STX_SUBVOL",
+        "HAVE_SYSCTLBYNAME",
+        "HAVE_SYS_SYSCTL_H",
+        "JIT_BUILD_TARGETS",
+        "JIT_GENERATED_STAMP",
+        "JIT_OBJS",
+        "JIT_SHIM_BUILD_OBJS",
+        "JIT_TARGETS",
+        "JIT_UNWIND_INFO_H",
+        "MODULE_XXLIMITED_3_13_STATE",
+        "MODULE__ASYNCIO_LDFLAGS",
+        "MODULE__MATH_INTEGER_STATE",
+        "MODULE__REMOTE_DEBUGGING_CFLAGS",
+        "MODULE__REMOTE_DEBUGGING_DEPS",
+        "MODULE__REMOTE_DEBUGGING_LDFLAGS",
+        "PYMALLOC_USE_HUGEPAGES"
+      ],
+      "added_count": 32,
+      "removed": [
+        "DOUBLE_IS_ARM_MIXED_ENDIAN_IEEE754",
+        "MODULE__CTYPES_TEST_CFLAGS",
+        "MODULE__DECIMAL_CFLAGS",
+        "MODULE__DECIMAL_LDFLAGS",
+        "Py_TAIL_CALL_INTERP"
+      ],
+      "removed_count": 5,
+      "unchanged_count": 1078
+    },
+    "sysconfig_selected": {
+      "added": [],
+      "added_count": 0,
+      "changed": [
+        {
+          "from": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+          "key": "CFLAGS",
+          "to": "-fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+        },
+        {
+          "from": "/usr/local/lib/python3.14/lib-dynload",
+          "key": "DESTSHARED",
+          "to": "/usr/local/lib/python3.15/lib-dynload"
+        },
+        {
+          "from": ".cpython-314-aarch64-linux-android.so",
+          "key": "EXT_SUFFIX",
+          "to": ".cpython-315-aarch64-linux-android.so"
+        },
+        {
+          "from": "/usr/local/include/python3.14",
+          "key": "INCLUDEPY",
+          "to": "/usr/local/include/python3.15"
+        },
+        {
+          "from": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android",
+          "key": "LIBPL",
+          "to": "/usr/local/lib/python3.15/config-3.15-aarch64-linux-android"
+        },
+        {
+          "from": "cpython-314-aarch64-linux-android",
+          "key": "SOABI",
+          "to": "cpython-315-aarch64-linux-android"
+        },
+        {
+          "from": "3.14",
+          "key": "VERSION",
+          "to": "3.15"
+        }
+      ],
+      "changed_count": 7,
+      "removed": [],
+      "removed_count": 0
+    }
+  },
+  "schema_version": 1,
+  "selected_launcher_authority_sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2",
+  "sysconfig_authority_sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+}

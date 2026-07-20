@@ -1,0 +1,70 @@
+{
+  "all_exact_owner_inputs": true,
+  "all_sigstore_digest_bound": true,
+  "inputs": [
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "current-accepted",
+      "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.14.6-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "c7ac761686eded04a3bf8c7a9be83916e673c1c230bcd22f6cdf5fa415b0feb7",
+      "sigstore_size": 5439,
+      "size": 22358404,
+      "url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-aarch64-linux-android.tar.gz",
+      "version": "3.14.6"
+    },
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.14.5-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "official-patch-predecessor",
+      "sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.14.5-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "0d094fe223aa4b4bfbc0f25e5cd20a3294adbc2ac694af1024756e50a515b2a2",
+      "sigstore_size": 5319,
+      "size": 21479191,
+      "url": "https://www.python.org/ftp/python/3.14.5/python-3.14.5-aarch64-linux-android.tar.gz",
+      "version": "3.14.5"
+    },
+    {
+      "acquisition_mode": "owner-local-cache-reuse",
+      "acquisition_scope": "bounded-owner-local",
+      "exact_identity_verified": true,
+      "filename": "python-3.15.0b4-aarch64-linux-android.tar.gz",
+      "matching_digest_paths": [
+        "/messageSignature/messageDigest/digest"
+      ],
+      "network_acquisition": false,
+      "role": "python315-preview",
+      "sha256": "789d5ef9cc2d19fe93b8801b7e1e9073daa69807472da898323dae31facf3dfc",
+      "signer_identity_claimed": false,
+      "sigstore_digest_match": true,
+      "sigstore_filename": "python-3.15.0b4-aarch64-linux-android.tar.gz.sigstore",
+      "sigstore_sha256": "c3e249cf68e709e8b9e31d848a0781cfb871d78c4f8ff8f03745189858ca9ea2",
+      "sigstore_size": 7152,
+      "size": 23766878,
+      "url": "https://www.python.org/ftp/python/3.15.0/python-3.15.0b4-aarch64-linux-android.tar.gz",
+      "version": "3.15.0b4"
+    }
+  ],
+  "owner_network_download_count": 0,
+  "pass": true,
+  "preview_release_claim": false,
+  "schema_version": 3
+}

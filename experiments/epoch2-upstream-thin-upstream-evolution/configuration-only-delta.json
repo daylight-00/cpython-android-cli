@@ -1,0 +1,172 @@
+{
+  "automation_boundary": {
+    "configuration_only_may_not_bypass_runtime_qualification": true,
+    "parameterize_package_identity": true,
+    "parameterize_python_minor": true,
+    "re-run_full_authority_chain": true
+  },
+  "complete": true,
+  "pass": true,
+  "patch_update": {
+    "configuration_changes": [
+      "version",
+      "URL",
+      "checksum",
+      "upstream metadata",
+      "expected package identity"
+    ],
+    "configuration_only_candidate": false,
+    "non_configuration_delta_count": 14,
+    "qualification_replay_required": true
+  },
+  "schema_version": 1,
+  "version_specific_assumptions": {
+    "files_scanned": 43,
+    "files_with_version_literals": 20,
+    "hits": [
+      {
+        "counts": {
+          "3.14": 3,
+          "python3.14": 3
+        },
+        "path": "experiments/epoch2-upstream-thin-android-data-policy/run_android_data_policy_experiment.py"
+      },
+      {
+        "counts": {
+          "3.14": 2,
+          "python3.14": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-android-data-policy/test_verify_android_data_policy.py"
+      },
+      {
+        "counts": {
+          "3.14": 3,
+          "libpython3.14": 1,
+          "python3.14": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-artifact-prototype/audit_artifact_prototype.py"
+      },
+      {
+        "counts": {
+          "3.14": 4,
+          "cp314": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-artifact-prototype/generate_artifact_prototype.py"
+      },
+      {
+        "counts": {
+          "3.14": 2,
+          "libpython3.14": 1,
+          "python3.14": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-artifact-prototype/verify_artifact_prototype.py"
+      },
+      {
+        "counts": {
+          "3.15": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-feature-qualification/finalize_feature_qualification.py"
+      },
+      {
+        "counts": {
+          "3.14": 19,
+          "python3.14": 19
+        },
+        "path": "experiments/epoch2-upstream-thin-feature-qualification/run_feature_qualification_experiment.py"
+      },
+      {
+        "counts": {
+          "3.14": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-loader-relocation/finalize_loader_relocation.py"
+      },
+      {
+        "counts": {
+          "3.14": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-loader-relocation/launcher_la2_programs_python.c"
+      },
+      {
+        "counts": {
+          "3.14": 8,
+          "python3.14": 7
+        },
+        "path": "experiments/epoch2-upstream-thin-loader-relocation/run_loader_relocation_experiment.py"
+      },
+      {
+        "counts": {
+          "3.14": 4,
+          "cpython-314": 1,
+          "python3.14": 4
+        },
+        "path": "experiments/epoch2-upstream-thin-loader-relocation/test_verify_loader_relocation.py"
+      },
+      {
+        "counts": {
+          "3.14": 2,
+          "python3.14": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-platform-portability/audit_platform_portability.py"
+      },
+      {
+        "counts": {
+          "3.14": 1,
+          "3.15": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-platform-portability/finalize_platform_portability.py"
+      },
+      {
+        "counts": {
+          "3.14": 12,
+          "libpython3.14": 1,
+          "python3.14": 12
+        },
+        "path": "experiments/epoch2-upstream-thin-platform-portability/run_platform_portability_experiment.py"
+      },
+      {
+        "counts": {
+          "3.14": 2,
+          "python3.14": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-platform-portability/verify_platform_portability.py"
+      },
+      {
+        "counts": {
+          "cp314": 4
+        },
+        "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/audit_sysconfig_sdk.py"
+      },
+      {
+        "counts": {
+          "3.14": 1
+        },
+        "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/finalize_sysconfig_sdk.py"
+      },
+      {
+        "counts": {
+          "3.14": 40,
+          "cp314": 6,
+          "cpython-314": 4,
+          "libpython3.14": 1,
+          "python3.14": 29
+        },
+        "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/run_sysconfig_sdk_experiment.py"
+      },
+      {
+        "counts": {
+          "cp314": 6,
+          "cpython-314": 2
+        },
+        "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/test_verify_sysconfig_sdk.py"
+      },
+      {
+        "counts": {
+          "cp314": 4
+        },
+        "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/verify_sysconfig_sdk.py"
+      }
+    ],
+    "parameterization_required": true,
+    "pass": true
+  }
+}
