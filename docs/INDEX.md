@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `execute-e2-r1-ut6-platform-portability`
-- gate: `E2-R1/UT-6` — Platform portability
+- action class: `execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability`
+- gate: `E2-R1/UT-7` — Upstream evolution and maintenance portability
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `632`
+- tracked Markdown/JSON: `645`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

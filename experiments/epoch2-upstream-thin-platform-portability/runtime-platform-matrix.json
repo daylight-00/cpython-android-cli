@@ -1,0 +1,345 @@
+{
+  "cases": [
+    {
+      "case": "launcher-libpython-native-closure",
+      "direct_evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "-c",
+          "import ctypes,importlib,json,os,subprocess,sys\nprefix=os.environ['HW_T_EXPECTED_PREFIX'];fails={};mods=[]\nfor p in sorted(__import__('pathlib').Path(prefix,'lib/python3.14/lib-dynload').glob('*.so')):\n m=p.name.split('.cpython-',1)[0];mods.append(m)\n try:importlib.import_module(m)\n except BaseException as e:fails[m]=type(e).__name__+':'+str(e)\ndl={}\nfor rel in ['lib/libpython3.14.so','lib/libcrypto_python.so','lib/libssl_python.so','lib/libsqlite3_python.so','lib/engines-3/afalg.so','lib/ossl-modules/legacy.so']:\n try:ctypes.CDLL(os.path.join(prefix,rel));dl[rel]='pass'\n except BaseException as e:dl[rel]=type(e).__name__+':'+str(e)\ncp=subprocess.run([sys.executable,'-c','import json,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"ok\":True,\"prefix\":sys.prefix}))'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nprint(json.dumps({'pass':not fails and all(v=='pass' for v in dl.values()) and cp.returncode==0,'extension_count':len(mods),'extension_failures':fails,'dlopen':dl,'child':{'returncode':cp.returncode,'stdout':cp.stdout,'stderr':cp.stderr},'executable':sys.executable,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'ld_library_path':os.environ.get('LD_LIBRARY_PATH')},sort_keys=True))"
+        ],
+        "data": {
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix",
+          "child": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "{\"ok\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix\"}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/libcrypto_python.so": "pass",
+            "lib/libpython3.14.so": "pass",
+            "lib/libsqlite3_python.so": "pass",
+            "lib/libssl_python.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": null,
+          "pass": true,
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix"
+        },
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix\", \"child\": {\"returncode\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"ok\\\": true, \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix\\\"}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libpython3.14.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-reproduction/location-b/prefix\"}\n"
+      },
+      "public_claim_candidate": true,
+      "status": "pass"
+    },
+    {
+      "case": "clean-isolated-termux-extraction",
+      "direct_evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python/bin/python3.14",
+          "-c",
+          "import ctypes,importlib,json,os,subprocess,sys\nprefix=os.environ['HW_T_EXPECTED_PREFIX'];fails={};mods=[]\nfor p in sorted(__import__('pathlib').Path(prefix,'lib/python3.14/lib-dynload').glob('*.so')):\n m=p.name.split('.cpython-',1)[0];mods.append(m)\n try:importlib.import_module(m)\n except BaseException as e:fails[m]=type(e).__name__+':'+str(e)\ndl={}\nfor rel in ['lib/libpython3.14.so','lib/libcrypto_python.so','lib/libssl_python.so','lib/libsqlite3_python.so','lib/engines-3/afalg.so','lib/ossl-modules/legacy.so']:\n try:ctypes.CDLL(os.path.join(prefix,rel));dl[rel]='pass'\n except BaseException as e:dl[rel]=type(e).__name__+':'+str(e)\ncp=subprocess.run([sys.executable,'-c','import json,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"ok\":True,\"prefix\":sys.prefix}))'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nprint(json.dumps({'pass':not fails and all(v=='pass' for v in dl.values()) and cp.returncode==0,'extension_count':len(mods),'extension_failures':fails,'dlopen':dl,'child':{'returncode':cp.returncode,'stdout':cp.stdout,'stderr':cp.stderr},'executable':sys.executable,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'ld_library_path':os.environ.get('LD_LIBRARY_PATH')},sort_keys=True))"
+        ],
+        "data": {
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python",
+          "child": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "{\"ok\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python\"}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/libcrypto_python.so": "pass",
+            "lib/libpython3.14.so": "pass",
+            "lib/libsqlite3_python.so": "pass",
+            "lib/libssl_python.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": null,
+          "pass": true,
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python"
+        },
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python\", \"child\": {\"returncode\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"ok\\\": true, \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python\\\"}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libpython3.14.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-a/opt/python\"}\n"
+      },
+      "public_claim_candidate": true,
+      "status": "pass"
+    },
+    {
+      "case": "whole-prefix-relocation",
+      "direct_evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/bin/python3.14",
+          "-c",
+          "import ctypes,importlib,json,os,subprocess,sys\nprefix=os.environ['HW_T_EXPECTED_PREFIX'];fails={};mods=[]\nfor p in sorted(__import__('pathlib').Path(prefix,'lib/python3.14/lib-dynload').glob('*.so')):\n m=p.name.split('.cpython-',1)[0];mods.append(m)\n try:importlib.import_module(m)\n except BaseException as e:fails[m]=type(e).__name__+':'+str(e)\ndl={}\nfor rel in ['lib/libpython3.14.so','lib/libcrypto_python.so','lib/libssl_python.so','lib/libsqlite3_python.so','lib/engines-3/afalg.so','lib/ossl-modules/legacy.so']:\n try:ctypes.CDLL(os.path.join(prefix,rel));dl[rel]='pass'\n except BaseException as e:dl[rel]=type(e).__name__+':'+str(e)\ncp=subprocess.run([sys.executable,'-c','import json,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"ok\":True,\"prefix\":sys.prefix}))'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nprint(json.dumps({'pass':not fails and all(v=='pass' for v in dl.values()) and cp.returncode==0,'extension_count':len(mods),'extension_failures':fails,'dlopen':dl,'child':{'returncode':cp.returncode,'stdout':cp.stdout,'stderr':cp.stderr},'executable':sys.executable,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'ld_library_path':os.environ.get('LD_LIBRARY_PATH')},sort_keys=True))"
+        ],
+        "data": {
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python",
+          "child": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "{\"ok\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\"}\n"
+          },
+          "dlopen": {
+            "lib/engines-3/afalg.so": "pass",
+            "lib/libcrypto_python.so": "pass",
+            "lib/libpython3.14.so": "pass",
+            "lib/libsqlite3_python.so": "pass",
+            "lib/libssl_python.so": "pass",
+            "lib/ossl-modules/legacy.so": "pass"
+          },
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/bin/python3.14",
+          "extension_count": 67,
+          "extension_failures": {},
+          "ld_library_path": null,
+          "pass": true,
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python"
+        },
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\", \"child\": {\"returncode\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"ok\\\": true, \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\\\"}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libpython3.14.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\"}\n"
+      },
+      "public_claim_candidate": true,
+      "status": "pass"
+    },
+    {
+      "case": "fresh-symlink-venv-after-relocation",
+      "create": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/bin/python3.14",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--symlinks",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "probe": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink/bin/python",
+          "-c",
+          "import json,sys;print(json.dumps({'pass':True,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'executable':sys.executable}))"
+        ],
+        "data": {
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python",
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink/bin/python",
+          "pass": true,
+          "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink"
+        },
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"pass\": true, \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/platform-symlink/bin/python\"}\n"
+      },
+      "public_claim_candidate": true,
+      "status": "pass"
+    },
+    {
+      "case": "native-extension-wheel-in-fresh-venv",
+      "direct_evidence": {
+        "import": {
+          "data": {
+            "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python",
+            "meaning": 42,
+            "module_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+            "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel",
+            "sys_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python\", \"meaning\": 42, \"module_file\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so\", \"runtime_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel\", \"sys_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel\"}\n"
+        },
+        "install": {
+          "data": {
+            "member_count": 5,
+            "pass": true,
+            "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages",
+            "wheel": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"pass\": true, \"wheel\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/runtime-sdk-artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\", \"site_packages\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages\", \"member_count\": 5}\n"
+        },
+        "pass": true,
+        "venv": {
+          "create_command": [
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/bin/python3.14",
+            "-m",
+            "venv",
+            "--without-pip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel"
+          ],
+          "paths": {
+            "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel",
+            "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/include/python3.14",
+            "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/include/python3.14",
+            "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages",
+            "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14",
+            "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages",
+            "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/bin",
+            "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/canonical-termux/location-b/opt/python/lib/python3.14"
+          },
+          "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/bin/python",
+          "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut6-platform-portability-v2-20260720T060946Z-31252/ut6-experiment/state/venvs/native-wheel/lib/python3.14/site-packages"
+        }
+      },
+      "public_claim_candidate": true,
+      "status": "pass"
+    },
+    {
+      "authority_boundary": "No inclusion decision; PIP-X and package-only options remain valid.",
+      "case": "selected-base-pip-path",
+      "public_claim_candidate": false,
+      "status": "withheld-not-selected"
+    },
+    {
+      "authority_boundary": "External pass or absence does not select uv inclusion.",
+      "case": "selected-uv-path",
+      "public_claim_candidate": false,
+      "status": "withheld-not-selected"
+    }
+  ],
+  "device": {
+    "abilist": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "adb_path": null,
+    "android_api": 36,
+    "android_release": "16",
+    "device": "b0q",
+    "execution_context": "termux-app-process",
+    "hardware": "qcom",
+    "machine": "aarch64",
+    "model": "SM-S908N",
+    "page_size": 4096,
+    "pass": true,
+    "prefix": "/data/data/com.termux/files/usr",
+    "primary_abi": "arm64-v8a",
+    "property_probes": {
+      "ro.build.version.release": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.release"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "16\n",
+        "value": "16"
+      },
+      "ro.build.version.sdk": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.sdk"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "36\n",
+        "value": "36"
+      },
+      "ro.build.version.security_patch": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.security_patch"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "2026-05-05\n",
+        "value": "2026-05-05"
+      },
+      "ro.hardware": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.hardware"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "qcom\n",
+        "value": "qcom"
+      },
+      "ro.product.cpu.abi": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.cpu.abi"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "arm64-v8a\n",
+        "value": "arm64-v8a"
+      },
+      "ro.product.cpu.abilist": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.cpu.abilist"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "arm64-v8a,armeabi-v7a,armeabi\n",
+        "value": "arm64-v8a,armeabi-v7a,armeabi"
+      },
+      "ro.product.device": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.device"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "b0q\n",
+        "value": "b0q"
+      },
+      "ro.product.model": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.model"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SM-S908N\n",
+        "value": "SM-S908N"
+      }
+    },
+    "schema_version": 1,
+    "security_patch": "2026-05-05",
+    "su_path": "/data/data/com.termux/files/usr/bin/su",
+    "termux_version": "0.119.0-beta.3",
+    "uid": 10534,
+    "uname": {
+      "machine": "aarch64",
+      "node": "localhost",
+      "processor": "",
+      "release": "16",
+      "system": "Android",
+      "version": "#1 SMP PREEMPT Tue May 12 12:31:59 UTC 2026"
+    }
+  },
+  "matrix": "current-assembled-runtime-platform",
+  "pass": true,
+  "required_direct_pass_cases": [
+    "launcher-libpython-native-closure",
+    "clean-isolated-termux-extraction",
+    "whole-prefix-relocation",
+    "fresh-symlink-venv-after-relocation",
+    "native-extension-wheel-in-fresh-venv"
+  ],
+  "schema_version": 1,
+  "selected_paths": {
+    "base_pip": false,
+    "uv": false
+  }
+}

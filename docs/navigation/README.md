@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut6-platform-portability
-gate         E2-R1/UT-6 — Platform portability
-tracked docs 632
+action       execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability
+gate         E2-R1/UT-7 — Upstream evolution and maintenance portability
+tracked docs 645
 indexes      16
 ```
 

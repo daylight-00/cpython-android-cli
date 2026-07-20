@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut6-platform-portability",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -49,14 +49,15 @@
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-platform-portability/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-upstream-evolution/",
       "required_output_roles": [
-        "environment-matrix",
-        "static-16k-matrix",
-        "runtime-platform-matrix",
-        "minimum-api-claim",
-        "supported-contexts",
-        "withheld-claims",
+        "patch-update-rehearsal",
+        "configuration-only-delta",
+        "layout-and-extension-delta",
+        "runpath-and-sysconfig-delta",
+        "wheel-and-pip-delta",
+        "python315-preview-delta",
+        "security-ownership",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -73,9 +74,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+      "successor_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-7"
+      "successor_task_id": "E2-R1-API36-1"
     }
   },
   "default_exclusions": [
@@ -108,8 +109,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-6",
-    "name": "Platform portability",
+    "id": "E2-R1/UT-7",
+    "name": "Upstream evolution and maintenance portability",
     "status": "ready"
   },
   "required_authorities": [
@@ -147,24 +148,29 @@
       "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
       "reason": "Frozen feature capability and product-surface qualification authority.",
       "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "reason": "Frozen bounded platform portability and explicit withheld-claim authority.",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Platform portability matrix and boundaries.",
+      "reason": "Patch update and Python 3.15 preview maintenance portability.",
       "scope": "section",
-      "section_heading": "## UT-6 — Platform portability",
-      "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
+      "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
+      "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
     }
   ],
   "schema_version": 2,
-  "state_revision": 12,
+  "state_revision": 13,
   "task": {
-    "action_class": "execute-e2-r1-ut6-platform-portability",
-    "goal": "Classify runtime and build portability across Android app namespaces, Android versions, architectures, and non-Android Unix targets.",
-    "id": "E2-R1-UT-6",
-    "title": "Platform portability",
+    "action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+    "goal": "Bound patch-update and Python 3.15 evolution burden without turning preview evidence into a release claim.",
+    "id": "E2-R1-UT-7",
+    "title": "Upstream evolution and maintenance portability",
     "work_class": "L"
   }
 }

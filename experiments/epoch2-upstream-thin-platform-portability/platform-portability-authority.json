@@ -1,0 +1,282 @@
+{
+  "android_data_policy_authority": {
+    "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+    "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+  },
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut6-platform-portability",
+  "claim_boundary": {
+    "adb_context": false,
+    "bounded_android_runtime": true,
+    "broad_device_qualification": false,
+    "direct_termux_aarch64_api_target": true,
+    "emulator": false,
+    "epoch3_selection": false,
+    "minimum_release_api": false,
+    "non_termux_context": false,
+    "official_upstream_identity": true,
+    "other_abis": false,
+    "product_selectability": false,
+    "publication": false,
+    "root_context": false,
+    "runtime_16k_device_qualification": false,
+    "static_16k_compatibility": true
+  },
+  "direct_current_environment": {
+    "abilist": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "android_api": 36,
+    "android_release": "16",
+    "context": "termux-app-process",
+    "current_assembly": true,
+    "environment_id": "current-owner-termux",
+    "evidence_kind": "direct-current-run",
+    "machine": "aarch64",
+    "page_size": 4096,
+    "status": "pass"
+  },
+  "epoch3_decisions_enabled": [
+    "minimum release API",
+    "supported page-size claim",
+    "supported contexts",
+    "withheld claims"
+  ],
+  "epoch3_selection_made": false,
+  "exit_condition": {
+    "direct_current_environment_count": 1,
+    "direct_runtime_pass_count": 5,
+    "historical_related_environment_count": 2,
+    "minimum_release_api_claimed": false,
+    "negative_claim_hits": 0,
+    "public_claim_count": 3,
+    "runtime_16k_device_tested": false,
+    "runtime_case_count": 7,
+    "static_runtime_elf_count": 81,
+    "static_wheel_elf_count": 1,
+    "withheld_claim_count": 10
+  },
+  "feature_qualification_authority": {
+    "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+    "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+  },
+  "file_identities": {
+    "audit_platform_portability.py": "31b8a8d221e36bfd5bc24e99068d4fa154f16e9dcba05f92dd207c7b0ef62040",
+    "current-device-probe.json": "d73d92e724064f3290939fb508fc71bf7efcae084fc15d252cc8c81d98ce598f",
+    "environment-matrix.json": "2171aec78022ed8f55faa3135436a35f18b071fe4a23bc999c22c48e40fa47d9",
+    "finalize_platform_portability.py": "60d33c7b97f48f62df7d98f7d7e4239c73aeb34471316266444cf062118dc4fe",
+    "independent-audit.json": "73ed9d5097f1c6542f0ef16c2249491c3fdb21e5d93eda277ab0c100992d61d1",
+    "minimum-api-claim.json": "619edf6d3c3b7d70082f18f539408daf1cc8c6fcf3cb71626da40895c135ddbd",
+    "run-ut6-platform-portability.sh": "397135cff9f83b26f65a3523b518048ad19442901459229e7c2f63c1b74119de",
+    "run_platform_portability_experiment.py": "fd520c94261770a5cd2a9bd6c9d3812e9b0c202ad628e3a6f889079e014f1582",
+    "runtime-platform-matrix.json": "5d347396ce110aea670399ea3ce4252cb932e03675ecde14e0185dfef1cf75a3",
+    "runtime-reproduction.json": "a09af849c4a0da9305fdcceb6588bfdd611cd5d15c06b4c98d6bf2bed79d647a",
+    "static-16k-matrix.json": "84788e447058d3fd1b8d12e65391ecec02a043621bea2d9a5929ccb1b04c2d9f",
+    "supported-contexts.json": "eb4db8d959b8b69aa88987cc270579fd68fab59aa3727cc3480d9d1b724709fd",
+    "test_verify_platform_portability.py": "12cf1c44ba957915760c7f89a384e04cc39ce180b17ce6286665983f8f3a1a8c",
+    "ut6-gate-diagnostics.json": "bb009ef8a8fafebc055cd76a04559c01350124eedf9b4b882b260e4c552e0d2e",
+    "verify_platform_portability.py": "d37bc0a2711257aa002a463842d180706ec952efdc246616b4aec81e69d91da1",
+    "withheld-claims.json": "269c23337e4306bfc2d8a0523a449704c8444fe2acc396b28954e33dfb9c5d22"
+  },
+  "gate_condition": {
+    "authority_bindings_exact": true,
+    "environment_matrix_complete": true,
+    "epoch3_selection_absent": true,
+    "minimum_api_claim_explicit": true,
+    "no_broad_platform_claims": true,
+    "no_modern_as_minimum_inference": true,
+    "runtime_platform_matrix_complete": true,
+    "static_16k_matrix_complete": true,
+    "supported_contexts_explicit": true,
+    "withheld_claims_explicit": true
+  },
+  "loader_relocation_authority": {
+    "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+    "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+  },
+  "minimum_api": {
+    "epoch3_decision_made": false,
+    "lowest_direct_current_assembly_runtime_api": 36,
+    "lowest_related_historical_artifact_runtime_api": 29,
+    "modern_device_used_as_minimum_proof": false,
+    "package_declared_floor_api": 24,
+    "package_floor_evidence": "official filename/tag and accepted upstream authority",
+    "pass": true,
+    "public_minimum_release_api": null,
+    "reason": "No direct current assembled-product execution exists at API 24 or any API below the current owner target. Modern-device success is not minimum-API proof.",
+    "schema_version": 1,
+    "status": "withheld"
+  },
+  "next_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
+  "predecessor": {
+    "commit": "5341a8942f8c4b9aae075ace1de53759f04d5bcd",
+    "tree": "dfd6479b338179a6cb3bbb5ed537d4bf5e8bfedd"
+  },
+  "related_historical_environments": [
+    {
+      "android_api": 36,
+      "android_release": "16",
+      "context": "Termux real device",
+      "current_assembly": false,
+      "environment_id": "termux-real-primary-s22-ultra-api36",
+      "machine": "aarch64",
+      "status": "historical-related-artifact-only"
+    },
+    {
+      "android_api": 29,
+      "android_release": "10",
+      "context": "Termux real device",
+      "current_assembly": false,
+      "environment_id": "termux-real-secondary-exynos9810-api29",
+      "machine": "aarch64",
+      "status": "historical-related-artifact-only"
+    }
+  ],
+  "runtime_platform": {
+    "cases": [
+      {
+        "case": "launcher-libpython-native-closure",
+        "status": "pass"
+      },
+      {
+        "case": "clean-isolated-termux-extraction",
+        "status": "pass"
+      },
+      {
+        "case": "whole-prefix-relocation",
+        "status": "pass"
+      },
+      {
+        "case": "fresh-symlink-venv-after-relocation",
+        "status": "pass"
+      },
+      {
+        "case": "native-extension-wheel-in-fresh-venv",
+        "status": "pass"
+      },
+      {
+        "case": "selected-base-pip-path",
+        "status": "withheld-not-selected"
+      },
+      {
+        "case": "selected-uv-path",
+        "status": "withheld-not-selected"
+      }
+    ],
+    "pass": true
+  },
+  "schema_version": 1,
+  "static_16k": {
+    "all_load_alignments_16k": true,
+    "all_readelf_pass": true,
+    "all_segment_offsets_congruent_16k": true,
+    "post_mutation_identity_expected": 81,
+    "post_mutation_identity_matches": 81,
+    "post_runpath_layout_matches": true,
+    "relocation_section_inventory_complete": true,
+    "runtime_16k_device_tested": false,
+    "selected_launcher_identity_match": true,
+    "stripped_object_count": 80,
+    "symlink_alias_expected": 3,
+    "symlink_alias_identity_matches": 3,
+    "symlink_alias_inventory_complete": true,
+    "unstripped_object_count": 2
+  },
+  "status": "frozen-pass-bounded-platform-claims-and-explicit-withholding",
+  "supported_contexts": {
+    "epoch3_selection_made": false,
+    "explicit_boundaries": [
+      "Claims apply only to the exact official input and frozen local mutation authorities.",
+      "Passing current-device probes do not imply a minimum API.",
+      "Static 16 KiB compatibility does not imply runtime qualification on a 16 KiB device.",
+      "Related API-29 evidence is historical and is not current-assembly proof."
+    ],
+    "pass": true,
+    "public_claims": [
+      {
+        "android_api": 36,
+        "architecture": "aarch64",
+        "claim": "The current assembled product executes in the Termux Android linker namespace on the directly tested aarch64 API target.",
+        "context": "Termux app process",
+        "evidence": "runtime-platform-matrix.json",
+        "page_size": 4096
+      },
+      {
+        "claim": "Every final runtime ELF and the native-extension wheel ELF have statically 16 KiB-compatible PT_LOAD alignment and segment-offset congruence after RUNPATH normalization.",
+        "evidence": "static-16k-matrix.json",
+        "runtime_16k_device_tested": false
+      },
+      {
+        "claim": "The directly tested runtime supports launcher startup, 67 native imports, internal dlopen closure, subprocess child re-entry, whole-prefix relocation, fresh symlink venv creation, and native-extension wheel import.",
+        "evidence": "runtime-platform-matrix.json"
+      }
+    ],
+    "schema_version": 1
+  },
+  "sysconfig_sdk_authority": {
+    "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+    "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "64/64",
+    "negative_fixtures": "required-before-transaction"
+  },
+  "withheld_claims": {
+    "claims": [
+      {
+        "claim": "Android API 24 minimum runtime support",
+        "reason": "no direct current-assembly API-24 target evidence"
+      },
+      {
+        "claim": "Any minimum release API",
+        "reason": "no lower-API direct current-assembly target evidence"
+      },
+      {
+        "claim": "Runtime operation on a 16 KiB page-size device",
+        "conditionally_resolved": false,
+        "reason": "no direct 16 KiB runtime target unless current page size is 16384"
+      },
+      {
+        "claim": "Non-Termux Android app namespace support",
+        "reason": "no non-Termux app target access"
+      },
+      {
+        "claim": "ADB shell support",
+        "reason": "no ADB target qualification"
+      },
+      {
+        "claim": "root execution support",
+        "reason": "no root target qualification"
+      },
+      {
+        "claim": "emulator support",
+        "reason": "prior emulator contract was waived, not qualified"
+      },
+      {
+        "claim": "x86_64, armeabi-v7a, or other ABI support",
+        "reason": "current assembly is aarch64-only"
+      },
+      {
+        "claim": "all Android versions, OEMs, kernels, or devices",
+        "reason": "bounded direct evidence only"
+      },
+      {
+        "claim": "base pip or uv product inclusion",
+        "reason": "UT-5 did not select either path"
+      }
+    ],
+    "pass": true,
+    "schema_version": 1,
+    "unresolved_count": 10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "epoch3_decision_made": false,
+  "lowest_direct_current_assembly_runtime_api": 36,
+  "lowest_related_historical_artifact_runtime_api": 29,
+  "modern_device_used_as_minimum_proof": false,
+  "package_declared_floor_api": 24,
+  "package_floor_evidence": "official filename/tag and accepted upstream authority",
+  "pass": true,
+  "public_minimum_release_api": null,
+  "reason": "No direct current assembled-product execution exists at API 24 or any API below the current owner target. Modern-device success is not minimum-API proof.",
+  "schema_version": 1,
+  "status": "withheld"
+}

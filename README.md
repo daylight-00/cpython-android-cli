@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      execute-e2-r1-ut6-platform-portability
+immediate action      execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability
 program epoch         E2 — upstream-thin research program
-program gate          E2-R1/UT-6 — Platform portability
+program gate          E2-R1/UT-7 — Upstream evolution and maintenance portability
 ```
 
 ### Current claim boundary
@@ -33,7 +33,8 @@ none
 
 ### Unresolved risks
 
-- UT-6 must bind every public Android platform claim to target evidence or explicitly withhold it; modern-device success is not minimum-API proof.
+- UT-7 must rehearse an official 3.14 patch update and bound Python 3.15 preview deltas without converting preview evidence into a release claim.
+- UT-6 withholds a minimum release API and runtime 16 KiB support until direct target evidence exists.
 
 ### Accepted authorities
 
@@ -53,6 +54,7 @@ none
 - [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json): relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence (`6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808`)
 - [`experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json`](experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json): host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv, read-only-install, and independent data-update policy (`be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7`)
 - [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json): explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries (`3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5`)
+- [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json): bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims (`b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4`)
 
 ### Agent entry
 

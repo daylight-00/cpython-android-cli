@@ -1,0 +1,128 @@
+{
+  "current_device": {
+    "abilist": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "adb_path": null,
+    "android_api": 36,
+    "android_release": "16",
+    "device": "b0q",
+    "execution_context": "termux-app-process",
+    "hardware": "qcom",
+    "machine": "aarch64",
+    "model": "SM-S908N",
+    "page_size": 4096,
+    "pass": true,
+    "prefix": "/data/data/com.termux/files/usr",
+    "primary_abi": "arm64-v8a",
+    "property_probes": {
+      "ro.build.version.release": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.release"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "16\n",
+        "value": "16"
+      },
+      "ro.build.version.sdk": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.sdk"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "36\n",
+        "value": "36"
+      },
+      "ro.build.version.security_patch": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.build.version.security_patch"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "2026-05-05\n",
+        "value": "2026-05-05"
+      },
+      "ro.hardware": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.hardware"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "qcom\n",
+        "value": "qcom"
+      },
+      "ro.product.cpu.abi": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.cpu.abi"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "arm64-v8a\n",
+        "value": "arm64-v8a"
+      },
+      "ro.product.cpu.abilist": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.cpu.abilist"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "arm64-v8a,armeabi-v7a,armeabi\n",
+        "value": "arm64-v8a,armeabi-v7a,armeabi"
+      },
+      "ro.product.device": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.device"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "b0q\n",
+        "value": "b0q"
+      },
+      "ro.product.model": {
+        "command": [
+          "/system/bin/getprop",
+          "ro.product.model"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SM-S908N\n",
+        "value": "SM-S908N"
+      }
+    },
+    "schema_version": 1,
+    "security_patch": "2026-05-05",
+    "su_path": "/data/data/com.termux/files/usr/bin/su",
+    "termux_version": "0.119.0-beta.3",
+    "uid": 10534,
+    "uname": {
+      "machine": "aarch64",
+      "node": "localhost",
+      "processor": "",
+      "release": "16",
+      "system": "Android",
+      "version": "#1 SMP PREEMPT Tue May 12 12:31:59 UTC 2026"
+    }
+  },
+  "native_wheel": {
+    "filename": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "sha256": "68c639100b8bd55902a5d76ab54e643471bfe248e4bb3e4a59674081f9b881a9",
+    "size": 3630
+  },
+  "pass": true,
+  "prefix_role": "<WORK>/runtime-sdk-reproduction/location-b/prefix",
+  "schema_version": 1,
+  "ut3_reproduction": {
+    "gate_pass": true,
+    "returncode": 0
+  }
+}

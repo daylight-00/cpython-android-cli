@@ -213,6 +213,22 @@
 - [`experiments/epoch2-upstream-thin-plan/external-audit.json`](epoch2-upstream-thin-plan/external-audit.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-plan/plan-authority.json`](epoch2-upstream-thin-plan/plan-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-platform-portability`
+
+- [`experiments/epoch2-upstream-thin-platform-portability/README.md`](epoch2-upstream-thin-platform-portability/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/current-device-probe.json`](epoch2-upstream-thin-platform-portability/current-device-probe.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/environment-matrix.json`](epoch2-upstream-thin-platform-portability/environment-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/evidence-freeze.md`](epoch2-upstream-thin-platform-portability/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/independent-audit.json`](epoch2-upstream-thin-platform-portability/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/minimum-api-claim.json`](epoch2-upstream-thin-platform-portability/minimum-api-claim.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](epoch2-upstream-thin-platform-portability/platform-portability-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/runtime-platform-matrix.json`](epoch2-upstream-thin-platform-portability/runtime-platform-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/runtime-reproduction.json`](epoch2-upstream-thin-platform-portability/runtime-reproduction.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/static-16k-matrix.json`](epoch2-upstream-thin-platform-portability/static-16k-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/supported-contexts.json`](epoch2-upstream-thin-platform-portability/supported-contexts.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/ut6-gate-diagnostics.json`](epoch2-upstream-thin-platform-portability/ut6-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-platform-portability/withheld-claims.json`](epoch2-upstream-thin-platform-portability/withheld-claims.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-sysconfig-sdk`
 
 - [`experiments/epoch2-upstream-thin-sysconfig-sdk/README.md`](epoch2-upstream-thin-sysconfig-sdk/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`

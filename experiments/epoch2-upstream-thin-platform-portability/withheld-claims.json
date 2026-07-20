@@ -1,0 +1,48 @@
+{
+  "claims": [
+    {
+      "claim": "Android API 24 minimum runtime support",
+      "reason": "no direct current-assembly API-24 target evidence"
+    },
+    {
+      "claim": "Any minimum release API",
+      "reason": "no lower-API direct current-assembly target evidence"
+    },
+    {
+      "claim": "Runtime operation on a 16 KiB page-size device",
+      "conditionally_resolved": false,
+      "reason": "no direct 16 KiB runtime target unless current page size is 16384"
+    },
+    {
+      "claim": "Non-Termux Android app namespace support",
+      "reason": "no non-Termux app target access"
+    },
+    {
+      "claim": "ADB shell support",
+      "reason": "no ADB target qualification"
+    },
+    {
+      "claim": "root execution support",
+      "reason": "no root target qualification"
+    },
+    {
+      "claim": "emulator support",
+      "reason": "prior emulator contract was waived, not qualified"
+    },
+    {
+      "claim": "x86_64, armeabi-v7a, or other ABI support",
+      "reason": "current assembly is aarch64-only"
+    },
+    {
+      "claim": "all Android versions, OEMs, kernels, or devices",
+      "reason": "bounded direct evidence only"
+    },
+    {
+      "claim": "base pip or uv product inclusion",
+      "reason": "UT-5 did not select either path"
+    }
+  ],
+  "pass": true,
+  "schema_version": 1,
+  "unresolved_count": 10
+}

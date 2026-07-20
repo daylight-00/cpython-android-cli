@@ -1,0 +1,68 @@
+{
+  "current_assembly": [
+    {
+      "abilist": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "armeabi"
+      ],
+      "android_api": 36,
+      "android_release": "16",
+      "context": "termux-app-process",
+      "current_assembly": true,
+      "environment_id": "current-owner-termux",
+      "evidence_kind": "direct-current-run",
+      "machine": "aarch64",
+      "page_size": 4096,
+      "status": "pass"
+    }
+  ],
+  "matrix": "platform-environments",
+  "pass": true,
+  "related_historical_evidence": [
+    {
+      "android_api": 36,
+      "android_release": "16",
+      "context": "Termux real device",
+      "current_assembly": false,
+      "environment_id": "termux-real-primary-s22-ultra-api36",
+      "machine": "aarch64",
+      "status": "historical-related-artifact-only"
+    },
+    {
+      "android_api": 29,
+      "android_release": "10",
+      "context": "Termux real device",
+      "current_assembly": false,
+      "environment_id": "termux-real-secondary-exynos9810-api29",
+      "machine": "aarch64",
+      "status": "historical-related-artifact-only"
+    }
+  ],
+  "requested_boundaries": {
+    "adb": {
+      "status": "withheld-no-adb-target-access"
+    },
+    "clean_non_termux_path": {
+      "status": "withheld-no-non-termux-app-namespace-access"
+    },
+    "minimum_claimed_api": {
+      "requested": 24,
+      "status": "withheld-no-current-assembly-runtime-evidence"
+    },
+    "modern_android_target": {
+      "api": 36,
+      "status": "pass"
+    },
+    "root": {
+      "status": "withheld-no-root-target-access"
+    },
+    "runtime_16k_page_device": {
+      "status": "withheld-no-16k-runtime-device"
+    },
+    "termux": {
+      "status": "pass"
+    }
+  },
+  "schema_version": 1
+}

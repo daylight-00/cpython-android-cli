@@ -1,0 +1,39 @@
+{
+  "exit_condition": {
+    "direct_current_environment_count": 1,
+    "direct_runtime_pass_count": 5,
+    "historical_related_environment_count": 2,
+    "minimum_release_api_claimed": false,
+    "negative_claim_hits": 0,
+    "public_claim_count": 3,
+    "runtime_16k_device_tested": false,
+    "runtime_case_count": 7,
+    "static_runtime_elf_count": 81,
+    "static_wheel_elf_count": 1,
+    "withheld_claim_count": 10
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "authority_bindings_exact": true,
+    "environment_matrix_complete": true,
+    "epoch3_selection_absent": true,
+    "minimum_api_claim_explicit": true,
+    "no_broad_platform_claims": true,
+    "no_modern_as_minimum_inference": true,
+    "runtime_platform_matrix_complete": true,
+    "static_16k_matrix_complete": true,
+    "supported_contexts_explicit": true,
+    "withheld_claims_explicit": true
+  },
+  "negative_claim_scan": {
+    "hits": [],
+    "pass": true,
+    "pattern_count": 7,
+    "scope": [
+      "minimum-api-claim.json",
+      "supported-contexts.json"
+    ]
+  },
+  "pass": true,
+  "schema_version": 1
+}

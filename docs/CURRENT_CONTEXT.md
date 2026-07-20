@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 12
+> **State revision:** 13
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut6-platform-portability
-work gate       E2-R1/UT-6 — Platform portability
+action          execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability
+work gate       E2-R1/UT-7 — Upstream evolution and maintenance portability
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-6 — Platform portability
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-6 — Platform portability
+gate    E2-R1/UT-7 — Upstream evolution and maintenance portability
 status  ready
 ```
 
@@ -47,6 +47,7 @@ status  ready
 14. [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](../experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json) — relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence
 15. [`experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json`](../experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json) — host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv, read-only-install, and independent data-update policy
 16. [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](../experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json) — explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries
+17. [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](../experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json) — bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims
 
 ## Blockers
 
@@ -54,6 +55,7 @@ None.
 
 ## Unresolved risks
 
-- UT-6 must bind every public Android platform claim to target evidence or explicitly withhold it; modern-device success is not minimum-API proof.
+- UT-7 must rehearse an official 3.14 patch update and bound Python 3.15 preview deltas without converting preview evidence into a release claim.
+- UT-6 withholds a minimum release API and runtime 16 KiB support until direct target evidence exists.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

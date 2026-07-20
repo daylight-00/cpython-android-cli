@@ -1,0 +1,30 @@
+{
+  "epoch3_selection_made": false,
+  "explicit_boundaries": [
+    "Claims apply only to the exact official input and frozen local mutation authorities.",
+    "Passing current-device probes do not imply a minimum API.",
+    "Static 16 KiB compatibility does not imply runtime qualification on a 16 KiB device.",
+    "Related API-29 evidence is historical and is not current-assembly proof."
+  ],
+  "pass": true,
+  "public_claims": [
+    {
+      "android_api": 36,
+      "architecture": "aarch64",
+      "claim": "The current assembled product executes in the Termux Android linker namespace on the directly tested aarch64 API target.",
+      "context": "Termux app process",
+      "evidence": "runtime-platform-matrix.json",
+      "page_size": 4096
+    },
+    {
+      "claim": "Every final runtime ELF and the native-extension wheel ELF have statically 16 KiB-compatible PT_LOAD alignment and segment-offset congruence after RUNPATH normalization.",
+      "evidence": "static-16k-matrix.json",
+      "runtime_16k_device_tested": false
+    },
+    {
+      "claim": "The directly tested runtime supports launcher startup, 67 native imports, internal dlopen closure, subprocess child re-entry, whole-prefix relocation, fresh symlink venv creation, and native-extension wheel import.",
+      "evidence": "runtime-platform-matrix.json"
+    }
+  ],
+  "schema_version": 1
+}
