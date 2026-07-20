@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 11
+> **State revision:** 12
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-ut5-feature-capability-and-product-surface-qualification
-work gate       E2-R1/UT-5 — Feature capability and product-surface qualification
+action          execute-e2-r1-ut6-platform-portability
+work gate       E2-R1/UT-6 — Platform portability
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/UT-5 — Feature capability and product-surface qualificat
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/UT-5 — Feature capability and product-surface qualification
+gate    E2-R1/UT-6 — Platform portability
 status  ready
 ```
 
@@ -46,6 +46,7 @@ status  ready
 13. [`experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json`](../experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json) — bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence
 14. [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](../experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json) — relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence
 15. [`experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json`](../experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json) — host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv, read-only-install, and independent data-update policy
+16. [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](../experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json) — explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries
 
 ## Blockers
 
@@ -53,6 +54,6 @@ None.
 
 ## Unresolved risks
 
-- UT-5 must classify subprocess, venv, pip, and multiprocessing feasibility without making blanket support claims beyond the evidence.
+- UT-6 must bind every public Android platform claim to target evidence or explicitly withhold it; modern-device success is not minimum-API proof.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `execute-e2-r1-ut5-feature-capability-and-product-surface-qualification`
-- gate: `E2-R1/UT-5` — Feature capability and product-surface qualification
+- action class: `execute-e2-r1-ut6-platform-portability`
+- gate: `E2-R1/UT-6` — Platform portability
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `620`
+- tracked Markdown/JSON: `632`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

@@ -27,7 +27,7 @@
       "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
       "complete_receipt_required": true,
       "correction_task_must_be_cataloged": true,
-      "correction_task_must_resume_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+      "correction_task_must_resume_action_class": "execute-e2-r1-ut6-platform-portability",
       "required_failure_records": [
         "first-meaningful-failure",
         "failure-classification",
@@ -49,14 +49,14 @@
         "activate-successor-task",
         "define-successor-completion-contract-before-selection"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-feature-qualification/",
+      "required_output_namespace": "experiments/epoch2-upstream-thin-platform-portability/",
       "required_output_roles": [
-        "subprocess-core-matrix",
-        "subprocess-secondary-matrix",
-        "venv-matrix",
-        "base-pip-variants",
-        "multiprocessing-matrix",
-        "feature-surface-decision",
+        "environment-matrix",
+        "static-16k-matrix",
+        "runtime-platform-matrix",
+        "minimum-api-claim",
+        "supported-contexts",
+        "withheld-claims",
         "independent-audit",
         "machine-authority",
         "evidence-freeze"
@@ -73,9 +73,9 @@
         "unresolved_risks",
         "updated_by_transaction"
       ],
-      "successor_action_class": "execute-e2-r1-ut6-platform-portability",
+      "successor_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
       "successor_must_exist": true,
-      "successor_task_id": "E2-R1-UT-6"
+      "successor_task_id": "E2-R1-UT-7"
     }
   },
   "default_exclusions": [
@@ -108,8 +108,8 @@
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2-R1/UT-5",
-    "name": "Feature capability and product-surface qualification",
+    "id": "E2-R1/UT-6",
+    "name": "Platform portability",
     "status": "ready"
   },
   "required_authorities": [
@@ -142,24 +142,29 @@
       "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
       "reason": "Frozen host-neutral Android data-source and writable-state policy authority.",
       "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+      "reason": "Frozen feature capability and product-surface qualification authority.",
+      "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
     }
   ],
   "required_reads": [
     {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
+      "reason": "Platform portability matrix and boundaries.",
       "scope": "section",
-      "section_heading": "## UT-5 — Feature capability and product-surface qualification",
-      "stop_before_heading": "## UT-6 — Dependency and provenance closure"
+      "section_heading": "## UT-6 — Platform portability",
+      "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
     }
   ],
   "schema_version": 2,
-  "state_revision": 11,
+  "state_revision": 12,
   "task": {
-    "action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
-    "goal": "Classify subprocess, venv, pip, and multiprocessing feasibility and bound the technically supportable Epoch 3 feature surface.",
-    "id": "E2-R1-UT-5",
-    "title": "Feature capability and product-surface qualification",
+    "action_class": "execute-e2-r1-ut6-platform-portability",
+    "goal": "Classify runtime and build portability across Android app namespaces, Android versions, architectures, and non-Android Unix targets.",
+    "id": "E2-R1-UT-6",
+    "title": "Platform portability",
     "work_class": "L"
   }
 }

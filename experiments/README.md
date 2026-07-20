@@ -177,6 +177,21 @@
 - [`experiments/epoch2-upstream-thin-control/upstream-control-authority.json`](epoch2-upstream-thin-control/upstream-control-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-control/upstream-input-manifest.json`](epoch2-upstream-thin-control/upstream-input-manifest.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-feature-qualification`
+
+- [`experiments/epoch2-upstream-thin-feature-qualification/README.md`](epoch2-upstream-thin-feature-qualification/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/base-pip-variants.json`](epoch2-upstream-thin-feature-qualification/base-pip-variants.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/evidence-freeze.md`](epoch2-upstream-thin-feature-qualification/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/feature-surface-decision.json`](epoch2-upstream-thin-feature-qualification/feature-surface-decision.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/independent-audit.json`](epoch2-upstream-thin-feature-qualification/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/multiprocessing-matrix.json`](epoch2-upstream-thin-feature-qualification/multiprocessing-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/runtime-sdk-reproduction.json`](epoch2-upstream-thin-feature-qualification/runtime-sdk-reproduction.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/subprocess-core-matrix.json`](epoch2-upstream-thin-feature-qualification/subprocess-core-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/subprocess-secondary-matrix.json`](epoch2-upstream-thin-feature-qualification/subprocess-secondary-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/ut5-gate-diagnostics.json`](epoch2-upstream-thin-feature-qualification/ut5-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-feature-qualification/venv-matrix.json`](epoch2-upstream-thin-feature-qualification/venv-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-loader-relocation`
 
 - [`experiments/epoch2-upstream-thin-loader-relocation/README.md`](epoch2-upstream-thin-loader-relocation/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`

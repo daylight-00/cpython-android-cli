@@ -1,0 +1,271 @@
+{
+  "android_data_policy_authority": {
+    "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+    "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+  },
+  "artifact_prototype_authority": {
+    "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+    "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+  },
+  "authority_kind": "e2-r1-ut5-feature-capability-and-product-surface-qualification",
+  "blanket_claims": {
+    "multiprocessing": false,
+    "pip": false,
+    "subprocess": false,
+    "venv": false
+  },
+  "claim_boundary": {
+    "android_data_policy": true,
+    "artifact_representation": true,
+    "bounded_android_runtime": true,
+    "device_qualification": false,
+    "epoch3_selection": false,
+    "feature_capability_qualification": true,
+    "official_upstream_identity": true,
+    "product_selectability": false,
+    "product_surface_selection_input": true,
+    "publication": false,
+    "runtime_metadata_normalization": true
+  },
+  "classification_vocabulary": [
+    "pass",
+    "android-mandatory-adaptation",
+    "missing-bionic-primitive",
+    "upstream-build-decision",
+    "inadequate-environment"
+  ],
+  "epoch3_selection_made": false,
+  "exit_condition": {
+    "blanket_claim_count": 0,
+    "complete_matrix_count": 5,
+    "copy_mode_classification": "inadequate-environment",
+    "core_anchor_pass_count": 5,
+    "core_anchor_required": 5,
+    "epoch3_selection_made": false,
+    "fresh_venv_mode": "symlinks",
+    "native_extension_venv_pass": true,
+    "negative_contract_hits": 0,
+    "required_matrix_count": 5,
+    "total_classified_cases": 59,
+    "unclassified_cases": 0
+  },
+  "feature_surface": {
+    "base_pip": {
+      "adaptation_required": [
+        "PIP-0",
+        "PIP-2"
+      ],
+      "classified": 5,
+      "inadequate_environment": [],
+      "missing_bionic_primitive": [],
+      "support_candidates": [
+        "PIP-1",
+        "PIP-2",
+        "PIP-3",
+        "PIP-X"
+      ],
+      "technically_passing": [
+        "PIP-0",
+        "PIP-1",
+        "PIP-2",
+        "PIP-3",
+        "PIP-X"
+      ],
+      "upstream_build_decision": []
+    },
+    "multiprocessing": {
+      "adaptation_required": [],
+      "classified": 16,
+      "inadequate_environment": [
+        "start_method:fork",
+        "start_method:spawn",
+        "start_method:forkserver",
+        "pipes_connections",
+        "queues",
+        "pools",
+        "locks",
+        "semaphores",
+        "events",
+        "conditions",
+        "shared_values_arrays",
+        "manager",
+        "process_pool_executor",
+        "resource_tracker",
+        "shared_memory",
+        "termination_cleanup"
+      ],
+      "missing_bionic_primitive": [],
+      "support_candidates": [],
+      "technically_passing": [],
+      "upstream_build_decision": []
+    },
+    "subprocess_core": {
+      "adaptation_required": [],
+      "classified": 17,
+      "inadequate_environment": [
+        "venv_execution"
+      ],
+      "missing_bionic_primitive": [],
+      "support_candidates": [
+        "run_text_capture",
+        "popen_binary_pipes",
+        "cwd",
+        "custom_env",
+        "executable_lookup",
+        "absolute_execution",
+        "poll_wait_communicate",
+        "timeout",
+        "terminate",
+        "kill",
+        "large_output",
+        "nested_python",
+        "child_native_imports",
+        "relocated_base_execution",
+        "asyncio_subprocess_exec",
+        "asyncio_subprocess_shell"
+      ],
+      "technically_passing": [
+        "run_text_capture",
+        "popen_binary_pipes",
+        "cwd",
+        "custom_env",
+        "executable_lookup",
+        "absolute_execution",
+        "poll_wait_communicate",
+        "timeout",
+        "terminate",
+        "kill",
+        "large_output",
+        "nested_python",
+        "child_native_imports",
+        "relocated_base_execution",
+        "asyncio_subprocess_exec",
+        "asyncio_subprocess_shell"
+      ],
+      "upstream_build_decision": []
+    },
+    "subprocess_secondary": {
+      "adaptation_required": [],
+      "classified": 11,
+      "inadequate_environment": [],
+      "missing_bionic_primitive": [],
+      "support_candidates": [
+        "shell_default",
+        "shell_explicit_system",
+        "explicit_shell_argv",
+        "start_new_session",
+        "process_group",
+        "signal_forwarding",
+        "pass_fds",
+        "close_fds",
+        "pty",
+        "background_reap"
+      ],
+      "technically_passing": [
+        "shell_default",
+        "shell_explicit_system",
+        "explicit_shell_argv",
+        "start_new_session",
+        "process_group",
+        "signal_forwarding",
+        "pass_fds",
+        "close_fds",
+        "preexec_fn",
+        "pty",
+        "background_reap"
+      ],
+      "upstream_build_decision": []
+    },
+    "venv": {
+      "adaptation_required": [
+        "pre_existing_symlink_venv_after_base_move",
+        "pre_existing_copy_venv_after_base_move",
+        "venv_moved_without_base",
+        "pip_generated_console_script_after_venv_relocation"
+      ],
+      "classified": 10,
+      "inadequate_environment": [
+        "copy_mode",
+        "patch_level_base_replacement_same_path"
+      ],
+      "missing_bionic_primitive": [],
+      "support_candidates": [
+        "symlink_mode",
+        "base_moved_before_new_venv",
+        "native_extension_in_venv",
+        "uv_created_venv"
+      ],
+      "technically_passing": [
+        "symlink_mode",
+        "base_moved_before_new_venv",
+        "native_extension_in_venv",
+        "uv_created_venv"
+      ],
+      "upstream_build_decision": []
+    }
+  },
+  "file_identities": {
+    "audit_feature_qualification.py": "7675bc1ec195313e31eaacdae018397ee0d38f64624b9957f7549ca2b5c6347f",
+    "base-pip-variants.json": "c3783bffc273697187a08b0e4ebae8ffd29d9f493c3235c81264624b8a71eef2",
+    "feature-surface-decision.json": "d174c9ec97e472c78fd7aec7d5e5f1e07d1f1c07847db13922d6de30fcd2f277",
+    "finalize_feature_qualification.py": "777c43605009df7233078772e9934e36c79e694843eb0cb5df02ae615ee94473",
+    "independent-audit.json": "ab0e8595396a5e087a112cc6796d0eeebeecff261a6a77a5e242d198031c406a",
+    "multiprocessing-matrix.json": "be56df16f0a4bc3aacf82edbc7c551066765ed37856f8e0e1d3140f4b483236f",
+    "run-ut5-feature-capability-and-product-surface-qualification.sh": "526747988dc7c36a1fe6a5578960773b46c70ce600cf7d2bcba9962697617066",
+    "run_feature_qualification_experiment.py": "24cdb0ab11761d16236f8498331b6a4c225ebf16879d16c4879814b0a1854d32",
+    "runtime-sdk-reproduction.json": "950326e914d9dbd4e0690a1df92f7c6136f0327011ef5d009e4cd838ac8d7462",
+    "subprocess-core-matrix.json": "aa744ffdeea63184bd0071a23c17893712e53764ca2ffb1ea064fceed271c7a4",
+    "subprocess-secondary-matrix.json": "8b307ec4daf698ba9077412f7d5a885048c34cb649c5655b8e25b427739eb8f0",
+    "test_verify_feature_qualification.py": "3e3846012bd2efbb73eb53dd27c759bacd8fd5349bf8f2347c33fa9b213dcd2c",
+    "ut5-gate-diagnostics.json": "d875df954586ad65cda3fe126f6c2f50fa033ff9b5b0cdbfb8086055fc0703ae",
+    "venv-matrix.json": "64f4421efe61770f22f24fcf62238c891ebfac9c64756b0a725daf3fe2db3557",
+    "verify_feature_qualification.py": "c554544c2a961070a277e5797e0595b2c1d3f8ad7ac507b189063bde8d500737"
+  },
+  "gate_condition": {
+    "base_pip_variants_complete": true,
+    "classification_vocabulary_exact": true,
+    "core_anchor_cases_pass": true,
+    "feature_surface_decision_complete": true,
+    "fresh_venv_and_native_extension_pass": true,
+    "multiprocessing_matrix_complete": true,
+    "negative_contract_scan": true,
+    "no_blanket_claims": true,
+    "runtime_sdk_reproduction": true,
+    "subprocess_core_complete": true,
+    "subprocess_secondary_complete": true,
+    "venv_matrix_complete": true
+  },
+  "loader_relocation_authority": {
+    "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+    "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+  },
+  "next_action_class": "execute-e2-r1-ut6-platform-portability",
+  "policy_boundaries": {
+    "base_pip": "No inclusion decision; PIP-X and package-only options remain valid.",
+    "default_shell": "Use an explicit Android shell path when shell execution is selected; default /bin/sh is not assumed.",
+    "multiprocessing": "Only individually passing primitives and start methods are support candidates.",
+    "pip_command_wrappers": "Absolute shebang wrappers are relocation-bound; relative Android wrapper is a product-owned adaptation.",
+    "pre_existing_venv_after_base_move": "Recreate unless independently transformed and qualified.",
+    "preexec_fn": "Not a default product support candidate even when technically passing.",
+    "uv": "External pass or absence does not select uv inclusion."
+  },
+  "predecessor": {
+    "commit": "845981e0d2bde7f52ab034fc00e40af226d2120d",
+    "tree": "0a8e572a9f9aacfd7299c0b397d7393bd1a7330f"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-explicit-feature-support-boundaries",
+  "sysconfig_sdk_authority": {
+    "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+    "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "upstream_control_authority": {
+    "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+    "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "54/54",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

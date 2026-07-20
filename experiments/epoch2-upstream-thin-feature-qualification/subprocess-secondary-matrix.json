@@ -1,0 +1,238 @@
+{
+  "cases": [
+    {
+      "case": "shell_default",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "default-shell"
+      },
+      "note": "Default /bin/sh is not a host-neutral Android contract; explicit /system/bin/sh is the adaptation.",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "shell_explicit_system",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "shell": "/system/bin/sh",
+        "stderr": "",
+        "stdout": "system-shell"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "explicit_shell_argv",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "argv-shell"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "start_new_session",
+      "classification": "pass",
+      "evidence": {
+        "child_sid": 7460,
+        "parent_sid": 31248,
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "process_group",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "pgrp": 7462,
+        "pid": 7462,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "signal_forwarding",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "ready": "READY",
+        "returncode": 42,
+        "stderr": "",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "pass_fds",
+      "classification": "pass",
+      "evidence": {
+        "data": "fd-ok",
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "close_fds",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "closed\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "preexec_fn",
+      "classification": "pass",
+      "evidence": {
+        "child_sid": 7466,
+        "parent_sid": 31248,
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "Technically passes, but excluded from default product surface because preexec_fn is unsafe in threaded applications.",
+      "pass": true,
+      "support_candidate": false
+    },
+    {
+      "case": "pty",
+      "classification": "pass",
+      "evidence": {
+        "data": "pty-ok\r\n",
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "background_reap",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "reaped": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    }
+  ],
+  "classified_case_count": 11,
+  "matrix": "subprocess-secondary",
+  "pass": true,
+  "pass_count": 11,
+  "probe": {
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/subprocess-secondary-probe.py"
+    ],
+    "json": {
+      "cases": {
+        "background_reap": {
+          "pass": true,
+          "reaped": true,
+          "returncode": 0
+        },
+        "close_fds": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "closed\n"
+        },
+        "explicit_shell_argv": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "argv-shell"
+        },
+        "pass_fds": {
+          "data": "fd-ok",
+          "pass": true,
+          "returncode": 0
+        },
+        "preexec_fn": {
+          "child_sid": 7466,
+          "parent_sid": 31248,
+          "pass": true,
+          "returncode": 0
+        },
+        "process_group": {
+          "pass": true,
+          "pgrp": 7462,
+          "pid": 7462,
+          "returncode": 0,
+          "stderr": ""
+        },
+        "pty": {
+          "data": "pty-ok\r\n",
+          "pass": true,
+          "returncode": 0
+        },
+        "shell_default": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "default-shell"
+        },
+        "shell_explicit_system": {
+          "pass": true,
+          "returncode": 0,
+          "shell": "/system/bin/sh",
+          "stderr": "",
+          "stdout": "system-shell"
+        },
+        "signal_forwarding": {
+          "pass": true,
+          "ready": "READY",
+          "returncode": 42,
+          "stderr": "",
+          "stdout": ""
+        },
+        "start_new_session": {
+          "child_sid": 7460,
+          "parent_sid": 31248,
+          "pass": true,
+          "returncode": 0
+        }
+      },
+      "schema_version": 1
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"cases\": {\"background_reap\": {\"pass\": true, \"reaped\": true, \"returncode\": 0}, \"close_fds\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"closed\\n\"}, \"explicit_shell_argv\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"argv-shell\"}, \"pass_fds\": {\"data\": \"fd-ok\", \"pass\": true, \"returncode\": 0}, \"preexec_fn\": {\"child_sid\": 7466, \"parent_sid\": 31248, \"pass\": true, \"returncode\": 0}, \"process_group\": {\"pass\": true, \"pgrp\": 7462, \"pid\": 7462, \"returncode\": 0, \"stderr\": \"\"}, \"pty\": {\"data\": \"pty-ok\\r\\n\", \"pass\": true, \"returncode\": 0}, \"shell_default\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"default-shell\"}, \"shell_explicit_system\": {\"pass\": true, \"returncode\": 0, \"shell\": \"/system/bin/sh\", \"stderr\": \"\", \"stdout\": \"system-shell\"}, \"signal_forwarding\": {\"pass\": true, \"ready\": \"READY\", \"returncode\": 42, \"stderr\": \"\", \"stdout\": \"\"}, \"start_new_session\": {\"child_sid\": 7460, \"parent_sid\": 31248, \"pass\": true, \"returncode\": 0}}, \"schema_version\": 1}\n"
+  },
+  "required_case_count": 11,
+  "schema_version": 1,
+  "support_boundary": {
+    "blanket_secondary_claim": false,
+    "explicit_shell_required_on_android": true,
+    "preexec_fn_default_product_support": false
+  }
+}

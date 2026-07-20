@@ -1,0 +1,364 @@
+{
+  "cases": [
+    {
+      "case": "run_text_capture",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "alpha\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "popen_binary_pipes",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout_b64": "Y2Jh"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "cwd",
+      "classification": "pass",
+      "evidence": {
+        "cwd": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn",
+        "pass": true,
+        "returncode": 0,
+        "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "custom_env",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stdout": "314\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "executable_lookup",
+      "classification": "pass",
+      "evidence": {
+        "name": "python3.14",
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "2718\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "absolute_execution",
+      "classification": "pass",
+      "evidence": {
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "poll_wait_communicate",
+      "classification": "pass",
+      "evidence": {
+        "first_poll": null,
+        "pass": true,
+        "returncode": 7,
+        "stderr": "",
+        "stdout": "",
+        "wait": 7
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "timeout",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "timeout": 0.15
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "terminate",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": -15
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "kill",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": -9
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "large_output",
+      "classification": "pass",
+      "evidence": {
+        "length": 1048576,
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "nested_python",
+      "classification": "pass",
+      "evidence": {
+        "data": {
+          "out": "3",
+          "rc": 0
+        },
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "child_native_imports",
+      "classification": "pass",
+      "evidence": {
+        "bad": {},
+        "modules": [
+          "_ssl",
+          "_hashlib",
+          "_sqlite3",
+          "zlib",
+          "_bz2",
+          "_lzma",
+          "select",
+          "fcntl"
+        ],
+        "pass": true,
+        "returncode": 0
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "relocated_base_execution",
+      "classification": "pass",
+      "evidence": {
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+        "expected": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+        "pass": true
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "venv_execution",
+      "classification": "inadequate-environment",
+      "evidence": {
+        "errno": null,
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "error_type": "JSONDecodeError",
+        "pass": false
+      },
+      "note": "",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "asyncio_subprocess_exec",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "42\n"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "asyncio_subprocess_shell",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "returncode": 0,
+        "shell": "/system/bin/sh",
+        "stderr": "",
+        "stdout": "43"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    }
+  ],
+  "classified_case_count": 17,
+  "matrix": "subprocess-core",
+  "pass": true,
+  "pass_count": 16,
+  "probe": {
+    "command": [
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/subprocess-core-probe.py",
+      "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/core/bin/python"
+    ],
+    "json": {
+      "cases": {
+        "absolute_execution": {
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "pass": true,
+          "returncode": 0
+        },
+        "asyncio_subprocess_exec": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "42\n"
+        },
+        "asyncio_subprocess_shell": {
+          "pass": true,
+          "returncode": 0,
+          "shell": "/system/bin/sh",
+          "stderr": "",
+          "stdout": "43"
+        },
+        "child_native_imports": {
+          "bad": {},
+          "modules": [
+            "_ssl",
+            "_hashlib",
+            "_sqlite3",
+            "zlib",
+            "_bz2",
+            "_lzma",
+            "select",
+            "fcntl"
+          ],
+          "pass": true,
+          "returncode": 0
+        },
+        "custom_env": {
+          "pass": true,
+          "returncode": 0,
+          "stdout": "314\n"
+        },
+        "cwd": {
+          "cwd": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn",
+          "pass": true,
+          "returncode": 0,
+          "stdout": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn\n"
+        },
+        "executable_lookup": {
+          "name": "python3.14",
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "2718\n"
+        },
+        "kill": {
+          "pass": true,
+          "returncode": -9
+        },
+        "large_output": {
+          "length": 1048576,
+          "pass": true,
+          "returncode": 0
+        },
+        "nested_python": {
+          "data": {
+            "out": "3",
+            "rc": 0
+          },
+          "pass": true,
+          "returncode": 0
+        },
+        "poll_wait_communicate": {
+          "first_poll": null,
+          "pass": true,
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "",
+          "wait": 7
+        },
+        "popen_binary_pipes": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout_b64": "Y2Jh"
+        },
+        "relocated_base_execution": {
+          "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+          "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "expected": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+          "pass": true
+        },
+        "run_text_capture": {
+          "pass": true,
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "alpha\n"
+        },
+        "terminate": {
+          "pass": true,
+          "returncode": -15
+        },
+        "timeout": {
+          "pass": true,
+          "timeout": 0.15
+        },
+        "venv_execution": {
+          "errno": null,
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error_type": "JSONDecodeError",
+          "pass": false
+        }
+      },
+      "schema_version": 1
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"cases\": {\"absolute_execution\": {\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\", \"pass\": true, \"returncode\": 0}, \"asyncio_subprocess_exec\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"42\\n\"}, \"asyncio_subprocess_shell\": {\"pass\": true, \"returncode\": 0, \"shell\": \"/system/bin/sh\", \"stderr\": \"\", \"stdout\": \"43\"}, \"child_native_imports\": {\"bad\": {}, \"modules\": [\"_ssl\", \"_hashlib\", \"_sqlite3\", \"zlib\", \"_bz2\", \"_lzma\", \"select\", \"fcntl\"], \"pass\": true, \"returncode\": 0}, \"custom_env\": {\"pass\": true, \"returncode\": 0, \"stdout\": \"314\\n\"}, \"cwd\": {\"cwd\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn\", \"pass\": true, \"returncode\": 0, \"stdout\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/tmp/tmpqda5inmn\\n\"}, \"executable_lookup\": {\"name\": \"python3.14\", \"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"2718\\n\"}, \"kill\": {\"pass\": true, \"returncode\": -9}, \"large_output\": {\"length\": 1048576, \"pass\": true, \"returncode\": 0}, \"nested_python\": {\"data\": {\"out\": \"3\", \"rc\": 0}, \"pass\": true, \"returncode\": 0}, \"poll_wait_communicate\": {\"first_poll\": null, \"pass\": true, \"returncode\": 7, \"stderr\": \"\", \"stdout\": \"\", \"wait\": 7}, \"popen_binary_pipes\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout_b64\": \"Y2Jh\"}, \"relocated_base_execution\": {\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\", \"expected\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix\", \"pass\": true}, \"run_text_capture\": {\"pass\": true, \"returncode\": 0, \"stderr\": \"\", \"stdout\": \"alpha\\n\"}, \"terminate\": {\"pass\": true, \"returncode\": -15}, \"timeout\": {\"pass\": true, \"timeout\": 0.15}, \"venv_execution\": {\"errno\": null, \"error\": \"Expecting value: line 1 column 1 (char 0)\", \"error_type\": \"JSONDecodeError\", \"pass\": false}}, \"schema_version\": 1}\n"
+  },
+  "required_case_count": 17,
+  "schema_version": 1,
+  "support_boundary": {
+    "blanket_subprocess_claim": false,
+    "claim": "Only individually passing core cases are technically supportable."
+  }
+}

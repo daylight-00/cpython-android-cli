@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      execute-e2-r1-ut5-feature-capability-and-product-surface-qualification
+immediate action      execute-e2-r1-ut6-platform-portability
 program epoch         E2 — upstream-thin research program
-program gate          E2-R1/UT-5 — Feature capability and product-surface qualification
+program gate          E2-R1/UT-6 — Platform portability
 ```
 
 ### Current claim boundary
@@ -33,7 +33,7 @@ none
 
 ### Unresolved risks
 
-- UT-5 must classify subprocess, venv, pip, and multiprocessing feasibility without making blanket support claims beyond the evidence.
+- UT-6 must bind every public Android platform claim to target evidence or explicitly withhold it; modern-device success is not minimum-API proof.
 
 ### Accepted authorities
 
@@ -52,6 +52,7 @@ none
 - [`experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json`](experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json): bounded Android/Bionic loader, launcher, getpath, native closure, and whole-prefix relocation evidence (`05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2`)
 - [`experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json`](experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json): relocation-aware sysconfig, consumer metadata, on-device native-extension SDK, and Android wheel evidence (`6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808`)
 - [`experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json`](experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json): host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv, read-only-install, and independent data-update policy (`be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7`)
+- [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json): explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries (`3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5`)
 
 ### Agent entry
 

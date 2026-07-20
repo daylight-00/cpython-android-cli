@@ -1,0 +1,33 @@
+{
+  "exit_condition": {
+    "blanket_claim_count": 0,
+    "complete_matrix_count": 5,
+    "copy_mode_classification": "inadequate-environment",
+    "core_anchor_pass_count": 5,
+    "core_anchor_required": 5,
+    "epoch3_selection_made": false,
+    "fresh_venv_mode": "symlinks",
+    "native_extension_venv_pass": true,
+    "negative_contract_hits": 0,
+    "required_matrix_count": 5,
+    "total_classified_cases": 59,
+    "unclassified_cases": 0
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "base_pip_variants_complete": true,
+    "classification_vocabulary_exact": true,
+    "core_anchor_cases_pass": true,
+    "feature_surface_decision_complete": true,
+    "fresh_venv_and_native_extension_pass": true,
+    "multiprocessing_matrix_complete": true,
+    "negative_contract_scan": true,
+    "no_blanket_claims": true,
+    "runtime_sdk_reproduction": true,
+    "subprocess_core_complete": true,
+    "subprocess_secondary_complete": true,
+    "venv_matrix_complete": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

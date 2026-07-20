@@ -1,0 +1,67 @@
+{
+  "command": [
+    "/data/data/com.termux/files/home/uv-base/.venv/bin/python3",
+    "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-sysconfig-sdk/run_sysconfig_sdk_experiment.py",
+    "--root",
+    "/data/data/com.termux/files/home/projects/cpython-android-cli",
+    "--archive",
+    "/data/data/com.termux/files/home/.cache/hw-t-inputs/cpython-android-cli-ut0/python-3.14.6-aarch64-linux-android.tar.gz",
+    "--work",
+    "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction",
+    "--output",
+    "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-evidence",
+    "--artifacts",
+    "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-artifacts",
+    "--source-dir",
+    "/data/data/com.termux/files/home/projects/cpython-android-cli/experiments/epoch2-upstream-thin-sysconfig-sdk",
+    "--cc",
+    "clang",
+    "--cxx",
+    "clang++",
+    "--ar",
+    "llvm-ar",
+    "--patchelf",
+    "patchelf",
+    "--readelf",
+    "readelf",
+    "--pkg-config",
+    "pkg-config"
+  ],
+  "native_wheel": {
+    "name": "hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "sha256": "68c639100b8bd55902a5d76ab54e643471bfe248e4bb3e4a59674081f9b881a9",
+    "size": 3630
+  },
+  "pass": true,
+  "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+  "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+  "returncode": 0,
+  "schema_version": 1,
+  "stderr_tail": "",
+  "stdout_tail": "{\n  \"exit_condition\": {\n    \"native_extension_wheel_build\": true,\n    \"relocated_extension_import\": true,\n    \"runtime_paths_reroot_after_movement\": true,\n    \"stale_active_install_prefixes\": 0,\n    \"unknown_producer_absolute_paths\": 0,\n    \"wheel_identity_correct\": true\n  },\n  \"gate_condition\": {\n    \"consumer_metadata_location_a\": true,\n    \"consumer_metadata_location_b\": true,\n    \"lr3_exact_and_16k\": true,\n    \"native_extension_wheel_build\": true,\n    \"relocated_extension_import\": true,\n    \"runtime_paths_reroot_after_movement\": true,\n    \"runtime_reproduction\": true,\n    \"stale_active_install_prefixes_zero\": true,\n    \"unknown_producer_absolute_paths_zero\": true,\n    \"wheel_identity_correct\": true\n  },\n  \"output\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-evidence\",\n  \"pass\": true,\n  \"wheel\": {\n    \"extension_members\": [\n      \"hw_t_native_probe.cpython-314-aarch64-linux-android.so\"\n    ],\n    \"filename\": \"hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\",\n    \"filename_ok\": true,\n    \"pass\": true,\n    \"sha256\": \"68c639100b8bd55902a5d76ab54e643471bfe248e4bb3e4a59674081f9b881a9\",\n    \"size\": 3630,\n    \"tag_ok\": true,\n    \"tags\": [\n      \"cp314-cp314-android_24_arm64_v8a\"\n    ]\n  }\n}\n",
+  "ut3_gate": {
+    "exit_condition": {
+      "native_extension_wheel_build": true,
+      "relocated_extension_import": true,
+      "runtime_paths_reroot_after_movement": true,
+      "stale_active_install_prefixes": 0,
+      "unknown_producer_absolute_paths": 0,
+      "wheel_identity_correct": true
+    },
+    "failed_gate_conditions": [],
+    "gate_condition": {
+      "consumer_metadata_location_a": true,
+      "consumer_metadata_location_b": true,
+      "lr3_exact_and_16k": true,
+      "native_extension_wheel_build": true,
+      "relocated_extension_import": true,
+      "runtime_paths_reroot_after_movement": true,
+      "runtime_reproduction": true,
+      "stale_active_install_prefixes_zero": true,
+      "unknown_producer_absolute_paths_zero": true,
+      "wheel_identity_correct": true
+    },
+    "pass": true,
+    "schema_version": 1
+  }
+}

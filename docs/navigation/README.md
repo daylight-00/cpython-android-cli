@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-ut5-feature-capability-and-product-surface-qualification
-gate         E2-R1/UT-5 — Feature capability and product-surface qualification
-tracked docs 620
+action       execute-e2-r1-ut6-platform-portability
+gate         E2-R1/UT-6 — Platform portability
+tracked docs 632
 indexes      16
 ```
 

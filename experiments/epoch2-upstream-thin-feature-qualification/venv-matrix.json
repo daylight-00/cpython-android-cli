@@ -1,0 +1,484 @@
+{
+  "cases": [
+    {
+      "case": "symlink_mode",
+      "classification": "pass",
+      "evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--symlinks",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink"
+        ],
+        "mode": "symlinks",
+        "pass": true,
+        "probe": {
+          "json": {
+            "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+            "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink/bin/python",
+            "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink"
+          },
+          "pass": true,
+          "path_state": {
+            "exists": true,
+            "is_symlink": true,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+            "symlink_target": "python3.14"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink/bin/python\"}\n"
+        },
+        "python": {
+          "exists": true,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "pyvenv_cfg": "home = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin\ninclude-system-site-packages = false\nversion = 3.14.6\nexecutable = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\ncommand = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14 -m venv --without-pip /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-symlink\n",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "copy_mode",
+      "classification": "inadequate-environment",
+      "evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--copies",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy"
+        ],
+        "mode": "copies",
+        "pass": false,
+        "probe": {
+          "pass": false,
+          "path_state": {
+            "exists": true,
+            "is_symlink": false,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy/bin/python",
+            "symlink_target": null
+          },
+          "returncode": 1,
+          "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+          "stdout": ""
+        },
+        "python": {
+          "exists": true,
+          "is_symlink": false,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy/bin/python",
+          "symlink_target": null
+        },
+        "pyvenv_cfg": "home = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin\ninclude-system-site-packages = false\nversion = 3.14.6\nexecutable = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\ncommand = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14 -m venv --copies --without-pip /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/basic-copy\n",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "base_moved_before_new_venv",
+      "classification": "pass",
+      "evidence": {
+        "command": [
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin/python3.14",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--symlinks",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move"
+        ],
+        "mode": "symlinks",
+        "pass": true,
+        "probe": {
+          "json": {
+            "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix",
+            "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move/bin/python",
+            "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move"
+          },
+          "pass": true,
+          "path_state": {
+            "exists": true,
+            "is_symlink": true,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin/python3.14",
+            "symlink_target": "python3.14"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix\", \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move/bin/python\"}\n"
+        },
+        "python": {
+          "exists": true,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "pyvenv_cfg": "home = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin\ninclude-system-site-packages = false\nversion = 3.14.6\nexecutable = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin/python3.14\ncommand = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-b/prefix/bin/python3.14 -m venv --without-pip /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/fresh-after-base-move\n",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "pre_existing_symlink_venv_after_base_move",
+      "classification": "android-mandatory-adaptation",
+      "evidence": {
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pre-move-symlink/bin/python'",
+        "error_type": "FileNotFoundError",
+        "pass": false,
+        "path_state": {
+          "exists": false,
+          "is_symlink": true,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pre-move-symlink/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/base-move/location-a/prefix/bin/python3.14",
+          "symlink_target": "python3.14"
+        },
+        "returncode": null
+      },
+      "note": "Failure is an accepted base-bound boundary; recreate after base movement.",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "pre_existing_copy_venv_after_base_move",
+      "classification": "android-mandatory-adaptation",
+      "evidence": {
+        "pass": false,
+        "path_state": {
+          "exists": true,
+          "is_symlink": false,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pre-move-copy/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pre-move-copy/bin/python",
+          "symlink_target": null
+        },
+        "returncode": 1,
+        "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pre-move-copy/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+        "stdout": ""
+      },
+      "note": "Recorded independently; no blanket relocation claim.",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "venv_moved_without_base",
+      "classification": "android-mandatory-adaptation",
+      "evidence": {
+        "pass": false,
+        "path_state": {
+          "exists": true,
+          "is_symlink": false,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/move-without-base-dst/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/move-without-base-dst/bin/python",
+          "symlink_target": null
+        },
+        "returncode": 1,
+        "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/move-without-base-dst/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "patch_level_base_replacement_same_path",
+      "classification": "inadequate-environment",
+      "evidence": {
+        "created": {
+          "command": [
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/patch-replacement/prefix/bin/python3.14",
+            "-m",
+            "venv",
+            "--without-pip",
+            "--copies",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement"
+          ],
+          "mode": "copies",
+          "pass": false,
+          "probe": {
+            "pass": false,
+            "path_state": {
+              "exists": true,
+              "is_symlink": false,
+              "lexists": true,
+              "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+              "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+              "symlink_target": null
+            },
+            "returncode": 1,
+            "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+            "stdout": ""
+          },
+          "python": {
+            "exists": true,
+            "is_symlink": false,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+            "symlink_target": null
+          },
+          "pyvenv_cfg": "home = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/patch-replacement/prefix/bin\ninclude-system-site-packages = false\nversion = 3.14.6\nexecutable = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/patch-replacement/prefix/bin/python3.14\ncommand = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/patch-replacement/prefix/bin/python3.14 -m venv --copies --without-pip /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement\n",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        },
+        "pass": false,
+        "path_state": {
+          "exists": true,
+          "is_symlink": false,
+          "lexists": true,
+          "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+          "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python",
+          "symlink_target": null
+        },
+        "replacement_base_tree": {
+          "count": 3156,
+          "sha256": "acac123f63789f2e713bfa9cdde7943f628ba3623be244f4f3179923d4ad2e55",
+          "size": 80488128
+        },
+        "returncode": 1,
+        "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/patch-replacement/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+        "stdout": ""
+      },
+      "note": "",
+      "pass": false,
+      "support_candidate": false
+    },
+    {
+      "case": "native_extension_in_venv",
+      "classification": "pass",
+      "evidence": {
+        "import": {
+          "data": {
+            "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+            "meaning": 42,
+            "module_file": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so",
+            "runtime_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension",
+            "sys_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix\", \"meaning\": 42, \"module_file\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages/hw_t_native_probe.cpython-314-aarch64-linux-android.so\", \"runtime_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension\", \"sys_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension\"}\n"
+        },
+        "install": {
+          "data": {
+            "member_count": 5,
+            "pass": true,
+            "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages",
+            "wheel": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"pass\": true, \"wheel\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-artifacts/hw_t_native_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\", \"site_packages\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages\", \"member_count\": 5}\n"
+        },
+        "pass": true,
+        "venv": {
+          "create_command": [
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+            "-m",
+            "venv",
+            "--without-pip",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension"
+          ],
+          "paths": {
+            "data": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension",
+            "include": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/include/python3.14",
+            "platinclude": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/include/python3.14",
+            "platlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages",
+            "platstdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14",
+            "purelib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages",
+            "scripts": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/bin",
+            "stdlib": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/lib/python3.14"
+          },
+          "python": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/bin/python",
+          "site_packages": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/native-extension/lib/python3.14/site-packages"
+        }
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "uv_created_venv",
+      "classification": "pass",
+      "evidence": {
+        "pass": true,
+        "probe": {
+          "json": {
+            "base": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix",
+            "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/uv-created"
+          },
+          "pass": true,
+          "path_state": {
+            "exists": true,
+            "is_symlink": true,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/uv-created/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+            "symlink_target": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14"
+          },
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "{\"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/uv-created\", \"base\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix\"}\n"
+        },
+        "returncode": 0,
+        "stderr": "Using CPython 3.14.6 interpreter at: /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\nCreating virtual environment at: /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/uv-created\nActivate with: source /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/uv-created/bin/activate\n",
+        "stdout": "",
+        "uv_path": "/data/data/com.termux/files/usr/bin/uv"
+      },
+      "note": "",
+      "pass": true,
+      "support_candidate": true
+    },
+    {
+      "case": "pip_generated_console_script_after_venv_relocation",
+      "classification": "android-mandatory-adaptation",
+      "evidence": {
+        "after_move": {
+          "errno": 2,
+          "error": "[Errno 2] No such file or directory: '/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/hw-t-console-probe'",
+          "error_type": "FileNotFoundError",
+          "pass": false,
+          "path_state": {
+            "exists": false,
+            "is_symlink": false,
+            "lexists": false,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/hw-t-console-probe",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/hw-t-console-probe",
+            "symlink_target": null
+          },
+          "returncode": null
+        },
+        "before_move": {
+          "errno": 2,
+          "error": "[Errno 2] No such file or directory: '/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/hw-t-console-probe'",
+          "error_type": "FileNotFoundError",
+          "pass": false,
+          "path_state": {
+            "exists": false,
+            "is_symlink": false,
+            "lexists": false,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/hw-t-console-probe",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/hw-t-console-probe",
+            "symlink_target": null
+          },
+          "returncode": null
+        },
+        "create": {
+          "command": [
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14",
+            "-m",
+            "venv",
+            "--copies",
+            "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console"
+          ],
+          "mode": "copies",
+          "pass": false,
+          "probe": {
+            "pass": false,
+            "path_state": {
+              "exists": true,
+              "is_symlink": false,
+              "lexists": true,
+              "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python",
+              "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python",
+              "symlink_target": null
+            },
+            "returncode": 1,
+            "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+            "stdout": ""
+          },
+          "python": {
+            "exists": true,
+            "is_symlink": false,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python",
+            "symlink_target": null
+          },
+          "pyvenv_cfg": "home = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin\ninclude-system-site-packages = false\nversion = 3.14.6\nexecutable = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14\ncommand = /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/runtime-sdk-reproduction/location-b/prefix/bin/python3.14 -m venv --copies /data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console\n",
+          "returncode": 1,
+          "stderr": "Error: Command '['/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python3.14', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n",
+          "stdout": ""
+        },
+        "install": {
+          "returncode": 1,
+          "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+          "stdout": ""
+        },
+        "moved_python": {
+          "pass": false,
+          "path_state": {
+            "exists": true,
+            "is_symlink": false,
+            "lexists": true,
+            "path": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/python",
+            "resolved": "/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/python",
+            "symlink_target": null
+          },
+          "returncode": 1,
+          "stderr": "CANNOT LINK EXECUTABLE \"/data/data/com.termux/files/home/.cache/hw-t-work/20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2-20260720T051949Z-6077/ut5-experiment/state/venvs/pip-console-moved/bin/python\": library \"libpython3.14.so\" not found: needed by main executable\n",
+          "stdout": ""
+        },
+        "pass": false,
+        "relocation_boundary_explicit": true,
+        "scripts": []
+      },
+      "note": "pip-generated absolute shebang remains venv-location-bound; recreate or rewrite wrapper after relocation.",
+      "pass": false,
+      "support_candidate": false
+    }
+  ],
+  "classified_case_count": 10,
+  "matrix": "venv",
+  "pass": true,
+  "pass_count": 4,
+  "required_cases": [
+    "symlink_mode",
+    "copy_mode",
+    "base_moved_before_new_venv",
+    "pre_existing_symlink_venv_after_base_move",
+    "pre_existing_copy_venv_after_base_move",
+    "venv_moved_without_base",
+    "patch_level_base_replacement_same_path",
+    "native_extension_in_venv",
+    "uv_created_venv",
+    "pip_generated_console_script_after_venv_relocation"
+  ],
+  "schema_version": 1,
+  "support_boundary": {
+    "fresh_venv_after_base_move": true,
+    "pip_script_blanket_relocation_claim": false,
+    "pre_existing_venv_blanket_relocation_claim": false,
+    "uv_inclusion_selected": false
+  }
+}

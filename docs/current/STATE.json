@@ -89,6 +89,12 @@
       "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
       "role": "host-neutral CA, timezone, temporary, cache, bytecode, user-site, venv, read-only-install, and independent data-update policy",
       "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+    },
+    {
+      "id": "e2-r1-ut5-feature-capability-and-product-surface-qualification",
+      "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+      "role": "explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries",
+      "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
     }
   ],
   "active_plan": {
@@ -130,10 +136,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+    "next_action_class": "execute-e2-r1-ut6-platform-portability",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+    "resume_program_action_class": "execute-e2-r1-ut6-platform-portability",
     "status": "completed"
   },
   "documentation_layers": {
@@ -157,10 +163,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+  "next_action_class": "execute-e2-r1-ut6-platform-portability",
   "predecessor": {
-    "commit": "a1fdd7ea96f282504287abb864aaea8dbbe1aa54",
-    "tree": "a6d8e2da095cdd2fd6e9dfbfb3b220686a4fe093"
+    "commit": "845981e0d2bde7f52ab034fc00e40af226d2120d",
+    "tree": "0a8e572a9f9aacfd7299c0b397d7393bd1a7330f"
   },
   "program": {
     "epoch": {
@@ -169,11 +175,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/UT-5",
-      "name": "Feature capability and product-surface qualification",
+      "id": "E2-R1/UT-6",
+      "name": "Platform portability",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
+    "next_action_class": "execute-e2-r1-ut6-platform-portability",
     "status": "active"
   },
   "project_model": {
@@ -214,22 +220,22 @@
     "sha256": "216f4c5e4e2c3c5a1930d8bcbeb6b43c4fe3417bac49cfebad8801f0c8ed1f15"
   },
   "state_kind": "project-current-state",
-  "state_revision": 11,
+  "state_revision": 12,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "968bb5a8e5f0b21da2d48f0bb93c265c0e39772bebc4a8695fcb248c62797b9a"
+    "sha256": "c4fe940d121ccbd492a586c4db78524207ceeef3393c731682dc6a0cff244fb3"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-ut5-feature-capability-and-product-surface-qualification",
-    "pass_successor_action_class": "execute-e2-r1-ut6-platform-portability",
+    "current_action_class": "execute-e2-r1-ut6-platform-portability",
+    "pass_successor_action_class": "execute-e2-r1-ut7-upstream-evolution-and-maintenance-portability",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "UT-5 must classify subprocess, venv, pip, and multiprocessing feasibility without making blanket support claims beyond the evidence."
+    "UT-6 must bind every public Android platform claim to target evidence or explicitly withhold it; modern-device success is not minimum-API proof."
   ],
-  "updated_by_transaction": "20260720-e2-r1-ut4-android-data-and-writable-state-policy-v1"
+  "updated_by_transaction": "20260720-e2-r1-ut5-feature-capability-and-product-surface-qualification-v2"
 }

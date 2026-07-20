@@ -1,0 +1,193 @@
+{
+  "base_pip": {
+    "adaptation_required": [
+      "PIP-0",
+      "PIP-2"
+    ],
+    "inadequate_environment": [],
+    "missing_bionic_primitive": [],
+    "support_candidates": [
+      "PIP-1",
+      "PIP-2",
+      "PIP-3",
+      "PIP-X"
+    ],
+    "technically_passing": [
+      "PIP-0",
+      "PIP-1",
+      "PIP-2",
+      "PIP-3",
+      "PIP-X"
+    ],
+    "upstream_build_decision": []
+  },
+  "blanket_claims": {
+    "multiprocessing": false,
+    "pip": false,
+    "subprocess": false,
+    "venv": false
+  },
+  "decision_kind": "epoch3-feature-selection-input",
+  "epoch3_selection_made": false,
+  "exit_condition": {
+    "multiprocessing_classified": 16,
+    "pip_variants_classified": 5,
+    "subprocess_core_classified": 17,
+    "subprocess_secondary_classified": 11,
+    "unclassified_count": 0,
+    "venv_classified": 10
+  },
+  "multiprocessing": {
+    "adaptation_required": [],
+    "inadequate_environment": [
+      "start_method:fork",
+      "start_method:spawn",
+      "start_method:forkserver",
+      "pipes_connections",
+      "queues",
+      "pools",
+      "locks",
+      "semaphores",
+      "events",
+      "conditions",
+      "shared_values_arrays",
+      "manager",
+      "process_pool_executor",
+      "resource_tracker",
+      "shared_memory",
+      "termination_cleanup"
+    ],
+    "missing_bionic_primitive": [],
+    "support_candidates": [],
+    "technically_passing": [],
+    "upstream_build_decision": []
+  },
+  "negative_contract_scan": {
+    "forbidden_tokens": [
+      "/data/data/com.termux",
+      "/data/user/0/com.termux",
+      "com.termux",
+      "/usr/local",
+      "/opt/android-sdk",
+      "/opt/android-ndk",
+      "/home/runner/work",
+      "/tmp/cpython-build"
+    ],
+    "hit_count": 0,
+    "hits": {},
+    "pass": true,
+    "scope": "selected feature-surface decision and abstract support contract"
+  },
+  "pass": true,
+  "policy_boundaries": {
+    "base_pip": "No inclusion decision; PIP-X and package-only options remain valid.",
+    "default_shell": "Use an explicit Android shell path when shell execution is selected; default /bin/sh is not assumed.",
+    "multiprocessing": "Only individually passing primitives and start methods are support candidates.",
+    "pip_command_wrappers": "Absolute shebang wrappers are relocation-bound; relative Android wrapper is a product-owned adaptation.",
+    "pre_existing_venv_after_base_move": "Recreate unless independently transformed and qualified.",
+    "preexec_fn": "Not a default product support candidate even when technically passing.",
+    "uv": "External pass or absence does not select uv inclusion."
+  },
+  "schema_version": 1,
+  "subprocess_core": {
+    "adaptation_required": [],
+    "inadequate_environment": [
+      "venv_execution"
+    ],
+    "missing_bionic_primitive": [],
+    "support_candidates": [
+      "run_text_capture",
+      "popen_binary_pipes",
+      "cwd",
+      "custom_env",
+      "executable_lookup",
+      "absolute_execution",
+      "poll_wait_communicate",
+      "timeout",
+      "terminate",
+      "kill",
+      "large_output",
+      "nested_python",
+      "child_native_imports",
+      "relocated_base_execution",
+      "asyncio_subprocess_exec",
+      "asyncio_subprocess_shell"
+    ],
+    "technically_passing": [
+      "run_text_capture",
+      "popen_binary_pipes",
+      "cwd",
+      "custom_env",
+      "executable_lookup",
+      "absolute_execution",
+      "poll_wait_communicate",
+      "timeout",
+      "terminate",
+      "kill",
+      "large_output",
+      "nested_python",
+      "child_native_imports",
+      "relocated_base_execution",
+      "asyncio_subprocess_exec",
+      "asyncio_subprocess_shell"
+    ],
+    "upstream_build_decision": []
+  },
+  "subprocess_secondary": {
+    "adaptation_required": [],
+    "inadequate_environment": [],
+    "missing_bionic_primitive": [],
+    "support_candidates": [
+      "shell_default",
+      "shell_explicit_system",
+      "explicit_shell_argv",
+      "start_new_session",
+      "process_group",
+      "signal_forwarding",
+      "pass_fds",
+      "close_fds",
+      "pty",
+      "background_reap"
+    ],
+    "technically_passing": [
+      "shell_default",
+      "shell_explicit_system",
+      "explicit_shell_argv",
+      "start_new_session",
+      "process_group",
+      "signal_forwarding",
+      "pass_fds",
+      "close_fds",
+      "preexec_fn",
+      "pty",
+      "background_reap"
+    ],
+    "upstream_build_decision": []
+  },
+  "venv": {
+    "adaptation_required": [
+      "pre_existing_symlink_venv_after_base_move",
+      "pre_existing_copy_venv_after_base_move",
+      "venv_moved_without_base",
+      "pip_generated_console_script_after_venv_relocation"
+    ],
+    "inadequate_environment": [
+      "copy_mode",
+      "patch_level_base_replacement_same_path"
+    ],
+    "missing_bionic_primitive": [],
+    "support_candidates": [
+      "symlink_mode",
+      "base_moved_before_new_venv",
+      "native_extension_in_venv",
+      "uv_created_venv"
+    ],
+    "technically_passing": [
+      "symlink_mode",
+      "base_moved_before_new_venv",
+      "native_extension_in_venv",
+      "uv_created_venv"
+    ],
+    "upstream_build_decision": []
+  }
+}
