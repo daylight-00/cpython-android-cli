@@ -11,9 +11,9 @@ LIB = ROOT / "components/upstream-thin/lib"
 
 
 def main() -> int:
-    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "observe-astral", "test"}
+    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "observe-astral", "test"}
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
-        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|observe-astral|test} ...", file=sys.stderr)
+        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|observe-astral|test} ...", file=sys.stderr)
         return 2
     command = sys.argv[1]
     if command == "test":
@@ -25,6 +25,9 @@ def main() -> int:
         "assemble-install-only": "assemble_install_only.py",
         "verify-install-only": "verify_install_only.py",
         "qualify-install-only": "qualify_install_only.py",
+        "assemble-stripped": "assemble_stripped.py",
+        "verify-stripped": "verify_stripped.py",
+        "qualify-stripped": "qualify_stripped.py",
         "observe-astral": "observe_astral.py",
     }
     implementation = LIB / implementations[command]

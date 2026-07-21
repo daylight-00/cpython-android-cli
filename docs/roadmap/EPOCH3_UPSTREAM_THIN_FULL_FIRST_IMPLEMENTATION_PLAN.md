@@ -301,3 +301,53 @@ eligible ELF changes and the resulting archive passes complete Android runtime,
 loader, alignment, native-closure, relocation, and consumer-surface
 qualification. If no eligible bytes change, the release decision must be an
 explicit alias or omission rather than a fabricated distinct product.
+
+## 11. Canonical stripped implementation start
+
+The frozen install-only authority at commit
+`a48b65cac61c2011bf7582f69da54593af67ff59` opened only the E3-X4 stripped
+experiment. The implementation remains an exact derivation from the accepted
+install-only archive and cannot reacquire, rebuild, add, remove, or reorder a
+product selection independently of that archive.
+
+An independent section census of the exact accepted install-only tree found:
+
+```text
+regular ELF files     81
+already stripped      80
+eligible ELF files     1
+eligible path          bin/python3.14
+removable sections     .symtab, .strtab
+```
+
+The only eligible object is the project-owned LA-2 standalone launcher. No
+Python.org or BeeWare-provided ELF is eligible for mutation. Therefore the
+initial decision is to attempt a real distinct Astral-like
+`install_only_stripped` archive rather than publish an alias. The operation is
+bounded to `llvm-strip --strip-unneeded` on `bin/python3.14` and must record the
+resolved tool path, tool byte identity, and version output.
+
+The derivation must satisfy all of the following before it can become a frozen
+stripped authority:
+
+1. the source install-only filename, size, and SHA-256 match the frozen lock;
+2. all 81 regular ELF files are censused before mutation;
+3. exactly one ELF is eligible and exactly that ELF changes;
+4. all paths, types, modes, and relative symlinks are identical;
+5. every non-ELF byte and every other ELF byte is identical;
+6. launcher `DT_NEEDED`, SONAME, RPATH/RUNPATH, ELF type/machine, and load
+   alignments are unchanged;
+7. `.symtab`, `.strtab`, `.debug*`, and `.zdebug*` are absent from the changed
+   launcher after stripping;
+8. two independent archive derivations are byte-identical;
+9. the derived archive passes the complete install-only Android qualification,
+   including two-location relocation, read-only execution, all 67 native
+   extensions, subprocess, pip, venv, `python-config`, and pkg-config; and
+10. an independent audit reruns the exact derivation verifier.
+
+If the owner toolchain produces no byte delta, changes any object other than the
+launcher, or fails any runtime or ELF invariant, no distinct stripped archive is
+accepted. The fallback decision must then be an explicit alias or omission.
+This implementation start does not authorize stripped selectability,
+publication, API-24 runtime, actual 16 KiB page-size runtime, or a non-Termux
+execution-context claim.

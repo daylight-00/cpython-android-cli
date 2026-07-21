@@ -33,3 +33,12 @@ input authority. The stripped increment may modify only regular ELF files by a
 recorded safe strip operation; all non-ELF bytes, modes, paths, and symlinks
 must remain identical. A separate stripped asset requires a real byte delta and
 full Android requalification.
+
+The stripped implementation censuses every regular ELF in the frozen
+install-only input and applies `--strip-unneeded` only to objects that still
+contain removable symbol/debug sections. The accepted input currently has 81
+regular ELF files; 80 upstream-provided objects are already stripped, and only
+the project-owned `bin/python3.14` launcher is eligible. A distinct stripped
+asset is valid only if exactly that launcher changes while its dynamic and load
+alignment surface remains identical and the complete Android qualification is
+repeated.
