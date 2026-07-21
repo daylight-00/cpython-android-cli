@@ -135,7 +135,7 @@
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
-    "detail_sha256": "43e8bd1972c87fd6a6a3e48934bd6b8d152a44955d0ea4012200405ddd6b1210",
+    "detail_sha256": "db5abdbcd3f08b60ac55aa767a3f4fbcf145eba6053e8661e0c78cc03e74168f",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -167,7 +167,7 @@
     "epoch3_feature_selection_started": true,
     "full_implementation_started": true,
     "full_release_complete": true,
-    "install_only_implementation_started": false,
+    "install_only_implementation_started": true,
     "publication_authorized": false,
     "selectable": false
   },
@@ -205,8 +205,8 @@
   },
   "next_action_class": "derive-epoch3-install-only-from-full",
   "predecessor": {
-    "commit": "54f942bcd13b5a3282c13965eb2cc9b283c6bebb",
-    "tree": "4383874f02e198df796c187881ad9da4698140b5"
+    "commit": "9e7f80413ee6e3b972097c273f6442626eff2630",
+    "tree": "bd050775d34884e0cfffe3500b456af6d7393afb"
   },
   "program": {
     "epoch": {
@@ -217,7 +217,7 @@
     "gate": {
       "id": "E3/INSTALL-ONLY",
       "name": "Canonical install-only projection and qualification",
-      "status": "ready"
+      "status": "in-progress"
     },
     "next_action_class": "derive-epoch3-install-only-from-full",
     "status": "in-progress"
@@ -260,11 +260,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 19,
+  "state_revision": 20,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "72889054d7824a031789347a8674248bbae7a9e0f8ad01453d1e5b94b8226626"
+    "sha256": "72c144788956fad6fbe3ff0e4ef7914643e2550875434f3c2ed089eb9a62f306"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -275,7 +275,7 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "install-only-exact-full-projection-and-android-qualification-pending",
+    "install-only-android-target-qualification-and-authority-pending",
     "API24-runtime-qualification-pending",
     "runtime-16KiB-device-support-unqualified",
     "non-Termux-Android-context-unqualified",
@@ -289,5 +289,5 @@
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "publication-not-authorized"
   ],
-  "updated_by_transaction": "20260722-e3-full-authority-freeze-install-only-open-v1"
+  "updated_by_transaction": "20260722-e3-install-only-implementation-start-r1"
 }

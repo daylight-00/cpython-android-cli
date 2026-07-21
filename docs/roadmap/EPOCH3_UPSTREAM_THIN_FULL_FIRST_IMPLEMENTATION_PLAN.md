@@ -233,3 +233,42 @@ The accepted full does not authorize selectability, publication, API-24 runtime,
 actual 16 KiB page-size runtime, or non-Termux execution-context claims.
 Stripped implementation remains forbidden until a separate install-only
 authority is frozen.
+
+## 9. Canonical install-only implementation start
+
+The frozen full authority at commit `9e7f80413ee6e3b972097c273f6442626eff2630`
+opened the install-only implementation gate. The implementation is added only
+in the successor commit and does not modify the accepted full assembler,
+artifact bytes, authority, or projection invariant.
+
+The install-only implementation has four bounded parts:
+
+1. verify the exact frozen full filename, byte size, and SHA-256;
+2. safely extract only that accepted full and copy every member below
+   `python/install/` into a new `python/` root without filtering or mutation;
+3. write deterministic tar metadata and a gzip header with `mtime=0`; and
+4. independently compare the projected tree against the accepted full,
+   including file bytes, modes, relative symlinks, root count, and absence of
+   `PYTHON.json` and `build/`.
+
+A local non-Android projection rehearsal from the exact accepted r4 full
+produced the same archive twice and passed the exact projection verifier:
+
+```text
+candidate filename  cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz
+candidate sha256    84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76
+candidate size      23841726
+candidate members   3699
+```
+
+This rehearsal proves deterministic archive derivation and exact member
+projection on the agent host. It does not prove Android execution and is not an
+install-only authority. The bounded owner target must independently derive the
+archive twice from the owner-cached accepted full, rerun exact projection
+verification, execute the extracted `python/` root at two locations and
+read-only, import all 67 native extensions, exercise subprocess, pip wrappers,
+`python-config`, pkg-config, and a fresh venv, and complete an independent
+return audit.
+
+No stripped implementation, selectability, publication, API-24 runtime, actual
+16 KiB runtime, or non-Termux execution-context claim is opened by this start.

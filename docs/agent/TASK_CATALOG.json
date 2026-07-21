@@ -1736,7 +1736,7 @@
         "prerequisites_satisfied": true,
         "required_authority_role": "canonical-full-archive-and-projection-invariant",
         "required_predecessor_action_class": "implement-epoch3-clean-upstream-derived-product",
-        "status": "ready"
+        "status": "in-progress"
       },
       "claim_boundary": {
         "android_runtime_claim": true,
@@ -1744,7 +1744,7 @@
         "device_qualification_claim": false,
         "epoch2_closed_claim": true,
         "epoch3_selection_claim": true,
-        "install_only_implementation_started_claim": false,
+        "install_only_implementation_started_claim": true,
         "official_upstream_identity_claim": true,
         "product_selectability_claim": false,
         "publication_claim": false

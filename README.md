@@ -33,7 +33,7 @@ none
 
 ### Unresolved risks
 
-- install-only-exact-full-projection-and-android-qualification-pending
+- install-only-android-target-qualification-and-authority-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified

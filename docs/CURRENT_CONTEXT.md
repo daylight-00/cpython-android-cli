@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 19
+> **State revision:** 20
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -26,7 +26,7 @@ work gate       E3/INSTALL-ONLY — Canonical install-only projection and qualif
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
 gate    E3/INSTALL-ONLY — Canonical install-only projection and qualification
-status  ready
+status  in-progress
 ```
 
 ## Accepted authorities
@@ -60,7 +60,7 @@ None.
 
 ## Unresolved risks
 
-- install-only-exact-full-projection-and-android-qualification-pending
+- install-only-android-target-qualification-and-authority-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
