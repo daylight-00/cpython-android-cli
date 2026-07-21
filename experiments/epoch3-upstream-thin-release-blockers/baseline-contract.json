@@ -5,6 +5,13 @@
     "selectable": false
   },
   "contract_kind": "epoch3-release-blocker-component-license-census",
+  "evidence_rules": {
+    "ambiguous-libffi-version-markers_must_not_be_inferred": true,
+    "exact_versions_require_artifact-contained-machine-metadata-header-or-unambiguous-binary-marker": true,
+    "external_android_system_providers_are_not_distributed_components": true,
+    "license_expressions_require_artifact-contained-license-metadata-or-inline-license-statement": true,
+    "repository_license_not_equal_to_packaged-license": true
+  },
   "expected_component_classes": [
     "cpython",
     "project-launcher",
@@ -19,6 +26,12 @@
     "libffi",
     "android-system-providers"
   ],
+  "implementation": {
+    "component_command": "components/upstream-thin/bin/cpython-android-upstream-thin census-licenses",
+    "independent_audit": "experiments/epoch3-upstream-thin-release-blockers/audit_release_blocker_baseline.py",
+    "input_access": "read-only-streaming-census-of-frozen-full-archive",
+    "runner": "experiments/epoch3-upstream-thin-release-blockers/run_release_blocker_baseline.py"
+  },
   "input": {
     "artifact_family_authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
     "artifact_family_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",

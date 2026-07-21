@@ -50,3 +50,16 @@ manifest, provenance, qualification, license-file-inventory, and attestation
 sidecars together with `SHA256SUMS` and `release-index.json`. The family remains
 qualified but unselectable and unpublished until the separately cataloged
 release-blocking experiments and complete component-to-license mapping close.
+
+The release-blocker census command is evidence-only:
+
+```text
+cpython-android-upstream-thin census-licenses --family-dir FAMILY --output-dir OUT
+```
+
+It verifies the frozen family first, reads the canonical full archive without
+extracting or modifying it, records component/version and packaged license-file
+evidence, and emits an explicit gap register. It must not promote file-name or
+binary-string observations into a complete legal mapping; unresolved libffi
+versioning, missing dependency license texts, project notice packaging, and
+Android external-provider notice policy remain blocking findings.
