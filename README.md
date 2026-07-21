@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      evaluate-epoch2-closure-gates
-program epoch         E2 — upstream-thin research program
-program gate          E2/CLOSURE — Epoch 2 closure gates
+immediate action      initialize-epoch3-from-accepted-evidence-export
+program epoch         E3 — clean upstream-derived Android standalone distribution
+program gate          E3/INIT — Epoch 3 initialization decisions and contract freeze
 ```
 
 ### Current claim boundary
@@ -33,9 +33,22 @@ none
 
 ### Unresolved risks
 
-- Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.
-- UT-6 still withholds a minimum release API and direct 16 KiB runtime support.
-- Class C source-built dependencies carry greater producer and maintenance burden than Class B.
+- minimum-supported-Android-API-unselected
+- runtime-16KiB-device-support-unqualified
+- ADB-root-APK-and-non-Termux-contexts-unqualified
+- emulator-unqualified-and-waived
+- other-Android-ABIs-unqualified
+- CA-and-timezone-payload-provider-and-update-policy-unselected
+- multiprocessing-environment-inadequate
+- pre-existing-venv-after-base-relocation-fails
+- install_only_stripped-duplicates-install_only
+- runtime-only-versus-on-device-SDK-versus-cross-SDK-unselected
+- uv-system-versus-managed-contract-unselected
+- API36-production-input-would-require-stable-official-NDK-reproduction
+- upstream-derived-full-differs-from-Astral-source-producer-full
+- supported-version-release-cadence-security-and-data-update-operations-unselected
+- source-producer-host-isolation-and-libffi-fix-deferred
+- publication-not-authorized
 
 ### Accepted authorities
 
@@ -58,6 +71,7 @@ none
 - [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json): bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims (`b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4`)
 - [`experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json`](experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json): official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership (`a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5`)
 - [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json): API-24 official and API-36 source-equivalent three-class controlled comparison (`576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e`)
+- [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](experiments/epoch2-upstream-thin-closure/closure-authority.json): Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary (`8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc`)
 
 ### Agent entry
 

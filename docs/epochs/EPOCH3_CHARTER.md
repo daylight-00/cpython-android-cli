@@ -1,6 +1,6 @@
 # Epoch 3 Charter: Clean upstream-derived Android standalone distribution
 
-> **Status:** PLANNED
+> **Status:** READY FOR INITIALIZATION — selection not started
 > **Input:** accepted Epoch 2 evidence export and complete Epoch 3 selection register
 > **Primary structural reference:** Astral `python-build-standalone`
 > **Decision authorities:** ADR-0006 and ADR-0007

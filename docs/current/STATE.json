@@ -113,13 +113,19 @@
       "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
       "role": "API-24 official and API-36 source-equivalent three-class controlled comparison",
       "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+    },
+    {
+      "id": "epoch2-closure-and-producer-independent-evidence-export",
+      "path": "experiments/epoch2-upstream-thin-closure/closure-authority.json",
+      "role": "Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary",
+      "sha256": "8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
     "detail_sha256": "81fc0baaa996952c3caab86ea4abc7168b04e4aea357bc98530a332ea3ceef0a",
-    "path": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
-    "sha256": "ec5f36ed15bcfdf9a20b675b8d08c267237246c17600907c2a081825e55f69a4"
+    "path": "docs/epochs/EPOCH3_CHARTER.md",
+    "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
   "active_work_package": null,
   "agent_onboarding": {
@@ -154,10 +160,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "evaluate-epoch2-closure-gates",
+    "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "evaluate-epoch2-closure-gates",
+    "resume_program_action_class": "initialize-epoch3-from-accepted-evidence-export",
     "status": "completed"
   },
   "documentation_layers": {
@@ -181,24 +187,24 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "evaluate-epoch2-closure-gates",
+  "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
   "predecessor": {
-    "commit": "fbfb79ea94b1c374c54b22745685fac9b8c540a2",
-    "tree": "b4286f603a8047d708d41d2b574c3d707922e468"
+    "commit": "082d005716934ea63f98c6fe232151b6c9b813ab",
+    "tree": "097b4b7cce6d7fb6d6552a381a74350cd132f9ef"
   },
   "program": {
     "epoch": {
-      "id": "E2",
-      "name": "upstream-thin research program",
-      "status": "active-recalibrated"
+      "id": "E3",
+      "name": "clean upstream-derived Android standalone distribution",
+      "status": "ready-not-started"
     },
     "gate": {
-      "id": "E2/CLOSURE",
-      "name": "Epoch 2 closure gates",
+      "id": "E3/INIT",
+      "name": "Epoch 3 initialization decisions and contract freeze",
       "status": "ready"
     },
-    "next_action_class": "evaluate-epoch2-closure-gates",
-    "status": "active"
+    "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "status": "ready"
   },
   "project_model": {
     "path": "docs/agent/PROJECT_MODEL.md",
@@ -238,24 +244,37 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 15,
+  "state_revision": 16,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "af936bb24c5fc552cb40768efac6dfda804bfe1b96764640da2bb6571a8565d5"
+    "sha256": "7e7fc5f2448addfbc3abfdd8b41757c289fd63e19fe0e5cf7bc5991ea3ab9ec3"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "evaluate-epoch2-closure-gates",
-    "pass_successor_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "current_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "pass_successor_action_class": "implement-epoch3-clean-upstream-derived-product",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.",
-    "UT-6 still withholds a minimum release API and direct 16 KiB runtime support.",
-    "Class C source-built dependencies carry greater producer and maintenance burden than Class B."
+    "minimum-supported-Android-API-unselected",
+    "runtime-16KiB-device-support-unqualified",
+    "ADB-root-APK-and-non-Termux-contexts-unqualified",
+    "emulator-unqualified-and-waived",
+    "other-Android-ABIs-unqualified",
+    "CA-and-timezone-payload-provider-and-update-policy-unselected",
+    "multiprocessing-environment-inadequate",
+    "pre-existing-venv-after-base-relocation-fails",
+    "install_only_stripped-duplicates-install_only",
+    "runtime-only-versus-on-device-SDK-versus-cross-SDK-unselected",
+    "uv-system-versus-managed-contract-unselected",
+    "API36-production-input-would-require-stable-official-NDK-reproduction",
+    "upstream-derived-full-differs-from-Astral-source-producer-full",
+    "supported-version-release-cadence-security-and-data-update-operations-unselected",
+    "source-producer-host-isolation-and-libffi-fix-deferred",
+    "publication-not-authorized"
   ],
-  "updated_by_transaction": "20260721-e2-r1-api36-controlled-comparison-v19"
+  "updated_by_transaction": "20260721-e2-closure-v1"
 }

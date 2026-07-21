@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 15
+> **State revision:** 16
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          evaluate-epoch2-closure-gates
-work gate       E2/CLOSURE — Epoch 2 closure gates
+action          initialize-epoch3-from-accepted-evidence-export
+work gate       E3/INIT — Epoch 3 initialization decisions and contract freeze
 ```
 
 ## Mandatory project and session modules
@@ -24,8 +24,8 @@ work gate       E2/CLOSURE — Epoch 2 closure gates
 ## Program position
 
 ```text
-epoch   E2 — upstream-thin research program
-gate    E2/CLOSURE — Epoch 2 closure gates
+epoch   E3 — clean upstream-derived Android standalone distribution
+gate    E3/INIT — Epoch 3 initialization decisions and contract freeze
 status  ready
 ```
 
@@ -50,6 +50,7 @@ status  ready
 17. [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](../experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json) — bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims
 18. [`experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json`](../experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json) — official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership
 19. [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](../experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json) — API-24 official and API-36 source-equivalent three-class controlled comparison
+20. [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](../experiments/epoch2-upstream-thin-closure/closure-authority.json) — Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary
 
 ## Blockers
 
@@ -57,8 +58,21 @@ None.
 
 ## Unresolved risks
 
-- Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.
-- UT-6 still withholds a minimum release API and direct 16 KiB runtime support.
-- Class C source-built dependencies carry greater producer and maintenance burden than Class B.
+- minimum-supported-Android-API-unselected
+- runtime-16KiB-device-support-unqualified
+- ADB-root-APK-and-non-Termux-contexts-unqualified
+- emulator-unqualified-and-waived
+- other-Android-ABIs-unqualified
+- CA-and-timezone-payload-provider-and-update-policy-unselected
+- multiprocessing-environment-inadequate
+- pre-existing-venv-after-base-relocation-fails
+- install_only_stripped-duplicates-install_only
+- runtime-only-versus-on-device-SDK-versus-cross-SDK-unselected
+- uv-system-versus-managed-contract-unselected
+- API36-production-input-would-require-stable-official-NDK-reproduction
+- upstream-derived-full-differs-from-Astral-source-producer-full
+- supported-version-release-cadence-security-and-data-update-operations-unselected
+- source-producer-host-isolation-and-libffi-fix-deferred
+- publication-not-authorized
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `evaluate-epoch2-closure-gates`
-- gate: `E2/CLOSURE` — Epoch 2 closure gates
+- action class: `initialize-epoch3-from-accepted-evidence-export`
+- gate: `E3/INIT` — Epoch 3 initialization decisions and contract freeze
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `671`
+- tracked Markdown/JSON: `686`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

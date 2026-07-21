@@ -1,0 +1,147 @@
+{
+  "accepted_product_seed": {
+    "path": "experiments/epoch2-upstream-thin-closure/accepted-product-seed-boundary.json",
+    "release_product": false,
+    "seed_id": "pythonorg-cpython-3.14.6-android-aarch64-upstream-thin-v1",
+    "sha256": "3c9b6e104455234b2290b3c57785c09678f0d3c7aa30df4d080de4bbb4a9aa86"
+  },
+  "authority_kind": "epoch2-closure-and-producer-independent-evidence-export",
+  "claim_boundary": {
+    "accepted_seed_for_initialization": true,
+    "epoch2_closed": true,
+    "epoch3_initialization_ready": true,
+    "epoch3_selection_started": false,
+    "minimum_android_api_selected": false,
+    "producer_independent_export_complete": true,
+    "product_selectability": false,
+    "publication": false,
+    "runtime_16k_device_qualified": false
+  },
+  "closure_gate_matrix": {
+    "gate_count": 8,
+    "path": "experiments/epoch2-upstream-thin-closure/closure-gate-matrix.json",
+    "resolved_count": 8,
+    "sha256": "760f23bc1f79b5cecb69c68d42cc55b077bb7ec26ec9da8613d6e792f2fb80ae"
+  },
+  "epoch3_initialization_contract": {
+    "path": "experiments/epoch2-upstream-thin-closure/epoch3-initialization-contract.json",
+    "sha256": "c6cb551bc826ecd35660fb81581313397dda0deecec022a904ab05b26feaa3c2",
+    "status": "ready-not-started"
+  },
+  "file_identities": {
+    "README.md": "cc67e0915c93e21543b5c89dd14eb1e2582f9644151d708e232637fcedc0252d",
+    "accepted-product-seed-boundary.json": "3c9b6e104455234b2290b3c57785c09678f0d3c7aa30df4d080de4bbb4a9aa86",
+    "audit_epoch2_closure.py": "ba15619723d929f1b245dd8c6da4162fca1192312e159cdf19725a77ac3a2224",
+    "build_epoch2_closure.py": "8ee28e3ba7442af48e1cc12fefd179984bcb815288880b7ed1040a215170ecba",
+    "closure-gate-matrix.json": "760f23bc1f79b5cecb69c68d42cc55b077bb7ec26ec9da8613d6e792f2fb80ae",
+    "epoch1-inheritance-matrix.json": "f53ba44db3cd2d50a5366948c34d12fb7c0d2bec8b92de777e876242604631b0",
+    "epoch3-initialization-contract.json": "c6cb551bc826ecd35660fb81581313397dda0deecec022a904ab05b26feaa3c2",
+    "finalize_epoch2_closure.py": "2fde208bad8f5953a5793f7cd7fcbdcbac7690d6edcb011efe6e6bfc11528926",
+    "independent-audit.json": "9ce470c3ed8be342e871254e8fc2b7ea58b540b37be176da221625689fddc2fd",
+    "mandatory-invariants.json": "4207be3f21a34d3472d893e364c07fb887a73b7ba1c5eb645aa7f5ca6c38df84",
+    "producer-independent-evidence-export.json": "82977757fefe8068cd86acd9aceef1216aa512b285d85339440daadee952b2b3",
+    "producer-only-deferred-register.json": "f8c5f57fc2d9f7a2c1af2f931105f05675b2957fef6f2f80ee08bcc621d7fcf7",
+    "reference-deviation-register.json": "a300ae5a23a2c1246afaa53792b68d2087e919d21c7b32d5900e35005b254db1",
+    "reference-hierarchy.json": "0ad89b697d837c76d36650a1ffed1214cd25cae98d4eb090a62d7d765dc7c062",
+    "run-epoch2-closure.sh": "a9cbaba385a308ecb66fd38e2f98b5f441a6c2f5a9945baa7e1f789a39715575",
+    "selectable-options.json": "8d333e242f567e29fb08fff581c037d155ba09a712d66507953697a2fc5e2fc4",
+    "test_verify_epoch2_closure.py": "8b10e76505c81a087078f2e26c52a7e8def15be79771a7b4c2fdbbbe1d8d0f0e",
+    "unresolved-risk-register.json": "f29859707af89d61a981c409900c6bb28b29285c156209e6c49a955c4ce7b096",
+    "verify_epoch2_closure.py": "943349b891af4c4b00fb206bb732809e6b47f84ccbfb85850f2ae85248146adb"
+  },
+  "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+  "predecessor": {
+    "commit": "082d005716934ea63f98c6fe232151b6c9b813ab",
+    "tree": "097b4b7cce6d7fb6d6552a381a74350cd132f9ef"
+  },
+  "producer_independent_export": {
+    "path": "experiments/epoch2-upstream-thin-closure/producer-independent-evidence-export.json",
+    "sha256": "82977757fefe8068cd86acd9aceef1216aa512b285d85339440daadee952b2b3"
+  },
+  "repository_transition_file_identities": {
+    "docs/epochs/EPOCH2_CHARTER.md": "15d645e54d84b7ede0fb08aa6e3172237cfe655dd7600865d0f59ddc1ab51b1e",
+    "docs/epochs/EPOCH3_CHARTER.md": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a",
+    "docs/roadmap/EPOCH2_PROGRAM_PLAN.md": "400372c5f6dc7a91a81b6a1510dbd38a27bd455b6d789e6589e68f2b51a33bb1"
+  },
+  "schema_version": 1,
+  "selection_input": {
+    "item_count": 18,
+    "path": "experiments/epoch2-upstream-thin-closure/selectable-options.json",
+    "selection_complete": false,
+    "sha256": "8d333e242f567e29fb08fff581c037d155ba09a712d66507953697a2fc5e2fc4"
+  },
+  "source_authority_bindings": {
+    "adr0006": {
+      "path": "docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md",
+      "sha256": "63fc713bc39107ff4c5b183913bf651747a8192a034120efacac62f73c101e7f"
+    },
+    "api36": {
+      "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+      "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+    },
+    "artifact": {
+      "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+      "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+    },
+    "control": {
+      "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+      "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+    },
+    "data": {
+      "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+      "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+    },
+    "epoch1_closure": {
+      "path": "docs/epochs/EPOCH1_CLOSURE.md",
+      "sha256": "3d8941649915010ab13759699a44392b0068c314d1bbf0e251433aa2f1c1c5c1"
+    },
+    "epoch2_charter": {
+      "path": "docs/epochs/EPOCH2_CHARTER.md",
+      "sha256": "15d645e54d84b7ede0fb08aa6e3172237cfe655dd7600865d0f59ddc1ab51b1e"
+    },
+    "epoch3_charter": {
+      "path": "docs/epochs/EPOCH3_CHARTER.md",
+      "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
+    },
+    "evolution": {
+      "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+      "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+    },
+    "feature": {
+      "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+      "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+    },
+    "loader": {
+      "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+      "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+    },
+    "plan": {
+      "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+      "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+    },
+    "platform": {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    "project_model": {
+      "path": "docs/agent/PROJECT_MODEL.md",
+      "sha256": "e2c75f6bbef5f3b2e00c131a0f7e46ddbdb10143f9757f02c6086a41704fa456"
+    },
+    "sdk": {
+      "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+      "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+    }
+  },
+  "status": "frozen-pass-epoch2-closed-epoch3-initialization-ready",
+  "unresolved_risks": {
+    "closure_blocker_count": 0,
+    "path": "experiments/epoch2-upstream-thin-closure/unresolved-risk-register.json",
+    "risk_count": 16,
+    "sha256": "f29859707af89d61a981c409900c6bb28b29285c156209e6c49a955c4ce7b096"
+  },
+  "verification": {
+    "focused_verifier": "required-after-finalization",
+    "independent_audit": "124/124",
+    "negative_fixtures": "required-before-transaction"
+  }
+}

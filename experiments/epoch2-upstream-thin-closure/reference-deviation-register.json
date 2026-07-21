@@ -1,0 +1,98 @@
+{
+  "deviations": [
+    {
+      "change": "minimal-Py_BytesMain-launcher",
+      "class": "product-delta",
+      "epoch3_default_action": "include-bounded-overlay",
+      "id": "DEV-P01",
+      "necessity": "required-for-standalone-CLI"
+    },
+    {
+      "change": "per-object-relative-RUNPATH-closure",
+      "class": "product-delta",
+      "epoch3_default_action": "include-only-when-byte-change-required",
+      "id": "DEV-P02",
+      "necessity": "required-for-relocatable-standalone-Bionic-loading"
+    },
+    {
+      "change": "runtime-sysconfig-relocation-normalization",
+      "class": "product-delta",
+      "epoch3_default_action": "include-minimal-runtime-subset",
+      "id": "DEV-P03",
+      "necessity": "required-for-correct-relocated-runtime-metadata"
+    },
+    {
+      "change": "SDK-consumer-metadata-normalization",
+      "class": "optional-product-delta",
+      "epoch3_default_action": "exclude-from-runtime-only-flavor",
+      "id": "DEV-P04",
+      "necessity": "required-only-for-on-device-SDK"
+    },
+    {
+      "change": "upstream-derived-full-semantics",
+      "class": "representation-delta",
+      "epoch3_default_action": "name-and-document-truthfully",
+      "id": "DEV-P05",
+      "necessity": "official-package-lacks-Astral-producer-object-tree"
+    },
+    {
+      "change": "external-DATA_ROOT-and-STATE_ROOT-policy",
+      "class": "product-policy",
+      "epoch3_default_action": "include-contract-not-unselected-payloads",
+      "id": "DEV-P06",
+      "necessity": "required-for-host-neutral-read-only-install"
+    },
+    {
+      "change": "custom-r30-beta2-SDK-overlay",
+      "class": "experiment-only",
+      "epoch3_default_action": "exclude-from-default-Epoch3-product",
+      "id": "DEV-X01",
+      "necessity": "API36-controlled-source-build-on-Termux"
+    },
+    {
+      "change": "Termux-host-compiler-and-linker-argument-filtering",
+      "class": "producer-only",
+      "epoch3_default_action": "defer-to-Epoch4-producer",
+      "id": "DEV-X02",
+      "necessity": "prevent-host-libc-and-libz-contamination"
+    },
+    {
+      "change": "source-deps-android-env-NDK-and-API36-precedence",
+      "class": "producer-only",
+      "epoch3_default_action": "defer-to-Epoch4-producer",
+      "id": "DEV-X03",
+      "necessity": "materialize-Class-C-controlled-build"
+    },
+    {
+      "change": "libffi-configure-cache-fallback",
+      "class": "producer-only",
+      "epoch3_default_action": "replace-with-upstream-or-config-site-fix-in-Epoch4",
+      "id": "DEV-X04",
+      "necessity": "cross-configure-declaration-false-positive"
+    },
+    {
+      "change": "CPython-android.py-environment-capture-portability",
+      "class": "producer-only",
+      "epoch3_default_action": "upstream-candidate-or-Epoch4-ephemeral-patch",
+      "id": "DEV-X05",
+      "necessity": "Termux-shell-export-format"
+    },
+    {
+      "change": "exact-BeeWare-development-asset-prepopulation",
+      "class": "experiment-control",
+      "epoch3_default_action": "retain-as-evidence-not-product-code",
+      "id": "DEV-X06",
+      "necessity": "official-final-package-is-not-a-complete-rebuild-SDK"
+    }
+  ],
+  "reduction_opportunities": [
+    "Do not run patchelf on verified-unchanged ELF objects; record changed, verified-unchanged, and not-applicable separately.",
+    "Preserve exact upstream package bytes in an immutable input subtree and derive overlays into a separate install tree.",
+    "Split runtime metadata normalization from optional SDK metadata normalization.",
+    "Decide whether install_only_stripped is an alias, omitted duplicate, or separately meaningful artifact.",
+    "If API36 is selected, reproduce with a stable official NDK and non-Termux producer before product adoption."
+  ],
+  "register_kind": "reference-deviation-and-reduction-register",
+  "schema_version": 1,
+  "status": "frozen-closure-review"
+}

@@ -1,0 +1,224 @@
+{
+  "invariant_count": 14,
+  "invariant_set_kind": "epoch2-to-epoch3-mandatory-invariants",
+  "invariants": [
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+        }
+      ],
+      "id": "INV-01",
+      "name": "verified-upstream-provenance",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        }
+      ],
+      "id": "INV-02",
+      "name": "pure-bionic-and-android-public-native-closure",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+          "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+        }
+      ],
+      "id": "INV-03",
+      "name": "no-required-termux-native-provider-or-hard-coded-termux-identity",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+          "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+        }
+      ],
+      "id": "INV-04",
+      "name": "fresh-extraction-execution",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ],
+      "id": "INV-05",
+      "name": "whole-prefix-relocation",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        }
+      ],
+      "id": "INV-06",
+      "name": "no-project-required-LD_LIBRARY_PATH",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        }
+      ],
+      "id": "INV-07",
+      "name": "no-loader-bootstrap-self-reexecution",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+          "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        }
+      ],
+      "id": "INV-08",
+      "name": "truthful-astral-structured-artifacts-and-PYTHON.json",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+          "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+          "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ],
+      "id": "INV-09",
+      "name": "exact-mutation-provenance-license-checksum-and-qualification-accounting",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "id": "INV-10",
+      "name": "runtime-and-subprocess-identity",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+          "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+          "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ],
+      "id": "INV-11",
+      "name": "native-extension-and-DT_NEEDED-closure",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+        }
+      ],
+      "id": "INV-12",
+      "name": "externalized-writable-state-and-independent-data-lifecycle",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "docs/epochs/EPOCH1_CLOSURE.md",
+          "sha256": "3d8941649915010ab13759699a44392b0068c314d1bbf0e251433aa2f1c1c5c1"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+          "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+        }
+      ],
+      "id": "INV-13",
+      "name": "update-rollback-and-acquisition-lineage-inherited-or-revalidated",
+      "requirement": "mandatory"
+    },
+    {
+      "epoch3_obligation": "preserve-or-explicitly-revalidate",
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-plan/plan-authority.json",
+          "sha256": "62b3b07f37a90b497747562bb00a9db5a3d78b3b2cb45df8f66db22818f5eafa"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ],
+      "id": "INV-14",
+      "name": "experiment-success-does-not-imply-product-inclusion",
+      "requirement": "mandatory"
+    }
+  ],
+  "schema_version": 1,
+  "status": "frozen-input-to-selection"
+}

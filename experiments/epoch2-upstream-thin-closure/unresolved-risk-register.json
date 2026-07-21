@@ -1,0 +1,106 @@
+{
+  "claim_policy": "Unresolved risks constrain Epoch 3 selection and release claims; they do not become implicit product support.",
+  "closure_blocker_count": 0,
+  "register_kind": "epoch2-closure-unresolved-risk-register",
+  "risk_count": 16,
+  "risks": [
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-01",
+      "required_disposition": "selection-required",
+      "risk": "minimum-supported-Android-API-unselected"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-02",
+      "required_disposition": "additional-direct-device-evidence-or-exclude-claim",
+      "risk": "runtime-16KiB-device-support-unqualified"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-03",
+      "required_disposition": "select-and-qualify-only-supported-contexts",
+      "risk": "ADB-root-APK-and-non-Termux-contexts-unqualified"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-04",
+      "required_disposition": "retain-unclaimed-or-run-new-evidence",
+      "risk": "emulator-unqualified-and-waived"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-05",
+      "required_disposition": "exclude-until-evidenced",
+      "risk": "other-Android-ABIs-unqualified"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-06",
+      "required_disposition": "epoch3-selection",
+      "risk": "CA-and-timezone-payload-provider-and-update-policy-unselected"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-07",
+      "required_disposition": "exclude-or-redesign-and-retest",
+      "risk": "multiprocessing-environment-inadequate"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-08",
+      "required_disposition": "document-support-boundary-or-redesign",
+      "risk": "pre-existing-venv-after-base-relocation-fails"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-09",
+      "required_disposition": "artifact-selection",
+      "risk": "install_only_stripped-duplicates-install_only"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-10",
+      "required_disposition": "epoch3-selection",
+      "risk": "runtime-only-versus-on-device-SDK-versus-cross-SDK-unselected"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-11",
+      "required_disposition": "epoch3-selection",
+      "risk": "uv-system-versus-managed-contract-unselected"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-12",
+      "required_disposition": "conditional-on-API36-selection",
+      "risk": "API36-production-input-would-require-stable-official-NDK-reproduction"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-13",
+      "required_disposition": "truthful-metadata-and-documentation-required",
+      "risk": "upstream-derived-full-differs-from-Astral-source-producer-full"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-14",
+      "required_disposition": "epoch3-contract-freeze",
+      "risk": "supported-version-release-cadence-security-and-data-update-operations-unselected"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-15",
+      "required_disposition": "epoch4",
+      "risk": "source-producer-host-isolation-and-libffi-fix-deferred"
+    },
+    {
+      "blocks_epoch2_closure": false,
+      "id": "R-16",
+      "required_disposition": "release-governance",
+      "risk": "publication-not-authorized"
+    }
+  ],
+  "schema_version": 1,
+  "status": "complete-no-hidden-closure-blocker"
+}

@@ -1,0 +1,103 @@
+{
+  "acceptance_reason": "Smallest content-addressed upstream-derived seed that satisfies mandatory standalone and relocation invariants without importing producer-only experimental machinery.",
+  "android_runtime_reference": "Python.org / CPython Android plus BeeWare dependency topology selected by CPython",
+  "artifact_boundary": {
+    "full": "upstream-derived reconstruction and audit input; not a project-owned CPython/dependency object tree",
+    "install_only": "derived runtime/product tree",
+    "install_only_stripped": "selection required because prototype bytes equal install_only",
+    "python_json_format": 8
+  },
+  "boundary_kind": "epoch3-accepted-product-seed",
+  "epoch3_selection_made": false,
+  "evidence": [
+    {
+      "path": "experiments/epoch2-upstream-thin-control/upstream-control-authority.json",
+      "sha256": "6cc0acee911239eb2e82267dbb2d2de0043260fe482d45e10d6aeebffebe540c"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+      "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+      "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+      "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+      "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+    }
+  ],
+  "excluded_from_seed": [
+    "API36 Class B or C as default product input",
+    "custom NDK overlays and source-build wrappers",
+    "source dependency recipes or source producer code",
+    "unselected pip, CA, timezone, multiprocessing, uv, SDK, symbols, debug, test, or context claims",
+    "publication and product selectability"
+  ],
+  "included_bounded_overlays": [
+    {
+      "id": "LA-2",
+      "kind": "minimal-standalone-launcher",
+      "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17"
+    },
+    {
+      "id": "LR-3",
+      "kind": "relative-native-lookup-plan",
+      "requirements": {
+        "loader_bootstrap_self_reexec_absent": true,
+        "project_required_LD_LIBRARY_PATH_absent": true,
+        "required_extension_failures": 0,
+        "subprocess_child_reentry_pass": true,
+        "unresolved_internal_edges": 0,
+        "whole_prefix_relocation_pass": true
+      }
+    },
+    {
+      "id": "runtime-metadata-minimum",
+      "kind": "relocation-aware-runtime-metadata",
+      "requirements": {
+        "native_extension_wheel_build": true,
+        "relocated_extension_import": true,
+        "runtime_paths_reroot_after_movement": true,
+        "stale_active_install_prefixes": 0,
+        "unknown_producer_absolute_paths": 0,
+        "wheel_identity_correct": true
+      }
+    },
+    {
+      "id": "immutable-input-derived-install",
+      "kind": "deterministic-transformation-and-mutation-manifest"
+    },
+    {
+      "id": "three-root-contract",
+      "kind": "immutable-install-updateable-data-writable-state",
+      "requirements": {
+        "complete_policy_count": 6,
+        "data_update_without_python_update": true,
+        "fresh_venv_after_move_pass": true,
+        "negative_path_hits": 0,
+        "read_only_prefix_unchanged": true,
+        "relocated_runtime_pass": true,
+        "required_policy_count": 6
+      }
+    }
+  ],
+  "official_input": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "minimum_android_api": 24,
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size": 22358404,
+    "target": "aarch64-linux-android",
+    "url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-aarch64-linux-android.tar.gz",
+    "version": "3.14.6"
+  },
+  "release_product": false,
+  "schema_version": 1,
+  "seed_id": "pythonorg-cpython-3.14.6-android-aarch64-upstream-thin-v1",
+  "status": "accepted-for-epoch3-initialization-not-selectable-release",
+  "structural_reference": "Astral python-build-standalone"
+}

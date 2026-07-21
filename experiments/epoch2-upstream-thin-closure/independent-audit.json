@@ -1,0 +1,507 @@
+{
+  "audit_kind": "epoch2-closure-independent-audit",
+  "check_count": 124,
+  "checks": [
+    {
+      "name": "file:closure-gate-matrix.json",
+      "pass": true
+    },
+    {
+      "name": "file:producer-independent-evidence-export.json",
+      "pass": true
+    },
+    {
+      "name": "file:accepted-product-seed-boundary.json",
+      "pass": true
+    },
+    {
+      "name": "file:unresolved-risk-register.json",
+      "pass": true
+    },
+    {
+      "name": "file:epoch1-inheritance-matrix.json",
+      "pass": true
+    },
+    {
+      "name": "file:reference-hierarchy.json",
+      "pass": true
+    },
+    {
+      "name": "file:mandatory-invariants.json",
+      "pass": true
+    },
+    {
+      "name": "file:selectable-options.json",
+      "pass": true
+    },
+    {
+      "name": "file:reference-deviation-register.json",
+      "pass": true
+    },
+    {
+      "name": "file:producer-only-deferred-register.json",
+      "pass": true
+    },
+    {
+      "name": "file:epoch3-initialization-contract.json",
+      "pass": true
+    },
+    {
+      "name": "file:README.md",
+      "pass": true
+    },
+    {
+      "name": "gate-kind",
+      "pass": true
+    },
+    {
+      "name": "gate-count",
+      "pass": true
+    },
+    {
+      "name": "gate-ids",
+      "pass": true
+    },
+    {
+      "name": "gate-resolved",
+      "pass": true
+    },
+    {
+      "name": "gate-no-selection",
+      "pass": true
+    },
+    {
+      "name": "gate-decision",
+      "pass": true
+    },
+    {
+      "name": "binding-file:adr0006",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:adr0006",
+      "pass": true
+    },
+    {
+      "name": "binding-file:api36",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:api36",
+      "pass": true
+    },
+    {
+      "name": "binding-file:artifact",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:artifact",
+      "pass": true
+    },
+    {
+      "name": "binding-file:control",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:control",
+      "pass": true
+    },
+    {
+      "name": "binding-file:data",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:data",
+      "pass": true
+    },
+    {
+      "name": "binding-file:epoch1_closure",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:epoch1_closure",
+      "pass": true
+    },
+    {
+      "name": "binding-file:epoch2_charter",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:epoch2_charter",
+      "pass": true
+    },
+    {
+      "name": "binding-file:epoch3_charter",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:epoch3_charter",
+      "pass": true
+    },
+    {
+      "name": "binding-file:evolution",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:evolution",
+      "pass": true
+    },
+    {
+      "name": "binding-file:feature",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:feature",
+      "pass": true
+    },
+    {
+      "name": "binding-file:loader",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:loader",
+      "pass": true
+    },
+    {
+      "name": "binding-file:plan",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:plan",
+      "pass": true
+    },
+    {
+      "name": "binding-file:platform",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:platform",
+      "pass": true
+    },
+    {
+      "name": "binding-file:project_model",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:project_model",
+      "pass": true
+    },
+    {
+      "name": "binding-file:sdk",
+      "pass": true
+    },
+    {
+      "name": "binding-sha:sdk",
+      "pass": true
+    },
+    {
+      "name": "export-kind",
+      "pass": true
+    },
+    {
+      "name": "export-producer-independent",
+      "pass": true
+    },
+    {
+      "name": "export-no-selection",
+      "pass": true
+    },
+    {
+      "name": "export-section:exact_upstream_inputs",
+      "pass": true
+    },
+    {
+      "name": "export-section:exact_local_delta",
+      "pass": true
+    },
+    {
+      "name": "export-section:mandatory_invariants",
+      "pass": true
+    },
+    {
+      "name": "export-section:selectable_item_evidence",
+      "pass": true
+    },
+    {
+      "name": "export-section:selection_candidates_and_tradeoffs",
+      "pass": true
+    },
+    {
+      "name": "export-section:supported_platform_claims",
+      "pass": true
+    },
+    {
+      "name": "export-section:withheld_platform_claims",
+      "pass": true
+    },
+    {
+      "name": "export-section:artifact_and_metadata_contract",
+      "pass": true
+    },
+    {
+      "name": "export-section:qualification_contract",
+      "pass": true
+    },
+    {
+      "name": "export-section:unresolved_risks",
+      "pass": true
+    },
+    {
+      "name": "export-section:accepted_product_seed",
+      "pass": true
+    },
+    {
+      "name": "export-section:epoch4_deferred_questions",
+      "pass": true
+    },
+    {
+      "name": "official-filename",
+      "pass": true
+    },
+    {
+      "name": "official-sha",
+      "pass": true
+    },
+    {
+      "name": "official-size",
+      "pass": true
+    },
+    {
+      "name": "official-target",
+      "pass": true
+    },
+    {
+      "name": "seed-kind",
+      "pass": true
+    },
+    {
+      "name": "seed-status",
+      "pass": true
+    },
+    {
+      "name": "seed-id",
+      "pass": true
+    },
+    {
+      "name": "seed-official",
+      "pass": true
+    },
+    {
+      "name": "seed-overlay-count",
+      "pass": true
+    },
+    {
+      "name": "seed-la2",
+      "pass": true
+    },
+    {
+      "name": "seed-lr3",
+      "pass": true
+    },
+    {
+      "name": "seed-not-release",
+      "pass": true
+    },
+    {
+      "name": "seed-excludes-api36",
+      "pass": true
+    },
+    {
+      "name": "reference-kind",
+      "pass": true
+    },
+    {
+      "name": "reference-overall-primary",
+      "pass": true
+    },
+    {
+      "name": "reference-secondary-pythonorg",
+      "pass": true
+    },
+    {
+      "name": "reference-structural",
+      "pass": true
+    },
+    {
+      "name": "reference-android",
+      "pass": true
+    },
+    {
+      "name": "reference-producer-epoch4",
+      "pass": true
+    },
+    {
+      "name": "invariant-count",
+      "pass": true
+    },
+    {
+      "name": "invariant-ids",
+      "pass": true
+    },
+    {
+      "name": "invariant-mandatory",
+      "pass": true
+    },
+    {
+      "name": "epoch1-count",
+      "pass": true
+    },
+    {
+      "name": "epoch1-no-auto-import",
+      "pass": true
+    },
+    {
+      "name": "selection-count",
+      "pass": true
+    },
+    {
+      "name": "selection-pending",
+      "pass": true
+    },
+    {
+      "name": "selection-not-complete",
+      "pass": true
+    },
+    {
+      "name": "selection-vocabulary",
+      "pass": true
+    },
+    {
+      "name": "selection-no-auto-adopt",
+      "pass": true
+    },
+    {
+      "name": "selection-id:01",
+      "pass": true
+    },
+    {
+      "name": "selection-id:02",
+      "pass": true
+    },
+    {
+      "name": "selection-id:03",
+      "pass": true
+    },
+    {
+      "name": "selection-id:04",
+      "pass": true
+    },
+    {
+      "name": "selection-id:05",
+      "pass": true
+    },
+    {
+      "name": "selection-id:06",
+      "pass": true
+    },
+    {
+      "name": "selection-id:07",
+      "pass": true
+    },
+    {
+      "name": "selection-id:08",
+      "pass": true
+    },
+    {
+      "name": "selection-id:09",
+      "pass": true
+    },
+    {
+      "name": "selection-id:10",
+      "pass": true
+    },
+    {
+      "name": "selection-id:11",
+      "pass": true
+    },
+    {
+      "name": "selection-id:12",
+      "pass": true
+    },
+    {
+      "name": "selection-id:13",
+      "pass": true
+    },
+    {
+      "name": "selection-id:14",
+      "pass": true
+    },
+    {
+      "name": "selection-id:15",
+      "pass": true
+    },
+    {
+      "name": "selection-id:16",
+      "pass": true
+    },
+    {
+      "name": "selection-id:17",
+      "pass": true
+    },
+    {
+      "name": "selection-id:18",
+      "pass": true
+    },
+    {
+      "name": "deviation-count",
+      "pass": true
+    },
+    {
+      "name": "deviation-classes",
+      "pass": true
+    },
+    {
+      "name": "reduction-opportunities",
+      "pass": true
+    },
+    {
+      "name": "producer-count",
+      "pass": true
+    },
+    {
+      "name": "producer-deferred",
+      "pass": true
+    },
+    {
+      "name": "risk-count",
+      "pass": true
+    },
+    {
+      "name": "risk-no-hidden-blocker",
+      "pass": true
+    },
+    {
+      "name": "risk-policy",
+      "pass": true
+    },
+    {
+      "name": "init-kind",
+      "pass": true
+    },
+    {
+      "name": "init-ready",
+      "pass": true
+    },
+    {
+      "name": "init-gates",
+      "pass": true
+    },
+    {
+      "name": "init-selection-ids",
+      "pass": true
+    },
+    {
+      "name": "init-no-expansion",
+      "pass": true
+    },
+    {
+      "name": "init-next",
+      "pass": true
+    }
+  ],
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 124,
+  "schema_version": 1,
+  "status": "pass"
+}

@@ -1,0 +1,75 @@
+{
+  "android_input_authority": "Python.org / CPython Android release process",
+  "axes": [
+    {
+      "android_authority": false,
+      "axis": "consumer-product-structure",
+      "governs": [
+        "artifact family",
+        "archive layout",
+        "PYTHON.json semantics",
+        "release index",
+        "consumer metadata"
+      ],
+      "primary": "Astral python-build-standalone"
+    },
+    {
+      "android_authority": true,
+      "axis": "android-runtime-provenance",
+      "governs": [
+        "runtime bytes",
+        "Android ABI",
+        "module surface",
+        "dependency topology",
+        "official API policy"
+      ],
+      "primary": "Python.org / CPython Android release process",
+      "secondary": "CPython source plus BeeWare dependency products selected by CPython"
+    },
+    {
+      "available_in_epoch3": false,
+      "axis": "full-source-producer",
+      "governs": [
+        "CPython/dependency source builds",
+        "NDK/API producer policy",
+        "source-level optimization"
+      ],
+      "primary": "Epoch 4 project-owned producer",
+      "secondary": "Epoch 2 Class B/C controlled evidence"
+    }
+  ],
+  "bound_policy_documents": [
+    {
+      "path": "docs/agent/PROJECT_MODEL.md",
+      "sha256": "e2c75f6bbef5f3b2e00c131a0f7e46ddbdb10143f9757f02c6086a41704fa456"
+    },
+    {
+      "path": "docs/epochs/EPOCH3_CHARTER.md",
+      "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
+    },
+    {
+      "path": "docs/decisions/ADR-0006-UPSTREAM-DERIVED-EPOCH3-AND-SOURCE-PRODUCER-EPOCH4.md",
+      "sha256": "63fc713bc39107ff4c5b183913bf651747a8192a034120efacac62f73c101e7f"
+    }
+  ],
+  "conflict_resolution": [
+    "Android ABI/runtime provenance overrides structural-reference assumptions.",
+    "Astral structure governs product representation only where truthful for upstream-derived Android inputs.",
+    "Every local byte mutation requires explicit manifest and justification."
+  ],
+  "overall_primary_reference": "Astral python-build-standalone",
+  "primary_reference_scope": [
+    "standalone product architecture",
+    "artifact family",
+    "archive layout",
+    "PYTHON.json and consumer metadata semantics"
+  ],
+  "reference_hierarchy_kind": "epoch3-two-axis-reference-policy",
+  "schema_version": 1,
+  "secondary_references": [
+    "Python.org / CPython Android prebuilt products",
+    "CPython source releases",
+    "BeeWare dependency products selected by CPython"
+  ],
+  "status": "frozen-input-to-epoch3-initialization"
+}

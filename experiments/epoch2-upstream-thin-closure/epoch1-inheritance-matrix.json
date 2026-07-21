@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "mandatory-revalidate-in-clean-product",
+      "id": "E1-I01",
+      "inherited_contract": "runtime-and-subprocess-identity"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "mandatory-revalidate-in-clean-product",
+      "id": "E1-I02",
+      "inherited_contract": "native-closure-and-extension-surface"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "selection-required",
+      "id": "E1-I03",
+      "inherited_contract": "CA-and-timezone-boundaries"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "selection-required",
+      "id": "E1-I04",
+      "inherited_contract": "uv-and-venv-behavior"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "mandatory-preserve",
+      "id": "E1-I05",
+      "inherited_contract": "whole-prefix-relocation"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "mandatory-preserve",
+      "id": "E1-I06",
+      "inherited_contract": "archive-and-manifest-identity"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "initialization-input-not-seed-code",
+      "id": "E1-I07",
+      "inherited_contract": "ownership-and-dependency-policy"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "release-operations-obligation",
+      "id": "E1-I08",
+      "inherited_contract": "transaction-recovery-residual-and-transition-semantics"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "release-operations-obligation",
+      "id": "E1-I09",
+      "inherited_contract": "publication-and-acquisition-identity"
+    },
+    {
+      "automatic_implementation_import": false,
+      "epoch3_disposition_class": "defer-to-epoch4",
+      "id": "E1-I10",
+      "inherited_contract": "source-producer-reconstruction"
+    }
+  ],
+  "matrix_kind": "epoch1-inheritance-to-epoch3",
+  "schema_version": 1,
+  "source": {
+    "path": "docs/epochs/EPOCH1_CLOSURE.md",
+    "sha256": "3d8941649915010ab13759699a44392b0068c314d1bbf0e251433aa2f1c1c5c1"
+  },
+  "status": "frozen-handoff-input"
+}

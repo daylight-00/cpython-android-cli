@@ -1,0 +1,352 @@
+{
+  "item_count": 18,
+  "items": [
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-01",
+      "item": "base-pip",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-02",
+      "item": "pip-command-wrappers",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-03",
+      "item": "CA-payload-policy",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-04",
+      "item": "timezone-payload-policy",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-05",
+      "item": "runtime-only-mode",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-06",
+      "item": "on-device-SDK-mode",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ],
+      "evidence_disposition": "unavailable-or-bounded-unresolved",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-07",
+      "item": "cross-build-SDK-mode",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-08",
+      "item": "subprocess-secondary-surface",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-09",
+      "item": "venv-relocation-and-update-cases",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "unavailable-or-bounded-unresolved",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-10",
+      "item": "multiprocessing-primitives",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json",
+          "sha256": "3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5"
+        }
+      ],
+      "evidence_disposition": "bounded-pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-11",
+      "item": "uv-system-versus-managed-integration",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+          "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-12",
+      "item": "install_only_stripped-separate-artifact-or-alias",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-artifact-prototype/artifact-prototype-authority.json",
+          "sha256": "387f0b68be2069fa36227dc80982ffe1371e79b2a35076ef0b09380ec7c7c306"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-13",
+      "item": "symbols-debug-test-artifacts",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-14",
+      "item": "official-API-floor-versus-API36-input",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+          "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+        }
+      ],
+      "evidence_disposition": "unavailable-or-bounded-unresolved",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-15",
+      "item": "minimum-supported-Android-API",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+          "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+        }
+      ],
+      "evidence_disposition": "unavailable-or-bounded-unresolved",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-16",
+      "item": "runtime-16KiB-device-support",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+          "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+        }
+      ],
+      "evidence_disposition": "unavailable-or-bounded-unresolved",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-17",
+      "item": "supported-Termux-ADB-root-APK-contexts",
+      "selection_status": "pending-epoch3"
+    },
+    {
+      "allowed_product_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+          "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+        }
+      ],
+      "evidence_disposition": "pass",
+      "experiment_success_implies_inclusion": false,
+      "id": "SEL-18",
+      "item": "supported-version-and-release-cadence",
+      "selection_status": "pending-epoch3"
+    }
+  ],
+  "product_selection_made": false,
+  "register_kind": "epoch3-selection-input-register",
+  "schema_version": 1,
+  "selection_complete": false,
+  "status": "complete-evidence-input-selection-not-started"
+}

@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       evaluate-epoch2-closure-gates
-gate         E2/CLOSURE — Epoch 2 closure gates
-tracked docs 671
+action       initialize-epoch3-from-accepted-evidence-export
+gate         E3/INIT — Epoch 3 initialization decisions and contract freeze
+tracked docs 686
 indexes      16
 ```
 

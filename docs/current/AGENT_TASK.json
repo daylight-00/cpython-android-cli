@@ -2,6 +2,8 @@
   "claim_boundary": {
     "android_runtime_claim": true,
     "device_qualification_claim": false,
+    "epoch2_closed_claim": true,
+    "epoch3_initialization_ready_claim": true,
     "epoch3_selection_claim": false,
     "official_upstream_identity_claim": true,
     "product_selectability_claim": false,
@@ -10,15 +12,8 @@
   "completion_contract": {
     "always": {
       "all_required_verifiers_must_pass": true,
-      "clean_main_and_bundle_export_ready_on_close": true,
-      "forbidden_new_authority_bindings": [
-        "docs/current/STATE.json",
-        "docs/current/AGENT_TASK.json",
-        "README.md",
-        "docs/CURRENT_CONTEXT.md",
-        "docs/INDEX.md"
-      ],
       "generated_views_must_be_regenerated": true,
+      "implementation_expansion_before_selection_complete_forbidden": true,
       "new_markdown_or_json_requires_registry_update": true,
       "one_runner_and_complete_receipt_required": true
     },
@@ -28,33 +23,40 @@
       "complete_receipt_required": true
     },
     "pass": {
-      "required_catalog_updates": [
-        "define-epoch3-initialization-decision-before-selection"
+      "required_initialization_gates": [
+        "E3-I1",
+        "E3-I2",
+        "E3-I3",
+        "E3-I4"
       ],
-      "required_output_namespace": "experiments/epoch2-upstream-thin-closure/",
       "required_output_roles": [
-        "closure-gate-matrix",
-        "producer-independent-evidence-export",
-        "accepted-product-seed-boundary",
-        "unresolved-risk-register",
-        "independent-audit",
-        "machine-authority",
-        "evidence-freeze"
+        "epoch3-selection-register",
+        "clean-repository-boundary",
+        "product-contract-freeze",
+        "initialization-independent-audit",
+        "initialization-authority"
       ],
-      "successor_action_class": "initialize-epoch3-from-accepted-evidence-export",
+      "required_selection_dispositions": [
+        "adopt",
+        "adopt-with-redesign",
+        "exclude",
+        "defer-to-epoch4"
+      ],
+      "successor_action_class": "implement-epoch3-clean-upstream-derived-product",
       "successor_must_exist": false,
-      "successor_task_id": "E3-INIT"
+      "successor_task_id": "E3-IMPLEMENT"
     }
   },
   "default_exclusions": [
     "docs/history/**",
     "docs/handoff/**",
     "docs/stages/**",
-    "unrelated-evidence",
+    "unselected-epoch2-experiments",
+    "producer-only-source-build-machinery",
     "past-chat-transcripts"
   ],
   "deliverable": {
-    "class": "local-artifact-evidence-and-repository-transaction",
+    "class": "epoch3-initialization-authority-and-clean-repository-contract",
     "owner_interface": "one-runner",
     "result": "complete-pass-or-fail-receipt"
   },
@@ -63,44 +65,65 @@
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "one bounded owner-run acquisition runner",
-    "first_attempt": "google-drive-connector",
+    "fallback": "one bounded owner-run repository initialization runner",
+    "first_attempt": "repository-local-accepted-evidence-export",
     "forbidden": [
-      "curl-or-wget-in-assistant-environment",
-      "github-connector-or-api",
-      "network-git"
+      "reopen-unrelated-epoch2-experiments",
+      "import-complete-laboratory-history",
+      "start-product-implementation-before-selection-register",
+      "network-git-in-assistant-environment"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E2/CLOSURE",
-    "name": "Epoch 2 closure gates",
+    "id": "E3/INIT",
+    "name": "Epoch 3 initialization decisions and contract freeze",
     "status": "ready"
   },
   "required_authorities": [
     {
-      "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
-      "reason": "Frozen A/B/C API-36 comparison authority.",
-      "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+      "path": "experiments/epoch2-upstream-thin-closure/closure-authority.json",
+      "reason": "Frozen Epoch 2 closure and producer-independent evidence export.",
+      "sha256": "8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-closure/accepted-product-seed-boundary.json",
+      "reason": "Accepted minimal upstream-derived initialization seed.",
+      "sha256": "3c9b6e104455234b2290b3c57785c09678f0d3c7aa30df4d080de4bbb4a9aa86"
     }
   ],
   "required_reads": [
     {
+      "path": "docs/epochs/EPOCH3_CHARTER.md",
+      "reason": "Epoch 3 mission, producer model, selection boundary, and repository contract.",
+      "scope": "full"
+    },
+    {
       "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Epoch 2 closure gates.",
+      "reason": "Epoch 3 initialization gates.",
       "scope": "section",
-      "section_heading": "## 7. Epoch 2 closure gates",
-      "stop_before_heading": "## 8. Epoch 3 initialization gates"
+      "section_heading": "## 8. Epoch 3 initialization gates",
+      "stop_before_heading": "## 9. Epoch 3 completion gates"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-closure/epoch3-initialization-contract.json",
+      "reason": "Frozen initialization inputs and no-implementation-before-selection rule.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch2-upstream-thin-closure/reference-hierarchy.json",
+      "reason": "Astral primary product reference and Python.org/CPython secondary Android input authority boundary.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 15,
+  "state_revision": 16,
   "task": {
-    "action_class": "evaluate-epoch2-closure-gates",
-    "goal": "Resolve E2-G1 through E2-G8 and freeze the producer-independent evidence export before any Epoch 3 product selection.",
-    "id": "E2-CLOSURE",
-    "title": "Epoch 2 closure gates and producer-independent evidence export",
+    "action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "goal": "Consume the accepted Epoch 2 producer-independent export, complete every product selection disposition, define the clean repository boundary, and freeze the Epoch 3 product contract before implementation expands.",
+    "id": "E3-INIT",
+    "title": "Epoch 3 initialization decisions and clean repository contract",
     "work_class": "L"
   }
 }

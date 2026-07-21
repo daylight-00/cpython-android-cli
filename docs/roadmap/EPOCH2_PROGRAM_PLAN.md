@@ -1,6 +1,6 @@
 # Epoch 2 Upstream-Thin Program Plan
 
-> **Lifecycle:** canonical active plan
+> **Lifecycle:** historical completed plan — closed by E2-CLOSURE
 > **Decision authorities:** ADR-0006 and ADR-0007
 > **Detailed work:** [`EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)
 > **Live progress:** [`../current/STATE.json`](../current/STATE.json)

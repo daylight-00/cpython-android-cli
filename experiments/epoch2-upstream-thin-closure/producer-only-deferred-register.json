@@ -1,0 +1,72 @@
+{
+  "epoch3_product_contract_must_not_depend_on_resolution": true,
+  "questions": [
+    {
+      "id": "P-01",
+      "question": "stable official NDK and API policy for source production",
+      "source_evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ]
+    },
+    {
+      "id": "P-02",
+      "question": "host-isolated CPython and six-dependency source producer",
+      "source_evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ]
+    },
+    {
+      "id": "P-03",
+      "question": "upstreamable android.py environment-capture portability",
+      "source_evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ]
+    },
+    {
+      "id": "P-04",
+      "question": "libffi declaration-aware configure solution replacing tactical cache override",
+      "source_evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+          "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
+        }
+      ]
+    },
+    {
+      "id": "P-05",
+      "question": "cross-build SDK and relocatable NDK/sysroot contract",
+      "source_evidence": [
+        {
+          "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+          "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+        }
+      ]
+    },
+    {
+      "id": "P-06",
+      "question": "source-level optimization, PGO/LTO, static/shared policy, and reproducible object-tree artifacts",
+      "source_evidence": [
+        {
+          "path": "docs/agent/PROJECT_MODEL.md",
+          "sha256": "e2c75f6bbef5f3b2e00c131a0f7e46ddbdb10143f9757f02c6086a41704fa456"
+        },
+        {
+          "path": "docs/epochs/EPOCH3_CHARTER.md",
+          "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
+        }
+      ]
+    }
+  ],
+  "register_kind": "epoch4-deferred-producer-questions",
+  "schema_version": 1,
+  "status": "deferred-not-blocking-epoch2-closure"
+}

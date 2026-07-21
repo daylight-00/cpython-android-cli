@@ -1,0 +1,52 @@
+{
+  "accepted_seed": "experiments/epoch2-upstream-thin-closure/accepted-product-seed-boundary.json",
+  "clean_repository_boundary": {
+    "exclude": [
+      "complete laboratory history",
+      "producer-only experimental wrappers",
+      "unselected capabilities and claims"
+    ],
+    "import": [
+      "product code",
+      "bounded provenance",
+      "selected tests",
+      "release automation",
+      "accepted documentation"
+    ]
+  },
+  "contract_kind": "epoch3-initialization-contract",
+  "epoch3_selection_started": false,
+  "implementation_may_expand_before_selection_complete": false,
+  "input_export": "experiments/epoch2-upstream-thin-closure/producer-independent-evidence-export.json",
+  "mandatory_invariants": "experiments/epoch2-upstream-thin-closure/mandatory-invariants.json",
+  "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+  "reference_hierarchy": "experiments/epoch2-upstream-thin-closure/reference-hierarchy.json",
+  "required_initialization_gates": [
+    "E3-I1 accepted evidence export",
+    "E3-I2 complete selection register",
+    "E3-I3 clean repository boundary",
+    "E3-I4 contract freeze"
+  ],
+  "required_selection_item_ids": [
+    "SEL-01",
+    "SEL-02",
+    "SEL-03",
+    "SEL-04",
+    "SEL-05",
+    "SEL-06",
+    "SEL-07",
+    "SEL-08",
+    "SEL-09",
+    "SEL-10",
+    "SEL-11",
+    "SEL-12",
+    "SEL-13",
+    "SEL-14",
+    "SEL-15",
+    "SEL-16",
+    "SEL-17",
+    "SEL-18"
+  ],
+  "schema_version": 1,
+  "status": "ready-not-started"
+}

@@ -1,6 +1,6 @@
 # Epoch 2 Charter: Upstream Android adaptation research
 
-> **Status:** ACTIVE — recalibrated 2026-07-19
+> **Status:** CLOSED — producer-independent evidence export frozen 2026-07-21
 > **Predecessor:** Epoch 1 frozen through Stage 3-F
 > **Decision authorities:** ADR-0006 and ADR-0007
 > **Detailed plan:** [`EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](../roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md)

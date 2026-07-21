@@ -177,6 +177,24 @@
 - [`experiments/epoch2-upstream-thin-artifact-prototype/strip-mutations.json`](epoch2-upstream-thin-artifact-prototype/strip-mutations.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-artifact-prototype/unavailable-field-policy.json`](epoch2-upstream-thin-artifact-prototype/unavailable-field-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-closure`
+
+- [`experiments/epoch2-upstream-thin-closure/README.md`](epoch2-upstream-thin-closure/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/accepted-product-seed-boundary.json`](epoch2-upstream-thin-closure/accepted-product-seed-boundary.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](epoch2-upstream-thin-closure/closure-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/closure-gate-matrix.json`](epoch2-upstream-thin-closure/closure-gate-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/epoch1-inheritance-matrix.json`](epoch2-upstream-thin-closure/epoch1-inheritance-matrix.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/epoch3-initialization-contract.json`](epoch2-upstream-thin-closure/epoch3-initialization-contract.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/evidence-freeze.md`](epoch2-upstream-thin-closure/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/independent-audit.json`](epoch2-upstream-thin-closure/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/mandatory-invariants.json`](epoch2-upstream-thin-closure/mandatory-invariants.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/producer-independent-evidence-export.json`](epoch2-upstream-thin-closure/producer-independent-evidence-export.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/producer-only-deferred-register.json`](epoch2-upstream-thin-closure/producer-only-deferred-register.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/reference-deviation-register.json`](epoch2-upstream-thin-closure/reference-deviation-register.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/reference-hierarchy.json`](epoch2-upstream-thin-closure/reference-hierarchy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/selectable-options.json`](epoch2-upstream-thin-closure/selectable-options.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+- [`experiments/epoch2-upstream-thin-closure/unresolved-risk-register.json`](epoch2-upstream-thin-closure/unresolved-risk-register.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-closure`
+
 ## `epoch2-upstream-thin-control`
 
 - [`experiments/epoch2-upstream-thin-control/README.md`](epoch2-upstream-thin-control/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
