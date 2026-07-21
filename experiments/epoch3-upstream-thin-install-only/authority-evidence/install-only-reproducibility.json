@@ -1,0 +1,14 @@
+{
+  "first": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "pass": true,
+  "schema_version": 1,
+  "second": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  }
+}

@@ -272,3 +272,32 @@ return audit.
 
 No stripped implementation, selectability, publication, API-24 runtime, actual
 16 KiB runtime, or non-Termux execution-context claim is opened by this start.
+
+## 10. Canonical install-only r1 acceptance and stripped opening
+
+The bounded install-only r1 transaction completed from the exact accepted full,
+produced the same projection twice, executed it on Android/Bionic at two
+locations and read-only, imported all 67 native extensions, exercised the
+launcher aliases, pip, subprocess re-entry, fresh venv, `python-config`, and
+pkg-config surfaces, and passed an independent exact-projection rerun.
+
+```text
+filename  cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz
+sha256    84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76
+size      23841726
+members   3699
+```
+
+The frozen install-only authority preserves the full projection invariant and
+opens only the stripped experiment. It does not authorize selectability,
+publication, API-24 runtime, actual 16 KiB page-size runtime, or a non-Termux
+execution-context claim.
+
+The E3-X4 stripped experiment starts from this exact install-only archive. It
+must census every regular ELF, preserve all non-ELF bytes and symlinks, use one
+recorded Android-compatible strip tool and operation, and compare every eligible
+ELF before and after. A distinct archive is permitted only when at least one
+eligible ELF changes and the resulting archive passes complete Android runtime,
+loader, alignment, native-closure, relocation, and consumer-surface
+qualification. If no eligible bytes change, the release decision must be an
+explicit alias or omission rather than a fabricated distinct product.

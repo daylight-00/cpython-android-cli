@@ -1,0 +1,31 @@
+{
+  "audit_kind": "epoch3-canonical-install-only-acceptance-independent-audit",
+  "bound_file_identities": {
+    "components/upstream-thin/lib/assemble_install_only.py": "bac8dcb1c30463c3133f9ef003268fbc22d938331da7b272bdefb89163ca6788",
+    "components/upstream-thin/lib/qualify_install_only.py": "67b22d61eb643716f39ec2fe337a1ed18bbec7ffd34a96cec8d12e2f6d3b784a",
+    "components/upstream-thin/lib/verify_install_only.py": "6d00ffda8c87316af63bdfa9dc8218e99989feaa883a10aec7dc103aa9e9f517",
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json": "7d21b93e7bcbca4f6bb52ac22e384fb1dba9f816568c9020e4c3e7b2baefe6eb",
+    "experiments/epoch3-upstream-thin-install-only/accepted-r1-return.json": "388d52ffe6e7dc3a8f7e21e78b601146497093ba6c677a2450c9571c66b628a4",
+    "experiments/epoch3-upstream-thin-install-only/audit_install_only_target.py": "c2e5392198ce620b56259677ef1f85f777c25f2e005e966460f2a23d8d5421a9",
+    "experiments/epoch3-upstream-thin-install-only/run_install_only_target.py": "f25c17ed063aa6b1c278ffd05d4ac6a573022a1ed1fa7b40d6d410adf766b2dc"
+  },
+  "checks": {
+    "all_primary_checks_pass": true,
+    "artifact_exact": true,
+    "bound_files_present": true,
+    "claims_bounded": true,
+    "primary_pass": true,
+    "source_full_exact": true
+  },
+  "claim_boundary": {
+    "install_only_complete": true,
+    "publication": false,
+    "selectable": false,
+    "stripped_authorized_to_start": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "primary_verification_sha256": "eff3d745027b11dd0346f6093547179be9bde724f2064ef5ecf532b39a52e66a",
+  "schema_version": 1,
+  "stderr": ""
+}

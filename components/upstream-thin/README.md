@@ -27,3 +27,9 @@ observes an exact Astral 3.14.6 AArch64 full golden; and runs launcher,
 67-extension, subprocess, prefix-relocation, pip, SDK, venv, and read-only
 runtime qualification. The returned result remains a candidate until its
 external evidence is reviewed and frozen as the full authority.
+
+The canonical install-only r1 projection is now frozen as the only stripped
+input authority. The stripped increment may modify only regular ELF files by a
+recorded safe strip operation; all non-ELF bytes, modes, paths, and symlinks
+must remain identical. A separate stripped asset requires a real byte delta and
+full Android requalification.

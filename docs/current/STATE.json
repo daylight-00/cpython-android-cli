@@ -131,11 +131,17 @@
       "path": "experiments/epoch3-upstream-thin-full/full-authority.json",
       "role": "canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority",
       "sha256": "a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0"
+    },
+    {
+      "id": "epoch3-upstream-thin-canonical-install-only-r1",
+      "path": "experiments/epoch3-upstream-thin-install-only/install-only-authority.json",
+      "role": "canonical exact full projection, Android/Bionic qualification, and stripped start authority",
+      "sha256": "7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
-    "detail_sha256": "db5abdbcd3f08b60ac55aa767a3f4fbcf145eba6053e8661e0c78cc03e74168f",
+    "detail_sha256": "3c1764d359d0a6e68e511561c2ea400bab18b794573962f0dc79806fcfcf64fc",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -168,18 +174,20 @@
     "full_implementation_started": true,
     "full_release_complete": true,
     "install_only_implementation_started": true,
+    "install_only_release_complete": true,
     "publication_authorized": false,
-    "selectable": false
+    "selectable": false,
+    "stripped_implementation_started": true
   },
   "control_work": {
     "completed_phase": 1,
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "derive-epoch3-install-only-from-full",
+    "next_action_class": "derive-epoch3-stripped-from-install-only",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "derive-epoch3-install-only-from-full",
+    "resume_program_action_class": "derive-epoch3-stripped-from-install-only",
     "status": "completed"
   },
   "documentation_layers": {
@@ -203,10 +211,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "derive-epoch3-install-only-from-full",
+  "next_action_class": "derive-epoch3-stripped-from-install-only",
   "predecessor": {
-    "commit": "9e7f80413ee6e3b972097c273f6442626eff2630",
-    "tree": "bd050775d34884e0cfffe3500b456af6d7393afb"
+    "commit": "992947ee1023d806e22c6cfdfc88efc2f0d1d76f",
+    "tree": "b4dc1e9ef61b8eb49e55638f3659e5b5216496f0"
   },
   "program": {
     "epoch": {
@@ -215,11 +223,11 @@
       "status": "implementation-in-progress"
     },
     "gate": {
-      "id": "E3/INSTALL-ONLY",
-      "name": "Canonical install-only projection and qualification",
+      "id": "E3/STRIPPED",
+      "name": "Canonical install-only-stripped semantic identity and qualification",
       "status": "in-progress"
     },
-    "next_action_class": "derive-epoch3-install-only-from-full",
+    "next_action_class": "derive-epoch3-stripped-from-install-only",
     "status": "in-progress"
   },
   "project_model": {
@@ -260,34 +268,33 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 20,
+  "state_revision": 21,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "72c144788956fad6fbe3ff0e4ef7914643e2550875434f3c2ed089eb9a62f306"
+    "sha256": "aad0cf9b0a7a7a756418443deae4095424028d48e9e86edb5abbe8ea600a0449"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "derive-epoch3-install-only-from-full",
-    "pass_successor_action_class": "derive-epoch3-stripped-from-install-only",
+    "current_action_class": "derive-epoch3-stripped-from-install-only",
+    "pass_successor_action_class": "finalize-epoch3-artifact-family",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "install-only-android-target-qualification-and-authority-pending",
+    "install_only_stripped-census-derivation-and-android-qualification-in-progress",
     "API24-runtime-qualification-pending",
     "runtime-16KiB-device-support-unqualified",
     "non-Termux-Android-context-unqualified",
     "emulator-unqualified-and-not-required-for-current-full-start",
     "other-Android-ABIs-explicitly-out-of-scope",
     "CA-and-timezone-production-payload-experiment-pending",
-    "install_only_stripped-semantic-identity-experiment-pending",
     "uv-managed-consumer-compatibility-experiment-pending",
     "upstream-derived-full-is-not-Astral-producer-object-full",
     "support-security-data-update-and-revocation-operations-pending",
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "publication-not-authorized"
   ],
-  "updated_by_transaction": "20260722-e3-install-only-implementation-start-r1"
+  "updated_by_transaction": "20260722-e3-install-only-authority-and-stripped-start-r1"
 }

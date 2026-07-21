@@ -1,0 +1,45 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "path": "artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "projection_member_count": 3699,
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "install_only_authority_frozen": false,
+    "install_only_candidate_qualified": true,
+    "non_termux_context_claim": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_implementation_started": false
+  },
+  "failed_gates": [],
+  "gate_kind": "epoch3-upstream-thin-first-real-install-only-candidate",
+  "gates": {
+    "accepted_full_identity": true,
+    "android_target_qualification": true,
+    "assembly_1": true,
+    "assembly_2": true,
+    "byte_reproducible": true,
+    "exact_full_projection": true,
+    "full_authority": true,
+    "no_stripped_artifact": true,
+    "one_install_only_artifact": true
+  },
+  "pass": true,
+  "projection": {
+    "filtering": "none-preserve-all-install-members",
+    "payload_bytes_unchanged": true,
+    "source": "python/install/**",
+    "target": "python/**"
+  },
+  "schema_version": 1,
+  "source_full": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  }
+}

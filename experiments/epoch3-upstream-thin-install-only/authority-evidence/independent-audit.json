@@ -1,0 +1,63 @@
+{
+  "audit_kind": "epoch3-first-real-install-only-independent-return-audit",
+  "checks": {
+    "artifact_identity_matches_summary": true,
+    "claims_withheld": true,
+    "full_authority_pass": true,
+    "independent_projection_rerun": true,
+    "no_stripped_artifact": true,
+    "one_install_only_artifact": true,
+    "reproducibility_pass": true,
+    "summary_pass": true,
+    "target_qualification_pass": true,
+    "verification_pass": true
+  },
+  "claim_boundary": {
+    "install_only_authority_frozen": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_implementation_started": false
+  },
+  "failed_checks": [],
+  "independent_projection_rerun": {
+    "artifact": {
+      "member_count": 3699,
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-first-real-install-only-r1-results/target/artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    "checks": {
+      "accepted_full_identity": true,
+      "archive_member_count_matches_projection": true,
+      "deterministic_gzip_header": true,
+      "deterministic_tar_metadata": true,
+      "exact_projection": true,
+      "full_metadata_absent": true,
+      "launcher_surface": true,
+      "no_duplicate_members": true,
+      "one_python_root": true,
+      "payload_bytes_unchanged": true,
+      "pip_surface": true,
+      "source_root": true
+    },
+    "claim_boundary": {
+      "install_only_authority_frozen": false,
+      "install_only_candidate": true,
+      "publication": false,
+      "selectable": false,
+      "stripped_started": false
+    },
+    "errors": [],
+    "failed_checks": [],
+    "pass": true,
+    "schema_version": 1,
+    "source_full": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    },
+    "verifier_kind": "epoch3-upstream-thin-install-only-exact-projection"
+  },
+  "pass": true,
+  "schema_version": 1
+}

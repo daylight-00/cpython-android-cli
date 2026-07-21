@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "member_count": 3699,
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "check_count": 26,
+  "checks": {
+    "accepted_artifact_identity": true,
+    "accepted_evidence_hashes": true,
+    "accepted_repository_transition": true,
+    "accepted_source_full": true,
+    "android_runtime_surface": true,
+    "android_target_pass": true,
+    "candidate_gate_identity": true,
+    "candidate_gate_pass": true,
+    "claim_code_complete": true,
+    "exact_projection_pass": true,
+    "independent_audit_pass": true,
+    "independent_projection_identity": true,
+    "install_only_byte_reproducible": true,
+    "parse:accepted-return": true,
+    "parse:full-input-identity.json": true,
+    "parse:gate-diagnostics.json": true,
+    "parse:independent-audit.json": true,
+    "parse:install-only-reproducibility.json": true,
+    "parse:install-only-target-qualification.json": true,
+    "parse:install-only-verification.json": true,
+    "projection_identity": true,
+    "projection_semantics": true,
+    "result_archive_identity": true,
+    "source_full_exact": true,
+    "stripped_not_started": true,
+    "target_claims_bounded": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "install_only_complete": true,
+    "non_termux_context": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_authorized_to_start": true
+  },
+  "claim_code_identities": {
+    "components/upstream-thin/lib/assemble_install_only.py": "bac8dcb1c30463c3133f9ef003268fbc22d938331da7b272bdefb89163ca6788",
+    "components/upstream-thin/lib/qualify_install_only.py": "67b22d61eb643716f39ec2fe337a1ed18bbec7ffd34a96cec8d12e2f6d3b784a",
+    "components/upstream-thin/lib/verify_install_only.py": "6d00ffda8c87316af63bdfa9dc8218e99989feaa883a10aec7dc103aa9e9f517",
+    "experiments/epoch3-upstream-thin-install-only/audit_install_only_target.py": "c2e5392198ce620b56259677ef1f85f777c25f2e005e966460f2a23d8d5421a9",
+    "experiments/epoch3-upstream-thin-install-only/run_install_only_target.py": "f25c17ed063aa6b1c278ffd05d4ac6a573022a1ed1fa7b40d6d410adf766b2dc"
+  },
+  "errors": {},
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 26,
+  "schema_version": 1,
+  "source_full": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "verifier_kind": "epoch3-canonical-install-only-return-acceptance"
+}

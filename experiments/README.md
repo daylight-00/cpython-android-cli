@@ -315,6 +315,19 @@
 - [`experiments/epoch3-upstream-thin-initialization/independent-audit.json`](epoch3-upstream-thin-initialization/independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
 - [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](epoch3-upstream-thin-initialization/initialization-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-initialization`
 
+## `epoch3-upstream-thin-install-only`
+
+- [`experiments/epoch3-upstream-thin-install-only/accepted-r1-return.json`](epoch3-upstream-thin-install-only/accepted-r1-return.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/full-input-identity.json`](epoch3-upstream-thin-install-only/authority-evidence/full-input-identity.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/gate-diagnostics.json`](epoch3-upstream-thin-install-only/authority-evidence/gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/independent-audit.json`](epoch3-upstream-thin-install-only/authority-evidence/independent-audit.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/install-only-reproducibility.json`](epoch3-upstream-thin-install-only/authority-evidence/install-only-reproducibility.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/install-only-target-qualification.json`](epoch3-upstream-thin-install-only/authority-evidence/install-only-target-qualification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/authority-evidence/install-only-verification.json`](epoch3-upstream-thin-install-only/authority-evidence/install-only-verification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-install-only-acceptance`
+- [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](epoch3-upstream-thin-install-only/install-only-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-install-only-governance`
+- [`experiments/epoch3-upstream-thin-install-only/install-only-independent-audit.json`](epoch3-upstream-thin-install-only/install-only-independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
+- [`experiments/epoch3-upstream-thin-install-only/install-only-verification.json`](epoch3-upstream-thin-install-only/install-only-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-install-only-acceptance`
+
 ## `stage1b-pyconfig`
 
 - [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority

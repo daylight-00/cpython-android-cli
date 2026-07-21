@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 20
+> **State revision:** 21
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          derive-epoch3-install-only-from-full
-work gate       E3/INSTALL-ONLY — Canonical install-only projection and qualification
+action          derive-epoch3-stripped-from-install-only
+work gate       E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E3/INSTALL-ONLY — Canonical install-only projection and qualif
 
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
-gate    E3/INSTALL-ONLY — Canonical install-only projection and qualification
+gate    E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
 status  in-progress
 ```
 
@@ -53,6 +53,7 @@ status  in-progress
 20. [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](../experiments/epoch2-upstream-thin-closure/closure-authority.json) — Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary
 21. [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](../experiments/epoch3-upstream-thin-initialization/initialization-authority.json) — complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start
 22. [`experiments/epoch3-upstream-thin-full/full-authority.json`](../experiments/epoch3-upstream-thin-full/full-authority.json) — canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority
+23. [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](../experiments/epoch3-upstream-thin-install-only/install-only-authority.json) — canonical exact full projection, Android/Bionic qualification, and stripped start authority
 
 ## Blockers
 
@@ -60,14 +61,13 @@ None.
 
 ## Unresolved risks
 
-- install-only-android-target-qualification-and-authority-pending
+- install_only_stripped-census-derivation-and-android-qualification-in-progress
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-full-start
 - other-Android-ABIs-explicitly-out-of-scope
 - CA-and-timezone-production-payload-experiment-pending
-- install_only_stripped-semantic-identity-experiment-pending
 - uv-managed-consumer-compatibility-experiment-pending
 - upstream-derived-full-is-not-Astral-producer-object-full
 - support-security-data-update-and-revocation-operations-pending

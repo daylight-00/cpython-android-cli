@@ -1845,6 +1845,135 @@
       "task_id": "E3-INSTALL-ONLY",
       "title": "Canonical Astral-like install-only projection and qualification",
       "work_class": "T"
+    },
+    {
+      "action_class": "derive-epoch3-stripped-from-install-only",
+      "activation": {
+        "accepted_authority_path": "experiments/epoch3-upstream-thin-install-only/install-only-authority.json",
+        "accepted_authority_sha256": "7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d",
+        "prerequisites_satisfied": true,
+        "required_authority_role": "canonical-install-only-archive-and-stripped-input-invariant",
+        "required_predecessor_action_class": "derive-epoch3-install-only-from-full",
+        "status": "in-progress"
+      },
+      "claim_boundary": {
+        "android_runtime_claim": true,
+        "canonical_full_complete_claim": true,
+        "canonical_install_only_complete_claim": true,
+        "device_qualification_claim": false,
+        "epoch2_closed_claim": true,
+        "epoch3_selection_claim": true,
+        "official_upstream_identity_claim": true,
+        "product_selectability_claim": false,
+        "publication_claim": false,
+        "stripped_implementation_started_claim": true
+      },
+      "completion_contract": {
+        "always": {
+          "all_required_verifiers_must_pass": true,
+          "distinct_asset_requires_real_byte_delta": true,
+          "generated_views_must_be_regenerated": true,
+          "install_only_authority_identity_must_match": true,
+          "new_markdown_or_json_requires_registry_update": true,
+          "non_elf_payload_identity_required": true,
+          "one_runner_and_complete_receipt_required": true
+        },
+        "contract_version": 1,
+        "fail": {
+          "allowed_action_policy": "retain-stripped-experiment-or-select-bounded-correction",
+          "complete_receipt_required": true
+        },
+        "pass": {
+          "required_epoch3_gates": [
+            "E3-X4",
+            "E3-G2",
+            "E3-G4-stripped",
+            "E3-G6-stripped",
+            "E3-G7"
+          ],
+          "required_output_roles": [
+            "elf-section-census",
+            "strip-tool-identity",
+            "before-after-mutation-manifest",
+            "deterministic-stripped-or-alias-decision",
+            "stripped-target-qualification",
+            "stripped-independent-audit",
+            "stripped-authority"
+          ],
+          "successor_action_class": "finalize-epoch3-artifact-family",
+          "successor_must_exist": false,
+          "successor_task_id": "E3-ARTIFACT-FAMILY"
+        }
+      },
+      "default_exclusions": [
+        "docs/history/**",
+        "docs/handoff/**",
+        "docs/stages/**",
+        "unselected-epoch2-experiments",
+        "producer-only-source-build-machinery",
+        "legacy-components/standalone-product-path",
+        "past-chat-transcripts"
+      ],
+      "deliverable": {
+        "class": "stripped-census-derivation-code-runner-receipt-audit-decision-and-authority",
+        "owner_interface": "one-runner",
+        "result": "complete-pass-or-fail-stripped-derivation-and-qualification-receipt"
+      },
+      "goal": "Start only from the frozen install-only archive, census every regular ELF, apply one recorded Android-compatible strip operation to eligible files, preserve all other bytes and symlinks, prove deterministic derivation and Android behavior, and decide a truthful distinct-asset or alias/omission result.",
+      "input_routing": {
+        "fallback": "extract exact install-only artifact from its verified complete result archive",
+        "first_attempt": "exact frozen install-only artifact from prior owner result cache",
+        "forbidden": [
+          "derive-from-full-or-official-input",
+          "modify-non-ELF-bytes",
+          "follow-or-rewrite-symlinks",
+          "use-unrecorded-strip-tool",
+          "claim-distinct-stripped-asset-without-byte-delta",
+          "start-release-publication"
+        ]
+      },
+      "required_authorities": [
+        {
+          "path": "experiments/epoch3-upstream-thin-install-only/install-only-authority.json",
+          "reason": "Canonical install-only input and stripped start authority.",
+          "sha256": "7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-initialization/initialization-authority.json",
+          "reason": "Frozen Astral-like default rule and artifact order.",
+          "sha256": "901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b"
+        }
+      ],
+      "required_reads": [
+        {
+          "path": "experiments/epoch3-upstream-thin-install-only/install-only-authority.json",
+          "reason": "Frozen install-only artifact identity and stripped start authority.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md",
+          "reason": "Artifact order and truthful distinct-or-alias stripped contract.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
+          "reason": "E3-X4 census, mutation, verification, and claim boundaries.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_SELECTION_REGISTER.json",
+          "reason": "SEL-12 adopt-with-redesign decision and release gate.",
+          "scope": "full"
+        },
+        {
+          "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json",
+          "reason": "Exact frozen install-only input identity.",
+          "scope": "full"
+        }
+      ],
+      "task_id": "E3-STRIPPED",
+      "title": "Canonical Astral-like install-only-stripped derivation and qualification",
+      "work_class": "T"
     }
   ]
 }
