@@ -175,3 +175,28 @@ The corrected verifier independently passes the exact r2 full archive with zero
 operational residue while reporting the inert provenance strings. No full
 authority, install-only implementation, selectability, or publication claim was
 created by r2, and local and remote main remained at `00ac96f`.
+
+
+### r3 — observed Astral representation and qualification-context paths
+
+The same full again assembled reproducibly and passed static verification,
+runtime execution at two locations, read-only execution, all 67 extension
+imports, pip, venv, subprocess re-entry, and native closure checks. Two remaining
+failures were verifier assumptions contradicted by the returned evidence:
+
+- the exact Astral 20260610 full omits explicit directory members for `python/`,
+  `python/build/`, and `python/install/`; those roots are represented by member
+  path prefixes, and its `PYTHON.json` encodes format version as the string
+  `"8"`;
+- correct relocated `python-config` and pkg-config outputs necessarily contained
+  the candidate prefix, which was itself under the Termux app's temporary
+  directory. The verifier confused this execution-context location with a
+  dependency on the external Termux package prefix.
+
+The r4 correction follows the exact Astral archive representation and removes
+the exact candidate prefix before testing for any remaining
+`/data/data/com.termux/files/usr` leakage. It therefore continues to reject
+external Termux compiler, include, library, or tool paths while allowing the
+Android-native candidate to be tested inside the current Termux app process.
+No full authority, downstream flavor, selectability, or publication claim is
+created by these harness corrections.

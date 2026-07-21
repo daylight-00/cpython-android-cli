@@ -35,6 +35,18 @@ def _run(command: list[str], *, env: dict[str, str], cwd: Path | None = None, ti
         }
 
 
+def _has_external_termux_prefix(text: str, candidate_prefix: Path) -> bool:
+    """Detect Termux system-prefix leakage outside the relocated candidate.
+
+    The qualification itself runs inside a Termux app process, so the temporary
+    candidate prefix can legitimately be nested below /data/data/com.termux.
+    Remove that exact consumer prefix before checking for references to the
+    Termux package prefix. This still rejects compiler, include, library, and
+    tool paths that escape the candidate into /data/data/com.termux/files/usr.
+    """
+    return "/data/data/com.termux/files/usr" in text.replace(str(candidate_prefix), "<CANDIDATE_PREFIX>")
+
+
 def _json_probe(python: Path, code: str, env: dict[str, str], timeout: int = 300) -> dict[str, Any]:
     row = _run([str(python), "-c", code], env=env, timeout=timeout)
     try:
@@ -175,7 +187,11 @@ def qualify(archive: Path, *, output: Path | None = None, zstd: str = "zstd", pk
             config_rows: dict[str, Any] = {}
             for option in ("--prefix", "--exec-prefix", "--includes", "--cflags", "--libs", "--ldflags", "--extension-suffix", "--configdir"):
                 config_rows[option] = _run([str(runtime_b / "bin/python3.14-config"), option], env=env_b)
-            checks["python_config_surface"] = all(row["returncode"] == 0 and "/data/data/com.termux/files/usr" not in (row["stdout"] + row["stderr"]) for row in config_rows.values())
+            checks["python_config_surface"] = all(
+                row["returncode"] == 0
+                and not _has_external_termux_prefix(row["stdout"] + row["stderr"], runtime_b)
+                for row in config_rows.values()
+            )
             evidence["python_config_surface"] = config_rows
 
             pc_env = dict(env_b)
@@ -184,7 +200,12 @@ def qualify(archive: Path, *, output: Path | None = None, zstd: str = "zstd", pk
             pkg_rows: dict[str, Any] = {}
             for package in ("python-3.14", "python-3.14-embed"):
                 pkg_rows[package] = _run([pkg_config, "--cflags", "--libs", package], env=pc_env)
-            checks["pkg_config_surface"] = all(row["returncode"] == 0 and str(runtime_b) in row["stdout"] and "/data/data/com.termux/files/usr" not in row["stdout"] for row in pkg_rows.values())
+            checks["pkg_config_surface"] = all(
+                row["returncode"] == 0
+                and str(runtime_b) in row["stdout"]
+                and not _has_external_termux_prefix(row["stdout"] + row["stderr"], runtime_b)
+                for row in pkg_rows.values()
+            )
             evidence["pkg_config_surface"] = pkg_rows
 
             venv = root / "state-b/venvs/fresh"

@@ -52,8 +52,18 @@ def observe(archive: Path, *, expected_sha256: str, zstd: str = "zstd") -> dict[
                     errors.append(f"PYTHON.json: {type(exc).__name__}: {exc}")
             paths = {row["path"] for row in members}
             checks["one_python_root"] = bool(paths) and all(path == "python" or path.startswith("python/") for path in paths)
-            checks["canonical_full_roots"] = {"python", "python/build", "python/install", "python/PYTHON.json"}.issubset(paths)
-            checks["python_json_format_8"] = python_json.get("version") == 8
+            # Real Astral release tarballs do not necessarily emit explicit
+            # directory entries. The canonical roots are therefore structural
+            # path prefixes, not mandatory zero-length directory members.
+            checks["canonical_full_roots"] = (
+                "python/PYTHON.json" in paths
+                and any(path.startswith("python/build/") for path in paths)
+                and any(path.startswith("python/install/") for path in paths)
+            )
+            # Astral format 8 archives in the observed 20260610 release encode
+            # the schema version as the JSON string "8". Accept the published
+            # representation as well as the integer form used by our candidate.
+            checks["python_json_format_8"] = str(python_json.get("version")) == "8"
             checks["no_duplicate_members"] = len(paths) == len(members)
     bin_rows = [row for row in members if row["path"].startswith("python/install/bin/") and len(PurePosixPath(row["path"]).parts) == 4]
     build_info = python_json.get("build_info", {}) if isinstance(python_json, dict) else {}

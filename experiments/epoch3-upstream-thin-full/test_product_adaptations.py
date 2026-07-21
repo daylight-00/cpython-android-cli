@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import io
 import json
 import sys
+import subprocess
+import tarfile
 import tempfile
 import unittest
 import zipfile
@@ -12,8 +15,10 @@ sys.path.insert(0, str(ROOT / "components/upstream-thin/lib"))
 
 from normalize import normalize_runtime_metadata  # noqa: E402
 from pip_surface import install_upstream_pip  # noqa: E402
-from qualify_full import _run  # noqa: E402
+from qualify_full import _has_external_termux_prefix, _run  # noqa: E402
 from verify_full import classify_host_residue  # noqa: E402
+from observe_astral import observe  # noqa: E402
+from archive import sha256_file  # noqa: E402
 
 
 class ProductAdaptationTests(unittest.TestCase):
@@ -81,6 +86,36 @@ class ProductAdaptationTests(unittest.TestCase):
         self.assertEqual(row["returncode"], 127)
         self.assertTrue(row["tool_unavailable"])
         self.assertIn("FileNotFoundError", row["stderr"])
+
+    def test_astral_implied_roots_and_string_format_version(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            tar_path = root / "golden.tar"
+            with tarfile.open(tar_path, "w:") as tf:
+                for name, data in (
+                    ("python/PYTHON.json", json.dumps({"version": "8", "build_info": {}}).encode()),
+                    ("python/build/object.o", b"object"),
+                    ("python/install/bin/python3.14", b"binary"),
+                ):
+                    info = tarfile.TarInfo(name)
+                    info.size = len(data)
+                    tf.addfile(info, io.BytesIO(data))
+            archive = root / "golden.tar.zst"
+            subprocess.run(["zstd", "-q", "-f", str(tar_path), "-o", str(archive)], check=True)
+            result = observe(archive, expected_sha256=sha256_file(archive))
+            self.assertTrue(result["checks"]["canonical_full_roots"])
+            self.assertTrue(result["checks"]["python_json_format_8"])
+            self.assertTrue(result["pass"])
+
+    def test_candidate_nested_under_termux_prefix_is_not_external_residue(self) -> None:
+        prefix = Path("/data/data/com.termux/files/usr/tmp/qualify/relocated/prefix")
+        text = f"-I{prefix}/include/python3.14 -L{prefix}/lib"
+        self.assertFalse(_has_external_termux_prefix(text, prefix))
+
+    def test_external_termux_package_path_remains_rejected(self) -> None:
+        prefix = Path("/data/data/com.termux/files/usr/tmp/qualify/relocated/prefix")
+        text = f"-I{prefix}/include/python3.14 -I/data/data/com.termux/files/usr/include"
+        self.assertTrue(_has_external_termux_prefix(text, prefix))
 
     def test_host_residue_classification_preserves_inert_upstream_bytes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
