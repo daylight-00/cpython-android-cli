@@ -1,0 +1,78 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "path": "artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+    "size_bytes": 23841241
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "non_termux_context_claim": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_authority_frozen": false,
+    "stripped_candidate_qualified": true
+  },
+  "failed_gates": [],
+  "gate_kind": "epoch3-upstream-thin-first-real-install-only-stripped-candidate",
+  "gates": {
+    "accepted_install_only_identity": true,
+    "android_target_qualification": true,
+    "assembly_1": true,
+    "assembly_2": true,
+    "byte_reproducible": true,
+    "changed_elf_count_1": true,
+    "distinct_archive_decision": true,
+    "elf_dynamic_alignment_preserved": true,
+    "eligible_elf_count_1": true,
+    "exact_stripped_derivation": true,
+    "install_only_authority": true,
+    "non_elf_bytes_unchanged": true,
+    "one_stripped_artifact": true,
+    "only_project_launcher_changed": true,
+    "regular_elf_count_81": true
+  },
+  "pass": true,
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "operation": "--strip-unneeded",
+    "readelf_tool": {
+      "canonical_path": "/data/data/com.termux/files/usr/bin/llvm-readobj",
+      "is_symlink": true,
+      "path": "/data/data/com.termux/files/usr/bin/readelf",
+      "requested": "/data/data/com.termux/files/usr/bin/readelf",
+      "sha256": "f409f88b053ede038c37d2cc844a6c065a9d623cdebdf3f63d544beb8b55630e",
+      "size_bytes": 1734360,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "LLVM (http://llvm.org/):\n  LLVM version 21.1.8\n  Optimized build.\n"
+    },
+    "regular_elf_count": 81,
+    "strip_tool": {
+      "canonical_path": "/data/data/com.termux/files/usr/bin/llvm-objcopy",
+      "is_symlink": true,
+      "path": "/data/data/com.termux/files/usr/bin/llvm-strip",
+      "requested": "/data/data/com.termux/files/usr/bin/llvm-strip",
+      "sha256": "b1196f21e347a912662b0bea76ad97c60f758e68c612b58006d505182a679392",
+      "size_bytes": 209368,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "llvm-strip, compatible with GNU strip\nLLVM (http://llvm.org/):\n  LLVM version 21.1.8\n  Optimized build.\n"
+    }
+  }
+}

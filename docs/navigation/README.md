@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       derive-epoch3-stripped-from-install-only
-gate         E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
-tracked docs 721
+action       finalize-epoch3-artifact-family
+gate         E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
+tracked docs 733
 indexes      16
 ```
 
@@ -47,6 +47,7 @@ indexes      16
 - [`config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json`](../../config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
+- [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`

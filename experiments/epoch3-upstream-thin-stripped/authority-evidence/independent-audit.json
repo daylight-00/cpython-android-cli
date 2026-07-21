@@ -1,0 +1,77 @@
+{
+  "audit_kind": "epoch3-first-real-install-only-stripped-independent-return-audit",
+  "checks": {
+    "artifact_identity_matches_summary": true,
+    "claims_withheld": true,
+    "exact_change_surface": true,
+    "independent_derivation_rerun": true,
+    "install_only_authority_pass": true,
+    "one_stripped_artifact": true,
+    "reproducibility_pass": true,
+    "summary_pass": true,
+    "target_qualification_pass": true,
+    "verification_pass": true
+  },
+  "claim_boundary": {
+    "publication": false,
+    "selectable": false,
+    "stripped_authority_frozen": false
+  },
+  "failed_checks": [],
+  "independent_derivation_rerun": {
+    "artifact": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+      "member_count": 3699,
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-first-real-stripped-r2-results/target/artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+      "size_bytes": 23841241
+    },
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "checks": {
+      "accepted_install_only_identity": true,
+      "all_and_only_eligible_elf_changed": true,
+      "artifact_identity_matches_receipt": true,
+      "changed_count_exact": true,
+      "changed_paths_exact": true,
+      "deterministic_gzip_header": true,
+      "deterministic_tar_metadata": true,
+      "distinct_byte_delta": true,
+      "elf_dynamic_alignment_preserved": true,
+      "eligible_count_exact": true,
+      "eligible_paths_exact": true,
+      "no_duplicate_members": true,
+      "non_elf_bytes_unchanged": true,
+      "path_set_identity": true,
+      "receipt_decision_distinct": true,
+      "receipt_parse": true,
+      "receipt_source_identity": true,
+      "regular_elf_count_exact": true,
+      "regular_elf_paths_exact": true,
+      "removable_sections_absent_after": true,
+      "type_mode_symlink_identity": true
+    },
+    "claim_boundary": {
+      "publication": false,
+      "selectable": false,
+      "stripped_authority_frozen": false,
+      "stripped_candidate": true
+    },
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "errors": [],
+    "failed_checks": [],
+    "pass": true,
+    "schema_version": 1,
+    "source_install_only": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    "verifier_kind": "epoch3-upstream-thin-install-only-stripped"
+  },
+  "pass": true,
+  "schema_version": 1
+}

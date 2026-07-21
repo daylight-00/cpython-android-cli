@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `derive-epoch3-stripped-from-install-only`
-- gate: `E3/STRIPPED` — Canonical install-only-stripped semantic identity and qualification
+- action class: `finalize-epoch3-artifact-family`
+- gate: `E3/ARTIFACT-FAMILY` — Canonical full, install-only, and stripped release-family integration
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `721`
+- tracked Markdown/JSON: `733`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

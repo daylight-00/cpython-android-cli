@@ -1,0 +1,33 @@
+{
+  "audit_kind": "epoch3-canonical-install-only-stripped-acceptance-independent-audit",
+  "bound_file_identities": {
+    "components/upstream-thin/lib/assemble_stripped.py": "ace01edea9aeeef6738864548bde8c477f26cdd9ff448790fdf20c028799b31e",
+    "components/upstream-thin/lib/qualify_stripped.py": "ea72ca1fa98ed16b0868669abf1b850c888179b9fe742218f0585b8022fa7a9f",
+    "components/upstream-thin/lib/strip_surface.py": "379a61b367781d288c9751f393cb7099e14c2dec2132a0abb008e74c02357f57",
+    "components/upstream-thin/lib/verify_stripped.py": "2efaea18161488c40d6da131821fd0fac6065d51704781bef5d5ff5e500de4a8",
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json": "7d21b93e7bcbca4f6bb52ac22e384fb1dba9f816568c9020e4c3e7b2baefe6eb",
+    "experiments/epoch3-upstream-thin-stripped/accepted-r2-return.json": "09fe0cf8196a63190fc5086608e2c0ac32fdc18fb4b43f90aa753061bad40481",
+    "experiments/epoch3-upstream-thin-stripped/audit_stripped_target.py": "3d0be5d8926276e14a35e1b5140266004b620a19c9309802555032a9120ef4f4",
+    "experiments/epoch3-upstream-thin-stripped/run_stripped_target.py": "4ceed5c6b5c2bc865f93fc30584e0ac5cae32abacadf97857c47eb266d7a255a"
+  },
+  "checks": {
+    "all_primary_checks_pass": true,
+    "artifact_exact": true,
+    "bound_files_present": true,
+    "claims_bounded": true,
+    "primary_pass": true,
+    "source_install_only_exact": true,
+    "strip_surface_exact": true
+  },
+  "claim_boundary": {
+    "artifact_family_authorized_to_start": true,
+    "publication": false,
+    "selectable": false,
+    "stripped_complete": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "primary_verification_sha256": "7797b4b9b1877f9d68fe3574692e5926e6d23c6b3be39382dcafdfc3fdfeb8bc",
+  "schema_version": 1,
+  "stderr": ""
+}

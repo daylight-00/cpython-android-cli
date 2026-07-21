@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      derive-epoch3-stripped-from-install-only
+immediate action      finalize-epoch3-artifact-family
 program epoch         E3 — clean upstream-derived Android standalone distribution
-program gate          E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
+program gate          E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
 ```
 
 ### Current claim boundary
@@ -33,7 +33,7 @@ none
 
 ### Unresolved risks
 
-- install_only_stripped-census-derivation-and-android-qualification-in-progress
+- artifact-family-integration-in-progress
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
@@ -71,6 +71,7 @@ none
 - [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](experiments/epoch3-upstream-thin-initialization/initialization-authority.json): complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start (`901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b`)
 - [`experiments/epoch3-upstream-thin-full/full-authority.json`](experiments/epoch3-upstream-thin-full/full-authority.json): canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority (`a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0`)
 - [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](experiments/epoch3-upstream-thin-install-only/install-only-authority.json): canonical exact full projection, Android/Bionic qualification, and stripped start authority (`7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d`)
+- [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](experiments/epoch3-upstream-thin-stripped/stripped-authority.json): canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority (`bf985a2cfc5446f7deab36d853f27ac439c30ba2b85b761546d919fe411a2d25`)
 
 ### Agent entry
 

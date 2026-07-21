@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+    "size_bytes": 23841241
+  },
+  "check_count": 32,
+  "checks": {
+    "accepted_artifact_identity": true,
+    "accepted_evidence_hashes": true,
+    "accepted_repository_transition": true,
+    "accepted_source_install_only": true,
+    "accepted_strip_surface": true,
+    "android_runtime_surface": true,
+    "android_target_pass": true,
+    "candidate_gate_identity": true,
+    "candidate_gate_pass": true,
+    "candidate_gate_surface": true,
+    "claim_code_complete": true,
+    "derivation_identity": true,
+    "derivation_semantics": true,
+    "distinct_archive_decision": true,
+    "exact_derivation_pass": true,
+    "independent_audit_pass": true,
+    "independent_derivation_identity": true,
+    "mutation_source_and_artifact_exact": true,
+    "parse:accepted-return": true,
+    "parse:gate-diagnostics.json": true,
+    "parse:independent-audit.json": true,
+    "parse:install-only-input-identity.json": true,
+    "parse:stripped-mutation-receipt.json": true,
+    "parse:stripped-reproducibility.json": true,
+    "parse:stripped-target-qualification.json": true,
+    "parse:stripped-verification.json": true,
+    "result_archive_identity": true,
+    "source_install_only_exact": true,
+    "strip_surface_exact": true,
+    "stripped_byte_reproducible": true,
+    "target_claims_bounded": true,
+    "tool_alias_semantics_recorded": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "artifact_family_authorized_to_start": true,
+    "non_termux_context": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_complete": true
+  },
+  "claim_code_identities": {
+    "components/upstream-thin/lib/assemble_stripped.py": "ace01edea9aeeef6738864548bde8c477f26cdd9ff448790fdf20c028799b31e",
+    "components/upstream-thin/lib/qualify_stripped.py": "ea72ca1fa98ed16b0868669abf1b850c888179b9fe742218f0585b8022fa7a9f",
+    "components/upstream-thin/lib/strip_surface.py": "379a61b367781d288c9751f393cb7099e14c2dec2132a0abb008e74c02357f57",
+    "components/upstream-thin/lib/verify_stripped.py": "2efaea18161488c40d6da131821fd0fac6065d51704781bef5d5ff5e500de4a8",
+    "experiments/epoch3-upstream-thin-stripped/audit_stripped_target.py": "3d0be5d8926276e14a35e1b5140266004b620a19c9309802555032a9120ef4f4",
+    "experiments/epoch3-upstream-thin-stripped/run_stripped_target.py": "4ceed5c6b5c2bc865f93fc30584e0ac5cae32abacadf97857c47eb266d7a255a"
+  },
+  "errors": {},
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 32,
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "decision": "distinct-archive",
+    "dynamic_and_alignment_surface_preserved": true,
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "non_elf_payload_unchanged": true,
+    "operation": "--strip-unneeded",
+    "regular_elf_count": 81
+  },
+  "verifier_kind": "epoch3-canonical-install-only-stripped-return-acceptance"
+}

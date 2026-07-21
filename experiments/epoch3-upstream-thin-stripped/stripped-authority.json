@@ -1,0 +1,87 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+    "size_bytes": 23841241
+  },
+  "authority_kind": "epoch3-upstream-thin-canonical-install-only-stripped",
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "artifact_family_implementation_authorized": true,
+    "non_termux_context": false,
+    "publication": false,
+    "selectable": false,
+    "stripped_complete": true
+  },
+  "completion": {
+    "E3-G2": true,
+    "E3-G4-stripped": true,
+    "E3-G6-stripped": true,
+    "E3-G7": true,
+    "E3-X4": true
+  },
+  "file_identities": {
+    "components/upstream-thin/lib/assemble_stripped.py": "ace01edea9aeeef6738864548bde8c477f26cdd9ff448790fdf20c028799b31e",
+    "components/upstream-thin/lib/qualify_stripped.py": "ea72ca1fa98ed16b0868669abf1b850c888179b9fe742218f0585b8022fa7a9f",
+    "components/upstream-thin/lib/strip_surface.py": "379a61b367781d288c9751f393cb7099e14c2dec2132a0abb008e74c02357f57",
+    "components/upstream-thin/lib/verify_stripped.py": "2efaea18161488c40d6da131821fd0fac6065d51704781bef5d5ff5e500de4a8",
+    "components/upstream-thin/tests/test_stripped.py": "644f9441d3c40c8c21270c8c7afcc266315a53143aa006e96d9a5db40a69aaf3",
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json": "54dc44f655b3f05b80ea0695b2e288da830c7171ddd53acd061a3b7d71413f5c",
+    "experiments/epoch3-upstream-thin-stripped/accepted-r2-return.json": "09fe0cf8196a63190fc5086608e2c0ac32fdc18fb4b43f90aa753061bad40481",
+    "experiments/epoch3-upstream-thin-stripped/audit_stripped_acceptance.py": "ce5e63e1540b1930b1c1d977759a31586211b6f8153aa96c1b9d90cd944d525b",
+    "experiments/epoch3-upstream-thin-stripped/audit_stripped_target.py": "3d0be5d8926276e14a35e1b5140266004b620a19c9309802555032a9120ef4f4",
+    "experiments/epoch3-upstream-thin-stripped/run_stripped_target.py": "4ceed5c6b5c2bc865f93fc30584e0ac5cae32abacadf97857c47eb266d7a255a",
+    "experiments/epoch3-upstream-thin-stripped/stripped-independent-audit.json": "2bcced0bf26cfeecab68c4e9c5f50ddf8922a915ed47246e1ba263981945e31f",
+    "experiments/epoch3-upstream-thin-stripped/stripped-verification.json": "7797b4b9b1877f9d68fe3574692e5926e6d23c6b3be39382dcafdfc3fdfeb8bc",
+    "experiments/epoch3-upstream-thin-stripped/test_stripped_acceptance.py": "f3c918a91177ecb8a93f86e520959d57fa69b70fdede805ec7831076bac1152b",
+    "experiments/epoch3-upstream-thin-stripped/verify_stripped_acceptance.py": "be7e04bb9ee838438b274ef139b20ee6f56a1be267bb4549bb1eac57bfe4101a"
+  },
+  "inputs": {
+    "install_only_authority_sha256": "7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d",
+    "result_archive_sha256": "f23fcbaed9cdaad1da8ca355500e8181297f0c70b96618f5f5a802b607b08a93"
+  },
+  "next_action_class": "finalize-epoch3-artifact-family",
+  "predecessor": {
+    "commit": "bc7b655059c376f50f06c6c6171b508fbf2eb1a2",
+    "tree": "8d9a61713fb3de00e49d11b0a01fa314040e57a0"
+  },
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "status": "frozen-pass-stripped-complete-artifact-family-authorized",
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "decision": "distinct-archive",
+    "dynamic_and_alignment_surface_preserved": true,
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "non_elf_payload_unchanged": true,
+    "operation": "--strip-unneeded",
+    "regular_elf_count": 81
+  },
+  "tool_identity": {
+    "alias_invocation_semantics_preserved": true,
+    "llvm_version": "21.1.8",
+    "readelf_canonical": "/data/data/com.termux/files/usr/bin/llvm-readobj",
+    "readelf_invocation": "/data/data/com.termux/files/usr/bin/readelf",
+    "readelf_sha256": "f409f88b053ede038c37d2cc844a6c065a9d623cdebdf3f63d544beb8b55630e",
+    "strip_canonical": "/data/data/com.termux/files/usr/bin/llvm-objcopy",
+    "strip_invocation": "/data/data/com.termux/files/usr/bin/llvm-strip",
+    "strip_sha256": "b1196f21e347a912662b0bea76ad97c60f758e68c612b58006d505182a679392"
+  },
+  "verification": {
+    "independent_audit": "7/7",
+    "primary": "32/32",
+    "verifier_fixtures": "3/3"
+  }
+}

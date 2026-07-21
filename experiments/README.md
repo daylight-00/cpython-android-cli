@@ -328,6 +328,20 @@
 - [`experiments/epoch3-upstream-thin-install-only/install-only-independent-audit.json`](epoch3-upstream-thin-install-only/install-only-independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
 - [`experiments/epoch3-upstream-thin-install-only/install-only-verification.json`](epoch3-upstream-thin-install-only/install-only-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-install-only-acceptance`
 
+## `epoch3-upstream-thin-stripped`
+
+- [`experiments/epoch3-upstream-thin-stripped/accepted-r2-return.json`](epoch3-upstream-thin-stripped/accepted-r2-return.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/gate-diagnostics.json`](epoch3-upstream-thin-stripped/authority-evidence/gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/independent-audit.json`](epoch3-upstream-thin-stripped/authority-evidence/independent-audit.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/install-only-input-identity.json`](epoch3-upstream-thin-stripped/authority-evidence/install-only-input-identity.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/stripped-mutation-receipt.json`](epoch3-upstream-thin-stripped/authority-evidence/stripped-mutation-receipt.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/stripped-reproducibility.json`](epoch3-upstream-thin-stripped/authority-evidence/stripped-reproducibility.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/stripped-target-qualification.json`](epoch3-upstream-thin-stripped/authority-evidence/stripped-target-qualification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/authority-evidence/stripped-verification.json`](epoch3-upstream-thin-stripped/authority-evidence/stripped-verification.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-stripped-acceptance`
+- [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](epoch3-upstream-thin-stripped/stripped-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-stripped-governance`
+- [`experiments/epoch3-upstream-thin-stripped/stripped-independent-audit.json`](epoch3-upstream-thin-stripped/stripped-independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
+- [`experiments/epoch3-upstream-thin-stripped/stripped-verification.json`](epoch3-upstream-thin-stripped/stripped-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-stripped-acceptance`
+
 ## `stage1b-pyconfig`
 
 - [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority

@@ -379,3 +379,40 @@ version output. This does not alter the selected strip operation, eligible
 object boundary, source install-only identity, or archive contract. A regression
 fixture now uses an argv[0]-sensitive multi-call symlink and fails if alias
 identity is lost again.
+
+## 13. Canonical stripped r2 acceptance and artifact-family opening
+
+The corrected owner r2 transaction preserved LLVM alias invocation semantics,
+derived the stripped archive twice byte-identically, and passed exact mutation,
+ELF, Android/Bionic runtime, relocation, read-only, native-extension, pip, venv,
+subprocess, `python-config`, pkg-config, and independent-audit gates.
+
+```text
+filename       cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz
+sha256         40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134
+size           23841241
+members        3699
+regular ELF    81
+eligible ELF   1
+changed ELF    1
+changed path   bin/python3.14
+```
+
+The accepted result proves a truthful distinct stripped asset. The source is the
+exact frozen install-only archive; the only byte mutation is
+`--strip-unneeded` on the project-owned launcher. The remaining 80 upstream
+ELFs, all non-ELF payloads, paths, modes, symlinks, dynamic dependencies, and
+load-alignment surfaces are unchanged.
+
+The next gate integrates the three already frozen artifacts into one
+Astral-like release family. It must not rebuild or modify any archive. It may
+only copy the exact bytes and generate deterministic manifests, provenance,
+qualification summaries, archive license-file inventories, identity
+attestations, `SHA256SUMS`, and a release index that records the exact
+full-to-install-only projection and install-only-to-stripped derivation.
+
+Artifact-family completion does not itself make the product selectable or
+publishable. Component-to-license mapping, release/security/data-update and
+revocation operations, API-24 runtime, actual 16 KiB runtime, non-Termux Android
+context, and the selected remaining consumer experiments stay outside this
+gate.

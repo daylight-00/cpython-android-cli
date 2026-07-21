@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 21
+> **State revision:** 22
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          derive-epoch3-stripped-from-install-only
-work gate       E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
+action          finalize-epoch3-artifact-family
+work gate       E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E3/STRIPPED — Canonical install-only-stripped semantic identit
 
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
-gate    E3/STRIPPED — Canonical install-only-stripped semantic identity and qualification
+gate    E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
 status  in-progress
 ```
 
@@ -54,6 +54,7 @@ status  in-progress
 21. [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](../experiments/epoch3-upstream-thin-initialization/initialization-authority.json) — complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start
 22. [`experiments/epoch3-upstream-thin-full/full-authority.json`](../experiments/epoch3-upstream-thin-full/full-authority.json) — canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority
 23. [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](../experiments/epoch3-upstream-thin-install-only/install-only-authority.json) — canonical exact full projection, Android/Bionic qualification, and stripped start authority
+24. [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](../experiments/epoch3-upstream-thin-stripped/stripped-authority.json) — canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority
 
 ## Blockers
 
@@ -61,7 +62,7 @@ None.
 
 ## Unresolved risks
 
-- install_only_stripped-census-derivation-and-android-qualification-in-progress
+- artifact-family-integration-in-progress
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified

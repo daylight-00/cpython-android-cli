@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+    "size_bytes": 23841241
+  },
+  "authority_path": "experiments/epoch3-upstream-thin-stripped/stripped-authority.json",
+  "lock_kind": "epoch3-upstream-thin-canonical-install-only-stripped-r2",
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "size_bytes": 23841726
+  },
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "decision": "distinct-archive",
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "non_elf_payload_unchanged": true,
+    "operation": "--strip-unneeded",
+    "regular_elf_count": 81
+  },
+  "status": "frozen-by-stripped-authority"
+}
