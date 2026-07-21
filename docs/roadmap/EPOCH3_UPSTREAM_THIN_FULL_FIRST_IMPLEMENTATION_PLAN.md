@@ -200,3 +200,36 @@ external Termux compiler, include, library, or tool paths while allowing the
 Android-native candidate to be tested inside the current Termux app process.
 No full authority, downstream flavor, selectability, or publication claim is
 created by these harness corrections.
+## 8. Canonical full r4 acceptance and install-only opening
+
+The bounded r4 transaction completed with `main@54f942b`, exact official input,
+exact Astral golden input, two byte-identical full assemblies, Android/Bionic
+runtime qualification, and an independent return audit. The accepted artifact is:
+
+```text
+filename  cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst
+sha256    20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12
+size      39408292
+members   3752
+ELF       81
+extensions 67
+```
+
+The full authority freezes `python/install/**` as the sole downstream byte
+authority. The install-only projection preserves every install member, byte,
+mode, and relative symlink and performs only this path rewrite:
+
+```text
+python/install/X -> python/X
+```
+
+There is no test-tree or test-extension filtering in the initial projection.
+This follows Astral's documented full-to-install-only rule and avoids creating a
+second product-selection policy that is not present in the accepted full.
+`python/PYTHON.json` and `python/build/**` are excluded because they are outside
+`python/install/**`, not because of a post-projection filter.
+
+The accepted full does not authorize selectability, publication, API-24 runtime,
+actual 16 KiB page-size runtime, or non-Termux execution-context claims.
+Stripped implementation remains forbidden until a separate install-only
+authority is frozen.

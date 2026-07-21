@@ -1,0 +1,47 @@
+{
+  "artifact": {
+    "archive_member_count": 3752,
+    "elf_count": 81,
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "python_extension_count": 67,
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "claims": {
+    "actual_16k_runtime": false,
+    "android_bionic_runtime_current_owner_termux_process": true,
+    "api24_runtime": false,
+    "astral_structure_and_metadata_conformance": true,
+    "canonical_full_assembled": true,
+    "deterministic_reproduction": true,
+    "full_authority_frozen": false,
+    "non_termux_execution_context": false,
+    "publication": false,
+    "selectable": false,
+    "termux_native_dependency_count": 0
+  },
+  "evidence_files": {
+    "experiments/epoch3-upstream-thin-full/authority-evidence/astral-conformance.json": "85d3e44158ad04bdb1ea0cf3dcc2d8d11841bb5470de09afb07b1681128c5903",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/full-reproducibility.json": "634d44a8a3988be749a91ca8ea2955b47db334693066400a556b2e893f807db8",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/full-static-verification.json": "7df3b2b6883f89cea1af504111cd6d4aeeb17c32339d0c8bd884fea2a9891aad",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/full-target-qualification.json": "edc249c4dd9745facf9a69b98729770714324994451891a7b81fb3dd44307c3d",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/gate-diagnostics.json": "148a1b654446487def170d17139531c05286e5da5b919578ccc8435502d7ae44",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/independent-audit.json": "180b46e4f4d7db32dd04f76bc5de50d7a6848d4248ea5a7f5af2c61b5f18839b",
+    "experiments/epoch3-upstream-thin-full/authority-evidence/input-identities.json": "155cc7275dfc1713356c25272ed62d097afc46ef60b622ecf44b2b63ff685671"
+  },
+  "receipt_kind": "epoch3-canonical-full-r4-return-acceptance-input",
+  "repository_result": {
+    "post_head": "54f942bcd13b5a3282c13965eb2cc9b283c6bebb",
+    "post_tree": "4383874f02e198df796c187881ad9da4698140b5",
+    "pre_head": "00ac96f96e79e173f549956e323f2b2d6a725bc1",
+    "pre_tree": "0e2eed023820b57fdff40d015affd93460cb4698",
+    "remote_post_head": "54f942bcd13b5a3282c13965eb2cc9b283c6bebb"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-first-real-full-r4-results.tar.zst",
+    "sha256": "9aa7f062746b37ab1e947fbbdda56a6ed345b9837d4727dac728e82d3c6a2f0e",
+    "size_bytes": 39495005,
+    "transport": "gdrive:HW-T-results/cpython-android-cli-e3-first-real-full-r4-results.tar.zst"
+  },
+  "schema_version": 1
+}

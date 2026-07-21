@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 — Exact official upstream control",
-          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 \u2014 Exact official upstream control",
+          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
+          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 — Platform portability",
-          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 \u2014 Platform portability",
+          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -1615,7 +1615,7 @@
         "prerequisites_satisfied": true,
         "required_authority_role": "epoch3-initialization-selection-contract-and-full-start",
         "required_predecessor_action_class": "initialize-epoch3-from-accepted-evidence-export",
-        "status": "ready"
+        "status": "completed"
       },
       "claim_boundary": {
         "android_runtime_claim": true,
@@ -1655,7 +1655,7 @@
             "full-authority"
           ],
           "successor_action_class": "derive-epoch3-install-only-from-full",
-          "successor_must_exist": false,
+          "successor_must_exist": true,
           "successor_task_id": "E3-INSTALL-ONLY"
         }
       },
@@ -1726,6 +1726,124 @@
       ],
       "task_id": "E3-IMPLEMENT",
       "title": "Canonical upstream-thin full archive implementation and qualification",
+      "work_class": "T"
+    },
+    {
+      "action_class": "derive-epoch3-install-only-from-full",
+      "activation": {
+        "accepted_authority_path": "experiments/epoch3-upstream-thin-full/full-authority.json",
+        "accepted_authority_sha256": "a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0",
+        "prerequisites_satisfied": true,
+        "required_authority_role": "canonical-full-archive-and-projection-invariant",
+        "required_predecessor_action_class": "implement-epoch3-clean-upstream-derived-product",
+        "status": "ready"
+      },
+      "claim_boundary": {
+        "android_runtime_claim": true,
+        "canonical_full_complete_claim": true,
+        "device_qualification_claim": false,
+        "epoch2_closed_claim": true,
+        "epoch3_selection_claim": true,
+        "install_only_implementation_started_claim": false,
+        "official_upstream_identity_claim": true,
+        "product_selectability_claim": false,
+        "publication_claim": false
+      },
+      "completion_contract": {
+        "always": {
+          "all_required_verifiers_must_pass": true,
+          "full_authority_identity_must_match": true,
+          "generated_views_must_be_regenerated": true,
+          "new_markdown_or_json_requires_registry_update": true,
+          "one_runner_and_complete_receipt_required": true,
+          "stripped_implementation_before_install_only_authority_forbidden": true
+        },
+        "contract_version": 1,
+        "fail": {
+          "allowed_action_policy": "retain-install-only-implementation-or-select-bounded-correction",
+          "complete_receipt_required": true
+        },
+        "pass": {
+          "required_epoch3_gates": [
+            "E3-G2",
+            "E3-G4-install-only",
+            "E3-G6-install-only",
+            "E3-G7"
+          ],
+          "required_output_roles": [
+            "canonical-install-only-archive",
+            "exact-full-projection-receipt",
+            "install-only-target-qualification",
+            "install-only-independent-audit",
+            "install-only-authority"
+          ],
+          "successor_action_class": "derive-epoch3-stripped-from-install-only",
+          "successor_must_exist": false,
+          "successor_task_id": "E3-STRIPPED"
+        }
+      },
+      "default_exclusions": [
+        "docs/history/**",
+        "docs/handoff/**",
+        "docs/stages/**",
+        "unselected-epoch2-experiments",
+        "producer-only-source-build-machinery",
+        "legacy-components/standalone-product-path",
+        "past-chat-transcripts"
+      ],
+      "deliverable": {
+        "class": "canonical-install-only-projection-code-runner-receipt-audit-and-authority",
+        "owner_interface": "one-runner",
+        "result": "complete-pass-or-fail-install-only-projection-and-qualification-receipt"
+      },
+      "goal": "Derive the install-only archive exclusively from the accepted canonical full archive, preserve every python/install payload byte and symlink, exclude full-only metadata, prove deterministic projection and Android runtime behavior, and freeze an install-only authority before any stripped implementation.",
+      "input_routing": {
+        "fallback": "extract the exact accepted full artifact from its complete result archive after verifying the result archive and full SHA-256",
+        "first_attempt": "exact accepted full artifact from the prior bounded owner result cache",
+        "forbidden": [
+          "reassemble-install-only-from-official-upstream-input",
+          "use-an-independent-install-staging-tree",
+          "modify-projected-payload-bytes",
+          "start-stripped-before-install-only-authority",
+          "network-git-in-assistant-environment"
+        ]
+      },
+      "required_authorities": [
+        {
+          "path": "experiments/epoch3-upstream-thin-full/full-authority.json",
+          "reason": "Canonical full archive and exact projection source authority.",
+          "sha256": "a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-initialization/initialization-authority.json",
+          "reason": "Frozen artifact order, product contract, and Astral-like default rule.",
+          "sha256": "901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b"
+        }
+      ],
+      "required_reads": [
+        {
+          "path": "experiments/epoch3-upstream-thin-full/full-authority.json",
+          "reason": "Frozen full artifact identity, accepted projection invariant, and downstream implementation authorization.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md",
+          "reason": "Full-first artifact family and exact install-only projection contract.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
+          "reason": "Current install-only sequence, decision boundaries, and stripped gate.",
+          "scope": "full"
+        },
+        {
+          "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json",
+          "reason": "Exact accepted full input and projection lock.",
+          "scope": "full"
+        }
+      ],
+      "task_id": "E3-INSTALL-ONLY",
+      "title": "Canonical Astral-like install-only projection and qualification",
       "work_class": "T"
     }
   ]

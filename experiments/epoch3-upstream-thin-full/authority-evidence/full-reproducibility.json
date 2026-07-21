@@ -1,0 +1,12 @@
+{
+  "first": {
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "pass": true,
+  "schema_version": 1,
+  "second": {
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  }
+}

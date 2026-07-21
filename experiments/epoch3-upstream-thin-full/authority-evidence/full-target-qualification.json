@@ -1,0 +1,530 @@
+{
+  "archive": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-first-real-full-r4-results/target/artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "checks": {
+    "all_67_extensions": true,
+    "decompress": true,
+    "fresh_venv": true,
+    "pip_surface": true,
+    "pkg_config_surface": true,
+    "python_alias_commands": true,
+    "python_config_surface": true,
+    "read_only_install": true,
+    "runtime_location_a": true,
+    "whole_prefix_relocation": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "non_termux_context_claim": false,
+    "publication": false,
+    "qualified_context": "current owner Termux app process on Android/Bionic",
+    "selectable": false,
+    "termux_native_dependency_claim": false
+  },
+  "errors": [],
+  "evidence": {
+    "device": {
+      "execution_context": "Termux app process used only as an Android/Bionic qualification context",
+      "getprop_release": {
+        "command": [
+          "getprop",
+          "ro.build.version.release"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "16\n",
+        "timed_out": false
+      },
+      "getprop_sdk": {
+        "command": [
+          "getprop",
+          "ro.build.version.sdk"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "36\n",
+        "timed_out": false
+      },
+      "id": {
+        "command": [
+          "id"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "uid=10534(u0_a534) gid=10534(u0_a534) groups=10534(u0_a534),1077(external_storage),3003(inet),9997(everybody),20534(u0_a534_cache),50534(all_a534) context=u:r:untrusted_app_27:s0:c22,c258,c512,c768\n",
+        "timed_out": false
+      },
+      "optional_getconf_pagesize": {
+        "command": [
+          "getconf",
+          "PAGESIZE"
+        ],
+        "returncode": 127,
+        "stderr": "FileNotFoundError: [Errno 2] No such file or directory: 'getconf'",
+        "stdout": "",
+        "timed_out": false,
+        "tool_unavailable": true
+      },
+      "python_sysconf_pagesize": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+          "-c",
+          "import os; print(os.sysconf('SC_PAGE_SIZE'))"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "4096\n",
+        "timed_out": false
+      },
+      "uname": {
+        "command": [
+          "uname",
+          "-a"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Linux localhost 5.10.236-android12-9-31998796-abS908NKSS9GZE5 #1 SMP PREEMPT Tue May 12 12:31:59 UTC 2026 aarch64 Android\n",
+        "timed_out": false
+      }
+    },
+    "fresh_venv": {
+      "create": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--symlinks",
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "probe": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh/bin/python",
+          "-c",
+          "import json,sys;print(json.dumps({'pass':sys.prefix!=sys.base_prefix,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'executable':sys.executable}))"
+        ],
+        "data": {
+          "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+          "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh/bin/python",
+          "pass": true,
+          "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh"
+        },
+        "pass": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh\", \"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/state-b/venvs/fresh/bin/python\"}\n",
+        "timed_out": false
+      }
+    },
+    "pip_surface": {
+      "module": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+          "-m",
+          "pip",
+          "--version"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "pip 26.1.2 from /data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages/pip (python 3.14)\n",
+        "timed_out": false
+      },
+      "pip": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/pip",
+          "--version"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "pip 26.1.2 from /data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages/pip (python 3.14)\n",
+        "timed_out": false
+      },
+      "pip3": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/pip3",
+          "--version"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "pip 26.1.2 from /data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages/pip (python 3.14)\n",
+        "timed_out": false
+      },
+      "pip3.14": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/pip3.14",
+          "--version"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "pip 26.1.2 from /data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages/pip (python 3.14)\n",
+        "timed_out": false
+      }
+    },
+    "pkg_config_surface": {
+      "python-3.14": {
+        "command": [
+          "/data/data/com.termux/files/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "python-3.14"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/pkgconfig/../../lib\n",
+        "timed_out": false
+      },
+      "python-3.14-embed": {
+        "command": [
+          "/data/data/com.termux/files/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "python-3.14-embed"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/pkgconfig/../../lib -lpython3.14\n",
+        "timed_out": false
+      }
+    },
+    "python_alias_commands": {
+      "python": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python",
+          "-c",
+          "import json,sys;print(json.dumps({'pass':True,'executable':sys.executable,'version':sys.version_info[:3]}))"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"pass\": true, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python\", \"version\": [3, 14, 6]}\n",
+        "timed_out": false
+      },
+      "python3": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3",
+          "-c",
+          "import json,sys;print(json.dumps({'pass':True,'executable':sys.executable,'version':sys.version_info[:3]}))"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"pass\": true, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3\", \"version\": [3, 14, 6]}\n",
+        "timed_out": false
+      },
+      "python3.14": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+          "-c",
+          "import json,sys;print(json.dumps({'pass':True,'executable':sys.executable,'version':sys.version_info[:3]}))"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\"pass\": true, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"version\": [3, 14, 6]}\n",
+        "timed_out": false
+      }
+    },
+    "python_config_surface": {
+      "--cflags": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--cflags"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14 -I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO\n",
+        "timed_out": false
+      },
+      "--configdir": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--configdir"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/config-3.14-aarch64-linux-android\n",
+        "timed_out": false
+      },
+      "--exec-prefix": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--exec-prefix"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\n",
+        "timed_out": false
+      },
+      "--extension-suffix": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--extension-suffix"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".cpython-314-aarch64-linux-android.so\n",
+        "timed_out": false
+      },
+      "--includes": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--includes"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14 -I/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\n",
+        "timed_out": false
+      },
+      "--ldflags": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--ldflags"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog\n",
+        "timed_out": false
+      },
+      "--libs": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--libs"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-ldl -lm -llog\n",
+        "timed_out": false
+      },
+      "--prefix": {
+        "command": [
+          "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14-config",
+          "--prefix"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\n",
+        "timed_out": false
+      }
+    },
+    "read_only_install": {
+      "command": [
+        "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys, sysconfig\nmods=['_asyncio', '_bisect', '_blake2', '_bz2', '_codecs_cn', '_codecs_hk', '_codecs_iso2022', '_codecs_jp', '_codecs_kr', '_codecs_tw', '_csv', '_ctypes', '_ctypes_test', '_decimal', '_elementtree', '_hashlib', '_heapq', '_hmac', '_interpchannels', '_interpqueues', '_interpreters', '_json', '_lsprof', '_lzma', '_md5', '_multibytecodec', '_pickle', '_posixsubprocess', '_queue', '_random', '_remote_debugging', '_sha1', '_sha2', '_sha3', '_socket', '_sqlite3', '_ssl', '_statistics', '_struct', '_testbuffer', '_testcapi', '_testclinic', '_testclinic_limited', '_testimportmultiple', '_testinternalcapi', '_testlimitedcapi', '_testmultiphase', '_testsinglephase', '_xxtestfuzz', '_zoneinfo', '_zstd', 'array', 'binascii', 'cmath', 'fcntl', 'math', 'mmap', 'pyexpat', 'resource', 'select', 'syslog', 'termios', 'unicodedata', 'xxlimited', 'xxlimited_35', 'xxsubtype', 'zlib']\nfail={}\nfor name in mods:\n    try:\n        importlib.import_module(name)\n    except BaseException as exc:\n        fail[name]=type(exc).__name__+\":\"+str(exc)\nprefix=os.environ[\"HW_T_EXPECTED_PREFIX\"]\ndl={}\nfor rel in (\"lib/libcrypto_python.so\",\"lib/libssl_python.so\",\"lib/libsqlite3_python.so\",\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    path=os.path.join(prefix,rel)\n    if not os.path.exists(path):\n        dl[rel]=\"absent\"\n        continue\n    try:\n        ctypes.CDLL(path); dl[rel]=\"pass\"\n    except BaseException as exc:\n        dl[rel]=type(exc).__name__+\":\"+str(exc)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"pass\":True,\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ);env.pop(\"LD_LIBRARY_PATH\",None)\nchild=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\ntry:\n    child_data=json.loads(child.stdout.strip())\nexcept BaseException:\n    child_data=None\npaths=sysconfig.get_paths()\nvars={k:sysconfig.get_config_var(k) for k in (\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\",\"CC\",\"LDSHARED\",\"ANDROID_API_LEVEL\",\"HOST_GNU_TYPE\",\"BUILD_GNU_TYPE\",\"HW_T_CROSS_BUILD_SDK\")}\nwithin=lambda value: isinstance(value,str) and (value==prefix or value.startswith(prefix+os.sep))\npath_ok=all(within(value) for value in paths.values())\nvar_path_keys=(\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\")\nvar_ok=all(within(vars[key]) for key in var_path_keys)\nprint(json.dumps({\n \"pass\":not fail and child.returncode==0 and isinstance(child_data,dict) and child_data.get(\"pass\") is True and child_data.get(\"ld\") is None and path_ok and var_ok and os.environ.get(\"LD_LIBRARY_PATH\") is None,\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"extension_count\":len(mods),\"extension_failures\":fail,\"dlopen\":dl,\"child\":{\"returncode\":child.returncode,\"data\":child_data,\"stderr\":child.stderr},\n \"sysconfig\":{\"paths\":paths,\"vars\":vars,\"paths_within_prefix\":path_ok,\"path_vars_within_prefix\":var_ok},\n \"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+        "child": {
+          "data": {
+            "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+            "ld": null,
+            "pass": true,
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix"
+          },
+          "returncode": 0,
+          "stderr": ""
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/libcrypto_python.so": "pass",
+          "lib/libsqlite3_python.so": "pass",
+          "lib/libssl_python.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "pass": true,
+        "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+        "sysconfig": {
+          "path_vars_within_prefix": true,
+          "paths": {
+            "data": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "include": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "platinclude": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "platlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages",
+            "platstdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14",
+            "purelib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages",
+            "scripts": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin",
+            "stdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14"
+          },
+          "paths_within_prefix": true,
+          "vars": {
+            "ANDROID_API_LEVEL": 24,
+            "BINDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin",
+            "BUILD_GNU_TYPE": "aarch64-linux-android",
+            "CC": "clang",
+            "DESTSHARED": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/lib-dynload",
+            "HOST_GNU_TYPE": "aarch64-linux-android",
+            "HW_T_CROSS_BUILD_SDK": "unavailable-without-explicit-ndk-authority",
+            "INCLUDEPY": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "LDSHARED": "clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+            "LIBDEST": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14",
+            "LIBDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib",
+            "LIBPL": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/config-3.14-aarch64-linux-android",
+            "exec_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix"
+          }
+        }
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"child\": {\"data\": {\"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"ld\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\"}, \"returncode\": 0, \"stderr\": \"\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"sysconfig\": {\"path_vars_within_prefix\": true, \"paths\": {\"data\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"include\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\"}, \"paths_within_prefix\": true, \"vars\": {\"ANDROID_API_LEVEL\": 24, \"BINDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin\", \"BUILD_GNU_TYPE\": \"aarch64-linux-android\", \"CC\": \"clang\", \"DESTSHARED\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/lib-dynload\", \"HOST_GNU_TYPE\": \"aarch64-linux-android\", \"HW_T_CROSS_BUILD_SDK\": \"unavailable-without-explicit-ndk-authority\", \"INCLUDEPY\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"LDSHARED\": \"clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"LIBDEST\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\", \"LIBDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib\", \"LIBPL\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/config-3.14-aarch64-linux-android\", \"exec_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\"}}}\n",
+      "timed_out": false
+    },
+    "runtime_location_a": {
+      "command": [
+        "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys, sysconfig\nmods=['_asyncio', '_bisect', '_blake2', '_bz2', '_codecs_cn', '_codecs_hk', '_codecs_iso2022', '_codecs_jp', '_codecs_kr', '_codecs_tw', '_csv', '_ctypes', '_ctypes_test', '_decimal', '_elementtree', '_hashlib', '_heapq', '_hmac', '_interpchannels', '_interpqueues', '_interpreters', '_json', '_lsprof', '_lzma', '_md5', '_multibytecodec', '_pickle', '_posixsubprocess', '_queue', '_random', '_remote_debugging', '_sha1', '_sha2', '_sha3', '_socket', '_sqlite3', '_ssl', '_statistics', '_struct', '_testbuffer', '_testcapi', '_testclinic', '_testclinic_limited', '_testimportmultiple', '_testinternalcapi', '_testlimitedcapi', '_testmultiphase', '_testsinglephase', '_xxtestfuzz', '_zoneinfo', '_zstd', 'array', 'binascii', 'cmath', 'fcntl', 'math', 'mmap', 'pyexpat', 'resource', 'select', 'syslog', 'termios', 'unicodedata', 'xxlimited', 'xxlimited_35', 'xxsubtype', 'zlib']\nfail={}\nfor name in mods:\n    try:\n        importlib.import_module(name)\n    except BaseException as exc:\n        fail[name]=type(exc).__name__+\":\"+str(exc)\nprefix=os.environ[\"HW_T_EXPECTED_PREFIX\"]\ndl={}\nfor rel in (\"lib/libcrypto_python.so\",\"lib/libssl_python.so\",\"lib/libsqlite3_python.so\",\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    path=os.path.join(prefix,rel)\n    if not os.path.exists(path):\n        dl[rel]=\"absent\"\n        continue\n    try:\n        ctypes.CDLL(path); dl[rel]=\"pass\"\n    except BaseException as exc:\n        dl[rel]=type(exc).__name__+\":\"+str(exc)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"pass\":True,\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ);env.pop(\"LD_LIBRARY_PATH\",None)\nchild=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\ntry:\n    child_data=json.loads(child.stdout.strip())\nexcept BaseException:\n    child_data=None\npaths=sysconfig.get_paths()\nvars={k:sysconfig.get_config_var(k) for k in (\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\",\"CC\",\"LDSHARED\",\"ANDROID_API_LEVEL\",\"HOST_GNU_TYPE\",\"BUILD_GNU_TYPE\",\"HW_T_CROSS_BUILD_SDK\")}\nwithin=lambda value: isinstance(value,str) and (value==prefix or value.startswith(prefix+os.sep))\npath_ok=all(within(value) for value in paths.values())\nvar_path_keys=(\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\")\nvar_ok=all(within(vars[key]) for key in var_path_keys)\nprint(json.dumps({\n \"pass\":not fail and child.returncode==0 and isinstance(child_data,dict) and child_data.get(\"pass\") is True and child_data.get(\"ld\") is None and path_ok and var_ok and os.environ.get(\"LD_LIBRARY_PATH\") is None,\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"extension_count\":len(mods),\"extension_failures\":fail,\"dlopen\":dl,\"child\":{\"returncode\":child.returncode,\"data\":child_data,\"stderr\":child.stderr},\n \"sysconfig\":{\"paths\":paths,\"vars\":vars,\"paths_within_prefix\":path_ok,\"path_vars_within_prefix\":var_ok},\n \"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix",
+        "child": {
+          "data": {
+            "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix",
+            "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14",
+            "ld": null,
+            "pass": true,
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix"
+          },
+          "returncode": 0,
+          "stderr": ""
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/libcrypto_python.so": "pass",
+          "lib/libsqlite3_python.so": "pass",
+          "lib/libssl_python.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "pass": true,
+        "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix",
+        "sysconfig": {
+          "path_vars_within_prefix": true,
+          "paths": {
+            "data": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix",
+            "include": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14",
+            "platinclude": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14",
+            "platlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/site-packages",
+            "platstdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14",
+            "purelib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/site-packages",
+            "scripts": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin",
+            "stdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14"
+          },
+          "paths_within_prefix": true,
+          "vars": {
+            "ANDROID_API_LEVEL": 24,
+            "BINDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin",
+            "BUILD_GNU_TYPE": "aarch64-linux-android",
+            "CC": "clang",
+            "DESTSHARED": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/lib-dynload",
+            "HOST_GNU_TYPE": "aarch64-linux-android",
+            "HW_T_CROSS_BUILD_SDK": "unavailable-without-explicit-ndk-authority",
+            "INCLUDEPY": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14",
+            "LDSHARED": "clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+            "LIBDEST": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14",
+            "LIBDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib",
+            "LIBPL": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android",
+            "exec_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix",
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix"
+          }
+        }
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\", \"child\": {\"data\": {\"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\", \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14\", \"ld\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\"}, \"returncode\": 0, \"stderr\": \"\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\", \"sysconfig\": {\"path_vars_within_prefix\": true, \"paths\": {\"data\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\", \"include\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14\"}, \"paths_within_prefix\": true, \"vars\": {\"ANDROID_API_LEVEL\": 24, \"BINDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/bin\", \"BUILD_GNU_TYPE\": \"aarch64-linux-android\", \"CC\": \"clang\", \"DESTSHARED\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/lib-dynload\", \"HOST_GNU_TYPE\": \"aarch64-linux-android\", \"HW_T_CROSS_BUILD_SDK\": \"unavailable-without-explicit-ndk-authority\", \"INCLUDEPY\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/include/python3.14\", \"LDSHARED\": \"clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"LIBDEST\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14\", \"LIBDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib\", \"LIBPL\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix/lib/python3.14/config-3.14-aarch64-linux-android\", \"exec_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\", \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/runtime-a/prefix\"}}}\n",
+      "timed_out": false
+    },
+    "runtime_location_b": {
+      "command": [
+        "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys, sysconfig\nmods=['_asyncio', '_bisect', '_blake2', '_bz2', '_codecs_cn', '_codecs_hk', '_codecs_iso2022', '_codecs_jp', '_codecs_kr', '_codecs_tw', '_csv', '_ctypes', '_ctypes_test', '_decimal', '_elementtree', '_hashlib', '_heapq', '_hmac', '_interpchannels', '_interpqueues', '_interpreters', '_json', '_lsprof', '_lzma', '_md5', '_multibytecodec', '_pickle', '_posixsubprocess', '_queue', '_random', '_remote_debugging', '_sha1', '_sha2', '_sha3', '_socket', '_sqlite3', '_ssl', '_statistics', '_struct', '_testbuffer', '_testcapi', '_testclinic', '_testclinic_limited', '_testimportmultiple', '_testinternalcapi', '_testlimitedcapi', '_testmultiphase', '_testsinglephase', '_xxtestfuzz', '_zoneinfo', '_zstd', 'array', 'binascii', 'cmath', 'fcntl', 'math', 'mmap', 'pyexpat', 'resource', 'select', 'syslog', 'termios', 'unicodedata', 'xxlimited', 'xxlimited_35', 'xxsubtype', 'zlib']\nfail={}\nfor name in mods:\n    try:\n        importlib.import_module(name)\n    except BaseException as exc:\n        fail[name]=type(exc).__name__+\":\"+str(exc)\nprefix=os.environ[\"HW_T_EXPECTED_PREFIX\"]\ndl={}\nfor rel in (\"lib/libcrypto_python.so\",\"lib/libssl_python.so\",\"lib/libsqlite3_python.so\",\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    path=os.path.join(prefix,rel)\n    if not os.path.exists(path):\n        dl[rel]=\"absent\"\n        continue\n    try:\n        ctypes.CDLL(path); dl[rel]=\"pass\"\n    except BaseException as exc:\n        dl[rel]=type(exc).__name__+\":\"+str(exc)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys;print(json.dumps({\"pass\":True,\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ);env.pop(\"LD_LIBRARY_PATH\",None)\nchild=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\ntry:\n    child_data=json.loads(child.stdout.strip())\nexcept BaseException:\n    child_data=None\npaths=sysconfig.get_paths()\nvars={k:sysconfig.get_config_var(k) for k in (\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\",\"CC\",\"LDSHARED\",\"ANDROID_API_LEVEL\",\"HOST_GNU_TYPE\",\"BUILD_GNU_TYPE\",\"HW_T_CROSS_BUILD_SDK\")}\nwithin=lambda value: isinstance(value,str) and (value==prefix or value.startswith(prefix+os.sep))\npath_ok=all(within(value) for value in paths.values())\nvar_path_keys=(\"prefix\",\"exec_prefix\",\"BINDIR\",\"LIBDIR\",\"LIBDEST\",\"INCLUDEPY\",\"DESTSHARED\",\"LIBPL\")\nvar_ok=all(within(vars[key]) for key in var_path_keys)\nprint(json.dumps({\n \"pass\":not fail and child.returncode==0 and isinstance(child_data,dict) and child_data.get(\"pass\") is True and child_data.get(\"ld\") is None and path_ok and var_ok and os.environ.get(\"LD_LIBRARY_PATH\") is None,\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"extension_count\":len(mods),\"extension_failures\":fail,\"dlopen\":dl,\"child\":{\"returncode\":child.returncode,\"data\":child_data,\"stderr\":child.stderr},\n \"sysconfig\":{\"paths\":paths,\"vars\":vars,\"paths_within_prefix\":path_ok,\"path_vars_within_prefix\":var_ok},\n \"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+        "child": {
+          "data": {
+            "base_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+            "ld": null,
+            "pass": true,
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix"
+          },
+          "returncode": 0,
+          "stderr": ""
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/libcrypto_python.so": "pass",
+          "lib/libsqlite3_python.so": "pass",
+          "lib/libssl_python.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "pass": true,
+        "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+        "sysconfig": {
+          "path_vars_within_prefix": true,
+          "paths": {
+            "data": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "include": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "platinclude": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "platlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages",
+            "platstdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14",
+            "purelib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages",
+            "scripts": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin",
+            "stdlib": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14"
+          },
+          "paths_within_prefix": true,
+          "vars": {
+            "ANDROID_API_LEVEL": 24,
+            "BINDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin",
+            "BUILD_GNU_TYPE": "aarch64-linux-android",
+            "CC": "clang",
+            "DESTSHARED": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/lib-dynload",
+            "HOST_GNU_TYPE": "aarch64-linux-android",
+            "HW_T_CROSS_BUILD_SDK": "unavailable-without-explicit-ndk-authority",
+            "INCLUDEPY": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14",
+            "LDSHARED": "clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+            "LIBDEST": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14",
+            "LIBDIR": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib",
+            "LIBPL": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/config-3.14-aarch64-linux-android",
+            "exec_prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix",
+            "prefix": "/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix"
+          }
+        }
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"child\": {\"data\": {\"base_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"ld\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\"}, \"returncode\": 0, \"stderr\": \"\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/libcrypto_python.so\": \"pass\", \"lib/libsqlite3_python.so\": \"pass\", \"lib/libssl_python.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"pass\": true, \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"sysconfig\": {\"path_vars_within_prefix\": true, \"paths\": {\"data\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"include\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"platinclude\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"platlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages\", \"platstdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\", \"purelib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/site-packages\", \"scripts\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin\", \"stdlib\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\"}, \"paths_within_prefix\": true, \"vars\": {\"ANDROID_API_LEVEL\": 24, \"BINDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/bin\", \"BUILD_GNU_TYPE\": \"aarch64-linux-android\", \"CC\": \"clang\", \"DESTSHARED\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/lib-dynload\", \"HOST_GNU_TYPE\": \"aarch64-linux-android\", \"HW_T_CROSS_BUILD_SDK\": \"unavailable-without-explicit-ndk-authority\", \"INCLUDEPY\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/include/python3.14\", \"LDSHARED\": \"clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384\", \"LIBDEST\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14\", \"LIBDIR\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib\", \"LIBPL\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix/lib/python3.14/config-3.14-aarch64-linux-android\", \"exec_prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\", \"prefix\": \"/data/data/com.termux/files/usr/tmp/qualify-full-fgr7pczr/relocated/deep/path/prefix\"}}}\n",
+      "timed_out": false
+    }
+  },
+  "failed_checks": [],
+  "pass": true,
+  "qualification_kind": "epoch3-canonical-full-android-target",
+  "schema_version": 1
+}

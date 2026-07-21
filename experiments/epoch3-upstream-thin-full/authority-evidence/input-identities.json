@@ -1,0 +1,13 @@
+{
+  "astral_golden": {
+    "filename": "cpython-3.14.6+20260610-aarch64-unknown-linux-gnu-pgo+lto-full.tar.zst",
+    "sha256": "451113b0af15ded8986def51f05dc3a3f4516974dd78c3b27d768a1cb221a231",
+    "size_bytes": 102585386
+  },
+  "official": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size_bytes": 22358404
+  },
+  "schema_version": 1
+}

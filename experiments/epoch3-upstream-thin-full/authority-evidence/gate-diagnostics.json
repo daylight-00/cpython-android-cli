@@ -1,0 +1,38 @@
+{
+  "artifact": {
+    "path": "artifacts/cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "candidate_full_assembled": true,
+    "full_authority_frozen": false,
+    "install_only_implementation_started": false,
+    "non_termux_context_claim": false,
+    "publication": false,
+    "selectable": false
+  },
+  "failed_gates": [],
+  "gate_kind": "epoch3-upstream-thin-first-real-full-candidate",
+  "gates": {
+    "assembly_a": true,
+    "assembly_b": true,
+    "astral_conformance_boundary": true,
+    "astral_golden_observation": true,
+    "exact_official_input": true,
+    "full_reproducible": true,
+    "full_static_verification": true,
+    "full_target_qualification": true,
+    "launcher_build": true,
+    "only_full_artifact": true
+  },
+  "launcher": {
+    "path": "work-products/python3.14",
+    "sha256": "7ea03ea62800f5f202e09f90f79d76eda7075510ffe738fa48219b1f727408ba",
+    "size_bytes": 5728
+  },
+  "pass": true,
+  "schema_version": 1
+}

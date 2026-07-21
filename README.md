@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      implement-epoch3-clean-upstream-derived-product
+immediate action      derive-epoch3-install-only-from-full
 program epoch         E3 — clean upstream-derived Android standalone distribution
-program gate          E3/FULL — Canonical Astral-structured full archive implementation and qualification
+program gate          E3/INSTALL-ONLY — Canonical install-only projection and qualification
 ```
 
 ### Current claim boundary
@@ -33,15 +33,13 @@ none
 
 ### Unresolved risks
 
-- astral-golden-archive-conformance-pending
-- exact-official-full-assembly-owner-receipt-pending
+- install-only-exact-full-projection-and-android-qualification-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-full-start
 - other-Android-ABIs-explicitly-out-of-scope
 - CA-and-timezone-production-payload-experiment-pending
-- pip-wrapper-relocation-experiment-pending
 - install_only_stripped-semantic-identity-experiment-pending
 - uv-managed-consumer-compatibility-experiment-pending
 - upstream-derived-full-is-not-Astral-producer-object-full
@@ -72,6 +70,7 @@ none
 - [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json): API-24 official and API-36 source-equivalent three-class controlled comparison (`576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e`)
 - [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](experiments/epoch2-upstream-thin-closure/closure-authority.json): Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary (`8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc`)
 - [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](experiments/epoch3-upstream-thin-initialization/initialization-authority.json): complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start (`901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b`)
+- [`experiments/epoch3-upstream-thin-full/full-authority.json`](experiments/epoch3-upstream-thin-full/full-authority.json): canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority (`a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0`)
 
 ### Agent entry
 

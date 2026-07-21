@@ -1,0 +1,66 @@
+{
+  "candidate_archive": {
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292
+  },
+  "candidate_install_bin_entries": [
+    "pip",
+    "pip3",
+    "pip3.14",
+    "python",
+    "python3",
+    "python3.14",
+    "python3.14-config"
+  ],
+  "candidate_only_python_json_keys": [],
+  "canonical_roots_match": true,
+  "comparison_kind": "astral-golden-to-android-upstream-thin-full",
+  "golden_archive": {
+    "expected_sha256": "451113b0af15ded8986def51f05dc3a3f4516974dd78c3b27d768a1cb221a231",
+    "filename": "cpython-3.14.6+20260610-aarch64-unknown-linux-gnu-pgo+lto-full.tar.zst",
+    "sha256": "451113b0af15ded8986def51f05dc3a3f4516974dd78c3b27d768a1cb221a231",
+    "size_bytes": 102585386
+  },
+  "golden_only_python_json_keys": [
+    "crt_features",
+    "optimizations",
+    "python_bytecode_magic_number",
+    "python_symbol_visibility",
+    "run_tests",
+    "tcl_library_path",
+    "tcl_library_paths"
+  ],
+  "intentional_non_equivalence": [
+    "Astral producer object/static build_info is unavailable from the official Android embedding package.",
+    "The Android launcher and per-object relative RUNPATH are bounded project adaptations.",
+    "Dependency versions and native module topology are inherited from Python.org/BeeWare, not rebuilt by this project."
+  ],
+  "pass": true,
+  "schema_version": 1,
+  "shared_python_json_keys": [
+    "build_info",
+    "build_options",
+    "libpython_link_mode",
+    "license_path",
+    "licenses",
+    "python_abi_tag",
+    "python_config_vars",
+    "python_exe",
+    "python_extension_module_loading",
+    "python_implementation_cache_tag",
+    "python_implementation_hex_version",
+    "python_implementation_name",
+    "python_implementation_version",
+    "python_major_minor_version",
+    "python_paths",
+    "python_paths_abstract",
+    "python_platform_tag",
+    "python_stdlib_platform_config",
+    "python_stdlib_test_packages",
+    "python_suffixes",
+    "python_tag",
+    "python_version",
+    "target_triple",
+    "version"
+  ]
+}

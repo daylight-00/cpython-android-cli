@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "lock_kind": "epoch3-upstream-thin-canonical-full",
+  "release_id": "e3-full-r4",
+  "target_triple": "aarch64-linux-android",
+  "python_version": "3.14.6",
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+    "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "size_bytes": 39408292,
+    "member_count": 3752,
+    "elf_count": 81,
+    "python_extension_count": 67
+  },
+  "source": {
+    "official_archive_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "astral_golden_sha256": "451113b0af15ded8986def51f05dc3a3f4516974dd78c3b27d768a1cb221a231"
+  },
+  "projection": {
+    "install_only_source_prefix": "python/install/",
+    "install_only_target_prefix": "python/",
+    "preserve_all_install_members": true,
+    "payload_bytes_must_not_change": true,
+    "exclude_full_metadata": [
+      "python/PYTHON.json",
+      "python/build/**"
+    ],
+    "compression": "deterministic-tar-gzip"
+  },
+  "claim_boundary": {
+    "canonical_full_complete": true,
+    "install_only_implementation_authorized": true,
+    "selectable": false,
+    "publication": false,
+    "api24_runtime": false,
+    "actual_16k_runtime": false,
+    "non_termux_context": false
+  }
+}

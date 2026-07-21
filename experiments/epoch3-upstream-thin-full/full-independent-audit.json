@@ -1,0 +1,28 @@
+{
+  "accepted_return_sha256": "702171c16fc0081860a6f2180528c061302397f28f02f3203accf1f2f13d7dfc",
+  "audit_kind": "epoch3-canonical-full-authority-independent-audit",
+  "check_count": 10,
+  "checks": {
+    "accepted_artifact_matches_gate": true,
+    "accepted_size_matches_target": true,
+    "android_claim_is_bounded": true,
+    "full_code_identity_recorded": true,
+    "full_has_exact_inventory": true,
+    "full_is_only_artifact": true,
+    "independent_return_audit_passes": true,
+    "primary_verifier_passes": true,
+    "publication_withheld": true,
+    "selectability_withheld": true
+  },
+  "claim_boundary": {
+    "canonical_full_complete": true,
+    "install_only_may_start": true,
+    "publication": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 10,
+  "primary_output_sha256": "f0b318d2ca8dbd09a7939354a683b6ecd292bddf12ed9cfa1fcb67cff3b40b52",
+  "schema_version": 1
+}

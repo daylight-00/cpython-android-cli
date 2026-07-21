@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 18
+> **State revision:** 19
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          implement-epoch3-clean-upstream-derived-product
-work gate       E3/FULL — Canonical Astral-structured full archive implementation and qualification
+action          derive-epoch3-install-only-from-full
+work gate       E3/INSTALL-ONLY — Canonical install-only projection and qualification
 ```
 
 ## Mandatory project and session modules
@@ -25,8 +25,8 @@ work gate       E3/FULL — Canonical Astral-structured full archive implementat
 
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
-gate    E3/FULL — Canonical Astral-structured full archive implementation and qualification
-status  in-progress
+gate    E3/INSTALL-ONLY — Canonical install-only projection and qualification
+status  ready
 ```
 
 ## Accepted authorities
@@ -52,6 +52,7 @@ status  in-progress
 19. [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](../experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json) — API-24 official and API-36 source-equivalent three-class controlled comparison
 20. [`experiments/epoch2-upstream-thin-closure/closure-authority.json`](../experiments/epoch2-upstream-thin-closure/closure-authority.json) — Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary
 21. [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](../experiments/epoch3-upstream-thin-initialization/initialization-authority.json) — complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start
+22. [`experiments/epoch3-upstream-thin-full/full-authority.json`](../experiments/epoch3-upstream-thin-full/full-authority.json) — canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority
 
 ## Blockers
 
@@ -59,15 +60,13 @@ None.
 
 ## Unresolved risks
 
-- astral-golden-archive-conformance-pending
-- exact-official-full-assembly-owner-receipt-pending
+- install-only-exact-full-projection-and-android-qualification-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-full-start
 - other-Android-ABIs-explicitly-out-of-scope
 - CA-and-timezone-production-payload-experiment-pending
-- pip-wrapper-relocation-experiment-pending
 - install_only_stripped-semantic-identity-experiment-pending
 - uv-managed-consumer-compatibility-experiment-pending
 - upstream-derived-full-is-not-Astral-producer-object-full
