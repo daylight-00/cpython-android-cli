@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo "usage: build-launcher --prefix DIR --cc PATH --patchelf PATH --output FILE [--readelf PATH]" >&2
+  exit 2
+}
+
+PREFIX= CC= PATCHELF= OUTPUT= READELF=readelf
+while (($#)); do
+  case "$1" in
+    --prefix) PREFIX=$2; shift 2 ;;
+    --cc) CC=$2; shift 2 ;;
+    --patchelf) PATCHELF=$2; shift 2 ;;
+    --output) OUTPUT=$2; shift 2 ;;
+    --readelf) READELF=$2; shift 2 ;;
+    *) usage ;;
+  esac
+done
+[[ -n "$PREFIX" && -n "$CC" && -n "$PATCHELF" && -n "$OUTPUT" ]] || usage
+[[ -f "$PREFIX/include/python3.14/Python.h" ]] || { echo "missing Python.h" >&2; exit 3; }
+[[ -f "$PREFIX/lib/libpython3.14.so" ]] || { echo "missing libpython3.14.so" >&2; exit 3; }
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/../../.." && pwd)
+mkdir -p "$(dirname -- "$OUTPUT")"
+"$CC" -fPIE -pie -O2 -Wall -Wextra -pthread \
+  -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384 \
+  -I"$PREFIX/include/python3.14" "$ROOT/components/upstream-thin/src/python.c" \
+  -L"$PREFIX/lib" -lpython3.14 -ldl -lm -llog \
+  -Wl,--enable-new-dtags '-Wl,-rpath,$ORIGIN/../lib' -o "$OUTPUT"
+"$PATCHELF" --page-size 16384 --set-rpath '$ORIGIN/../lib' "$OUTPUT"
+"$READELF" -d "$OUTPUT" | grep -F 'Library runpath: [$ORIGIN/../lib]' >/dev/null
+"$READELF" -lW "$OUTPUT" | awk '/^[[:space:]]*LOAD / { if ($NF != "0x4000") exit 1; found=1 } END { exit !found }'
+sha256sum "$OUTPUT"

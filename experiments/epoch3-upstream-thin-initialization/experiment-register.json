@@ -1,0 +1,99 @@
+{
+  "concurrency_rule": "Experiments may run alongside full assembly when they do not change the exact official native input, do not import producer-only machinery, and feed an explicit decision gate before the affected release surface is published.",
+  "experiments": [
+    {
+      "blocks": [
+        "final full member contract",
+        "install_only projection",
+        "test filtering",
+        "archive naming"
+      ],
+      "can_run_parallel_with": "full staging and launcher integration",
+      "id": "E3-X1",
+      "priority": 1,
+      "title": "Astral golden archive conformance"
+    },
+    {
+      "blocks": [
+        "E3-G3"
+      ],
+      "can_run_parallel_with": "metadata and build-area assembly",
+      "id": "E3-X2",
+      "priority": 2,
+      "title": "Final launcher behavior parity"
+    },
+    {
+      "blocks": [
+        "install_only release"
+      ],
+      "can_run_parallel_with": "full completion",
+      "id": "E3-X3",
+      "priority": 3,
+      "title": "Install-only filtering"
+    },
+    {
+      "blocks": [
+        "install_only_stripped release"
+      ],
+      "can_run_parallel_with": "install_only implementation",
+      "id": "E3-X4",
+      "priority": 4,
+      "title": "Stripped semantic identity"
+    },
+    {
+      "blocks": [
+        "pip wrapper publication"
+      ],
+      "can_run_parallel_with": "full qualification",
+      "id": "E3-X5",
+      "priority": 5,
+      "title": "Relocation-safe pip wrappers"
+    },
+    {
+      "blocks": [
+        "managed consumer claim",
+        "final PYTHON.json optional-field policy"
+      ],
+      "can_run_parallel_with": "full metadata iteration",
+      "id": "E3-X6",
+      "priority": 6,
+      "title": "Real Astral/uv consumer compatibility"
+    },
+    {
+      "blocks": [
+        "strong Termux-independent context claim"
+      ],
+      "can_run_parallel_with": "archive projection work",
+      "id": "E3-X7",
+      "priority": 7,
+      "title": "Non-Termux Android execution"
+    },
+    {
+      "blocks": [
+        "minimum API and actual 16 KiB runtime claims"
+      ],
+      "can_run_parallel_with": "post-full qualification",
+      "id": "E3-X8",
+      "priority": 8,
+      "title": "API-24 and real 16 KiB qualification"
+    },
+    {
+      "blocks": [
+        "data payload publication"
+      ],
+      "can_run_parallel_with": "runtime archive work",
+      "id": "E3-X9",
+      "priority": 9,
+      "title": "CA/timezone production payload"
+    }
+  ],
+  "register_kind": "epoch3-upstream-thin-concurrent-experiment-register",
+  "schema_version": 1,
+  "status": "active-during-full-first-assembly",
+  "stop_conditions": [
+    "an experiment requires rebuilding an upstream native dependency",
+    "an experiment requires changing the official input archive",
+    "a result would silently broaden the support claim",
+    "an affected release surface reaches packaging without a disposition"
+  ]
+}

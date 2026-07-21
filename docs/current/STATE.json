@@ -119,15 +119,21 @@
       "path": "experiments/epoch2-upstream-thin-closure/closure-authority.json",
       "role": "Epoch 2 closure, accepted upstream-derived seed, selection inputs, and Epoch 3 initialization boundary",
       "sha256": "8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc"
+    },
+    {
+      "id": "epoch3-upstream-thin-initialization-and-full-start",
+      "path": "experiments/epoch3-upstream-thin-initialization/initialization-authority.json",
+      "role": "complete Epoch 3 selection register, clean repository boundary, product contract freeze, independent audit, and canonical full implementation start",
+      "sha256": "901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b"
     }
   ],
   "active_plan": {
-    "detail_path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-    "detail_sha256": "81fc0baaa996952c3caab86ea4abc7168b04e4aea357bc98530a332ea3ceef0a",
+    "detail_path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
+    "detail_sha256": "0c780d9a1fcea0c339fe0bfbccc30d73b2fb75bb4bf03a4a6a1b5558916ae2ce",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "docs/epochs/EPOCH3_UPSTREAM_THIN_ASTRAL_BOUNDARY_REVIEW.md",
+  "active_work_package": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -151,7 +157,10 @@
   "claim_boundaries": {
     "dual_real_device_aarch64_termux_compatibility": true,
     "emulator_qualified": false,
-    "epoch3_feature_selection_started": false,
+    "epoch3_feature_selection_complete": true,
+    "epoch3_feature_selection_started": true,
+    "full_implementation_started": true,
+    "full_release_complete": false,
     "publication_authorized": false,
     "selectable": false
   },
@@ -160,14 +169,14 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "next_action_class": "implement-epoch3-clean-upstream-derived-product",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "resume_program_action_class": "implement-epoch3-clean-upstream-derived-product",
     "status": "completed"
   },
   "documentation_layers": {
-    "active_plan": "docs/roadmap/EPOCH2_PROGRAM_PLAN.md",
+    "active_plan": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
     "agent_bootstrap": "AGENT_BOOTSTRAP.md",
     "agent_task": "docs/current/AGENT_TASK.json",
     "authority_root": "docs/evidence/README.md",
@@ -187,23 +196,23 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+  "next_action_class": "implement-epoch3-clean-upstream-derived-product",
   "predecessor": {
-    "commit": "9331e4aef31d5f30c86aa4556bb71b2c878c6d03",
-    "tree": "9061ba96de6cd6de5ca4b8c074ec7ac14e116d46"
+    "commit": "f1ae4e08737a635846c7265a854c48c76559e6b8",
+    "tree": "f1fa16e29dffdfdc5e8d18c544bd14c29f1dd422"
   },
   "program": {
     "epoch": {
       "id": "E3",
       "name": "clean upstream-derived Android standalone distribution",
-      "status": "initialization-in-progress"
+      "status": "implementation-in-progress"
     },
     "gate": {
-      "id": "E3/INIT",
-      "name": "Epoch 3 initialization decisions and contract freeze",
+      "id": "E3/FULL",
+      "name": "Canonical Astral-structured full archive implementation and qualification",
       "status": "in-progress"
     },
-    "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "next_action_class": "implement-epoch3-clean-upstream-derived-product",
     "status": "in-progress"
   },
   "project_model": {
@@ -244,37 +253,36 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 17,
+  "state_revision": 18,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "79328d6d7d6683b36016ee2541a26de88ccad596ceb4c478201da17800ffcffd"
+    "sha256": "7b4dfb2d8ff41adfafca773566e5f8215ffb9ff3269984c18db40641083a203e"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "initialize-epoch3-from-accepted-evidence-export",
-    "pass_successor_action_class": "implement-epoch3-clean-upstream-derived-product",
+    "current_action_class": "implement-epoch3-clean-upstream-derived-product",
+    "pass_successor_action_class": "derive-epoch3-install-only-from-full",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "minimum-supported-Android-API-unselected",
+    "astral-golden-archive-conformance-pending",
+    "exact-official-full-assembly-owner-receipt-pending",
+    "API24-runtime-qualification-pending",
     "runtime-16KiB-device-support-unqualified",
-    "ADB-root-APK-and-non-Termux-contexts-unqualified",
-    "emulator-unqualified-and-waived",
-    "other-Android-ABIs-unqualified",
-    "CA-and-timezone-payload-provider-and-update-policy-unselected",
-    "multiprocessing-environment-inadequate",
-    "pre-existing-venv-after-base-relocation-fails",
-    "install_only_stripped-duplicates-install_only",
-    "runtime-only-versus-on-device-SDK-versus-cross-SDK-unselected",
-    "uv-system-versus-managed-contract-unselected",
-    "API36-production-input-would-require-stable-official-NDK-reproduction",
-    "upstream-derived-full-differs-from-Astral-source-producer-full",
-    "supported-version-release-cadence-security-and-data-update-operations-unselected",
-    "source-producer-host-isolation-and-libffi-fix-deferred",
+    "non-Termux-Android-context-unqualified",
+    "emulator-unqualified-and-not-required-for-current-full-start",
+    "other-Android-ABIs-explicitly-out-of-scope",
+    "CA-and-timezone-production-payload-experiment-pending",
+    "pip-wrapper-relocation-experiment-pending",
+    "install_only_stripped-semantic-identity-experiment-pending",
+    "uv-managed-consumer-compatibility-experiment-pending",
+    "upstream-derived-full-is-not-Astral-producer-object-full",
+    "support-security-data-update-and-revocation-operations-pending",
+    "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "publication-not-authorized"
   ],
-  "updated_by_transaction": "20260721-e3-init-upstream-thin-boundary-review-v1"
+  "updated_by_transaction": "20260721-e3-init-complete-full-first-implementation-start-v1"
 }

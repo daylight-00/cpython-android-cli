@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       initialize-epoch3-from-accepted-evidence-export
-gate         E3/INIT — Epoch 3 initialization decisions and contract freeze
-tracked docs 687
+action       implement-epoch3-clean-upstream-derived-product
+gate         E3/FULL — Canonical Astral-structured full archive implementation and qualification
+tracked docs 697
 indexes      16
 ```
 
@@ -41,7 +41,10 @@ indexes      16
 - [`components/standalone/contracts/qualification-v1.json`](../../components/standalone/contracts/qualification-v1.json) — `FROZEN_AUTHORITY` · `machine_contract` · owner `standalone-component`
 - [`components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json`](../../components/standalone/contracts/termux-native-cpython3146-producer-binding-v1.json) — `FROZEN_AUTHORITY` · `machine_contract` · owner `standalone-component`
 - [`components/standalone/schemas/qualification-result-v1.schema.json`](../../components/standalone/schemas/qualification-result-v1.schema.json) — `STABLE` · `machine_contract` · owner `standalone-component`
+- [`components/upstream-thin/README.md`](../../components/upstream-thin/README.md) — `STABLE` · `component_contract` · owner `epoch3-upstream-thin-product`
+- [`components/upstream-thin/contracts/product-v1.json`](../../components/upstream-thin/contracts/product-v1.json) — `FROZEN_AUTHORITY` · `product_contract` · owner `epoch3-product-governance`
 - [`config/dependencies/android-source-deps-aarch64-linux-android.lock.json`](../../config/dependencies/android-source-deps-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
+- [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`
 - [`docs/GITHUB_COLLABORATION_WORKFLOW.md`](../GITHUB_COLLABORATION_WORKFLOW.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`

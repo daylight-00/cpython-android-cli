@@ -1,0 +1,56 @@
+{
+  "authority_kind": "epoch3-upstream-thin-initialization-and-full-start",
+  "claim_boundary": {
+    "android_runtime_prior_evidence": true,
+    "device_qualification": false,
+    "epoch3_selection": true,
+    "full_release_complete": false,
+    "implementation_started": true,
+    "publication": false,
+    "selectable": false
+  },
+  "completion": {
+    "E3-I1": true,
+    "E3-I2": true,
+    "E3-I3": true,
+    "E3-I4": true
+  },
+  "file_identities": {
+    "components/upstream-thin/contracts/product-v1.json": "a7dd3d878339898cf6e04b6f18d5ab68057c105cd76c6bb24a05b9fa9f4117fa",
+    "components/upstream-thin/src/python.c": "15b38b3acf1e3861fb036fe593de1e002e30bdb1be113c005330055bc6dbfbfd",
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json": "47f94dab7e792a383f25d8752f1134a4720ed4f5e163aec76dc11cce2ee5f1e9",
+    "docs/contracts/EPOCH3_UPSTREAM_THIN_CLEAN_REPOSITORY_BOUNDARY.json": "348093c4682f671eb58cde90b26cf899f597bdacb82284c1103673d177bf3d1c",
+    "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md": "de206aac2410701608a615dc60daea32167c2e554fbf7e452058dbb4f801e401",
+    "docs/epochs/EPOCH3_UPSTREAM_THIN_SELECTION_REGISTER.json": "b5c2354db195d9df0bb87d536a75d5fcf0219734069580244326695164387963",
+    "experiments/epoch3-upstream-thin-initialization/audit_epoch3_initialization.py": "8dc22d46fe96d2ba7dd8e8983530738de9cc4ca6d181a653e97cc95e61e21acf",
+    "experiments/epoch3-upstream-thin-initialization/independent-audit.json": "aefd69e7dd97f1cd9c46c04c213bada77377d72784ddc8a2a5ad8f7cbcf59aff",
+    "experiments/epoch3-upstream-thin-initialization/verify_epoch3_initialization.py": "a1d388a1d6ae05aac09e92d0cf2854d24a2b589158505f0a5dbe46618749b9fc"
+  },
+  "next_action_class": "implement-epoch3-clean-upstream-derived-product",
+  "predecessor": {
+    "commit": "f1ae4e08737a635846c7265a854c48c76559e6b8",
+    "tree": "f1fa16e29dffdfdc5e8d18c544bd14c29f1dd422"
+  },
+  "product": {
+    "active_root": "components/upstream-thin/",
+    "artifact_order": [
+      "full",
+      "install_only",
+      "install_only_stripped"
+    ],
+    "full_release_complete": false,
+    "implementation_started": true
+  },
+  "schema_version": 1,
+  "selection": {
+    "complete": true,
+    "count": 18,
+    "default": "adopt Astral-like unless impossible or Android adaptation is required"
+  },
+  "status": "frozen-pass-initialization-complete-full-implementation-started",
+  "verification": {
+    "independent_audit": "14/14",
+    "primary": "25/25",
+    "synthetic_and_negative_tests": "7/7"
+  }
+}

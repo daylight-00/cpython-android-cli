@@ -295,6 +295,12 @@
 - [`experiments/epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json`](epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json`](epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch3-upstream-thin-initialization`
+
+- [`experiments/epoch3-upstream-thin-initialization/experiment-register.json`](epoch3-upstream-thin-initialization/experiment-register.json) — `ACTIVE_PLAN` · `program_plan` · owner `epoch3-program-governance`
+- [`experiments/epoch3-upstream-thin-initialization/independent-audit.json`](epoch3-upstream-thin-initialization/independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
+- [`experiments/epoch3-upstream-thin-initialization/initialization-authority.json`](epoch3-upstream-thin-initialization/initialization-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-initialization`
+
 ## `stage1b-pyconfig`
 
 - [`experiments/stage1b-pyconfig/README.md`](stage1b-pyconfig/README.md) — `HISTORICAL_SNAPSHOT` · `historical_narrative` · owner `epoch1-history` · snapshot-relative; never current authority

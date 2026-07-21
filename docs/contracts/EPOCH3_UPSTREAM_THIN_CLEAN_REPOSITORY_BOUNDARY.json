@@ -1,0 +1,36 @@
+{
+  "active_launcher": "components/upstream-thin/src/python.c",
+  "active_product_contract": "components/upstream-thin/contracts/product-v1.json",
+  "active_product_root": "components/upstream-thin/",
+  "allowed_imports": [
+    "official Python.org Android archive identified by the product lock",
+    "official package metadata and licenses",
+    "LA-2 source copied from the accepted UT-2 evidence with recorded identity",
+    "LR-3 relative RUNPATH algorithm copied as bounded product code",
+    "selected sysconfig normalization behavior from accepted UT-3 evidence",
+    "selected three-root policy from accepted UT-4 evidence",
+    "focused semantic tests and deterministic archive tooling"
+  ],
+  "artifact_flow": "full is the sole assembly authority; install_only is a mechanical projection of full; install_only_stripped is derived only from install_only",
+  "boundary_kind": "epoch3-clean-upstream-thin-repository-boundary",
+  "claim_boundary": {
+    "full_release_complete": false,
+    "implementation_started": true,
+    "publication": false,
+    "selectable": false,
+    "selection_complete": true
+  },
+  "forbidden_runtime_or_build_dependencies": [
+    "components/standalone legacy producer facade",
+    "experiments/** at product execution time",
+    "Termux native libraries or Termux prefix identity",
+    "project-built OpenSSL, SQLite, libffi, xz, bzip2, zlib, or other upstream dependency replacements",
+    "API-36 source-equivalent producer machinery",
+    "Epoch 4 source-producer code",
+    "network Git or unpinned runtime acquisition"
+  ],
+  "legacy_retention_policy": "Existing Epoch 1/2 code and experiments remain evidence/history but are not imported by components/upstream-thin.",
+  "repository_flow": "single append-only main; no feature branch is required for this program unless the owner explicitly changes the rule",
+  "schema_version": 1,
+  "status": "frozen"
+}

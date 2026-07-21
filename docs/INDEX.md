@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `initialize-epoch3-from-accepted-evidence-export`
-- gate: `E3/INIT` — Epoch 3 initialization decisions and contract freeze
+- action class: `implement-epoch3-clean-upstream-derived-product`
+- gate: `E3/FULL` — Canonical Astral-structured full archive implementation and qualification
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `687`
+- tracked Markdown/JSON: `697`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

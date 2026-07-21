@@ -1,0 +1,89 @@
+{
+  "artifact_order": [
+    "full",
+    "install_only",
+    "install_only_stripped"
+  ],
+  "artifacts": {
+    "full": {
+      "compression": "zstd",
+      "required": true,
+      "required_members": [
+        "python/PYTHON.json",
+        "python/build/",
+        "python/install/"
+      ],
+      "role": "canonical assembly and derivation authority",
+      "root": "python/"
+    },
+    "install_only": {
+      "compression": "gzip",
+      "derivation": "project python/install/** from verified full to python/**; exclude python/PYTHON.json and python/build/**",
+      "required": true,
+      "root": "python/"
+    },
+    "install_only_stripped": {
+      "compression": "gzip",
+      "derivation": "from verified install_only only; record every ELF before/after identity; allow explicit producer-already-stripped alias mode",
+      "required": true,
+      "root": "python/"
+    }
+  },
+  "build_area": {
+    "forbidden": [
+      "fake core objects",
+      "fake static libpython",
+      "fake extension objects",
+      "fake static dependency archives",
+      "fake relinkable inittab"
+    ],
+    "meaning": "truthful upstream-derived input, project adaptation, mutation, audit, license, and qualification records; not a producer object tree"
+  },
+  "contract_kind": "epoch3-upstream-thin-astral-structured-product",
+  "contract_version": 1,
+  "input_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json",
+  "install": {
+    "data_root_external": true,
+    "immutable": true,
+    "layout": "normal relocatable POSIX-style prefix under python/install",
+    "state_root_external": true
+  },
+  "launcher": {
+    "model": "CPython Programs/python.c POSIX-equivalent Py_BytesMain",
+    "project_owned": true,
+    "reason": "official Android package is embedding-oriented and has no interpreter executable",
+    "source": "components/upstream-thin/src/python.c"
+  },
+  "loader": {
+    "bootstrap_self_reexec": false,
+    "model": "LR-3",
+    "page_alignment_bytes": 16384,
+    "project_required_LD_LIBRARY_PATH": false,
+    "rule": "every ELF receives one relative DT_RUNPATH from its own directory to install/lib"
+  },
+  "metadata": {
+    "astral_format_version": 8,
+    "fabricated_producer_objects_forbidden": true,
+    "path": "python/PYTHON.json",
+    "project_metadata_root": "python/build/hw-t/",
+    "standard_fields_only_until_consumer_test": true
+  },
+  "native_boundary": {
+    "android_native": true,
+    "project_dependency_builds": 0,
+    "termux_native_dependencies": 0,
+    "upstream_dependency_topology_inherited": true
+  },
+  "publication": {
+    "authorized": false,
+    "selectable": false
+  },
+  "reference_priority": [
+    "Astral python-build-standalone archive and metadata contract",
+    "official Python.org Android package bytes and BeeWare dependency topology",
+    "bounded Android adaptations selected by accepted project evidence"
+  ],
+  "schema_version": 1,
+  "selection_register": "docs/epochs/EPOCH3_UPSTREAM_THIN_SELECTION_REGISTER.json",
+  "status": "implementation-started-not-selectable"
+}

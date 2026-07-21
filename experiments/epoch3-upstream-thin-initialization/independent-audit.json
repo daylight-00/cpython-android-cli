@@ -1,0 +1,32 @@
+{
+  "audit_kind": "epoch3-upstream-thin-initialization-independent-audit",
+  "check_count": 14,
+  "checks": {
+    "active_code_does_not_import_experiments": true,
+    "active_code_has_no_termux_prefix": true,
+    "active_python_compiles": true,
+    "clean_root_matches_contract": true,
+    "every_selection_has_one_disposition": true,
+    "full_is_only_assembly_authority": true,
+    "install_only_cannot_be_independent": true,
+    "launcher_exact_accepted_source": true,
+    "nine_experiments_bounded": true,
+    "primary_verifier_passes": true,
+    "producer_surface_truthful": true,
+    "stripped_cannot_be_independent": true,
+    "termux_native_dependency_zero": true,
+    "upstream_native_topology_inherited": true
+  },
+  "claim_boundary": {
+    "full_release_complete": false,
+    "implementation_started": true,
+    "publication": false,
+    "selectable": false,
+    "selection_complete": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 14,
+  "primary_verifier_output_sha256": "14b59e873d8d7ab789be2775b802b3c322e63fcd6a63b8d53aac0968be466c6e",
+  "schema_version": 1
+}

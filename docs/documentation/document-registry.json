@@ -26,15 +26,15 @@
     "mixed_document_correction_enabled": true,
     "navigation_root": "docs/navigation/README.md",
     "navigation_target_count": 16,
-    "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
+    "next_action_class": "implement-epoch3-clean-upstream-derived-product",
     "next_migration_phase": null,
     "ordinary_handoff_packages_required": false,
     "phase1_tracked_document_count": 415,
     "phase2_new_document_count": 10,
     "physical_moves_allowed": false,
     "physical_moves_decision": "not-required",
-    "predecessor_head": "082d005716934ea63f98c6fe232151b6c9b813ab",
-    "predecessor_tree": "097b4b7cce6d7fb6d6552a381a74350cd132f9ef",
+    "predecessor_head": "f1ae4e08737a635846c7265a854c48c76559e6b8",
+    "predecessor_tree": "f1fa16e29dffdfdc5e8d18c544bd14c29f1dd422",
     "scope_extensions": [
       ".json",
       ".md"
@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 687
+    "tracked_document_count": 697
   },
   "documents": [
     {
@@ -186,6 +186,36 @@
       "update_trigger": "New schema version only."
     },
     {
+      "authority_domain": "component_contract",
+      "format": "md",
+      "lifecycle_class": "STABLE",
+      "machine_binding_policy": "stable-only",
+      "migration_action": "keep",
+      "mutability": "controlled",
+      "onboarding_visibility": "contextual",
+      "owner": "epoch3-upstream-thin-product",
+      "path": "components/upstream-thin/README.md",
+      "planned_canonical_parent": "components/README.md",
+      "rationale": "Active clean product component for Epoch 3.",
+      "supersession_rule": "Update with versioned product component contract change.",
+      "update_trigger": "Product component ownership, interface, or artifact flow changes."
+    },
+    {
+      "authority_domain": "product_contract",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-product-contract-v1",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-product-governance",
+      "path": "components/upstream-thin/contracts/product-v1.json",
+      "planned_canonical_parent": "docs/contracts/README.md",
+      "rationale": "Machine contract for the upstream-thin Astral-structured artifact family.",
+      "supersession_rule": "Create product-v2 and explicit successor authority.",
+      "update_trigger": "Never edit after freeze; create a new contract version."
+    },
+    {
       "authority_domain": "program_input",
       "format": "json",
       "lifecycle_class": "CURRENT_INPUT_LOCK",
@@ -199,6 +229,21 @@
       "rationale": "",
       "supersession_rule": "Commit new lock with evidence; historical authorities bind old lock digest.",
       "update_trigger": "Only when selected product/dependency input changes."
+    },
+    {
+      "authority_domain": "program_input",
+      "format": "json",
+      "lifecycle_class": "CURRENT_INPUT_LOCK",
+      "machine_binding_policy": "allowed-versioned",
+      "migration_action": "keep-versioned",
+      "mutability": "versioned-update",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-product-input-governance",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json",
+      "planned_canonical_parent": "docs/current/STATE.json",
+      "rationale": "Exact official Python.org Android input selected for upstream-thin.",
+      "supersession_rule": "Commit a new lock and preserve authorities bound to this version.",
+      "update_trigger": "Only when the selected official product input changes."
     },
     {
       "authority_domain": "program_input",
@@ -645,6 +690,36 @@
       "rationale": "",
       "supersession_rule": "Explicit amendment/supersedes edge.",
       "update_trigger": "Never edit after acceptance; create amendment or new version."
+    },
+    {
+      "authority_domain": "product_contract",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-clean-boundary",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-product-governance",
+      "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_CLEAN_REPOSITORY_BOUNDARY.json",
+      "planned_canonical_parent": "docs/contracts/README.md",
+      "rationale": "Defines the active clean product root and excluded laboratory/producer dependencies.",
+      "supersession_rule": "Explicit versioned amendment and successor authority.",
+      "update_trigger": "Never edit after freeze; create amendment when repository boundary changes."
+    },
+    {
+      "authority_domain": "product_contract",
+      "format": "md",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-product-contract",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-product-governance",
+      "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md",
+      "planned_canonical_parent": "docs/contracts/README.md",
+      "rationale": "Human-readable full-first product contract.",
+      "supersession_rule": "Explicit versioned successor contract.",
+      "update_trigger": "Never edit after freeze; create a new contract version."
     },
     {
       "authority_domain": "navigation",
@@ -1304,6 +1379,21 @@
       "rationale": "Current E3-INIT comparison of Astral standalone structure, official Python.org Android input, bounded adaptations, experiment needs, and thin exclusions.",
       "supersession_rule": "Supersede with the frozen Epoch 3 selection register and product contract; preserve this review as decision input.",
       "update_trigger": "Change only during E3-INIT research, classification, or decision-boundary correction."
+    },
+    {
+      "authority_domain": "product_selection",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-selection-register",
+      "mutability": "immutable-versioned",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-product-governance",
+      "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_SELECTION_REGISTER.json",
+      "planned_canonical_parent": "docs/epochs/README.md",
+      "rationale": "Complete SEL-01 through SEL-18 disposition register.",
+      "supersession_rule": "Explicit amendment retaining prior dispositions and rationale.",
+      "update_trigger": "Never edit after freeze; amend through a new selection authority."
     },
     {
       "authority_domain": "normative_policy",
@@ -5209,6 +5299,21 @@
       "update_trigger": "Never edit."
     },
     {
+      "authority_domain": "program_plan",
+      "format": "md",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "snapshot-only",
+      "migration_action": "e3-full-first-plan",
+      "mutability": "controlled-plan",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-program-governance",
+      "path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Current full-first implementation sequence and concurrent experiment lanes.",
+      "supersession_rule": "Current progress remains in STATE.json; plan changes require explicit plan update.",
+      "update_trigger": "Change only when decomposition, gates, or sequencing changes."
+    },
+    {
       "authority_domain": "navigation",
       "format": "md",
       "lifecycle_class": "GENERATED_VIEW",
@@ -9112,6 +9217,51 @@
       "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
       "rationale": "",
       "supersession_rule": "Explicit successor experiment or authority only.",
+      "update_trigger": "Never edit after freeze; create successor authority."
+    },
+    {
+      "authority_domain": "program_plan",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "snapshot-only",
+      "migration_action": "e3-concurrent-experiment-register",
+      "mutability": "controlled-plan",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-program-governance",
+      "path": "experiments/epoch3-upstream-thin-initialization/experiment-register.json",
+      "planned_canonical_parent": "experiments/README.md",
+      "rationale": "Bounded experiments allowed concurrently with full assembly.",
+      "supersession_rule": "Freeze each completed experiment separately; amend register only for scope or gate changes.",
+      "update_trigger": "Experiment scope, block relation, or stop-condition change."
+    },
+    {
+      "authority_domain": "machine_audit",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-init-independent-audit",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "independent-audit",
+      "path": "experiments/epoch3-upstream-thin-initialization/independent-audit.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Independent audit of complete initialization and full implementation start.",
+      "supersession_rule": "Create a new audit for a successor authority.",
+      "update_trigger": "Never edit after freeze."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-init-authority",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-initialization",
+      "path": "experiments/epoch3-upstream-thin-initialization/initialization-authority.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Freezes E3-I1 through E3-I4 and starts full-first implementation.",
+      "supersession_rule": "Explicit successor authority only.",
       "update_trigger": "Never edit after freeze; create successor authority."
     },
     {

@@ -4,7 +4,8 @@
     "device_qualification_claim": false,
     "epoch2_closed_claim": true,
     "epoch3_initialization_ready_claim": true,
-    "epoch3_selection_claim": false,
+    "epoch3_selection_claim": true,
+    "full_implementation_started_claim": true,
     "official_upstream_identity_claim": true,
     "product_selectability_claim": false,
     "publication_claim": false
@@ -13,38 +14,31 @@
     "always": {
       "all_required_verifiers_must_pass": true,
       "generated_views_must_be_regenerated": true,
-      "implementation_expansion_before_selection_complete_forbidden": true,
+      "install_only_implementation_before_full_authority_forbidden": true,
       "new_markdown_or_json_requires_registry_update": true,
       "one_runner_and_complete_receipt_required": true
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain-current-action-or-select-cataloged-bounded-correction",
+      "allowed_action_policy": "retain-full-implementation-or-select-bounded-correction",
       "complete_receipt_required": true
     },
     "pass": {
-      "required_initialization_gates": [
-        "E3-I1",
-        "E3-I2",
-        "E3-I3",
-        "E3-I4"
+      "required_epoch3_gates": [
+        "E3-G1",
+        "E3-G2",
+        "E3-G3",
+        "E3-G4-full"
       ],
       "required_output_roles": [
-        "epoch3-selection-register",
-        "clean-repository-boundary",
-        "product-contract-freeze",
-        "initialization-independent-audit",
-        "initialization-authority"
+        "canonical-full-archive",
+        "full-assembly-receipt",
+        "full-independent-audit",
+        "full-authority"
       ],
-      "required_selection_dispositions": [
-        "adopt",
-        "adopt-with-redesign",
-        "exclude",
-        "defer-to-epoch4"
-      ],
-      "successor_action_class": "implement-epoch3-clean-upstream-derived-product",
+      "successor_action_class": "derive-epoch3-install-only-from-full",
       "successor_must_exist": false,
-      "successor_task_id": "E3-IMPLEMENT"
+      "successor_task_id": "E3-INSTALL-ONLY"
     }
   },
   "default_exclusions": [
@@ -53,82 +47,82 @@
     "docs/stages/**",
     "unselected-epoch2-experiments",
     "producer-only-source-build-machinery",
+    "legacy-components/standalone-product-path",
     "past-chat-transcripts"
   ],
   "deliverable": {
-    "class": "epoch3-initialization-authority-and-clean-repository-contract",
+    "class": "canonical-full-archive-code-runner-receipt-audit-and-authority",
     "owner_interface": "one-runner",
-    "result": "complete-pass-or-fail-receipt"
+    "result": "complete-pass-or-fail-full-assembly-and-qualification-receipt"
   },
   "generated_from": {
     "state": "docs/current/STATE.json",
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "one bounded owner-run repository initialization runner",
-    "first_attempt": "repository-local-accepted-evidence-export",
+    "fallback": "one bounded owner-run acquisition-build-assemble-qualify runner",
+    "first_attempt": "repository-local full assembler with exact owner-supplied or owner-cached official input",
     "forbidden": [
-      "reopen-unrelated-epoch2-experiments",
-      "import-complete-laboratory-history",
-      "start-product-implementation-before-selection-register",
+      "assemble-install-only-before-full-authority",
+      "assemble-stripped-before-install-only-authority",
+      "rebuild-or-substitute-upstream-native-dependencies",
+      "import-experiments-as-product-runtime-dependencies",
       "network-git-in-assistant-environment"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E3/INIT",
-    "name": "Epoch 3 initialization decisions and contract freeze",
+    "id": "E3/FULL",
+    "name": "Canonical Astral-structured full archive implementation and qualification",
     "status": "in-progress"
   },
   "required_authorities": [
     {
-      "path": "experiments/epoch2-upstream-thin-closure/closure-authority.json",
-      "reason": "Frozen Epoch 2 closure and producer-independent evidence export.",
-      "sha256": "8f3ed1fffb15fcc4302653176086797cbe0d64a30fe51f79570f11a4639e9fdc"
+      "path": "experiments/epoch3-upstream-thin-initialization/initialization-authority.json",
+      "reason": "Frozen E3-I1 through E3-I4 completion, complete selection register, clean boundary, product contract, and implementation start.",
+      "sha256": "901cd0ecde47ce3fc15f256976d2075db714c2003a51e996b5c278a1d1e22f3b"
     },
     {
       "path": "experiments/epoch2-upstream-thin-closure/accepted-product-seed-boundary.json",
-      "reason": "Accepted minimal upstream-derived initialization seed.",
+      "reason": "Exact accepted official input and minimal launcher/loader/metadata/data seed.",
       "sha256": "3c9b6e104455234b2290b3c57785c09678f0d3c7aa30df4d080de4bbb4a9aa86"
     }
   ],
   "required_reads": [
     {
-      "path": "docs/epochs/EPOCH3_CHARTER.md",
-      "reason": "Epoch 3 mission, producer model, selection boundary, and repository contract.",
+      "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_SELECTION_REGISTER.json",
+      "reason": "Frozen dispositions for every selectable product surface.",
       "scope": "full"
     },
     {
-      "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_ASTRAL_BOUNDARY_REVIEW.md",
-      "reason": "Current E3-INIT Astral/Python.org boundary classification, truthful 1:1 definition, bounded adaptations, thin exclusions, and authorized experiment candidates.",
+      "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md",
+      "reason": "Canonical full-first archive, metadata, Android adaptation, and omission contract.",
       "scope": "full"
     },
     {
-      "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
-      "reason": "Epoch 3 initialization gates.",
-      "scope": "section",
-      "section_heading": "## 8. Epoch 3 initialization gates",
-      "stop_before_heading": "## 9. Epoch 3 completion gates"
-    },
-    {
-      "path": "experiments/epoch2-upstream-thin-closure/epoch3-initialization-contract.json",
-      "reason": "Frozen initialization inputs and no-implementation-before-selection rule.",
+      "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_CLEAN_REPOSITORY_BOUNDARY.json",
+      "reason": "Active clean product root and forbidden legacy/producer dependencies.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch2-upstream-thin-closure/reference-hierarchy.json",
-      "reason": "Astral primary product reference and Python.org/CPython secondary Android input authority boundary.",
+      "path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
+      "reason": "Current assembly order, parallel work lanes, and experiment gates.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-initialization/experiment-register.json",
+      "reason": "Bounded E3-X1 through E3-X9 experiments allowed during full assembly.",
       "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 17,
+  "state_revision": 18,
   "task": {
-    "action_class": "initialize-epoch3-from-accepted-evidence-export",
-    "goal": "Consume the accepted Epoch 2 producer-independent export, complete every product selection disposition, define the clean repository boundary, and freeze the Epoch 3 product contract before implementation expands.",
-    "id": "E3-INIT",
-    "title": "Epoch 3 initialization decisions and clean repository contract",
-    "work_class": "L"
+    "action_class": "implement-epoch3-clean-upstream-derived-product",
+    "goal": "Implement and qualify the canonical Astral-structured full archive from the exact official Python.org Android package, while running bounded decision-closing experiments in parallel and preserving full as the sole source of downstream flavors.",
+    "id": "E3-IMPLEMENT",
+    "title": "Canonical upstream-thin full archive implementation and qualification",
+    "work_class": "T"
   }
 }

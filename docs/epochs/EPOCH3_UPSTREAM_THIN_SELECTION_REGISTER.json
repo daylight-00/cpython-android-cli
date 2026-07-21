@@ -1,0 +1,156 @@
+{
+  "allowed_dispositions": [
+    "adopt",
+    "adopt-with-redesign",
+    "exclude",
+    "defer-to-epoch4"
+  ],
+  "artifact_order": [
+    "full",
+    "install_only",
+    "install_only_stripped"
+  ],
+  "decision_rule": "Adopt Astral-like structure, behavior, metadata, and consumer surface wherever upstream bytes or bounded project support make it truthful; exclude or defer only producer surfaces and dependencies unavailable without a separate build.",
+  "global_non_claims": [
+    "publication authorized",
+    "selectable release complete",
+    "all Android contexts supported",
+    "all Android ABIs supported",
+    "actual 16 KiB device qualified",
+    "complete Astral producer build_info",
+    "source-built CPython or dependencies"
+  ],
+  "primary_product": "astral-structured-pythonorg-produced-android-adapted-upstream-thin",
+  "register_kind": "epoch3-upstream-thin-product-selection-register",
+  "schema_version": 1,
+  "selection_count": 18,
+  "selections": [
+    {
+      "decision": "Install pip only from the wheel already carried by the official package; do not acquire a replacement wheel and do not change the native producer topology.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-01",
+      "item": "base-pip",
+      "release_gate": "deterministic package-only bootstrap and relocation qualification"
+    },
+    {
+      "decision": "Provide Astral-like pip, pip3, and pip3.14 command surfaces only through relocation-safe project wrappers; python -m pip remains the normative fallback.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-02",
+      "item": "pip-command-wrappers",
+      "release_gate": "E3-X5 wrapper relocation and shell-contract experiment"
+    },
+    {
+      "decision": "Provide a versioned project-supported CA payload outside the immutable Python install tree through DATA_ROOT; preserve caller override and independent update/rollback.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-03",
+      "item": "ca-payload",
+      "release_gate": "E3-X9 provider, license, update, rollback, and corruption tests"
+    },
+    {
+      "decision": "Provide a versioned project-supported timezone payload outside the immutable Python install tree through DATA_ROOT; do not write updates into the archive-derived prefix.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-04",
+      "item": "timezone-payload",
+      "release_gate": "E3-X9 provider, license, update, rollback, and corruption tests"
+    },
+    {
+      "decision": "Do not add a non-Astral runtime-only archive flavor. The canonical user artifact is Astral install_only derived from full.",
+      "disposition": "exclude",
+      "id": "SEL-05",
+      "item": "separate-runtime-only-flavor",
+      "reason": "A separate runtime-only flavor is not required for Astral archive parity and would create a project-specific product class."
+    },
+    {
+      "decision": "Retain upstream headers, shared libpython, pkg-config, and normalized sysconfig as a bounded on-device extension SDK inside the normal install tree.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-06",
+      "item": "on-device-native-extension-sdk",
+      "non_claim": "No static relinking, custom built-ins, or dependency rebuild support."
+    },
+    {
+      "decision": "Do not bundle an NDK, sysroot, producer object tree, or complete cross toolchain in upstream-thin.",
+      "disposition": "defer-to-epoch4",
+      "id": "SEL-07",
+      "item": "host-cross-build-sdk",
+      "reason": "The official embedding package does not contain the complete producer material required for an Astral-style relinking SDK."
+    },
+    {
+      "decision": "Ship the bounded subprocess surface already evidenced with sys.executable child re-entry; document unavailable or Android-sensitive operations explicitly.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-08",
+      "item": "subprocess-secondary-surface",
+      "release_gate": "final launcher/archive qualification"
+    },
+    {
+      "decision": "Support creation of new venvs before or after base installation movement only within the qualified cases; require recreation of pre-existing venvs after base relocation.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-09",
+      "item": "venv-relocation",
+      "non_claim": "Arbitrary relocation of existing venvs is unsupported."
+    },
+    {
+      "decision": "Do not claim general multiprocessing support in the initial upstream-thin release.",
+      "disposition": "exclude",
+      "id": "SEL-10",
+      "item": "multiprocessing-primitives",
+      "reason": "The Android execution environment and available start methods were inadequate in Epoch 2 evidence."
+    },
+    {
+      "decision": "Adopt external/system-interpreter consumption first and pursue Astral-like managed catalog compatibility only if the exact consumer accepts the truthful Android PYTHON.json and partial build_info.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-11",
+      "item": "uv-integration",
+      "release_gate": "E3-X6 real consumer compatibility"
+    },
+    {
+      "decision": "Generate after install_only. Publish a distinct stripped archive only when a recorded safe strip operation changes bytes; otherwise publish an explicit producer-already-stripped alias identity or omit the duplicate asset according to the release index contract.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-12",
+      "item": "install-only-stripped",
+      "release_gate": "E3-X4 section census, strip safety, and identity decision"
+    },
+    {
+      "decision": "Do not publish symbols or debug products absent from the official producer. Do not create a separate project test artifact; test-material retention is governed by Astral golden projection rules.",
+      "disposition": "exclude",
+      "id": "SEL-13",
+      "item": "symbols-debug-and-separate-test-artifacts",
+      "reason": "No upstream debug/symbol producer bytes exist."
+    },
+    {
+      "decision": "Use the exact official Python.org 3.14.6 aarch64-linux-android archive with its BeeWare-derived dependency closure and minimum API 24. Do not use the API-36 source-equivalent experiment as a production input.",
+      "disposition": "adopt",
+      "id": "SEL-14",
+      "input_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+      "item": "native-input-family"
+    },
+    {
+      "decision": "Set the intended product floor to Android API 24 because that is the official input floor; publication at API 24 requires direct qualification and remains withheld until then.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-15",
+      "item": "minimum-supported-android-api",
+      "release_gate": "API-24 device or managed-emulator qualification"
+    },
+    {
+      "decision": "Preserve and statically verify 16 KiB ELF alignment in every transformation; claim actual 16 KiB runtime support only after a real 16 KiB device passes.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-16",
+      "item": "16-kib-page-size",
+      "release_gate": "E3-X8 real 16 KiB runtime qualification"
+    },
+    {
+      "decision": "The product is a native CLI distribution. Termux app-process and a non-Termux shell/app-private native context are qualification targets; APK/JNI packaging is a separate consumer layer and not part of the archive product.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-17",
+      "item": "supported-android-contexts",
+      "release_gate": "E3-X7 non-Termux execution"
+    },
+    {
+      "decision": "Track official Python.org Android patch releases, independently version CA/timezone payloads, retain rollback and revocation lineage, and separate upstream native security ownership from project adaptation ownership.",
+      "disposition": "adopt-with-redesign",
+      "id": "SEL-18",
+      "item": "version-release-security-and-data-cadence",
+      "release_gate": "E3-G8 patch-update rehearsal and operations contract"
+    }
+  ],
+  "status": "complete-frozen-for-full-first-implementation"
+}

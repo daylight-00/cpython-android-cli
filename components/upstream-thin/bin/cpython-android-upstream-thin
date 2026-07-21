@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+LIB = ROOT / "components/upstream-thin/lib"
+
+
+def main() -> int:
+    if len(sys.argv) < 2 or sys.argv[1] not in {"assemble-full", "verify-full", "test"}:
+        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|test} ...", file=sys.stderr)
+        return 2
+    command = sys.argv[1]
+    if command == "test":
+        return subprocess.call([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "components/upstream-thin/tests"), "-v"], cwd=ROOT)
+    implementation = LIB / ("assemble_full.py" if command == "assemble-full" else "verify_full.py")
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(LIB) + (os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else "")
+    return subprocess.call([sys.executable, str(implementation), *sys.argv[2:]], cwd=ROOT, env=env)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
