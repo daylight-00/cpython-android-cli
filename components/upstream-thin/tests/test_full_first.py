@@ -55,6 +55,10 @@ class FullFirstTests(unittest.TestCase):
             }
         }
         with tarfile.open(archive, "w:gz") as tf:
+            # The official Python.org Android archive begins with this normal
+            # POSIX tar root marker. Product extraction must accept it without
+            # weakening parent-traversal or link safety.
+            add_directory(tf, ".")
             for directory in (
                 "prefix",
                 "prefix/lib",
@@ -127,6 +131,7 @@ class FullFirstTests(unittest.TestCase):
             artifacts = [next(output.glob("*-full.tar.zst")) for output in outputs]
             self.assertEqual(artifacts[0].read_bytes(), artifacts[1].read_bytes())
 
+
     def test_rejects_parent_traversal(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -171,13 +176,20 @@ class FullFirstTests(unittest.TestCase):
     def test_rejects_incomplete_input_without_prefix(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            archive = root / "incomplete.tar.gz"
-            with tarfile.open(archive, "w:gz") as tf:
-                add_file(tf, "README.txt", b"no prefix\n")
             launcher = root / "launcher"
             launcher.write_text("x")
             launcher.chmod(0o755)
-            proc = self.assemble_fixture(archive, launcher, root / "out")
+
+            archive = root / "incomplete.tar.gz"
+            with tarfile.open(archive, "w:gz") as tf:
+                add_file(tf, "README.txt", b"no prefix\n")
+            proc = self.assemble_fixture(archive, launcher, root / "out-incomplete")
+            self.assertNotEqual(proc.returncode, 0)
+
+            invalid_root = root / "invalid-root-marker.tar.gz"
+            with tarfile.open(invalid_root, "w:gz") as tf:
+                add_file(tf, ".", b"not a directory")
+            proc = self.assemble_fixture(invalid_root, launcher, root / "out-invalid-root")
             self.assertNotEqual(proc.returncode, 0)
 
     def test_contract_is_full_first(self) -> None:

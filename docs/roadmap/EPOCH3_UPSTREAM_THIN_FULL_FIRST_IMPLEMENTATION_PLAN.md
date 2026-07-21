@@ -120,3 +120,20 @@ It performs these operations without starting either downstream flavor:
 A passing returned result is an input to the next repository transaction. It is
 not itself the full authority and does not broaden API, page-size, non-Termux,
 selectability, or publication claims.
+
+## 8. First real full execution history
+
+### r1 — bounded harness correction required
+
+The first owner execution acquired and verified both exact locked inputs, then
+stopped before launcher construction because the safe extractor rejected the
+normal leading `.` directory member in the official Python.org tar archive.
+This was a harness classification error, not a product, upstream-byte, loader,
+relocation, Astral-conformance, or Android-runtime failure. No full artifact was
+created, the independent audit was correctly blocked, local main rolled back to
+`00ac96f`, and remote main remained unchanged.
+
+The bounded r2 correction permits `.` only when it is a directory root marker.
+Absolute paths, `..` traversal, duplicate normalized members, special files,
+hard links, and escaping symlinks remain rejected. Positive, expected-negative,
+and incomplete fixture coverage is retained before the real target rerun.

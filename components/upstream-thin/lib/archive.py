@@ -37,7 +37,13 @@ def normalize_member_name(name: str) -> str:
     if not name or name.startswith("/") or "\\" in name or "\x00" in name:
         raise ValueError(f"unsafe archive path: {name!r}")
     normalized = posixpath.normpath(name)
-    if normalized in {".", ".."} or normalized.startswith("../"):
+    # POSIX tar writers commonly emit a leading `.` directory member. It is a
+    # harmless marker for the extraction root, not a path component to create.
+    # Preserve it as a sentinel so safe_extract_tar() can require that it is a
+    # directory while continuing to reject every parent-traversal form.
+    if normalized == ".":
+        return normalized
+    if normalized == ".." or normalized.startswith("../"):
         raise ValueError(f"unsafe archive path: {name!r}")
     if any(part in {"", ".", ".."} for part in PurePosixPath(normalized).parts):
         raise ValueError(f"unsafe archive component: {name!r}")
@@ -72,6 +78,8 @@ def safe_extract_tar(archive: Path, destination: Path, mode: str = "r:*") -> lis
             if name in names:
                 raise ValueError(f"duplicate archive member: {name}")
             names.add(name)
+            if name == "." and not member.isdir():
+                raise ValueError("archive root marker must be a directory")
             if member.islnk() or member.isdev() or member.isfifo():
                 raise ValueError(f"forbidden archive member type: {name}")
             if not (member.isdir() or member.isfile() or member.issym()):
