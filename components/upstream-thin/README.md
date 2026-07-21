@@ -42,3 +42,11 @@ the project-owned `bin/python3.14` launcher is eligible. A distinct stripped
 asset is valid only if exactly that launcher changes while its dynamic and load
 alignment surface remains identical and the complete Android qualification is
 repeated.
+
+The artifact-family increment never rebuilds any frozen archive. It copies the
+exact full, install-only, and install-only-stripped bytes into one flat
+Astral-like release set and deterministically emits per-asset artifact,
+manifest, provenance, qualification, license-file-inventory, and attestation
+sidecars together with `SHA256SUMS` and `release-index.json`. The family remains
+qualified but unselectable and unpublished until the separately cataloged
+release-blocking experiments and complete component-to-license mapping close.

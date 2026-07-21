@@ -11,9 +11,9 @@ LIB = ROOT / "components/upstream-thin/lib"
 
 
 def main() -> int:
-    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "observe-astral", "test"}
+    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "assemble-family", "verify-family", "observe-astral", "test"}
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
-        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|observe-astral|test} ...", file=sys.stderr)
+        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|assemble-family|verify-family|observe-astral|test} ...", file=sys.stderr)
         return 2
     command = sys.argv[1]
     if command == "test":
@@ -28,12 +28,15 @@ def main() -> int:
         "assemble-stripped": "assemble_stripped.py",
         "verify-stripped": "verify_stripped.py",
         "qualify-stripped": "qualify_stripped.py",
+        "assemble-family": "release_family.py",
+        "verify-family": "release_family.py",
         "observe-astral": "observe_astral.py",
     }
     implementation = LIB / implementations[command]
     env = os.environ.copy()
     env["PYTHONPATH"] = str(LIB) + (os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else "")
-    return subprocess.call([sys.executable, str(implementation), *sys.argv[2:]], cwd=ROOT, env=env)
+    extra = ["assemble"] if command == "assemble-family" else ["verify"] if command == "verify-family" else []
+    return subprocess.call([sys.executable, str(implementation), *extra, *sys.argv[2:]], cwd=ROOT, env=env)
 
 
 if __name__ == "__main__":
