@@ -1,0 +1,37 @@
+{
+  "exit_condition": {
+    "additional_delta_count": 13,
+    "all_16k": true,
+    "b_official_dependency_asset_identity_count": 6,
+    "b_official_dependency_manifest_entry_count": 319,
+    "b_official_dependency_manifest_equal_count": 319,
+    "b_official_package_incomplete_rebuild_dependency_count": 4,
+    "b_representative_dependency_count": 6,
+    "b_representative_dependency_equal_count": 6,
+    "behavior_pass_count": 3,
+    "c_libffi_android_configure_fallback_complete": true,
+    "c_source_dependency_count": 6,
+    "c_source_dependency_host_isolation_complete": true,
+    "class_count": 3,
+    "official_dependency_asset_count": 6,
+    "runtime_pass_count": 3
+  },
+  "failed_gate_conditions": [],
+  "gate_condition": {
+    "benchmark_and_size_complete": true,
+    "class_a_exact_official": true,
+    "class_b_build_complete": true,
+    "class_b_official_dependencies_retained": true,
+    "class_c_build_complete": true,
+    "class_c_source_tags_complete": true,
+    "controlled_delta_inventory_complete": true,
+    "elf_16k_matrix_complete": true,
+    "no_epoch3_selection": true,
+    "no_minimum_runtime_inference": true,
+    "provenance_and_build_burden_complete": true,
+    "runtime_matrix_complete": true,
+    "wheel_sysconfig_symbols_complete": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

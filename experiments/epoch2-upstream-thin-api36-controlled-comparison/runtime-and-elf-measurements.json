@@ -1,0 +1,5483 @@
+{
+  "A": {
+    "behavior": {
+      "data": {
+        "filesystem": true,
+        "monotonic": true,
+        "sha256": "986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809",
+        "sqlite": "3.50.4",
+        "subprocess": true,
+        "tls": "OpenSSL 3.5.7 9 Jun 2026"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"filesystem\": true, \"monotonic\": true, \"sha256\": \"986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809\", \"sqlite\": \"3.50.4\", \"subprocess\": true, \"tls\": \"OpenSSL 3.5.7 9 Jun 2026\"}\n"
+    },
+    "compile_api": 24,
+    "elf": {
+      "all_16k_compatible": true,
+      "elf_count": 81,
+      "max_observed_versioned_android_api": null,
+      "minimum_runtime_inference_made": false,
+      "objects": [
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "bin/python3.14",
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+          "size": 5752
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/afalg.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "a3bf894ca5468d41ec12e73a86d1e7caa7086e8edbbcf0d31e31f1dd007b8601",
+          "size": 19745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/capi.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "8043f3ec7dcc2b2e633a9b20e6256c92ee90b1f4e5fb541928c14e369bde1a62",
+          "size": 18465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/loader_attic.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "bb66e9c4a3bf542a3f72f47c4ed384d713ab663171fc09ec9d8c44613a7359e3",
+          "size": 54521
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/padlock.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "2ae0cd57c34bb2e0700a434530b41f2567339b2cf432879aeb21db5d3f000d4d",
+          "size": 18465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libcrypto.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "a45df9867808dd80793d1451fa5d908f272cd7d2146eecf60545b32cd5c3cde3",
+          "size": 4666689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libcrypto_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "a45df9867808dd80793d1451fa5d908f272cd7d2146eecf60545b32cd5c3cde3",
+          "size": 4666689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.14.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "6499c0cd9c33f120f0ac33c09f3625abafe430b6cc72e5b3234762ddff82cf8b",
+          "size": 5876465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "bf3e09cfd6d301c8490fefe1e14ae3af6cb1a6aa50c639727b43800135016ba7",
+          "size": 18521
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libsqlite3.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "6bc699816894ab7e9ace2c00dcbdfd43d2ed0ec0cf2fd8d7a087cb9c9d529cec",
+          "size": 886520
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libsqlite3_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "6bc699816894ab7e9ace2c00dcbdfd43d2ed0ec0cf2fd8d7a087cb9c9d529cec",
+          "size": 886520
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libssl.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "882a4d18722c1446c0871b16af82d35667333047eaf4c3c0d78f7695384bf52c",
+          "size": 994153
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libssl_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "882a4d18722c1446c0871b16af82d35667333047eaf4c3c0d78f7695384bf52c",
+          "size": 994153
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/ossl-modules/legacy.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "ea30949f4397853412f414d65e96ef0c27584879fd4d0bb8d84b560af91c708d",
+          "size": 135217
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a278483432c9a019100c652b7894fe7fd79768558b69255af3b2d4a0d0de55f1",
+          "size": 86353
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "48d006fc6b47703b99faf559038522351f29c3cdaf1a318c2d6adfa8ed94801b",
+          "size": 19089
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3a21b5d7fd1fe727ca1374885b4e0d7ce440548af3315be7e37251696629f402",
+          "size": 52241
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a4bdb24b5f3a2d755f3fb98b0f6576e6c0549a997c36297caf76f499675c2d33",
+          "size": 101905
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c666f66a2f4b330f4f31497803a466655f4f68c83ef6d60d8811c5868666406f",
+          "size": 149977
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "19a67fade28d7a2c0e8198c2c1363f88d28a13ae3b939524e47930937f9d5153",
+          "size": 166473
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3c245393189976300f857a6f21f8898b23f2994bd8448a605f099189b67605ab",
+          "size": 35465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0aee2d8c93bf3e276d321b02ed544f3ee7a72f89d3a4469fd16fdcd2602d5eb9",
+          "size": 264697
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b0c0ebdde0888d2822a16ea7d9d2af28a373dcc5dc4bd0348fbe7418008b2bc1",
+          "size": 149977
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "149e96781b73fd1668bbd3c59837e0fdb98b319228a625b45e1893b201b69b01",
+          "size": 117209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "44a5e76351b80f9ff2cc5198e576b90ffa15da5f1288199de82cee6d1d0d949f",
+          "size": 52481
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ae1121a55fdc08dd9f81da944e312a99909eeb9111c68e529e16370213ef2377",
+          "size": 235665
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "439205c34d66cea2cd14efbbe4b54cdfc3bec160b4b5043c3d3b47241e38ba71",
+          "size": 102561
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "75766d5a81cae069688d1dcdbb241aecf8854cf682fd505fb8cd00d3f100dc98",
+          "size": 364921
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4d3349dd1057b16f4a6fd621add175fccba60944fe3b7edebb5a434605c6c3aa",
+          "size": 86241
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "810dc05c66c806f724a57371a5dcb20404a6911d3aeb989807dfab60479e6e14",
+          "size": 69705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c13b132a4217c9ed6f8d3c9facd1b2ccb8000a5b5b2afd44c53d9e40fef721be",
+          "size": 35241
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4a4c9fb02e3bcbdb99297c0215183c7ea331794107d6901f1438448ee0f685b8",
+          "size": 150801
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d8600ceee33963a62052363adf64492a24c2fa8eefb817850525fa7c1d45ecd8",
+          "size": 53121
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "02c847be0e0db97f054bcbd2e1e1817a7b91d39ef38db88a5754da0948c32175",
+          "size": 36233
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2486dd61cffdc680f18b684c671e0a4de27498f849de5024adc4a7b8ce9dd020",
+          "size": 53625
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d7d00b71cc91660403d0b9452803cca35c34b80e0f3fa2483f827de10cd2c9ff",
+          "size": 52617
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "61686f5b2203c2a2e3784f569e5b4801b14be8deec877239ce20434712abaaa5",
+          "size": 36169
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4786979e43858f1576b50bb9ab470e01e367494e44039cef4b7e2751623fc2f3",
+          "size": 250761
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b463f5bdae4e15417a79edc65a54f61b2c54d8aa901355beb190f424b4a67187",
+          "size": 35745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "14eb6de1cd847672604074a0e581271b851cbfe14074764c9f56fc1269bb4098",
+          "size": 53025
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "74701df484210e57eecc18128732db270cc4d926915c1485a01570c5b9e34ae2",
+          "size": 136489
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8a446e0190c77adb058b35f417ce820177cdf782d1f6ae8a51fe670335656487",
+          "size": 35993
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "676aa56d3baa795d62fe02d8bdd350e217ab1f1bf546722c4c1e26a7c0319512",
+          "size": 19177
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ea395a9f8cfc2dd973e43d4169a04f3809b6a9edd6ae6f161f68c828ab1ef08d",
+          "size": 19273
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "9955ddb12b15fa978c5b9228a0163c9de496cb5466c83c69a5727c9f7bdc14f7",
+          "size": 69025
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "557bd0ea2d8c651fc9156d53225ee18b27887dc973c423186e9bfd06f0315132",
+          "size": 35729
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3ee9681c2248a5087e18c12ce9297bfa5bd774f0c8684a04997f685543a3f785",
+          "size": 52089
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b82ec1fe05b4f8a9faeebf42783cf28e9a50645dc04da0106211a7b6db6e5ff5",
+          "size": 52241
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3a29e64caa45af1c5acc8c1878fa40d7650ab27fd0b253659c673841bb8c3608",
+          "size": 102817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libsqlite3_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b95fd86de046f6e4bca4ec535fd7c80fed53d9bded28ac07f9879a910e8dc14b",
+          "size": 137769
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libssl_python.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "65f412b1338f9b5c66c1c5ba6f5e004e3f979d5df0e9ff5798d0b498229e39f7",
+          "size": 254801
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "72cd00a1de2ad44a379adf22f4521ad33ec8efbc04e82f095609a6151e210d6b",
+          "size": 18729
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a79cbc80090bee23cd08d018a0a558ae7d97e8306ea314e97b9367cc557c26eb",
+          "size": 69385
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c20312d3b8fd6f4120dc70f0e3f33e40b30b1d9dd60ec4e4cb9f4e5c354213e1",
+          "size": 52561
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3b28c5a19dd3bf96a837d9db938c6a78003b3365dff91fa3f59aca2c30111c3d",
+          "size": 373425
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "40b3e2640265ee9a19e64f90fcde01c3bde66ac443f1c982d4685fbc8df5c683",
+          "size": 118313
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b0c04e43ee59cf0df239062c6e59fb24555246922559d6df4f54e14b931d6b0c",
+          "size": 18777
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "7385d5970d3876e781cb806f67b4c29f75832fa344b6615f8e6f3a7b0771122f",
+          "size": 18617
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "65d622789c8338c200a0f0d4110de35a5ec59974778da7723f74a51417d2890b",
+          "size": 105401
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4ee2f3e484ec4e0976bb8901af42ae40e64cae3cc4537d3f44db29c7f0ff0573",
+          "size": 205257
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "5584680b5b58620a912dc03fd61b20c2a89afc63134a12ba2e9c40ed8e64e292",
+          "size": 36873
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "e3b53e7fe602217075eef6a2d9bbff5c3a415a3a8acda69377febb0051a295b7",
+          "size": 19377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2b1d22dbfd172feb8be7f544f99da918ab3007b4a1d812a388bedd7623992334",
+          "size": 19553
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "5775a8c9ccd3422bb273ea27e740431b7d0db5e51973c737332dc5d75fdfb6b4",
+          "size": 52609
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0294556483aeb375b193591c0fa380f4f5c54d5cf9981327c6bcf6638a7d495f",
+          "size": 2015433
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6522a5dcc88cc70343184543f385cc89ed0a6748f308cce17d512f6ea9819294",
+          "size": 69689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8f29fa281538dc47c1190e07c0b98e1c5f7b4613a45c5e28ce1cda0ff2c08cdc",
+          "size": 35577
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "02936255c271c8ed0a5c80a6cb6ceb01e62024f34ebb97f2b26ea832bcf8791b",
+          "size": 51761
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3ae86d5c81264bfa33276f74796692b5beffcb5a757ff3c406e81ae33acd6f2b",
+          "size": 35561
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f97fac2d82392fae3ac0c3cf2c3f64f3e40a835deadf63ed80b8edf092176219",
+          "size": 68905
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cfbcd9a6b0abad2a197192d9c2ce69bd45afc06e22aef22259d52e0a117ab8fe",
+          "size": 36041
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "93e575c4a8eca019a85b0a2311f2171ed196ad262ac1c1c210432ddca99e8526",
+          "size": 249489
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "618c7ad855a7d646292c4cf86604a7e54687be1e7538f1c7ca797f5090107388",
+          "size": 19209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a56054554955617095622d2128a77e5ed69d18b82b1d95c6b60bdd3758e8f200",
+          "size": 36145
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b9f1f53e0c6a61b996fbb2ee17fddef540067059c013ec67845abb4e46ed9258",
+          "size": 19137
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f2d234a12bf95e07d0367225b1244a498f16fdb5bcb6e08f9d2c9ab1b9a46e97",
+          "size": 35577
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "163ac2e994c37248d3ed5325e26350b1794fbce9e2507ec1efd8ada4ed09b889",
+          "size": 756705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d33430b0564176780de9b536b75d7dced28a56ee98f22c00c109227ab88b3c89",
+          "size": 19177
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "e30326750bb1cd71e96a95aa85fbc233f9b71107bcd75232671601dfda800db7",
+          "size": 19089
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4a478271718aae94a2ee990bd769e2e59b7ebea73adf634298ddc0d82589976b",
+          "size": 18785
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d65b668a6d8aa111b24e8795f6549de806445e4d47ae2bfb1199d42354bda7b5",
+          "size": 52489
+        }
+      ],
+      "observed_android_api_symbol_versions": []
+    },
+    "runtime_probe": {
+      "child_reentry_pass": true,
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime",
+        "child": {
+          "rc": 0,
+          "stderr": "",
+          "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\", \"ld\": null}\n"
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass",
+          "libcrypto_python.so": "pass",
+          "libsqlite3_python.so": "pass",
+          "libssl_python.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime",
+        "self_reexec": null
+      },
+      "dlopen_pass": true,
+      "ld_library_path_absent": true,
+      "required_extension_failures": 0,
+      "returncode": 0,
+      "self_reexec_absent": true,
+      "startup_pass": true,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-a/runtime\", \"self_reexec\": null}\n"
+    }
+  },
+  "B": {
+    "behavior": {
+      "data": {
+        "filesystem": true,
+        "monotonic": true,
+        "sha256": "986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809",
+        "sqlite": "3.50.4",
+        "subprocess": true,
+        "tls": "OpenSSL 3.5.7 9 Jun 2026"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"filesystem\": true, \"monotonic\": true, \"sha256\": \"986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809\", \"sqlite\": \"3.50.4\", \"subprocess\": true, \"tls\": \"OpenSSL 3.5.7 9 Jun 2026\"}\n"
+    },
+    "compile_api": 36,
+    "elf": {
+      "all_16k_compatible": true,
+      "elf_count": 79,
+      "max_observed_versioned_android_api": 36,
+      "minimum_runtime_inference_made": false,
+      "objects": [
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "bin/python3.14",
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+          "size": 5752
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/afalg.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "fd03d7fb1d0073cd606db93da6540b17e9edcaf96462a62e78761dc3641c60c1",
+          "size": 36321
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/capi.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "f9a03e54c8d0f05a42f8da1a8258f251d2caab8973ffbc17df93e3752490cd2b",
+          "size": 18657
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/loader_attic.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "4860390cae37fefbc6983136b57c6dfc0a95649a887de8bf6cf4a8f19d313abc",
+          "size": 71097
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/padlock.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "b80f1614838d725e338c25623312e4c38ba599888eabd235460ce92e1663034d",
+          "size": 18657
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libcrypto_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "ad6b621fba29aa5f2b60ca00f815dcd4b04a022cb117ff50cac5c856560dcf0c",
+          "size": 5584385
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [
+            36
+          ],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.14.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "a334fe947381cfa327bb41b45ebf7ac3a40f7c88040838a0833af702d18c5a51",
+          "size": 27144249
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "926bd693980512dee398a6012feb10bd879d7ca6150e622248d0ebaf01747a2b",
+          "size": 18825
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libsqlite3_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "b8e18918fe787dbb0d42e94bc037fc963d18fb162646722d564a0832136b6d4f",
+          "size": 972752
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libssl_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "d29bcd0c7cd2098e836d7c37fa1df42a438dc28be684dc08d9ee762ed3470124",
+          "size": 1158185
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/ossl-modules/legacy.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "bd8314245b1640dce6afa1a4f10f7ec56d1ecdbff82bd387424350aafa493db9",
+          "size": 168177
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6322e31a8001a26ce5bc7501cf096916bd573ac74e8ce0b12aaa06ce20c9b9c5",
+          "size": 381937
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0141f9d3049e7ba9ddb2e8fcfd4d2cbfa083c94aca06161144b2ae7949b98a1d",
+          "size": 68913
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c146ad986e5abf33ba7337754607fee50219228ed9422916563e94fade27dfbf",
+          "size": 642745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "84abffb8409888c9b8676875ab8befca91fed1568e2e0d64b9c4c8ed7f078aab",
+          "size": 151729
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "80895f9648608600275314bb8922cadfd78b919f1124cfe38cc9ddb9dee67742",
+          "size": 183417
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6500b24bc3c507904dbd8ae8e726e88dd41a8b1c83d3222fed621f62f1c96152",
+          "size": 183529
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4cbc68b106de206094841e754ae87693a624f6fa155a260db9c5fb4726c9de9e",
+          "size": 85289
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1a1be9288ffd83b09e81f2ff506dc1a333935b5903d485e5c6e16fc41a274ab0",
+          "size": 298137
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8254d0415e957c53d5d7c46b2f8495b9ab1b8550f057da2b5ebe36b86776c3f8",
+          "size": 167033
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4c5271508fe1dd0787e474acbf8782815772981e1f54bcf1ee0b6ce0b136b5fe",
+          "size": 134265
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6393540a58976d52f16639221a628c546b4258f9348571ebc6de030826114ac5",
+          "size": 135073
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ba4aa41c88fc655730210d3f73211a1397211e0ad253c27b25269b516866da2c",
+          "size": 924465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "9a8f83d25cb28bb7feb02403bd6540fca83359a9b9b10a76cfafb3da69fb7f10",
+          "size": 512881
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a8b69ab3a3c4c2fd1e0cc0549b229dedd8ebe92125ad0f782b5642e171928cb1",
+          "size": 1610777
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b395bd1c91dedf180bb09540a3f062a80f8025bdbc72872091729874ab2ad27d",
+          "size": 398209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1785574fda819e7cc05aebe6aaf5c8ab0a7d9f9a465708efad45f5eb9bb19479",
+          "size": 283377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "96672ede613c6d276a612abd0563779ec87c6aa7ffa1abd3031209b0cc521983",
+          "size": 68681
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "db5c83246f427ca5bf076c6c6cab8780a6a5743b1df17cc17dbca110bc32bbbb",
+          "size": 1232817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "908c8a7d56b561cdb328519aed58743c9690d34dd65a3f114ef8926702d2118e",
+          "size": 217633
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1eda2c502364e8f818852bdb0f99918680ca006bddf9e13a538b5e62586f5794",
+          "size": 118833
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0c2cde52c3db41d74d98c209636a09928cfa1dcc42363c9c2fb67ff8cd68bad5",
+          "size": 136217
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "fdbe8e8353adf2c07258e3abecfff87ff3c205696e4fc8391739c882ece58799",
+          "size": 249897
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1089e4df526910d10dccc33b61ad4581c531bba9f7ba3985a7c69ac66dd3f58c",
+          "size": 200689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "39e41faaae9cca5f5ce7f1f06844e5fe2c82cc4bd52b7238c212b4bea58e9ace",
+          "size": 448041
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d1f3aee99257cb2a4ef22d519ff04fd0d24a84f25fd2cd21a9f8f3045c0d2864",
+          "size": 118337
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cb99f1d00daef9e83871e688ca55804ce290b9333731c53f9f76edc8cfdab8d3",
+          "size": 168385
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a004effe597761db9fe3d550d321e056ae74d40c4cba9a63e2a40ce1b157bcfd",
+          "size": 612297
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "49493adb589a3d332a35bef007ad7846ef834a134922bc90b8cf723413f299f7",
+          "size": 102225
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0a282d57fecfc67d97d5ddf75060fcb722de3f832ed7a5b6bf9be62a76202062",
+          "size": 69001
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b3572cc1db7e0ca6a148be2b4e333fa4d76dfe2ee66280b83872ab9fac05f8b5",
+          "size": 52713
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1f486e2cb21c0b7317364e543f43c97638a57364324f2c7463910bd57e627e55",
+          "size": 348225
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f5d493ac335d4d3e35472c8d82dfa0ce4ca24db316ecf6f87177ebc522783f79",
+          "size": 101945
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f70e9dc64d79bb9ce379e1ddee46cff1254da564c6a8b6b2c94258c991c23a6f",
+          "size": 413209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "85c1bdee1fe9369f7441843cef17dfa717829c007c5f2a2d85c18c69bc84c6a6",
+          "size": 298665
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "789cdf489b7525ced7d14be14e171a9a5296803d60a61a9aa20114339b7b99d9",
+          "size": 398401
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libsqlite3_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cacce7f4bb24169e1c080f06825eb9a5cbe6f101458ce980348a98d6c335ccdb",
+          "size": 728265
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libssl_python.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1bef039b120c893a6ffe3a5345aef077f60cb38e429e478d78fc6d67a9a65ca6",
+          "size": 615929
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "eebc5553baca1a8640612014c718f958ae9d3c7a6ed4daba758a18b781d8969d",
+          "size": 19401
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cf90fd45b23128b77e16629e1263badf6a2de8b2a4efc6295bb1506dad9d26d2",
+          "size": 184745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "9ef59cf42210df424af6cc0f31dc67e98b7f1fc1a5a5474351090826b3fdbcb3",
+          "size": 151537
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "bb52bdfb253133603694678cb9ffe501c70addf9ffef752d756bbe039646ed2a",
+          "size": 1209689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d4be760ea0b20a231832278e5271125345f31f56bdba2957173c001b70a026d4",
+          "size": 381129
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6ad29875e257081c381afe5316c105183d145dcce2c32688b6f082066d08beb9",
+          "size": 35769
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "79590532e0039d78d34e9f093296df75e9d37fbf2c3cbb528e1986817896ff41",
+          "size": 19113
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f985332dc848ba2287019a6d752babe7ae0435fd7a631f05d86f7576a78ae3bc",
+          "size": 417377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "66cd1c7d58d789bc738d38c94686afa95ae4340cc489d048253121b989994582",
+          "size": 582761
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "11cf2689abc8ec4c0af4391f14ee6d6e7aab2ffb7bf28722d9cb07046087aec8",
+          "size": 70313
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c237862a5c523b2a80a7f481bbcdeacb2eb8db4e6b8e882a30fabbc187560e7c",
+          "size": 52817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0ae0e121f548d1021e68e81f1f8a23bc77b053c3e174ce07bdac61899798f566",
+          "size": 69377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a4007aa337d19efd1ffa168e9cc636fa205b78d90a62216abbdc6a5f16d332b2",
+          "size": 167969
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "84148b84ceec501d0f017e44ace89738f11786351d713c03325226da92bfac64",
+          "size": 2245489
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cc4502abc861e5ce2c265b23f0e39f94f936bba1661d554d001c4b7e9efbb836",
+          "size": 217817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "89056e15dd08782bc1989255bf0c81600ed5b160e3c0df0cfcebf3e162fae981",
+          "size": 183705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "672eb226223dde44a686a69505b00e27140821fc1e13ca85087a009c174e0675",
+          "size": 101585
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2a5867f87621b6bd4e4d5484d06cb92da90e8146e1a7dcf1ce67a5242f9fc22b",
+          "size": 52617
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/grp.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2dd701d531a3334ec16f113eee5cce3eb6798cfde76dddee68b34d33ac5b5314",
+          "size": 52801
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "42a01605d0457d14dd5355921f6bd1e9303e031b6576205a83af21351d6ed68e",
+          "size": 217033
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "dfee30526f5649493bb5122e1ea846170b0e2c144a61ec0f6987c10446fab93b",
+          "size": 200553
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ccf5a8f533bf36a55a2e64c7557e137cc644f0944b11b2de6c5071819b2196b5",
+          "size": 971057
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ced4513388809b6c3dff049ab8747b16ac82e487769a3b4885ddaaff5d5412fe",
+          "size": 52649
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1dcdcc81ba3d06b624df3d304f71b6a28585da7bbe80c073392e5d7912457619",
+          "size": 200657
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "e62ac11192e13a885b24a717262d15a46f1652a572411f38b977698dbce3ae0f",
+          "size": 52577
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "07a58c1b0e0e579b95fbea023af451db283d1f52ecc66bfa12e220335ac34647",
+          "size": 69105
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "9c6c38b989211e1ad599148d94be09d9d262f49917d8742ee6e7e6e665fbda6b",
+          "size": 855681
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "63484971c7f74ae9861fd46103fab068ec2b5270889dba7111bfd5ccd0d6efe6",
+          "size": 36233
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "83e894f8d799b6a7d9e3c4c3810e8dfe924a6b61be1139ffcdf143fc801d4292",
+          "size": 36145
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a852e2b21a54a443ca8b33648d99234c14d1b1cddfaf29add745ee76b790418f",
+          "size": 35841
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "82fbc2bf56668181bbbac1d35839db3acb58ed8b8dd94070a7799c7e3c24e223",
+          "size": 167849
+        }
+      ],
+      "observed_android_api_symbol_versions": [
+        36
+      ]
+    },
+    "runtime_probe": {
+      "child_reentry_pass": true,
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime",
+        "child": {
+          "rc": 0,
+          "stderr": "",
+          "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\", \"ld\": null}\n"
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass",
+          "libcrypto_python.so": "pass",
+          "libsqlite3_python.so": "pass",
+          "libssl_python.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime",
+        "self_reexec": null
+      },
+      "dlopen_pass": true,
+      "ld_library_path_absent": true,
+      "required_extension_failures": 0,
+      "returncode": 0,
+      "self_reexec_absent": true,
+      "startup_pass": true,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b/runtime\", \"self_reexec\": null}\n"
+    }
+  },
+  "C": {
+    "behavior": {
+      "data": {
+        "filesystem": true,
+        "monotonic": true,
+        "sha256": "986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809",
+        "sqlite": "3.50.4",
+        "subprocess": true,
+        "tls": "OpenSSL 3.5.7 9 Jun 2026"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"filesystem\": true, \"monotonic\": true, \"sha256\": \"986d61ad18e8e7777f648b1d6cd6fb343292815eb0ff6e97be20a986d9d77809\", \"sqlite\": \"3.50.4\", \"subprocess\": true, \"tls\": \"OpenSSL 3.5.7 9 Jun 2026\"}\n"
+    },
+    "compile_api": 36,
+    "elf": {
+      "all_16k_compatible": true,
+      "elf_count": 79,
+      "max_observed_versioned_android_api": 36,
+      "minimum_runtime_inference_made": false,
+      "objects": [
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "bin/python3.14",
+          "runpath": [
+            "$ORIGIN/../lib"
+          ],
+          "sha256": "94e5d27c9ed421b8cbbeefa2b56a531a9b7f94ea5adc8072911da7bf32b79a17",
+          "size": 5752
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/afalg.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "14703a815c1c84c64a831e18ab82f22884e2fb07c873834d6cfb05472e67410f",
+          "size": 36417
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/capi.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "ccf8ba603bf39a47274faed0351058eee92ef8ac6d1abe8025cc862d550a1649",
+          "size": 18705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/loader_attic.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "103451a56de62e7b87dd6d6b0cab49d1322e227c5996e072b593b3ef0d328038",
+          "size": 71137
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/engines-3/padlock.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "4b9b1649967d4cbd6c3fdcdeedd87cb4041958f18b2eeeff14273484e84fb860",
+          "size": 18705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libcrypto_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "1c18148b0e0667fceca0b832ffbfc74a5018c8674dd5d1b9e47d882de5deddab",
+          "size": 4929169
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [
+            36
+          ],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "liblog.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.14.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "d1950ef26548e8463d36545fd7c70d3270522221c551ff707c04e8ca3d7df456",
+          "size": 27144249
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libpython3.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "926bd693980512dee398a6012feb10bd879d7ca6150e622248d0ebaf01747a2b",
+          "size": 18825
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libsqlite3_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "6b92382bc9b35a727e71c6668adf1595020ed27532184586e9a45b36a9a8d93d",
+          "size": 959273
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/libssl_python.so",
+          "runpath": [
+            "$ORIGIN"
+          ],
+          "sha256": "b1d42db68d72faf955ff398237fff505bac2255050295ded09ca3ade292e3d24",
+          "size": 1092753
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/ossl-modules/legacy.so",
+          "runpath": [
+            "$ORIGIN/.."
+          ],
+          "sha256": "6c07525eabd3752b29bd4bddffa49e147f8b51cd7aef0024c80d7673b505b7d7",
+          "size": 135497
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_asyncio.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "5f5430d3bf64283debb5e07d941bc9a1d42b7b29feedf810ada76a65be2b77d1",
+          "size": 381937
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "56d731dc0df247b95e1e42be868ee7c3ccd67cb5f799f3ee23649e35dda3b66d",
+          "size": 68913
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "44e4055be615bf8d7b1f6d3c6f8c100eda8610bf1364c7f358146fdf100cdca9",
+          "size": 642745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "262642038d87e16ae21be2a474f94e990eb9745f05c5a577990e6007856d55f5",
+          "size": 151745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "49d0101bbbc334a2ae27af32a8ab6c45282071d6928a0c8f0c70b7b8dea65a4a",
+          "size": 183417
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "81c79146f1dc32648f5379e476ab68029ce98616297fcadee23e4ae6946d1c12",
+          "size": 183529
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0f554d0320ca59023883a2a46c5d84b8d816eb34043138a795f8913d090edade",
+          "size": 85289
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "c9e3114ccbd789f3f6b01c03424656239b769d5d0e37680a87e3b50c3c954379",
+          "size": 298137
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "9d75860c4deb119a14c7a575014d9aed8053b07533401e7f1bf4d83081cdf5f4",
+          "size": 167033
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a25e390e7959fc55a8ae63d7036e15b6615e95ef5d984c04edc8a18d436042c5",
+          "size": 134265
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a06662234b0b7f274cba0c78e3fb296f5cee05acf06c408e3a7ae8fc86094b8d",
+          "size": 135073
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6b935db0ed97d9c25265adca66812193a572927e1c3f3e2a4eac2f47eaad5a31",
+          "size": 924465
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libdl.so",
+            "libpython3.14.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ctypes_test.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "fcd91a589e5dcdc501087bdb77c420709831711cddea0b63be0f9af521823e69",
+          "size": 512881
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2fe9679e47e3b74946d12f1587abea821becb717d5ca7786d6752bd50a6a18df",
+          "size": 1610777
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f18604e7a77b5996e24b93b3cbe55bb9eb13054b7b6eb7b265c43a56a8b91b8d",
+          "size": 398209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6387cc5bed997e945e01b7ab3b5e46fe6e634a748ed65edf6a861ea4359118ce",
+          "size": 283377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "4d9d065d26477aeb9bc1da17c922824f5fd0ee1aa8a8142b134d5034f63fb52c",
+          "size": 68681
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ecc59231f60521bdfab03f3791b25e03fed539a706353ea391e3fb3d9ff5d337",
+          "size": 1232817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpchannels.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "7b9c0e26c4aab1dbaa068415d43cb9fa03f65401bca3f1c51d4c38a27189ab4e",
+          "size": 217633
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpqueues.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "367114ee3193119b40ef0163bda26e10287f307f5362feea91059ecff7005ad4",
+          "size": 118833
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_interpreters.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cfb4ebb578d2996a19c1b407127393111b89db1f419f19c4439bc4525c303d6f",
+          "size": 136217
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "ee757ee78b3ac46a8b68b9c1d755f5ffdfae507ca49d1190be0b791cacd41fcb",
+          "size": 249897
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lsprof.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1bc3c327bdb5c99681ef1687e545013a3b044d5a562fa9343aa22977b8f1b149",
+          "size": 200689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "725cbc305a180ad5969d7ca0db3de35aaac551bc223c2f80b2c2e9a5f62d8fa2",
+          "size": 448041
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f91447a5bd44e0af12439ec30fb1e7acfdff0697a9e6d9fa899c3e92f6566f33",
+          "size": 118337
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "e37d8e4bb712fbbbb7f9a25b0ef012f8f235920e9e2b22bfcf5b0a82877fea26",
+          "size": 168385
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d855c7b704eefda2c55b77e000dd28b54cd5a88b5c90fae2fde2a9cc579c59bd",
+          "size": 612297
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "caed486e255429bb4f933367ed4b384fb4c3c4596416996ab637f139a02b8665",
+          "size": 102225
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "70b97bedd45274ecf8cb28a1310345efbc7cbb1b9bab3ba81f644b8a586dffd2",
+          "size": 69001
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "218bde1bb060d3f0c4bcaddf814862ef827eca7bc8cc0c4a61272cac601845f0",
+          "size": 52713
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_remote_debugging.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3c928ad2aca0c124f48099fb0216a6ac4618c34c049d62d44ab84bb7c121e03e",
+          "size": 348225
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "06843a7796ff597b17f78656aa3a437570a3cca132e6cec25a51d24af0316d4d",
+          "size": 101945
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "04b94c73ebaf98dff0349b433982524ee5510c572fd6228ac2b2211fc8022756",
+          "size": 413209
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d4e5cefa2e09bbe0e0d5c8ed8a815dec602551c0760dbb474a855b40a4b8892c",
+          "size": 298665
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d1fd1e453116e8fc4faf700719b8ce921981963dba73780e2beff43f998a7195",
+          "size": 398401
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libsqlite3_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_sqlite3.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d720e8ffa884858a45642142ba79448c6c9b6f2e6041d5188e4216a9d0725bab",
+          "size": 728265
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libssl_python.so",
+            "libcrypto_python.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a52fea07040cb3974cae5900ec25f456907f231e0c999d4a97b8e99f9953530e",
+          "size": 615929
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "bb2fb37c0764aa6194ba0f4a6e769af27ed74da00e18c2c4b45a77c165bcb605",
+          "size": 19401
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d87380103e7b0f6ca2eaebfb3da9e7c0136bf327158ef4f32476b3694578399d",
+          "size": 184745
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testbuffer.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d81424e863f8405c9f0e2bf26eaf69a8aeb95ebc4a3a05b211f73f6169202d44",
+          "size": 151537
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "21387d18eeaea9d777266d3e91447cb7dc0d7fc01e232b9693287515f30132fc",
+          "size": 1209689
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "bc14f92db76026de165ee552e81d77d3f6ca13151c52d0561f37ad966981bbca",
+          "size": 381129
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testclinic_limited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8c68bd8819c69e76b794f3e91c722cac085c20df3d27c59bd522fd286794c04c",
+          "size": 35769
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testimportmultiple.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "a34f2f82ad89b205abdd811463e2db4401793d1112d48d95d5b48c9603968257",
+          "size": 19113
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testinternalcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "3b7dddaf9bd5d381fb5499181d12174665dfa77bea0c6e999a2107f796f12f5d",
+          "size": 417377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testlimitedcapi.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "6ef97e2f87bba16b4682530c02772561a7f20af08c770dfdb2f30bfb2b81e188",
+          "size": 582761
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testmultiphase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "2b91f6c4b7fab3153d2601806e23ec010b62b05a78320cd434cf4d244dafd2d4",
+          "size": 70313
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_testsinglephase.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "735acd599661c119ef67d0f8639f40af7a924bd704095d476b8bd07a3ca03501",
+          "size": 52817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_xxtestfuzz.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "62da660de3cf13623ac9c7eec62122b2a12b4d8e97104eb5351b1a49808752fb",
+          "size": 69377
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zoneinfo.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "21c5fc872a165334290369da6d0d17fe436bfb00c739f3bc9aabb9905d67a48b",
+          "size": 167969
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "52fdc7e2b5459d96b3af27a7f7c2b4040109c4ed0b5977bd80b5d528aa77e2fb",
+          "size": 2261873
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/array.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "cc194db2ca5d5b2b08c03c536d105a3bcc055c9c9725b0eddd0a30b695c2cfea",
+          "size": 217817
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "abc2298b68435014f1f17c84b341a2940c336cd4d90a2f4b92d4157b883bc836",
+          "size": 183705
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/cmath.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "227afe54b8df82cfe0f2354f580ade153c46bee33b78789ee0f3e4e852f3aff1",
+          "size": 101585
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "feb800b5fbdf598c6fdc1722c8691bcb7426502878d4fa8b19db488ca224ce27",
+          "size": 52617
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/grp.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f5ccd19a070d70df54c4c08b32171a2ff753e59bf7f18fbdca5bfbfad3972e5e",
+          "size": 52801
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/math.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "85cc6a76f7ac44e8d917ceaa8a7f417725caf75e581296692461166bcfd18ab9",
+          "size": 217033
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/mmap.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "b9bd33be4001de4219629382dd1853b8a61ad6cfb2e2d7ff3d51492aed2af4cf",
+          "size": 200553
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8bad3918bebf84abf1a205afa742a8aa12116780cadf681829a3f61fa5a45cd9",
+          "size": 971057
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d55472a9e9df96c35d77da90aef88694b8dfb3326b49ac421bf4cf30cda3f95b",
+          "size": 52649
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/select.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "040728a042c54793c2ca8e45065ab530972179f599b83e3cbf272f17171f4f46",
+          "size": 200657
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/syslog.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "8509c940c0fd3d85c71c99b1b91ea112bd73ff83bd89d6d762154a94cf7db082",
+          "size": 52577
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "0796a120219d7b2299f71a9dccf086c5bdc982f08ecd7e9899160183a82fe205",
+          "size": 69105
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "737d3111dfa62b3208686e0ba04971fcc2c176a3e87a378e03979c989f7e672f",
+          "size": 855681
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "d944d867de66bf452549e0c4456d3e8a7fa977aaa2301c3f0f6a0ddd72c6fb03",
+          "size": 36233
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxlimited_35.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "330cd2ae875de195b4011cba3f9dfc77931a45e8ddd2d92c84ebe65870c8d894",
+          "size": 36145
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/xxsubtype.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "f6504064d1fc4559193f9d7c815204d385e4008623706e60113853a4df17f9d3",
+          "size": 35841
+        },
+        {
+          "alignment_16k_compatible": true,
+          "android_api_symbol_versions": [],
+          "load_alignments": [
+            16384,
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libm.so",
+            "libz.so",
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "path": "lib/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-android.so",
+          "runpath": [
+            "$ORIGIN/../.."
+          ],
+          "sha256": "1e9b5a5fafd920b2a6e8f66b414c89b3c641ebc66b115d8330e75104ef8d2bf3",
+          "size": 167849
+        }
+      ],
+      "observed_android_api_symbol_versions": [
+        36
+      ]
+    },
+    "runtime_probe": {
+      "child_reentry_pass": true,
+      "command": [
+        "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14",
+        "-c",
+        "\nimport ctypes, importlib, json, os, subprocess, sys\nmods=json.loads(os.environ.get(\"HW_T_EXTENSION_MODULES\",\"[]\"))\nfail={}\nfor m in mods:\n    try: importlib.import_module(m)\n    except BaseException as e: fail[m]=type(e).__name__+\":\"+str(e)\nprefix=os.environ.get(\"HW_T_EXPECTED_PREFIX\",\"\")\ndl={}\nfor n in (\"libcrypto_python.so\",\"libssl_python.so\",\"libsqlite3_python.so\"):\n    p=os.path.join(prefix,\"lib\",n)\n    try: ctypes.CDLL(p); dl[n]=\"pass\"\n    except BaseException as e: dl[n]=type(e).__name__+\":\"+str(e)\nfor rel in (\"lib/engines-3/afalg.so\",\"lib/ossl-modules/legacy.so\"):\n    p=os.path.join(prefix,rel)\n    try: ctypes.CDLL(p); dl[rel]=\"pass\"\n    except BaseException as e: dl[rel]=type(e).__name__+\":\"+str(e)\nchild_code='import json,os,ssl,sqlite3,_hashlib,sys; print(json.dumps({\"executable\":sys.executable,\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\"ld\":os.environ.get(\"LD_LIBRARY_PATH\")}))'\nenv=dict(os.environ); env.pop(\"LD_LIBRARY_PATH\",None)\ncp=subprocess.run([sys.executable,\"-c\",child_code],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)\nchild={\"rc\":cp.returncode,\"stdout\":cp.stdout,\"stderr\":cp.stderr}\nprint(json.dumps({\n \"executable\":sys.executable,\"base_executable\":getattr(sys,\"_base_executable\",None),\"prefix\":sys.prefix,\"base_prefix\":sys.base_prefix,\n \"path\":sys.path,\"ld_library_path\":os.environ.get(\"LD_LIBRARY_PATH\"),\"self_reexec\":os.environ.get(\"HW_T_LR0_SELF_REEXEC\"),\n \"extension_failures\":fail,\"extension_count\":len(mods),\"dlopen\":dl,\"child\":child,\n},sort_keys=True))\n"
+      ],
+      "data": {
+        "base_executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14",
+        "base_prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime",
+        "child": {
+          "rc": 0,
+          "stderr": "",
+          "stdout": "{\"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14\", \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\", \"ld\": null}\n"
+        },
+        "dlopen": {
+          "lib/engines-3/afalg.so": "pass",
+          "lib/ossl-modules/legacy.so": "pass",
+          "libcrypto_python.so": "pass",
+          "libsqlite3_python.so": "pass",
+          "libssl_python.so": "pass"
+        },
+        "executable": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14",
+        "extension_count": 67,
+        "extension_failures": {},
+        "ld_library_path": null,
+        "path": [
+          "",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python314.zip",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14/lib-dynload",
+          "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14/site-packages"
+        ],
+        "prefix": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime",
+        "self_reexec": null
+      },
+      "dlopen_pass": true,
+      "ld_library_path_absent": true,
+      "required_extension_failures": 0,
+      "returncode": 0,
+      "self_reexec_absent": true,
+      "startup_pass": true,
+      "stderr": "",
+      "stdout": "{\"base_executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14\", \"base_prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\", \"child\": {\"rc\": 0, \"stderr\": \"\", \"stdout\": \"{\\\"executable\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14\\\", \\\"prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\\\", \\\"base_prefix\\\": \\\"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\\\", \\\"ld\\\": null}\\n\"}, \"dlopen\": {\"lib/engines-3/afalg.so\": \"pass\", \"lib/ossl-modules/legacy.so\": \"pass\", \"libcrypto_python.so\": \"pass\", \"libsqlite3_python.so\": \"pass\", \"libssl_python.so\": \"pass\"}, \"executable\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/bin/python3.14\", \"extension_count\": 67, \"extension_failures\": {}, \"ld_library_path\": null, \"path\": [\"\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python314.zip\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14/lib-dynload\", \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime/lib/python3.14/site-packages\"], \"prefix\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c/runtime\", \"self_reexec\": null}\n"
+    }
+  }
+}

@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       execute-e2-r1-api36-controlled-source-equivalent-comparison
-gate         E2-R1/API36-1 — API-36 controlled source-equivalent comparison
-tracked docs 658
+action       evaluate-epoch2-closure-gates
+gate         E2/CLOSURE — Epoch 2 closure gates
+tracked docs 671
 indexes      16
 ```
 

@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 14
+> **State revision:** 15
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          execute-e2-r1-api36-controlled-source-equivalent-comparison
-work gate       E2-R1/API36-1 — API-36 controlled source-equivalent comparison
+action          evaluate-epoch2-closure-gates
+work gate       E2/CLOSURE — Epoch 2 closure gates
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E2-R1/API36-1 — API-36 controlled source-equivalent comparison
 
 ```text
 epoch   E2 — upstream-thin research program
-gate    E2-R1/API36-1 — API-36 controlled source-equivalent comparison
+gate    E2/CLOSURE — Epoch 2 closure gates
 status  ready
 ```
 
@@ -49,6 +49,7 @@ status  ready
 16. [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](../experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json) — explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries
 17. [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](../experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json) — bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims
 18. [`experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json`](../experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json) — official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership
+19. [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](../experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json) — API-24 official and API-36 source-equivalent three-class controlled comparison
 
 ## Blockers
 
@@ -56,8 +57,8 @@ None.
 
 ## Unresolved risks
 
-- The API-36 comparison must keep compile API as the intended changed variable and enumerate every unavoidable additional delta.
-- Python 3.15.0b4 remains preview-only and requires a successor release/runtime qualification before any support claim.
-- UT-6 still withholds a minimum release API and runtime 16 KiB support until direct target evidence exists.
+- Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.
+- UT-6 still withholds a minimum release API and direct 16 KiB runtime support.
+- Class C source-built dependencies carry greater producer and maintenance burden than Class B.
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

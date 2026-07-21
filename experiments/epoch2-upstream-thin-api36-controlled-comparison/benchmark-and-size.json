@@ -1,0 +1,95 @@
+{
+  "A": {
+    "benchmark": {
+      "micro": {
+        "digest": "8f990ba0b577b51cf009ea049368c16bbda1b21e1b93be07a824758bb253c39b",
+        "loop_ms": 1689.8878120118752,
+        "sha256_1m_ms": 13.869323011022061,
+        "value": 999496507
+      },
+      "pass": true,
+      "startup_median_ms": 331.25921798637137,
+      "startup_ms": [
+        337.1855199802667,
+        333.40281300479546,
+        331.4706769888289,
+        328.89484299812466,
+        325.6118220160715,
+        328.9047389989719,
+        331.25921798637137
+      ]
+    },
+    "prefix_tree": {
+      "file_count": 2933,
+      "snapshot_sha256": "6c6c394fcb81a7a481b2a94696820ef2b659a9d6d4de9960c624c95073e068b5",
+      "total_bytes": 79330914
+    },
+    "runtime_tree": {
+      "file_count": 2934,
+      "snapshot_sha256": "cef641f303545cb6d2500e275048e37c1802d65a64693ddd80edb6aaf944d4d6",
+      "total_bytes": 80547048
+    }
+  },
+  "B": {
+    "benchmark": {
+      "micro": {
+        "digest": "8f990ba0b577b51cf009ea049368c16bbda1b21e1b93be07a824758bb253c39b",
+        "loop_ms": 361.7768230033107,
+        "sha256_1m_ms": 10.306614974979311,
+        "value": 999496507
+      },
+      "pass": true,
+      "startup_median_ms": 54.59911498473957,
+      "startup_ms": [
+        53.15807298757136,
+        63.97458299761638,
+        57.10364499827847,
+        50.83593702875078,
+        54.310312028974295,
+        54.59911498473957,
+        55.1544789923355
+      ]
+    },
+    "prefix_tree": {
+      "file_count": 8614,
+      "snapshot_sha256": "c366ce79539a392ed6581fb266457279a377769e4fc9b153f13b09807e5e9b89",
+      "total_bytes": 284665786
+    },
+    "runtime_tree": {
+      "file_count": 8614,
+      "snapshot_sha256": "183188230803cef6052b185df41102de639412c6b02e11aedbe04ac7436db409",
+      "total_bytes": 285843463
+    }
+  },
+  "C": {
+    "benchmark": {
+      "micro": {
+        "digest": "8f990ba0b577b51cf009ea049368c16bbda1b21e1b93be07a824758bb253c39b",
+        "loop_ms": 160.90734401950613,
+        "sha256_1m_ms": 4.6704689739272,
+        "value": 999496507
+      },
+      "pass": true,
+      "startup_median_ms": 30.707707977853715,
+      "startup_ms": [
+        27.12536498438567,
+        29.981457977555692,
+        30.824582965578884,
+        30.707707977853715,
+        31.98942798189819,
+        29.902969021350145,
+        31.602447968907654
+      ]
+    },
+    "prefix_tree": {
+      "file_count": 8613,
+      "snapshot_sha256": "7c64d7d081f61348ed0cd7b9f2ef92e791998d2ba861bff1de1c5ea940cb8183",
+      "total_bytes": 283766150
+    },
+    "runtime_tree": {
+      "file_count": 8613,
+      "snapshot_sha256": "039b277208ecd3c0b1db1c6552bbc46c6e8c6f85b6907bdf6590c1dc311e094e",
+      "total_bytes": 284951324
+    }
+  }
+}

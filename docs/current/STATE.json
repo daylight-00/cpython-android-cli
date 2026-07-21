@@ -107,6 +107,12 @@
       "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
       "role": "official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership",
       "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+    },
+    {
+      "id": "e2-r1-api36-controlled-source-equivalent-comparison",
+      "path": "experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json",
+      "role": "API-24 official and API-36 source-equivalent three-class controlled comparison",
+      "sha256": "576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e"
     }
   ],
   "active_plan": {
@@ -148,10 +154,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "next_action_class": "evaluate-epoch2-closure-gates",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "resume_program_action_class": "evaluate-epoch2-closure-gates",
     "status": "completed"
   },
   "documentation_layers": {
@@ -175,10 +181,10 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+  "next_action_class": "evaluate-epoch2-closure-gates",
   "predecessor": {
-    "commit": "62cfef14e0dec602d3229e05b21a4ac0c7d4552f",
-    "tree": "c1f278294dc0ba842bb36841968352e88646eaab"
+    "commit": "fbfb79ea94b1c374c54b22745685fac9b8c540a2",
+    "tree": "b4286f603a8047d708d41d2b574c3d707922e468"
   },
   "program": {
     "epoch": {
@@ -187,11 +193,11 @@
       "status": "active-recalibrated"
     },
     "gate": {
-      "id": "E2-R1/API36-1",
-      "name": "API-36 controlled source-equivalent comparison",
+      "id": "E2/CLOSURE",
+      "name": "Epoch 2 closure gates",
       "status": "ready"
     },
-    "next_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
+    "next_action_class": "evaluate-epoch2-closure-gates",
     "status": "active"
   },
   "project_model": {
@@ -232,24 +238,24 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 14,
+  "state_revision": 15,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "86f333a93a32f6f21c7aa96f940b317431677f2832d1806b03c3c20ded964e45"
+    "sha256": "af936bb24c5fc552cb40768efac6dfda804bfe1b96764640da2bb6571a8565d5"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "execute-e2-r1-api36-controlled-source-equivalent-comparison",
-    "pass_successor_action_class": "evaluate-epoch2-closure-gates",
+    "current_action_class": "evaluate-epoch2-closure-gates",
+    "pass_successor_action_class": "initialize-epoch3-from-accepted-evidence-export",
     "status": "enforced"
   },
   "unresolved_risks": [
-    "The API-36 comparison must keep compile API as the intended changed variable and enumerate every unavoidable additional delta.",
-    "Python 3.15.0b4 remains preview-only and requires a successor release/runtime qualification before any support claim.",
-    "UT-6 still withholds a minimum release API and runtime 16 KiB support until direct target evidence exists."
+    "Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.",
+    "UT-6 still withholds a minimum release API and direct 16 KiB runtime support.",
+    "Class C source-built dependencies carry greater producer and maintenance burden than Class B."
   ],
-  "updated_by_transaction": "20260720-e2-r1-ut7-upstream-evolution-v4"
+  "updated_by_transaction": "20260721-e2-r1-api36-controlled-comparison-v19"
 }

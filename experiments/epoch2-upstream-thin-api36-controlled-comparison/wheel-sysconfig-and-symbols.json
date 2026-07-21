@@ -1,0 +1,135 @@
+{
+  "A": {
+    "extension_failures": 0,
+    "native_extension_probe": {
+      "compile_rc": 0,
+      "compiler": "clang",
+      "compiler_scope": "owner-local-termux-clang",
+      "import_rc": 0,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "measurement_compile_api_claim": null,
+      "pass": true,
+      "producer_compile_api": 24,
+      "sha256": "9d4cd78650cbce8abf6af8a781d1bba21279d3bea3feac1828be7c121319e145",
+      "size": 6128,
+      "stderr": "",
+      "stdout": "36\n"
+    },
+    "observed_android_api_symbol_versions": [],
+    "sysconfig": {
+      "data": {
+        "platform": "android-24-arm64_v8a",
+        "vars": {
+          "ANDROID_API_LEVEL": 24,
+          "CC": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang",
+          "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include",
+          "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+          "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+          "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib",
+          "MULTIARCH": "aarch64-linux-android",
+          "Py_GIL_DISABLED": 0,
+          "SOABI": "cpython-314-aarch64-linux-android"
+        },
+        "version": "3.14.6 (tags/v3.14.6-dirty:c63aec6, Jun 10 2026, 10:08:03) [Clang 18.0.4 (https://android.googlesource.com/toolchain/llvm-project d8003a456"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"platform\": \"android-24-arm64_v8a\", \"vars\": {\"ANDROID_API_LEVEL\": 24, \"CC\": \"/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-unknown-linux-android\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_GIL_DISABLED\": 0, \"SOABI\": \"cpython-314-aarch64-linux-android\"}, \"version\": \"3.14.6 (tags/v3.14.6-dirty:c63aec6, Jun 10 2026, 10:08:03) [Clang 18.0.4 (https://android.googlesource.com/toolchain/llvm-project d8003a456\"}\n"
+    }
+  },
+  "B": {
+    "extension_failures": 0,
+    "native_extension_probe": {
+      "compile_rc": 0,
+      "compiler": "clang",
+      "compiler_scope": "owner-local-termux-clang",
+      "import_rc": 0,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "measurement_compile_api_claim": null,
+      "pass": true,
+      "producer_compile_api": 36,
+      "sha256": "9d4cd78650cbce8abf6af8a781d1bba21279d3bea3feac1828be7c121319e145",
+      "size": 6128,
+      "stderr": "",
+      "stdout": "36\n"
+    },
+    "observed_android_api_symbol_versions": [
+      36
+    ],
+    "sysconfig": {
+      "data": {
+        "platform": "android-36-arm64_v8a",
+        "vars": {
+          "ANDROID_API_LEVEL": 36,
+          "CC": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/android-home-overlay/ndk/30.0.15729638-beta2/toolchains/llvm/prebuilt/linux-arm64/bin/aarch64-linux-android36-clang",
+          "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b-cross/aarch64-linux-android/prefix/include",
+          "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+          "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+          "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b-cross/aarch64-linux-android/prefix/lib",
+          "MULTIARCH": "aarch64-linux-android",
+          "Py_GIL_DISABLED": 0,
+          "SOABI": "cpython-314-aarch64-linux-android"
+        },
+        "version": "3.14.6 (main, Jul 21 2026, 15:27:27) [Clang 21.0.0 (https://github.com/HomuHomu833/llvm-custom)]"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"platform\": \"android-36-arm64_v8a\", \"vars\": {\"ANDROID_API_LEVEL\": 36, \"CC\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/android-home-overlay/ndk/30.0.15729638-beta2/toolchains/llvm/prebuilt/linux-arm64/bin/aarch64-linux-android36-clang\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b-cross/aarch64-linux-android/prefix/include\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-unknown-linux-android\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-b-cross/aarch64-linux-android/prefix/lib\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_GIL_DISABLED\": 0, \"SOABI\": \"cpython-314-aarch64-linux-android\"}, \"version\": \"3.14.6 (main, Jul 21 2026, 15:27:27) [Clang 21.0.0 (https://github.com/HomuHomu833/llvm-custom)]\"}\n"
+    }
+  },
+  "C": {
+    "extension_failures": 0,
+    "native_extension_probe": {
+      "compile_rc": 0,
+      "compiler": "clang",
+      "compiler_scope": "owner-local-termux-clang",
+      "import_rc": 0,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "measurement_compile_api_claim": null,
+      "pass": true,
+      "producer_compile_api": 36,
+      "sha256": "9d4cd78650cbce8abf6af8a781d1bba21279d3bea3feac1828be7c121319e145",
+      "size": 6128,
+      "stderr": "",
+      "stdout": "36\n"
+    },
+    "observed_android_api_symbol_versions": [
+      36
+    ],
+    "sysconfig": {
+      "data": {
+        "platform": "android-36-arm64_v8a",
+        "vars": {
+          "ANDROID_API_LEVEL": 36,
+          "CC": "/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/android-home-overlay/ndk/30.0.15729638-beta2/toolchains/llvm/prebuilt/linux-arm64/bin/aarch64-linux-android36-clang",
+          "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c-cross/aarch64-linux-android/prefix/include",
+          "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+          "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+          "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c-cross/aarch64-linux-android/prefix/lib",
+          "MULTIARCH": "aarch64-linux-android",
+          "Py_GIL_DISABLED": 0,
+          "SOABI": "cpython-314-aarch64-linux-android"
+        },
+        "version": "3.14.6 (main, Jul 21 2026, 15:58:55) [Clang 21.0.0 (https://github.com/HomuHomu833/llvm-custom)]"
+      },
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"platform\": \"android-36-arm64_v8a\", \"vars\": {\"ANDROID_API_LEVEL\": 36, \"CC\": \"/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/android-home-overlay/ndk/30.0.15729638-beta2/toolchains/llvm/prebuilt/linux-arm64/bin/aarch64-linux-android36-clang\", \"CFLAGS\": \"-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c-cross/aarch64-linux-android/prefix/include\", \"EXT_SUFFIX\": \".cpython-314-aarch64-linux-android.so\", \"HOST_GNU_TYPE\": \"aarch64-unknown-linux-android\", \"LDFLAGS\": \"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/data/data/com.termux/files/home/.cache/hw-t-work/20260721-e2-r1-api36-controlled-comparison-v19-20260721T061658Z-6512/api36-experiment/class-c-cross/aarch64-linux-android/prefix/lib\", \"MULTIARCH\": \"aarch64-linux-android\", \"Py_GIL_DISABLED\": 0, \"SOABI\": \"cpython-314-aarch64-linux-android\"}, \"version\": \"3.14.6 (main, Jul 21 2026, 15:58:55) [Clang 21.0.0 (https://github.com/HomuHomu833/llvm-custom)]\"}\n"
+    }
+  }
+}

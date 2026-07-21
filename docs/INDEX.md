@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `execute-e2-r1-api36-controlled-source-equivalent-comparison`
-- gate: `E2-R1/API36-1` — API-36 controlled source-equivalent comparison
+- action class: `evaluate-epoch2-closure-gates`
+- gate: `E2/CLOSURE` — Epoch 2 closure gates
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `658`
+- tracked Markdown/JSON: `671`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

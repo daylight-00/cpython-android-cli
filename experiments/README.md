@@ -140,6 +140,22 @@
 - [`experiments/epoch2-upstream-thin-android-data-policy/ut4-gate-diagnostics.json`](epoch2-upstream-thin-android-data-policy/ut4-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-android-data-policy/venv-writable-state-policy.json`](epoch2-upstream-thin-android-data-policy/venv-writable-state-policy.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch2-upstream-thin-api36-controlled-comparison`
+
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/README.md`](epoch2-upstream-thin-api36-controlled-comparison/README.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-gate-diagnostics.json`](epoch2-upstream-thin-api36-controlled-comparison/api36-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/benchmark-and-size.json`](epoch2-upstream-thin-api36-controlled-comparison/benchmark-and-size.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/control-class-a.json`](epoch2-upstream-thin-api36-controlled-comparison/control-class-a.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/control-class-b.json`](epoch2-upstream-thin-api36-controlled-comparison/control-class-b.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/control-class-c.json`](epoch2-upstream-thin-api36-controlled-comparison/control-class-c.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/controlled-delta-inventory.json`](epoch2-upstream-thin-api36-controlled-comparison/controlled-delta-inventory.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/evidence-freeze.md`](epoch2-upstream-thin-api36-controlled-comparison/evidence-freeze.md) — `FROZEN_AUTHORITY` · `claim_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/independent-audit.json`](epoch2-upstream-thin-api36-controlled-comparison/independent-audit.json) — `FROZEN_AUTHORITY` · `audit` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/provenance-and-build-burden.json`](epoch2-upstream-thin-api36-controlled-comparison/provenance-and-build-burden.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/runtime-and-elf-measurements.json`](epoch2-upstream-thin-api36-controlled-comparison/runtime-and-elf-measurements.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/wheel-sysconfig-and-symbols.json`](epoch2-upstream-thin-api36-controlled-comparison/wheel-sysconfig-and-symbols.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
+
 ## `epoch2-upstream-thin-artifact-prototype`
 
 - [`experiments/epoch2-upstream-thin-artifact-prototype/PYTHON.json`](epoch2-upstream-thin-artifact-prototype/PYTHON.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`

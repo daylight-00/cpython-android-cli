@@ -1,0 +1,205 @@
+{
+  "all_deltas_enumerated": true,
+  "controlled_constants": {
+    "baseline_cpython_ndk_version": "27.3.13750724",
+    "class_b_dependency_asset_sha256": {
+      "bzip2-1.0.8-3": "2385f46e173d525f079946957c007000a8ad11d8496ba66bae99129183d74bd9",
+      "libffi-3.4.4-3": "9f2c0255ce025c177d44db16174ad5158c7560efe3c7ef0c8c0c64b2196e6a9d",
+      "openssl-3.5.7-0": "3d62143ba57f17dfa25816b1ce06256944cb23e5bad1212a419cfd073b1eebab",
+      "sqlite-3.50.4-0": "f446f18d381ed641cb9d58b4768097f9cb7fcce79f7d13be371ee089f2c93e27",
+      "xz-5.4.6-1": "320b76d45dc3499cf855e5310f875cba61c2608e4a98bb280cc4f1b8f189da1a",
+      "zstd-1.5.7-2": "c3ae98fbe54b0cef9601d9dc120ed692d79609087e6926c70d8fc30face07fe7"
+    },
+    "class_b_dependency_asset_size": {
+      "bzip2-1.0.8-3": 197400,
+      "libffi-3.4.4-3": 42455,
+      "openssl-3.5.7-0": 6321792,
+      "sqlite-3.50.4-0": 1287749,
+      "xz-5.4.6-1": 651211,
+      "zstd-1.5.7-2": 490959
+    },
+    "class_b_dependency_binding": "exact-cpython-3.14.6-builder-pinned-release-assets",
+    "class_b_dependency_release_tags": [
+      "bzip2-1.0.8-3",
+      "libffi-3.4.4-3",
+      "openssl-3.5.7-0",
+      "sqlite-3.50.4-0",
+      "xz-5.4.6-1",
+      "zstd-1.5.7-2"
+    ],
+    "class_c_dependency_recipe_archive_sha256": {
+      "bzip2-1.0.8-3": "265397f190467b02c7240871856f0d8850750a08bbb2f51453520188e2fd4f7d",
+      "libffi-3.4.4-3": "a62b0629ceebad486149add1c7cb01a25a2b63a8ecc664384947b1b3cd2728d0",
+      "openssl-3.5.7-0": "018fcb54cad2078462ca8f95c7e920163181f2895f84229195bdb6bd1f2433fa",
+      "sqlite-3.50.4-0": "f77e764265d52feb800901dfe42f9d5647726cbf72aa253eea46ae2526d069f8",
+      "xz-5.4.6-1": "791b4ea0dcea392324f33acd83975ab7d192a5d1a568f7958bd908453c8ce2a2",
+      "zstd-1.5.7-2": "3731a5223183213353b325e78917a69dfff26164f9cd7b652dec35bf5f7f5105"
+    },
+    "class_c_dependency_release_tags": [
+      "bzip2-1.0.8-3",
+      "libffi-3.4.4-3",
+      "openssl-3.5.7-0",
+      "sqlite-3.50.4-0",
+      "xz-5.4.6-1",
+      "zstd-1.5.7-2"
+    ],
+    "cpython_source_sha256": "143b1dddefaec3bd2e21e3b839b34a2b7fb9842272883c576420d605e9f30c63",
+    "cpython_version": "3.14.6",
+    "host": "aarch64-linux-android",
+    "launcher_source_and_patch": "UT-2 LA-2 exact",
+    "loader_normalization": "UT-2 LR-3",
+    "ndk_version": "30.0.15729638-beta2"
+  },
+  "epoch3_selection": false,
+  "intended_change": {
+    "A": 24,
+    "B": 36,
+    "C": 36
+  },
+  "intended_variable": "ANDROID_API_LEVEL",
+  "product_decision": null,
+  "schema_version": 1,
+  "unavoidable_additional_deltas": [
+    {
+      "baseline_ndk_revision": "27.3.13750724",
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "api36-capable-ndk-toolchain",
+      "product_source_semantics_changed": false,
+      "reason": "official CPython 3.14.6 pins NDK 27.3.13750724; the controlled API36 rebuild selects exact owner-local custom r30 beta2 30.0.15729638-beta2 only after standard-symlink, API36 CRT, and executable-link verification and applies it equally to B/C",
+      "revision_changed": true,
+      "selected_ndk_revision": "30.0.15729638-beta2"
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "epoch3_selection": false,
+      "id": "ndk-prerelease-channel",
+      "product_source_semantics_changed": false,
+      "reason": "API 36 compilation requires the owner-local NDK r30 beta2 pre-release in this run; this is an explicitly enumerated build-tool delta and does not establish stable-toolchain or Epoch 3 product adoption",
+      "release_channel": "pre-release",
+      "selected_ndk_revision": "30.0.15729638-beta2"
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "producer-context",
+      "reason": "A is official release output; B/C are bounded owner-local rebuilds"
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "build-python-bootstrap",
+      "product_source_semantics_changed": false,
+      "reason": "owner-local exact CPython 3.14.6 is reused as the external build Python because the official Android builder only requires a matching major/minor interpreter for regeneration and freezing; no product source semantics change"
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "build-timestamp-and-build-id",
+      "reason": "rebuild output includes run-specific timestamps/build IDs"
+    },
+    {
+      "classes": [
+        "B"
+      ],
+      "enumerated": true,
+      "id": "class-b-exact-official-release-asset-prepopulation",
+      "identity_policy": "hard-pinned-url-filename-sha256-size",
+      "network_acquisition_allowed": true,
+      "official_package_final_bytes_used_as_rebuild_input": false,
+      "product_source_semantics_changed": false,
+      "reason": "the exact final A package omits the development headers and static archives for bzip2, libffi, xz, and zstd, so B prepopulates the exact six release assets pinned by CPython 3.14.6 Android/unpack_deps; every asset is hard-bound by URL, filename, SHA-256, and size and the merged dependency manifest is retained byte-for-byte through the API36 CPython build"
+    },
+    {
+      "classes": [
+        "C"
+      ],
+      "enumerated": true,
+      "id": "dependency-producer",
+      "reason": "C rebuilds pinned BeeWare dependency tags from source at API 36"
+    },
+    {
+      "classes": [
+        "C"
+      ],
+      "enumerated": true,
+      "id": "source-dependency-ndk-orchestration",
+      "product_source_semantics_changed": false,
+      "reason": "pinned source-dependency recipes are build-environment-normalized to the same selected NDK revision 30.0.15729638-beta2 used by CPython B/C"
+    },
+    {
+      "classes": [
+        "C"
+      ],
+      "enumerated": true,
+      "id": "source-dependency-host-isolation",
+      "product_source_semantics_changed": false,
+      "reason": "compiler and linker wrappers unset Termux variables and filter host -L/-I/RPATH arguments; source-dependency android-env prepends the selected API36 sysroot library directory; SQLite must resolve libz.so rather than Termux libz.so.1",
+      "termux_host_library_allowed": false
+    },
+    {
+      "classes": [
+        "C"
+      ],
+      "enumerated": true,
+      "forced_cache_values": {
+        "ac_cv_func_memfd_create": "no",
+        "ac_cv_func_mkostemp": "no",
+        "ac_cv_func_mkstemp": "yes"
+      },
+      "id": "source-dependency-libffi-android-configure-fallback",
+      "product_source_semantics_changed": false,
+      "reason": "libffi 3.4.4 AC_CHECK_FUNCS cross-link checks can mark memfd_create and mkostemp available even when the API36 C99 compile surface lacks declarations; the pinned recipe forces those configure cache results to no and verifies the declared mkstemp fallback with the selected r30/API36 compiler",
+      "recipe_build_environment_changed": true,
+      "selected_exec_temp_backend": "mkstemp-compatible-fallback",
+      "source_patch_applied": false
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "termux-host-environment-capture-portability",
+      "product_semantics_changed": false,
+      "reason": "bounded Android/android.py host-build patch uses env rather than shell export so Termux emits KEY=VALUE assignments; target product semantics are unchanged"
+    },
+    {
+      "classes": [
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "dependency-prepopulation-native-control-flow",
+      "product_source_semantics_changed": false,
+      "reason": "Classes B and C prepopulate exact dependency prefixes before invoking the unmodified CPython configure_host_python flow; the existing prefix-existence guard natively bypasses official dependency unpacking",
+      "source_patch_applied": false
+    },
+    {
+      "classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "enumerated": true,
+      "id": "measurement-normalization",
+      "reason": "LA-2 and LR-3 are held constant for runnable measurement copies and are not part of raw producer identity"
+    }
+  ]
+}

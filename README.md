@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      execute-e2-r1-api36-controlled-source-equivalent-comparison
+immediate action      evaluate-epoch2-closure-gates
 program epoch         E2 — upstream-thin research program
-program gate          E2-R1/API36-1 — API-36 controlled source-equivalent comparison
+program gate          E2/CLOSURE — Epoch 2 closure gates
 ```
 
 ### Current claim boundary
@@ -33,9 +33,9 @@ none
 
 ### Unresolved risks
 
-- The API-36 comparison must keep compile API as the intended changed variable and enumerate every unavoidable additional delta.
-- Python 3.15.0b4 remains preview-only and requires a successor release/runtime qualification before any support claim.
-- UT-6 still withholds a minimum release API and runtime 16 KiB support until direct target evidence exists.
+- Epoch 2 closure must resolve E2-G1 through E2-G8 without treating API-36 evidence as an automatic product selection.
+- UT-6 still withholds a minimum release API and direct 16 KiB runtime support.
+- Class C source-built dependencies carry greater producer and maintenance burden than Class B.
 
 ### Accepted authorities
 
@@ -57,6 +57,7 @@ none
 - [`experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json`](experiments/epoch2-upstream-thin-feature-qualification/feature-qualification-authority.json): explicit evidence-backed subprocess, venv, pip, uv, console-script, and multiprocessing support boundaries (`3b56a38898a3a2384cf9419fe3cd124faa8dbf367cdd5532724b3424092a62e5`)
 - [`experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json`](experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json): bounded current-target platform evidence, static 16 KiB compatibility, and explicit withheld claims (`b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4`)
 - [`experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json`](experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json): official patch-update rehearsal, Python 3.15 preview delta, maintenance burden, and security ownership (`a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5`)
+- [`experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json`](experiments/epoch2-upstream-thin-api36-controlled-comparison/api36-controlled-comparison-authority.json): API-24 official and API-36 source-equivalent three-class controlled comparison (`576f0f833164a2748a5c494780f429b4c22af5cb07d331248ac7572611b1339e`)
 
 ### Agent entry
 
