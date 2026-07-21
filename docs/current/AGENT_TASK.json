@@ -1,22 +1,25 @@
 {
   "claim_boundary": {
-    "android_runtime_claim": true,
-    "artifact_family_implementation_started_claim": true,
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "artifact_family_complete_claim": true,
     "canonical_full_complete_claim": true,
     "canonical_install_only_complete_claim": true,
     "canonical_stripped_complete_claim": true,
-    "device_qualification_claim": false,
+    "component_license_mapping_complete_claim": false,
     "epoch2_closed_claim": true,
     "epoch3_selection_claim": true,
+    "non_termux_context_claim": false,
     "official_upstream_identity_claim": true,
     "product_selectability_claim": false,
-    "publication_claim": false
+    "publication_claim": false,
+    "release_blocker_resolution_started_claim": true
   },
   "completion_contract": {
     "always": {
       "all_required_verifiers_must_pass": true,
-      "all_three_artifact_authority_identities_must_match": true,
-      "artifact_bytes_must_be_reused_without_reassembly": true,
+      "artifact_family_authority_must_match": true,
+      "frozen_artifact_bytes_must_not_change": true,
       "generated_views_must_be_regenerated": true,
       "new_markdown_or_json_requires_registry_update": true,
       "one_runner_and_complete_receipt_required": true,
@@ -24,31 +27,32 @@
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain-artifact-family-integration-or-select-bounded-correction",
+      "allowed_action_policy": "retain-release-blocker-gate-or-select-bounded-correction",
       "complete_receipt_required": true
     },
     "pass": {
-      "required_epoch3_gates": [
-        "E3-G4-family",
-        "E3-G6-family",
-        "E3-G7-family"
+      "required_blockers": [
+        "RB-1",
+        "RB-2",
+        "RB-3",
+        "RB-4",
+        "RB-5",
+        "RB-6",
+        "RB-7"
       ],
       "required_output_roles": [
-        "three-frozen-artifact-family",
-        "exact-flavor-lineage",
-        "artifact-manifests",
-        "provenance-sidecars",
-        "qualification-sidecars",
-        "license-file-inventories",
-        "identity-attestations",
-        "sha256sums",
-        "release-index",
-        "artifact-family-independent-audit",
-        "artifact-family-authority"
+        "component-license-authority",
+        "ca-timezone-data-authority",
+        "astral-consumer-compatibility-authority",
+        "release-operations-authority",
+        "api24-runtime-authority",
+        "real-16k-runtime-authority",
+        "non-termux-runtime-authority",
+        "release-blocker-independent-audit"
       ],
-      "successor_action_class": "resolve-epoch3-release-blocking-experiments",
+      "successor_action_class": "integrate-epoch3-selectable-release-candidate",
       "successor_must_exist": false,
-      "successor_task_id": "E3-RELEASE-BLOCKERS"
+      "successor_task_id": "E3-RELEASE-CANDIDATE"
     }
   },
   "default_exclusions": [
@@ -61,84 +65,69 @@
     "past-chat-transcripts"
   ],
   "deliverable": {
-    "class": "three-artifact-release-family-runner-receipt-audit-and-authority",
-    "owner_interface": "one-runner",
-    "result": "complete-pass-or-fail-artifact-family-integration-receipt"
+    "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
+    "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
+    "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
   "generated_from": {
     "state": "docs/current/STATE.json",
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "extract each exact artifact from its verified complete owner result archive after validating the result archive and embedded artifact SHA-256",
-    "first_attempt": "reuse the three exact frozen artifacts from prior owner result caches",
+    "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
+    "first_attempt": "reuse the exact artifact-family directory and frozen artifacts from the accepted owner cache",
     "forbidden": [
       "reassemble-or-modify-any-frozen-artifact",
-      "invent-producer-object-or-dependency-build-metadata",
-      "claim-complete-component-license-mapping-without-evidence",
+      "claim-complete-license-mapping-from-file-name-census-alone",
+      "claim-api24-16k-or-non-termux-without-direct-context-evidence",
+      "fabricate-astral-producer-metadata",
       "claim-selectability-or-publication",
-      "rerun-unrelated-device-qualification",
       "network-git-in-assistant-environment"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E3/ARTIFACT-FAMILY",
-    "name": "Canonical full, install-only, and stripped release-family integration",
+    "id": "E3/RELEASE-BLOCKERS",
+    "name": "Release-blocking evidence, data products, compatibility, runtime contexts, and operations",
     "status": "in-progress"
   },
   "required_authorities": [
     {
-      "path": "experiments/epoch3-upstream-thin-full/full-authority.json",
-      "reason": "Frozen canonical full artifact and upstream-derived full contract.",
-      "sha256": "a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-install-only/install-only-authority.json",
-      "reason": "Frozen exact full projection and install-only identity.",
-      "sha256": "7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-stripped/stripped-authority.json",
-      "reason": "Frozen bounded strip derivation and stripped artifact identity.",
-      "sha256": "bf985a2cfc5446f7deab36d853f27ac439c30ba2b85b761546d919fe411a2d25"
+      "path": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+      "reason": "Frozen exact three-artifact release-family authority.",
+      "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
     }
   ],
   "required_reads": [
     {
-      "path": "docs/contracts/EPOCH3_UPSTREAM_THIN_PRODUCT_CONTRACT.md",
-      "reason": "Canonical Astral-like artifact family, truthful metadata, and non-claim contract.",
+      "path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
+      "reason": "Current parallel blocker lanes, gate ordering, and stop conditions.",
       "scope": "full"
     },
     {
-      "path": "docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md",
-      "reason": "Full-first artifact order and current artifact-family integration sequence.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/blocker-register.json",
+      "reason": "Machine-readable status and completion role for every release blocker.",
       "scope": "full"
     },
     {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json",
-      "reason": "Exact frozen full identity.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/baseline-contract.json",
+      "reason": "First bounded component/license census contract and non-claim boundary.",
       "scope": "full"
     },
     {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json",
-      "reason": "Exact frozen install-only identity.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json",
-      "reason": "Exact frozen stripped identity and strip surface.",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json",
+      "reason": "Exact frozen release-family and 23-file identity.",
       "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 22,
+  "state_revision": 23,
   "task": {
-    "action_class": "finalize-epoch3-artifact-family",
-    "goal": "Bind the frozen full, install-only, and install-only-stripped artifacts into one deterministic Astral-like release family without changing artifact bytes; generate truthful manifests, provenance, qualification, license-file inventories, attestations, SHA256SUMS, and a release index; prove two-build identity and independent verification while withholding selectability and publication.",
-    "id": "E3-ARTIFACT-FAMILY",
-    "title": "Canonical Astral-like three-artifact release-family integration",
+    "action_class": "resolve-epoch3-release-blocking-experiments",
+    "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
+    "id": "E3-RELEASE-BLOCKERS",
+    "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "L"
   }
 }

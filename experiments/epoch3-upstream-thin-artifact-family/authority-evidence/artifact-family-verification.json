@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "asset_identities": true,
+    "authority_bindings": true,
+    "checksum_binding": true,
+    "claims_bounded": true,
+    "exact_file_set": true,
+    "flavor_relationships": true,
+    "manifest_exact": true,
+    "release_digest": true,
+    "release_identity": true,
+    "release_index_parse": true,
+    "sha256sums_exact": true,
+    "three_flavors": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "artifact_family_complete": true,
+    "component_license_mapping_complete": false,
+    "non_termux_context": false,
+    "publication": false,
+    "selectable": false
+  },
+  "errors": [],
+  "failed_checks": [],
+  "pass": true,
+  "release_index": {
+    "filename": "release-index.json",
+    "sha256": "b60274ac64b40c43fc174e4ea4a238743216452b5dfe8af300adde37c4fd7389",
+    "size_bytes": 8094
+  },
+  "release_sha256": "81bd66f5cd1978485eb50991d5a6e773b55b51defb52483db6db5215c1a91a9e",
+  "schema_version": 1,
+  "verifier_kind": "epoch3-upstream-thin-release-family"
+}

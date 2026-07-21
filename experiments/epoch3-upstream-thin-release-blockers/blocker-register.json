@@ -1,0 +1,75 @@
+{
+  "blockers": [
+    {
+      "completion_role": "complete-component-to-license-map-and-notice-set",
+      "id": "RB-1",
+      "lane": "local",
+      "name": "component-license-closure",
+      "required_for": ["selectability", "publication"],
+      "status": "in-progress"
+    },
+    {
+      "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
+      "id": "RB-2",
+      "lane": "local",
+      "name": "ca-timezone-data-products",
+      "required_for": ["selectability"],
+      "status": "open"
+    },
+    {
+      "completion_role": "astral-compatible-consumer-and-parser-qualification",
+      "id": "RB-3",
+      "lane": "local",
+      "name": "astral-consumer-compatibility",
+      "required_for": ["selectability"],
+      "status": "open"
+    },
+    {
+      "completion_role": "release-security-update-rollback-and-revocation-operations",
+      "id": "RB-4",
+      "lane": "local",
+      "name": "release-operations",
+      "required_for": ["publication"],
+      "status": "open"
+    },
+    {
+      "completion_role": "exact-artifact-runtime-on-android-api-24",
+      "id": "RB-5",
+      "lane": "target",
+      "name": "api24-runtime",
+      "required_for": ["api24-support", "selectability"],
+      "status": "open"
+    },
+    {
+      "completion_role": "exact-artifact-runtime-on-real-16384-byte-page-device",
+      "id": "RB-6",
+      "lane": "target",
+      "name": "real-16k-runtime",
+      "required_for": ["16k-support", "selectability"],
+      "status": "open"
+    },
+    {
+      "completion_role": "exact-artifact-runtime-in-non-termux-android-context",
+      "id": "RB-7",
+      "lane": "target",
+      "name": "non-termux-runtime",
+      "required_for": ["termux-independence", "selectability"],
+      "status": "open"
+    }
+  ],
+  "claim_boundary": {
+    "artifact_bytes_frozen": true,
+    "artifact_family_authority_frozen": true,
+    "publication": false,
+    "selectable": false
+  },
+  "execution_model": {
+    "device_lanes_may_use_distinct_devices": true,
+    "exact_artifact_identity_required_everywhere": true,
+    "local_and_target_lanes_parallel": true,
+    "metadata_revision_may_not_change_artifact_bytes": true
+  },
+  "next_bounded_action": "component-and-license-census",
+  "register_kind": "epoch3-release-blocker-register",
+  "schema_version": 1
+}

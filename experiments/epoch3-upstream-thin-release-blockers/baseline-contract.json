@@ -1,0 +1,39 @@
+{
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-release-blocker-component-license-census",
+  "expected_component_classes": [
+    "cpython",
+    "project-launcher",
+    "pip",
+    "openssl",
+    "sqlite",
+    "bzip2",
+    "xz-liblzma",
+    "zstd",
+    "expat",
+    "libmpdec",
+    "libffi",
+    "android-system-providers"
+  ],
+  "input": {
+    "artifact_family_authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "artifact_family_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12"
+  },
+  "required_outputs": [
+    "component-census.json",
+    "license-gap-register.json",
+    "independent-audit.json"
+  ],
+  "schema_version": 1,
+  "stop_conditions": [
+    "frozen-artifact-identity-mismatch",
+    "artifact-byte-mutation",
+    "unrecorded-distributed-component",
+    "false-complete-license-claim"
+  ]
+}

@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 22
+> **State revision:** 23
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          finalize-epoch3-artifact-family
-work gate       E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
+action          resolve-epoch3-release-blocking-experiments
+work gate       E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
 ```
 
 ## Mandatory project and session modules
@@ -25,7 +25,7 @@ work gate       E3/ARTIFACT-FAMILY — Canonical full, install-only, and strippe
 
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
-gate    E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
+gate    E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
 status  in-progress
 ```
 
@@ -55,24 +55,33 @@ status  in-progress
 22. [`experiments/epoch3-upstream-thin-full/full-authority.json`](../experiments/epoch3-upstream-thin-full/full-authority.json) — canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority
 23. [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](../experiments/epoch3-upstream-thin-install-only/install-only-authority.json) — canonical exact full projection, Android/Bionic qualification, and stripped start authority
 24. [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](../experiments/epoch3-upstream-thin-stripped/stripped-authority.json) — canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority
+25. [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](../experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json) — canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority
 
 ## Blockers
 
-None.
+- RB-1-component-and-license-closure
+- RB-2-ca-and-timezone-data-products
+- RB-3-astral-consumer-compatibility
+- RB-4-release-security-update-and-revocation-operations
+- RB-5-api24-runtime-qualification
+- RB-6-real-16k-runtime-qualification
+- RB-7-non-termux-android-runtime-qualification
 
 ## Unresolved risks
 
-- artifact-family-integration-in-progress
+- component-to-license-mapping-incomplete
+- libffi-version-and-license-attribution-unresolved
+- CA-and-timezone-production-payload-selection-pending
+- astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
-- emulator-unqualified-and-not-required-for-current-full-start
-- other-Android-ABIs-explicitly-out-of-scope
-- CA-and-timezone-production-payload-experiment-pending
-- uv-managed-consumer-compatibility-experiment-pending
-- upstream-derived-full-is-not-Astral-producer-object-full
 - support-security-data-update-and-revocation-operations-pending
+- emulator-unqualified-and-not-required-for-current-release-blocker-gate
+- other-Android-ABIs-explicitly-out-of-scope
+- upstream-derived-full-is-not-Astral-producer-object-full
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
+- selectability-not-authorized
 - publication-not-authorized
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

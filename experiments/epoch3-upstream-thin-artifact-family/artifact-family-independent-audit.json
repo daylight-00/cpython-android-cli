@@ -1,0 +1,32 @@
+{
+  "audit_kind": "epoch3-artifact-family-acceptance-independent-audit",
+  "bound_file_identities": {
+    "components/upstream-thin/lib/release_family.py": "0df01cfb4af9e1895ad7058e83a16685d147be3271f2a51dae31621faaa1801f",
+    "components/upstream-thin/tests/test_release_family.py": "f1a8f26418179211dacfc4d21f338b4d3987d90b38d5ac27b2222a6c95a90b6e",
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json": "8c1a06cd67e70219807e463a30524bec767661d33d0ef86eea9cec029a918322",
+    "experiments/epoch3-upstream-thin-artifact-family/accepted-r1-return.json": "05196119a6ac1b6e17153cde15fd8500d9a19f0d0bd5b866e6cf275de18f6504",
+    "experiments/epoch3-upstream-thin-artifact-family/audit_artifact_family.py": "77dc228f609a757b7d39122010c3790d2639676f022f5991ddc988eb76164b6c",
+    "experiments/epoch3-upstream-thin-artifact-family/run_artifact_family.py": "f55856cd4f1322dbd2c9e80233e584b562033b035c32047b4358b0acd5f011a2",
+    "experiments/epoch3-upstream-thin-artifact-family/verify_artifact_family_acceptance.py": "c09465bf3a92ead25d0bf4e6fbf9d8a2ca3222a25294077515bc6f20f20787c6"
+  },
+  "checks": {
+    "all_primary_checks_pass": true,
+    "bound_files_present": true,
+    "claims_bounded": true,
+    "family_identity_exact": true,
+    "primary_pass": true,
+    "three_artifacts_exact": true
+  },
+  "claim_boundary": {
+    "artifact_family_complete": true,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "release_blocker_work_authorized": true,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "primary_verification_sha256": "dd4dbe0ad388c72058821adea0091bd81d0055e4b93ab79aa7b2cf538119d72e",
+  "schema_version": 1,
+  "stderr": ""
+}

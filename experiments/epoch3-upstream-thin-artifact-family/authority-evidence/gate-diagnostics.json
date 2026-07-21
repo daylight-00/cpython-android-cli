@@ -1,0 +1,60 @@
+{
+  "claim_boundary": {
+    "actual_16k_runtime_claim": false,
+    "api24_runtime_claim": false,
+    "artifact_family_authority_frozen": false,
+    "artifact_family_candidate_complete": true,
+    "component_license_mapping_complete": false,
+    "non_termux_context_claim": false,
+    "publication": false,
+    "selectable": false
+  },
+  "failed_gates": [],
+  "gate_kind": "epoch3-upstream-thin-artifact-family-candidate",
+  "gates": {
+    "artifact_bytes_reused": true,
+    "assembly_1": true,
+    "assembly_2": true,
+    "byte_reproducible_family": true,
+    "claims_withheld": true,
+    "exact_23_file_family": true,
+    "family_verification": true,
+    "three_exact_inputs": true,
+    "three_frozen_authorities": true
+  },
+  "inputs": {
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    },
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    "install_only_stripped": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+      "size_bytes": 23841241
+    }
+  },
+  "pass": true,
+  "release_family": {
+    "file_count": 23,
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "path": "artifacts/cpython-3.14.6+e3-r1-aarch64-linux-android",
+    "release_index": {
+      "filename": "release-index.json",
+      "sha256": "b60274ac64b40c43fc174e4ea4a238743216452b5dfe8af300adde37c4fd7389",
+      "size_bytes": 8094
+    },
+    "release_sha256": "81bd66f5cd1978485eb50991d5a6e773b55b51defb52483db6db5215c1a91a9e",
+    "sha256sums": {
+      "filename": "SHA256SUMS",
+      "sha256": "b47f399a48526e75aad98499aff841126986f8436702a7cd5c9cd25784ac6082",
+      "size_bytes": 3110
+    }
+  },
+  "schema_version": 1
+}

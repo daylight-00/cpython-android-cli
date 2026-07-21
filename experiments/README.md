@@ -295,6 +295,19 @@
 - [`experiments/epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json`](epoch2-upstream-thin-upstream-evolution/ut7-gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 - [`experiments/epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json`](epoch2-upstream-thin-upstream-evolution/wheel-and-pip-delta.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch2-research`
 
+## `epoch3-upstream-thin-artifact-family`
+
+- [`experiments/epoch3-upstream-thin-artifact-family/accepted-r1-return.json`](epoch3-upstream-thin-artifact-family/accepted-r1-return.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](epoch3-upstream-thin-artifact-family/artifact-family-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-artifact-family-governance`
+- [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-independent-audit.json`](epoch3-upstream-thin-artifact-family/artifact-family-independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-verification.json`](epoch3-upstream-thin-artifact-family/artifact-family-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-reproducibility.json`](epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-reproducibility.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-verification.json`](epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/gate-diagnostics.json`](epoch3-upstream-thin-artifact-family/authority-evidence/gate-diagnostics.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/independent-audit.json`](epoch3-upstream-thin-artifact-family/authority-evidence/independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/input-identities.json`](epoch3-upstream-thin-artifact-family/authority-evidence/input-identities.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-artifact-family-acceptance`
+- [`experiments/epoch3-upstream-thin-artifact-family/authority-evidence/result-summary.json`](epoch3-upstream-thin-artifact-family/authority-evidence/result-summary.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-artifact-family-acceptance`
+
 ## `epoch3-upstream-thin-full`
 
 - [`experiments/epoch3-upstream-thin-full/accepted-r4-return.json`](epoch3-upstream-thin-full/accepted-r4-return.json) — `FROZEN_AUTHORITY` · `machine_evidence` · owner `epoch3-full-acceptance`
@@ -327,6 +340,11 @@
 - [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](epoch3-upstream-thin-install-only/install-only-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-install-only-governance`
 - [`experiments/epoch3-upstream-thin-install-only/install-only-independent-audit.json`](epoch3-upstream-thin-install-only/install-only-independent-audit.json) — `FROZEN_AUTHORITY` · `machine_audit` · owner `independent-audit`
 - [`experiments/epoch3-upstream-thin-install-only/install-only-verification.json`](epoch3-upstream-thin-install-only/install-only-verification.json) — `FROZEN_AUTHORITY` · `machine_verification` · owner `epoch3-install-only-acceptance`
+
+## `epoch3-upstream-thin-release-blockers`
+
+- [`experiments/epoch3-upstream-thin-release-blockers/baseline-contract.json`](epoch3-upstream-thin-release-blockers/baseline-contract.json) — `ACTIVE_PLAN` · `machine_contract` · owner `epoch3-release-blocker-governance`
+- [`experiments/epoch3-upstream-thin-release-blockers/blocker-register.json`](epoch3-upstream-thin-release-blockers/blocker-register.json) — `ACTIVE_PLAN` · `machine_plan` · owner `epoch3-release-blocker-governance`
 
 ## `epoch3-upstream-thin-stripped`
 

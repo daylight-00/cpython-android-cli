@@ -6,8 +6,8 @@
 ## Current task
 
 - [`docs/current/AGENT_TASK.json`](current/AGENT_TASK.json)
-- action class: `finalize-epoch3-artifact-family`
-- gate: `E3/ARTIFACT-FAMILY` — Canonical full, install-only, and stripped release-family integration
+- action class: `resolve-epoch3-release-blocking-experiments`
+- gate: `E3/RELEASE-BLOCKERS` — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
 
 ## Mandatory agent modules
 
@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `733`
+- tracked Markdown/JSON: `747`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

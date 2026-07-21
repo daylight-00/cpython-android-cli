@@ -1,0 +1,80 @@
+{
+  "artifacts": {
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    },
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    "install_only_stripped": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+      "size_bytes": 23841241
+    }
+  },
+  "check_count": 26,
+  "checks": {
+    "accepted_action": true,
+    "accepted_artifacts": true,
+    "accepted_release_family": true,
+    "accepted_repository_transition": true,
+    "accepted_result_archive": true,
+    "candidate_gate_identity": true,
+    "candidate_gate_pass": true,
+    "candidate_inputs_exact": true,
+    "claims_bounded": true,
+    "evidence_present": true,
+    "family_inventory_exact": true,
+    "family_reproducibility": true,
+    "family_verification_identity": true,
+    "family_verification_pass": true,
+    "independent_audit_pass": true,
+    "input_identity_receipt": true,
+    "lock_identity": true,
+    "parse:accepted-return": true,
+    "parse:artifact-family-lock": true,
+    "parse:artifact-family-reproducibility": true,
+    "parse:artifact-family-verification": true,
+    "parse:gate-diagnostics": true,
+    "parse:independent-audit": true,
+    "parse:input-identities": true,
+    "parse:result-summary": true,
+    "result_summary_pass": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "artifact_family_authority_can_freeze": true,
+    "artifact_family_complete": true,
+    "component_license_mapping_complete": false,
+    "non_termux_context": false,
+    "publication": false,
+    "selectable": false
+  },
+  "errors": {},
+  "evidence_identities": {
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-reproducibility.json": "2c7efca13a34e584c2e6d32b5a70c041efe6c032572769da54ff5f76e9950e00",
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/artifact-family-verification.json": "1ce9055c82ba6f78779924afa026e99466b6ff1e80617bc10b6a7e18c76699fa",
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/gate-diagnostics.json": "33a49b26019fb3b2b8d5af382e664b3e3ae9546c7f3c49d3732e4fc7535247a0",
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/independent-audit.json": "34444af85448fa2ec1d69b2b145ae03c8fbe2c46720004021d87244c3aefe669",
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/input-identities.json": "8fceb94db49f5c00fb20e06006757b74b991ef23a858165c8cd06e5518184f20",
+    "experiments/epoch3-upstream-thin-artifact-family/authority-evidence/result-summary.json": "33a49b26019fb3b2b8d5af382e664b3e3ae9546c7f3c49d3732e4fc7535247a0"
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 26,
+  "release_family": {
+    "file_count": 23,
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "release_id": "cpython-3.14.6+e3-r1-aarch64-linux-android",
+    "release_index_sha256": "b60274ac64b40c43fc174e4ea4a238743216452b5dfe8af300adde37c4fd7389",
+    "release_sha256": "81bd66f5cd1978485eb50991d5a6e773b55b51defb52483db6db5215c1a91a9e",
+    "sha256sums_sha256": "b47f399a48526e75aad98499aff841126986f8436702a7cd5c9cd25784ac6082"
+  },
+  "schema_version": 1,
+  "verifier_kind": "epoch3-artifact-family-owner-return-acceptance"
+}

@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      finalize-epoch3-artifact-family
+immediate action      resolve-epoch3-release-blocking-experiments
 program epoch         E3 — clean upstream-derived Android standalone distribution
-program gate          E3/ARTIFACT-FAMILY — Canonical full, install-only, and stripped release-family integration
+program gate          E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
 ```
 
 ### Current claim boundary
@@ -29,21 +29,29 @@ Epoch 3 selection     true
 
 ### Active blockers
 
-none
+- RB-1-component-and-license-closure
+- RB-2-ca-and-timezone-data-products
+- RB-3-astral-consumer-compatibility
+- RB-4-release-security-update-and-revocation-operations
+- RB-5-api24-runtime-qualification
+- RB-6-real-16k-runtime-qualification
+- RB-7-non-termux-android-runtime-qualification
 
 ### Unresolved risks
 
-- artifact-family-integration-in-progress
+- component-to-license-mapping-incomplete
+- libffi-version-and-license-attribution-unresolved
+- CA-and-timezone-production-payload-selection-pending
+- astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
-- emulator-unqualified-and-not-required-for-current-full-start
-- other-Android-ABIs-explicitly-out-of-scope
-- CA-and-timezone-production-payload-experiment-pending
-- uv-managed-consumer-compatibility-experiment-pending
-- upstream-derived-full-is-not-Astral-producer-object-full
 - support-security-data-update-and-revocation-operations-pending
+- emulator-unqualified-and-not-required-for-current-release-blocker-gate
+- other-Android-ABIs-explicitly-out-of-scope
+- upstream-derived-full-is-not-Astral-producer-object-full
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
+- selectability-not-authorized
 - publication-not-authorized
 
 ### Accepted authorities
@@ -72,6 +80,7 @@ none
 - [`experiments/epoch3-upstream-thin-full/full-authority.json`](experiments/epoch3-upstream-thin-full/full-authority.json): canonical deterministic Astral-structured upstream-thin full archive, Android/Bionic qualification, projection invariant, and install-only start authority (`a29064602ad2fa612eba516cc09ab49334f7d8ec4aec04f3c9e2e0827afec9d0`)
 - [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](experiments/epoch3-upstream-thin-install-only/install-only-authority.json): canonical exact full projection, Android/Bionic qualification, and stripped start authority (`7f27a85ce283e0283bb7e7cf0e4aace8282d7cfd0d37c732b23188c8b318018d`)
 - [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](experiments/epoch3-upstream-thin-stripped/stripped-authority.json): canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority (`bf985a2cfc5446f7deab36d853f27ac439c30ba2b85b761546d919fe411a2d25`)
+- [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json): canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority (`102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e`)
 
 ### Agent entry
 

@@ -5,6 +5,7 @@
 ## Canonical active plans
 
 - [`docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md`](EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md) — `ACTIVE_PLAN` · `program_plan` · owner `program-governance`
+- [`docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md`](EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md) — `ACTIVE_PLAN` · `program_plan` · owner `epoch3-program-governance`
 - [`docs/roadmap/EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md`](EPOCH3_UPSTREAM_THIN_FULL_FIRST_IMPLEMENTATION_PLAN.md) — `ACTIVE_PLAN` · `program_plan` · owner `epoch3-program-governance`
 
 ## Historical plan snapshots
