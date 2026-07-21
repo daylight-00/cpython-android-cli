@@ -351,3 +351,31 @@ accepted. The fallback decision must then be an explicit alias or omission.
 This implementation start does not authorize stripped selectability,
 publication, API-24 runtime, actual 16 KiB page-size runtime, or a non-Termux
 execution-context claim.
+
+## 12. First stripped owner run and LLVM multi-call alias correction
+
+The first owner stripped run accepted the frozen install-only input and counted
+all 81 regular ELF files, but it produced no stripped artifact. The assembler
+incorrectly classified every ELF as having no sections. The preserved receipt
+showed the owner tools were Termux LLVM multi-call aliases:
+
+```text
+requested readelf     /data/data/com.termux/files/usr/bin/readelf
+canonical target      /data/data/com.termux/files/usr/bin/llvm-readobj
+requested llvm-strip  /data/data/com.termux/files/usr/bin/llvm-strip
+canonical target      /data/data/com.termux/files/usr/bin/llvm-objcopy
+```
+
+The implementation resolved each symlink to its canonical target and then
+executed the target path. LLVM selects the `llvm-readelf`/`llvm-strip` interface
+from the invoked alias name, so dereferencing the alias changed both command
+semantics and output format. The section parser consequently received the
+structured `llvm-readobj` form rather than GNU-compatible `llvm-readelf`
+output and returned an empty section list.
+
+The correction preserves the absolute alias path for subprocess execution while
+recording both invocation and canonical target paths, tool bytes, size, and
+version output. This does not alter the selected strip operation, eligible
+object boundary, source install-only identity, or archive contract. A regression
+fixture now uses an argv[0]-sensitive multi-call symlink and fails if alias
+identity is lost again.

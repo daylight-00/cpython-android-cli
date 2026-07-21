@@ -27,16 +27,26 @@ def run(command: list[str]) -> subprocess.CompletedProcess[str]:
 
 
 def resolve_tool(tool: str) -> Path:
-    candidate = Path(tool)
+    """Return an absolute invocation path without dereferencing tool aliases.
+
+    LLVM multi-call tools select their interface from argv[0]. In particular,
+    Termux exposes ``readelf`` as a symlink to ``llvm-readobj`` and
+    ``llvm-strip`` as a symlink to ``llvm-objcopy``. Dereferencing those
+    symlinks before execution silently changes command-line and output
+    semantics. Identity recording may inspect the canonical target, but the
+    executable path used for subprocess invocation must preserve the alias.
+    """
+    candidate = Path(tool).expanduser()
     if candidate.parent != Path(".") or candidate.is_absolute():
-        resolved = candidate.expanduser().resolve()
-        if not resolved.is_file():
+        invocation = candidate if candidate.is_absolute() else Path.cwd() / candidate
+        invocation = invocation.absolute()
+        if not invocation.is_file():
             raise FileNotFoundError(f"tool not found: {tool}")
-        return resolved
+        return invocation
     found = shutil.which(tool)
     if not found:
         raise FileNotFoundError(f"tool not found on PATH: {tool}")
-    return Path(found).resolve()
+    return Path(found).absolute()
 
 
 def section_names(path: Path, readelf: str = "readelf") -> list[str]:
@@ -73,13 +83,16 @@ def section_census(path: Path, readelf: str = "readelf") -> dict[str, Any]:
 
 
 def tool_identity(tool: str) -> dict[str, Any]:
-    path = resolve_tool(tool)
-    proc = run([str(path), "--version"])
+    invocation_path = resolve_tool(tool)
+    canonical_path = invocation_path.resolve()
+    proc = run([str(invocation_path), "--version"])
     return {
         "requested": tool,
-        "path": str(path),
-        "sha256": sha256_file(path),
-        "size_bytes": path.stat().st_size,
+        "path": str(invocation_path),
+        "canonical_path": str(canonical_path),
+        "is_symlink": invocation_path.is_symlink(),
+        "sha256": sha256_file(invocation_path),
+        "size_bytes": invocation_path.stat().st_size,
         "version_returncode": proc.returncode,
         "version_stdout": proc.stdout,
         "version_stderr": proc.stderr,

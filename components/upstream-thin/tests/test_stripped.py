@@ -210,6 +210,43 @@ class StrippedTests(unittest.TestCase):
             self.assertTrue(census["eligible"])
             self.assertIn(".symtab", census["removable_sections"])
 
+    def test_multicall_tool_alias_is_preserved_for_invocation(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="stripped-test-") as temporary:
+            root = Path(temporary)
+            target = root / "llvm-readobj"
+            target.write_text(
+                "#!/bin/sh\n"
+                "case \"$(basename \"$0\")\" in\n"
+                "  readelf)\n"
+                "    cat <<'EOF'\n"
+                "  [ 1] .symtab SYMTAB 00000000 000000 000018 18 0 0 8\n"
+                "  [ 2] .strtab STRTAB 00000000 000018 000010 00 0 0 1\n"
+                "EOF\n"
+                "    ;;\n"
+                "  *)\n"
+                "    cat <<'EOF'\n"
+                "Sections [\n"
+                "  Section { Name: .symtab }\n"
+                "]\n"
+                "EOF\n"
+                "    ;;\n"
+                "esac\n",
+                encoding="utf-8",
+            )
+            target.chmod(0o755)
+            alias = root / "readelf"
+            alias.symlink_to(target.name)
+            dummy = root / "dummy.elf"
+            dummy.write_bytes(b"not inspected by fake tool")
+
+            identity = tool_identity(str(alias))
+            self.assertEqual(Path(identity["path"]), alias.absolute())
+            self.assertEqual(Path(identity["canonical_path"]), target.resolve())
+            self.assertTrue(identity["is_symlink"])
+            census = section_census(dummy, str(alias))
+            self.assertEqual(census["removable_sections"], [".symtab", ".strtab"])
+            self.assertTrue(census["eligible"])
+
 
 if __name__ == "__main__":
     unittest.main()
