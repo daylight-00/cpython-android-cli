@@ -137,3 +137,41 @@ The bounded r2 correction permits `.` only when it is a directory root marker.
 Absolute paths, `..` traversal, duplicate normalized members, special files,
 hard links, and escaping symlinks remain rejected. Positive, expected-negative,
 and incomplete fixture coverage is retained before the real target rerun.
+
+### r2 — full assembly succeeded; qualification harness and verifier correction required
+
+The second owner execution consumed the exact locked Python.org and Astral
+inputs, built the LA-2 launcher, assembled the canonical full archive twice,
+and proved byte-for-byte reproducibility. Both assemblies produced the same
+3,752-member, 81-ELF archive:
+
+```text
+sha256 = 20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12
+size   = 39408292
+```
+
+The run then stopped in target qualification because Android did not provide an
+optional `getconf` executable. The harness allowed `FileNotFoundError` from a
+diagnostic command to abort after the substantive runtime probes had run but
+before the qualification receipt was written. This is a harness error, not an
+Android runtime failure. r3 records unavailable optional tools with return code
+127 and derives the device page size through the candidate Python's
+`os.sysconf("SC_PAGE_SIZE")`.
+
+The r2 static verifier also over-classified seven immutable upstream strings as
+active host dependencies. Six were ordinary standard-library source or test
+references to `LD_LIBRARY_PATH`; one was an upstream zstd source filename in an
+ELF `.rodata` diagnostic string. None was an ELF loader path, RUNPATH, NEEDED
+provider, command wrapper, sysconfig value, pkg-config value, or other active
+consumer configuration. Astral also documents that build-time paths may remain
+as non-runtime build provenance. r3 therefore separates:
+
+- **operational residue**, which remains a hard failure in launch commands and
+  consumed runtime/SDK metadata; and
+- **informational upstream provenance**, which is inventoried but preserved so
+  thin does not rewrite upstream bytes without a runtime requirement.
+
+The corrected verifier independently passes the exact r2 full archive with zero
+operational residue while reporting the inert provenance strings. No full
+authority, install-only implementation, selectability, or publication claim was
+created by r2, and local and remote main remained at `00ac96f`.

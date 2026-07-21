@@ -13,7 +13,7 @@ from typing import Any
 from archive import safe_extract_tar, sha256_file, tree_manifest
 from elf import elf_surface, is_elf, relative_runpath
 
-FORBIDDEN_ACTIVE_BYTES = (
+FORBIDDEN_OPERATIONAL_BYTES = (
     b"/data/data/com.termux/files/usr",
     b"/data/data/com.termux/files/home",
     b"/Users/runner/",
@@ -48,6 +48,53 @@ def _forbidden_build_info(value: Any, path: str = "build_info") -> list[str]:
         for index, item in enumerate(value):
             hits.extend(_forbidden_build_info(item, f"{path}[{index}]"))
     return hits
+
+
+def classify_host_residue(python_root: Path, install: Path) -> dict[str, list[str]]:
+    """Separate consumer-active path residue from inert upstream provenance.
+
+    Astral documents that build-time paths can survive in distributions. The
+    upstream-thin contract therefore rejects them only in surfaces consumed as
+    configuration or command wrappers. Source-code mentions and strings baked
+    into upstream ELF .rodata remain immutable provenance unless they appear in
+    ELF loader metadata, which is verified independently by the LR-3 checks.
+    """
+    operational: set[Path] = {python_root / "PYTHON.json"}
+    operational.update(
+        path for path in (install / "bin").glob("*")
+        if path.is_file() and not path.is_symlink() and not is_elf(path)
+    )
+    stdlib = install / "lib/python3.14"
+    for pattern in (
+        "_sysconfigdata_*.py",
+        "_sysconfig_vars_*.json",
+        "build-details.json",
+        "config-*/Makefile",
+        "config-*/python-config.py",
+        "config-*/pybuilddir.txt",
+    ):
+        operational.update(path for path in stdlib.glob(pattern) if path.is_file())
+    operational.update(
+        path for path in (install / "lib/pkgconfig").glob("*.pc")
+        if path.is_file()
+    )
+
+    operational_hits: list[str] = []
+    informational_hits: list[str] = []
+    for path in sorted(path for path in python_root.rglob("*") if path.is_file() and not path.is_symlink()):
+        data = path.read_bytes()
+        for marker in FORBIDDEN_OPERATIONAL_BYTES:
+            if marker not in data:
+                continue
+            row = f"{path.relative_to(python_root).as_posix()}:{marker.decode(errors='replace')}"
+            if path in operational:
+                operational_hits.append(row)
+            else:
+                informational_hits.append(row)
+    return {
+        "operational": operational_hits,
+        "informational_upstream_provenance": informational_hits,
+    }
 
 
 def _providers(install: Path, readelf: str) -> tuple[dict[str, str], list[Path]]:
@@ -140,16 +187,19 @@ def verify(archive: Path, *, zstd: str = "zstd", readelf: str = "readelf", fixtu
         except Exception as exc:  # noqa: BLE001
             _check(checks, errors, "official_input_identity", False, f"{type(exc).__name__}: {exc}")
 
-        active_files = [path for path in install.rglob("*") if path.is_file() and not path.is_symlink()]
-        active_files.append(py_path)
-        residue: list[str] = []
-        for path in active_files:
-            data = path.read_bytes()
-            for marker in FORBIDDEN_ACTIVE_BYTES:
-                if marker in data:
-                    residue.append(f"{path.relative_to(python_root).as_posix()}:{marker.decode(errors='replace')}")
-        _check(checks, errors, "active_tree_host_neutral", not residue, str(residue[:20]))
-        metrics["active_host_residue_count"] = len(residue)
+        residue = classify_host_residue(python_root, install)
+        operational_residue = residue["operational"]
+        informational_residue = residue["informational_upstream_provenance"]
+        _check(
+            checks,
+            errors,
+            "active_tree_host_neutral",
+            not operational_residue,
+            str(operational_residue[:20]),
+        )
+        metrics["active_host_residue_count"] = len(operational_residue)
+        metrics["informational_upstream_provenance_residue_count"] = len(informational_residue)
+        metrics["informational_upstream_provenance_residue"] = informational_residue[:40]
 
         if fixture_mode:
             _check(checks, errors, "release_elf_inventory", True)

@@ -21,6 +21,18 @@ def _run(command: list[str], *, env: dict[str, str], cwd: Path | None = None, ti
         return {"command": command, "returncode": proc.returncode, "stdout": proc.stdout, "stderr": proc.stderr, "timed_out": False}
     except subprocess.TimeoutExpired as exc:
         return {"command": command, "returncode": 124, "stdout": exc.stdout or "", "stderr": exc.stderr or "", "timed_out": True}
+    except OSError as exc:
+        # Android app shells are intentionally minimal and may not expose
+        # optional POSIX utilities such as getconf. Missing diagnostic tools
+        # are evidence, not a reason for the qualification harness to crash.
+        return {
+            "command": command,
+            "returncode": 127,
+            "stdout": "",
+            "stderr": f"{type(exc).__name__}: {exc}",
+            "timed_out": False,
+            "tool_unavailable": True,
+        }
 
 
 def _json_probe(python: Path, code: str, env: dict[str, str], timeout: int = 300) -> dict[str, Any]:
@@ -189,11 +201,16 @@ def qualify(archive: Path, *, output: Path | None = None, zstd: str = "zstd", pk
             _restore_owner_write(runtime_b)
 
             checks["all_67_extensions"] = len(modules) == 67 and probe_a.get("data", {}).get("extension_count") == 67 and probe_b.get("data", {}).get("extension_count") == 67
+            page_size = _run(
+                [str(python_b), "-c", "import os; print(os.sysconf('SC_PAGE_SIZE'))"],
+                env=env_b,
+            )
             evidence["device"] = {
                 "uname": _run(["uname", "-a"], env=env_b),
                 "getprop_sdk": _run(["getprop", "ro.build.version.sdk"], env=env_b),
                 "getprop_release": _run(["getprop", "ro.build.version.release"], env=env_b),
-                "getconf_pagesize": _run(["getconf", "PAGESIZE"], env=env_b),
+                "python_sysconf_pagesize": page_size,
+                "optional_getconf_pagesize": _run(["getconf", "PAGESIZE"], env=env_b),
                 "id": _run(["id"], env=env_b),
                 "execution_context": "Termux app process used only as an Android/Bionic qualification context",
             }

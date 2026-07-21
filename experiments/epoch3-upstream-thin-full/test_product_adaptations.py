@@ -12,6 +12,8 @@ sys.path.insert(0, str(ROOT / "components/upstream-thin/lib"))
 
 from normalize import normalize_runtime_metadata  # noqa: E402
 from pip_surface import install_upstream_pip  # noqa: E402
+from qualify_full import _run  # noqa: E402
+from verify_full import classify_host_residue  # noqa: E402
 
 
 class ProductAdaptationTests(unittest.TestCase):
@@ -73,6 +75,35 @@ class ProductAdaptationTests(unittest.TestCase):
             self.assertEqual(values["prefix"], "${prefix}")
             self.assertEqual(values["HW_T_CROSS_BUILD_SDK"], "unavailable-without-explicit-ndk-authority")
             self.assertTrue((install / "bin/python3.14-config").is_file())
+
+    def test_missing_optional_target_tool_is_recorded_not_raised(self) -> None:
+        row = _run(["/definitely/not/present/hw-t-getconf"], env={})
+        self.assertEqual(row["returncode"], 127)
+        self.assertTrue(row["tool_unavailable"])
+        self.assertIn("FileNotFoundError", row["stderr"])
+
+    def test_host_residue_classification_preserves_inert_upstream_bytes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            python_root = Path(tmp) / "python"
+            install = python_root / "install"
+            stdlib = install / "lib/python3.14"
+            dynload = stdlib / "lib-dynload"
+            config = stdlib / "config-3.14-aarch64-linux-android"
+            bin_dir = install / "bin"
+            pkg = install / "lib/pkgconfig"
+            for directory in (dynload, config, bin_dir, pkg):
+                directory.mkdir(parents=True, exist_ok=True)
+            (python_root / "PYTHON.json").write_text("{}\n", encoding="utf-8")
+            (stdlib / "ctypes_util.py").write_text("# documents LD_LIBRARY_PATH\n", encoding="utf-8")
+            (dynload / "upstream.so").write_bytes(b"\x7fELF\x00/home/runner/work/source.c\x00")
+            (config / "Makefile").write_text("prefix=${prefix}\n", encoding="utf-8")
+            (bin_dir / "pip").write_text("#!/system/bin/sh\nexec /data/data/com.termux/files/usr/bin/python -m pip\n", encoding="utf-8")
+            rows = classify_host_residue(python_root, install)
+            self.assertEqual(len(rows["operational"]), 1)
+            self.assertIn("install/bin/pip:/data/data/com.termux/files/usr", rows["operational"][0])
+            self.assertEqual(len(rows["informational_upstream_provenance"]), 2)
+            self.assertTrue(any("LD_LIBRARY_PATH" in row for row in rows["informational_upstream_provenance"]))
+            self.assertTrue(any("/home/runner/" in row for row in rows["informational_upstream_provenance"]))
 
 
 if __name__ == "__main__":
