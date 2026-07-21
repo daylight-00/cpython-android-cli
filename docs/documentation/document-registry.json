@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 686
+    "tracked_document_count": 687
   },
   "documents": [
     {
@@ -1288,6 +1288,22 @@
       "rationale": "",
       "supersession_rule": "Amend via ADR and preserve prior version semantics.",
       "update_trigger": "Epoch boundary or explicit charter amendment."
+    },
+    {
+      "authority_domain": "program_plan",
+      "format": "md",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "snapshot-only",
+      "migration_action": "keep-current-initialization-review",
+      "mutability": "controlled-plan",
+      "onboarding_visibility": "primary",
+      "owner": "architecture-governance",
+      "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_ASTRAL_BOUNDARY_REVIEW.md",
+      "plan_role": "epoch3-upstream-thin-boundary-review",
+      "planned_canonical_parent": "docs/plans/INDEX.md",
+      "rationale": "Current E3-INIT comparison of Astral standalone structure, official Python.org Android input, bounded adaptations, experiment needs, and thin exclusions.",
+      "supersession_rule": "Supersede with the frozen Epoch 3 selection register and product contract; preserve this review as decision input.",
+      "update_trigger": "Change only during E3-INIT research, classification, or decision-boundary correction."
     },
     {
       "authority_domain": "normative_policy",

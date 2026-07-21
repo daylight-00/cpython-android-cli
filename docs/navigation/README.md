@@ -8,7 +8,7 @@
 ```text
 action       initialize-epoch3-from-accepted-evidence-export
 gate         E3/INIT — Epoch 3 initialization decisions and contract freeze
-tracked docs 686
+tracked docs 687
 indexes      16
 ```
 

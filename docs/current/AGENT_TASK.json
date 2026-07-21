@@ -79,7 +79,7 @@
   "program_gate": {
     "id": "E3/INIT",
     "name": "Epoch 3 initialization decisions and contract freeze",
-    "status": "ready"
+    "status": "in-progress"
   },
   "required_authorities": [
     {
@@ -97,6 +97,11 @@
     {
       "path": "docs/epochs/EPOCH3_CHARTER.md",
       "reason": "Epoch 3 mission, producer model, selection boundary, and repository contract.",
+      "scope": "full"
+    },
+    {
+      "path": "docs/epochs/EPOCH3_UPSTREAM_THIN_ASTRAL_BOUNDARY_REVIEW.md",
+      "reason": "Current E3-INIT Astral/Python.org boundary classification, truthful 1:1 definition, bounded adaptations, thin exclusions, and authorized experiment candidates.",
       "scope": "full"
     },
     {
@@ -118,7 +123,7 @@
     }
   ],
   "schema_version": 2,
-  "state_revision": 16,
+  "state_revision": 17,
   "task": {
     "action_class": "initialize-epoch3-from-accepted-evidence-export",
     "goal": "Consume the accepted Epoch 2 producer-independent export, complete every product selection disposition, define the clean repository boundary, and freeze the Epoch 3 product contract before implementation expands.",

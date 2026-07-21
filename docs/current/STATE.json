@@ -127,7 +127,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": null,
+  "active_work_package": "docs/epochs/EPOCH3_UPSTREAM_THIN_ASTRAL_BOUNDARY_REVIEW.md",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -189,22 +189,22 @@
   },
   "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
   "predecessor": {
-    "commit": "082d005716934ea63f98c6fe232151b6c9b813ab",
-    "tree": "097b4b7cce6d7fb6d6552a381a74350cd132f9ef"
+    "commit": "9331e4aef31d5f30c86aa4556bb71b2c878c6d03",
+    "tree": "9061ba96de6cd6de5ca4b8c074ec7ac14e116d46"
   },
   "program": {
     "epoch": {
       "id": "E3",
       "name": "clean upstream-derived Android standalone distribution",
-      "status": "ready-not-started"
+      "status": "initialization-in-progress"
     },
     "gate": {
       "id": "E3/INIT",
       "name": "Epoch 3 initialization decisions and contract freeze",
-      "status": "ready"
+      "status": "in-progress"
     },
     "next_action_class": "initialize-epoch3-from-accepted-evidence-export",
-    "status": "ready"
+    "status": "in-progress"
   },
   "project_model": {
     "path": "docs/agent/PROJECT_MODEL.md",
@@ -244,11 +244,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 16,
+  "state_revision": 17,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "7e7fc5f2448addfbc3abfdd8b41757c289fd63e19fe0e5cf7bc5991ea3ab9ec3"
+    "sha256": "79328d6d7d6683b36016ee2541a26de88ccad596ceb4c478201da17800ffcffd"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -276,5 +276,5 @@
     "source-producer-host-isolation-and-libffi-fix-deferred",
     "publication-not-authorized"
   ],
-  "updated_by_transaction": "20260721-e2-closure-v1"
+  "updated_by_transaction": "20260721-e3-init-upstream-thin-boundary-review-v1"
 }

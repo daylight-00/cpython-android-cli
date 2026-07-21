@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 16
+> **State revision:** 17
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -26,7 +26,7 @@ work gate       E3/INIT — Epoch 3 initialization decisions and contract freeze
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
 gate    E3/INIT — Epoch 3 initialization decisions and contract freeze
-status  ready
+status  in-progress
 ```
 
 ## Accepted authorities
