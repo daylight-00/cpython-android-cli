@@ -88,3 +88,35 @@ The first implementation increment establishes:
 - synthetic success and negative fixtures;
 - no install-only or stripped assembler before the full projection contract is
   executable.
+
+## 7. First real full target transaction
+
+The first real candidate transaction is prepared as one bounded owner runner.
+It performs these operations without starting either downstream flavor:
+
+1. reuse or acquire the exact locked Python.org Android archive and verify its
+   filename, exact byte size, and SHA-256;
+2. reuse or acquire the exact locked Astral 3.14.6 AArch64 GNU full reference,
+   enforce a download cap, and verify its release SHA-256;
+3. build the selected `Py_BytesMain` launcher from the official headers and
+   shared libpython;
+4. normalize the selected relocation-aware runtime and on-device SDK metadata;
+5. install pip package bytes only from the upstream-carried ensurepip wheel and
+   add the selected relocation-safe Android command wrappers;
+6. apply and record LR-3 for every final ELF;
+7. assemble the same full twice and require byte identity;
+8. observe the Astral golden member tree and format-8 `PYTHON.json` before
+   accepting the candidate conformance boundary;
+9. verify the final member manifest, partial truthful `build_info`, native
+   provider closure, AArch64 identity, exact RUNPATH, 16 KiB static alignment,
+   and active-tree host neutrality;
+10. execute the final extracted prefix at two locations and read-only, importing
+    all 67 native modules and testing child re-entry, pip, `python-config`,
+    pkg-config, and a newly created venv;
+11. run an independent evidence and static-artifact audit; and
+12. return the full candidate and complete evidence without freezing authority
+    or creating install-only.
+
+A passing returned result is an input to the next repository transaction. It is
+not itself the full authority and does not broaden API, page-size, non-Termux,
+selectability, or publication claims.

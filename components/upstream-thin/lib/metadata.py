@@ -25,7 +25,7 @@ def normalize_string(value: Any) -> str:
 
 
 def sanitize_tokens(value: str) -> str:
-    value = value.replace("/usr/local", "install")
+    value = value.replace("/usr/local", "install").replace("${prefix}", "install").replace("@HW_T_PREFIX@", "install")
     tokens = re.findall(r"(?:'[^']*'|\"[^\"]*\"|\S+)", value)
     kept = [token for token in tokens if not any(marker in token for marker in ("/Users/runner/", "/data/data/com.termux/", "/home/runner/"))]
     return " ".join(kept)

@@ -61,6 +61,7 @@ class FullFirstTests(unittest.TestCase):
                 "prefix/lib/python3.14",
                 "prefix/include",
                 "prefix/include/python3.14",
+                "prefix/lib/python3.14/site-packages",
             ):
                 add_directory(tf, directory)
             add_file(
@@ -106,7 +107,7 @@ class FullFirstTests(unittest.TestCase):
             self.assertEqual(proc.returncode, 0, proc.stderr)
             full = next(output.glob("*-full.tar.zst"))
             verify = subprocess.run(
-                [str(CLI), "verify-full", str(full)],
+                [str(CLI), "verify-full", "--fixture-mode", str(full)],
                 cwd=ROOT,
                 text=True,
                 stdout=subprocess.PIPE,

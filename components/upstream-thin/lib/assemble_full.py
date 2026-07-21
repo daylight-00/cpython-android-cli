@@ -13,6 +13,8 @@ from typing import Any
 from archive import copy_entry, copy_tree_contents, safe_extract_tar, sha256_file, tree_manifest, write_json, write_tar_zst
 from elf import patch_lr3
 from metadata import build_python_json
+from normalize import normalize_runtime_metadata
+from pip_surface import install_upstream_pip
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -91,14 +93,18 @@ def assemble(args: argparse.Namespace) -> dict[str, Any]:
         build = python_root / "build"
         copy_tree_contents(prefix, install)
         aliases = install_launcher(install, launcher, python_mm)
+        metadata_normalization: dict[str, Any] = {"schema_version": 1, "fixture_mode": True, "status": "not-applied"}
+        pip_surface: dict[str, Any] = {"schema_version": 1, "fixture_mode": True, "status": "not-applied"}
         mutation_rows: list[dict[str, Any]] = []
         if not args.fixture_mode:
+            metadata_normalization = normalize_runtime_metadata(install)
+            pip_surface = install_upstream_pip(install)
             mutation_rows = patch_lr3(install, args.patchelf, args.readelf)
         copy_upstream_material(extracted, archive, build)
         hw = build / "hw-t"
         write_json(hw / "input.json", {"schema_version": 1, "official_input": observed_input, "lock": contract["input_lock"]})
         write_json(hw / "launcher.json", {"schema_version": 1, "source": "components/upstream-thin/src/python.c", "binary": {"sha256": sha256_file(launcher), "size_bytes": launcher.stat().st_size}, "aliases": aliases})
-        write_json(hw / "mutations.json", {"schema_version": 1, "model": "LR-3", "fixture_mode": args.fixture_mode, "objects": mutation_rows})
+        write_json(hw / "mutations.json", {"schema_version": 1, "model": "LR-3-plus-selected-consumer-normalization", "fixture_mode": args.fixture_mode, "elf_objects": mutation_rows, "runtime_metadata": metadata_normalization, "pip_surface": pip_surface})
         python_json = build_python_json(install, contract, readelf=args.readelf, fixture_mode=args.fixture_mode)
         write_json(python_root / "PYTHON.json", python_json)
         manifest_path = hw / "full-member-manifest.json"
@@ -116,6 +122,8 @@ def assemble(args: argparse.Namespace) -> dict[str, Any]:
             "official_input": observed_input,
             "launcher_sha256": sha256_file(launcher),
             "lr3_object_count": len(mutation_rows),
+            "runtime_metadata_normalized": not args.fixture_mode,
+            "pip_surface_installed": not args.fixture_mode,
             "python_json_standard_top_level_keys": sorted(python_json),
         }
         write_json(output_dir / f"{artifact_stem}-full.receipt.json", receipt)

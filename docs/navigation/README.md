@@ -8,7 +8,7 @@
 ```text
 action       implement-epoch3-clean-upstream-derived-product
 gate         E3/FULL — Canonical Astral-structured full archive implementation and qualification
-tracked docs 697
+tracked docs 698
 indexes      16
 ```
 
@@ -44,6 +44,7 @@ indexes      16
 - [`components/upstream-thin/README.md`](../../components/upstream-thin/README.md) — `STABLE` · `component_contract` · owner `epoch3-upstream-thin-product`
 - [`components/upstream-thin/contracts/product-v1.json`](../../components/upstream-thin/contracts/product-v1.json) — `FROZEN_AUTHORITY` · `product_contract` · owner `epoch3-product-governance`
 - [`config/dependencies/android-source-deps-aarch64-linux-android.lock.json`](../../config/dependencies/android-source-deps-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
+- [`config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json`](../../config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`

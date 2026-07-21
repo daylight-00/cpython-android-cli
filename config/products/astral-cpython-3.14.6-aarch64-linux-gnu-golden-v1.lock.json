@@ -1,0 +1,13 @@
+{
+  "asset": {
+    "filename": "cpython-3.14.6+20260610-aarch64-unknown-linux-gnu-pgo+lto-full.tar.zst",
+    "maximum_size_bytes": 125829120,
+    "sha256": "451113b0af15ded8986def51f05dc3a3f4516974dd78c3b27d768a1cb221a231",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6%2B20260610-aarch64-unknown-linux-gnu-pgo%2Blto-full.tar.zst"
+  },
+  "content_identity_policy": "Exact release asset SHA-256 is authoritative. The first bounded observation freezes the exact byte size; the pre-observation download is additionally capped by maximum_size_bytes.",
+  "reference_role": "Astral archive, flavor, member-layout, symlink, and PYTHON.json golden reference only; not an Android native-byte source",
+  "release_tag": "20260610",
+  "schema_version": 1,
+  "target": "aarch64-unknown-linux-gnu"
+}

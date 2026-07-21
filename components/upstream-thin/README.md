@@ -18,3 +18,12 @@ The initial implementation contains deterministic archive primitives, the
 selected LA-2 launcher source, LR-3 mutation support, a full-layout assembler,
 and local structural tests. It does not authorize publication or claim target
 qualification.
+
+The second implementation increment promotes the scaffold to a bounded Android
+T-class candidate workflow. It adds the selected relocation-aware sysconfig,
+pkg-config, `python-config`, and upstream-wheel pip surfaces; validates every
+final ELF and mutation row; assembles the full twice for byte reproducibility;
+observes an exact Astral 3.14.6 AArch64 full golden; and runs launcher,
+67-extension, subprocess, prefix-relocation, pip, SDK, venv, and read-only
+runtime qualification. The returned result remains a candidate until its
+external evidence is reviewed and frozen as the full authority.
