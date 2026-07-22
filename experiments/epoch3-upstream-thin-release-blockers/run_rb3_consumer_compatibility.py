@@ -58,6 +58,13 @@ def identity_ok(row:dict[str,Any],expected_python:Path|None=None)->bool:
     if expected_python is not None: base=base and Path(v.get('real_executable','')).resolve()==expected_python.resolve()
     return base
 
+
+def identity_base_ok(row:dict[str,Any],base_prefix:Path)->bool:
+    if not identity_ok(row): return False
+    try: v=parse_identity(row['stdout'])
+    except Exception: return False
+    return Path(v.get('base_prefix','')).resolve()==base_prefix.resolve()
+
 def isolated_env(base:Path,managed:Path|None=None,policy:str='never',catalog:Path|None=None)->dict[str,str]:
     home=base/'home'; data=base/'data'; config=base/'config'; cache=base/'cache'
     for p in (home,data,config,cache): p.mkdir(parents=True,exist_ok=True)
@@ -93,7 +100,7 @@ def run(family:Path,output:Path,uv:Path,zstd:str='zstd')->dict[str,Any]:
         sysvenv=t/'system-venv'; procs.append(run_capture('system-venv',[str(uv),'venv',str(sysvenv),'--python',str(python),'--no-python-downloads','--offline','--no-managed-python','--no-cache','--no-config','--color','never'],t,sysenv,output/'process'))
         procs.append(run_capture('system-venv-identity',[str(sysvenv/'bin/python'),'-c',identity_code()],t,sysenv,output/'process'))
         procs.append(run_capture('system-run',[str(uv),'run','--python',str(python),'--no-python-downloads','--offline','--no-managed-python','--no-project','--no-sync','--no-config','--color','never','--','python','-c',identity_code()],t,sysenv,output/'process'))
-        project=t/'sync-project'; project.mkdir(); (project/'pyproject.toml').write_text('[project]\nname="rb3-probe"\nversion="0.0.0"\nrequires-python=">=3.14,<3.15"\ndependencies=[]\n')
+        project=t/'sync-project'; project.mkdir(); (project/'pyproject.toml').write_text('[project]\nname="rb3-probe"\nversion="0.0.0"\nrequires-python=">=3.14,<3.15"\ndependencies=[]\n\n[tool.uv]\npackage=false\n')
         syncvenv=t/'sync-venv'; syncenv=dict(sysenv); syncenv['UV_PROJECT_ENVIRONMENT']=str(syncvenv)
         procs.append(run_capture('system-sync',[str(uv),'sync','--project',str(project),'--python',str(python),'--no-python-downloads','--offline','--no-managed-python','--no-cache','--no-config','--color','never'],project,syncenv,output/'process'))
         procs.append(run_capture('system-sync-identity',[str(syncvenv/'bin/python'),'-c',identity_code()],project,syncenv,output/'process'))
@@ -119,14 +126,14 @@ def run(family:Path,output:Path,uv:Path,zstd:str='zstd')->dict[str,Any]:
           'exact_family':fv['pass'],'astral_metadata':all(astral_checks.values()),'uv_android':True,
           'system_identity':identity_ok(process['system-identity'],python),
           'system_find':process['system-find']['returncode']==0 and Path(process['system-find']['stdout'].strip()).resolve()==python.resolve(),
-          'system_venv':process['system-venv']['returncode']==0 and identity_ok(process['system-venv-identity']),
-          'system_run':identity_ok(process['system-run'],python),
-          'system_sync':process['system-sync']['returncode']==0 and identity_ok(process['system-sync-identity']),
+          'system_venv':process['system-venv']['returncode']==0 and identity_base_ok(process['system-venv-identity'],python.parent.parent),
+          'system_run':identity_base_ok(process['system-run'],python.parent.parent),
+          'system_sync':process['system-sync']['returncode']==0 and identity_base_ok(process['system-sync-identity'],python.parent.parent),
           'managed_catalog':process['managed-catalog']['returncode']==0 and KEY in process['managed-catalog']['stdout'],
           'managed_install':process['managed-install']['returncode']==0,
           'managed_find':process['managed-find']['returncode']==0 and managed_python.is_file(),
           'managed_identity':identity_ok(process['managed-identity']),
-          'managed_venv':process['managed-venv']['returncode']==0 and identity_ok(process['managed-venv-identity']),
+          'managed_venv':process['managed-venv']['returncode']==0 and identity_base_ok(process['managed-venv-identity'],managed_python.parent.parent),
           'managed_reinstall_noop':process['managed-reinstall']['returncode']==0 and installed_before==installed_after,
           'managed_uninstall':process['managed-uninstall']['returncode']==0 and process['managed-find-empty']['returncode']!=0,
           'exact_archive_direct':catalog_row(install)['sha256']==INSTALL['sha256'] and catalog_row(install)['url']==install.resolve().as_uri(),
