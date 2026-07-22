@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 33
+> **State revision:** 34
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -62,11 +62,11 @@ status  in-progress
 29. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json) — non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output
 30. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json) — frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority
 31. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json) — frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority
+32. [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json) — frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority
 
 ## Blockers
 
 - RB-1-component-and-license-closure
-- RB-2-ca-and-timezone-data-products
 - RB-3-astral-consumer-compatibility
 - RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
@@ -88,7 +88,7 @@ status  in-progress
 - publication-not-authorized
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
-- CA-and-timezone-owner-build-update-rollback-runtime-qualification-pending
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
+- astral-consumer-and-uv-managed-compatibility-owner-qualification-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

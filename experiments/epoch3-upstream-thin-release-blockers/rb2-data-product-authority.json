@@ -1,0 +1,66 @@
+{
+  "accepted_evidence": {
+    "acceptance_verifier": "11/11",
+    "independent_audit": "8/8",
+    "result_archive_sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+    "result_archive_size": 459042,
+    "self_index_file_count": 34
+  },
+  "accepted_surface": [
+    "deterministic pure-data CA/timezone products",
+    "external immutable DATA_ROOT",
+    "atomic current symlink update and rollback",
+    "current and rollback two-run byte identity",
+    "exact frozen install_only runtime qualification",
+    "frozen 128-file Python release family invariance"
+  ],
+  "authority_kind": "epoch3-rb2-ca-timezone-data-products-r3",
+  "claim_boundary": {
+    "ca_timezone_data_product_complete": true,
+    "general_online_https_connectivity_claim": false,
+    "owner_approved": false,
+    "publication": false,
+    "python_archive_bytes_changed": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "selectable": false
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb2-data-products-r3-return.json": "ff73bc471c34da3e802aa98ce024c6f123b47cbef86841f7a7ead21772ec3bd7",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/frozen-family-invariance.json": "14d16031e08460ba7864a68a885aadc2e27363063cacf9a668c4d05d9785e3f2",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/independent-audit.json": "3e36208758f1f500e9eccc589121e91e58480cd7dd299f7792eb21a4a8780762",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/lifecycle.json": "803c44f1562768f3e1bea452b9652b6c20e174fcf61b51068f821c91139d63bf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/provider-lock.json": "945dd0726d372cd17ce242c249eaba572058aec2c595daa3e7cc8a63370ad36c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/reproducibility.json": "0b0b7c886f920c41fdd6ac2fe277e6e871f62989f26ae37942a4abebbfb1437a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/result-index.json": "27e3589dbc4a9433a851189b9f71ed4173d7ca60369fc95768356ab0cde86848",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/result.json": "806450d6cc233b49c769a2133827856567813d70744228a6b91d5ecd6d6085a8",
+    "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority-evidence/runtime-qualification.json": "b2a6bf4316053c4443f66716fae42adb888267144e68dbf1fa814769906cd6f1",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb2_data_product_acceptance.py": "7c6b37c6d31fce5a0c96c76ad27fe596ed616abd850dfe616540e487304c3594",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb2_data_product_acceptance.py": "2946cc215b31740b7f04be75c63e89bdde00283541cc8630363e8b376369a336"
+  },
+  "products": {
+    "current": {
+      "ca_provider": "certifi 2026.6.17",
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "iana_version": "2026c",
+      "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318,
+      "timezone_provider": "tzdata 2026.3"
+    },
+    "rollback": {
+      "ca_provider": "certifi 2026.5.20",
+      "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141,
+      "timezone_provider": "tzdata 2026.2"
+    }
+  },
+  "schema_version": 1,
+  "successor_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-contract.json",
+    "id": "RB-3/ASTRAL-UV-CONSUMER-COMPATIBILITY",
+    "required_output": "astral-consumer-compatibility-authority"
+  }
+}

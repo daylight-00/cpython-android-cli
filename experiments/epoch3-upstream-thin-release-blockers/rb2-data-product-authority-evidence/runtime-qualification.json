@@ -1,0 +1,26 @@
+{
+  "claim_boundary": {
+    "exact_runtime_context_only": true,
+    "publication": false,
+    "rb2_closed": false,
+    "selectable": false
+  },
+  "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/current",
+  "details": {
+    "ca_count": 118,
+    "executable": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/python-runtime/python/bin/python3.14",
+    "python": "3.14.6 (tags/v3.14.6-dirty:c63aec6, Jun 10 2026, 10:08:03) [Clang 18.0.4 (https://android.googlesource.com/toolchain/llvm-project d8003a456",
+    "zones": {
+      "America/New_York": "America/New_York",
+      "Asia/Seoul": "Asia/Seoul",
+      "UTC": "UTC"
+    }
+  },
+  "pass": true,
+  "python": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/python-runtime/python/bin/python3.14",
+  "qualifier_kind": "epoch3-android-ca-timezone-data-runtime",
+  "returncode": 0,
+  "schema_version": 1,
+  "stderr": "",
+  "stdout": "{\"ca_count\": 118, \"executable\": \"/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/python-runtime/python/bin/python3.14\", \"python\": \"3.14.6 (tags/v3.14.6-dirty:c63aec6, Jun 10 2026, 10:08:03) [Clang 18.0.4 (https://android.googlesource.com/toolchain/llvm-project d8003a456\", \"zones\": {\"America/New_York\": \"America/New_York\", \"Asia/Seoul\": \"Asia/Seoul\", \"UTC\": \"UTC\"}}\n"
+}

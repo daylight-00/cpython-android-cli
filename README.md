@@ -30,7 +30,6 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-2-ca-and-timezone-data-products
 - RB-3-astral-consumer-compatibility
 - RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
@@ -52,8 +51,8 @@ Epoch 3 selection     true
 - publication-not-authorized
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
-- CA-and-timezone-owner-build-update-rollback-runtime-qualification-pending
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
+- astral-consumer-and-uv-managed-compatibility-owner-qualification-pending
 
 ### Accepted authorities
 
@@ -88,6 +87,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json): non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output (`1471394928903fb8d430c6a0f99b07defe847bb1732298eac0d82a5db643c983`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json): frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority (`faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json): frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority (`23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json): frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority (`48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098`)
 
 ### Agent entry
 

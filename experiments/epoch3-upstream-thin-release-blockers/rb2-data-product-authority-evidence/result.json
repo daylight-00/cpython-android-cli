@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "current_reproducible": true,
+    "exact_frozen_python_runtime": true,
+    "exact_legally_integrated_family": true,
+    "frozen_python_family_unchanged": true,
+    "rollback_reproducible": true,
+    "update_rollback_reactivation": true
+  },
+  "claim_boundary": {
+    "publication": false,
+    "rb2_closed": false,
+    "selectable": false
+  },
+  "current": {
+    "artifact": {
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+  },
+  "failed_checks": [],
+  "family_verification": {
+    "checks": {
+      "exact_manifest": true,
+      "file_count": true,
+      "notice": true,
+      "release_identity": true
+    },
+    "errors": [],
+    "failed_checks": [],
+    "pass": true,
+    "schema_version": 1,
+    "verifier_kind": "epoch3-rb1-owner-approval-review-input"
+  },
+  "pass": true,
+  "result_kind": "epoch3-rb2-ca-timezone-data-product-owner-result",
+  "rollback": {
+    "artifact": {
+      "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1"
+  },
+  "schema_version": 1
+}

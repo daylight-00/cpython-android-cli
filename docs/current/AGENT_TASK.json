@@ -214,7 +214,7 @@
     }
   ],
   "schema_version": 2,
-  "state_revision": 33,
+  "state_revision": 34,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",

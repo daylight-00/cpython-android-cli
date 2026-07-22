@@ -1,13 +1,14 @@
 {
+  "authority": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
   "basis": {
     "data_policy_authority": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
     "frozen_python_family": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
     "provider_lock": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json"
   },
   "claim_boundary": {
-    "candidate_build_allowed": true,
+    "candidate_build_allowed": false,
     "publication": false,
-    "rb2_closed": false,
+    "rb2_closed": true,
     "runtime_qualification_allowed": true,
     "selectable": false
   },
@@ -63,7 +64,7 @@
     "timezone_value": "<DATA_ROOT>/zoneinfo"
   },
   "schema_version": 1,
-  "status": "implementation-started-owner-run-pending",
+  "status": "completed-authority-frozen",
   "stop_conditions": [
     "any wheel identity differs from the lock",
     "any provider payload requires rebuilding or modifying certificate/zoneinfo bytes",

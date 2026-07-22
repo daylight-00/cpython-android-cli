@@ -1,0 +1,65 @@
+{
+  "check_kind": "epoch3-rb2-data-update-rollback",
+  "events": [
+    {
+      "event": "install-rollback",
+      "result": {
+        "activation": {
+          "current_link": "releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/current",
+          "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1"
+        },
+        "installed_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+        "operation": "install-epoch3-android-data-product",
+        "pass": true,
+        "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+        "schema_version": 1
+      }
+    },
+    {
+      "event": "install-current",
+      "result": {
+        "activation": {
+          "current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/current",
+          "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+        },
+        "installed_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+        "operation": "install-epoch3-android-data-product",
+        "pass": true,
+        "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+        "schema_version": 1
+      }
+    },
+    {
+      "event": "rollback",
+      "result": {
+        "current_link": "releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+        "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/current",
+        "operation": "activate-epoch3-android-data-release",
+        "pass": true,
+        "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+        "schema_version": 1
+      }
+    },
+    {
+      "event": "reactivate-current",
+      "result": {
+        "current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+        "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb2-lifecycle-dho1lw8i/data-home/current",
+        "operation": "activate-epoch3-android-data-release",
+        "pass": true,
+        "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+        "schema_version": 1
+      }
+    }
+  ],
+  "final_current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+  "pass": true,
+  "python_install_root_written": false,
+  "release_directories": [
+    "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+    "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+  ],
+  "schema_version": 1
+}

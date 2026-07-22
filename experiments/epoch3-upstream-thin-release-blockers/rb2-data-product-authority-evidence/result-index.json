@@ -1,0 +1,180 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "file_count": 35,
+  "files": [
+    {
+      "path": "final-status.txt",
+      "sha256": "459dc37cfd25371fa5071b697f73a640a74f8eda6e7d7952e7f3bae01d6f1bae",
+      "size_bytes": 1431
+    },
+    {
+      "path": "inputs/certifi-2026.5.20.pypi.json",
+      "sha256": "38362770a78b77d55847457dfe395e85c0f5ea4fbde6ee040d0f1e93b141c701",
+      "size_bytes": 4584
+    },
+    {
+      "path": "inputs/certifi-2026.6.17.pypi.json",
+      "sha256": "e342f67597312a318fcda12b980332b8e52d5554a4c1526635574f0cbdb7369f",
+      "size_bytes": 4584
+    },
+    {
+      "path": "inputs/cpython-android-cli-e3-rb2-data-products-r1.lock.json",
+      "sha256": "945dd0726d372cd17ce242c249eaba572058aec2c595daa3e7cc8a63370ad36c",
+      "size_bytes": 3086
+    },
+    {
+      "path": "inputs/tzdata-2026.2.pypi.json",
+      "sha256": "e167a9ed8cd92a59007e38c6f014b81671c7fc0284b4ea357431e742c7dca916",
+      "size_bytes": 3612
+    },
+    {
+      "path": "inputs/tzdata-2026.3.pypi.json",
+      "sha256": "803cc078e95743a65df3400feac314ee93a4c5bf9fbb1acf62938d50fe88660e",
+      "size_bytes": 3613
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/bundle-fetch.log",
+      "sha256": "17dd9b1bd9734376fa594bb3f77178ef7ad4135e6c51c917aa3b5aacfee5147a",
+      "size_bytes": 264
+    },
+    {
+      "path": "logs/legal-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package-verify.log",
+      "sha256": "de98fc80525a2fa4e1dbdd15aaef0f575273bea45b34b1e585f1fe3d1ffa7804",
+      "size_bytes": 126
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "47e930bfa8547af0e275fdc8f30ee4b5eded740e9615307434258197298b0ea5",
+      "size_bytes": 22
+    },
+    {
+      "path": "logs/rb2-run.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-post.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-pre.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "786072b00e8545d85ab10084d4248355b885de4f6ec97f65a655fd0b9ab05b11",
+      "size_bytes": 370
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "e0ba1aa100f5aa639ff654331cddb09aa4ac0642acb25c81e06b0fde38e4a782",
+      "size_bytes": 131
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "7c9710614864d74a7460edc237040f61e555e36ff6ce7104de76f9fd0c90a3fc",
+      "size_bytes": 7220
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "6a7dad8856316429c5b154c43d03e0d1ed2335b5d361042e3f50abfae0e90d9d",
+      "size_bytes": 2781
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "3e36208758f1f500e9eccc589121e91e58480cd7dd299f7792eb21a4a8780762",
+      "size_bytes": 922
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "3356e11ed649e3ac53d3f7d0a315321f3da6fb08bce506d446f3a8dcf3af5c34",
+      "size_bytes": 11246
+    },
+    {
+      "path": "receipts/rb2-run.json",
+      "sha256": "806450d6cc233b49c769a2133827856567813d70744228a6b91d5ecd6d6085a8",
+      "size_bytes": 1390
+    },
+    {
+      "path": "summary.json",
+      "sha256": "8f15624a4b840f40ab686cc0561b85c0c3b947c36ddc94ab78b8875234d37730",
+      "size_bytes": 1071
+    },
+    {
+      "path": "target/artifacts/android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "path": "target/artifacts/android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    {
+      "path": "target/builds/current/run-a/android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    {
+      "path": "target/builds/current/run-b/android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    {
+      "path": "target/builds/rollback/run-a/android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "path": "target/builds/rollback/run-b/android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "path": "target/frozen-family-invariance.json",
+      "sha256": "14d16031e08460ba7864a68a885aadc2e27363063cacf9a668c4d05d9785e3f2",
+      "size_bytes": 24574
+    },
+    {
+      "path": "target/lifecycle.json",
+      "sha256": "803c44f1562768f3e1bea452b9652b6c20e174fcf61b51068f821c91139d63bf",
+      "size_bytes": 2618
+    },
+    {
+      "path": "target/rb2-data-product-result.json",
+      "sha256": "806450d6cc233b49c769a2133827856567813d70744228a6b91d5ecd6d6085a8",
+      "size_bytes": 1390
+    },
+    {
+      "path": "target/reproducibility.json",
+      "sha256": "0b0b7c886f920c41fdd6ac2fe277e6e871f62989f26ae37942a4abebbfb1437a",
+      "size_bytes": 14069
+    },
+    {
+      "path": "target/runtime-qualification.json",
+      "sha256": "b2a6bf4316053c4443f66716fae42adb888267144e68dbf1fa814769906cd6f1",
+      "size_bytes": 1353
+    }
+  ],
+  "index_kind": "self-excluding-complete-result-index",
+  "schema_version": 1
+}

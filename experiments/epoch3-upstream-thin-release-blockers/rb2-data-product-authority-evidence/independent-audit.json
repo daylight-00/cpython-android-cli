@@ -1,0 +1,34 @@
+{
+  "audit_kind": "epoch3-rb2-ca-timezone-data-product-independent-audit",
+  "checks": {
+    "claims_bounded": true,
+    "frozen_family": true,
+    "products_verify_independently": true,
+    "reproducibility": true,
+    "result_consistency": true,
+    "runtime": true,
+    "two_artifacts": true,
+    "update_rollback": true
+  },
+  "claim_boundary": {
+    "publication": false,
+    "rb2_closed": false,
+    "selectable": false
+  },
+  "errors": [],
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1,
+  "subjects": [
+    {
+      "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    }
+  ]
+}
