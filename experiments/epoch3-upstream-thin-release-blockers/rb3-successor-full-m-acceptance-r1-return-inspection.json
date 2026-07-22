@@ -1,0 +1,56 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "profile_selected": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": true,
+    "successor_install_only_authorized": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-full-acceptance-r1-return-inspection",
+  "receipt": {
+    "acceptance_commit_not_applied": true,
+    "action": "failed-unit",
+    "failure_reason": "acceptance-and-product-unit-tests-failed",
+    "first_failure": "unit",
+    "post_head": "d0337b4a3072501dca200135007931eac814500d",
+    "pre_head": "d0337b4a3072501dca200135007931eac814500d",
+    "remote_post_head": "d0337b4a3072501dca200135007931eac814500d",
+    "remote_pre_head": "d0337b4a3072501dca200135007931eac814500d",
+    "rollback_exact": true
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-acceptance-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 13,
+    "sha256": "20ac37ce8d71dbcf439aae22ba3115cae0f96dea9c493ac50267ec47f1f7b8dc",
+    "size_bytes": 8562
+  },
+  "root_cause": {
+    "acceptance_authority_semantics_invalidated": false,
+    "candidate_artifact_invalidated": false,
+    "classification": "test-fixture-working-tree-copy-isolation-defect",
+    "correction": "Construct the negative-test fixture from git archive HEAD so only the committed tracked tree is copied; preserve the same mutation and rejection assertions.",
+    "correction_scope": "test-only-no-product-or-authority-claim-change",
+    "mechanism": "The negative acceptance-boundary test copied the entire repository working tree with shutil.copytree. Owner-local untracked work/ and results/ trees contained dangling venv and scenario symlinks, so copytree attempted to follow missing targets and failed before the intended mutation and verifier assertion.",
+    "successor_full_acceptance_evidence_invalidated": false
+  },
+  "schema_version": 1,
+  "status": "accepted-failure-r2-tracked-tree-test-isolation-correction-required",
+  "unit_observation": {
+    "failed_test": "test_boundary_rejects_family_supersession",
+    "failure_phase": "negative-test-fixture-copy-before-acceptance-verification",
+    "product_tests": {
+      "pass": true,
+      "ran": 70
+    },
+    "release_blocker_tests": {
+      "errors": 1,
+      "pass": false,
+      "ran": 54
+    }
+  }
+}

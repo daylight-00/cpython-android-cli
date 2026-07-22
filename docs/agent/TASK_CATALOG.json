@@ -2139,6 +2139,8 @@
         "product_selectability_claim": false,
         "publication_claim": false,
         "release_blocker_resolution_started_claim": true,
+        "successor_family_complete_claim": false,
+        "successor_full_accepted_claim": true,
         "user_built_wheel_repair_claim": false
       },
       "completion_contract": {
@@ -2153,7 +2155,7 @@
         },
         "contract_version": 1,
         "fail": {
-          "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only bounded successor representation or qualification defects; user-built wheel repair remains out of scope while direct and managed 16 KiB alignment remain hard gates",
+          "allowed_action_policy": "retain accepted full r5, keep RB-3 open, preserve the frozen predecessor family, and correct only bounded successor projection, stripping, family assembly, or qualification defects; user-built wheel repair remains out of scope and 16 KiB remains a hard gate",
           "complete_receipt_required": true
         },
         "pass": {
@@ -2195,14 +2197,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb3-profile-M-successor-full-r5-managed-find-observation-correction",
+        "current_bounded_transition": "rb3-profile-M-successor-family-derivation",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
-      "goal": "Resolve the remaining release blockers while preserving the accepted distributor boundary. Retain the r3 candidate that passed reproducibility, runtime, direct and managed SDK, and 16 KiB qualification; correct only the managed-find observation-order verifier defect without modifying the predecessor family or profile M semantics.",
+      "goal": "Resolve remaining release blockers while preserving the accepted distributor boundary. The deterministic profile-M successor full r5 is accepted; derive successor install_only, install_only_stripped, and a non-promoted technical family candidate without modifying or superseding the frozen predecessor family.",
       "input_routing": {
-        "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-        "first_attempt": "apply the verifier-only managed-find observation snapshot correction, then reuse the exact official Python archive, accepted launcher, exact Android uv, and selected profile M implementation to reproduce and requalify successor full r5 twice",
+        "fallback": "retain the accepted full r5 and frozen predecessor family, return one complete fail-closed receipt, and correct only the bounded projection, stripping, family assembly, or qualification defect",
+        "first_attempt": "acquire the exact accepted full r5 from the accepted r4 result archive, derive install_only and stripped twice, assemble the technical family twice, and qualify Android runtime, uv direct/managed, native SDK 16 KiB, protected state, and independent audit",
         "forbidden": [
           "accept-an-incomplete-result-index",
           "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -2222,7 +2224,9 @@
           "treat-producer-provenance-as-operational-path-residue",
           "use-unpinned-or-latest-provider-resolution-at-runtime",
           "use-user-wheel-rpath-cleanliness-as-rb3-blocker",
-          "write-ca-or-timezone-updates-into-python-install-root"
+          "write-ca-or-timezone-updates-into-python-install-root",
+          "supersede-predecessor-family-before-successor-family-acceptance",
+          "start-legal-integration-or-rb1-rb2-rebinding-inside-technical-family-derivation"
         ]
       },
       "required_authorities": [
@@ -2280,6 +2284,16 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
           "reason": "Frozen r3 result proving all product and Android 16 KiB gates passed while the final managed-find check observed the path after uninstall.",
           "sha256": "28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
+          "reason": "Frozen acceptance-r1 unit failure proving the owner repository was unchanged and limiting the correction to tracked-tree negative-test fixture isolation.",
+          "sha256": "5c5ed77416d038f6aca78957e4a8fe690aaf9ba5ee74c26bf7e708e8ba8ef0bf"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+          "reason": "Frozen accepted profile-M successor full r5 and exact family-derivation authorization.",
+          "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
         }
       ],
       "required_reads": [
@@ -2425,7 +2439,27 @@
         },
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json",
-          "reason": "Active verifier-only r4 retry contract and unchanged claim boundary.",
+          "reason": "Completed verifier-only r4 correction contract retained as accepted transition evidence.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-full-m-r4-return.json",
+          "reason": "Exact accepted r4 return, candidate identity, qualification matrix, and non-promotion boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
+          "reason": "Exact acceptance-r1 failure, rollback, passing product suite, and test-fixture isolation root cause.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+          "reason": "Accepted successor full r5 identity, distributor responsibility boundary, and authorized next gate.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json",
+          "reason": "Active exact full-to-install_only-to-stripped technical family derivation contract.",
           "scope": "full"
         }
       ],

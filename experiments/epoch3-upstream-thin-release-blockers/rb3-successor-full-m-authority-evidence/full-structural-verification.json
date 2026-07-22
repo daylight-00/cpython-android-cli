@@ -1,0 +1,152 @@
+{
+  "archive": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-full-m-r4-results/artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "checks": {
+    "active_tree_host_neutral": true,
+    "effective_consumer_metadata": true,
+    "launcher_aliases": true,
+    "launcher_present_executable": true,
+    "no_duplicate_members": true,
+    "official_input_identity": true,
+    "one_python_root": true,
+    "pip_from_upstream_wheel": true,
+    "pip_wrappers_present": true,
+    "python_json_executable": true,
+    "python_json_format_8": true,
+    "python_json_license_exists": true,
+    "python_json_no_project_extension": true,
+    "python_json_paths_exist": true,
+    "python_json_standard_key_floor": true,
+    "python_json_target": true,
+    "release_elf_inventory": true,
+    "release_lr3_exact": true,
+    "release_mutation_manifest_exact": true,
+    "release_needed_closure": true,
+    "required_roots": true,
+    "runtime_metadata_normalized": true,
+    "self_excluding_member_manifest_exact": true,
+    "truthful_build_area": true,
+    "truthful_partial_build_info": true,
+    "zstd_decompress": true
+  },
+  "claim_boundary": {
+    "publication": false,
+    "selectable": false,
+    "target_runtime_qualified": false
+  },
+  "errors": [],
+  "failed_checks": [],
+  "fixture_mode": false,
+  "metrics": {
+    "active_host_residue_count": 0,
+    "archive_member_count": 3752,
+    "consumer_metadata": {
+      "effective": {
+        "AR": "llvm-ar",
+        "BINDIR": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/bin",
+        "CC": "clang",
+        "CXX": "clang++",
+        "DESTSHARED": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/lib/python3.14/lib-dynload",
+        "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+        "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+        "HW_T_METADATA_PROFILE": "upstream-preserved-minimal-consumer-overlay",
+        "INCLUDEPY": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/include/python3.14",
+        "LIBDEST": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/lib/python3.14",
+        "LIBDIR": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/lib",
+        "LIBPL": "/data/data/com.termux/files/usr/tmp/verify-full-4ua_909r/tree/python/install/lib/python3.14/config-3.14-aarch64-linux-android",
+        "MULTIARCH": "aarch64-linux-android",
+        "SOABI": "cpython-314-aarch64-linux-android"
+      },
+      "errors": [],
+      "header": "# system configuration generated and used by the sysconfig module",
+      "pass": true,
+      "pkgconfig": [
+        {
+          "path": "libcrypto.pc",
+          "prefix": "${pcfiledir}/../.."
+        },
+        {
+          "path": "libssl.pc",
+          "prefix": "${pcfiledir}/../.."
+        },
+        {
+          "path": "openssl.pc",
+          "prefix": "${pcfiledir}/../.."
+        },
+        {
+          "path": "python-3.14-embed.pc",
+          "prefix": "${pcfiledir}/../.."
+        },
+        {
+          "path": "python-3.14.pc",
+          "prefix": "${pcfiledir}/../.."
+        },
+        {
+          "path": "sqlite3.pc",
+          "prefix": "${pcfiledir}/../.."
+        }
+      ],
+      "preserved_producer": {
+        "BUILD_GNU_TYPE": "aarch64-apple-darwin24.6.0",
+        "CONFIG_ARGS": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'"
+      },
+      "sysconfig_vars_sha256": "7a0eb85c7df08ed8c1af6d39c285de462b24eee48ae4cfca4cb32bd9c5eb9e68"
+    },
+    "elf_count": 81,
+    "informational_upstream_provenance_residue": [
+      "build/hw-t/mutations.json:/Users/runner/",
+      "install/lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json:/Users/runner/",
+      "install/lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py:/Users/runner/",
+      "install/lib/python3.14/config-3.14-aarch64-linux-android/Makefile:/Users/runner/",
+      "install/lib/python3.14/ctypes/_aix.py:LD_LIBRARY_PATH",
+      "install/lib/python3.14/ctypes/macholib/dyld.py:LD_LIBRARY_PATH",
+      "install/lib/python3.14/ctypes/util.py:LD_LIBRARY_PATH",
+      "install/lib/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-android.so:/home/runner/",
+      "install/lib/python3.14/test/pythoninfo.py:LD_LIBRARY_PATH",
+      "install/lib/python3.14/test/test_ctypes/test_find.py:LD_LIBRARY_PATH",
+      "install/lib/python3.14/test/test_venv.py:LD_LIBRARY_PATH"
+    ],
+    "informational_upstream_provenance_residue_count": 11,
+    "packaged_provider_count": 81,
+    "python_json_extension_count": 67,
+    "python_json_top_level_keys": [
+      "build_info",
+      "build_options",
+      "libpython_link_mode",
+      "license_path",
+      "licenses",
+      "python_abi_tag",
+      "python_config_vars",
+      "python_exe",
+      "python_extension_module_loading",
+      "python_implementation_cache_tag",
+      "python_implementation_hex_version",
+      "python_implementation_name",
+      "python_implementation_version",
+      "python_major_minor_version",
+      "python_paths",
+      "python_paths_abstract",
+      "python_platform_tag",
+      "python_stdlib_platform_config",
+      "python_stdlib_test_packages",
+      "python_suffixes",
+      "python_tag",
+      "python_version",
+      "target_triple",
+      "version"
+    ],
+    "system_libraries": [
+      "libc.so",
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libz.so"
+    ]
+  },
+  "pass": true,
+  "schema_version": 2,
+  "verifier_kind": "epoch3-upstream-thin-full-static-and-structural"
+}

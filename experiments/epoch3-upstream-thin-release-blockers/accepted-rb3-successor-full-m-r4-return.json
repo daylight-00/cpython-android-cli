@@ -1,0 +1,54 @@
+{
+  "candidate_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "checks": {
+    "candidate_reproducible": true,
+    "claim_transaction_pass": true,
+    "direct_native_wheel_16k_alignment": true,
+    "direct_native_wheel_build_install_import": true,
+    "full_android_qualification": true,
+    "full_structural_verification": true,
+    "independent_acceptance_audit": true,
+    "managed_native_wheel_16k_alignment": true,
+    "managed_native_wheel_build_install_import": true,
+    "managed_uv_lifecycle": true,
+    "predecessor_and_managed_root_protected": true,
+    "result_self_index_exact": true,
+    "system_uv_lifecycle": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_predecessor_family_unchanged": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_full_candidate": true,
+    "successor_install_only_authorized": true,
+    "successor_install_only_started": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+  },
+  "profile": {
+    "id": "M",
+    "name": "upstream-preserved-minimal-consumer-overlay"
+  },
+  "repository": {
+    "post_head": "d0337b4a3072501dca200135007931eac814500d",
+    "post_tree": "55828f6f3e990fc743f09bd48a17e95404ea694b",
+    "remote_post_head": "d0337b4a3072501dca200135007931eac814500d"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 77,
+    "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+    "size_bytes": 63029723
+  },
+  "return_kind": "epoch3-rb3-profile-M-successor-full-r4-accepted-return",
+  "schema_version": 1,
+  "status": "accepted-pass-successor-full-r5-authorized-family-derivation-pending"
+}

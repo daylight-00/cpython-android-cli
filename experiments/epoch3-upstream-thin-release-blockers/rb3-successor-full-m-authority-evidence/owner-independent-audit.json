@@ -1,0 +1,41 @@
+{
+  "audit_kind": "epoch3-rb3-profile-M-successor-full-independent-audit",
+  "checks": {
+    "android_qualification_pass": true,
+    "candidate_protected": true,
+    "family_not_superseded": true,
+    "install_only_not_started": true,
+    "managed_native_wheel_16k_alignment_pass": true,
+    "managed_native_wheel_build_import_pass": true,
+    "managed_native_wheel_elf_recorded": true,
+    "native_wheel_16k_alignment_pass": true,
+    "native_wheel_build_import_pass": true,
+    "native_wheel_elf_recorded": true,
+    "portable_raw_wheel_not_claimed": true,
+    "predecessor_protected": true,
+    "profile_M_exact": true,
+    "projection_identity_bound": true,
+    "projection_present": true,
+    "publication_withheld": true,
+    "rb3_open": true,
+    "real_managed_root_protected": true,
+    "required_process_logs_present": true,
+    "result_checks_all_true": true,
+    "result_pass": true,
+    "selectability_withheld": true,
+    "structural_verification_pass": true,
+    "successor_not_promoted": true,
+    "wheel_postprocessing_out_of_scope": true
+  },
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false
+  },
+  "failed_checks": [],
+  "missing_process_logs": [],
+  "pass": true,
+  "schema_version": 1
+}

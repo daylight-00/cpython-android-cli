@@ -221,6 +221,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
       "role": "exact successful successor r3 product qualification evidence and bounded managed-find verifier observation-order correction",
       "sha256": "28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d"
+    },
+    {
+      "id": "epoch3-rb3-successor-full-acceptance-r1-failure-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
+      "role": "exact failed acceptance-r1 unit receipt, clean rollback, and tracked-committed-tree negative-test isolation correction boundary",
+      "sha256": "5c5ed77416d038f6aca78957e4a8fe690aaf9ba5ee74c26bf7e708e8ba8ef0bf"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-full-r5",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+      "role": "accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence",
+      "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
     }
   ],
   "active_plan": {
@@ -229,7 +241,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -284,7 +296,9 @@
     "selectable": false,
     "stripped_implementation_started": true,
     "stripped_release_complete": true,
-    "successor_full_candidate": false,
+    "successor_family_derivation_started": false,
+    "successor_full_accepted": true,
+    "successor_full_candidate": true,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
     "user_built_wheel_postprocessing_in_scope": false
@@ -323,8 +337,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "dfe28ebf61b14273b48943b118033b712483d6a2",
-    "tree": "cacff3808d1bc29f086f4804295dcbac48a06af9"
+    "commit": "d0337b4a3072501dca200135007931eac814500d",
+    "tree": "55828f6f3e990fc743f09bd48a17e95404ea694b"
   },
   "program": {
     "epoch": {
@@ -378,11 +392,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 39,
+  "state_revision": 41,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "ccc70f6a35fa16a56360b80c535ca3e10af8cd4258d5a33760f51ba138d055af"
+    "sha256": "55b15b1372d060a8761ba76633607dc407f88bb57ea96fe74f1098001971fe21"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -410,7 +424,8 @@
     "frozen-predecessor-family-not-superseded",
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
-    "selected-profile-M-successor-full-r5-verifier-observation-requalification-pending"
+    "successor-full-r5-accepted-family-derivation-pending",
+    "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession"
   ],
-  "updated_by_transaction": "20260723-e3-rb3-managed-find-observation-order-correction-v1"
+  "updated_by_transaction": "20260723-e3-rb3-successor-full-r5-acceptance-r2-test-isolation-correction"
 }

@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 39
+> **State revision:** 41
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -68,6 +68,8 @@ status  in-progress
 35. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json) — exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary
 36. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json) — exact reproducible successor r2 failure receipt, truthful host-triple correction, and uv-managed sysconfig rewrite correction boundary
 37. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json) — exact successful successor r3 product qualification evidence and bounded managed-find verifier observation-order correction
+38. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json) — exact failed acceptance-r1 unit receipt, clean rollback, and tracked-committed-tree negative-test isolation correction boundary
+39. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json) — accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
 
 ## Blockers
 
@@ -97,6 +99,7 @@ status  in-progress
 - frozen-predecessor-family-not-superseded
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- selected-profile-M-successor-full-r5-verifier-observation-requalification-pending
+- successor-full-r5-accepted-family-derivation-pending
+- predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

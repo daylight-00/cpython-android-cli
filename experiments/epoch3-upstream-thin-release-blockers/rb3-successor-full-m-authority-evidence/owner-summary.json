@@ -1,0 +1,54 @@
+{
+  "action": "applied-rb3-profile-M-managed-find-observation-corrected-successor-full-built-qualified-audited-pushed",
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "on_device_sdk_final": false,
+    "owner_approved": false,
+    "profile_selected": true,
+    "publication": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": true
+  },
+  "claim_transaction_rc": 0,
+  "expected_post": {
+    "head": "d0337b4a3072501dca200135007931eac814500d",
+    "tree": "55828f6f3e990fc743f09bd48a17e95404ea694b"
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "package_id": "cpython-android-cli-e3-rb3-successor-full-m-r4",
+  "post": {
+    "head": "d0337b4a3072501dca200135007931eac814500d",
+    "remote_head": "d0337b4a3072501dca200135007931eac814500d",
+    "tree": "55828f6f3e990fc743f09bd48a17e95404ea694b"
+  },
+  "pre": {
+    "head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "remote_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "tree": "acbac663fdc805980709cf1500577567407a3ccd"
+  },
+  "repository": "/data/data/com.termux/files/home/projects/cpython-android-cli",
+  "return_codes": {
+    "apply": 0,
+    "audit": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "rollback": 99,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "unit": 0
+  },
+  "schema_version": 1
+}

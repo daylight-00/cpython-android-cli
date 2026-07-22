@@ -1,0 +1,48 @@
+{
+  "artifact": {
+    "member_count": 3752,
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-full-m-r4-work/assembly-a/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "launcher_sha256": "7ea03ea62800f5f202e09f90f79d76eda7075510ffe738fa48219b1f727408ba",
+  "lr3_object_count": 81,
+  "official_input": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size_bytes": 22358404
+  },
+  "pip_surface_installed": true,
+  "publication": false,
+  "python_json_standard_top_level_keys": [
+    "build_info",
+    "build_options",
+    "libpython_link_mode",
+    "license_path",
+    "licenses",
+    "python_abi_tag",
+    "python_config_vars",
+    "python_exe",
+    "python_extension_module_loading",
+    "python_implementation_cache_tag",
+    "python_implementation_hex_version",
+    "python_implementation_name",
+    "python_implementation_version",
+    "python_major_minor_version",
+    "python_paths",
+    "python_paths_abstract",
+    "python_platform_tag",
+    "python_stdlib_platform_config",
+    "python_stdlib_test_packages",
+    "python_suffixes",
+    "python_tag",
+    "python_version",
+    "target_triple",
+    "version"
+  ],
+  "receipt_kind": "epoch3-upstream-thin-full-local-assembly",
+  "runtime_metadata_normalized": true,
+  "schema_version": 1,
+  "selectable": false,
+  "status": "passed-local-full-assembly"
+}

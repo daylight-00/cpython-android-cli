@@ -1,0 +1,104 @@
+{
+  "acceptance": {
+    "family": "two candidate-family assemblies byte-identical with complete release index and SHA256SUMS",
+    "projection": "successor install_only is an exact projection of accepted full r5 python/install",
+    "runtime": "all Android qualification checks true for install_only and stripped",
+    "sdk": "direct and managed baseline native-extension build/install/import and 16 KiB alignment pass",
+    "stripping": "only the existing accepted bounded stripping mutation is allowed"
+  },
+  "acceptance_authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+    "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
+  },
+  "claim_boundary": {
+    "legal_family_integration_started": false,
+    "portable_raw_wheel_claim": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_candidate_allowed": true,
+    "successor_stripped_candidate_allowed": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_candidate_allowed": true
+  },
+  "contract_kind": "epoch3-rb3-successor-profile-M-family-derivation",
+  "exact_input": {
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "member_count": 3752,
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    }
+  },
+  "forbidden": [
+    "modify the accepted full r5 bytes",
+    "rewrite any predecessor artifact or frozen authority",
+    "supersede the predecessor family before successor-family acceptance",
+    "start legal integration or RB-1/RB-2 rebinding inside the technical derivation transaction",
+    "claim raw user-built wheel portability or run repair tooling",
+    "claim RB-3 closure, selectability, or publication"
+  ],
+  "predecessor_family": {
+    "artifacts": {
+      "full": {
+        "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+        "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+        "size_bytes": 39408292
+      },
+      "install_only": {
+        "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
+        "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+        "size_bytes": 23841726
+      },
+      "install_only_stripped": {
+        "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+        "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+        "size_bytes": 23841241
+      }
+    },
+    "authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "status": "frozen-valid-not-superseded"
+  },
+  "proposed_outputs": {
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "role": "exact python/install projection of accepted full r5"
+    },
+    "install_only_stripped": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "role": "bounded deterministic stripped derivation from successor install_only"
+    },
+    "technical_family": {
+      "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+      "role": "candidate-only-not-legal-or-canonical-family"
+    }
+  },
+  "required_execution": [
+    "acquire and verify the exact accepted full r5 from the r4 owner result archive",
+    "derive install_only twice as an exact python/install projection and prove byte identity",
+    "derive install_only_stripped twice using the existing bounded stripping policy and prove byte identity",
+    "verify full remains byte exact and all three candidate artifacts have complete manifests and sidecars",
+    "qualify fresh extraction, relocation, subprocess, venv, imports, python-config, pkg-config, and uv system/managed consumer paths for install_only and stripped",
+    "build, install, and import the baseline native extension against install_only and stripped and require 16 KiB LOAD alignment",
+    "record user-built wheel DT_NEEDED/RPATH/RUNPATH only as diagnostics and perform no repair",
+    "assemble a deterministic candidate technical family twice and independently audit identities and predecessor invariance"
+  ],
+  "schema_version": 1,
+  "status": "active-successor-family-derivation-pending",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_candidate": true,
+    "successor_stripped_candidate": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_candidate": true
+  }
+}

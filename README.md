@@ -55,7 +55,8 @@ Epoch 3 selection     true
 - frozen-predecessor-family-not-superseded
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- selected-profile-M-successor-full-r5-verifier-observation-requalification-pending
+- successor-full-r5-accepted-family-derivation-pending
+- predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
 
 ### Accepted authorities
 
@@ -96,6 +97,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json): exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary (`2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json): exact reproducible successor r2 failure receipt, truthful host-triple correction, and uv-managed sysconfig rewrite correction boundary (`032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json): exact successful successor r3 product qualification evidence and bounded managed-find verifier observation-order correction (`28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json): exact failed acceptance-r1 unit receipt, clean rollback, and tracked-committed-tree negative-test isolation correction boundary (`5c5ed77416d038f6aca78957e4a8fe690aaf9ba5ee74c26bf7e708e8ba8ef0bf`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json): accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence (`557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb`)
 
 ### Agent entry
 

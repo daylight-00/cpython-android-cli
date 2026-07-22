@@ -1,0 +1,394 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "artifacts/assembly-receipt.json",
+      "sha256": "4aa584293c3c8d21acc44240c8e08f11394627de5e8db4ea424278e33e8a45d2",
+      "size_bytes": 1596
+    },
+    {
+      "path": "artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    {
+      "path": "artifacts/reproducibility.json",
+      "sha256": "d9ce1c76a93390a44bdb6ec01066d58872f0ea6c19c84bb137b1a9bcc0ed8e0b",
+      "size_bytes": 716
+    },
+    {
+      "path": "final-status.txt",
+      "sha256": "4c595ce5026ef962a65d6fa2a7392940c67e696bcee21f6414f0acf186f568ff",
+      "size_bytes": 1261
+    },
+    {
+      "path": "inputs/launcher.sha256",
+      "sha256": "24de99cbce59c7f2902572600593176cf931a4816af92134e9bdb7c12ead3567",
+      "size_bytes": 77
+    },
+    {
+      "path": "inputs/official-input.sha256",
+      "sha256": "e4c97bf470488f41e62ea4a404f87aa22f702f14492fdb6362cf30224150cc2b",
+      "size_bytes": 109
+    },
+    {
+      "path": "inputs/predecessor-full.sha256",
+      "sha256": "b907b0dc8ca8cec6fd961e1c8bfc3d77ebb77f52ea0d6a264d2a1311a1439e29",
+      "size_bytes": 127
+    },
+    {
+      "path": "inputs/predecessor-result.sha256",
+      "sha256": "f7755dc10de37ab5709e823af94f5d73f897916f8f25abe02ebb82b7bb4177d6",
+      "size_bytes": 124
+    },
+    {
+      "path": "inputs/rb3-distributor-responsibility-reassessment.json",
+      "sha256": "ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f",
+      "size_bytes": 2371
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-contract.json",
+      "sha256": "6e0f5b825196e010c4118f43e2f29fd171bda10022bac04306458da77f7fe7eb",
+      "size_bytes": 4348
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-r1-return-inspection.json",
+      "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126",
+      "size_bytes": 2173
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-r2-return-inspection.json",
+      "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd",
+      "size_bytes": 3145
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-r3-correction-contract.json",
+      "sha256": "cb31f6d819bac6b5e7a3af4b3258b6a0bdea4e3a4179443a671a09b239091b5f",
+      "size_bytes": 3127
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-r3-return-inspection.json",
+      "sha256": "28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d",
+      "size_bytes": 2777
+    },
+    {
+      "path": "inputs/rb3-successor-full-m-r4-correction-contract.json",
+      "sha256": "572ffd79599028c1b461be91977f9b9542d6895f28a6806640b5e8042245dc86",
+      "size_bytes": 2230
+    },
+    {
+      "path": "inputs/rb3-sysconfig-profile-selection-authority.json",
+      "sha256": "85544b28efa71b8fbe33b7f933c367b408f4442152103403155f3603ec9ffd28",
+      "size_bytes": 6059
+    },
+    {
+      "path": "inputs/uv-version.txt",
+      "sha256": "ee03852d3cd00b116420d7c9316ecd0d524fc3424dbbd1d6fb9227d42ec35f10",
+      "size_bytes": 35
+    },
+    {
+      "path": "inputs/uv.sha256",
+      "sha256": "39b8b53ec1ef12553210f06d47f17aa762e3b9655d03c8ff1ae5f2405024ff4a",
+      "size_bytes": 105
+    },
+    {
+      "path": "inputs/uv.size",
+      "sha256": "d98cda53d6523fb5158db696765aeca79edf1d6dabb723de5bd94194c0cf2dbc",
+      "size_bytes": 48
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "71262371ec89eee1191392378081fd128d12c16c86abe112103b2a750ba4df94",
+      "size_bytes": 7690
+    },
+    {
+      "path": "logs/assemble-a.log",
+      "sha256": "4aa584293c3c8d21acc44240c8e08f11394627de5e8db4ea424278e33e8a45d2",
+      "size_bytes": 1596
+    },
+    {
+      "path": "logs/assemble-b.log",
+      "sha256": "e6737e1c2e9e566ca852c8f8618690ba1d681cf000d443025a04d3d96d0ce203",
+      "size_bytes": 1596
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/bundle-fetch.log",
+      "sha256": "86c4866ac8526ac7f8596f341941ae65e4a1647f3301c823a15c04e3adc3ad0c",
+      "size_bytes": 273
+    },
+    {
+      "path": "logs/full-r4-result-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package-verify.log",
+      "sha256": "bd298b812884dca780dbb8f2c50d9b821e90268e0cf27edc3bd6f3c98179500c",
+      "size_bytes": 128
+    },
+    {
+      "path": "logs/predecessor-full-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "2eebfdb6e1b4e5b7ef91c2e1e3e21a12936885391b323d385f051a27e3dbe5b4",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/rb3-successor-full-m.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-post.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-pre.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "a660553f8aa97eb3a28a0ca87218119eca0c8f1762a1aa2242f73d513bc5789c",
+      "size_bytes": 459
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "c162e58f8550872727111094704df5f2ead9411d2543fc56f24942a79c644671",
+      "size_bytes": 169
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "8c60a65e8b0906a9b5fb7c9674e76913844300417b92ef643ac1dd6cca8c4f82",
+      "size_bytes": 197
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "658958a161cc16753a41e0383754f28d32126686e99deab0ba77bf59dc1b9c5e",
+      "size_bytes": 854
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "e4ec363f7c846bbef03f2c2d4c12022b89cbdb7a177f07ba59f39cb294df82dc",
+      "size_bytes": 1337
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "1f409c0e4cb58d947365eb385e21c066c5671622b9f94415be249b0a3f54cf10",
+      "size_bytes": 16783
+    },
+    {
+      "path": "receipts/rb3-successor-full-m.json",
+      "sha256": "44fd3cf98b2c87aa5c6dd5b832607e595540c3eb8872fcc75dc761921bc8dea5",
+      "size_bytes": 4876
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1d9d22423c2d69a0c6bd9aba47fb089528b09d734ae01ec6f1fbe00deb2a757f",
+      "size_bytes": 1595
+    },
+    {
+      "path": "target/artifacts/custom-downloads.json",
+      "sha256": "aad7583765aa9e0782df9ce986aa42eb39374de8d76709f81661c83a1322d866",
+      "size_bytes": 591
+    },
+    {
+      "path": "target/artifacts/install-only-projection.json",
+      "sha256": "831d7daa12acf099e33c3dedc196bfc9d0434849e6cd676fa65f69f22129fdb4",
+      "size_bytes": 374
+    },
+    {
+      "path": "target/artifacts/successor-install-only-projection.tar.gz",
+      "sha256": "615da732c6993949f3ff985d523a707208e614c3124d4c5872caf8c171cf8be9",
+      "size_bytes": 23843353
+    },
+    {
+      "path": "target/full-android-qualification.json",
+      "sha256": "5531f9f777ed21604b58fc5e44b80a9b9ff1693961515c7174931358ed60332c",
+      "size_bytes": 45983
+    },
+    {
+      "path": "target/full-structural-verification.json",
+      "sha256": "e49fbe2d81c846776fb4eaceb24bf8a4c676b77c3362fae01565cfc4e40af57e",
+      "size_bytes": 6726
+    },
+    {
+      "path": "target/independent-audit.json",
+      "sha256": "e4ec363f7c846bbef03f2c2d4c12022b89cbdb7a177f07ba59f39cb294df82dc",
+      "size_bytes": 1337
+    },
+    {
+      "path": "target/native-managed-wheel-elf-boundary.json",
+      "sha256": "dd8b4fea41ed380c02babcb71b0f4087c7d10e598b7fe8ee5a18c1984dd9b328",
+      "size_bytes": 951
+    },
+    {
+      "path": "target/native-wheel-elf-boundary.json",
+      "sha256": "541df369c3362c7a082af728153b3da1acf7fd0186f6a59121e197842989198e",
+      "size_bytes": 951
+    },
+    {
+      "path": "target/process/managed-catalog.json",
+      "sha256": "75c9431a28e457f46a42458429b46252b232435017fa3b130b51a55958861668",
+      "size_bytes": 1444
+    },
+    {
+      "path": "target/process/managed-find-empty.json",
+      "sha256": "cba54dbfa47c73cc920499f80c00429142db70f5493b3663a8648faee11e52c0",
+      "size_bytes": 549
+    },
+    {
+      "path": "target/process/managed-find.json",
+      "sha256": "115359e34c2dd28660adec85a0fb35cf0b6246bb522289abd3bdef05f5a9315d",
+      "size_bytes": 568
+    },
+    {
+      "path": "target/process/managed-identity.json",
+      "sha256": "e4ce8962b85288e02e7323605a1f88623ab9f61c893470dd4bdcf09bf690e601",
+      "size_bytes": 3569
+    },
+    {
+      "path": "target/process/managed-install.json",
+      "sha256": "f9f1a5f99ffba07dd21e9d3983540151c35c528a5ab012ee6d56f654c2b0c50c",
+      "size_bytes": 740
+    },
+    {
+      "path": "target/process/managed-reinstall.json",
+      "sha256": "092ffb25ab5be80007e7dd9776631b7887e1aa1e6220b4a31f86920bd0336be6",
+      "size_bytes": 600
+    },
+    {
+      "path": "target/process/managed-uninstall.json",
+      "sha256": "2de1282c080b6c28b89b9faa08631a335d91123b03b265cf7876e0a2262e75eb",
+      "size_bytes": 495
+    },
+    {
+      "path": "target/process/managed-venv-identity.json",
+      "sha256": "3662bdff7d5ba32a036f317547a4779153d8d968461356590ef8c4529533ccc6",
+      "size_bytes": 3464
+    },
+    {
+      "path": "target/process/managed-venv.json",
+      "sha256": "47057440cc68395945f25136d6331a7e6b4fa7850e8b21865420de53b30505c7",
+      "size_bytes": 526
+    },
+    {
+      "path": "target/process/successor-M-managed-wheel-build.json",
+      "sha256": "095045bd5a0ba11715695d705532424394921735d1c8d5e113fc5a6e986861c3",
+      "size_bytes": 1284
+    },
+    {
+      "path": "target/process/successor-M-managed-wheel-import.json",
+      "sha256": "26471359b5b77a9841f786fe4eb33b865a6ac1d17ff7518559309d7b66522db8",
+      "size_bytes": 306
+    },
+    {
+      "path": "target/process/successor-M-managed-wheel-install.json",
+      "sha256": "ea59b827f6afd151f0adaaf3d78b04d20a3b8be46e3e8e0fc7b792807909e187",
+      "size_bytes": 644
+    },
+    {
+      "path": "target/process/successor-M-managed-wheel-setuptools.json",
+      "sha256": "c1e796b9db0a1ac64d205c7877f70797510134d3f99fb4211a11d320626f40d2",
+      "size_bytes": 763
+    },
+    {
+      "path": "target/process/successor-M-managed-wheel-venv.json",
+      "sha256": "179ce846dc9007ce32f82b78af1c1fa7aaffdb92f03f886a68bcfceafde7d9c4",
+      "size_bytes": 372
+    },
+    {
+      "path": "target/process/successor-M-wheel-build.json",
+      "sha256": "8660b43b084ceae93536ee06a195fc148467f1f3a8e8a46522069964c7df8c61",
+      "size_bytes": 1246
+    },
+    {
+      "path": "target/process/successor-M-wheel-import.json",
+      "sha256": "2fd821d56c2baa2523cba2003cd4d8a1d5c2d0f22ec1ebf1ef556e8d84e08917",
+      "size_bytes": 290
+    },
+    {
+      "path": "target/process/successor-M-wheel-install.json",
+      "sha256": "c350d8c2342688edeb0e1514f38e10b183283118117cbf1f123d5c1220c90355",
+      "size_bytes": 620
+    },
+    {
+      "path": "target/process/successor-M-wheel-setuptools.json",
+      "sha256": "8d54d20817bcb1e0a0588443554572ff85c5b929085d089e79f4d610f1808685",
+      "size_bytes": 693
+    },
+    {
+      "path": "target/process/successor-M-wheel-venv.json",
+      "sha256": "268de8cd08bca857130301c9fd794e38aa260214bc7af631942c4033e85efed1",
+      "size_bytes": 329
+    },
+    {
+      "path": "target/process/system-find.json",
+      "sha256": "f5826901009c08ac87b74c31409415d098258659ef1ff3d41c09f6e63436a13c",
+      "size_bytes": 539
+    },
+    {
+      "path": "target/process/system-identity.json",
+      "sha256": "4f0d34c934bfcf9612fe3596be267c90bde40f06255fcb41a6dfd30300227460",
+      "size_bytes": 3448
+    },
+    {
+      "path": "target/process/system-run.json",
+      "sha256": "b0f25c0f4ce8a3205d7f08b576625556fa088ed238b3818f2bc80968003efff3",
+      "size_bytes": 3768
+    },
+    {
+      "path": "target/process/system-sync-identity.json",
+      "sha256": "68cea3fb868672a5f5af9e491cf9842aa7e75fa2695d276bc7d741723c0a5432",
+      "size_bytes": 3415
+    },
+    {
+      "path": "target/process/system-sync.json",
+      "sha256": "d6b7e20326ddb4cf694b55e0ff1128f72e1e9b91faab5f34a877db7aec87a431",
+      "size_bytes": 817
+    },
+    {
+      "path": "target/process/system-venv-identity.json",
+      "sha256": "ed6d8a9d6138258e027f7e0374db3bdc9c5305a98d160348c796c4fe3d52e983",
+      "size_bytes": 3421
+    },
+    {
+      "path": "target/process/system-venv.json",
+      "sha256": "d6e4a69484a1a26d423bebf840a22269f81f5dfb09d164ff146968c24f84c34a",
+      "size_bytes": 670
+    },
+    {
+      "path": "target/protected-state.json",
+      "sha256": "d5d319b52b4c4d587d94de7cc052e708f2de64b9cfa19456b5044f7f02b36aaf",
+      "size_bytes": 198
+    },
+    {
+      "path": "target/rb3-successor-full-m-result.json",
+      "sha256": "44fd3cf98b2c87aa5c6dd5b832607e595540c3eb8872fcc75dc761921bc8dea5",
+      "size_bytes": 4876
+    },
+    {
+      "path": "target/research/uv.json",
+      "sha256": "56f20262666bda90524486d25f8af188fffe9b5200822f0b961a95caa710d335",
+      "size_bytes": 247
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

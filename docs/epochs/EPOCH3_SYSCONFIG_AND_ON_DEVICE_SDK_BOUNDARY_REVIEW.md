@@ -355,3 +355,34 @@ Machine records:
 
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json`
+
+
+## 15. Successor r4 acceptance and family-derivation boundary
+
+The corrected r4 owner run returned a complete pass receipt. The result archive has SHA-256 `0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d`, size 63,029,723 bytes, and an exact 77-file self-index. Independent extraction and re-audit reproduced every indexed file identity.
+
+The accepted successor full is:
+
+- filename: `cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst`;
+- SHA-256: `b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2`;
+- size: 39,414,556 bytes;
+- member count: 3,752.
+
+Both independent assemblies were byte-identical. Structural verification and Android runtime qualification passed. System and uv-managed profile-M consumers passed. Direct and managed baseline native extensions built, installed, imported, and had 16 KiB LOAD alignment. Their Termux RUNPATH remains recorded as diagnostic user-wheel output; no repair or portable-wheel claim is introduced.
+
+This evidence accepts the successor **full** only. It does not yet supersede the frozen r4 full/install-only/stripped family and does not close RB-3. The newly authorized bounded transition is:
+
+```text
+accepted profile-M full r5
+  -> exact deterministic install_only candidate
+  -> bounded deterministic install_only_stripped candidate
+  -> non-promoted technical family candidate
+  -> later family acceptance, legal integration, RB-1/RB-2 rebinding,
+     explicit predecessor supersession, and RB-3 closure
+```
+
+Machine records:
+
+- `experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-full-m-r4-return.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json`

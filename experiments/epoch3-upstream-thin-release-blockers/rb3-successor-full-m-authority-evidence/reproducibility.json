@@ -1,0 +1,15 @@
+{
+  "assembly_a": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-full-m-r4-work/assembly-a/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "assembly_b": {
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-full-m-r4-work/assembly-b/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "byte_identical": true,
+  "pass": true,
+  "schema_version": 1
+}

@@ -1,0 +1,86 @@
+{
+  "accepted_evidence": {
+    "assembly_byte_identical": true,
+    "direct_and_managed_native_sdk_16k": true,
+    "external_acceptance_audit": "16/16",
+    "owner_independent_audit": "25/25",
+    "owner_result_checks": "24/24",
+    "result_archive_filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+    "result_archive_sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+    "result_archive_size": 63029723,
+    "self_index_file_count": 77,
+    "structural_and_android_qualification": true
+  },
+  "accepted_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "member_count": 3752,
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "authority_kind": "epoch3-rb3-profile-M-successor-full-r5",
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_predecessor_family_unchanged": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_full_candidate": true,
+    "successor_install_only_authorized": true,
+    "successor_install_only_started": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-full-m-r4-return.json": "f22ba319557677286b6184e3fb7cc40bc9edc9696b31092cc861cee8f4e04a28",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/assembly-receipt.json": "4aa584293c3c8d21acc44240c8e08f11394627de5e8db4ea424278e33e8a45d2",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/external-acceptance-audit.json": "54adc6c34a7f1a1973148decf5687e122050c642f217e18f799c5c375ee3b006",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/full-android-qualification.json": "5531f9f777ed21604b58fc5e44b80a9b9ff1693961515c7174931358ed60332c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/full-structural-verification.json": "e49fbe2d81c846776fb4eaceb24bf8a4c676b77c3362fae01565cfc4e40af57e",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/native-managed-wheel-elf-boundary.json": "dd8b4fea41ed380c02babcb71b0f4087c7d10e598b7fe8ee5a18c1984dd9b328",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/native-wheel-elf-boundary.json": "541df369c3362c7a082af728153b3da1acf7fd0186f6a59121e197842989198e",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/owner-independent-audit.json": "e4ec363f7c846bbef03f2c2d4c12022b89cbdb7a177f07ba59f39cb294df82dc",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/owner-result.json": "44fd3cf98b2c87aa5c6dd5b832607e595540c3eb8872fcc75dc761921bc8dea5",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/owner-summary.json": "1d9d22423c2d69a0c6bd9aba47fb089528b09d734ae01ec6f1fbe00deb2a757f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/protected-state.json": "d5d319b52b4c4d587d94de7cc052e708f2de64b9cfa19456b5044f7f02b36aaf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/reproducibility.json": "d9ce1c76a93390a44bdb6ec01066d58872f0ea6c19c84bb137b1a9bcc0ed8e0b",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority-evidence/result-index.json": "774b3efdf5ed07685026bcb3bcc319df48a5669e00aabed430c8393870fcc861",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_full_m_acceptance.py": "2bc09bb2c372d46e849554a1e82d24a871a7bd6c88f77b05ba3e724de706fc10",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_full_m_result_archive.py": "72445e02b62e69a2a9a3efdbf7a8f46733827e18400c8785af34c4903fb2bf65",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_full_m_acceptance.py": "92f954223b3fb8c5c9612ea9fac4d732df9ff40ab00c48705f65c7e834ddfda7",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_full_m_result_archive.py": "dc66f55d19d0331d6559d5ae613035e6990b1b207b92a7ab71e588a984877f84"
+  },
+  "predecessor_family": {
+    "authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "status": "frozen-valid-not-superseded"
+  },
+  "responsibility_boundary": {
+    "baseline_sdk_extension_16k_alignment": "distributor-hard-gate-passed-direct-and-managed",
+    "distributed_elf_16k_alignment": "distributor-hard-gate-passed",
+    "portable_raw_wheel_claim": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
+    "user_built_wheel_rpath_runpath": "diagnostic-only"
+  },
+  "schema_version": 1,
+  "selected_profile": {
+    "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
+    "direct_and_uv_managed_consumer_semantics": true,
+    "id": "M",
+    "name": "upstream-preserved-minimal-consumer-overlay",
+    "producer_provenance_preserved": true
+  },
+  "status": "successor-full-r5-accepted-family-derivation-authorized",
+  "successor_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json",
+    "id": "RB-3/SUCCESSOR-FAMILY-DERIVATION",
+    "later_required_before_rb3_closure": [
+      "accept successor technical family",
+      "legally integrate successor family",
+      "rebind RB-1 exact legal evidence",
+      "rebind RB-2 exact runtime qualification",
+      "explicitly supersede predecessor family through a new family authority"
+    ],
+    "required_output": "deterministic successor install_only and install_only_stripped candidates derived from the accepted full r5, with a non-promoted technical family candidate and complete qualification evidence"
+  }
+}
