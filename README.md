@@ -30,7 +30,7 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-3-astral-consumer-compatibility
+- RB-3-sysconfig-sdk-and-astral-consumer-boundary
 - RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
@@ -38,7 +38,6 @@ Epoch 3 selection     true
 
 ### Unresolved risks
 
-- astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
@@ -52,7 +51,12 @@ Epoch 3 selection     true
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
-- astral-consumer-and-uv-managed-compatibility-owner-qualification-pending
+- rb3-managed-install-failed-on-project-rendered-sysconfig-header
+- current-sysconfig-normalizer-overrides-producer-provenance-and-redundant-target-identity
+- zero-producer-path-rule-not-derived-from-astral-golden-contract
+- on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal
+- rb3-c-h-u-m-target-profile-comparison-pending
+- sysconfig-profile-not-selected-and-frozen-artifacts-not-superseded
 
 ### Accepted authorities
 

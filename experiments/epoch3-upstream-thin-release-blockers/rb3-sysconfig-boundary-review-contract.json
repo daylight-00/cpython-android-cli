@@ -1,0 +1,105 @@
+{
+  "accepted_evidence": {
+    "astral_golden_observation_sha256": "906278d02342aa3587991969c9ee79da0f89c159c640fc347b55f1bf094b2726",
+    "current_normalizer": {
+      "path": "components/upstream-thin/lib/normalize.py",
+      "sha256": "bd786bb106f587e9d52fb7564aa57d5d350b6eea266808160c947de801e93065"
+    },
+    "ut2_runtime_relocation_authority": {
+      "path": "experiments/epoch2-upstream-thin-loader-relocation/loader-relocation-authority.json",
+      "sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2"
+    },
+    "ut3_sysconfig_sdk_authority": {
+      "path": "experiments/epoch2-upstream-thin-sysconfig-sdk/sysconfig-sdk-authority.json",
+      "sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+    }
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "profile_selected": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb3-sysconfig-and-on-device-sdk-boundary-review",
+  "findings": {
+    "canonical_header_must_be_preserved": true,
+    "current_normalizer_is_minimal": false,
+    "current_on_device_sdk_contract_complete": false,
+    "producer_provenance_and_consumer_policy_must_be_separated": true,
+    "runtime_relocation_required_current_normalizer": false,
+    "ut3_raw_wheel_was_policy_clean": false,
+    "ut3_required_explicit_post_build_rpath_removal": true,
+    "zero_producer_paths_is_astral_derived": false
+  },
+  "host_profile_assembly": {
+    "all_profiles_byte_identical_second_assembly": true,
+    "control_is_exact_install_only": true,
+    "pass": true,
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json",
+    "sha256": "8d94744e1133040e3eb97123722d93591e50b566705daca58577c5eca01d6e8d"
+  },
+  "profiles": [
+    {
+      "description": "exact frozen install-only archive",
+      "id": "C",
+      "name": "current-control"
+    },
+    {
+      "description": "current payload with only the CPython canonical _sysconfigdata_ header restored",
+      "id": "H",
+      "name": "current-plus-canonical-header"
+    },
+    {
+      "description": "current product topology with official Python.org active metadata restored",
+      "id": "U",
+      "name": "upstream-metadata-restored"
+    },
+    {
+      "description": "U plus field-bounded consumer-path and on-device toolchain adaptations without provenance or target-identity replacement",
+      "id": "M",
+      "name": "upstream-preserved-minimal-consumer-overlay"
+    }
+  ],
+  "required_measurements": [
+    "deterministic-profile-assembly",
+    "fresh-and-moved-prefix-runtime",
+    "android-identity",
+    "uv-system-consumption",
+    "uv-managed-install-find-venv-reinstall-uninstall",
+    "python-config",
+    "python-pkg-config",
+    "raw-native-wheel-build",
+    "raw-wheel-elf-runpath-needed-and-alignment",
+    "relocated-wheel-import",
+    "explicit-post-build-normalization-if-needed",
+    "frozen-input-family-invariance"
+  ],
+  "schema_version": 1,
+  "selection_policy": {
+    "android_adaptation_requires_measured_failure": true,
+    "artifact_change_requires_successor_family": true,
+    "automatic_selection": false,
+    "frozen_authority_rewrite_forbidden": true,
+    "header_only_is_control_not_default": true,
+    "producer_provenance_replacement_forbidden": true,
+    "upstream_preservation_preferred": true
+  },
+  "static_review": {
+    "astral_build_install_tool_path_token_count": 52,
+    "dynamic_override_key_count": 54,
+    "literal_changed_key_count": 84,
+    "mutated_metadata_file_count": 7,
+    "pass": true,
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json",
+    "sha256": "3d21118ddf5c93a829525e47648cc18ba75b397765d381f7e4afbf25da1eb939"
+  },
+  "status": "static-review-complete-target-profile-probe-required",
+  "trigger": {
+    "failure": "managed installer rejected the project-rendered _sysconfigdata_ header",
+    "rb3_result_sha256": "efa31699c53a552a6ecbc0e70de33802c0a7b431e68bc50c05af7592ab12eb33",
+    "rb3_result_size_bytes": 13787,
+    "uv_version": "0.11.28"
+  }
+}

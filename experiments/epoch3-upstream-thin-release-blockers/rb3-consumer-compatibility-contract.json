@@ -1,15 +1,47 @@
 {
-  "schema_version": 1,
-  "contract_kind": "epoch3-rb3-astral-and-uv-consumer-compatibility",
-  "status": "implementation-started-owner-run-pending",
+  "astral_contract": {
+    "catalog_key": "cpython-3.14.6-linux-aarch64-none",
+    "catalog_platform": {
+      "arch_family": "aarch64",
+      "libc": "none",
+      "major": 3,
+      "minor": 14,
+      "name": "cpython",
+      "os": "linux",
+      "patch": 6
+    },
+    "full_metadata": "python/PYTHON.json format 8",
+    "managed_archive": "use the exact install_only archive directly; no rewrap, rebuild, or payload transformation",
+    "reason_for_linux_none_key": "uv's custom managed-Python key model has no Android OS key; the installed interpreter must be reprobed and prove Android identity"
+  },
   "basis": {
     "artifact_family": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "managed_python_precedent": "experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json",
     "rb2_data_authority": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
-    "system_python_precedent": "experiments/stage3d-consumer-integration/gate4-consumer-integration-authority.json",
-    "managed_python_precedent": "experiments/stage3e-managed-python-distribution/gate5-independent-distribution-freeze.json"
+    "system_python_precedent": "experiments/stage3d-consumer-integration/gate4-consumer-integration-authority.json"
+  },
+  "claim_boundary": {
+    "automatic_network_download": false,
+    "built_in_uv_android_catalog": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "upstream_uv_android_support": false
+  },
+  "contract_kind": "epoch3-rb3-astral-and-uv-consumer-compatibility",
+  "design_review": {
+    "canonical_artifact_bytes_changed": false,
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
+    "profile_selected": false,
+    "profiles": [
+      "C-current-control",
+      "H-current-plus-canonical-header",
+      "U-upstream-metadata-restored",
+      "M-upstream-preserved-minimal-consumer-overlay"
+    ],
+    "review": "docs/epochs/EPOCH3_SYSCONFIG_AND_ON_DEVICE_SDK_BOUNDARY_REVIEW.md"
   },
   "exact_product": {
-    "release_family": "cpython-3.14.6+e3-r2-aarch64-linux-android",
     "full": {
       "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
       "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
@@ -19,28 +51,34 @@
       "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz",
       "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
       "size_bytes": 23841726
-    }
-  },
-  "astral_contract": {
-    "full_metadata": "python/PYTHON.json format 8",
-    "managed_archive": "use the exact install_only archive directly; no rewrap, rebuild, or payload transformation",
-    "catalog_key": "cpython-3.14.6-linux-aarch64-none",
-    "catalog_platform": {"name":"cpython","os":"linux","libc":"none","arch_family":"aarch64","major":3,"minor":14,"patch":6},
-    "reason_for_linux_none_key": "uv's custom managed-Python key model has no Android OS key; the installed interpreter must be reprobed and prove Android identity"
-  },
-  "system_python": {
-    "selector": "exact absolute python/bin/python3.14 path",
-    "required": ["uv python find", "uv venv", "uv run", "uv sync"],
-    "controls": ["offline", "no Python downloads", "no managed fallback", "isolated HOME/XDG/cache", "identity reprobe"]
+    },
+    "release_family": "cpython-3.14.6+e3-r2-aarch64-linux-android"
   },
   "managed_python": {
-    "transport": "local file:// exact install_only archive and custom JSON catalog",
-    "install_root": "disposable project-owned explicit root",
-    "install_policy": "manual only for explicit uv python install",
-    "other_policy": "never",
     "global_bin_links": false,
-    "required": ["catalog list", "exact install", "managed find", "direct launch", "uv venv", "exact reinstall no-op", "uninstall and empty find"]
+    "install_policy": "manual only for explicit uv python install",
+    "install_root": "disposable project-owned explicit root",
+    "other_policy": "never",
+    "required": [
+      "catalog list",
+      "exact install",
+      "managed find",
+      "direct launch",
+      "uv venv",
+      "exact reinstall no-op",
+      "uninstall and empty find"
+    ],
+    "transport": "local file:// exact install_only archive and custom JSON catalog"
   },
+  "r1_result": {
+    "first_meaningful_failure": "_sysconfigdata_ is missing a header comment",
+    "inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
+    "managed_install_passed": false,
+    "result_sha256": "efa31699c53a552a6ecbc0e70de33802c0a7b431e68bc50c05af7592ab12eb33",
+    "system_consumer_passed": true
+  },
+  "schema_version": 1,
+  "status": "r1-failed-managed-header-static-boundary-review-in-progress",
   "stop_conditions": [
     "exact frozen archive identity mismatch",
     "uv binary is not Android aarch64",
@@ -48,7 +86,25 @@
     "managed installation requires archive transformation",
     "installed managed interpreter does not report CPython 3.14.6, SOABI cpython-314-aarch64-linux-android, MULTIARCH aarch64-linux-android, and android-24-arm64_v8a",
     "canonical release family or real uv managed root changes",
-    "receipt is incomplete"
+    "receipt is incomplete",
+    "select a sysconfig profile from static reasoning alone",
+    "replace producer provenance with consumer policy without a separate truthful record",
+    "claim ordinary native wheel build support when a hidden post-build ELF mutation is required"
   ],
-  "claim_boundary": {"rb3_closed":false,"built_in_uv_android_catalog":false,"automatic_network_download":false,"upstream_uv_android_support":false,"selectable":false,"publication":false}
+  "system_python": {
+    "controls": [
+      "offline",
+      "no Python downloads",
+      "no managed fallback",
+      "isolated HOME/XDG/cache",
+      "identity reprobe"
+    ],
+    "required": [
+      "uv python find",
+      "uv venv",
+      "uv run",
+      "uv sync"
+    ],
+    "selector": "exact absolute python/bin/python3.14 path"
+  }
 }

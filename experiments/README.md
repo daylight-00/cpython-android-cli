@@ -437,6 +437,10 @@
 - [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-release-blockers`
 - [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json`](epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json) — `ACTIVE_PLAN` · `operational` · owner `epoch3-release-blockers`
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-contract.json`](epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-contract.json) — `ACTIVE_PLAN` · `operational` · owner `epoch3-release-blockers`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json`](epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json) — `HISTORICAL_SNAPSHOT` · `evidence_snapshot` · owner `epoch3-release-blockers` · snapshot-relative; never current authority
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json`](epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json) — `ACTIVE_PLAN` · `operational` · owner `epoch3-release-blockers`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json`](epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json) — `HISTORICAL_SNAPSHOT` · `evidence_snapshot` · owner `epoch3-release-blockers` · snapshot-relative; never current authority
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json`](epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json) — `HISTORICAL_SNAPSHOT` · `evidence_snapshot` · owner `epoch3-release-blockers` · snapshot-relative; never current authority
 - [`experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json`](epoch3-upstream-thin-release-blockers/source-provenance-contract.json) — `ACTIVE_PLAN` · `machine_contract` · owner `epoch3-rb1-license-closure`
 
 ## `epoch3-upstream-thin-stripped`

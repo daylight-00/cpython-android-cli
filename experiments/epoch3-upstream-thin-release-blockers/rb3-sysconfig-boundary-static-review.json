@@ -1,0 +1,1183 @@
+{
+  "astral_absolute_path_examples": [
+    {
+      "pointer": "/AR",
+      "value": "/tools/llvm/bin/llvm-ar"
+    },
+    {
+      "pointer": "/BINDIR",
+      "value": "/install/bin"
+    },
+    {
+      "pointer": "/BINLIBDEST",
+      "value": "/install/lib/python3.14"
+    },
+    {
+      "pointer": "/CONFINCLUDEDIR",
+      "value": "/install/include"
+    },
+    {
+      "pointer": "/CONFINCLUDEPY",
+      "value": "/install/include/python3.14"
+    },
+    {
+      "pointer": "/COVERAGE_INFO",
+      "value": "/build/Python-3.14.6/coverage.info"
+    },
+    {
+      "pointer": "/COVERAGE_REPORT",
+      "value": "/build/Python-3.14.6/lcov-report"
+    },
+    {
+      "pointer": "/DESTDIRS",
+      "value": "/install"
+    },
+    {
+      "pointer": "/DESTDIRS",
+      "value": "/install/lib"
+    },
+    {
+      "pointer": "/DESTDIRS",
+      "value": "/install/lib/python3.14"
+    },
+    {
+      "pointer": "/DESTDIRS",
+      "value": "/install/lib/python3.14/lib-dynload"
+    },
+    {
+      "pointer": "/DESTLIB",
+      "value": "/install/lib/python3.14"
+    },
+    {
+      "pointer": "/DESTSHARED",
+      "value": "/install/lib/python3.14/lib-dynload"
+    },
+    {
+      "pointer": "/EXENAME",
+      "value": "/install/bin/python3.14"
+    },
+    {
+      "pointer": "/FREEZE_MODULE",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/FREEZE_MODULE_BOOTSTRAP",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/INCLDIRSTOMAKE",
+      "value": "/install/include"
+    },
+    {
+      "pointer": "/INCLDIRSTOMAKE",
+      "value": "/install/include"
+    },
+    {
+      "pointer": "/INCLDIRSTOMAKE",
+      "value": "/install/include/python3.14"
+    },
+    {
+      "pointer": "/INCLDIRSTOMAKE",
+      "value": "/install/include/python3.14"
+    },
+    {
+      "pointer": "/INCLUDEDIR",
+      "value": "/install/include"
+    },
+    {
+      "pointer": "/INCLUDEPY",
+      "value": "/install/include/python3.14"
+    },
+    {
+      "pointer": "/LIBDEST",
+      "value": "/install/lib/python3.14"
+    },
+    {
+      "pointer": "/LIBDIR",
+      "value": "/install/lib"
+    },
+    {
+      "pointer": "/LIBPC",
+      "value": "/install/lib/pkgconfig"
+    },
+    {
+      "pointer": "/LIBPL",
+      "value": "/install/lib/python3.14/config-3.14-aarch64-linux-gnu"
+    },
+    {
+      "pointer": "/LLVM_PROFDATA",
+      "value": "/tools/llvm/bin/llvm-profdata"
+    },
+    {
+      "pointer": "/LLVM_PROF_MERGER",
+      "value": "/tools/llvm/bin/llvm-profdata"
+    },
+    {
+      "pointer": "/MACHDESTLIB",
+      "value": "/install/lib/python3.14"
+    },
+    {
+      "pointer": "/MANDIR",
+      "value": "/install/share/man"
+    },
+    {
+      "pointer": "/PYTHON_FOR_BUILD",
+      "value": "/build/Python-3.14.6/`cat"
+    },
+    {
+      "pointer": "/PYTHON_FOR_BUILD",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/PYTHON_FOR_FREEZE",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/SCRIPTDIR",
+      "value": "/install/lib"
+    },
+    {
+      "pointer": "/TESTPYTHON",
+      "value": "/build/Python-3.14.6/`cat"
+    },
+    {
+      "pointer": "/TESTPYTHON",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/TESTRUNNER",
+      "value": "/build/Python-3.14.6/`cat"
+    },
+    {
+      "pointer": "/TESTRUNNER",
+      "value": "/tools/host/bin/python3.14"
+    },
+    {
+      "pointer": "/abs_builddir",
+      "value": "/build/Python-3.14.6"
+    },
+    {
+      "pointer": "/abs_srcdir",
+      "value": "/build/Python-3.14.6"
+    }
+  ],
+  "checks": {
+    "all_expected_metadata_files_compared": true,
+    "astral_golden_retains_build_or_install_absolute_paths": true,
+    "candidate_header_is_not_cpython_canonical": true,
+    "dynamic_override_exists": true,
+    "literal_dictionary_rewritten": true,
+    "official_header_is_cpython_canonical": true,
+    "producer_provenance_overridden": true,
+    "ut2_proved_runtime_and_relocation_before_ut3_normalization": true,
+    "ut3_native_wheel_required_post_build_runpath_removal": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "profile_selected": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "dynamic_overrides": [
+    {
+      "category": "target-identity",
+      "key": "ANDROID_API_LEVEL",
+      "kind": "literal",
+      "value": 24
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "AR",
+      "kind": "literal",
+      "value": "llvm-ar"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "ARFLAGS",
+      "kind": "literal",
+      "value": "rcs"
+    },
+    {
+      "category": "consumer-path",
+      "key": "BINDIR",
+      "kind": "expression",
+      "value": "_hw_os.path.join(_hw_prefix, 'bin')"
+    },
+    {
+      "category": "consumer-path",
+      "key": "BINLIBDEST",
+      "kind": "expression",
+      "value": "_hw_stdlib"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "BLDLIBRARY",
+      "kind": "expression",
+      "value": "'-L' + _hw_lib + ' -lpython3.14'"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "BLDSHARED",
+      "kind": "expression",
+      "value": "'clang -shared ' + _hw_ldflags"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "BUILD_GNU_TYPE",
+      "kind": "literal",
+      "value": "aarch64-linux-android"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "CC",
+      "kind": "literal",
+      "value": "clang"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "CCSHARED",
+      "kind": "literal",
+      "value": "-fPIC"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "CFLAGS",
+      "kind": "expression",
+      "value": "_hw_cflags"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "CONFIG_ARGS",
+      "kind": "literal",
+      "value": "--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived"
+    },
+    {
+      "category": "consumer-path",
+      "key": "CONFINCLUDEDIR",
+      "kind": "expression",
+      "value": "_hw_os.path.join(_hw_prefix, 'include')"
+    },
+    {
+      "category": "consumer-path",
+      "key": "CONFINCLUDEPY",
+      "kind": "expression",
+      "value": "_hw_include"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "CPPFLAGS",
+      "kind": "literal",
+      "value": ""
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "CXX",
+      "kind": "literal",
+      "value": "clang++"
+    },
+    {
+      "category": "consumer-path",
+      "key": "DESTSHARED",
+      "kind": "expression",
+      "value": "_hw_os.path.join(_hw_stdlib, 'lib-dynload')"
+    },
+    {
+      "category": "target-identity",
+      "key": "EXT_SUFFIX",
+      "kind": "literal",
+      "value": ".cpython-314-aarch64-linux-android.so"
+    },
+    {
+      "category": "target-identity",
+      "key": "HOST_GNU_TYPE",
+      "kind": "literal",
+      "value": "aarch64-linux-android"
+    },
+    {
+      "category": "other",
+      "key": "HW_T_CROSS_BUILD_SDK",
+      "kind": "literal",
+      "value": "unavailable-without-explicit-ndk-authority"
+    },
+    {
+      "category": "other",
+      "key": "HW_T_METADATA_PROFILE",
+      "kind": "literal",
+      "value": "on-device-sdk"
+    },
+    {
+      "category": "consumer-path",
+      "key": "INCLUDEDIR",
+      "kind": "expression",
+      "value": "_hw_os.path.join(_hw_prefix, 'include')"
+    },
+    {
+      "category": "consumer-path",
+      "key": "INCLUDEPY",
+      "kind": "expression",
+      "value": "_hw_include"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "LDFLAGS",
+      "kind": "expression",
+      "value": "_hw_ldflags"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "LDSHARED",
+      "kind": "expression",
+      "value": "'clang -shared ' + _hw_ldflags"
+    },
+    {
+      "category": "consumer-path",
+      "key": "LIBDEST",
+      "kind": "expression",
+      "value": "_hw_stdlib"
+    },
+    {
+      "category": "consumer-path",
+      "key": "LIBDIR",
+      "kind": "expression",
+      "value": "_hw_lib"
+    },
+    {
+      "category": "consumer-path",
+      "key": "LIBPL",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "other",
+      "key": "LIBPYTHON",
+      "kind": "literal",
+      "value": ""
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "LIBS",
+      "kind": "literal",
+      "value": "-ldl -lm"
+    },
+    {
+      "category": "target-identity",
+      "key": "MULTIARCH",
+      "kind": "literal",
+      "value": "aarch64-linux-android"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_CFLAGS",
+      "kind": "expression",
+      "value": "_hw_cflags"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_CORE_LDFLAGS",
+      "kind": "expression",
+      "value": "_hw_ldflags"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_CPPFLAGS",
+      "kind": "literal",
+      "value": ""
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_LDFLAGS",
+      "kind": "expression",
+      "value": "_hw_ldflags"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_STDMODULE_CFLAGS",
+      "kind": "expression",
+      "value": "_hw_cflags + ' -fPIC'"
+    },
+    {
+      "category": "consumer-path",
+      "key": "SCRIPTDIR",
+      "kind": "expression",
+      "value": "_hw_lib"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "SHELL",
+      "kind": "literal",
+      "value": "sh -e"
+    },
+    {
+      "category": "target-identity",
+      "key": "SOABI",
+      "kind": "literal",
+      "value": "cpython-314-aarch64-linux-android"
+    },
+    {
+      "category": "on-device-sdk-toolchain",
+      "key": "SYSLIBS",
+      "kind": "literal",
+      "value": "-llog"
+    },
+    {
+      "category": "target-identity",
+      "key": "TZPATH",
+      "kind": "literal",
+      "value": ""
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_builddir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_srcdir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "base",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "builddir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "exec_prefix",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "host_exec_prefix",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "host_prefix",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "installed_base",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "installed_platbase",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "platbase",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "prefix",
+      "kind": "expression",
+      "value": "_hw_prefix"
+    },
+    {
+      "category": "runtime-prefix",
+      "key": "projectbase",
+      "kind": "expression",
+      "value": "_hw_os.path.join(_hw_prefix, 'bin')"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "srcdir",
+      "kind": "expression",
+      "value": "_hw_config"
+    }
+  ],
+  "failed_checks": [],
+  "finding": {
+    "current_normalizer_conflates": [
+      "runtime relocation",
+      "consumer path convenience",
+      "on-device compiler policy",
+      "producer provenance sanitization",
+      "target identity"
+    ],
+    "current_normalizer_is_minimal": false,
+    "on_device_sdk_contract_complete": false,
+    "reason": "UT-3 removed a Termux RUNPATH after wheel build; the canonical consumer flow does not yet own that output normalization step.",
+    "runtime_normalization_required_by_ut2": false,
+    "zero_producer_absolute_paths_is_astral_derived": false
+  },
+  "inputs": {
+    "astral_observation_sha256": "906278d02342aa3587991969c9ee79da0f89c159c640fc347b55f1bf094b2726",
+    "candidate_sysconfigdata": {
+      "header": "# system configuration normalized for relocatable Android consumers",
+      "key_count": 1083,
+      "sha256": "07abcac255dafbbb642b6d0a80d976eaae9bed3ffa052577af3854f2524ddf6d"
+    },
+    "normalizer_sha256": "bd786bb106f587e9d52fb7564aa57d5d350b6eea266808160c947de801e93065",
+    "official_sysconfigdata": {
+      "header": "# system configuration generated and used by the sysconfig module",
+      "key_count": 1083,
+      "sha256": "d6ee606254072ae512667851cfc37a3af74f02f2d6fd46bfad74533836f5d575"
+    },
+    "ut2_authority_sha256": "05a6a21d9803d01880c6a81e0a33785edfd2b0b27b1ca4b508bd23f42219a6d2",
+    "ut3_authority_sha256": "6cff1984d4601a37e8b57762bb170a57e695cb64d516c1dab0023b7e809dc808"
+  },
+  "literal_differences": [
+    {
+      "candidate_literal": "",
+      "category": "on-device-sdk-toolchain",
+      "key": "AR",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/bin",
+      "category": "consumer-path",
+      "key": "BINDIR",
+      "upstream": "/usr/local/bin"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14",
+      "category": "consumer-path",
+      "key": "BINLIBDEST",
+      "upstream": "/usr/local/lib/python3.14"
+    },
+    {
+      "candidate_literal": "-shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "BLDSHARED",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "",
+      "category": "on-device-sdk-toolchain",
+      "key": "CC",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO",
+      "category": "on-device-sdk-toolchain",
+      "key": "CFLAGS",
+      "upstream": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-D__BIONIC_NO_PAGE_SIZE_MACRO",
+      "category": "producer-provenance-or-build-only",
+      "key": "CONFIGURE_CFLAGS",
+      "upstream": "-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "producer-provenance-or-build-only",
+      "key": "CONFIGURE_LDFLAGS",
+      "upstream": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--without-ensurepip' '--enable-shared' '--without-static-libpython' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix'",
+      "category": "producer-provenance-or-build-only",
+      "key": "CONFIG_ARGS",
+      "upstream": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/include",
+      "category": "consumer-path",
+      "key": "CONFINCLUDEDIR",
+      "upstream": "/usr/local/include"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/include/python3.14",
+      "category": "consumer-path",
+      "key": "CONFINCLUDEPY",
+      "upstream": "/usr/local/include/python3.14"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-provenance-or-build-only",
+      "key": "COVERAGE_INFO",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/coverage.info"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-provenance-or-build-only",
+      "key": "COVERAGE_REPORT",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/lcov-report"
+    },
+    {
+      "candidate_literal": "",
+      "category": "on-device-sdk-toolchain",
+      "key": "CXX",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@ @HW_T_PREFIX@/lib @HW_T_PREFIX@/lib/python3.14 @HW_T_PREFIX@/lib/python3.14/lib-dynload",
+      "category": "consumer-path",
+      "key": "DESTDIRS",
+      "upstream": "/usr/local /usr/local/lib /usr/local/lib/python3.14 /usr/local/lib/python3.14/lib-dynload"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14",
+      "category": "consumer-path",
+      "key": "DESTLIB",
+      "upstream": "/usr/local/lib/python3.14"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14/lib-dynload",
+      "category": "consumer-path",
+      "key": "DESTSHARED",
+      "upstream": "/usr/local/lib/python3.14/lib-dynload"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/bin/python3.14",
+      "category": "consumer-path",
+      "key": "EXENAME",
+      "upstream": "/usr/local/bin/python3.14"
+    },
+    {
+      "candidate_literal": "../../Programs/_freeze_module.py",
+      "category": "producer-provenance-or-build-only",
+      "key": "FREEZE_MODULE",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe ../../Programs/_freeze_module.py"
+    },
+    {
+      "candidate_literal": "../../Programs/_freeze_module.py",
+      "category": "producer-provenance-or-build-only",
+      "key": "FREEZE_MODULE_BOOTSTRAP",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe ../../Programs/_freeze_module.py"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/include @HW_T_PREFIX@/include @HW_T_PREFIX@/include/python3.14 @HW_T_PREFIX@/include/python3.14",
+      "category": "consumer-path",
+      "key": "INCLDIRSTOMAKE",
+      "upstream": "/usr/local/include /usr/local/include /usr/local/include/python3.14 /usr/local/include/python3.14"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/include",
+      "category": "consumer-path",
+      "key": "INCLUDEDIR",
+      "upstream": "/usr/local/include"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/include/python3.14",
+      "category": "consumer-path",
+      "key": "INCLUDEPY",
+      "upstream": "/usr/local/include/python3.14"
+    },
+    {
+      "candidate_literal": "-shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "LDCXXSHARED",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++ -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "LDFLAGS",
+      "upstream": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "-shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "LDSHARED",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -shared -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14",
+      "category": "consumer-path",
+      "key": "LIBDEST",
+      "upstream": "/usr/local/lib/python3.14"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib",
+      "category": "consumer-path",
+      "key": "LIBDIR",
+      "upstream": "/usr/local/lib"
+    },
+    {
+      "candidate_literal": "-I../../Modules/expat -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "other",
+      "key": "LIBEXPAT_CFLAGS",
+      "upstream": "-I../../Modules/expat -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "other",
+      "key": "LIBHACL_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_decimal/libmpdec -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "other",
+      "key": "LIBMPDEC_CFLAGS",
+      "upstream": "-I../../Modules/_decimal/libmpdec -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/pkgconfig",
+      "category": "other",
+      "key": "LIBPC",
+      "upstream": "/usr/local/lib/pkgconfig"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14/config-3.14-aarch64-linux-android",
+      "category": "consumer-path",
+      "key": "LIBPL",
+      "upstream": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android"
+    },
+    {
+      "candidate_literal": "-ldl -llog",
+      "category": "on-device-sdk-toolchain",
+      "key": "LIBS",
+      "upstream": "-ldl  -llog"
+    },
+    {
+      "candidate_literal": "",
+      "category": "other",
+      "key": "LINKCC",
+      "upstream": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang"
+    },
+    {
+      "candidate_literal": "'' merge -output=\"$(shell pwd)/code.profclangd\" \"$(shell pwd)\" /*.profclangr",
+      "category": "other",
+      "key": "LLVM_PROF_MERGER",
+      "upstream": "'' merge -output=\"$(shell pwd)/code.profclangd\" \"$(shell pwd)\"/*.profclangr"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib/python3.14",
+      "category": "other",
+      "key": "MACHDESTLIB",
+      "upstream": "/usr/local/lib/python3.14"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/share/man",
+      "category": "other",
+      "key": "MANDIR",
+      "upstream": "/usr/local/share/man"
+    },
+    {
+      "candidate_literal": "array _asyncio _bisect _csv _heapq _json _lsprof _pickle _queue _random _remote_debugging _struct _interpreters _interpchannels _interpqueues _zoneinfo math cmath _statistics _decimal binascii _bz2 _lzma _zstd zlib _md5 _sha1 _sha2 _sha3 _blake2 _hmac pyexpat _elementtree _codecs_cn _codecs_hk _codecs_iso2022 _codecs_jp _codecs_kr _codecs_tw _multibytecodec unicodedata fcntl mmap _posixsubprocess resource select _socket syslog termios _ctypes _sqlite3 _ssl _hashlib xxsubtype _xxtestfuzz _testbuffer _testinternalcapi _testcapi _testlimitedcapi _testclinic _testclinic_limited _testimportmultiple _testmultiphase _testsinglephase _ctypes_test xxlimited xxlimited_35 atexit faulthandler posix _signal _tracemalloc _suggestions _datetime _codecs _collections errno _io itertools _sre _sysconfig _thread time _types _typing _weakref _abc _functools _locale _opcode _operator _stat _symtable pwd",
+      "category": "other",
+      "key": "MODBUILT_NAMES",
+      "upstream": "array  _asyncio  _bisect  _csv  _heapq  _json  _lsprof  _pickle  _queue  _random  _remote_debugging  _struct  _interpreters  _interpchannels  _interpqueues  _zoneinfo  math  cmath  _statistics  _decimal  binascii  _bz2  _lzma  _zstd  zlib  _md5  _sha1  _sha2  _sha3  _blake2  _hmac  pyexpat  _elementtree  _codecs_cn  _codecs_hk  _codecs_iso2022  _codecs_jp  _codecs_kr  _codecs_tw  _multibytecodec  unicodedata  fcntl  mmap  _posixsubprocess  resource  select  _socket  syslog  termios  _ctypes  _sqlite3  _ssl  _hashlib  xxsubtype  _xxtestfuzz  _testbuffer  _testinternalcapi  _testcapi  _testlimitedcapi  _testclinic  _testclinic_limited  _testimportmultiple  _testmultiphase  _testsinglephase  _ctypes_test  xxlimited  xxlimited_35  atexit  faulthandler  posix  _signal  _tracemalloc  _suggestions  _datetime  _codecs  _collections  errno  _io  itertools  _sre  _sysconfig  _thread  time  _types  _typing  _weakref  _abc  _functools  _locale  _opcode  _operator  _stat  _symtable  pwd"
+    },
+    {
+      "candidate_literal": "Modules/atexitmodule.o Modules/faulthandler.o Modules/posixmodule.o Modules/signalmodule.o Modules/_tracemalloc.o Modules/_suggestions.o Modules/_datetimemodule.o Modules/_codecsmodule.o Modules/_collectionsmodule.o Modules/errnomodule.o Modules/_io/_iomodule.o Modules/_io/iobase.o Modules/_io/fileio.o Modules/_io/bytesio.o Modules/_io/bufferedio.o Modules/_io/textio.o Modules/_io/stringio.o Modules/itertoolsmodule.o Modules/_sre/sre.o Modules/_sysconfig.o Modules/_threadmodule.o Modules/timemodule.o Modules/_typesmodule.o Modules/_typingmodule.o Modules/_weakref.o Modules/_abc.o Modules/_functoolsmodule.o Modules/_localemodule.o Modules/_opcode.o Modules/_operator.o Modules/_stat.o Modules/symtablemodule.o Modules/pwdmodule.o",
+      "category": "other",
+      "key": "MODOBJS",
+      "upstream": "Modules/atexitmodule.o  Modules/faulthandler.o  Modules/posixmodule.o  Modules/signalmodule.o  Modules/_tracemalloc.o  Modules/_suggestions.o  Modules/_datetimemodule.o  Modules/_codecsmodule.o  Modules/_collectionsmodule.o  Modules/errnomodule.o  Modules/_io/_iomodule.o Modules/_io/iobase.o Modules/_io/fileio.o Modules/_io/bytesio.o Modules/_io/bufferedio.o Modules/_io/textio.o Modules/_io/stringio.o  Modules/itertoolsmodule.o  Modules/_sre/sre.o  Modules/_sysconfig.o  Modules/_threadmodule.o  Modules/timemodule.o  Modules/_typesmodule.o  Modules/_typingmodule.o  Modules/_weakref.o  Modules/_abc.o  Modules/_functoolsmodule.o  Modules/_localemodule.o  Modules/_opcode.o  Modules/_operator.o  Modules/_stat.o  Modules/symtablemodule.o  Modules/pwdmodule.o"
+    },
+    {
+      "candidate_literal": "Modules/config.c libpython3.14.so",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE_DEPS_SHARED",
+      "upstream": "Modules/config.c  libpython3.14.so"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__BLAKE2_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "../../Modules/cjkcodecs/mappings_hk.h ../../Modules/cjkcodecs/multibytecodec.h ../../Modules/cjkcodecs/cjkcodecs.h",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__CODECS_HK_DEPS",
+      "upstream": "../../Modules/cjkcodecs/mappings_hk.h  ../../Modules/cjkcodecs/multibytecodec.h ../../Modules/cjkcodecs/cjkcodecs.h"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__CTYPES_CFLAGS",
+      "upstream": "-fno-strict-overflow -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-lffi -ldl",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__CTYPES_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib -lffi -ldl"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__CTYPES_TEST_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-lffi -ldl -lm",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__CTYPES_TEST_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib -lffi -ldl -lm"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__HASHLIB_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-lcrypto",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__HASHLIB_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib   -lcrypto"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__HMAC_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__LZMA_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-llzma",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__LZMA_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib -llzma"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__MD5_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SHA1_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SHA2_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SHA3_CFLAGS",
+      "upstream": "-I../../Modules/_hacl -I../../Modules/_hacl/include -D_BSD_SOURCE -D_DEFAULT_SOURCE -DLINUX_NO_EXPLICIT_BZERO -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -fPIC"
+    },
+    {
+      "candidate_literal": "-I../../Modules/_sqlite",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SQLITE3_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -I../../Modules/_sqlite"
+    },
+    {
+      "candidate_literal": "-lsqlite3",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SQLITE3_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib -lsqlite3"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SSL_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-lssl -lcrypto",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__SSL_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib  -lssl -lcrypto"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__ZSTD_CFLAGS",
+      "upstream": "-I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-lzstd",
+      "category": "producer-build-only-or-module-build",
+      "key": "MODULE__ZSTD_LDFLAGS",
+      "upstream": "-L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib -lzstd"
+    },
+    {
+      "candidate_literal": "_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo pybuilddir.txt`)",
+      "category": "producer-provenance-or-build-only",
+      "key": "PYTHON_FOR_BUILD",
+      "upstream": "_PYTHON_PROJECT_BASE=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo /Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/`cat pybuilddir.txt`) /Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-provenance-or-build-only",
+      "key": "PYTHON_FOR_FREEZE",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -DPy_BUILD_CORE_BUILTIN",
+      "category": "producer-build-only-or-module-build",
+      "key": "PY_BUILTIN_MODULE_CFLAGS",
+      "upstream": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -DPy_BUILD_CORE_BUILTIN"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO",
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_CFLAGS",
+      "upstream": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+    },
+    {
+      "candidate_literal": "-std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc",
+      "category": "producer-build-only-or-module-build",
+      "key": "PY_CFLAGS_NODIST",
+      "upstream": "-std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -DPy_BUILD_CORE",
+      "category": "producer-build-only-or-module-build",
+      "key": "PY_CORE_CFLAGS",
+      "upstream": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC -DPy_BUILD_CORE"
+    },
+    {
+      "candidate_literal": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_CORE_LDFLAGS",
+      "upstream": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_LDFLAGS",
+      "upstream": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm",
+      "category": "producer-build-only-or-module-build",
+      "key": "PY_LDFLAGS_NOLTO",
+      "upstream": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib"
+    },
+    {
+      "candidate_literal": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC",
+      "category": "on-device-sdk-toolchain",
+      "key": "PY_STDMODULE_CFLAGS",
+      "upstream": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -std=c11 -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration -fvisibility=hidden  -I../../Include/internal -I../../Include/internal/mimalloc -IObjects -IInclude -IPython -I. -I../../Include -fPIC"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/lib",
+      "category": "consumer-path",
+      "key": "SCRIPTDIR",
+      "upstream": "/usr/local/lib"
+    },
+    {
+      "candidate_literal": "-ldl -llog",
+      "category": "other",
+      "key": "SHLIBS",
+      "upstream": "-ldl  -llog"
+    },
+    {
+      "candidate_literal": "Modules Modules/_ctypes Modules/_decimal Modules/_decimal/libmpdec Modules/_hacl Modules/_io Modules/_multiprocessing Modules/_sqlite Modules/_sre Modules/_testcapi Modules/_testinternalcapi Modules/_testlimitedcapi Modules/_xxtestfuzz Modules/_zstd Modules/cjkcodecs Modules/expat Objects Objects/mimalloc Objects/mimalloc/prim Parser Parser/tokenizer Parser/lexer Programs Python Python/frozen_modules",
+      "category": "other",
+      "key": "SRCDIRS",
+      "upstream": "Modules   Modules/_ctypes   Modules/_decimal   Modules/_decimal/libmpdec   Modules/_hacl   Modules/_io   Modules/_multiprocessing   Modules/_sqlite   Modules/_sre   Modules/_testcapi   Modules/_testinternalcapi   Modules/_testlimitedcapi   Modules/_xxtestfuzz   Modules/_zstd   Modules/cjkcodecs   Modules/expat   Objects   Objects/mimalloc   Objects/mimalloc/prim   Parser   Parser/tokenizer   Parser/lexer   Programs   Python   Python/frozen_modules"
+    },
+    {
+      "candidate_literal": "_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo pybuilddir.txt`)",
+      "category": "producer-provenance-or-build-only",
+      "key": "TESTPYTHON",
+      "upstream": "_PYTHON_PROJECT_BASE=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo /Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/`cat pybuilddir.txt`) /Users/runner/work/release-tools/release-tools/cross-build/build/python.exe"
+    },
+    {
+      "candidate_literal": "_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo pybuilddir.txt`) -m test",
+      "category": "producer-provenance-or-build-only",
+      "key": "TESTRUNNER",
+      "upstream": "_PYTHON_PROJECT_BASE=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=../../Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__android_aarch64-linux-android _PYTHON_SYSCONFIGDATA_PATH=$(shell test -f pybuilddir.txt && echo /Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/`cat pybuilddir.txt`) /Users/runner/work/release-tools/release-tools/cross-build/build/python.exe -m test"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_builddir",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android"
+    },
+    {
+      "candidate_literal": "",
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_srcdir",
+      "upstream": "/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/../.."
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@/share",
+      "category": "consumer-path",
+      "key": "datarootdir",
+      "upstream": "/usr/local/share"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@",
+      "category": "runtime-prefix",
+      "key": "exec_prefix",
+      "upstream": "/usr/local"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@",
+      "category": "runtime-prefix",
+      "key": "host_exec_prefix",
+      "upstream": "/usr/local"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@",
+      "category": "runtime-prefix",
+      "key": "host_prefix",
+      "upstream": "/usr/local"
+    },
+    {
+      "candidate_literal": "@HW_T_PREFIX@",
+      "category": "runtime-prefix",
+      "key": "prefix",
+      "upstream": "/usr/local"
+    }
+  ],
+  "measurements": {
+    "astral_absolute_path_token_count": 62,
+    "astral_build_install_tool_path_token_count": 52,
+    "dynamic_override_key_count": 54,
+    "literal_changed_key_count": 84,
+    "mutated_metadata_file_count": 7,
+    "ut3_after_runpath": [],
+    "ut3_before_runpath": [
+      "/data/data/com.termux/files/usr/bin/../../usr/lib"
+    ]
+  },
+  "metadata_file_mutations": [
+    {
+      "candidate_present": true,
+      "candidate_sha256": "62f442ef1bed76aea753ca9fb19e55bb3ae03cbf735e790ec60b9c1a94131c96",
+      "candidate_size_bytes": 300,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "d30a57353b22fb5c07067a6297b58140917fb82de8469e83a22cf7dc30513f17",
+      "official_size_bytes": 293,
+      "path": "lib/pkgconfig/python-3.14-embed.pc"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "24de128519e698f56aae23ca9779b26340e08cdf7b76c0c5739312d8b4648a01",
+      "candidate_size_bytes": 285,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "be5610a325e60b8b24a7a81dc9d995aec18e4706c2526244e9643f3f6718a279",
+      "official_size_bytes": 292,
+      "path": "lib/pkgconfig/python-3.14.pc"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "befa8df8be3c8f001d624232e87011b52a0af93abc352f0dca807e8eb358ef21",
+      "candidate_size_bytes": 48594,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "7a0eb85c7df08ed8c1af6d39c285de462b24eee48ae4cfca4cb32bd9c5eb9e68",
+      "official_size_bytes": 55628,
+      "path": "lib/python3.14/_sysconfig_vars__android_aarch64-linux-android.json"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "07abcac255dafbbb642b6d0a80d976eaae9bed3ffa052577af3854f2524ddf6d",
+      "candidate_size_bytes": 54405,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "d6ee606254072ae512667851cfc37a3af74f02f2d6fd46bfad74533836f5d575",
+      "official_size_bytes": 57374,
+      "path": "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "72941ecde6caf8ef4668845769d73a63eff129b4ac6c66178df1c08be220a62a",
+      "candidate_size_bytes": 1242,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "9d3737f37580d6181d7f7bf53b04aad2f1fe01c814830675f030734d8a92dd77",
+      "official_size_bytes": 1238,
+      "path": "lib/python3.14/build-details.json"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "31f83d5ef86840aa20d42affd20eedb92752a85c1cba9dfd0609fd7210392218",
+      "candidate_size_bytes": 211911,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "2eda97362f0a97126d98eaf354e312d4ff6dc49c2452295584e8370c708c9c2c",
+      "official_size_bytes": 218682,
+      "path": "lib/python3.14/config-3.14-aarch64-linux-android/Makefile"
+    },
+    {
+      "candidate_present": true,
+      "candidate_sha256": "eb01c9941055b9ca7183818992ec85608640b88fe897fc8edf2fa1734fab11c3",
+      "candidate_size_bytes": 2043,
+      "changed": true,
+      "official_present": true,
+      "official_sha256": "e35cd008a3d7b9b0b7bae4b588f8ad381a04511a55b66d6edf24184f08bc0612",
+      "official_size_bytes": 2071,
+      "path": "lib/python3.14/config-3.14-aarch64-linux-android/python-config.py"
+    }
+  ],
+  "pass": true,
+  "producer_provenance_overrides": [
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "BUILD_GNU_TYPE",
+      "kind": "literal",
+      "value": "aarch64-linux-android"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "CONFIG_ARGS",
+      "kind": "literal",
+      "value": "--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_builddir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "abs_srcdir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "builddir",
+      "kind": "expression",
+      "value": "_hw_config"
+    },
+    {
+      "category": "producer-provenance-or-build-only",
+      "key": "srcdir",
+      "kind": "expression",
+      "value": "_hw_config"
+    }
+  ],
+  "redundant_identity_overrides": [
+    "ANDROID_API_LEVEL",
+    "EXT_SUFFIX",
+    "MULTIARCH",
+    "SOABI"
+  ],
+  "required_target_profiles": [
+    "C-current-control",
+    "H-current-plus-canonical-header",
+    "U-upstream-metadata-restored",
+    "M-upstream-preserved-minimal-consumer-overlay"
+  ],
+  "review_kind": "epoch3-rb3-sysconfig-and-on-device-sdk-static-boundary-review",
+  "schema_version": 1,
+  "status": "passed-static-review-target-profile-probe-required"
+}

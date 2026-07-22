@@ -2150,7 +2150,7 @@
         },
         "contract_version": 1,
         "fail": {
-          "allowed_action_policy": "retain-release-blocker-gate-or-select-bounded-correction",
+          "allowed_action_policy": "retain-RB-3-open, preserve frozen family, and select only a bounded evidence-driven correction",
           "complete_receipt_required": true
         },
         "pass": {
@@ -2189,27 +2189,31 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb2-ca-timezone-data-product-build-update-rollback-and-runtime-qualification",
+        "current_bounded_transition": "rb3-sysconfig-and-on-device-sdk-boundary-profile-probe",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
-      "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
+      "goal": "Resolve the remaining release blockers over the frozen family while explicitly reopening the RB-3 sysconfig/on-device-SDK boundary. Compare current, header-only, upstream-restored, and minimal-overlay profiles before selecting or superseding any artifact.",
       "input_routing": {
-        "fallback": "reuse owner-cached inputs only after exact filename, size, SHA-256, PyPI metadata, legally integrated family, and self-excluding result-index verification",
-        "first_attempt": "acquire the four exact fixed-hash certifi/tzdata wheels, reuse the exact accepted 128-file legally integrated family, and build/qualify RB-2 without changing frozen Python artifacts",
+        "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
+        "first_attempt": "reuse the exact accepted 128-file family and exact Android uv, then execute the C/H/U/M comparative profile probe without changing frozen canonical artifacts",
         "forbidden": [
-          "reassemble-or-modify-any-frozen-artifact",
-          "claim-complete-license-mapping-from-file-name-census-alone",
-          "claim-api24-16k-or-non-termux-without-direct-context-evidence",
-          "fabricate-astral-producer-metadata",
-          "claim-selectability-or-publication",
-          "network-git-in-assistant-environment",
-          "infer-owner-approval-from-runner-execution",
-          "close-rb1-without-exact-owner-approval-document",
-          "use-unpinned-or-latest-provider-resolution-at-runtime",
-          "write-ca-or-timezone-updates-into-python-install-root",
           "accept-an-incomplete-result-index",
-          "close-rb2-without-exact-frozen-python-runtime-qualification"
+          "claim-api24-16k-or-non-termux-without-direct-context-evidence",
+          "claim-complete-license-mapping-from-file-name-census-alone",
+          "claim-on-device-sdk-standard-flow-without-raw-wheel-elf-evidence",
+          "claim-selectability-or-publication",
+          "close-rb1-without-exact-owner-approval-document",
+          "close-rb2-without-exact-frozen-python-runtime-qualification",
+          "fabricate-astral-producer-metadata",
+          "infer-owner-approval-from-runner-execution",
+          "network-git-in-assistant-environment",
+          "reassemble-or-modify-any-frozen-artifact",
+          "rewrite-or-amend-frozen-artifact-authorities",
+          "select-sysconfig-profile-from-static-review-alone",
+          "silently-replace-producer-provenance-with-consumer-policy",
+          "use-unpinned-or-latest-provider-resolution-at-runtime",
+          "write-ca-or-timezone-updates-into-python-install-root"
         ]
       },
       "required_authorities": [
@@ -2323,6 +2327,31 @@
         {
           "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
           "reason": "Frozen INSTALL_ROOT, DATA_ROOT, STATE_ROOT, CA override, timezone path, update, and rollback policy.",
+          "scope": "full"
+        },
+        {
+          "path": "docs/epochs/EPOCH3_SYSCONFIG_AND_ON_DEVICE_SDK_BOUNDARY_REVIEW.md",
+          "reason": "Current evidence-backed review of upstream preservation, Astral parity, sysconfig normalization, and on-device SDK boundaries.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
+          "reason": "Accepted exact RB-3 r1 failure evidence and rollback boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json",
+          "reason": "Machine static comparison of upstream, current, Astral, UT-2, and UT-3 evidence.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
+          "reason": "C/H/U/M profile definitions, measurements, selection rules, and non-claim boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json",
+          "reason": "Exact deterministic host assembly identities and control-preservation proof for C/H/U/M.",
           "scope": "full"
         }
       ],

@@ -1,0 +1,76 @@
+{
+  "checks": {
+    "all_four_profiles_built": true,
+    "all_profiles_byte_identical_second_assembly": true,
+    "canonical_family_unchanged": true,
+    "control_is_exact_install_only": true,
+    "no_profile_selected": true
+  },
+  "claim_boundary": {
+    "canonical_artifact_bytes_changed": false,
+    "profile_selected": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "target_runtime_executed": false
+  },
+  "evidence_kind": "epoch3-rb3-sysconfig-profile-host-assembly",
+  "inputs": {
+    "full": {
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    },
+    "install_only": {
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    "official_embedded_archive": {
+      "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+      "size_bytes": 22358404
+    }
+  },
+  "profiles": [
+    {
+      "byte_identical_second_assembly": true,
+      "filename": "rb3-sysconfig-profile-C.tar.gz",
+      "header": "# system configuration normalized for relocatable Android consumers",
+      "id": "C",
+      "mutation_count": 0,
+      "second_sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    {
+      "byte_identical_second_assembly": true,
+      "filename": "rb3-sysconfig-profile-H.tar.gz",
+      "header": "# system configuration generated and used by the sysconfig module",
+      "id": "H",
+      "mutation_count": 1,
+      "second_sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+      "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+      "size_bytes": 23841713
+    },
+    {
+      "byte_identical_second_assembly": true,
+      "filename": "rb3-sysconfig-profile-U.tar.gz",
+      "header": "# system configuration generated and used by the sysconfig module",
+      "id": "U",
+      "mutation_count": 7,
+      "second_sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+      "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+      "size_bytes": 23842209
+    },
+    {
+      "byte_identical_second_assembly": true,
+      "filename": "rb3-sysconfig-profile-M.tar.gz",
+      "header": "# system configuration generated and used by the sysconfig module",
+      "id": "M",
+      "mutation_count": 13,
+      "second_sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+      "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+      "size_bytes": 23843530
+    }
+  ],
+  "schema_version": 1,
+  "status": "passed-host-assembly-target-execution-required"
+}

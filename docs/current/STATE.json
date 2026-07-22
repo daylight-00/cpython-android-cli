@@ -199,7 +199,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -221,7 +221,7 @@
   },
   "blockers": [
     "RB-1-component-and-license-closure",
-    "RB-3-astral-consumer-compatibility",
+    "RB-3-sysconfig-sdk-and-astral-consumer-boundary",
     "RB-4-release-security-update-and-revocation-operations",
     "RB-5-api24-runtime-qualification",
     "RB-6-real-16k-runtime-qualification",
@@ -236,6 +236,7 @@
     "astral_consumer_compatibility_implementation_started": true,
     "ca_timezone_data_product_complete": true,
     "ca_timezone_data_product_implementation_started": true,
+    "canonical_artifact_successor_started": false,
     "component_license_mapping_complete": true,
     "dual_real_device_aarch64_termux_compatibility": true,
     "emulator_qualified": false,
@@ -251,7 +252,9 @@
     "release_blocker_resolution_started": true,
     "selectable": false,
     "stripped_implementation_started": true,
-    "stripped_release_complete": true
+    "stripped_release_complete": true,
+    "sysconfig_profile_selected": false,
+    "sysconfig_sdk_boundary_review_complete": true
   },
   "control_work": {
     "completed_phase": 1,
@@ -287,8 +290,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "7a5d003b303206e326f54df42a38cfd72b66a52d",
-    "tree": "f8503f8112d23c22e21bf183a7e0b6e6ccb09e99"
+    "commit": "b40546213c3ef2cd9b69bffa237aa229d1877459",
+    "tree": "f0b388b6357d341687a8dcf56586354a1c43d2de"
   },
   "program": {
     "epoch": {
@@ -342,11 +345,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 34,
+  "state_revision": 35,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "64021db94fe516fcd92803b69b6b9b91a3b593576366310f0b784433db90dbff"
+    "sha256": "cca10080ee1ad674bd58a986e6eb4a045f94103e3b8a206c3dd338f46e82b136"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -357,7 +360,6 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "astral-consumer-and-uv-managed-compatibility-pending",
     "API24-runtime-qualification-pending",
     "runtime-16KiB-device-support-unqualified",
     "non-Termux-Android-context-unqualified",
@@ -371,7 +373,12 @@
     "final-notice-set-not-owner-approved",
     "owner-approval-must-bind-exact-release-and-notice-hashes",
     "rb1-owner-review-result-receipt-index-incomplete-dossier-valid",
-    "astral-consumer-and-uv-managed-compatibility-owner-qualification-pending"
+    "rb3-managed-install-failed-on-project-rendered-sysconfig-header",
+    "current-sysconfig-normalizer-overrides-producer-provenance-and-redundant-target-identity",
+    "zero-producer-path-rule-not-derived-from-astral-golden-contract",
+    "on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal",
+    "rb3-c-h-u-m-target-profile-comparison-pending",
+    "sysconfig-profile-not-selected-and-frozen-artifacts-not-superseded"
   ],
-  "updated_by_transaction": "20260722-e3-rb2-authority-rb3-start-v1"
+  "updated_by_transaction": "20260722-e3-rb3-sysconfig-sdk-boundary-review-v1"
 }

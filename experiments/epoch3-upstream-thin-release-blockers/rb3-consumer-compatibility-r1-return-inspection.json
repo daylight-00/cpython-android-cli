@@ -1,0 +1,58 @@
+{
+  "claim_boundary": {
+    "canonical_artifact_bytes_changed": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "first_meaningful_failure": {
+    "reinstall_stderr": "error: `_sysconfigdata_` is missing a header comment\n",
+    "returncode": 2,
+    "stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nerror: `_sysconfigdata_` is missing a header comment\n",
+    "step": "managed-install"
+  },
+  "inspection_kind": "epoch3-rb3-consumer-compatibility-r1-return-inspection",
+  "interpretation": {
+    "archive_extraction_and_android_interpreter_usability_after_failed_install": true,
+    "failure_is_project_rendered_header_contract": true,
+    "managed_install_command_succeeded": false,
+    "profile_selection_required": true,
+    "rb3_closed": false,
+    "system_consumer_compatibility_passed": true
+  },
+  "managed_checks": {
+    "managed_catalog": true,
+    "managed_find": false,
+    "managed_identity": true,
+    "managed_install": false,
+    "managed_reinstall_noop": false,
+    "managed_uninstall": true,
+    "managed_venv": true
+  },
+  "receipt": {
+    "indexed_file_count": 41,
+    "post_head": "7a5d003b303206e326f54df42a38cfd72b66a52d",
+    "rollback_succeeded": true,
+    "self_index_exact": true
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-consumer-compatibility-r1-results.tar.zst",
+    "sha256": "efa31699c53a552a6ecbc0e70de33802c0a7b431e68bc50c05af7592ab12eb33",
+    "size_bytes": 13787
+  },
+  "schema_version": 1,
+  "status": "accepted-failure-evidence-design-review-required",
+  "system_checks": {
+    "system_find": true,
+    "system_identity": true,
+    "system_run": true,
+    "system_sync": true,
+    "system_venv": true
+  },
+  "uv": {
+    "path": "/data/data/com.termux/files/usr/bin/uv",
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "size_bytes": 52827648,
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}
