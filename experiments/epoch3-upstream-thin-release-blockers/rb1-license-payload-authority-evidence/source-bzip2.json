@@ -1,0 +1,10 @@
+{
+  "acquisition_mode": "cache-reuse",
+  "component": "bzip2",
+  "exact_sha256_verified": true,
+  "filename": "bzip2-1.0.8.tar.gz",
+  "sha256": "ab8d1b0cc087c20d4c32c0e4fcf7d0c733a95da12cedc6d63b3f0a9af07427e2",
+  "size_bytes": 818771,
+  "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/bzip2-1.0.8.tar.gz",
+  "version": "1.0.8"
+}

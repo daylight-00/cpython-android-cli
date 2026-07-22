@@ -2189,14 +2189,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb1-authoritative-license-payload-acquisition-and-component-expansion-audit",
+        "current_bounded_transition": "rb1-legal-evidence-overlay-and-provider-policy-synthesis",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
       "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
       "input_routing": {
         "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-        "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 source-provenance authority, exact CPython 3.14.6 source cache, and fixed-hash CPython source-deps caches",
+        "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 payload authority, exact CPython 3.14.6 and source-deps caches, and exact BeeWare xz-5.4.6-1 product asset cache",
         "forbidden": [
           "reassemble-or-modify-any-frozen-artifact",
           "claim-complete-license-mapping-from-file-name-census-alone",
@@ -2221,6 +2221,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
           "reason": "Frozen six-dependency provenance, exact CPython source identity, libffi resolution, and mismatch quarantine boundary.",
           "sha256": "e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+          "reason": "Frozen five-source license payload acquisition, 13-component expansion, exact evidence hashes, and eight-gap boundary.",
+          "sha256": "20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba"
         }
       ],
       "required_reads": [
@@ -2257,6 +2262,11 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/license-payload-acquisition-contract.json",
           "reason": "Exact external source inputs, component-expansion checks, deterministic outputs, and non-closing claim boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+          "reason": "Accepted payload evidence, expanded component set, mismatch quarantine, and exact remaining-gap boundary.",
           "scope": "full"
         }
       ],

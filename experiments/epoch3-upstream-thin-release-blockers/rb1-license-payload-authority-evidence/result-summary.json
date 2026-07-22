@@ -1,0 +1,53 @@
+{
+  "action": "applied-rb1-license-payloads-acquired-component-expansion-audited-pushed",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "license_payloads_integrated_into_release_family": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "metrics": {
+    "expanded_component_count": "13",
+    "fixed_hash_source_archive_count": "5",
+    "new_component_count": "1",
+    "remaining_gap_count": "8",
+    "source_archives_with_license_evidence": "4"
+  },
+  "package_id": "cpython-android-cli-e3-rb1-license-payload-expansion-r3",
+  "post": {
+    "head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "remote_head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "tree": "570526f5ba9b87a3c02d10075015c4c482c96aab"
+  },
+  "pre": {
+    "head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "remote_head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 0,
+    "audit": 0,
+    "family_input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "source_authority": 0,
+    "source_input": 0,
+    "static": 0,
+    "target": 0,
+    "upload": 99
+  },
+  "schema_version": 1,
+  "transaction_rc": 0
+}

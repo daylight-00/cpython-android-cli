@@ -1,0 +1,10 @@
+{
+  "acquisition_mode": "cache-reuse",
+  "component": "libffi",
+  "exact_sha256_verified": true,
+  "filename": "libffi-3.4.4.tar.gz",
+  "sha256": "9d802681adfea27d84cae0487a785fb9caa925bdad44c401b364c59ab2b8edda",
+  "size_bytes": 1375889,
+  "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/libffi-3.4.4.tar.gz",
+  "version": "3.4.4"
+}

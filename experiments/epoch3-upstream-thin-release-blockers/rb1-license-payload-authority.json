@@ -1,0 +1,82 @@
+{
+  "authority_kind": "epoch3-rb1-license-payload-and-component-expansion",
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "component_set_complete": false,
+    "legal_overlay_authoritative": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "file_identities": {
+    "components/upstream-thin/lib/license_payloads.py": "52fa45c669dfab6fecb30051998c43b21b8db09cb0bf648417d958d958ba723b",
+    "components/upstream-thin/tests/test_license_payloads.py": "a59b0ce5c279207d481b99212887f668bf75020c2c121ed70757f46b8bff132f",
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-license-payload-expansion-r3-return.json": "d421e7fcd8b27f7bc2e3734226e419eeddf06edd053ccf635f60bc78f4ec5ffd",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_license_payload_acceptance.py": "bfd87ca4094ffbde5d080e09c35921e7ac9acce6f8ea9732e2e8e53071b4729e",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_license_payload_acquisition.py": "10ef399ea280e125134577fc5cf40bfa1ef7fbe991b4566207420b8d2349586e",
+    "experiments/epoch3-upstream-thin-release-blockers/license-payload-acquisition-contract.json": "f2b1f41a0cb8ae4184bc9beea6bde86f13fb691cac54523aa64c6d17694aabde",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/NOTICE.candidate.txt": "5a8ba329930e6a5cd4c0e8b526e1b3212c5a3aa65cf71077655f6c239005d733",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/component-expansion-audit.json": "84f9f5bfed7cb12ad0caa30dac7c708d645111a0889606dc3054738cc18e18a2",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/component-license-map-candidate.json": "ddb127574d62608f8721f581916875b38c10dd6721c7244ff6caa651229e8857",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/independent-audit.json": "d99ee5dd1b27fa77dcd2e5b7db0d4e66eea4ea2612943755e9c58a251f0a8312",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/license-payload-inventory.json": "4b318a537b8a22f6600eec88570ed841c7f5db7a4460df6ffb4012545a0110dd",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/payload-result.json": "a889bef7600f14bf8589836fc118b5618b95c0e0c094f7d0d0fd66a06bed03a0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/reproducibility.json": "02b7a05ad6da71bd48ee40667bbecde4e97670b9068de77af88987f3e7b4795f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/result-summary.json": "b01ec1ea53dc5c7d5f2e79b5fa1e58835b1a9c2b2cec764be943d002bc383080",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/source-bzip2.json": "e50da79195ef9b863d9701f71fd0f5170984e93e7ffece7f2c51585517e79c23",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/source-libffi.json": "f9a79184f73dd7c20cc5df4a6d9394eef3ac30cd7b7080f258eb973c3364d020",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/source-openssl.json": "9d7a24a341a74370270fc3ebd0b956b93ab76550bc949c2d982a64d4b4b202b6",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/source-sqlite.json": "5924ae3b509e2c7c1034b01f3f406572d88ee1709ccdfa057f6f7ce39b24f313",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/source-zstd.json": "0f6aa1132af4d095f8a800ff66c6dbe48d3ac50c9599b55109e98db09010b7d7",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-evidence/updated-gap-register.json": "6e91366bae9d72c349d7f19bd04ef4a98aa9ad6bb30be9ee7698dbf451c281b5",
+    "experiments/epoch3-upstream-thin-release-blockers/run_rb1_license_payload_acquisition.py": "1d181888971ac0e9b3c5f8b547a99f74f81ba93818e8075f51eab72d8afa60f6",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb1_license_payload_acceptance.py": "624a436de4acd302a1a0b5f68655606356dce4722d239c6937fb2d8ed4f7f103",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb1_license_payload_acceptance.py": "144736b82d3181adb2ad4b2cb4cf971988628111ee00372f610ca4883a55ec26"
+  },
+  "frozen_result": {
+    "component_count": 13,
+    "component_expansion_audit_sha256": "84f9f5bfed7cb12ad0caa30dac7c708d645111a0889606dc3054738cc18e18a2",
+    "component_license_map_candidate_sha256": "ddb127574d62608f8721f581916875b38c10dd6721c7244ff6caa651229e8857",
+    "fixed_hash_source_archive_count": 5,
+    "independent_audit_sha256": "d99ee5dd1b27fa77dcd2e5b7db0d4e66eea4ea2612943755e9c58a251f0a8312",
+    "license_payload_inventory_sha256": "4b318a537b8a22f6600eec88570ed841c7f5db7a4460df6ffb4012545a0110dd",
+    "new_components": [
+      "hacl-star"
+    ],
+    "notice_candidate_sha256": "5a8ba329930e6a5cd4c0e8b526e1b3212c5a3aa65cf71077655f6c239005d733",
+    "remaining_gap_count": 8,
+    "source_archives_with_license_evidence": 4,
+    "updated_gap_register_sha256": "6e91366bae9d72c349d7f19bd04ef4a98aa9ad6bb30be9ee7698dbf451c281b5"
+  },
+  "gap_boundary": {
+    "codes": [
+      "complete-componentization-and-obligation-review-pending",
+      "authoritative-license-evidence-not-integrated-into-release-family",
+      "project-license-not-in-release-family",
+      "xz-5.4.6-exact-license-source-unresolved",
+      "sqlite-public-domain-notice-policy-not-frozen",
+      "android-system-provider-notice-boundary-not-frozen",
+      "hacl-star-new-component-mapping-and-notice-pending",
+      "final-notice-set-not-owner-approved"
+    ],
+    "remaining": 8
+  },
+  "inputs": {
+    "artifact_family_authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "result_archive_sha256": "3a02139b93f238b2dbf9ea418fd48112aaea62f2b49655f1d739fbced2820a55",
+    "source_provenance_authority_sha256": "e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467"
+  },
+  "next_action_class": "synthesize-exact-legal-evidence-overlay-and-freeze-provider-policies",
+  "predecessor": {
+    "commit": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "tree": "570526f5ba9b87a3c02d10075015c4c482c96aab"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-13-components-eight-gaps-legal-evidence-synthesis-authorized",
+  "verification": {
+    "independent_audit": "8/8",
+    "primary": "22/22",
+    "verifier_fixtures": "3/3"
+  }
+}

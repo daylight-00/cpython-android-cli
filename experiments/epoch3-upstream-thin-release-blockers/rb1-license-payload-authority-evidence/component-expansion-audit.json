@@ -1,0 +1,98 @@
+{
+  "audit_kind": "epoch3-rb1-component-expansion",
+  "baseline_components": [
+    "cpython",
+    "project-launcher",
+    "pip",
+    "openssl",
+    "sqlite",
+    "bzip2",
+    "xz-liblzma",
+    "zstd",
+    "expat",
+    "libmpdec",
+    "libffi",
+    "android-system-providers"
+  ],
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "component_set_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "expanded_components": [
+    "cpython",
+    "project-launcher",
+    "pip",
+    "openssl",
+    "sqlite",
+    "bzip2",
+    "xz-liblzma",
+    "zstd",
+    "expat",
+    "libmpdec",
+    "libffi",
+    "android-system-providers",
+    "hacl-star"
+  ],
+  "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+  "libmpdec": {
+    "distributed_byte_evidence": [
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+        "sha256": "75766d5a81cae069688d1dcdbb241aecf8854cf682fd505fb8cd00d3f100dc98",
+        "size_bytes": 364921
+      }
+    ],
+    "frozen_version": "2.5.1",
+    "source_evidence": [
+      {
+        "contains_2_5_1": false,
+        "sha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626",
+        "size_bytes": 247346,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.c"
+      },
+      {
+        "contains_2_5_1": true,
+        "sha256": "ea0b9c6b296c13aed6ecaa50b463e39a9c1bdc059b84f50507fd8247b2e660f9",
+        "size_bytes": 41684,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.h"
+      }
+    ]
+  },
+  "mismatch_quarantine": [
+    {
+      "component": "xz-liblzma",
+      "frozen_product_version": "5.4.6",
+      "quarantined_source_version": "5.2.5",
+      "reason": "version-mismatch"
+    },
+    {
+      "component": "libmpdec",
+      "frozen_product_version": "2.5.1",
+      "quarantined_source_version": "4.0.0",
+      "reason": "version-mismatch"
+    }
+  ],
+  "new_components": [
+    {
+      "component_class": "hacl-star",
+      "distributed_byte_evidence": [
+        {
+          "path": "python/install/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+          "sha256": "4a4c9fb02e3bcbdb99297c0215183c7ea331794107d6901f1438448ee0f685b8",
+          "size_bytes": 150801
+        },
+        {
+          "path": "python/install/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+          "sha256": "b82ec1fe05b4f8a9faeebf42783cf28e9a50645dc04da0106211a7b6db6e5ff5",
+          "size_bytes": 52241
+        }
+      ],
+      "source_evidence_count": 49
+    }
+  ],
+  "pass": true,
+  "schema_version": 1
+}

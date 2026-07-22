@@ -1,0 +1,29 @@
+{
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "license_payloads_integrated_into_release_family": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "full_artifact_identity_preserved": true,
+  "metrics": {
+    "baseline_component_count": 12,
+    "expanded_component_count": 13,
+    "fixed_hash_source_archive_count": 5,
+    "new_component_count": 1,
+    "remaining_gap_count": 8,
+    "source_archives_with_license_evidence": 4
+  },
+  "outputs": [
+    "component-expansion-audit.json",
+    "license-payload-inventory.json",
+    "component-license-map-candidate.json",
+    "NOTICE.candidate.txt",
+    "updated-gap-register.json",
+    "payload/"
+  ],
+  "pass": true,
+  "runner_kind": "epoch3-rb1-license-payload-acquisition-and-component-expansion",
+  "schema_version": 1
+}

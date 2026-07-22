@@ -1,0 +1,567 @@
+{
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "license_payloads_integrated_into_release_family": false,
+    "payload_is_evidence_not_release_asset": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "cpython_source": {
+    "archive": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628
+    },
+    "hacl_source_evidence": [
+      {
+        "license_like": false,
+        "sha256": "142adb769ff02b8a5327f0eb837e1f9a797bdf9a1684d21acd749dbb5b2e5be2",
+        "size_bytes": 45493,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_HMAC.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "d68209032703137326f9aadd9abac8fe4a5c92d391e2f43b0414fa63087adc6b",
+        "size_bytes": 5898,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_HMAC.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "6a492aa586f2d10b1b300ce8ce4c72c976ff7548fee667aded2253f99969ac87",
+        "size_bytes": 48852,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "fac493e96af252abcf5705f0ab4eec59c1f3bc8244e105d75a57c43552dd1569",
+        "size_bytes": 7873,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "9eb22953ce60dde9dc970fec9dfce9d94235f4b7ccd8f0151cad4707dc835d1d",
+        "size_bytes": 54551,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b_Simd256.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "817dcd05d06d804587fce7d8f2f3f42a6fcf6818d2419a3551ef0df70cb7125a",
+        "size_bytes": 7784,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b_Simd256.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "db42da82d18641d68d3670e6201e0cbb43415daaa84f29770b8f0ebf33562975",
+        "size_bytes": 770,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b_Simd256_universal2.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "f3204f3e60734d811b6630f879b69ce54eaf367f3fca5889c1026e7a1f3ee1e4",
+        "size_bytes": 47943,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "5cc96313f8c066f055c2819e473c79aeff086ba91a1449d54aa569127cd8601e",
+        "size_bytes": 7464,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "c93746df2f219cbb1634ee6fb0ab1c4cbd381d1f36c637114c68346c9935326d",
+        "size_bytes": 53595,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s_Simd128.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "fe3f17bf237166f872ba88c8204333c4f64bdc4bb29c265448581c7bfea4b151",
+        "size_bytes": 7781,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s_Simd128.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "5b132ab850a5e0fe6f27e08a955f8989ea3aae8e5b3115f0195039034ece8c04",
+        "size_bytes": 723,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s_Simd128_universal2.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "5b91ed0339074e2e546119833398e2cdb7190c33a59c405bf43b2417c789547d",
+        "size_bytes": 40719,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_MD5.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "a34534ef36bc8428ac1169ca5f4f1c17a0817507ebae388e3dd825d1a331f28d",
+        "size_bytes": 2248,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_MD5.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "ce08721d491f3b8a9bd4cde6c27bfcc8fc01471512ccca4bd3c0b764cb551d29",
+        "size_bytes": 15783,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA1.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "2d5cae94382f5473cf6d2654760375ff1ee9cebdb8d4506b63ba33f488de1559",
+        "size_bytes": 2260,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA1.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f8af382de7e29a73c726f9c70770498ddd99e2c4702489ed6e634f0b68597c95",
+        "size_bytes": 44266,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA2.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "442d8997d2bcda20ddf628665e2e69945400e1ab3019bc14fc7c8e20db20c320",
+        "size_bytes": 6928,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA2.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "8744f5b6e054c3e5c44f413a60f9154b76dd7230135dcee26fd063755ec64be1",
+        "size_bytes": 72622,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA3.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "961a686186b76a1cd6a64bcfd06afdc8657b1f901bac991166f498ed16f9349a",
+        "size_bytes": 5219,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA3.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "29fcf948a3715e09cbbd434cebb6105f276236a6e4947d237b7bf06634bf2432",
+        "size_bytes": 68898,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_HMAC.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "6450aef92f507fb0a8a3086b1d2792e7fca07121580c24fdaedd1b32e9ad0a76",
+        "size_bytes": 3927,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_HMAC.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "efc7bd11460744768425aedf4e004d3ad3397a5489752b80044ae785f30b78d4",
+        "size_bytes": 2595,
+        "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_Types.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "135d4afb4812468885c963c9c87a55ba5fae9181df4431af5fbad08588dda229",
+        "size_bytes": 2671,
+        "source_path": "Python-3.14.6/Modules/_hacl/Lib_Memzero0.c"
+      },
+      {
+        "license_like": false,
+        "sha256": "8c0c0d4c6e65b349a8b116862174669fbd4c9ce037c6fee32f19994ddb6fbf6c",
+        "size_bytes": 1044,
+        "source_path": "Python-3.14.6/Modules/_hacl/README.md"
+      },
+      {
+        "license_like": false,
+        "sha256": "69dc2e78411e9b271100eb0d2a2d8dc39dd2348afc26f8b4cfba14c025102c7f",
+        "size_bytes": 9331,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/FStar_UInt128_Verified.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f01e3f0892935f3f659019875f580445b9ea23482afbe11ffbe7cdbd22dbd4d2",
+        "size_bytes": 6335,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/FStar_UInt_8_16_32_64.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "1c9bee7ac4b987c73cc3aba6b7ceed8ec7e75c9a741810e4411f35602490e0d8",
+        "size_bytes": 1658,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/fstar_uint128_struct_endianness.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "c5a04a1f99807cea29ac1832ba17d8a3d3805862d3a713642583be2106e04edb",
+        "size_bytes": 1320,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/compat.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "08bb43ef5626a8450f985da0af345b6658ac8bcc4585f77271decd0e41fc02e0",
+        "size_bytes": 15309,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/target.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "404691cf9b2269ecc754ceca27bb8f8f029f1c8deaa4d967990dcf5ce08cd016",
+        "size_bytes": 3649,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/types.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "6d1a350ec272c83761f1789611d8f60947a4d69fed3d23d8eee38709a0ad2c0a",
+        "size_bytes": 7825,
+        "source_path": "Python-3.14.6/Modules/_hacl/include/krml/lowstar_endianness.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "96c2a973bc01b1295f7af67c7de3839facfeee36c8848d7d88c62695de98ab21",
+        "size_bytes": 1671,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_HMAC.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f262738390f56e8e9692acadecd1434c688075047d788283e1fb45d920ea6956",
+        "size_bytes": 2600,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2b.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f22e088ad9c2eb739aefc3685ef3ab1ccaab3c5ef2e5d06cc846ad9f8e3d2669",
+        "size_bytes": 3670,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2b_Simd256.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "a4728e43deb0a9d8213b8ddcbda68a63bc73a12fb99aad54b7d28b314776a0d4",
+        "size_bytes": 2487,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2s.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "dad568d256a2ccbbbcdd419fe0543ea7137d8065a713a5f009aa52521c0f7f6a",
+        "size_bytes": 3618,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2s_Simd128.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "305af1422213ed97e8e5d3d8a9dfee4f21cb2fcd2acf65ee7303ce00b2b4bd2a",
+        "size_bytes": 1991,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_MD5.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "63c58363ff95e8146d5628dab2da25bc2fd0e8b590fd4823b512c33f843355bb",
+        "size_bytes": 1967,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA1.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "709c6272f77e2368f6cc0bf36527e3b16dd5d5f3dc26a2afdef8238200af8770",
+        "size_bytes": 6575,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA2.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "cf49d536a5663379fb4517018b4b3f8a232f8d4c7ddc7edfd60163d13f98a530",
+        "size_bytes": 2411,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA3.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "916d54d7217517f0360edea920dc21585fbe6d1c2458eac86826182e12c82ec2",
+        "size_bytes": 2843,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Impl_Blake2_Constants.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "059cf0d31427abf84c626797a97c140630a1a6ead578005162f46fad46663389",
+        "size_bytes": 3000,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Streaming_HMAC.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "76997c7069a347ac78b65d26354a0324d54add4ca7a02e7be36d6d5e1c9702e0",
+        "size_bytes": 2435,
+        "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Streaming_Types.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "284079d2af21a570c58c82e54536b8b9bae0f0a321f229b242c92dc350d10bdf",
+        "size_bytes": 207,
+        "source_path": "Python-3.14.6/Modules/_hacl/lib_memzero0.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f26e8339da7e0db3d6c8f70247300bd5876110a30e1fb883e59370da48e38f9e",
+        "size_bytes": 1834,
+        "source_path": "Python-3.14.6/Modules/_hacl/libintvector-shim.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "d09a6196d65c2645974100eb922002bd387d3ae13f2653780f82ed97a79af635",
+        "size_bytes": 36779,
+        "source_path": "Python-3.14.6/Modules/_hacl/libintvector.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "8551d2c3fde03b92c6fab5febde00347bd9184ea0085077976863c7836e9669d",
+        "size_bytes": 17875,
+        "source_path": "Python-3.14.6/Modules/_hacl/python_hacl_namespaces.h"
+      },
+      {
+        "license_like": false,
+        "sha256": "f30f633ec04fe0ec1eac20bab2b1b3eb8524d57abaa93213a1de1aed0ad09bbd",
+        "size_bytes": 4886,
+        "source_path": "Python-3.14.6/Modules/_hacl/refresh.sh"
+      }
+    ],
+    "libmpdec_version_evidence": [
+      {
+        "contains_2_5_1": false,
+        "sha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626",
+        "size_bytes": 247346,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.c"
+      },
+      {
+        "contains_2_5_1": true,
+        "sha256": "ea0b9c6b296c13aed6ecaa50b463e39a9c1bdc059b84f50507fd8247b2e660f9",
+        "size_bytes": 41684,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.h"
+      }
+    ],
+    "license_evidence": [
+      {
+        "evidence_path": "cpython/LICENSE",
+        "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+        "size_bytes": 13804,
+        "source_path": "Python-3.14.6/LICENSE"
+      },
+      {
+        "evidence_path": "cpython/Misc/externals.spdx.json",
+        "sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+        "size_bytes": 7084,
+        "source_path": "Python-3.14.6/Misc/externals.spdx.json"
+      },
+      {
+        "evidence_path": "cpython/Modules/_decimal/libmpdec/mpdecimal.c",
+        "sha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626",
+        "size_bytes": 247346,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.c"
+      },
+      {
+        "evidence_path": "cpython/Modules/_decimal/libmpdec/mpdecimal.h",
+        "sha256": "ea0b9c6b296c13aed6ecaa50b463e39a9c1bdc059b84f50507fd8247b2e660f9",
+        "size_bytes": 41684,
+        "source_path": "Python-3.14.6/Modules/_decimal/libmpdec/mpdecimal.h"
+      },
+      {
+        "evidence_path": "cpython/Modules/_hacl/README.md",
+        "sha256": "8c0c0d4c6e65b349a8b116862174669fbd4c9ce037c6fee32f19994ddb6fbf6c",
+        "size_bytes": 1044,
+        "source_path": "Python-3.14.6/Modules/_hacl/README.md"
+      },
+      {
+        "evidence_path": "cpython/Modules/expat/COPYING",
+        "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+        "size_bytes": 1144,
+        "source_path": "Python-3.14.6/Modules/expat/COPYING"
+      }
+    ]
+  },
+  "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+  "full_artifact": {
+    "examined_members": [
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+        "sha256": "75766d5a81cae069688d1dcdbb241aecf8854cf682fd505fb8cd00d3f100dc98",
+        "size_bytes": 364921
+      },
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+        "sha256": "4a4c9fb02e3bcbdb99297c0215183c7ea331794107d6901f1438448ee0f685b8",
+        "size_bytes": 150801
+      },
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+        "sha256": "b82ec1fe05b4f8a9faeebf42783cf28e9a50645dc04da0106211a7b6db6e5ff5",
+        "size_bytes": 52241
+      }
+    ],
+    "hacl_evidence": [
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-android.so",
+        "sha256": "4a4c9fb02e3bcbdb99297c0215183c7ea331794107d6901f1438448ee0f685b8",
+        "size_bytes": 150801
+      },
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-android.so",
+        "sha256": "b82ec1fe05b4f8a9faeebf42783cf28e9a50645dc04da0106211a7b6db6e5ff5",
+        "size_bytes": 52241
+      }
+    ],
+    "identity": {
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    },
+    "identity_preserved": true,
+    "libmpdec_evidence": [
+      {
+        "path": "python/install/lib/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-android.so",
+        "sha256": "75766d5a81cae069688d1dcdbb241aecf8854cf682fd505fb8cd00d3f100dc98",
+        "size_bytes": 364921
+      }
+    ]
+  },
+  "inventory_kind": "epoch3-rb1-authoritative-license-source-evidence",
+  "project_license": {
+    "evidence_path": "project/LICENSE",
+    "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+    "size_bytes": 1075,
+    "source_path": "LICENSE"
+  },
+  "schema_version": 1,
+  "source_archives": [
+    {
+      "archive": {
+        "filename": "bzip2-1.0.8.tar.gz",
+        "sha256": "ab8d1b0cc087c20d4c32c0e4fcf7d0c733a95da12cedc6d63b3f0a9af07427e2",
+        "size_bytes": 818771
+      },
+      "component": "bzip2",
+      "license_evidence": [
+        {
+          "evidence_path": "bzip2/LICENSE",
+          "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+          "size_bytes": 1896,
+          "source_path": "cpython-source-deps-bzip2-1.0.8/LICENSE"
+        },
+        {
+          "evidence_path": "bzip2/README",
+          "sha256": "152f0da2867a1160a8f956628296ff45e766e492ad0d7054ffb8d981f7518782",
+          "size_bytes": 7451,
+          "source_path": "cpython-source-deps-bzip2-1.0.8/README"
+        }
+      ],
+      "license_evidence_count": 2,
+      "status": "evidence-acquired",
+      "version": "1.0.8"
+    },
+    {
+      "archive": {
+        "filename": "libffi-3.4.4.tar.gz",
+        "sha256": "9d802681adfea27d84cae0487a785fb9caa925bdad44c401b364c59ab2b8edda",
+        "size_bytes": 1375889
+      },
+      "component": "libffi",
+      "license_evidence": [
+        {
+          "evidence_path": "libffi/LICENSE",
+          "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+          "size_bytes": 1132,
+          "source_path": "cpython-source-deps-libffi-3.4.4/LICENSE"
+        },
+        {
+          "evidence_path": "libffi/LICENSE-BUILDTOOLS",
+          "sha256": "e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94",
+          "size_bytes": 18698,
+          "source_path": "cpython-source-deps-libffi-3.4.4/LICENSE-BUILDTOOLS"
+        }
+      ],
+      "license_evidence_count": 2,
+      "status": "evidence-acquired",
+      "version": "3.4.4"
+    },
+    {
+      "archive": {
+        "filename": "openssl-3.5.7.tar.gz",
+        "sha256": "ca94e7c6c223d9caf77bb51aac5949186379608ea2a0cad3aa8bdf31856912e9",
+        "size_bytes": 53341406
+      },
+      "component": "openssl",
+      "license_evidence": [
+        {
+          "evidence_path": "openssl/AUTHORS.md",
+          "sha256": "b9f638dfc06b59c2d3b808186c3b30f713805a5db390f5b77b1703ac58acb83e",
+          "size_bytes": 1022,
+          "source_path": "cpython-source-deps-openssl-3.5.7/AUTHORS.md"
+        },
+        {
+          "evidence_path": "openssl/LICENSE.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+          "size_bytes": 10175,
+          "source_path": "cpython-source-deps-openssl-3.5.7/LICENSE.txt"
+        },
+        {
+          "evidence_path": "openssl/README.md",
+          "sha256": "f68c351048c11bd8499b9d6ef8b283386d4544cc556fd2679a2ff2b1c50a378b",
+          "size_bytes": 8137,
+          "source_path": "cpython-source-deps-openssl-3.5.7/README.md"
+        },
+        {
+          "evidence_path": "openssl/external/perl/Text-Template-1.56/LICENSE",
+          "sha256": "9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181",
+          "size_bytes": 18412,
+          "source_path": "cpython-source-deps-openssl-3.5.7/external/perl/Text-Template-1.56/LICENSE"
+        },
+        {
+          "evidence_path": "openssl/util/perl/OpenSSL/copyright.pm",
+          "sha256": "04213b69dbebc8ba0dd8a6216af1d9422f9b63619c1cf2f1d8aa107b83bbb608",
+          "size_bytes": 1145,
+          "source_path": "cpython-source-deps-openssl-3.5.7/util/perl/OpenSSL/copyright.pm"
+        }
+      ],
+      "license_evidence_count": 5,
+      "status": "evidence-acquired",
+      "version": "3.5.7"
+    },
+    {
+      "archive": {
+        "filename": "sqlite-3.50.4.0.tar.gz",
+        "sha256": "fb5ab81f27612b0a7b4861ba655906c76dc85ee969e7a4905d2075aff931e8d0",
+        "size_bytes": 2845090
+      },
+      "component": "sqlite",
+      "license_evidence": [],
+      "license_evidence_count": 0,
+      "status": "no-license-like-file-found",
+      "version": "3.50.4.0"
+    },
+    {
+      "archive": {
+        "filename": "zstd-1.5.7.tar.gz",
+        "sha256": "f24b52470d12f466e9fa4fcc94e6c530625ada51d7b36de7fdc6ed7e6f499c8e",
+        "size_bytes": 2440298
+      },
+      "component": "zstd",
+      "license_evidence": [
+        {
+          "evidence_path": "zstd/COPYING",
+          "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+          "size_bytes": 18091,
+          "source_path": "cpython-source-deps-zstd-1.5.7/COPYING"
+        },
+        {
+          "evidence_path": "zstd/LICENSE",
+          "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+          "size_bytes": 1549,
+          "source_path": "cpython-source-deps-zstd-1.5.7/LICENSE"
+        },
+        {
+          "evidence_path": "zstd/README.md",
+          "sha256": "c97c5752f0cf8e235e5834726968708ff1f4b3bf6bfbfcf59db0229b5889ac35",
+          "size_bytes": 11487,
+          "source_path": "cpython-source-deps-zstd-1.5.7/README.md"
+        },
+        {
+          "evidence_path": "zstd/build/LICENSE",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0,
+          "source_path": "cpython-source-deps-zstd-1.5.7/build/LICENSE"
+        },
+        {
+          "evidence_path": "zstd/build/single_file_libs/examples/README.md",
+          "sha256": "ddc4fda25b585bdae4997eae06e671b684835a430c79d8eaab1fc75d41424e72",
+          "size_bytes": 1031,
+          "source_path": "cpython-source-deps-zstd-1.5.7/build/single_file_libs/examples/README.md"
+        }
+      ],
+      "license_evidence_count": 5,
+      "status": "evidence-acquired",
+      "version": "1.5.7"
+    }
+  ]
+}

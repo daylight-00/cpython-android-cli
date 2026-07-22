@@ -1,0 +1,36 @@
+DRAFT NOTICE CANDIDATE — NOT A RELEASE NOTICE
+
+Frozen family: 87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302
+This file inventories candidate evidence only. Legal and owner review remain required.
+
+- cpython 3.14.6: candidate-evidence-present
+    evidence: cpython/LICENSE
+- project-launcher (external/project): candidate-evidence-present
+    evidence: project/LICENSE
+- pip 26.1.2: already-packaged-license-inventory-present
+- openssl 3.5.7: evidence-acquired
+    evidence: openssl/AUTHORS.md
+    evidence: openssl/LICENSE.txt
+    evidence: openssl/README.md
+    evidence: openssl/external/perl/Text-Template-1.56/LICENSE
+    evidence: openssl/util/perl/OpenSSL/copyright.pm
+- sqlite 3.50.4: no-license-like-file-found
+- bzip2 1.0.8: evidence-acquired
+    evidence: bzip2/LICENSE
+    evidence: bzip2/README
+- xz-liblzma 5.4.6: exact-5.4.6-license-source-unresolved
+- zstd 1.5.7: evidence-acquired
+    evidence: zstd/COPYING
+    evidence: zstd/LICENSE
+    evidence: zstd/README.md
+    evidence: zstd/build/LICENSE
+    evidence: zstd/build/single_file_libs/examples/README.md
+- expat 2.8.1: candidate-evidence-present
+    evidence: cpython/Modules/expat/COPYING
+- libmpdec 2.5.1: candidate-evidence-present
+- libffi 3.4.4: evidence-acquired
+    evidence: libffi/LICENSE
+    evidence: libffi/LICENSE-BUILDTOOLS
+- android-system-providers (external/project): external-provider-policy-unfrozen
+- hacl-star bundled-with-cpython-3.14.6: candidate-evidence-present
+    evidence: cpython/Modules/_hacl/README.md

@@ -22,7 +22,7 @@
         "selectability",
         "publication"
       ],
-      "status": "in-progress-authoritative-license-payload-acquisition-and-component-expansion"
+      "status": "in-progress-payload-authority-frozen-legal-overlay-next"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -100,7 +100,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "execute-rb1-license-payload-acquisition-and-component-expansion-audit",
+  "next_bounded_action": "execute-rb1-legal-evidence-overlay-and-provider-policy-synthesis",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

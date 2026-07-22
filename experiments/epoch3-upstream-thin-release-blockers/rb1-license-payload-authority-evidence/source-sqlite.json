@@ -1,0 +1,10 @@
+{
+  "acquisition_mode": "cache-reuse",
+  "component": "sqlite",
+  "exact_sha256_verified": true,
+  "filename": "sqlite-3.50.4.0.tar.gz",
+  "sha256": "fb5ab81f27612b0a7b4861ba655906c76dc85ee969e7a4905d2075aff931e8d0",
+  "size_bytes": 2845090,
+  "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/sqlite-3.50.4.0.tar.gz",
+  "version": "3.50.4.0"
+}

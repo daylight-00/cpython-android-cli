@@ -1,0 +1,169 @@
+{
+  "files": [
+    {
+      "identical": true,
+      "path": "NOTICE.candidate.txt",
+      "sha256": "5a8ba329930e6a5cd4c0e8b526e1b3212c5a3aa65cf71077655f6c239005d733",
+      "size_bytes": 1523
+    },
+    {
+      "identical": true,
+      "path": "component-expansion-audit.json",
+      "sha256": "84f9f5bfed7cb12ad0caa30dac7c708d645111a0889606dc3054738cc18e18a2",
+      "size_bytes": 2708
+    },
+    {
+      "identical": true,
+      "path": "component-license-map-candidate.json",
+      "sha256": "ddb127574d62608f8721f581916875b38c10dd6721c7244ff6caa651229e8857",
+      "size_bytes": 3915
+    },
+    {
+      "identical": true,
+      "path": "license-payload-inventory.json",
+      "sha256": "4b318a537b8a22f6600eec88570ed841c7f5db7a4460df6ffb4012545a0110dd",
+      "size_bytes": 22066
+    },
+    {
+      "identical": true,
+      "path": "payload-result.json",
+      "sha256": "a889bef7600f14bf8589836fc118b5618b95c0e0c094f7d0d0fd66a06bed03a0",
+      "size_bytes": 839
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "size_bytes": 13804
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/Misc/externals.spdx.json",
+      "sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+      "size_bytes": 7084
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/Modules/_decimal/libmpdec/mpdecimal.c",
+      "sha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626",
+      "size_bytes": 247346
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/Modules/_decimal/libmpdec/mpdecimal.h",
+      "sha256": "ea0b9c6b296c13aed6ecaa50b463e39a9c1bdc059b84f50507fd8247b2e660f9",
+      "size_bytes": 41684
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/Modules/_hacl/README.md",
+      "sha256": "8c0c0d4c6e65b349a8b116862174669fbd4c9ce037c6fee32f19994ddb6fbf6c",
+      "size_bytes": 1044
+    },
+    {
+      "identical": true,
+      "path": "payload/cpython/Modules/expat/COPYING",
+      "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "size_bytes": 1144
+    },
+    {
+      "identical": true,
+      "path": "payload/project/LICENSE",
+      "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+      "size_bytes": 1075
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/bzip2/LICENSE",
+      "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+      "size_bytes": 1896
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/bzip2/README",
+      "sha256": "152f0da2867a1160a8f956628296ff45e766e492ad0d7054ffb8d981f7518782",
+      "size_bytes": 7451
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/libffi/LICENSE",
+      "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+      "size_bytes": 1132
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/libffi/LICENSE-BUILDTOOLS",
+      "sha256": "e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94",
+      "size_bytes": 18698
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/openssl/AUTHORS.md",
+      "sha256": "b9f638dfc06b59c2d3b808186c3b30f713805a5db390f5b77b1703ac58acb83e",
+      "size_bytes": 1022
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/openssl/LICENSE.txt",
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+      "size_bytes": 10175
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/openssl/README.md",
+      "sha256": "f68c351048c11bd8499b9d6ef8b283386d4544cc556fd2679a2ff2b1c50a378b",
+      "size_bytes": 8137
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/openssl/external/perl/Text-Template-1.56/LICENSE",
+      "sha256": "9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181",
+      "size_bytes": 18412
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/openssl/util/perl/OpenSSL/copyright.pm",
+      "sha256": "04213b69dbebc8ba0dd8a6216af1d9422f9b63619c1cf2f1d8aa107b83bbb608",
+      "size_bytes": 1145
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/zstd/COPYING",
+      "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+      "size_bytes": 18091
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/zstd/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+      "size_bytes": 1549
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/zstd/README.md",
+      "sha256": "c97c5752f0cf8e235e5834726968708ff1f4b3bf6bfbfcf59db0229b5889ac35",
+      "size_bytes": 11487
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/zstd/build/LICENSE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "identical": true,
+      "path": "payload/source-deps/zstd/build/single_file_libs/examples/README.md",
+      "sha256": "ddc4fda25b585bdae4997eae06e671b684835a430c79d8eaab1fc75d41424e72",
+      "size_bytes": 1031
+    },
+    {
+      "identical": true,
+      "path": "updated-gap-register.json",
+      "sha256": "6e91366bae9d72c349d7f19bd04ef4a98aa9ad6bb30be9ee7698dbf451c281b5",
+      "size_bytes": 1033
+    }
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb1-license-payload-reproducibility",
+  "schema_version": 1
+}

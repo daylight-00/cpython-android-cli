@@ -1,0 +1,145 @@
+{
+  "claim_boundary": {
+    "candidate_only": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "component_count": 13,
+  "components": [
+    {
+      "component_class": "cpython",
+      "evidence_paths": [
+        "cpython/LICENSE"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "candidate-evidence-present",
+      "version": "3.14.6"
+    },
+    {
+      "component_class": "project-launcher",
+      "evidence_paths": [
+        "project/LICENSE"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "candidate-evidence-present",
+      "version": null
+    },
+    {
+      "component_class": "pip",
+      "evidence_paths": [],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "already-packaged-license-inventory-present",
+      "version": "26.1.2"
+    },
+    {
+      "component_class": "openssl",
+      "evidence_paths": [
+        "openssl/AUTHORS.md",
+        "openssl/LICENSE.txt",
+        "openssl/README.md",
+        "openssl/external/perl/Text-Template-1.56/LICENSE",
+        "openssl/util/perl/OpenSSL/copyright.pm"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "evidence-acquired",
+      "version": "3.5.7"
+    },
+    {
+      "component_class": "sqlite",
+      "evidence_paths": [],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "no-license-like-file-found",
+      "version": "3.50.4"
+    },
+    {
+      "component_class": "bzip2",
+      "evidence_paths": [
+        "bzip2/LICENSE",
+        "bzip2/README"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "evidence-acquired",
+      "version": "1.0.8"
+    },
+    {
+      "component_class": "xz-liblzma",
+      "evidence_paths": [],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "exact-5.4.6-license-source-unresolved",
+      "version": "5.4.6"
+    },
+    {
+      "component_class": "zstd",
+      "evidence_paths": [
+        "zstd/COPYING",
+        "zstd/LICENSE",
+        "zstd/README.md",
+        "zstd/build/LICENSE",
+        "zstd/build/single_file_libs/examples/README.md"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "evidence-acquired",
+      "version": "1.5.7"
+    },
+    {
+      "component_class": "expat",
+      "evidence_paths": [
+        "cpython/Modules/expat/COPYING"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "candidate-evidence-present",
+      "version": "2.8.1"
+    },
+    {
+      "component_class": "libmpdec",
+      "evidence_paths": [],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "candidate-evidence-present",
+      "version": "2.5.1"
+    },
+    {
+      "component_class": "libffi",
+      "evidence_paths": [
+        "libffi/LICENSE",
+        "libffi/LICENSE-BUILDTOOLS"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "evidence-acquired",
+      "version": "3.4.4"
+    },
+    {
+      "component_class": "android-system-providers",
+      "evidence_paths": [],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "external-provider-policy-unfrozen",
+      "version": null
+    },
+    {
+      "component_class": "hacl-star",
+      "evidence_paths": [
+        "cpython/Modules/_hacl/README.md"
+      ],
+      "mapping_complete": false,
+      "release_family_integrated": false,
+      "status": "candidate-evidence-present",
+      "version": "bundled-with-cpython-3.14.6"
+    }
+  ],
+  "map_kind": "epoch3-rb1-component-license-map-candidate",
+  "mapping_complete": false,
+  "new_component_count": 1,
+  "schema_version": 1
+}

@@ -1,0 +1,10 @@
+{
+  "acquisition_mode": "cache-reuse",
+  "component": "openssl",
+  "exact_sha256_verified": true,
+  "filename": "openssl-3.5.7.tar.gz",
+  "sha256": "ca94e7c6c223d9caf77bb51aac5949186379608ea2a0cad3aa8bdf31856912e9",
+  "size_bytes": 53341406,
+  "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/openssl-3.5.7.tar.gz",
+  "version": "3.5.7"
+}

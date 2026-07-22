@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 26
+> **State revision:** 27
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -58,6 +58,7 @@ status  in-progress
 25. [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](../experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json) — canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority
 26. [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json) — frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority
 27. [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json) — frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority
+28. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json) — frozen exact five-source license payload acquisition, 13-component expansion, eight-gap boundary, and legal-overlay evidence synthesis start authority
 
 ## Blockers
 
@@ -84,10 +85,12 @@ status  in-progress
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- component-license-payloads-not-yet-authoritatively-bound
-- baseline-component-set-may-omit-bundled-components
-- xz-5.4.6-exact-license-source-unresolved
 - libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
-- hacl-component-mapping-and-notice-pending
+- authoritative-license-payloads-not-yet-integrated-into-release-family
+- xz-5.4.6-product-matching-license-evidence-not-yet-bound
+- sqlite-public-domain-notice-policy-not-frozen
+- android-system-provider-notice-boundary-not-frozen
+- hacl-license-header-and-notice-not-yet-frozen
+- final-notice-set-not-owner-approved
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

@@ -52,11 +52,13 @@ Epoch 3 selection     true
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- component-license-payloads-not-yet-authoritatively-bound
-- baseline-component-set-may-omit-bundled-components
-- xz-5.4.6-exact-license-source-unresolved
 - libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
-- hacl-component-mapping-and-notice-pending
+- authoritative-license-payloads-not-yet-integrated-into-release-family
+- xz-5.4.6-product-matching-license-evidence-not-yet-bound
+- sqlite-public-domain-notice-policy-not-frozen
+- android-system-provider-notice-boundary-not-frozen
+- hacl-license-header-and-notice-not-yet-frozen
+- final-notice-set-not-owner-approved
 
 ### Accepted authorities
 
@@ -87,6 +89,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json): canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority (`102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json): frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority (`12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json): frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority (`e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json): frozen exact five-source license payload acquisition, 13-component expansion, eight-gap boundary, and legal-overlay evidence synthesis start authority (`20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba`)
 
 ### Agent entry
 

@@ -1,0 +1,40 @@
+{
+  "blocking_gap_count": 8,
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "closure_status": "incomplete",
+  "newly_detected_component_count": 1,
+  "register_kind": "epoch3-rb1-license-payload-and-expansion-gap-register",
+  "remaining_gaps": [
+    {
+      "code": "complete-componentization-and-obligation-review-pending"
+    },
+    {
+      "code": "authoritative-license-evidence-not-integrated-into-release-family"
+    },
+    {
+      "code": "project-license-not-in-release-family"
+    },
+    {
+      "code": "xz-5.4.6-exact-license-source-unresolved"
+    },
+    {
+      "code": "sqlite-public-domain-notice-policy-not-frozen"
+    },
+    {
+      "code": "android-system-provider-notice-boundary-not-frozen"
+    },
+    {
+      "code": "hacl-star-new-component-mapping-and-notice-pending"
+    },
+    {
+      "code": "final-notice-set-not-owner-approved"
+    }
+  ],
+  "schema_version": 1,
+  "source_provenance_gap_count": 11
+}

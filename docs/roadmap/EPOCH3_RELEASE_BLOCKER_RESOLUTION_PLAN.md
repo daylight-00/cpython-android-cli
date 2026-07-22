@@ -181,3 +181,17 @@ The correction copies only `experiments/epoch3-upstream-thin-release-blockers/`,
 The corrected owner r2 passed repository, static, onboarding, frozen source-authority, artifact-family, CPython source, and all five fixed-hash source-archive acquisition gates. Both independent target runs then stopped on the same normal zstd source-tree symlink, `tests/cli-tests/bin/unzstd`. The license inventory scanner had classified every non-directory and non-regular member as unsupported even though the lane reads selected regular files only and does not materialize source trees.
 
 The bounded r3 correction accepts only relative symlinks whose lexical resolution remains inside the archive root, records no payload from them, and does not create or follow them. Absolute or escaping symlinks remain rejected. Hardlinks, devices, FIFOs, duplicate normalized names, unsafe paths, truncated members, and unsupported special types remain hard failures. CPython source scanning uses the same rule for consistency. No frozen artifact, source identity, selected license byte, component-expansion rule, mismatch quarantine, audit rule, or claim boundary changes.
+## 12. RB-1 license-payload and component-expansion authority
+
+The fixed-hash payload acquisition and component-expansion run passed and is frozen as a non-closing authority. It preserved the exact artifact family, acquired five exact source archives, expanded the component set from 12 to 13 by adding HACL*, and reduced the blocking gap register from 11 to 8. The result remains a candidate evidence set: component-to-license mapping, legal overlay integration, owner notice approval, selectability, and publication remain false.
+
+The next bounded action is legal-evidence overlay and provider-policy synthesis. It must:
+
+1. bind the frozen payload/component-expansion authority and exact artifact family;
+2. acquire the exact BeeWare `xz-5.4.6-1` product dependency asset using its frozen SHA-256 and size, rather than the mismatched CPython SPDX `xz 5.2.5` coordinate;
+3. extract and verify the exact XZ notice payload from the product-matching asset;
+4. derive SQLite public-domain evidence from the exact `sqlite-3.50.4.0` source archive;
+5. derive HACL* upstream-coordinate and license-header evidence from the exact CPython 3.14.6 source archive;
+6. freeze the Android system-provider boundary from the accepted full static authority without representing platform libraries as distributed product bytes;
+7. synthesize a deterministic legal-overlay candidate and updated component map without changing any frozen artifact byte;
+8. retain complete obligation review, release-family integration, final notice approval, selectability, and publication as explicit open gates.

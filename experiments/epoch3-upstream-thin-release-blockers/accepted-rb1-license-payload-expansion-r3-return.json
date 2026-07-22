@@ -1,0 +1,44 @@
+{
+  "action": "applied-rb1-license-payloads-acquired-component-expansion-audited-pushed",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "component_set_complete": false,
+    "license_payloads_integrated_into_release_family": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "metrics": {
+    "expanded_component_count": 13,
+    "fixed_hash_source_archive_count": 5,
+    "new_component_count": 1,
+    "remaining_gap_count": 8,
+    "source_archives_with_license_evidence": 4
+  },
+  "output_sha256": {
+    "NOTICE.candidate.txt": "5a8ba329930e6a5cd4c0e8b526e1b3212c5a3aa65cf71077655f6c239005d733",
+    "component-expansion-audit.json": "84f9f5bfed7cb12ad0caa30dac7c708d645111a0889606dc3054738cc18e18a2",
+    "component-license-map-candidate.json": "ddb127574d62608f8721f581916875b38c10dd6721c7244ff6caa651229e8857",
+    "independent-audit.json": "d99ee5dd1b27fa77dcd2e5b7db0d4e66eea4ea2612943755e9c58a251f0a8312",
+    "license-payload-inventory.json": "4b318a537b8a22f6600eec88570ed841c7f5db7a4460df6ffb4012545a0110dd",
+    "payload-result.json": "a889bef7600f14bf8589836fc118b5618b95c0e0c094f7d0d0fd66a06bed03a0",
+    "reproducibility.json": "02b7a05ad6da71bd48ee40667bbecde4e97670b9068de77af88987f3e7b4795f",
+    "result-summary.json": "b01ec1ea53dc5c7d5f2e79b5fa1e58835b1a9c2b2cec764be943d002bc383080",
+    "updated-gap-register.json": "6e91366bae9d72c349d7f19bd04ef4a98aa9ad6bb30be9ee7698dbf451c281b5"
+  },
+  "repository_transition": {
+    "post_head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "post_tree": "570526f5ba9b87a3c02d10075015c4c482c96aab",
+    "pre_head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "pre_tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be",
+    "remote_post_head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb1-license-payload-expansion-r3-results.tar.zst",
+    "sha256": "3a02139b93f238b2dbf9ea418fd48112aaea62f2b49655f1d739fbced2820a55",
+    "size_bytes": 107608
+  },
+  "return_kind": "accepted-owner-rb1-license-payload-expansion-r3-return",
+  "schema_version": 1,
+  "transaction_rc": 0
+}
