@@ -49,6 +49,22 @@ class T(unittest.TestCase):
    with tarfile.open(p,'w:gz') as tf:
     i=tarfile.TarInfo('x/LICENSE');i.type=tarfile.SYMTYPE;i.linkname='../../etc/passwd';tf.addfile(i)
    with self.assertRaises(ValueError):lp.inventory_source_archive('x',p,lp.sha_file(p),'1',Path(d)/'out')
+ def test_safe_symlink_tar_is_metadata_only(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'ok.tgz'
+   with tarfile.open(p,'w:gz') as tf:
+    import io
+    lic=b'zstd license';regular=tarfile.TarInfo('x/LICENSE');regular.size=len(lic);tf.addfile(regular,io.BytesIO(lic))
+    link=tarfile.TarInfo('x/tests/cli-tests/bin/unzstd');link.type=tarfile.SYMTYPE;link.linkname='zstd';tf.addfile(link)
+   row=lp.inventory_source_archive('x',p,lp.sha_file(p),'1',Path(d)/'out')
+   self.assertEqual(row['license_evidence_count'],1)
+   self.assertFalse((Path(d)/'out/x/tests/cli-tests/bin/unzstd').exists())
+ def test_hardlink_tar_fails(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'bad-hardlink.tgz'
+   with tarfile.open(p,'w:gz') as tf:
+    i=tarfile.TarInfo('x/LICENSE');i.type=tarfile.LNKTYPE;i.linkname='x/COPYING';tf.addfile(i)
+   with self.assertRaises(ValueError):lp.inventory_source_archive('x',p,lp.sha_file(p),'1',Path(d)/'out')
  def test_unsafe_tar_fails(self):
   with tempfile.TemporaryDirectory() as d:
    p=Path(d)/'bad.tgz';make_tgz(p,{'../LICENSE':b'x'})

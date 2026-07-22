@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib, io, json, os, re, subprocess, tarfile
 from pathlib import Path, PurePosixPath
 from typing import Iterable
+from archive import safe_link_target
 FAMILY_FINGERPRINT="87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302"
 FULL_SHA="20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12"
 CPYTHON_SOURCE_SHA="74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222"
@@ -56,7 +57,10 @@ def inventory_source_archive(component:str,path:Path,expected_sha:str,expected_v
   if name in seen:raise ValueError(f'duplicate source member: {name}')
   seen.add(name)
   if m.isdir():continue
-  if not m.isfile():
+  if m.issym():
+   if not safe_link_target(name,m.linkname):raise ValueError(f'unsafe source symlink: {name} -> {m.linkname}')
+   continue
+  if m.islnk() or m.isdev() or m.isfifo() or not m.isfile():
    raise ValueError(f'unsupported source member type: {name}')
   if m.size>2*1024*1024:continue
   f=tf.extractfile(m);data=f.read() if f else b''
@@ -77,7 +81,10 @@ def read_cpython_source(source:Path,out:Path):
   if name in seen:raise ValueError(f'duplicate CPython source member: {name}')
   seen.add(name)
   if m.isdir():continue
-  if not m.isfile():raise ValueError(f'unsupported CPython source member type: {name}')
+  if m.issym():
+   if not safe_link_target(name,m.linkname):raise ValueError(f'unsafe CPython source symlink: {name} -> {m.linkname}')
+   continue
+  if m.islnk() or m.isdev() or m.isfifo() or not m.isfile():raise ValueError(f'unsupported CPython source member type: {name}')
   if m.size>3*1024*1024:continue
   relevant=(name.endswith('/LICENSE') or name.endswith('/Misc/externals.spdx.json') or '/Modules/' in name)
   if not relevant:continue
