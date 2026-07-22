@@ -27,7 +27,10 @@ def wheel(path: Path, distribution: str, version: str, files: dict[str, bytes], 
             info.date_time = (1980, 1, 1, 0, 0, 0)
             info.external_attr = 0o100644 << 16
             zf.writestr(info, data)
-        zf.writestr(f"{dist}/licenses/LICENSE", f"{distribution} license\n".encode())
+        license_info = zipfile.ZipInfo(f"{dist}/licenses/LICENSE")
+        license_info.date_time = (1980, 1, 1, 0, 0, 0)
+        license_info.external_attr = 0o100644 << 16
+        zf.writestr(license_info, f"{distribution} license\n".encode())
         if symlink:
             info = zipfile.ZipInfo(symlink)
             info.external_attr = (stat.S_IFLNK | 0o777) << 16
@@ -72,9 +75,36 @@ class DataProductTests(unittest.TestCase):
 
     def test_reproducible(self) -> None:
         root = self.tmp()
-        a = self.assemble(root, "a")
-        b = self.assemble(root, "b")
-        self.assertEqual((root / "a" / a["artifact"]["filename"]).read_bytes(), (root / "b" / b["artifact"]["filename"]).read_bytes())
+        certifi, tzdata = inputs(root)
+        a = D.assemble_data_product(
+            certifi,
+            tzdata,
+            root / "a",
+            ca_version="2026.6.17",
+            tzdata_version="2026.3",
+        )
+        b = D.assemble_data_product(
+            certifi,
+            tzdata,
+            root / "b",
+            ca_version="2026.6.17",
+            tzdata_version="2026.3",
+        )
+        self.assertEqual(
+            (root / "a" / a["artifact"]["filename"]).read_bytes(),
+            (root / "b" / b["artifact"]["filename"]).read_bytes(),
+        )
+
+    def test_synthetic_wheels_are_reproducible(self) -> None:
+        root = self.tmp()
+        left = root / "left"
+        right = root / "right"
+        left.mkdir()
+        right.mkdir()
+        left_inputs = inputs(left)
+        right_inputs = inputs(right)
+        self.assertEqual(left_inputs[0].read_bytes(), right_inputs[0].read_bytes())
+        self.assertEqual(left_inputs[1].read_bytes(), right_inputs[1].read_bytes())
 
     def test_install_update_rollback(self) -> None:
         root = self.tmp()
