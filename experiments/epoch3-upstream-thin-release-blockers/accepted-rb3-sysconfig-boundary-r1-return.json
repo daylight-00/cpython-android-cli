@@ -1,0 +1,138 @@
+{
+  "checks": {
+    "all_four_profiles_executed": true,
+    "current_control_reproduces_managed_failure": true,
+    "family_valid": true,
+    "frozen_family_unchanged": true,
+    "header_profile_managed_install_attempted": true,
+    "profile_assembly_reproducible": true,
+    "profile_identities_match_host_assembly": true,
+    "real_managed_root_unchanged": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "profile_selection_authorized": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "selected_profile": "M"
+  },
+  "profiles": {
+    "C": {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-C.tar.gz",
+        "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+        "size_bytes": 23841726
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": false,
+        "managed_reinstall_noop": false,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration normalized for relocatable Android consumers"
+    },
+    "H": {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-H.tar.gz",
+        "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+        "size_bytes": 23841713
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module"
+    },
+    "M": {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-M.tar.gz",
+        "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+        "size_bytes": 23843530
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module"
+    },
+    "U": {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-U.tar.gz",
+        "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+        "size_bytes": 23842209
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": false,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": false,
+        "raw_native_wheel_import": false,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module"
+    }
+  },
+  "repository": {
+    "post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "post_tree": "acbac663fdc805980709cf1500577567407a3ccd",
+    "remote_post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-sysconfig-boundary-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 133,
+    "sha256": "8174ba88219d38933bd1b5d20d3c8e858ff81edd9250f58097a44825d6774169",
+    "size_bytes": 94449607
+  },
+  "return_kind": "epoch3-rb3-sysconfig-boundary-r1-accepted-return",
+  "schema_version": 1,
+  "status": "accepted-pass-profile-selection-authorized-successor-artifact-pending"
+}

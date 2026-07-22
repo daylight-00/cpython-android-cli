@@ -27,7 +27,7 @@
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain-RB-3-open, preserve frozen family, and select only a bounded evidence-driven correction",
+      "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only the bounded successor implementation or qualification runner",
       "complete_receipt_required": true
     },
     "pass": {
@@ -66,7 +66,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-sysconfig-and-on-device-sdk-boundary-profile-probe",
+    "current_bounded_transition": "rb3-selected-profile-M-successor-full-r5",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -76,7 +76,7 @@
   },
   "input_routing": {
     "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-    "first_attempt": "reuse the exact accepted 128-file family and exact Android uv, then execute the C/H/U/M comparative profile probe without changing frozen canonical artifacts",
+    "first_attempt": "reuse the exact official Python archive, accepted launcher, exact Android uv, and profile-M selection authority to build and qualify successor full r5 twice",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -93,7 +93,9 @@
       "select-sysconfig-profile-from-static-review-alone",
       "silently-replace-producer-provenance-with-consumer-policy",
       "use-unpinned-or-latest-provider-resolution-at-runtime",
-      "write-ca-or-timezone-updates-into-python-install-root"
+      "write-ca-or-timezone-updates-into-python-install-root",
+      "treat-producer-provenance-as-operational-path-residue",
+      "claim-raw-native-wheel-portability-before-explicit-elf-normalization-authority"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
@@ -240,13 +242,28 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json",
       "reason": "Exact deterministic host assembly identities and control-preservation proof for C/H/U/M.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
+      "reason": "Accepted exact C/H/U/M target result, selected M rationale, and raw-wheel boundary.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
+      "reason": "Frozen profile M selection and production metadata boundary.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-contract.json",
+      "reason": "Exact successor full r5 inputs, required qualifications, and non-claim boundary.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 35,
+  "state_revision": 36,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Resolve the remaining release blockers over the frozen family while explicitly reopening the RB-3 sysconfig/on-device-SDK boundary. Compare current, header-only, upstream-restored, and minimal-overlay profiles before selecting or superseding any artifact.",
+    "goal": "Resolve the remaining release blockers while implementing the accepted RB-3 profile M boundary. Build and qualify a deterministic successor full r5 without modifying or superseding the frozen predecessor family.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

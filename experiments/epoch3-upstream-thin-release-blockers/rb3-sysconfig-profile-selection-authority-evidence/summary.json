@@ -1,0 +1,52 @@
+{
+  "action": "applied-rb3-sysconfig-sdk-boundary-profiles-probed-audited-pushed",
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "on_device_sdk_final": false,
+    "owner_approved": false,
+    "profile_selected": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "claim_transaction_rc": 0,
+  "expected_post": {
+    "head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "tree": "acbac663fdc805980709cf1500577567407a3ccd"
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "package_id": "cpython-android-cli-e3-rb3-sysconfig-boundary-r1",
+  "post": {
+    "head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "remote_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "tree": "acbac663fdc805980709cf1500577567407a3ccd"
+  },
+  "pre": {
+    "head": "7a5d003b303206e326f54df42a38cfd72b66a52d",
+    "remote_head": "7a5d003b303206e326f54df42a38cfd72b66a52d",
+    "tree": "f8503f8112d23c22e21bf183a7e0b6e6ccb09e99"
+  },
+  "repository": "/data/data/com.termux/files/home/projects/cpython-android-cli",
+  "return_codes": {
+    "apply": 0,
+    "audit": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "rollback": 99,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "unit": 0
+  },
+  "schema_version": 1
+}

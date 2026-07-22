@@ -1,0 +1,674 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "final-status.txt",
+      "sha256": "c9b87004a280bd8da51012d4c4e476849a97dae6f70b347fd7d3f36a9eda3fcf",
+      "size_bytes": 1165
+    },
+    {
+      "path": "inputs/legal-result.sha256",
+      "sha256": "1933eb0ddfc2fbbe5026ea6e4a5ac90748661922705a6c2b0fc32da2263eecc3",
+      "size_bytes": 130
+    },
+    {
+      "path": "inputs/rb3-sysconfig-boundary-review-contract.json",
+      "sha256": "f85b9a46c1b729acb69e3c0e134991a91c011880dc88d104bfe9c2b20ec08fa1",
+      "size_bytes": 4179
+    },
+    {
+      "path": "inputs/rb3-sysconfig-profile-host-assembly.json",
+      "sha256": "8d94744e1133040e3eb97123722d93591e50b566705daca58577c5eca01d6e8d",
+      "size_bytes": 2847
+    },
+    {
+      "path": "inputs/uv-version.txt",
+      "sha256": "ee03852d3cd00b116420d7c9316ecd0d524fc3424dbbd1d6fb9227d42ec35f10",
+      "size_bytes": 35
+    },
+    {
+      "path": "inputs/uv.sha256",
+      "sha256": "39b8b53ec1ef12553210f06d47f17aa762e3b9655d03c8ff1ae5f2405024ff4a",
+      "size_bytes": 105
+    },
+    {
+      "path": "inputs/uv.size",
+      "sha256": "d98cda53d6523fb5158db696765aeca79edf1d6dabb723de5bd94194c0cf2dbc",
+      "size_bytes": 48
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "6d3dba71fe17bb03680f8a7fa6ae6b516edad8e6df2e826e46d547e54551384b",
+      "size_bytes": 5939
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/bundle-fetch.log",
+      "sha256": "8594e61668e5be6b849025f58ef13cea4ecdb0172f43207db7cd7ed7bd1291e2",
+      "size_bytes": 279
+    },
+    {
+      "path": "logs/legal-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package-verify.log",
+      "sha256": "58d2ec25849558a4deef1bfcf61cdc3afc8a21648bf45bd55568829232753063",
+      "size_bytes": 128
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "dbc6cca50a768342629fe007c6829f64d25ebd2edc10558a2c84ab1aef98bb80",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/rb3-boundary-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-post.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-pre.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "4ff94c1797f4392531f189d2db487cdece2b54ee8b6d3a9cf1263ed632b0117d",
+      "size_bytes": 347
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "e5352469d108184d2018ab003c0ceb06f14b9211d846a81a72f2f2e9b5423fb7",
+      "size_bytes": 169
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "bf8a0a12305a34a8efbe2ad1b92c2eb9870d909eb8edcda2f338079b92ba1424",
+      "size_bytes": 197
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "2851801a04a4b27e1489b0539f70fb485b18ea0f47e19a7c29a859e022241286",
+      "size_bytes": 1194
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "4b61ffe17a984a896264aec318486b0342cd9eb01f6f72438de53727e95bdcb7",
+      "size_bytes": 3372
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "a45eab2afc237df893b27957e29f3c49d5ecfb86858b46d00a0144a55acd000c",
+      "size_bytes": 12832
+    },
+    {
+      "path": "receipts/rb3-boundary-probe.json",
+      "sha256": "2f78c0540c0678d2ce1bbff8dec70d921d84197d1a7b4de67a4f29be4a912e54",
+      "size_bytes": 26939
+    },
+    {
+      "path": "summary.json",
+      "sha256": "7c74f3f7b6483e72f66ab3d00311cee86b808645d9a7a593502bf81343544bc9",
+      "size_bytes": 1485
+    },
+    {
+      "path": "target/independent-audit.json",
+      "sha256": "4b61ffe17a984a896264aec318486b0342cd9eb01f6f72438de53727e95bdcb7",
+      "size_bytes": 3372
+    },
+    {
+      "path": "target/process/C-direct-identity.json",
+      "sha256": "eccf754fb63a5c5f41d480bcdb290916c5af69a4daa5feb5fbcc5e6836f26442",
+      "size_bytes": 1668
+    },
+    {
+      "path": "target/process/C-managed-find.json",
+      "sha256": "44e17c388fe78052638995fff5ec3462738d7bf73fc46de1b1484e91bdb85397",
+      "size_bytes": 572
+    },
+    {
+      "path": "target/process/C-managed-identity.json",
+      "sha256": "7698c94cfbd16d451bdff7406295556a55381553b3cbb6278965064b57d1eb86",
+      "size_bytes": 1814
+    },
+    {
+      "path": "target/process/C-managed-install.json",
+      "sha256": "bf54b9099cfad06de92ba9ee8cc5389bf475f8dc60f285b9567bc2e1a21e378a",
+      "size_bytes": 726
+    },
+    {
+      "path": "target/process/C-managed-reinstall.json",
+      "sha256": "41b2e519c1286757ac206c743caf80c7758da63a1d26e52f306a571a49b3d6c8",
+      "size_bytes": 602
+    },
+    {
+      "path": "target/process/C-managed-uninstall.json",
+      "sha256": "8d610d6d04fa1ba0f5a2c1db8394fc6dbdc91311f6d123f00254bca2f0f1ec66",
+      "size_bytes": 500
+    },
+    {
+      "path": "target/process/C-managed-venv-identity.json",
+      "sha256": "cb593f2c9063d91dbff1bb4d6cf173262e4722416ebdd5346abeb66325356c98",
+      "size_bytes": 1724
+    },
+    {
+      "path": "target/process/C-managed-venv.json",
+      "sha256": "5e1c8a72d0c729b2c9440291fe0c781dbe91758c0f89dabb7ecc6934fe1a1679",
+      "size_bytes": 536
+    },
+    {
+      "path": "target/process/C-pkg-config.json",
+      "sha256": "960e53af847df47c183cf0530eb0d10926eb2793bc7e9f33e95d3cc49cb41a68",
+      "size_bytes": 408
+    },
+    {
+      "path": "target/process/C-python-config-cflags.json",
+      "sha256": "a92a8228d0e66ac1ee5af3f7a0d0350c5939db442d01aaea866c01265a306cc7",
+      "size_bytes": 562
+    },
+    {
+      "path": "target/process/C-python-config-configdir.json",
+      "sha256": "7c3363fc55149758f1cfb0a1ed07dcb2a6cb1ebc48f9b862f7011fbff2cb2f85",
+      "size_bytes": 384
+    },
+    {
+      "path": "target/process/C-python-config-extension-suffix.json",
+      "sha256": "d971c2d7f0587fd3a0e7ef85ee16621f4f9ca3327cc48d5cbc762be1daba1386",
+      "size_bytes": 300
+    },
+    {
+      "path": "target/process/C-python-config-includes.json",
+      "sha256": "80fbd98973524f2fbf834547af162ebc8e168b87758d97c9baac277db2e48a2b",
+      "size_bytes": 462
+    },
+    {
+      "path": "target/process/C-python-config-ldflags.json",
+      "sha256": "f7cc920dcf5e01f52ad37bc59cf5c18323aec811ec4b873f176b3120c48293e9",
+      "size_bytes": 259
+    },
+    {
+      "path": "target/process/C-python-config-libs.json",
+      "sha256": "b4f20e53c6deab9f798fe790df3ec9c7f3034d81251595d38c9fd4d39ef08302",
+      "size_bytes": 253
+    },
+    {
+      "path": "target/process/C-python-config-prefix.json",
+      "sha256": "f455729acc083713f6d8a8b4e713694d52485217bc6c60d210aef596934fe183",
+      "size_bytes": 329
+    },
+    {
+      "path": "target/process/C-system-find.json",
+      "sha256": "eed4e6bd3824c6d965edcd9b8776e32a9ed5f390017a04e9bc0a3dca9659e556",
+      "size_bytes": 543
+    },
+    {
+      "path": "target/process/C-system-venv-identity.json",
+      "sha256": "4049becd9ab7a9fabc65d3c30ff6ca96cc0a0cbaa77124cc6778e8a4356f06a8",
+      "size_bytes": 1662
+    },
+    {
+      "path": "target/process/C-system-venv.json",
+      "sha256": "64b30ff9b85a9c86d9d1521e16b9be62e2d85feaab2a0cbf48048255fa45e83b",
+      "size_bytes": 674
+    },
+    {
+      "path": "target/process/C-wheel-build.json",
+      "sha256": "fff4cfbea32794fa6e0082d2e6dff1bd456aac1437c232bdf658d13eead6d4c6",
+      "size_bytes": 1268
+    },
+    {
+      "path": "target/process/C-wheel-explicit-normalization-import.json",
+      "sha256": "6e56068d1f52fc3cb683f8106c22d060ffb03735db398f3c4bc6cedb404f31cf",
+      "size_bytes": 553
+    },
+    {
+      "path": "target/process/C-wheel-explicit-rpath-normalization.json",
+      "sha256": "aabcc95346e19473e0aaf220f9ae4f5142143334f1d04fee4245f2285042d338",
+      "size_bytes": 304
+    },
+    {
+      "path": "target/process/C-wheel-import.json",
+      "sha256": "4b110fdf84295bd777cc2daa5e4fe95930d66587c52cfec22a6b59d1502b5b3f",
+      "size_bytes": 288
+    },
+    {
+      "path": "target/process/C-wheel-install.json",
+      "sha256": "e21f9a6809b049ddea74eb1e3713cba89ebfd45651c454f8303550fa2d275639",
+      "size_bytes": 626
+    },
+    {
+      "path": "target/process/C-wheel-setuptools.json",
+      "sha256": "2c4ac9e412991a7115c9061ab5feda1370ab5e9850f20761a2a5e0cdd5f3a8cc",
+      "size_bytes": 693
+    },
+    {
+      "path": "target/process/C-wheel-venv.json",
+      "sha256": "08f57cd3fe7337acb7c03276e21ac39d3023409274d9faa084ade78162ea433a",
+      "size_bytes": 328
+    },
+    {
+      "path": "target/process/H-direct-identity.json",
+      "sha256": "e6acfd90c24e69c992aeb939cbac29c44f0a6b5046e19ded01c966605e229c49",
+      "size_bytes": 1668
+    },
+    {
+      "path": "target/process/H-managed-find.json",
+      "sha256": "34db7f3aee90375ae3d7ad578acb3d69385531a105fc2d9798937cf8dd4fd2c5",
+      "size_bytes": 572
+    },
+    {
+      "path": "target/process/H-managed-identity.json",
+      "sha256": "cafc88c9ffe5babb984fbc41d875e8ebdac5043bcdf835fe7968f8fafc9dad9a",
+      "size_bytes": 1940
+    },
+    {
+      "path": "target/process/H-managed-install.json",
+      "sha256": "5b70bd20ad0f3cd62db07b6d4b8c370a73d065f572b4620dcd62a70711d9c448",
+      "size_bytes": 744
+    },
+    {
+      "path": "target/process/H-managed-reinstall.json",
+      "sha256": "8186ac2a87528ab5b907d26d45006c59e6db185f5485316637b6ca48be83a52b",
+      "size_bytes": 604
+    },
+    {
+      "path": "target/process/H-managed-uninstall.json",
+      "sha256": "9161f3d257a663988150d5dc1ead4d1e3120ee848c963d7cd0257896d434a2af",
+      "size_bytes": 500
+    },
+    {
+      "path": "target/process/H-managed-venv-identity.json",
+      "sha256": "9031c3b510d77fe930167db9e205d2a9925809f336e2408034398eb8a7f76827",
+      "size_bytes": 1850
+    },
+    {
+      "path": "target/process/H-managed-venv.json",
+      "sha256": "c9b32fc84ba0bff8876d14a26334ce55a7105f5a751c89b91b20a885111cb759",
+      "size_bytes": 536
+    },
+    {
+      "path": "target/process/H-pkg-config.json",
+      "sha256": "8e1e1df072b3e75b407fa795d0231acb24d46dacdd3ff7763496cf9b88a179f2",
+      "size_bytes": 408
+    },
+    {
+      "path": "target/process/H-python-config-cflags.json",
+      "sha256": "a219accf0a03dbe507a1f6895c633c624438687ce39c104c1e94a74e1079db48",
+      "size_bytes": 562
+    },
+    {
+      "path": "target/process/H-python-config-configdir.json",
+      "sha256": "807e252cc44c6c056427e06778043a96db72e97ef36cecdfd1796f3a51a74af3",
+      "size_bytes": 384
+    },
+    {
+      "path": "target/process/H-python-config-extension-suffix.json",
+      "sha256": "a679d8d66743a016a0a04d5ff21c93989efde2ce50730b32149a5062a1605130",
+      "size_bytes": 300
+    },
+    {
+      "path": "target/process/H-python-config-includes.json",
+      "sha256": "9fcc0bb1e776257db55478dae5283d20e57db5e369871dd5391f63b2a4e0c7e9",
+      "size_bytes": 462
+    },
+    {
+      "path": "target/process/H-python-config-ldflags.json",
+      "sha256": "3171c2b4bffc4f93fd66bb53dc1a3eb7cc6a30ebf1ae52a046024c99e14863b8",
+      "size_bytes": 259
+    },
+    {
+      "path": "target/process/H-python-config-libs.json",
+      "sha256": "f2d4bffdc01347d67de8d3d71e08f7449ce874aef87169fa7dac67fda19f4dd7",
+      "size_bytes": 253
+    },
+    {
+      "path": "target/process/H-python-config-prefix.json",
+      "sha256": "30754cc302ff7580419374c702135a50c9f06199a3128c327972cad29b1a69aa",
+      "size_bytes": 329
+    },
+    {
+      "path": "target/process/H-system-find.json",
+      "sha256": "469bc496ccbc3c0746828ca558f244b6765a35a2449adc50560639f8a192c134",
+      "size_bytes": 543
+    },
+    {
+      "path": "target/process/H-system-venv-identity.json",
+      "sha256": "6407253ba911ece0dcf64adb087451ef7f4f66aeed01a5d1135cfc8d4a8c7178",
+      "size_bytes": 1662
+    },
+    {
+      "path": "target/process/H-system-venv.json",
+      "sha256": "9dd2abaf1e02027f219d24234f48cb9c43425353a38a757c7c9c2333a2a479b2",
+      "size_bytes": 674
+    },
+    {
+      "path": "target/process/H-wheel-build.json",
+      "sha256": "d74d62d019b26982401d2fd89590599fbab7381d412426dc3b6e73207534084e",
+      "size_bytes": 1268
+    },
+    {
+      "path": "target/process/H-wheel-explicit-normalization-import.json",
+      "sha256": "e11e5fb8c8ca8c1b9ce32aa250e7c95127c39a3dcd3b77a51988bb72ab9654d0",
+      "size_bytes": 553
+    },
+    {
+      "path": "target/process/H-wheel-explicit-rpath-normalization.json",
+      "sha256": "12dc067e297fe9e7e83e9d5545027139f2329b25e489aa5911ed2e79a6fd7a47",
+      "size_bytes": 304
+    },
+    {
+      "path": "target/process/H-wheel-import.json",
+      "sha256": "6b61f1d341efaf46e7dffb624777acd03e70393d63c6701bb406385656981122",
+      "size_bytes": 288
+    },
+    {
+      "path": "target/process/H-wheel-install.json",
+      "sha256": "8001f5be4ccfb32eaf0c1add7783e72dd8ada92549701a55d4905505d14c4902",
+      "size_bytes": 626
+    },
+    {
+      "path": "target/process/H-wheel-setuptools.json",
+      "sha256": "eb37fb5314a0c4051f46c4778937ec2be7344a1735df43823a51af2014491865",
+      "size_bytes": 693
+    },
+    {
+      "path": "target/process/H-wheel-venv.json",
+      "sha256": "8d5372c6d8c3cc7e59b81343458917c36c3d4205d8c9fa52cfd0490f7ee20236",
+      "size_bytes": 328
+    },
+    {
+      "path": "target/process/M-direct-identity.json",
+      "sha256": "6779b757b1f2e37806e4c0fd176ccb03c5ce2444f9aed844a0d1478bd7bcd348",
+      "size_bytes": 2584
+    },
+    {
+      "path": "target/process/M-managed-find.json",
+      "sha256": "d358f8c9e2d39260f8af6516ea9423315b31f402727b50efbaec3306cc7d5591",
+      "size_bytes": 572
+    },
+    {
+      "path": "target/process/M-managed-identity.json",
+      "sha256": "53585fa9264bbe662d6358b0dcc82958cb7ee53f632f7a382f50d2c5ea9759e1",
+      "size_bytes": 2849
+    },
+    {
+      "path": "target/process/M-managed-install.json",
+      "sha256": "2b9c2ba00c5fa65a68311baa43f6ab36511e12f57da6d7106dede7f9e130e228",
+      "size_bytes": 744
+    },
+    {
+      "path": "target/process/M-managed-reinstall.json",
+      "sha256": "83578e150fa27b77523efbd4eff50e8b37aef4501cb52aee4b543f6e782b2499",
+      "size_bytes": 604
+    },
+    {
+      "path": "target/process/M-managed-uninstall.json",
+      "sha256": "727945d0550c36fea84dec052f5515f0f8b9ca5523a991cb4bb7eddff2c9733f",
+      "size_bytes": 500
+    },
+    {
+      "path": "target/process/M-managed-venv-identity.json",
+      "sha256": "3228f1e69803e8a7a9991cc55fd6eac71850c31853487fcf2de8aee92c08e698",
+      "size_bytes": 2759
+    },
+    {
+      "path": "target/process/M-managed-venv.json",
+      "sha256": "6cdb459bd5a2c5c435f78dc005741f1108fa24f486d7745ca4e76c872e05eb8b",
+      "size_bytes": 536
+    },
+    {
+      "path": "target/process/M-pkg-config.json",
+      "sha256": "b865d2adcfe5ff760ef5a8684dfc6df07c28364ac6debf0086fddd70b04b5109",
+      "size_bytes": 408
+    },
+    {
+      "path": "target/process/M-python-config-cflags.json",
+      "sha256": "fde07d7623961d5530928b93619c24c204cb3ef0682dd532853dc367d401e5e0",
+      "size_bytes": 562
+    },
+    {
+      "path": "target/process/M-python-config-configdir.json",
+      "sha256": "5e3c3e1ac7564dff8b705493bd3b3acc101b50aac6f287e95034252f37894ff7",
+      "size_bytes": 384
+    },
+    {
+      "path": "target/process/M-python-config-extension-suffix.json",
+      "sha256": "914773880aea7e2d807d6c62697873a061ab784d9f5512ebf646ea52946bce8f",
+      "size_bytes": 300
+    },
+    {
+      "path": "target/process/M-python-config-includes.json",
+      "sha256": "5ce906692d9fb9ae98983df8e67f7b82b383b7c914a303bb14a7b8f2c410e82f",
+      "size_bytes": 462
+    },
+    {
+      "path": "target/process/M-python-config-ldflags.json",
+      "sha256": "d54722fc2b4d41d6b931d857cb63233f09ec5bf5403e2fdbc9304eeef989a921",
+      "size_bytes": 259
+    },
+    {
+      "path": "target/process/M-python-config-libs.json",
+      "sha256": "dcadb525a67faef42f4050a3d5c83838ba5450b1c5a9986749ab076b81bfc7ba",
+      "size_bytes": 253
+    },
+    {
+      "path": "target/process/M-python-config-prefix.json",
+      "sha256": "c55bf94dcc6c97a479d4afda557ff3352fb803e226bed8e2f5fb96bea9ba8832",
+      "size_bytes": 329
+    },
+    {
+      "path": "target/process/M-system-find.json",
+      "sha256": "c04dfae115af6d2c9862c37b888bf52d09fbed9a4c27def2d55cf57d5c79b5e1",
+      "size_bytes": 543
+    },
+    {
+      "path": "target/process/M-system-venv-identity.json",
+      "sha256": "b45d389e6c2a90aa0b61478c57b98d190756413737b371465ee2c265fe8d5e25",
+      "size_bytes": 2578
+    },
+    {
+      "path": "target/process/M-system-venv.json",
+      "sha256": "6504a2e52e4adf39ef903f87d83df4943f93abf757e3427af6ca910de12c568d",
+      "size_bytes": 674
+    },
+    {
+      "path": "target/process/M-wheel-build.json",
+      "sha256": "0b5f383e1fde09ec3058bb99854e2040cd21af3c3a5ea59ec0391e957ec7f2d5",
+      "size_bytes": 1268
+    },
+    {
+      "path": "target/process/M-wheel-explicit-normalization-import.json",
+      "sha256": "1770ce618d11b922b8728bc7a2883a1e6aa21492cf46f97961fd74e4086c0478",
+      "size_bytes": 553
+    },
+    {
+      "path": "target/process/M-wheel-explicit-rpath-normalization.json",
+      "sha256": "8aa1972e026c373ba254549a7a603ac2ffef692da221d82622ee8028eb6a266c",
+      "size_bytes": 304
+    },
+    {
+      "path": "target/process/M-wheel-import.json",
+      "sha256": "649fc87d4a7785c93b9215b258d2a8674d3c490c91a0aa2baf04456666486e10",
+      "size_bytes": 288
+    },
+    {
+      "path": "target/process/M-wheel-install.json",
+      "sha256": "24114b8e038b6317639c16fb2a905664c9c3e6e283602020122af521eff6431a",
+      "size_bytes": 626
+    },
+    {
+      "path": "target/process/M-wheel-setuptools.json",
+      "sha256": "1ed55cc49a7d741bdadf47107e506b18205e890876388f39d3d70c5c84e5e582",
+      "size_bytes": 693
+    },
+    {
+      "path": "target/process/M-wheel-venv.json",
+      "sha256": "b785780fd0b28420727c2c1909864ed36578b38b18247d765a1c2512fb03b04f",
+      "size_bytes": 328
+    },
+    {
+      "path": "target/process/U-direct-identity.json",
+      "sha256": "445f105786f974c04911353840d7db48fe528125524936d0ee26bcb639000c5e",
+      "size_bytes": 2703
+    },
+    {
+      "path": "target/process/U-managed-find.json",
+      "sha256": "bbeb86d1e40c0a9c7e5a29b46d06fe400e82c8c04e48051cb0c3b80da9fb13aa",
+      "size_bytes": 572
+    },
+    {
+      "path": "target/process/U-managed-identity.json",
+      "sha256": "e18a116115a0c0e5fee12c776858c28d5f1ac650c18feaf78593a01f3fab2bb8",
+      "size_bytes": 2849
+    },
+    {
+      "path": "target/process/U-managed-install.json",
+      "sha256": "3d01a8afc210649920c6e7fafe356e16984382ffa42432ba4a8d7a085cdf488e",
+      "size_bytes": 744
+    },
+    {
+      "path": "target/process/U-managed-reinstall.json",
+      "sha256": "c3977ae9d5a1f33d6daeb5436ed755dcac4b6d75ba5c2dc7b7d1a39dddd7bf37",
+      "size_bytes": 604
+    },
+    {
+      "path": "target/process/U-managed-uninstall.json",
+      "sha256": "6888e1e3aefae1a8029b2f6167f9f14329e038383dca853cddf3395704e856c4",
+      "size_bytes": 500
+    },
+    {
+      "path": "target/process/U-managed-venv-identity.json",
+      "sha256": "73a3289e5bf73b8740462e1ff399a7f6a201b7494f44a15c9a5d672e570b88aa",
+      "size_bytes": 2759
+    },
+    {
+      "path": "target/process/U-managed-venv.json",
+      "sha256": "b159fae7f3e260e6c0434a324a1d1ecba8b127bbe23ac84471beba54132cd347",
+      "size_bytes": 536
+    },
+    {
+      "path": "target/process/U-pkg-config.json",
+      "sha256": "4e8d09d9f610ee061a976a879d1bbc91eaa5adce6e87512a876543e257c13b4b",
+      "size_bytes": 230
+    },
+    {
+      "path": "target/process/U-python-config-cflags.json",
+      "sha256": "787b9bb585bd3d73c043f45c4bf17c0294ecb6f1aba4ae29437c637a4345089e",
+      "size_bytes": 663
+    },
+    {
+      "path": "target/process/U-python-config-configdir.json",
+      "sha256": "0604e439c26a28b6c2a028e969cbfdc8d665e99937e2480b96794ea7f9f4e90b",
+      "size_bytes": 308
+    },
+    {
+      "path": "target/process/U-python-config-extension-suffix.json",
+      "sha256": "f0c2a64c2a46fe90ee43594ecc2f13c80607119afb8408be7e45e0e8e6f59957",
+      "size_bytes": 300
+    },
+    {
+      "path": "target/process/U-python-config-includes.json",
+      "sha256": "8445af163974125dd7b368b5121c8d82fd5a33f36febe4280a1d33b7df052ebe",
+      "size_bytes": 462
+    },
+    {
+      "path": "target/process/U-python-config-ldflags.json",
+      "sha256": "0cb8444ffd493a7ea2e48232e1a2c1f63f784fe5cb40ae9656a5aac40e333935",
+      "size_bytes": 276
+    },
+    {
+      "path": "target/process/U-python-config-libs.json",
+      "sha256": "df01e1ed546bc8cf33739425202121ed19231ddab95888a570f42e46eaf0c9d8",
+      "size_bytes": 270
+    },
+    {
+      "path": "target/process/U-python-config-prefix.json",
+      "sha256": "320107d4e05a9b15821fa9c22e3d36a9563a76f446cfd3d3fa690603fc7ae18b",
+      "size_bytes": 329
+    },
+    {
+      "path": "target/process/U-system-find.json",
+      "sha256": "eadc19fdf3151f44b632903051386138abe4377f9a883bc1f7376440418fcf26",
+      "size_bytes": 543
+    },
+    {
+      "path": "target/process/U-system-venv-identity.json",
+      "sha256": "0d495c54dc6cac23ca891a27ed0d71c9417f18b9c118686381d2304e11a3d734",
+      "size_bytes": 2697
+    },
+    {
+      "path": "target/process/U-system-venv.json",
+      "sha256": "fea39aa96a1cd5b3e5dd3df941c0f4e2249a86f971619238d08a5ab8ef51feae",
+      "size_bytes": 674
+    },
+    {
+      "path": "target/process/U-wheel-build.json",
+      "sha256": "4391f5f230a73d7ac3c8d77b4d6fec61e5ee45c7626a21bb6de62ecb07c31b60",
+      "size_bytes": 2253
+    },
+    {
+      "path": "target/process/U-wheel-setuptools.json",
+      "sha256": "d35de7a8182a63845bc5c6ea37344ffd224d95e890f996698af3d766274539df",
+      "size_bytes": 693
+    },
+    {
+      "path": "target/process/U-wheel-venv.json",
+      "sha256": "fd21ff8758ae666e9ca9d83cb7126a141f407b703c8e16293a27f642ce6129a0",
+      "size_bytes": 328
+    },
+    {
+      "path": "target/profiles/profile-manifest.json",
+      "sha256": "1e2d565f145434f1ec800d18cebcfbcf1c2c4564d5434591a9f263fcc72c8644",
+      "size_bytes": 7301
+    },
+    {
+      "path": "target/profiles/rb3-sysconfig-profile-C.tar.gz",
+      "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+      "size_bytes": 23841726
+    },
+    {
+      "path": "target/profiles/rb3-sysconfig-profile-H.tar.gz",
+      "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+      "size_bytes": 23841713
+    },
+    {
+      "path": "target/profiles/rb3-sysconfig-profile-M.tar.gz",
+      "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+      "size_bytes": 23843530
+    },
+    {
+      "path": "target/profiles/rb3-sysconfig-profile-U.tar.gz",
+      "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+      "size_bytes": 23842209
+    },
+    {
+      "path": "target/protected-state.json",
+      "sha256": "17265b0e4149cc68992c5e2b9f00fd7dc78428f01a6711ff3ba7a957fffd45f8",
+      "size_bytes": 70
+    },
+    {
+      "path": "target/rb3-sysconfig-boundary-probe-result.json",
+      "sha256": "2f78c0540c0678d2ce1bbff8dec70d921d84197d1a7b4de67a4f29be4a912e54",
+      "size_bytes": 26939
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "patchelf",
+    "--page-size",
+    "16384",
+    "--remove-rpath",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/normalized-extension.so"
+  ],
+  "name": "M-wheel-explicit-rpath-normalization",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

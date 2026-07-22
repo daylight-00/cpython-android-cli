@@ -1,0 +1,628 @@
+{
+  "checks": {
+    "all_four_profiles_executed": true,
+    "current_control_reproduces_managed_failure": true,
+    "family_valid": true,
+    "frozen_family_unchanged": true,
+    "header_profile_managed_install_attempted": true,
+    "profile_assembly_reproducible": true,
+    "profile_identities_match_host_assembly": true,
+    "real_managed_root_unchanged": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "on_device_sdk_final": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "profiles": [
+    {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-C.tar.gz",
+        "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+        "size_bytes": 23841726
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": false,
+        "managed_reinstall_noop": false,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration normalized for relocatable Android consumers",
+      "identity": {
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python",
+        "build_gnu_type": "aarch64-linux-android",
+        "cc": "clang",
+        "config_args": "--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived",
+        "executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/bin/python3.14",
+        "implementation": "CPython",
+        "multiarch": "aarch64-linux-android",
+        "platform": "android-24-arm64_v8a",
+        "prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python",
+        "real_executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/bin/python3.14",
+        "soabi": "cpython-314-aarch64-linux-android",
+        "version": "3.14.6"
+      },
+      "managed": {
+        "find_returncode": 0,
+        "find_stderr": "",
+        "find_stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/managed/cpython-3.14.6-linux-aarch64-none/bin/python3.14\n",
+        "identity_returncode": 0,
+        "install_returncode": 2,
+        "install_stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nerror: `_sysconfigdata_` is missing a header comment\n",
+        "install_stdout": "",
+        "reinstall_returncode": 2,
+        "uninstall_returncode": 0,
+        "venv_identity_returncode": 0,
+        "venv_returncode": 0
+      },
+      "pkg_config_output": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/lib/pkgconfig/../../lib"
+      },
+      "profile": "C",
+      "python_config_outputs": [
+        {
+          "option": "--prefix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python"
+        },
+        {
+          "option": "--includes",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/include/python3.14"
+        },
+        {
+          "option": "--cflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        {
+          "option": "--libs",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        {
+          "option": "--ldflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        {
+          "option": "--extension-suffix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        {
+          "option": "--configdir",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-C/moved/python/lib/python3.14/config-3.14-aarch64-linux-android"
+        }
+      ],
+      "wheel": {
+        "build_returncode": 0,
+        "explicit_normalization": {
+          "after": {
+            "all_load_alignments_16k": true,
+            "load_alignments": [
+              16384,
+              16384,
+              16384
+            ],
+            "needed": [
+              "libpython3.14.so",
+              "libdl.so",
+              "libc.so"
+            ],
+            "returncode": 0,
+            "rpath": [],
+            "runpath": [],
+            "sha256": "7577591d773b8e6b8725596865eef5f0fcbe071aede6d79305ec6523878fc540",
+            "size_bytes": 6144
+          },
+          "import_returncode": 0,
+          "required": true,
+          "returncode": 0
+        },
+        "extension_count": 1,
+        "pass": true,
+        "raw_extension": {
+          "all_load_alignments_16k": true,
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "returncode": 0,
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ],
+          "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+          "size_bytes": 6144
+        },
+        "raw_policy_clean": false,
+        "setuptools_returncode": 0,
+        "venv_returncode": 0,
+        "wheel": {
+          "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+          "sha256": "f8ac3f7629a921e3e71ef422fbdf3dd3faad66164446499ec0dfa12057876c18",
+          "size_bytes": 3239
+        },
+        "wheel_count": 1,
+        "wheel_import_returncode": 0,
+        "wheel_install_returncode": 0
+      }
+    },
+    {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-H.tar.gz",
+        "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+        "size_bytes": 23841713
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module",
+      "identity": {
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python",
+        "build_gnu_type": "aarch64-linux-android",
+        "cc": "clang",
+        "config_args": "--host=aarch64-linux-android --enable-shared --without-static-libpython --without-ensurepip consumer-normalized-binary-derived",
+        "executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/bin/python3.14",
+        "implementation": "CPython",
+        "multiarch": "aarch64-linux-android",
+        "platform": "android-24-arm64_v8a",
+        "prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python",
+        "real_executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/bin/python3.14",
+        "soabi": "cpython-314-aarch64-linux-android",
+        "version": "3.14.6"
+      },
+      "managed": {
+        "find_returncode": 0,
+        "find_stderr": "",
+        "find_stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/managed/cpython-3.14.6-linux-aarch64-none/bin/python3.14\n",
+        "identity_returncode": 0,
+        "install_returncode": 0,
+        "install_stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nInstalled Python 3.14.6 in 1.80s\n + cpython-3.14.6-linux-aarch64-none\n",
+        "install_stdout": "",
+        "reinstall_returncode": 0,
+        "uninstall_returncode": 0,
+        "venv_identity_returncode": 0,
+        "venv_returncode": 0
+      },
+      "pkg_config_output": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/lib/pkgconfig/../../lib"
+      },
+      "profile": "H",
+      "python_config_outputs": [
+        {
+          "option": "--prefix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python"
+        },
+        {
+          "option": "--includes",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/include/python3.14"
+        },
+        {
+          "option": "--cflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        {
+          "option": "--libs",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        {
+          "option": "--ldflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -lm -llog"
+        },
+        {
+          "option": "--extension-suffix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        {
+          "option": "--configdir",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-H/moved/python/lib/python3.14/config-3.14-aarch64-linux-android"
+        }
+      ],
+      "wheel": {
+        "build_returncode": 0,
+        "explicit_normalization": {
+          "after": {
+            "all_load_alignments_16k": true,
+            "load_alignments": [
+              16384,
+              16384,
+              16384
+            ],
+            "needed": [
+              "libpython3.14.so",
+              "libdl.so",
+              "libc.so"
+            ],
+            "returncode": 0,
+            "rpath": [],
+            "runpath": [],
+            "sha256": "7577591d773b8e6b8725596865eef5f0fcbe071aede6d79305ec6523878fc540",
+            "size_bytes": 6144
+          },
+          "import_returncode": 0,
+          "required": true,
+          "returncode": 0
+        },
+        "extension_count": 1,
+        "pass": true,
+        "raw_extension": {
+          "all_load_alignments_16k": true,
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "returncode": 0,
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ],
+          "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+          "size_bytes": 6144
+        },
+        "raw_policy_clean": false,
+        "setuptools_returncode": 0,
+        "venv_returncode": 0,
+        "wheel": {
+          "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+          "sha256": "7d6ca3560f6844c204d8646d8eb8cf0bfcf1989bb97f01b5632bb274c5b1ecc6",
+          "size_bytes": 3239
+        },
+        "wheel_count": 1,
+        "wheel_import_returncode": 0,
+        "wheel_install_returncode": 0
+      }
+    },
+    {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-U.tar.gz",
+        "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+        "size_bytes": 23842209
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": false,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": false,
+        "raw_native_wheel_import": false,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module",
+      "identity": {
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python",
+        "build_gnu_type": "aarch64-apple-darwin24.6.0",
+        "cc": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang",
+        "config_args": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'",
+        "executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/bin/python3.14",
+        "implementation": "CPython",
+        "multiarch": "aarch64-linux-android",
+        "platform": "android-24-arm64_v8a",
+        "prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python",
+        "real_executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/bin/python3.14",
+        "soabi": "cpython-314-aarch64-linux-android",
+        "version": "3.14.6"
+      },
+      "managed": {
+        "find_returncode": 0,
+        "find_stderr": "",
+        "find_stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/managed/cpython-3.14.6-linux-aarch64-none/bin/python3.14\n",
+        "identity_returncode": 0,
+        "install_returncode": 0,
+        "install_stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nInstalled Python 3.14.6 in 1.93s\n + cpython-3.14.6-linux-aarch64-none\n",
+        "install_stdout": "",
+        "reinstall_returncode": 0,
+        "uninstall_returncode": 0,
+        "venv_identity_returncode": 0,
+        "venv_returncode": 0
+      },
+      "pkg_config_output": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/usr/local/include/python3.14 -L/usr/local/lib $(BLDLIBRARY)"
+      },
+      "profile": "U",
+      "python_config_outputs": [
+        {
+          "option": "--prefix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python"
+        },
+        {
+          "option": "--includes",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/include/python3.14"
+        },
+        {
+          "option": "--cflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include"
+        },
+        {
+          "option": "--libs",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-L. -lpython3.14 -ldl -llog -lm"
+        },
+        {
+          "option": "--ldflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-L. -lpython3.14 -ldl -llog -lm"
+        },
+        {
+          "option": "--extension-suffix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        {
+          "option": "--configdir",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/usr/local/lib/python3.14/config-3.14-aarch64-linux-android"
+        }
+      ],
+      "wheel": {
+        "build_returncode": 1,
+        "pass": false,
+        "raw_policy_clean": false,
+        "setuptools_returncode": 0,
+        "venv_returncode": 0,
+        "wheel_count": 0
+      }
+    },
+    {
+      "archive": {
+        "filename": "rb3-sysconfig-profile-M.tar.gz",
+        "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+        "size_bytes": 23843530
+      },
+      "checks": {
+        "direct_android_identity": true,
+        "explicit_normalized_extension_import": true,
+        "managed_find": true,
+        "managed_identity": true,
+        "managed_install": true,
+        "managed_reinstall_noop": true,
+        "managed_uninstall": true,
+        "managed_venv": true,
+        "pkg_config": true,
+        "python_config": true,
+        "raw_native_wheel_build": true,
+        "raw_native_wheel_import": true,
+        "raw_native_wheel_policy_clean": false,
+        "system_find": true,
+        "system_venv": true
+      },
+      "header": "# system configuration generated and used by the sysconfig module",
+      "identity": {
+        "base_prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python",
+        "build_gnu_type": "aarch64-apple-darwin24.6.0",
+        "cc": "clang",
+        "config_args": "'--host=aarch64-linux-android' '--build=aarch64-apple-darwin24.6.0' '--with-build-python=/Users/runner/work/release-tools/release-tools/cross-build/build/python.exe' '--without-ensurepip' '--enable-shared' '--without-static-libpython' '--with-openssl=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix' 'build_alias=aarch64-apple-darwin24.6.0' 'host_alias=aarch64-linux-android' 'PKG_CONFIG=pkg-config --define-prefix' 'PKG_CONFIG_LIBDIR=/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib/pkgconfig' 'CC=/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' 'CFLAGS=-D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include' 'LDFLAGS=-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,--no-undefined -lm -L/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/lib'",
+        "executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/bin/python3.14",
+        "implementation": "CPython",
+        "multiarch": "aarch64-linux-android",
+        "platform": "android-24-arm64_v8a",
+        "prefix": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python",
+        "real_executable": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/bin/python3.14",
+        "soabi": "cpython-314-aarch64-linux-android",
+        "version": "3.14.6"
+      },
+      "managed": {
+        "find_returncode": 0,
+        "find_stderr": "",
+        "find_stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/managed/cpython-3.14.6-linux-aarch64-none/bin/python3.14\n",
+        "identity_returncode": 0,
+        "install_returncode": 0,
+        "install_stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nInstalled Python 3.14.6 in 4.68s\n + cpython-3.14.6-linux-aarch64-none\n",
+        "install_stdout": "",
+        "reinstall_returncode": 0,
+        "uninstall_returncode": 0,
+        "venv_identity_returncode": 0,
+        "venv_returncode": 0
+      },
+      "pkg_config_output": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/lib/pkgconfig/../../include/python3.14 -L/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/lib/pkgconfig/../../lib"
+      },
+      "profile": "M",
+      "python_config_outputs": [
+        {
+          "option": "--prefix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python"
+        },
+        {
+          "option": "--includes",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/include/python3.14"
+        },
+        {
+          "option": "--cflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/include/python3.14 -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/include/python3.14 -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO"
+        },
+        {
+          "option": "--libs",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -llog -lm"
+        },
+        {
+          "option": "--ldflags",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "-ldl -llog -lm"
+        },
+        {
+          "option": "--extension-suffix",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ".cpython-314-aarch64-linux-android.so"
+        },
+        {
+          "option": "--configdir",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/lib/python3.14/config-3.14-aarch64-linux-android"
+        }
+      ],
+      "wheel": {
+        "build_returncode": 0,
+        "explicit_normalization": {
+          "after": {
+            "all_load_alignments_16k": true,
+            "load_alignments": [
+              16384,
+              16384,
+              16384
+            ],
+            "needed": [
+              "libpython3.14.so",
+              "libdl.so",
+              "libc.so"
+            ],
+            "returncode": 0,
+            "rpath": [],
+            "runpath": [],
+            "sha256": "7577591d773b8e6b8725596865eef5f0fcbe071aede6d79305ec6523878fc540",
+            "size_bytes": 6144
+          },
+          "import_returncode": 0,
+          "required": true,
+          "returncode": 0
+        },
+        "extension_count": 1,
+        "pass": true,
+        "raw_extension": {
+          "all_load_alignments_16k": true,
+          "load_alignments": [
+            16384,
+            16384,
+            16384
+          ],
+          "needed": [
+            "libpython3.14.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "returncode": 0,
+          "rpath": [],
+          "runpath": [
+            "/data/data/com.termux/files/usr/bin/../../usr/lib"
+          ],
+          "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+          "size_bytes": 6144
+        },
+        "raw_policy_clean": false,
+        "setuptools_returncode": 0,
+        "venv_returncode": 0,
+        "wheel": {
+          "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+          "sha256": "f23721053ffa4a5d97c0f05681106bdebf4f757f23a63f47ce48d1f1db644746",
+          "size_bytes": 3239
+        },
+        "wheel_count": 1,
+        "wheel_import_returncode": 0,
+        "wheel_install_returncode": 0
+      }
+    }
+  ],
+  "result_kind": "epoch3-rb3-sysconfig-and-on-device-sdk-profile-probe",
+  "schema_version": 1,
+  "selection": {
+    "reason": "profile selection requires owner review of complete comparative evidence",
+    "selected": false
+  },
+  "uv": {
+    "sha256": "f624c48a72b2e2e307043f339eb3ff6dbdfa0207be2053d2e5bc071709289495",
+    "size_bytes": 52827648,
+    "version": "uv 0.11.28 (aarch64-linux-android)"
+  }
+}

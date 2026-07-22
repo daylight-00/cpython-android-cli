@@ -1,0 +1,95 @@
+{
+  "audit_kind": "epoch3-rb3-sysconfig-and-on-device-sdk-profile-probe-independent-audit",
+  "checks": {
+    "canonical_bytes_unchanged": true,
+    "control_reproduces_header_failure": true,
+    "experiment_checks_all_true": true,
+    "family_not_superseded": true,
+    "profile_archives_match_host_assembly": true,
+    "profile_order_exact": true,
+    "profile_summaries_complete": true,
+    "protected_family_unchanged": true,
+    "protected_real_managed_root_unchanged": true,
+    "publication_withheld": true,
+    "rb3_open": true,
+    "required_process_logs_present": true,
+    "result_pass": true,
+    "sdk_not_final": true,
+    "selectability_withheld": true,
+    "selection_withheld": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "profile_selected": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "missing_process_logs": [],
+  "pass": true,
+  "profile_archive_checks": {
+    "C": {
+      "actual": {
+        "exists": true,
+        "header": "# system configuration normalized for relocatable Android consumers",
+        "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+        "size_bytes": 23841726
+      },
+      "expected": {
+        "filename": "rb3-sysconfig-profile-C.tar.gz",
+        "header": "# system configuration normalized for relocatable Android consumers",
+        "sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+        "size_bytes": 23841726
+      },
+      "pass": true
+    },
+    "H": {
+      "actual": {
+        "exists": true,
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+        "size_bytes": 23841713
+      },
+      "expected": {
+        "filename": "rb3-sysconfig-profile-H.tar.gz",
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "4e8d4ae1292d729c629c3a8044ed7acb601bfe1493d9609f9c462862bd50686f",
+        "size_bytes": 23841713
+      },
+      "pass": true
+    },
+    "M": {
+      "actual": {
+        "exists": true,
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+        "size_bytes": 23843530
+      },
+      "expected": {
+        "filename": "rb3-sysconfig-profile-M.tar.gz",
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+        "size_bytes": 23843530
+      },
+      "pass": true
+    },
+    "U": {
+      "actual": {
+        "exists": true,
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+        "size_bytes": 23842209
+      },
+      "expected": {
+        "filename": "rb3-sysconfig-profile-U.tar.gz",
+        "header": "# system configuration generated and used by the sysconfig module",
+        "sha256": "e6460a41a4154c45be0bbd7ca6b70426d83221d487677c77018a1c1059aaeb55",
+        "size_bytes": 23842209
+      },
+      "pass": true
+    }
+  },
+  "schema_version": 1
+}

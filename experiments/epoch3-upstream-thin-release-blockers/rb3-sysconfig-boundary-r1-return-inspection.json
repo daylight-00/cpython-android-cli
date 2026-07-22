@@ -1,0 +1,63 @@
+{
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "canonical_artifact_successor_started": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "sysconfig_profile_selected": true
+  },
+  "comparison": {
+    "C": "control; runtime and raw native build pass; uv managed install fails on noncanonical project header; broad provenance replacement retained",
+    "H": "header-only repair; all consumer paths pass; rejected as final because broad provenance replacement remains",
+    "M": "upstream-preserved minimal overlay; runtime, uv system/managed, python-config, pkg-config, native build/install/import all pass",
+    "U": "upstream metadata; runtime and uv managed paths pass; native wheel build fails on producer macOS NDK compiler path"
+  },
+  "inspection_kind": "epoch3-rb3-sysconfig-boundary-r1-return-inspection",
+  "receipt": {
+    "independent_audit_pass": true,
+    "post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "post_tree": "acbac663fdc805980709cf1500577567407a3ccd",
+    "remote_post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "self_index_exact": true
+  },
+  "rejected_profiles": {
+    "C": "uv managed install failure and noncanonical header",
+    "H": "successful but retains overbroad synthetic producer metadata replacement",
+    "U": "native wheel build uses unavailable producer NDK compiler path"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-sysconfig-boundary-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 133,
+    "sha256": "8174ba88219d38933bd1b5d20d3c8e858ff81edd9250f58097a44825d6774169",
+    "size_bytes": 94449607
+  },
+  "schema_version": 1,
+  "selected_profile": {
+    "archive": {
+      "filename": "rb3-sysconfig-profile-M.tar.gz",
+      "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+      "size_bytes": 23843530
+    },
+    "id": "M",
+    "raw_wheel_boundary": {
+      "explicit_normalization_required": true,
+      "observed_runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ],
+      "policy_clean": false,
+      "post_normalization_import_passed": true
+    },
+    "selection_basis": [
+      "preserves canonical CPython sysconfig header",
+      "preserves producer CONFIG_ARGS and BUILD_GNU_TYPE",
+      "preserves upstream target identity fields",
+      "overlays only measured consumer paths and Android on-device compiler policy",
+      "passes direct runtime, uv system, uv managed, python-config, pkg-config, and native wheel build/import probes"
+    ]
+  },
+  "status": "accepted-pass-select-profile-M-successor-full-required"
+}

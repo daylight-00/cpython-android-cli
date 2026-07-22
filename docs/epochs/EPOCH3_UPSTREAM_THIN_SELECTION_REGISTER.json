@@ -61,11 +61,12 @@
       "reason": "A separate runtime-only flavor is not required for Astral archive parity and would create a project-specific product class."
     },
     {
-      "decision": "Retain upstream headers, shared libpython, pkg-config, and normalized sysconfig as a bounded on-device extension SDK inside the normal install tree.",
-      "disposition": "adopt-with-redesign",
+      "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
+      "decision": "Retain upstream headers, shared libpython, Python pkg-config, and producer metadata. Apply the selected profile M minimal consumer/on-device-toolchain overlay inside the normal install tree; portable wheel ELF cleanup is a separate explicit product boundary.",
+      "disposition": "adopt-with-bounded-android-adaptation",
       "id": "SEL-06",
       "item": "on-device-native-extension-sdk",
-      "non_claim": "No static relinking, custom built-ins, or dependency rebuild support."
+      "non_claim": "No static relinking, custom built-ins, dependency rebuild support, cross-build NDK SDK, or claim that ordinary raw native wheels are portable without explicit ELF normalization."
     },
     {
       "decision": "Do not bundle an NDK, sysroot, producer object tree, or complete cross toolchain in upstream-thin.",

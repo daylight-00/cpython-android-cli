@@ -70,26 +70,26 @@
       "completion_role": "astral-compatible-consumer-and-parser-qualification",
       "evidence": {
         "artifact_bytes_changed": false,
-        "managed_install_failed_on_project_header": true,
-        "profile_selected": false,
+        "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
+        "old_family_superseded": false,
+        "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
         "r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
-        "review_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
-        "static_review": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json",
-        "system_consumer_passed": true
+        "raw_wheel_policy_clean": false,
+        "selected_profile": "M"
       },
       "id": "RB-3",
       "lane": "local",
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
-        "required_input": "exact frozen family, exact Android uv, C/H/U/M profile probe",
-        "required_output": "complete comparative runtime, uv, metadata, raw native-wheel, ELF, reproducibility, and protected-state evidence",
-        "successor_after_accepted_probe": "select-minimal-truthful-profile-or-revise-on-device-sdk-boundary"
+        "required_input": "exact official archive, accepted launcher, selected profile M implementation, exact Android uv",
+        "required_output": "deterministic successor full r5 candidate with static, runtime, uv system/managed, SDK, raw-wheel ELF, protected-state, and independent-audit evidence",
+        "successor_after_accepted_probe": "derive successor install_only and stripped, then legally integrate and rebind RB-1/RB-2 evidence before RB-3 closure"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-sysconfig-and-sdk-boundary-review"
+      "status": "in-progress-profile-M-selected-successor-full-pending"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",
@@ -147,7 +147,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "run-rb3-sysconfig-and-on-device-sdk-boundary-profile-probe",
+  "next_bounded_action": "build-and-qualify-selected-profile-M-successor-full-r5",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

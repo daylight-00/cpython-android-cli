@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/wheel-venv/bin/python",
+    "-c",
+    "import hw_t_rb3_probe; assert hw_t_rb3_probe.value() == 3146"
+  ],
+  "name": "M-wheel-import",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

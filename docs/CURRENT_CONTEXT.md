@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 35
+> **State revision:** 36
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -63,6 +63,7 @@ status  in-progress
 30. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json) — frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority
 31. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json) — frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority
 32. [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json) — frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority
+33. [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json) — Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations.
 
 ## Blockers
 
@@ -88,11 +89,11 @@ status  in-progress
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
-- rb3-managed-install-failed-on-project-rendered-sysconfig-header
-- current-sysconfig-normalizer-overrides-producer-provenance-and-redundant-target-identity
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
 - on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal
-- rb3-c-h-u-m-target-profile-comparison-pending
-- sysconfig-profile-not-selected-and-frozen-artifacts-not-superseded
+- selected-profile-M-successor-full-r5-pending
+- frozen-predecessor-family-not-superseded
+- ordinary-native-wheel-inherits-Termux-toolchain-RUNPATH-and-requires-explicit-ELF-normalization-boundary
+- rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

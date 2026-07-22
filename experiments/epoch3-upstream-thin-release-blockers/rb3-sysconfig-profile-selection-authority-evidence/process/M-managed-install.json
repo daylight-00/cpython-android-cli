@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/bin/uv",
+    "python",
+    "install",
+    "cpython-3.14.6-linux-aarch64-none",
+    "--install-dir",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/managed",
+    "--no-bin",
+    "--python-downloads-json-url",
+    "file:///data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/catalog.json",
+    "--offline",
+    "--no-config",
+    "--color",
+    "never"
+  ],
+  "name": "M-managed-install",
+  "returncode": 0,
+  "stderr": "Downloading cpython-3.14.6-linux-aarch64-none (download) (22.7MiB)\n Downloaded cpython-3.14.6-linux-aarch64-none (download)\nInstalled Python 3.14.6 in 4.68s\n + cpython-3.14.6-linux-aarch64-none\n",
+  "stdout": ""
+}

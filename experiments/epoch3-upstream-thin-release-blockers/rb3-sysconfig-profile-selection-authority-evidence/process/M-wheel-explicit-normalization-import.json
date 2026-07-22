@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/moved/python/bin/python3.14",
+    "-c",
+    "import importlib.util,sys; p=sys.argv[1]; s=importlib.util.spec_from_file_location('hw_t_rb3_probe',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); assert m.value() == 3146",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/normalized-extension.so"
+  ],
+  "name": "M-wheel-explicit-normalization-import",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

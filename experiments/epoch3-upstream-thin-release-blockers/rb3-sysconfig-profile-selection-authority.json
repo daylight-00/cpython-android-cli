@@ -1,0 +1,70 @@
+{
+  "accepted_evidence": {
+    "independent_audit": "16/16",
+    "result_archive_sha256": "8174ba88219d38933bd1b5d20d3c8e858ff81edd9250f58097a44825d6774169",
+    "result_archive_size": 94449607,
+    "self_index_file_count": 133,
+    "target_probe_pass": true
+  },
+  "authority_kind": "epoch3-rb3-sysconfig-profile-M-selection",
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_artifact_bytes_changed": false,
+    "canonical_artifact_successor_started": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "sysconfig_profile_selected": true
+  },
+  "decision": {
+    "consumer_path_and_toolchain_overlay": "apply-only-measured-profile-M-fields",
+    "portable_wheel_elf_normalization": "separate-explicit-boundary-required",
+    "producer_config_args_and_build_gnu_type": "preserve",
+    "production_normalization_kind": "upstream-preserved-minimal-consumer-overlay",
+    "sysconfig_vars_json": "preserve-upstream-byte-exact",
+    "target_identity": "preserve-upstream"
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-sysconfig-boundary-r1-return.json": "cc6e4765041a83c85e57f4a96e7f6db5f03384d30049abd11304d8d4f3d6c145",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json": "4a5d0aa5db4de9c66431b7876f9e55027c25d463ea90c304b0132efec842cbc4",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/independent-audit.json": "4b61ffe17a984a896264aec318486b0342cd9eb01f6f72438de53727e95bdcb7",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-direct-identity.json": "6779b757b1f2e37806e4c0fd176ccb03c5ce2444f9aed844a0d1478bd7bcd348",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-find.json": "d358f8c9e2d39260f8af6516ea9423315b31f402727b50efbaec3306cc7d5591",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-identity.json": "53585fa9264bbe662d6358b0dcc82958cb7ee53f632f7a382f50d2c5ea9759e1",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-install.json": "2b9c2ba00c5fa65a68311baa43f6ab36511e12f57da6d7106dede7f9e130e228",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-reinstall.json": "83578e150fa27b77523efbd4eff50e8b37aef4501cb52aee4b543f6e782b2499",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-uninstall.json": "727945d0550c36fea84dec052f5515f0f8b9ca5523a991cb4bb7eddff2c9733f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-venv-identity.json": "3228f1e69803e8a7a9991cc55fd6eac71850c31853487fcf2de8aee92c08e698",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-managed-venv.json": "6cdb459bd5a2c5c435f78dc005741f1108fa24f486d7745ca4e76c872e05eb8b",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-wheel-build.json": "0b5f383e1fde09ec3058bb99854e2040cd21af3c3a5ea59ec0391e957ec7f2d5",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-wheel-explicit-normalization-import.json": "1770ce618d11b922b8728bc7a2883a1e6aa21492cf46f97961fd74e4086c0478",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-wheel-explicit-rpath-normalization.json": "8aa1972e026c373ba254549a7a603ac2ffef692da221d82622ee8028eb6a266c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-wheel-import.json": "649fc87d4a7785c93b9215b258d2a8674d3c490c91a0aa2baf04456666486e10",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/M-wheel-install.json": "24114b8e038b6317639c16fb2a905664c9c3e6e283602020122af521eff6431a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/process/U-wheel-build.json": "4391f5f230a73d7ac3c8d77b4d6fec61e5ee45c7626a21bb6de62ecb07c31b60",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/result-index.json": "6e9101bf46a171a2cb53d07d8419b423de849ad1523c3c54f6f7d47ba4a5472f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/summary.json": "7c74f3f7b6483e72f66ab3d00311cee86b808645d9a7a593502bf81343544bc9",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority-evidence/target-result.json": "2f78c0540c0678d2ce1bbff8dec70d921d84197d1a7b4de67a4f29be4a912e54"
+  },
+  "schema_version": 1,
+  "selected_profile": {
+    "canonical_header": "# system configuration generated and used by the sysconfig module",
+    "experimental_archive": {
+      "filename": "rb3-sysconfig-profile-M.tar.gz",
+      "sha256": "d08e63dab00a7b43994cd6f7788ee827dfedfeeaf9bf183f40c9d5ee30df6639",
+      "size_bytes": 23843530
+    },
+    "id": "M",
+    "name": "upstream-preserved-minimal-consumer-overlay",
+    "native_build_and_import_pass": true,
+    "preserved_producer": true,
+    "system_and_managed_uv_pass": true
+  },
+  "status": "profile-M-selected-successor-full-pending",
+  "successor_gate": {
+    "id": "RB-3/SUCCESSOR-FULL-M",
+    "old_family_status": "frozen-valid-not-superseded-until-successor-family-authority",
+    "required_output": "deterministic full r5 candidate produced from official input with selected profile M, structurally verified and Android-target-qualified"
+  }
+}

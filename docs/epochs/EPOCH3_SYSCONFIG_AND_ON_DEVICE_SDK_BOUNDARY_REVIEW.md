@@ -275,3 +275,56 @@ The evidence presently supports these statements:
 - a target profile comparison is required before choosing header-only repair, upstream restoration, minimal overlay, or SDK boundary redesign.
 
 No artifact byte, blocker closure, selectability claim, or publication claim changes until that experiment is accepted.
+
+## 10. Accepted target result and profile selection
+
+The C/H/U/M target probe completed successfully and returned a complete self-indexed result archive. The independent audit verified all four profile identities, protected-family invariance, and protected real managed-root invariance.
+
+The observed decision matrix is:
+
+| Profile | Runtime and uv | Native extension build | Producer truth | Decision |
+|---|---|---|---|---|
+| C | managed install fails on project header | passes | replaced by broad consumer profile | reject |
+| H | passes | passes | still replaced by broad consumer profile | reject as non-minimal |
+| U | passes | fails on unavailable macOS NDK compiler path | preserved | insufficient for local SDK |
+| M | passes | passes | preserved | **selected** |
+
+Profile M is selected because it preserves CPython's canonical header, upstream target identity, producer `CONFIG_ARGS`, producer `BUILD_GNU_TYPE`, and the upstream `_sysconfig_vars_` JSON while overlaying only measured consumer paths and the local Android compiler/linker entry points.
+
+The selection does not make the experimental M archive canonical. It authorizes a successor full build from the exact official input using the production implementation of the same semantic boundary.
+
+Machine authority:
+
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json`
+
+## 11. Separate portable-wheel boundary
+
+Every profile that could build the probe extension produced a raw ELF with the Termux toolchain RUNPATH:
+
+```text
+/data/data/com.termux/files/usr/bin/../../usr/lib
+```
+
+This is not evidence that profile M is incorrect. U, H, C, and M all exhibit the same toolchain-default behavior. It is evidence that sysconfig metadata and portable wheel publication are separate boundaries.
+
+The selected contract is therefore:
+
+1. profile M supports local native-extension build, install, and import;
+2. raw wheel ELF identity must be inspected;
+3. portable product-owned wheel output requires an explicit deterministic ELF normalization step;
+4. no ordinary raw-wheel portability claim is made before that step has its own authority.
+
+## 12. Successor lineage
+
+The frozen r4 full/install-only/stripped family remains valid and unchanged. It is not edited or silently reclassified.
+
+The next bounded transition is:
+
+```text
+exact official archive + accepted launcher + profile M production implementation
+  -> deterministic successor full r5 candidate
+  -> Android target qualification and independent audit
+```
+
+Only after the full candidate is accepted may successor install-only, stripped, legal family, RB-1 binding, RB-2 rebinding, and final RB-3 closure proceed.

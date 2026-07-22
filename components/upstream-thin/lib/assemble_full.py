@@ -104,7 +104,7 @@ def assemble(args: argparse.Namespace) -> dict[str, Any]:
         hw = build / "hw-t"
         write_json(hw / "input.json", {"schema_version": 1, "official_input": observed_input, "lock": contract["input_lock"]})
         write_json(hw / "launcher.json", {"schema_version": 1, "source": "components/upstream-thin/src/python.c", "binary": {"sha256": sha256_file(launcher), "size_bytes": launcher.stat().st_size}, "aliases": aliases})
-        write_json(hw / "mutations.json", {"schema_version": 1, "model": "LR-3-plus-selected-consumer-normalization", "fixture_mode": args.fixture_mode, "elf_objects": mutation_rows, "runtime_metadata": metadata_normalization, "pip_surface": pip_surface})
+        write_json(hw / "mutations.json", {"schema_version": 1, "model": "LR-3-plus-upstream-preserved-profile-M-consumer-overlay", "fixture_mode": args.fixture_mode, "elf_objects": mutation_rows, "runtime_metadata": metadata_normalization, "pip_surface": pip_surface})
         python_json = build_python_json(install, contract, readelf=args.readelf, fixture_mode=args.fixture_mode)
         write_json(python_root / "PYTHON.json", python_json)
         manifest_path = hw / "full-member-manifest.json"

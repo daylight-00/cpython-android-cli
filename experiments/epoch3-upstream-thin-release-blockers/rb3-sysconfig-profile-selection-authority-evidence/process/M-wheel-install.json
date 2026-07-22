@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/wheel-venv/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-index",
+    "--no-deps",
+    "--force-reinstall",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/dist/hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl"
+  ],
+  "name": "M-wheel-install",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "Processing ./dist/hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl\nInstalling collected packages: hw-t-rb3-probe\nSuccessfully installed hw-t-rb3-probe-0.1.0\n"
+}

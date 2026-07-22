@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/bin/uv",
+    "python",
+    "uninstall",
+    "3.14.6",
+    "--install-dir",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/managed",
+    "--offline",
+    "--no-config",
+    "--color",
+    "never"
+  ],
+  "name": "M-managed-uninstall",
+  "returncode": 0,
+  "stderr": "Searching for Python versions matching: Python 3.14.6\nUninstalled Python 3.14.6 in 113ms\n - cpython-3.14.6-linux-aarch64-none\n",
+  "stdout": ""
+}

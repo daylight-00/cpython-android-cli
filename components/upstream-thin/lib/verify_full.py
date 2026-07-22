@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -50,34 +51,136 @@ def _forbidden_build_info(value: Any, path: str = "build_info") -> list[str]:
     return hits
 
 
-def classify_host_residue(python_root: Path, install: Path) -> dict[str, list[str]]:
-    """Separate consumer-active path residue from inert upstream provenance.
+def _parse_makefile(path: Path) -> dict[str, str]:
+    values: dict[str, str] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        match = re.match(r"^([A-Za-z_][A-Za-z0-9_]*)\s*(?::=|=)\s*(.*)$", line)
+        if match:
+            values[match.group(1)] = match.group(2).strip()
+    return values
 
-    Astral documents that build-time paths can survive in distributions. The
-    upstream-thin contract therefore rejects them only in surfaces consumed as
-    configuration or command wrappers. Source-code mentions and strings baked
-    into upstream ELF .rodata remain immutable provenance unless they appear in
-    ELF loader metadata, which is verified independently by the LR-3 checks.
+
+def inspect_consumer_metadata(install: Path) -> dict[str, Any]:
+    stdlib = install / "lib/python3.14"
+    sysdata_files = sorted(stdlib.glob("_sysconfigdata_*.py"))
+    sysvars_files = sorted(stdlib.glob("_sysconfig_vars_*.json"))
+    if len(sysdata_files) != 1 or len(sysvars_files) != 1:
+        return {"pass": False, "errors": ["expected exactly one sysconfigdata and sysconfig-vars file"]}
+    sysdata = sysdata_files[0]
+    namespace: dict[str, Any] = {"__file__": str(sysdata)}
+    try:
+        exec(compile(sysdata.read_text(encoding="utf-8"), str(sysdata), "exec"), namespace)  # noqa: S102
+    except Exception as exc:  # noqa: BLE001
+        return {"pass": False, "errors": [f"sysconfigdata execution: {type(exc).__name__}: {exc}"]}
+    values = namespace.get("build_time_vars")
+    if not isinstance(values, dict):
+        return {"pass": False, "errors": ["build_time_vars missing"]}
+
+    expected_paths = {
+        "BINDIR": install / "bin",
+        "LIBDIR": install / "lib",
+        "LIBDEST": install / "lib/python3.14",
+        "INCLUDEPY": install / "include/python3.14",
+        "LIBPL": install / "lib/python3.14/config-3.14-aarch64-linux-android",
+        "DESTSHARED": install / "lib/python3.14/lib-dynload",
+    }
+    errors: list[str] = []
+    for key, expected in expected_paths.items():
+        if values.get(key) != str(expected):
+            errors.append(f"{key}={values.get(key)!r} expected={str(expected)!r}")
+    expected_values = {
+        "CC": "clang",
+        "CXX": "clang++",
+        "AR": "llvm-ar",
+        "SOABI": "cpython-314-aarch64-linux-android",
+        "MULTIARCH": "aarch64-linux-android",
+        "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
+        "HOST_GNU_TYPE": "aarch64-linux-android",
+        "HW_T_METADATA_PROFILE": "upstream-preserved-minimal-consumer-overlay",
+    }
+    for key, expected in expected_values.items():
+        if values.get(key) != expected:
+            errors.append(f"{key}={values.get(key)!r} expected={expected!r}")
+    if "consumer-normalized-binary-derived" in str(values.get("CONFIG_ARGS", "")):
+        errors.append("CONFIG_ARGS synthetic provenance replacement remains")
+    if values.get("BUILD_GNU_TYPE") == "aarch64-linux-android":
+        errors.append("BUILD_GNU_TYPE was replaced by consumer target")
+    header = sysdata.read_text(encoding="utf-8").splitlines()[0]
+    if header != "# system configuration generated and used by the sysconfig module":
+        errors.append(f"noncanonical sysconfig header: {header!r}")
+
+    makefile_path = stdlib / "config-3.14-aarch64-linux-android/Makefile"
+    makefile = _parse_makefile(makefile_path)
+    expected_make = {
+        "CC": "clang", "CXX": "clang++", "AR": "llvm-ar",
+        "CFLAGS": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO",
+        "LDFLAGS": "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+    }
+    for key, expected in expected_make.items():
+        if makefile.get(key) != expected:
+            errors.append(f"Makefile {key}={makefile.get(key)!r} expected={expected!r}")
+    if "lastword $(MAKEFILE_LIST)" not in makefile.get("prefix", ""):
+        errors.append("Makefile prefix is not location-relative")
+    if "consumer-normalized-binary-derived" in makefile.get("CONFIG_ARGS", ""):
+        errors.append("Makefile CONFIG_ARGS synthetic provenance replacement remains")
+
+    pkg_rows: list[dict[str, str]] = []
+    for path in sorted((install / "lib/pkgconfig").glob("*.pc")):
+        if path.is_symlink():
+            continue
+        text = path.read_text(encoding="utf-8")
+        prefix = next((line.split("=", 1)[1] for line in text.splitlines() if line.startswith("prefix=")), "")
+        pkg_rows.append({"path": path.name, "prefix": prefix})
+        if prefix != "${pcfiledir}/../..":
+            errors.append(f"pkg-config prefix not relative: {path.name}={prefix!r}")
+        if any(marker.decode() in text for marker in FORBIDDEN_OPERATIONAL_BYTES):
+            errors.append(f"pkg-config contains forbidden operational path: {path.name}")
+
+    config_entry = install / "bin/python3.14-config"
+    if not config_entry.is_file() or not bool(config_entry.stat().st_mode & 0o111):
+        errors.append("dynamic python3.14-config entry missing")
+    elif any(marker.decode() in config_entry.read_text(encoding="utf-8") for marker in FORBIDDEN_OPERATIONAL_BYTES):
+        errors.append("python3.14-config contains forbidden operational path")
+
+    build_details = _load(stdlib / "build-details.json")
+    if build_details.get("base_interpreter") != "bin/python3.14" or build_details.get("base_prefix") != ".":
+        errors.append("build-details runtime paths are not relative")
+
+    return {
+        "pass": not errors,
+        "errors": errors,
+        "header": header,
+        "effective": {key: values.get(key) for key in (*expected_paths, *expected_values)},
+        "preserved_producer": {
+            "BUILD_GNU_TYPE": values.get("BUILD_GNU_TYPE"),
+            "CONFIG_ARGS": values.get("CONFIG_ARGS"),
+        },
+        "sysconfig_vars_sha256": sha256_file(sysvars_files[0]),
+        "pkgconfig": pkg_rows,
+    }
+
+
+def classify_host_residue(python_root: Path, install: Path) -> dict[str, list[str]]:
+    """Separate executable consumer surfaces from preserved producer records.
+
+    `_sysconfigdata_`, `_sysconfig_vars_`, and the Makefile deliberately retain
+    producer facts. Their effective consumer values are verified semantically by
+    `inspect_consumer_metadata`; raw byte scanning would incorrectly reject the
+    selected upstream-preserving profile M.
     """
-    operational: set[Path] = {python_root / "PYTHON.json"}
+    operational: set[Path] = set()
     operational.update(
         path for path in (install / "bin").glob("*")
         if path.is_file() and not path.is_symlink() and not is_elf(path)
     )
     stdlib = install / "lib/python3.14"
-    for pattern in (
-        "_sysconfigdata_*.py",
-        "_sysconfig_vars_*.json",
-        "build-details.json",
-        "config-*/Makefile",
-        "config-*/python-config.py",
-        "config-*/pybuilddir.txt",
-    ):
+    for pattern in ("build-details.json", "config-*/python-config.py", "config-*/pybuilddir.txt"):
         operational.update(path for path in stdlib.glob(pattern) if path.is_file())
-    operational.update(
-        path for path in (install / "lib/pkgconfig").glob("*.pc")
-        if path.is_file()
-    )
+    operational.update(path for path in (install / "lib/pkgconfig").glob("*.pc") if path.is_file())
+
+    provenance: set[Path] = {python_root / "PYTHON.json"}
+    for pattern in ("_sysconfigdata_*.py", "_sysconfig_vars_*.json", "config-*/Makefile"):
+        provenance.update(path for path in stdlib.glob(pattern) if path.is_file())
 
     operational_hits: list[str] = []
     informational_hits: list[str] = []
@@ -95,7 +198,6 @@ def classify_host_residue(python_root: Path, install: Path) -> dict[str, list[st
         "operational": operational_hits,
         "informational_upstream_provenance": informational_hits,
     }
-
 
 def _providers(install: Path, readelf: str) -> tuple[dict[str, str], list[Path]]:
     providers: dict[str, str] = {}
@@ -202,6 +304,13 @@ def verify(archive: Path, *, zstd: str = "zstd", readelf: str = "readelf", fixtu
         metrics["informational_upstream_provenance_residue"] = informational_residue[:40]
 
         if fixture_mode:
+            _check(checks, errors, "effective_consumer_metadata", True)
+        else:
+            consumer_metadata = inspect_consumer_metadata(install)
+            _check(checks, errors, "effective_consumer_metadata", consumer_metadata.get("pass") is True, str(consumer_metadata.get("errors", [])))
+            metrics["consumer_metadata"] = consumer_metadata
+
+        if fixture_mode:
             _check(checks, errors, "release_elf_inventory", True)
             _check(checks, errors, "release_lr3_exact", True)
             _check(checks, errors, "release_needed_closure", True)
@@ -238,7 +347,7 @@ def verify(archive: Path, *, zstd: str = "zstd", readelf: str = "readelf", fixtu
                 metrics["packaged_provider_count"] = len(providers)
                 metrics["system_libraries"] = sorted(SYSTEM_LIBRARIES)
                 normalization = mutations.get("runtime_metadata", {})
-                _check(checks, errors, "runtime_metadata_normalized", normalization.get("normalization_kind") == "relocation-aware-runtime-and-on-device-sdk")
+                _check(checks, errors, "runtime_metadata_normalized", normalization.get("normalization_kind") == "upstream-preserved-minimal-consumer-overlay" and normalization.get("selected_profile") == "M" and normalization.get("producer_provenance_preserved") is True and normalization.get("sysconfig_vars_json", {}).get("mutation") == "preserved-upstream-byte-exact")
                 pip_surface = mutations.get("pip_surface", {})
                 _check(checks, errors, "pip_from_upstream_wheel", pip_surface.get("installation_kind") == "package-only-from-exact-upstream-ensurepip-wheel" and pip_surface.get("network_acquisition") is False)
             except Exception as exc:  # noqa: BLE001

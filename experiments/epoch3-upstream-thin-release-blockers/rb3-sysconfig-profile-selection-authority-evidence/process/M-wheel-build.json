@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/wheel-venv/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-index",
+    "--no-deps",
+    "--no-build-isolation",
+    "-w",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/dist",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/wheel/native-project"
+  ],
+  "name": "M-wheel-build",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "Processing ./native-project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: hw-t-rb3-probe\n  Building wheel for hw-t-rb3-probe (pyproject.toml): started\n  Building wheel for hw-t-rb3-probe (pyproject.toml): finished with status 'done'\n  Created wheel for hw-t-rb3-probe: filename=hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl size=3239 sha256=f23721053ffa4a5d97c0f05681106bdebf4f757f23a63f47ce48d1f1db644746\n  Stored in directory: /data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/system-session/cache/pip/wheels/0d/49/24/730e127ea2a34f57f98a1d09059692e4a4cef557080ca15a44\nSuccessfully built hw-t-rb3-probe\n"
+}

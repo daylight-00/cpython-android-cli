@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/bin/uv",
+    "venv",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/managed-venv",
+    "--python",
+    "3.14.6",
+    "--managed-python",
+    "--no-python-downloads",
+    "--offline",
+    "--no-cache",
+    "--no-config",
+    "--color",
+    "never"
+  ],
+  "name": "M-managed-venv",
+  "returncode": 0,
+  "stderr": "Using CPython 3.14.6\nCreating virtual environment at: managed-venv\nActivate with: source managed-venv/bin/activate\n",
+  "stdout": ""
+}

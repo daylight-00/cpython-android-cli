@@ -191,6 +191,12 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
       "role": "frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority",
       "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098"
+    },
+    {
+      "id": "epoch3-rb3-sysconfig-profile-M-selection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
+      "role": "Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations.",
+      "sha256": "85544b28efa71b8fbe33b7f933c367b408f4442152103403155f3603ec9ffd28"
     }
   ],
   "active_plan": {
@@ -199,7 +205,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -236,7 +242,7 @@
     "astral_consumer_compatibility_implementation_started": true,
     "ca_timezone_data_product_complete": true,
     "ca_timezone_data_product_implementation_started": true,
-    "canonical_artifact_successor_started": false,
+    "canonical_artifact_successor_started": true,
     "component_license_mapping_complete": true,
     "dual_real_device_aarch64_termux_compatibility": true,
     "emulator_qualified": false,
@@ -253,7 +259,7 @@
     "selectable": false,
     "stripped_implementation_started": true,
     "stripped_release_complete": true,
-    "sysconfig_profile_selected": false,
+    "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true
   },
   "control_work": {
@@ -345,11 +351,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 35,
+  "state_revision": 36,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "cca10080ee1ad674bd58a986e6eb4a045f94103e3b8a206c3dd338f46e82b136"
+    "sha256": "2bd38aed45bb5b0e8d846159da14d5a1450efb1a5a53e53ed24fe46bc9cc083a"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -373,12 +379,12 @@
     "final-notice-set-not-owner-approved",
     "owner-approval-must-bind-exact-release-and-notice-hashes",
     "rb1-owner-review-result-receipt-index-incomplete-dossier-valid",
-    "rb3-managed-install-failed-on-project-rendered-sysconfig-header",
-    "current-sysconfig-normalizer-overrides-producer-provenance-and-redundant-target-identity",
     "zero-producer-path-rule-not-derived-from-astral-golden-contract",
     "on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal",
-    "rb3-c-h-u-m-target-profile-comparison-pending",
-    "sysconfig-profile-not-selected-and-frozen-artifacts-not-superseded"
+    "selected-profile-M-successor-full-r5-pending",
+    "frozen-predecessor-family-not-superseded",
+    "ordinary-native-wheel-inherits-Termux-toolchain-RUNPATH-and-requires-explicit-ELF-normalization-boundary",
+    "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding"
   ],
-  "updated_by_transaction": "20260722-e3-rb3-sysconfig-sdk-boundary-review-v1"
+  "updated_by_transaction": "20260722-e3-rb3-profile-M-selected-successor-full-r5-started-v1"
 }

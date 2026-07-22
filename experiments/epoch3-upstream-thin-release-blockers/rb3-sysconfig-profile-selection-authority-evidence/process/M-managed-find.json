@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/bin/uv",
+    "python",
+    "find",
+    "3.14.6",
+    "--managed-python",
+    "--no-python-downloads",
+    "--offline",
+    "--python-downloads-json-url",
+    "file:///data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/catalog.json",
+    "--no-config",
+    "--color",
+    "never"
+  ],
+  "name": "M-managed-find",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-M/managed/cpython-3.14.6-linux-aarch64-none/bin/python3.14\n"
+}

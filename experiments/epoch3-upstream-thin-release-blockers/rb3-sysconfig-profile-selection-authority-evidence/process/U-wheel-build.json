@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/wheel/wheel-venv/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-index",
+    "--no-deps",
+    "--no-build-isolation",
+    "-w",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/wheel/dist",
+    "/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/wheel/native-project"
+  ],
+  "name": "U-wheel-build",
+  "returncode": 1,
+  "stderr": "  error: subprocess-exited-with-error\n  \n  × Building wheel for hw-t-rb3-probe (pyproject.toml) did not run successfully.\n  │ exit code: 1\n  ╰─> [7 lines of output]\n      running bdist_wheel\n      running build\n      running build_ext\n      building 'hw_t_rb3_probe' extension\n      creating build/temp.android-24-arm64_v8a-cpython-314\n      /Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -D__BIONIC_NO_PAGE_SIZE_MACRO -I/Users/runner/work/release-tools/release-tools/cross-build/aarch64-linux-android/prefix/include -fPIC -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/wheel/wheel-venv/include -I/data/data/com.termux/files/usr/tmp/rb3-sysconfig-boundary-4cswneh7/run-U/moved/python/include/python3.14 -c probe.c -o build/temp.android-24-arm64_v8a-cpython-314/probe.o\n      error: command '/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang' failed: No such file or directory\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\n  ERROR: Failed building wheel for hw-t-rb3-probe\nERROR: Failed to build one or more wheels\n",
+  "stdout": "Processing ./native-project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: hw-t-rb3-probe\n  Building wheel for hw-t-rb3-probe (pyproject.toml): started\n  Building wheel for hw-t-rb3-probe (pyproject.toml): finished with status 'error'\nFailed to build hw-t-rb3-probe\n"
+}
