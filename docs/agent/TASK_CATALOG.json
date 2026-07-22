@@ -2185,7 +2185,10 @@
         "unselected-epoch2-experiments",
         "producer-only-source-build-machinery",
         "legacy-components/standalone-product-path",
-        "past-chat-transcripts"
+        "past-chat-transcripts",
+        "unrelated-evidence",
+        "unrelated-experiments",
+        "roadmap-outside-selected-section"
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",

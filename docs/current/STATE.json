@@ -355,7 +355,7 @@
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "2bd38aed45bb5b0e8d846159da14d5a1450efb1a5a53e53ed24fe46bc9cc083a"
+    "sha256": "3bffbfe7059fd1034d8f2fbcb4789d005d4935922fe34384b8cbf2c2c815334e"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
