@@ -223,3 +223,10 @@ The next bounded action may technically resolve only three blockers:
 3. include the project `LICENSE` in that revised family.
 
 The revised family is an owner-approval-pending candidate, not a selectable or publishable product. `THIRD-PARTY-NOTICES` approval, RB-1 closure, selectability, and publication remain forbidden until a separate owner-approval transaction accepts the exact notice and integrated-family identities.
+## 17. RB-1 technical obligation review and legal integration implementation start
+
+The accepted legal-overlay authority opens a bounded non-closing integration lane. The implementation reads the exact pip 26.1.2 `vendor.txt` from the frozen install-only artifact, maps all 18 vendored units to their embedded license bytes, and combines them with the 13 top-level component classes for 31 technical review units.
+
+The candidate release family uses release ID `cpython-3.14.6+e3-r2-aarch64-linux-android`. It reuses the three artifact archives and eighteen artifact sidecars byte-for-byte, preserves the r1 `release-index.json` and `SHA256SUMS` under `lineage/r1/`, integrates the accepted 72-file legal overlay and project `LICENSE`, and regenerates only the revised envelope metadata.
+
+The bounded target is deterministic and must reduce the RB-1 gap register from four to one. The sole remaining gap is `final-notice-set-not-owner-approved`. A successful implementation transaction still cannot close RB-1, select the product, or authorize publication.

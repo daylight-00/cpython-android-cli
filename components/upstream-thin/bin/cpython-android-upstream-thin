@@ -11,9 +11,9 @@ LIB = ROOT / "components/upstream-thin/lib"
 
 
 def main() -> int:
-    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "assemble-family", "verify-family", "census-licenses", "resolve-license-provenance", "acquire-license-evidence", "observe-astral", "test"}
+    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "assemble-family", "verify-family", "census-licenses", "resolve-license-provenance", "acquire-license-evidence", "integrate-legal-family", "verify-legal-family", "observe-astral", "test"}
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
-        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|assemble-family|verify-family|census-licenses|resolve-license-provenance|acquire-license-evidence|observe-astral|test} ...", file=sys.stderr)
+        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|assemble-family|verify-family|census-licenses|resolve-license-provenance|acquire-license-evidence|integrate-legal-family|verify-legal-family|observe-astral|test} ...", file=sys.stderr)
         return 2
     command = sys.argv[1]
     if command == "test":
@@ -33,12 +33,14 @@ def main() -> int:
         "census-licenses": "license_census.py",
         "resolve-license-provenance": "license_provenance.py",
         "acquire-license-evidence": "license_payloads.py",
+        "integrate-legal-family": "legal_integration.py",
+        "verify-legal-family": "legal_integration.py",
         "observe-astral": "observe_astral.py",
     }
     implementation = LIB / implementations[command]
     env = os.environ.copy()
     env["PYTHONPATH"] = str(LIB) + (os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else "")
-    extra = ["assemble"] if command == "assemble-family" else ["verify"] if command == "verify-family" else []
+    extra = ["assemble"] if command in {"assemble-family", "integrate-legal-family"} else ["verify"] if command in {"verify-family", "verify-legal-family"} else []
     return subprocess.call([sys.executable, str(implementation), *extra, *sys.argv[2:]], cwd=ROOT, env=env)
 
 

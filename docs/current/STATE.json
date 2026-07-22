@@ -183,7 +183,7 @@
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "53f7bc2ba29f3dddec11093a5407d2977e086d7bf72465a53ee5aa2ac90f9bc9",
+    "detail_sha256": "881931f480bda20666f1b3bc6bbad0804633c4055ecee23adb496d2777b9d6c5",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -271,8 +271,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "611e036367c1723277bdccc2180e215283194978",
-    "tree": "98bbf9f5e1391c7f297b63aeb60ef17db0fc7c18"
+    "commit": "bc8c096b1b7171a1485f0f92ebb2632d9f02f2e2",
+    "tree": "0a2b53ac266ddcc608fd4bfb838a7e2830265a50"
   },
   "program": {
     "epoch": {
@@ -326,7 +326,7 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 30,
+  "state_revision": 31,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
@@ -361,5 +361,5 @@
     "release-family-legal-integration-pending",
     "pip-vendored-component-obligation-review-pending"
   ],
-  "updated_by_transaction": "20260722-e3-rb1-legal-overlay-authority-and-integration-start-r1"
+  "updated_by_transaction": "20260722-e3-rb1-legal-integration-implementation-r1"
 }

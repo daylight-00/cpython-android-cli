@@ -6,6 +6,7 @@
         "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
         "blocking_gap_count": 4,
         "component_count": 13,
+        "legal_integration_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-integration-contract.json",
         "legal_overlay_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
         "legal_overlay_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
         "legal_overlay_file_count": 72,
@@ -26,7 +27,7 @@
         "selectability",
         "publication"
       ],
-      "status": "in-progress-legal-integration-and-technical-obligation-review"
+      "status": "in-progress-legal-integration-implementation"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",

@@ -67,3 +67,17 @@ Android external-provider notice policy remain blocking findings.
 ### RB-1 license evidence lane
 
 `bin/cpython-android-upstream-thin acquire-license-evidence` verifies the frozen artifact family and exact source archives, preserves license-like source evidence, detects distributed HACL* and libmpdec 2.5.1 byte evidence, quarantines mismatched XZ/mpdecimal source coordinates, and emits only a non-closing component-map and NOTICE candidate. It never mutates release artifact bytes and cannot authorize selectability or publication.
+
+### RB-1 legal integration candidate
+
+```sh
+cpython-android-upstream-thin integrate-legal-family \
+  --family-dir FAMILY_R1 \
+  --output-dir FAMILY_R2_CANDIDATE
+
+cpython-android-upstream-thin verify-legal-family \
+  --candidate-dir FAMILY_R2_CANDIDATE \
+  --predecessor-dir FAMILY_R1
+```
+
+The revised family preserves all three artifact archives and eighteen artifact sidecars byte-for-byte, integrates the frozen legal overlay and project license, and records all pip vendored review units. It remains owner-approval-pending, unselectable, and unpublished.

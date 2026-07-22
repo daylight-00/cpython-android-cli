@@ -54,14 +54,10 @@ Epoch 3 selection     true
 - publication-not-authorized
 - libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
 - authoritative-license-payloads-not-yet-integrated-into-release-family
-- xz-5.4.6-product-matching-license-evidence-not-yet-bound
-- sqlite-public-domain-notice-policy-not-frozen
-- android-system-provider-notice-boundary-not-frozen
-- hacl-license-header-and-notice-not-yet-frozen
 - final-notice-set-not-owner-approved
-- legal-overlay-owner-qualification-pending
 - complete-license-obligation-review-pending
 - release-family-legal-integration-pending
+- pip-vendored-component-obligation-review-pending
 
 ### Accepted authorities
 
@@ -94,6 +90,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json): frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority (`e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json): frozen exact five-source license payload acquisition, 13-component expansion, eight-gap boundary, and legal-overlay evidence synthesis start authority (`20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json): non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output (`1471394928903fb8d430c6a0f99b07defe847bb1732298eac0d82a5db643c983`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json): frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority (`faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3`)
 
 ### Agent entry
 

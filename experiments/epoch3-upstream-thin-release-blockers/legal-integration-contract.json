@@ -1,0 +1,51 @@
+{
+  "claim_boundary": {
+    "component_license_mapping_complete": true,
+    "owner_approved": false,
+    "project_license_included": true,
+    "publication": false,
+    "rb1_closed": false,
+    "release_family_integrated": true,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "contract_kind": "epoch3-rb1-technical-obligation-review-and-release-family-legal-integration-candidate",
+  "expected_metrics": {
+    "pip_vendored_component_count": 18,
+    "remaining_gap_count": 1,
+    "resolved_gap_count": 3,
+    "review_unit_count": 31,
+    "top_level_component_count": 13
+  },
+  "inputs": {
+    "install_only_sha256": "84315c6967e56ed2ad3587ffcd459597835b18897f4988de9fc7c67a1bf38d76",
+    "legal_overlay_authority_sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3",
+    "predecessor_family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "predecessor_release_family_id": "cpython-3.14.6+e3-r1-aarch64-linux-android"
+  },
+  "outputs": [
+    "release-index.json",
+    "SHA256SUMS",
+    "LICENSE",
+    "legal/component-license-map.json",
+    "legal/pip-vendored-component-review.json",
+    "legal/technical-obligation-review.json",
+    "legal/legal-integration.json",
+    "legal/updated-gap-register.json",
+    "legal/THIRD-PARTY-NOTICES.candidate.txt",
+    "lineage/r1/release-index.json",
+    "lineage/r1/SHA256SUMS"
+  ],
+  "requirements": [
+    "preserve-three-artifact-archives-byte-identically",
+    "preserve-eighteen-artifact-sidecars-byte-identically",
+    "preserve-predecessor-release-index-and-checksums-under-lineage",
+    "map-all-18-pip-vendor-units-to-exact-embedded-license-bytes",
+    "complete-31-unit-technical-obligation-record",
+    "integrate-accepted-legal-overlay",
+    "include-project-license",
+    "produce-deterministic-revised-family-twice",
+    "retain-final-owner-approval-as-only-rb1-gap"
+  ],
+  "schema_version": 1
+}
