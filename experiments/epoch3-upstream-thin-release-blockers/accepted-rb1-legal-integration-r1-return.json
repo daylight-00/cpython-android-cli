@@ -1,0 +1,54 @@
+{
+  "action": "applied-rb1-technical-obligation-review-legal-family-integrated-audited-pushed",
+  "bindings": {
+    "component_license_map_sha256": "4da6f405f18ff827452f33aea0886f993ab9dab362b515350ab8f92c87b0f7b2",
+    "independent_audit_sha256": "49d647ae33f1d22c7716089ca34e2dc28744d8da9e640209b742f88b7de144ca",
+    "legal_integration_sha256": "6bc22c63a31f6b9f5e243a9ed405572d441d2114c76b0a2abeb105f28d41563b",
+    "pip_vendored_component_review_sha256": "2571c7419781231ab39353723dd9163e91d6ab84f0a48b9f8421be441cf6d85d",
+    "project_license_sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+    "technical_obligation_review_sha256": "240b953086110134ea442313212ed24468e057415e5bbeb83ec5cd65f8dfb3df",
+    "third_party_notices_candidate_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "updated_gap_register_sha256": "936a43aa5b649f9dba70bc595e1c1dc9f025ee2997604530b7971108c6c98d1a"
+  },
+  "claim_boundary": {
+    "artifact_bytes_unchanged": true,
+    "component_license_mapping_complete": true,
+    "legal_evidence_integrated": true,
+    "owner_approved": false,
+    "project_license_included": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "family": {
+    "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+    "file_count": 128,
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_index_sha256": "887c7142a83082143df0073bcffacf70ec7fe81f23d146309bbf6970e987c115",
+    "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb",
+    "sha256sums_sha256": "892a1bcd5d0cf0f925f3ed81874c37770bcc5dfe11b694e04a567c494a70eb9d"
+  },
+  "metrics": {
+    "pip_vendored_component_count": 18,
+    "remaining_gap_count": 1,
+    "resolved_gap_count": 3,
+    "technical_review_unit_count": 31,
+    "top_level_component_count": 13
+  },
+  "repository_transition": {
+    "post_head": "2a6ab3d100960d9a07be4bb0a5a23845601d0f88",
+    "post_tree": "a9fe892700eac8bdd30a2758cefcfcd831d2d561",
+    "pre_head": "611e036367c1723277bdccc2180e215283194978",
+    "pre_tree": "98bbf9f5e1391c7f297b63aeb60ef17db0fc7c18",
+    "remote_post_head": "2a6ab3d100960d9a07be4bb0a5a23845601d0f88"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb1-legal-integration-r1-results.tar.zst",
+    "sha256": "5018f4e337f4ee0086e5017db0010c5ef2ae41634f97edd4117b0bccdb8a6375",
+    "size_bytes": 87683594
+  },
+  "return_kind": "accepted-owner-rb1-legal-integration-r1-return",
+  "schema_version": 1,
+  "transaction_rc": 0
+}

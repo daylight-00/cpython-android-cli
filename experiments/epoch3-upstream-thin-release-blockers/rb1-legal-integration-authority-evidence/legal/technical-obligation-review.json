@@ -1,0 +1,12 @@
+{
+  "all_review_units_have_exact_evidence": true,
+  "all_review_units_have_technical_obligation_records": true,
+  "legal_interpretation_approved": false,
+  "owner_approved": false,
+  "pip_vendored_component_count": 18,
+  "review_kind": "epoch3-rb1-technical-component-obligation-review",
+  "review_unit_count": 31,
+  "schema_version": 1,
+  "technical_review_complete": true,
+  "top_level_component_count": 13
+}

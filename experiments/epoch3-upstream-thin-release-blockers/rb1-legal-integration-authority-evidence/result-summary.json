@@ -1,0 +1,59 @@
+{
+  "action": "applied-rb1-technical-obligation-review-legal-family-integrated-audited-pushed",
+  "claim_boundary": {
+    "artifact_bytes_unchanged": true,
+    "component_license_mapping_complete": true,
+    "legal_evidence_integrated": true,
+    "owner_approved": false,
+    "project_license_included": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "metrics": {
+    "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+    "file_count": "128",
+    "pip_vendored_component_count": "18",
+    "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb",
+    "remaining_gap_count": "1",
+    "resolved_gap_count": "3",
+    "technical_review_unit_count": "31",
+    "top_level_component_count": "13"
+  },
+  "package_id": "cpython-android-cli-e3-rb1-legal-integration-r1",
+  "post": {
+    "head": "2a6ab3d100960d9a07be4bb0a5a23845601d0f88",
+    "remote_head": "2a6ab3d100960d9a07be4bb0a5a23845601d0f88",
+    "tree": "a9fe892700eac8bdd30a2758cefcfcd831d2d561"
+  },
+  "pre": {
+    "head": "611e036367c1723277bdccc2180e215283194978",
+    "remote_head": "611e036367c1723277bdccc2180e215283194978",
+    "tree": "98bbf9f5e1391c7f297b63aeb60ef17db0fc7c18"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 0,
+    "audit": 0,
+    "family_input": 0,
+    "legal_overlay_authority": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "upload": 99
+  },
+  "schema_version": 1,
+  "transaction_rc": 0
+}

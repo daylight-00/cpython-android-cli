@@ -1,0 +1,37 @@
+{
+  "audit_kind": "epoch3-rb1-legal-integration-independent-audit",
+  "candidate": {
+    "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb"
+  },
+  "checks": {
+    "artifact_archives_exact": true,
+    "owner_pending": true,
+    "predecessor_envelope_preserved": true,
+    "project_license": true,
+    "rb1_open": true,
+    "review_units": true,
+    "selection_closed": true,
+    "sidecars_exact": true,
+    "single_gap": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "artifact_bytes_unchanged": true,
+    "artifact_family_complete": true,
+    "component_license_mapping_complete": true,
+    "legal_evidence_integrated": true,
+    "non_termux_context": false,
+    "owner_approved": false,
+    "project_license_included": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}

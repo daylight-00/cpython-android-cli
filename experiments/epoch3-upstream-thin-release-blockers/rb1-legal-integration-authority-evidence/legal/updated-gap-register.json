@@ -1,0 +1,33 @@
+{
+  "baseline_gap_count": 4,
+  "blocking_gap_count": 1,
+  "claim_boundary": {
+    "component_license_mapping_complete": true,
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "release_family_integrated": true,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "closure_status": "owner-approval-pending",
+  "register_kind": "epoch3-rb1-legal-integration-candidate-gap-register",
+  "remaining_gaps": [
+    {
+      "code": "final-notice-set-not-owner-approved"
+    }
+  ],
+  "resolved_gap_count": 3,
+  "resolved_gaps": [
+    {
+      "code": "complete-componentization-and-obligation-review-pending"
+    },
+    {
+      "code": "authoritative-license-evidence-not-integrated-into-release-family"
+    },
+    {
+      "code": "project-license-not-in-release-family"
+    }
+  ],
+  "schema_version": 3
+}

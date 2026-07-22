@@ -1,0 +1,431 @@
+{
+  "owner_approved": false,
+  "pip_license_evidence": [
+    {
+      "path": "pip/licenses/pip/AUTHORS.txt",
+      "sha256": "5b73479bffada0916044cb29c47ab20360215e3c838ff2e7562ecdfcb11645bd",
+      "size_bytes": 11869
+    },
+    {
+      "path": "pip/licenses/pip/LICENSE.txt",
+      "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+      "size_bytes": 1093
+    }
+  ],
+  "pip_license_expression_candidate": "MIT",
+  "pip_version": "26.1.2",
+  "review_kind": "pip-26.1.2-vendored-component-technical-obligation-review",
+  "schema_version": 1,
+  "technical_componentization_complete": true,
+  "technical_obligation_records_complete": true,
+  "vendor_component_count": 18,
+  "vendor_components": [
+    {
+      "component": "CacheControl",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/cachecontrol/LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+          "size_bytes": 558,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt"
+        }
+      ],
+      "license_expression_candidate": "Apache-2.0",
+      "pip_local_modifications_recorded": true,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "cachecontrol",
+      "version": "0.14.4"
+    },
+    {
+      "component": "distlib",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/distlib/LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+          "size_bytes": 14531,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt"
+        }
+      ],
+      "license_expression_candidate": "Python-2.0",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "distlib",
+      "version": "0.4.0"
+    },
+    {
+      "component": "distro",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/distro/LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+          "size_bytes": 11325,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/distro/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "Apache-2.0",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "distro",
+      "version": "1.9.0"
+    },
+    {
+      "component": "msgpack",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/msgpack/COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+          "size_bytes": 614,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/msgpack/COPYING"
+        }
+      ],
+      "license_expression_candidate": "Apache-2.0",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "msgpack",
+      "version": "1.1.2"
+    },
+    {
+      "component": "packaging",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "size_bytes": 197,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE"
+        },
+        {
+          "path": "pip/licenses/vendors/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size_bytes": 10174,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE"
+        },
+        {
+          "path": "pip/licenses/vendors/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "size_bytes": 1344,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD"
+        }
+      ],
+      "license_expression_candidate": "Apache-2.0 OR BSD-2-Clause",
+      "pip_local_modifications_recorded": true,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "packaging",
+      "version": "26.2"
+    },
+    {
+      "component": "platformdirs",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/platformdirs/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "size_bytes": 1089,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": true,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "platformdirs",
+      "version": "4.5.1"
+    },
+    {
+      "component": "pyproject-hooks",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/pyproject_hooks/LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+          "size_bytes": 1081,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "pyproject_hooks",
+      "version": "1.2.0"
+    },
+    {
+      "component": "requests",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/requests/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "size_bytes": 10142,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "Apache-2.0",
+      "pip_local_modifications_recorded": true,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "requests",
+      "version": "2.33.1"
+    },
+    {
+      "component": "certifi",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/certifi/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "size_bytes": 989,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/certifi/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MPL-2.0",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": true
+      },
+      "vendored_module": "certifi",
+      "version": "2026.2.25"
+    },
+    {
+      "component": "idna",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/idna/LICENSE.md",
+          "sha256": "b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87",
+          "size_bytes": 1541,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md"
+        }
+      ],
+      "license_expression_candidate": "BSD-3-Clause",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "idna",
+      "version": "3.11"
+    },
+    {
+      "component": "urllib3",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/urllib3/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "size_bytes": 1093,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "urllib3",
+      "version": "2.6.3"
+    },
+    {
+      "component": "rich",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/rich/LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+          "size_bytes": 1056,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "rich",
+      "version": "14.2.0"
+    },
+    {
+      "component": "pygments",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/pygments/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "size_bytes": 1331,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "BSD-2-Clause",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "pygments",
+      "version": "2.19.2"
+    },
+    {
+      "component": "resolvelib",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/resolvelib/LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+          "size_bytes": 751,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "ISC",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "resolvelib",
+      "version": "1.2.1"
+    },
+    {
+      "component": "setuptools",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/pkg_resources/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "size_bytes": 1023,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": true,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "pkg_resources",
+      "version": "70.3.0"
+    },
+    {
+      "component": "tomli",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/tomli/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "size_bytes": 1072,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "tomli",
+      "version": "2.3.1"
+    },
+    {
+      "component": "tomli-w",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/tomli_w/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "size_bytes": 1072,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "tomli_w",
+      "version": "1.2.0"
+    },
+    {
+      "component": "truststore",
+      "license_evidence": [
+        {
+          "path": "pip/licenses/vendors/truststore/LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+          "size_bytes": 1086,
+          "source_archive_path": "python/lib/python3.14/site-packages/pip-26.1.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE"
+        }
+      ],
+      "license_expression_candidate": "MIT",
+      "pip_local_modifications_recorded": false,
+      "technical_obligation_record": {
+        "final_legal_approval_required": true,
+        "include_exact_license_evidence": true,
+        "preserve_copyright_and_notice_text": true,
+        "source_or_file_level_terms_require_owner_review": false
+      },
+      "vendored_module": "truststore",
+      "version": "0.10.4"
+    }
+  ],
+  "vendor_metadata": {
+    "metadata": {
+      "path": "pip/METADATA",
+      "sha256": "17832de47b5dc23e46253ba16462520036f28d9a27d5c30157784952ca4e69b2",
+      "size_bytes": 4566
+    },
+    "vendor_txt": {
+      "path": "pip/vendor.txt",
+      "sha256": "e7673bce58219ac86720dbadbf4927921d6c213f2363b7a930c1e01594eea302",
+      "size_bytes": 316
+    },
+    "vendoring_readme": {
+      "path": "pip/VENDORING-README.rst",
+      "sha256": "b7b2229e36a2bb0521f35d9799502940725bf294f0df753c03d511ab2e86945e",
+      "size_bytes": 9222
+    }
+  }
+}

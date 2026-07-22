@@ -1,0 +1,30 @@
+{
+  "artifact_and_sidecar_files_reused_byte_identically": 21,
+  "integration_kind": "epoch3-rb1-revised-release-family-legal-integration-candidate",
+  "legal_overlay_authority": {
+    "fingerprint_sha256": "e4378c59eabcc6fdf5d07cccd718bd536d87deda531e5e2fcc3115fb6944a878",
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
+    "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
+  },
+  "owner_approved": false,
+  "predecessor": {
+    "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "release_id": "cpython-3.14.6+e3-r1-aarch64-linux-android",
+    "release_index_sha256": "b60274ac64b40c43fc174e4ea4a238743216452b5dfe8af300adde37c4fd7389",
+    "sha256sums_sha256": "b47f399a48526e75aad98499aff841126986f8436702a7cd5c9cd25784ac6082"
+  },
+  "project_license": {
+    "path": "LICENSE",
+    "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+    "size_bytes": 1075
+  },
+  "rb1_closed": false,
+  "remaining_gap_count": 1,
+  "schema_version": 1,
+  "technical_review": {
+    "complete": true,
+    "pip_vendored_components": 18,
+    "review_units": 31,
+    "top_level_components": 13
+  }
+}

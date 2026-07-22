@@ -1,0 +1,52 @@
+{
+  "authority_kind": "epoch3-rb1-legally-integrated-release-family-r1",
+  "claim_boundary": {
+    "artifact_bytes_unchanged": true,
+    "component_license_mapping_complete": true,
+    "legal_evidence_integrated": true,
+    "owner_approved": false,
+    "project_license_included": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "technical_obligation_review_complete": true
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-legal-integration-r1-return.json": "9974312e69f3883f5cd43bf2c5b7ac8b0118e1d1849d37a6c9293b1268b513dd",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_legal_integration_acceptance.py": "9a6a01048d8f936bd5d4e95ea029e136b2d881d0c06f32de7ec5df6a96736bfc",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/LICENSE": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/SHA256SUMS": "892a1bcd5d0cf0f925f3ed81874c37770bcc5dfe11b694e04a567c494a70eb9d",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/final-candidate-verification.json": "04cf1b04343fab407c728efb2de14301e139ac0e75ee0e7e4ed7e262fe811676",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/independent-audit.json": "49d647ae33f1d22c7716089ca34e2dc28744d8da9e640209b742f88b7de144ca",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/integrated-family-file-manifest.json": "72b3cbd3f9bb7856b98d24b48a615874620e6273cdb8d4717c2118fbcfd72cdd",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/THIRD-PARTY-NOTICES.candidate.txt": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/component-license-map.json": "4da6f405f18ff827452f33aea0886f993ab9dab362b515350ab8f92c87b0f7b2",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/legal-integration.json": "6bc22c63a31f6b9f5e243a9ed405572d441d2114c76b0a2abeb105f28d41563b",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/pip-vendored-component-review.json": "2571c7419781231ab39353723dd9163e91d6ab84f0a48b9f8421be441cf6d85d",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/technical-obligation-review.json": "240b953086110134ea442313212ed24468e057415e5bbeb83ec5cd65f8dfb3df",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/legal/updated-gap-register.json": "936a43aa5b649f9dba70bc595e1c1dc9f025ee2997604530b7971108c6c98d1a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/release-index.json": "887c7142a83082143df0073bcffacf70ec7fe81f23d146309bbf6970e987c115",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/reproducibility.json": "ab2caab6c6a5725226d753ba2429d5f01398ba53a26f56d4f3ea6a71a39e7435",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/result-index.json": "98584c773d000edde52a188600437d7e4987acf60356a4a55518e521a114799f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority-evidence/result-summary.json": "ab90ae7746e91d43e09fa48aee238690565e8ae33736a77b91bc99592494e92a",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb1_legal_integration_acceptance.py": "cbeeb8e2e3dc6ed214229383012a46eee1014ff680209be65fa77d03fec02a6d",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb1_legal_integration_acceptance.py": "e74a4d82fe0eb982f99be000e389bf5dbd0b319ac4dc3e91435b919ccbf9006f"
+  },
+  "frozen_family": {
+    "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+    "file_count": 128,
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb",
+    "remaining_gap_count": 1,
+    "review_unit_count": 31
+  },
+  "schema_version": 1,
+  "successor_gate": {
+    "id": "RB-1/OWNER-NOTICE-APPROVAL",
+    "implicit_approval_forbidden": true,
+    "rb1_closure_before_validated_approval_forbidden": true,
+    "required_input": "explicit-owner-approval-document-bound-to-exact-release-and-notice-hashes",
+    "runner_execution_is_not_approval": true
+  }
+}
