@@ -1,4 +1,12 @@
 {
+  "acceptance": {
+    "android_qualification": "all checks true",
+    "native_wheel": "build and import pass; raw RPATH/RUNPATH recorded without converting it into a portable-wheel claim",
+    "profile_M": "canonical header, preserved BUILD_GNU_TYPE/CONFIG_ARGS, effective clang/clang++/llvm-ar and Android identity",
+    "promotion": "withheld until the returned receipt is independently accepted in a later transaction",
+    "structural_verification": "all checks true",
+    "uv": "system and custom managed install/find/venv/reinstall/uninstall pass"
+  },
   "claim_boundary": {
     "old_family_superseded": false,
     "old_family_unchanged": true,
@@ -25,6 +33,11 @@
       "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
       "size_bytes": 39408292
     }
+  },
+  "implementation": {
+    "independent_audit": "experiments/epoch3-upstream-thin-release-blockers/audit_rb3_successor_full_m.py",
+    "owner_qualification_runner": "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_full_m.py",
+    "temporary_install_only_projection": "derived only from successor full python/install for uv qualification; not a release artifact"
   },
   "output": {
     "artifact_role": "successor-full-candidate-not-yet-canonical-family",
