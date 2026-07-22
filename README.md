@@ -52,11 +52,10 @@ Epoch 3 selection     true
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
-- on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal
-- selected-profile-M-successor-full-r5-pending
 - frozen-predecessor-family-not-superseded
-- ordinary-native-wheel-inherits-Termux-toolchain-RUNPATH-and-requires-explicit-ELF-normalization-boundary
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
+- user-built-wheel-portability-and-repair-explicitly-out-of-scope
+- selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction
 
 ### Accepted authorities
 
@@ -93,6 +92,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json): frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority (`23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json): frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority (`48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json): Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations. (`85544b28efa71b8fbe33b7f933c367b408f4442152103403155f3603ec9ffd28`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json): distributor artifact responsibility, external user-wheel repair boundary, and Android 16 KiB SDK obligation (`ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json): exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary (`2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126`)
 
 ### Agent entry
 

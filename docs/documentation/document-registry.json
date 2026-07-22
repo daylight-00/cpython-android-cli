@@ -11291,6 +11291,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Accepted distributor versus user-built-wheel responsibility boundary for profile M and Android 16 KiB policy.",
+      "supersession_rule": "Do not edit; create an amendment or successor record.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "operational",
       "format": "json",
       "lifecycle_class": "ACTIVE_PLAN",
@@ -11304,6 +11319,21 @@
       "rationale": "Selected profile M successor full r5 assembly and qualification contract.",
       "supersession_rule": "Explicit successor contract or authority.",
       "update_trigger": "Update only through the active bounded RB-3 successor transaction."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact failed successor-full r1 receipt inspection, rollback boundary, and deterministic receipt root-cause record.",
+      "supersession_rule": "Do not edit; create a correction result or successor authority.",
+      "update_trigger": "Never edit after commit."
     },
     {
       "authority_domain": "evidence_snapshot",

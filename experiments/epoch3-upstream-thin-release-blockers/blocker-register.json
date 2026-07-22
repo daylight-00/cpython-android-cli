@@ -71,25 +71,29 @@
       "evidence": {
         "artifact_bytes_changed": false,
         "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
+        "native_wheel_16k_alignment": "hard-gate",
         "old_family_superseded": false,
         "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
         "r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
-        "raw_wheel_policy_clean": false,
-        "selected_profile": "M"
+        "responsibility_reassessment": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
+        "selected_profile": "M",
+        "successor_r1_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
       },
       "id": "RB-3",
       "lane": "local",
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
+        "next_action": "correct deterministic receipt serialization and retry successor full r5",
         "required_input": "exact official archive, accepted launcher, selected profile M implementation, exact Android uv",
-        "required_output": "deterministic successor full r5 candidate with static, runtime, uv system/managed, SDK, raw-wheel ELF, protected-state, and independent-audit evidence",
+        "required_output": "deterministic successor full r5 candidate with static, runtime, uv system/managed, SDK build/import, distributed-ELF and baseline-extension 16 KiB, protected-state, and independent-audit evidence",
         "successor_after_accepted_probe": "derive successor install_only and stripped, then legally integrate and rebind RB-1/RB-2 evidence before RB-3 closure"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-selected-successor-full-pending"
+      "status": "in-progress-profile-M-selected-successor-full-reproducibility-correction"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",

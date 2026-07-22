@@ -44,6 +44,10 @@ class SuccessorFullTests(unittest.TestCase):
         self.assertIn('"successor_full_accepted": False', text)
         self.assertIn('"predecessor_family_superseded": False', text)
         self.assertIn('"rb3_closed": False', text)
+        self.assertIn('"portable_raw_wheel_claim": False', text)
+        self.assertIn('"user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"', text)
+        self.assertIn('"native_wheel_16k_alignment"', text)
+        self.assertNotIn('"explicit_wheel_normalization_import"', text)
 
 
 if __name__ == "__main__":

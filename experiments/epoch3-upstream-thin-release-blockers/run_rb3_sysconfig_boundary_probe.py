@@ -146,7 +146,18 @@ def native_project(root: Path) -> None:
     (root / "pyproject.toml").write_text("[build-system]\nrequires=['setuptools']\nbuild-backend='setuptools.build_meta'\n", encoding="utf-8")
 
 
-def wheel_probe(profile: str, python: Path, product: Path, work: Path, env: dict[str, str], process_dir: Path, readelf: str, patchelf: str) -> dict[str, Any]:
+def wheel_probe(
+    profile: str,
+    python: Path,
+    product: Path,
+    work: Path,
+    env: dict[str, str],
+    process_dir: Path,
+    readelf: str,
+    patchelf: str | None,
+    *,
+    perform_explicit_normalization: bool = True,
+) -> dict[str, Any]:
     work.mkdir(parents=True, exist_ok=True)
     venv = work / "wheel-venv"
     create = run_capture(f"{profile}-wheel-venv", [str(python), "-m", "venv", str(venv)], work, env, process_dir)
@@ -190,19 +201,24 @@ def wheel_probe(profile: str, python: Path, product: Path, work: Path, env: dict
     before = readelf_surface(ext, readelf, env)
     row["raw_extension"] = before
     row["raw_policy_clean"] = before["returncode"] == 0 and not before["runpath"] and not before["rpath"] and before["all_load_alignments_16k"]
-    normalized = work / "normalized-extension.so"; shutil.copy2(ext, normalized)
-    norm = run_capture(f"{profile}-wheel-explicit-rpath-normalization", [patchelf, "--page-size", "16384", "--remove-rpath", str(normalized)], work, env, process_dir)
-    normalized_import = run_capture(
-        f"{profile}-wheel-explicit-normalization-import",
-        [str(python), "-c", "import importlib.util,sys; p=sys.argv[1]; s=importlib.util.spec_from_file_location('hw_t_rb3_probe',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); assert m.value() == 3146", str(normalized)],
-        work, env, process_dir,
-    ) if norm["returncode"] == 0 else {"returncode": 125}
-    row["explicit_normalization"] = {
-        "returncode": norm["returncode"],
-        "import_returncode": normalized_import.get("returncode"),
-        "after": readelf_surface(normalized, readelf, env) if norm["returncode"] == 0 else None,
-        "required": bool(before["runpath"] or before["rpath"]),
-    }
+    row["postprocessing_boundary"] = "out-of-scope-external-tool-responsibility"
+    if perform_explicit_normalization:
+        if not patchelf:
+            raise RuntimeError("patchelf is required for the historical explicit-normalization probe")
+        normalized = work / "normalized-extension.so"; shutil.copy2(ext, normalized)
+        norm = run_capture(f"{profile}-wheel-explicit-rpath-normalization", [patchelf, "--page-size", "16384", "--remove-rpath", str(normalized)], work, env, process_dir)
+        normalized_import = run_capture(
+            f"{profile}-wheel-explicit-normalization-import",
+            [str(python), "-c", "import importlib.util,sys; p=sys.argv[1]; s=importlib.util.spec_from_file_location('hw_t_rb3_probe',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); assert m.value() == 3146", str(normalized)],
+            work, env, process_dir,
+        ) if norm["returncode"] == 0 else {"returncode": 125}
+        row["explicit_normalization"] = {
+            "returncode": norm["returncode"],
+            "import_returncode": normalized_import.get("returncode"),
+            "after": readelf_surface(normalized, readelf, env) if norm["returncode"] == 0 else None,
+            "required": bool(before["runpath"] or before["rpath"]),
+            "historical_experiment_only": True,
+        }
     row["pass"] = build["returncode"] == 0 and before["returncode"] == 0
     return row
 

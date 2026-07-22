@@ -197,6 +197,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
       "role": "Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations.",
       "sha256": "85544b28efa71b8fbe33b7f933c367b408f4442152103403155f3603ec9ffd28"
+    },
+    {
+      "id": "epoch3-rb3-distributor-responsibility-reassessment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
+      "role": "distributor artifact responsibility, external user-wheel repair boundary, and Android 16 KiB SDK obligation",
+      "sha256": "ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f"
+    },
+    {
+      "id": "epoch3-rb3-successor-full-r1-failure-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+      "role": "exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary",
+      "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
     }
   ],
   "active_plan": {
@@ -252,6 +264,7 @@
     "full_release_complete": true,
     "install_only_implementation_started": true,
     "install_only_release_complete": true,
+    "native_sdk_baseline_extension_16k_required": true,
     "non_termux_android_context_qualified": false,
     "publication_authorized": false,
     "rb2_closed": true,
@@ -259,8 +272,10 @@
     "selectable": false,
     "stripped_implementation_started": true,
     "stripped_release_complete": true,
+    "successor_full_candidate": false,
     "sysconfig_profile_selected": true,
-    "sysconfig_sdk_boundary_review_complete": true
+    "sysconfig_sdk_boundary_review_complete": true,
+    "user_built_wheel_postprocessing_in_scope": false
   },
   "control_work": {
     "completed_phase": 1,
@@ -351,11 +366,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 36,
+  "state_revision": 37,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "3bffbfe7059fd1034d8f2fbcb4789d005d4935922fe34384b8cbf2c2c815334e"
+    "sha256": "2daa7aaf99c93757e531254acda6349c59957e422113314edca9242da8f9f133"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -380,11 +395,10 @@
     "owner-approval-must-bind-exact-release-and-notice-hashes",
     "rb1-owner-review-result-receipt-index-incomplete-dossier-valid",
     "zero-producer-path-rule-not-derived-from-astral-golden-contract",
-    "on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal",
-    "selected-profile-M-successor-full-r5-pending",
     "frozen-predecessor-family-not-superseded",
-    "ordinary-native-wheel-inherits-Termux-toolchain-RUNPATH-and-requires-explicit-ELF-normalization-boundary",
-    "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding"
+    "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
+    "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
+    "selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction"
   ],
-  "updated_by_transaction": "20260722-e3-rb3-profile-M-selected-successor-full-r5-started-v1"
+  "updated_by_transaction": "20260722-e3-rb3-responsibility-and-successor-reproducibility-correction-v1"
 }

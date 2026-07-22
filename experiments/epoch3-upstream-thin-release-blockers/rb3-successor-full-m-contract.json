@@ -1,7 +1,7 @@
 {
   "acceptance": {
     "android_qualification": "all checks true",
-    "native_wheel": "build and import pass; raw RPATH/RUNPATH recorded without converting it into a portable-wheel claim",
+    "native_wheel": "build, install, and import pass; baseline extension has 16 KiB LOAD alignment; DT_NEEDED and RPATH/RUNPATH are diagnostic only",
     "profile_M": "canonical header, preserved BUILD_GNU_TYPE/CONFIG_ARGS, effective clang/clang++/llvm-ar and Android identity",
     "promotion": "withheld until the returned receipt is independently accepted in a later transaction",
     "structural_verification": "all checks true",
@@ -35,8 +35,10 @@
     }
   },
   "implementation": {
+    "failed_r1_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
     "independent_audit": "experiments/epoch3-upstream-thin-release-blockers/audit_rb3_successor_full_m.py",
     "owner_qualification_runner": "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_full_m.py",
+    "responsibility_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
     "temporary_install_only_projection": "derived only from successor full python/install for uv qualification; not a release artifact"
   },
   "output": {
@@ -45,21 +47,23 @@
     "required_receipt": "self-indexed complete pass-or-fail owner result"
   },
   "production_boundary": {
+    "android_16k_alignment": "hard distributor gate for distributed ELF objects and the baseline extension produced by profile M SDK flags",
     "canonical_sysconfig_header": "preserve upstream",
     "consumer_path_overlay": "only profile M measured fields",
     "on_device_toolchain_overlay": "CC/CXX/AR and measured compile/link flags only",
-    "portable_wheel_elf_normalization": "separate explicit boundary; not solved by sysconfig metadata",
     "producer_BUILD_GNU_TYPE": "preserve",
     "producer_CONFIG_ARGS": "preserve",
     "sysconfig_vars_json": "preserve upstream byte exact",
-    "upstream_target_identity": "preserve"
+    "upstream_target_identity": "preserve",
+    "user_built_wheel_postprocessing": "out of scope; use external packaging or repair tooling"
   },
   "required_execution": [
     "assemble successor full twice from exact official input",
-    "prove the two full archives byte-identical",
-    "verify full structure, manifest, LR-3, dependency closure, selected profile M metadata semantics, and preserved producer provenance",
+    "prove the two full archives byte-identical, including artifact-embedded receipts that use deterministic install-relative semantics",
+    "verify full structure, manifest, LR-3, dependency closure, selected profile M metadata semantics, preserved producer provenance, and 16 KiB alignment for distributed ELF objects",
     "qualify fresh extraction, relocation, subprocess, venv, imports, python-config, pkg-config, uv system and managed consumer paths on Android AArch64",
-    "build a raw native extension wheel and record its exact ELF policy separately from runtime/SDK compatibility",
+    "build, install, and import a baseline native extension wheel; require 16 KiB LOAD alignment and record DT_NEEDED/RPATH/RUNPATH only as diagnostics",
+    "do not repair, rewrite, or make a portability claim for the user-built wheel",
     "independently audit all identities and protect the frozen predecessor family"
   ],
   "schema_version": 1,
@@ -68,5 +72,5 @@
     "id": "M",
     "name": "upstream-preserved-minimal-consumer-overlay"
   },
-  "status": "implementation-and-target-qualification-pending"
+  "status": "correction-and-target-requalification-pending"
 }

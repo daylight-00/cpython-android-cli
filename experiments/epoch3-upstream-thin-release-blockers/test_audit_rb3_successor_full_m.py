@@ -21,6 +21,9 @@ class AuditTests(unittest.TestCase):
         text = SCRIPT.read_text(encoding="utf-8")
         self.assertIn('"successor_full_accepted": False', text)
         self.assertIn('"rb3_closed": False', text)
+        self.assertIn('"native_wheel_16k_alignment_pass"', text)
+        self.assertIn('"wheel_postprocessing_out_of_scope"', text)
+        self.assertNotIn('"explicit_wheel_normalization_pass"', text)
 
 
 if __name__ == "__main__":

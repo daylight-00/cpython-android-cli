@@ -1,0 +1,45 @@
+{
+  "android_specific_rule": {
+    "page_alignment_bytes": 16384,
+    "reason": "Android platform compatibility property affected by the distributed binaries and the SDK linker policy supplied by this distribution",
+    "responsibility": "distributor"
+  },
+  "authority_kind": "epoch3-rb3-distributor-responsibility-reassessment",
+  "claim_boundary": {
+    "portable_user_built_wheel_claim": false,
+    "profile_M_selected": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "wheel_repair_tool_claim": false
+  },
+  "decision_basis": "Astral-thin responsibility follows the distributed Python artifact and Android-specific ABI/runtime requirements; repair of later user-created wheels belongs to the user or external packaging tooling",
+  "diagnostic_only_for_user_built_wheels": [
+    "DT_NEEDED inventory",
+    "RPATH and RUNPATH inventory",
+    "wheel filename, hash, size, and extension identity"
+  ],
+  "distributor_hard_gates": [
+    "deterministic distributed artifact bytes and receipts",
+    "distributed archive structure, manifest, checksums, relocation, runtime, subprocess, venv, and claimed uv consumer paths",
+    "distributed native ELF dependency closure and absence of accidental host or Termux identity in distributed artifact bytes",
+    "truthful Android target identity and API floor",
+    "profile M native extension build, installation, and import capability",
+    "16 KiB LOAD alignment for every distributed ELF object",
+    "16 KiB LOAD alignment for the baseline extension produced by the SDK compile and link flags supplied by profile M"
+  ],
+  "explicitly_out_of_scope": [
+    "automatic removal of RPATH or RUNPATH from user-built wheels",
+    "auditwheel-like dependency repair or bundling",
+    "patchelf postprocessing of user-built extensions",
+    "repackaging or publication portability of user-created wheels",
+    "reproducibility of arbitrary user package builds"
+  ],
+  "project_action": {
+    "built_in_repair_feature": "do-not-implement-in-upstream-thin-product",
+    "historical_explicit_normalization_evidence": "retained as historical experiment evidence but removed from current RB-3 acceptance and successor audit gates",
+    "possible_future_work": "separate toy project or external Android wheel repair tool"
+  },
+  "schema_version": 1,
+  "status": "accepted-current-design-boundary"
+}

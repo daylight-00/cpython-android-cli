@@ -9,11 +9,14 @@
     "component_license_mapping_complete_claim": true,
     "epoch2_closed_claim": true,
     "epoch3_selection_claim": true,
+    "native_sdk_baseline_extension_16k_required": true,
     "non_termux_context_claim": false,
     "official_upstream_identity_claim": true,
+    "portable_user_built_wheel_claim": false,
     "product_selectability_claim": false,
     "publication_claim": false,
-    "release_blocker_resolution_started_claim": true
+    "release_blocker_resolution_started_claim": true,
+    "user_built_wheel_repair_claim": false
   },
   "completion_contract": {
     "always": {
@@ -27,7 +30,7 @@
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only the bounded successor implementation or qualification runner",
+      "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only deterministic successor assembly/qualification defects; user-built wheel repair remains out of scope while 16 KiB alignment remains a hard gate",
       "complete_receipt_required": true
     },
     "pass": {
@@ -69,7 +72,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-selected-profile-M-successor-full-r5",
+    "current_bounded_transition": "rb3-selected-profile-M-successor-full-r5-reproducibility-correction",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -79,26 +82,27 @@
   },
   "input_routing": {
     "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-    "first_attempt": "reuse the exact official Python archive, accepted launcher, exact Android uv, and profile-M selection authority to build and qualify successor full r5 twice",
+    "first_attempt": "apply the deterministic install-relative receipt correction, reuse the exact official Python archive, accepted launcher, exact Android uv, and profile-M authorities, then build and qualify successor full r5 twice",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
       "claim-complete-license-mapping-from-file-name-census-alone",
-      "claim-on-device-sdk-standard-flow-without-raw-wheel-elf-evidence",
       "claim-selectability-or-publication",
+      "claim-user-built-wheel-portability-or-repair-as-distributor-contract",
       "close-rb1-without-exact-owner-approval-document",
       "close-rb2-without-exact-frozen-python-runtime-qualification",
       "fabricate-astral-producer-metadata",
       "infer-owner-approval-from-runner-execution",
       "network-git-in-assistant-environment",
+      "omit-16k-alignment-from-distributed-or-baseline-sdk-elf-gates",
       "reassemble-or-modify-any-frozen-artifact",
       "rewrite-or-amend-frozen-artifact-authorities",
       "select-sysconfig-profile-from-static-review-alone",
       "silently-replace-producer-provenance-with-consumer-policy",
-      "use-unpinned-or-latest-provider-resolution-at-runtime",
-      "write-ca-or-timezone-updates-into-python-install-root",
       "treat-producer-provenance-as-operational-path-residue",
-      "claim-raw-native-wheel-portability-before-explicit-elf-normalization-authority"
+      "use-unpinned-or-latest-provider-resolution-at-runtime",
+      "use-user-wheel-rpath-cleanliness-as-rb3-blocker",
+      "write-ca-or-timezone-updates-into-python-install-root"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
@@ -143,6 +147,16 @@
       "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
       "reason": "Frozen accepted three-root Android data policy and selected CA/timezone runtime bindings.",
       "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
+      "reason": "Frozen responsibility reassessment for profile M and user-built wheel postprocessing.",
+      "sha256": "ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+      "reason": "Frozen failed successor r1 inspection and correction boundary.",
+      "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
     }
   ],
   "required_reads": [
@@ -260,13 +274,23 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-contract.json",
       "reason": "Exact successor full r5 inputs, required qualifications, and non-claim boundary.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
+      "reason": "Accepted distributor/user responsibility split, external wheel-repair exclusion, and hard Android 16 KiB boundary.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+      "reason": "Exact successor-full r1 failure, rollback, A/B identities, and deterministic receipt path defect.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 36,
+  "state_revision": 37,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Resolve the remaining release blockers while implementing the accepted RB-3 profile M boundary. Build and qualify a deterministic successor full r5 without modifying or superseding the frozen predecessor family.",
+    "goal": "Resolve the remaining release blockers while preserving the accepted profile M responsibility boundary. Correct deterministic receipt serialization and build and qualify successor full r5 without modifying or superseding the frozen predecessor family.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

@@ -1,0 +1,55 @@
+{
+  "assemblies": {
+    "A": {
+      "assembly_pass": true,
+      "member_count": 3752,
+      "sha256": "fdd7489caa54f7809a6614f6df821ff3019e3c307b9df50caaf7f537823d5ebf",
+      "size_bytes": 39411761
+    },
+    "B": {
+      "assembly_pass": true,
+      "member_count": 3752,
+      "sha256": "8b5b391d19030ff7430d1057c2b50fcf76ca08913114733e1f70cdad7b380eb2",
+      "size_bytes": 39411751
+    },
+    "byte_identical": false
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "profile_selected": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-full-r1-return-inspection",
+  "receipt": {
+    "action": "failed-target",
+    "failure_reason": "successor-full-double-assembly-or-reproducibility-failed",
+    "post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "pre_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "remote_post_not_written": true,
+    "remote_pre_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "rollback_exact": true
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 25,
+    "sha256": "5f4c25a94f3fd347b0a353eaa2122e49fcf8af671ff03a7ddafaa130a9e686b2",
+    "size_bytes": 11046
+  },
+  "root_cause": {
+    "classification": "deterministic-receipt-serialization-defect",
+    "component": "components/upstream-thin/lib/normalize.py:normalize_runtime_metadata",
+    "correction_proof_required": "unit receipt equality across distinct roots plus successor double-assembly retry",
+    "embedded_member": "python/build/hw-t/mutations.json",
+    "exact_member_diff_from_failed_runner_available": false,
+    "mechanism": "effective_consumer.paths serialized assembly-root absolute paths into the artifact receipt, so independent assembly roots produced different receipt bytes",
+    "profile_M_semantics_invalidated": false
+  },
+  "schema_version": 1,
+  "status": "accepted-failure-correction-required"
+}

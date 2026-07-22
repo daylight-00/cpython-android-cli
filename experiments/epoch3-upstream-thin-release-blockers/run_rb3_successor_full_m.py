@@ -149,7 +149,6 @@ def run(
     *,
     zstd: str = "zstd",
     readelf: str = "readelf",
-    patchelf: str = "patchelf",
     pkg_config: str = "pkg-config",
     predecessor_full: Path | None = None,
 ) -> dict[str, Any]:
@@ -308,7 +307,11 @@ def run(
         )
         process.append(find_empty)
 
-        wheel = wheel_probe("successor-M", python, install, root / "wheel", system_env, output_dir / "process", readelf, patchelf)
+        wheel = wheel_probe(
+            "successor-M", python, install, root / "wheel", system_env,
+            output_dir / "process", readelf, None,
+            perform_explicit_normalization=False,
+        )
         write_json(output_dir / "native-wheel-elf-boundary.json", wheel)
 
         checks = {
@@ -329,7 +332,7 @@ def run(
             "managed_uninstall": uninstall["returncode"] == 0 and find_empty["returncode"] != 0,
             "native_wheel_build_and_import": wheel.get("pass") is True and wheel.get("wheel_import_returncode") == 0,
             "native_wheel_elf_recorded": isinstance(wheel.get("raw_extension"), dict),
-            "explicit_wheel_normalization_import": wheel.get("explicit_normalization", {}).get("import_returncode") == 0,
+            "native_wheel_16k_alignment": wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
         }
 
     after_candidate = exact_identity(full_archive)
@@ -358,7 +361,9 @@ def run(
             "successor_full_accepted": False,
             "successor_install_only_started": False,
             "predecessor_family_superseded": False,
-            "portable_raw_wheel_claim": wheel.get("raw_policy_clean") is True,
+            "portable_raw_wheel_claim": False,
+            "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
+            "native_wheel_16k_alignment_qualified": wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
             "rb3_closed": False,
             "selectable": False,
             "publication": False,
@@ -381,7 +386,6 @@ def main() -> int:
     parser.add_argument("--uv", type=Path, default=Path(shutil.which("uv") or "uv"))
     parser.add_argument("--zstd", default="zstd")
     parser.add_argument("--readelf", default="readelf")
-    parser.add_argument("--patchelf", default="patchelf")
     parser.add_argument("--pkg-config", default="pkg-config")
     parser.add_argument("--predecessor-full", type=Path)
     args = parser.parse_args()
@@ -392,7 +396,6 @@ def main() -> int:
             args.uv,
             zstd=args.zstd,
             readelf=args.readelf,
-            patchelf=args.patchelf,
             pkg_config=args.pkg_config,
             predecessor_full=args.predecessor_full,
         )

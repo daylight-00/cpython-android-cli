@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 36
+> **State revision:** 37
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -64,6 +64,8 @@ status  in-progress
 31. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json) — frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority
 32. [`experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json) — frozen deterministic current and rollback CA/timezone data products, update/rollback lifecycle, exact Android runtime qualification, and RB-2 closure authority
 33. [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json) — Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations.
+34. [`experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json) — distributor artifact responsibility, external user-wheel repair boundary, and Android 16 KiB SDK obligation
+35. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json) — exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary
 
 ## Blockers
 
@@ -90,10 +92,9 @@ status  in-progress
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
-- on-device-sdk-ordinary-wheel-flow-under-specified-because-ut3-required-post-build-rpath-removal
-- selected-profile-M-successor-full-r5-pending
 - frozen-predecessor-family-not-superseded
-- ordinary-native-wheel-inherits-Termux-toolchain-RUNPATH-and-requires-explicit-ELF-normalization-boundary
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
+- user-built-wheel-portability-and-repair-explicitly-out-of-scope
+- selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

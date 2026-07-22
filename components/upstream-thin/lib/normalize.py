@@ -265,7 +265,7 @@ def normalize_runtime_metadata(install: Path) -> dict[str, Any]:
         "normalization_kind": "upstream-preserved-minimal-consumer-overlay",
         "selected_profile": "M",
         "producer_provenance_preserved": True,
-        "portable_wheel_elf_normalization": "separate-explicit-boundary-required",
+        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
         "sysconfigdata": {"path": sysdata.relative_to(install).as_posix(), **sysdata_row},
         "sysconfig_vars_json": {
             "path": sysvars.relative_to(install).as_posix(),
@@ -283,7 +283,11 @@ def normalize_runtime_metadata(install: Path) -> dict[str, Any]:
         "pkgconfig": pkgconfig_rows,
         "build_details": build_details_row,
         "effective_consumer": {
-            "paths": {key: effective[key] for key in expected_paths},
+            "path_semantics": "relative-to-install-root",
+            "paths": {
+                key: "<install>/" + expected.relative_to(install).as_posix()
+                for key, expected in expected_paths.items()
+            },
             "CC": effective.get("CC"),
             "CXX": effective.get("CXX"),
             "AR": effective.get("AR"),

@@ -104,30 +104,19 @@ Python execution ignores this semantic distinction, but uv's managed-Python inst
 
 A canonical-header-only profile is therefore a necessary control, but not by itself a sufficient final design decision.
 
-### 4.6 The current on-device SDK claim is under-specified
+### 4.6 User-built wheel repair is not a distributor contract
 
-UT-3 successfully built, installed, relocated, and imported an Android native-extension wheel. However, the raw extension contained a Termux RUNPATH:
+UT-3 successfully built, installed, relocated, and imported an Android native-extension wheel. The raw extension also contained a Termux toolchain RUNPATH:
 
 ```text
 /data/data/com.termux/files/usr/bin/../../usr/lib
 ```
 
-The experiment then invoked:
+That RUNPATH belongs to the later user-controlled build environment and package build flow. It is not part of the distributed CPython artifact, and Astral-style standalone distribution does not imply automatic repair of every wheel later built by a consumer.
 
-```text
-patchelf --page-size 16384 --remove-rpath <extension>
-```
+The earlier `patchelf --remove-rpath` experiment remains useful historical evidence that an external repair flow is possible. It is no longer an RB-3 acceptance condition and no built-in wheel repair feature is added to the upstream-thin product. Such work belongs to auditwheel-like external tooling or a separate future toy project.
 
-and rebuilt the wheel before the final import qualification.
-
-That proves a bounded product-owned normalization can produce a clean extension. It does **not** prove that an ordinary `pip`, setuptools, Meson, or other build flow using only the canonical sysconfig metadata emits a policy-clean wheel.
-
-The selected SDK contract must therefore choose one of the following truthfully:
-
-- native builds are supported only through a documented product-owned wheel/ELF normalization step;
-- toolchain metadata is changed so ordinary builds are clean without post-processing;
-- the SDK claim is narrowed;
-- SDK material is separated from the canonical runtime surface.
+The distributor remains responsible for Android-specific properties that it directly controls: all distributed ELF objects must be 16 KiB compatible, and the baseline extension produced with the compile/link flags supplied by profile M must also have 16 KiB LOAD alignment.
 
 ### 4.7 Existing selection records contain a tension
 
@@ -158,7 +147,7 @@ That combination is valid only if the integrated SDK adaptation is both minimal 
 - `CC`, `CXX`, `AR`, and `ARFLAGS`;
 - Android-safe compile and shared-link flags;
 - explicit 16 KiB linker policy;
-- output normalization policy if Termux toolchain defaults inject a forbidden RUNPATH.
+- 16 KiB LOAD alignment produced by the supplied Android linker flags.
 
 These must be measured independently from runtime relocation and producer provenance.
 
@@ -209,7 +198,7 @@ Start from U, then add only measured consumer-path and on-device toolchain overr
 Purpose:
 
 - find the smallest truthful integrated profile that supports required consumers;
-- determine whether native wheel output is clean without an undocumented mutation.
+- prove that the supplied SDK builds and imports a correctly aligned Android extension without claiming publication portability for the user-built wheel.
 
 ## 6.1 Host assembly result
 
@@ -241,9 +230,11 @@ Each profile must record:
 7. Python pkg-config outputs;
 8. a raw native-extension wheel build using the profile without prior mutation;
 9. raw extension `DT_NEEDED`, RUNPATH/RPATH, ELF machine, and LOAD alignment;
-10. import before and after prefix relocation;
-11. any required post-build normalization as a separate, explicit measurement;
+10. hard confirmation that the baseline extension has 16 KiB LOAD alignment;
+11. import before and after prefix relocation;
 12. frozen input-family invariance.
+
+RUNPATH/RPATH and `DT_NEEDED` for the user-built wheel are diagnostic inventory only. Repair or publication portability is outside this product contract.
 
 ## 8. Selection rules
 
@@ -254,8 +245,8 @@ A profile may be selected only if:
 - it preserves truthful Android identity;
 - every mutation has a field-level reason and pre/post identity;
 - producer provenance is not silently replaced by consumer policy;
-- native SDK claims match the raw build flow or explicitly include a product-owned normalization step;
-- no Termux native dependency or identity is introduced into the product;
+- the baseline native extension builds, installs, imports, and has 16 KiB LOAD alignment;
+- no Termux native dependency or identity is introduced into the distributed product bytes;
 - the old frozen family remains unchanged during the experiment.
 
 If U passes every required consumer except on-device native builds, the default recommendation is to preserve upstream runtime metadata and revisit SEL-06 rather than retain broad canonical-runtime rewriting merely to keep an integrated SDK claim.
@@ -271,7 +262,7 @@ The evidence presently supports these statements:
 - upstream metadata was sufficient for the proven UT-2 runtime and relocation boundary;
 - the global zero-producer-path rule was not inherited from Astral;
 - the managed uv header failure was introduced by the HW-T whole-file renderer;
-- the on-device SDK evidence includes an extra post-build ELF mutation not owned by the ordinary consumer path;
+- user-built wheel postprocessing is outside the distributor contract, while 16 KiB alignment remains an Android distributor requirement;
 - a target profile comparison is required before choosing header-only repair, upstream restoration, minimal overlay, or SDK boundary redesign.
 
 No artifact byte, blocker closure, selectability claim, or publication claim changes until that experiment is accepted.
@@ -298,22 +289,22 @@ Machine authority:
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json`
 
-## 11. Separate portable-wheel boundary
+## 11. Distributor and user-built-wheel responsibility boundary
 
-Every profile that could build the probe extension produced a raw ELF with the Termux toolchain RUNPATH:
+Every profile that could build the probe extension recorded the same Termux toolchain RUNPATH. That observation is retained as diagnostic evidence, not converted into a distribution failure.
 
-```text
-/data/data/com.termux/files/usr/bin/../../usr/lib
-```
+The selected contract is:
 
-This is not evidence that profile M is incorrect. U, H, C, and M all exhibit the same toolchain-default behavior. It is evidence that sysconfig metadata and portable wheel publication are separate boundaries.
+1. profile M must support native-extension build, installation, and import;
+2. all distributed ELF objects must satisfy the 16 KiB Android alignment policy;
+3. the baseline extension produced by profile M's supplied linker flags must also satisfy 16 KiB LOAD alignment;
+4. raw wheel `DT_NEEDED`, RPATH, and RUNPATH are recorded for diagnosis only;
+5. removal, dependency repair, rebundling, and publication portability of a user-created wheel belong to the user or external auditwheel-like tooling;
+6. upstream-thin will not add a built-in wheel repair path. A separate future tool may explore it without expanding the standalone distribution contract.
 
-The selected contract is therefore:
+Machine authority:
 
-1. profile M supports local native-extension build, install, and import;
-2. raw wheel ELF identity must be inspected;
-3. portable product-owned wheel output requires an explicit deterministic ELF normalization step;
-4. no ordinary raw-wheel portability claim is made before that step has its own authority.
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json`
 
 ## 12. Successor lineage
 

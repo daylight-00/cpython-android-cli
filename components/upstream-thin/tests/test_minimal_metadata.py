@@ -109,7 +109,12 @@ class MinimalConsumerMetadataTests(unittest.TestCase):
             # Install-root-dependent runtime code is textual and deterministic;
             # the output bytes do not embed the temporary roots.
             self.assertEqual(hashes[0], hashes[1])
-            self.assertEqual(receipts[0]["normalization_kind"], receipts[1]["normalization_kind"])
+            self.assertEqual(receipts[0], receipts[1])
+            self.assertEqual(receipts[0]["effective_consumer"]["path_semantics"], "relative-to-install-root")
+            self.assertEqual(receipts[0]["effective_consumer"]["paths"]["BINDIR"], "<install>/bin")
+            serialized = json.dumps(receipts[0], sort_keys=True)
+            self.assertNotIn(str(roots[0]), serialized)
+            self.assertNotIn(str(roots[1]), serialized)
 
 
 if __name__ == "__main__":
