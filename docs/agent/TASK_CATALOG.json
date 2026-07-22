@@ -2189,14 +2189,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb1-source-provenance-resolution-with-11-remaining-gaps",
+        "current_bounded_transition": "rb1-authoritative-license-payload-acquisition-and-component-expansion-audit",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
       "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
       "input_routing": {
         "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-        "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 baseline authority, and preserved official Android package from the accepted owner cache",
+        "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 source-provenance authority, exact CPython 3.14.6 source cache, and fixed-hash CPython source-deps caches",
         "forbidden": [
           "reassemble-or-modify-any-frozen-artifact",
           "claim-complete-license-mapping-from-file-name-census-alone",
@@ -2216,6 +2216,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
           "reason": "Frozen RB-1 baseline and exact unresolved gap boundary.",
           "sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
+          "reason": "Frozen six-dependency provenance, exact CPython source identity, libffi resolution, and mismatch quarantine boundary.",
+          "sha256": "e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467"
         }
       ],
       "required_reads": [
@@ -2247,6 +2252,11 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json",
           "reason": "Exact CPython source input, libffi resolution condition, outputs, and non-claim boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/license-payload-acquisition-contract.json",
+          "reason": "Exact external source inputs, component-expansion checks, deterministic outputs, and non-closing claim boundary.",
           "scope": "full"
         }
       ],

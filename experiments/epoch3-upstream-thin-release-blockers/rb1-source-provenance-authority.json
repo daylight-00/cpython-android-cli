@@ -1,0 +1,82 @@
+{
+  "authority_kind": "epoch3-rb1-source-provenance",
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "license_payloads_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "source_provenance_frozen": true
+  },
+  "file_identities": {
+    "components/upstream-thin/lib/license_provenance.py": "0f27ce1590e642b049938d0061c04b92d39ea49f19bce4063cad8038976be794",
+    "components/upstream-thin/tests/test_license_provenance.py": "24c24f81298a9d8520ff133095cae62ba8f2957ec03330e761f4b423cf644530",
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-source-provenance-r1-return.json": "a130ef8c895fd5fd9ceffaa437b81dfc473e8df53e6cdf0d16d89870d2f0f4ea",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_source_provenance.py": "f5c4fd5b1d189f2480076616e6fe6729bc8e324f3ec0cac7c516488ef27600d4",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_source_provenance_acceptance.py": "aede80b1fd9e9dd86e5fd9ffe5deaf737053904419c378cf41684ab84a54f477",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/independent-audit.json": "5fbf0df12e72198ef9210e562bdf67fb74e45990f1d00535605349f71589268d",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/license-source-plan.json": "8ff744d85632f6c187eb5b4d43fccbfe9e6090a174c5f79b679c1ef40b1d2dbe",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/provenance-result.json": "0c8098bfc08de88086a4d70738cd66fe3a3706a1e599eac6457031f39290799c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/reproducibility.json": "a98422f6ac44144ed1f6be3716cd3e6fdba8dc7dfb3dace2c139a195eabc13cb",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/resolved-gap-register.json": "fe5f28a6437cc1f2d646b9bad13149b87d9a575ddc26110d13368c337bbc9939",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/result-summary.json": "38d169a307e249d4d76022ee0a26217893601108933fc3c95bffca2bea790d8e",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/source-input.json": "7bbdbf7135a0ee67c8c61535d716f3f5b6c771517ba2cbbb4a372a107d4488d7",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority-evidence/source-provenance.json": "ddbd32d2424c042954f590e5a9f75132b62160fb848298575599b3a721f26f52",
+    "experiments/epoch3-upstream-thin-release-blockers/run_rb1_source_provenance.py": "7b436c13ed1e696ffe643d93124e030b527dda255594d696b03d6921b400aaae",
+    "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json": "a5c54d75d3cde0075824828c4dd5badacebbc476bca7ad954627f7e0083bc4d1",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb1_source_provenance_acceptance.py": "22627dc22d802f0eb8d7606a46f051f2b36b384e05b9fc3920f1c5475bd39a3a",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb1_source_provenance_acceptance.py": "7b3e1fc295d67d9b1e4fa1a70c11bed90e839a43796d97f414e35a5be1dad8fe"
+  },
+  "gap_boundary": {
+    "baseline": 12,
+    "remaining": 11,
+    "resolved": [
+      "libffi-version-unresolved"
+    ]
+  },
+  "important_mismatch_boundaries": [
+    {
+      "component": "xz-liblzma",
+      "cpython_spdx_version": "5.2.5",
+      "policy": "do-not-use-mismatched-spdx-source-as-product-license-authority",
+      "product_version": "5.4.6"
+    },
+    {
+      "component": "libmpdec",
+      "cpython_spdx_version": "4.0.0",
+      "policy": "resolve-from-bundled-product-matching-source-and-frozen-binary-evidence",
+      "product_version": "2.5.1"
+    }
+  ],
+  "inputs": {
+    "artifact_family_authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "rb1_baseline_authority_sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e",
+    "result_archive_sha256": "806692ad56bd3d3dcaf087cae6dc61b228ab121e60f0ba9be7a15d6978d652c4"
+  },
+  "next_action_class": "acquire-authoritative-license-payloads-and-expand-component-audit",
+  "predecessor": {
+    "commit": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be"
+  },
+  "resolved": {
+    "cpython_source": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628
+    },
+    "dependency_pin_count": 6,
+    "libffi": {
+      "build_revision": 3,
+      "release_tag": "libffi-3.4.4-3",
+      "version": "3.4.4"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-libffi-resolved-license-payload-acquisition-authorized",
+  "verification": {
+    "independent_audit": "6/6",
+    "primary": "13/13",
+    "verifier_fixtures": "3/3"
+  }
+}

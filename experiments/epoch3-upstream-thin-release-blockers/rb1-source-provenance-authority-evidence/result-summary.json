@@ -1,0 +1,75 @@
+{
+  "action": "applied-rb1-source-provenance-resolved-audited-pushed",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "expected_post": {
+    "head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be"
+  },
+  "failure_reason": "none",
+  "family": {
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-artifact-family-r1-results/target/artifacts/cpython-3.14.6+e3-r1-aarch64-linux-android"
+  },
+  "first_failure": "none",
+  "metrics": {
+    "baseline_gap_count": "12",
+    "dependency_pin_count": "6",
+    "libffi_release_tag": "libffi-3.4.4-3",
+    "libffi_version": "3.4.4",
+    "remaining_gap_count": "11"
+  },
+  "outputs": {
+    "independent_audit_sha256": "5fbf0df12e72198ef9210e562bdf67fb74e45990f1d00535605349f71589268d",
+    "license_source_plan_sha256": "8ff744d85632f6c187eb5b4d43fccbfe9e6090a174c5f79b679c1ef40b1d2dbe",
+    "resolved_gap_register_sha256": "fe5f28a6437cc1f2d646b9bad13149b87d9a575ddc26110d13368c337bbc9939",
+    "source_provenance_sha256": "ddbd32d2424c042954f590e5a9f75132b62160fb848298575599b3a721f26f52"
+  },
+  "package_id": "cpython-android-cli-e3-rb1-source-provenance-r1",
+  "post": {
+    "head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "remote_head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be"
+  },
+  "pre": {
+    "head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "remote_head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 0,
+    "audit": 0,
+    "baseline_authority": 0,
+    "family_input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "source_input": 0,
+    "static": 0,
+    "target": 0,
+    "upload": 99
+  },
+  "schema_version": 1,
+  "source": {
+    "filename": "Python-3.14.6.tgz",
+    "mode": "owner-local-bounded-download",
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-inputs/cpython-source-3.14.6/Python-3.14.6.tgz",
+    "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+    "size_bytes": 31234628,
+    "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tgz"
+  },
+  "transaction_rc": 0
+}

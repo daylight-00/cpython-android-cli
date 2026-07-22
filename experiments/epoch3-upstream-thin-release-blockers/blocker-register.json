@@ -4,26 +4,25 @@
       "completion_role": "complete-component-to-license-map-and-notice-set",
       "evidence": {
         "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-        "blocking_gap_count": 12,
-        "component_count": 12,
-        "exact_version_count": 10,
-        "unresolved_version_components": [
-          "libffi"
-        ]
+        "blocking_gap_count": 11,
+        "component_count_baseline": 12,
+        "libffi_release_tag": "libffi-3.4.4-3",
+        "resolved_dependency_pin_count": 6,
+        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json"
       },
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
       "next_gate": {
         "closure_allowed": false,
-        "expected_remaining_gap_count": 11,
-        "required_output": "source-provenance-resolution-pass"
+        "fixed_gap_reduction_required": false,
+        "required_output": "authoritative-license-payload-and-component-expansion-audit"
       },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-source-provenance-implementation-ready"
+      "status": "in-progress-authoritative-license-payload-acquisition-and-component-expansion"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -101,7 +100,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "execute-rb1-source-provenance-resolution",
+  "next_bounded_action": "execute-rb1-license-payload-acquisition-and-component-expansion-audit",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

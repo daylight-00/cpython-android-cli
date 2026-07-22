@@ -1,0 +1,34 @@
+{
+  "audit_kind": "epoch3-rb1-source-provenance-independent-audit",
+  "checks": {
+    "android_package_identity": true,
+    "android_py_double_binding": true,
+    "claims_bounded": true,
+    "cpython_source_identity": true,
+    "dependency_pin_set": true,
+    "family_identity": true,
+    "full_identity": true,
+    "gap_reduction_exact": true,
+    "libffi_resolved": true,
+    "plan_component_count": true,
+    "result_pass": true,
+    "source_evidence_present": true
+  },
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false,
+    "source_provenance_resolved": true
+  },
+  "errors": {},
+  "failed_checks": [],
+  "input_sha256": {
+    "license-source-plan.json": "8ff744d85632f6c187eb5b4d43fccbfe9e6090a174c5f79b679c1ef40b1d2dbe",
+    "provenance-result.json": "0c8098bfc08de88086a4d70738cd66fe3a3706a1e599eac6457031f39290799c",
+    "resolved-gap-register.json": "fe5f28a6437cc1f2d646b9bad13149b87d9a575ddc26110d13368c337bbc9939",
+    "source-provenance.json": "ddbd32d2424c042954f590e5a9f75132b62160fb848298575599b3a721f26f52"
+  },
+  "pass": true,
+  "schema_version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "full_artifact_identity_preserved": true,
+  "metrics": {
+    "baseline_gap_count": 12,
+    "component_count": 12,
+    "remaining_gap_count": 11,
+    "resolved_dependency_pin_count": 6,
+    "resolved_version_components": [
+      "libffi"
+    ]
+  },
+  "outputs": {
+    "license_source_plan": "license-source-plan.json",
+    "resolved_gap_register": "resolved-gap-register.json",
+    "source_evidence_dir": "source-evidence",
+    "source_provenance": "source-provenance.json"
+  },
+  "pass": true,
+  "runner_kind": "epoch3-rb1-source-provenance-resolution",
+  "schema_version": 1
+}

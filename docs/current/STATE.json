@@ -155,11 +155,17 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
       "role": "frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority",
       "sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e"
+    },
+    {
+      "id": "epoch3-rb1-source-provenance-r1",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
+      "role": "frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority",
+      "sha256": "e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "0d821f40409711cc69ebfc3f4bdd388a15f944172509ef642acde7b63c317072",
+    "detail_sha256": "8616b2a56d9434bd6749bc7d8a65745ab0326d3b68687dcc52099295ee2fc546",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -247,8 +253,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "0b6146c01c4ca8c20f73cc1143e0a4a447fe351b",
-    "tree": "ccbad2f55601718b1881c968d11c2fa9b823c5fb"
+    "commit": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be"
   },
   "program": {
     "epoch": {
@@ -302,11 +308,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 25,
+  "state_revision": 26,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "5d4eda75e5359c99b52524612a0f845c99b9261352f924637b1ed07f8f426a16"
+    "sha256": "d429f3e0a0c41f3f3df1c23e8cc37de7f57f64142af63d361053a350e7157e56"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -318,7 +324,6 @@
   },
   "unresolved_risks": [
     "component-to-license-mapping-incomplete",
-    "libffi-version-and-license-attribution-unresolved",
     "CA-and-timezone-production-payload-selection-pending",
     "astral-consumer-and-uv-managed-compatibility-pending",
     "API24-runtime-qualification-pending",
@@ -331,9 +336,11 @@
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "selectability-not-authorized",
     "publication-not-authorized",
-    "libffi-version-and-source-provenance-unresolved",
     "component-license-payloads-not-yet-authoritatively-bound",
-    "rb1-source-provenance-owner-run-pending"
+    "baseline-component-set-may-omit-bundled-components",
+    "xz-5.4.6-exact-license-source-unresolved",
+    "libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry",
+    "hacl-component-mapping-and-notice-pending"
   ],
-  "updated_by_transaction": "20260722-e3-artifact-family-authority-and-release-blocker-start-r1"
+  "updated_by_transaction": "20260722-e3-rb1-source-provenance-authority-and-license-payload-start-r1"
 }

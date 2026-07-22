@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 25
+> **State revision:** 26
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -57,6 +57,7 @@ status  in-progress
 24. [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](../experiments/epoch3-upstream-thin-stripped/stripped-authority.json) — canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority
 25. [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](../experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json) — canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority
 26. [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json) — frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority
+27. [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json) — frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority
 
 ## Blockers
 
@@ -71,7 +72,6 @@ status  in-progress
 ## Unresolved risks
 
 - component-to-license-mapping-incomplete
-- libffi-version-and-license-attribution-unresolved
 - CA-and-timezone-production-payload-selection-pending
 - astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
@@ -84,8 +84,10 @@ status  in-progress
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- libffi-version-and-source-provenance-unresolved
 - component-license-payloads-not-yet-authoritatively-bound
-- rb1-source-provenance-owner-run-pending
+- baseline-component-set-may-omit-bundled-components
+- xz-5.4.6-exact-license-source-unresolved
+- libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
+- hacl-component-mapping-and-notice-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

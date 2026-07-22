@@ -163,4 +163,10 @@ The next bounded action is source-provenance resolution. It must:
 The bounded resolver is implemented but not yet accepted. It reads the two preserved copies of CPython's Android `android.py`, requires them to be byte-identical, resolves the six BeeWare dependency release tags, and validates an exact Python.org CPython 3.14.6 source archive before preserving its SPDX and license evidence.
 
 The owner run must reduce the gap register only by resolving `libffi-version-unresolved`. A successful result is expected to leave 11 blocking gaps. It does not package final license payloads and cannot close RB-1.
+## 12. Accepted source provenance and next bounded lane
 
+The owner source-provenance run passed and is frozen by `rb1-source-provenance-authority.json`. It resolved the exact six BeeWare dependency release coordinates, bound the exact Python.org CPython 3.14.6 source archive, and reduced the baseline gap register from 12 to 11 solely by resolving `libffi-version-unresolved`.
+
+The next bounded lane is authoritative license-payload acquisition plus component-expansion audit. It must not assume that the 12-class baseline is complete. It must detect bundled components evidenced by distributed bytes, including HACL* in `_hmac` and `_sha3`, and must quarantine version-mismatched source coordinates. In particular, CPython source SPDX entries for XZ 5.2.5 and mpdecimal 4.0.0 are not authorities for the frozen XZ 5.4.6 and libmpdec 2.5.1 product bytes.
+
+The lane may acquire exact fixed-hash CPython source-deps archives for matching components and preserve license-like files as evidence. It may emit a component map and NOTICE candidate, but it must retain `rb1_closed=false`, `component_license_mapping_complete=false`, `selectable=false`, and `publication=false`. Frozen artifact bytes remain immutable.

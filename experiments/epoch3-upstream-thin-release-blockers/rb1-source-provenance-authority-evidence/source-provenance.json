@@ -1,0 +1,239 @@
+{
+  "android_py": {
+    "byte_identical": true,
+    "embedded_metadata_sha256": "1dfe8fe9f6187819f83319916f77e27eaf8df43a73a0696e31c3d9c0950fcd09",
+    "nested_package_sha256": "1dfe8fe9f6187819f83319916f77e27eaf8df43a73a0696e31c3d9c0950fcd09"
+  },
+  "beeware_dependency_releases": {
+    "bzip2": {
+      "aarch64_asset": "bzip2-1.0.8-3-aarch64-linux-android.tar.gz",
+      "build_revision": 3,
+      "component": "bzip2",
+      "release_tag": "bzip2-1.0.8-3",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/bzip2-1.0.8-3/bzip2-1.0.8-3-aarch64-linux-android.tar.gz",
+      "version": "1.0.8"
+    },
+    "libffi": {
+      "aarch64_asset": "libffi-3.4.4-3-aarch64-linux-android.tar.gz",
+      "build_revision": 3,
+      "component": "libffi",
+      "release_tag": "libffi-3.4.4-3",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/libffi-3.4.4-3/libffi-3.4.4-3-aarch64-linux-android.tar.gz",
+      "version": "3.4.4"
+    },
+    "openssl": {
+      "aarch64_asset": "openssl-3.5.7-0-aarch64-linux-android.tar.gz",
+      "build_revision": 0,
+      "component": "openssl",
+      "release_tag": "openssl-3.5.7-0",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/openssl-3.5.7-0/openssl-3.5.7-0-aarch64-linux-android.tar.gz",
+      "version": "3.5.7"
+    },
+    "sqlite": {
+      "aarch64_asset": "sqlite-3.50.4-0-aarch64-linux-android.tar.gz",
+      "build_revision": 0,
+      "component": "sqlite",
+      "release_tag": "sqlite-3.50.4-0",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/sqlite-3.50.4-0/sqlite-3.50.4-0-aarch64-linux-android.tar.gz",
+      "version": "3.50.4"
+    },
+    "xz": {
+      "aarch64_asset": "xz-5.4.6-1-aarch64-linux-android.tar.gz",
+      "build_revision": 1,
+      "component": "xz",
+      "release_tag": "xz-5.4.6-1",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/xz-5.4.6-1/xz-5.4.6-1-aarch64-linux-android.tar.gz",
+      "version": "5.4.6"
+    },
+    "zstd": {
+      "aarch64_asset": "zstd-1.5.7-2-aarch64-linux-android.tar.gz",
+      "build_revision": 2,
+      "component": "zstd",
+      "release_tag": "zstd-1.5.7-2",
+      "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/zstd-1.5.7-2/zstd-1.5.7-2-aarch64-linux-android.tar.gz",
+      "version": "1.5.7"
+    }
+  },
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "license_payloads_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "cpython_source": {
+    "identity": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628,
+      "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tgz"
+    },
+    "license_evidence": [
+      {
+        "evidence_path": "LICENSE",
+        "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+        "size_bytes": 13804,
+        "source_path": "Python-3.14.6/LICENSE"
+      },
+      {
+        "evidence_path": "Misc/externals.spdx.json",
+        "sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+        "size_bytes": 7084,
+        "source_path": "Python-3.14.6/Misc/externals.spdx.json"
+      },
+      {
+        "evidence_path": "Modules/expat/COPYING",
+        "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+        "size_bytes": 1144,
+        "source_path": "Python-3.14.6/Modules/expat/COPYING"
+      }
+    ],
+    "spdx_document_sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+    "spdx_packages": [
+      {
+        "checksums": {
+          "SHA256": "ab8d1b0cc087c20d4c32c0e4fcf7d0c733a95da12cedc6d63b3f0a9af07427e2"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/bzip2-1.0.8.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "bzip2",
+        "spdx_id": "SPDXRef-PACKAGE-bzip2",
+        "version": "1.0.8"
+      },
+      {
+        "checksums": {
+          "SHA256": "9d802681adfea27d84cae0487a785fb9caa925bdad44c401b364c59ab2b8edda"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/libffi-3.4.4.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "libffi",
+        "spdx_id": "SPDXRef-PACKAGE-libffi",
+        "version": "3.4.4"
+      },
+      {
+        "checksums": {
+          "SHA256": "338fac3fb8cdd60f406b6326431338756f58a8af94229ffd9bf1e7c2b1ad71ca"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/mpdecimal-4.0.0.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "mpdecimal",
+        "spdx_id": "SPDXRef-PACKAGE-mpdecimal",
+        "version": "4.0.0"
+      },
+      {
+        "checksums": {
+          "SHA256": "ca94e7c6c223d9caf77bb51aac5949186379608ea2a0cad3aa8bdf31856912e9"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/openssl-3.5.7.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "openssl",
+        "spdx_id": "SPDXRef-PACKAGE-openssl",
+        "version": "3.5.7"
+      },
+      {
+        "checksums": {
+          "SHA256": "fb5ab81f27612b0a7b4861ba655906c76dc85ee969e7a4905d2075aff931e8d0"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/sqlite-3.50.4.0.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "sqlite",
+        "spdx_id": "SPDXRef-PACKAGE-sqlite",
+        "version": "3.50.4.0"
+      },
+      {
+        "checksums": {
+          "SHA256": "4c23f0dd3efcbe6f3a22c503a68d147617bb30c4f5290f1eb3eaacf0b460440b"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/tcl-core-8.6.15.0.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "tcl-core",
+        "spdx_id": "SPDXRef-PACKAGE-tcl-core",
+        "version": "8.6.15.0"
+      },
+      {
+        "checksums": {
+          "SHA256": "0ae56d39bca92865f338529557a1e56d110594184b6dc5a91339c5675751e264"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/tk-8.6.15.0.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "tk",
+        "spdx_id": "SPDXRef-PACKAGE-tk",
+        "version": "8.6.15.0"
+      },
+      {
+        "checksums": {
+          "SHA256": "a15c168e39e87d750c3dc766edc7f19bdda57dacf01e509678467eace91ad282"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/xz-5.2.5.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "xz",
+        "spdx_id": "SPDXRef-PACKAGE-xz",
+        "version": "5.2.5"
+      },
+      {
+        "checksums": {
+          "SHA256": "00bbd88709bc416cb96160ab61d3e1c8f76e106799af7328d0fe434dc7dd5004"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/zlib-ng-2.2.4.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "zlib-ng",
+        "spdx_id": "SPDXRef-PACKAGE-zlib-ng",
+        "version": "2.2.4"
+      },
+      {
+        "checksums": {
+          "SHA256": "f24b52470d12f466e9fa4fcc94e6c530625ada51d7b36de7fdc6ed7e6f499c8e"
+        },
+        "copyright_text": null,
+        "download_location": "https://github.com/python/cpython-source-deps/archive/refs/tags/zstd-1.5.7.tar.gz",
+        "license_concluded": "NOASSERTION",
+        "license_declared": null,
+        "name": "zstd",
+        "spdx_id": "SPDXRef-PACKAGE-zstd",
+        "version": "1.5.7"
+      }
+    ]
+  },
+  "family": {
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst",
+      "sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+      "size_bytes": 39408292
+    }
+  },
+  "official_android_package": {
+    "embedded_path": "python/build/upstream/package/python-3.14.6-aarch64-linux-android.tar.gz",
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "size_bytes": 22358404
+  },
+  "provenance_kind": "epoch3-rb1-source-provenance-resolution",
+  "resolved": {
+    "libffi": {
+      "build_revision": 3,
+      "release_tag": "libffi-3.4.4-3",
+      "version": "3.4.4"
+    }
+  },
+  "schema_version": 1
+}

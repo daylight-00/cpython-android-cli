@@ -1,0 +1,45 @@
+{
+  "action": "applied-rb1-source-provenance-resolved-audited-pushed",
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "inputs": {
+    "cpython_source_sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+    "cpython_source_size_bytes": 31234628,
+    "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12"
+  },
+  "metrics": {
+    "baseline_gap_count": 12,
+    "dependency_pin_count": 6,
+    "libffi_release_tag": "libffi-3.4.4-3",
+    "libffi_version": "3.4.4",
+    "remaining_gap_count": 11
+  },
+  "output_sha256": {
+    "independent-audit.json": "5fbf0df12e72198ef9210e562bdf67fb74e45990f1d00535605349f71589268d",
+    "license-source-plan.json": "8ff744d85632f6c187eb5b4d43fccbfe9e6090a174c5f79b679c1ef40b1d2dbe",
+    "resolved-gap-register.json": "fe5f28a6437cc1f2d646b9bad13149b87d9a575ddc26110d13368c337bbc9939",
+    "source-provenance.json": "ddbd32d2424c042954f590e5a9f75132b62160fb848298575599b3a721f26f52"
+  },
+  "repository_transition": {
+    "post_head": "1b9dea0979ff0082226f368761e5491f4ee43834",
+    "post_tree": "2a5bfc9a0d7542fe72c021da7eca10e99314f6be",
+    "pre_head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "pre_tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262",
+    "remote_post_head": "1b9dea0979ff0082226f368761e5491f4ee43834"
+  },
+  "result_archive": {
+    "drive_file_id": "116VNyPqyoBDd9BHWQ6nah_FVb7ov5vu1",
+    "filename": "cpython-android-cli-e3-rb1-source-provenance-r1-results.tar.zst",
+    "sha256": "806692ad56bd3d3dcaf087cae6dc61b228ab121e60f0ba9be7a15d6978d652c4",
+    "size_bytes": 17565
+  },
+  "return_kind": "epoch3-rb1-source-provenance-owner-return",
+  "schema_version": 1,
+  "transaction_rc": 0
+}

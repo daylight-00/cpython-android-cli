@@ -1,0 +1,86 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "license_payloads_integrated_into_release_family": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb1-authoritative-license-payload-acquisition-and-component-expansion",
+  "inputs": {
+    "cpython_source": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628
+    },
+    "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "fixed_hash_source_archives": [
+      {
+        "component": "bzip2",
+        "filename": "bzip2-1.0.8.tar.gz",
+        "sha256": "ab8d1b0cc087c20d4c32c0e4fcf7d0c733a95da12cedc6d63b3f0a9af07427e2",
+        "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/bzip2-1.0.8.tar.gz",
+        "version": "1.0.8"
+      },
+      {
+        "component": "libffi",
+        "filename": "libffi-3.4.4.tar.gz",
+        "sha256": "9d802681adfea27d84cae0487a785fb9caa925bdad44c401b364c59ab2b8edda",
+        "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/libffi-3.4.4.tar.gz",
+        "version": "3.4.4"
+      },
+      {
+        "component": "openssl",
+        "filename": "openssl-3.5.7.tar.gz",
+        "sha256": "ca94e7c6c223d9caf77bb51aac5949186379608ea2a0cad3aa8bdf31856912e9",
+        "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/openssl-3.5.7.tar.gz",
+        "version": "3.5.7"
+      },
+      {
+        "component": "sqlite",
+        "filename": "sqlite-3.50.4.0.tar.gz",
+        "sha256": "fb5ab81f27612b0a7b4861ba655906c76dc85ee969e7a4905d2075aff931e8d0",
+        "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/sqlite-3.50.4.0.tar.gz",
+        "version": "3.50.4.0"
+      },
+      {
+        "component": "zstd",
+        "filename": "zstd-1.5.7.tar.gz",
+        "sha256": "f24b52470d12f466e9fa4fcc94e6c530625ada51d7b36de7fdc6ed7e6f499c8e",
+        "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/zstd-1.5.7.tar.gz",
+        "version": "1.5.7"
+      }
+    ],
+    "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json"
+  },
+  "mismatch_quarantine": [
+    {
+      "component": "xz-liblzma",
+      "frozen_product_version": "5.4.6",
+      "mismatched_source_version": "5.2.5"
+    },
+    {
+      "component": "libmpdec",
+      "frozen_product_version": "2.5.1",
+      "mismatched_source_version": "4.0.0"
+    }
+  ],
+  "required_expansion_checks": [
+    "detect-HACL-star-in-frozen-distributed-bytes",
+    "resolve-libmpdec-2.5.1-from-bundled-source-and-frozen-binary-evidence",
+    "inventory-all-license-like-files-from-exact-inputs",
+    "preserve-xz-and-Android-system-provider-gaps",
+    "preserve-frozen-artifact-byte-identities"
+  ],
+  "required_outputs": [
+    "component-expansion-audit.json",
+    "license-payload-inventory.json",
+    "component-license-map-candidate.json",
+    "NOTICE.candidate.txt",
+    "updated-gap-register.json",
+    "payload/**",
+    "independent-audit.json"
+  ],
+  "schema_version": 1
+}

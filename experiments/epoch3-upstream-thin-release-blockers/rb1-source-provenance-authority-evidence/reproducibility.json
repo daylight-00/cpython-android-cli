@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "identical": true,
+      "path": "license-source-plan.json",
+      "sha256": "8ff744d85632f6c187eb5b4d43fccbfe9e6090a174c5f79b679c1ef40b1d2dbe",
+      "size_bytes": 5755
+    },
+    {
+      "identical": true,
+      "path": "provenance-result.json",
+      "sha256": "0c8098bfc08de88086a4d70738cd66fe3a3706a1e599eac6457031f39290799c",
+      "size_bytes": 770
+    },
+    {
+      "identical": true,
+      "path": "resolved-gap-register.json",
+      "sha256": "fe5f28a6437cc1f2d646b9bad13149b87d9a575ddc26110d13368c337bbc9939",
+      "size_bytes": 2116
+    },
+    {
+      "identical": true,
+      "path": "source-evidence/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "size_bytes": 13804
+    },
+    {
+      "identical": true,
+      "path": "source-evidence/Misc/externals.spdx.json",
+      "sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+      "size_bytes": 7084
+    },
+    {
+      "identical": true,
+      "path": "source-evidence/Modules/expat/COPYING",
+      "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "size_bytes": 1144
+    },
+    {
+      "identical": true,
+      "path": "source-provenance.json",
+      "sha256": "ddbd32d2424c042954f590e5a9f75132b62160fb848298575599b3a721f26f52",
+      "size_bytes": 9320
+    }
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb1-source-provenance-reproducibility",
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "acquisition_mode": "owner-local-bounded-download",
+  "exact_identity_verified": true,
+  "expected_sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+  "expected_size_bytes": 31234628,
+  "filename": "Python-3.14.6.tgz",
+  "input_kind": "exact-python-org-cpython-source",
+  "path": "/data/data/com.termux/files/home/.cache/hw-t-inputs/cpython-source-3.14.6/Python-3.14.6.tgz",
+  "schema_version": 1,
+  "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+  "size_bytes": 31234628,
+  "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tgz",
+  "verification_basis": "Python.org release-page SHA-256 and exact directory-index size"
+}

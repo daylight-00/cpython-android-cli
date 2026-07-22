@@ -1,0 +1,81 @@
+{
+  "baseline_gap_count": 12,
+  "blocking_gap_count": 11,
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "closure_status": "incomplete",
+  "register_kind": "epoch3-rb1-resolved-source-provenance-gap-register",
+  "remaining_gaps": [
+    {
+      "blocking": true,
+      "code": "cpython-bundled-third-party-license-sections-not-componentized",
+      "component_class": "cpython"
+    },
+    {
+      "blocking": true,
+      "code": "project-license-not-in-release-family",
+      "component_class": "project-launcher"
+    },
+    {
+      "blocking": true,
+      "code": "openssl-license-text-not-packaged",
+      "component_class": "openssl"
+    },
+    {
+      "blocking": true,
+      "code": "sqlite-notice-policy-not-frozen",
+      "component_class": "sqlite"
+    },
+    {
+      "blocking": true,
+      "code": "bzip2-license-evidence-not-packaged",
+      "component_class": "bzip2"
+    },
+    {
+      "blocking": true,
+      "code": "xz-liblzma-license-evidence-not-packaged",
+      "component_class": "xz-liblzma"
+    },
+    {
+      "blocking": true,
+      "code": "zstd-license-evidence-not-packaged",
+      "component_class": "zstd"
+    },
+    {
+      "blocking": true,
+      "code": "expat-license-evidence-not-packaged",
+      "component_class": "expat"
+    },
+    {
+      "blocking": true,
+      "code": "libmpdec-license-evidence-not-packaged",
+      "component_class": "libmpdec"
+    },
+    {
+      "blocking": true,
+      "code": "libffi-license-evidence-not-packaged",
+      "component_class": "libffi"
+    },
+    {
+      "blocking": true,
+      "code": "android-system-provider-notice-boundary-not-frozen",
+      "component_class": "android-system-providers"
+    }
+  ],
+  "resolved_gaps": [
+    {
+      "code": "libffi-version-unresolved",
+      "resolution": {
+        "build_revision": 3,
+        "evidence": "byte-identical android.py in frozen full and nested official Android package",
+        "release_tag": "libffi-3.4.4-3",
+        "version": "3.4.4"
+      }
+    }
+  ],
+  "schema_version": 1
+}

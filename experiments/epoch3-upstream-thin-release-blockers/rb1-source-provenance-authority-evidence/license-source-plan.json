@@ -1,0 +1,161 @@
+{
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "plan_is_not_license_payload": true,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "components": [
+    {
+      "component_class": "cpython",
+      "license_candidates": [
+        "LICENSE",
+        "Misc/externals.spdx.json"
+      ],
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "source_coordinate": {
+        "filename": "Python-3.14.6.tgz",
+        "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+        "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tgz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "project-launcher",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "source_coordinate": {
+        "path": "LICENSE",
+        "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "pip",
+      "mapping_complete": false,
+      "payload_packaged": true,
+      "source_coordinate": {
+        "kind": "already-packaged-pip-dist-info-and-vendored-license-files"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "openssl",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "3.5.7",
+      "source_coordinate": {
+        "asset": "openssl-3.5.7-0-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "openssl-3.5.7-0",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/openssl-3.5.7-0/openssl-3.5.7-0-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "sqlite",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "3.50.4",
+      "source_coordinate": {
+        "asset": "sqlite-3.50.4-0-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "sqlite-3.50.4-0",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/sqlite-3.50.4-0/sqlite-3.50.4-0-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "bzip2",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "1.0.8",
+      "source_coordinate": {
+        "asset": "bzip2-1.0.8-3-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "bzip2-1.0.8-3",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/bzip2-1.0.8-3/bzip2-1.0.8-3-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "xz-liblzma",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "5.4.6",
+      "source_coordinate": {
+        "asset": "xz-5.4.6-1-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "xz-5.4.6-1",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/xz-5.4.6-1/xz-5.4.6-1-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "zstd",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "1.5.7",
+      "source_coordinate": {
+        "asset": "zstd-1.5.7-2-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "zstd-1.5.7-2",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/zstd-1.5.7-2/zstd-1.5.7-2-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "expat",
+      "license_candidates": [
+        "Modules/expat/COPYING"
+      ],
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "source_coordinate": {
+        "provider": "CPython 3.14.6 bundled source tree"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "libmpdec",
+      "license_candidates": [],
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "source_coordinate": {
+        "provider": "CPython 3.14.6 bundled source tree"
+      },
+      "source_coordinate_resolved": false
+    },
+    {
+      "component_class": "libffi",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "resolved_version": "3.4.4",
+      "source_coordinate": {
+        "asset": "libffi-3.4.4-3-aarch64-linux-android.tar.gz",
+        "provider": "BeeWare cpython-android-source-deps",
+        "release_tag": "libffi-3.4.4-3",
+        "release_url": "https://github.com/beeware/cpython-android-source-deps/releases/download/libffi-3.4.4-3/libffi-3.4.4-3-aarch64-linux-android.tar.gz"
+      },
+      "source_coordinate_resolved": true
+    },
+    {
+      "component_class": "android-system-providers",
+      "mapping_complete": false,
+      "payload_packaged": false,
+      "source_coordinate": {
+        "kind": "external-Android-system-provider-policy"
+      },
+      "source_coordinate_resolved": false
+    }
+  ],
+  "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+  "next_action": "acquire-and-package-exact-license-and-notice-payloads",
+  "plan_kind": "epoch3-rb1-authoritative-license-source-plan",
+  "schema_version": 1
+}

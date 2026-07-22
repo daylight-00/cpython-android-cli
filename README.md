@@ -40,7 +40,6 @@ Epoch 3 selection     true
 ### Unresolved risks
 
 - component-to-license-mapping-incomplete
-- libffi-version-and-license-attribution-unresolved
 - CA-and-timezone-production-payload-selection-pending
 - astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
@@ -53,9 +52,11 @@ Epoch 3 selection     true
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- libffi-version-and-source-provenance-unresolved
 - component-license-payloads-not-yet-authoritatively-bound
-- rb1-source-provenance-owner-run-pending
+- baseline-component-set-may-omit-bundled-components
+- xz-5.4.6-exact-license-source-unresolved
+- libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
+- hacl-component-mapping-and-notice-pending
 
 ### Accepted authorities
 
@@ -85,6 +86,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](experiments/epoch3-upstream-thin-stripped/stripped-authority.json): canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority (`bf985a2cfc5446f7deab36d853f27ac439c30ba2b85b761546d919fe411a2d25`)
 - [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json): canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority (`102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json): frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority (`12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json): frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority (`e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467`)
 
 ### Agent entry
 
