@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "identical": true,
+      "path": "component-census.json",
+      "sha256": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+      "size_bytes": 23819
+    },
+    {
+      "identical": true,
+      "path": "license-gap-register.json",
+      "sha256": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01",
+      "size_bytes": 2293
+    },
+    {
+      "identical": true,
+      "path": "baseline-result.json",
+      "sha256": "cff5718480b1360999c3cb9b7d6954dd6d99ec2655436a883f9aa849614bf240",
+      "size_bytes": 917
+    }
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb1-baseline-reproducibility",
+  "schema_version": 1
+}

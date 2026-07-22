@@ -75,7 +75,7 @@
   },
   "input_routing": {
     "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-    "first_attempt": "reuse the exact artifact-family directory and frozen artifacts from the accepted owner cache",
+    "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 baseline authority, and preserved official Android package from the accepted owner cache",
     "forbidden": [
       "reassemble-or-modify-any-frozen-artifact",
       "claim-complete-license-mapping-from-file-name-census-alone",
@@ -97,6 +97,11 @@
       "path": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
       "reason": "Frozen exact three-artifact release-family authority.",
       "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
+      "reason": "Frozen RB-1 baseline and exact unresolved gap boundary.",
+      "sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e"
     }
   ],
   "required_reads": [
@@ -119,10 +124,15 @@
       "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json",
       "reason": "Exact frozen release-family and 23-file identity.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
+      "reason": "Accepted baseline metrics, unresolved libffi boundary, and next-action authority.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 23,
+  "state_revision": 24,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",

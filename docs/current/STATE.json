@@ -149,11 +149,17 @@
       "path": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
       "role": "canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority",
       "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
+    },
+    {
+      "id": "epoch3-rb1-component-license-baseline-r1",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
+      "role": "frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority",
+      "sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "a99fca52c69a0cc6aab77c2f45a494d190d30b9d6c8b9235e75304000fd31dd7",
+    "detail_sha256": "9881408772997e0e9b09d15871a00ec061ed836d6fedb374e6e9dafa15b2533c",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -296,11 +302,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 23,
+  "state_revision": 24,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "a76825a0300351ce527e8718e5d18a1e482cbfbfef3e67ec423ed2b30e46983b"
+    "sha256": "27e229450045a2ad57e9d8ad16881024ff73202a4f5bc15d2a87693b8a5fd11f"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -324,7 +330,9 @@
     "upstream-derived-full-is-not-Astral-producer-object-full",
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "selectability-not-authorized",
-    "publication-not-authorized"
+    "publication-not-authorized",
+    "libffi-version-and-source-provenance-unresolved",
+    "component-license-payloads-not-yet-authoritatively-bound"
   ],
   "updated_by_transaction": "20260722-e3-artifact-family-authority-and-release-blocker-start-r1"
 }

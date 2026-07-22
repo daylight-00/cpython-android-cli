@@ -1,0 +1,31 @@
+{
+  "audit_kind": "epoch3-release-blocker-component-license-baseline-independent-audit",
+  "checks": {
+    "artifact_not_mutated": true,
+    "claim_boundaries_false": true,
+    "component_classes_exact": true,
+    "component_classes_unique": true,
+    "family_identity": true,
+    "full_identity": true,
+    "gaps_nonempty": true,
+    "libffi_gaps_present": true,
+    "mapping_explicitly_incomplete": true,
+    "no_complete_overclaim": true,
+    "project_license_gap_present": true,
+    "result_pass": true
+  },
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "input_sha256": {
+    "baseline-result.json": "cff5718480b1360999c3cb9b7d6954dd6d99ec2655436a883f9aa849614bf240",
+    "component-census.json": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "license-gap-register.json": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01"
+  },
+  "pass": true,
+  "schema_version": 1
+}

@@ -1,0 +1,64 @@
+{
+  "action": "applied-rb1-component-license-baseline-censused-audited-pushed",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "expected_post": {
+    "head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262"
+  },
+  "failure_reason": "none",
+  "family": {
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-artifact-family-r1-results/target/artifacts/cpython-3.14.6+e3-r1-aarch64-linux-android"
+  },
+  "first_failure": "none",
+  "metrics": {
+    "blocking_gap_count": "12",
+    "component_count": "12",
+    "exact_version_count": "10",
+    "unresolved_version_components": "libffi"
+  },
+  "outputs": {
+    "component_census_sha256": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "independent_audit_sha256": "c83c5b811ee25727b3c69d638c3dee954cb38caf24f61b904ead033634b265cf",
+    "license_gap_register_sha256": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01"
+  },
+  "package_id": "cpython-android-cli-e3-release-blocker-rb1-baseline-r1",
+  "post": {
+    "head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "remote_head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262"
+  },
+  "pre": {
+    "head": "0b6146c01c4ca8c20f73cc1143e0a4a447fe351b",
+    "remote_head": "0b6146c01c4ca8c20f73cc1143e0a4a447fe351b",
+    "tree": "ccbad2f55601718b1881c968d11c2fa9b823c5fb"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 0,
+    "artifact_family_authority": 0,
+    "audit": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "upload": 99
+  },
+  "schema_version": 1,
+  "transaction_rc": 0
+}

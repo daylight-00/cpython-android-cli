@@ -1,0 +1,38 @@
+{
+  "action": "applied-rb1-component-license-baseline-censused-audited-pushed",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "metrics": {
+    "blocking_gap_count": 12,
+    "component_count": 12,
+    "exact_version_count": 10,
+    "unresolved_version_components": [
+      "libffi"
+    ]
+  },
+  "outputs": {
+    "component_census_sha256": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "independent_audit_sha256": "c83c5b811ee25727b3c69d638c3dee954cb38caf24f61b904ead033634b265cf",
+    "license_gap_register_sha256": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01"
+  },
+  "repository_transition": {
+    "post_head": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "post_tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262",
+    "pre_head": "0b6146c01c4ca8c20f73cc1143e0a4a447fe351b",
+    "pre_tree": "ccbad2f55601718b1881c968d11c2fa9b823c5fb",
+    "remote_post_head": "a42ee1e45132aacfd74e4949695df39856c1646c"
+  },
+  "result_archive": {
+    "drive_file_id": "1NXw2j4lBjw9rZnuGqq17OpWDbp0rLXxo",
+    "filename": "cpython-android-cli-e3-release-blocker-rb1-baseline-r1-results.tar.zst",
+    "sha256": "f16b484cdf92afac84d3ecdc5f462d23747bf29087899a372d6511f0444f4000",
+    "size_bytes": 11220
+  },
+  "return_kind": "epoch3-rb1-component-license-baseline-owner-return",
+  "schema_version": 1,
+  "transaction_rc": 0
+}

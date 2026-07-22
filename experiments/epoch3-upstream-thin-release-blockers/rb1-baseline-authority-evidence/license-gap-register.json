@@ -1,0 +1,80 @@
+{
+  "blocking_gap_count": 12,
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "selectable": false
+  },
+  "closure_status": "incomplete",
+  "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+  "gaps": [
+    {
+      "blocking": true,
+      "code": "cpython-bundled-third-party-license-sections-not-componentized",
+      "component_class": "cpython"
+    },
+    {
+      "blocking": true,
+      "code": "project-license-not-in-release-family",
+      "component_class": "project-launcher"
+    },
+    {
+      "blocking": true,
+      "code": "openssl-license-text-not-packaged",
+      "component_class": "openssl"
+    },
+    {
+      "blocking": true,
+      "code": "sqlite-notice-policy-not-frozen",
+      "component_class": "sqlite"
+    },
+    {
+      "blocking": true,
+      "code": "bzip2-license-evidence-not-packaged",
+      "component_class": "bzip2"
+    },
+    {
+      "blocking": true,
+      "code": "xz-liblzma-license-evidence-not-packaged",
+      "component_class": "xz-liblzma"
+    },
+    {
+      "blocking": true,
+      "code": "zstd-license-evidence-not-packaged",
+      "component_class": "zstd"
+    },
+    {
+      "blocking": true,
+      "code": "expat-license-evidence-not-packaged",
+      "component_class": "expat"
+    },
+    {
+      "blocking": true,
+      "code": "libmpdec-license-evidence-not-packaged",
+      "component_class": "libmpdec"
+    },
+    {
+      "blocking": true,
+      "code": "libffi-license-evidence-not-packaged",
+      "component_class": "libffi"
+    },
+    {
+      "blocking": true,
+      "code": "libffi-version-unresolved",
+      "component_class": "libffi"
+    },
+    {
+      "blocking": true,
+      "code": "android-system-provider-notice-boundary-not-frozen",
+      "component_class": "android-system-providers"
+    }
+  ],
+  "next_actions": [
+    "acquire-versioned-license-texts-from-authoritative-upstream-sources",
+    "resolve-libffi-version-from-beeware-producer-provenance-or-binary-equivalent-evidence",
+    "add-project-license-and-required-notices-to-release-family-metadata-layer",
+    "freeze-component-to-license-and-notice-mapping-before-selectability"
+  ],
+  "register_kind": "epoch3-component-license-gap-register",
+  "schema_version": 1
+}

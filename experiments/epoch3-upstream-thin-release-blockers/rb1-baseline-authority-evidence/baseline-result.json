@@ -1,0 +1,38 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "selectable": false
+  },
+  "full_artifact_identity_preserved": true,
+  "metrics": {
+    "blocking_gap_count": 12,
+    "component_count": 12,
+    "component_to_license_mapping_complete": false,
+    "components_with_blocking_gaps": [
+      "cpython",
+      "project-launcher",
+      "openssl",
+      "sqlite",
+      "bzip2",
+      "xz-liblzma",
+      "zstd",
+      "expat",
+      "libmpdec",
+      "libffi",
+      "android-system-providers"
+    ],
+    "exact_version_count": 10,
+    "unresolved_version_components": [
+      "libffi"
+    ]
+  },
+  "outputs": {
+    "component_census": "component-census.json",
+    "license_gap_register": "license-gap-register.json"
+  },
+  "pass": true,
+  "runner_kind": "epoch3-release-blocker-component-license-baseline",
+  "schema_version": 1
+}

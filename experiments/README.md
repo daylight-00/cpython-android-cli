@@ -343,8 +343,18 @@
 
 ## `epoch3-upstream-thin-release-blockers`
 
+- [`experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-baseline-r1-return.json`](epoch3-upstream-thin-release-blockers/accepted-rb1-baseline-r1-return.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
 - [`experiments/epoch3-upstream-thin-release-blockers/baseline-contract.json`](epoch3-upstream-thin-release-blockers/baseline-contract.json) — `ACTIVE_PLAN` · `machine_contract` · owner `epoch3-release-blocker-governance`
 - [`experiments/epoch3-upstream-thin-release-blockers/blocker-register.json`](epoch3-upstream-thin-release-blockers/blocker-register.json) — `ACTIVE_PLAN` · `machine_plan` · owner `epoch3-release-blocker-governance`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/baseline-result.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/baseline-result.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/component-census.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/component-census.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/independent-audit.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/independent-audit.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/license-gap-register.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/license-gap-register.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/reproducibility.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/reproducibility.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/result-summary.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/result-summary.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json) — `FROZEN_AUTHORITY` · `product_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-independent-audit.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-independent-audit.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-verification.json`](epoch3-upstream-thin-release-blockers/rb1-baseline-verification.json) — `FROZEN_AUTHORITY` · `evidence_authority` · owner `epoch3-rb1-license-closure`
 
 ## `epoch3-upstream-thin-stripped`
 

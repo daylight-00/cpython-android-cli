@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 23
+> **State revision:** 24
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -56,6 +56,7 @@ status  in-progress
 23. [`experiments/epoch3-upstream-thin-install-only/install-only-authority.json`](../experiments/epoch3-upstream-thin-install-only/install-only-authority.json) — canonical exact full projection, Android/Bionic qualification, and stripped start authority
 24. [`experiments/epoch3-upstream-thin-stripped/stripped-authority.json`](../experiments/epoch3-upstream-thin-stripped/stripped-authority.json) — canonical bounded install-only-stripped derivation, Android/Bionic qualification, and artifact-family start authority
 25. [`experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json`](../experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json) — canonical deterministic three-artifact release family, exact artifact identities, sidecars, checksums, release index, reproducibility, and release-blocker start authority
+26. [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json) — frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority
 
 ## Blockers
 
@@ -83,5 +84,7 @@ status  in-progress
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
+- libffi-version-and-source-provenance-unresolved
+- component-license-payloads-not-yet-authoritatively-bound
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

@@ -146,3 +146,16 @@ Stop and retain the blocker when:
 ## 9. Final release boundary
 
 After all mandatory blockers pass, a new release-family revision may add complete component-license mapping, data-product references, operations policy, and final platform qualification receipts while reusing the exact three artifact bytes. Only a subsequent explicit selectability authority may set `selectable=true`. Publication remains a separate owner authorization.
+## 10. RB-1 baseline result and next bounded action
+
+The first deterministic census passed and is frozen as a non-closing baseline. It identified 12 component classes, resolved 10 exact versions, retained 12 blocking gaps, and left only `libffi` version provenance unresolved. The baseline does not complete component-to-license mapping and does not authorize selectability or publication.
+
+The next bounded action is source-provenance resolution. It must:
+
+1. bind the exact frozen artifact family and RB-1 baseline authority;
+2. read the exact Python.org Android package and its preserved `android.py` without changing artifact bytes;
+3. resolve the BeeWare dependency release coordinates, including `libffi`;
+4. bind an exact CPython 3.14.6 source release coordinate for later authoritative license extraction;
+5. emit a deterministic license-source plan and a reduced-but-still-open gap register;
+6. preserve `rb1_closed=false`, `selectable=false`, and `publication=false`.
+

@@ -1,0 +1,45 @@
+{
+  "check_count": 21,
+  "checks": {
+    "accepted_action": true,
+    "accepted_metrics": true,
+    "accepted_result_archive": true,
+    "accepted_transition": true,
+    "audit_pass": true,
+    "census_metrics": true,
+    "claims_bounded": true,
+    "component_classes": true,
+    "evidence_identity": true,
+    "family_identity": true,
+    "full_identity": true,
+    "gap_register": true,
+    "parse:accepted-return": true,
+    "parse:baseline-result": true,
+    "parse:component-census": true,
+    "parse:independent-audit": true,
+    "parse:license-gap-register": true,
+    "parse:reproducibility": true,
+    "parse:result-summary": true,
+    "reproducibility_pass": true,
+    "result_pass": true
+  },
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_baseline_authority_can_freeze": true,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "errors": {},
+  "evidence_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/baseline-result.json": "cff5718480b1360999c3cb9b7d6954dd6d99ec2655436a883f9aa849614bf240",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/component-census.json": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/independent-audit.json": "c83c5b811ee25727b3c69d638c3dee954cb38caf24f61b904ead033634b265cf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/license-gap-register.json": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01"
+  },
+  "failed_checks": [],
+  "pass": true,
+  "pass_count": 21,
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb1-baseline-owner-return-acceptance"
+}

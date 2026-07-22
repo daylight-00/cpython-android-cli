@@ -2,18 +2,32 @@
   "blockers": [
     {
       "completion_role": "complete-component-to-license-map-and-notice-set",
+      "evidence": {
+        "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
+        "blocking_gap_count": 12,
+        "component_count": 12,
+        "exact_version_count": 10,
+        "unresolved_version_components": [
+          "libffi"
+        ]
+      },
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
-      "required_for": ["selectability", "publication"],
-      "status": "in-progress"
+      "required_for": [
+        "selectability",
+        "publication"
+      ],
+      "status": "in-progress-baseline-frozen"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
       "id": "RB-2",
       "lane": "local",
       "name": "ca-timezone-data-products",
-      "required_for": ["selectability"],
+      "required_for": [
+        "selectability"
+      ],
       "status": "open"
     },
     {
@@ -21,7 +35,9 @@
       "id": "RB-3",
       "lane": "local",
       "name": "astral-consumer-compatibility",
-      "required_for": ["selectability"],
+      "required_for": [
+        "selectability"
+      ],
       "status": "open"
     },
     {
@@ -29,7 +45,9 @@
       "id": "RB-4",
       "lane": "local",
       "name": "release-operations",
-      "required_for": ["publication"],
+      "required_for": [
+        "publication"
+      ],
       "status": "open"
     },
     {
@@ -37,7 +55,10 @@
       "id": "RB-5",
       "lane": "target",
       "name": "api24-runtime",
-      "required_for": ["api24-support", "selectability"],
+      "required_for": [
+        "api24-support",
+        "selectability"
+      ],
       "status": "open"
     },
     {
@@ -45,7 +66,10 @@
       "id": "RB-6",
       "lane": "target",
       "name": "real-16k-runtime",
-      "required_for": ["16k-support", "selectability"],
+      "required_for": [
+        "16k-support",
+        "selectability"
+      ],
       "status": "open"
     },
     {
@@ -53,7 +77,10 @@
       "id": "RB-7",
       "lane": "target",
       "name": "non-termux-runtime",
-      "required_for": ["termux-independence", "selectability"],
+      "required_for": [
+        "termux-independence",
+        "selectability"
+      ],
       "status": "open"
     }
   ],
@@ -69,7 +96,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "component-and-license-census",
+  "next_bounded_action": "rb1-source-provenance-and-license-source-plan",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

@@ -1,0 +1,58 @@
+{
+  "authority_kind": "epoch3-rb1-component-license-baseline",
+  "baseline": {
+    "blocking_gap_count": 12,
+    "component_census_sha256": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "component_count": 12,
+    "exact_version_count": 10,
+    "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "full_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+    "license_gap_register_sha256": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01",
+    "unresolved_version_components": [
+      "libffi"
+    ]
+  },
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_baseline_frozen": true,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "file_identities": {
+    "components/upstream-thin/lib/license_census.py": "9d1f82e3af8bd25229ec9023c7dc4ba447d22a3d5ad275041c13e642ced0f9d1",
+    "components/upstream-thin/tests/test_license_census.py": "d442421e2bbf255bfddb120fc02e1b0e65cfd0090e2e6867124b44da2d3c1a47",
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-baseline-r1-return.json": "0327efa33f32f8ce6740363e2ea302f40e75de8cf6aeac627bad7783d2e7288a",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb1_baseline_acceptance.py": "3302bf64c97da9de2ca307bc99bd05bc4e82fa9f1f0f72202685b1ba475b39e6",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_release_blocker_baseline.py": "092a51857ba904949a1d13ad41a14758f9af7b2784801ee7606aa76e6aae9ce9",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/baseline-result.json": "cff5718480b1360999c3cb9b7d6954dd6d99ec2655436a883f9aa849614bf240",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/component-census.json": "3ff0379f5f76c503e32d6bbf3df32677d0e0d2d44ed973d0bd8696e312a8ccf0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/independent-audit.json": "c83c5b811ee25727b3c69d638c3dee954cb38caf24f61b904ead033634b265cf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/license-gap-register.json": "9ac84e6c625d1bdeadd1cbe2a87f1947af4e05aebdabb5a64ed2c11b348c7f01",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/reproducibility.json": "bfe43d20b222818e488649b1a60a8567ef05f86482a9ce98c9a3fe2062d4258a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority-evidence/result-summary.json": "61c8c630f7bc4160385f89e6ce9fff74950d9522615a13efa21ef985f12d7298",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-independent-audit.json": "1d0a6cbcd234c4422fab269a468a51f27727f1f716f3abf64b9ab53fb02d032c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-verification.json": "220ddd30183619f2860e6e4a3a5fcaa567453ad6f34becf2c842a2b7ff59c37f",
+    "experiments/epoch3-upstream-thin-release-blockers/run_release_blocker_baseline.py": "9653c14befb481b3b4acd2995c6a0bc3487494a1ae8a329d6c265d6fd1f5703d",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb1_baseline_acceptance.py": "f504212e89a1b6bd9d9a4247d33ebf1bd0b2d368fbed256b97d9c42b8f3462c4",
+    "experiments/epoch3-upstream-thin-release-blockers/test_release_blocker_baseline.py": "3159fc7fae6b7dd0ecfba4bc33584fb8e0927efa9218f28d333bc4812210fe92",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb1_baseline_acceptance.py": "1cd65e59278b2394cda0019a9e6d7c26c8019e89463fb80c082d61cd990b91be"
+  },
+  "inputs": {
+    "artifact_family_authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "result_archive_sha256": "f16b484cdf92afac84d3ecdc5f462d23747bf29087899a372d6511f0444f4000"
+  },
+  "next_action_class": "resolve-rb1-source-provenance-and-license-payloads",
+  "predecessor": {
+    "commit": "a42ee1e45132aacfd74e4949695df39856c1646c",
+    "tree": "beb8f96cfb7f9961938e1476c254b11ec57c1262"
+  },
+  "schema_version": 1,
+  "status": "frozen-pass-baseline-incomplete-mapping-provenance-resolution-authorized",
+  "verification": {
+    "independent_audit": "5/5",
+    "primary": "21/21",
+    "verifier_fixtures": "3/3"
+  }
+}

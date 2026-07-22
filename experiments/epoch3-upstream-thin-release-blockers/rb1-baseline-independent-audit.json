@@ -1,0 +1,31 @@
+{
+  "audit_kind": "epoch3-rb1-baseline-acceptance-independent-audit",
+  "bound_file_identities": {
+    "components/upstream-thin/lib/license_census.py": "9d1f82e3af8bd25229ec9023c7dc4ba447d22a3d5ad275041c13e642ced0f9d1",
+    "components/upstream-thin/tests/test_license_census.py": "d442421e2bbf255bfddb120fc02e1b0e65cfd0090e2e6867124b44da2d3c1a47",
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb1-baseline-r1-return.json": "0327efa33f32f8ce6740363e2ea302f40e75de8cf6aeac627bad7783d2e7288a",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_release_blocker_baseline.py": "092a51857ba904949a1d13ad41a14758f9af7b2784801ee7606aa76e6aae9ce9",
+    "experiments/epoch3-upstream-thin-release-blockers/baseline-contract.json": "1f915a60cc6afb0e4a9bed314f544dde6128830ff87bbe8f05b859cb981cf394",
+    "experiments/epoch3-upstream-thin-release-blockers/run_release_blocker_baseline.py": "9653c14befb481b3b4acd2995c6a0bc3487494a1ae8a329d6c265d6fd1f5703d",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb1_baseline_acceptance.py": "1cd65e59278b2394cda0019a9e6d7c26c8019e89463fb80c082d61cd990b91be"
+  },
+  "checks": {
+    "all_primary_checks": true,
+    "baseline_freezable": true,
+    "bound_files_present": true,
+    "claims_bounded": true,
+    "primary_pass": true
+  },
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_baseline_frozen": true,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "pass": true,
+  "primary_verification_sha256": "220ddd30183619f2860e6e4a3a5fcaa567453ad6f34becf2c842a2b7ff59c37f",
+  "schema_version": 1,
+  "stderr": ""
+}
