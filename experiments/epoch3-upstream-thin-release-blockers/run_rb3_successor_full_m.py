@@ -82,30 +82,41 @@ def identity_code() -> str:
         "'ar':sysconfig.get_config_var('AR'),'build_gnu_type':sysconfig.get_config_var('BUILD_GNU_TYPE'),"
         "'host_gnu_type':sysconfig.get_config_var('HOST_GNU_TYPE'),"
         "'config_args':sysconfig.get_config_var('CONFIG_ARGS'),"
+        "'ldshared':sysconfig.get_config_var('LDSHARED'),'cflags':sysconfig.get_config_var('CFLAGS'),"
+        "'ldflags':sysconfig.get_config_var('LDFLAGS'),"
         "'metadata_profile':sysconfig.get_config_var('HW_T_METADATA_PROFILE')},sort_keys=True))"
     )
 
 
-def profile_m_identity(row: dict[str, Any]) -> bool:
+def profile_m_identity(row: dict[str, Any], *, managed: bool = False) -> bool:
     if not android_identity(row):
         return False
     value = parse_json_stdout(row)
     if not value:
         return False
+    expected_tools = (
+        ({"cc", "clang"}, {"c++", "clang++"}, {"ar", "llvm-ar"})
+        if managed
+        else ({"clang"}, {"clang++"}, {"llvm-ar"})
+    )
+    linker_policy = " ".join(str(value.get(key, "")) for key in ("ldshared", "ldflags"))
     return (
         value.get("metadata_profile") == EXPECTED_PROFILE
-        and value.get("cc") == "clang"
-        and value.get("cxx") == "clang++"
-        and value.get("ar") == "llvm-ar"
-        and value.get("host_gnu_type") == "aarch64-linux-android"
-        and value.get("build_gnu_type") != "aarch64-linux-android"
+        and value.get("cc") in expected_tools[0]
+        and value.get("cxx") in expected_tools[1]
+        and value.get("ar") in expected_tools[2]
+        and value.get("host_gnu_type") == "aarch64-unknown-linux-android"
+        and value.get("build_gnu_type") != "aarch64-unknown-linux-android"
         and "consumer-normalized-binary-derived" not in str(value.get("config_args", ""))
+        and "-D__BIONIC_NO_PAGE_SIZE_MACRO" in str(value.get("cflags", ""))
+        and "max-page-size=16384" in linker_policy
+        and "common-page-size=16384" in linker_policy
     )
 
 
-def identity_base_ok(row: dict[str, Any], base: Path) -> bool:
+def identity_base_ok(row: dict[str, Any], base: Path, *, managed: bool = False) -> bool:
     value = parse_json_stdout(row)
-    return bool(profile_m_identity(row) and Path(str(value.get("base_prefix", ""))).resolve() == base.resolve())
+    return bool(profile_m_identity(row, managed=managed) and Path(str(value.get("base_prefix", ""))).resolve() == base.resolve())
 
 
 def catalog_row(archive: Path) -> dict[str, Any]:
@@ -286,6 +297,16 @@ def run(
         process.append(mvenv)
         mvenv_id = run_capture("managed-venv-identity", [str(managed_venv / "bin/python"), "-c", identity_code()], root, find_env, output_dir / "process") if mvenv["returncode"] == 0 else {"name": "managed-venv-identity", "returncode": 125}
         process.append(mvenv_id)
+        managed_wheel = (
+            wheel_probe(
+                "successor-M-managed", managed_python, managed_python.parent.parent,
+                root / "managed-wheel", find_env, output_dir / "process", readelf, None,
+                perform_explicit_normalization=False,
+            )
+            if managed_python.is_file() and profile_m_identity(managed_id, managed=True)
+            else {"pass": False, "skipped": "managed profile M identity unavailable"}
+        )
+        write_json(output_dir / "native-managed-wheel-elf-boundary.json", managed_wheel)
         managed_before_reinstall = snapshot(managed)
         reinstall = run_capture(
             "managed-reinstall",
@@ -326,13 +347,16 @@ def run(
             "managed_catalog": catalog_list["returncode"] == 0 and KEY in catalog_list.get("stdout", ""),
             "managed_install": install_row["returncode"] == 0,
             "managed_find": managed_find["returncode"] == 0 and managed_python.is_file(),
-            "managed_profile_m_identity": profile_m_identity(managed_id),
-            "managed_venv": mvenv["returncode"] == 0 and identity_base_ok(mvenv_id, managed_python.parent.parent),
+            "managed_profile_m_identity": profile_m_identity(managed_id, managed=True),
+            "managed_venv": mvenv["returncode"] == 0 and identity_base_ok(mvenv_id, managed_python.parent.parent, managed=True),
             "managed_reinstall_noop": reinstall["returncode"] == 0 and managed_before_reinstall == managed_after_reinstall,
             "managed_uninstall": uninstall["returncode"] == 0 and find_empty["returncode"] != 0,
             "native_wheel_build_and_import": wheel.get("pass") is True and wheel.get("wheel_import_returncode") == 0,
             "native_wheel_elf_recorded": isinstance(wheel.get("raw_extension"), dict),
             "native_wheel_16k_alignment": wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
+            "managed_native_wheel_build_and_import": managed_wheel.get("pass") is True and managed_wheel.get("wheel_import_returncode") == 0,
+            "managed_native_wheel_elf_recorded": isinstance(managed_wheel.get("raw_extension"), dict),
+            "managed_native_wheel_16k_alignment": managed_wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
         }
 
     after_candidate = exact_identity(full_archive)
@@ -356,6 +380,7 @@ def run(
         "uv": uv_identity,
         "profile": {"id": "M", "name": EXPECTED_PROFILE},
         "native_wheel_elf_boundary": wheel,
+        "managed_native_wheel_elf_boundary": managed_wheel,
         "claim_boundary": {
             "successor_full_candidate_built": True,
             "successor_full_accepted": False,
@@ -364,6 +389,7 @@ def run(
             "portable_raw_wheel_claim": False,
             "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
             "native_wheel_16k_alignment_qualified": wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
+            "managed_native_wheel_16k_alignment_qualified": managed_wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
             "rb3_closed": False,
             "selectable": False,
             "publication": False,

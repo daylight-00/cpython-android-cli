@@ -30,7 +30,7 @@
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only deterministic successor assembly/qualification defects; user-built wheel repair remains out of scope while 16 KiB alignment remains a hard gate",
+      "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only bounded successor representation or qualification defects; user-built wheel repair remains out of scope while direct and managed 16 KiB alignment remain hard gates",
       "complete_receipt_required": true
     },
     "pass": {
@@ -72,7 +72,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-selected-profile-M-successor-full-r5-reproducibility-correction",
+    "current_bounded_transition": "rb3-profile-M-uv-managed-rewrite-compatible-successor-full-r5-correction",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -82,7 +82,7 @@
   },
   "input_routing": {
     "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-    "first_attempt": "apply the deterministic install-relative receipt correction, reuse the exact official Python archive, accepted launcher, exact Android uv, and profile-M authorities, then build and qualify successor full r5 twice",
+    "first_attempt": "apply the canonical literal-mapping profile-M correction and truthful HOST_GNU_TYPE expectation, then reuse the exact official Python archive, accepted launcher, exact Android uv, and frozen authorities to build and qualify successor full r5 twice",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -157,6 +157,11 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
       "reason": "Frozen failed successor r1 inspection and correction boundary.",
       "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+      "reason": "Frozen failed successor r2 inspection, exact reproducible candidate evidence, verifier correction, and uv-managed sysconfig rewrite defect.",
+      "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd"
     }
   ],
   "required_reads": [
@@ -284,13 +289,23 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
       "reason": "Exact successor-full r1 failure, rollback, A/B identities, and deterministic receipt path defect.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+      "reason": "Exact successor r2 result, successful reproducibility/runtime/16 KiB evidence, and bounded remaining defects.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
+      "reason": "Active canonical literal-mapping and uv-managed SDK preservation correction contract.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 37,
+  "state_revision": 38,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Resolve the remaining release blockers while preserving the accepted profile M responsibility boundary. Correct deterministic receipt serialization and build and qualify successor full r5 without modifying or superseding the frozen predecessor family.",
+    "goal": "Resolve the remaining release blockers while preserving the accepted distributor boundary. Correct profile M to survive uv managed sysconfig rewriting, retain truthful upstream provenance, and requalify direct and managed 16 KiB SDK output without modifying or superseding the frozen predecessor family.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

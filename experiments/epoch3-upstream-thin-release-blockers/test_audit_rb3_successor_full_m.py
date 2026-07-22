@@ -16,6 +16,7 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(mod.RESULT, "rb3-successor-full-m-result.json")
         self.assertEqual(mod.STRUCTURAL, "full-structural-verification.json")
         self.assertEqual(mod.QUALIFICATION, "full-android-qualification.json")
+        self.assertEqual(mod.MANAGED_WHEEL, "native-managed-wheel-elf-boundary.json")
 
     def test_claim_boundary_remains_open(self):
         text = SCRIPT.read_text(encoding="utf-8")
@@ -23,6 +24,8 @@ class AuditTests(unittest.TestCase):
         self.assertIn('"rb3_closed": False', text)
         self.assertIn('"native_wheel_16k_alignment_pass"', text)
         self.assertIn('"wheel_postprocessing_out_of_scope"', text)
+        self.assertIn('"managed_native_wheel_16k_alignment_pass"', text)
+        self.assertIn('"successor-M-managed-wheel-build.json"', text)
         self.assertNotIn('"explicit_wheel_normalization_pass"', text)
 
 

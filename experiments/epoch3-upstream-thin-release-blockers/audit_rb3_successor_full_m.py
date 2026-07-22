@@ -13,6 +13,7 @@ STRUCTURAL = "full-structural-verification.json"
 QUALIFICATION = "full-android-qualification.json"
 PROTECTED = "protected-state.json"
 WHEEL = "native-wheel-elf-boundary.json"
+MANAGED_WHEEL = "native-managed-wheel-elf-boundary.json"
 
 
 def load(path: Path) -> Any:
@@ -34,6 +35,7 @@ def audit(result_dir: Path) -> dict[str, Any]:
     qualification = load(result_dir / QUALIFICATION)
     protected = load(result_dir / PROTECTED)
     wheel = load(result_dir / WHEEL)
+    managed_wheel = load(result_dir / MANAGED_WHEEL)
     checks = result.get("checks", {}) if isinstance(result.get("checks"), dict) else {}
     boundary = result.get("claim_boundary", {}) if isinstance(result.get("claim_boundary"), dict) else {}
     projection = result.get("temporary_install_only_projection", {})
@@ -51,6 +53,9 @@ def audit(result_dir: Path) -> dict[str, Any]:
         "native_wheel_build_import_pass": wheel.get("pass") is True and wheel.get("wheel_import_returncode") == 0,
         "native_wheel_elf_recorded": isinstance(wheel.get("raw_extension"), dict),
         "native_wheel_16k_alignment_pass": wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
+        "managed_native_wheel_build_import_pass": managed_wheel.get("pass") is True and managed_wheel.get("wheel_import_returncode") == 0,
+        "managed_native_wheel_elf_recorded": isinstance(managed_wheel.get("raw_extension"), dict),
+        "managed_native_wheel_16k_alignment_pass": managed_wheel.get("raw_extension", {}).get("all_load_alignments_16k") is True,
         "wheel_postprocessing_out_of_scope": boundary.get("user_built_wheel_postprocessing") == "out-of-scope-external-tool-responsibility",
         "portable_raw_wheel_not_claimed": boundary.get("portable_raw_wheel_claim") is False,
         "candidate_protected": protected.get("candidate_full_unchanged") is True,
@@ -67,7 +72,11 @@ def audit(result_dir: Path) -> dict[str, Any]:
         "system-identity.json", "system-find.json", "system-venv.json", "system-run.json", "system-sync.json",
         "managed-catalog.json", "managed-install.json", "managed-find.json", "managed-identity.json",
         "managed-venv.json", "managed-reinstall.json", "managed-uninstall.json", "managed-find-empty.json",
-        "successor-M-wheel-venv.json", "successor-M-wheel-build.json",
+        "successor-M-wheel-venv.json", "successor-M-wheel-setuptools.json", "successor-M-wheel-build.json",
+        "successor-M-wheel-install.json", "successor-M-wheel-import.json",
+        "successor-M-managed-wheel-venv.json", "successor-M-managed-wheel-setuptools.json",
+        "successor-M-managed-wheel-build.json", "successor-M-managed-wheel-install.json",
+        "successor-M-managed-wheel-import.json",
     ]
     missing = sorted(name for name in required_logs if not (result_dir / "process" / name).is_file())
     audit_checks["required_process_logs_present"] = not missing

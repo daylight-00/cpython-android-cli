@@ -30,14 +30,34 @@ class SuccessorFullTests(unittest.TestCase):
             "soabi": "cpython-314-aarch64-linux-android", "multiarch": "aarch64-linux-android",
             "platform": "android-24-arm64_v8a", "metadata_profile": mod.EXPECTED_PROFILE,
             "cc": "clang", "cxx": "clang++", "ar": "llvm-ar",
-            "host_gnu_type": "aarch64-linux-android", "build_gnu_type": "aarch64-apple-darwin24.6.0",
+            "host_gnu_type": "aarch64-unknown-linux-android", "build_gnu_type": "aarch64-apple-darwin24.6.0",
             "config_args": "--host=aarch64-linux-android --build=aarch64-apple-darwin24.6.0",
+            "cflags": "-D__BIONIC_NO_PAGE_SIZE_MACRO",
+            "ldflags": "-Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+            "ldshared": "clang -shared -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
         }
         row = {"returncode": 0, "stdout": json.dumps(value)}
         self.assertTrue(mod.profile_m_identity(row))
-        value["build_gnu_type"] = "aarch64-linux-android"
+        value["build_gnu_type"] = "aarch64-unknown-linux-android"
         row["stdout"] = json.dumps(value)
         self.assertFalse(mod.profile_m_identity(row))
+
+
+    def test_profile_m_identity_accepts_uv_managed_tool_names(self):
+        value = {
+            "implementation": "CPython", "version": "3.14.6",
+            "soabi": "cpython-314-aarch64-linux-android", "multiarch": "aarch64-linux-android",
+            "platform": "android-24-arm64_v8a", "metadata_profile": mod.EXPECTED_PROFILE,
+            "cc": "cc", "cxx": "c++", "ar": "ar",
+            "host_gnu_type": "aarch64-unknown-linux-android", "build_gnu_type": "aarch64-apple-darwin24.6.0",
+            "config_args": "--host=aarch64-linux-android",
+            "cflags": "-D__BIONIC_NO_PAGE_SIZE_MACRO",
+            "ldflags": "-Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+            "ldshared": "cc -shared -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384",
+        }
+        row = {"returncode": 0, "stdout": json.dumps(value)}
+        self.assertTrue(mod.profile_m_identity(row, managed=True))
+        self.assertFalse(mod.profile_m_identity(row, managed=False))
 
     def test_claim_boundaries_remain_open_in_source(self):
         text = SCRIPT.read_text(encoding="utf-8")
@@ -47,6 +67,7 @@ class SuccessorFullTests(unittest.TestCase):
         self.assertIn('"portable_raw_wheel_claim": False', text)
         self.assertIn('"user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"', text)
         self.assertIn('"native_wheel_16k_alignment"', text)
+        self.assertIn('"managed_native_wheel_16k_alignment"', text)
         self.assertNotIn('"explicit_wheel_normalization_import"', text)
 
 

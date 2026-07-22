@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 \u2014 Exact official upstream control",
-          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 — Exact official upstream control",
+          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
+          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 \u2014 Platform portability",
-          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 — Platform portability",
+          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -2153,7 +2153,7 @@
         },
         "contract_version": 1,
         "fail": {
-          "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only deterministic successor assembly/qualification defects; user-built wheel repair remains out of scope while 16 KiB alignment remains a hard gate",
+          "allowed_action_policy": "retain RB-3 open, keep profile M selected, preserve the frozen predecessor family, and correct only bounded successor representation or qualification defects; user-built wheel repair remains out of scope while direct and managed 16 KiB alignment remain hard gates",
           "complete_receipt_required": true
         },
         "pass": {
@@ -2195,14 +2195,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb3-selected-profile-M-successor-full-r5-reproducibility-correction",
+        "current_bounded_transition": "rb3-profile-M-uv-managed-rewrite-compatible-successor-full-r5-correction",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
-      "goal": "Resolve the remaining release blockers while preserving the accepted profile M responsibility boundary. Correct deterministic receipt serialization and build and qualify successor full r5 without modifying or superseding the frozen predecessor family.",
+      "goal": "Resolve the remaining release blockers while preserving the accepted distributor boundary. Correct profile M to survive uv managed sysconfig rewriting, retain truthful upstream provenance, and requalify direct and managed 16 KiB SDK output without modifying or superseding the frozen predecessor family.",
       "input_routing": {
         "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-        "first_attempt": "apply the deterministic install-relative receipt correction, reuse the exact official Python archive, accepted launcher, exact Android uv, and profile-M authorities, then build and qualify successor full r5 twice",
+        "first_attempt": "apply the canonical literal-mapping profile-M correction and truthful HOST_GNU_TYPE expectation, then reuse the exact official Python archive, accepted launcher, exact Android uv, and frozen authorities to build and qualify successor full r5 twice",
         "forbidden": [
           "accept-an-incomplete-result-index",
           "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -2270,6 +2270,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
           "reason": "Frozen failed successor r1 inspection and correction boundary.",
           "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+          "reason": "Frozen failed successor r2 inspection, exact reproducible candidate evidence, verifier correction, and uv-managed sysconfig rewrite defect.",
+          "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd"
         }
       ],
       "required_reads": [
@@ -2396,6 +2401,16 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
           "reason": "Exact successor-full r1 failure, rollback, A/B identities, and deterministic receipt path defect.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+          "reason": "Exact successor r2 result, successful reproducibility/runtime/16 KiB evidence, and bounded remaining defects.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
+          "reason": "Active canonical literal-mapping and uv-managed SDK preservation correction contract.",
           "scope": "full"
         }
       ],

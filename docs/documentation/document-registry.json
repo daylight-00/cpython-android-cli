@@ -11336,6 +11336,36 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact reproducible successor-full r2 failure inspection, host-triple verifier correction, and uv-managed sysconfig rewrite root-cause record.",
+      "supersession_rule": "Do not edit; create a correction result or successor authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Active profile-M canonical literal mapping, uv-managed rewrite compatibility, direct and managed SDK, and 16 KiB requalification contract.",
+      "supersession_rule": "Explicit accepted r3 result inspection or successor authority.",
+      "update_trigger": "Update only through the active bounded RB-3 r3 correction transaction."
+    },
+    {
       "authority_domain": "evidence_snapshot",
       "format": "json",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",

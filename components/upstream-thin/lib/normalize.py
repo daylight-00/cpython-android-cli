@@ -29,19 +29,71 @@ def _text_sha(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-def _minimal_dynamic_overlay() -> str:
-    return rf'''
+def _base_dictionary_updates() -> dict[str, str]:
+    """Return the bounded values that must survive uv's sysconfig rewrite.
 
-# BEGIN HW-T MINIMAL CONSUMER OVERLAY — E3 selected profile M
+    uv parses and rewrites only the literal ``build_time_vars = {...}`` mapping.
+    Therefore static toolchain policy and ``/install`` placeholders must live in
+    that mapping. The direct-runtime overlay below only resolves those
+    placeholders for an unpacked standalone tree; uv intentionally discards the
+    executable overlay and replaces ``/install`` itself at managed install time.
+    """
+    ldshared = "clang -shared " + LDFLAGS
+    ldcxxshared = "clang++ -shared " + LDFLAGS
+    return {
+        "BINDIR": "/install/bin",
+        "BINLIBDEST": "/install/lib/python3.14",
+        "LIBDEST": "/install/lib/python3.14",
+        "SCRIPTDIR": "/install/lib",
+        "INCLUDEDIR": "/install/include",
+        "CONFINCLUDEDIR": "/install/include",
+        "INCLUDEPY": "/install/include/python3.14",
+        "CONFINCLUDEPY": "/install/include/python3.14",
+        "LIBDIR": "/install/lib",
+        "LIBPL": "/install/lib/python3.14/config-3.14-aarch64-linux-android",
+        "DESTSHARED": "/install/lib/python3.14/lib-dynload",
+        "CC": "clang",
+        "CXX": "clang++",
+        "AR": "llvm-ar",
+        "ARFLAGS": "rcs",
+        "CCSHARED": "-fPIC",
+        "CFLAGS": CFLAGS,
+        "PY_CFLAGS": CFLAGS,
+        "PY_STDMODULE_CFLAGS": CFLAGS + " -fPIC",
+        "CPPFLAGS": "",
+        "PY_CPPFLAGS": "",
+        "LDFLAGS": LDFLAGS,
+        "PY_LDFLAGS": LDFLAGS,
+        "PY_CORE_LDFLAGS": LDFLAGS,
+        "LDSHARED": ldshared,
+        "BLDSHARED": ldshared,
+        "LINKCC": "clang",
+        "LDCXXSHARED": ldcxxshared,
+        "BLDLIBRARY": "-L /install/lib -lpython3.14",
+        "LIBPYTHON": "",
+        "SHELL": "sh -e",
+        "HW_T_METADATA_PROFILE": "upstream-preserved-minimal-consumer-overlay",
+        "HW_T_CROSS_BUILD_SDK": "unavailable-without-explicit-ndk-authority",
+    }
+
+
+def _minimal_dynamic_overlay() -> str:
+    """Resolve ``/install`` placeholders for direct standalone execution.
+
+    This code is deliberately outside the literal mapping. Direct execution
+    evaluates it; uv managed installation rewrites the literal mapping and
+    omits this code after replacing ``/install`` with the managed prefix.
+    """
+    return r'''
+
+# BEGIN HW-T DIRECT-RUNTIME PATH RESOLUTION — E3 selected profile M
 import os as _hw_os
 _hw_prefix = _hw_os.path.dirname(_hw_os.path.dirname(_hw_os.path.dirname(_hw_os.path.abspath(__file__))))
 _hw_lib = _hw_os.path.join(_hw_prefix, "lib")
 _hw_stdlib = _hw_os.path.join(_hw_lib, "python3.14")
 _hw_include = _hw_os.path.join(_hw_prefix, "include", "python3.14")
 _hw_config = _hw_os.path.join(_hw_stdlib, "config-3.14-aarch64-linux-android")
-_hw_ldflags = {LDFLAGS!r}
-_hw_cflags = {CFLAGS!r}
-build_time_vars.update({{
+build_time_vars.update({
     "BINDIR": _hw_os.path.join(_hw_prefix, "bin"),
     "BINLIBDEST": _hw_stdlib,
     "LIBDEST": _hw_stdlib,
@@ -53,19 +105,40 @@ build_time_vars.update({{
     "LIBDIR": _hw_lib,
     "LIBPL": _hw_config,
     "DESTSHARED": _hw_os.path.join(_hw_stdlib, "lib-dynload"),
-    "CC": "clang", "CXX": "clang++", "AR": "llvm-ar", "ARFLAGS": "rcs", "CCSHARED": "-fPIC",
-    "CFLAGS": _hw_cflags, "PY_CFLAGS": _hw_cflags, "PY_STDMODULE_CFLAGS": _hw_cflags + " -fPIC",
-    "CPPFLAGS": "", "PY_CPPFLAGS": "", "LDFLAGS": _hw_ldflags, "PY_LDFLAGS": _hw_ldflags,
-    "PY_CORE_LDFLAGS": _hw_ldflags, "LDSHARED": "clang -shared " + _hw_ldflags,
-    "BLDSHARED": "clang -shared " + _hw_ldflags,
     "BLDLIBRARY": "-L" + _hw_lib + " -lpython3.14",
-    "LIBPYTHON": "", "SHELL": "sh -e",
-    "HW_T_METADATA_PROFILE": "upstream-preserved-minimal-consumer-overlay",
-    "HW_T_CROSS_BUILD_SDK": "unavailable-without-explicit-ndk-authority",
-}})
-del _hw_config, _hw_include, _hw_stdlib, _hw_lib, _hw_prefix, _hw_cflags, _hw_ldflags, _hw_os
-# END HW-T MINIMAL CONSUMER OVERLAY
+})
+del _hw_config, _hw_include, _hw_stdlib, _hw_lib, _hw_prefix, _hw_os
+# END HW-T DIRECT-RUNTIME PATH RESOLUTION
 '''
+
+
+def _literal_sysconfigdata(text: str) -> dict[str, Any]:
+    import ast
+
+    tree = ast.parse(text)
+    for node in tree.body:
+        if not isinstance(node, ast.Assign) or len(node.targets) != 1:
+            continue
+        target = node.targets[0]
+        if isinstance(target, ast.Name) and target.id == "build_time_vars":
+            values = ast.literal_eval(node.value)
+            if not isinstance(values, dict):
+                break
+            if not all(isinstance(key, str) and isinstance(value, (str, int)) for key, value in values.items()):
+                raise RuntimeError("sysconfig mapping contains unsupported uv parser value types")
+            return dict(values)
+    raise RuntimeError("literal build_time_vars mapping missing")
+
+
+def _render_literal_sysconfigdata(values: dict[str, Any]) -> str:
+    rows = [CANONICAL_HEADER, "build_time_vars = {"]
+    for key in sorted(values):
+        value = values[key]
+        if not isinstance(key, str) or not isinstance(value, (str, int)):
+            raise RuntimeError(f"unsupported sysconfig value: {key}={type(value).__name__}")
+        rows.append(f"    {key!r}: {value!r},")
+    rows.append("}")
+    return "\n".join(rows) + "\n"
 
 
 def _execute_sysconfigdata(path: Path) -> dict[str, Any]:
@@ -83,16 +156,23 @@ def _overlay_sysconfigdata(path: Path) -> dict[str, Any]:
     if not before_lines or before_lines[0] != CANONICAL_HEADER:
         raise RuntimeError("minimal profile M requires canonical upstream sysconfig header")
     before_vars = _execute_sysconfigdata(path)
-    rendered = before_text.rstrip() + "\n" + _minimal_dynamic_overlay()
+    base_vars = _literal_sysconfigdata(before_text)
+    updates = _base_dictionary_updates()
+    base_vars.update(updates)
+    rendered = _render_literal_sysconfigdata(base_vars) + _minimal_dynamic_overlay()
     compile(rendered, str(path), "exec")
     path.write_text(rendered, encoding="utf-8")
     after_vars = _execute_sysconfigdata(path)
+    managed_visible = _literal_sysconfigdata(rendered)
     preserved = {
         key: before_vars.get(key) == after_vars.get(key)
         for key in ("CONFIG_ARGS", "BUILD_GNU_TYPE", "HOST_GNU_TYPE", "SOABI", "MULTIARCH", "EXT_SUFFIX", "ANDROID_API_LEVEL")
     }
     if not all(preserved.values()):
         raise RuntimeError(f"profile M changed producer/target identity: {preserved}")
+    for key, expected in updates.items():
+        if managed_visible.get(key) != expected:
+            raise RuntimeError(f"uv-visible profile M value mismatch: {key}")
     return {
         "path": path.name,
         "before_sha256": _text_sha(before_text),
@@ -100,6 +180,9 @@ def _overlay_sysconfigdata(path: Path) -> dict[str, Any]:
         "canonical_header_preserved": True,
         "producer_and_target_identity_preserved": preserved,
         "effective_metadata_profile": after_vars.get("HW_T_METADATA_PROFILE"),
+        "uv_managed_rewrite_compatible": True,
+        "literal_mapping_mutated_keys": sorted(updates),
+        "direct_runtime_path_resolution": True,
     }
 
 

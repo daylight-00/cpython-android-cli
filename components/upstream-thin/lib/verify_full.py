@@ -95,7 +95,7 @@ def inspect_consumer_metadata(install: Path) -> dict[str, Any]:
         "SOABI": "cpython-314-aarch64-linux-android",
         "MULTIARCH": "aarch64-linux-android",
         "EXT_SUFFIX": ".cpython-314-aarch64-linux-android.so",
-        "HOST_GNU_TYPE": "aarch64-linux-android",
+        "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
         "HW_T_METADATA_PROFILE": "upstream-preserved-minimal-consumer-overlay",
     }
     for key, expected in expected_values.items():

@@ -1,0 +1,64 @@
+{
+  "candidate": {
+    "assembly_reproducibility_pass": true,
+    "full_android_qualification_pass": true,
+    "full_structural_verification_pass": false,
+    "native_wheel_16k_alignment_pass": true,
+    "native_wheel_build_install_import_pass": true,
+    "sha256": "d10a86238220357f3e5805771d0a41427c3b12a380bb133534c79f4e638cc1c0",
+    "size_bytes": 39417616
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "profile_selected": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-full-r2-return-inspection",
+  "managed_uv_observation": {
+    "all_lifecycle_commands_returned_zero": true,
+    "direct_profile_M_semantics_present_before_install": true,
+    "managed_AR": "ar",
+    "managed_CC": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang",
+    "managed_CXX": "/Users/runner/Library/Android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android24-clang++",
+    "managed_metadata_profile": null,
+    "mechanism": "uv parses and rewrites only the canonical literal build_time_vars mapping; the executable build_time_vars.update profile-M overlay was not part of that mapping and was discarded",
+    "runtime_identity_remained_android": true,
+    "source_extension_sdk_semantics_preserved": false
+  },
+  "receipt": {
+    "action": "failed-target",
+    "failure_reason": "rb3-profile-M-successor-full-qualification-failed",
+    "post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "pre_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "remote_post_not_written": true,
+    "rollback_exact": true
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r2-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 62,
+    "sha256": "a906bdb3802ae241def7d76b9fcebed7aeceda3833d6e4521352639807e35d82",
+    "size_bytes": 63031237
+  },
+  "root_causes": [
+    {
+      "classification": "verifier-host-triple-expectation-error",
+      "correction": "expect the truthful upstream HOST_GNU_TYPE aarch64-unknown-linux-android while preserving CONFIG_ARGS host_alias=aarch64-linux-android",
+      "evidence": "actual HOST_GNU_TYPE was aarch64-unknown-linux-android; the verifier incorrectly required aarch64-linux-android",
+      "profile_M_semantics_invalidated": false
+    },
+    {
+      "classification": "uv-managed-sysconfig-rewrite-contract-mismatch",
+      "correction": "place bounded static profile-M values and /install placeholders inside the canonical literal build_time_vars mapping; retain only direct unpacked-path resolution as executable trailing code",
+      "evidence": "uv canonical parser and serializer retained the original literal mapping but discarded the later build_time_vars.update overlay",
+      "profile_M_semantics_invalidated": false
+    }
+  ],
+  "schema_version": 1,
+  "status": "accepted-failure-r3-correction-required"
+}

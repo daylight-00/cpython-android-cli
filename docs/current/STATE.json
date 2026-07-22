@@ -209,6 +209,12 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
       "role": "exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary",
       "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
+    },
+    {
+      "id": "epoch3-rb3-successor-full-r2-failure-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+      "role": "exact reproducible successor r2 failure receipt, truthful host-triple correction, and uv-managed sysconfig rewrite correction boundary",
+      "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd"
     }
   ],
   "active_plan": {
@@ -217,7 +223,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -311,8 +317,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "b40546213c3ef2cd9b69bffa237aa229d1877459",
-    "tree": "f0b388b6357d341687a8dcf56586354a1c43d2de"
+    "commit": "dfe28ebf61b14273b48943b118033b712483d6a2",
+    "tree": "cacff3808d1bc29f086f4804295dcbac48a06af9"
   },
   "program": {
     "epoch": {
@@ -366,11 +372,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 37,
+  "state_revision": 38,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "2daa7aaf99c93757e531254acda6349c59957e422113314edca9242da8f9f133"
+    "sha256": "dfa390ddfb491333c0573d16f74608daa087fd15f2b2fe470e9a21d73ffbdac0"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -398,7 +404,7 @@
     "frozen-predecessor-family-not-superseded",
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
-    "selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction"
+    "selected-profile-M-uv-managed-sysconfig-rewrite-compatible-successor-full-r5-requalification-pending"
   ],
-  "updated_by_transaction": "20260722-e3-rb3-responsibility-and-successor-reproducibility-correction-v1"
+  "updated_by_transaction": "20260723-e3-rb3-uv-managed-profile-M-representation-correction-v1"
 }

@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 37
+> **State revision:** 38
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -66,6 +66,7 @@ status  in-progress
 33. [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json) — Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations.
 34. [`experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json) — distributor artifact responsibility, external user-wheel repair boundary, and Android 16 KiB SDK obligation
 35. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json) — exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary
+36. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json) — exact reproducible successor r2 failure receipt, truthful host-triple correction, and uv-managed sysconfig rewrite correction boundary
 
 ## Blockers
 
@@ -95,6 +96,6 @@ status  in-progress
 - frozen-predecessor-family-not-superseded
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction
+- selected-profile-M-uv-managed-sysconfig-rewrite-compatible-successor-full-r5-requalification-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

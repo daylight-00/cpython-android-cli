@@ -55,7 +55,7 @@ Epoch 3 selection     true
 - frozen-predecessor-family-not-superseded
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- selected-profile-M-successor-full-r5-reproducibility-receipt-path-defect-pending-correction
+- selected-profile-M-uv-managed-sysconfig-rewrite-compatible-successor-full-r5-requalification-pending
 
 ### Accepted authorities
 
@@ -94,6 +94,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json): Selected profile M authority; preserves upstream producer metadata while authorizing only measured consumer/toolchain adaptations. (`85544b28efa71b8fbe33b7f933c367b408f4442152103403155f3603ec9ffd28`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json): distributor artifact responsibility, external user-wheel repair boundary, and Android 16 KiB SDK obligation (`ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json): exact failed successor-full r1 receipt, rollback, and deterministic receipt correction boundary (`2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json): exact reproducible successor r2 failure receipt, truthful host-triple correction, and uv-managed sysconfig rewrite correction boundary (`032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd`)
 
 ### Agent entry
 

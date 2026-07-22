@@ -1,0 +1,57 @@
+{
+  "acceptance": {
+    "android_qualification": "all existing full runtime checks remain true",
+    "direct_profile_M": "canonical header, truthful upstream producer and target identity, dynamic unpacked-root paths, clang/clang++/llvm-ar, Bionic macro, and both 16 KiB linker flags",
+    "managed_profile_M": "after uv canonical sysconfig rewrite, marker and bounded SDK flags survive; uv-normalized cc/c++/ar names are accepted",
+    "managed_source_extension": "build, install, import, ELF inventory, and 16 KiB LOAD alignment pass without wheel repair",
+    "native_wheel_postprocessing": "not performed and not claimed",
+    "reproducibility": "two full assemblies are byte-identical"
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "portable_user_built_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate_allowed": true
+  },
+  "contract_kind": "epoch3-rb3-profile-M-uv-managed-rewrite-compatible-successor-full-r3",
+  "corrections": {
+    "host_triple": {
+      "expected_HOST_GNU_TYPE": "aarch64-unknown-linux-android",
+      "preserved_CONFIG_ARGS_host_alias": "aarch64-linux-android"
+    },
+    "sysconfig_representation": {
+      "canonical_literal_mapping": "contains bounded profile-M static toolchain values, Android flags, metadata marker, and /install placeholders",
+      "direct_runtime_trailing_code": "resolves only install-root-dependent paths for a directly unpacked standalone tree",
+      "producer_provenance": "BUILD_GNU_TYPE and CONFIG_ARGS remain truthful upstream values",
+      "sysconfig_vars_json": "preserved upstream byte-exact",
+      "uv_managed_install": "uv replaces /install with the managed prefix, normalizes clang-family tool names, serializes the literal mapping, and therefore retains profile-M semantics"
+    }
+  },
+  "evidence_inputs": {
+    "r2_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
+    "uv_parser": "astral-sh/uv crates/uv-python/src/sysconfig/parser.rs at f851ad0427960543cdfea3ba06fbd6e5eb4c133c",
+    "uv_rewriter": "astral-sh/uv crates/uv-python/src/sysconfig/mod.rs at f851ad0427960543cdfea3ba06fbd6e5eb4c133c"
+  },
+  "implementation": {
+    "independent_audit": "experiments/epoch3-upstream-thin-release-blockers/audit_rb3_successor_full_m.py",
+    "normalizer": "components/upstream-thin/lib/normalize.py",
+    "owner_qualification": "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_full_m.py",
+    "structural_verifier": "components/upstream-thin/lib/verify_full.py"
+  },
+  "responsibility_boundary": {
+    "distributor": [
+      "direct and managed profile-M SDK semantics",
+      "distributed ELF 16 KiB alignment",
+      "baseline direct and managed extension 16 KiB alignment"
+    ],
+    "external_user_tooling": [
+      "RPATH or RUNPATH removal from user-created wheels",
+      "auditwheel-like dependency repair and publication packaging"
+    ]
+  },
+  "schema_version": 1,
+  "status": "active-owner-requalification-pending"
+}

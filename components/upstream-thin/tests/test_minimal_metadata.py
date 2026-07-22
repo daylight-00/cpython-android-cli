@@ -30,7 +30,7 @@ class MinimalConsumerMetadataTests(unittest.TestCase):
             path.mkdir(parents=True, exist_ok=True)
         values = {
             "BUILD_GNU_TYPE": "aarch64-apple-darwin24.6.0",
-            "HOST_GNU_TYPE": "aarch64-linux-android",
+            "HOST_GNU_TYPE": "aarch64-unknown-linux-android",
             "CONFIG_ARGS": "--with-build-python=/Users/runner/build/python.exe",
             "CC": "/Users/runner/Library/Android/sdk/ndk/toolchains/clang",
             "CXX": "/Users/runner/Library/Android/sdk/ndk/toolchains/clang++",
@@ -54,7 +54,7 @@ class MinimalConsumerMetadataTests(unittest.TestCase):
             "AR=\t\t/Users/runner/Library/Android/sdk/ndk/toolchains/llvm-ar\n"
             "CONFIG_ARGS=\t\t--with-build-python=/Users/runner/build/python.exe\n"
             "BUILD_GNU_TYPE=\t\taarch64-apple-darwin24.6.0\n"
-            "HOST_GNU_TYPE=\t\taarch64-linux-android\n",
+            "HOST_GNU_TYPE=\t\taarch64-unknown-linux-android\n",
             encoding="utf-8",
         )
         (config / "python-config.py").write_text("#!/usr/bin/env python3\nprint('fixture')\n", encoding="utf-8")
@@ -87,12 +87,69 @@ class MinimalConsumerMetadataTests(unittest.TestCase):
             self.assertEqual(text.splitlines()[0], CANONICAL_HEADER)
             self.assertIn("/Users/runner/build/python.exe", text)
             self.assertNotIn("consumer-normalized-binary-derived", text)
+            literal = __import__("normalize")._literal_sysconfigdata(text)
+            self.assertEqual(literal["BINDIR"], "/install/bin")
+            self.assertEqual(literal["CC"], "clang")
+            self.assertEqual(literal["HW_T_METADATA_PROFILE"], "upstream-preserved-minimal-consumer-overlay")
+            self.assertIn("BEGIN HW-T DIRECT-RUNTIME PATH RESOLUTION", text)
+            self.assertTrue(result["sysconfigdata"]["uv_managed_rewrite_compatible"])
             inspected = inspect_consumer_metadata(install)
             self.assertTrue(inspected["pass"], inspected["errors"])
             self.assertEqual(inspected["preserved_producer"]["BUILD_GNU_TYPE"], "aarch64-apple-darwin24.6.0")
             self.assertIn("/Users/runner/build/python.exe", inspected["preserved_producer"]["CONFIG_ARGS"])
             self.assertEqual(inspected["effective"]["CC"], "clang")
             self.assertEqual(inspected["effective"]["BINDIR"], str(install / "bin"))
+
+    def test_uv_managed_rewrite_preserves_profile_m_semantics(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            install = self.make_install(Path(td) / "source")
+            normalize_runtime_metadata(install)
+            sysdata = install / "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py"
+            mod = __import__("normalize")
+            values = mod._literal_sysconfigdata(sysdata.read_text(encoding="utf-8"))
+            managed = Path(td) / "managed/cpython-3.14.6-linux-aarch64-none"
+
+            def uv_prefix(value: str) -> str:
+                parts = []
+                for part in value.split():
+                    if part == "/install":
+                        parts.append(str(managed))
+                    elif part.startswith("/install/"):
+                        parts.append(str(managed / part.removeprefix("/install/")))
+                    else:
+                        parts.append(part)
+                return " ".join(parts)
+
+            for key, value in list(values.items()):
+                if not isinstance(value, str):
+                    continue
+                value = uv_prefix(value)
+                if key in {"CC", "BLDSHARED", "LDSHARED", "LINKCC"}:
+                    value = value.replace("clang", "cc")
+                elif key in {"CXX", "LDCXXSHARED"}:
+                    value = value.replace("clang++", "c++")
+                elif key == "AR":
+                    value = "ar"
+                values[key] = value
+            values["PYTHON_BUILD_STANDALONE"] = 1
+
+            rewritten = mod._render_literal_sysconfigdata(values)
+            namespace = {"__file__": str(managed / "lib/python3.14/_sysconfigdata__android_aarch64-linux-android.py")}
+            exec(compile(rewritten, "<uv-managed-sysconfig>", "exec"), namespace)
+            effective = namespace["build_time_vars"]
+            self.assertEqual(effective["BINDIR"], str(managed / "bin"))
+            self.assertEqual(effective["LIBDIR"], str(managed / "lib"))
+            self.assertEqual(effective["BLDLIBRARY"], f"-L {managed / 'lib'} -lpython3.14")
+            self.assertEqual(effective["CC"], "cc")
+            self.assertEqual(effective["CXX"], "c++")
+            self.assertEqual(effective["AR"], "ar")
+            self.assertEqual(effective["HW_T_METADATA_PROFILE"], "upstream-preserved-minimal-consumer-overlay")
+            self.assertIn("-D__BIONIC_NO_PAGE_SIZE_MACRO", effective["CFLAGS"])
+            self.assertIn("-Wl,-z,max-page-size=16384", effective["LDFLAGS"])
+            self.assertIn("-Wl,-z,common-page-size=16384", effective["LDFLAGS"])
+            self.assertEqual(effective["HOST_GNU_TYPE"], "aarch64-unknown-linux-android")
+            self.assertEqual(effective["BUILD_GNU_TYPE"], "aarch64-apple-darwin24.6.0")
+            self.assertIn("/Users/runner/build/python.exe", effective["CONFIG_ARGS"])
 
     def test_normalization_is_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as td:

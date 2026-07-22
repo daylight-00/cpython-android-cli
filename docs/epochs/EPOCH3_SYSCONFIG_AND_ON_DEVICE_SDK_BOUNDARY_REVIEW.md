@@ -319,3 +319,26 @@ exact official archive + accepted launcher + profile M production implementation
 ```
 
 Only after the full candidate is accepted may successor install-only, stripped, legal family, RB-1 binding, RB-2 rebinding, and final RB-3 closure proceed.
+
+## 13. Successor r2 result and uv-managed representation correction
+
+The successor r2 owner run resolved the r1 reproducibility defect. Independent assembly roots produced the same full archive bytes, and the exact candidate passed the complete Android runtime qualification. The direct profile-M baseline extension also built, installed, imported, and reported 16 KiB LOAD alignment.
+
+The remaining failures separated into one verifier defect and one real managed-install representation defect:
+
+1. CPython's upstream Android metadata reports `HOST_GNU_TYPE=aarch64-unknown-linux-android`. The prior verifier incorrectly required `aarch64-linux-android`, even though the preserved producer `CONFIG_ARGS` correctly records `host_alias=aarch64-linux-android`.
+2. The first profile-M implementation preserved the upstream literal `build_time_vars` dictionary and appended `build_time_vars.update(...)`. Direct Python execution evaluated the update, but uv's managed installer parses only the canonical literal dictionary and serializes that parsed mapping after install-prefix and compiler normalization. The appended executable update was therefore lost in the managed installation.
+
+The corrected representation keeps the selected profile-M boundary while matching uv's actual standalone consumer contract:
+
+- producer `BUILD_GNU_TYPE`, producer `CONFIG_ARGS`, Android target identity, and `_sysconfig_vars_*.json` remain preserved;
+- bounded static toolchain values, the profile marker, Android compile/link flags, and `/install` path placeholders are stored inside the canonical literal `build_time_vars` mapping;
+- trailing executable code resolves only unpacked-install-root-dependent paths for direct standalone execution;
+- uv replaces `/install` with its managed installation root, normalizes tool names such as `clang` to `cc`, and retains the profile-M marker and Android 16 KiB flags when it rewrites the canonical mapping;
+- both direct and managed Python must build, install, and import the baseline native extension and produce a 16 KiB-aligned extension;
+- RPATH and RUNPATH remain diagnostic-only user-wheel evidence and are not repaired by this product.
+
+Machine records:
+
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json`
