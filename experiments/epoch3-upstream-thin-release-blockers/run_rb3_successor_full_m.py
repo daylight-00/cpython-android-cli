@@ -119,6 +119,11 @@ def identity_base_ok(row: dict[str, Any], base: Path, *, managed: bool = False) 
     return bool(profile_m_identity(row, managed=managed) and Path(str(value.get("base_prefix", ""))).resolve() == base.resolve())
 
 
+def managed_find_observed(row: dict[str, Any], python_path: Path) -> bool:
+    """Snapshot managed-find success before a later uninstall removes the path."""
+    return row.get("returncode") == 0 and python_path.is_file()
+
+
 def catalog_row(archive: Path) -> dict[str, Any]:
     return {
         "name": "cpython",
@@ -286,7 +291,8 @@ def run(
         )
         process.append(managed_find)
         managed_python = Path(managed_find.get("stdout", "").strip()) if managed_find["returncode"] == 0 else managed / "missing"
-        managed_id = run_capture("managed-identity", [str(managed_python), "-c", identity_code()], root, find_env, output_dir / "process") if managed_python.is_file() else {"name": "managed-identity", "returncode": 125}
+        managed_find_ok = managed_find_observed(managed_find, managed_python)
+        managed_id = run_capture("managed-identity", [str(managed_python), "-c", identity_code()], root, find_env, output_dir / "process") if managed_find_ok else {"name": "managed-identity", "returncode": 125}
         process.append(managed_id)
         managed_venv = root / "managed-venv"
         mvenv = run_capture(
@@ -303,7 +309,7 @@ def run(
                 root / "managed-wheel", find_env, output_dir / "process", readelf, None,
                 perform_explicit_normalization=False,
             )
-            if managed_python.is_file() and profile_m_identity(managed_id, managed=True)
+            if managed_find_ok and profile_m_identity(managed_id, managed=True)
             else {"pass": False, "skipped": "managed profile M identity unavailable"}
         )
         write_json(output_dir / "native-managed-wheel-elf-boundary.json", managed_wheel)
@@ -346,7 +352,7 @@ def run(
             "system_sync": sync["returncode"] == 0 and identity_base_ok(sync_id, install),
             "managed_catalog": catalog_list["returncode"] == 0 and KEY in catalog_list.get("stdout", ""),
             "managed_install": install_row["returncode"] == 0,
-            "managed_find": managed_find["returncode"] == 0 and managed_python.is_file(),
+            "managed_find": managed_find_ok,
             "managed_profile_m_identity": profile_m_identity(managed_id, managed=True),
             "managed_venv": mvenv["returncode"] == 0 and identity_base_ok(mvenv_id, managed_python.parent.parent, managed=True),
             "managed_reinstall_noop": reinstall["returncode"] == 0 and managed_before_reinstall == managed_after_reinstall,

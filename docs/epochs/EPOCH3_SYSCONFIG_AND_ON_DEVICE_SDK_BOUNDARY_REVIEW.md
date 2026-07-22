@@ -342,3 +342,16 @@ Machine records:
 
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json`
+
+## 14. Successor r3 result and verifier observation-order correction
+
+The successor r3 owner run proved that the canonical literal-mapping representation survives uv managed installation. The same deterministic full r5 bytes passed structural verification, Android runtime qualification, direct profile-M identity, managed profile-M identity, and both direct and managed native-extension build/install/import with 16 KiB LOAD alignment.
+
+The sole failed check was `managed_find`, but the recorded process evidence shows that `uv python find` returned zero and selected the installed managed interpreter. That interpreter then completed identity, venv, native-wheel, import, and alignment qualification. The runner subsequently performed the required uninstall and verified that a second find failed. Final check construction then evaluated `managed_python.is_file()` after uninstall, converting successful lifecycle behavior into a false failure.
+
+The r4 correction therefore changes no artifact, sysconfig value, responsibility boundary, or qualification requirement. It snapshots managed-find success immediately after the find command and consumes that immutable observation after uninstall. The candidate remains unaccepted until the corrected owner run and independent audit return a complete pass receipt.
+
+Machine records:
+
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json`

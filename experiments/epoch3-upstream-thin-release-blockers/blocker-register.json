@@ -78,6 +78,7 @@
         "responsibility_reassessment": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
         "selected_profile": "M",
         "successor_r1_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
+        "successor_r3_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
         "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
       },
       "id": "RB-3",
@@ -85,7 +86,7 @@
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
-        "next_action": "correct deterministic receipt serialization and retry successor full r5",
+        "next_action": "correct managed-find observation timing and retry successor full r5",
         "required_input": "exact official archive, accepted launcher, selected profile M implementation, exact Android uv",
         "required_output": "deterministic successor full r5 candidate with static, runtime, uv system/managed, SDK build/import, distributed-ELF and baseline-extension 16 KiB, protected-state, and independent-audit evidence",
         "successor_after_accepted_probe": "derive successor install_only and stripped, then legally integrate and rebind RB-1/RB-2 evidence before RB-3 closure"
@@ -93,7 +94,7 @@
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-selected-successor-full-reproducibility-correction"
+      "status": "in-progress-profile-M-selected-successor-full-verifier-observation-correction"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",

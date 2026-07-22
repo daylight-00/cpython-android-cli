@@ -1,0 +1,47 @@
+{
+  "accepted_r3_evidence": {
+    "assembly_reproducible": true,
+    "candidate_sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "direct_and_managed_16k_alignment": true,
+    "direct_and_managed_native_wheel_build_install_import": true,
+    "direct_and_managed_profile_M_identity": true,
+    "structural_and_android_qualification": true
+  },
+  "bounded_correction": {
+    "artifact_or_metadata_change": false,
+    "defect": "managed_find final check tested path existence after successful uninstall",
+    "required_change": "snapshot returncode-zero plus interpreter-file existence immediately after uv python find and use that observation in the final check",
+    "source": "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_full_m.py"
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-full-r4-verifier-observation-correction",
+  "forbidden": [
+    "change profile M metadata semantics",
+    "change user-built wheel postprocessing boundary",
+    "modify or supersede the predecessor family",
+    "accept the candidate without a complete owner result and audit",
+    "claim RB-3 closure, selectability, or publication"
+  ],
+  "predecessor_result": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r3-results.tar.zst",
+    "inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
+    "sha256": "4ad01834772f2502d793729cb4fbf7fe6db0f93df27ef1fdf90936f9499d7fd2"
+  },
+  "required_requalification": [
+    "assemble the exact successor full twice and retain byte identity",
+    "repeat static and Android runtime qualification",
+    "repeat uv system and custom managed lifecycle",
+    "repeat direct and managed native wheel build, install, import, and 16 KiB alignment",
+    "prove managed find succeeds before uninstall and managed find fails after uninstall",
+    "preserve candidate, predecessor, and real uv managed root",
+    "run independent audit"
+  ],
+  "schema_version": 1,
+  "success_boundary": {
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": true
+  }
+}

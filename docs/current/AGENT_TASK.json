@@ -72,7 +72,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-profile-M-uv-managed-rewrite-compatible-successor-full-r5-correction",
+    "current_bounded_transition": "rb3-profile-M-successor-full-r5-managed-find-observation-correction",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -82,7 +82,7 @@
   },
   "input_routing": {
     "fallback": "one bounded owner runner that acquires exact cached inputs, records complete failure evidence, and returns a self-indexed result archive",
-    "first_attempt": "apply the canonical literal-mapping profile-M correction and truthful HOST_GNU_TYPE expectation, then reuse the exact official Python archive, accepted launcher, exact Android uv, and frozen authorities to build and qualify successor full r5 twice",
+    "first_attempt": "apply the verifier-only managed-find observation snapshot correction, then reuse the exact official Python archive, accepted launcher, exact Android uv, and selected profile M implementation to reproduce and requalify successor full r5 twice",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -162,6 +162,11 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
       "reason": "Frozen failed successor r2 inspection, exact reproducible candidate evidence, verifier correction, and uv-managed sysconfig rewrite defect.",
       "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
+      "reason": "Frozen r3 result proving all product and Android 16 KiB gates passed while the final managed-find check observed the path after uninstall.",
+      "sha256": "28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d"
     }
   ],
   "required_reads": [
@@ -299,13 +304,23 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
       "reason": "Active canonical literal-mapping and uv-managed SDK preservation correction contract.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
+      "reason": "Exact successor r3 result and bounded verifier observation-order root cause.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json",
+      "reason": "Active verifier-only r4 retry contract and unchanged claim boundary.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 38,
+  "state_revision": 39,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Resolve the remaining release blockers while preserving the accepted distributor boundary. Correct profile M to survive uv managed sysconfig rewriting, retain truthful upstream provenance, and requalify direct and managed 16 KiB SDK output without modifying or superseding the frozen predecessor family.",
+    "goal": "Resolve the remaining release blockers while preserving the accepted distributor boundary. Retain the r3 candidate that passed reproducibility, runtime, direct and managed SDK, and 16 KiB qualification; correct only the managed-find observation-order verifier defect without modifying the predecessor family or profile M semantics.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

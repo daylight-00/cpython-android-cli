@@ -59,6 +59,16 @@ class SuccessorFullTests(unittest.TestCase):
         self.assertTrue(mod.profile_m_identity(row, managed=True))
         self.assertFalse(mod.profile_m_identity(row, managed=False))
 
+    def test_managed_find_is_snapshotted_before_uninstall(self):
+        with tempfile.TemporaryDirectory() as td:
+            python_path = Path(td) / "python3.14"
+            python_path.write_bytes(b"python")
+            row = {"returncode": 0, "stdout": str(python_path)}
+            observed = mod.managed_find_observed(row, python_path)
+            python_path.unlink()
+            self.assertTrue(observed)
+            self.assertFalse(mod.managed_find_observed(row, python_path))
+
     def test_claim_boundaries_remain_open_in_source(self):
         text = SCRIPT.read_text(encoding="utf-8")
         self.assertIn('"successor_full_accepted": False', text)

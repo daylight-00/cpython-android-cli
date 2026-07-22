@@ -1,0 +1,61 @@
+{
+  "candidate": {
+    "assembly_reproducibility_pass": true,
+    "direct_native_wheel_16k_alignment_pass": true,
+    "direct_native_wheel_build_install_import_pass": true,
+    "direct_profile_M_identity_pass": true,
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "full_android_qualification_pass": true,
+    "full_structural_verification_pass": true,
+    "managed_native_wheel_16k_alignment_pass": true,
+    "managed_native_wheel_build_install_import_pass": true,
+    "managed_profile_M_identity_pass": true,
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "profile_selected": true,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": false,
+    "successor_full_candidate": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-full-r3-return-inspection",
+  "managed_find_observation": {
+    "command_returncode": 0,
+    "find_after_uninstall_returncode": 2,
+    "functional_result": "managed find succeeded and its selected interpreter completed all downstream managed qualification",
+    "identity_probe_returncode": 0,
+    "managed_native_wheel_returncode": 0,
+    "stdout": "/data/data/com.termux/files/usr/tmp/rb3-successor-full-m-giyvnvax/managed-root/cpython-3.14.6-linux-aarch64-none/bin/python3.14",
+    "uninstall_returncode": 0,
+    "venv_returncode": 0
+  },
+  "receipt": {
+    "action": "failed-target",
+    "failure_reason": "rb3-profile-M-successor-full-qualification-failed",
+    "post_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "pre_head": "e36d6d22c04868d73b246e1dae20081abcc0bd91",
+    "remote_post_not_written": true,
+    "rollback_exact": true
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r3-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 70,
+    "sha256": "4ad01834772f2502d793729cb4fbf7fe6db0f93df27ef1fdf90936f9499d7fd2",
+    "size_bytes": 63024071
+  },
+  "root_cause": {
+    "candidate_artifact_invalidated": false,
+    "classification": "verifier-observation-order-error",
+    "correction": "snapshot managed-find success immediately after the find command and before identity, wheel, reinstall, or uninstall operations; consume that immutable observation in final checks",
+    "evidence": "the runner evaluated managed_python.is_file() while constructing final checks after uv python uninstall had correctly removed the managed installation",
+    "profile_M_semantics_invalidated": false
+  },
+  "schema_version": 1,
+  "status": "accepted-failure-r4-verifier-observation-correction-required"
+}
