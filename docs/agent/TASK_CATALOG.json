@@ -2189,14 +2189,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb1-final-notice-owner-approval-review-preparation",
+        "current_bounded_transition": "rb2-ca-timezone-data-product-build-update-rollback-and-runtime-qualification",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
       "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
       "input_routing": {
-        "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-        "first_attempt": "reuse the exact accepted 128-file legally integrated family and prepare an explicit owner-approval review dossier without inferring approval",
+        "fallback": "reuse owner-cached inputs only after exact filename, size, SHA-256, PyPI metadata, legally integrated family, and self-excluding result-index verification",
+        "first_attempt": "acquire the four exact fixed-hash certifi/tzdata wheels, reuse the exact accepted 128-file legally integrated family, and build/qualify RB-2 without changing frozen Python artifacts",
         "forbidden": [
           "reassemble-or-modify-any-frozen-artifact",
           "claim-complete-license-mapping-from-file-name-census-alone",
@@ -2205,7 +2205,11 @@
           "claim-selectability-or-publication",
           "network-git-in-assistant-environment",
           "infer-owner-approval-from-runner-execution",
-          "close-rb1-without-exact-owner-approval-document"
+          "close-rb1-without-exact-owner-approval-document",
+          "use-unpinned-or-latest-provider-resolution-at-runtime",
+          "write-ca-or-timezone-updates-into-python-install-root",
+          "accept-an-incomplete-result-index",
+          "close-rb2-without-exact-frozen-python-runtime-qualification"
         ]
       },
       "required_authorities": [
@@ -2238,6 +2242,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
           "reason": "Frozen exact 128-file legally integrated family, 31-unit technical review, and single owner-approval gap.",
           "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "reason": "Frozen accepted three-root Android data policy and selected CA/timezone runtime bindings.",
+          "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
         }
       ],
       "required_reads": [
@@ -2295,11 +2304,31 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/owner-approval-review-contract.json",
           "reason": "Exact review dossier, approval binding, explicit owner statement, and no-implicit-approval contract.",
           "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-owner-approval-review-r1-return-inspection.json",
+          "reason": "Fail-closed inspection of the valid owner-review dossier and incomplete enclosing result receipt.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json",
+          "reason": "Current data-product structure, lifecycle, qualification, receipt, and non-claim contract.",
+          "scope": "full"
+        },
+        {
+          "path": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json",
+          "reason": "Exact current and rollback certifi/tzdata wheel identities and provider policy.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+          "reason": "Frozen INSTALL_ROOT, DATA_ROOT, STATE_ROOT, CA override, timezone path, update, and rollback policy.",
+          "scope": "full"
         }
       ],
       "task_id": "E3-RELEASE-BLOCKERS",
       "title": "Resolve Epoch 3 release-blocking evidence and operations",
-      "work_class": "L"
+      "work_class": "T"
     }
   ]
 }

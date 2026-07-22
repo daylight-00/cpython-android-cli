@@ -227,7 +227,9 @@
     "api24_runtime_qualified": false,
     "artifact_family_implementation_started": true,
     "artifact_family_release_complete": true,
-    "component_license_mapping_complete": false,
+    "ca_timezone_data_product_complete": false,
+    "ca_timezone_data_product_implementation_started": true,
+    "component_license_mapping_complete": true,
     "dual_real_device_aarch64_termux_compatibility": true,
     "emulator_qualified": false,
     "epoch3_feature_selection_complete": true,
@@ -277,8 +279,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "f38563167d03a32caa6b38deb12c5ebb67b9bdd5",
-    "tree": "892f868f0237cd67f5dcd074fb0537793317c7db"
+    "commit": "ca82747fa5ca9c01e09d9364de41e93e28dd586b",
+    "tree": "be088e3dc0d895882bd139c105a10a3e71f33781"
   },
   "program": {
     "epoch": {
@@ -332,11 +334,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 32,
+  "state_revision": 33,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "aa47d37029f528e091e21f6aaafa6484ffab225fc0045c41a0b93aac8839c0c3"
+    "sha256": "64021db94fe516fcd92803b69b6b9b91a3b593576366310f0b784433db90dbff"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -347,7 +349,6 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "CA-and-timezone-production-payload-selection-pending",
     "astral-consumer-and-uv-managed-compatibility-pending",
     "API24-runtime-qualification-pending",
     "runtime-16KiB-device-support-unqualified",
@@ -359,9 +360,10 @@
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "selectability-not-authorized",
     "publication-not-authorized",
-    "libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry",
     "final-notice-set-not-owner-approved",
-    "owner-approval-must-bind-exact-release-and-notice-hashes"
+    "owner-approval-must-bind-exact-release-and-notice-hashes",
+    "CA-and-timezone-owner-build-update-rollback-runtime-qualification-pending",
+    "rb1-owner-review-result-receipt-index-incomplete-dossier-valid"
   ],
-  "updated_by_transaction": "20260722-e3-rb1-integrated-family-authority-owner-approval-review-preparation-r1"
+  "updated_by_transaction": "20260722-e3-rb1-review-return-inspection-rb2-data-product-implementation-start-r1"
 }

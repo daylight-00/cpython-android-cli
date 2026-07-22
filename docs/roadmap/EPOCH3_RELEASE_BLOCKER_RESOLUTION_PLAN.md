@@ -235,3 +235,31 @@ The bounded target is deterministic and must reduce the RB-1 gap register from f
 ## RB-1 final notice owner approval gate
 
 The accepted legally integrated family is frozen by `rb1-legal-integration-authority.json`. The only RB-1 gap is explicit owner approval of the exact notice set. The review-preparation runner must produce a deterministic dossier bound to the release, family, notice, component-map, technical-review, pip-vendor-review, and project-license hashes. Running the runner is not approval. RB-1 may close only after a separate owner approval document preserves every binding, contains the exact required statement, identifies the owner, and sets `approved=true`. Selectability and publication remain false because RB-2 through RB-7 are independent blockers.
+
+## 18. RB-2 CA and timezone data-product implementation start
+
+RB-1 remains open solely for an explicit owner approval document. The returned
+owner-review dossier is exact and reproducible, but its enclosing result archive
+is not accepted as a claim authority because `logs/archive.log` was omitted from
+the self-excluding result index and the frozen final status predates archive and
+upload completion. The dossier may still be reviewed; no approval is inferred.
+
+RB-2 now proceeds in parallel under the accepted three-root data policy. The
+provider lock selects exact pure-data wheels and does not rebuild or modify their
+payloads:
+
+- current: certifi 2026.6.17 and tzdata 2026.3;
+- rollback baseline: certifi 2026.5.20 and tzdata 2026.2.
+
+The product is a deterministic `data/`-root `.tar.zst` containing only the CA
+bundle, compiled zoneinfo tree, licenses, provenance, `DATA.json`, and a
+self-excluding member manifest. It contains no Python package code or native
+code and cannot change any frozen Python archive byte.
+
+The owner transaction must build current and rollback products twice
+byte-identically, install them below an external immutable release directory,
+exercise current update, rollback, and reactivation through an atomic relative
+`current` symlink, and qualify CA loading plus `ZoneInfo` for UTC, Asia/Seoul,
+and America/New_York with the exact frozen Android install-only interpreter.
+The exact artifact family must remain unchanged. RB-2 remains open until a
+complete self-indexed owner receipt and independent audit are accepted.

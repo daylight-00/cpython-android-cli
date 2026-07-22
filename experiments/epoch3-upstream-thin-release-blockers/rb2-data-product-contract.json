@@ -1,0 +1,74 @@
+{
+  "basis": {
+    "data_policy_authority": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+    "frozen_python_family": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "provider_lock": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json"
+  },
+  "claim_boundary": {
+    "candidate_build_allowed": true,
+    "publication": false,
+    "rb2_closed": false,
+    "runtime_qualification_allowed": true,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb2-ca-timezone-data-product",
+  "lifecycle": {
+    "layout": "<DATA_HOME>/releases/<release_id> plus atomic relative <DATA_HOME>/current symlink",
+    "python_artifact_bytes_changed": false,
+    "python_install_tree_written": false,
+    "release_directories_immutable": true,
+    "rollback": "atomically reactivate an already verified prior release",
+    "update": "install and activate a separately verified release"
+  },
+  "owner_run": {
+    "builds": [
+      "rollback",
+      "current"
+    ],
+    "receipt_rule": "self-excluding result index must account for every result file except result-index.json; archive logging must be outside the indexed result root",
+    "requires_two_run_byte_identity": true,
+    "sequence": [
+      "acquire and verify four exact wheels and PyPI metadata",
+      "assemble rollback twice and current twice",
+      "verify byte identity and static product contracts",
+      "install rollback",
+      "activate current",
+      "rollback to prior",
+      "reactivate current",
+      "extract exact frozen install_only archive",
+      "qualify SSL CA loading and ZoneInfo UTC/Asia-Seoul/America-New_York with exact target Python",
+      "prove frozen Python family identities unchanged",
+      "independent audit"
+    ]
+  },
+  "product": {
+    "ca_path": "data/ca/ca-bundle.pem",
+    "format": "deterministic-tar-zstd",
+    "license_root": "data/licenses",
+    "metadata": "data/DATA.json",
+    "native_code_included": false,
+    "provenance_root": "data/provenance",
+    "python_package_code_included": false,
+    "root": "data/",
+    "self_excluding_manifest": "data/DATA-MANIFEST.json",
+    "timezone_root": "data/zoneinfo"
+  },
+  "runtime": {
+    "ca_environment": "SSL_CERT_FILE",
+    "ca_value": "<DATA_ROOT>/ca/ca-bundle.pem",
+    "caller_override_allowed": true,
+    "data_root_environment": "HW_T_ANDROID_DATA_ROOT",
+    "host_private_fallback_forbidden": true,
+    "timezone_environment": "PYTHONTZPATH",
+    "timezone_value": "<DATA_ROOT>/zoneinfo"
+  },
+  "schema_version": 1,
+  "status": "implementation-started-owner-run-pending",
+  "stop_conditions": [
+    "any wheel identity differs from the lock",
+    "any provider payload requires rebuilding or modifying certificate/zoneinfo bytes",
+    "any operation writes to the frozen Python install tree",
+    "runtime qualification does not use the exact frozen install_only archive",
+    "result receipt is incomplete"
+  ]
+}

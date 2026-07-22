@@ -8,7 +8,7 @@
 ```text
 action       resolve-epoch3-release-blocking-experiments
 gate         E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
-tracked docs 827
+tracked docs 830
 indexes      16
 ```
 
@@ -51,6 +51,7 @@ indexes      16
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `product-input-governance`
+- [`config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json`](../../config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json) — `CURRENT_INPUT_LOCK` · `product_identity` · owner `epoch3-release-blockers`
 - [`docs/CURRENT_CONTEXT.md`](../CURRENT_CONTEXT.md) — `GENERATED_VIEW` · `temporal_state_view` · owner `program-governance`
 - [`docs/GITHUB_COLLABORATION_WORKFLOW.md`](../GITHUB_COLLABORATION_WORKFLOW.md) — `STABLE` · `session_operations_compatibility` · owner `session-operations`
 - [`docs/INDEX.md`](../INDEX.md) — `GENERATED_VIEW` · `navigation` · owner `program-governance`

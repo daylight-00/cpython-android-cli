@@ -1,0 +1,71 @@
+{
+  "acquisition": {
+    "owner_network_only": true,
+    "reject_yanked_or_identity-mismatched-input": true,
+    "retain_pypi_json_metadata": true,
+    "verify_filename_size_sha256_before_use": true
+  },
+  "claim_boundary": {
+    "product_built": false,
+    "provider_selection_frozen": true,
+    "publication": false,
+    "rb2_closed": false,
+    "runtime_qualified": false,
+    "selectable": false
+  },
+  "lock_kind": "epoch3-rb2-ca-timezone-data-products",
+  "provider_policy": {
+    "ca": "exact certifi wheel payload, copied without certificate modification",
+    "install_root_mutation_forbidden": true,
+    "network_runtime_discovery_forbidden": true,
+    "python_archive_mutation_forbidden": true,
+    "timezone": "exact tzdata wheel zoneinfo payload, copied without zic recompilation"
+  },
+  "releases": {
+    "current": {
+      "certifi": {
+        "filename": "certifi-2026.6.17-py3-none-any.whl",
+        "license": "MPL-2.0",
+        "pypi_json": "https://pypi.org/pypi/certifi/2026.6.17/json",
+        "sha256": "2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db",
+        "size_bytes": 133289,
+        "url": "https://files.pythonhosted.org/packages/ef/2f/c5464532e965badff2f4c4c1a3a83f5697f0d7c407ed0cda44aaa99bb451/certifi-2026.6.17-py3-none-any.whl",
+        "version": "2026.6.17"
+      },
+      "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+      "tzdata": {
+        "expected_iana_version": "2026c",
+        "filename": "tzdata-2026.3-py2.py3-none-any.whl",
+        "license": "Apache-2.0",
+        "pypi_json": "https://pypi.org/pypi/tzdata/2026.3/json",
+        "sha256": "dc096730c87af6cab1b171c9d532be840741ff5d459015e7f6947bd7d7e54931",
+        "size_bytes": 348168,
+        "url": "https://files.pythonhosted.org/packages/e5/6d/b53b99a9f2766d095985947a5782f1702cabb129a34f7a802d7197af832f/tzdata-2026.3-py2.py3-none-any.whl",
+        "version": "2026.3"
+      }
+    },
+    "rollback": {
+      "certifi": {
+        "filename": "certifi-2026.5.20-py3-none-any.whl",
+        "license": "MPL-2.0",
+        "pypi_json": "https://pypi.org/pypi/certifi/2026.5.20/json",
+        "sha256": "3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897",
+        "size_bytes": 134134,
+        "url": "https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl",
+        "version": "2026.5.20"
+      },
+      "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+      "tzdata": {
+        "expected_iana_version": "verify-from-wheel-tzdata.zi",
+        "filename": "tzdata-2026.2-py2.py3-none-any.whl",
+        "license": "Apache-2.0",
+        "pypi_json": "https://pypi.org/pypi/tzdata/2026.2/json",
+        "sha256": "bbe9af844f658da81a5f95019480da3a89415801f6cc966806612cc7169bffe7",
+        "size_bytes": 349321,
+        "url": "https://files.pythonhosted.org/packages/ce/e4/dccd7f47c4b64213ac01ef921a1337ee6e30e8c6466046018326977efd95/tzdata-2026.2-py2.py3-none-any.whl",
+        "version": "2026.2"
+      }
+    }
+  },
+  "schema_version": 1
+}

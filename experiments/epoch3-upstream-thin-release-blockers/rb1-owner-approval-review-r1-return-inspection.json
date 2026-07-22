@@ -1,0 +1,56 @@
+{
+  "acceptance": {
+    "dossier_may_be_used_for_owner_review": true,
+    "reason": "The review dossier is exact and reproducible, but the result archive contains an unindexed archive log and its frozen final status predates archive/upload completion.",
+    "return_may_be_frozen_as_claim_authority": false
+  },
+  "claim_boundary": {
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "dossier": {
+    "approval_binding_sha256": "8ecd4b8a6fb573251bf56f12a8b51eea6854f25e0df0e8562ed143a2980611fb",
+    "approval_template_sha256": "8f2466a69368a8313bd0b4db9042b207f1c05fd188ed59b36de7e52a011562cf",
+    "file_count": 9,
+    "fingerprint_sha256": "f19071959beff693d791dd83079249e2b1d0b55da49edee3fd5a4c8fda73d04e",
+    "independent_audit_pass": true,
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "owner_approved": false,
+    "rb1_closed": false,
+    "two_run_reproducibility_pass": true,
+    "verification_pass": true
+  },
+  "inspection_kind": "epoch3-rb1-owner-approval-review-return-inspection",
+  "next_action": {
+    "parallel_lane": "proceed with RB-2",
+    "rb1": "retain owner-approval-pending; accept only a separate explicit approval document bound to the exact dossier",
+    "runner_fix": "write archive logs outside the indexed result root and finalize status before indexing"
+  },
+  "receipt_integrity": {
+    "actual_non_index_file_count": 28,
+    "complete_receipt": false,
+    "final_status_archive_rc": 99,
+    "final_status_result_sha256_empty": true,
+    "final_status_upload_rc": 99,
+    "indexed_non_index_file_count": 27,
+    "unindexed_files": [
+      "logs/archive.log"
+    ]
+  },
+  "repository_result": {
+    "post_head": "ca82747fa5ca9c01e09d9364de41e93e28dd586b",
+    "post_tree": "be088e3dc0d895882bd139c105a10a3e71f33781",
+    "pre_head": "2a6ab3d100960d9a07be4bb0a5a23845601d0f88",
+    "remote_readback_matches": true
+  },
+  "schema_version": 1,
+  "source": {
+    "drive_file_id": "1Un2jROF-3znszLQaTX7XSRUFbDIgsL-4",
+    "filename": "cpython-android-cli-e3-rb1-owner-approval-review-r1-results.tar.zst",
+    "sha256": "f67a46c6d2351a97b7627fc28f48d1a3e4c3ac93e4766c2d50b7700b8ae38d67",
+    "size_bytes": 13333
+  },
+  "status": "dossier-valid-result-receipt-not-accepted"
+}

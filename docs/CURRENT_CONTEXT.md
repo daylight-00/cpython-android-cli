@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 32
+> **State revision:** 33
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -75,7 +75,6 @@ status  in-progress
 
 ## Unresolved risks
 
-- CA-and-timezone-production-payload-selection-pending
 - astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
@@ -87,8 +86,9 @@ status  in-progress
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
+- CA-and-timezone-owner-build-update-rollback-runtime-qualification-pending
+- rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

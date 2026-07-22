@@ -39,7 +39,6 @@ Epoch 3 selection     true
 
 ### Unresolved risks
 
-- CA-and-timezone-production-payload-selection-pending
 - astral-consumer-and-uv-managed-compatibility-pending
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
@@ -51,9 +50,10 @@ Epoch 3 selection     true
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
 - final-notice-set-not-owner-approved
 - owner-approval-must-bind-exact-release-and-notice-hashes
+- CA-and-timezone-owner-build-update-rollback-runtime-qualification-pending
+- rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 
 ### Accepted authorities
 

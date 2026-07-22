@@ -13,6 +13,10 @@
         "legally_integrated_family_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
         "legally_integrated_family_file_count": 128,
         "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+        "owner_approval_review_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb1-owner-approval-review-r1-return-inspection.json",
+        "review_dossier_fingerprint_sha256": "f19071959beff693d791dd83079249e2b1d0b55da49edee3fd5a4c8fda73d04e",
+        "review_dossier_valid": true,
+        "review_result_receipt_accepted": false,
         "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
         "technical_review_unit_count": 31
       },
@@ -24,7 +28,7 @@
         "implicit_approval_forbidden": true,
         "owner_approval_required": true,
         "required_input": "explicit-owner-approval-document-bound-to-exact-release-and-notice-hashes",
-        "required_output": "deterministic-owner-approval-review-dossier-and-independent-audit",
+        "required_output": "explicit owner approval document; review dossier already prepared but its result receipt is not authority-accepted",
         "successor_after_explicit_approval": "freeze-owner-approval-authority-and-close-rb1"
       },
       "required_for": [
@@ -35,13 +39,34 @@
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
+      "evidence": {
+        "current_provider_versions": {
+          "certifi": "2026.6.17",
+          "tzdata": "2026.3"
+        },
+        "data_policy_authority": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
+        "data_product_contract": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json",
+        "local_implementation_test_count": 7,
+        "owner_result_required": true,
+        "provider_lock": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json",
+        "rollback_provider_versions": {
+          "certifi": "2026.5.20",
+          "tzdata": "2026.2"
+        }
+      },
       "id": "RB-2",
       "lane": "local",
       "name": "ca-timezone-data-products",
+      "next_gate": {
+        "closure_allowed": false,
+        "required_input": "four exact fixed-hash provider wheels plus exact frozen legally integrated family",
+        "required_output": "two deterministic data products, update/rollback receipt, exact frozen Python runtime qualification, independent audit, and complete self-indexed result archive",
+        "successor_after_accepted_receipt": "freeze-rb2-ca-timezone-data-authority-and-close-rb2"
+      },
       "required_for": [
         "selectability"
       ],
-      "status": "open"
+      "status": "in-progress-provider-lock-and-owner-run-qualification-pending"
     },
     {
       "completion_role": "astral-compatible-consumer-and-parser-qualification",
@@ -109,7 +134,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "prepare-rb1-final-notice-owner-approval-review",
+  "next_bounded_action": "build-qualify-and-audit-rb2-data-products",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

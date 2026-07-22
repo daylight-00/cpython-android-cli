@@ -12629,6 +12629,51 @@
       "rationale": "",
       "supersession_rule": "Explicit predecessor/supersedes edge.",
       "update_trigger": "Update only through the active bounded transaction."
+    },
+    {
+      "authority_domain": "product_identity",
+      "format": "json",
+      "lifecycle_class": "CURRENT_INPUT_LOCK",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "controlled-lock",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json",
+      "planned_canonical_parent": "config/products/README.md",
+      "rationale": "Exact current and rollback CA/timezone pure-data provider input lock.",
+      "supersession_rule": "Replace only through an explicit provider-update transaction.",
+      "update_trigger": "Provider version, hash, source, license, or rollback baseline changes."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Active RB-2 data product, lifecycle, qualification, receipt, and non-claim contract.",
+      "supersession_rule": "Explicit successor contract or frozen RB-2 authority.",
+      "update_trigger": "Update only through the active bounded RB-2 transaction."
+    },
+    {
+      "authority_domain": "evidence_snapshot",
+      "format": "json",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-owner-approval-review-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/evidence/README.md",
+      "rationale": "Fail-closed inspection: valid review dossier, incomplete enclosing result receipt, and no owner approval.",
+      "supersession_rule": "Do not edit; create a later accepted return or correction record.",
+      "update_trigger": "Never edit after commit."
     }
   ],
   "lifecycle_classes": [
