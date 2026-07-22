@@ -1,0 +1,383 @@
+{
+  "cpython_source": {
+    "filename": "Python-3.14.6.tgz",
+    "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+    "size_bytes": 31234628
+  },
+  "evidence": [
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "142adb769ff02b8a5327f0eb837e1f9a797bdf9a1684d21acd749dbb5b2e5be2",
+      "size_bytes": 45493,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_HMAC.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "d68209032703137326f9aadd9abac8fe4a5c92d391e2f43b0414fa63087adc6b",
+      "size_bytes": 5898,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_HMAC.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "6a492aa586f2d10b1b300ce8ce4c72c976ff7548fee667aded2253f99969ac87",
+      "size_bytes": 48852,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "fac493e96af252abcf5705f0ab4eec59c1f3bc8244e105d75a57c43552dd1569",
+      "size_bytes": 7873,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "9eb22953ce60dde9dc970fec9dfce9d94235f4b7ccd8f0151cad4707dc835d1d",
+      "size_bytes": 54551,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b_Simd256.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "817dcd05d06d804587fce7d8f2f3f42a6fcf6818d2419a3551ef0df70cb7125a",
+      "size_bytes": 7784,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2b_Simd256.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "f3204f3e60734d811b6630f879b69ce54eaf367f3fca5889c1026e7a1f3ee1e4",
+      "size_bytes": 47943,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "5cc96313f8c066f055c2819e473c79aeff086ba91a1449d54aa569127cd8601e",
+      "size_bytes": 7464,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "c93746df2f219cbb1634ee6fb0ab1c4cbd381d1f36c637114c68346c9935326d",
+      "size_bytes": 53595,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s_Simd128.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "fe3f17bf237166f872ba88c8204333c4f64bdc4bb29c265448581c7bfea4b151",
+      "size_bytes": 7781,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_Blake2s_Simd128.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "5b91ed0339074e2e546119833398e2cdb7190c33a59c405bf43b2417c789547d",
+      "size_bytes": 40719,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_MD5.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "a34534ef36bc8428ac1169ca5f4f1c17a0817507ebae388e3dd825d1a331f28d",
+      "size_bytes": 2248,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_MD5.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "ce08721d491f3b8a9bd4cde6c27bfcc8fc01471512ccca4bd3c0b764cb551d29",
+      "size_bytes": 15783,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA1.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "2d5cae94382f5473cf6d2654760375ff1ee9cebdb8d4506b63ba33f488de1559",
+      "size_bytes": 2260,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA1.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "f8af382de7e29a73c726f9c70770498ddd99e2c4702489ed6e634f0b68597c95",
+      "size_bytes": 44266,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA2.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "442d8997d2bcda20ddf628665e2e69945400e1ab3019bc14fc7c8e20db20c320",
+      "size_bytes": 6928,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA2.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "8744f5b6e054c3e5c44f413a60f9154b76dd7230135dcee26fd063755ec64be1",
+      "size_bytes": 72622,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA3.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "961a686186b76a1cd6a64bcfd06afdc8657b1f901bac991166f498ed16f9349a",
+      "size_bytes": 5219,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Hash_SHA3.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "29fcf948a3715e09cbbd434cebb6105f276236a6e4947d237b7bf06634bf2432",
+      "size_bytes": 68898,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_HMAC.c"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "6450aef92f507fb0a8a3086b1d2792e7fca07121580c24fdaedd1b32e9ad0a76",
+      "size_bytes": 3927,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_HMAC.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "efc7bd11460744768425aedf4e004d3ad3397a5489752b80044ae785f30b78d4",
+      "size_bytes": 2595,
+      "source_path": "Python-3.14.6/Modules/_hacl/Hacl_Streaming_Types.h"
+    },
+    {
+      "license_markers": [],
+      "sha256": "8c0c0d4c6e65b349a8b116862174669fbd4c9ce037c6fee32f19994ddb6fbf6c",
+      "size_bytes": 1044,
+      "source_path": "Python-3.14.6/Modules/_hacl/README.md"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "69dc2e78411e9b271100eb0d2a2d8dc39dd2348afc26f8b4cfba14c025102c7f",
+      "size_bytes": 9331,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/FStar_UInt128_Verified.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "f01e3f0892935f3f659019875f580445b9ea23482afbe11ffbe7cdbd22dbd4d2",
+      "size_bytes": 6335,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/FStar_UInt_8_16_32_64.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "1c9bee7ac4b987c73cc3aba6b7ceed8ec7e75c9a741810e4411f35602490e0d8",
+      "size_bytes": 1658,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/fstar_uint128_struct_endianness.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "c5a04a1f99807cea29ac1832ba17d8a3d3805862d3a713642583be2106e04edb",
+      "size_bytes": 1320,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/compat.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "08bb43ef5626a8450f985da0af345b6658ac8bcc4585f77271decd0e41fc02e0",
+      "size_bytes": 15309,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/target.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "404691cf9b2269ecc754ceca27bb8f8f029f1c8deaa4d967990dcf5ce08cd016",
+      "size_bytes": 3649,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/internal/types.h"
+    },
+    {
+      "license_markers": [
+        "MIT License"
+      ],
+      "sha256": "6d1a350ec272c83761f1789611d8f60947a4d69fed3d23d8eee38709a0ad2c0a",
+      "size_bytes": 7825,
+      "source_path": "Python-3.14.6/Modules/_hacl/include/krml/lowstar_endianness.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "96c2a973bc01b1295f7af67c7de3839facfeee36c8848d7d88c62695de98ab21",
+      "size_bytes": 1671,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_HMAC.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "f262738390f56e8e9692acadecd1434c688075047d788283e1fb45d920ea6956",
+      "size_bytes": 2600,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2b.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "f22e088ad9c2eb739aefc3685ef3ab1ccaab3c5ef2e5d06cc846ad9f8e3d2669",
+      "size_bytes": 3670,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2b_Simd256.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "a4728e43deb0a9d8213b8ddcbda68a63bc73a12fb99aad54b7d28b314776a0d4",
+      "size_bytes": 2487,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2s.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "dad568d256a2ccbbbcdd419fe0543ea7137d8065a713a5f009aa52521c0f7f6a",
+      "size_bytes": 3618,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_Blake2s_Simd128.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "305af1422213ed97e8e5d3d8a9dfee4f21cb2fcd2acf65ee7303ce00b2b4bd2a",
+      "size_bytes": 1991,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_MD5.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "63c58363ff95e8146d5628dab2da25bc2fd0e8b590fd4823b512c33f843355bb",
+      "size_bytes": 1967,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA1.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "709c6272f77e2368f6cc0bf36527e3b16dd5d5f3dc26a2afdef8238200af8770",
+      "size_bytes": 6575,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA2.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "cf49d536a5663379fb4517018b4b3f8a232f8d4c7ddc7edfd60163d13f98a530",
+      "size_bytes": 2411,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Hash_SHA3.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "916d54d7217517f0360edea920dc21585fbe6d1c2458eac86826182e12c82ec2",
+      "size_bytes": 2843,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Impl_Blake2_Constants.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "059cf0d31427abf84c626797a97c140630a1a6ead578005162f46fad46663389",
+      "size_bytes": 3000,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Streaming_HMAC.h"
+    },
+    {
+      "license_markers": [
+        "MIT License",
+        "Permission is hereby granted"
+      ],
+      "sha256": "76997c7069a347ac78b65d26354a0324d54add4ca7a02e7be36d6d5e1c9702e0",
+      "size_bytes": 2435,
+      "source_path": "Python-3.14.6/Modules/_hacl/internal/Hacl_Streaming_Types.h"
+    },
+    {
+      "license_markers": [],
+      "sha256": "f30f633ec04fe0ec1eac20bab2b1b3eb8524d57abaa93213a1de1aed0ad09bbd",
+      "size_bytes": 4886,
+      "source_path": "Python-3.14.6/Modules/_hacl/refresh.sh"
+    }
+  ],
+  "evidence_kind": "hacl-star-bundled-source-license-evidence",
+  "license_expression_candidate": "MIT",
+  "license_marker_file_count": 40,
+  "mapping_status": "candidate-evidence-frozen-owner-review-pending",
+  "pass": true,
+  "schema_version": 1,
+  "upstream_commit_candidates": [
+    "8ba599b2f6c9701b3dc961db895b0856a2210f76"
+  ]
+}

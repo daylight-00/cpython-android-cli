@@ -1,0 +1,48 @@
+{
+  "boundary": "record provider names and non-distribution; do not package or attribute Android platform library bytes as product components",
+  "full_artifact_sha256": "20fe6b6a7877af303461cd271f658f40750b6a3d1981f437dd730aea07c0ff12",
+  "pass": true,
+  "policy_kind": "android-system-provider-notice-boundary",
+  "providers": [
+    {
+      "classification": "android-platform-runtime-provider",
+      "distributed_in_product": false,
+      "product_notice_payload_required": false,
+      "runtime_support_claim_separate": true,
+      "soname": "libc.so"
+    },
+    {
+      "classification": "android-platform-runtime-provider",
+      "distributed_in_product": false,
+      "product_notice_payload_required": false,
+      "runtime_support_claim_separate": true,
+      "soname": "libdl.so"
+    },
+    {
+      "classification": "android-platform-runtime-provider",
+      "distributed_in_product": false,
+      "product_notice_payload_required": false,
+      "runtime_support_claim_separate": true,
+      "soname": "liblog.so"
+    },
+    {
+      "classification": "android-platform-runtime-provider",
+      "distributed_in_product": false,
+      "product_notice_payload_required": false,
+      "runtime_support_claim_separate": true,
+      "soname": "libm.so"
+    },
+    {
+      "classification": "android-platform-runtime-provider",
+      "distributed_in_product": false,
+      "product_notice_payload_required": false,
+      "runtime_support_claim_separate": true,
+      "soname": "libz.so"
+    }
+  ],
+  "schema_version": 1,
+  "source_authority": {
+    "path": "experiments/epoch3-upstream-thin-full/authority-evidence/full-static-verification.json",
+    "sha256": "7df3b2b6883f89cea1af504111cd6d4aeeb17c32339d0c8bd884fea2a9891aad"
+  }
+}

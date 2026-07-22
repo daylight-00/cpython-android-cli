@@ -1,0 +1,24 @@
+{
+  "classification": "public-domain-non-spdx",
+  "evidence": [
+    {
+      "matched_lines": [
+        "** who thereby has the right to put this into the public domain.",
+        "** Hence, the author has rightfully put this into the public domain."
+      ],
+      "sha256": "c446ff8f3109335ce6d0731b6f7d65e57f1d1747c9bfc8b18b50db8f48cd253a",
+      "size_bytes": 1066685,
+      "source_path": "cpython-source-deps-sqlite-3.50.4.0/shell.c"
+    }
+  ],
+  "evidence_kind": "sqlite-3.50.4-public-domain-policy",
+  "notice_policy": "record-public-domain-status-and-exact-source-evidence-without-inventing-license-text",
+  "pass": true,
+  "product_version": "3.50.4",
+  "schema_version": 1,
+  "source": {
+    "filename": "sqlite-3.50.4.0.tar.gz",
+    "sha256": "fb5ab81f27612b0a7b4861ba655906c76dc85ee969e7a4905d2075aff931e8d0",
+    "size_bytes": 2845090
+  }
+}

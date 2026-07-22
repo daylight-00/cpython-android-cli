@@ -4,26 +4,29 @@
       "completion_role": "complete-component-to-license-map-and-notice-set",
       "evidence": {
         "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
-        "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+        "blocking_gap_count": 4,
         "component_count": 13,
-        "blocking_gap_count": 8,
-        "legal_overlay_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json"
+        "legal_overlay_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
+        "legal_overlay_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
+        "legal_overlay_file_count": 72,
+        "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json"
       },
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
       "next_gate": {
         "closure_allowed": false,
+        "expected_remaining_gap_count": 1,
         "fixed_gap_reduction_required": true,
-        "required_output": "deterministic-legal-overlay-candidate-and-independent-audit",
-        "expected_remaining_gap_count": 4
+        "owner_approval_required_after_success": true,
+        "required_output": "deterministic-legally-integrated-release-family-candidate-and-independent-audit"
       },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-legal-overlay-implementation"
+      "status": "in-progress-legal-integration-and-technical-obligation-review"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -101,7 +104,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "execute-rb1-legal-evidence-overlay-and-provider-policy-synthesis",
+  "next_bounded_action": "execute-rb1-technical-obligation-review-and-release-family-legal-integration-candidate",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

@@ -212,3 +212,14 @@ The next bounded implementation synthesizes a legal-evidence overlay without cha
 8. reduce only the evidence-policy gap register from eight to four.
 
 The remaining gates are complete componentization and obligation review, integration of authoritative legal evidence into a revised release family, inclusion of the project license in that family, and final owner approval of the notice set. This implementation cannot close RB-1 or authorize selectability or publication.
+## 16. RB-1 legal-overlay authority and legal-integration start
+
+The corrected owner r2 passed the exact artifact-family, source-input, XZ product-asset, two-run reproducibility, and independent-audit gates. The accepted authority freezes a deterministic 72-file legal evidence overlay with fingerprint `e4378c59eabcc6fdf5d07cccd718bd536d87deda531e5e2fcc3115fb6944a878`, resolves four evidence-policy gaps, and retains four explicit blockers. No frozen artifact byte changed.
+
+The next bounded action may technically resolve only three blockers:
+
+1. complete componentization and technical obligation review, including all 18 units listed by the exact pip 26.1.2 `pip/_vendor/vendor.txt`;
+2. integrate the exact accepted legal evidence under a revised release-family metadata envelope while preserving the three artifact archives and their existing artifact sidecars byte-for-byte; and
+3. include the project `LICENSE` in that revised family.
+
+The revised family is an owner-approval-pending candidate, not a selectable or publishable product. `THIRD-PARTY-NOTICES` approval, RB-1 closure, selectability, and publication remain forbidden until a separate owner-approval transaction accepts the exact notice and integrated-family identities.

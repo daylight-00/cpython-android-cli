@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 29
+> **State revision:** 30
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -60,6 +60,7 @@ status  in-progress
 27. [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json) — frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority
 28. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json) — frozen exact five-source license payload acquisition, 13-component expansion, eight-gap boundary, and legal-overlay evidence synthesis start authority
 29. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json) — non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output
+30. [`experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json) — frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority
 
 ## Blockers
 
@@ -88,13 +89,9 @@ status  in-progress
 - publication-not-authorized
 - libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry
 - authoritative-license-payloads-not-yet-integrated-into-release-family
-- xz-5.4.6-product-matching-license-evidence-not-yet-bound
-- sqlite-public-domain-notice-policy-not-frozen
-- android-system-provider-notice-boundary-not-frozen
-- hacl-license-header-and-notice-not-yet-frozen
 - final-notice-set-not-owner-approved
-- legal-overlay-owner-qualification-pending
 - complete-license-obligation-review-pending
 - release-family-legal-integration-pending
+- pip-vendored-component-obligation-review-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

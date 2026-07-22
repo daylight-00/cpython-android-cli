@@ -66,7 +66,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb1-legal-evidence-overlay-and-provider-policy-synthesis",
+    "current_bounded_transition": "rb1-technical-obligation-review-and-release-family-legal-integration-candidate",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -76,7 +76,7 @@
   },
   "input_routing": {
     "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-    "first_attempt": "reuse the exact artifact-family directory, frozen RB-1 payload authority, exact CPython 3.14.6 and source-deps caches, and exact BeeWare xz-5.4.6-1 product asset cache",
+    "first_attempt": "reuse the exact frozen artifact family and accepted legal-overlay authority; derive pip vendored evidence from the exact install-only artifact without changing artifact bytes",
     "forbidden": [
       "reassemble-or-modify-any-frozen-artifact",
       "claim-complete-license-mapping-from-file-name-census-alone",
@@ -113,6 +113,11 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
       "reason": "Frozen five-source license payload acquisition, 13-component expansion, exact evidence hashes, and eight-gap boundary.",
       "sha256": "20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
+      "reason": "Frozen 72-file legal overlay and exact four-gap boundary.",
+      "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
     }
   ],
   "required_reads": [
@@ -160,10 +165,15 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
       "reason": "Exact XZ product evidence, SQLite/HACL/libmpdec evidence synthesis, Android provider boundary, deterministic legal overlay outputs, and bounded non-claim contract.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/legal-integration-contract.json",
+      "reason": "Technical obligation review, pip vendored component expansion, legal integration, and final owner-approval boundary.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 29,
+  "state_revision": 30,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",

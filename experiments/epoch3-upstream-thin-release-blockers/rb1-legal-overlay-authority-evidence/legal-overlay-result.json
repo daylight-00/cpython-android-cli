@@ -1,0 +1,29 @@
+{
+  "claim_boundary": {
+    "complete_obligation_review": false,
+    "component_license_mapping_complete": false,
+    "legal_overlay_authoritative": false,
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "release_family_integrated": false,
+    "selectable": false
+  },
+  "family_identity_preserved": true,
+  "legal_overlay_fingerprint_sha256": "e4378c59eabcc6fdf5d07cccd718bd536d87deda531e5e2fcc3115fb6944a878",
+  "metrics": {
+    "component_count": 13,
+    "exact_input_archive_count": 7,
+    "legal_overlay_file_count": 72,
+    "remaining_gap_count": 4,
+    "resolved_gap_count": 4
+  },
+  "outputs": [
+    "legal/",
+    "legal-overlay-index.json",
+    "updated-gap-register.json"
+  ],
+  "pass": true,
+  "runner_kind": "epoch3-rb1-legal-overlay-and-provider-policy-synthesis",
+  "schema_version": 1
+}

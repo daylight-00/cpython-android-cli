@@ -1,0 +1,57 @@
+{
+  "action": "applied-rb1-legal-overlay-evidence-synthesized-audited-pushed",
+  "claim_boundary": {
+    "complete_obligation_review": false,
+    "component_license_mapping_complete": false,
+    "legal_overlay_authoritative": false,
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "release_family_integrated": false,
+    "selectable": false
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "metrics": {
+    "exact_input_archive_count": 7,
+    "legal_overlay_file_count": "72",
+    "legal_overlay_fingerprint_sha256": "e4378c59eabcc6fdf5d07cccd718bd536d87deda531e5e2fcc3115fb6944a878",
+    "remaining_gap_count": "4",
+    "resolved_gap_count": "4"
+  },
+  "package_id": "cpython-android-cli-e3-rb1-legal-overlay-r2",
+  "post": {
+    "head": "611e036367c1723277bdccc2180e215283194978",
+    "remote_head": "611e036367c1723277bdccc2180e215283194978",
+    "tree": "98bbf9f5e1391c7f297b63aeb60ef17db0fc7c18"
+  },
+  "pre": {
+    "head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "remote_head": "bdd25ce7560ecbac15e9745bd927ad14efb867d3",
+    "tree": "570526f5ba9b87a3c02d10075015c4c482c96aab"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 0,
+    "audit": 0,
+    "family_input": 0,
+    "onboard": 0,
+    "package": 0,
+    "payload_authority": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "source_input": 0,
+    "static": 0,
+    "target": 0,
+    "upload": 99,
+    "xz_input": 0
+  },
+  "schema_version": 1,
+  "transaction_rc": 0
+}

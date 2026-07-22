@@ -8,7 +8,7 @@
 ```text
 action       resolve-epoch3-release-blocking-experiments
 gate         E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
-tracked docs 787
+tracked docs 811
 indexes      16
 ```
 

@@ -1,0 +1,33 @@
+{
+  "audit_kind": "epoch3-rb1-legal-overlay-independent-audit",
+  "checks": {
+    "claims_bounded": true,
+    "component_map": true,
+    "family_immutable": true,
+    "gap_transition": true,
+    "hacl_evidence": true,
+    "index_exact": true,
+    "notice_candidate": true,
+    "provider_boundary": true,
+    "result_pass": true,
+    "sqlite_policy": true,
+    "xz_product_matching": true
+  },
+  "claim_boundary": {
+    "complete_obligation_review": false,
+    "component_license_mapping_complete": false,
+    "legal_overlay_authoritative": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "failed_checks": [],
+  "input_sha256": {
+    "legal-overlay-index.json": "ee98cec220d4fb41bf56ed496c3d0f508dbd3891a41a90e42ebdae7e9faff2dc",
+    "legal-overlay-result.json": "784b451e011c8b988331304a31f4ab2df4a2ec38a4f658d4401f2b1716b25fbe",
+    "updated-gap-register.json": "c7ab068de9242d098b61cc2888c35e36a745e8be0f1a8d8f45a53d1b9786998d"
+  },
+  "legal_overlay_fingerprint_sha256": "e4378c59eabcc6fdf5d07cccd718bd536d87deda531e5e2fcc3115fb6944a878",
+  "pass": true,
+  "schema_version": 1
+}

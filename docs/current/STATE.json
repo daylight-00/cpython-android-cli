@@ -173,11 +173,17 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json",
       "role": "non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output",
       "sha256": "1471394928903fb8d430c6a0f99b07defe847bb1732298eac0d82a5db643c983"
+    },
+    {
+      "id": "epoch3-rb1-legal-overlay-r2",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
+      "role": "frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority",
+      "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "3a2eaafac542cedd221f52582c29ec48c63b7e63d97116f8143e5f37767537ae",
+    "detail_sha256": "53f7bc2ba29f3dddec11093a5407d2977e086d7bf72465a53ee5aa2ac90f9bc9",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -265,8 +271,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "205b421d4b33ede684024b34c444c2ae08a22d05",
-    "tree": "152d77fa3d20f668866d612ef50724c91f780b6c"
+    "commit": "611e036367c1723277bdccc2180e215283194978",
+    "tree": "98bbf9f5e1391c7f297b63aeb60ef17db0fc7c18"
   },
   "program": {
     "epoch": {
@@ -320,11 +326,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 29,
+  "state_revision": 30,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "9ad2cafebc6e0578a37f836d7e096497f8fa0f36911343e14c2805da44bebaaf"
+    "sha256": "9f982e69ba352d623b7cd22c0e6371a073df5aad886c385b4798934c9d5768c9"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -350,14 +356,10 @@
     "publication-not-authorized",
     "libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry",
     "authoritative-license-payloads-not-yet-integrated-into-release-family",
-    "xz-5.4.6-product-matching-license-evidence-not-yet-bound",
-    "sqlite-public-domain-notice-policy-not-frozen",
-    "android-system-provider-notice-boundary-not-frozen",
-    "hacl-license-header-and-notice-not-yet-frozen",
     "final-notice-set-not-owner-approved",
-    "legal-overlay-owner-qualification-pending",
     "complete-license-obligation-review-pending",
-    "release-family-legal-integration-pending"
+    "release-family-legal-integration-pending",
+    "pip-vendored-component-obligation-review-pending"
   ],
-  "updated_by_transaction": "20260722-e3-rb1-legal-overlay-implementation-r1"
+  "updated_by_transaction": "20260722-e3-rb1-legal-overlay-authority-and-integration-start-r1"
 }

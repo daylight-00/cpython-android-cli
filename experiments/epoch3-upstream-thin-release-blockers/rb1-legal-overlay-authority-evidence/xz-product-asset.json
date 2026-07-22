@@ -1,0 +1,11 @@
+{
+  "acquisition_mode": "bounded-download",
+  "component": "xz-liblzma",
+  "exact_identity_verified": true,
+  "filename": "xz-5.4.6-1-aarch64-linux-android.tar.gz",
+  "release_tag": "xz-5.4.6-1",
+  "sha256": "320b76d45dc3499cf855e5310f875cba61c2608e4a98bb280cc4f1b8f189da1a",
+  "size_bytes": 651211,
+  "url": "https://github.com/beeware/cpython-android-source-deps/releases/download/xz-5.4.6-1/xz-5.4.6-1-aarch64-linux-android.tar.gz",
+  "version": "5.4.6"
+}

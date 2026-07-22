@@ -1,0 +1,45 @@
+DRAFT THIRD-PARTY NOTICES CANDIDATE — OWNER AND OBLIGATION REVIEW REQUIRED
+
+Frozen artifact family: 87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302
+No frozen artifact byte is modified by this legal overlay.
+
+- cpython 3.14.6: Python-2.0
+    evidence: cpython/LICENSE
+- project-launcher (project/external): MIT
+    evidence: project/LICENSE
+- pip 26.1.2: MIT-plus-vendored-inventory-review-pending
+- openssl 3.5.7: Apache-2.0
+    evidence: openssl/AUTHORS.md
+    evidence: openssl/LICENSE.txt
+    evidence: openssl/README.md
+    evidence: openssl/external/perl/Text-Template-1.56/LICENSE
+    evidence: openssl/util/perl/OpenSSL/copyright.pm
+- sqlite 3.50.4: public-domain-non-spdx
+    evidence: sqlite-public-domain-evidence.json
+- bzip2 1.0.8: bzip2-1.0.6
+    evidence: bzip2/LICENSE
+    evidence: bzip2/README
+- xz-liblzma 5.4.6: multi-license-product-asset-evidence-present
+    evidence: xz-product-license-evidence.json
+    evidence: licenses/xz/COPYING
+    evidence: licenses/xz/COPYING.GPLv2
+    evidence: licenses/xz/AUTHORS
+- zstd 1.5.7: BSD-3-Clause OR GPL-2.0-only
+    evidence: zstd/COPYING
+    evidence: zstd/LICENSE
+    evidence: zstd/README.md
+    evidence: zstd/build/LICENSE
+    evidence: zstd/build/single_file_libs/examples/README.md
+- expat 2.8.1: MIT
+    evidence: cpython/Modules/expat/COPYING
+- libmpdec 2.5.1: BSD-2-Clause-like
+    evidence: libmpdec-license-evidence.json
+- libffi 3.4.4: MIT
+    evidence: libffi/LICENSE
+    evidence: libffi/LICENSE-BUILDTOOLS
+- android-system-providers (project/external): external-platform-provider-not-distributed
+    evidence: android-system-provider-policy.json
+- hacl-star bundled-with-cpython-3.14.6: license-expression-candidate:MIT
+    evidence: hacl-star-license-evidence.json
+
+Open gates: complete obligation review; release-family legal integration; project-license integration; final owner approval.
