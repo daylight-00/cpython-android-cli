@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 24
+> **State revision:** 25
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -86,5 +86,6 @@ status  in-progress
 - publication-not-authorized
 - libffi-version-and-source-provenance-unresolved
 - component-license-payloads-not-yet-authoritatively-bound
+- rb1-source-provenance-owner-run-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

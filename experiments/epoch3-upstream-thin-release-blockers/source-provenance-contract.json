@@ -1,0 +1,36 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb1-source-provenance-resolution",
+  "inputs": {
+    "cpython_source": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628,
+      "url": "https://www.python.org/ftp/python/3.14.6/Python-3.14.6.tgz"
+    },
+    "family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "rb1_baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json"
+  },
+  "required_outputs": [
+    "source-provenance.json",
+    "license-source-plan.json",
+    "resolved-gap-register.json",
+    "provenance-result.json",
+    "source-evidence/**",
+    "independent-audit.json"
+  ],
+  "schema_version": 1,
+  "success_conditions": {
+    "android_py_byte_identical_across_preserved_copies": true,
+    "baseline_gap_count": 12,
+    "dependency_pin_count": 6,
+    "libffi_release_tag": "libffi-3.4.4-3",
+    "remaining_gap_count": 11
+  }
+}

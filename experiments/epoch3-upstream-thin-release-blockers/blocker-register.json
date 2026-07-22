@@ -14,11 +14,16 @@
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
+      "next_gate": {
+        "closure_allowed": false,
+        "expected_remaining_gap_count": 11,
+        "required_output": "source-provenance-resolution-pass"
+      },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-baseline-frozen"
+      "status": "in-progress-source-provenance-implementation-ready"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -96,7 +101,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "rb1-source-provenance-and-license-source-plan",
+  "next_bounded_action": "execute-rb1-source-provenance-resolution",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

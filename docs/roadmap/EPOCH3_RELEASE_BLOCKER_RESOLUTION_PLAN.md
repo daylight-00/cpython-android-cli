@@ -158,4 +158,9 @@ The next bounded action is source-provenance resolution. It must:
 4. bind an exact CPython 3.14.6 source release coordinate for later authoritative license extraction;
 5. emit a deterministic license-source plan and a reduced-but-still-open gap register;
 6. preserve `rb1_closed=false`, `selectable=false`, and `publication=false`.
+## 11. Source-provenance resolver implementation
+
+The bounded resolver is implemented but not yet accepted. It reads the two preserved copies of CPython's Android `android.py`, requires them to be byte-identical, resolves the six BeeWare dependency release tags, and validates an exact Python.org CPython 3.14.6 source archive before preserving its SPDX and license evidence.
+
+The owner run must reduce the gap register only by resolving `libffi-version-unresolved`. A successful result is expected to leave 11 blocking gaps. It does not package final license payloads and cannot close RB-1.
 

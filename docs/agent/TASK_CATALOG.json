@@ -2189,6 +2189,7 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
+        "current_bounded_transition": "rb1-source-provenance-resolution-with-11-remaining-gaps",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
@@ -2241,6 +2242,11 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
           "reason": "Accepted baseline metrics, unresolved libffi boundary, and next-action authority.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json",
+          "reason": "Exact CPython source input, libffi resolution condition, outputs, and non-claim boundary.",
           "scope": "full"
         }
       ],

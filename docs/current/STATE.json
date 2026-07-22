@@ -159,7 +159,7 @@
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "9881408772997e0e9b09d15871a00ec061ed836d6fedb374e6e9dafa15b2533c",
+    "detail_sha256": "0d821f40409711cc69ebfc3f4bdd388a15f944172509ef642acde7b63c317072",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -302,11 +302,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 24,
+  "state_revision": 25,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "27e229450045a2ad57e9d8ad16881024ff73202a4f5bc15d2a87693b8a5fd11f"
+    "sha256": "5d4eda75e5359c99b52524612a0f845c99b9261352f924637b1ed07f8f426a16"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -332,7 +332,8 @@
     "selectability-not-authorized",
     "publication-not-authorized",
     "libffi-version-and-source-provenance-unresolved",
-    "component-license-payloads-not-yet-authoritatively-bound"
+    "component-license-payloads-not-yet-authoritatively-bound",
+    "rb1-source-provenance-owner-run-pending"
   ],
   "updated_by_transaction": "20260722-e3-artifact-family-authority-and-release-blocker-start-r1"
 }

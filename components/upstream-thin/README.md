@@ -55,6 +55,7 @@ The release-blocker census command is evidence-only:
 
 ```text
 cpython-android-upstream-thin census-licenses --family-dir FAMILY --output-dir OUT
+cpython-android-upstream-thin resolve-license-provenance --family-dir FAMILY --cpython-source Python-3.14.6.tgz --output-dir OUT
 ```
 
 It verifies the frozen family first, reads the canonical full archive without

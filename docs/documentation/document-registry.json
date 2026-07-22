@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 757
+    "tracked_document_count": 758
   },
   "documents": [
     {
@@ -9998,6 +9998,21 @@
       "rationale": "Frozen accepted RB-1 baseline return or claim-bearing evidence.",
       "supersession_rule": "A later explicit RB-1 source-provenance or license-closure authority may supersede this record without rewriting it.",
       "update_trigger": "Never modify; supersede with a new versioned RB-1 authority."
+    },
+    {
+      "authority_domain": "machine_contract",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-rb1-source-provenance",
+      "mutability": "controlled-plan",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-rb1-license-closure",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json",
+      "planned_canonical_parent": "experiments/README.md",
+      "rationale": "Bounded exact-source acquisition and provenance-resolution contract.",
+      "supersession_rule": "Freeze the accepted result under a versioned source-provenance authority.",
+      "update_trigger": "Change only before the source-provenance result is accepted."
     },
     {
       "authority_domain": "machine_evidence",

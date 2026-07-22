@@ -55,6 +55,7 @@ Epoch 3 selection     true
 - publication-not-authorized
 - libffi-version-and-source-provenance-unresolved
 - component-license-payloads-not-yet-authoritatively-bound
+- rb1-source-provenance-owner-run-pending
 
 ### Accepted authorities
 

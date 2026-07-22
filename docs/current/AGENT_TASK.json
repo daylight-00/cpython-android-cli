@@ -66,6 +66,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
+    "current_bounded_transition": "rb1-source-provenance-resolution-with-11-remaining-gaps",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -129,10 +130,15 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
       "reason": "Accepted baseline metrics, unresolved libffi boundary, and next-action authority.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json",
+      "reason": "Exact CPython source input, libffi resolution condition, outputs, and non-claim boundary.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 24,
+  "state_revision": 25,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
