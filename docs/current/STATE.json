@@ -177,7 +177,7 @@
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "cfea3971515d504e521eb7bb171dab2a7d265f050446f238572e3f0ca605f26c",
+    "detail_sha256": "3a2eaafac542cedd221f52582c29ec48c63b7e63d97116f8143e5f37767537ae",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
@@ -265,8 +265,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "230f1cf4a50ab4355453bb059013d9297a2e0a0d",
-    "tree": "5a9980ca83d860cfe70e648a50e8e47316048ef7"
+    "commit": "205b421d4b33ede684024b34c444c2ae08a22d05",
+    "tree": "152d77fa3d20f668866d612ef50724c91f780b6c"
   },
   "program": {
     "epoch": {
@@ -320,11 +320,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 28,
+  "state_revision": 29,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "ed51647a9159918cb98234c8d925f63edc4394688d6902fc0eee116c3d20c71e"
+    "sha256": "9ad2cafebc6e0578a37f836d7e096497f8fa0f36911343e14c2805da44bebaaf"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -354,7 +354,10 @@
     "sqlite-public-domain-notice-policy-not-frozen",
     "android-system-provider-notice-boundary-not-frozen",
     "hacl-license-header-and-notice-not-yet-frozen",
-    "final-notice-set-not-owner-approved"
+    "final-notice-set-not-owner-approved",
+    "legal-overlay-owner-qualification-pending",
+    "complete-license-obligation-review-pending",
+    "release-family-legal-integration-pending"
   ],
-  "updated_by_transaction": "20260722-e3-rb1-payload-authority-verification-amendment-r1"
+  "updated_by_transaction": "20260722-e3-rb1-legal-overlay-implementation-r1"
 }

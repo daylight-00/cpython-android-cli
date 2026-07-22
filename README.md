@@ -59,6 +59,9 @@ Epoch 3 selection     true
 - android-system-provider-notice-boundary-not-frozen
 - hacl-license-header-and-notice-not-yet-frozen
 - final-notice-set-not-owner-approved
+- legal-overlay-owner-qualification-pending
+- complete-license-obligation-review-pending
+- release-family-legal-integration-pending
 
 ### Accepted authorities
 

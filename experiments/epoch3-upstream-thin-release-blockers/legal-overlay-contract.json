@@ -1,0 +1,55 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_mutated": false,
+    "complete_obligation_review": false,
+    "component_license_mapping_complete": false,
+    "legal_overlay_authoritative": false,
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "release_family_integrated": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb1-legal-evidence-overlay-and-provider-policy-synthesis",
+  "expected_gap_transition": {
+    "baseline": 8,
+    "remaining": 4,
+    "resolved": 4
+  },
+  "inputs": {
+    "artifact_family_fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "cpython_source": {
+      "filename": "Python-3.14.6.tgz",
+      "sha256": "74d0d71d0600e477651a077101d6e62d1e2e69b8e992ba18c993dd643b7ba222",
+      "size_bytes": 31234628
+    },
+    "five_source_archives_from_payload_contract": true,
+    "payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+    "xz_product_asset": {
+      "filename": "xz-5.4.6-1-aarch64-linux-android.tar.gz",
+      "required_notice_files": {
+        "share/doc/xz/AUTHORS": "07def6a20ec5430b6ad04cf1286da3f53fbb86cf6d2026119945ccd55d3a2258",
+        "share/doc/xz/COPYING": "29a1e305b2e34eefe5d4602d00cde1d528b71c5d9f2eec5106972cf6ddb6f73f",
+        "share/doc/xz/COPYING.GPLv2": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+      },
+      "sha256": "320b76d45dc3499cf855e5310f875cba61c2608e4a98bb280cc4f1b8f189da1a",
+      "size_bytes": 651211,
+      "url": "https://github.com/beeware/cpython-android-source-deps/releases/download/xz-5.4.6-1/xz-5.4.6-1-aarch64-linux-android.tar.gz"
+    }
+  },
+  "required_outputs": [
+    "legal-overlay-result.json",
+    "legal-overlay-index.json",
+    "updated-gap-register.json",
+    "legal/component-license-map-candidate-v2.json",
+    "legal/THIRD-PARTY-NOTICES.candidate.txt",
+    "legal/xz-product-license-evidence.json",
+    "legal/sqlite-public-domain-evidence.json",
+    "legal/hacl-star-license-evidence.json",
+    "legal/libmpdec-license-evidence.json",
+    "legal/android-system-provider-policy.json",
+    "legal/licenses/**",
+    "independent-audit.json"
+  ],
+  "schema_version": 1
+}

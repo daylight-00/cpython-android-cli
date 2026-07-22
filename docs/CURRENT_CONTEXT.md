@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 28
+> **State revision:** 29
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -93,5 +93,8 @@ status  in-progress
 - android-system-provider-notice-boundary-not-frozen
 - hacl-license-header-and-notice-not-yet-frozen
 - final-notice-set-not-owner-approved
+- legal-overlay-owner-qualification-pending
+- complete-license-obligation-review-pending
+- release-family-legal-integration-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

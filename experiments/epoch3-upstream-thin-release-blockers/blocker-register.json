@@ -4,25 +4,26 @@
       "completion_role": "complete-component-to-license-map-and-notice-set",
       "evidence": {
         "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-        "blocking_gap_count": 11,
-        "component_count_baseline": 12,
-        "libffi_release_tag": "libffi-3.4.4-3",
-        "resolved_dependency_pin_count": 6,
-        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json"
+        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
+        "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+        "component_count": 13,
+        "blocking_gap_count": 8,
+        "legal_overlay_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json"
       },
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
       "next_gate": {
         "closure_allowed": false,
-        "fixed_gap_reduction_required": false,
-        "required_output": "authoritative-license-payload-and-component-expansion-audit"
+        "fixed_gap_reduction_required": true,
+        "required_output": "deterministic-legal-overlay-candidate-and-independent-audit",
+        "expected_remaining_gap_count": 4
       },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-payload-authority-frozen-legal-overlay-next"
+      "status": "in-progress-legal-overlay-implementation"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",

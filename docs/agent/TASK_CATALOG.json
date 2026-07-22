@@ -2268,6 +2268,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
           "reason": "Accepted payload evidence, expanded component set, mismatch quarantine, and exact remaining-gap boundary.",
           "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
+          "reason": "Exact XZ product evidence, SQLite/HACL/libmpdec evidence synthesis, Android provider boundary, deterministic legal overlay outputs, and bounded non-claim contract.",
+          "scope": "full"
         }
       ],
       "task_id": "E3-RELEASE-BLOCKERS",

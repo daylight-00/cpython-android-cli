@@ -195,3 +195,20 @@ The next bounded action is legal-evidence overlay and provider-policy synthesis.
 6. freeze the Android system-provider boundary from the accepted full static authority without representing platform libraries as distributed product bytes;
 7. synthesize a deterministic legal-overlay candidate and updated component map without changing any frozen artifact byte;
 8. retain complete obligation review, release-family integration, final notice approval, selectability, and publication as explicit open gates.
+
+## 15. RB-1 legal-overlay implementation start
+
+The accepted payload/component-expansion authority freezes 13 component classes, five exact source archives, HACL* expansion, mismatch quarantine, and an eight-gap boundary. A verification amendment binds that authority to the actual 23-check verifier output without altering any accepted claim.
+
+The next bounded implementation synthesizes a legal-evidence overlay without changing any of the 23 frozen release-family files. It must:
+
+1. reacquire and verify the exact CPython source and five fixed-hash source archives;
+2. bind the exact BeeWare `xz-5.4.6-1` product asset and verify `AUTHORS`, `COPYING`, and `COPYING.GPLv2` by fixed hashes;
+3. derive SQLite public-domain evidence from the exact SQLite source;
+4. preserve HACL* license-header and upstream-coordinate evidence from the exact bundled CPython source;
+5. preserve the bundled libmpdec 2.5.1 redistribution header rather than using the mismatched mpdecimal 4.0.0 SPDX coordinate;
+6. freeze the exact Android external-provider boundary (`libc.so`, `libdl.so`, `liblog.so`, `libm.so`, and `libz.so`) without treating platform bytes as distributed product components;
+7. produce a deterministic component-map candidate, notice candidate, legal file index, and independent audit twice byte-identically; and
+8. reduce only the evidence-policy gap register from eight to four.
+
+The remaining gates are complete componentization and obligation review, integration of authoritative legal evidence into a revised release family, inclusion of the project license in that family, and final owner approval of the notice set. This implementation cannot close RB-1 or authorize selectability or publication.
