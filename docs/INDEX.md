@@ -18,6 +18,6 @@
 
 - [`docs/CURRENT_CONTEXT.md`](CURRENT_CONTEXT.md)
 - [`docs/navigation/README.md`](navigation/README.md)
-- tracked Markdown/JSON: `812`
+- tracked Markdown/JSON: `827`
 
 Historical and exhaustive indexes are lookup-only during ordinary onboarding.

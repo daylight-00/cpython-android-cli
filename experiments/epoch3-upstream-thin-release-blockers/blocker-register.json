@@ -4,30 +4,34 @@
       "completion_role": "complete-component-to-license-map-and-notice-set",
       "evidence": {
         "baseline_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-        "blocking_gap_count": 4,
+        "blocking_gap_count": 1,
         "component_count": 13,
         "legal_integration_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-integration-contract.json",
         "legal_overlay_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
         "legal_overlay_contract": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
         "legal_overlay_file_count": 72,
+        "legally_integrated_family_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+        "legally_integrated_family_file_count": 128,
         "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
-        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json"
+        "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
+        "technical_review_unit_count": 31
       },
       "id": "RB-1",
       "lane": "local",
       "name": "component-license-closure",
       "next_gate": {
         "closure_allowed": false,
-        "expected_remaining_gap_count": 1,
-        "fixed_gap_reduction_required": true,
-        "owner_approval_required_after_success": true,
-        "required_output": "deterministic-legally-integrated-release-family-candidate-and-independent-audit"
+        "implicit_approval_forbidden": true,
+        "owner_approval_required": true,
+        "required_input": "explicit-owner-approval-document-bound-to-exact-release-and-notice-hashes",
+        "required_output": "deterministic-owner-approval-review-dossier-and-independent-audit",
+        "successor_after_explicit_approval": "freeze-owner-approval-authority-and-close-rb1"
       },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-legal-integration-implementation"
+      "status": "in-progress-owner-approval-pending"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -105,7 +109,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "execute-rb1-technical-obligation-review-and-release-family-legal-integration-candidate",
+  "next_bounded_action": "prepare-rb1-final-notice-owner-approval-review",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

@@ -179,6 +179,12 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
       "role": "frozen deterministic 72-file legal evidence overlay, exact four-gap boundary, and legal-integration start authority",
       "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
+    },
+    {
+      "id": "epoch3-rb1-legally-integrated-release-family-r1",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+      "role": "frozen exact 128-file legally integrated family candidate and final owner-notice approval start authority",
+      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
     }
   ],
   "active_plan": {
@@ -271,8 +277,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "bc8c096b1b7171a1485f0f92ebb2632d9f02f2e2",
-    "tree": "0a2b53ac266ddcc608fd4bfb838a7e2830265a50"
+    "commit": "f38563167d03a32caa6b38deb12c5ebb67b9bdd5",
+    "tree": "892f868f0237cd67f5dcd074fb0537793317c7db"
   },
   "program": {
     "epoch": {
@@ -326,11 +332,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 31,
+  "state_revision": 32,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "9f982e69ba352d623b7cd22c0e6371a073df5aad886c385b4798934c9d5768c9"
+    "sha256": "aa47d37029f528e091e21f6aaafa6484ffab225fc0045c41a0b93aac8839c0c3"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -341,7 +347,6 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "component-to-license-mapping-incomplete",
     "CA-and-timezone-production-payload-selection-pending",
     "astral-consumer-and-uv-managed-compatibility-pending",
     "API24-runtime-qualification-pending",
@@ -355,11 +360,8 @@
     "selectability-not-authorized",
     "publication-not-authorized",
     "libmpdec-2.5.1-license-source-must-not-use-mpdecimal-4.0.0-spdx-entry",
-    "authoritative-license-payloads-not-yet-integrated-into-release-family",
     "final-notice-set-not-owner-approved",
-    "complete-license-obligation-review-pending",
-    "release-family-legal-integration-pending",
-    "pip-vendored-component-obligation-review-pending"
+    "owner-approval-must-bind-exact-release-and-notice-hashes"
   ],
-  "updated_by_transaction": "20260722-e3-rb1-legal-integration-implementation-r1"
+  "updated_by_transaction": "20260722-e3-rb1-integrated-family-authority-owner-approval-review-preparation-r1"
 }

@@ -230,3 +230,8 @@ The accepted legal-overlay authority opens a bounded non-closing integration lan
 The candidate release family uses release ID `cpython-3.14.6+e3-r2-aarch64-linux-android`. It reuses the three artifact archives and eighteen artifact sidecars byte-for-byte, preserves the r1 `release-index.json` and `SHA256SUMS` under `lineage/r1/`, integrates the accepted 72-file legal overlay and project `LICENSE`, and regenerates only the revised envelope metadata.
 
 The bounded target is deterministic and must reduce the RB-1 gap register from four to one. The sole remaining gap is `final-notice-set-not-owner-approved`. A successful implementation transaction still cannot close RB-1, select the product, or authorize publication.
+
+
+## RB-1 final notice owner approval gate
+
+The accepted legally integrated family is frozen by `rb1-legal-integration-authority.json`. The only RB-1 gap is explicit owner approval of the exact notice set. The review-preparation runner must produce a deterministic dossier bound to the release, family, notice, component-map, technical-review, pip-vendor-review, and project-license hashes. Running the runner is not approval. RB-1 may close only after a separate owner approval document preserves every binding, contains the exact required statement, identifies the owner, and sets `approved=true`. Selectability and publication remain false because RB-2 through RB-7 are independent blockers.

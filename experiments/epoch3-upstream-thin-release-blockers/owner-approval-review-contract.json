@@ -1,0 +1,36 @@
+{
+  "claim_boundary": {
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb1-final-notice-owner-approval-review-preparation",
+  "input": {
+    "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+    "integrated_family_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb"
+  },
+  "outputs": [
+    "OWNER-APPROVAL-REVIEW.txt",
+    "THIRD-PARTY-NOTICES.review.txt",
+    "component-license-map.json",
+    "technical-obligation-review.json",
+    "pip-vendored-component-review.json",
+    "LICENSE",
+    "approval-binding.json",
+    "owner-approval-template.json",
+    "review-index.json"
+  ],
+  "requirements": [
+    "exact-128-file-integrated-family-input",
+    "bind-every-review-document-to-exact-sha256",
+    "approval-template-must-remain-unapproved",
+    "runner-execution-must-not-count-as-owner-approval",
+    "produce-review-dossier-twice-byte-identically",
+    "independent-audit"
+  ],
+  "schema_version": 1
+}

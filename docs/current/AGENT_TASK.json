@@ -6,7 +6,7 @@
     "canonical_full_complete_claim": true,
     "canonical_install_only_complete_claim": true,
     "canonical_stripped_complete_claim": true,
-    "component_license_mapping_complete_claim": false,
+    "component_license_mapping_complete_claim": true,
     "epoch2_closed_claim": true,
     "epoch3_selection_claim": true,
     "non_termux_context_claim": false,
@@ -66,7 +66,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb1-technical-obligation-review-and-release-family-legal-integration-candidate",
+    "current_bounded_transition": "rb1-final-notice-owner-approval-review-preparation",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -76,14 +76,16 @@
   },
   "input_routing": {
     "fallback": "extract the exact family from the verified artifact-family r1 result archive after validating its SHA-256 and self-excluding index",
-    "first_attempt": "reuse the exact frozen artifact family and accepted legal-overlay authority; derive pip vendored evidence from the exact install-only artifact without changing artifact bytes",
+    "first_attempt": "reuse the exact accepted 128-file legally integrated family and prepare an explicit owner-approval review dossier without inferring approval",
     "forbidden": [
       "reassemble-or-modify-any-frozen-artifact",
       "claim-complete-license-mapping-from-file-name-census-alone",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
       "fabricate-astral-producer-metadata",
       "claim-selectability-or-publication",
-      "network-git-in-assistant-environment"
+      "network-git-in-assistant-environment",
+      "infer-owner-approval-from-runner-execution",
+      "close-rb1-without-exact-owner-approval-document"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
@@ -118,6 +120,11 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
       "reason": "Frozen 72-file legal overlay and exact four-gap boundary.",
       "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+      "reason": "Frozen exact 128-file legally integrated family, 31-unit technical review, and single owner-approval gap.",
+      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
     }
   ],
   "required_reads": [
@@ -170,10 +177,15 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/legal-integration-contract.json",
       "reason": "Technical obligation review, pip vendored component expansion, legal integration, and final owner-approval boundary.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/owner-approval-review-contract.json",
+      "reason": "Exact review dossier, approval binding, explicit owner statement, and no-implicit-approval contract.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 31,
+  "state_revision": 32,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Resolve the local and target release blockers over the exact frozen artifact family without changing artifact bytes. Complete component/license closure, CA and timezone data-product selection, Astral consumer compatibility, release/security/update/revocation operations, API 24 runtime, real 16 KiB runtime, and non-Termux Android execution before final release-candidate integration.",
