@@ -1,0 +1,33 @@
+{
+  "check_count": 23,
+  "checks": {
+    "accepted_action": true,
+    "audit": true,
+    "claims_bounded": true,
+    "component_expansion": true,
+    "evidence_identity": true,
+    "family": true,
+    "gap_boundary": true,
+    "map": true,
+    "metrics": true,
+    "parse:accepted": true,
+    "parse:audit": true,
+    "parse:expansion": true,
+    "parse:gaps": true,
+    "parse:inventory": true,
+    "parse:map": true,
+    "parse:repro": true,
+    "parse:result": true,
+    "parse:summary": true,
+    "reproducibility": true,
+    "result_archive": true,
+    "source_archives": true,
+    "summary": true,
+    "transition": true
+  },
+  "errors": {},
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb1-license-payload-acceptance"
+}

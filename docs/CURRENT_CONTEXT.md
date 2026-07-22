@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 27
+> **State revision:** 28
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -59,6 +59,7 @@ status  in-progress
 26. [`experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json) — frozen exact component/license baseline, explicit 12-gap register, and source-provenance resolution start authority
 27. [`experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json) — frozen exact six-dependency source provenance, libffi resolution, CPython source identity, mismatch quarantine, and license-payload acquisition start authority
 28. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json) — frozen exact five-source license payload acquisition, 13-component expansion, eight-gap boundary, and legal-overlay evidence synthesis start authority
+29. [`experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification-amendment.json) — non-claiming correction binding the payload authority to the actual 23-check acceptance verifier output
 
 ## Blockers
 

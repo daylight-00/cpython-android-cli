@@ -1,0 +1,26 @@
+{
+  "amends": {
+    "corrected_value": "23/23",
+    "field": "verification.primary",
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+    "recorded_value": "22/22",
+    "sha256": "20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba"
+  },
+  "authority_kind": "epoch3-rb1-license-payload-authority-verification-amendment",
+  "claim_boundary": {
+    "component_license_mapping_complete": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "claim_change": false,
+  "evidence": {
+    "check_count": 23,
+    "pass": true,
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority-verification.json",
+    "sha256": "0720e9e7c8c48ba3b34d5b17fe4f7fd45851f7c71fdc19cdbde4d74226e7e0b9"
+  },
+  "next_action_class": "synthesize-exact-legal-evidence-overlay-and-freeze-provider-policies",
+  "schema_version": 1,
+  "status": "frozen-pass-verification-count-corrected"
+}
