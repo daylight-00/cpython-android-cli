@@ -64,3 +64,6 @@ evidence, and emits an explicit gap register. It must not promote file-name or
 binary-string observations into a complete legal mapping; unresolved libffi
 versioning, missing dependency license texts, project notice packaging, and
 Android external-provider notice policy remain blocking findings.
+### RB-1 license evidence lane
+
+`bin/cpython-android-upstream-thin acquire-license-evidence` verifies the frozen artifact family and exact source archives, preserves license-like source evidence, detects distributed HACL* and libmpdec 2.5.1 byte evidence, quarantines mismatched XZ/mpdecimal source coordinates, and emits only a non-closing component-map and NOTICE candidate. It never mutates release artifact bytes and cannot authorize selectability or publication.

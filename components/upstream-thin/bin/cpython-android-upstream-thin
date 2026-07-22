@@ -11,9 +11,9 @@ LIB = ROOT / "components/upstream-thin/lib"
 
 
 def main() -> int:
-    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "assemble-family", "verify-family", "census-licenses", "resolve-license-provenance", "observe-astral", "test"}
+    commands = {"assemble-full", "verify-full", "qualify-full", "assemble-install-only", "verify-install-only", "qualify-install-only", "assemble-stripped", "verify-stripped", "qualify-stripped", "assemble-family", "verify-family", "census-licenses", "resolve-license-provenance", "acquire-license-evidence", "observe-astral", "test"}
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
-        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|assemble-family|verify-family|census-licenses|resolve-license-provenance|observe-astral|test} ...", file=sys.stderr)
+        print("usage: cpython-android-upstream-thin {assemble-full|verify-full|qualify-full|assemble-install-only|verify-install-only|qualify-install-only|assemble-stripped|verify-stripped|qualify-stripped|assemble-family|verify-family|census-licenses|resolve-license-provenance|acquire-license-evidence|observe-astral|test} ...", file=sys.stderr)
         return 2
     command = sys.argv[1]
     if command == "test":
@@ -32,6 +32,7 @@ def main() -> int:
         "verify-family": "release_family.py",
         "census-licenses": "license_census.py",
         "resolve-license-provenance": "license_provenance.py",
+        "acquire-license-evidence": "license_payloads.py",
         "observe-astral": "observe_astral.py",
     }
     implementation = LIB / implementations[command]
