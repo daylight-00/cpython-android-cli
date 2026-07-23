@@ -1,0 +1,89 @@
+{
+  "audit_observation": {
+    "direct_receipt": {
+      "all_load_alignments_16k": true,
+      "performed_explicit_normalization_present": false,
+      "postprocessing_boundary": "out-of-scope-external-tool-responsibility",
+      "raw_policy_clean": false,
+      "runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ]
+    },
+    "failed_checks": [
+      "raw_policy_diagnostic_only"
+    ],
+    "managed_receipt": {
+      "all_load_alignments_16k": true,
+      "performed_explicit_normalization_present": false,
+      "postprocessing_boundary": "out-of-scope-external-tool-responsibility",
+      "raw_policy_clean": false,
+      "runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ]
+    },
+    "only_failed_check": true,
+    "pass": false
+  },
+  "candidate": {
+    "all_target_checks_true": true,
+    "android_target_qualification": true,
+    "byte_reproducible": true,
+    "direct_native_wheel_16k_alignment": true,
+    "direct_native_wheel_build_install_import": true,
+    "exact_full_projection": true,
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "managed_native_wheel_16k_alignment": true,
+    "managed_native_wheel_build_install_import": true,
+    "member_count": 3699,
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355,
+    "source_full_sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "target_failed_checks": [],
+    "target_result_pass": true
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": false,
+    "successor_install_only_candidate": false,
+    "successor_install_only_started": true,
+    "successor_stripped_started": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-install-only-r1-return-inspection",
+  "receipt": {
+    "action": "failed-audit",
+    "audit_returncode": 1,
+    "candidate_commit_not_applied": true,
+    "failure_reason": "rb3-profile-M-successor-install-only-independent-audit-failed",
+    "first_failure": "audit",
+    "post_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+    "pre_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+    "remote_post_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+    "remote_pre_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+    "rollback_exact": true,
+    "target_returncode": 0
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 68,
+    "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",
+    "size_bytes": 23629446
+  },
+  "root_cause": {
+    "candidate_artifact_invalidated": false,
+    "classification": "independent-audit-receipt-field-schema-mismatch",
+    "correction": "Evaluate the canonical serialized fields: require raw_policy_clean=false for direct and managed receipts, require both postprocessing_boundary values to equal out-of-scope-external-tool-responsibility, and require the owner claim boundary to keep portable_raw_wheel_claim=false and the same external-tool responsibility string.",
+    "correction_scope": "audit-and-tests-only-no-product-projection-or-responsibility-change",
+    "mechanism": "The audit required performed_explicit_normalization to be the boolean false, but the canonical wheel receipt does not serialize that internal invocation parameter. It serializes raw_policy_clean=false and postprocessing_boundary=out-of-scope-external-tool-responsibility instead. Missing keys therefore evaluated as None is False and rejected otherwise valid diagnostic-only evidence.",
+    "profile_M_semantics_invalidated": false,
+    "retroactive_promotion_forbidden": true,
+    "target_qualification_invalidated": false
+  },
+  "schema_version": 1,
+  "status": "accepted-failure-r2-audit-receipt-schema-correction-required"
+}

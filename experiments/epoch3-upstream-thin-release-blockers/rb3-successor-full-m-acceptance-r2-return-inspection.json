@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "inspection_kind": "epoch3-rb3-profile-M-successor-full-acceptance-r2-return-inspection",
+  "status": "accepted-success-successor-install-only-derivation-authorized",
+  "receipt": {
+    "action": "applied-rb3-profile-M-successor-full-r5-accepted-test-isolation-corrected-family-derivation-authorized-pushed",
+    "claim_transaction_rc": 0,
+    "first_failure": "none",
+    "failure_reason": "none",
+    "post_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+    "post_tree": "2a166ca046d853999e46f1d95c70adbc1a39e664",
+    "remote_post_head": "76d7b7967a9c6287426636805bdb3c54bcd296e8"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-acceptance-r2-results.tar.zst",
+    "sha256": "6cf1d50a1b0af5fc5379bfa026cbcf5ca11bd6c6d7df5f500596cc6d3ca1e37f",
+    "size_bytes": 8957,
+    "self_index_exact": true,
+    "self_index_file_count": 19
+  },
+  "verification": {
+    "product_tests": "70/70",
+    "release_blocker_tests": "54/54",
+    "successor_full_acceptance": "20/20",
+    "r4_result_archive": "15/15",
+    "all_return_codes_zero": true
+  },
+  "claim_boundary": {
+    "successor_full_candidate": true,
+    "successor_full_accepted": true,
+    "successor_install_only_authorized": true,
+    "successor_install_only_started": false,
+    "artifact_bytes_changed": false,
+    "artifact_family_superseded": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "publication": false
+  }
+}

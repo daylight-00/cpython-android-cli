@@ -74,7 +74,7 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-profile-M-successor-family-derivation",
+    "current_bounded_transition": "rb3-profile-M-successor-install-only-r2-audit-receipt-schema-correction-and-owner-requalification",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
     "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
   },
@@ -83,8 +83,8 @@
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "retain the accepted full r5 and frozen predecessor family, return one complete fail-closed receipt, and correct only the bounded projection, stripping, family assembly, or qualification defect",
-    "first_attempt": "acquire the exact accepted full r5 from the accepted r4 result archive, derive install_only and stripped twice, assemble the technical family twice, and qualify Android runtime, uv direct/managed, native SDK 16 KiB, protected state, and independent audit",
+    "fallback": "retain accepted full r5 and the frozen predecessor family, return one complete fail-closed receipt, and correct only a bounded install-only projection, qualification, audit, or receipt defect without user-wheel repair",
+    "first_attempt": "acquire the exact accepted full r5 and predecessor install-only result, derive the same install_only candidate twice, repeat all Android and uv direct/managed qualification, and audit canonical raw_policy_clean/postprocessing_boundary fields",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -181,6 +181,16 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
       "reason": "Frozen accepted profile-M successor full r5 and exact family-derivation authorization.",
       "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json",
+      "reason": "Frozen successful acceptance-r2 receipt and successor install-only authorization.",
+      "sha256": "6f2ef52e78248de144bc390f06e07624d74629cc60666f0b39ddbb5e1a89e31f"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
+      "reason": "Frozen r1 target qualification and audit receipt-schema mismatch boundary.",
+      "sha256": "b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd"
     }
   ],
   "required_reads": [
@@ -348,13 +358,38 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json",
       "reason": "Active exact full-to-install_only-to-stripped technical family derivation contract.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json",
+      "reason": "Successful owner acceptance-r2 receipt and exact authorization for successor install-only derivation.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-contract.json",
+      "reason": "Active exact accepted-full-r5 to successor-install-only candidate derivation and owner-qualification contract.",
+      "scope": "full"
+    },
+    {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json",
+      "reason": "Exact accepted full r5 identity and authority binding used by install-only projection.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
+      "reason": "Exact r1 target-pass/audit-fail receipt, 68-file result identity, and canonical raw-wheel receipt schema mismatch.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json",
+      "reason": "Active audit-only r2 correction and exact owner requalification contract.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 41,
+  "state_revision": 43,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Resolve remaining release blockers while preserving the accepted distributor boundary. The deterministic profile-M successor full r5 is accepted; derive successor install_only, install_only_stripped, and a non-promoted technical family candidate without modifying or superseding the frozen predecessor family.",
+    "goal": "Repeat the exact profile-M successor install-only owner qualification with the independent audit bound to the canonical serialized raw-wheel policy fields, while preserving the accepted full r5, the exact install-only candidate identity, the frozen predecessor family, and all non-promotion boundaries.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

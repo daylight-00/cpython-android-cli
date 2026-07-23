@@ -55,8 +55,8 @@ Epoch 3 selection     true
 - frozen-predecessor-family-not-superseded
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- successor-full-r5-accepted-family-derivation-pending
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
+- successor-install-only-r1-target-qualified-audit-receipt-schema-corrected-owner-r2-pending
 
 ### Accepted authorities
 
@@ -99,6 +99,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json): exact successful successor r3 product qualification evidence and bounded managed-find verifier observation-order correction (`28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json): exact failed acceptance-r1 unit receipt, clean rollback, and tracked-committed-tree negative-test isolation correction boundary (`5c5ed77416d038f6aca78957e4a8fe690aaf9ba5ee74c26bf7e708e8ba8ef0bf`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json): accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence (`557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json): exact successful acceptance-r2 receipt, pushed full-r5 acceptance, and successor install-only derivation start boundary (`6f2ef52e78248de144bc390f06e07624d74629cc60666f0b39ddbb5e1a89e31f`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json): frozen successful target qualification and failed audit receipt-schema mismatch boundary (`b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd`)
 
 ### Agent entry
 

@@ -96,7 +96,11 @@ def qualify(archive: Path, *, output: Path | None = None, pkg_config: str = "pkg
             evidence["read_only_install"] = read_only
             _restore_owner_write(runtime_b)
 
-            checks["all_67_extensions"] = len(modules) == 67 and probe_a.get("data", {}).get("extension_count") == 67 and probe_b.get("data", {}).get("extension_count") == 67
+            checks["all_67_extensions"] = (
+                len(modules) == 67
+                and (probe_a.get("data") or {}).get("extension_count") == 67
+                and (probe_b.get("data") or {}).get("extension_count") == 67
+            )
             evidence["device"] = {
                 "uname": _run(["uname", "-a"], env=env_b),
                 "getprop_sdk": _run(["getprop", "ro.build.version.sdk"], env=env_b),

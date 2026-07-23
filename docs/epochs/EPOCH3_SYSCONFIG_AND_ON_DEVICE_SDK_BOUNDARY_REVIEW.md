@@ -386,3 +386,22 @@ Machine records:
 - `experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-full-m-r4-return.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json`
+
+## 16. Successor install-only r1 audit receipt-schema correction
+
+The successor install-only r1 owner run produced the exact expected install-only bytes and passed every target qualification check. Two independent derivations were byte-identical at SHA-256 `c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56`, size 23,843,355 bytes, and 3,699 members. Exact full projection, Android runtime qualification, uv system and managed consumption, direct and managed native-extension build/install/import, and 16 KiB LOAD alignment all passed.
+
+The transaction failed only in the independent audit. The audit expected an internal invocation field named `performed_explicit_normalization`, but the canonical serialized wheel receipts do not contain that field. They record the actual policy outcome instead:
+
+- `raw_policy_clean=false`;
+- `postprocessing_boundary=out-of-scope-external-tool-responsibility`;
+- raw Termux RUNPATH retained as diagnostic evidence;
+- `portable_raw_wheel_claim=false`;
+- direct and managed baseline extensions remain 16 KiB aligned.
+
+The missing internal field evaluated as `None is False`, so the audit rejected valid evidence. The r2 correction changes only the audit predicate and its regression fixtures. It consumes the canonical serialized fields, preserves the external user-wheel repair boundary, and repeats the complete owner qualification. The r1 failed transaction is not retroactively promoted.
+
+Machine records:
+
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json`

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "product": "cpython-android-cli",
+  "python_version": "3.14.6",
+  "release_id": "e3-full-r5",
+  "target_triple": "aarch64-linux-android",
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556,
+    "member_count": 3752
+  },
+  "authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+    "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
+  },
+  "claim_boundary": {
+    "successor_full_accepted": true,
+    "successor_install_only_authorized": true,
+    "predecessor_family_superseded": false,
+    "selectable": false,
+    "publication": false
+  }
+}

@@ -8,7 +8,7 @@
 ```text
 action       resolve-epoch3-release-blocking-experiments
 gate         E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
-tracked docs 890
+tracked docs 895
 indexes      16
 ```
 
@@ -47,6 +47,7 @@ indexes      16
 - [`config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json`](../../config/products/astral-cpython-3.14.6-aarch64-linux-gnu-golden-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json) — `CURRENT_INPUT_LOCK` · `product_identity` · owner `epoch3-artifact-family-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r4.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
+- [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-r1.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-install-only-stripped-r2.lock.json) — `CURRENT_INPUT_LOCK` · `product_input_lock` · owner `epoch3-product-governance`
 - [`config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json`](../../config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-v1.lock.json) — `CURRENT_INPUT_LOCK` · `program_input` · owner `epoch3-product-input-governance`

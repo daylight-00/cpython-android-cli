@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 890
+    "tracked_document_count": 893
   },
   "documents": [
     {
@@ -274,6 +274,21 @@
       "rationale": "Exact accepted canonical full artifact and downstream projection lock.",
       "supersession_rule": "Create a versioned successor authority or evidence set.",
       "update_trigger": "Update only when the accepted product input changes."
+    },
+    {
+      "authority_domain": "product_input_lock",
+      "format": "json",
+      "lifecycle_class": "CURRENT_INPUT_LOCK",
+      "machine_binding_policy": "allowed",
+      "migration_action": "e3-successor-full-r5-lock",
+      "mutability": "controlled-lock",
+      "onboarding_visibility": "primary",
+      "owner": "epoch3-product-governance",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json",
+      "planned_canonical_parent": "docs/contracts/README.md",
+      "rationale": "Exact accepted profile-M successor full r5 identity and install-only projection input lock.",
+      "supersession_rule": "Create a versioned successor authority or evidence set.",
+      "update_trigger": "Update only when the accepted successor full input changes."
     },
     {
       "authority_domain": "product_input_lock",
@@ -11351,6 +11366,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact successful acceptance-r2 receipt, pushed full-r5 acceptance, and successor install-only derivation authorization.",
+      "supersession_rule": "Do not edit; create a successor derivation result or correction authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "evidence_snapshot",
       "format": "json",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
@@ -11634,6 +11664,51 @@
       "rationale": "Active verifier-only managed-find observation snapshot correction and exact successor-full r5 requalification contract.",
       "supersession_rule": "Superseded for active routing by rb3-successor-full-m-authority.json and rb3-successor-family-derivation-contract.json.",
       "update_trigger": "Never edit after successor full acceptance."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "HISTORICAL_SNAPSHOT",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-history",
+      "mutability": "immutable",
+      "onboarding_visibility": "history",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Completed r1 install-only derivation contract; target qualification passed and the transaction failed only at the independent audit receipt-schema predicate.",
+      "supersession_rule": "Superseded for active routing by rb3-successor-install-only-m-r2-correction-contract.json.",
+      "update_trigger": "Never edit after the r1 return inspection and r2 correction contract are committed."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact successor install-only r1 target-pass/audit-fail receipt, artifact identity, 68-file self-index, and audit receipt-schema mismatch boundary.",
+      "supersession_rule": "Do not edit; create a correction result or successor authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Active audit-only canonical receipt-field correction and exact successor install-only owner requalification contract.",
+      "supersession_rule": "Explicit successful r2 result inspection or accepted successor install-only authority.",
+      "update_trigger": "Update only through the bounded r2 correction transaction."
     },
     {
       "authority_domain": "evidence_snapshot",

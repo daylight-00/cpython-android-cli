@@ -1,0 +1,67 @@
+{
+  "accepted_input": {
+    "expected_install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "member_count": 3699,
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    "full": {
+      "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    "r1_result_archive": {
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
+      "self_index_exact": true,
+      "self_index_file_count": 68,
+      "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",
+      "size_bytes": 23629446
+    }
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-install-only-r2-audit-receipt-schema-correction",
+  "correction_scope": {
+    "android_16k_gate_changed": false,
+    "audit_predicate_changed": true,
+    "control_plane_changed": true,
+    "product_bytes_changed": false,
+    "profile_M_changed": false,
+    "projection_changed": false,
+    "tests_changed": true,
+    "user_wheel_responsibility_changed": false
+  },
+  "failure_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
+  "forbidden": [
+    "retroactively promote the r1 failed transaction",
+    "change accepted full r5 bytes",
+    "change install-only projection bytes or expected identity",
+    "repair or remove raw user-wheel RPATH or RUNPATH",
+    "weaken direct or managed native-extension 16 KiB alignment gates",
+    "start stripped derivation",
+    "supersede the predecessor family",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "predecessor_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-contract.json",
+  "required_correction": [
+    "replace performed_explicit_normalization field checks with canonical raw_policy_clean and postprocessing_boundary checks",
+    "require portable_raw_wheel_claim=false and external-tool postprocessing responsibility in the owner result claim boundary",
+    "add positive and negative regression tests using the exact serialized receipt schema",
+    "repeat exact install-only A/B derivation and all Android target qualification gates",
+    "repeat independent audit and require every check true",
+    "return a complete self-indexed owner result before candidate promotion"
+  ],
+  "schema_version": 1,
+  "status": "active-owner-r2-requalification-pending",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": false,
+    "successor_install_only_candidate": true,
+    "successor_install_only_started": true,
+    "successor_stripped_started": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "accepted_input": {
+    "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "member_count": 3752,
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-install-only-derivation",
+  "expected_candidate": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "member_count": 3699,
+    "role": "exact unfiltered python/install to python projection",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "forbidden": [
+    "modify accepted full r5 bytes",
+    "filter or rewrite any install member",
+    "start stripped derivation inside this transaction",
+    "repair or claim portability for user-built wheel RPATH or RUNPATH",
+    "supersede predecessor family",
+    "start legal integration or RB-1/RB-2 rebinding",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "required_execution": [
+    "verify exact accepted full r5 identity and acceptance authority",
+    "derive install_only twice and require byte identity",
+    "verify exact projection with deterministic tar and gzip metadata",
+    "qualify fresh extraction, whole-prefix relocation, subprocess, venv, imports, python-config, pkg-config, pip, and read-only installation",
+    "qualify uv system find/run/sync/venv paths",
+    "qualify uv managed catalog/install/find/venv/reinstall/uninstall paths",
+    "build install and import baseline native extension through direct and managed Python",
+    "require every baseline native extension LOAD alignment to be 16384",
+    "record raw extension DT_NEEDED RPATH and RUNPATH as diagnostics without repair",
+    "preserve accepted full, predecessor family, and real uv managed root"
+  ],
+  "schema_version": 1,
+  "status": "owner-r1-target-qualified-independent-audit-schema-mismatch-superseded-by-r2-correction",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": false,
+    "successor_install_only_candidate": true,
+    "successor_install_only_started": true,
+    "successor_stripped_started": false,
+    "successor_technical_family_accepted": false
+  },
+  "superseded_by": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json"
+}
