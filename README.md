@@ -30,7 +30,6 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-3-sysconfig-sdk-and-astral-consumer-boundary
 - RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
@@ -52,13 +51,8 @@ Epoch 3 selection     true
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
-- frozen-predecessor-family-not-superseded
-- rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- predecessor-family-supersession-pending-after-successor-legal-data-acceptance
 - rb1-owner-approval-remains-pending-after-technical-rebinding
-- predecessor-family-supersession-owner-transition-pending
 
 ### Accepted authorities
 
@@ -117,6 +111,7 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json): verifier-only third temporal monotonicity amendment allowing the bounded owner legal/data rebinding execution while preserving accepted artifacts, authorities, evidence, and rebound claim boundaries (`5f70109c21101c593da595e444f0db5dd8c64e928627d778d9a26cb44758ee95`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json): accepted successor RB-1 technical legal and RB-2 data/runtime rebinding with explicit predecessor supersession authorization (`98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json): verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding (`71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json): explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure (`5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3`)
 
 ### Agent entry
 

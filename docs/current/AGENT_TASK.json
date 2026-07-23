@@ -3,6 +3,7 @@
     "actual_16k_runtime_claim": false,
     "api24_runtime_claim": false,
     "artifact_family_complete_claim": true,
+    "astral_consumer_compatibility_complete_claim": true,
     "canonical_full_complete_claim": true,
     "canonical_install_only_complete_claim": true,
     "canonical_stripped_complete_claim": true,
@@ -13,9 +14,12 @@
     "non_termux_context_claim": false,
     "official_upstream_identity_claim": true,
     "portable_user_built_wheel_claim": false,
+    "predecessor_family_historical_valid_claim": true,
     "product_selectability_claim": false,
     "publication_claim": false,
+    "rb3_closed_claim": true,
     "release_blocker_resolution_started_claim": true,
+    "successor_family_canonical_claim": true,
     "successor_family_complete_claim": true,
     "successor_full_accepted_claim": true,
     "successor_install_only_accepted_claim": true,
@@ -277,6 +281,11 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
       "reason": "Frozen four-level temporal routing amendment preserving accepted product, evidence, authority, and rebinding bytes.",
       "sha256": "71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "reason": "Frozen explicit predecessor supersession, canonical successor r3 selection, historical predecessor preservation, and RB-3 closure.",
+      "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
     }
   ],
   "required_reads": [
@@ -659,10 +668,30 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
       "reason": "Verifier-only fourth temporal amendment allowing explicit predecessor supersession and RB-3 closure progression without changing accepted artifacts, evidence, authorities, or accepted rebinding claims.",
       "scope": "full"
+    },
+    {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "reason": "Canonical successor r3 selection and immutable historical predecessor binding.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
+      "reason": "Exact successful rebinding acceptance-r2 owner receipt and supersession authorization evidence.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
+      "reason": "Explicit byte-preserving predecessor-to-successor map and RB-3 closure receipt.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "reason": "Frozen successor r3 canonical-family, predecessor historical-valid, and RB-3 closure authority.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 52,
+  "state_revision": 53,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Execute the authorized profile-M predecessor-family supersession and RB-3 closure transition: verify the accepted successor legal/data rebinding authority, exact successor r3 family, and frozen predecessor family authority; freeze an explicit predecessor-to-successor supersession map; retain predecessor bytes and authorities as immutable historical evidence; make successor r3 canonical for RB-3; close RB-3 only while owner legal approval, RB-4, RB-5, RB-6, RB-7, selectability, and publication remain open.",

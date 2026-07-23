@@ -1,0 +1,43 @@
+{
+  "canonical_family": {
+    "authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+    "authority_sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6",
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "lock_path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-legal-family-r3.lock.json",
+    "lock_sha256": "c5ada43253a118a2bc2cb773cbd33422e5d8cb45c3778f4ed918031ce810c30c",
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "astral_consumer_compatibility_complete": true,
+    "predecessor_family_superseded": true,
+    "publication": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "rb3_closed": true,
+    "selectable": false,
+    "successor_family_canonical": true
+  },
+  "lock_kind": "epoch3-upstream-thin-canonical-family-selection",
+  "schema_version": 1,
+  "selection_scope": "RB-3 Astral consumer compatibility canonical family only",
+  "status": "successor-r3-canonical-predecessor-r1-historical-valid",
+  "superseded_family": {
+    "authority_path": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "file_count": 23,
+    "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+    "historical_status": "immutable-historical-valid-not-deleted-not-rewritten",
+    "lock_path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json",
+    "lock_sha256": "8c1a06cd67e70219807e463a30524bec767661d33d0ef86eea9cec029a918322",
+    "release_id": "cpython-3.14.6+e3-r1-aarch64-linux-android",
+    "release_index_sha256": "b60274ac64b40c43fc174e4ea4a238743216452b5dfe8af300adde37c4fd7389",
+    "release_sha256": "81bd66f5cd1978485eb50991d5a6e773b55b51defb52483db6db5215c1a91a9e",
+    "sha256sums_sha256": "b47f399a48526e75aad98499aff841126986f8436702a7cd5c9cd25784ac6082"
+  }
+}

@@ -81,7 +81,7 @@
         "artifact_bytes_changed": false,
         "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
         "native_wheel_16k_alignment": "hard-gate",
-        "old_family_superseded": false,
+        "old_family_superseded": true,
         "predecessor_supersession_authorized": true,
         "predecessor_supersession_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json",
         "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
@@ -138,22 +138,47 @@
         "successor_technical_family_release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1",
         "successor_technical_family_result_sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
         "successor_technical_family_started": true,
-        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
+        "predecessor_supersession_started": true,
+        "predecessor_family_historical_valid": true,
+        "successor_family_canonical": true,
+        "astral_consumer_compatibility_complete": true,
+        "supersession_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+        "supersession_authority_sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3",
+        "supersession_closure_receipt": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
+        "supersession_closure_receipt_sha256": "bf2b55dd3aab36147d4b1fb30a21116f676e6fcd25fba882985b4bc6cb2cadde",
+        "canonical_family_selection_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+        "canonical_family_selection_lock_sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b",
+        "successor_legal_data_rebinding_acceptance_r2_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
+        "successor_legal_data_rebinding_acceptance_r2_result_sha256": "176e9947df1fd40d0650c77aeedd4701cf03958cc842767f63735d700bb80685"
       },
       "id": "RB-3",
       "lane": "local",
       "name": "astral-consumer-compatibility",
       "next_gate": {
-        "closure_allowed": false,
-        "next_action": "freeze explicit predecessor-to-successor supersession authority and close RB-3 without artifact mutation",
-        "required_input": "accepted successor legal/data rebinding authority plus predecessor and successor family authorities and locks",
-        "required_output": "explicit supersession map, successor canonical-family authority, predecessor historical-valid status, and RB-3 closure receipt",
-        "successor_after_accepted_probe": "remove RB-3 from blocker register and continue RB-1/RB-4/RB-5/RB-6/RB-7 in parallel"
+        "closure_allowed": true,
+        "next_action": "continue RB-1 owner approval and RB-4/RB-5/RB-6/RB-7 without inferring selectability or publication",
+        "required_input": "RB-3 successor r3 canonical-family authority and closure receipt are frozen",
+        "required_output": "remaining blocker evidence and final selectable release-candidate integration only after all required blockers close",
+        "successor_after_accepted_probe": "RB-3 closed; continue RB-1/RB-4/RB-5/RB-6/RB-7 in parallel"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-successor-rebinding-accepted-predecessor-supersession-authorized"
+      "status": "closed-profile-M-successor-r3-canonical-predecessor-r1-historical-valid",
+      "closure": {
+        "rb1_closed": false,
+        "rb2_closed": true,
+        "rb3_closed": true,
+        "rb4_closed": false,
+        "rb5_closed": false,
+        "rb6_closed": false,
+        "rb7_closed": false,
+        "selectable": false,
+        "publication": false,
+        "successor_family_canonical": true,
+        "predecessor_family_historical_valid": true
+      }
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",
@@ -203,7 +228,8 @@
     "artifact_bytes_frozen": true,
     "artifact_family_authority_frozen": true,
     "publication": false,
-    "selectable": false
+    "selectable": false,
+    "astral_consumer_compatibility_complete": true
   },
   "execution_model": {
     "device_lanes_may_use_distinct_devices": true,
@@ -211,7 +237,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "rb3-profile-M-successor-predecessor-supersession-and-rb3-closure-owner-transition",
+  "next_bounded_action": "confirm-rb3-supersession-owner-receipt-then-continue-rb1-rb4-rb5-rb6-rb7",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

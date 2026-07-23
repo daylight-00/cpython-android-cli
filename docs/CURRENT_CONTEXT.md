@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 52
+> **State revision:** 53
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -86,11 +86,11 @@ status  in-progress
 53. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json) — verifier-only third temporal monotonicity amendment allowing the bounded owner legal/data rebinding execution while preserving accepted artifacts, authorities, evidence, and rebound claim boundaries
 54. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json) — accepted successor RB-1 technical legal and RB-2 data/runtime rebinding with explicit predecessor supersession authorization
 55. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json) — verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding
+56. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json) — explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure
 
 ## Blockers
 
 - RB-1-component-and-license-closure
-- RB-3-sysconfig-sdk-and-astral-consumer-boundary
 - RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
@@ -112,12 +112,7 @@ status  in-progress
 - owner-approval-must-bind-exact-release-and-notice-hashes
 - rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
-- frozen-predecessor-family-not-superseded
-- rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- predecessor-family-supersession-pending-after-successor-legal-data-acceptance
 - rb1-owner-approval-remains-pending-after-technical-rebinding
-- predecessor-family-supersession-owner-transition-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

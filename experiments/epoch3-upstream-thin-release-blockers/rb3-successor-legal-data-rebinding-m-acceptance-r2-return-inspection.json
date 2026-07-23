@@ -1,0 +1,45 @@
+{
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "predecessor_family_supersession_authorized": true,
+    "predecessor_family_supersession_started": false,
+    "publication": false,
+    "rb1_rebound": true,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true
+  },
+  "conclusion": "The accepted successor legal/data rebinding transition landed exactly. It authorizes only the explicit byte-preserving predecessor-to-successor family supersession and RB-3 closure transition.",
+  "inspection_kind": "epoch3-rb3-profile-M-successor-legal-data-rebinding-acceptance-r2-return-inspection",
+  "receipt": {
+    "action": "applied-rb3-profile-M-successor-legal-data-rebinding-r4-accepted-supersession-authorized-pushed",
+    "claim_transaction_rc": 0,
+    "failure_reason": "none",
+    "first_failure": "none",
+    "post_head": "25e5bae1d48a031d443174e6e8cbb81316910276",
+    "post_tree": "eef661a1d2a3c9d6211b7830e2b136eb1152c6df",
+    "remote_post_head": "25e5bae1d48a031d443174e6e8cbb81316910276"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-acceptance-r2-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 19,
+    "sha256": "176e9947df1fd40d0650c77aeedd4701cf03958cc842767f63735d700bb80685",
+    "size_bytes": 11626
+  },
+  "schema_version": 1,
+  "status": "accepted-complete-pass-predecessor-supersession-owner-transition-ready",
+  "verification": {
+    "all_return_codes_zero": true,
+    "detached_validation_worktree": true,
+    "owner_checkout_runtime_residue_isolated": true,
+    "product_tests": "73/73",
+    "rebinding_acceptance_verifier": "17/17",
+    "release_blocker_tests": "101/101",
+    "repository_push_readback_exact": true,
+    "total_tests": "174/174"
+  }
+}

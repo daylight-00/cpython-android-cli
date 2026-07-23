@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 893
+    "tracked_document_count": 1000
   },
   "documents": [
     {
@@ -259,6 +259,21 @@
       "rationale": "Exact 23-file frozen artifact-family input lock.",
       "supersession_rule": "Update through the active release-blocker state transition.",
       "update_trigger": "Change only when the active release-blocker contract or status changes."
+    },
+    {
+      "authority_domain": "product_identity",
+      "format": "json",
+      "lifecycle_class": "CURRENT_INPUT_LOCK",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-active",
+      "mutability": "controlled",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "planned_canonical_parent": "docs/plans/INDEX.md",
+      "rationale": "Exact canonical successor r3 selection with predecessor r1 retained as immutable historical-valid family.",
+      "supersession_rule": "Supersede only through a later explicit canonical-family transition.",
+      "update_trigger": "Update only before the next canonical-family authority is accepted."
     },
     {
       "authority_domain": "product_input_lock",
@@ -12086,6 +12101,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "evidence",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact successful rebinding acceptance-r2 receipt audit and supersession readiness evidence.",
+      "supersession_rule": "Do not edit; create an amendment or successor inspection.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "machine_authority",
       "format": "json",
       "lifecycle_class": "FROZEN_AUTHORITY",
@@ -12607,6 +12637,36 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
       "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
       "rationale": "Verifier-only temporal monotonicity amendment after successor legal-family acceptance.",
+      "supersession_rule": "Do not edit; create an amendment or successor record.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Frozen successor r3 canonical-family, predecessor r1 historical-valid, and RB-3 closure authority.",
+      "supersession_rule": "Do not edit; create an amendment or successor authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Explicit byte-preserving predecessor-to-successor map, historical predecessor preservation, and RB-3 closure receipt.",
       "supersession_rule": "Do not edit; create an amendment or successor record.",
       "update_trigger": "Never edit after commit."
     },

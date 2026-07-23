@@ -329,6 +329,12 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
       "role": "verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding",
       "sha256": "71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-predecessor-supersession-and-closure",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "role": "explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure",
+      "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
     }
   ],
   "active_plan": {
@@ -359,7 +365,6 @@
   },
   "blockers": [
     "RB-1-component-and-license-closure",
-    "RB-3-sysconfig-sdk-and-astral-consumer-boundary",
     "RB-4-release-security-update-and-revocation-operations",
     "RB-5-api24-runtime-qualification",
     "RB-6-real-16k-runtime-qualification",
@@ -370,7 +375,7 @@
     "api24_runtime_qualified": false,
     "artifact_family_implementation_started": true,
     "artifact_family_release_complete": true,
-    "astral_consumer_compatibility_complete": false,
+    "astral_consumer_compatibility_complete": true,
     "astral_consumer_compatibility_implementation_started": true,
     "ca_timezone_data_product_complete": true,
     "ca_timezone_data_product_implementation_started": true,
@@ -386,9 +391,9 @@
     "install_only_release_complete": true,
     "native_sdk_baseline_extension_16k_required": true,
     "non_termux_android_context_qualified": false,
-    "predecessor_family_superseded": false,
+    "predecessor_family_superseded": true,
     "predecessor_family_supersession_authorized": true,
-    "predecessor_family_supersession_started": false,
+    "predecessor_family_supersession_started": true,
     "publication_authorized": false,
     "rb1_rebound": true,
     "rb1_technical_legal_evidence_complete": true,
@@ -420,7 +425,9 @@
     "successor_technical_family_started": true,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
-    "user_built_wheel_postprocessing_in_scope": false
+    "user_built_wheel_postprocessing_in_scope": false,
+    "successor_family_canonical": true,
+    "predecessor_family_historical_valid": true
   },
   "control_work": {
     "completed_phase": 1,
@@ -456,8 +463,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "9caabc54552ef51fc517c708f65288e7dc24e66e",
-    "tree": "269dd804666b04737f46daa15e70df01b2dad25a"
+    "commit": "25e5bae1d48a031d443174e6e8cbb81316910276",
+    "tree": "eef661a1d2a3c9d6211b7830e2b136eb1152c6df"
   },
   "program": {
     "epoch": {
@@ -511,11 +518,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 52,
+  "state_revision": 53,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "c10080721d82795ffd9c2e67d4e36067fda362bef94c99139b05436b5b54c8af"
+    "sha256": "266bbd4bf65447f92d5513fc4c32ca53b0973d015d330860e2a75f6d6c279d16"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -540,13 +547,8 @@
     "owner-approval-must-bind-exact-release-and-notice-hashes",
     "rb1-owner-review-result-receipt-index-incomplete-dossier-valid",
     "zero-producer-path-rule-not-derived-from-astral-golden-contract",
-    "frozen-predecessor-family-not-superseded",
-    "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
-    "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "predecessor-family-supersession-pending-after-successor-legal-data-acceptance",
-    "rb1-owner-approval-remains-pending-after-technical-rebinding",
-    "predecessor-family-supersession-owner-transition-pending"
+    "rb1-owner-approval-remains-pending-after-technical-rebinding"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-legal-data-rebinding-r2-accepted-supersession-authorized"
+  "updated_by_transaction": "rb3-profile-M-successor-predecessor-family-r1-superseded-rb3-closed"
 }

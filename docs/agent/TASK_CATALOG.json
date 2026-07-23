@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 \u2014 Exact official upstream control",
-          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 — Exact official upstream control",
+          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
+          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 \u2014 Platform portability",
-          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 — Platform portability",
+          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -2145,7 +2145,11 @@
         "successor_legal_family_complete_claim": true,
         "successor_stripped_accepted_claim": true,
         "successor_technical_family_complete_claim": true,
-        "user_built_wheel_repair_claim": false
+        "user_built_wheel_repair_claim": false,
+        "astral_consumer_compatibility_complete_claim": true,
+        "successor_family_canonical_claim": true,
+        "predecessor_family_historical_valid_claim": true,
+        "rb3_closed_claim": true
       },
       "completion_contract": {
         "always": {
@@ -2390,6 +2394,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
           "reason": "Frozen four-level temporal routing amendment preserving accepted product, evidence, authority, and rebinding bytes.",
           "sha256": "71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+          "reason": "Frozen explicit predecessor supersession, canonical successor r3 selection, historical predecessor preservation, and RB-3 closure.",
+          "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
         }
       ],
       "required_reads": [
@@ -2771,6 +2780,26 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
           "reason": "Verifier-only fourth temporal amendment allowing explicit predecessor supersession and RB-3 closure progression without changing accepted artifacts, evidence, authorities, or accepted rebinding claims.",
+          "scope": "full"
+        },
+        {
+          "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+          "reason": "Canonical successor r3 selection and immutable historical predecessor binding.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
+          "reason": "Exact successful rebinding acceptance-r2 owner receipt and supersession authorization evidence.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
+          "reason": "Explicit byte-preserving predecessor-to-successor map and RB-3 closure receipt.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+          "reason": "Frozen successor r3 canonical-family, predecessor historical-valid, and RB-3 closure authority.",
           "scope": "full"
         }
       ],
