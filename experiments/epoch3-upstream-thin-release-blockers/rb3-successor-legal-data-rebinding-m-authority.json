@@ -1,0 +1,94 @@
+{
+  "accepted_evidence": {
+    "external_acceptance_audit": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/external-acceptance-audit.json",
+    "owner_independent_audit": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/owner-independent-audit.json",
+    "protected_state": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/protected-state.json",
+    "rb1_technical_legal_rebinding": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/rb1-technical-legal-rebinding.json",
+    "rb2_data_runtime_rebinding": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/rb2-data-runtime-rebinding.json",
+    "result_archive_sha256": "04bb2ccca290902c9236682295c655dfe56dcd822bcdc41b1e662aafa2ba6def",
+    "result_archive_size_bytes": 13505,
+    "self_index_file_count": 25
+  },
+  "accepted_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "accepted_rebinding": {
+    "current_data_product_sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rollback_data_product_sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+    "successor_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56"
+  },
+  "authority_kind": "epoch3-rb3-profile-M-successor-legal-data-rebinding",
+  "claim_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "predecessor_family_supersession_authorized": true,
+    "predecessor_family_supersession_started": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": true,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_closed": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-legal-data-rebinding-m-r2-return.json": "3f32ab745147e5dc6863ee1fa592712fbf05b8a4b0ec76685d94a087dc2fd5ef",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-contract.json": "7bc8bd53c006a4d4900acba59d3884d8326490b87ca289ffa1fe7e96ec7bd2fd",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/external-acceptance-audit.json": "c8c7ba0656117e4604d74e36da7a2aa57c7496d72a67a12a99b2ba10eaeea054",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/input-verification.json": "4d3ddc6c41a9a7f1f3ae72844a6cc9d0f293cd425cdb1befca1f064bb5b8b7b2",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/owner-independent-audit.json": "14304d9ba3e8e28ee8667e092b27605a46f5087822bfaf9e2f2ddd9ad9267687",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/owner-result.json": "44ff5a7f30453e5fe4e101aaca8e6a399fb3d947e3f1960702e26524bdf994cd",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/owner-summary.json": "207cb77b1d3a9d45ca0c2a63b646eddede91ee3240ad0f4b89ccf186dbac41c0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/package-manifest.json": "524ef9b37b95f2267e9fafd91430117d8e5d07f7ae176b869f68bd7cce3f2b2f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/protected-state.json": "2865417204e8015fd15b0fbfbb16fbec1ad068aca33e749558470e0dd69f155f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/rb1-technical-legal-rebinding.json": "c1986405e414ebcab6addf938df24cc5b9ce5a9af49ba93a0c80a69c0690fbaf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/rb2-data-runtime-rebinding.json": "39b78828e48ddd90a7c4dd82fd7c2c8b1d9e0aee5a49eb53a29a3760ea75ffd0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/result-index.json": "0c763cf8af2204c0acb506faa8a38981f63e1edfafe37200c186d6fec9a35c61",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority-evidence/successor-family-verification.json": "906d769865fdbc162972da649ddd7fd5faed10e8f7c1d31af3ac44c536769b55",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json": "8710aa6c9830298493be747f60eb6d2a95a5d2f6d86add8de6ee7225c37e6ef1",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json": "9bf41eccb8aa89de827c285ab1097cd5badc71f0235712e2b0ba4b59e986fd4e",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r2-return-inspection.json": "9b7da656db578e334f438bc0bb9d41fc2d99843cff532006dcdc24bf3ada1662",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json": "d595fcc17c1d59aa64cb647796aafc630213528d59192e62b47e2f533bc37561"
+  },
+  "invariants": {
+    "artifact_bytes_changed": false,
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "user_built_wheel_postprocessing_in_scope": false
+  },
+  "next_gate": {
+    "authorized": true,
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json",
+    "required_output": "explicit predecessor-to-successor supersession authority and RB-3 closure without artifact mutation or selectability/publication expansion"
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "rb1_legal_integration": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
+    },
+    "rb2_data_products": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+      "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098"
+    },
+    "successor_legal_family": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+      "sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6"
+    }
+  }
+}

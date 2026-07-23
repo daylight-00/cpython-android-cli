@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "exact_successor_family": true,
+    "owner_approval_still_pending": true,
+    "predecessor_not_superseded": true,
+    "rb1_technical_legal_evidence": true,
+    "rb2_data_runtime_evidence": true
+  },
+  "claim_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": false,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "rb1": {
+    "owner_approved": false,
+    "pass": true,
+    "result": "rb1-technical-legal-rebinding.json"
+  },
+  "rb2": {
+    "pass": true,
+    "result": "rb2-data-runtime-rebinding.json",
+    "successor_install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    }
+  },
+  "result_kind": "epoch3-rb3-profile-M-successor-legal-data-rebinding-owner-candidate",
+  "schema_version": 1,
+  "successor_family": {
+    "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "file_count": 128,
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  }
+}

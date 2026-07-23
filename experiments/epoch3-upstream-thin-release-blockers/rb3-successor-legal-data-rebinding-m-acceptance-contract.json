@@ -1,0 +1,52 @@
+{
+  "accepted_by": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+  "accepted_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-legal-data-rebinding-acceptance-transition",
+  "evidence_summary": {
+    "external_acceptance_audit": "9/9",
+    "original_modes_restored": true,
+    "owner_independent_audit": "11/11",
+    "rb1_checks": "9/9",
+    "rb2_checks": "8/8",
+    "read_only_content_identity": true,
+    "read_only_modes_enforced": true,
+    "runtime_checks": "6/6"
+  },
+  "execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
+  "predecessor_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 25,
+    "sha256": "04bb2ccca290902c9236682295c655dfe56dcd822bcdc41b1e662aafa2ba6def",
+    "size_bytes": 13505
+  },
+  "schema_version": 1,
+  "status": "candidate-qualified-accepted-by-successor-legal-data-rebinding-authority",
+  "success_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "predecessor_family_supersession_authorized": true,
+    "predecessor_family_supersession_started": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": true,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_closed": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  }
+}

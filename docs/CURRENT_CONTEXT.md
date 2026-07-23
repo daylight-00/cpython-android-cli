@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 51
+> **State revision:** 52
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -84,6 +84,8 @@ status  in-progress
 51. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json) — accepted deterministic 128-file successor legal family, exact technical/legal byte preservation, and successor legal/data rebinding authorization
 52. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json) — verifier-only monotonic routing amendment allowing legal/data rebinding progression after accepted successor legal family
 53. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json) — verifier-only third temporal monotonicity amendment allowing the bounded owner legal/data rebinding execution while preserving accepted artifacts, authorities, evidence, and rebound claim boundaries
+54. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json) — accepted successor RB-1 technical legal and RB-2 data/runtime rebinding with explicit predecessor supersession authorization
+55. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json) — verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding
 
 ## Blockers
 
@@ -115,7 +117,7 @@ status  in-progress
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
 - predecessor-family-supersession-pending-after-successor-legal-data-acceptance
-- successor-legal-data-rebinding-owner-qualification-pending
 - rb1-owner-approval-remains-pending-after-technical-rebinding
+- predecessor-family-supersession-owner-transition-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

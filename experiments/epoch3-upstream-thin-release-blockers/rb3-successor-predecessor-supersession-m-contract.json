@@ -1,0 +1,51 @@
+{
+  "contract_kind": "epoch3-rb3-profile-M-successor-predecessor-family-supersession-and-rb3-closure",
+  "failure_boundary": {
+    "artifact_bytes_changed": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true
+  },
+  "forbidden": [
+    "modify any predecessor or successor artifact byte",
+    "delete or rewrite predecessor authority or locks",
+    "infer owner legal approval",
+    "claim selectability or publication",
+    "close RB-1, RB-4, RB-5, RB-6, or RB-7",
+    "expand user-built wheel postprocessing into the product contract"
+  ],
+  "purpose": "Make the accepted successor r3 legal family the canonical RB-3 family, retain the predecessor family as immutable historical authority, and close RB-3 without changing artifact bytes or implying RB-1 closure, selectability, or publication.",
+  "required_actions": [
+    "verify all accepted successor and predecessor authority hashes",
+    "freeze an explicit supersession map from predecessor release identity to successor release identity",
+    "retain predecessor authority and locks byte-identically as historical valid evidence",
+    "mark successor r3 as canonical for RB-3 consumer compatibility",
+    "close RB-3 only; keep RB-1 owner approval and RB-4 through RB-7 open"
+  ],
+  "required_inputs": {
+    "accepted_successor_legal_data_rebinding_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+    "accepted_successor_legal_family_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+    "predecessor_family_authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "successor_family_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-legal-family-r3.lock.json"
+  },
+  "schema_version": 1,
+  "success_boundary": {
+    "artifact_bytes_changed": false,
+    "astral_consumer_compatibility_complete": true,
+    "predecessor_family_superseded": true,
+    "predecessor_family_supersession_started": true,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": true,
+    "rb2_closed": true,
+    "rb2_rebound": true,
+    "rb3_closed": true,
+    "selectable": false,
+    "successor_family_canonical": true,
+    "successor_legal_data_rebinding_accepted": true
+  }
+}

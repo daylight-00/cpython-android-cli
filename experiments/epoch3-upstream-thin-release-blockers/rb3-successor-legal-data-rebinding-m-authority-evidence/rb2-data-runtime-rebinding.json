@@ -1,0 +1,239 @@
+{
+  "checks": {
+    "accepted_data_products_exact": true,
+    "accepted_family_unchanged": true,
+    "install_root_modes_restored": true,
+    "read_only_install_root_content_unchanged": true,
+    "read_only_install_root_mode_enforced": true,
+    "source_authority_exact": true,
+    "successor_runtime_qualified": true,
+    "update_rollback_reactivation": true
+  },
+  "claim_boundary": {
+    "data_runtime_evidence_complete": true,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb2_closed_source_authority": true,
+    "rb2_rebound": false,
+    "selectable": false
+  },
+  "data_product_verification": {
+    "current": {
+      "checks": {
+        "ca_bundle_framing": true,
+        "claims_bounded": true,
+        "iana_version_bound": true,
+        "immutable_update_model": true,
+        "metadata_schema": true,
+        "no_duplicate_members": true,
+        "one_data_root": true,
+        "pure_data_only": true,
+        "required_layout": true,
+        "runtime_paths_relative": true,
+        "self_excluding_manifest_exact": true,
+        "source_wheel_hashes_bound": true
+      },
+      "claim_boundary": {
+        "publication": false,
+        "rb2_closed": false,
+        "runtime_qualified": false,
+        "selectable": false
+      },
+      "errors": [],
+      "failed_checks": [],
+      "metrics": {
+        "archive_member_count": 639,
+        "ca_certificate_count": 118,
+        "iana_version": "2026c",
+        "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+        "zoneinfo_file_count": 604
+      },
+      "pass": true,
+      "schema_version": 1,
+      "subject": {
+        "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+        "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+        "size_bytes": 227318
+      },
+      "verifier_kind": "epoch3-android-ca-timezone-data-product"
+    },
+    "rollback": {
+      "checks": {
+        "ca_bundle_framing": true,
+        "claims_bounded": true,
+        "iana_version_bound": true,
+        "immutable_update_model": true,
+        "metadata_schema": true,
+        "no_duplicate_members": true,
+        "one_data_root": true,
+        "pure_data_only": true,
+        "required_layout": true,
+        "runtime_paths_relative": true,
+        "self_excluding_manifest_exact": true,
+        "source_wheel_hashes_bound": true
+      },
+      "claim_boundary": {
+        "publication": false,
+        "rb2_closed": false,
+        "runtime_qualified": false,
+        "selectable": false
+      },
+      "errors": [],
+      "failed_checks": [],
+      "metrics": {
+        "archive_member_count": 639,
+        "ca_certificate_count": 119,
+        "iana_version": "2026b-dirty",
+        "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+        "zoneinfo_file_count": 604
+      },
+      "pass": true,
+      "schema_version": 1,
+      "subject": {
+        "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+        "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+        "size_bytes": 229141
+      },
+      "verifier_kind": "epoch3-android-ca-timezone-data-product"
+    }
+  },
+  "data_products": {
+    "current": {
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    "rollback": {
+      "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    }
+  },
+  "failed_checks": [],
+  "family_invariance": {
+    "after_fingerprint_sha256": "03d1a54e28aef88b9cdb54e3f4ca3aa33dd7179f4c9d4c44a68c371a363602c5",
+    "before_fingerprint_sha256": "03d1a54e28aef88b9cdb54e3f4ca3aa33dd7179f4c9d4c44a68c371a363602c5",
+    "file_count": 128,
+    "pass": true
+  },
+  "install_root_invariance": {
+    "before_content_fingerprint_sha256": "b3a93c8342244ef067bd6db2f82542f153da8e0b64b915bde2ae2570a041e76f",
+    "before_full_fingerprint_sha256": "ba5c3c89277b73936d9053c5f99c1edcaef0d6543011db9fc7bdddc3a5e090cf",
+    "content_identity_unchanged": true,
+    "file_count": 3403,
+    "original_modes_restored": true,
+    "pass": true,
+    "read_only_content_fingerprint_sha256": "b3a93c8342244ef067bd6db2f82542f153da8e0b64b915bde2ae2570a041e76f",
+    "read_only_full_fingerprint_sha256": "735c48161610f75e6809ae69de028aff7cce3b64875695bd453a4336df24070e",
+    "read_only_modes_enforced": true,
+    "restored_content_fingerprint_sha256": "b3a93c8342244ef067bd6db2f82542f153da8e0b64b915bde2ae2570a041e76f",
+    "restored_full_fingerprint_sha256": "ba5c3c89277b73936d9053c5f99c1edcaef0d6543011db9fc7bdddc3a5e090cf"
+  },
+  "lifecycle": {
+    "check_kind": "epoch3-rb3-successor-data-update-rollback-reactivation",
+    "events": [
+      {
+        "event": "install-rollback",
+        "result": {
+          "activation": {
+            "current_link": "releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+            "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/current",
+            "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1"
+          },
+          "installed_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "operation": "install-epoch3-android-data-product",
+          "pass": true,
+          "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "schema_version": 1
+        }
+      },
+      {
+        "event": "install-current",
+        "result": {
+          "activation": {
+            "current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+            "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/current",
+            "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+          },
+          "installed_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "operation": "install-epoch3-android-data-product",
+          "pass": true,
+          "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "schema_version": 1
+        }
+      },
+      {
+        "event": "rollback",
+        "result": {
+          "current_link": "releases/android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/current",
+          "operation": "activate-epoch3-android-data-release",
+          "pass": true,
+          "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "schema_version": 1
+        }
+      },
+      {
+        "event": "reactivate-current",
+        "result": {
+          "current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/current",
+          "operation": "activate-epoch3-android-data-release",
+          "pass": true,
+          "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "schema_version": 1
+        }
+      }
+    ],
+    "final_current_link": "releases/android-data-ca-2026.6.17-tzdata-2026.3-r1",
+    "pass": true,
+    "python_install_root_written": false,
+    "release_directories": [
+      "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+      "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+    ],
+    "schema_version": 1
+  },
+  "pass": true,
+  "result_kind": "epoch3-rb3-successor-rb2-data-runtime-rebinding-candidate",
+  "runtime_qualification": {
+    "checks": {
+      "android_identity": true,
+      "ca_loaded": true,
+      "exact_extracted_prefix": true,
+      "process_success": true,
+      "python_version": true,
+      "zones_loaded": true
+    },
+    "data_root": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/data-home/current",
+    "details": {
+      "base_prefix": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python",
+      "ca_count": 118,
+      "executable": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python/bin/python3.14",
+      "multiarch": "aarch64-linux-android",
+      "platform": "android-24-arm64_v8a",
+      "prefix": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python",
+      "soabi": "cpython-314-aarch64-linux-android",
+      "version": "3.14.6",
+      "zones": {
+        "America/New_York": "America/New_York",
+        "Asia/Seoul": "Asia/Seoul",
+        "UTC": "UTC"
+      }
+    },
+    "failed_checks": [],
+    "pass": true,
+    "python": "/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python/bin/python3.14",
+    "qualifier_kind": "epoch3-rb3-successor-rb2-data-runtime",
+    "returncode": 0,
+    "schema_version": 1,
+    "stderr": "",
+    "stdout": "{\"base_prefix\": \"/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python\", \"ca_count\": 118, \"executable\": \"/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python/bin/python3.14\", \"multiarch\": \"aarch64-linux-android\", \"platform\": \"android-24-arm64_v8a\", \"prefix\": \"/data/data/com.termux/files/usr/tmp/e3-rb3-rebind-6cc_oopx/runtime/python\", \"soabi\": \"cpython-314-aarch64-linux-android\", \"version\": \"3.14.6\", \"zones\": {\"America/New_York\": \"America/New_York\", \"Asia/Seoul\": \"Asia/Seoul\", \"UTC\": \"UTC\"}}\n"
+  },
+  "schema_version": 1,
+  "successor_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  }
+}

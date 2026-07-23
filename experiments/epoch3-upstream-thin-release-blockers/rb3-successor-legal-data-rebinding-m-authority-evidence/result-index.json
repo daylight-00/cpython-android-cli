@@ -1,0 +1,134 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "final-status.txt",
+      "sha256": "83696aa94df42ccef9705bbecb4b2d41860546c7e3ad6c660f3b63c846eba636",
+      "size_bytes": 1633
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "4f7b19cf084b8487f069cd518352e9ae25cfd2aa2920ef0db287523a761020ad",
+      "size_bytes": 2091
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/extract-legal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/extract-rb2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/fetch.log",
+      "sha256": "e496060a03e45e52bad566f4bfc8b127ad30f506a4456f63599772e5ac5d646a",
+      "size_bytes": 321
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package.log",
+      "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431",
+      "size_bytes": 5
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "b4f59de1199897c0a20408d41fd683e0517222bdcc4668196a8fdfd98d1cc647",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "bdb7f26a87476b5c29053d72fab3b53ccbab84675648bb589c92af1bfd3b8add",
+      "size_bytes": 375
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "e0ba1aa100f5aa639ff654331cddb09aa4ac0642acb25c81e06b0fde38e4a782",
+      "size_bytes": 131
+    },
+    {
+      "path": "logs/target.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/unit.log",
+      "sha256": "747d908d7acfa8eec63025742a1bceb17d810c2c4c2c6213911264cf4571fec5",
+      "size_bytes": 198
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "524ef9b37b95f2267e9fafd91430117d8e5d07f7ae176b869f68bd7cce3f2b2f",
+      "size_bytes": 2229
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "14304d9ba3e8e28ee8667e092b27605a46f5087822bfaf9e2f2ddd9ad9267687",
+      "size_bytes": 1030
+    },
+    {
+      "path": "receipts/input-verification.json",
+      "sha256": "4d3ddc6c41a9a7f1f3ae72844a6cc9d0f293cd425cdb1befca1f064bb5b8b7b2",
+      "size_bytes": 506
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "15c3a6ea5d95424366bd0be08b05c8075def4b8d818f32f4c6bc1b8b1d43467e",
+      "size_bytes": 34240
+    },
+    {
+      "path": "receipts/owner-result.json",
+      "sha256": "44ff5a7f30453e5fe4e101aaca8e6a399fb3d947e3f1960702e26524bdf994cd",
+      "size_bytes": 1644
+    },
+    {
+      "path": "receipts/protected-state-before.json",
+      "sha256": "e1eaa5afd927294bb6163673dadd7efd5acb73672ea60c9a0becff3462bbcc62",
+      "size_bytes": 2040
+    },
+    {
+      "path": "receipts/protected-state.json",
+      "sha256": "2865417204e8015fd15b0fbfbb16fbec1ad068aca33e749558470e0dd69f155f",
+      "size_bytes": 4125
+    },
+    {
+      "path": "summary.json",
+      "sha256": "207cb77b1d3a9d45ca0c2a63b646eddede91ee3240ad0f4b89ccf186dbac41c0",
+      "size_bytes": 1812
+    },
+    {
+      "path": "target/rebinding/rb1-technical-legal-rebinding.json",
+      "sha256": "c1986405e414ebcab6addf938df24cc5b9ce5a9af49ba93a0c80a69c0690fbaf",
+      "size_bytes": 1108
+    },
+    {
+      "path": "target/rebinding/rb2-data-runtime-rebinding.json",
+      "sha256": "39b78828e48ddd90a7c4dd82fd7c2c8b1d9e0aee5a49eb53a29a3760ea75ffd0",
+      "size_bytes": 9719
+    },
+    {
+      "path": "target/rebinding/result.json",
+      "sha256": "44ff5a7f30453e5fe4e101aaca8e6a399fb3d947e3f1960702e26524bdf994cd",
+      "size_bytes": 1644
+    },
+    {
+      "path": "target/rebinding/successor-family-verification.json",
+      "sha256": "906d769865fdbc162972da649ddd7fd5faed10e8f7c1d31af3ac44c536769b55",
+      "size_bytes": 633
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

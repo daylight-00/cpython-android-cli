@@ -1,0 +1,71 @@
+{
+  "after": [
+    {
+      "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775
+    },
+    {
+      "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/legal/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results/target/candidate/release-index.json",
+      "sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+      "size_bytes": 16367
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/legal/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results/target/candidate/SHA256SUMS",
+      "sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e",
+      "size_bytes": 14689
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/rb2/cpython-android-cli-e3-rb2-data-products-r3-results/target/artifacts/android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/rb2/cpython-android-cli-e3-rb2-data-products-r3-results/target/artifacts/android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    }
+  ],
+  "before": [
+    {
+      "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775
+    },
+    {
+      "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/legal/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results/target/candidate/release-index.json",
+      "sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+      "size_bytes": 16367
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/legal/cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results/target/candidate/SHA256SUMS",
+      "sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e",
+      "size_bytes": 14689
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/rb2/cpython-android-cli-e3-rb2-data-products-r3-results/target/artifacts/android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    },
+    {
+      "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-work/rb2/cpython-android-cli-e3-rb2-data-products-r3-results/target/artifacts/android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    }
+  ],
+  "checks": {
+    "exact_inputs_unchanged": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

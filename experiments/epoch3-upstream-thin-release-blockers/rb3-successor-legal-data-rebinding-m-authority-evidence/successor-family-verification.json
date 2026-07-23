@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "accepted_lock_boundary": true,
+    "all_file_identities": true,
+    "exact_file_set": true,
+    "release_identity": true,
+    "release_index_present": true
+  },
+  "failed_checks": [],
+  "mismatches": [],
+  "pass": true,
+  "release": {
+    "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "file_count": 128,
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb3-successor-legal-family-r3-exact-input"
+}

@@ -1,0 +1,51 @@
+{
+  "amendment_kind": "epoch3-rb3-successor-predecessor-supersession-temporal-routing-verifier-amendment",
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "predecessor_family_supersession_authorized": true,
+    "predecessor_family_supersession_started": false,
+    "publication": false,
+    "rb1_rebound": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true
+  },
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false,
+    "predecessor_family_superseded": false,
+    "rb1_rebound_accepted_not_inferred": true,
+    "rb2_rebound_accepted_not_inferred": true
+  },
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
+    "sha256": "5f70109c21101c593da595e444f0db5dd8c64e928627d778d9a26cb44758ee95"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "a43d08e5b15ad695e072726963ce40bcd5b1472ca91ffe6dc64b5b1c1f0b67f4",
+      "reason": "allow the historical accepted install-only verifier to recognize the explicit predecessor supersession and RB-3 closure owner transition",
+      "replacement_sha256": "34cb6ff84b0fc5eeed23f687b02995d59bdee7c9dae25b61619c509665233d1c"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "d22b6bc8e381a86552307b44d576569593e6abe3d2cfe2b98278ea05da775938",
+      "reason": "verify the four-level temporal amendment chain without changing accepted stripped evidence or authority",
+      "replacement_sha256": "d9efa0b7962bb5eaaa14cc1b7440ac7155ed249625d4d6d640dd3d15436aa76d"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "2492c119e010adb6018b4a78664332292bdc2baa4ff0a0ccaf846aabc91067f3",
+      "reason": "allow the historical accepted stripped verifier to recognize the explicit predecessor supersession and RB-3 closure owner transition",
+      "replacement_sha256": "ee3b4f30a81b198d9034797f3ffe8cf79ac94adcbeb91cb8f3e3cd59999ce5f3"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "e95316e6f4a8f7d508971d323912bfbed08ba2a0e6c536ef80f5de47b7491625",
+      "reason": "verify the four-level temporal amendment chain without changing accepted technical-family evidence or authority",
+      "replacement_sha256": "623d2207b63efd5f767e62e1f9d7db05c3a9db2debf49efcb2278b6549031e01"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity after accepted successor legal/data rebinding; accepted artifacts, evidence, authorities, and claim boundaries unchanged"
+}

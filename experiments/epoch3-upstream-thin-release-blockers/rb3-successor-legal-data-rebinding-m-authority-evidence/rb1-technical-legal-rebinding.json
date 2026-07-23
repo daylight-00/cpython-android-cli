@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "component_map_exact": true,
+    "component_mapping_complete": true,
+    "legal_payload_byte_exact": true,
+    "notice_exact": true,
+    "owner_approval_pending": true,
+    "single_owner_gap": true,
+    "source_authority_exact": true,
+    "successor_flavors_rebound": true,
+    "technical_review_complete": true
+  },
+  "claim_boundary": {
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": false,
+    "selectable": false,
+    "technical_legal_evidence_complete": true
+  },
+  "failed_checks": [],
+  "metrics": {
+    "legal_payload_file_count": 102,
+    "license_files_per_flavor": {
+      "full": 42,
+      "install_only": 42,
+      "install_only_stripped": 42
+    },
+    "pip_vendored_component_count": 18,
+    "remaining_gap_count": 1,
+    "review_unit_count": 31,
+    "top_level_component_count": 13
+  },
+  "owner_approved": false,
+  "pass": true,
+  "rb1_closed": false,
+  "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+  "result_kind": "epoch3-rb3-successor-rb1-technical-legal-rebinding-candidate",
+  "schema_version": 1
+}

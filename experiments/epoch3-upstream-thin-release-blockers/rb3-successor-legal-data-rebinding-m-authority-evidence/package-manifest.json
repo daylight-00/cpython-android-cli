@@ -1,0 +1,51 @@
+{
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": false,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "correction": {
+    "corrected_semantics": [
+      "content and symlink identity unchanged while read-only",
+      "all write bits removed during qualification",
+      "original modes restored exactly after qualification"
+    ],
+    "diagnosis": "The r1 fingerprint included permission modes, so chmod-based read-only enforcement was incorrectly treated as content mutation.",
+    "failed_check": "read_only_install_root_unchanged",
+    "failed_result_sha256": "9299f3760f7cf776cb17cb664e6863133554791ec307245bd6043f1511b0179c"
+  },
+  "exact_inputs": {
+    "rb2_data_product_result": {
+      "filename": "cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042
+    },
+    "successor_legal_family_result": {
+      "filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775
+    }
+  },
+  "package_id": "cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2",
+  "payload": {
+    "filename": "payload/repository.bundle",
+    "head": "9caabc54552ef51fc517c708f65288e7dc24e66e",
+    "ref": "refs/heads/main",
+    "sha256": "19aae3887715c301937ec4cf797266aa284559bdcaaaa5dd543db11153ba2331",
+    "size_bytes": 4876134,
+    "tree": "269dd804666b04737f46daa15e70df01b2dad25a"
+  },
+  "purpose": "Apply the corrected successor legal/data rebinding owner qualification, separating read-only permission enforcement from install-root content invariance, and produce candidate-only RB-1/RB-2 evidence.",
+  "required_predecessor": {
+    "head": "a1415fcaafcc4535f4b85b0fdf5baa682e2aeafd",
+    "tree": "cbf2e3ba633e00a7dd49aa9b57caa8965d57c8b8"
+  },
+  "schema_version": 1
+}

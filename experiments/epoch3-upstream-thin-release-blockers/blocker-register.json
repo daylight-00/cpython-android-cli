@@ -18,6 +18,9 @@
         "review_dossier_valid": true,
         "review_result_receipt_accepted": false,
         "source_provenance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
+        "successor_rebinding_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+        "successor_rebinding_authority_sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89",
+        "successor_technical_legal_rebound": true,
         "technical_review_unit_count": 31
       },
       "id": "RB-1",
@@ -52,6 +55,9 @@
           "tzdata": "2026.2"
         },
         "runtime_qualified": true,
+        "successor_data_runtime_rebound": true,
+        "successor_rebinding_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+        "successor_rebinding_authority_sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89",
         "update_rollback_qualified": true
       },
       "id": "RB-2",
@@ -76,10 +82,12 @@
         "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
         "native_wheel_16k_alignment": "hard-gate",
         "old_family_superseded": false,
+        "predecessor_supersession_authorized": true,
+        "predecessor_supersession_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json",
         "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
         "r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
-        "rb1_rebound": false,
-        "rb2_rebound": false,
+        "rb1_rebound": true,
+        "rb2_rebound": true,
         "responsibility_reassessment": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
         "selected_profile": "M",
         "successor_full_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
@@ -90,10 +98,14 @@
         "successor_install_only_acceptance_r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
         "successor_install_only_accepted": true,
         "successor_install_only_r2_result_sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
-        "successor_legal_data_rebinding_candidate": false,
+        "successor_legal_data_rebinding_accepted": true,
+        "successor_legal_data_rebinding_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+        "successor_legal_data_rebinding_authority_sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89",
+        "successor_legal_data_rebinding_candidate": true,
         "successor_legal_data_rebinding_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
         "successor_legal_data_rebinding_execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
         "successor_legal_data_rebinding_host_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-host-inspection.json",
+        "successor_legal_data_rebinding_result_sha256": "04bb2ccca290902c9236682295c655dfe56dcd822bcdc41b1e662aafa2ba6def",
         "successor_legal_data_rebinding_started": true,
         "successor_legal_data_rebinding_temporal_verifier_amendment": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
         "successor_legal_family_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
@@ -133,15 +145,15 @@
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
-        "next_action": "run exact successor RB-1 technical legal and RB-2 data/runtime rebinding qualification and return candidate evidence for separate acceptance",
-        "required_input": "accepted 128-file successor legal family r3 plus frozen RB-1 and RB-2 authorities",
-        "required_output": "complete owner result with exact RB-1 technical legal evidence, RB-2 read-only current/rollback/current runtime qualification, independent audit, and candidate-only claim boundary",
-        "successor_after_accepted_probe": "explicit predecessor supersession authority and RB-3 closure transition"
+        "next_action": "freeze explicit predecessor-to-successor supersession authority and close RB-3 without artifact mutation",
+        "required_input": "accepted successor legal/data rebinding authority plus predecessor and successor family authorities and locks",
+        "required_output": "explicit supersession map, successor canonical-family authority, predecessor historical-valid status, and RB-3 closure receipt",
+        "successor_after_accepted_probe": "remove RB-3 from blocker register and continue RB-1/RB-4/RB-5/RB-6/RB-7 in parallel"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-successor-legal-data-rebinding-owner-qualification"
+      "status": "in-progress-profile-M-successor-rebinding-accepted-predecessor-supersession-authorized"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",
@@ -199,7 +211,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "rb3-profile-M-successor-legal-data-rebinding-owner-qualification",
+  "next_bounded_action": "rb3-profile-M-successor-predecessor-supersession-and-rb3-closure-owner-transition",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

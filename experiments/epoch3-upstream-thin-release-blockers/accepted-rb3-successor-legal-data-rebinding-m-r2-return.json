@@ -1,0 +1,50 @@
+{
+  "accepted_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "accepted_rebinding": {
+    "current_data_product_sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rollback_data_product_sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+    "successor_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56"
+  },
+  "claim_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "predecessor_family_supersession_authorized": true,
+    "predecessor_family_supersession_started": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": true,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_closed": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": true,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "repository": {
+    "post_head": "9caabc54552ef51fc517c708f65288e7dc24e66e",
+    "post_tree": "269dd804666b04737f46daa15e70df01b2dad25a",
+    "remote_post_head": "9caabc54552ef51fc517c708f65288e7dc24e66e"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 25,
+    "sha256": "04bb2ccca290902c9236682295c655dfe56dcd822bcdc41b1e662aafa2ba6def",
+    "size_bytes": 13505
+  },
+  "schema_version": 1,
+  "status": "accepted-pass-successor-legal-data-rebinding-supersession-authorized-pending"
+}

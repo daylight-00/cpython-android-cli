@@ -1,0 +1,35 @@
+{
+  "audit_kind": "epoch3-rb3-successor-legal-data-rebinding-independent-audit",
+  "checks": {
+    "claim_boundary": true,
+    "data_lifecycle": true,
+    "data_product_identities": true,
+    "family_exact": true,
+    "family_invariance": true,
+    "inputs_still_exact": true,
+    "owner_result_pass": true,
+    "rb1_pass": true,
+    "rb2_pass": true,
+    "read_only_invariance": true,
+    "runtime_identity": true
+  },
+  "claim_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": false,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "errors": [],
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}

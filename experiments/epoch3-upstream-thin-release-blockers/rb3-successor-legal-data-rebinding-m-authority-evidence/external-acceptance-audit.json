@@ -1,0 +1,22 @@
+{
+  "audit_kind": "epoch3-rb3-successor-legal-data-rebinding-r2-external-acceptance-audit",
+  "checks": {
+    "external_archive_identity": true,
+    "independent_audit_pass": true,
+    "owner_result_pass": true,
+    "protected_inputs_unchanged": true,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "repository_push_readback_exact": true,
+    "self_index_exact": true,
+    "successor_family_exact": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-legal-data-rebinding-m-r2-results.tar.zst",
+    "sha256": "04bb2ccca290902c9236682295c655dfe56dcd822bcdc41b1e662aafa2ba6def",
+    "size_bytes": 13505
+  },
+  "schema_version": 1
+}
