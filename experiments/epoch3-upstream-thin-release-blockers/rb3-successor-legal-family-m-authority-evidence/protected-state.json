@@ -1,0 +1,72 @@
+{
+  "after": {
+    "authorities": [
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
+        "sha256": "ce6a80b5505afec7c99a74e0a7c12001848ba2e1892e3592fc1066e299b091e2",
+        "size_bytes": 8014
+      },
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+        "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba",
+        "size_bytes": 4799
+      },
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+        "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098",
+        "size_bytes": 3971
+      }
+    ],
+    "input_archives": [
+      {
+        "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-technical-family-m-r1-results.tar.zst",
+        "sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
+        "size_bytes": 87065667
+      },
+      {
+        "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb1-legal-integration-r1-results.tar.zst",
+        "sha256": "5018f4e337f4ee0086e5017db0010c5ef2ae41634f97edd4117b0bccdb8a6375",
+        "size_bytes": 87683594
+      }
+    ]
+  },
+  "before": {
+    "authorities": [
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
+        "sha256": "ce6a80b5505afec7c99a74e0a7c12001848ba2e1892e3592fc1066e299b091e2",
+        "size_bytes": 8014
+      },
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+        "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba",
+        "size_bytes": 4799
+      },
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+        "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098",
+        "size_bytes": 3971
+      }
+    ],
+    "input_archives": [
+      {
+        "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-technical-family-m-r1-results.tar.zst",
+        "sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
+        "size_bytes": 87065667
+      },
+      {
+        "path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb1-legal-integration-r1-results.tar.zst",
+        "sha256": "5018f4e337f4ee0086e5017db0010c5ef2ae41634f97edd4117b0bccdb8a6375",
+        "size_bytes": 87683594
+      }
+    ],
+    "repository_head": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "schema_version": 1
+  },
+  "checks": {
+    "accepted_authorities_unchanged": true,
+    "input_archives_unchanged": true
+  },
+  "pass": true,
+  "schema_version": 1
+}

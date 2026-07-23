@@ -1,0 +1,29 @@
+{
+  "audit_kind": "epoch3-rb3-successor-legal-family-r2-external-acceptance-audit",
+  "checks": {
+    "assembly_a_pass": true,
+    "assembly_b_pass": true,
+    "owner_audit_pass": true,
+    "protected_state_pass": true,
+    "reported_archive_sha256": true,
+    "reported_archive_size": true,
+    "reproducibility_pass": true,
+    "self_index_exact": true,
+    "self_index_file_count": true,
+    "summary_pass": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "post": {
+    "head": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "remote_head": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "tree": "d75b704c5e6268287c6de5a640dabefbb4938d1a"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+    "self_index_file_count": 153,
+    "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+    "size_bytes": 87216775
+  },
+  "schema_version": 1
+}

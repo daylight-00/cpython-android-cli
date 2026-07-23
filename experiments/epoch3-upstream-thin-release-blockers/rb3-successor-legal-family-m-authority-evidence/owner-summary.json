@@ -1,0 +1,58 @@
+{
+  "action": "applied-rb3-profile-M-successor-legal-family-r2-integrated-reproduced-audited-pushed",
+  "candidate_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_integration_started": true,
+    "successor_technical_family_accepted": true
+  },
+  "claim_transaction_rc": 0,
+  "failure_reason": "none",
+  "first_failure": "none",
+  "package_id": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2",
+  "post": {
+    "head": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "remote_head": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "tree": "d75b704c5e6268287c6de5a640dabefbb4938d1a"
+  },
+  "pre": {
+    "head": "fedfa4711462bc5e00f3d4c232d83b75046b238d",
+    "remote_head": "fedfa4711462bc5e00f3d4c232d83b75046b238d",
+    "tree": "aab27931795e848472e5be41792c9aecc464cde1"
+  },
+  "return_codes": {
+    "apply": 0,
+    "audit": 0,
+    "host_identity": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "protected": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "reproducibility": 0,
+    "rollback": 0,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "unit": 0
+  },
+  "schema_version": 1
+}

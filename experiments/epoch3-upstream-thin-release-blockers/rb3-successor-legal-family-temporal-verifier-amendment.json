@@ -1,0 +1,43 @@
+{
+  "amendment_kind": "epoch3-rb3-successor-legal-family-temporal-routing-verifier-amendment",
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound_not_inferred": true,
+    "rb2_rebound_not_inferred": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": true
+  },
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false,
+    "predecessor_family_superseded": false
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "57d0e123f2aa8d77be2c701a6b972557b5b6e2cb8a9e7ec18c63b21997f68838",
+      "reason": "allow accepted install-only routing verification to recognize legal/data rebinding progression",
+      "replacement_sha256": "59403dc4827e44a83a891c6fb8690ecc510182aab2435107bbcd2527485d8991"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "15eb7f13286731c59df0ce91da8fda4ccc0c3671fd3d7ee1bdb82f6ab02e36ff",
+      "reason": "verify the two-level temporal amendment chain without changing stripped authority or evidence",
+      "replacement_sha256": "fbe530080b6d20c3a53a9fbf184543c9660e0baa40656e86585e5301bd5f595a"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "69faa5cfeb6e693bd5298a34ec1d3754928938ef0c4dc02d2b26b4a62987af7a",
+      "reason": "allow accepted stripped routing verification to recognize legal/data rebinding progression",
+      "replacement_sha256": "e7ff3b81acbc342ba28a67e537dca45ba94ee29ee2fbe450ad526394d1149395"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "fdb2769a5341dd37211b9f7378e70d61d8b5f9c90a7b91415a3413713806a051",
+      "reason": "verify the legal-family temporal amendment chain without changing technical-family authority or evidence",
+      "replacement_sha256": "405f197f70b02026ae24565ce8a7cfa96382e133d6b7360b0ec08b8c5d423ab2"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity after accepted successor legal-family progression; accepted artifacts, evidence, and authorities unchanged"
+}

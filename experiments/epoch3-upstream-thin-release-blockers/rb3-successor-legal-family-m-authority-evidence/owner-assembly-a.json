@@ -1,0 +1,102 @@
+{
+  "checks": {
+    "claims_bounded": true,
+    "family_fingerprint": true,
+    "file_count": true,
+    "index_parse": true,
+    "legal_input": true,
+    "legal_metrics": true,
+    "legal_payload_exact": true,
+    "license_rebinding": true,
+    "notice_identity": true,
+    "project_license_exact": true,
+    "regular_files_only": true,
+    "release_digest": true,
+    "release_identity": true,
+    "sha256sums_exact": true,
+    "technical_23_files_exact": true,
+    "technical_input": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "non_termux_context": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_integration_started": true,
+    "successor_technical_family_accepted": true
+  },
+  "errors": [],
+  "failed_checks": [],
+  "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+  "file_count": 128,
+  "license_rebinding": {
+    "component_license_mapping_complete": true,
+    "flavors": {
+      "full": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst.licenses.json",
+          "sha256": "62bc180fd302c555a7c463e84d7a989d27dee6ad0191837b83ef8edd663718cd",
+          "size_bytes": 10166
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.licenses.json",
+          "sha256": "40a6a1af100068957289f0faae99c095a91e11de08f2abc616ca92b0ba4c8ce2",
+          "size_bytes": 10255
+        }
+      },
+      "install_only": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz.licenses.json",
+          "sha256": "37c40e87a62159767fc4492275fd8927704f0c9849195c2ef2b45d8ac268d2dd",
+          "size_bytes": 9837
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.licenses.json",
+          "sha256": "2bd24ca4fb3673a840bbec24a562a51beef6be81cd80f5319e5979ae0d319653",
+          "size_bytes": 9926
+        }
+      },
+      "install_only_stripped": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+          "sha256": "d2314766c36b00264784c33d95d2fd28f2d2c5f0c39096c3589f42bbe88208b6",
+          "size_bytes": 9846
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+          "sha256": "1cf4689aab8ab82f9450898cb3651433ca98a7ff5a8d22661db7577813f3ce47",
+          "size_bytes": 9935
+        }
+      }
+    },
+    "owner_approved": false,
+    "pass": true,
+    "receipt_kind": "epoch3-rb3-successor-legal-family-license-rebinding",
+    "schema_version": 1
+  },
+  "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+  "pass": true,
+  "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+  "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb3-successor-legally-integrated-release-family-candidate"
+}

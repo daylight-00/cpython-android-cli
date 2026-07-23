@@ -299,6 +299,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
       "role": "verifier-only temporal monotonicity amendment preserving accepted stripped artifact, authority, and owner evidence while allowing later technical-family and legal-family state progression",
       "sha256": "f02b72452085dcedf96fe9b2301a0a6be317f069920f8016a9f7e8b63ed4d6af"
+    },
+    {
+      "id": "epoch3-rb3-successor-legally-integrated-family-r3",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+      "role": "accepted deterministic 128-file successor legal family, exact technical/legal byte preservation, and successor legal/data rebinding authorization",
+      "sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6"
+    },
+    {
+      "id": "epoch3-rb3-successor-legal-family-temporal-routing-verifier-amendment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
+      "role": "verifier-only monotonic routing amendment allowing legal/data rebinding progression after accepted successor legal family",
+      "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
     }
   ],
   "active_plan": {
@@ -307,7 +319,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -357,7 +369,9 @@
     "native_sdk_baseline_extension_16k_required": true,
     "non_termux_android_context_qualified": false,
     "publication_authorized": false,
+    "rb1_rebound": false,
     "rb2_closed": true,
+    "rb2_rebound": false,
     "release_blocker_resolution_started": true,
     "selectable": false,
     "stripped_implementation_started": true,
@@ -367,8 +381,10 @@
     "successor_full_candidate": true,
     "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
-    "successor_legal_family_accepted": false,
-    "successor_legal_family_candidate": false,
+    "successor_legal_data_rebinding_authorized": true,
+    "successor_legal_data_rebinding_started": false,
+    "successor_legal_family_accepted": true,
+    "successor_legal_family_candidate": true,
     "successor_legal_family_integration_authorized": true,
     "successor_legal_family_integration_started": true,
     "successor_stripped_accepted": true,
@@ -415,8 +431,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "fedfa4711462bc5e00f3d4c232d83b75046b238d",
-    "tree": "aab27931795e848472e5be41792c9aecc464cde1"
+    "commit": "2d27f5e2a66c1186a0bec49b2c7b1c96d6624edc",
+    "tree": "d75b704c5e6268287c6de5a640dabefbb4938d1a"
   },
   "program": {
     "epoch": {
@@ -470,11 +486,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 49,
+  "state_revision": 50,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "3b43478a581a0fe750cea98088cc82bac28a5bd7786cc22a0928dc5344e3c2ee"
+    "sha256": "ad2d14b72ad0a166b3c91bc44f90bed495d8db290c07515b5b065f4a6b060f84"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -503,9 +519,9 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-legal-family-integration-and-rb1-rebinding-pending",
     "successor-rb2-data-runtime-rebinding-pending",
-    "predecessor-family-supersession-pending-after-successor-legal-data-acceptance"
+    "predecessor-family-supersession-pending-after-successor-legal-data-acceptance",
+    "successor-rb1-technical-legal-rebinding-pending-owner-approval-still-required"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-legal-family-r1-owner-integration-prepared"
+  "updated_by_transaction": "rb3-profile-M-successor-legal-family-r3-acceptance-rebinding-authorized"
 }

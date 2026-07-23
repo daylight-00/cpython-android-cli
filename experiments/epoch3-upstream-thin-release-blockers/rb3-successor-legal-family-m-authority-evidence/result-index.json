@@ -1,0 +1,774 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "final-status.txt",
+      "sha256": "d14cf984017c53ca1d288a860ff335a178040b3c00bce0af2dc9e00f740eba2b",
+      "size_bytes": 1530
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "eb96da4f7e106c448b08bfee2536f42023943992010e7415e8ed0c81841013d8",
+      "size_bytes": 1671
+    },
+    {
+      "path": "logs/assembly-a.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/assembly-b.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/extract-legal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/extract-technical.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/fetch.log",
+      "sha256": "1985d038d54b567ddf08b4712c4e9e6eded43173e715fbc8cfcd6df0fcb39751",
+      "size_bytes": 297
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package.log",
+      "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431",
+      "size_bytes": 5
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "fb9733968497a6ba764672257de5dc74d1410455cce31e87d01e4489be37e33c",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "8b507a47835bfb2f543a268a7240dbcce25b14ba7afddd3e9ce2670a3f8b2755",
+      "size_bytes": 359
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "e0ba1aa100f5aa639ff654331cddb09aa4ac0642acb25c81e06b0fde38e4a782",
+      "size_bytes": 131
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "8f0a77f6f57830452edb6285290f6a7622df33a79680cf82cb20a250d18f9061",
+      "size_bytes": 198
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "8dc4384a647bde8179fce11bde74bcf45bacca07116ef4f182d1195289a385a3",
+      "size_bytes": 2683
+    },
+    {
+      "path": "receipts/assembly-a.json",
+      "sha256": "495cbe2c98e7c2e74fab012d93e61ed9b700788a6b74d427b625e0716ae322b1",
+      "size_bytes": 3910
+    },
+    {
+      "path": "receipts/assembly-b.json",
+      "sha256": "495cbe2c98e7c2e74fab012d93e61ed9b700788a6b74d427b625e0716ae322b1",
+      "size_bytes": 3910
+    },
+    {
+      "path": "receipts/host-identity.json",
+      "sha256": "99f76d56f2a0e7115f428a92fc4ecbb4def0cab99d37cbe55423849e8d450e42",
+      "size_bytes": 1014
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "ad63d4b74fe51160f2019d756306648c2867032df70ec6f26a4362127387f8b0",
+      "size_bytes": 1181
+    },
+    {
+      "path": "receipts/input-verification.json",
+      "sha256": "60f2b016bb1603716d38fd7df217a6e43d4d4b7738f8eca9a2830a1e94c58701",
+      "size_bytes": 560
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "5d289ec98ab9f42f8504e7cc3e0e9a1b73a1486540efced57105072e2048e6cd",
+      "size_bytes": 30570
+    },
+    {
+      "path": "receipts/protected-state-before.json",
+      "sha256": "bedbcaf37999da2459430f43ea393752f0e824d5b6b34b45a738c5bc9922939b",
+      "size_bytes": 1335
+    },
+    {
+      "path": "receipts/protected-state.json",
+      "sha256": "d6179432fdf7f96a7503cc22faf744b66c6b443f83b26ceb273e75eb91c7d7ed",
+      "size_bytes": 2873
+    },
+    {
+      "path": "receipts/reproducibility.json",
+      "sha256": "601df8459aea7a319a7b57b3e014628881a337940e45fa6e18f91bb8211c6ae8",
+      "size_bytes": 24396
+    },
+    {
+      "path": "summary.json",
+      "sha256": "4295c38f2968d2256b5bd1426ac544053eee2fc0e984442f95c19a8cfaa5c3a7",
+      "size_bytes": 1911
+    },
+    {
+      "path": "target/candidate/LICENSE",
+      "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+      "size_bytes": 1075
+    },
+    {
+      "path": "target/candidate/SHA256SUMS",
+      "sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e",
+      "size_bytes": 14689
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.artifact.json",
+      "sha256": "da5ac08e584ba3dc915d2f6e924f118ef26c6b9e325307e4bbee0710bddf9beb",
+      "size_bytes": 1866
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.attestation.json",
+      "sha256": "78ed36fd4e5278663df4588d07900d653320a8d2d5fa7f910a91021fecf6616b",
+      "size_bytes": 1802
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.licenses.json",
+      "sha256": "40a6a1af100068957289f0faae99c095a91e11de08f2abc616ca92b0ba4c8ce2",
+      "size_bytes": 10255
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.manifest.json",
+      "sha256": "14b1a83196b250bdfc059459130e211d4e7485787f7cd3452662376fa549db17",
+      "size_bytes": 989384
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.provenance.json",
+      "sha256": "c89a3715e620badd2b7575c743f6e99ba33288aeb8803fe6f65e1a495898f28d",
+      "size_bytes": 1524
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.qualification.json",
+      "sha256": "3d98e41b42eb22ad4f44430cadf87e02a4ecdf74d58f9ed117d45c4eef84d078",
+      "size_bytes": 1804
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.artifact.json",
+      "sha256": "46955b36a5fdaf0a6a6a05d2edc16c2cf622e8fa34f142505d1f03712e40831f",
+      "size_bytes": 1949
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.attestation.json",
+      "sha256": "4e72750a77518b63d4112d0d9d0c9f3be09bae9f7ffc15fb89b55f809e595d2a",
+      "size_bytes": 1881
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.licenses.json",
+      "sha256": "2bd24ca4fb3673a840bbec24a562a51beef6be81cd80f5319e5979ae0d319653",
+      "size_bytes": 9926
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.manifest.json",
+      "sha256": "b4f2e74b0bb3f8f34375ba8f787b39d29df230f05307813043a172764aa52660",
+      "size_bytes": 947157
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.provenance.json",
+      "sha256": "c3dad03d2a24312f8a60768c0c1aa39bf60da5faa3ca34caf3f7daf8dd9f20c8",
+      "size_bytes": 1599
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.qualification.json",
+      "sha256": "6b4fd9b2d63a6f3f910ad0fe4d1cea231f9841dd1285662dfefd9e506a11f8dc",
+      "size_bytes": 1845
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.artifact.json",
+      "sha256": "fcf51722aa2d29dd11d2088f2828abf20b82f8426c3cbec96426532bf71fbe1b",
+      "size_bytes": 2064
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.attestation.json",
+      "sha256": "da261dcd2361a2388a179943a9eb4c046a52c986e5fa30a993abce1abb1ff628",
+      "size_bytes": 1993
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+      "sha256": "1cf4689aab8ab82f9450898cb3651433ca98a7ff5a8d22661db7577813f3ce47",
+      "size_bytes": 9935
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.manifest.json",
+      "sha256": "23a52477a06cb45b37fc4a06297923fea031c137f5b440872fbc0bea1ac58ac6",
+      "size_bytes": 947166
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.provenance.json",
+      "sha256": "2173b79a20af2aeda76a0da1c2a4cea1be35c847365f5f8ce841139ad94acd5a",
+      "size_bytes": 1705
+    },
+    {
+      "path": "target/candidate/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.qualification.json",
+      "sha256": "89d3e9ea7021ec1be80a0ef8b7dcc5032c326ac6934cb03b521a2f57c5e24946",
+      "size_bytes": 1859
+    },
+    {
+      "path": "target/candidate/legal/LEGAL-OVERLAY-README.txt",
+      "sha256": "322a27d8316bdd676d2676503c7aefff89886051cc4ebae06c833b1a10ad18bc",
+      "size_bytes": 193
+    },
+    {
+      "path": "target/candidate/legal/THIRD-PARTY-NOTICES.candidate.txt",
+      "sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+      "size_bytes": 2489
+    },
+    {
+      "path": "target/candidate/legal/android-system-provider-policy.json",
+      "sha256": "40d73252af239473351b40a33e1f765abe33a2f56992dfad9f0453a29e562fbd",
+      "size_bytes": 1739
+    },
+    {
+      "path": "target/candidate/legal/component-license-map-candidate-v2.json",
+      "sha256": "72747da5c3bab0275eb3f9ab30643db66f899e8996ca8c4fdf7a37cbbb5382b2",
+      "size_bytes": 6030
+    },
+    {
+      "path": "target/candidate/legal/component-license-map.json",
+      "sha256": "4da6f405f18ff827452f33aea0886f993ab9dab362b515350ab8f92c87b0f7b2",
+      "size_bytes": 7113
+    },
+    {
+      "path": "target/candidate/legal/hacl-star-license-evidence.json",
+      "sha256": "096f5c38c78bec510220b6181679c6f464f014311613a6338932cc958af84cc4",
+      "size_bytes": 12591
+    },
+    {
+      "path": "target/candidate/legal/legal-integration.json",
+      "sha256": "6bc22c63a31f6b9f5e243a9ed405572d441d2114c76b0a2abeb105f28d41563b",
+      "size_bytes": 1234
+    },
+    {
+      "path": "target/candidate/legal/libmpdec-license-evidence.json",
+      "sha256": "5f9a3016c3eac0f84c7f172671e5673e6a073a908ff94be2263b14e2f4ac922e",
+      "size_bytes": 1188
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "size_bytes": 13804
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/Misc/externals.spdx.json",
+      "sha256": "f0c6117fb540099d8576ae2623804a64d5d41b57a56d19b8e61a74c901c1ba7b",
+      "size_bytes": 7084
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/Modules/_decimal/libmpdec/mpdecimal.c",
+      "sha256": "4f89b8095e408a18deff79cfb605299e615bae747898eb105d8936064f7fb626",
+      "size_bytes": 247346
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/Modules/_decimal/libmpdec/mpdecimal.h",
+      "sha256": "ea0b9c6b296c13aed6ecaa50b463e39a9c1bdc059b84f50507fd8247b2e660f9",
+      "size_bytes": 41684
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/Modules/_hacl/README.md",
+      "sha256": "8c0c0d4c6e65b349a8b116862174669fbd4c9ce037c6fee32f19994ddb6fbf6c",
+      "size_bytes": 1044
+    },
+    {
+      "path": "target/candidate/legal/licenses/cpython/Modules/expat/COPYING",
+      "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "size_bytes": 1144
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/059cf0d31427-Hacl_Streaming_HMAC.h",
+      "sha256": "059cf0d31427abf84c626797a97c140630a1a6ead578005162f46fad46663389",
+      "size_bytes": 3000
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/305af1422213-Hacl_Hash_MD5.h",
+      "sha256": "305af1422213ed97e8e5d3d8a9dfee4f21cb2fcd2acf65ee7303ce00b2b4bd2a",
+      "size_bytes": 1991
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/63c58363ff95-Hacl_Hash_SHA1.h",
+      "sha256": "63c58363ff95e8146d5628dab2da25bc2fd0e8b590fd4823b512c33f843355bb",
+      "size_bytes": 1967
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/709c6272f77e-Hacl_Hash_SHA2.h",
+      "sha256": "709c6272f77e2368f6cc0bf36527e3b16dd5d5f3dc26a2afdef8238200af8770",
+      "size_bytes": 6575
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/76997c7069a3-Hacl_Streaming_Types.h",
+      "sha256": "76997c7069a347ac78b65d26354a0324d54add4ca7a02e7be36d6d5e1c9702e0",
+      "size_bytes": 2435
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/96c2a973bc01-Hacl_HMAC.h",
+      "sha256": "96c2a973bc01b1295f7af67c7de3839facfeee36c8848d7d88c62695de98ab21",
+      "size_bytes": 1671
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/FStar_UInt128_Verified.h",
+      "sha256": "69dc2e78411e9b271100eb0d2a2d8dc39dd2348afc26f8b4cfba14c025102c7f",
+      "size_bytes": 9331
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/FStar_UInt_8_16_32_64.h",
+      "sha256": "f01e3f0892935f3f659019875f580445b9ea23482afbe11ffbe7cdbd22dbd4d2",
+      "size_bytes": 6335
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_HMAC.c",
+      "sha256": "142adb769ff02b8a5327f0eb837e1f9a797bdf9a1684d21acd749dbb5b2e5be2",
+      "size_bytes": 45493
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_HMAC.h",
+      "sha256": "d68209032703137326f9aadd9abac8fe4a5c92d391e2f43b0414fa63087adc6b",
+      "size_bytes": 5898
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2b.c",
+      "sha256": "6a492aa586f2d10b1b300ce8ce4c72c976ff7548fee667aded2253f99969ac87",
+      "size_bytes": 48852
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2b.h",
+      "sha256": "fac493e96af252abcf5705f0ab4eec59c1f3bc8244e105d75a57c43552dd1569",
+      "size_bytes": 7873
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2b_Simd256.c",
+      "sha256": "9eb22953ce60dde9dc970fec9dfce9d94235f4b7ccd8f0151cad4707dc835d1d",
+      "size_bytes": 54551
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2b_Simd256.h",
+      "sha256": "817dcd05d06d804587fce7d8f2f3f42a6fcf6818d2419a3551ef0df70cb7125a",
+      "size_bytes": 7784
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2s.c",
+      "sha256": "f3204f3e60734d811b6630f879b69ce54eaf367f3fca5889c1026e7a1f3ee1e4",
+      "size_bytes": 47943
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2s.h",
+      "sha256": "5cc96313f8c066f055c2819e473c79aeff086ba91a1449d54aa569127cd8601e",
+      "size_bytes": 7464
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2s_Simd128.c",
+      "sha256": "c93746df2f219cbb1634ee6fb0ab1c4cbd381d1f36c637114c68346c9935326d",
+      "size_bytes": 53595
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_Blake2s_Simd128.h",
+      "sha256": "fe3f17bf237166f872ba88c8204333c4f64bdc4bb29c265448581c7bfea4b151",
+      "size_bytes": 7781
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_MD5.c",
+      "sha256": "5b91ed0339074e2e546119833398e2cdb7190c33a59c405bf43b2417c789547d",
+      "size_bytes": 40719
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_MD5.h",
+      "sha256": "a34534ef36bc8428ac1169ca5f4f1c17a0817507ebae388e3dd825d1a331f28d",
+      "size_bytes": 2248
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA1.c",
+      "sha256": "ce08721d491f3b8a9bd4cde6c27bfcc8fc01471512ccca4bd3c0b764cb551d29",
+      "size_bytes": 15783
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA1.h",
+      "sha256": "2d5cae94382f5473cf6d2654760375ff1ee9cebdb8d4506b63ba33f488de1559",
+      "size_bytes": 2260
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA2.c",
+      "sha256": "f8af382de7e29a73c726f9c70770498ddd99e2c4702489ed6e634f0b68597c95",
+      "size_bytes": 44266
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA2.h",
+      "sha256": "442d8997d2bcda20ddf628665e2e69945400e1ab3019bc14fc7c8e20db20c320",
+      "size_bytes": 6928
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA3.c",
+      "sha256": "8744f5b6e054c3e5c44f413a60f9154b76dd7230135dcee26fd063755ec64be1",
+      "size_bytes": 72622
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Hash_SHA3.h",
+      "sha256": "961a686186b76a1cd6a64bcfd06afdc8657b1f901bac991166f498ed16f9349a",
+      "size_bytes": 5219
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Impl_Blake2_Constants.h",
+      "sha256": "916d54d7217517f0360edea920dc21585fbe6d1c2458eac86826182e12c82ec2",
+      "size_bytes": 2843
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Streaming_HMAC.c",
+      "sha256": "29fcf948a3715e09cbbd434cebb6105f276236a6e4947d237b7bf06634bf2432",
+      "size_bytes": 68898
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Streaming_HMAC.h",
+      "sha256": "6450aef92f507fb0a8a3086b1d2792e7fca07121580c24fdaedd1b32e9ad0a76",
+      "size_bytes": 3927
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/Hacl_Streaming_Types.h",
+      "sha256": "efc7bd11460744768425aedf4e004d3ad3397a5489752b80044ae785f30b78d4",
+      "size_bytes": 2595
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/a4728e43deb0-Hacl_Hash_Blake2s.h",
+      "sha256": "a4728e43deb0a9d8213b8ddcbda68a63bc73a12fb99aad54b7d28b314776a0d4",
+      "size_bytes": 2487
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/cf49d536a566-Hacl_Hash_SHA3.h",
+      "sha256": "cf49d536a5663379fb4517018b4b3f8a232f8d4c7ddc7edfd60163d13f98a530",
+      "size_bytes": 2411
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/compat.h",
+      "sha256": "c5a04a1f99807cea29ac1832ba17d8a3d3805862d3a713642583be2106e04edb",
+      "size_bytes": 1320
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/dad568d256a2-Hacl_Hash_Blake2s_Simd128.h",
+      "sha256": "dad568d256a2ccbbbcdd419fe0543ea7137d8065a713a5f009aa52521c0f7f6a",
+      "size_bytes": 3618
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/f22e088ad9c2-Hacl_Hash_Blake2b_Simd256.h",
+      "sha256": "f22e088ad9c2eb739aefc3685ef3ab1ccaab3c5ef2e5d06cc846ad9f8e3d2669",
+      "size_bytes": 3670
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/f262738390f5-Hacl_Hash_Blake2b.h",
+      "sha256": "f262738390f56e8e9692acadecd1434c688075047d788283e1fb45d920ea6956",
+      "size_bytes": 2600
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/fstar_uint128_struct_endianness.h",
+      "sha256": "1c9bee7ac4b987c73cc3aba6b7ceed8ec7e75c9a741810e4411f35602490e0d8",
+      "size_bytes": 1658
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/lowstar_endianness.h",
+      "sha256": "6d1a350ec272c83761f1789611d8f60947a4d69fed3d23d8eee38709a0ad2c0a",
+      "size_bytes": 7825
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/target.h",
+      "sha256": "08bb43ef5626a8450f985da0af345b6658ac8bcc4585f77271decd0e41fc02e0",
+      "size_bytes": 15309
+    },
+    {
+      "path": "target/candidate/legal/licenses/hacl-star/types.h",
+      "sha256": "404691cf9b2269ecc754ceca27bb8f8f029f1c8deaa4d967990dcf5ce08cd016",
+      "size_bytes": 3649
+    },
+    {
+      "path": "target/candidate/legal/licenses/project/LICENSE",
+      "sha256": "09ca1b4089dc99d077db44d5c90d140c2bbceeacd0712ba3be0e8d61839c55ee",
+      "size_bytes": 1075
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/bzip2/LICENSE",
+      "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+      "size_bytes": 1896
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/bzip2/README",
+      "sha256": "152f0da2867a1160a8f956628296ff45e766e492ad0d7054ffb8d981f7518782",
+      "size_bytes": 7451
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/libffi/LICENSE",
+      "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+      "size_bytes": 1132
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/libffi/LICENSE-BUILDTOOLS",
+      "sha256": "e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94",
+      "size_bytes": 18698
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/openssl/AUTHORS.md",
+      "sha256": "b9f638dfc06b59c2d3b808186c3b30f713805a5db390f5b77b1703ac58acb83e",
+      "size_bytes": 1022
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/openssl/LICENSE.txt",
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+      "size_bytes": 10175
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/openssl/README.md",
+      "sha256": "f68c351048c11bd8499b9d6ef8b283386d4544cc556fd2679a2ff2b1c50a378b",
+      "size_bytes": 8137
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/openssl/external/perl/Text-Template-1.56/LICENSE",
+      "sha256": "9837f05336ef3cbacb6a96e1672a0426d81ad01191f214b8d48e22ca62338181",
+      "size_bytes": 18412
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/openssl/util/perl/OpenSSL/copyright.pm",
+      "sha256": "04213b69dbebc8ba0dd8a6216af1d9422f9b63619c1cf2f1d8aa107b83bbb608",
+      "size_bytes": 1145
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/zstd/COPYING",
+      "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+      "size_bytes": 18091
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/zstd/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+      "size_bytes": 1549
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/zstd/README.md",
+      "sha256": "c97c5752f0cf8e235e5834726968708ff1f4b3bf6bfbfcf59db0229b5889ac35",
+      "size_bytes": 11487
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/zstd/build/LICENSE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "target/candidate/legal/licenses/source-deps/zstd/build/single_file_libs/examples/README.md",
+      "sha256": "ddc4fda25b585bdae4997eae06e671b684835a430c79d8eaab1fc75d41424e72",
+      "size_bytes": 1031
+    },
+    {
+      "path": "target/candidate/legal/licenses/xz/AUTHORS",
+      "sha256": "07def6a20ec5430b6ad04cf1286da3f53fbb86cf6d2026119945ccd55d3a2258",
+      "size_bytes": 1402
+    },
+    {
+      "path": "target/candidate/legal/licenses/xz/COPYING",
+      "sha256": "29a1e305b2e34eefe5d4602d00cde1d528b71c5d9f2eec5106972cf6ddb6f73f",
+      "size_bytes": 3347
+    },
+    {
+      "path": "target/candidate/legal/licenses/xz/COPYING.GPLv2",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "size_bytes": 18092
+    },
+    {
+      "path": "target/candidate/legal/pip/METADATA",
+      "sha256": "17832de47b5dc23e46253ba16462520036f28d9a27d5c30157784952ca4e69b2",
+      "size_bytes": 4566
+    },
+    {
+      "path": "target/candidate/legal/pip/VENDORING-README.rst",
+      "sha256": "b7b2229e36a2bb0521f35d9799502940725bf294f0df753c03d511ab2e86945e",
+      "size_bytes": 9222
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/pip/AUTHORS.txt",
+      "sha256": "5b73479bffada0916044cb29c47ab20360215e3c838ff2e7562ecdfcb11645bd",
+      "size_bytes": 11869
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/pip/LICENSE.txt",
+      "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+      "size_bytes": 1093
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/cachecontrol/LICENSE.txt",
+      "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+      "size_bytes": 558
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "size_bytes": 989
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/distlib/LICENSE.txt",
+      "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+      "size_bytes": 14531
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/distro/LICENSE",
+      "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+      "size_bytes": 11325
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/idna/LICENSE.md",
+      "sha256": "b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87",
+      "size_bytes": 1541
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/msgpack/COPYING",
+      "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+      "size_bytes": 614
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "size_bytes": 197
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "size_bytes": 10174
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "size_bytes": 1344
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/pkg_resources/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+      "size_bytes": 1023
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/platformdirs/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "size_bytes": 1089
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+      "size_bytes": 1331
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/pyproject_hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+      "size_bytes": 1081
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "size_bytes": 10142
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/resolvelib/LICENSE",
+      "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+      "size_bytes": 751
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/rich/LICENSE",
+      "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+      "size_bytes": 1056
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/tomli/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "size_bytes": 1072
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/tomli_w/LICENSE",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "size_bytes": 1072
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+      "size_bytes": 1086
+    },
+    {
+      "path": "target/candidate/legal/pip/licenses/vendors/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+      "size_bytes": 1093
+    },
+    {
+      "path": "target/candidate/legal/pip/vendor.txt",
+      "sha256": "e7673bce58219ac86720dbadbf4927921d6c213f2363b7a930c1e01594eea302",
+      "size_bytes": 316
+    },
+    {
+      "path": "target/candidate/legal/pip-vendored-component-review.json",
+      "sha256": "2571c7419781231ab39353723dd9163e91d6ab84f0a48b9f8421be441cf6d85d",
+      "size_bytes": 17001
+    },
+    {
+      "path": "target/candidate/legal/sqlite-public-domain-evidence.json",
+      "sha256": "395cddb312dc38f362238766390c48252c0b647d722011b8c8ee14669791f4d2",
+      "size_bytes": 854
+    },
+    {
+      "path": "target/candidate/legal/technical-obligation-review.json",
+      "sha256": "240b953086110134ea442313212ed24468e057415e5bbeb83ec5cd65f8dfb3df",
+      "size_bytes": 411
+    },
+    {
+      "path": "target/candidate/legal/updated-gap-register.json",
+      "sha256": "936a43aa5b649f9dba70bc595e1c1dc9f025ee2997604530b7971108c6c98d1a",
+      "size_bytes": 858
+    },
+    {
+      "path": "target/candidate/legal/xz-product-license-evidence.json",
+      "sha256": "7b53e5c853f52879cc10b1ce469ea28b8e1e335523727ae752ecba42106c662c",
+      "size_bytes": 1126
+    },
+    {
+      "path": "target/candidate/lineage/r2/SHA256SUMS",
+      "sha256": "d8e3fc9f56951f40c0f1624f21c708bd2e1eeef10fa775ade37d1234f5fb35dd",
+      "size_bytes": 3110
+    },
+    {
+      "path": "target/candidate/lineage/r2/release-index.json",
+      "sha256": "bb9cf9d8acfa93910a75ee5dfc73d6a7ced4b27fe252bf588c54ee1c3ba1ee12",
+      "size_bytes": 13415
+    },
+    {
+      "path": "target/candidate/release-index.json",
+      "sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+      "size_bytes": 16367
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

@@ -106,12 +106,12 @@ def verify(root: Path) -> dict[str, Any]:
         "audit_only_scope": correction.get("correction_scope", {}).get("audit_predicate_changed") is True
         and correction.get("correction_scope", {}).get("product_bytes_changed") is False
         and correction.get("correction_scope", {}).get("projection_changed") is False,
-        "state_active_work": state.get("active_work_package") in {STRIPPED_EXECUTION, "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json"},
+        "state_active_work": state.get("active_work_package") in {STRIPPED_EXECUTION, "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json"},
         "state_install_only_accepted": state.get("claim_boundaries", {}).get("successor_install_only_accepted") is True,
         "state_stripped_started": state.get("claim_boundaries", {}).get("successor_stripped_started") is True,
         "state_no_premature_completion": state.get("claim_boundaries", {}).get("selectable") is False
         and isinstance(state.get("claim_boundaries", {}).get("successor_technical_family_accepted"), bool),
-        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") in {"rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification", "rb3-profile-M-successor-technical-family-owner-assembly-and-audit", "rb3-profile-M-successor-legal-family-owner-integration-and-audit"},
+        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") in {"rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification", "rb3-profile-M-successor-technical-family-owner-assembly-and-audit", "rb3-profile-M-successor-legal-family-owner-integration-and-audit", "rb3-profile-M-successor-legal-data-rebinding-owner-qualification"},
         "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, ACCEPTANCE_INSPECTION, STRIPPED_EXECUTION, SUCCESSOR_INSTALL_LOCK)),
         "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY, ACCEPTANCE_INSPECTION)),
         "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, STRIPPED_EXECUTION, ACCEPTANCE_INSPECTION, LOCK, SUCCESSOR_INSTALL_LOCK}.issubset(registered),

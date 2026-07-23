@@ -56,9 +56,9 @@ Epoch 3 selection     true
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-legal-family-integration-and-rb1-rebinding-pending
 - successor-rb2-data-runtime-rebinding-pending
 - predecessor-family-supersession-pending-after-successor-legal-data-acceptance
+- successor-rb1-technical-legal-rebinding-pending-owner-approval-still-required
 
 ### Accepted authorities
 
@@ -112,6 +112,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json): exact successful technical-family owner result, 45-file self-index, old-to-rewritten repository coordinate binding, and legal-family integration authorization (`d327b2b84712d7e9b7378e0934a4246dbe7bb4246236080a271d3bb58f8edae2`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json): exact twelve-commit old-to-new author rewrite mapping preserving tree, subject, and author date while binding external receipts to rewritten main (`153010d8f18fc39b6d78cee3fb2ca2dcbf2b941ba70c908c3f6df192052eaa8a`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json): verifier-only temporal monotonicity amendment preserving accepted stripped artifact, authority, and owner evidence while allowing later technical-family and legal-family state progression (`f02b72452085dcedf96fe9b2301a0a6be317f069920f8016a9f7e8b63ed4d6af`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json): accepted deterministic 128-file successor legal family, exact technical/legal byte preservation, and successor legal/data rebinding authorization (`f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json): verifier-only monotonic routing amendment allowing legal/data rebinding progression after accepted successor legal family (`d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5`)
 
 ### Agent entry
 

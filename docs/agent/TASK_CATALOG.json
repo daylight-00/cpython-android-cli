@@ -2142,7 +2142,7 @@
         "successor_family_complete_claim": false,
         "successor_full_accepted_claim": true,
         "successor_install_only_accepted_claim": true,
-        "successor_legal_family_complete_claim": false,
+        "successor_legal_family_complete_claim": true,
         "successor_stripped_accepted_claim": true,
         "successor_technical_family_complete_claim": true,
         "user_built_wheel_repair_claim": false
@@ -2201,9 +2201,9 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb3-profile-M-successor-legal-family-owner-integration-and-audit",
+        "current_bounded_transition": "rb3-profile-M-successor-legal-data-rebinding-owner-qualification",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-        "result": "deterministic-legally-integrated-successor-family-candidate-with-exact-technical-byte-preservation-accepted-legal-evidence-rebinding-one-owner-approval-gap-reproducibility-and-independent-audit"
+        "result": "accepted-successor-legal-family-r3-plus-owner-qualified-rb1-technical-legal-and-rb2-data-runtime-rebinding-without-owner-approval-or-predecessor-supersession"
       },
       "goal": "Execute the authorized profile-M successor legal-family integration: verify the exact accepted 23-file technical family and frozen RB-1 legal evidence; preserve every technical-family byte; rebind accepted component/license, pip-vendored, technical-obligation, project-license, and notice evidence to successor manifests; assemble the revised family twice; independently audit one remaining owner-approval gap and predecessor invariance; return a candidate-only receipt without owner approval, RB-2 rebinding, predecessor supersession, RB-3 closure, selectability, or publication.",
       "input_routing": {
@@ -2361,6 +2361,16 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
           "reason": "Frozen verifier-only amendment making historical stripped transition checks monotonic without changing accepted product or authority bytes.",
           "sha256": "f02b72452085dcedf96fe9b2301a0a6be317f069920f8016a9f7e8b63ed4d6af"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+          "reason": "Accepted successor legally integrated family r3 identity, legal evidence binding, and legal/data rebinding gate.",
+          "sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
+          "reason": "Frozen temporal routing amendment preserving accepted artifact and authority bytes.",
+          "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
         }
       ],
       "required_reads": [
@@ -2667,6 +2677,36 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
           "reason": "Exact deterministic host assembly identity for the successor legal-family r1 candidate.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r2-return-inspection.json",
+          "reason": "Exact successful successor legal-family r2 result, 153-file self-index, candidate identity, and bounded acceptance evidence.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-legal-family-m-r2-return.json",
+          "reason": "Accepted successor legal-family r3 return and legal/data rebinding authorization boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-acceptance-contract.json",
+          "reason": "Completed legal-family candidate qualification and acceptance transition contract.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
+          "reason": "Active successor RB-1 technical legal and RB-2 data/runtime rebinding contract.",
+          "scope": "full"
+        },
+        {
+          "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-legal-family-r3.lock.json",
+          "reason": "Exact frozen accepted 128-file successor legally integrated family identity.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
+          "reason": "Verifier-only temporal monotonicity amendment allowing authorized legal/data rebinding progression without changing accepted artifacts or authorities.",
           "scope": "full"
         }
       ],

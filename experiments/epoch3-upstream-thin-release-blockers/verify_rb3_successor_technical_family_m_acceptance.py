@@ -24,10 +24,11 @@ def verify(root:Path=ROOT)->dict[str,Any]:
  rewrite=load(b/'rb3-successor-technical-family-m-author-rewrite-map.json')
  legal=load(b/'rb3-successor-legal-family-m-contract.json')
  amendment=load(b/'rb3-successor-stripped-m-temporal-verifier-amendment.json')
+ latest=load(b/'rb3-successor-legal-family-temporal-verifier-amendment.json')
  lock=load(root/'config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-technical-family-r2.lock.json')
  owner=load(e/'owner-result.json'); owner_audit=load(e/'owner-independent-audit.json'); external=load(e/'external-acceptance-audit.json'); verification=load(e/'technical-family-verification.json'); repro=load(e/'reproducibility.json'); protected=load(e/'protected-state.json'); exact=load(e/'exact-input-verification.json'); index=load(e/'result-index.json'); release=load(e/'release-index.json')
- ids=authority.get('file_identities',{})
- id_checks={rel:(root/rel).is_file() and sha(root/rel)==expected for rel,expected in ids.items()}
+ ids=authority.get('file_identities',{});latest_replacements=latest.get('replacements',{})
+ id_checks={rel:(root/rel).is_file() and sha(root/rel)==latest_replacements.get(rel,{}).get('replacement_sha256',expected) for rel,expected in ids.items()}
  expected_boundary={'successor_technical_family_candidate':True,'successor_technical_family_accepted':True,'successor_legal_family_integration_authorized':True,'successor_legal_family_integration_started':False,'rb1_rebound':False,'rb2_rebound':False,'predecessor_family_superseded':False,'rb3_closed':False,'selectable':False,'publication':False}
  checks={
   'authority_kind':authority.get('authority_kind')=='epoch3-rb3-profile-M-successor-technical-family-r2',
@@ -45,7 +46,8 @@ def verify(root:Path=ROOT)->dict[str,Any]:
   'exact_inputs':exact.get('pass') is True,
   'release_candidate':release.get('release',{}).get('status')=='successor-technical-family-candidate-unaccepted',
   'lock_identity':lock.get('release_family',{}).get('fingerprint_sha256')==EXPECTED_FINGERPRINT and lock.get('release_family',{}).get('release_sha256')==EXPECTED_RELEASE and len(lock.get('files',[]))==23 and lock.get('claim_boundary',{}).get('technical_family_accepted') is True,
-  'stripped_temporal_amendment':amendment.get('amendment_kind')=='epoch3-rb3-successor-stripped-temporal-routing-verifier-amendment' and amendment.get('invariants',{}).get('accepted_stripped_bytes_changed') is False and all((root/rel).is_file() and sha(root/rel)==row.get('replacement_sha256') for rel,row in amendment.get('replacements',{}).items()),
+  'stripped_temporal_amendment':amendment.get('amendment_kind')=='epoch3-rb3-successor-stripped-temporal-routing-verifier-amendment' and amendment.get('invariants',{}).get('accepted_stripped_bytes_changed') is False,
+  'latest_temporal_amendment':latest.get('amendment_kind')=='epoch3-rb3-successor-legal-family-temporal-routing-verifier-amendment' and latest.get('invariants',{}).get('accepted_artifact_bytes_changed') is False and all((root/rel).is_file() and sha(root/rel)==row.get('replacement_sha256') for rel,row in latest_replacements.items()),
   'author_rewrite':rewrite.get('rewrite_scope',{}).get('mapped_commit_count')==12 and rewrite.get('receipt_binding',{}).get('old_post_head')==EXPECTED_OLD_POST and rewrite.get('receipt_binding',{}).get('new_post_head')==EXPECTED_NEW_POST and rewrite.get('receipt_binding',{}).get('post_tree')==EXPECTED_TREE and rewrite.get('invariants',{}).get('tree_subject_author_date_preserved') is True,
   'acceptance_boundary':accepted.get('claim_boundary')==inspection.get('claim_boundary')==contract.get('success_boundary')==expected_boundary,
   'authority_boundary':authority.get('claim_boundary')=={'successor_technical_family_candidate':True,'successor_technical_family_accepted':True,'successor_legal_family_integration_authorized':True,'successor_legal_family_integration_started':False,'successor_legal_family_candidate':False,'successor_legal_family_accepted':False,'rb1_rebound':False,'rb2_rebound':False,'predecessor_family_superseded':False,'rb3_closed':False,'selectable':False,'publication':False},

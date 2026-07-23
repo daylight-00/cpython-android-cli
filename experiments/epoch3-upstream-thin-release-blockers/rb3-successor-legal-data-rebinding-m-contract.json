@@ -1,0 +1,60 @@
+{
+  "accepted_legal_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index_sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "sha256sums_sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e"
+  },
+  "accepted_legal_family_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-legal-family-r3.lock.json",
+  "contract_kind": "epoch3-rb3-profile-M-successor-legal-and-data-rebinding",
+  "failure_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": true
+  },
+  "next_gate": "explicit predecessor-family supersession and RB-3 closure only after accepted rebinding authority",
+  "rb1_rebinding": {
+    "owner_approval_remains_required": true,
+    "rb1_closure_allowed": false,
+    "required_checks": [
+      "exact successor legal-family verification",
+      "component/license mapping complete",
+      "notice identity exact",
+      "owner approval false and explicit approval still pending"
+    ],
+    "scope": "bind existing accepted 13-component mapping, 102-file legal payload, and exact notice identity to successor r3 family"
+  },
+  "rb2_rebinding": {
+    "required_checks": [
+      "exact install_only r5 identity",
+      "current and rollback data product identity",
+      "SSL and zoneinfo runtime qualification",
+      "update rollback reactivation",
+      "read-only product root",
+      "predecessor and accepted authorities unchanged"
+    ],
+    "scope": "re-run accepted CA/tzdata current-rollback-current lifecycle and runtime qualification against exact successor install_only r5",
+    "source_authority": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json"
+  },
+  "schema_version": 1,
+  "status": "authorized-not-started",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb1_rebound": true,
+    "rb2_closed": true,
+    "rb2_rebound": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  }
+}

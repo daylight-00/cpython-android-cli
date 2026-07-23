@@ -1,0 +1,38 @@
+{
+  "audit_kind": "epoch3-rb3-successor-legal-family-independent-audit",
+  "candidate": {
+    "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "file_count": 128,
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "checks": {
+    "checksums": true,
+    "claims_bounded": true,
+    "file_count": true,
+    "legal_exact": true,
+    "legal_metrics": true,
+    "license_exact": true,
+    "notice_exact": true,
+    "release_identity": true,
+    "technical_exact": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "non_termux_context": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_integration_started": true,
+    "successor_technical_family_accepted": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}
