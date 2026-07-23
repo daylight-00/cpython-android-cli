@@ -601,6 +601,9 @@
 - [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-fixture.json`](epoch3-upstream-thin-release-blockers/rb4-release-operations-fixture.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-release-blockers`
 - [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-release-blockers`
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json`](epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json) — `ACTIVE_PLAN` · `operational` · owner `epoch3-release-blockers`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-execution-contract.json`](epoch3-upstream-thin-release-blockers/rb5-api24-runtime-execution-contract.json) — `ACTIVE_PLAN` · `operational` · owner `epoch3-release-blockers`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json`](epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-release-blockers`
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json`](epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json) — `FROZEN_AUTHORITY` · `machine_authority` · owner `epoch3-release-blockers`
 - [`experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json`](epoch3-upstream-thin-release-blockers/source-provenance-contract.json) — `ACTIVE_PLAN` · `machine_contract` · owner `epoch3-rb1-license-closure`
 
 ## `epoch3-upstream-thin-stripped`

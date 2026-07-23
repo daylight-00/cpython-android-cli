@@ -210,8 +210,17 @@
       "evidence": {
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
         "exact_api_required": 24,
+        "exact_data_result_sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+        "exact_family_result_sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
         "exact_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
-        "exact_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android"
+        "exact_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+        "execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-execution-contract.json",
+        "execution_contract_sha256": "cf3e70a1c39c4ed95d7c093dc89f787dbe182e856bd84d30cb4af5a674430042",
+        "host_preflight": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json",
+        "host_preflight_sha256": "2f523028cb817d47f9b08d2419638c2de2b4b0f5cb70db1378d052ea0f2d1080",
+        "target_selection": "local-exact-api24-aarch64-or-one-adb-exact-api24-aarch64",
+        "temporal_amendment": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json",
+        "temporal_amendment_sha256": "bc8aa9da7c81d4d2a48b11759a9aa058118f6db8be9a5f2501ebc220d134d8c0"
       },
       "id": "RB-5",
       "lane": "target",
@@ -220,7 +229,7 @@
         "api24-support",
         "selectability"
       ],
-      "status": "in-progress-authorized-not-started"
+      "status": "in-progress-owner-qualification-prepared"
     },
     {
       "completion_role": "exact-artifact-runtime-on-real-16384-byte-page-device",
@@ -246,6 +255,9 @@
     }
   ],
   "claim_boundary": {
+    "api24_runtime_accepted": false,
+    "api24_runtime_candidate": false,
+    "api24_runtime_started": true,
     "artifact_bytes_frozen": true,
     "artifact_family_authority_frozen": true,
     "astral_consumer_compatibility_complete": true,

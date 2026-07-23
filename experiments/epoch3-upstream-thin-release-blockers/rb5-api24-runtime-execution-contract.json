@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "contract_kind": "epoch3-rb5-api24-runtime-owner-execution",
+  "status": "prepared-owner-qualification",
+  "base_contract": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
+    "sha256": "a2d8f426f4c19ee6460fadb06d9386dc250886fbcb7ce8d74026696a2bdb54ca"
+  },
+  "exact_inputs": {
+    "canonical_legal_family_result": {
+      "filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775
+    },
+    "accepted_data_product_result": {
+      "filename": "cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042
+    },
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56"
+    },
+    "current_data": {
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d"
+    }
+  },
+  "target_selection": {
+    "allowed_modes": ["local-api24-termux", "adb-api24-aarch64"],
+    "android_api": 24,
+    "architecture": "aarch64",
+    "exact_api_required": true,
+    "higher_api_substitution_forbidden": true,
+    "selection_rule": "exactly one target must report SDK 24 and AArch64; HW_T_ADB_SERIAL may disambiguate"
+  },
+  "required_checks": [
+    "exact input and artifact identity",
+    "target getprop SDK 24 and AArch64 identity",
+    "startup at first location",
+    "whole-prefix relocation and startup",
+    "all 67 native extension imports",
+    "subprocess sys.executable re-entry without LD_LIBRARY_PATH",
+    "accepted CA and timezone data runtime",
+    "Android API 24 sysconfig identity",
+    "python aliases",
+    "bounded offline pip operation",
+    "fresh symlink venv creation and execution",
+    "python-config consumer surface",
+    "host pkg-config consumer surface from exact prefix",
+    "read-only install-root execution and content invariance",
+    "frozen source family and install-only identity",
+    "independent audit"
+  ],
+  "claim_boundary": {
+    "api24_runtime_started": true,
+    "api24_runtime_candidate_on_success": true,
+    "api24_runtime_accepted": false,
+    "rb5_closed": false,
+    "actual_16k_runtime_qualified": false,
+    "non_termux_android_context_qualified": false,
+    "artifact_bytes_changed": false,
+    "selectable": false,
+    "publication": false
+  },
+  "failure_policy": "fail closed, preserve RB-4 closure and canonical r3, do not infer support from API 25+ or static metadata"
+}

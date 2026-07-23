@@ -1,0 +1,55 @@
+{
+  "claim_boundary": {
+    "api24_runtime_accepted": false,
+    "api24_runtime_candidate": false,
+    "api24_runtime_started": false,
+    "publication": false,
+    "rb5_closed": false,
+    "selectable": false
+  },
+  "expected_outcome": "fail-closed-no-api24-target-in-assistant-environment",
+  "input_checks": {
+    "exact_current_data": true,
+    "exact_data_result": true,
+    "exact_family_result": true,
+    "exact_install_only": true,
+    "extension_inventory_67": true,
+    "pkg_config": true
+  },
+  "inspection_kind": "epoch3-rb5-api24-runtime-host-preflight",
+  "pass": true,
+  "schema_version": 1,
+  "target_check": {
+    "discovery": {
+      "adb_error": "adb-not-found",
+      "local": {
+        "abi": {
+          "command": [],
+          "returncode": 127,
+          "stderr": "missing",
+          "stdout": ""
+        },
+        "sdk": {
+          "command": [],
+          "returncode": 127,
+          "stderr": "missing",
+          "stdout": ""
+        },
+        "uname": {
+          "command": [
+            "uname",
+            "-m"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "x86_64\n",
+          "timed_out": false
+        }
+      },
+      "requested_mode": "auto",
+      "requested_serial": null
+    },
+    "exact_target_available": false
+  },
+  "target_execution_performed": false
+}

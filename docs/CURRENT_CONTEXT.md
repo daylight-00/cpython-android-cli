@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 54
+> **State revision:** 55
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -89,6 +89,7 @@ status  in-progress
 56. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json) — explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure
 57. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json) — deterministic release catalog, official patch-update binding, rollback, revocation readback, support status, and security ownership
 58. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json) — verifier-only fifth temporal monotonicity amendment allowing RB-5 API-24 owner qualification after closed RB-4 while preserving all accepted artifacts and authorities
+59. [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json) — verifier-only temporal monotonicity for prepared exact API 24 owner qualification
 
 ## Blockers
 
@@ -99,7 +100,7 @@ status  in-progress
 
 ## Unresolved risks
 
-- API24-runtime-qualification-pending
+- API24-runtime-owner-qualification-pending-exact-target
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
