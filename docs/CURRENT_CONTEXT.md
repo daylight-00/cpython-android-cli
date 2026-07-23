@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 46
+> **State revision:** 47
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -76,6 +76,7 @@ status  in-progress
 43. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json) — accepted deterministic successor install-only r5 with exact full projection, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
 44. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json) — exact successful r1 owner receipt, deterministic stripped candidate identity, bounded one-path mutation, complete Android/uv/native-SDK qualification, and bounded acceptance input
 45. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json) — accepted deterministic successor stripped r5 with bounded llvm-strip mutation, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
+46. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json) — exact successful stripped acceptance transaction, 21-file result self-index, repository and remote transition, and technical-family owner assembly authorization
 
 ## Blockers
 
@@ -106,6 +107,6 @@ status  in-progress
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-stripped-r5-accepted-successor-technical-family-owner-assembly-pending
+- successor-technical-family-r1-owner-assembly-and-independent-audit-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

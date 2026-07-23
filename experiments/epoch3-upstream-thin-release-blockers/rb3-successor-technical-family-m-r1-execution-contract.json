@@ -1,0 +1,108 @@
+{
+  "accepted_artifacts": {
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "member_count": 3752,
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "member_count": 3699,
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    "install_only_stripped": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "member_count": 3699,
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    }
+  },
+  "authorization": {
+    "acceptance_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
+    "acceptance_return_inspection_sha256": "d8df265e57a21427bd25c435db23af01e702eb2e466a934af9537f41b889ddef",
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+    "sha256": "0f9c83cec8423e43ee603ff93ef47718e74b37190381c3c910a14c9973e00268",
+    "stripped_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+    "stripped_authority_sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
+  },
+  "candidate": {
+    "file_count": 23,
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "role": "deterministic technical-family candidate only; unaccepted, not legally integrated, not canonical, not selectable, and not published"
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-technical-family-r1-execution",
+  "forbidden": [
+    "modify accepted full, install_only, or install_only_stripped bytes",
+    "modify or supersede the predecessor family authority or lock",
+    "reuse predecessor sidecars or predecessor release-index metadata",
+    "start successor legal-family integration or rebind RB-1 or RB-2",
+    "repair or claim portability for user-built wheel RPATH or RUNPATH",
+    "accept the successor technical family inside this transaction",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "implementation_files": {
+    "components/upstream-thin/lib/successor_release_family.py": "e3b7c2344c83ed65b967fdf86aa8502767337612e8b0ce8822444d0f4530435b",
+    "components/upstream-thin/tests/test_successor_release_family.py": "ad7ed7e21cc168912d9a0599f627d30431d23a729cff193111b17fa59fe86f46",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb3_successor_technical_family_m.py": "82159f3f0f642a859c12a6a14c9396e7aabc50cdb9a4f8c9d38de530be56df2b",
+    "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_technical_family_m.py": "085143de57743c663a4c747c9ceae1ca172d18359da46021dc1d87459639b6bb",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_technical_family_m_contract.py": "355faf01f32e0cc0799bc93c022803639d4298b60da28913e0206a416bd0d628",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_contract.py": "963482b55000bc5b67959e47db0d8c4bbed1d28859187825b57dc267874b972f"
+  },
+  "protected_files": {
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json": "8c1a06cd67e70219807e463a30524bec767661d33d0ef86eea9cec029a918322",
+    "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
+  },
+  "required_execution": [
+    "verify all four exact result archives before repository mutation",
+    "extract the three exact accepted successor artifacts and verify filename, sha256, size, and member count",
+    "assemble the 23-file successor technical family twice using successor-bound sidecars and require every output byte to match",
+    "independently verify release-index.json, SHA256SUMS, manifests, license inventories, attestations, accepted authority bindings, and candidate-only claims",
+    "independently audit predecessor family invariance and exact accepted artifact byte reuse",
+    "push only after all product, release-blocker, contract, assembly, verification, and audit gates pass"
+  ],
+  "required_result_archives": {
+    "full": {
+      "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+      "size_bytes": 63029723
+    },
+    "install_only": {
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+      "size_bytes": 47232364
+    },
+    "install_only_stripped": {
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+      "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+      "size_bytes": 47423566
+    },
+    "stripped_acceptance": {
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+      "self_index_file_count": 21,
+      "sha256": "742c316a3dd9c428fb201e54d3cb8c29280cbd1ed8d491afa367636852672b14",
+      "size_bytes": 10309
+    }
+  },
+  "schema_version": 1,
+  "status": "active-owner-assembly-pending",
+  "success_boundary": {
+    "legal_family_integration_started": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_candidate": true,
+    "successor_technical_family_started": true
+  }
+}

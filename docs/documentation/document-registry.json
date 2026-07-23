@@ -12011,6 +12011,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact successful stripped-acceptance result, 21-file self-index, repository transition, and technical-family authorization boundary.",
+      "supersession_rule": "Do not edit; create an amendment or successor inspection.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "evidence_snapshot",
       "format": "json",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
@@ -12266,6 +12281,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Frozen accepted-three-artifact authorization and candidate-only technical-family derivation boundary.",
+      "supersession_rule": "Do not edit; create a successor execution or amendment contract.",
+      "update_trigger": "Never edit after stripped authority acceptance."
+    },
+    {
       "authority_domain": "operational",
       "format": "json",
       "lifecycle_class": "ACTIVE_PLAN",
@@ -12274,11 +12304,11 @@
       "mutability": "mutable",
       "onboarding_visibility": "machine",
       "owner": "epoch3-release-blockers",
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-execution-contract.json",
       "planned_canonical_parent": "docs/roadmap/README.md",
-      "rationale": "Active exact accepted-three-artifact to deterministic candidate technical-family derivation contract.",
-      "supersession_rule": "Explicit accepted technical-family result or successor authority.",
-      "update_trigger": "Update only through the active bounded RB-3 successor technical-family transaction."
+      "rationale": "Active exact four-result input and deterministic 23-file successor technical-family r1 owner assembly contract.",
+      "supersession_rule": "Supersede only with an accepted technical-family return inspection or explicit correction contract.",
+      "update_trigger": "Update only before commit; after commit create a correction or acceptance contract."
     },
     {
       "authority_domain": "evidence_snapshot",

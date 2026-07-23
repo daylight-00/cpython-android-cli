@@ -2202,12 +2202,12 @@
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
         "current_bounded_transition": "rb3-profile-M-successor-technical-family-owner-assembly-and-audit",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-        "result": "deterministic-candidate-only-successor-technical-family-with-complete-index-sidecars-checksums-reproducibility-and-audit"
+        "result": "deterministic-23-file-successor-technical-family-candidate-with-exact-accepted-artifact-reuse-successor-bound-metadata-reproducibility-and-independent-audit"
       },
-      "goal": "Assemble the accepted profile-M successor full, install-only, and stripped r5 artifacts into a deterministic technical family twice; bind successor-specific release metadata and authorities; verify exact artifact reuse, complete release index and SHA256SUMS, reproducibility, predecessor invariance, and independent audit; return a candidate-only owner receipt without legal integration, predecessor supersession, RB-3 closure, selectability, or publication.",
+      "goal": "Execute the authorized profile-M successor technical-family r1 owner assembly: verify the exact accepted full, install-only, and stripped r5 artifacts from their frozen owner results; assemble the 23-file successor family twice with successor-bound release metadata; require byte-identical inventories, release-index.json, SHA256SUMS, manifests, license inventories, and attestations; independently audit exact artifact reuse and predecessor invariance; return a candidate-only receipt without family acceptance, legal integration, predecessor supersession, RB-3 closure, selectability, or publication.",
       "input_routing": {
-        "fallback": "retain all three accepted successor artifacts and the frozen predecessor family, return one complete fail-closed receipt, and correct only bounded successor technical-family assembly, metadata rebinding, reproducibility, audit, or receipt defects without legal integration or predecessor supersession",
-        "first_attempt": "acquire exact accepted successor full, install-only, and stripped artifacts from verified owner result archives; verify all three frozen authorities and locks; assemble the technical family twice; compare complete inventories; verify release index, SHA256SUMS, sidecars, attestations, exact artifact reuse, predecessor invariance, and candidate-only audit boundary",
+        "fallback": "retain all three accepted successor artifacts and the frozen predecessor family; return one complete fail-closed receipt; correct only bounded family assembly, successor metadata binding, reproducibility, verification, audit, or result-index defects; do not accept or legally integrate the family and do not supersede the predecessor",
+        "first_attempt": "verify the exact full-r4, install-only-r2, stripped-r1, and stripped-acceptance-r1 result archives; extract the three accepted successor artifacts; verify frozen successor authorities and predecessor-family invariance; assemble two complete 23-file families; compare every output byte; independently verify release index, SHA256SUMS, manifests, sidecars, attestations, candidate-only claim boundary, and no predecessor metadata reuse",
         "forbidden": [
           "accept-an-incomplete-result-index",
           "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -2330,8 +2330,13 @@
         },
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
-          "reason": "Frozen accepted profile-M successor stripped r5 and technical-family derivation gate.",
+          "reason": "Frozen accepted profile-M successor stripped r5 authority and technical-family derivation gate.",
           "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
+          "reason": "Frozen successful stripped-acceptance owner receipt and exact technical-family authorization input.",
+          "sha256": "d8df265e57a21427bd25c435db23af01e702eb2e466a934af9537f41b889ddef"
         }
       ],
       "required_reads": [
@@ -2572,12 +2577,12 @@
         },
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
-          "reason": "Accepted successor stripped r5 identity, tool/mutation boundary, and technical-family derivation authorization.",
+          "reason": "Frozen accepted stripped r5 authority authorizing only candidate technical-family derivation.",
           "scope": "full"
         },
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
-          "reason": "Exact accepted three-artifact input and candidate-only technical-family assembly contract.",
+          "reason": "Frozen authorization contract for accepted-three-artifact successor technical-family derivation.",
           "scope": "full"
         },
         {
@@ -2588,6 +2593,16 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-contract.json",
           "reason": "Completed stripped r1 candidate qualification and bounded acceptance transition contract.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
+          "reason": "Exact successful stripped-acceptance result, repository transition, 21-file self-index, and technical-family authorization boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-execution-contract.json",
+          "reason": "Active exact four-result input, 23-file family shape, protected-state, execution, audit, and success-boundary contract.",
           "scope": "full"
         }
       ],

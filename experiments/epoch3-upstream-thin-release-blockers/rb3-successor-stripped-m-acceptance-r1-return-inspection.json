@@ -1,0 +1,37 @@
+{
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_authorized": true,
+    "successor_technical_family_started": false
+  },
+  "conclusion": "The stripped acceptance transaction landed exactly and authorizes only deterministic successor technical-family candidate assembly and independent audit. Legal integration, predecessor supersession, RB-3 closure, selectability, and publication remain forbidden.",
+  "inspection_kind": "epoch3-rb3-profile-M-successor-stripped-acceptance-r1-return-inspection",
+  "repository": {
+    "post_head": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+    "post_tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc",
+    "remote_post_head": "7a19eb59e2d1bb261708ced0f760c95ddec05577"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+    "self_index_file_count": 21,
+    "sha256": "742c316a3dd9c428fb201e54d3cb8c29280cbd1ed8d491afa367636852672b14",
+    "size_bytes": 10309
+  },
+  "schema_version": 1,
+  "status": "accepted-complete-pass-technical-family-owner-assembly-authorized",
+  "verification": {
+    "product_and_release_blocker_tests": "147/147",
+    "result_self_index_exact": true,
+    "result_self_index_file_count": 21,
+    "stripped_acceptance_authority_verifier": "22/22",
+    "stripped_owner_result_verifier": "19/19",
+    "transition_contract_verifier": "16/16"
+  }
+}
