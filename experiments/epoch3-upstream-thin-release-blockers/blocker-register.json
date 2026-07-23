@@ -88,8 +88,10 @@
         "successor_install_only_acceptance_r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
         "successor_install_only_accepted": true,
         "successor_install_only_r2_result_sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+        "successor_legal_family_execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
+        "successor_legal_family_host_assembly": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
         "successor_legal_family_integration_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json",
-        "successor_legal_family_integration_started": false,
+        "successor_legal_family_integration_started": true,
         "successor_r1_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
         "successor_r3_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
         "successor_stripped_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
@@ -124,7 +126,7 @@
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-successor-technical-family-accepted-legal-integration-pending"
+      "status": "in-progress-profile-M-successor-legal-family-r1-owner-integration-prepared"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",

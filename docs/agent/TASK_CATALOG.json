@@ -2658,6 +2658,16 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
           "reason": "Temporal-routing verifier amendment and exact original/replacement hash bindings.",
           "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
+          "reason": "Exact owner input archives, deterministic 128-file integration shape, execution, audit, and candidate-only success boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
+          "reason": "Exact deterministic host assembly identity for the successor legal-family r1 candidate.",
+          "scope": "full"
         }
       ],
       "task_id": "E3-RELEASE-BLOCKERS",

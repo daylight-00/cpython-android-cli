@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "contract_kind": "epoch3-rb3-profile-M-successor-legal-family-r1-owner-execution",
+  "status": "execution-ready",
+  "inputs": {
+    "successor_technical_family_result": {
+      "filename": "cpython-android-cli-e3-rb3-successor-technical-family-m-r1-results.tar.zst",
+      "sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
+      "size_bytes": 87065667,
+      "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+      "file_count": 23,
+      "family_fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5"
+    },
+    "accepted_legal_family_result": {
+      "filename": "cpython-android-cli-e3-rb1-legal-integration-r1-results.tar.zst",
+      "sha256": "5018f4e337f4ee0086e5017db0010c5ef2ae41634f97edd4117b0bccdb8a6375",
+      "size_bytes": 87683594,
+      "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+      "file_count": 128,
+      "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d"
+    }
+  },
+  "output": {
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "file_count": 128,
+    "shape": "21 successor technical payload files + lineage/r2 technical release-index and SHA256SUMS + 102 exact accepted legal files + exact project LICENSE + new release-index and SHA256SUMS"
+  },
+  "requirements": [
+    "verify both exact result archive identities before extraction",
+    "verify the accepted 23-file technical family and accepted 128-file legal family",
+    "preserve all 23 technical family files byte-identically",
+    "preserve all 102 accepted legal files and project LICENSE byte-identically",
+    "require all three successor archive license inventories to equal the accepted predecessor inventories",
+    "assemble twice and require all 128 files byte-identical",
+    "independently audit release metadata, lineage, legal evidence, one owner-approval gap, and claim boundary",
+    "preserve predecessor repository authorities and actual data roots"
+  ],
+  "success_boundary": {
+    "successor_legal_family_integration_started": true,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_accepted": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "predecessor_family_superseded": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "publication": false
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "checks": {
+    "all_128_files_byte_identical_between_assemblies": true,
+    "all_three_license_inventories_rebound": true,
+    "assembly_a_pass": true,
+    "assembly_b_pass": true,
+    "claims_bounded": true,
+    "family_fingerprint_exact": true,
+    "independent_audit_pass": true,
+    "legal_102_files_exact": true,
+    "notice_identity_preserved": true,
+    "project_license_exact": true,
+    "release_digest_exact": true,
+    "sha256sums_exact": true,
+    "technical_23_files_exact": true
+  },
+  "claim_boundary": {
+    "actual_16k_runtime": false,
+    "api24_runtime": false,
+    "non_termux_context": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_integration_started": true,
+    "successor_technical_family_accepted": true
+  },
+  "evidence_kind": "epoch3-rb3-profile-M-successor-legal-family-r1-host-assembly",
+  "inputs": {
+    "accepted_legal_family_result": {
+      "family_fingerprint_sha256": "b71a0123d9d135b3ab378b59d2227ec312c95b49dc15c6ec40fce91a916f348d",
+      "file_count": 128,
+      "filename": "cpython-android-cli-e3-rb1-legal-integration-r1-results.tar.zst",
+      "legal_payload_file_count": 102,
+      "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+      "release_sha256": "b2d93c0f13b60e7404a948a54abfa4c7adffdb318194b291a6ec6b668b49c1fb",
+      "sha256": "5018f4e337f4ee0086e5017db0010c5ef2ae41634f97edd4117b0bccdb8a6375",
+      "size_bytes": 87683594
+    },
+    "contracts": {
+      "execution": {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
+        "sha256": "c438eacdb6d1f510360b47905537456529976a8a47bef5d826c87db241e92580"
+      },
+      "integration": {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json",
+        "sha256": "3ecf954fbcfe05b9b52ac3ecfa4f74753dd963db5288eb4815d0192e5a9954b5"
+      }
+    },
+    "successor_technical_family_result": {
+      "family_fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5",
+      "file_count": 23,
+      "filename": "cpython-android-cli-e3-rb3-successor-technical-family-m-r1-results.tar.zst",
+      "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+      "release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1",
+      "sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
+      "size_bytes": 87065667
+    }
+  },
+  "license_rebinding": {
+    "component_license_mapping_complete": true,
+    "flavors": {
+      "full": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-full.tar.zst.licenses.json",
+          "sha256": "62bc180fd302c555a7c463e84d7a989d27dee6ad0191837b83ef8edd663718cd",
+          "size_bytes": 10166
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.licenses.json",
+          "sha256": "40a6a1af100068957289f0faae99c095a91e11de08f2abc616ca92b0ba4c8ce2",
+          "size_bytes": 10255
+        }
+      },
+      "install_only": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only.tar.gz.licenses.json",
+          "sha256": "37c40e87a62159767fc4492275fd8927704f0c9849195c2ef2b45d8ac268d2dd",
+          "size_bytes": 9837
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.licenses.json",
+          "sha256": "2bd24ca4fb3673a840bbec24a562a51beef6be81cd80f5319e5979ae0d319653",
+          "size_bytes": 9926
+        }
+      },
+      "install_only_stripped": {
+        "license_file_count": 42,
+        "license_inventory_byte_semantics_equal": true,
+        "pass": true,
+        "predecessor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+          "sha256": "d2314766c36b00264784c33d95d2fd28f2d2c5f0c39096c3589f42bbe88208b6",
+          "size_bytes": 9846
+        },
+        "primary_python_license_equal": true,
+        "successor_sidecar": {
+          "path": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+          "sha256": "1cf4689aab8ab82f9450898cb3651433ca98a7ff5a8d22661db7577813f3ce47",
+          "size_bytes": 9935
+        }
+      }
+    },
+    "owner_approved": false,
+    "pass": true,
+    "receipt_kind": "epoch3-rb3-successor-legal-family-license-rebinding",
+    "schema_version": 1
+  },
+  "output": {
+    "checksums": {
+      "path": "SHA256SUMS",
+      "sha256": "66ca173365202145f3a7e8b80bcf2740a63de2be96837d16f9d45d4945ff897e",
+      "size_bytes": 14689
+    },
+    "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "file_count": 128,
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_index": {
+      "path": "release-index.json",
+      "sha256": "01d44978aee037f759ba2d4d1effec1925df7e61f7d5a6142275062510f78fc5",
+      "size_bytes": 16367
+    },
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "shape": {
+      "accepted_legal_payload_file_count": 102,
+      "new_release_envelope_file_count": 2,
+      "project_license_file_count": 1,
+      "successor_technical_payload_and_sidecar_file_count": 21,
+      "technical_lineage_file_count": 2,
+      "total_file_count": 128
+    }
+  },
+  "schema_version": 1,
+  "status": "passed-host-double-assembly-owner-target-execution-required"
+}

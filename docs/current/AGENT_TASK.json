@@ -545,10 +545,20 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
       "reason": "Temporal-routing verifier amendment and exact original/replacement hash bindings.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
+      "reason": "Exact owner input archives, deterministic 128-file integration shape, execution, audit, and candidate-only success boundary.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
+      "reason": "Exact deterministic host assembly identity for the successor legal-family r1 candidate.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 48,
+  "state_revision": 49,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
     "goal": "Execute the authorized profile-M successor legal-family integration: verify the exact accepted 23-file technical family and frozen RB-1 legal evidence; preserve every technical-family byte; rebind accepted component/license, pip-vendored, technical-obligation, project-license, and notice evidence to successor manifests; assemble the revised family twice; independently audit one remaining owner-approval gap and predecessor invariance; return a candidate-only receipt without owner approval, RB-2 rebinding, predecessor supersession, RB-3 closure, selectability, or publication.",

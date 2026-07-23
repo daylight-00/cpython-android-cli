@@ -12041,6 +12041,36 @@
       "update_trigger": "Update only before commit; after commit create a correction or acceptance contract."
     },
     {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Exact deterministic host assembly identity for the successor legal-family r1 candidate.",
+      "supersession_rule": "Supersede only with accepted owner target evidence or an explicit corrected host assembly.",
+      "update_trigger": "Update only before owner execution when the integration contract or assembler changes."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Active exact two-result input and deterministic 128-file successor legal-family r1 owner integration contract.",
+      "supersession_rule": "Supersede only with an accepted legal-family return inspection or explicit correction contract.",
+      "update_trigger": "Update only before commit; after commit create a correction or acceptance contract."
+    },
+    {
       "authority_domain": "machine_authority",
       "format": "json",
       "lifecycle_class": "FROZEN_AUTHORITY",

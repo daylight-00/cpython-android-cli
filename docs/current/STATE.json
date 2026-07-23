@@ -370,7 +370,7 @@
     "successor_legal_family_accepted": false,
     "successor_legal_family_candidate": false,
     "successor_legal_family_integration_authorized": true,
-    "successor_legal_family_integration_started": false,
+    "successor_legal_family_integration_started": true,
     "successor_stripped_accepted": true,
     "successor_stripped_candidate": true,
     "successor_stripped_started": true,
@@ -415,8 +415,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
-    "tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99"
+    "commit": "fedfa4711462bc5e00f3d4c232d83b75046b238d",
+    "tree": "aab27931795e848472e5be41792c9aecc464cde1"
   },
   "program": {
     "epoch": {
@@ -470,11 +470,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 48,
+  "state_revision": 49,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "76dd84590619ea7d21b3ed9725ae59953eecb83909aafc630979d8414e067142"
+    "sha256": "3b43478a581a0fe750cea98088cc82bac28a5bd7786cc22a0928dc5344e3c2ee"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -507,5 +507,5 @@
     "successor-rb2-data-runtime-rebinding-pending",
     "predecessor-family-supersession-pending-after-successor-legal-data-acceptance"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-technical-family-r1-verified-accepted-legal-family-integration-authorized"
+  "updated_by_transaction": "rb3-profile-M-successor-legal-family-r1-owner-integration-prepared"
 }
