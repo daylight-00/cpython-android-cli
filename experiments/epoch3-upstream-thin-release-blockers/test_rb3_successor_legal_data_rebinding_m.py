@@ -13,6 +13,18 @@ class RebindingTests(unittest.TestCase):
     def test_missing_family_fails_exact_verification(self):
         with tempfile.TemporaryDirectory() as td:
             r=mod.verify_exact_successor_family(Path(td)); self.assertFalse(r['pass']); self.assertIn('exact_file_set',r['failed_checks'])
+    def test_read_only_invariance_separates_content_from_modes(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)/'root'; root.mkdir(); (root/'file').write_text('payload'); (root/'dir').mkdir(); (root/'dir'/'nested').write_text('nested')
+            before=mod.snapshot(root); modes=mod._make_read_only(root)
+            try:
+                during=mod.snapshot(root)
+                self.assertEqual(mod.content_snapshot(before),mod.content_snapshot(during))
+                self.assertTrue(mod.read_only_modes_enforced(during))
+                self.assertNotEqual(before,during)
+            finally:
+                mod._restore_modes(modes)
+            self.assertEqual(before,mod.snapshot(root))
     def test_execution_contract_requires_separate_acceptance(self):
         d=json.loads(SCRIPT.with_name('rb3-successor-legal-data-rebinding-m-r1-execution-contract.json').read_text()); self.assertEqual(d['status'],'prepared-owner-qualification-not-run'); self.assertFalse(d['owner_result_boundary']['rb1_rebound']); self.assertFalse(d['owner_result_boundary']['rb2_rebound']); self.assertIn('separate repository acceptance',d['acceptance_rule'].lower())
     def test_host_inspection_is_static_only(self):

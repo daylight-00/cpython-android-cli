@@ -73,8 +73,14 @@
       "make extracted install root read-only",
       "qualify SSL CA and UTC/Asia-Seoul/America-New_York",
       "verify CPython 3.14.6 Android identity",
-      "prove install root and accepted family unchanged"
-    ]
+      "prove install-root content and symlink identity unchanged while read-only, prove write bits removed, restore original modes exactly, and prove accepted family unchanged"
+    ],
+    "read_only_invariance_semantics": {
+      "content_and_symlink_identity_while_read_only": "must remain byte/path/target exact",
+      "permission_mode_during_read_only": "must differ by removing write bits where originally present",
+      "permission_mode_after_restore": "must match the original full snapshot exactly",
+      "r1_failure_correction": "A mode-inclusive fingerprint is expected to change during chmod and is not a content mutation."
+    }
   },
   "owner_result_boundary": {
     "successor_legal_data_rebinding_started": true,

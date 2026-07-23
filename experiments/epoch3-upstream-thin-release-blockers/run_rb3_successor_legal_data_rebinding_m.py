@@ -81,6 +81,17 @@ def fingerprint(rows: list[dict[str, Any]]) -> str:
     return hashlib.sha256(json.dumps(rows, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
+def content_snapshot(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return path/content identity while intentionally excluding permission modes."""
+    return [{key: value for key, value in row.items() if key != "mode"} for row in rows]
+
+
+def read_only_modes_enforced(rows: list[dict[str, Any]]) -> bool:
+    """True when every non-symlink file and directory has no write bits."""
+    relevant = [row for row in rows if row.get("type") in {"file", "directory"}]
+    return bool(relevant) and all(isinstance(row.get("mode"), int) and row["mode"] & 0o222 == 0 for row in relevant)
+
+
 def candidate_claim_boundary() -> dict[str, bool]:
     return {
         "successor_legal_family_accepted": True,
@@ -287,12 +298,20 @@ def qualify_rb2(family: Path, rb2_result: Path, output: Path, *, zstd: str) -> d
         install_after = snapshot(runtime_root / "python")
 
     family_after = snapshot(family)
+    content_before = content_snapshot(install_before)
+    content_after_read_only = content_snapshot(install_after_read_only)
+    content_after_restore = content_snapshot(install_after)
+    content_unchanged = content_before == content_after_read_only == content_after_restore
+    read_only_enforced = read_only_modes_enforced(install_after_read_only)
+    modes_restored = install_before == install_after
     checks = {
         "source_authority_exact": sha256_file(RB2_AUTHORITY) == RB2_AUTHORITY_SHA,
         "accepted_data_products_exact": rollback_verification.get("pass") is True and current_verification.get("pass") is True,
         "update_rollback_reactivation": lifecycle["pass"],
         "successor_runtime_qualified": qualification.get("pass") is True,
-        "read_only_install_root_unchanged": install_before == install_after_read_only == install_after,
+        "read_only_install_root_content_unchanged": content_unchanged,
+        "read_only_install_root_mode_enforced": read_only_enforced,
+        "install_root_modes_restored": modes_restored,
         "accepted_family_unchanged": family_before == family_after,
     }
     failed = sorted(name for name, passed in checks.items() if passed is not True)
@@ -307,7 +326,19 @@ def qualify_rb2(family: Path, rb2_result: Path, output: Path, *, zstd: str) -> d
         "data_product_verification": {"rollback": rollback_verification, "current": current_verification},
         "lifecycle": lifecycle,
         "runtime_qualification": qualification,
-        "install_root_invariance": {"pass": install_before == install_after_read_only == install_after, "before_fingerprint_sha256": fingerprint(install_before), "read_only_after_fingerprint_sha256": fingerprint(install_after_read_only), "restored_after_fingerprint_sha256": fingerprint(install_after), "file_count": len([row for row in install_before if row["type"] == "file"])},
+        "install_root_invariance": {
+            "pass": content_unchanged and read_only_enforced and modes_restored,
+            "content_identity_unchanged": content_unchanged,
+            "read_only_modes_enforced": read_only_enforced,
+            "original_modes_restored": modes_restored,
+            "before_full_fingerprint_sha256": fingerprint(install_before),
+            "read_only_full_fingerprint_sha256": fingerprint(install_after_read_only),
+            "restored_full_fingerprint_sha256": fingerprint(install_after),
+            "before_content_fingerprint_sha256": fingerprint(content_before),
+            "read_only_content_fingerprint_sha256": fingerprint(content_after_read_only),
+            "restored_content_fingerprint_sha256": fingerprint(content_after_restore),
+            "file_count": len([row for row in install_before if row["type"] == "file"]),
+        },
         "family_invariance": {"pass": family_before == family_after, "before_fingerprint_sha256": fingerprint(family_before), "after_fingerprint_sha256": fingerprint(family_after), "file_count": len([row for row in family_before if row["type"] == "file"])},
         "claim_boundary": {"data_runtime_evidence_complete": not failed, "rb2_closed_source_authority": True, "rb2_rebound": False, "predecessor_family_superseded": False, "selectable": False, "publication": False},
     }
