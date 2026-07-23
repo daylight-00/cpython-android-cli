@@ -1,0 +1,28 @@
+{
+  "audit_kind": "epoch3-rb3-profile-M-successor-install-only-independent-audit",
+  "checks": {
+    "accepted_full_unchanged": true,
+    "all_result_checks_true": true,
+    "android_qualification": true,
+    "artifact_bytes_exact": true,
+    "artifact_exists": true,
+    "artifact_identity": true,
+    "candidate_only_boundary": true,
+    "direct_native_16k": true,
+    "direct_native_build_import": true,
+    "managed_native_16k": true,
+    "managed_native_build_import": true,
+    "not_selectable_or_published": true,
+    "predecessor_install_only_unchanged": true,
+    "predecessor_not_superseded": true,
+    "projection_verification": true,
+    "raw_policy_diagnostic_only": true,
+    "rb3_open": true,
+    "real_managed_root_unchanged": true,
+    "result_pass": true,
+    "stripped_not_started": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}

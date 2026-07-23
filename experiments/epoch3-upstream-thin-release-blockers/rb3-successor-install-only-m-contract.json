@@ -1,4 +1,5 @@
 {
+  "accepted_by": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
   "accepted_input": {
     "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
     "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
@@ -36,16 +37,17 @@
     "preserve accepted full, predecessor family, and real uv managed root"
   ],
   "schema_version": 1,
-  "status": "owner-r1-target-qualified-independent-audit-schema-mismatch-superseded-by-r2-correction",
+  "status": "owner-r2-qualified-candidate-accepted-by-successor-install-only-authority",
   "success_boundary": {
     "predecessor_family_superseded": false,
     "publication": false,
     "rb3_closed": false,
     "selectable": false,
     "successor_full_accepted": true,
-    "successor_install_only_accepted": false,
+    "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
     "successor_install_only_started": true,
+    "successor_stripped_authorized": true,
     "successor_stripped_started": false,
     "successor_technical_family_accepted": false
   },

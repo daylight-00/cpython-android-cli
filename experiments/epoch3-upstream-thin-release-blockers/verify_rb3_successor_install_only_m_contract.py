@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the active successor install-only r2 audit correction and routing."""
+"""Verify the completed successor install-only transition and stripped routing."""
 from __future__ import annotations
 
 import argparse
@@ -15,17 +15,26 @@ EXPECTED_FULL = {
     "member_count": 3752,
 }
 EXPECTED_INSTALL = {
-    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android_install_only.tar.gz".replace("android_", "android-"),
     "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
     "size_bytes": 23843355,
     "member_count": 3699,
 }
+EXPECTED_R2_RESULT = {
+    "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+    "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+    "size_bytes": 47232364,
+    "self_index_file_count": 72,
+}
 CONTRACT = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-contract.json"
 CORRECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json"
 R1_INSPECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json"
-INSPECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json"
+R2_INSPECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json"
+FULL_INSPECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json"
 LOCK = "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json"
-AUTHORITY = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json"
+FULL_AUTHORITY = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json"
+INSTALL_AUTHORITY = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json"
+STRIPPED_CONTRACT = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json"
 
 
 def load(root: Path, path: str) -> dict[str, Any]:
@@ -43,9 +52,12 @@ def verify(root: Path) -> dict[str, Any]:
     contract = load(root, CONTRACT)
     correction = load(root, CORRECTION)
     r1 = load(root, R1_INSPECTION)
-    inspection = load(root, INSPECTION)
+    r2 = load(root, R2_INSPECTION)
+    full_inspection = load(root, FULL_INSPECTION)
     lock = load(root, LOCK)
-    authority = load(root, AUTHORITY)
+    full_authority = load(root, FULL_AUTHORITY)
+    install_authority = load(root, INSTALL_AUTHORITY)
+    stripped = load(root, STRIPPED_CONTRACT)
     state = load(root, "docs/current/STATE.json")
     catalog = load(root, "docs/agent/TASK_CATALOG.json")
     task = next(row for row in catalog["tasks"] if row["task_id"] == "E3-RELEASE-BLOCKERS")
@@ -59,36 +71,63 @@ def verify(root: Path) -> dict[str, Any]:
         "self_index_file_count": 68,
     }
     checks = {
-        "predecessor_contract_superseded": contract.get("status") == "owner-r1-target-qualified-independent-audit-schema-mismatch-superseded-by-r2-correction" and contract.get("superseded_by") == CORRECTION,
-        "correction_active": correction.get("status") == "active-owner-r2-requalification-pending" and correction.get("predecessor_contract") == CONTRACT,
+        "predecessor_contract_completed": contract.get("status") == "owner-r2-qualified-candidate-accepted-by-successor-install-only-authority"
+        and contract.get("accepted_by") == INSTALL_AUTHORITY,
+        "correction_completed": correction.get("status") == "completed-owner-r2-pass-candidate-accepted-by-successor-install-only-authority"
+        and correction.get("predecessor_contract") == CONTRACT
+        and correction.get("result_archive") == EXPECTED_R2_RESULT
+        and correction.get("accepted_by") == INSTALL_AUTHORITY,
         "accepted_full_exact": {key: contract.get("accepted_input", {}).get(key) for key in EXPECTED_FULL} == EXPECTED_FULL,
         "candidate_exact": {key: contract.get("expected_candidate", {}).get(key) for key in EXPECTED_INSTALL} == EXPECTED_INSTALL,
         "correction_candidate_exact": correction.get("accepted_input", {}).get("expected_install_only") == EXPECTED_INSTALL,
         "full_lock_exact": lock.get("artifact") == EXPECTED_FULL,
-        "authority_exact": authority.get("accepted_full") == EXPECTED_FULL,
-        "lock_authority_hash": lock.get("authority", {}).get("sha256") == sha(root, AUTHORITY),
-        "acceptance_receipt_success": inspection.get("receipt", {}).get("claim_transaction_rc") == 0 and inspection.get("verification", {}).get("all_return_codes_zero") is True,
-        "acceptance_receipt_hash_registered": any(row.get("path") == INSPECTION and row.get("sha256") == sha(root, INSPECTION) for row in state.get("accepted_authorities", [])),
+        "full_authority_exact": full_authority.get("accepted_full") == EXPECTED_FULL,
+        "lock_authority_hash": lock.get("authority", {}).get("sha256") == sha(root, FULL_AUTHORITY),
+        "full_acceptance_receipt_success": full_inspection.get("receipt", {}).get("claim_transaction_rc") == 0
+        and full_inspection.get("verification", {}).get("all_return_codes_zero") is True,
         "r1_result_exact": r1.get("result_archive") == expected_r1_archive,
-        "r1_target_pass_audit_only_failure": r1.get("candidate", {}).get("target_result_pass") is True and r1.get("candidate", {}).get("all_target_checks_true") is True and r1.get("audit_observation", {}).get("only_failed_check") is True,
-        "r1_failure_hash_registered": any(row.get("path") == R1_INSPECTION and row.get("sha256") == sha(root, R1_INSPECTION) for row in state.get("accepted_authorities", [])),
-        "audit_only_scope": correction.get("correction_scope", {}).get("audit_predicate_changed") is True and correction.get("correction_scope", {}).get("product_bytes_changed") is False and correction.get("correction_scope", {}).get("projection_changed") is False,
-        "state_active_work": state.get("active_work_package") == CORRECTION,
-        "state_derivation_started": state.get("claim_boundaries", {}).get("successor_family_derivation_started") is True,
-        "state_full_accepted": state.get("claim_boundaries", {}).get("successor_full_accepted") is True,
-        "state_no_premature_completion": state.get("claim_boundaries", {}).get("successor_family_derivation_started") is True and state.get("claim_boundaries", {}).get("successor_full_accepted") is True and state.get("claim_boundaries", {}).get("selectable") is False,
-        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") == "rb3-profile-M-successor-install-only-r2-audit-receipt-schema-correction-and-owner-requalification",
-        "task_reads_contracts": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION)),
-        "task_reads_lock": any(row.get("path") == LOCK for row in task.get("required_reads", [])),
-        "task_binds_r1_failure": any(row.get("path") == R1_INSPECTION and row.get("sha256") == sha(root, R1_INSPECTION) for row in task.get("required_authorities", [])),
-        "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, INSPECTION, LOCK}.issubset(registered),
-        "success_boundary_candidate_only": correction.get("success_boundary", {}).get("successor_install_only_candidate") is True and correction.get("success_boundary", {}).get("successor_install_only_accepted") is False,
-        "stripped_deferred": correction.get("success_boundary", {}).get("successor_stripped_started") is False,
-        "predecessor_not_superseded": correction.get("success_boundary", {}).get("predecessor_family_superseded") is False,
-        "rb3_open_unpublished": correction.get("success_boundary", {}).get("rb3_closed") is False and correction.get("success_boundary", {}).get("selectable") is False and correction.get("success_boundary", {}).get("publication") is False,
+        "r1_target_pass_audit_only_failure": r1.get("candidate", {}).get("target_result_pass") is True
+        and r1.get("candidate", {}).get("all_target_checks_true") is True
+        and r1.get("audit_observation", {}).get("only_failed_check") is True,
+        "r2_result_exact": r2.get("result_archive") == {
+            **EXPECTED_R2_RESULT,
+            "self_index_exact": True,
+        },
+        "r2_result_registered": any(row.get("path") == R2_INSPECTION and row.get("sha256") == sha(root, R2_INSPECTION) for row in state.get("accepted_authorities", [])),
+        "install_authority_exact": install_authority.get("accepted_install_only") == EXPECTED_INSTALL
+        and install_authority.get("status") == "successor-install-only-r5-accepted-stripped-derivation-authorized",
+        "install_authority_registered": any(row.get("path") == INSTALL_AUTHORITY and row.get("sha256") == sha(root, INSTALL_AUTHORITY) for row in state.get("accepted_authorities", [])),
+        "audit_only_scope": correction.get("correction_scope", {}).get("audit_predicate_changed") is True
+        and correction.get("correction_scope", {}).get("product_bytes_changed") is False
+        and correction.get("correction_scope", {}).get("projection_changed") is False,
+        "state_active_work": state.get("active_work_package") == STRIPPED_CONTRACT,
+        "state_install_only_accepted": state.get("claim_boundaries", {}).get("successor_install_only_accepted") is True,
+        "state_stripped_not_started": state.get("claim_boundaries", {}).get("successor_stripped_started") is False,
+        "state_no_premature_completion": state.get("claim_boundaries", {}).get("selectable") is False
+        and state.get("claim_boundaries", {}).get("successor_technical_family_accepted") is False,
+        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") == "rb3-profile-M-successor-install-only-r5-accepted-and-successor-stripped-owner-derivation",
+        "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT)),
+        "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY)),
+        "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, LOCK}.issubset(registered),
+        "correction_success_candidate_only": correction.get("success_boundary", {}).get("successor_install_only_candidate") is True
+        and correction.get("success_boundary", {}).get("successor_install_only_accepted") is False,
+        "stripped_contract_exact": stripped.get("accepted_input", {}).get("sha256") == EXPECTED_INSTALL["sha256"]
+        and stripped.get("success_boundary", {}).get("successor_stripped_candidate") is True
+        and stripped.get("success_boundary", {}).get("successor_stripped_accepted") is False,
+        "predecessor_not_superseded": install_authority.get("claim_boundary", {}).get("artifact_family_superseded") is False
+        and stripped.get("success_boundary", {}).get("predecessor_family_superseded") is False,
+        "rb3_open_unpublished": install_authority.get("claim_boundary", {}).get("rb3_closed") is False
+        and install_authority.get("claim_boundary", {}).get("selectable") is False
+        and install_authority.get("claim_boundary", {}).get("publication") is False,
     }
     failed = sorted(name for name, value in checks.items() if value is not True)
-    return {"schema_version": 1, "verifier_kind": "epoch3-rb3-successor-install-only-r2-correction-contract", "pass": not failed, "checks": dict(sorted(checks.items())), "failed_checks": failed}
+    return {
+        "schema_version": 1,
+        "verifier_kind": "epoch3-rb3-successor-install-only-accepted-stripped-routing",
+        "pass": not failed,
+        "checks": dict(sorted(checks.items())),
+        "failed_checks": failed,
+    }
 
 
 def main() -> int:

@@ -405,3 +405,26 @@ Machine records:
 
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json`
 - `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json`
+
+
+## 17. Successor install-only r2 acceptance and stripped-derivation boundary
+
+The corrected r2 owner run returned a complete pass receipt. The result archive has SHA-256 `d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be`, size 47,232,364 bytes, and an exact 72-file self-index. The result contains both the target-working and final-delivery copies of the candidate; both copies are byte-identical and have the accepted candidate identity.
+
+The accepted successor install-only is:
+
+- filename: `cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz`;
+- SHA-256: `c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56`;
+- size: 23,843,355 bytes;
+- member count: 3,699.
+
+Two independent derivations were byte-identical. The archive is an exact unfiltered `python/install/**` to `python/**` projection of the accepted full r5 and changes no payload bytes. Android relocation, subprocess, venv, pip, Python config, pkg-config, read-only installation, uv system lifecycle, uv managed lifecycle, and direct and managed native-extension SDK qualification passed. Both baseline extensions had 16 KiB LOAD alignment. Raw Termux RUNPATH remains diagnostic-only and is not repaired or promoted as a portable-wheel claim.
+
+This evidence accepts the successor **install-only** only. It does not start stripped derivation inside the acceptance transaction, assemble the successor technical family, supersede the frozen predecessor family, close RB-3, or authorize selectability or publication. The next bounded transition is the deterministic stripped derivation described by `rb3-successor-stripped-m-contract.json`.
+
+Machine records:
+
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json`
+- `experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-install-only-m-r2-return.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json`
+- `experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json`

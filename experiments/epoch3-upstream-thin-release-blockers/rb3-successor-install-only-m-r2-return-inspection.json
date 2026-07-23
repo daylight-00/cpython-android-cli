@@ -1,0 +1,42 @@
+{
+  "candidate_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "member_count": 3699,
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": false,
+    "successor_install_only_candidate": true,
+    "successor_install_only_started": true,
+    "successor_stripped_started": false
+  },
+  "conclusion": "The r2 owner transaction produced the exact deterministic install-only candidate and passed projection, Android, uv system/managed, direct/managed SDK 16 KiB, protected-state, independent-audit, repository, remote, and self-index gates. Acceptance remains a separate bounded authority transition.",
+  "inspection_kind": "epoch3-rb3-profile-M-successor-install-only-r2-return-inspection",
+  "qualification": {
+    "direct_and_managed_native_sdk_16k": true,
+    "external_acceptance_audit": "15/15",
+    "owner_independent_audit": "20/20",
+    "owner_result_checks": "29/29",
+    "projection_and_android_qualification": true
+  },
+  "repository": {
+    "post_head": "b347d76acab63fe54ffda29c0493731f8b86dd01",
+    "post_tree": "681f6ec2dae9079f0a94584ba3eb34b795fce366",
+    "remote_post_head": "b347d76acab63fe54ffda29c0493731f8b86dd01"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 72,
+    "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+    "size_bytes": 47232364
+  },
+  "schema_version": 1,
+  "status": "accepted-complete-pass-candidate-ready-for-bounded-acceptance"
+}

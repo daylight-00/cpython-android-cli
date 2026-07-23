@@ -56,7 +56,7 @@ Epoch 3 selection     true
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-install-only-r1-target-qualified-audit-receipt-schema-corrected-owner-r2-pending
+- successor-install-only-r5-accepted-successor-stripped-derivation-pending
 
 ### Accepted authorities
 
@@ -101,6 +101,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json): accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence (`557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json): exact successful acceptance-r2 receipt, pushed full-r5 acceptance, and successor install-only derivation start boundary (`6f2ef52e78248de144bc390f06e07624d74629cc60666f0b39ddbb5e1a89e31f`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json): frozen successful target qualification and failed audit receipt-schema mismatch boundary (`b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json): exact successful r2 owner receipt, deterministic install-only candidate identity, complete Android/uv/native-SDK qualification, and bounded acceptance input (`3aec247ce7610121b27d775f91580e94d89cc7273acc31ee929d407c3fdb30d1`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json): accepted deterministic successor install-only r5 with exact full projection, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence (`cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca`)
 
 ### Agent entry
 

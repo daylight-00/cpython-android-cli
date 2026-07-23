@@ -245,6 +245,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
       "role": "frozen successful target qualification and failed audit receipt-schema mismatch boundary",
       "sha256": "b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-install-only-r2-success-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json",
+      "role": "exact successful r2 owner receipt, deterministic install-only candidate identity, complete Android/uv/native-SDK qualification, and bounded acceptance input",
+      "sha256": "3aec247ce7610121b27d775f91580e94d89cc7273acc31ee929d407c3fdb30d1"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-install-only-r5",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+      "role": "accepted deterministic successor install-only r5 with exact full projection, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence",
+      "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca"
     }
   ],
   "active_plan": {
@@ -253,7 +265,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -311,6 +323,10 @@
     "successor_family_derivation_started": true,
     "successor_full_accepted": true,
     "successor_full_candidate": true,
+    "successor_install_only_accepted": true,
+    "successor_install_only_candidate": true,
+    "successor_stripped_started": false,
+    "successor_technical_family_accepted": false,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
     "user_built_wheel_postprocessing_in_scope": false
@@ -349,8 +365,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
-    "tree": "2a166ca046d853999e46f1d95c70adbc1a39e664"
+    "commit": "b347d76acab63fe54ffda29c0493731f8b86dd01",
+    "tree": "681f6ec2dae9079f0a94584ba3eb34b795fce366"
   },
   "program": {
     "epoch": {
@@ -404,11 +420,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 43,
+  "state_revision": 44,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "17391bbfe7aef474c8afa2d53d2883d94bda168686cc64c00c36f3c3630d8657"
+    "sha256": "5d8dab7e2de58df5aa05590c23deba94690e6af406e2f717b72ef2515769ecc6"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -437,7 +453,7 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-install-only-r1-target-qualified-audit-receipt-schema-corrected-owner-r2-pending"
+    "successor-install-only-r5-accepted-successor-stripped-derivation-pending"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-install-only-r2-audit-receipt-schema-correction"
+  "updated_by_transaction": "rb3-profile-M-successor-install-only-r2-accepted-stripped-derivation-authorized"
 }

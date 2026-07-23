@@ -1,4 +1,5 @@
 {
+  "accepted_by": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
   "accepted_input": {
     "expected_install_only": {
       "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
@@ -51,8 +52,14 @@
     "repeat independent audit and require every check true",
     "return a complete self-indexed owner result before candidate promotion"
   ],
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+    "self_index_file_count": 72,
+    "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+    "size_bytes": 47232364
+  },
   "schema_version": 1,
-  "status": "active-owner-r2-requalification-pending",
+  "status": "completed-owner-r2-pass-candidate-accepted-by-successor-install-only-authority",
   "success_boundary": {
     "predecessor_family_superseded": false,
     "publication": false,

@@ -1,0 +1,61 @@
+{
+  "accepted_input": {
+    "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "member_count": 3699,
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-install-only-stripped-derivation",
+  "forbidden": [
+    "modify accepted full or install_only bytes",
+    "strip any ELF outside the existing bounded policy",
+    "repair or claim portability for user-built wheel RPATH or RUNPATH",
+    "assemble or accept the successor technical family inside this transaction",
+    "supersede predecessor family",
+    "start legal integration or RB-1/RB-2 rebinding",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "proposed_candidate": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "role": "bounded deterministic stripped derivation from accepted successor install_only"
+  },
+  "required_execution": [
+    "verify exact accepted successor install_only identity and acceptance authority",
+    "derive install_only_stripped twice with the existing bounded strip policy and require byte identity",
+    "record before/after identity for every inspected ELF and reject any mutation outside the bounded eligible path",
+    "verify non-ELF payload byte identity, archive metadata determinism, dynamic surface preservation, and 16 KiB LOAD alignment",
+    "qualify fresh extraction, relocation, subprocess, venv, imports, python-config, pkg-config, pip, and read-only installation",
+    "qualify uv system find/run/sync/venv and uv managed catalog/install/find/venv/reinstall/uninstall",
+    "build install and import the baseline native extension through direct and managed Python and require 16 KiB LOAD alignment",
+    "record raw extension DT_NEEDED RPATH and RUNPATH as diagnostics without repair",
+    "preserve accepted full, accepted install_only, predecessor family, and real uv managed root"
+  ],
+  "schema_version": 1,
+  "source_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "status": "authorized-pending-owner-derivation-after-install-only-acceptance",
+  "strip_policy": {
+    "allowed_mutation": "existing accepted bounded stripping surface only",
+    "decision_rule": "publish a distinct stripped candidate only when the bounded operation changes bytes safely; otherwise record an explicit alias-or-omission decision without duplicate promotion",
+    "dynamic_needed_rpath_runpath_and_16k_alignment_preserved": true,
+    "expected_eligible_path": "bin/python3.14",
+    "non_elf_payload_unchanged": true,
+    "operation": "llvm-strip --strip-unneeded"
+  },
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": false,
+    "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
+    "successor_technical_family_accepted": false
+  }
+}

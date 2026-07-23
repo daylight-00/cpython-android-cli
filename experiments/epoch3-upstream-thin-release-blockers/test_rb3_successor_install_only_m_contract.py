@@ -18,16 +18,20 @@ spec.loader.exec_module(module)
 
 class SuccessorInstallOnlyContractTests(unittest.TestCase):
     def test_current_contract_passes(self) -> None:
-        self.assertTrue(module.verify(ROOT)["pass"])
+        result = module.verify(ROOT)
+        self.assertTrue(result["pass"], result)
 
     def make_copy(self, root: Path) -> None:
         required = [
             module.CONTRACT,
             module.CORRECTION,
             module.R1_INSPECTION,
-            module.INSPECTION,
+            module.R2_INSPECTION,
+            module.FULL_INSPECTION,
             module.LOCK,
-            module.AUTHORITY,
+            module.FULL_AUTHORITY,
+            module.INSTALL_AUTHORITY,
+            module.STRIPPED_CONTRACT,
             "docs/current/STATE.json",
             "docs/agent/TASK_CATALOG.json",
             "docs/documentation/document-registry.json",
@@ -37,7 +41,7 @@ class SuccessorInstallOnlyContractTests(unittest.TestCase):
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, destination)
 
-    def test_rejects_premature_acceptance(self) -> None:
+    def test_rejects_retroactive_r2_acceptance_inside_correction(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             copy = Path(td) / "repo"
             self.make_copy(copy)

@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 — Exact official upstream control",
-          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 \u2014 Exact official upstream control",
+          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
+          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 — Platform portability",
-          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 \u2014 Platform portability",
+          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -2141,6 +2141,7 @@
         "release_blocker_resolution_started_claim": true,
         "successor_family_complete_claim": false,
         "successor_full_accepted_claim": true,
+        "successor_install_only_accepted_claim": true,
         "user_built_wheel_repair_claim": false
       },
       "completion_contract": {
@@ -2197,14 +2198,14 @@
       ],
       "deliverable": {
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-        "current_bounded_transition": "rb3-profile-M-successor-install-only-r2-audit-receipt-schema-correction-and-owner-requalification",
+        "current_bounded_transition": "rb3-profile-M-successor-install-only-r5-accepted-and-successor-stripped-owner-derivation",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
         "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
       },
       "goal": "Repeat the exact profile-M successor install-only owner qualification with the independent audit bound to the canonical serialized raw-wheel policy fields, while preserving the accepted full r5, the exact install-only candidate identity, the frozen predecessor family, and all non-promotion boundaries.",
       "input_routing": {
-        "fallback": "retain accepted full r5 and the frozen predecessor family, return one complete fail-closed receipt, and correct only a bounded install-only projection, qualification, audit, or receipt defect without user-wheel repair",
-        "first_attempt": "acquire the exact accepted full r5 and predecessor install-only result, derive the same install_only candidate twice, repeat all Android and uv direct/managed qualification, and audit canonical raw_policy_clean/postprocessing_boundary fields",
+        "fallback": "retain accepted full and install_only r5 plus the frozen predecessor family, return one complete fail-closed receipt, and correct only a bounded stripping, qualification, audit, or receipt defect without user-wheel repair",
+        "first_attempt": "acquire the exact accepted successor install_only r5, derive the bounded stripped candidate twice with the accepted llvm-strip policy, and repeat Android, uv system/managed, direct/managed native SDK, and 16 KiB qualification",
         "forbidden": [
           "accept-an-incomplete-result-index",
           "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -2304,6 +2305,16 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
           "reason": "Frozen r1 target qualification and audit receipt-schema mismatch boundary.",
           "sha256": "b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json",
+          "reason": "Frozen successful install-only r2 owner receipt and bounded acceptance input.",
+          "sha256": "3aec247ce7610121b27d775f91580e94d89cc7273acc31ee929d407c3fdb30d1"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+          "reason": "Frozen accepted profile-M successor install-only r5 and stripped-derivation authorization.",
+          "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca"
         }
       ],
       "required_reads": [
@@ -2495,6 +2506,26 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json",
           "reason": "Active audit-only r2 correction and exact owner requalification contract.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json",
+          "reason": "Exact successful install-only r2 receipt, candidate identity, qualification matrix, and non-promotion boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-install-only-m-r2-return.json",
+          "reason": "Accepted install-only r2 return and explicit stripped authorization boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+          "reason": "Accepted install-only r5 identity, evidence bindings, and successor gate.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json",
+          "reason": "Active bounded successor stripped derivation and owner qualification contract.",
           "scope": "full"
         }
       ],

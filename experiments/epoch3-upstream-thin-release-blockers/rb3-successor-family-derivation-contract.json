@@ -20,8 +20,10 @@
     "rb3_closed": false,
     "selectable": false,
     "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
     "successor_install_only_candidate_allowed": true,
     "successor_stripped_candidate_allowed": true,
+    "successor_stripped_started": false,
     "successor_technical_family_accepted": false,
     "successor_technical_family_candidate_allowed": true
   },
@@ -89,15 +91,17 @@
     "assemble a deterministic candidate technical family twice and independently audit identities and predecessor invariance"
   ],
   "schema_version": 1,
-  "status": "active-successor-family-derivation-pending",
+  "status": "active-successor-install-only-accepted-stripped-derivation-pending",
   "success_boundary": {
     "predecessor_family_superseded": false,
     "publication": false,
     "rb3_closed": false,
     "selectable": false,
     "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
     "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
     "successor_technical_family_accepted": false,
     "successor_technical_family_candidate": true
   }

@@ -1,0 +1,55 @@
+{
+  "candidate_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "checks": {
+    "android": true,
+    "candidate_identity": true,
+    "candidate_present": true,
+    "committed_evidence_exact": true,
+    "direct_native_sdk": true,
+    "managed_native_sdk": true,
+    "owner_independent_audit": true,
+    "owner_result": true,
+    "protected_state": true,
+    "raw_wheel_repair_out_of_scope": true,
+    "reproducibility": true,
+    "result_archive_identity": true,
+    "safe_archive_members": true,
+    "self_index_exact": true,
+    "structural": true
+  },
+  "evidence_exact": {
+    "artifacts/assembly-receipt.json": true,
+    "artifacts/reproducibility.json": true,
+    "result-index.json": true,
+    "summary.json": true,
+    "target/full-android-qualification.json": true,
+    "target/full-structural-verification.json": true,
+    "target/independent-audit.json": true,
+    "target/native-managed-wheel-elf-boundary.json": true,
+    "target/native-wheel-elf-boundary.json": true,
+    "target/protected-state.json": true,
+    "target/rb3-successor-full-m-result.json": true
+  },
+  "failed_checks": [],
+  "identity": {
+    "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+    "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+    "size_bytes": 63029723
+  },
+  "index": {
+    "actual_file_count": 77,
+    "extra": [],
+    "indexed_file_count": 77,
+    "mismatched": [],
+    "missing": [],
+    "pass": true
+  },
+  "member_count": 87,
+  "pass": true,
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb3-profile-M-successor-full-r4-result-archive"
+}

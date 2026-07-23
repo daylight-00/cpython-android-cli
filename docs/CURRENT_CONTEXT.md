@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 43
+> **State revision:** 44
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -72,6 +72,8 @@ status  in-progress
 39. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json) — accepted deterministic profile-M successor full r5 with structural, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
 40. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json) — exact successful acceptance-r2 receipt, pushed full-r5 acceptance, and successor install-only derivation start boundary
 41. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json) — frozen successful target qualification and failed audit receipt-schema mismatch boundary
+42. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json) — exact successful r2 owner receipt, deterministic install-only candidate identity, complete Android/uv/native-SDK qualification, and bounded acceptance input
+43. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json) — accepted deterministic successor install-only r5 with exact full projection, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
 
 ## Blockers
 
@@ -102,6 +104,6 @@ status  in-progress
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-install-only-r1-target-qualified-audit-receipt-schema-corrected-owner-r2-pending
+- successor-install-only-r5-accepted-successor-stripped-derivation-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.
