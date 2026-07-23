@@ -1,0 +1,58 @@
+{
+  "action": "applied-rb3-profile-M-successor-stripped-derived-qualified-audited-pushed",
+  "candidate": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": false,
+    "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_started": false
+  },
+  "claim_transaction_rc": 0,
+  "expected_post": {
+    "head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+    "tree": "043e7dda6b04f142d4732f1b8f29efc9bf074873"
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "package_id": "cpython-android-cli-e3-rb3-successor-stripped-m-r1",
+  "post": {
+    "head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+    "remote_head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+    "tree": "043e7dda6b04f142d4732f1b8f29efc9bf074873"
+  },
+  "pre": {
+    "head": "1760149bb6cea14e9726dae3f268830d740f29fc",
+    "remote_head": "1760149bb6cea14e9726dae3f268830d740f29fc",
+    "tree": "0cd6900c20178e840cdb254d4f0ae92ca1d86cd3"
+  },
+  "return_codes": {
+    "apply": 0,
+    "audit": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "rollback": 0,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "unit": 0
+  },
+  "schema_version": 1
+}

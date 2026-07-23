@@ -1,0 +1,47 @@
+{
+  "candidate": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "checks": {
+    "android_qualification": true,
+    "archive_name": true,
+    "archive_present": true,
+    "bounded_mutation": true,
+    "candidate_boundary": true,
+    "candidate_identity_consistent": true,
+    "direct_native_sdk": true,
+    "independent_audit": true,
+    "managed_native_sdk": true,
+    "owner_result": true,
+    "protected_state": true,
+    "raw_wheel_diagnostic_only": true,
+    "reproducibility": true,
+    "safe_archive_members": true,
+    "self_index_exact": true,
+    "source_install_only_exact": true,
+    "stripped_verification": true,
+    "target_result": true,
+    "transaction_pass": true
+  },
+  "failed_checks": [],
+  "identity": {
+    "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+    "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+    "size_bytes": 47423566
+  },
+  "index": {
+    "actual_file_count": 84,
+    "extra": [],
+    "indexed_file_count": 84,
+    "mismatched": [],
+    "missing": [],
+    "pass": true
+  },
+  "member_count": 95,
+  "pass": true,
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb3-profile-M-successor-stripped-owner-result-archive"
+}

@@ -1,0 +1,200 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "checks": {
+    "accepted_full_unchanged": true,
+    "accepted_install_only_authority": true,
+    "accepted_install_only_identity": true,
+    "accepted_install_only_unchanged": true,
+    "android_target_qualification": true,
+    "assembly_1_distinct": true,
+    "assembly_2_distinct": true,
+    "byte_reproducible": true,
+    "candidate_identity_consistent": true,
+    "candidate_member_count": true,
+    "changed_elf_count_1": true,
+    "elf_dynamic_alignment_preserved": true,
+    "eligible_elf_count_1": true,
+    "exact_stripped_derivation": true,
+    "frozen_authorities_unchanged": true,
+    "managed_catalog": true,
+    "managed_find": true,
+    "managed_install": true,
+    "managed_native_wheel_16k_alignment": true,
+    "managed_native_wheel_build_and_import": true,
+    "managed_profile_m_identity": true,
+    "managed_reinstall_noop": true,
+    "managed_uninstall": true,
+    "managed_venv": true,
+    "native_wheel_16k_alignment": true,
+    "native_wheel_build_and_import": true,
+    "non_elf_bytes_unchanged": true,
+    "only_project_launcher_changed": true,
+    "predecessor_stripped_unchanged": true,
+    "real_managed_root_unchanged": true,
+    "regular_elf_count_81": true,
+    "system_find": true,
+    "system_profile_m_identity": true,
+    "system_run": true,
+    "system_sync": true,
+    "system_venv": true,
+    "technical_family_not_started": true
+  },
+  "claim_boundary": {
+    "portable_raw_wheel_claim": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": false,
+    "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_started": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+  },
+  "failed_checks": [],
+  "managed_native_wheel_elf_boundary": {
+    "build_returncode": 0,
+    "extension_count": 1,
+    "pass": true,
+    "postprocessing_boundary": "out-of-scope-external-tool-responsibility",
+    "raw_extension": {
+      "all_load_alignments_16k": true,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "needed": [
+        "libpython3.14.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "returncode": 0,
+      "rpath": [],
+      "runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ],
+      "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+      "size_bytes": 6144
+    },
+    "raw_policy_clean": false,
+    "setuptools_returncode": 0,
+    "venv_returncode": 0,
+    "wheel": {
+      "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+      "sha256": "7343532097d1682a2a0f6e0e2df752c7af4d7e7ffc8e5ea231c7f4fbb319232d",
+      "size_bytes": 3239
+    },
+    "wheel_count": 1,
+    "wheel_import_returncode": 0,
+    "wheel_install_returncode": 0
+  },
+  "native_wheel_elf_boundary": {
+    "build_returncode": 0,
+    "extension_count": 1,
+    "pass": true,
+    "postprocessing_boundary": "out-of-scope-external-tool-responsibility",
+    "raw_extension": {
+      "all_load_alignments_16k": true,
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "needed": [
+        "libpython3.14.so",
+        "libdl.so",
+        "libc.so"
+      ],
+      "returncode": 0,
+      "rpath": [],
+      "runpath": [
+        "/data/data/com.termux/files/usr/bin/../../usr/lib"
+      ],
+      "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+      "size_bytes": 6144
+    },
+    "raw_policy_clean": false,
+    "setuptools_returncode": 0,
+    "venv_returncode": 0,
+    "wheel": {
+      "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+      "sha256": "9523c6ea847b86869664ab4e9e2dfa67d13a692c4d7448de3b4b251a3c777914",
+      "size_bytes": 3239
+    },
+    "wheel_count": 1,
+    "wheel_import_returncode": 0,
+    "wheel_install_returncode": 0
+  },
+  "pass": true,
+  "reproducibility": {
+    "byte_identical": true,
+    "first": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    "first_changed_paths": [
+      "bin/python3.14"
+    ],
+    "pass": true,
+    "schema_version": 1,
+    "second": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    "second_changed_paths": [
+      "bin/python3.14"
+    ]
+  },
+  "result_kind": "epoch3-rb3-profile-M-successor-stripped-owner-qualification",
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "operation": "llvm-strip --strip-unneeded",
+    "readelf_tool": {
+      "canonical_path": "/data/data/com.termux/files/usr/bin/llvm-readobj",
+      "is_symlink": true,
+      "path": "/data/data/com.termux/files/usr/bin/readelf",
+      "requested": "readelf",
+      "sha256": "f409f88b053ede038c37d2cc844a6c065a9d623cdebdf3f63d544beb8b55630e",
+      "size_bytes": 1734360,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "LLVM (http://llvm.org/):\n  LLVM version 21.1.8\n  Optimized build.\n"
+    },
+    "regular_elf_count": 81,
+    "strip_tool": {
+      "canonical_path": "/data/data/com.termux/files/usr/bin/llvm-objcopy",
+      "is_symlink": true,
+      "path": "/data/data/com.termux/files/usr/bin/llvm-strip",
+      "requested": "/data/data/com.termux/files/usr/bin/llvm-strip",
+      "sha256": "b1196f21e347a912662b0bea76ad97c60f758e68c612b58006d505182a679392",
+      "size_bytes": 209368,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "llvm-strip, compatible with GNU strip\nLLVM (http://llvm.org/):\n  LLVM version 21.1.8\n  Optimized build.\n"
+    }
+  }
+}

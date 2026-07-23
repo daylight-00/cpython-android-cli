@@ -1,0 +1,37 @@
+{
+  "build_returncode": 0,
+  "extension_count": 1,
+  "pass": true,
+  "postprocessing_boundary": "out-of-scope-external-tool-responsibility",
+  "raw_extension": {
+    "all_load_alignments_16k": true,
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ],
+    "needed": [
+      "libpython3.14.so",
+      "libdl.so",
+      "libc.so"
+    ],
+    "returncode": 0,
+    "rpath": [],
+    "runpath": [
+      "/data/data/com.termux/files/usr/bin/../../usr/lib"
+    ],
+    "sha256": "e81ae851b5a8bf8db6ec06e79f6d4fb7ac636a6ce3a75e4256486c99b59b382c",
+    "size_bytes": 6144
+  },
+  "raw_policy_clean": false,
+  "setuptools_returncode": 0,
+  "venv_returncode": 0,
+  "wheel": {
+    "filename": "hw_t_rb3_probe-0.1.0-cp314-cp314-android_24_arm64_v8a.whl",
+    "sha256": "9523c6ea847b86869664ab4e9e2dfa67d13a692c4d7448de3b4b251a3c777914",
+    "size_bytes": 3239
+  },
+  "wheel_count": 1,
+  "wheel_import_returncode": 0,
+  "wheel_install_returncode": 0
+}

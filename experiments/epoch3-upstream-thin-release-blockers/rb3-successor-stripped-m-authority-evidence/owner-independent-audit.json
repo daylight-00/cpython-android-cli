@@ -1,0 +1,41 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "audit_kind": "epoch3-rb3-profile-M-successor-stripped-independent-audit",
+  "checks": {
+    "accepted_full_unchanged": true,
+    "accepted_install_only_unchanged": true,
+    "all_result_checks_true": true,
+    "android_qualification": true,
+    "artifact_distinct_from_install_only": true,
+    "artifact_exists": true,
+    "artifact_filename": true,
+    "artifact_identity_self_consistent": true,
+    "bounded_mutation": true,
+    "candidate_only_boundary": true,
+    "direct_native_16k": true,
+    "direct_native_build_import": true,
+    "frozen_authorities_unchanged": true,
+    "managed_native_16k": true,
+    "managed_native_build_import": true,
+    "non_elf_and_dynamic_surface": true,
+    "not_selectable_or_published": true,
+    "predecessor_not_superseded": true,
+    "predecessor_stripped_unchanged": true,
+    "raw_policy_diagnostic_only": true,
+    "rb3_open": true,
+    "real_managed_root_unchanged": true,
+    "reproducibility": true,
+    "result_pass": true,
+    "source_install_only_exact": true,
+    "stripped_verification": true,
+    "technical_family_not_started": true
+  },
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}

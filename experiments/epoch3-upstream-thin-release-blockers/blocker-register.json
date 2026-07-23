@@ -71,6 +71,7 @@
       "evidence": {
         "accepted_successor_full_sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
         "accepted_successor_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+        "accepted_successor_stripped_sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
         "artifact_bytes_changed": false,
         "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
         "native_wheel_16k_alignment": "hard-gate",
@@ -89,7 +90,11 @@
         "successor_install_only_r2_result_sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
         "successor_r1_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
         "successor_r3_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
+        "successor_stripped_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+        "successor_stripped_accepted": true,
         "successor_stripped_r1_execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
+        "successor_stripped_r1_result_sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+        "successor_technical_family_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
         "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
       },
       "id": "RB-3",
@@ -97,15 +102,15 @@
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
-        "next_action": "execute profile-M successor install_only_stripped r1 owner derivation and qualification",
-        "required_input": "accepted install_only r5 c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56, accepted full r5, predecessor stripped r4, exact acceptance receipt 0712ccde2ea5db376242098b3503aa27d53e281f2906b0990600f0e7b58151a7, and frozen bounded stripping policy",
-        "required_output": "byte-identical successor stripped candidate with exact bounded mutation inventory, Android runtime, uv direct/managed, native SDK 16 KiB, protected-state, and independent-audit evidence",
-        "successor_after_accepted_probe": "accept stripped, then separately assemble and accept the technical family before any legal integration, predecessor supersession, or RB-3 closure"
+        "next_action": "assemble and qualify the profile-M successor technical family candidate",
+        "required_input": "accepted full r5 b13206f6, accepted install_only r5 c904a4d1, accepted stripped r5 9cffe27e, their frozen authorities, exact owner result archives, and the frozen predecessor family",
+        "required_output": "two byte-identical successor technical-family assemblies with complete release index, SHA256SUMS, successor-bound sidecars and attestations, exact artifact reuse, predecessor invariance, and independent audit",
+        "successor_after_accepted_probe": "accept the technical family in a separate transaction, then legally integrate and rebind RB-1/RB-2 before explicit predecessor supersession or RB-3 closure"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-successor-stripped-r1-owner-derivation-prepared"
+      "status": "in-progress-profile-M-successor-stripped-accepted-technical-family-assembly-authorized"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",
@@ -163,7 +168,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "execute-profile-M-successor-install-only-stripped-r1-owner-qualification",
+  "next_bounded_action": "execute-profile-M-successor-technical-family-owner-assembly-and-audit",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

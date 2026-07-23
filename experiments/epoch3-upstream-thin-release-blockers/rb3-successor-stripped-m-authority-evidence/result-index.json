@@ -1,0 +1,429 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    {
+      "path": "final-status.txt",
+      "sha256": "40738deeafdbd3798c23866c65dfb5910a055c595d17571aadb3d00f185d6b39",
+      "size_bytes": 1474
+    },
+    {
+      "path": "inputs/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-r5.lock.json",
+      "sha256": "37c4e278e645225d4cf53b6c1a430634028182f250e01445fe7fbcb0474fac29",
+      "size_bytes": 917
+    },
+    {
+      "path": "inputs/full-owner-result.sha256",
+      "sha256": "7f7f23dc4545f3997c7733be8381a412b7b7a388acdc17246d69b4a6c3d0de1d",
+      "size_bytes": 129
+    },
+    {
+      "path": "inputs/install-only-acceptance-result.sha256",
+      "sha256": "ffd2cde80c5fd77504aa4f256c4d0b5126e4aa023cc60db5fbc63aa279cbcee0",
+      "size_bytes": 148
+    },
+    {
+      "path": "inputs/install-only-owner-result.sha256",
+      "sha256": "fc505652469543a6f8698bd952e58dfc4d9450dbfa618a1f2dd89ef915fe5c31",
+      "size_bytes": 137
+    },
+    {
+      "path": "inputs/predecessor-stripped-owner-result.sha256",
+      "sha256": "76484d8a1f377180b7a33245e80670b753f7e2a7901471b0f94ce24c1801325e",
+      "size_bytes": 128
+    },
+    {
+      "path": "inputs/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
+      "sha256": "01a7e4c545a50a0d6f7b1809459cc2d23d93062ddcafdeea1a17465fe34b2905",
+      "size_bytes": 1455
+    },
+    {
+      "path": "inputs/rb3-successor-stripped-m-contract.json",
+      "sha256": "05933ce325e82e19053904cf985668ed7cf7cf0301b72d7b6a0adf2e7720b1cf",
+      "size_bytes": 3349
+    },
+    {
+      "path": "inputs/rb3-successor-stripped-m-r1-execution-contract.json",
+      "sha256": "eafb61221c745a58683ffdee5a6ae59de01c8bf52097081c8d6cd207a3ae0b07",
+      "size_bytes": 5803
+    },
+    {
+      "path": "logs/accept-result-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/acceptance-result-verification.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "320dd6c1a3cef82ce2cfd743e80bfc77166adde8f3caec6440a1ff5612e4bdf7",
+      "size_bytes": 2728
+    },
+    {
+      "path": "logs/audit.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/bundle-fetch.log",
+      "sha256": "aedc7c21f6952f04e9c8f95752ca876ff3f4c63c84714c0455394ddcfe8ca5a8",
+      "size_bytes": 307
+    },
+    {
+      "path": "logs/full-result-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/full-result-verification.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/input-rclone.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/install-result-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/install-result-verification.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/onboarding.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/package-verify.log",
+      "sha256": "ce560437e99d8e51f2b3d6699b5be285bc703c67ae34d01f59fb6659d6eead71",
+      "size_bytes": 128
+    },
+    {
+      "path": "logs/pred-result-extract.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/pred-result-verification.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "bde4fb318aa751b15b4894cc4d806cf0d3e49325cf6ec82240ce1a5450ef6be1",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/remote-post.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/remote-pre.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/repository-pre.log",
+      "sha256": "d4f80a4110e5932835139663de37d60af19183d9a4c3f9bd3de825355c32804c",
+      "size_bytes": 379
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "9508d459131cfef16d2d447d9a827d21a765176a2066b9da5e7df75e3ed25d3b",
+      "size_bytes": 169
+    },
+    {
+      "path": "logs/target.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "383b31b18e1e8f925a437eea32479c908765e90c2f52f7d8df89d173bc6d3ad5",
+      "size_bytes": 1490
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "c42c0974fdc14ec6deacf16ad7890316a5ba105beeec29dbe53f2d2e84b775a4",
+      "size_bytes": 2002
+    },
+    {
+      "path": "receipts/full-result-verification.json",
+      "sha256": "7563134da169b672482a9e7997ded203eca95183e91a57ea8b4f5416c714fc82",
+      "size_bytes": 1760
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "bacf7506513c5895bfb47f2068fb4282bd7d12b890e0094a4367ccc889aab08a",
+      "size_bytes": 1413
+    },
+    {
+      "path": "receipts/install-only-acceptance-result-verification.json",
+      "sha256": "a7edc1a605068fb795829c19e9de87a35bd72b4d224934d0a732a70eb19ae1ca",
+      "size_bytes": 898
+    },
+    {
+      "path": "receipts/install-only-result-verification.json",
+      "sha256": "de3edcd3052d2fdea9b7f5ff139ad4a454bda55dcc9cee7ed5e712daa064420d",
+      "size_bytes": 1958
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "084119b558139171e9ff69ff4070fbe4f929f4f19cbf1a0b0a2255ff8647aa02",
+      "size_bytes": 23622
+    },
+    {
+      "path": "receipts/predecessor-stripped-result-verification.json",
+      "sha256": "af64f04296019d3b54089fb7aebb84593029e9b867687ce0fbfabd631a359a43",
+      "size_bytes": 299
+    },
+    {
+      "path": "receipts/rb3-successor-stripped-m.json",
+      "sha256": "51847bfb58b309ff6ae96253d1ceb3fb3fefa07b3367f279c027992ccfdb600c",
+      "size_bytes": 6703
+    },
+    {
+      "path": "summary.json",
+      "sha256": "6d58e8d281c29924fca156b1b4b6e6564ee7bcbf98b4fa1c3ca39c1f24e7cc35",
+      "size_bytes": 1781
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    {
+      "path": "target/artifacts/custom-downloads.json",
+      "sha256": "09311fa56610db52f53b8d4319840c4a4ba43dc0400ba8d6d536cd63d81b64e2",
+      "size_bytes": 637
+    },
+    {
+      "path": "target/process/managed-catalog.json",
+      "sha256": "86b8b2f68940831d5467a6252f9bb494763cb8ba5ae1b3b321293beb127c018c",
+      "size_bytes": 1448
+    },
+    {
+      "path": "target/process/managed-find-empty.json",
+      "sha256": "c6a86a59ac90f56608f292c487b8a028fe7a6299620718296ecb43e9c1ab0010",
+      "size_bytes": 553
+    },
+    {
+      "path": "target/process/managed-find.json",
+      "sha256": "097a4b187abe3eef38292d89e2a2cffd554bb63a6464862a220a3c59f3e0612a",
+      "size_bytes": 576
+    },
+    {
+      "path": "target/process/managed-identity.json",
+      "sha256": "650988f351309eb92c7c44fa461f003a836989779514a10018ef024e93978229",
+      "size_bytes": 3589
+    },
+    {
+      "path": "target/process/managed-install.json",
+      "sha256": "5aa628808b46cd6a4f0e65de381df8de98bc289f1096a9bdd25e69ede9e89b66",
+      "size_bytes": 748
+    },
+    {
+      "path": "target/process/managed-reinstall.json",
+      "sha256": "f24ae60e49b3ce99c398e10fe0925ff1c5eab24161d41e2d9b619555ee1b9744",
+      "size_bytes": 608
+    },
+    {
+      "path": "target/process/managed-uninstall.json",
+      "sha256": "9a8fc2803687ecb9e87beee0575364da4aaa53f073806ab2dde12010f1e6444a",
+      "size_bytes": 499
+    },
+    {
+      "path": "target/process/managed-venv-identity.json",
+      "sha256": "47258cd4814f4e4b2fafffbc3577cd3b35d75ba760bc536285317a2e64370699",
+      "size_bytes": 3484
+    },
+    {
+      "path": "target/process/managed-venv.json",
+      "sha256": "1ba800de9bf57f0c6997f0d8122cba85e3d4306806fce18959b62bb0df78597c",
+      "size_bytes": 530
+    },
+    {
+      "path": "target/process/successor-stripped-M-managed-wheel-build.json",
+      "sha256": "12d64d9a263a021b4f4e874f6db84a947dc6d112707924c6a7fcc3b82cbfe9b6",
+      "size_bytes": 1309
+    },
+    {
+      "path": "target/process/successor-stripped-M-managed-wheel-import.json",
+      "sha256": "091ba3a48f6f0bf62950557c5df69c9db42cd05d486c3fe652a153e26fafb247",
+      "size_bytes": 319
+    },
+    {
+      "path": "target/process/successor-stripped-M-managed-wheel-install.json",
+      "sha256": "9fa4f32f0ad5c387aac7893c347c16e7cd9c9db4d3b5134fd4e1bb35ffaaade5",
+      "size_bytes": 661
+    },
+    {
+      "path": "target/process/successor-stripped-M-managed-wheel-setuptools.json",
+      "sha256": "b62c93ca08a63ee4f7b46b053ec2bde75157b7bcefb479735b3a98eb5c87a078",
+      "size_bytes": 784
+    },
+    {
+      "path": "target/process/successor-stripped-M-managed-wheel-venv.json",
+      "sha256": "59088560ea1ea133fcda5205eae6d578c3b54905992853d204661f654c3f7282",
+      "size_bytes": 389
+    },
+    {
+      "path": "target/process/successor-stripped-M-wheel-build.json",
+      "sha256": "de9da07af2b6dc78afcade8540db500b6756fbd41b96367fb0c3af332e617a26",
+      "size_bytes": 1271
+    },
+    {
+      "path": "target/process/successor-stripped-M-wheel-import.json",
+      "sha256": "32c3f3f35ac02cb24b73cbcafb6ee09ff9cba59e47e042e8a40af3ffd78be817",
+      "size_bytes": 303
+    },
+    {
+      "path": "target/process/successor-stripped-M-wheel-install.json",
+      "sha256": "ac34463be56dfed34d1eb1a44943a061929a7eac2326fa2d468587460e5250d9",
+      "size_bytes": 637
+    },
+    {
+      "path": "target/process/successor-stripped-M-wheel-setuptools.json",
+      "sha256": "5e1da3d5396de62d23a4549bf62be45e11825e870efb0adf88218e0c29a001d4",
+      "size_bytes": 704
+    },
+    {
+      "path": "target/process/successor-stripped-M-wheel-venv.json",
+      "sha256": "d9137e15ce1ae357f094a3bc08d3cdb62dc56ae49c1d9a4c2eab7459d1502392",
+      "size_bytes": 341
+    },
+    {
+      "path": "target/process/system-find.json",
+      "sha256": "7f40c1d9ccfb45f5c0184692e97bd031f0da5cf3374097ca284d3e07c92395ed",
+      "size_bytes": 537
+    },
+    {
+      "path": "target/process/system-identity.json",
+      "sha256": "d54c5571cb747a36faf3f9e01f1a79d8b911d217574974d14b7d34860c64c24d",
+      "size_bytes": 3443
+    },
+    {
+      "path": "target/process/system-run.json",
+      "sha256": "1ed5c435190f9412edd3c49f9661e7368540beab7b83cd528d3a1806185a692f",
+      "size_bytes": 3763
+    },
+    {
+      "path": "target/process/system-sync-identity.json",
+      "sha256": "201205c303ecf8733c4aede27a22ff1f8f8f7176db78faf526a20d2a010e7ddc",
+      "size_bytes": 3425
+    },
+    {
+      "path": "target/process/system-sync.json",
+      "sha256": "ce2051865a9f24e09171ef3ded2976e86b8806c4b441f98fe797123d88a505fd",
+      "size_bytes": 823
+    },
+    {
+      "path": "target/process/system-venv-identity.json",
+      "sha256": "0b9e5cac127836418f2da63404c50ce8b83c81e59a9dbda4a3b1cf5558e616d7",
+      "size_bytes": 3431
+    },
+    {
+      "path": "target/process/system-venv.json",
+      "sha256": "1583ddcaeb79d5fd76bfdf82647f7c7f25045e856ebf482085c8f36cfb3c38c0",
+      "size_bytes": 668
+    },
+    {
+      "path": "target/protected-state.json",
+      "sha256": "7fd3ebde3dcdb1e6a2a597133a9df439b0bf203739586e7937450d70f657d6bd",
+      "size_bytes": 1454
+    },
+    {
+      "path": "target/rb3-successor-stripped-m-result.json",
+      "sha256": "51847bfb58b309ff6ae96253d1ceb3fb3fefa07b3367f279c027992ccfdb600c",
+      "size_bytes": 6703
+    },
+    {
+      "path": "target/receipts/assembly-1-command.json",
+      "sha256": "554077f2b63ea7bd460b9567668ec408693353ba40fc05a9de22ff591dd5dd80",
+      "size_bytes": 2167761
+    },
+    {
+      "path": "target/receipts/assembly-1-receipt.json",
+      "sha256": "d46657d407982d9b46cebc4f2d73830f296fe4a233dd5f849e04843f9be62ac9",
+      "size_bytes": 1950386
+    },
+    {
+      "path": "target/receipts/assembly-2-command.json",
+      "sha256": "5ef64b19ca0c7d66e4ded0fcd3e586c10e395e0b9e91fe77b116427f4225b7a9",
+      "size_bytes": 2167761
+    },
+    {
+      "path": "target/receipts/assembly-2-receipt.json",
+      "sha256": "d46657d407982d9b46cebc4f2d73830f296fe4a233dd5f849e04843f9be62ac9",
+      "size_bytes": 1950386
+    },
+    {
+      "path": "target/receipts/install-only-authority-command.json",
+      "sha256": "23101ce066cffdfd6d96c1c800353a75129e524b7c4b81310b2b5d51bb2a396c",
+      "size_bytes": 3808
+    },
+    {
+      "path": "target/receipts/install-only-authority-verification.json",
+      "sha256": "2f33aa0288b481882f4db5e9f0d40dd3a036ee6c4012c9e5b826a41f1e546653",
+      "size_bytes": 3251
+    },
+    {
+      "path": "target/receipts/install-only-input-identity.json",
+      "sha256": "f0174c40c0e1377a3530233547b7e99b4f0455ebb0279f22becc29cdd7fd518c",
+      "size_bytes": 476
+    },
+    {
+      "path": "target/receipts/native-managed-wheel-elf-boundary.json",
+      "sha256": "827b9260101d8cd1012647da21bc4e85d32f2a7d90fec897aa48b8162bbd0023",
+      "size_bytes": 951
+    },
+    {
+      "path": "target/receipts/native-wheel-elf-boundary.json",
+      "sha256": "9fd92e67f05ede37364a9e30e9a496df603d8c82ac68fbd87a3cb78be9517506",
+      "size_bytes": 951
+    },
+    {
+      "path": "target/receipts/stripped-android-qualification.json",
+      "sha256": "5522ee105840895c5d30b7333459d4f17fe0e27fe56c84ceedc7233d49049f90",
+      "size_bytes": 46347
+    },
+    {
+      "path": "target/receipts/stripped-mutation-receipt.json",
+      "sha256": "d46657d407982d9b46cebc4f2d73830f296fe4a233dd5f849e04843f9be62ac9",
+      "size_bytes": 1950386
+    },
+    {
+      "path": "target/receipts/stripped-reproducibility.json",
+      "sha256": "941814115dd3332d56706bc118f69d0822cfc6b64a6a5c8ecb5d7c32d77dc8e9",
+      "size_bytes": 622
+    },
+    {
+      "path": "target/receipts/stripped-verification-command.json",
+      "sha256": "5bec1477e0b0ffb4a33c5c15a803efe96521ac63458b1805ca01f66ac7b660c0",
+      "size_bytes": 3244
+    },
+    {
+      "path": "target/receipts/stripped-verification.json",
+      "sha256": "faeedcb5944d458abbadb10d36907b37eff8c376adb189e1d667b8c7a1c98b45",
+      "size_bytes": 1902
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

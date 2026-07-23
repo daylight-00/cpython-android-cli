@@ -19,6 +19,8 @@
     "successor_family_complete_claim": false,
     "successor_full_accepted_claim": true,
     "successor_install_only_accepted_claim": true,
+    "successor_stripped_accepted_claim": true,
+    "successor_technical_family_complete_claim": false,
     "user_built_wheel_repair_claim": false
   },
   "completion_contract": {
@@ -75,17 +77,17 @@
   ],
   "deliverable": {
     "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification",
+    "current_bounded_transition": "rb3-profile-M-successor-technical-family-owner-assembly-and-audit",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-    "result": "complete-pass-or-fail-receipt-for-each-local-or-target-blocker"
+    "result": "deterministic-candidate-only-successor-technical-family-with-complete-index-sidecars-checksums-reproducibility-and-audit"
   },
   "generated_from": {
     "state": "docs/current/STATE.json",
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "retain accepted full and install-only r5 plus the frozen predecessor family, return one complete fail-closed receipt, and correct only a bounded stripped derivation, qualification, audit, or receipt defect without technical-family assembly or user-wheel repair",
-    "first_attempt": "acquire the exact accepted install-only r5, accepted full r5, and predecessor stripped artifact from verified result archives; derive the successor stripped candidate twice with the accepted bounded llvm-strip policy; run Android, uv system/managed, direct/managed native SDK, 16 KiB, protected-state, and independent-audit gates",
+    "fallback": "retain all three accepted successor artifacts and the frozen predecessor family, return one complete fail-closed receipt, and correct only bounded successor technical-family assembly, metadata rebinding, reproducibility, audit, or receipt defects without legal integration or predecessor supersession",
+    "first_attempt": "acquire exact accepted successor full, install-only, and stripped artifacts from verified owner result archives; verify all three frozen authorities and locks; assemble the technical family twice; compare complete inventories; verify release index, SHA256SUMS, sidecars, attestations, exact artifact reuse, predecessor invariance, and candidate-only audit boundary",
     "forbidden": [
       "accept-an-incomplete-result-index",
       "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -207,6 +209,16 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
       "reason": "Frozen successful install-only acceptance receipt and exact stripped-derivation authorization.",
       "sha256": "01a7e4c545a50a0d6f7b1809459cc2d23d93062ddcafdeea1a17465fe34b2905"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json",
+      "reason": "Frozen successful stripped r1 owner receipt and bounded acceptance input.",
+      "sha256": "8e851d093a6e0fd6e868e7351ee61ba7009eccbb2364ca80624c0fbad3fd6698"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+      "reason": "Frozen accepted profile-M successor stripped r5 and technical-family derivation gate.",
+      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
     }
   ],
   "required_reads": [
@@ -434,13 +446,43 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
       "reason": "Exact owner r1 input archives, protected inputs, runner surface, qualification matrix, and candidate-only success boundary.",
       "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-stripped-m-r1-return.json",
+      "reason": "Exact accepted successor stripped r1 owner return and candidate identity.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json",
+      "reason": "Frozen successful stripped r1 receipt, 84-file self-index, bounded mutation, and acceptance boundary.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+      "reason": "Accepted successor stripped r5 identity, tool/mutation boundary, and technical-family derivation authorization.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+      "reason": "Exact accepted three-artifact input and candidate-only technical-family assembly contract.",
+      "scope": "full"
+    },
+    {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-stripped-r5.lock.json",
+      "reason": "Exact accepted successor stripped r5 product lock.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-contract.json",
+      "reason": "Completed stripped r1 candidate qualification and bounded acceptance transition contract.",
+      "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 45,
+  "state_revision": 46,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Derive the profile-M successor install-only-stripped candidate twice from the accepted install-only r5 with the frozen bounded llvm-strip policy; qualify Android runtime, uv system and managed consumer paths, direct and managed baseline native-extension SDK output, 16 KiB LOAD alignment, and protected-state invariance; return a candidate-only owner receipt without technical-family assembly, predecessor supersession, RB-3 closure, selectability, or publication.",
+    "goal": "Assemble the accepted profile-M successor full, install-only, and stripped r5 artifacts into a deterministic technical family twice; bind successor-specific release metadata and authorities; verify exact artifact reuse, complete release index and SHA256SUMS, reproducibility, predecessor invariance, and independent audit; return a candidate-only owner receipt without legal integration, predecessor supersession, RB-3 closure, selectability, or publication.",
     "id": "E3-RELEASE-BLOCKERS",
     "title": "Resolve Epoch 3 release-blocking evidence and operations",
     "work_class": "T"

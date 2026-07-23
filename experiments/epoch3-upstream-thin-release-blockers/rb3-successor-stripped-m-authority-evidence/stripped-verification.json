@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-stripped-m-r1-results/target/artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "changed_paths": [
+    "bin/python3.14"
+  ],
+  "checks": {
+    "accepted_install_only_identity": true,
+    "all_and_only_eligible_elf_changed": true,
+    "artifact_identity_matches_receipt": true,
+    "changed_count_exact": true,
+    "changed_paths_exact": true,
+    "deterministic_gzip_header": true,
+    "deterministic_tar_metadata": true,
+    "distinct_byte_delta": true,
+    "elf_dynamic_alignment_preserved": true,
+    "eligible_count_exact": true,
+    "eligible_paths_exact": true,
+    "no_duplicate_members": true,
+    "non_elf_bytes_unchanged": true,
+    "path_set_identity": true,
+    "receipt_decision_distinct": true,
+    "receipt_parse": true,
+    "receipt_source_identity": true,
+    "regular_elf_count_exact": true,
+    "regular_elf_paths_exact": true,
+    "removable_sections_absent_after": true,
+    "type_mode_symlink_identity": true
+  },
+  "claim_boundary": {
+    "publication": false,
+    "selectable": false,
+    "stripped_authority_frozen": false,
+    "stripped_candidate": true
+  },
+  "eligible_paths": [
+    "bin/python3.14"
+  ],
+  "errors": [],
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "verifier_kind": "epoch3-upstream-thin-install-only-stripped"
+}

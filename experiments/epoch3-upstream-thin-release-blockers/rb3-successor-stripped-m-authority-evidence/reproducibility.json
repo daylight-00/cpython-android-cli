@@ -1,0 +1,21 @@
+{
+  "byte_identical": true,
+  "first": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "first_changed_paths": [
+    "bin/python3.14"
+  ],
+  "pass": true,
+  "schema_version": 1,
+  "second": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "second_changed_paths": [
+    "bin/python3.14"
+  ]
+}

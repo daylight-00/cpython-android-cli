@@ -1,0 +1,63 @@
+{
+  "accepted_inputs": {
+    "full": {
+      "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "member_count": 3752,
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    "install_only": {
+      "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "member_count": 3699,
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    "install_only_stripped": {
+      "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "member_count": 3699,
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    }
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-technical-family-derivation",
+  "forbidden": [
+    "modify any accepted successor or predecessor artifact bytes",
+    "reuse predecessor sidecars without rebinding successor artifact identities and authorities",
+    "legally integrate or claim complete component-license mapping inside this transaction",
+    "supersede the predecessor family",
+    "rebind RB-1 or RB-2",
+    "repair or claim portability for user-built wheel RPATH or RUNPATH",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "proposed_candidate": {
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "role": "deterministic technical family candidate only; not legally integrated, canonical, selectable, or published"
+  },
+  "required_execution": [
+    "acquire and independently verify the exact accepted full, install_only, and install_only_stripped artifacts from their owner result archives",
+    "assemble the complete technical family twice and require byte-identical inventories, release-index.json, SHA256SUMS, manifests, sidecars, and attestations",
+    "prove all three embedded artifact archives are byte-identical to accepted inputs and no product bytes are rewritten",
+    "verify family metadata binds the successor authorities while preserving upstream provenance and the explicit user-wheel responsibility boundary",
+    "independently audit complete family identity, predecessor invariance, and candidate-only claim boundary"
+  ],
+  "schema_version": 1,
+  "status": "authorized-pending-owner-assembly-after-stripped-acceptance",
+  "success_boundary": {
+    "legal_family_integration_started": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_candidate": true,
+    "successor_technical_family_started": true
+  }
+}

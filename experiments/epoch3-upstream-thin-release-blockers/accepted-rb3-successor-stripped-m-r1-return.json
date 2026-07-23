@@ -1,0 +1,73 @@
+{
+  "candidate_stripped": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "checks": {
+    "accepted_inputs_and_predecessor_protected": true,
+    "android_qualification": true,
+    "bounded_mutation": true,
+    "candidate_reproducible": true,
+    "claim_transaction_pass": true,
+    "direct_native_wheel_16k_alignment": true,
+    "direct_native_wheel_build_install_import": true,
+    "independent_acceptance_audit": true,
+    "managed_native_wheel_16k_alignment": true,
+    "managed_native_wheel_build_install_import": true,
+    "managed_uv_lifecycle": true,
+    "result_self_index_exact": true,
+    "system_uv_lifecycle": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_predecessor_family_unchanged": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_stripped_candidate": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_authorized": true,
+    "successor_technical_family_started": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+  },
+  "repository": {
+    "post_head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+    "post_tree": "043e7dda6b04f142d4732f1b8f29efc9bf074873",
+    "remote_post_head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 84,
+    "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+    "size_bytes": 47423566
+  },
+  "return_kind": "epoch3-rb3-profile-M-successor-stripped-r1-accepted-return",
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "status": "accepted-pass-successor-stripped-r5-authorized-technical-family-derivation-pending",
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "dynamic_and_16k_alignment_preserved": true,
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "non_elf_payload_unchanged": true,
+    "operation": "llvm-strip --strip-unneeded",
+    "regular_elf_count": 81
+  }
+}

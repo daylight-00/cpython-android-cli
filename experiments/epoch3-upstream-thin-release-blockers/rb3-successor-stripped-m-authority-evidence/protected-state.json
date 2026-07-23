@@ -1,0 +1,28 @@
+{
+  "accepted_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "accepted_full_unchanged": true,
+  "accepted_install_only_unchanged": true,
+  "authority_after": {
+    "accepted_full_authority_sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb",
+    "accepted_install_only_authority_sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca",
+    "predecessor_family_authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
+  },
+  "authority_before": {
+    "accepted_full_authority_sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb",
+    "accepted_install_only_authority_sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca",
+    "predecessor_family_authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
+  },
+  "frozen_authorities_unchanged": true,
+  "predecessor_stripped": {
+    "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+    "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+    "size_bytes": 23841241
+  },
+  "predecessor_stripped_unchanged": true,
+  "real_managed_root": "/data/data/com.termux/files/home/.local/share/uv/python",
+  "real_managed_root_unchanged": true
+}

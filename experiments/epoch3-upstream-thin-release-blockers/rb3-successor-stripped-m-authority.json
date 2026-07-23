@@ -1,0 +1,111 @@
+{
+  "accepted_evidence": {
+    "android_qualification": "11/11",
+    "assembly_byte_identical": true,
+    "bounded_mutation": "bin/python3.14-only",
+    "direct_and_managed_native_sdk_16k": true,
+    "external_acceptance_audit": "19/19",
+    "owner_independent_audit": "27/27",
+    "owner_result_checks": "37/37",
+    "result_archive_filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+    "result_archive_sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+    "result_archive_size": 47423566,
+    "self_index_file_count": 84,
+    "stripped_verification": "21/21"
+  },
+  "accepted_stripped": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "authority_kind": "epoch3-rb3-profile-M-successor-install-only-stripped-r5",
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "canonical_predecessor_family_unchanged": true,
+    "portable_raw_wheel_claim": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_stripped_candidate": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_authorized": true,
+    "successor_technical_family_started": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
+  },
+  "file_identities": {
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-stripped-r5.lock.json": "784f30c34d0d6f4f734f63c8de34135729e54cd8c986776acd98cc9f43761395",
+    "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-stripped-m-r1-return.json": "960871f9d80432c905f53c0e8fac967fdbff925f7c16767b1eb3a3558a9f56cc",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-contract.json": "1369d1541c566d22871d13db40b1d4e98ba32940c6380cd227c71bf81f59f6c8",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/external-acceptance-audit.json": "bbed489cdb95a92c3b5111290ff928afd1a54f4f1ea231b7e047068f598059c6",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/install-only-authority-verification.json": "2f33aa0288b481882f4db5e9f0d40dd3a036ee6c4012c9e5b826a41f1e546653",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/native-managed-wheel-elf-boundary.json": "827b9260101d8cd1012647da21bc4e85d32f2a7d90fec897aa48b8162bbd0023",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/native-wheel-elf-boundary.json": "9fd92e67f05ede37364a9e30e9a496df603d8c82ac68fbd87a3cb78be9517506",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/owner-independent-audit.json": "bacf7506513c5895bfb47f2068fb4282bd7d12b890e0094a4367ccc889aab08a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/owner-result.json": "51847bfb58b309ff6ae96253d1ceb3fb3fefa07b3367f279c027992ccfdb600c",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/owner-summary.json": "6d58e8d281c29924fca156b1b4b6e6564ee7bcbf98b4fa1c3ca39c1f24e7cc35",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/protected-state.json": "7fd3ebde3dcdb1e6a2a597133a9df439b0bf203739586e7937450d70f657d6bd",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/reproducibility.json": "941814115dd3332d56706bc118f69d0822cfc6b64a6a5c8ecb5d7c32d77dc8e9",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/result-index.json": "d55ac5745324442e7848f23d57aeca91d0d1daeecbcd90bb56f36b6cfcd2a6d3",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/stripped-android-qualification.json": "5522ee105840895c5d30b7333459d4f17fe0e27fe56c84ceedc7233d49049f90",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/stripped-mutation-receipt.json": "d46657d407982d9b46cebc4f2d73830f296fe4a233dd5f849e04843f9be62ac9",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority-evidence/stripped-verification.json": "faeedcb5944d458abbadb10d36907b37eff8c376adb189e1d667b8c7a1c98b45",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json": "05933ce325e82e19053904cf985668ed7cf7cf0301b72d7b6a0adf2e7720b1cf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json": "eafb61221c745a58683ffdee5a6ae59de01c8bf52097081c8d6cd207a3ae0b07",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json": "8e851d093a6e0fd6e868e7351ee61ba7009eccbb2364ca80624c0fbad3fd6698",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json": "0f9c83cec8423e43ee603ff93ef47718e74b37190381c3c910a14c9973e00268",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_stripped_m_acceptance.py": "dbf6bd39dad308ecb596c8e858bfd86c62cfb416437be037bc52457911959b0c",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_stripped_m_contract.py": "306eff7327aa88c86964e7959c02d64361678f98d6542da6e58570944bac052f",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_stripped_m_result_archive.py": "98f75760e2b96663e0495e2039b79bca9084ca7df998dbde1d4478d0d3a57a79",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": "f8fa63cc3c831595b444ce8005a8e73cfeda83c919653aa6a5ff34b1d16185b6",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": "2ea69d446be045f49d76376751376718739371805fb8756c2fd224b820188c63",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_result_archive.py": "4463b7ff12ee95741b0fa2f39f2381b85541940fe3a53f4b02b03efead9a75da"
+  },
+  "predecessor_family": {
+    "authority": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
+    "authority_sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+    "status": "frozen-valid-not-superseded"
+  },
+  "responsibility_boundary": {
+    "baseline_sdk_extension_16k_alignment": "distributor-hard-gate-passed-direct-and-managed",
+    "portable_raw_wheel_claim": false,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
+    "user_built_wheel_rpath_runpath": "diagnostic-only"
+  },
+  "schema_version": 1,
+  "source_install_only": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "status": "successor-stripped-r5-accepted-technical-family-derivation-authorized",
+  "strip_surface": {
+    "changed_elf_count": 1,
+    "changed_paths": [
+      "bin/python3.14"
+    ],
+    "dynamic_and_16k_alignment_preserved": true,
+    "eligible_elf_count": 1,
+    "eligible_paths": [
+      "bin/python3.14"
+    ],
+    "non_elf_payload_unchanged": true,
+    "operation": "llvm-strip --strip-unneeded",
+    "regular_elf_count": 81
+  },
+  "successor_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+    "id": "RB-3/SUCCESSOR-TECHNICAL-FAMILY-DERIVATION",
+    "later_required_before_rb3_closure": [
+      "accept successor technical family",
+      "legally integrate successor family",
+      "rebind RB-1 exact legal evidence",
+      "rebind RB-2 exact runtime qualification",
+      "explicitly supersede predecessor family through a new family authority"
+    ],
+    "required_output": "a deterministic complete successor technical family candidate with exact accepted artifact reuse, successor-bound sidecars, release index, SHA256SUMS, reproducibility, predecessor invariance, and independent audit"
+  }
+}

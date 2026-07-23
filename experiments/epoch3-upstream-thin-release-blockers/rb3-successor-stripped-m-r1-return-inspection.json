@@ -1,0 +1,44 @@
+{
+  "candidate_stripped": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "member_count": 3699,
+    "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "size_bytes": 23842721
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": false,
+    "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
+    "successor_technical_family_started": false
+  },
+  "conclusion": "The r1 owner transaction produced the exact deterministic stripped candidate and passed bounded llvm-strip mutation, Android runtime, uv system/managed, direct/managed SDK 16 KiB, protected-state, independent-audit, repository, remote, and self-index gates. Acceptance and technical-family authorization remain a separate bounded authority transition.",
+  "inspection_kind": "epoch3-rb3-profile-M-successor-stripped-r1-return-inspection",
+  "qualification": {
+    "android_qualification": "11/11",
+    "direct_and_managed_native_sdk_16k": true,
+    "external_acceptance_audit": "19/19",
+    "owner_independent_audit": "27/27",
+    "owner_result_checks": "37/37",
+    "stripped_verification": "21/21"
+  },
+  "repository": {
+    "post_head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+    "post_tree": "043e7dda6b04f142d4732f1b8f29efc9bf074873",
+    "remote_post_head": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 84,
+    "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+    "size_bytes": 47423566
+  },
+  "schema_version": 1,
+  "status": "accepted-complete-pass-candidate-ready-for-bounded-acceptance"
+}

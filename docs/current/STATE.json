@@ -257,6 +257,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
       "role": "accepted deterministic successor install-only r5 with exact full projection, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence",
       "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-stripped-r1-success-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json",
+      "role": "exact successful r1 owner receipt, deterministic stripped candidate identity, bounded one-path mutation, complete Android/uv/native-SDK qualification, and bounded acceptance input",
+      "sha256": "8e851d093a6e0fd6e868e7351ee61ba7009eccbb2364ca80624c0fbad3fd6698"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-install-only-stripped-r5",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+      "role": "accepted deterministic successor stripped r5 with bounded llvm-strip mutation, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence",
+      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
     }
   ],
   "active_plan": {
@@ -265,7 +277,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -325,8 +337,11 @@
     "successor_full_candidate": true,
     "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
+    "successor_stripped_accepted": true,
+    "successor_stripped_candidate": true,
     "successor_stripped_started": true,
     "successor_technical_family_accepted": false,
+    "successor_technical_family_started": false,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
     "user_built_wheel_postprocessing_in_scope": false
@@ -420,11 +435,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 45,
+  "state_revision": 46,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "47bd8af3adebdac2f6134e13c56374843804dca7ae3069c12e319b3a70a29172"
+    "sha256": "c76e699be927047fbaadbcda441d021dd309fd58f1345a1e3f911504253b1244"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -453,7 +468,7 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-install-only-r5-accepted-successor-stripped-r1-owner-qualification-pending"
+    "successor-stripped-r5-accepted-successor-technical-family-owner-assembly-pending"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-install-only-acceptance-r1-verified-successor-stripped-r1-owner-derivation-prepared"
+  "updated_by_transaction": "rb3-profile-M-successor-stripped-r1-verified-accepted-technical-family-derivation-authorized"
 }
