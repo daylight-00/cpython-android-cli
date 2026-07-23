@@ -30,7 +30,6 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
 - RB-7-non-termux-android-runtime-qualification
@@ -40,7 +39,6 @@ Epoch 3 selection     true
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
-- support-security-data-update-and-revocation-operations-pending
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full
@@ -112,6 +110,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json): accepted successor RB-1 technical legal and RB-2 data/runtime rebinding with explicit predecessor supersession authorization (`98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json): verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding (`71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json): explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure (`5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json): deterministic release catalog, official patch-update binding, rollback, revocation readback, support status, and security ownership (`abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json): verifier-only fifth temporal monotonicity amendment allowing RB-5 API-24 owner qualification after closed RB-4 while preserving all accepted artifacts and authorities (`575688ae02ce564a803acb1b5ba69e2d97e2bf885fc57041e1dedcf70e3cf232`)
 
 ### Agent entry
 

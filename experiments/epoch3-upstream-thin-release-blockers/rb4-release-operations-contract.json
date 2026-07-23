@@ -1,0 +1,52 @@
+{
+  "basis": {
+    "canonical_family_lock": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "data_product_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+      "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098"
+    },
+    "patch_update_authority": {
+      "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+      "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+    },
+    "supersession_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
+    }
+  },
+  "catalog_rules": {
+    "activation_requires_registered_non_revoked_exact_identity": true,
+    "ambiguous_same_identity_replacement_forbidden": true,
+    "data_and_python_lifecycles_are_independent": true,
+    "prior_release_entries_are_immutable": true,
+    "revocation_is_monotonic_within_a_catalog_revision_lineage": true,
+    "rollback_reactivates_an_already_verified_retained_identity": true
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "data_product_bytes_changed": false,
+    "owner_approved": false,
+    "production_revocation_applied": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb4_closure_allowed_after_pass": true,
+    "selectable": false
+  },
+  "completion_requirements": [
+    "bind the exact official Python 3.14.5 to 3.14.6 patch-update rehearsal",
+    "bind the accepted canonical successor and immutable historical predecessor",
+    "bind the accepted current and rollback CA/timezone data products",
+    "execute deterministic family rollback and restoration in a drill catalog",
+    "execute deterministic data rollback and restoration in a drill catalog",
+    "deny ambiguous same-release identity replacement",
+    "execute monotonic emergency revocation and read back selection denial",
+    "retain every prior identity and record security ownership and support status",
+    "independent audit"
+  ],
+  "contract_kind": "epoch3-rb4-release-security-update-rollback-and-revocation-operations",
+  "schema_version": 1,
+  "status": "authorized-local-deterministic-operations-qualification"
+}

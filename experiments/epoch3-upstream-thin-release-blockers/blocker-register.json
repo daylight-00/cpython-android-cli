@@ -73,23 +73,42 @@
       "status": "closed"
     },
     {
+      "closure": {
+        "predecessor_family_historical_valid": true,
+        "publication": false,
+        "rb1_closed": false,
+        "rb2_closed": true,
+        "rb3_closed": true,
+        "rb4_closed": false,
+        "rb5_closed": false,
+        "rb6_closed": false,
+        "rb7_closed": false,
+        "selectable": false,
+        "successor_family_canonical": true
+      },
       "completion_role": "astral-compatible-consumer-and-parser-qualification",
       "evidence": {
         "accepted_successor_full_sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
         "accepted_successor_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
         "accepted_successor_stripped_sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
         "artifact_bytes_changed": false,
+        "astral_consumer_compatibility_complete": true,
         "boundary_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
+        "canonical_family_selection_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+        "canonical_family_selection_lock_sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b",
         "native_wheel_16k_alignment": "hard-gate",
         "old_family_superseded": true,
+        "predecessor_family_historical_valid": true,
         "predecessor_supersession_authorized": true,
         "predecessor_supersession_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json",
+        "predecessor_supersession_started": true,
         "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
         "r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
         "rb1_rebound": true,
         "rb2_rebound": true,
         "responsibility_reassessment": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
         "selected_profile": "M",
+        "successor_family_canonical": true,
         "successor_full_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
         "successor_full_acceptance_r1_failure_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
         "successor_full_accepted": true,
@@ -98,6 +117,8 @@
         "successor_install_only_acceptance_r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
         "successor_install_only_accepted": true,
         "successor_install_only_r2_result_sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+        "successor_legal_data_rebinding_acceptance_r2_result_sha256": "176e9947df1fd40d0650c77aeedd4701cf03958cc842767f63735d700bb80685",
+        "successor_legal_data_rebinding_acceptance_r2_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
         "successor_legal_data_rebinding_accepted": true,
         "successor_legal_data_rebinding_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
         "successor_legal_data_rebinding_authority_sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89",
@@ -138,19 +159,11 @@
         "successor_technical_family_release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1",
         "successor_technical_family_result_sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
         "successor_technical_family_started": true,
-        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
-        "predecessor_supersession_started": true,
-        "predecessor_family_historical_valid": true,
-        "successor_family_canonical": true,
-        "astral_consumer_compatibility_complete": true,
         "supersession_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
         "supersession_authority_sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3",
         "supersession_closure_receipt": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
         "supersession_closure_receipt_sha256": "bf2b55dd3aab36147d4b1fb30a21116f676e6fcd25fba882985b4bc6cb2cadde",
-        "canonical_family_selection_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
-        "canonical_family_selection_lock_sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b",
-        "successor_legal_data_rebinding_acceptance_r2_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
-        "successor_legal_data_rebinding_acceptance_r2_result_sha256": "176e9947df1fd40d0650c77aeedd4701cf03958cc842767f63735d700bb80685"
+        "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility"
       },
       "id": "RB-3",
       "lane": "local",
@@ -165,33 +178,41 @@
       "required_for": [
         "selectability"
       ],
-      "status": "closed-profile-M-successor-r3-canonical-predecessor-r1-historical-valid",
-      "closure": {
-        "rb1_closed": false,
-        "rb2_closed": true,
-        "rb3_closed": true,
-        "rb4_closed": false,
-        "rb5_closed": false,
-        "rb6_closed": false,
-        "rb7_closed": false,
-        "selectable": false,
-        "publication": false,
-        "successor_family_canonical": true,
-        "predecessor_family_historical_valid": true
-      }
+      "status": "closed-profile-M-successor-r3-canonical-predecessor-r1-historical-valid"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",
+      "evidence": {
+        "authority": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
+        "authority_sha256": "abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8",
+        "data_rollback_restored": true,
+        "emergency_revocation_readback": true,
+        "family_rollback_restored": true,
+        "official_patch_update": "3.14.5-to-3.14.6-exact-rehearsal-bound-to-canonical-qualification-replay",
+        "production_catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+        "production_revocation_applied": false,
+        "security_ownership_complete": true
+      },
       "id": "RB-4",
       "lane": "local",
       "name": "release-operations",
+      "next_gate": {
+        "closure_allowed": true,
+        "successor": "retain-frozen-rb4-authority-during-final-release-candidate-integration"
+      },
       "required_for": [
         "publication"
       ],
-      "status": "open"
+      "status": "closed-deterministic-release-operations-qualified"
     },
     {
       "completion_role": "exact-artifact-runtime-on-android-api-24",
+      "evidence": {
+        "contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
+        "exact_api_required": 24,
+        "exact_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+        "exact_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android"
+      },
       "id": "RB-5",
       "lane": "target",
       "name": "api24-runtime",
@@ -199,7 +220,7 @@
         "api24-support",
         "selectability"
       ],
-      "status": "open"
+      "status": "in-progress-authorized-not-started"
     },
     {
       "completion_role": "exact-artifact-runtime-on-real-16384-byte-page-device",
@@ -227,9 +248,11 @@
   "claim_boundary": {
     "artifact_bytes_frozen": true,
     "artifact_family_authority_frozen": true,
+    "astral_consumer_compatibility_complete": true,
     "publication": false,
-    "selectable": false,
-    "astral_consumer_compatibility_complete": true
+    "rb4_closed": true,
+    "release_operations_complete": true,
+    "selectable": false
   },
   "execution_model": {
     "device_lanes_may_use_distinct_devices": true,
@@ -237,7 +260,7 @@
     "local_and_target_lanes_parallel": true,
     "metadata_revision_may_not_change_artifact_bytes": true
   },
-  "next_bounded_action": "confirm-rb3-supersession-owner-receipt-then-continue-rb1-rb4-rb5-rb6-rb7",
+  "next_bounded_action": "execute-rb5-exact-api24-runtime-owner-qualification-with-candidate-only-receipt",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

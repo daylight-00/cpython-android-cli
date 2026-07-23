@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 53
+> **State revision:** 54
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -87,11 +87,12 @@ status  in-progress
 54. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json) — accepted successor RB-1 technical legal and RB-2 data/runtime rebinding with explicit predecessor supersession authorization
 55. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json) — verifier-only fourth temporal monotonicity amendment allowing explicit predecessor supersession and RB-3 closure routing after accepted successor RB-1/RB-2 rebinding
 56. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json) — explicit predecessor-to-successor mapping, canonical successor r3 selection, immutable historical predecessor preservation, and RB-3 closure
+57. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json) — deterministic release catalog, official patch-update binding, rollback, revocation readback, support status, and security ownership
+58. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json) — verifier-only fifth temporal monotonicity amendment allowing RB-5 API-24 owner qualification after closed RB-4 while preserving all accepted artifacts and authorities
 
 ## Blockers
 
 - RB-1-component-and-license-closure
-- RB-4-release-security-update-and-revocation-operations
 - RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
 - RB-7-non-termux-android-runtime-qualification
@@ -101,7 +102,6 @@ status  in-progress
 - API24-runtime-qualification-pending
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
-- support-security-data-update-and-revocation-operations-pending
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full

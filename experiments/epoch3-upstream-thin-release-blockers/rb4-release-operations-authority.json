@@ -1,0 +1,128 @@
+{
+  "authority_kind": "epoch3-rb4-release-security-update-rollback-and-revocation-operations",
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "data_product_bytes_changed": false,
+    "data_product_rollback_complete": true,
+    "deterministic_catalog_transitions_complete": true,
+    "emergency_revocation_readback_complete": true,
+    "official_patch_update_rehearsal_complete": true,
+    "owner_approved": false,
+    "production_revocation_applied": false,
+    "publication": false,
+    "qualification_replay_bound_to_canonical_3146": true,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "rb3_closed": true,
+    "rb4_closed": true,
+    "rb5_closed": false,
+    "rb6_closed": false,
+    "rb7_closed": false,
+    "release_family_rollback_complete": true,
+    "security_ownership_complete": true,
+    "selectable": false
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb4_release_operations.py": "d43713927b3c64a689dc8b2c51bcb74471de1091116157fa4dbf46b9d2bab782",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/catalog-transition-receipt.json": "10856cbad8c8ccd58018531f7314a8feddfdce1b77331e60736c75bfa365cc86",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/independent-audit.json": "79c2305043650176e7c19c3a8894c42983bc1874eb25db0afafc4d7a0b9b7f3a",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/patch-update-binding.json": "0d047471af4463417b3c852ccffaf42b34c38d862dfa0ea664589d8170f9857d",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/result.json": "f09c8301ecf15215cc0207e046c3de1b49d4a128f02aeb10207437f73c6bc6db",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/revocation-readback.json": "9c7f7bf6a24b29e64443358aff86368bda3b9f7bcab607c35e7801ede08ece79",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/rollback-receipt.json": "5703126affb6d3d02a49f06c51f5dc7a985cf8f9a5d9f70ab439b1d7e3ba98c0",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority-evidence/security-ownership.json": "930f195bc512810b7abb4d8aa13facef7673363fa29fa11908980590cf50385d",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-contract.json": "cebf0b833677705b659ecdb990542c1c1e16ad0816d1ff701a5ba4f10f880eda",
+    "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-fixture.json": "1d565a1d7647156505319b36b52efaf53a6c551beec20c1a0ccdc936bd607d34",
+    "experiments/epoch3-upstream-thin-release-blockers/run_rb4_release_operations.py": "4dcbe96e2e378469af571f90f68d9d514b2b5afcd5cdc3aa163f1bd062a371f8"
+  },
+  "next_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
+    "id": "RB-5/API24-RUNTIME",
+    "parallel_lanes": [
+      "RB-1 owner approval",
+      "RB-6 real 16 KiB runtime",
+      "RB-7 non-Termux runtime"
+    ],
+    "required_output": "api24-runtime-authority"
+  },
+  "non_claims": [
+    "publication authorized",
+    "product selectable",
+    "production revocation applied",
+    "Epoch 3 3.14.5 release family produced",
+    "API 24 runtime qualified",
+    "real 16 KiB runtime qualified",
+    "non-Termux runtime qualified",
+    "owner legal approval inferred"
+  ],
+  "operations": {
+    "ambiguous_identity_replacement_denied": true,
+    "data_rollback_and_restore": true,
+    "fallback_after_revocation": true,
+    "family_rollback_and_restore": true,
+    "prior_identity_retention": true,
+    "revocation_drill_only": true,
+    "revocation_monotonic": true,
+    "revoked_selection_denied": true
+  },
+  "patch_update": {
+    "canonical_3146_authority_chain_replayed": true,
+    "epoch3_3145_family_produced": false,
+    "from_sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+    "from_version": "3.14.5",
+    "non_configuration_delta_reviewed": true,
+    "to_sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "to_version": "3.14.6"
+  },
+  "production_baseline": {
+    "catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+    "data_release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+    "data_sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+    "python_family_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "python_family_release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "canonical_family": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "canonical_supersession": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
+      "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
+    },
+    "data_products": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+      "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098"
+    },
+    "epoch2_patch_update": {
+      "path": "experiments/epoch2-upstream-thin-upstream-evolution/upstream-evolution-authority.json",
+      "sha256": "a45566c4ea0e9dbb1aed53e27d07398e81835f6221da2ce28f78471c2467ace5"
+    },
+    "full_replay": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
+      "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
+    },
+    "install_only_replay": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+      "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca"
+    },
+    "legal_data_rebinding": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+      "sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89"
+    },
+    "legal_family_replay": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+      "sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6"
+    },
+    "stripped_replay": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
+    },
+    "technical_family_replay": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
+      "sha256": "ce6a80b5505afec7c99a74e0a7c12001848ba2e1892e3592fc1066e299b091e2"
+    }
+  },
+  "status": "closed-pass-deterministic-release-operations-qualified"
+}

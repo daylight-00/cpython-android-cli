@@ -1,0 +1,35 @@
+{
+  "after_catalog_sha256": "fdd00c8f1a915e6afb8344d9501fe5d60bee47f335c95e3cdfb85e2b1e447abe",
+  "before_catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+  "checks": {
+    "fallback_activation_pass": true,
+    "production_baseline_unchanged": true,
+    "revocation_applied": true,
+    "revocation_readback_exact": true,
+    "revocation_rewrite_denied": true,
+    "revoked_bytes_retained": true,
+    "revoked_selection_denied": true
+  },
+  "drill_only": true,
+  "fallback_result": "activated",
+  "pass": true,
+  "production_revocation_applied": false,
+  "readback": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "revocation": {
+      "reason": "emergency-drill-security-revocation",
+      "sequence": 1
+    },
+    "revoked": true,
+    "support_status": "supported-canonical"
+  },
+  "receipt_kind": "epoch3-rb4-emergency-revocation-readback-drill",
+  "revocation_result": "revoked",
+  "rewrite_result": "revocation-rewrite-denied",
+  "schema_version": 1,
+  "selection_result": "revoked-identity-selection-denied",
+  "target_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android"
+}

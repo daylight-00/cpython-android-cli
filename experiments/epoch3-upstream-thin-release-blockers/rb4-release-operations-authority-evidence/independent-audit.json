@@ -1,0 +1,24 @@
+{
+  "audit_kind": "epoch3-rb4-release-operations-independent-audit",
+  "checks": {
+    "all_evidence_pass": true,
+    "ambiguous_replacement_denied": true,
+    "fallback_selected": true,
+    "production_catalog_stable_across_drills": true,
+    "publication_withheld": true,
+    "revocation_is_drill_only": true,
+    "revoked_selection_denied": true,
+    "rollback_restores_exact_baseline": true
+  },
+  "evidence_identities": {
+    "catalog-transition-receipt.json": "10856cbad8c8ccd58018531f7314a8feddfdce1b77331e60736c75bfa365cc86",
+    "patch-update-binding.json": "0d047471af4463417b3c852ccffaf42b34c38d862dfa0ea664589d8170f9857d",
+    "result.json": "f09c8301ecf15215cc0207e046c3de1b49d4a128f02aeb10207437f73c6bc6db",
+    "revocation-readback.json": "9c7f7bf6a24b29e64443358aff86368bda3b9f7bcab607c35e7801ede08ece79",
+    "rollback-receipt.json": "5703126affb6d3d02a49f06c51f5dc7a985cf8f9a5d9f70ab439b1d7e3ba98c0",
+    "security-ownership.json": "930f195bc512810b7abb4d8aa13facef7673363fa29fa11908980590cf50385d"
+  },
+  "failed_checks": [],
+  "pass": true,
+  "schema_version": 1
+}

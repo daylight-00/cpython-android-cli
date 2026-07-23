@@ -18,7 +18,9 @@
     "product_selectability_claim": false,
     "publication_claim": false,
     "rb3_closed_claim": true,
+    "rb4_closed_claim": true,
     "release_blocker_resolution_started_claim": true,
+    "release_operations_complete_claim": true,
     "successor_family_canonical_claim": true,
     "successor_family_complete_claim": true,
     "successor_full_accepted_claim": true,
@@ -40,7 +42,7 @@
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain accepted full r5, keep RB-3 open, preserve the frozen predecessor family, and correct only bounded successor projection, stripping, family assembly, or qualification defects; user-built wheel repair remains out of scope and 16 KiB remains a hard gate",
+      "allowed_action_policy": "retain closed RB-4 and exact canonical r3; leave RB-5 open; correct only bounded target acquisition, runtime qualification, verifier, audit, or receipt defects; do not substitute a higher API or change frozen bytes",
       "complete_receipt_required": true
     },
     "pass": {
@@ -81,47 +83,28 @@
     "roadmap-outside-selected-section"
   ],
   "deliverable": {
-    "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
-    "current_bounded_transition": "rb3-profile-M-successor-predecessor-supersession-and-rb3-closure-owner-transition",
+    "class": "exact-api24-target-runtime-candidate-evidence",
+    "current_bounded_transition": "rb5-api24-runtime-owner-qualification",
     "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-    "result": "accepted-successor-rb1-rb2-rebinding-plus-explicit-predecessor-supersession-and-rb3-closure-without-artifact-byte-change-or-selectability"
+    "result": "candidate-only exact API24 runtime receipt bound to canonical r3; separate acceptance required before RB-5 closure"
   },
   "generated_from": {
     "state": "docs/current/STATE.json",
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "retain accepted successor rebinding and canonical predecessor family; return one complete fail-closed receipt; correct only bounded authority, mapping, state-routing, verifier, audit, or receipt defects; do not mutate artifacts or infer owner approval, selectability, or publication",
-    "first_attempt": "verify exact accepted successor legal/data rebinding authority, accepted successor legal-family lock, predecessor family authority and lock, and all referenced evidence hashes; freeze a byte-preserving supersession map; mark successor r3 canonical and predecessor family historical-valid; close RB-3 only",
+    "fallback": "if no exact API 24 target exists or any identity/check fails, make no API 24 support claim, leave RB-5 open, preserve all frozen authorities and artifacts, and return a complete fail-closed receipt",
+    "first_attempt": "require an AArch64 Android target whose ro.build.version.sdk readback is exactly 24; acquire the exact canonical successor legal-family result and accepted data-product result by fixed SHA; extract install_only into isolated app-private or shell-private storage; run every required target check and independent audit; return one self-indexed result archive",
     "forbidden": [
-      "accept-an-incomplete-result-index",
-      "claim-api24-16k-or-non-termux-without-direct-context-evidence",
-      "claim-complete-license-mapping-from-file-name-census-alone",
+      "accept-higher-api-as-api24-evidence",
+      "change-artifact-or-data-bytes",
+      "claim-api24-support-from-static-metadata",
       "claim-selectability-or-publication",
-      "claim-user-built-wheel-portability-or-repair-as-distributor-contract",
-      "close-rb1-from-technical-legal-rebinding",
-      "close-rb1-without-exact-owner-approval-document",
-      "close-rb2-without-exact-frozen-python-runtime-qualification",
-      "close-rb3-before-explicit-supersession-map",
-      "delete-or-rewrite-predecessor-authority-or-locks",
-      "fabricate-astral-producer-metadata",
-      "infer-owner-approval-from-legal-family-integration",
-      "infer-owner-approval-from-runner-execution",
-      "modify-successor-or-predecessor-artifact-bytes-during-supersession",
-      "network-git-in-assistant-environment",
-      "omit-16k-alignment-from-distributed-or-baseline-sdk-elf-gates",
-      "reassemble-or-modify-any-frozen-artifact",
-      "rebind-rb2-inside-successor-legal-family-integration",
-      "rewrite-or-amend-frozen-artifact-authorities",
-      "select-sysconfig-profile-from-static-review-alone",
-      "silently-replace-producer-provenance-with-consumer-policy",
-      "start-legal-integration-or-rb1-rb2-rebinding-inside-technical-family-derivation",
-      "supersede-predecessor-family-before-successor-family-acceptance",
-      "supersede-predecessor-family-before-successor-legal-and-data-acceptance",
-      "treat-producer-provenance-as-operational-path-residue",
-      "use-unpinned-or-latest-provider-resolution-at-runtime",
-      "use-user-wheel-rpath-cleanliness-as-rb3-blocker",
-      "write-ca-or-timezone-updates-into-python-install-root"
+      "close-rb6-or-rb7",
+      "omit-target-getprop-readback",
+      "use-unpinned-release-or-data-input",
+      "write-into-frozen-install-root",
+      "accept-incomplete-result-index"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
@@ -133,570 +116,80 @@
   },
   "required_authorities": [
     {
-      "path": "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json",
-      "reason": "Frozen exact three-artifact release-family authority.",
-      "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e"
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
+      "reason": "RB-4 closed release operations authority.",
+      "sha256": "abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-      "reason": "Frozen RB-1 baseline and exact unresolved gap boundary.",
-      "sha256": "12c97e50fb1333c9f6094649dd8d19170df6f04c7c9168f88041cc321a982a0e"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-source-provenance-authority.json",
-      "reason": "Frozen six-dependency provenance, exact CPython source identity, libffi resolution, and mismatch quarantine boundary.",
-      "sha256": "e538a19afb768b923cde46b9a7f5fe563b02988195b9fbb4d81106d5333ee467"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
-      "reason": "Frozen five-source license payload acquisition, 13-component expansion, exact evidence hashes, and eight-gap boundary.",
-      "sha256": "20e74380a24b2868320290286841f97c7e847c133ecb6b29db430513ad99abba"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
-      "reason": "Frozen 72-file legal overlay and exact four-gap boundary.",
-      "sha256": "faccd8de76e9fc175ced66961c07f18696abd3c40d51d4e184a6e9bc277b79d3"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
-      "reason": "Frozen exact 128-file legally integrated family, 31-unit technical review, and single owner-approval gap.",
-      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
-    },
-    {
-      "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
-      "reason": "Frozen accepted three-root Android data policy and selected CA/timezone runtime bindings.",
-      "sha256": "be25e52aba1d6c9d0b2e25fec2bd1d8a0a0d9eb870436f00e81f347e90d012b7"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
-      "reason": "Frozen responsibility reassessment for profile M and user-built wheel postprocessing.",
-      "sha256": "ddb6803888e34f4713d8a08ebbd6a7bfcd0417e94ff55c7104b268ef4362447f"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
-      "reason": "Frozen failed successor r1 inspection and correction boundary.",
-      "sha256": "2ce206125fc66f9ea661b53fb6f836bbcb92bf0293eb9c0d3012f1d09b5f8126"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
-      "reason": "Frozen failed successor r2 inspection, exact reproducible candidate evidence, verifier correction, and uv-managed sysconfig rewrite defect.",
-      "sha256": "032f15b5408de260e21cc01a8f4e9598d6caa01bb574a601aa38af03b4a5e6dd"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
-      "reason": "Frozen r3 result proving all product and Android 16 KiB gates passed while the final managed-find check observed the path after uninstall.",
-      "sha256": "28354f618c27a896b448ec9fb91286d90e9f3b1e95a73028baf98468a0ef287d"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
-      "reason": "Frozen acceptance-r1 unit failure proving the owner repository was unchanged and limiting the correction to tracked-tree negative-test fixture isolation.",
-      "sha256": "5c5ed77416d038f6aca78957e4a8fe690aaf9ba5ee74c26bf7e708e8ba8ef0bf"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
-      "reason": "Frozen accepted profile-M successor full r5 and exact family-derivation authorization.",
-      "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json",
-      "reason": "Frozen successful acceptance-r2 receipt and successor install-only authorization.",
-      "sha256": "6f2ef52e78248de144bc390f06e07624d74629cc60666f0b39ddbb5e1a89e31f"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
-      "reason": "Frozen r1 target qualification and audit receipt-schema mismatch boundary.",
-      "sha256": "b9afe396cc7414af4933552bf9d48e727c42516d227aeaf2eecc5276749116fd"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json",
-      "reason": "Frozen successful install-only r2 owner receipt and bounded acceptance input.",
-      "sha256": "3aec247ce7610121b27d775f91580e94d89cc7273acc31ee929d407c3fdb30d1"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
-      "reason": "Frozen accepted profile-M successor install-only r5 and stripped-derivation authorization.",
-      "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
-      "reason": "Frozen successful install-only acceptance receipt and exact stripped-derivation authorization.",
-      "sha256": "01a7e4c545a50a0d6f7b1809459cc2d23d93062ddcafdeea1a17465fe34b2905"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json",
-      "reason": "Frozen successful stripped r1 owner receipt and bounded acceptance input.",
-      "sha256": "8e851d093a6e0fd6e868e7351ee61ba7009eccbb2364ca80624c0fbad3fd6698"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
-      "reason": "Frozen accepted profile-M successor stripped r5 authority and technical-family derivation gate.",
-      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
-      "reason": "Frozen successful stripped-acceptance owner receipt and exact technical-family authorization input.",
-      "sha256": "d8df265e57a21427bd25c435db23af01e702eb2e466a934af9537f41b889ddef"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
-      "reason": "Frozen accepted profile-M successor 23-file technical family and legal-integration authorization.",
-      "sha256": "ce6a80b5505afec7c99a74e0a7c12001848ba2e1892e3592fc1066e299b091e2"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json",
-      "reason": "Frozen successful technical-family receipt and rewritten repository binding.",
-      "sha256": "d327b2b84712d7e9b7378e0934a4246dbe7bb4246236080a271d3bb58f8edae2"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json",
-      "reason": "Frozen exact old-to-new author rewrite mapping for claim-bearing external receipts.",
-      "sha256": "153010d8f18fc39b6d78cee3fb2ca2dcbf2b941ba70c908c3f6df192052eaa8a"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
-      "reason": "Frozen verifier-only amendment making historical stripped transition checks monotonic without changing accepted product or authority bytes.",
-      "sha256": "f02b72452085dcedf96fe9b2301a0a6be317f069920f8016a9f7e8b63ed4d6af"
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "reason": "Canonical family selection lock.",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
     },
     {
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
-      "reason": "Accepted successor legally integrated family r3 identity, legal evidence binding, and legal/data rebinding gate.",
+      "reason": "Accepted canonical successor legal family.",
       "sha256": "f4570c47d5f5af1dc1802255b116aecf9fe99724c06e69770baf991cee4240e6"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
-      "reason": "Frozen temporal routing amendment preserving accepted artifact and authority bytes.",
-      "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+      "reason": "Accepted external CA/timezone data products.",
+      "sha256": "48ae38370afcd3cf095566307e6859ee2bf88a6ee0c45ad7f07dea7401e77098"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
-      "reason": "Frozen three-level temporal routing amendment preserving accepted product and authority bytes.",
-      "sha256": "5f70109c21101c593da595e444f0db5dd8c64e928627d778d9a26cb44758ee95"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
-      "reason": "Accepted successor RB-1 technical legal and RB-2 data/runtime rebinding authority.",
-      "sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
-      "reason": "Frozen four-level temporal routing amendment preserving accepted product, evidence, authority, and rebinding bytes.",
-      "sha256": "71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
-      "reason": "Frozen explicit predecessor supersession, canonical successor r3 selection, historical predecessor preservation, and RB-3 closure.",
-      "sha256": "5e275444d4ebedc3bd554079f36d2c11259ccb0052c17cbb6f58f9df16fbf0e3"
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json",
+      "reason": "Current monotonic routing authority for RB-5 activation after RB-4 closure.",
+      "sha256": "575688ae02ce564a803acb1b5ba69e2d97e2bf885fc57041e1dedcf70e3cf232"
     }
   ],
   "required_reads": [
     {
-      "path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-      "reason": "Current parallel blocker lanes, gate ordering, and stop conditions.",
+      "path": "docs/current/STATE.json",
+      "reason": "Current revision 54 claim boundary and active RB-5 route.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/blocker-register.json",
-      "reason": "Machine-readable status and completion role for every release blocker.",
+      "path": "docs/current/AGENT_TASK.json",
+      "reason": "Generated current owner qualification contract.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/baseline-contract.json",
-      "reason": "First bounded component/license census contract and non-claim boundary.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
+      "reason": "Exact target, artifact, checks, stop conditions, and candidate-only boundary.",
       "scope": "full"
     },
     {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json",
-      "reason": "Exact frozen release-family and 23-file identity.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-baseline-authority.json",
-      "reason": "Accepted baseline metrics, unresolved libffi boundary, and next-action authority.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/source-provenance-contract.json",
-      "reason": "Exact CPython source input, libffi resolution condition, outputs, and non-claim boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/license-payload-acquisition-contract.json",
-      "reason": "Exact external source inputs, component-expansion checks, deterministic outputs, and non-closing claim boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
-      "reason": "Accepted payload evidence, expanded component set, mismatch quarantine, and exact remaining-gap boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/legal-overlay-contract.json",
-      "reason": "Exact XZ product evidence, SQLite/HACL/libmpdec evidence synthesis, Android provider boundary, deterministic legal overlay outputs, and bounded non-claim contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/legal-integration-contract.json",
-      "reason": "Technical obligation review, pip vendored component expansion, legal integration, and final owner-approval boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/owner-approval-review-contract.json",
-      "reason": "Exact review dossier, approval binding, explicit owner statement, and no-implicit-approval contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-owner-approval-review-r1-return-inspection.json",
-      "reason": "Fail-closed inspection of the valid owner-review dossier and incomplete enclosing result receipt.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-contract.json",
-      "reason": "Current data-product structure, lifecycle, qualification, receipt, and non-claim contract.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-android-cli-e3-rb2-data-products-r1.lock.json",
-      "reason": "Exact current and rollback certifi/tzdata wheel identities and provider policy.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch2-upstream-thin-android-data-policy/android-data-policy-authority.json",
-      "reason": "Frozen INSTALL_ROOT, DATA_ROOT, STATE_ROOT, CA override, timezone path, update, and rollback policy.",
-      "scope": "full"
-    },
-    {
-      "path": "docs/epochs/EPOCH3_SYSCONFIG_AND_ON_DEVICE_SDK_BOUNDARY_REVIEW.md",
-      "reason": "Current evidence-backed review of upstream preservation, Astral parity, sysconfig normalization, and on-device SDK boundaries.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
-      "reason": "Accepted exact RB-3 r1 failure evidence and rollback boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-static-review.json",
-      "reason": "Machine static comparison of upstream, current, Astral, UT-2, and UT-3 evidence.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-review-contract.json",
-      "reason": "C/H/U/M profile definitions, measurements, selection rules, and non-claim boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-host-assembly.json",
-      "reason": "Exact deterministic host assembly identities and control-preservation proof for C/H/U/M.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-boundary-r1-return-inspection.json",
-      "reason": "Accepted exact C/H/U/M target result, selected M rationale, and raw-wheel boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
-      "reason": "Frozen profile M selection and production metadata boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-contract.json",
-      "reason": "Exact successor full r5 inputs, required qualifications, and non-claim boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
-      "reason": "Accepted distributor/user responsibility split, external wheel-repair exclusion, and hard Android 16 KiB boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r1-return-inspection.json",
-      "reason": "Exact successor-full r1 failure, rollback, A/B identities, and deterministic receipt path defect.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r2-return-inspection.json",
-      "reason": "Exact successor r2 result, successful reproducibility/runtime/16 KiB evidence, and bounded remaining defects.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-correction-contract.json",
-      "reason": "Active canonical literal-mapping and uv-managed SDK preservation correction contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r3-return-inspection.json",
-      "reason": "Exact successor r3 result and bounded verifier observation-order root cause.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-r4-correction-contract.json",
-      "reason": "Completed verifier-only r4 correction contract retained as accepted transition evidence.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-full-m-r4-return.json",
-      "reason": "Exact accepted r4 return, candidate identity, qualification matrix, and non-promotion boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r1-return-inspection.json",
-      "reason": "Exact acceptance-r1 failure, rollback, passing product suite, and test-fixture isolation root cause.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
-      "reason": "Accepted successor full r5 identity, distributor responsibility boundary, and authorized next gate.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-family-derivation-contract.json",
-      "reason": "Active exact full-to-install_only-to-stripped technical family derivation contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-acceptance-r2-return-inspection.json",
-      "reason": "Successful owner acceptance-r2 receipt and exact authorization for successor install-only derivation.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-contract.json",
-      "reason": "Active exact accepted-full-r5 to successor-install-only candidate derivation and owner-qualification contract.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-r5.lock.json",
-      "reason": "Exact accepted full r5 identity and authority binding used by install-only projection.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r1-return-inspection.json",
-      "reason": "Exact r1 target-pass/audit-fail receipt, 68-file result identity, and canonical raw-wheel receipt schema mismatch.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-correction-contract.json",
-      "reason": "Active audit-only r2 correction and exact owner requalification contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-r2-return-inspection.json",
-      "reason": "Exact successful install-only r2 receipt, candidate identity, qualification matrix, and non-promotion boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-install-only-m-r2-return.json",
-      "reason": "Accepted install-only r2 return and explicit stripped authorization boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
-      "reason": "Accepted install-only r5 identity, evidence bindings, and successor gate.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json",
-      "reason": "Active bounded successor stripped derivation and owner qualification contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
-      "reason": "Exact successful install-only acceptance receipt, pushed repository identity, and stripped authorization boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-r5.lock.json",
-      "reason": "Frozen exact accepted install-only r5 source identity used by stripped derivation.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
-      "reason": "Exact owner r1 input archives, protected inputs, runner surface, qualification matrix, and candidate-only success boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-stripped-m-r1-return.json",
-      "reason": "Exact accepted successor stripped r1 owner return and candidate identity.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json",
-      "reason": "Frozen successful stripped r1 receipt, 84-file self-index, bounded mutation, and acceptance boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
-      "reason": "Frozen accepted stripped r5 authority authorizing only candidate technical-family derivation.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
-      "reason": "Frozen authorization contract for accepted-three-artifact successor technical-family derivation.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-stripped-r5.lock.json",
-      "reason": "Exact accepted successor stripped r5 product lock.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-contract.json",
-      "reason": "Completed stripped r1 candidate qualification and bounded acceptance transition contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
-      "reason": "Exact successful stripped-acceptance result, repository transition, 21-file self-index, and technical-family authorization boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-execution-contract.json",
-      "reason": "Active exact four-result input, 23-file family shape, protected-state, execution, audit, and success-boundary contract.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-technical-family-r2.lock.json",
-      "reason": "Exact frozen accepted successor 23-file technical-family identity.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
-      "reason": "Accepted technical-family identity, author-rewrite binding, and legal-integration gate.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json",
-      "reason": "Exact successful owner receipt, self-index, and bounded next-action authorization.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json",
-      "reason": "Exact author/committer history rewrite mapping from external receipt commits to canonical rewritten main.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json",
-      "reason": "Active successor legal-family integration requirements and non-claim boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
-      "reason": "Temporal-routing verifier amendment and exact original/replacement hash bindings.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r1-execution-contract.json",
-      "reason": "Exact owner input archives, deterministic 128-file integration shape, execution, audit, and candidate-only success boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-host-assembly.json",
-      "reason": "Exact deterministic host assembly identity for the successor legal-family r1 candidate.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-r2-return-inspection.json",
-      "reason": "Exact successful successor legal-family r2 result, 153-file self-index, candidate identity, and bounded acceptance evidence.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-legal-family-m-r2-return.json",
-      "reason": "Accepted successor legal-family r3 return and legal/data rebinding authorization boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-acceptance-contract.json",
-      "reason": "Completed legal-family candidate qualification and acceptance transition contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
-      "reason": "Active successor RB-1 technical legal and RB-2 data/runtime rebinding contract.",
-      "scope": "full"
-    },
-    {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-legal-family-r3.lock.json",
-      "reason": "Exact frozen accepted 128-file successor legally integrated family identity.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
-      "reason": "Verifier-only temporal monotonicity amendment allowing authorized legal/data rebinding progression without changing accepted artifacts or authorities.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
-      "reason": "Exact owner inputs, RB-1/RB-2 qualification sequence, candidate-only claim boundary, and separate acceptance rule.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-host-inspection.json",
-      "reason": "Host-side exact input layout, successor family verification, RB-1 static rebinding proof, and target-only RB-2 boundary.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
-      "reason": "Verifier-only third temporal amendment allowing the authorized owner legal/data rebinding execution contract without changing accepted artifacts, evidence, authorities, or rebound claims.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r2-return-inspection.json",
-      "reason": "Exact successful successor legal/data rebinding r2 result and bounded acceptance evidence.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/accepted-rb3-successor-legal-data-rebinding-m-r2-return.json",
-      "reason": "Accepted successor RB-1/RB-2 rebinding boundary and supersession authorization.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-contract.json",
-      "reason": "Completed rebinding candidate acceptance transition contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
-      "reason": "Frozen accepted successor legal/data rebinding authority.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json",
-      "reason": "Active explicit predecessor supersession and RB-3 closure contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
-      "reason": "Verifier-only fourth temporal amendment allowing explicit predecessor supersession and RB-3 closure progression without changing accepted artifacts, evidence, authorities, or accepted rebinding claims.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
+      "reason": "Frozen completed release-operations predecessor authority.",
       "scope": "full"
     },
     {
       "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
-      "reason": "Canonical successor r3 selection and immutable historical predecessor binding.",
+      "reason": "Exact canonical successor r3 and historical predecessor identities.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-acceptance-r2-return-inspection.json",
-      "reason": "Exact successful rebinding acceptance-r2 owner receipt and supersession authorization evidence.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
+      "reason": "Exact accepted 128-file legal family and install_only identity.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-closure-receipt.json",
-      "reason": "Explicit byte-preserving predecessor-to-successor map and RB-3 closure receipt.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb2-data-product-authority.json",
+      "reason": "Exact accepted runtime data products required for CA and zoneinfo context.",
       "scope": "full"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-authority.json",
-      "reason": "Frozen successor r3 canonical-family, predecessor historical-valid, and RB-3 closure authority.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json",
+      "reason": "Fifth verifier-only temporal amendment preserving frozen RB-3 authorities while routing closed RB-4 into RB-5 owner qualification.",
       "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 53,
+  "state_revision": 54,
   "task": {
     "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Execute the authorized profile-M predecessor-family supersession and RB-3 closure transition: verify the accepted successor legal/data rebinding authority, exact successor r3 family, and frozen predecessor family authority; freeze an explicit predecessor-to-successor supersession map; retain predecessor bytes and authorities as immutable historical evidence; make successor r3 canonical for RB-3; close RB-3 only while owner legal approval, RB-4, RB-5, RB-6, RB-7, selectability, and publication remain open.",
+    "goal": "Execute the authorized RB-5 target qualification against the exact canonical successor r3 install_only artifact on an Android API 24 AArch64 target. Record exact target identity, startup, relocation, read-only execution, native-extension imports, subprocess re-entry, pip, venv, python-config, pkg-config, frozen-family invariance, and independent audit. Produce candidate evidence only; do not infer API 24 support, selectability, publication, RB-6, or RB-7 before separate acceptance.",
     "id": "E3-RELEASE-BLOCKERS",
-    "title": "Resolve Epoch 3 release-blocking evidence and operations",
+    "title": "Qualify exact canonical family on Android API 24",
     "work_class": "T"
   }
 }

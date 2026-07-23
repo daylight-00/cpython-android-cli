@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "authority_patch_rehearsal_pass": true,
+    "canonical_binds_to_official_3146": true,
+    "epoch3_canonical_closure_complete": true,
+    "epoch3_data_rebinding_replay_complete": true,
+    "epoch3_full_replay_complete": true,
+    "epoch3_install_only_replay_complete": true,
+    "epoch3_legal_family_replay_complete": true,
+    "epoch3_stripped_replay_complete": true,
+    "epoch3_technical_family_replay_complete": true,
+    "from_identity": true,
+    "from_version": true,
+    "non_configuration_delta_reviewed": true,
+    "qualification_replay_required": true,
+    "to_identity": true,
+    "to_version": true
+  },
+  "from": {
+    "filename": "python-3.14.5-aarch64-linux-android.tar.gz",
+    "sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+    "sigstore_sha256": "0d094fe223aa4b4bfbc0f25e5cd20a3294adbc2ac694af1024756e50a515b2a2",
+    "size_bytes": 21479191,
+    "version": "3.14.5"
+  },
+  "non_claims": [
+    "no Epoch 3 3.14.5 release family was produced",
+    "patch delta evidence does not substitute for target runtime qualification",
+    "no automatic release-on-green claim"
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb4-official-patch-update-binding",
+  "schema_version": 1,
+  "to": {
+    "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+    "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+    "sigstore_sha256": "c7ac761686eded04a3bf8c7a9be83916e673c1c230bcd22f6cdf5fa415b0feb7",
+    "size_bytes": 22358404,
+    "version": "3.14.6"
+  }
+}

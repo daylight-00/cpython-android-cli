@@ -1,0 +1,57 @@
+{
+  "amendment_kind": "epoch3-rb4-release-operations-temporal-routing-verifier-amendment",
+  "claim_boundary": {
+    "api24_runtime_accepted": false,
+    "api24_runtime_candidate": false,
+    "api24_runtime_started": false,
+    "predecessor_family_historical_valid": true,
+    "predecessor_family_superseded": true,
+    "publication": false,
+    "rb3_closed": true,
+    "rb4_closed": true,
+    "release_operations_complete": true,
+    "selectable": false,
+    "successor_family_canonical": true
+  },
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "canonical_family_identity_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false,
+    "predecessor_historical_identity_changed": false
+  },
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-temporal-verifier-amendment.json",
+    "sha256": "71eb3559290c0be75e9b0f37ec5d2b13aa7e06f0e4f9ba260829d8acc2d559a6"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "34cb6ff84b0fc5eeed23f687b02995d59bdee7c9dae25b61619c509665233d1c",
+      "reason": "allow the historical accepted install-only verifier to recognize closed RB-4 and the authorized RB-5 API-24 owner qualification route",
+      "replacement_sha256": "e3f3c9103b58a4e2b0879cbcd78da18cd9c42f2a2a098c22b130900b2fb0808b"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py": {
+      "original_sha256": "a4375d3ee6dc3092dd60e552a0d7b87f6128064678c30e28fb8d8cc935a3ab74",
+      "reason": "allow the frozen supersession verifier to recognize later RB-4 closure and RB-5 routing while preserving the canonical successor and historical predecessor identities",
+      "replacement_sha256": "400819a832fb93902a9b92d9bbf8919288f19d4a169313e75aee007b386b6e83"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "d9efa0b7962bb5eaaa14cc1b7440ac7155ed249625d4d6d640dd3d15436aa76d",
+      "reason": "verify the five-level temporal amendment chain without changing accepted stripped evidence or authority",
+      "replacement_sha256": "78ad89a173bc58339387062b83d4e82f5617dda70439abfc3783d085b0642cf4"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "ee3b4f30a81b198d9034797f3ffe8cf79ac94adcbeb91cb8f3e3cd59999ce5f3",
+      "reason": "allow the historical accepted stripped verifier to recognize closed RB-4 and the authorized RB-5 API-24 owner qualification route",
+      "replacement_sha256": "3913b62695c074af72e0baa5f8a4d16f4c60480eae6a8264cd772d3644bf8366"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "623d2207b63efd5f767e62e1f9d7db05c3a9db2debf49efcb2278b6549031e01",
+      "reason": "verify the five-level temporal amendment chain without changing accepted technical-family evidence or authority",
+      "replacement_sha256": "f23afca324fc3449b042eded4ecf4b14c7e4cb5de916ff377008d4173ff05f2c"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity after RB-3 closure and RB-4 release-operations qualification; accepted artifacts, evidence, authorities, canonical-family identity, and claim boundaries unchanged"
+}

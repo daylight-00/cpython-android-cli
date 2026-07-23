@@ -1,0 +1,141 @@
+{
+  "catalog": {
+    "active": {
+      "data_products": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+      "python_families": "cpython-3.14.6+e3-r3-aarch64-linux-android"
+    },
+    "catalog_kind": "epoch3-rb4-production-baseline",
+    "entries": {
+      "data_products": {
+        "android-data-ca-2026.5.20-tzdata-2026.2-r1": {
+          "release_id": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+          "revoked": false,
+          "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+          "size_bytes": 229141,
+          "support_status": "historical-valid-rollback"
+        },
+        "android-data-ca-2026.6.17-tzdata-2026.3-r1": {
+          "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+          "revoked": false,
+          "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+          "size_bytes": 227318,
+          "support_status": "supported-current"
+        }
+      },
+      "official_inputs": {
+        "pythonorg-android-3.14.5": {
+          "filename": "python-3.14.5-aarch64-linux-android.tar.gz",
+          "release_id": "pythonorg-android-3.14.5",
+          "revoked": false,
+          "sha256": "f008321abf837fcaec569df143283ece0e764b18d8c75763200160553f906af1",
+          "sigstore_sha256": "0d094fe223aa4b4bfbc0f25e5cd20a3294adbc2ac694af1024756e50a515b2a2",
+          "size_bytes": 21479191,
+          "support_status": "historical-input",
+          "version": "3.14.5"
+        },
+        "pythonorg-android-3.14.6": {
+          "filename": "python-3.14.6-aarch64-linux-android.tar.gz",
+          "release_id": "pythonorg-android-3.14.6",
+          "revoked": false,
+          "sha256": "38bbe77d3167b5cd554e03b1021324926f09f3825202b065951dd7638e9c37e5",
+          "sigstore_sha256": "c7ac761686eded04a3bf8c7a9be83916e673c1c230bcd22f6cdf5fa415b0feb7",
+          "size_bytes": 22358404,
+          "support_status": "current-upstream-input",
+          "version": "3.14.6"
+        }
+      },
+      "python_families": {
+        "cpython-3.14.6+e3-r1-aarch64-linux-android": {
+          "file_count": 23,
+          "fingerprint_sha256": "87464d93187c0a43663c8db98925566bc918f77ae0fccf83110307bcd593b302",
+          "release_id": "cpython-3.14.6+e3-r1-aarch64-linux-android",
+          "release_sha256": "81bd66f5cd1978485eb50991d5a6e773b55b51defb52483db6db5215c1a91a9e",
+          "revoked": false,
+          "support_status": "historical-valid-rollback"
+        },
+        "cpython-3.14.6+e3-r3-aarch64-linux-android": {
+          "file_count": 128,
+          "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+          "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+          "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+          "revoked": false,
+          "support_status": "supported-canonical"
+        }
+      }
+    },
+    "policies": {
+      "activation_requires_registered_non_revoked_exact_identity": true,
+      "ambiguous_same_identity_replacement_forbidden": true,
+      "data_and_python_lifecycles_are_independent": true,
+      "prior_release_entries_are_immutable": true,
+      "revocation_is_monotonic_within_a_catalog_revision_lineage": true,
+      "rollback_reactivates_an_already_verified_retained_identity": true
+    },
+    "revision": 1,
+    "schema_version": 1
+  },
+  "catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+  "checks": {
+    "active_data_is_current": true,
+    "active_python_is_canonical": true,
+    "all_prior_entries_retained": true,
+    "all_registrations_and_activation_pass": true,
+    "ambiguous_replacement_denied": true,
+    "exact_reregistration_idempotent": true
+  },
+  "pass": true,
+  "receipt_kind": "epoch3-rb4-production-catalog-baseline",
+  "schema_version": 1,
+  "transitions": [
+    {
+      "ok": true,
+      "operation": "register-python-family",
+      "result": "registered",
+      "role": "rollback"
+    },
+    {
+      "ok": true,
+      "operation": "register-python-family",
+      "result": "registered",
+      "role": "canonical"
+    },
+    {
+      "ok": true,
+      "operation": "register-data-product",
+      "result": "registered",
+      "role": "rollback"
+    },
+    {
+      "ok": true,
+      "operation": "register-data-product",
+      "result": "registered",
+      "role": "current"
+    },
+    {
+      "ok": true,
+      "operation": "register-official-input",
+      "result": "registered",
+      "role": "from"
+    },
+    {
+      "ok": true,
+      "operation": "register-official-input",
+      "result": "registered",
+      "role": "to"
+    },
+    {
+      "kind": "python_families",
+      "ok": true,
+      "operation": "activate-production-baseline",
+      "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+      "result": "activated"
+    },
+    {
+      "kind": "data_products",
+      "ok": true,
+      "operation": "activate-production-baseline",
+      "release_id": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+      "result": "activated"
+    }
+  ]
+}

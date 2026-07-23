@@ -1,0 +1,77 @@
+{
+  "checks": {
+    "all_operational_surfaces_assigned": true,
+    "automatic_release_forbidden": true,
+    "minimum_two_roles": true,
+    "source_security_policy_pass": true
+  },
+  "maintenance_model": {
+    "automatic_release_on_green": false,
+    "minimum_roles": [
+      "implementation maintainer",
+      "independent reviewer"
+    ],
+    "patch_update_steps": [
+      "acquire and bind official artifacts",
+      "run structural delta",
+      "review non-identity changes",
+      "replay qualification",
+      "freeze successor authority"
+    ],
+    "release_cadence_decision_enabled": true,
+    "staffing_decision_enabled": true
+  },
+  "ownership": [
+    {
+      "local_obligation": "consume signed official patch releases and review release notes",
+      "owner": "CPython upstream",
+      "surface": "CPython source security fixes and CVE response"
+    },
+    {
+      "local_obligation": "verify official identity and enumerate packaging deltas",
+      "owner": "Python.org/BeeWare release pipeline",
+      "surface": "Android package production and upstream Android patches"
+    },
+    {
+      "local_obligation": "replay full authority chain for each accepted update",
+      "owner": "local cpython-android-cli maintainers",
+      "surface": "launcher, RUNPATH, relocation, sysconfig and metadata transformations"
+    },
+    {
+      "local_obligation": "inventory changes and requalify selected surfaces",
+      "owner": "shared upstream plus local policy",
+      "surface": "bundled dependency versions, wheel and pip policy"
+    },
+    {
+      "local_obligation": "never convert preview evidence into a release or support claim",
+      "owner": "local research maintainers",
+      "surface": "preview interpretation"
+    },
+    {
+      "local_obligation": "pin exact provider identities, preserve licenses, and qualify current and rollback products",
+      "owner": "certifi and IANA/tzdata upstream providers",
+      "surface": "versioned CA and timezone provider bytes"
+    },
+    {
+      "local_obligation": "keep data outside the immutable Python tree and preserve atomic verified activation",
+      "owner": "local cpython-android-cli maintainers",
+      "surface": "data product assembly, activation, rollback and corruption handling"
+    },
+    {
+      "local_obligation": "record exact immutable identities, require explicit reasoned revocation, deny revoked selection, and never infer publication from green tests",
+      "owner": "local release operators with independent reviewer",
+      "surface": "release catalog support status, emergency revocation and publication decision"
+    }
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb4-security-ownership-and-support-policy",
+  "schema_version": 1,
+  "support_policy": {
+    "android-data-ca-2026.5.20-tzdata-2026.2-r1": "immutable-historical-valid-data-rollback",
+    "android-data-ca-2026.6.17-tzdata-2026.3-r1": "supported-current-data",
+    "cpython-3.14.6+e3-r1-aarch64-linux-android": "immutable-historical-valid-rollback-only",
+    "cpython-3.14.6+e3-r3-aarch64-linux-android": "supported-canonical-not-yet-selectable-or-published",
+    "pythonorg-android-3.14.5": "historical-upstream-patch-predecessor-input",
+    "pythonorg-android-3.14.6": "current-frozen-upstream-input"
+  }
+}

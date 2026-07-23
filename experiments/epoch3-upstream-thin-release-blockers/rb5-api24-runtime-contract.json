@@ -1,0 +1,53 @@
+{
+  "basis": {
+    "canonical_family_lock": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "rb4_release_operations_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
+      "sha256": "abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8"
+    }
+  },
+  "claim_boundary": {
+    "api24_runtime_accepted": false,
+    "api24_runtime_candidate": false,
+    "api24_runtime_started": false,
+    "publication": false,
+    "rb5_closed": false,
+    "rb6_closed": false,
+    "rb7_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb5-exact-canonical-family-api24-runtime-qualification",
+  "exact_family": {
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "lane": "target",
+  "receipt_rule": "one owner runner, complete self-excluding result index, exact target and artifact identities, fail closed without support claim",
+  "required_checks": [
+    "target identity and getprop API readback",
+    "startup and relocation",
+    "read-only install-root execution",
+    "native extension imports",
+    "subprocess sys.executable re-entry",
+    "pip import and bounded package-only operation",
+    "venv creation and execution",
+    "python-config",
+    "pkg-config",
+    "frozen family invariance",
+    "independent audit"
+  ],
+  "schema_version": 1,
+  "status": "authorized-not-started",
+  "target": {
+    "android_api": 24,
+    "architecture": "aarch64",
+    "exact_api_required": true,
+    "higher_api_substitution_forbidden": true,
+    "managed_emulator_allowed": true,
+    "real_device_allowed": true
+  }
+}

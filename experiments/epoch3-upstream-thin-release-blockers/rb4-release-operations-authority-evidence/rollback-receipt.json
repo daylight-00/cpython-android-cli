@@ -1,0 +1,55 @@
+{
+  "after_catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+  "before_catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+  "checks": {
+    "all_operations_pass": true,
+    "data_restored": true,
+    "data_rollback_exact": true,
+    "drill_restored_to_baseline": true,
+    "family_restored": true,
+    "family_rollback_exact": true,
+    "production_baseline_unchanged": true,
+    "retained_entry_counts_unchanged": true
+  },
+  "events": [
+    {
+      "catalog_sha256": "53f058df7a95a9b270ad5480fcd08127348af9c0191bd3ac43e318e538e1944b",
+      "from": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+      "kind": "python_families",
+      "ok": true,
+      "operation": "family-rollback",
+      "result": "activated",
+      "to": "cpython-3.14.6+e3-r1-aarch64-linux-android"
+    },
+    {
+      "catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+      "from": "cpython-3.14.6+e3-r1-aarch64-linux-android",
+      "kind": "python_families",
+      "ok": true,
+      "operation": "family-restore",
+      "result": "activated",
+      "to": "cpython-3.14.6+e3-r3-aarch64-linux-android"
+    },
+    {
+      "catalog_sha256": "75da42040d68a2f8535cd244c878312144e98cdc420e7e908d3888c5316c80bd",
+      "from": "android-data-ca-2026.6.17-tzdata-2026.3-r1",
+      "kind": "data_products",
+      "ok": true,
+      "operation": "data-rollback",
+      "result": "activated",
+      "to": "android-data-ca-2026.5.20-tzdata-2026.2-r1"
+    },
+    {
+      "catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+      "from": "android-data-ca-2026.5.20-tzdata-2026.2-r1",
+      "kind": "data_products",
+      "ok": true,
+      "operation": "data-restore",
+      "result": "activated",
+      "to": "android-data-ca-2026.6.17-tzdata-2026.3-r1"
+    }
+  ],
+  "pass": true,
+  "receipt_kind": "epoch3-rb4-release-and-data-rollback-drill",
+  "schema_version": 1
+}

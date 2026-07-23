@@ -1,0 +1,23 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "data_product_bytes_changed": false,
+    "owner_approved": false,
+    "production_revocation_applied": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb4_closure_allowed_after_pass": true,
+    "selectable": false
+  },
+  "evidence": {
+    "catalog_transition": "catalog-transition-receipt.json",
+    "patch_update_binding": "patch-update-binding.json",
+    "revocation": "revocation-readback.json",
+    "rollback": "rollback-receipt.json",
+    "security_ownership": "security-ownership.json"
+  },
+  "pass": true,
+  "production_catalog_sha256": "70abcce0b20ec707c6bf859a2fb841d984f99632f2f4a56a567f7f1f867d6280",
+  "result_kind": "epoch3-rb4-release-operations-local-qualification",
+  "schema_version": 1
+}

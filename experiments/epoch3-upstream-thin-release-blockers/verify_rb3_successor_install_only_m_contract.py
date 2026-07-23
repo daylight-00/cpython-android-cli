@@ -69,6 +69,23 @@ def verify(root: Path) -> dict[str, Any]:
     task = next(row for row in catalog["tasks"] if row["task_id"] == "E3-RELEASE-BLOCKERS")
     registry = load(root, "docs/documentation/document-registry.json")
     registered = {row["path"] for row in registry["documents"]}
+    rb5_contract = "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json"
+    rb4_authority = "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json"
+    rb4_temporal_amendment = "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json"
+    task_reads = {row.get("path") for row in task.get("required_reads", [])}
+    task_authorities = {row.get("path"): row.get("sha256") for row in task.get("required_authorities", [])}
+    later_progression = (
+        state.get("state_revision", 0) >= 54
+        and state.get("active_work_package") == rb5_contract
+        and state.get("claim_boundaries", {}).get("rb4_closed") is True
+        and state.get("claim_boundaries", {}).get("release_operations_complete") is True
+        and task.get("deliverable", {}).get("current_bounded_transition") == "rb5-api24-runtime-owner-qualification"
+        and {rb5_contract, rb4_authority, rb4_temporal_amendment}.issubset(task_reads)
+        and (root / rb4_authority).is_file()
+        and (root / rb4_temporal_amendment).is_file()
+        and task_authorities.get(rb4_authority) == sha(root, rb4_authority)
+        and task_authorities.get(rb4_temporal_amendment) == sha(root, rb4_temporal_amendment)
+    )
     expected_r1_archive = {
         "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
         "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",
@@ -106,14 +123,14 @@ def verify(root: Path) -> dict[str, Any]:
         "audit_only_scope": correction.get("correction_scope", {}).get("audit_predicate_changed") is True
         and correction.get("correction_scope", {}).get("product_bytes_changed") is False
         and correction.get("correction_scope", {}).get("projection_changed") is False,
-        "state_active_work": state.get("active_work_package") in {STRIPPED_EXECUTION, "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json"},
+        "state_active_work": state.get("active_work_package") in {STRIPPED_EXECUTION, "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json", "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-predecessor-supersession-m-contract.json"} or later_progression,
         "state_install_only_accepted": state.get("claim_boundaries", {}).get("successor_install_only_accepted") is True,
         "state_stripped_started": state.get("claim_boundaries", {}).get("successor_stripped_started") is True,
         "state_no_premature_completion": state.get("claim_boundaries", {}).get("selectable") is False
         and isinstance(state.get("claim_boundaries", {}).get("successor_technical_family_accepted"), bool),
-        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") in {"rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification", "rb3-profile-M-successor-technical-family-owner-assembly-and-audit", "rb3-profile-M-successor-legal-family-owner-integration-and-audit", "rb3-profile-M-successor-legal-data-rebinding-owner-qualification", "rb3-profile-M-successor-predecessor-supersession-and-rb3-closure-owner-transition"},
-        "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, ACCEPTANCE_INSPECTION, STRIPPED_EXECUTION, SUCCESSOR_INSTALL_LOCK)),
-        "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY, ACCEPTANCE_INSPECTION)),
+        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") in {"rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification", "rb3-profile-M-successor-technical-family-owner-assembly-and-audit", "rb3-profile-M-successor-legal-family-owner-integration-and-audit", "rb3-profile-M-successor-legal-data-rebinding-owner-qualification", "rb3-profile-M-successor-predecessor-supersession-and-rb3-closure-owner-transition"} or later_progression,
+        "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, ACCEPTANCE_INSPECTION, STRIPPED_EXECUTION, SUCCESSOR_INSTALL_LOCK)) or later_progression,
+        "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY, ACCEPTANCE_INSPECTION)) or later_progression,
         "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, STRIPPED_EXECUTION, ACCEPTANCE_INSPECTION, LOCK, SUCCESSOR_INSTALL_LOCK}.issubset(registered),
         "correction_success_candidate_only": correction.get("success_boundary", {}).get("successor_install_only_candidate") is True
         and correction.get("success_boundary", {}).get("successor_install_only_accepted") is False,
