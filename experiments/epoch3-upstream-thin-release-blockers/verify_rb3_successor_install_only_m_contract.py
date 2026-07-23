@@ -35,6 +35,9 @@ LOCK = "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-full-
 FULL_AUTHORITY = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json"
 INSTALL_AUTHORITY = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json"
 STRIPPED_CONTRACT = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json"
+STRIPPED_EXECUTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json"
+ACCEPTANCE_INSPECTION = "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json"
+SUCCESSOR_INSTALL_LOCK = "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-r5.lock.json"
 
 
 def load(root: Path, path: str) -> dict[str, Any]:
@@ -58,6 +61,9 @@ def verify(root: Path) -> dict[str, Any]:
     full_authority = load(root, FULL_AUTHORITY)
     install_authority = load(root, INSTALL_AUTHORITY)
     stripped = load(root, STRIPPED_CONTRACT)
+    stripped_execution = load(root, STRIPPED_EXECUTION)
+    acceptance_inspection = load(root, ACCEPTANCE_INSPECTION)
+    successor_install_lock = load(root, SUCCESSOR_INSTALL_LOCK)
     state = load(root, "docs/current/STATE.json")
     catalog = load(root, "docs/agent/TASK_CATALOG.json")
     task = next(row for row in catalog["tasks"] if row["task_id"] == "E3-RELEASE-BLOCKERS")
@@ -100,20 +106,30 @@ def verify(root: Path) -> dict[str, Any]:
         "audit_only_scope": correction.get("correction_scope", {}).get("audit_predicate_changed") is True
         and correction.get("correction_scope", {}).get("product_bytes_changed") is False
         and correction.get("correction_scope", {}).get("projection_changed") is False,
-        "state_active_work": state.get("active_work_package") == STRIPPED_CONTRACT,
+        "state_active_work": state.get("active_work_package") == STRIPPED_EXECUTION,
         "state_install_only_accepted": state.get("claim_boundaries", {}).get("successor_install_only_accepted") is True,
-        "state_stripped_not_started": state.get("claim_boundaries", {}).get("successor_stripped_started") is False,
+        "state_stripped_started": state.get("claim_boundaries", {}).get("successor_stripped_started") is True,
         "state_no_premature_completion": state.get("claim_boundaries", {}).get("selectable") is False
         and state.get("claim_boundaries", {}).get("successor_technical_family_accepted") is False,
-        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") == "rb3-profile-M-successor-install-only-r5-accepted-and-successor-stripped-owner-derivation",
-        "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT)),
-        "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY)),
-        "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, LOCK}.issubset(registered),
+        "task_transition": task.get("deliverable", {}).get("current_bounded_transition") == "rb3-profile-M-successor-stripped-r1-owner-derivation-and-qualification",
+        "task_reads_transition": all(any(row.get("path") == path for row in task.get("required_reads", [])) for path in (CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, ACCEPTANCE_INSPECTION, STRIPPED_EXECUTION, SUCCESSOR_INSTALL_LOCK)),
+        "task_binds_acceptance": all(any(row.get("path") == path and row.get("sha256") == sha(root, path) for row in task.get("required_authorities", [])) for path in (R2_INSPECTION, INSTALL_AUTHORITY, ACCEPTANCE_INSPECTION)),
+        "registry_complete": {CONTRACT, CORRECTION, R1_INSPECTION, R2_INSPECTION, INSTALL_AUTHORITY, STRIPPED_CONTRACT, STRIPPED_EXECUTION, ACCEPTANCE_INSPECTION, LOCK, SUCCESSOR_INSTALL_LOCK}.issubset(registered),
         "correction_success_candidate_only": correction.get("success_boundary", {}).get("successor_install_only_candidate") is True
         and correction.get("success_boundary", {}).get("successor_install_only_accepted") is False,
         "stripped_contract_exact": stripped.get("accepted_input", {}).get("sha256") == EXPECTED_INSTALL["sha256"]
         and stripped.get("success_boundary", {}).get("successor_stripped_candidate") is True
         and stripped.get("success_boundary", {}).get("successor_stripped_accepted") is False,
+        "stripped_execution_prepared": stripped_execution.get("status") == "prepared-owner-derivation-pending"
+        and stripped_execution.get("accepted_input", {}).get("install_only") == EXPECTED_INSTALL
+        and stripped_execution.get("success_boundary", {}).get("successor_stripped_started") is True
+        and stripped_execution.get("success_boundary", {}).get("successor_stripped_candidate") is True
+        and stripped_execution.get("success_boundary", {}).get("successor_stripped_accepted") is False,
+        "acceptance_result_exact": acceptance_inspection.get("result_archive", {}).get("sha256") == "0712ccde2ea5db376242098b3503aa27d53e281f2906b0990600f0e7b58151a7"
+        and acceptance_inspection.get("result_archive", {}).get("size_bytes") == 9973
+        and acceptance_inspection.get("result_archive", {}).get("self_index_file_count") == 21,
+        "successor_install_lock_exact": successor_install_lock.get("artifact") == EXPECTED_INSTALL
+        and successor_install_lock.get("authority_path") == INSTALL_AUTHORITY,
         "predecessor_not_superseded": install_authority.get("claim_boundary", {}).get("artifact_family_superseded") is False
         and stripped.get("success_boundary", {}).get("predecessor_family_superseded") is False,
         "rb3_open_unpublished": install_authority.get("claim_boundary", {}).get("rb3_closed") is False

@@ -1018,3 +1018,11 @@ The target Epoch 3 product is:
 > An aarch64 Android/Bionic standalone CPython distribution derived from the exact official Python.org Android embedding package, inheriting the packaged BeeWare dependency topology without rebuilding it, applying only enumerated minimum launcher, relative-loader, metadata, and selected data adaptations, and serializing the result according to Astral's full/install-only archive and consumer-metadata contract as far as upstream evidence truthfully permits.
 
 This definition satisfies the three top-level requirements without falsely claiming Astral producer internals or project ownership of CPython and dependency builds.
+
+## 18. Profile-M successor install-only acceptance and stripped r1 owner boundary
+
+The successful install-only acceptance transaction is frozen by `rb3-successor-install-only-m-acceptance-r1-return-inspection.json`. Its exact result archive (`0712ccde…`, 9,973 bytes) has a 21-file exact self-index, all acceptance and transition verifiers pass, and both local and remote `main` resolve to `1760149bb6cea14e9726dae3f268830d740f29fc` with tree `0cd6900c20178e840cdb254d4f0ae92ca1d86cd3`.
+
+This authorizes only the next technical step: derive and qualify `cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz` from the accepted install-only r5. The r1 execution contract requires two byte-identical derivations using the frozen `llvm-strip --strip-unneeded` policy, permits a byte mutation only at `bin/python3.14`, preserves all non-ELF bytes and the dynamic/16 KiB surface, and repeats Android runtime, uv system/managed, and direct/managed native-extension SDK qualification.
+
+The accepted full r5, accepted install-only r5, predecessor stripped r4, frozen authorities, and real uv managed root are protected read-only inputs. Raw user-built wheel RPATH/RUNPATH remains diagnostic-only and is not repaired. A successful transaction produces a stripped candidate only. It does not accept the stripped artifact, start or accept the successor technical family, supersede the predecessor family, rebind RB-1/RB-2, close RB-3, authorize selectability, or authorize publication.

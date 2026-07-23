@@ -321,6 +321,21 @@
       "update_trigger": "Update only through a versioned successor authority."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-r5.lock.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Frozen exact accepted successor install-only r5 identity and projection lock used by stripped derivation.",
+      "supersession_rule": "Do not edit; create a successor artifact lock and authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "program_input",
       "format": "json",
       "lifecycle_class": "CURRENT_INPUT_LOCK",
@@ -11681,6 +11696,21 @@
       "update_trigger": "Never edit after successor full acceptance."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Exact successful install-only acceptance receipt, 21-file self-index, pushed repository identity, and stripped-authorization boundary.",
+      "supersession_rule": "Do not edit; create an amendment or successor authority.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "evidence_snapshot",
       "format": "json",
       "lifecycle_class": "HISTORICAL_SNAPSHOT",
@@ -11949,6 +11979,21 @@
       "rationale": "Active exact accepted-install-only to bounded stripped candidate derivation contract.",
       "supersession_rule": "Explicit accepted stripped result or successor authority.",
       "update_trigger": "Update only through the active bounded RB-3 successor stripped derivation transaction."
+    },
+    {
+      "authority_domain": "operational",
+      "format": "json",
+      "lifecycle_class": "ACTIVE_PLAN",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "mutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
+      "planned_canonical_parent": "docs/roadmap/README.md",
+      "rationale": "Exact owner execution contract for bounded successor stripped r1 derivation, qualification, audit, and candidate-only push.",
+      "supersession_rule": "Superseded by the accepted stripped result or a bounded correction contract.",
+      "update_trigger": "Update only before package freeze; after commit create a correction contract."
     },
     {
       "authority_domain": "evidence_snapshot",

@@ -265,7 +265,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-execution-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -325,7 +325,7 @@
     "successor_full_candidate": true,
     "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
-    "successor_stripped_started": false,
+    "successor_stripped_started": true,
     "successor_technical_family_accepted": false,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
@@ -365,8 +365,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "b347d76acab63fe54ffda29c0493731f8b86dd01",
-    "tree": "681f6ec2dae9079f0a94584ba3eb34b795fce366"
+    "commit": "1760149bb6cea14e9726dae3f268830d740f29fc",
+    "tree": "0cd6900c20178e840cdb254d4f0ae92ca1d86cd3"
   },
   "program": {
     "epoch": {
@@ -420,11 +420,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 44,
+  "state_revision": 45,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "5d8dab7e2de58df5aa05590c23deba94690e6af406e2f717b72ef2515769ecc6"
+    "sha256": "47bd8af3adebdac2f6134e13c56374843804dca7ae3069c12e319b3a70a29172"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -453,7 +453,7 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-install-only-r5-accepted-successor-stripped-derivation-pending"
+    "successor-install-only-r5-accepted-successor-stripped-r1-owner-qualification-pending"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-install-only-r2-accepted-stripped-derivation-authorized"
+  "updated_by_transaction": "rb3-profile-M-successor-install-only-acceptance-r1-verified-successor-stripped-r1-owner-derivation-prepared"
 }

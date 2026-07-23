@@ -1,0 +1,23 @@
+{
+  "artifact": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+    "member_count": 3699,
+    "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "size_bytes": 23843355
+  },
+  "authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json",
+  "lock_kind": "epoch3-rb3-profile-M-successor-install-only-r5",
+  "projection": {
+    "filtering": "none-preserve-all-install-members",
+    "payload_bytes_unchanged": true,
+    "source": "accepted-full-r5/python/install/**",
+    "target": "python/**"
+  },
+  "schema_version": 1,
+  "source_full": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+    "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+    "size_bytes": 39414556
+  },
+  "status": "frozen-by-successor-install-only-r5-authority"
+}

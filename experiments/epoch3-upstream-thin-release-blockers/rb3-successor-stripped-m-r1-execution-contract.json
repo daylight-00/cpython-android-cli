@@ -1,0 +1,101 @@
+{
+  "accepted_input": {
+    "full": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    "install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "member_count": 3699,
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    "predecessor_stripped": {
+      "filename": "cpython-3.14.6+e3-full-r4-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "40951002c5880b223fa78c7b956dfcf2929e3ebf8e8beb9420c4179b98231134",
+      "size_bytes": 23841241
+    }
+  },
+  "candidate": {
+    "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+    "identity": "determined-by-owner-llvm-strip-and-frozen-only-after-return",
+    "member_count": 3699
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-stripped-r1-owner-execution",
+  "file_identities": {
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-install-only-r5.lock.json": "37c4e278e645225d4cf53b6c1a430634028182f250e01445fe7fbcb0474fac29",
+    "experiments/epoch3-upstream-thin-release-blockers/audit_rb3_successor_stripped_m.py": "fa7eaf2fe5c3be12068d885992b85a3098bcab8a6b682474660bae6f0f68787f",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json": "01a7e4c545a50a0d6f7b1809459cc2d23d93062ddcafdeea1a17465fe34b2905",
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-contract.json": "05933ce325e82e19053904cf985668ed7cf7cf0301b72d7b6a0adf2e7720b1cf",
+    "experiments/epoch3-upstream-thin-release-blockers/run_rb3_successor_stripped_m.py": "9c28dfef3eac5b3c0125ea299739e7bf3d200d09deb0a59968113265eeff160b",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_install_only_m_acceptance_result_archive.py": "619a696e39e71342e59844b38d24ebaaff50a6fa08f108c8f17bc740dba81a77",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_stripped_m.py": "e6416c750388aa01ed03f4a432bfa78f6c1160fe6bf4aae521473d18e8059427",
+    "experiments/epoch3-upstream-thin-release-blockers/test_rb3_successor_stripped_m_result_archive.py": "98f75760e2b96663e0495e2039b79bca9084ca7df998dbde1d4478d0d3a57a79",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_acceptance_result_archive.py": "559e4dc5b49f273dc7a85139f43a8a063086f1901ade85b2004f65644d7e95fd",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_result_archive.py": "4463b7ff12ee95741b0fa2f39f2381b85541940fe3a53f4b02b03efead9a75da"
+  },
+  "forbidden": [
+    "modify any accepted or predecessor artifact bytes",
+    "edit frozen authorities",
+    "assemble or accept the successor technical family",
+    "supersede the predecessor family",
+    "start legal integration or rebind RB-1/RB-2",
+    "repair user-built wheel RPATH or RUNPATH",
+    "close RB-3 or claim selectability or publication"
+  ],
+  "input_result_archives": {
+    "install_only_acceptance": {
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-acceptance-r1-results.tar.zst",
+      "self_index_file_count": 21,
+      "sha256": "0712ccde2ea5db376242098b3503aa27d53e281f2906b0990600f0e7b58151a7",
+      "size_bytes": 9973
+    },
+    "install_only_owner": {
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "self_index_file_count": 72,
+      "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+      "size_bytes": 47232364
+    },
+    "predecessor_stripped_owner": {
+      "filename": "cpython-android-cli-e3-first-real-stripped-r2-results.tar.zst",
+      "sha256": "f23fcbaed9cdaad1da8ca355500e8181297f0c70b96618f5f5a802b607b08a93",
+      "size_bytes": 71737271
+    },
+    "successor_full_owner": {
+      "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "self_index_file_count": 77,
+      "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+      "size_bytes": 63029723
+    }
+  },
+  "repository_base": {
+    "head": "1760149bb6cea14e9726dae3f268830d740f29fc",
+    "tree": "0cd6900c20178e840cdb254d4f0ae92ca1d86cd3"
+  },
+  "required_execution": [
+    "verify the exact successful install-only acceptance result and accepted install-only authority",
+    "derive stripped candidate twice with llvm-strip --strip-unneeded and require byte identity",
+    "permit mutation only at bin/python3.14 and prove all non-ELF bytes and dynamic alignment unchanged",
+    "qualify Android runtime, relocation, venv, pip, python-config, pkg-config, read-only installation, and uv system and managed lifecycle",
+    "build install and import direct and managed baseline native extensions and require 16 KiB LOAD alignment",
+    "record raw wheel RPATH and RUNPATH as diagnostics and perform no repair",
+    "prove accepted full, accepted install-only, predecessor stripped, frozen authorities, and real uv managed root unchanged",
+    "independently audit candidate-only boundary before push"
+  ],
+  "schema_version": 1,
+  "status": "prepared-owner-derivation-pending",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": false,
+    "successor_stripped_candidate": true,
+    "successor_stripped_started": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_started": false
+  }
+}

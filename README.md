@@ -56,7 +56,7 @@ Epoch 3 selection     true
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-install-only-r5-accepted-successor-stripped-derivation-pending
+- successor-install-only-r5-accepted-successor-stripped-r1-owner-qualification-pending
 
 ### Accepted authorities
 

@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "acceptance_authority_verified": true,
+    "claim_transaction_pass": true,
+    "install_only_result_archive_verified": true,
+    "local_post_identity_exact": true,
+    "remote_post_identity_exact": true,
+    "result_self_index_exact": true,
+    "stripped_authorized_not_started": true,
+    "transition_contract_verified": true
+  },
+  "claim_boundary": {
+    "artifact_family_superseded": false,
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb2_closed": true,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_authorized": true,
+    "successor_stripped_started": false
+  },
+  "inspection_kind": "epoch3-rb3-profile-M-successor-install-only-acceptance-r1-success",
+  "repository": {
+    "post_head": "1760149bb6cea14e9726dae3f268830d740f29fc",
+    "post_tree": "0cd6900c20178e840cdb254d4f0ae92ca1d86cd3",
+    "remote_post_head": "1760149bb6cea14e9726dae3f268830d740f29fc"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-acceptance-r1-results.tar.zst",
+    "self_index_file_count": 21,
+    "self_index_exact": true,
+    "sha256": "0712ccde2ea5db376242098b3503aa27d53e281f2906b0990600f0e7b58151a7",
+    "size_bytes": 9973
+  },
+  "schema_version": 1,
+  "status": "accepted-install-only-r5-pushed-successor-stripped-owner-derivation-authorized"
+}

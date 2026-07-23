@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 44
+> **State revision:** 45
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -104,6 +104,6 @@ status  in-progress
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-install-only-r5-accepted-successor-stripped-derivation-pending
+- successor-install-only-r5-accepted-successor-stripped-r1-owner-qualification-pending
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.
