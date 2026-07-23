@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "contract_kind": "epoch3-rb3-profile-M-successor-legal-data-rebinding-r1-owner-execution",
+  "status": "prepared-owner-qualification-not-run",
+  "frozen_authorization_contract": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
+    "sha256": "8710aa6c9830298493be747f60eb6d2a95a5d2f6d86add8de6ee7225c37e6ef1",
+    "mutation_forbidden": true
+  },
+  "repository": {
+    "required_predecessor_head": "a1415fcaafcc4535f4b85b0fdf5baa682e2aeafd",
+    "required_predecessor_tree": "cbf2e3ba633e00a7dd49aa9b57caa8965d57c8b8",
+    "author_name": "daylight-00",
+    "author_email": "hwjang00@snu.ac.kr"
+  },
+  "owner_acceptance_receipt": {
+    "action": "applied-rb3-profile-M-successor-legal-family-r3-accepted-rebinding-authorized-pushed",
+    "result_filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-acceptance-r1-results.tar.zst",
+    "result_sha256": "345ff6d3dc39e7d7ef8dbf9b403094b4b2fe907a2e27a213912152d983509136",
+    "result_size_bytes": 10879,
+    "post_head": "a1415fcaafcc4535f4b85b0fdf5baa682e2aeafd",
+    "post_tree": "cbf2e3ba633e00a7dd49aa9b57caa8965d57c8b8",
+    "remote_post_head": "a1415fcaafcc4535f4b85b0fdf5baa682e2aeafd"
+  },
+  "exact_inputs": {
+    "successor_legal_family_result": {
+      "filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775,
+      "family_subpath": "target/candidate",
+      "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+      "file_count": 128,
+      "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+      "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+    },
+    "rb2_data_product_result": {
+      "filename": "cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042,
+      "artifact_subpath": "target/artifacts"
+    }
+  },
+  "rb1_qualification": {
+    "mode": "verify-existing-accepted-technical-legal-evidence-against-successor-r3",
+    "required_checks": [
+      "exact accepted successor 128-file family",
+      "exact RB-1 legal integration authority",
+      "102-file legal payload byte identity",
+      "13 top-level component mappings",
+      "18 pip vendored component mappings",
+      "31 technical review units",
+      "42 archive license files for each of three flavors",
+      "exact notice identity",
+      "single remaining owner-approval gap"
+    ],
+    "owner_approval_remains_required": true,
+    "rb1_closure_forbidden": true
+  },
+  "rb2_qualification": {
+    "mode": "reuse-accepted-data-products-and-rerun-lifecycle-and-runtime",
+    "successor_install_only": {
+      "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    "sequence": [
+      "verify accepted rollback and current data product bytes",
+      "install rollback",
+      "install current",
+      "activate rollback",
+      "reactivate current",
+      "extract exact successor install-only",
+      "make extracted install root read-only",
+      "qualify SSL CA and UTC/Asia-Seoul/America-New_York",
+      "verify CPython 3.14.6 Android identity",
+      "prove install root and accepted family unchanged"
+    ]
+  },
+  "owner_result_boundary": {
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_data_rebinding_candidate": true,
+    "successor_legal_data_rebinding_accepted": false,
+    "rb1_technical_legal_evidence_complete": true,
+    "rb2_data_runtime_evidence_complete": true,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "publication": false
+  },
+  "acceptance_rule": "A separate repository acceptance transition must freeze the complete owner result before RB1_REBOUND or RB2_REBOUND becomes true.",
+  "failure_boundary": {
+    "successor_legal_family_accepted": true,
+    "successor_legal_data_rebinding_candidate": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "predecessor_family_superseded": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "publication": false
+  }
+}

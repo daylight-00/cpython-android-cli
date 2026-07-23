@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 \u2014 Exact official upstream control",
-          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 — Exact official upstream control",
+          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
+          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 \u2014 Platform portability",
-          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 — Platform portability",
+          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -2203,12 +2203,12 @@
         "class": "parallel-release-blocker-evidence-authorities-and-final-candidate-readiness",
         "current_bounded_transition": "rb3-profile-M-successor-legal-data-rebinding-owner-qualification",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-        "result": "accepted-successor-legal-family-r3-plus-owner-qualified-rb1-technical-legal-and-rb2-data-runtime-rebinding-without-owner-approval-or-predecessor-supersession"
+        "result": "owner-qualified-successor-rb1-technical-legal-and-rb2-data-runtime-rebinding-candidate-evidence-requiring-separate-acceptance"
       },
-      "goal": "Execute the authorized profile-M successor legal-family integration: verify the exact accepted 23-file technical family and frozen RB-1 legal evidence; preserve every technical-family byte; rebind accepted component/license, pip-vendored, technical-obligation, project-license, and notice evidence to successor manifests; assemble the revised family twice; independently audit one remaining owner-approval gap and predecessor invariance; return a candidate-only receipt without owner approval, RB-2 rebinding, predecessor supersession, RB-3 closure, selectability, or publication.",
+      "goal": "Execute the authorized profile-M successor legal/data rebinding: verify the exact accepted 128-file successor legal family and frozen RB-1/RB-2 authorities; freeze technical legal evidence against successor manifests while owner approval remains pending; reuse the exact accepted current and rollback CA/timezone products; rerun current/rollback/current lifecycle and SSL/zoneinfo qualification against exact successor install-only r5 with a read-only product root; return candidate evidence only without RB-1/RB-2 rebound claims, predecessor supersession, RB-3 closure, selectability, or publication.",
       "input_routing": {
-        "fallback": "retain the accepted successor technical family and frozen predecessor family; return one complete fail-closed receipt; correct only bounded legal-payload acquisition, component rebinding, lineage, reproducibility, verification, audit, or result-index defects; do not infer owner approval, rebind RB-2, supersede the predecessor, close RB-3, or authorize selectability/publication",
-        "first_attempt": "verify the exact accepted successor technical-family authority, lock, result evidence, and frozen RB-1 legal integration/overlay authorities; acquire the exact accepted 23-file family and legal payload; revalidate component bindings against successor manifests; assemble the successor legal family twice; compare every byte; independently verify release metadata, lineage, notice, LICENSE, component map, pip vendored review, technical obligations, one owner-approval gap, and predecessor invariance",
+        "fallback": "retain accepted successor legal family r3 and frozen RB-1/RB-2 authorities; return one complete fail-closed receipt; correct only bounded input location, exact-identity, lifecycle, runtime, read-only, audit, or result-index defects; do not infer owner approval, RB-1/RB-2 rebinding acceptance, predecessor supersession, RB-3 closure, selectability, or publication",
+        "first_attempt": "verify the exact accepted successor legal-family r3 lock and result, exact RB-1 legal integration authority, exact RB-2 data-product authority, and accepted current/rollback data-product bytes; execute static RB-1 rebinding checks; install rollback and current data releases; activate rollback and reactivate current; extract exact successor install-only r5; make the extracted product root read-only; qualify SSL CA, UTC/Asia-Seoul/America-New_York, and Android CPython identity; independently audit input and product-root invariance",
         "forbidden": [
           "accept-an-incomplete-result-index",
           "claim-api24-16k-or-non-termux-without-direct-context-evidence",
@@ -2371,6 +2371,11 @@
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
           "reason": "Frozen temporal routing amendment preserving accepted artifact and authority bytes.",
           "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
+          "reason": "Frozen three-level temporal routing amendment preserving accepted product and authority bytes.",
+          "sha256": "5f70109c21101c593da595e444f0db5dd8c64e928627d778d9a26cb44758ee95"
         }
       ],
       "required_reads": [
@@ -2707,6 +2712,21 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
           "reason": "Verifier-only temporal monotonicity amendment allowing authorized legal/data rebinding progression without changing accepted artifacts or authorities.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
+          "reason": "Exact owner inputs, RB-1/RB-2 qualification sequence, candidate-only claim boundary, and separate acceptance rule.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-host-inspection.json",
+          "reason": "Host-side exact input layout, successor family verification, RB-1 static rebinding proof, and target-only RB-2 boundary.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
+          "reason": "Verifier-only third temporal amendment allowing the authorized owner legal/data rebinding execution contract without changing accepted artifacts, evidence, authorities, or rebound claims.",
           "scope": "full"
         }
       ],

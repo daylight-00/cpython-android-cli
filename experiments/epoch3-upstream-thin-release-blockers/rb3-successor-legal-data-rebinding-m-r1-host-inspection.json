@@ -1,0 +1,107 @@
+{
+  "claim_boundary": {
+    "owner_approved": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_candidate": false
+  },
+  "inputs": {
+    "rb2_artifact_subpath": "target/artifacts",
+    "rb2_data_product_result": {
+      "filename": "cpython-android-cli-e3-rb2-data-products-r3-results.tar.zst.bin",
+      "sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
+      "size_bytes": 459042
+    },
+    "successor_family_subpath": "target/candidate",
+    "successor_legal_family_result": {
+      "filename": "cpython-android-cli-e3-rb3-successor-legal-family-m-r2-results.tar.zst.bin",
+      "sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
+      "size_bytes": 87216775
+    }
+  },
+  "inspection_kind": "epoch3-rb3-successor-legal-data-rebinding-r1-host-input-inspection",
+  "pass": true,
+  "rb1_static_rebinding": {
+    "checks": {
+      "component_map_exact": true,
+      "component_mapping_complete": true,
+      "legal_payload_byte_exact": true,
+      "notice_exact": true,
+      "owner_approval_pending": true,
+      "single_owner_gap": true,
+      "source_authority_exact": true,
+      "successor_flavors_rebound": true,
+      "technical_review_complete": true
+    },
+    "claim_boundary": {
+      "owner_approved": false,
+      "publication": false,
+      "rb1_closed": false,
+      "rb1_rebound": false,
+      "selectable": false,
+      "technical_legal_evidence_complete": true
+    },
+    "failed_checks": [],
+    "metrics": {
+      "legal_payload_file_count": 102,
+      "license_files_per_flavor": {
+        "full": 42,
+        "install_only": 42,
+        "install_only_stripped": 42
+      },
+      "pip_vendored_component_count": 18,
+      "remaining_gap_count": 1,
+      "review_unit_count": 31,
+      "top_level_component_count": 13
+    },
+    "owner_approved": false,
+    "pass": true,
+    "rb1_closed": false,
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "result_kind": "epoch3-rb3-successor-rb1-technical-legal-rebinding-candidate",
+    "schema_version": 1
+  },
+  "rb2_products": {
+    "current": {
+      "filename": "android-data-ca-2026.6.17-tzdata-2026.3-r1.tar.zst",
+      "sha256": "e7dcdfa84f093d8bbdea50c80f25b9f20bddd8619199610405c4ba344790268d",
+      "size_bytes": 227318
+    },
+    "rollback": {
+      "filename": "android-data-ca-2026.5.20-tzdata-2026.2-r1.tar.zst",
+      "sha256": "144d96b8f301309fc2269cc73c9f888a37b663afc0ae3e485966834b635d750d",
+      "size_bytes": 229141
+    }
+  },
+  "schema_version": 1,
+  "successor_family_verification": {
+    "checks": {
+      "accepted_lock_boundary": true,
+      "all_file_identities": true,
+      "exact_file_set": true,
+      "release_identity": true,
+      "release_index_present": true
+    },
+    "failed_checks": [],
+    "mismatches": [],
+    "pass": true,
+    "release": {
+      "family_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+      "file_count": 128,
+      "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+      "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+    },
+    "schema_version": 1,
+    "verifier_kind": "epoch3-rb3-successor-legal-family-r3-exact-input"
+  },
+  "target_required": {
+    "android_successor_runtime_execution": true,
+    "current_rollback_current_lifecycle": true,
+    "host_execution_is_not_substitute": true,
+    "read_only_install_root_qualification": true
+  }
+}

@@ -78,6 +78,8 @@
         "old_family_superseded": false,
         "profile_selection_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-sysconfig-profile-selection-authority.json",
         "r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-consumer-compatibility-r1-return-inspection.json",
+        "rb1_rebound": false,
+        "rb2_rebound": false,
         "responsibility_reassessment": "experiments/epoch3-upstream-thin-release-blockers/rb3-distributor-responsibility-reassessment.json",
         "selected_profile": "M",
         "successor_full_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json",
@@ -88,7 +90,12 @@
         "successor_install_only_acceptance_r1_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-acceptance-r1-return-inspection.json",
         "successor_install_only_accepted": true,
         "successor_install_only_r2_result_sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+        "successor_legal_data_rebinding_candidate": false,
         "successor_legal_data_rebinding_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
+        "successor_legal_data_rebinding_execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
+        "successor_legal_data_rebinding_host_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-host-inspection.json",
+        "successor_legal_data_rebinding_started": true,
+        "successor_legal_data_rebinding_temporal_verifier_amendment": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
         "successor_legal_family_acceptance_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json",
         "successor_legal_family_accepted": true,
         "successor_legal_family_candidate": true,
@@ -126,15 +133,15 @@
       "name": "astral-consumer-compatibility",
       "next_gate": {
         "closure_allowed": false,
-        "next_action": "rebind accepted RB-1 technical legal evidence and accepted RB-2 data/runtime qualification to exact successor r3 family",
+        "next_action": "run exact successor RB-1 technical legal and RB-2 data/runtime rebinding qualification and return candidate evidence for separate acceptance",
         "required_input": "accepted 128-file successor legal family r3 plus frozen RB-1 and RB-2 authorities",
-        "required_output": "RB-1 technical legal rebinding with owner approval still pending and RB-2 current/rollback/current runtime rebinding against exact successor install_only r5",
+        "required_output": "complete owner result with exact RB-1 technical legal evidence, RB-2 read-only current/rollback/current runtime qualification, independent audit, and candidate-only claim boundary",
         "successor_after_accepted_probe": "explicit predecessor supersession authority and RB-3 closure transition"
       },
       "required_for": [
         "selectability"
       ],
-      "status": "in-progress-profile-M-successor-legal-family-r3-accepted-rebinding-authorized"
+      "status": "in-progress-profile-M-successor-legal-data-rebinding-owner-qualification"
     },
     {
       "completion_role": "release-security-update-rollback-and-revocation-operations",

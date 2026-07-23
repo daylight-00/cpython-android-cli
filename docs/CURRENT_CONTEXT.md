@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 50
+> **State revision:** 51
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -83,6 +83,7 @@ status  in-progress
 50. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json) — verifier-only temporal monotonicity amendment preserving accepted stripped artifact, authority, and owner evidence while allowing later technical-family and legal-family state progression
 51. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-authority.json) — accepted deterministic 128-file successor legal family, exact technical/legal byte preservation, and successor legal/data rebinding authorization
 52. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json) — verifier-only monotonic routing amendment allowing legal/data rebinding progression after accepted successor legal family
+53. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json) — verifier-only third temporal monotonicity amendment allowing the bounded owner legal/data rebinding execution while preserving accepted artifacts, authorities, evidence, and rebound claim boundaries
 
 ## Blockers
 
@@ -113,8 +114,8 @@ status  in-progress
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-rb2-data-runtime-rebinding-pending
 - predecessor-family-supersession-pending-after-successor-legal-data-acceptance
-- successor-rb1-technical-legal-rebinding-pending-owner-approval-still-required
+- successor-legal-data-rebinding-owner-qualification-pending
+- rb1-owner-approval-remains-pending-after-technical-rebinding
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

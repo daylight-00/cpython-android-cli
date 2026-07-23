@@ -311,6 +311,12 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
       "role": "verifier-only monotonic routing amendment allowing legal/data rebinding progression after accepted successor legal family",
       "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
+    },
+    {
+      "id": "epoch3-rb3-successor-legal-data-rebinding-temporal-routing-verifier-amendment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-temporal-verifier-amendment.json",
+      "role": "verifier-only third temporal monotonicity amendment allowing the bounded owner legal/data rebinding execution while preserving accepted artifacts, authorities, evidence, and rebound claim boundaries",
+      "sha256": "5f70109c21101c593da595e444f0db5dd8c64e928627d778d9a26cb44758ee95"
     }
   ],
   "active_plan": {
@@ -319,7 +325,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-r1-execution-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -382,7 +388,7 @@
     "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
     "successor_legal_data_rebinding_authorized": true,
-    "successor_legal_data_rebinding_started": false,
+    "successor_legal_data_rebinding_started": true,
     "successor_legal_family_accepted": true,
     "successor_legal_family_candidate": true,
     "successor_legal_family_integration_authorized": true,
@@ -486,11 +492,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 50,
+  "state_revision": 51,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "ad2d14b72ad0a166b3c91bc44f90bed495d8db290c07515b5b065f4a6b060f84"
+    "sha256": "c8918f40c0220a642b3d0dcf6ddec4c8c318932f0bf283b78d1575767131de72"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -519,9 +525,9 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-rb2-data-runtime-rebinding-pending",
     "predecessor-family-supersession-pending-after-successor-legal-data-acceptance",
-    "successor-rb1-technical-legal-rebinding-pending-owner-approval-still-required"
+    "successor-legal-data-rebinding-owner-qualification-pending",
+    "rb1-owner-approval-remains-pending-after-technical-rebinding"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-legal-family-r3-acceptance-rebinding-authorized"
+  "updated_by_transaction": "rb3-profile-M-successor-legal-data-rebinding-r1-owner-qualification-prepared"
 }

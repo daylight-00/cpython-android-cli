@@ -1,0 +1,52 @@
+{
+  "amendment_kind": "epoch3-rb3-successor-legal-data-rebinding-temporal-routing-verifier-amendment",
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_data_rebinding_accepted": false,
+    "successor_legal_data_rebinding_candidate": false,
+    "successor_legal_data_rebinding_started": true,
+    "successor_legal_family_accepted": true
+  },
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false,
+    "predecessor_family_superseded": false,
+    "rb1_rebound_inferred": false,
+    "rb2_rebound_inferred": false
+  },
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-temporal-verifier-amendment.json",
+    "sha256": "d11ba8f48fab81fe71cbbb3ae8ceb0a8529443211a5624f7ce9e0836e9cf36a5"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "59403dc4827e44a83a891c6fb8690ecc510182aab2435107bbcd2527485d8991",
+      "reason": "allow the historical accepted install-only verifier to recognize the bounded owner legal/data rebinding execution contract",
+      "replacement_sha256": "a43d08e5b15ad695e072726963ce40bcd5b1472ca91ffe6dc64b5b1c1f0b67f4"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "fbe530080b6d20c3a53a9fbf184543c9660e0baa40656e86585e5301bd5f595a",
+      "reason": "verify the three-level temporal amendment chain without changing accepted stripped evidence or authority",
+      "replacement_sha256": "d22b6bc8e381a86552307b44d576569593e6abe3d2cfe2b98278ea05da775938"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "e7ff3b81acbc342ba28a67e537dca45ba94ee29ee2fbe450ad526394d1149395",
+      "reason": "allow the historical accepted stripped verifier to recognize the bounded owner legal/data rebinding execution contract",
+      "replacement_sha256": "2492c119e010adb6018b4a78664332292bdc2baa4ff0a0ccaf846aabc91067f3"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "405f197f70b02026ae24565ce8a7cfa96382e133d6b7360b0ec08b8c5d423ab2",
+      "reason": "verify the three-level temporal amendment chain without changing accepted technical-family evidence or authority",
+      "replacement_sha256": "e95316e6f4a8f7d508971d323912bfbed08ba2a0e6c536ef80f5de47b7491625"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity for the authorized owner legal/data rebinding execution; accepted artifacts, evidence, authorities, and claim boundaries unchanged"
+}
