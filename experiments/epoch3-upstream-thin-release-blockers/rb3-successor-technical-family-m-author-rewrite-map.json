@@ -1,0 +1,125 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "publication": false,
+    "receipt_evidence_invalidated": false,
+    "selectable": false,
+    "technical_family_identity_changed": false
+  },
+  "identity": {
+    "author_email": "hwjang00@snu.ac.kr",
+    "author_name": "daylight-00",
+    "committer_email": "hwjang00@snu.ac.kr",
+    "committer_name": "daylight-00"
+  },
+  "invariants": {
+    "current_main": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "current_tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99",
+    "old_backup_ref": "refs/remotes/origin/backup/pre-identity-rewrite-4d65756",
+    "parent_chain_rewritten": true,
+    "tree_subject_author_date_preserved": true
+  },
+  "mapping_kind": "epoch3-rb3-author-identity-history-rewrite-map",
+  "mappings": [
+    {
+      "author_date": "2026-07-22T11:21:21Z",
+      "new_commit": "86a55cdcd25c9e05498c4c642538b9e9337dedb2",
+      "old_commit": "4c114704ff7cc6ee09d96372f3ff22ae5bfd6bad",
+      "subject": "Select minimal sysconfig profile M",
+      "tree": "bb60a448de66ac9d771b6e9b0a810f6e41d0be8d"
+    },
+    {
+      "author_date": "2026-07-22T11:22:59Z",
+      "new_commit": "241293fbf22328a53f3dc38b544588bb1ab94bce",
+      "old_commit": "711ddcba4c943f34b7ae355ee6d1f9df5c9b218b",
+      "subject": "Complete RB-3 successor task routing",
+      "tree": "0b8a6d0f2f29e312a5cc53bcd734caaacf7cc186"
+    },
+    {
+      "author_date": "2026-07-22T11:30:11Z",
+      "new_commit": "19f42a4817915dfa1489c66842619fd473fe018e",
+      "old_commit": "73fddc2ef795c43a5fe913fbf2678a4351334bc5",
+      "subject": "Add profile M successor full qualification",
+      "tree": "962b8fa48c54f1de66e50a6bc0da0c0e412c849b"
+    },
+    {
+      "author_date": "2026-07-22T15:06:32Z",
+      "new_commit": "98d296b0cd9f18d494241bc2dc98f357e645e143",
+      "old_commit": "dfe28ebf61b14273b48943b118033b712483d6a2",
+      "subject": "Correct RB-3 responsibility and reproducibility boundary",
+      "tree": "cacff3808d1bc29f086f4804295dcbac48a06af9"
+    },
+    {
+      "author_date": "2026-07-22T16:08:05Z",
+      "new_commit": "61eee229b6f31db5fa88215939e42077ec7ec7c1",
+      "old_commit": "678e69cf5b20232e62ab91035e44e54ad2824689",
+      "subject": "Preserve profile M through uv managed rewriting",
+      "tree": "4771b777162bef43985f8e1a2bbd4a29f4246738"
+    },
+    {
+      "author_date": "2026-07-22T16:49:30Z",
+      "new_commit": "75f8c87d9f5c4657ee4ecd0c76460bbba8853d2f",
+      "old_commit": "d0337b4a3072501dca200135007931eac814500d",
+      "subject": "Fix managed find observation timing",
+      "tree": "55828f6f3e990fc743f09bd48a17e95404ea694b"
+    },
+    {
+      "author_date": "2026-07-22T17:52:01Z",
+      "new_commit": "a53dc23f849a23721a09bd93b918c936aa9edb0d",
+      "old_commit": "76d7b7967a9c6287426636805bdb3c54bcd296e8",
+      "subject": "Accept profile M successor full r5 with tracked-tree test isolation",
+      "tree": "2a166ca046d853999e46f1d95c70adbc1a39e664"
+    },
+    {
+      "author_date": "2026-07-23T00:23:42Z",
+      "new_commit": "65bcf992350cb94e28fd0257605d7100a6f0d49d",
+      "old_commit": "b347d76acab63fe54ffda29c0493731f8b86dd01",
+      "subject": "Correct successor install-only audit receipt schema",
+      "tree": "681f6ec2dae9079f0a94584ba3eb34b795fce366"
+    },
+    {
+      "author_date": "2026-07-23T03:23:53Z",
+      "new_commit": "045635505b8e2ce2b29f0e2fb1015648f8c2e925",
+      "old_commit": "1760149bb6cea14e9726dae3f268830d740f29fc",
+      "subject": "Accept profile M successor install-only r5",
+      "tree": "0cd6900c20178e840cdb254d4f0ae92ca1d86cd3"
+    },
+    {
+      "author_date": "2026-07-23T04:16:40Z",
+      "new_commit": "0fc2d9da235d4ddd561268a71092d75604bc8eeb",
+      "old_commit": "7c2d3b16979e01b44ca0e489e2a6ce26df1ff16d",
+      "subject": "Prepare profile M successor stripped qualification",
+      "tree": "043e7dda6b04f142d4732f1b8f29efc9bf074873"
+    },
+    {
+      "author_date": "2026-07-23T05:07:38Z",
+      "new_commit": "88cc79e874633ae68ad723e65159d079d19e9bc5",
+      "old_commit": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+      "subject": "Accept profile M successor stripped r5",
+      "tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc"
+    },
+    {
+      "author_date": "2026-07-23T05:47:46Z",
+      "new_commit": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+      "old_commit": "4d65756046b4718d337b5d4d97f605818bb1811c",
+      "subject": "Prepare profile M successor technical family qualification",
+      "tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99"
+    }
+  ],
+  "receipt_binding": {
+    "new_post_head": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "new_pre_head": "88cc79e874633ae68ad723e65159d079d19e9bc5",
+    "old_post_head": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "old_pre_head": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+    "post_tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99",
+    "pre_tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc"
+  },
+  "rewrite_scope": {
+    "first_new_commit": "86a55cdcd25c9e05498c4c642538b9e9337dedb2",
+    "first_old_commit": "4c114704ff7cc6ee09d96372f3ff22ae5bfd6bad",
+    "last_new_commit": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "last_old_commit": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "mapped_commit_count": 12
+  },
+  "schema_version": 1
+}

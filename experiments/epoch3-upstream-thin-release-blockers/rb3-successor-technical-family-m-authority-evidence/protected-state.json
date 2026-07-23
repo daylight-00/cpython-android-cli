@@ -1,0 +1,68 @@
+{
+  "after": {
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json": {
+      "sha256": "8c1a06cd67e70219807e463a30524bec767661d33d0ef86eea9cec029a918322",
+      "size_bytes": 6584
+    },
+    "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json": {
+      "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+      "size_bytes": 4416
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json": {
+      "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb",
+      "size_bytes": 6268
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json": {
+      "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca",
+      "size_bytes": 7063
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json": {
+      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd",
+      "size_bytes": 8445
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json": {
+      "sha256": "0f9c83cec8423e43ee603ff93ef47718e74b37190381c3c910a14c9973e00268",
+      "size_bytes": 3259
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-execution-contract.json": {
+      "sha256": "eabd6af91315370f2e148cb1491d787c46cd89d5b72765068af8a643fe95120e",
+      "size_bytes": 6497
+    }
+  },
+  "before": {
+    "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-artifact-family-r1.lock.json": {
+      "sha256": "8c1a06cd67e70219807e463a30524bec767661d33d0ef86eea9cec029a918322",
+      "size_bytes": 6584
+    },
+    "experiments/epoch3-upstream-thin-artifact-family/artifact-family-authority.json": {
+      "sha256": "102ea6c02198885a08328d821511a10b8043510095970dfde17d8c8ef18e276e",
+      "size_bytes": 4416
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-full-m-authority.json": {
+      "sha256": "557a1602d800f2eb0fd475e38d65e695aff5ed6fbc6f7d58f4e2a2ac277209cb",
+      "size_bytes": 6268
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-install-only-m-authority.json": {
+      "sha256": "cdee9a7e00adfe9e715d588ab7ce5a3b69a7ce0f6b24de26503ca67eb324d8ca",
+      "size_bytes": 7063
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json": {
+      "sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd",
+      "size_bytes": 8445
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json": {
+      "sha256": "0f9c83cec8423e43ee603ff93ef47718e74b37190381c3c910a14c9973e00268",
+      "size_bytes": 3259
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-execution-contract.json": {
+      "sha256": "eabd6af91315370f2e148cb1491d787c46cd89d5b72765068af8a643fe95120e",
+      "size_bytes": 6497
+    }
+  },
+  "contracts_unchanged": true,
+  "pass": true,
+  "predecessor_family_unchanged": true,
+  "receipt_kind": "epoch3-rb3-successor-technical-family-protected-state",
+  "schema_version": 1,
+  "successor_authorities_unchanged": true
+}

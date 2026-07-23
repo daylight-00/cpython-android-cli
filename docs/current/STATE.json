@@ -275,6 +275,30 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json",
       "role": "exact successful stripped acceptance transaction, 21-file result self-index, repository and remote transition, and technical-family owner assembly authorization",
       "sha256": "d8df265e57a21427bd25c435db23af01e702eb2e466a934af9537f41b889ddef"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-technical-family-r2",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
+      "role": "accepted deterministic 23-file profile-M successor technical family with exact accepted artifact reuse, successor-bound metadata, author-rewrite receipt binding, reproducibility, protected-state, and independent acceptance evidence",
+      "sha256": "ce6a80b5505afec7c99a74e0a7c12001848ba2e1892e3592fc1066e299b091e2"
+    },
+    {
+      "id": "epoch3-rb3-profile-M-successor-technical-family-r1-success-inspection",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json",
+      "role": "exact successful technical-family owner result, 45-file self-index, old-to-rewritten repository coordinate binding, and legal-family integration authorization",
+      "sha256": "d327b2b84712d7e9b7378e0934a4246dbe7bb4246236080a271d3bb58f8edae2"
+    },
+    {
+      "id": "epoch3-rb3-author-identity-history-rewrite-map",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json",
+      "role": "exact twelve-commit old-to-new author rewrite mapping preserving tree, subject, and author date while binding external receipts to rewritten main",
+      "sha256": "153010d8f18fc39b6d78cee3fb2ca2dcbf2b941ba70c908c3f6df192052eaa8a"
+    },
+    {
+      "id": "epoch3-rb3-successor-stripped-temporal-routing-verifier-amendment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json",
+      "role": "verifier-only temporal monotonicity amendment preserving accepted stripped artifact, authority, and owner evidence while allowing later technical-family and legal-family state progression",
+      "sha256": "f02b72452085dcedf96fe9b2301a0a6be317f069920f8016a9f7e8b63ed4d6af"
     }
   ],
   "active_plan": {
@@ -283,7 +307,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-family-m-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -343,12 +367,16 @@
     "successor_full_candidate": true,
     "successor_install_only_accepted": true,
     "successor_install_only_candidate": true,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": false,
+    "successor_legal_family_integration_authorized": true,
+    "successor_legal_family_integration_started": false,
     "successor_stripped_accepted": true,
     "successor_stripped_candidate": true,
     "successor_stripped_started": true,
-    "successor_technical_family_accepted": false,
-    "successor_technical_family_candidate": false,
-    "successor_technical_family_started": false,
+    "successor_technical_family_accepted": true,
+    "successor_technical_family_candidate": true,
+    "successor_technical_family_started": true,
     "sysconfig_profile_selected": true,
     "sysconfig_sdk_boundary_review_complete": true,
     "user_built_wheel_postprocessing_in_scope": false
@@ -387,8 +415,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
-    "tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc"
+    "commit": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99"
   },
   "program": {
     "epoch": {
@@ -442,11 +470,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 47,
+  "state_revision": 48,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "389cfa38f9d1048300c500d0203e072a7f297c7b240a35106ad85358cb1cbb65"
+    "sha256": "76dd84590619ea7d21b3ed9725ae59953eecb83909aafc630979d8414e067142"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -475,7 +503,9 @@
     "rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession",
-    "successor-technical-family-r1-owner-assembly-and-independent-audit-pending"
+    "successor-legal-family-integration-and-rb1-rebinding-pending",
+    "successor-rb2-data-runtime-rebinding-pending",
+    "predecessor-family-supersession-pending-after-successor-legal-data-acceptance"
   ],
-  "updated_by_transaction": "rb3-profile-M-successor-stripped-acceptance-r1-verified-technical-family-r1-owner-assembly-prepared"
+  "updated_by_transaction": "rb3-profile-M-successor-technical-family-r1-verified-accepted-legal-family-integration-authorized"
 }

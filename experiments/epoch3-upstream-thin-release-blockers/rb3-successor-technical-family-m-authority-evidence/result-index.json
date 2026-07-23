@@ -1,0 +1,234 @@
+{
+  "excluded_paths": [
+    "result-index.json"
+  ],
+  "files": [
+    {
+      "path": "final-status.txt",
+      "sha256": "d30ccc4abf81fe62b9b264205c65628676ef9345b711baac05e523bdcfdcdef8",
+      "size_bytes": 1712
+    },
+    {
+      "path": "inputs/exact-input-verification.json",
+      "sha256": "181ab74306685c31fbc2303ed78219e5702eeb0769b174d589ca3b374517bfb9",
+      "size_bytes": 4004
+    },
+    {
+      "path": "logs/apply.log",
+      "sha256": "382ff17b51590068fb0e905bd84b48333b323da41e00b6cf761f91db5f6a7f83",
+      "size_bytes": 2117
+    },
+    {
+      "path": "logs/audit.log",
+      "sha256": "1f321b1b5d29062fbd3cc1544d3e599aec827350013bdead9e32e9cd490553f2",
+      "size_bytes": 3684
+    },
+    {
+      "path": "logs/bundle-fetch.log",
+      "sha256": "aa7f1c5e427364618bf77540c7ce27e356af56b5aed12015bfda799cc21abd85",
+      "size_bytes": 325
+    },
+    {
+      "path": "logs/package-verify.log",
+      "sha256": "d554fc7ab6ba199c853748957be08bb433946ca1b0c13eda600c7bbf3757d0cd",
+      "size_bytes": 389
+    },
+    {
+      "path": "logs/push.log",
+      "sha256": "69e643505503a904b7bb89f1da8b047602f4ff1ac095f5a272dff632c88c983e",
+      "size_bytes": 124
+    },
+    {
+      "path": "logs/static.log",
+      "sha256": "ecda1cec0a5a072ea76804cfc79c448157da29cc6fb8ed224a9a7249241fd079",
+      "size_bytes": 831
+    },
+    {
+      "path": "logs/target.log",
+      "sha256": "93cd2ad27932f3a751dfba85a8b746c71f3a01241a45e4ffd21d0321388fa332",
+      "size_bytes": 3029
+    },
+    {
+      "path": "logs/unit-tests.log",
+      "sha256": "40588a5bfa57e0400d3c7c6261714c8b23f25c4e6a5f38576df3660249df6a9a",
+      "size_bytes": 197
+    },
+    {
+      "path": "package-manifest.json",
+      "sha256": "08d2a94dbd0f9a554fec4b0203d3b468d3a2488c6c185b8bf8319d496925d65e",
+      "size_bytes": 1136
+    },
+    {
+      "path": "receipts/accepted-result-archive-verification.json",
+      "sha256": "bb800a7de5fd281d452c7c0bac3e52bad4fef0e4b9a78e0798a34045d7d24ace",
+      "size_bytes": 4179
+    },
+    {
+      "path": "receipts/independent-audit.json",
+      "sha256": "1f321b1b5d29062fbd3cc1544d3e599aec827350013bdead9e32e9cd490553f2",
+      "size_bytes": 3684
+    },
+    {
+      "path": "receipts/onboarding.json",
+      "sha256": "8949b8ced197d9f8f42b5c5c9c66a0d7b89cf29fb7e510761d055274ba422e11",
+      "size_bytes": 26842
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1064e18da404a5dbe8db0d6678cb07c3ebb533aa12530b8a859ea56004443807",
+      "size_bytes": 4754
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/SHA256SUMS",
+      "sha256": "d8e3fc9f56951f40c0f1624f21c708bd2e1eeef10fa775ade37d1234f5fb35dd",
+      "size_bytes": 3110
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+      "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+      "size_bytes": 39414556
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.artifact.json",
+      "sha256": "da5ac08e584ba3dc915d2f6e924f118ef26c6b9e325307e4bbee0710bddf9beb",
+      "size_bytes": 1866
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.attestation.json",
+      "sha256": "78ed36fd4e5278663df4588d07900d653320a8d2d5fa7f910a91021fecf6616b",
+      "size_bytes": 1802
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.licenses.json",
+      "sha256": "40a6a1af100068957289f0faae99c095a91e11de08f2abc616ca92b0ba4c8ce2",
+      "size_bytes": 10255
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.manifest.json",
+      "sha256": "14b1a83196b250bdfc059459130e211d4e7485787f7cd3452662376fa549db17",
+      "size_bytes": 989384
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.provenance.json",
+      "sha256": "c89a3715e620badd2b7575c743f6e99ba33288aeb8803fe6f65e1a495898f28d",
+      "size_bytes": 1524
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst.qualification.json",
+      "sha256": "3d98e41b42eb22ad4f44430cadf87e02a4ecdf74d58f9ed117d45c4eef84d078",
+      "size_bytes": 1804
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+      "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+      "size_bytes": 23843355
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.artifact.json",
+      "sha256": "46955b36a5fdaf0a6a6a05d2edc16c2cf622e8fa34f142505d1f03712e40831f",
+      "size_bytes": 1949
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.attestation.json",
+      "sha256": "4e72750a77518b63d4112d0d9d0c9f3be09bae9f7ffc15fb89b55f809e595d2a",
+      "size_bytes": 1881
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.licenses.json",
+      "sha256": "2bd24ca4fb3673a840bbec24a562a51beef6be81cd80f5319e5979ae0d319653",
+      "size_bytes": 9926
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.manifest.json",
+      "sha256": "b4f2e74b0bb3f8f34375ba8f787b39d29df230f05307813043a172764aa52660",
+      "size_bytes": 947157
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.provenance.json",
+      "sha256": "c3dad03d2a24312f8a60768c0c1aa39bf60da5faa3ca34caf3f7daf8dd9f20c8",
+      "size_bytes": 1599
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz.qualification.json",
+      "sha256": "6b4fd9b2d63a6f3f910ad0fe4d1cea231f9841dd1285662dfefd9e506a11f8dc",
+      "size_bytes": 1845
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+      "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+      "size_bytes": 23842721
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.artifact.json",
+      "sha256": "fcf51722aa2d29dd11d2088f2828abf20b82f8426c3cbec96426532bf71fbe1b",
+      "size_bytes": 2064
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.attestation.json",
+      "sha256": "da261dcd2361a2388a179943a9eb4c046a52c986e5fa30a993abce1abb1ff628",
+      "size_bytes": 1993
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.licenses.json",
+      "sha256": "1cf4689aab8ab82f9450898cb3651433ca98a7ff5a8d22661db7577813f3ce47",
+      "size_bytes": 9935
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.manifest.json",
+      "sha256": "23a52477a06cb45b37fc4a06297923fea031c137f5b440872fbc0bea1ac58ac6",
+      "size_bytes": 947166
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.provenance.json",
+      "sha256": "2173b79a20af2aeda76a0da1c2a4cea1be35c847365f5f8ce841139ad94acd5a",
+      "size_bytes": 1705
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz.qualification.json",
+      "sha256": "89d3e9ea7021ec1be80a0ef8b7dcc5032c326ac6934cb03b521a2f57c5e24946",
+      "size_bytes": 1859
+    },
+    {
+      "path": "target/artifacts/cpython-3.14.6+e3-r2-aarch64-linux-android/release-index.json",
+      "sha256": "bb9cf9d8acfa93910a75ee5dfc73d6a7ced4b27fe252bf588c54ee1c3ba1ee12",
+      "size_bytes": 13415
+    },
+    {
+      "path": "target/rb3-successor-technical-family-m-result.json",
+      "sha256": "93cd2ad27932f3a751dfba85a8b746c71f3a01241a45e4ffd21d0321388fa332",
+      "size_bytes": 3029
+    },
+    {
+      "path": "target/receipts/input-identities.json",
+      "sha256": "90c720c418b5942263ac63252cd9e8e4e8941e8e798e33c26b3f9b65ec7d0397",
+      "size_bytes": 1731
+    },
+    {
+      "path": "target/receipts/protected-state.json",
+      "sha256": "7dce676a6a19addf9120d3dcb86d593b7fcb505564eac7e615c7b8387c292457",
+      "size_bytes": 3322
+    },
+    {
+      "path": "target/receipts/technical-family-reproducibility.json",
+      "sha256": "7ac708092269598f63c0f2e78b17ad39d94d3561e6c85eec9d0b97c60bcd6ca9",
+      "size_bytes": 13914
+    },
+    {
+      "path": "target/receipts/technical-family-verification-a.json",
+      "sha256": "13c98aa6d390ea6b69314f0690b01c955deadc096287458caf73de243563d0b3",
+      "size_bytes": 1826
+    },
+    {
+      "path": "target/receipts/technical-family-verification-b.json",
+      "sha256": "13c98aa6d390ea6b69314f0690b01c955deadc096287458caf73de243563d0b3",
+      "size_bytes": 1826
+    },
+    {
+      "path": "target/receipts/technical-family-verification.json",
+      "sha256": "13c98aa6d390ea6b69314f0690b01c955deadc096287458caf73de243563d0b3",
+      "size_bytes": 1826
+    }
+  ],
+  "index_kind": "self-excluding-result-index",
+  "schema_version": 1
+}

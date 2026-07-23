@@ -1,0 +1,34 @@
+{
+  "amendment_kind": "epoch3-rb3-successor-stripped-temporal-routing-verifier-amendment",
+  "amends_authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json",
+  "authority_sha256": "fd3995b0a76d7613846bbe1f191f39c49c8ffbb62da16062cc8bb4720ec8eccd",
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_stripped_accepted": true,
+    "technical_family_acceptance_not_inferred_by_amendment": true
+  },
+  "invariants": {
+    "accepted_stripped_bytes_changed": false,
+    "accepted_stripped_sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+    "authority_bytes_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "f8fa63cc3c831595b444ce8005a8e73cfeda83c919653aa6a5ff34b1d16185b6",
+      "reason": "make historical transition verification monotonic after accepted successor technical-family progression without changing any stripped artifact, owner evidence, or authority claim",
+      "replacement_sha256": "15eb7f13286731c59df0ce91da8fda4ccc0c3671fd3d7ee1bdb82f6ab02e36ff"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "2ea69d446be045f49d76376751376718739371805fb8756c2fd224b820188c63",
+      "reason": "make historical transition verification monotonic after accepted successor technical-family progression without changing any stripped artifact, owner evidence, or authority claim",
+      "replacement_sha256": "69faa5cfeb6e693bd5298a34ec1d3754928938ef0c4dc02d2b26b4a62987af7a"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity; accepted stripped artifact, evidence, authority, and claim boundary unchanged"
+}

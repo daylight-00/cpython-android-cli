@@ -1,0 +1,122 @@
+{
+  "action": "applied-rb3-profile-M-successor-technical-family-r1-assembled-verified-audited-pushed",
+  "claim_boundary": {
+    "legal_family_integration_started": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_full_accepted": true,
+    "successor_install_only_accepted": true,
+    "successor_stripped_accepted": true,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_authorized": true,
+    "successor_technical_family_candidate": true,
+    "successor_technical_family_started": true
+  },
+  "claim_transaction_rc": 0,
+  "expected_post": {
+    "head": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99"
+  },
+  "failure_reason": "none",
+  "first_failure": "none",
+  "inputs": {
+    "full": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "artifact": {
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+        "member_count": 3752,
+        "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+        "size_bytes": 39414556
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "index_count": 77,
+      "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+      "size_bytes": 63029723
+    },
+    "install_only": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "artifact": {
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+        "member_count": 3699,
+        "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+        "size_bytes": 23843355
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "index_count": 72,
+      "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+      "size_bytes": 47232364
+    },
+    "stripped": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+      "artifact": {
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+        "member_count": 3699,
+        "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+        "size_bytes": 23842721
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+      "index_count": 84,
+      "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+      "size_bytes": 47423566
+    },
+    "stripped_acceptance": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+      "index_count": 21,
+      "sha256": "742c316a3dd9c428fb201e54d3cb8c29280cbd1ed8d491afa367636852672b14",
+      "size_bytes": 10309
+    }
+  },
+  "package_id": "cpython-android-cli-e3-rb3-successor-technical-family-m-r1",
+  "post": {
+    "head": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "remote_head": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99"
+  },
+  "pre": {
+    "head": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+    "remote_head": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+    "tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc"
+  },
+  "release_family": {
+    "checksums": {
+      "filename": "SHA256SUMS",
+      "sha256": "d8e3fc9f56951f40c0f1624f21c708bd2e1eeef10fa775ade37d1234f5fb35dd",
+      "size_bytes": 3110
+    },
+    "file_count": 23,
+    "fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_index": {
+      "filename": "release-index.json",
+      "sha256": "bb9cf9d8acfa93910a75ee5dfc73d6a7ced4b27fe252bf588c54ee1c3ba1ee12",
+      "size_bytes": 13415
+    },
+    "release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1"
+  },
+  "return_codes": {
+    "apply": 0,
+    "archive": 99,
+    "archive_verify": 99,
+    "audit": 0,
+    "input": 0,
+    "onboard": 0,
+    "package": 0,
+    "post": 0,
+    "push": 0,
+    "receipt": 0,
+    "remote_pre": 0,
+    "remote_verify": 0,
+    "repository_pre": 0,
+    "result_verify": 0,
+    "rollback": 0,
+    "safety": 0,
+    "static": 0,
+    "target": 0,
+    "unit": 0,
+    "upload": 99
+  },
+  "schema_version": 1
+}

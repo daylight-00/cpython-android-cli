@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 47
+> **State revision:** 48
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -77,6 +77,10 @@ status  in-progress
 44. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-r1-return-inspection.json) — exact successful r1 owner receipt, deterministic stripped candidate identity, bounded one-path mutation, complete Android/uv/native-SDK qualification, and bounded acceptance input
 45. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-authority.json) — accepted deterministic successor stripped r5 with bounded llvm-strip mutation, Android runtime, uv system/managed, direct/managed native SDK 16 KiB, protected-state, and independent acceptance evidence
 46. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-acceptance-r1-return-inspection.json) — exact successful stripped acceptance transaction, 21-file result self-index, repository and remote transition, and technical-family owner assembly authorization
+47. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json) — accepted deterministic 23-file profile-M successor technical family with exact accepted artifact reuse, successor-bound metadata, author-rewrite receipt binding, reproducibility, protected-state, and independent acceptance evidence
+48. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-r1-return-inspection.json) — exact successful technical-family owner result, 45-file self-index, old-to-rewritten repository coordinate binding, and legal-family integration authorization
+49. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-author-rewrite-map.json) — exact twelve-commit old-to-new author rewrite mapping preserving tree, subject, and author date while binding external receipts to rewritten main
+50. [`experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb3-successor-stripped-m-temporal-verifier-amendment.json) — verifier-only temporal monotonicity amendment preserving accepted stripped artifact, authority, and owner evidence while allowing later technical-family and legal-family state progression
 
 ## Blockers
 
@@ -107,6 +111,8 @@ status  in-progress
 - rb3-closure-requires-successor-full-install-only-stripped-family-and-legal-data-rebinding
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
 - predecessor-family-remains-canonical-until-successor-family-acceptance-and-explicit-supersession
-- successor-technical-family-r1-owner-assembly-and-independent-audit-pending
+- successor-legal-family-integration-and-rb1-rebinding-pending
+- successor-rb2-data-runtime-rebinding-pending
+- predecessor-family-supersession-pending-after-successor-legal-data-acceptance
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

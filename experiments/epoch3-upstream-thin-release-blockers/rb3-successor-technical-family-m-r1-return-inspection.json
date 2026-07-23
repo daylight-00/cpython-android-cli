@@ -1,0 +1,49 @@
+{
+  "claim_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_integration_authorized": true,
+    "successor_legal_family_integration_started": false,
+    "successor_technical_family_accepted": true,
+    "successor_technical_family_candidate": true
+  },
+  "conclusion": "The exact 23-file profile-M successor technical family is accepted. The owner receipt remains valid after the author-only history rewrite because old and new repository coordinates bind identical trees and subjects. Only successor legal-family integration and later RB-1/RB-2 rebinding are authorized; predecessor supersession, RB-3 closure, selectability, and publication remain forbidden.",
+  "inspection_kind": "epoch3-rb3-profile-M-successor-technical-family-r1-return-inspection",
+  "release_family": {
+    "file_count": 23,
+    "fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1"
+  },
+  "repository": {
+    "post_tree": "3db24449b8009c4056cf5ec29c526a8307e1fe99",
+    "pre_tree": "fb81062750b07d935d43fb520b5c82c67d0ff5bc",
+    "receipt_old_post_head": "4d65756046b4718d337b5d4d97f605818bb1811c",
+    "receipt_old_pre_head": "7a19eb59e2d1bb261708ced0f760c95ddec05577",
+    "remote_rewritten_post_head": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "rewritten_post_head": "94e1aaab15f53d8c47ce71054af222bc64f21cca",
+    "rewritten_pre_head": "88cc79e874633ae68ad723e65159d079d19e9bc5"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb3-successor-technical-family-m-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 45,
+    "sha256": "c09d071e476a95470ca5e792aa1dc0897bd45e52198d985256a817a32f4cc306",
+    "size_bytes": 87065667
+  },
+  "schema_version": 1,
+  "status": "accepted-complete-pass-legal-family-integration-authorized",
+  "verification": {
+    "author_rewrite_mapping_count": 12,
+    "external_acceptance_audit": "13/13",
+    "owner_independent_audit": "18/18",
+    "owner_result_checks": "18/18",
+    "result_self_index_exact": true,
+    "result_self_index_file_count": 45,
+    "technical_family_verification": "17/17"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "inputs": {
+    "full": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "archive_member_count": 87,
+      "artifact": {
+        "actual_path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-technical-family-m-r1-work/accepted-artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-full.tar.zst",
+        "member_count": 3752,
+        "sha256": "b13206f67d900c1954ee6720c1b3d9337c467c9008b93a0384c16fb6127260d2",
+        "size_bytes": 39414556
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-full-m-r4-results.tar.zst",
+      "result_index_sha256": "774b3efdf5ed07685026bcb3bcc319df48a5669e00aabed430c8393870fcc861",
+      "root": "cpython-android-cli-e3-rb3-successor-full-m-r4-results",
+      "self_index_file_count": 77,
+      "sha256": "0bf2f2ff4e180206f0b6b59f4e6ff2368fea326d1d64efb5ddd23e5d0db7cc0d",
+      "size_bytes": 63029723
+    },
+    "install_only": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "archive_member_count": 83,
+      "artifact": {
+        "actual_path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-technical-family-m-r1-work/accepted-artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only.tar.gz",
+        "member_count": 3699,
+        "sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+        "size_bytes": 23843355
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results.tar.zst",
+      "result_index_sha256": "501fb01a8551caa75bcee9087ad93889b7368dc45978d6dabd0e2cc4f0794b97",
+      "root": "cpython-android-cli-e3-rb3-successor-install-only-m-r2-results",
+      "self_index_file_count": 72,
+      "sha256": "d8f4d13c34d1ce3eae3ba5ca8002fbc9a357941aa2b46c16fedc032d82b975be",
+      "size_bytes": 47232364
+    },
+    "stripped": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+      "archive_member_count": 95,
+      "artifact": {
+        "actual_path": "/data/data/com.termux/files/home/.cache/hw-t-results/cpython-android-cli-e3-rb3-successor-technical-family-m-r1-work/accepted-artifacts/cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+        "filename": "cpython-3.14.6+e3-full-r5-aarch64-linux-android-install_only_stripped.tar.gz",
+        "member_count": 3699,
+        "sha256": "9cffe27e4e7e6b82d3bace2ea4ce56473abae683bad041d38106ec481b83d9e5",
+        "size_bytes": 23842721
+      },
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results.tar.zst",
+      "result_index_sha256": "d55ac5745324442e7848f23d57aeca91d0d1daeecbcd90bb56f36b6cfcd2a6d3",
+      "root": "cpython-android-cli-e3-rb3-successor-stripped-m-r1-results",
+      "self_index_file_count": 84,
+      "sha256": "db5ff3a3f9a5a8de4731ae5e5cebad7739bcf0330f12de01bdecb01528acd1d7",
+      "size_bytes": 47423566
+    },
+    "stripped_acceptance": {
+      "actual_path": "/data/data/com.termux/files/home/Downloads/cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+      "archive_member_count": 26,
+      "filename": "cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results.tar.zst",
+      "result_index_sha256": "32f72e7381a91729e90b6370e16ccd33581225b37f8618fefa0c4837983a7500",
+      "root": "cpython-android-cli-e3-rb3-successor-stripped-m-acceptance-r1-results",
+      "self_index_file_count": 21,
+      "sha256": "742c316a3dd9c428fb201e54d3cb8c29280cbd1ed8d491afa367636852672b14",
+      "size_bytes": 10309
+    }
+  },
+  "pass": true,
+  "schema_version": 1
+}

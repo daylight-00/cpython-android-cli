@@ -1,0 +1,54 @@
+{
+  "accepted_legal_evidence": {
+    "authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+    "component_license_mapping_complete": true,
+    "legal_overlay_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-overlay-authority.json",
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "owner_approved": false
+  },
+  "accepted_technical_family": {
+    "authority": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-technical-family-m-authority.json",
+    "file_count": 23,
+    "fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5",
+    "lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-successor-technical-family-r2.lock.json",
+    "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+    "release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1"
+  },
+  "contract_kind": "epoch3-rb3-profile-M-successor-legal-family-integration",
+  "forbidden": [
+    "modify accepted successor artifact or sidecar bytes",
+    "reuse predecessor release metadata as current successor metadata",
+    "infer owner approval from runner execution",
+    "close RB-1, RB-2, or RB-3",
+    "supersede the predecessor family",
+    "claim API24, real 16 KiB, or non-Termux runtime qualification",
+    "claim selectability or publication"
+  ],
+  "proposed_output": {
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "role": "legally integrated successor family candidate only; owner notice approval, RB-2 rebinding, predecessor supersession, RB-3 closure, selectability, and publication remain pending"
+  },
+  "required_execution": [
+    "acquire and verify the exact accepted 23-file successor technical family",
+    "reuse the accepted legal payload and project LICENSE byte-identically while revalidating every component binding against successor manifests",
+    "preserve all 23 technical-family files byte-identically",
+    "preserve the accepted technical-family release-index.json and SHA256SUMS under lineage/r2",
+    "assemble the integrated successor family twice and require byte-identical complete inventories",
+    "independently verify component-license map, pip vendored review, technical obligations, notice identity, release index, checksums, and one remaining owner-approval gap",
+    "do not write CA/timezone data into the Python install root and do not claim RB-2 rebinding"
+  ],
+  "schema_version": 1,
+  "status": "authorized-pending-owner-integration-after-technical-family-acceptance",
+  "success_boundary": {
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_legal_family_accepted": false,
+    "successor_legal_family_candidate": true,
+    "successor_legal_family_integration_started": true,
+    "successor_technical_family_accepted": true
+  }
+}

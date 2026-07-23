@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "accepted_artifact_bytes_present": true,
+    "asset_identities": true,
+    "bindings_exact": true,
+    "checksum_binding": true,
+    "claims_bounded": true,
+    "exact_file_set": true,
+    "index_kind": true,
+    "manifests_and_license_inventories": true,
+    "predecessor_artifacts_absent": true,
+    "relationships": true,
+    "release_digest": true,
+    "release_identity": true,
+    "release_index_parse": true,
+    "sha256sums_exact": true,
+    "sidecar_claim_boundaries": true,
+    "successor_authority_bindings": true,
+    "three_flavors": true
+  },
+  "checksums": {
+    "filename": "SHA256SUMS",
+    "sha256": "d8e3fc9f56951f40c0f1624f21c708bd2e1eeef10fa775ade37d1234f5fb35dd",
+    "size_bytes": 3110
+  },
+  "claim_boundary": {
+    "legal_family_integration_started": false,
+    "portable_user_built_wheel_claim": false,
+    "predecessor_family_superseded": false,
+    "publication": false,
+    "rb1_rebound": false,
+    "rb2_rebound": false,
+    "rb3_closed": false,
+    "selectable": false,
+    "successor_technical_family_accepted": false,
+    "successor_technical_family_candidate": true,
+    "user_built_wheel_postprocessing": "out-of-scope-external-tool-responsibility",
+    "user_built_wheel_repair": false
+  },
+  "errors": [],
+  "failed_checks": [],
+  "file_count": 23,
+  "fingerprint_sha256": "1d3714c21c328c10ad356e29971784e550c8b107c570383b36b1ef5cbdef85b5",
+  "pass": true,
+  "release_id": "cpython-3.14.6+e3-r2-aarch64-linux-android",
+  "release_index": {
+    "filename": "release-index.json",
+    "sha256": "bb9cf9d8acfa93910a75ee5dfc73d6a7ced4b27fe252bf588c54ee1c3ba1ee12",
+    "size_bytes": 13415
+  },
+  "release_sha256": "407a67e81ef15fd1154487bcb31832c092e0068a73aae27f80b5edb498b8e2d1",
+  "schema_version": 1,
+  "verifier_kind": "epoch3-rb3-successor-technical-release-family"
+}
