@@ -10136,6 +10136,21 @@
       "update_trigger": "Never edit after commit."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Frozen independent inspection of the exact S22 android-terminal app-UID runtime qualification archive.",
+      "supersession_rule": "Do not edit; supersede through a new explicit authority or amendment.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
       "authority_domain": "machine_contract",
       "format": "json",
       "lifecycle_class": "ACTIVE_PLAN",
@@ -13943,6 +13958,51 @@
       "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
       "rationale": "Verifier-only temporal amendment allowing historical RB-3/RB-4 verification after accepted RB-5 API 24 scope exclusion.",
       "supersession_rule": "Do not edit; append a successor amendment for later progression.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Superseding support-policy authority accepting API 24 as declared supported and the exact S22 app-UID native-shell context as qualified.",
+      "supersession_rule": "Do not edit; supersede through a new explicit authority or amendment.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-contract.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Owner policy correction contract separating API 24 declared support from device validation and bounding app-UID non-Termux support.",
+      "supersession_rule": "Do not edit; supersede through a new explicit authority or amendment.",
+      "update_trigger": "Never edit after commit."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "Verifier-only temporal routing amendment preserving historical authorities after the API 24 and app-UID support-policy correction.",
+      "supersession_rule": "Do not edit; supersede through a new explicit authority or amendment.",
       "update_trigger": "Never edit after commit."
     },
     {

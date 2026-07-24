@@ -1,0 +1,66 @@
+{
+  "accepted_checks": [
+    "exact install-only archive and release identity",
+    "app-UID non-Termux native shell context",
+    "AArch64 Android API 36 runtime identity",
+    "system shell and Toybox availability",
+    "shared Downloads read/write handoff",
+    "67 native extension and private native-library imports",
+    "whole-prefix relocation across two app-private locations",
+    "subprocess re-entry without LD_LIBRARY_PATH",
+    "Python aliases",
+    "bounded pip and fresh venv --without-pip",
+    "python3.14-config",
+    "read-only runtime execution",
+    "CA and zoneinfo data",
+    "runtime tree and input archive invariance"
+  ],
+  "claim_boundary": {
+    "adb_shell_context_qualified": false,
+    "app_uid_non_termux_runtime_accepted_by_this_transition": true,
+    "app_uid_non_termux_runtime_candidate": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "app_uid_non_termux_runtime_started": true,
+    "artifact_bytes_changed": false,
+    "broad_all_non_termux_contexts_qualified": false,
+    "publication": false,
+    "repository_changed_by_evidence_run": false,
+    "selectable": false
+  },
+  "exact_binding": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "inspection_kind": "epoch3-android-terminal-appuid-runtime-qualification-r1-return-inspection",
+  "result_archive": {
+    "drive_file_id": "1JLSxrbRglURNeul8LNqbomTieJpekklB",
+    "file_name": "cpython-android-cli-e3-android-terminal-appuid-runtime-qualification-r1-results.tar.zst",
+    "independent_audit_pass": true,
+    "self_index_exact": true,
+    "self_index_file_count": 49,
+    "sha256": "569f67ed59352822ecf77542d4c46f985243cfeaf1c26772185acb9111c54212",
+    "size_bytes": 11809
+  },
+  "schema_version": 1,
+  "status": "accepted-exact-appuid-runtime-evidence",
+  "target": {
+    "abi": "arm64-v8a",
+    "android_api": 36,
+    "android_release": "16",
+    "device": "b0q",
+    "downloads": "/storage/emulated/0/Download",
+    "home": "/data/user/0/io.github.daylight00.androidterminal/files",
+    "model": "SM-S908N",
+    "page_size": 4096,
+    "selinux_context": "u:r:untrusted_app_27:s0:c232,c256,c512,c768",
+    "system_shell": "/system/bin/sh",
+    "toybox_available": true,
+    "uid": "u0_a232",
+    "uname": "aarch64",
+    "uv_path": "/data/user/0/io.github.daylight00.androidterminal/files/.local/bin/uv",
+    "uv_version": "uv 0.11.31 (b7fdec626 2026-07-21 aarch64-linux-android)"
+  }
+}

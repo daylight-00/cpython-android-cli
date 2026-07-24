@@ -389,6 +389,18 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
       "role": "verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval",
       "sha256": "c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e"
+    },
+    {
+      "id": "epoch3-rb5-rb7-runtime-support-policy-correction",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+      "role": "superseding API 24 declared-support policy and exact S22 app-UID non-Termux runtime qualification while preserving 16 KiB exclusion",
+      "sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13"
+    },
+    {
+      "id": "epoch3-rb5-rb7-runtime-support-policy-correction-temporal-routing",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
+      "role": "verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction",
+      "sha256": "b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6"
     }
   ],
   "active_plan": {
@@ -424,14 +436,21 @@
     "actual_16k_runtime_qualified": false,
     "actual_16k_runtime_scope_excluded": true,
     "actual_16k_runtime_supported": false,
+    "adb_shell_context_qualified": false,
     "api24_runtime_accepted": false,
     "api24_runtime_attempted": true,
     "api24_runtime_candidate": false,
+    "api24_runtime_device_validated": false,
     "api24_runtime_qualified": false,
     "api24_runtime_required_for_selectability": false,
-    "api24_runtime_scope_excluded": true,
+    "api24_runtime_scope_excluded": false,
     "api24_runtime_started": false,
-    "api24_runtime_supported": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_accepted": true,
+    "app_uid_non_termux_runtime_candidate": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "app_uid_non_termux_runtime_started": true,
+    "app_uid_non_termux_runtime_supported": true,
     "artifact_family_implementation_started": true,
     "artifact_family_release_complete": true,
     "astral_consumer_compatibility_complete": true,
@@ -451,12 +470,14 @@
     "full_release_complete": true,
     "install_only_implementation_started": true,
     "install_only_release_complete": true,
-    "minimum_supported_android_api_declared": false,
+    "minimum_supported_android_api": 24,
+    "minimum_supported_android_api_declared": true,
     "native_sdk_baseline_extension_16k_required": true,
-    "non_termux_android_context_qualified": false,
-    "non_termux_android_context_scope_excluded": true,
-    "non_termux_android_context_supported": false,
+    "non_termux_android_context_qualified": true,
+    "non_termux_android_context_scope_excluded": false,
+    "non_termux_android_context_supported": true,
     "official_patch_update_rehearsal_complete": true,
+    "other_non_termux_android_contexts_supported": false,
     "predecessor_family_historical_valid": true,
     "predecessor_family_superseded": true,
     "predecessor_family_supersession_authorized": true,
@@ -538,8 +559,8 @@
   },
   "next_action_class": "resolve-epoch3-release-blocking-experiments",
   "predecessor": {
-    "commit": "4b4efa9db57ca89dce611bea659f4ba5d871e919",
-    "tree": "9bcd9516481e98482f862dee8b1c25e61c6520ef"
+    "commit": "b8eff93231bca88b03179d618bfd96292ef49417",
+    "tree": "9a31eccb32cca2475949cb3a3078b9d9993de0ec"
   },
   "program": {
     "epoch": {
@@ -593,11 +614,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 58,
+  "state_revision": 59,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "c911640d0b823c0c76476174810a7753d365f5b19c5d0d2a71de8861ce8525d3"
+    "sha256": "1651814c21d0de25ac1f10a6419ae1294321fd5b8eebfc527deb5e13ad225605"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -608,11 +629,10 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "minimum-supported-Android-API-not-yet-declared",
-    "API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded",
+    "API24-runtime-declared-supported-from-build-floor-but-device-unvalidated",
+    "non-Termux-support-qualified-only-for-android-terminal-appuid-native-shell-on-S22-API36",
+    "adb-shell-and-other-non-Termux-contexts-unqualified-and-not-required",
     "runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded",
-    "supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane",
-    "non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded",
     "emulator-unqualified-and-not-required-for-current-release-blocker-gate",
     "other-Android-ABIs-explicitly-out-of-scope",
     "upstream-derived-full-is-not-Astral-producer-object-full",
@@ -626,5 +646,5 @@
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "rb1-owner-approval-remains-pending-after-technical-rebinding"
   ],
-  "updated_by_transaction": "rb7-non-termux-runtime-support-scope-excluded-rb1-owner-approval-authorized"
+  "updated_by_transaction": "rb5-rb7-runtime-support-policy-corrected-appuid-qualified-owner-approval-retained"
 }

@@ -2115,10 +2115,10 @@
     {
       "action_class": "resolve-epoch3-release-blocking-experiments",
       "activation": {
-        "accepted_authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
-        "accepted_authority_sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366",
+        "accepted_authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+        "accepted_authority_sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13",
         "prerequisites_satisfied": true,
-        "required_authority_role": "non-termux-runtime-support-scope-authority",
+        "required_authority_role": "runtime-support-policy-correction-authority",
         "required_predecessor_action_class": "resolve-epoch3-release-blocking-experiments",
         "status": "in-progress"
       },
@@ -2126,9 +2126,12 @@
         "actual_16k_runtime_claim": false,
         "actual_16k_runtime_scope_excluded_claim": true,
         "actual_16k_runtime_supported_claim": false,
+        "adb_shell_context_claim": false,
         "api24_runtime_claim": false,
-        "api24_runtime_scope_excluded_claim": true,
-        "api24_runtime_supported_claim": false,
+        "api24_runtime_device_validated_claim": false,
+        "api24_runtime_scope_excluded_claim": false,
+        "api24_runtime_supported_claim": true,
+        "app_uid_non_termux_context_claim": true,
         "artifact_family_complete_claim": true,
         "astral_consumer_compatibility_complete_claim": true,
         "canonical_full_complete_claim": true,
@@ -2137,10 +2140,11 @@
         "component_license_mapping_complete_claim": true,
         "epoch2_closed_claim": true,
         "epoch3_selection_claim": true,
+        "minimum_supported_android_api_declared_claim": true,
         "native_sdk_baseline_extension_16k_required": true,
-        "non_termux_context_claim": false,
-        "non_termux_context_scope_excluded_claim": true,
-        "non_termux_context_supported_claim": false,
+        "non_termux_context_claim": true,
+        "non_termux_context_scope_excluded_claim": false,
+        "non_termux_context_supported_claim": true,
         "official_upstream_identity_claim": true,
         "portable_user_built_wheel_claim": false,
         "predecessor_family_historical_valid_claim": true,
@@ -2174,7 +2178,7 @@
         },
         "contract_version": 1,
         "fail": {
-          "allowed_action_policy": "retain exact canonical r3 and all closed RB-2 through RB-7 dispositions; leave RB-1 open; correct only the explicit owner-approval document or binding; do not infer approval or change frozen bytes",
+          "allowed_action_policy": "retain exact canonical r3, corrected API 24 and app-UID support policy, all closed blockers, and RB-1 open; do not infer approval or change frozen bytes",
           "complete_receipt_required": true
         },
         "pass": {
@@ -2196,7 +2200,8 @@
             "real-16k-support-scope-authority",
             "non-termux-support-scope-authority",
             "explicit-owner-approval-authority",
-            "release-blocker-independent-audit"
+            "release-blocker-independent-audit",
+            "runtime-support-policy-correction-authority"
           ],
           "successor_action_class": "integrate-epoch3-selectable-release-candidate",
           "successor_must_exist": false,
@@ -2218,10 +2223,10 @@
       "deliverable": {
         "class": "explicit-owner-approval",
         "current_bounded_transition": "rb1-successor-r3-explicit-owner-approval",
-        "owner_interface": "separate human owner decision bound to exact hashes; runner execution alone is not approval",
+        "owner_interface": "separate human owner decision bound to exact hashes and the corrected accepted support scope; runner execution alone is not approval",
         "result": "an explicit approved owner document and frozen authority, or a complete fail receipt leaving RB-1 open"
       },
-      "goal": "Close the final remaining blocker RB-1 through a separate explicit owner approval document bound to the exact canonical successor r3 release, fingerprint, and unchanged notice hash. RB-2 through RB-7 are closed or explicitly scope-disposed. Keep selectability and publication false until a separate final release-candidate integration transition.",
+      "goal": "Close the final remaining blocker RB-1 through a separate explicit owner approval document bound to the exact canonical successor r3 release, fingerprint, unchanged notice hash, and corrected accepted support scope. API 24 is declared supported but device-unvalidated; the exact S22 android-terminal app-UID native-shell context is qualified. Keep selectability and publication false until final integration.",
       "input_routing": {
         "fallback": "if approval is not granted, retain RB-1 open and make no selectability or publication claim",
         "first_attempt": "read the exact canonical r3 owner-approval contract and the rebound RB-1 technical/legal authority; request the owner decision only against the frozen hashes",
@@ -2250,20 +2255,20 @@
           "sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
-          "reason": "Accepted RB-7 non-Termux support-scope disposition closing the last target blocker.",
-          "sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366"
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+          "reason": "Accepted API 24 declared-support and exact app-UID non-Termux qualification policy correction.",
+          "sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
-          "reason": "Verifier-only temporal monotonicity routing accepted RB-7 scope closure into exact canonical r3 owner approval.",
-          "sha256": "c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e"
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
+          "reason": "Verifier-only temporal routing for historical authorities after accepted runtime support-policy correction.",
+          "sha256": "b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6"
         }
       ],
       "required_reads": [
         {
           "path": "docs/current/STATE.json",
-          "reason": "Current revision 58 boundary with RB-1 as the only remaining blocker.",
+          "reason": "Current revision 59 boundary with corrected API 24 and app-UID non-Termux support policy and RB-1 as the only blocker.",
           "scope": "full"
         },
         {
@@ -2288,12 +2293,7 @@
         },
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
-          "reason": "Accepted RB-7 scope closure and Termux-only supported runtime context boundary.",
-          "scope": "full"
-        },
-        {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-decision-contract.json",
-          "reason": "Owner decision and Termux-context guard for RB-7 scope closure.",
+          "reason": "Historical RB-7 scope-exclusion authority superseded only for support language by the correction authority.",
           "scope": "full"
         },
         {
@@ -2309,6 +2309,26 @@
         {
           "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
           "reason": "Temporal monotonicity for historical RB-3 through RB-6 verifiers after RB-7 closure.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
+          "reason": "Exact S22 android-terminal app-UID runtime qualification result inspection.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-contract.json",
+          "reason": "Owner-selected API 24 and app-UID support-policy correction contract.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+          "reason": "Accepted superseding runtime support-policy correction authority.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
+          "reason": "Temporal monotonicity amendment for historical verifiers after policy correction.",
           "scope": "full"
         }
       ],

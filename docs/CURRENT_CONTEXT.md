@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 58
+> **State revision:** 59
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -96,6 +96,8 @@ status  in-progress
 63. [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json) — verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7
 64. [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json) — closed non-Termux Android runtime support-scope disposition retaining the accepted Termux owner/runtime lane without a Termux-independence claim
 65. [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json) — verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval
+66. [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json) — superseding API 24 declared-support policy and exact S22 app-UID non-Termux runtime qualification while preserving 16 KiB exclusion
+67. [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json) — verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction
 
 ## Blockers
 
@@ -103,11 +105,10 @@ status  in-progress
 
 ## Unresolved risks
 
-- minimum-supported-Android-API-not-yet-declared
-- API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
+- API24-runtime-declared-supported-from-build-floor-but-device-unvalidated
+- non-Termux-support-qualified-only-for-android-terminal-appuid-native-shell-on-S22-API36
+- adb-shell-and-other-non-Termux-contexts-unqualified-and-not-required
 - runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded
-- supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane
-- non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full

@@ -207,11 +207,13 @@
       "status": "closed-deterministic-release-operations-qualified"
     },
     {
-      "completion_role": "explicit-api24-runtime-support-disposition",
+      "completion_role": "declared-api24-runtime-support-policy",
       "evidence": {
+        "api24_runtime_device_validated": false,
         "api24_runtime_qualified": false,
         "api24_runtime_required_for_selectability": false,
-        "api24_runtime_supported": false,
+        "api24_runtime_scope_excluded": false,
+        "api24_runtime_supported": true,
         "build_abi_floor_android_api": 24,
         "build_sysconfig_platform": "android-24-arm64_v8a",
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
@@ -227,6 +229,10 @@
         "failed_result_sha256": "4c47f137a72612a5ac44ffb81e6cf21f1fc62c4d67d940a8926889ffdcf56c4d",
         "host_preflight": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json",
         "host_preflight_sha256": "2f523028cb817d47f9b08d2419638c2de2b4b0f5cb70db1378d052ea0f2d1080",
+        "minimum_supported_android_api": 24,
+        "minimum_supported_android_api_declared": true,
+        "policy_correction_authority": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+        "policy_correction_authority_sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13",
         "support_scope_authority": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
         "support_scope_authority_sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723",
         "target_selection": "local-exact-api24-aarch64-or-one-adb-exact-api24-aarch64",
@@ -238,13 +244,13 @@
       "name": "api24-runtime",
       "next_gate": {
         "closure_allowed": true,
-        "disposition": "API 24 unsupported and unqualified by explicit owner scope exclusion",
-        "successor": "resolve RB-6 real 16 KiB runtime support disposition"
+        "disposition": "API 24 declared as minimum supported Android API from exact build floor; exact API 24 device validation remains absent",
+        "successor": "retain corrected support policy through RB-1 owner approval"
       },
       "required_for": [
-        "api24-support-disposition"
+        "api24-support-policy"
       ],
-      "status": "closed-owner-scope-excluded-api24-unsupported-not-qualified"
+      "status": "closed-api24-declared-supported-device-unvalidated"
     },
     {
       "completion_role": "explicit-real-16k-runtime-support-disposition",
@@ -275,15 +281,23 @@
       "status": "closed-owner-scope-excluded-16k-unsupported-not-qualified"
     },
     {
-      "completion_role": "explicit-non-termux-android-runtime-support-disposition",
+      "completion_role": "qualified-appuid-non-termux-runtime-support-scope",
       "evidence": {
+        "adb_shell_context_qualified": false,
+        "app_uid_non_termux_runtime_accepted": true,
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
         "contract_sha256": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317",
         "decision_contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-decision-contract.json",
         "decision_contract_sha256": "086a01c9b4bf857bfcc94a98b678f841a2573903f8c6931a68d1268503c55db6",
-        "non_termux_android_context_qualified": false,
-        "non_termux_android_context_scope_excluded": true,
-        "non_termux_android_context_supported": false,
+        "non_termux_android_context_qualified": true,
+        "non_termux_android_context_scope_excluded": false,
+        "non_termux_android_context_supported": true,
+        "other_non_termux_contexts_supported": false,
+        "policy_correction_authority": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+        "policy_correction_authority_sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13",
+        "qualification_result_inspection": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
+        "qualification_result_sha256": "569f67ed59352822ecf77542d4c46f985243cfeaf1c26772185acb9111c54212",
+        "qualified_context": "android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a",
         "support_scope_authority": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
         "support_scope_authority_sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366",
         "termux_runtime_context_retained": true
@@ -293,13 +307,13 @@
       "name": "non-termux-runtime",
       "next_gate": {
         "closure_allowed": true,
-        "disposition": "non-Termux Android runtime unsupported and unqualified by explicit owner scope exclusion",
-        "successor": "obtain RB-1 explicit owner approval for canonical successor r3"
+        "disposition": "exact android-terminal app-UID native-shell context qualified and supported; no broad all-context or adb-shell claim",
+        "successor": "obtain RB-1 explicit owner approval for canonical successor r3 and corrected accepted support scope"
       },
       "required_for": [
-        "non-termux-support-disposition"
+        "non-termux-appuid-support-scope"
       ],
-      "status": "closed-owner-scope-excluded-non-termux-unsupported-not-qualified"
+      "status": "closed-appuid-non-termux-runtime-qualified-supported"
     }
   ],
   "claim_boundary": {

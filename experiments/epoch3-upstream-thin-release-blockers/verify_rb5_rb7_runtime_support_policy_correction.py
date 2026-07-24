@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import hashlib,json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+BASE='experiments/epoch3-upstream-thin-release-blockers/'
+AUTH=BASE+'rb5-rb7-runtime-support-policy-correction-authority.json'
+CONTRACT=BASE+'rb5-rb7-runtime-support-policy-correction-contract.json'
+INSPECTION=BASE+'android-terminal-appuid-runtime-qualification-r1-return-inspection.json'
+TEMPORAL=BASE+'rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json'
+OWNER=BASE+'rb1-successor-r3-owner-approval-contract.json'
+EXPECTED_AUTH='7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13'
+EXPECTED_CONTRACT='52f5a82cd9eab1462b8f7fc7d79ff35a2e1fbfc10d3aefa737bfb6ea9a6a7a04'
+EXPECTED_INSPECTION='074cfd21dfe4e21136abb4d4f6c5e6a4278e87ef90bf81cfa75584b81fc8308e'
+EXPECTED_TEMPORAL='b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6'
+EXPECTED_OWNER='180c761efedcf26ded43f5c1626650c6e8673934399607af30b97f6c0defb430'
+EXPECTED_RESULT='569f67ed59352822ecf77542d4c46f985243cfeaf1c26772185acb9111c54212'
+def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(p:Path):return json.loads(p.read_text(encoding='utf-8'))
+def verify(root:Path|None=None)->dict:
+ root=(root or ROOT).resolve();required=[AUTH,CONTRACT,INSPECTION,TEMPORAL,OWNER,'docs/current/STATE.json','docs/current/AGENT_TASK.json','docs/agent/TASK_CATALOG.json','docs/documentation/document-registry.json',BASE+'blocker-register.json','docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md']
+ missing=[p for p in required if not (root/p).is_file()]
+ if missing:return {'schema_version':1,'verifier_kind':'epoch3-rb5-rb7-runtime-support-policy-correction','pass':False,'checks':{'required_inputs':False},'failed_checks':['required_inputs'],'missing_inputs':missing}
+ auth=load(root/AUTH);contract=load(root/CONTRACT);inspection=load(root/INSPECTION);temporal=load(root/TEMPORAL);owner=load(root/OWNER);state=load(root/'docs/current/STATE.json');task=load(root/'docs/current/AGENT_TASK.json');catalog=load(root/'docs/agent/TASK_CATALOG.json');register=load(root/(BASE+'blocker-register.json'));registry=load(root/'docs/documentation/document-registry.json');plan=(root/'docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md').read_text()
+ sb=state.get('claim_boundaries',{});ab=auth.get('claim_boundary',{});sp=auth.get('support_policy',{});cb=contract.get('corrected_support_policy',{});ib=inspection.get('claim_boundary',{});e3=next((x for x in catalog.get('tasks',[]) if x.get('task_id')=='E3-RELEASE-BLOCKERS'),{});rb1=next((x for x in register.get('blockers',[]) if x.get('id')=='RB-1'),{});rb5=next((x for x in register.get('blockers',[]) if x.get('id')=='RB-5'),{});rb6=next((x for x in register.get('blockers',[]) if x.get('id')=='RB-6'),{});rb7=next((x for x in register.get('blockers',[]) if x.get('id')=='RB-7'),{});registered={x['path'] for x in registry.get('documents',[])};task_auth={x.get('path'):x.get('sha256') for x in task.get('required_authorities',[])};task_reads={x.get('path') for x in task.get('required_reads',[])}
+ checks={
+  'authority_identity':sha(root/AUTH)==EXPECTED_AUTH,'contract_identity':sha(root/CONTRACT)==EXPECTED_CONTRACT,'inspection_identity':sha(root/INSPECTION)==EXPECTED_INSPECTION,'temporal_identity':sha(root/TEMPORAL)==EXPECTED_TEMPORAL,'owner_contract_unchanged':sha(root/OWNER)==EXPECTED_OWNER,
+  'authority_status':auth.get('status')=='accepted-api24-declared-supported-appuid-non-termux-qualified','historical_supersession_only':auth.get('supersession',{}).get('historical_authorities_remain_valid') is True and len(auth.get('supersession',{}).get('supersedes',[]))==2,
+  'result_archive':inspection.get('result_archive',{}).get('sha256')==EXPECTED_RESULT and inspection.get('result_archive',{}).get('size_bytes')==11809 and inspection.get('result_archive',{}).get('self_index_file_count')==49 and inspection.get('result_archive',{}).get('self_index_exact') is True and inspection.get('result_archive',{}).get('independent_audit_pass') is True,
+  'target_identity':inspection.get('target',{}).get('android_api')==36 and inspection.get('target',{}).get('model')=='SM-S908N' and inspection.get('target',{}).get('abi')=='arm64-v8a' and inspection.get('target',{}).get('home')=='/data/user/0/io.github.daylight00.androidterminal/files' and inspection.get('target',{}).get('system_shell')=='/system/bin/sh' and inspection.get('target',{}).get('toybox_available') is True,
+  'evidence_boundary':ib.get('app_uid_non_termux_runtime_qualified') is True and ib.get('broad_all_non_termux_contexts_qualified') is False and ib.get('adb_shell_context_qualified') is False and ib.get('artifact_bytes_changed') is False,
+  'api24_policy':all(x is True for x in [sp.get('minimum_supported_android_api_declared'),sp.get('api24_runtime_supported')]) and sp.get('minimum_supported_android_api')==24 and sp.get('api24_runtime_device_validated') is False and sp.get('api24_runtime_qualified') is False and sp.get('api24_runtime_scope_excluded') is False and cb==sp,
+  'appuid_policy':sp.get('app_uid_non_termux_runtime_supported') is True and sp.get('app_uid_non_termux_runtime_qualified') is True and sp.get('qualified_non_termux_scope')=='android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a' and sp.get('non_termux_android_context_scope_excluded') is False and sp.get('adb_shell_context_qualified') is False and sp.get('other_non_termux_contexts_supported') is False,
+  '16k_unchanged':sp.get('actual_16k_runtime_supported') is False and sp.get('actual_16k_runtime_qualified') is False and sp.get('actual_16k_runtime_scope_excluded') is True and rb6.get('status')=='closed-owner-scope-excluded-16k-unsupported-not-qualified',
+  'authority_boundary':ab.get('rb5_closed') is True and ab.get('rb6_closed') is True and ab.get('rb7_closed') is True and ab.get('rb1_closed') is False and ab.get('api24_runtime_supported') is True and ab.get('api24_runtime_device_validated') is False and ab.get('app_uid_non_termux_runtime_accepted') is True and ab.get('other_non_termux_contexts_supported') is False and ab.get('selectable') is False and ab.get('publication') is False and ab.get('artifact_bytes_changed') is False,
+  'temporal':temporal.get('status')=='frozen-verifier-only-rb1-owner-approval-routing-after-policy-correction' and temporal.get('accepted_policy_correction_authority',{}).get('sha256')==EXPECTED_AUTH and temporal.get('next_contract',{}).get('sha256')==EXPECTED_OWNER and temporal.get('allowed_progression',{}).get('state_revision')==59,
+  'state':state.get('state_revision')==59 and state.get('active_work_package')==OWNER and state.get('blockers')==['RB-1-component-and-license-closure'] and sb.get('minimum_supported_android_api')==24 and sb.get('api24_runtime_supported') is True and sb.get('api24_runtime_device_validated') is False and sb.get('api24_runtime_qualified') is False and sb.get('api24_runtime_scope_excluded') is False and sb.get('app_uid_non_termux_runtime_qualified') is True and sb.get('non_termux_android_context_supported') is True and sb.get('non_termux_android_context_scope_excluded') is False and sb.get('adb_shell_context_qualified') is False and sb.get('other_non_termux_android_contexts_supported') is False and sb.get('actual_16k_runtime_supported') is False and sb.get('selectable') is False and sb.get('publication_authorized') is False,
+  'task':task.get('state_revision')==59 and task.get('deliverable',{}).get('current_bounded_transition')=='rb1-successor-r3-explicit-owner-approval' and task.get('claim_boundary',{}).get('api24_runtime_supported_claim') is True and task.get('claim_boundary',{}).get('api24_runtime_device_validated_claim') is False and task.get('claim_boundary',{}).get('app_uid_non_termux_context_claim') is True and task.get('claim_boundary',{}).get('adb_shell_context_claim') is False and {AUTH,CONTRACT,INSPECTION,TEMPORAL}.issubset(task_reads) and task_auth.get(AUTH)==EXPECTED_AUTH and task_auth.get(TEMPORAL)==EXPECTED_TEMPORAL,
+  'catalog':e3.get('activation',{}).get('accepted_authority_sha256')==EXPECTED_AUTH and e3.get('deliverable',{}).get('current_bounded_transition')=='rb1-successor-r3-explicit-owner-approval',
+  'register_rb5':rb5.get('status')=='closed-api24-declared-supported-device-unvalidated' and rb5.get('evidence',{}).get('minimum_supported_android_api')==24 and rb5.get('evidence',{}).get('api24_runtime_device_validated') is False and rb5.get('evidence',{}).get('policy_correction_authority_sha256')==EXPECTED_AUTH,
+  'register_rb7':rb7.get('status')=='closed-appuid-non-termux-runtime-qualified-supported' and rb7.get('evidence',{}).get('app_uid_non_termux_runtime_accepted') is True and rb7.get('evidence',{}).get('qualification_result_sha256')==EXPECTED_RESULT and rb7.get('evidence',{}).get('other_non_termux_contexts_supported') is False,
+  'rb1_pending':rb1.get('status')=='in-progress-owner-approval-pending' and owner.get('claim_boundary',{}).get('owner_approved') is False,
+  'registry':{AUTH,CONTRACT,INSPECTION,TEMPORAL}.issubset(registered),
+  'accepted_authorities':any(x.get('path')==AUTH and x.get('sha256')==EXPECTED_AUTH for x in state.get('accepted_authorities',[])) and any(x.get('path')==TEMPORAL and x.get('sha256')==EXPECTED_TEMPORAL for x in state.get('accepted_authorities',[])),
+  'plan':'## 21. RB-5/RB-7 runtime support-policy correction' in plan and 'API 24 is therefore declared as the minimum supported Android API' in plan,
+ }
+ failed=sorted(k for k,v in checks.items() if v is not True)
+ return {'schema_version':1,'verifier_kind':'epoch3-rb5-rb7-runtime-support-policy-correction','pass':not failed,'checks':dict(sorted(checks.items())),'failed_checks':failed}
+def main()->int:
+ r=verify();print(json.dumps(r,indent=2,sort_keys=True));return 0 if r['pass'] else 1
+if __name__=='__main__':raise SystemExit(main())

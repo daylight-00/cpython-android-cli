@@ -1,0 +1,109 @@
+{
+  "accepted_evidence": {
+    "appuid_result_inspection": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
+      "sha256": "074cfd21dfe4e21136abb4d4f6c5e6a4278e87ef90bf81cfa75584b81fc8308e"
+    },
+    "contract": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-contract.json",
+      "sha256": "52f5a82cd9eab1462b8f7fc7d79ff35a2e1fbfc10d3aefa737bfb6ea9a6a7a04"
+    },
+    "result_archive_sha256": "569f67ed59352822ecf77542d4c46f985243cfeaf1c26772185acb9111c54212",
+    "result_archive_size": 11809,
+    "result_self_index_file_count": 49
+  },
+  "authority_kind": "epoch3-rb5-rb7-runtime-support-policy-correction",
+  "canonical_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "adb_shell_context_qualified": false,
+    "api24_runtime_accepted": false,
+    "api24_runtime_attempted": true,
+    "api24_runtime_candidate": false,
+    "api24_runtime_device_validated": false,
+    "api24_runtime_qualified": false,
+    "api24_runtime_scope_excluded": false,
+    "api24_runtime_started": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_accepted": true,
+    "app_uid_non_termux_runtime_candidate": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "app_uid_non_termux_runtime_started": true,
+    "app_uid_non_termux_runtime_supported": true,
+    "artifact_bytes_changed": false,
+    "minimum_supported_android_api": 24,
+    "minimum_supported_android_api_declared": true,
+    "non_termux_android_context_qualified": true,
+    "non_termux_android_context_scope_excluded": false,
+    "non_termux_android_context_supported": true,
+    "other_non_termux_contexts_supported": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb5_closed": true,
+    "rb6_closed": true,
+    "rb7_closed": true,
+    "selectable": false
+  },
+  "next_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "id": "RB-1/SUCCESSOR-R3-EXPLICIT-OWNER-APPROVAL",
+    "required_output": "separate explicit owner approval bound to exact release, notice, and corrected accepted support scope"
+  },
+  "non_claims": [
+    "API 24 device validation",
+    "real 16 KiB runtime support",
+    "all non-Termux Android contexts",
+    "adb shell qualification",
+    "other Android ABIs",
+    "RB-1 owner approval",
+    "selectability",
+    "publication"
+  ],
+  "schema_version": 1,
+  "status": "accepted-api24-declared-supported-appuid-non-termux-qualified",
+  "supersession": {
+    "historical_authorities_remain_valid": true,
+    "superseded_policy_only": [
+      "rb5 API 24 unsupported/scope-excluded language",
+      "rb7 all non-Termux unsupported/scope-excluded language"
+    ],
+    "supersedes": [
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+        "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+      },
+      {
+        "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
+        "sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366"
+      }
+    ]
+  },
+  "support_policy": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "adb_shell_context_qualified": false,
+    "api24_runtime_device_validated": false,
+    "api24_runtime_qualified": false,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_scope_excluded": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "app_uid_non_termux_runtime_supported": true,
+    "build_abi_floor_android_api": 24,
+    "build_sysconfig_platform": "android-24-arm64_v8a",
+    "minimum_supported_android_api": 24,
+    "minimum_supported_android_api_declared": true,
+    "non_termux_android_context_scope_excluded": false,
+    "other_non_termux_contexts_supported": false,
+    "qualified_non_termux_scope": "android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a"
+  }
+}

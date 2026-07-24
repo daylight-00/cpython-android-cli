@@ -1,0 +1,107 @@
+{
+  "accepted_policy_correction_authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
+    "sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13"
+  },
+  "allowed_progression": {
+    "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "actual_16k_runtime_supported": false,
+    "api24_runtime_device_validated": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "minimum_supported_android_api": 24,
+    "publication": false,
+    "qualified_non_termux_scope": "android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a",
+    "rb1_closed": false,
+    "selectable": false,
+    "state_revision": 59,
+    "task_transition": "rb1-successor-r3-explicit-owner-approval"
+  },
+  "amendment_kind": "epoch3-rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment",
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "canonical_family_identity_changed": false,
+    "historical_rb5_rb7_authority_bytes_changed": false,
+    "owner_approval_added": false,
+    "publication_added": false,
+    "real_16k_disposition_changed": false,
+    "selectability_added": false
+  },
+  "modified_verifiers": [
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb7_non_termux_runtime_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py"
+  ],
+  "next_contract": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "sha256": "180c761efedcf26ded43f5c1626650c6e8673934399607af30b97f6c0defb430"
+  },
+  "non_claims": [
+    "API 24 device validation",
+    "all non-Termux Android contexts",
+    "adb-shell qualification",
+    "real 16 KiB runtime support",
+    "RB-1 owner approval",
+    "selectability",
+    "publication"
+  ],
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
+    "sha256": "c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "9640754b992552fcd82b149203ac45c3103082a6140930b47b44592a4e3484ea",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "f828144afc46153086d8a96465f9fa4aff0ee0c654377c2e9c059edd005d61b6"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py": {
+      "original_sha256": "10bda7c313174ee25a2bfbde78d5210819c2891d7ac16b6cc78b1b957a7498ab",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "123ba569378adf4aff5f61667eefb969d1cfd4e9de051acc68b0d9149d739bcb"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "d22ea32314182cdb872a251b9ff7d78dc92c40f69a4e56c10730f94109859449",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "f0d386909b0aa894e6a9c201c642af838d96a8b2ccb712685bfe09c423041bd4"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "db247bd08290e64a0c43ad6ea92617561cc58d9b9f0edb357422ce0877f9bb95",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "b1b6e1cb39cc867e0d3d27882e6df09e2c619c63f52e5f093082c9f5289a47fa"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "fb73562c386ba6d42a7eb4cc684cb73485dfe7d552ef11e787ff3779c7a2a69c",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "fde06673bf3ecb4075426634d8d1d6d35d178d116aa6dfceed2522b5986795e7"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py": {
+      "original_sha256": "6c3cf9c9c94ac02819c4ca2f92f3cc48e304082558f68401deee2b44a6717421",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "43d9dbdf98a9445687cbcad5cf9ae075200019387ba144240b2dce5b9bff36bc"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py": {
+      "original_sha256": "26e4f3afdb73b13d978283457e0c2d3098d5d215391838f7a4008d25223285f6",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "3e3833cfb5794e861a3ae92a2e337c70c0708971ef9a01b57dafabcebb3e0408"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py": {
+      "original_sha256": "58418346b5b9ad738dab813fa3f23f05b605f383d538a21757f6aed8bc9faed1",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "b35c40972fcf23ac2630c368278a8a226fa5af7bdd8cfcf8daa91ed5c7cba11d"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb7_non_termux_runtime_support_scope.py": {
+      "original_sha256": "63c4dcd08d04d29954b9086db22c6ca9e52c7ebca99c1b541f7476cdf2ce4a1a",
+      "reason": "allow the historical verifier to recognize revision 59 support-policy correction while preserving its frozen historical authority and artifact identities",
+      "replacement_sha256": "18b6ae7fc00b414570483a493b9474613a8beb08c1814d307fb12351b728ac7f"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-verifier-only-rb1-owner-approval-routing-after-policy-correction"
+}

@@ -33,11 +33,10 @@ Epoch 3 selection     true
 
 ### Unresolved risks
 
-- minimum-supported-Android-API-not-yet-declared
-- API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
+- API24-runtime-declared-supported-from-build-floor-but-device-unvalidated
+- non-Termux-support-qualified-only-for-android-terminal-appuid-native-shell-on-S22-API36
+- adb-shell-and-other-non-Termux-contexts-unqualified-and-not-required
 - runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded
-- supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane
-- non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full
@@ -118,6 +117,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7 (`606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json): closed non-Termux Android runtime support-scope disposition retaining the accepted Termux owner/runtime lane without a Termux-independence claim (`5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval (`c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json): superseding API 24 declared-support policy and exact S22 app-UID non-Termux runtime qualification while preserving 16 KiB exclusion (`7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json): verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction (`b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6`)
 
 ### Agent entry
 

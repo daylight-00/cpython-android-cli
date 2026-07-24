@@ -131,7 +131,22 @@ def verify(root: Path) -> dict[str, Any]:
         and task_authorities.get(rb7_scope_authority) == sha(root, rb7_scope_authority)
         and task_authorities.get(rb7_scope_temporal) == sha(root, rb7_scope_temporal)
     )
-    later_progression = rb5_progression or scope_progression or rb6_scope_progression or rb7_scope_progression
+    policy_correction_authority = "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json"
+    policy_correction_temporal = "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json"
+    policy_correction_progression = (
+        state.get("state_revision") == 59
+        and state.get("active_work_package") == rb1_owner_contract
+        and state.get("claim_boundaries", {}).get("api24_runtime_supported") is True
+        and state.get("claim_boundaries", {}).get("api24_runtime_scope_excluded") is False
+        and state.get("claim_boundaries", {}).get("app_uid_non_termux_runtime_qualified") is True
+        and state.get("claim_boundaries", {}).get("non_termux_android_context_scope_excluded") is False
+        and task.get("deliverable", {}).get("current_bounded_transition") == "rb1-successor-r3-explicit-owner-approval"
+        and {policy_correction_authority, policy_correction_temporal, rb1_owner_contract}.issubset(task_reads)
+        and all((root / path).is_file() for path in (policy_correction_authority, policy_correction_temporal, rb1_owner_contract))
+        and task_authorities.get(policy_correction_authority) == sha(root, policy_correction_authority)
+        and task_authorities.get(policy_correction_temporal) == sha(root, policy_correction_temporal)
+    )
+    later_progression = rb5_progression or scope_progression or rb6_scope_progression or rb7_scope_progression or policy_correction_progression
     expected_r1_archive = {
         "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
         "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",

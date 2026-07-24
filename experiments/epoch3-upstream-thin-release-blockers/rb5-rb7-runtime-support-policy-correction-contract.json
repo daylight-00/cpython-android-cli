@@ -1,0 +1,60 @@
+{
+  "contract_kind": "epoch3-rb5-rb7-runtime-support-policy-correction",
+  "corrected_support_policy": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "adb_shell_context_qualified": false,
+    "api24_runtime_device_validated": false,
+    "api24_runtime_qualified": false,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_scope_excluded": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "app_uid_non_termux_runtime_supported": true,
+    "build_abi_floor_android_api": 24,
+    "build_sysconfig_platform": "android-24-arm64_v8a",
+    "minimum_supported_android_api": 24,
+    "minimum_supported_android_api_declared": true,
+    "non_termux_android_context_scope_excluded": false,
+    "other_non_termux_contexts_supported": false,
+    "qualified_non_termux_scope": "android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a"
+  },
+  "forbidden": [
+    "claim API 24 device validation",
+    "claim all non-Termux Android contexts",
+    "claim adb-shell qualification",
+    "change frozen artifact or data bytes",
+    "change real 16 KiB scope disposition",
+    "infer RB-1 owner approval",
+    "claim selectability or publication"
+  ],
+  "goal": "Supersede only the API 24 and non-Termux runtime support-language dispositions using the owner policy decision and exact S22 app-UID qualification evidence, without changing frozen artifact bytes or the real 16 KiB disposition.",
+  "owner_decision": {
+    "adb_shell_required": false,
+    "additional_device_required": false,
+    "api24_policy": "declare API 24 as the minimum supported Android API from the exact build ABI floor while retaining device-validation=false",
+    "appuid_policy": "accept the exact android-terminal app-UID native-shell context as a qualified supported non-Termux context",
+    "decision_date": "2026-07-24"
+  },
+  "required_evidence": {
+    "appuid_result_inspection": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
+      "sha256": "074cfd21dfe4e21136abb4d4f6c5e6a4278e87ef90bf81cfa75584b81fc8308e"
+    },
+    "rb5_historical_scope_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+      "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+    },
+    "rb6_16k_scope_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+      "sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414"
+    },
+    "rb7_historical_scope_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
+      "sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366"
+    }
+  },
+  "schema_version": 1,
+  "status": "owner-policy-correction-ready"
+}
