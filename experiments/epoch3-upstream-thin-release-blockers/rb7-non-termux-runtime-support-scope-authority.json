@@ -1,0 +1,79 @@
+{
+  "authority_kind": "epoch3-rb7-non-termux-android-runtime-support-scope-disposition",
+  "canonical_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_scope_excluded": true,
+    "non_termux_android_context_supported": false,
+    "publication": false,
+    "rb1_closed": false,
+    "rb6_closed": true,
+    "rb7_closed": true,
+    "selectable": false
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json": "180c761efedcf26ded43f5c1626650c6e8673934399607af30b97f6c0defb430",
+    "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317",
+    "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-decision-contract.json": "086a01c9b4bf857bfcc94a98b678f841a2573903f8c6931a68d1268503c55db6"
+  },
+  "next_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "id": "RB-1/SUCCESSOR-R3-EXPLICIT-OWNER-APPROVAL",
+    "required_output": "separate explicit owner approval document bound to exact canonical r3 release and notice hashes"
+  },
+  "non_claims": [
+    "non-Termux Android runtime qualification",
+    "non-Termux Android runtime support",
+    "minimum supported Android API",
+    "selectability",
+    "publication",
+    "RB-1 closure"
+  ],
+  "owner_decision": {
+    "additional_non_termux_context_testing_required": false,
+    "decision_date": "2026-07-24",
+    "disposition": "limit supported runtime context to the accepted Termux owner/runtime lane; exclude non-Termux Android contexts unless later qualified by new exact evidence",
+    "non_termux_android_target_available": false,
+    "termux_execution_may_not_prove_non_termux_support": true,
+    "x86_substitution_accepted": false
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "canonical_family": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "dual_real_device_termux": {
+      "path": "experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json",
+      "sha256": "e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c"
+    },
+    "platform_portability": {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    "rb5_support_scope": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+      "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+    },
+    "rb6_support_scope": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+      "sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414"
+    }
+  },
+  "status": "closed-owner-scope-excluded-non-termux-unsupported-not-qualified",
+  "support_policy": {
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_scope_excluded": true,
+    "non_termux_android_context_supported": false,
+    "support_language": "unsupported-not-qualified-owner-scope-excluded",
+    "termux_runtime_context_retained": true,
+    "termux_runtime_is_non_termux_support": false
+  }
+}

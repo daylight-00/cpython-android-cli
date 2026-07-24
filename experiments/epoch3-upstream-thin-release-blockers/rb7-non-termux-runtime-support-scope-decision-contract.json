@@ -1,0 +1,48 @@
+{
+  "contract_kind": "epoch3-rb7-non-termux-android-runtime-support-scope-decision",
+  "disposition": {
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_scope_excluded": true,
+    "non_termux_android_context_supported": false,
+    "required_language": "unsupported-not-qualified-owner-scope-excluded",
+    "termux_runtime_context_retained": true
+  },
+  "exact_family_binding": {
+    "canonical_family_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_file_count": 128,
+    "release_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "goal": "Close RB-7 without a Termux-independence claim because the owner declines creating or acquiring a separate non-Termux Android execution context solely for this gate.",
+  "non_claims": [
+    "non-Termux Android runtime qualification",
+    "non-Termux Android runtime support",
+    "Termux-independent native provider closure",
+    "minimum supported Android API",
+    "product selectability",
+    "publication"
+  ],
+  "owner_observation": {
+    "additional_non_termux_context_testing_declined": true,
+    "decision_date": "2026-07-24",
+    "existing_qualified_context": "Termux app-private runtime on accepted AArch64 real-device lanes",
+    "non_termux_android_target_available": false,
+    "termux_execution_proves_non_termux_support": false,
+    "x86_substitution_accepted": false
+  },
+  "runner_guard": {
+    "if_context_identity_unknown": "fail-closed",
+    "if_current_context_is_non_termux": "fail-closed-and-require-separate-exact-context-qualification",
+    "if_current_context_is_termux": "allow-owner-scope-exclusion-transition",
+    "termux_identity_checks": [
+      "PREFIX equals /data/data/com.termux/files/usr",
+      "HOME is below /data/data/com.termux/files/home",
+      "python executable is below /data/data/com.termux/files/usr/bin"
+    ]
+  },
+  "schema_version": 1,
+  "status": "owner-decision-ready"
+}

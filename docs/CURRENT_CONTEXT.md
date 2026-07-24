@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 57
+> **State revision:** 58
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -94,18 +94,20 @@ status  in-progress
 61. [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json) — verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6
 62. [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json) — closed real 16 KiB runtime support-scope disposition preserving static compatibility without a runtime support claim
 63. [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json) — verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7
+64. [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json) — closed non-Termux Android runtime support-scope disposition retaining the accepted Termux owner/runtime lane without a Termux-independence claim
+65. [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json) — verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval
 
 ## Blockers
 
 - RB-1-component-and-license-closure
-- RB-7-non-termux-android-runtime-qualification
 
 ## Unresolved risks
 
 - minimum-supported-Android-API-not-yet-declared
 - API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
 - runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded
-- non-Termux-Android-context-unqualified
+- supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane
+- non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full

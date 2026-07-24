@@ -377,15 +377,27 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json",
       "role": "verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7",
       "sha256": "606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85"
+    },
+    {
+      "id": "epoch3-rb7-non-termux-runtime-support-scope",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
+      "role": "closed non-Termux Android runtime support-scope disposition retaining the accepted Termux owner/runtime lane without a Termux-independence claim",
+      "sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366"
+    },
+    {
+      "id": "epoch3-rb7-non-termux-runtime-support-scope-temporal-routing",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
+      "role": "verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval",
+      "sha256": "c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "2d821adcb3d326b6a4f69dac16e5a59ecc588cdfbe0f8a68207eef6409a47f27",
+    "detail_sha256": "5856d3c5ab5f33d4c06519f856ee3b1bdc10cdaba9002044c5e13bbcfa1c3449",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -406,8 +418,7 @@
     "task_manifest_path": "docs/current/AGENT_TASK.json"
   },
   "blockers": [
-    "RB-1-component-and-license-closure",
-    "RB-7-non-termux-android-runtime-qualification"
+    "RB-1-component-and-license-closure"
   ],
   "claim_boundaries": {
     "actual_16k_runtime_qualified": false,
@@ -443,7 +454,7 @@
     "minimum_supported_android_api_declared": false,
     "native_sdk_baseline_extension_16k_required": true,
     "non_termux_android_context_qualified": false,
-    "non_termux_android_context_scope_excluded": false,
+    "non_termux_android_context_scope_excluded": true,
     "non_termux_android_context_supported": false,
     "official_patch_update_rehearsal_complete": true,
     "predecessor_family_historical_valid": true,
@@ -461,7 +472,7 @@
     "rb4_closed": true,
     "rb5_closed": true,
     "rb6_closed": true,
-    "rb7_closed": false,
+    "rb7_closed": true,
     "release_blocker_resolution_started": true,
     "release_family_rollback_complete": true,
     "release_operations_complete": true,
@@ -582,11 +593,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 57,
+  "state_revision": 58,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "58308a470ce06a53b00cc6036014a492d7ef3b9663f52a6e59f4ea99ca38c7c1"
+    "sha256": "c911640d0b823c0c76476174810a7753d365f5b19c5d0d2a71de8861ce8525d3"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -600,7 +611,8 @@
     "minimum-supported-Android-API-not-yet-declared",
     "API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded",
     "runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded",
-    "non-Termux-Android-context-unqualified",
+    "supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane",
+    "non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded",
     "emulator-unqualified-and-not-required-for-current-release-blocker-gate",
     "other-Android-ABIs-explicitly-out-of-scope",
     "upstream-derived-full-is-not-Astral-producer-object-full",
@@ -614,5 +626,5 @@
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "rb1-owner-approval-remains-pending-after-technical-rebinding"
   ],
-  "updated_by_transaction": "rb6-real-16k-runtime-support-scope-excluded-rb7-disposition-authorized"
+  "updated_by_transaction": "rb7-non-termux-runtime-support-scope-excluded-rb1-owner-approval-authorized"
 }

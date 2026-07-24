@@ -30,14 +30,14 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-7-non-termux-android-runtime-qualification
 
 ### Unresolved risks
 
 - minimum-supported-Android-API-not-yet-declared
 - API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
 - runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded
-- non-Termux-Android-context-unqualified
+- supported-runtime-context-limited-to-accepted-Termux-owner-runtime-lane
+- non-Termux-Android-context-explicitly-unsupported-unqualified-owner-scope-excluded
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
 - upstream-derived-full-is-not-Astral-producer-object-full
@@ -116,6 +116,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json): verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6 (`22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json): closed real 16 KiB runtime support-scope disposition preserving static compatibility without a runtime support claim (`0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7 (`606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json): closed non-Termux Android runtime support-scope disposition retaining the accepted Termux owner/runtime lane without a Termux-independence claim (`5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval (`c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e`)
 
 ### Agent entry
 

@@ -1,0 +1,96 @@
+{
+  "accepted_scope_authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
+    "sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366"
+  },
+  "allowed_progression": {
+    "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "non_termux_android_context_scope_excluded": true,
+    "non_termux_android_context_supported": false,
+    "publication": false,
+    "rb7_closed": true,
+    "selectable": false,
+    "state_revision": 58,
+    "task_transition": "rb1-successor-r3-explicit-owner-approval"
+  },
+  "amendment_kind": "epoch3-rb7-non-termux-runtime-support-scope-temporal-verifier-amendment",
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "canonical_family_identity_changed": false,
+    "later_state_progression_allowed": true,
+    "non_termux_support_claim_added": false,
+    "owner_approval_added": false,
+    "termux_runtime_evidence_changed": false
+  },
+  "modified_verifiers": [
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py"
+  ],
+  "next_contract": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+    "sha256": "180c761efedcf26ded43f5c1626650c6e8673934399607af30b97f6c0defb430"
+  },
+  "non_claims": [
+    "non-Termux runtime qualified",
+    "non-Termux runtime supported",
+    "minimum supported Android API declared",
+    "owner approved",
+    "selectability",
+    "publication"
+  ],
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json",
+    "sha256": "606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "e747e07373bfbe71d9c2b9fed899d2b6b88db9425745ea136bd37c5f6572608a",
+      "reason": "allow the historical install-only verifier to recognize accepted RB-7 scope exclusion and RB-1 owner-approval routing",
+      "replacement_sha256": "9640754b992552fcd82b149203ac45c3103082a6140930b47b44592a4e3484ea"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py": {
+      "original_sha256": "ecb08b50270bbe5845cbd2c4a86e6d377793ff1cd71a612b96e1a46b61ead4f3",
+      "reason": "allow the frozen supersession verifier to recognize accepted RB-7 scope exclusion while preserving family identities",
+      "replacement_sha256": "10bda7c313174ee25a2bfbde78d5210819c2891d7ac16b6cc78b1b957a7498ab"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "e874dffbd484a1d8ee6c2dd7bfed0f5d93a96a020fa5cabed27ecddcc1900d9f",
+      "reason": "allow the accepted stripped-family verifier to recognize the RB-7 verifier-only amendment while preserving frozen artifact and authority identities",
+      "replacement_sha256": "d22ea32314182cdb872a251b9ff7d78dc92c40f69a4e56c10730f94109859449"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "9edc72d09f100110576ba149afebc2a4ac7c350f57f290b842c578d9ec44c661",
+      "reason": "allow the stripped contract verifier to recognize accepted RB-7 scope exclusion and final RB-1 routing",
+      "replacement_sha256": "db247bd08290e64a0c43ad6ea92617561cc58d9b9f0edb357422ce0877f9bb95"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "d5e44aeb36bdfe6154785cfb4e5b6ab7cf17b4a3f864a571e296fcc769a1d2f1",
+      "reason": "allow the accepted technical-family verifier to recognize the RB-7 verifier-only amendment while preserving frozen artifact and authority identities",
+      "replacement_sha256": "fb73562c386ba6d42a7eb4cc684cb73485dfe7d552ef11e787ff3779c7a2a69c"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py": {
+      "original_sha256": "beb7ee9eae28293c607c1a5b46bd89cd5d089714dca05b1210b7a9d62d54455a",
+      "reason": "allow the accepted release-operations verifier to recognize RB-7 scope closure without changing catalog evidence",
+      "replacement_sha256": "6c3cf9c9c94ac02819c4ca2f92f3cc48e304082558f68401deee2b44a6717421"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py": {
+      "original_sha256": "122810a609f8b57e5573c0acd06416f78de856fd73a5b1045ef32b8d700da9c5",
+      "reason": "allow the accepted API-24 scope verifier to recognize later RB-7 scope closure",
+      "replacement_sha256": "26e4f3afdb73b13d978283457e0c2d3098d5d215391838f7a4008d25223285f6"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py": {
+      "original_sha256": "0767d670741fc3015878410c2c6011ea59830e4375dc64f250e7edaa9f2295d2",
+      "reason": "allow the accepted real-16-KiB scope verifier to recognize later RB-7 scope closure and RB-1 routing",
+      "replacement_sha256": "58418346b5b9ad738dab813fa3f23f05b605f383d538a21757f6aed8bc9faed1"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-verifier-only-rb1-owner-approval-routing-enabled"
+}

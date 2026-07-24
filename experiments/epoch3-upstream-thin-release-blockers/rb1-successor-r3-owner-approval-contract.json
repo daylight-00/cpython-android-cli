@@ -1,0 +1,51 @@
+{
+  "claim_boundary": {
+    "owner_approved": false,
+    "publication": false,
+    "rb1_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb1-successor-r3-explicit-owner-approval",
+  "exact_binding": {
+    "canonical_family_lock": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "forbidden": [
+    "implicit-approval",
+    "runner-execution-counts-as-approval",
+    "approval-bound-to-predecessor-r2-only",
+    "change-frozen-artifact-or-notice-bytes",
+    "claim-selectability-or-publication-before-rb1-and-final-integration"
+  ],
+  "goal": "Obtain a separate explicit owner approval document for the exact canonical successor r3 release and unchanged notice set after RB-2 through RB-7 have been closed or explicitly scope-disposed.",
+  "required_approval_document": {
+    "approved": true,
+    "approver_identity_required": true,
+    "decision_date_required": true,
+    "exact_notice_sha256_required": true,
+    "exact_release_fingerprint_required": true,
+    "exact_release_id_required": true,
+    "exact_release_sha256_required": true,
+    "required_statement": "I approve the exact canonical successor r3 release and the exact bound notice set for the accepted support scope.",
+    "signature_or_equivalent_owner_attestation_required": true
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "rb1_legal_integration": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
+      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
+    },
+    "successor_rebinding": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
+      "sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89"
+    }
+  },
+  "status": "authorized-owner-decision-pending"
+}

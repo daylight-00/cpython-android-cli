@@ -28,10 +28,11 @@
       "name": "component-license-closure",
       "next_gate": {
         "closure_allowed": false,
+        "contract": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
         "implicit_approval_forbidden": true,
         "owner_approval_required": true,
-        "required_input": "explicit-owner-approval-document-bound-to-exact-release-and-notice-hashes",
-        "required_output": "explicit owner approval document; review dossier already prepared but its result receipt is not authority-accepted",
+        "required_input": "explicit-owner-approval-document-bound-to-canonical-successor-r3-release-and-notice-hashes",
+        "required_output": "separate explicit owner approval document satisfying the canonical r3 approval contract",
         "successor_after_explicit_approval": "freeze-owner-approval-authority-and-close-rb1"
       },
       "required_for": [
@@ -277,16 +278,28 @@
       "completion_role": "explicit-non-termux-android-runtime-support-disposition",
       "evidence": {
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
-        "contract_sha256": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317"
+        "contract_sha256": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317",
+        "decision_contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-decision-contract.json",
+        "decision_contract_sha256": "086a01c9b4bf857bfcc94a98b678f841a2573903f8c6931a68d1268503c55db6",
+        "non_termux_android_context_qualified": false,
+        "non_termux_android_context_scope_excluded": true,
+        "non_termux_android_context_supported": false,
+        "support_scope_authority": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
+        "support_scope_authority_sha256": "5d383c33b414b0e09ce826b3567a680d622bd355ccbf35b9371eaccb5b1da366",
+        "termux_runtime_context_retained": true
       },
       "id": "RB-7",
       "lane": "target",
       "name": "non-termux-runtime",
+      "next_gate": {
+        "closure_allowed": true,
+        "disposition": "non-Termux Android runtime unsupported and unqualified by explicit owner scope exclusion",
+        "successor": "obtain RB-1 explicit owner approval for canonical successor r3"
+      },
       "required_for": [
-        "termux-independence",
-        "selectability"
+        "non-termux-support-disposition"
       ],
-      "status": "open-owner-support-disposition"
+      "status": "closed-owner-scope-excluded-non-termux-unsupported-not-qualified"
     }
   ],
   "claim_boundary": {
@@ -306,13 +319,13 @@
     "astral_consumer_compatibility_complete": true,
     "minimum_supported_android_api_declared": false,
     "non_termux_android_context_qualified": false,
-    "non_termux_android_context_scope_excluded": false,
+    "non_termux_android_context_scope_excluded": true,
     "non_termux_android_context_supported": false,
     "publication": false,
     "rb4_closed": true,
     "rb5_closed": true,
     "rb6_closed": true,
-    "rb7_closed": false,
+    "rb7_closed": true,
     "release_operations_complete": true,
     "selectable": false
   },
@@ -323,9 +336,11 @@
     "local_page_size_16384_forbids_automatic_rb6_scope_exclusion": true,
     "metadata_revision_may_not_change_artifact_bytes": true,
     "scope_exclusion_forbids_support_claim": true,
-    "target_lane_scope_exclusion_allowed": true
+    "supported_runtime_context_limited_to_accepted_termux_lane": true,
+    "target_lane_scope_exclusion_allowed": true,
+    "termux_execution_may_not_prove_non_termux_support": true
   },
-  "next_bounded_action": "resolve-rb7-non-termux-android-runtime-support-disposition",
+  "next_bounded_action": "obtain-rb1-explicit-owner-approval-for-canonical-successor-r3",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }
