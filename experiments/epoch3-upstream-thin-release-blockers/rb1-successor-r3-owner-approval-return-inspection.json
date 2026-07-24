@@ -1,0 +1,47 @@
+{
+  "approval_document": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval.json",
+    "sha256": "113b843321fa2e6abbb3a24c7662845de80f1cb14355032f04086d6ccca86b0e"
+  },
+  "claim_boundary": {
+    "explicit_owner_approval_accepted": true,
+    "publication": false,
+    "rb1_closure_authority_not_yet_applied": true,
+    "runner_execution_is_not_approval": true,
+    "selectable": false
+  },
+  "inspection_kind": "epoch3-rb1-successor-r3-owner-approval-return-inspection",
+  "normalization": {
+    "all_other_fields_preserved_semantically": true,
+    "performed": true,
+    "rules": [
+      {
+        "canonical_value": "hwjang00@snu.ac.kr",
+        "field": "OWNER_EMAIL",
+        "semantic_change": false,
+        "submitted_form": "markdown-mailto-link"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "source_submission": {
+    "approval_kind": "epoch3-rb1-successor-r3-explicit-owner-approval",
+    "approved": true,
+    "channel": "owner-chat-attestation",
+    "received_date": "2026-07-24"
+  },
+  "status": "accepted-explicit-owner-approval",
+  "validation": {
+    "decision_date_present": true,
+    "distribution_repository_deferred": true,
+    "equivalent_owner_attestation_present": true,
+    "github_owner_id_present": true,
+    "human_name_present": true,
+    "notice_identity_exact": true,
+    "publication_withheld": true,
+    "release_identity_exact": true,
+    "required_statement_exact": true,
+    "selectability_withheld": true,
+    "support_scope_exact": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "audit_kind": "epoch3-release-blocker-closure-independent-audit",
+  "bound_identities": {
+    "notice_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613",
+    "owner_approval_return_inspection_sha256": "aeed14240489eae4055d5323e1323829b316be77d61ea99851f0de29694c52c0",
+    "owner_approval_sha256": "113b843321fa2e6abbb3a24c7662845de80f1cb14355032f04086d6ccca86b0e",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "support_policy_correction_authority_sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13"
+  },
+  "checks": {
+    "artifact_bytes_unchanged": true,
+    "canonical_release_exact": true,
+    "distribution_repository_not_created": true,
+    "notice_set_exact": true,
+    "publication_withheld": true,
+    "rb1_explicit_owner_approval_exact": true,
+    "rb2_closed": true,
+    "rb3_closed": true,
+    "rb4_closed": true,
+    "rb5_closed": true,
+    "rb6_closed": true,
+    "rb7_closed": true,
+    "selectability_withheld": true,
+    "support_policy_exact": true
+  },
+  "claim_boundary": {
+    "all_release_blockers_closed_by_authority": true,
+    "distribution_authorized": false,
+    "owner_approved": true,
+    "publication": false,
+    "selectable": false
+  },
+  "pass": true,
+  "schema_version": 1
+}

@@ -1,0 +1,100 @@
+{
+  "accepted_owner_approval_authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+    "sha256": "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
+  },
+  "allowed_progression": {
+    "next_action_class": "integrate-epoch3-selectable-release-candidate",
+    "owner_approved": true,
+    "publication": false,
+    "rb1_closed": true,
+    "selectable": false,
+    "state_revision": 60
+  },
+  "amendment_kind": "epoch3-rb1-successor-r3-owner-approval-temporal-verifier-amendment",
+  "claim_boundary": {
+    "artifact_or_historical_authority_bytes_changed": false,
+    "publication": false,
+    "selectable": false,
+    "verifier_only": true
+  },
+  "historical_authorities_remain_valid": true,
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "distribution_repository_created": false,
+    "historical_authority_bytes_changed": false,
+    "publication_added": false,
+    "selectability_added": false,
+    "support_policy_changed": false
+  },
+  "modified_verifiers": [
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_rb7_runtime_support_policy_correction.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb7_non_termux_runtime_support_scope.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py"
+  ],
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
+    "sha256": "b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "f828144afc46153086d8a96465f9fa4aff0ee0c654377c2e9c059edd005d61b6",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "7f70d2cfd8fe7d6547dcc5d76007013f78b07239b042db0ec78ff1bb7178b026"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py": {
+      "original_sha256": "123ba569378adf4aff5f61667eefb969d1cfd4e9de051acc68b0d9149d739bcb",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "8b4c56c1d1c574b57f340494a34e8ed9b4f71a8bc94f02818ea7dfb92db79c79"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "f0d386909b0aa894e6a9c201c642af838d96a8b2ccb712685bfe09c423041bd4",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "36ef869310700ee0f3ab8fbae7a1b211f1c3775d37a0e8c70e4b0c0d03860c9c"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "b1b6e1cb39cc867e0d3d27882e6df09e2c619c63f52e5f093082c9f5289a47fa",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "57ae66dc70ac6df08611af95514247a5e8056140b84e2f36041500ad99ad8f68"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "fde06673bf3ecb4075426634d8d1d6d35d178d116aa6dfceed2522b5986795e7",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "573f076eabade91b443a36f2f712c2b6425b43731ecb5a9305c7f75660012b7d"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py": {
+      "original_sha256": "43d9dbdf98a9445687cbcad5cf9ae075200019387ba144240b2dce5b9bff36bc",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "63e9dbd3c1c7af7a6fefe17f413f792a47b9756ac5d9dd55ffdf1e52295578ca"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py": {
+      "original_sha256": "3e3833cfb5794e861a3ae92a2e337c70c0708971ef9a01b57dafabcebb3e0408",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "e810b1787f9d829a08c549ffb698c8ca82ed8d76771b94a2534ce31003305a8c"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_rb7_runtime_support_policy_correction.py": {
+      "original_sha256": "f95258467965b7eb82a23d6f04647bd1e279c3db05ae32691c076bc9360fe1de",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "b6a96d69ebf029f4ec3e7ee5ca55b0921991dd09730b40c5e3966d5e8f68e85c"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb6_real_16k_runtime_support_scope.py": {
+      "original_sha256": "b35c40972fcf23ac2630c368278a8a226fa5af7bdd8cfcf8daa91ed5c7cba11d",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "d953f127d605125451e02c92ec272c93b910538ad29db38d1418b960741bc4e7"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb7_non_termux_runtime_support_scope.py": {
+      "original_sha256": "18b6ae7fc00b414570483a493b9474613a8beb08c1814d307fb12351b728ac7f",
+      "reason": "allow the historical verifier to recognize revision 60 explicit owner approval while preserving frozen historical authorities and artifact identities",
+      "replacement_sha256": "8ff88341ee411b40b6c9a2956187e7ddf6d80753a141d1066b8ace154844eb80"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen-verifier-only-release-blocker-closure-routing"
+}

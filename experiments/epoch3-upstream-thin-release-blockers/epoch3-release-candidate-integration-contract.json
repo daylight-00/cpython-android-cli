@@ -1,0 +1,32 @@
+{
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "distribution_repository_created": false,
+    "publication": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-selectable-release-candidate-integration",
+  "forbidden": [
+    "publish-artifacts",
+    "create-distribution-repository",
+    "claim-maintenance-channel",
+    "change-frozen-artifact-or-notice-bytes",
+    "infer-support-beyond-frozen-scope"
+  ],
+  "goal": "Integrate all closed release blockers and exact owner approval into one repository-internal selectable release candidate without publication, distribution, or creation of the separate maintenance repository.",
+  "repository_role": {
+    "distribution_repository_created": false,
+    "distribution_repository_creation_deferred_to_epoch3_final": true,
+    "distribution_repository_separate": true,
+    "id": "epoch3-experiment-decision-and-completion",
+    "publication_approved": false,
+    "selectability_approved": false
+  },
+  "required_predecessor": {
+    "all_release_blockers_closed": true,
+    "owner_approval_authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+    "owner_approval_authority_sha256": "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
+  },
+  "schema_version": 1,
+  "status": "authorized-not-started"
+}

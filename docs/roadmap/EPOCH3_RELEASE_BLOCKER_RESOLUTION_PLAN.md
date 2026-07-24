@@ -281,3 +281,9 @@ The owner supersedes only the support-language portions of the earlier RB-5 and 
 The exact S22 (`SM-S908N`, API 36, AArch64) `android-terminal` app-UID native-shell qualification passed the 49-file self-index and all runtime probes: `/system/bin/sh`, Toybox, shared Downloads, exact install-only identity, native extensions and private libraries, whole-prefix relocation, subprocess re-entry without `LD_LIBRARY_PATH`, Python aliases, bounded pip, fresh venv, `python3.14-config`, read-only execution, data products, and artifact invariance. That exact context is accepted as a supported non-Termux context. This does not qualify every non-Termux context, adb shell, another ABI, or real 16 KiB runtime.
 
 The historical RB-5 and RB-7 authorities remain immutable evidence of the earlier owner dispositions and are superseded only by the new policy-correction authority. RB-1 explicit owner approval remains the sole blocker. Selectability and publication remain false.
+
+## 22. RB-1 explicit owner approval and release-blocker closure
+
+David Hyunyoo Jang, acting as repository owner `daylight-00`, explicitly approved the exact canonical successor r3 release, unchanged notice set, and corrected accepted support scope on 2026-07-24. The approval closes RB-1 and therefore all seven release blockers.
+
+This is an experiment-and-decision repository completion approval, not a publication or distribution approval. The separate Astral-standalone-style distribution and maintenance repository remains deferred to the final Epoch 3 handoff. Selectability remains false until the repository-internal release-candidate integration task completes; publication remains false.

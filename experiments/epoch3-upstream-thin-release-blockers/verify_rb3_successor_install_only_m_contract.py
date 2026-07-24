@@ -146,7 +146,28 @@ def verify(root: Path) -> dict[str, Any]:
         and task_authorities.get(policy_correction_authority) == sha(root, policy_correction_authority)
         and task_authorities.get(policy_correction_temporal) == sha(root, policy_correction_temporal)
     )
-    later_progression = rb5_progression or scope_progression or rb6_scope_progression or rb7_scope_progression or policy_correction_progression
+
+    owner_approval_authority = "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json"
+    owner_approval_temporal = "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json"
+    owner_temporal = load(root, owner_approval_temporal) if (root / owner_approval_temporal).is_file() else {}
+    owner_approval_progression = (
+        state.get("state_revision") == 60
+        and state.get("active_work_package") == "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-candidate-integration-contract.json"
+        and state.get("claim_boundaries", {}).get("owner_approved") is True
+        and state.get("claim_boundaries", {}).get("rb1_closed") is True
+        and state.get("claim_boundaries", {}).get("selectable") is False
+        and state.get("claim_boundaries", {}).get("publication_authorized") is False
+        and all((root / path).is_file() for path in (owner_approval_authority, owner_approval_temporal))
+        and sha(root, owner_approval_authority) == "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
+        and owner_temporal.get("amendment_kind") == "epoch3-rb1-successor-r3-owner-approval-temporal-verifier-amendment"
+        and owner_temporal.get("accepted_owner_approval_authority", {}).get("sha256") == "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
+        and owner_temporal.get("allowed_progression", {}).get("state_revision") == 60
+        and owner_temporal.get("allowed_progression", {}).get("rb1_closed") is True
+        and owner_temporal.get("allowed_progression", {}).get("owner_approved") is True
+        and owner_temporal.get("allowed_progression", {}).get("selectable") is False
+        and owner_temporal.get("allowed_progression", {}).get("publication") is False
+    )
+    later_progression = rb5_progression or scope_progression or rb6_scope_progression or rb7_scope_progression or policy_correction_progression or owner_approval_progression
     expected_r1_archive = {
         "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
         "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",

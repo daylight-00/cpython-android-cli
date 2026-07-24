@@ -44,7 +44,7 @@
     "stable_project_guide": "docs/PROJECT_GUIDE.md",
     "state_schema_version": 6,
     "task_catalog_schema_version": 2,
-    "tracked_document_count": 1011
+    "tracked_document_count": 1038
   },
   "documents": [
     {
@@ -10181,6 +10181,36 @@
       "update_trigger": "Change only when the active release-blocker contract or status changes."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit predecessor/supersedes edge.",
+      "update_trigger": "Never edit after freeze; create amendment/new authority."
+    },
+    {
+      "authority_domain": "current_input",
+      "format": "json",
+      "lifecycle_class": "CURRENT_INPUT_LOCK",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-current",
+      "mutability": "controlled-versioned",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-candidate-integration-contract.json",
+      "planned_canonical_parent": "docs/contracts/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit successor contract.",
+      "update_trigger": "Successor task transition."
+    },
+    {
       "authority_domain": "active_plan",
       "format": "json",
       "lifecycle_class": "ACTIVE_PLAN",
@@ -11306,6 +11336,21 @@
       "update_trigger": "Never edit after freeze; create amendment/new authority."
     },
     {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit predecessor/supersedes edge.",
+      "update_trigger": "Never edit after freeze; create amendment/new authority."
+    },
+    {
       "authority_domain": "operational",
       "format": "json",
       "lifecycle_class": "ACTIVE_PLAN",
@@ -11319,6 +11364,51 @@
       "rationale": "Active exact canonical r3 owner-approval contract for the final remaining RB-1 gap.",
       "supersession_rule": "Supersede with an accepted explicit owner-approval authority or a bounded corrected contract.",
       "update_trigger": "Update only before owner approval when a binding defect is verified."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-return-inspection.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit predecessor/supersedes edge.",
+      "update_trigger": "Never edit after freeze; create amendment/new authority."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit predecessor/supersedes edge.",
+      "update_trigger": "Never edit after freeze; create amendment/new authority."
+    },
+    {
+      "authority_domain": "machine_authority",
+      "format": "json",
+      "lifecycle_class": "FROZEN_AUTHORITY",
+      "machine_binding_policy": "allowed",
+      "migration_action": "keep-frozen",
+      "mutability": "immutable",
+      "onboarding_visibility": "machine",
+      "owner": "epoch3-release-blockers",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval.json",
+      "planned_canonical_parent": "docs/authorities/machine/INDEX.md",
+      "rationale": "",
+      "supersession_rule": "Explicit predecessor/supersedes edge.",
+      "update_trigger": "Never edit after freeze; create amendment/new authority."
     },
     {
       "authority_domain": "machine_authority",

@@ -13,7 +13,15 @@
         "legally_integrated_family_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
         "legally_integrated_family_file_count": 128,
         "license_payload_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-license-payload-authority.json",
+        "owner_approval_authority": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+        "owner_approval_authority_sha256": "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb",
+        "owner_approval_document": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval.json",
+        "owner_approval_document_sha256": "113b843321fa2e6abbb3a24c7662845de80f1cb14355032f04086d6ccca86b0e",
+        "owner_approval_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-return-inspection.json",
+        "owner_approval_return_inspection_sha256": "aeed14240489eae4055d5323e1323829b316be77d61ea99851f0de29694c52c0",
         "owner_approval_review_return_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb1-owner-approval-review-r1-return-inspection.json",
+        "release_blocker_closure_independent_audit": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json",
+        "release_blocker_closure_independent_audit_sha256": "fadb0421be91e2d1bb6ca14cd0d0a864029ebf624d8bb72d4aae5bfa468fb079",
         "review_dossier_fingerprint_sha256": "f19071959beff693d791dd83079249e2b1d0b55da49edee3fd5a4c8fda73d04e",
         "review_dossier_valid": true,
         "review_result_receipt_accepted": false,
@@ -27,19 +35,16 @@
       "lane": "local",
       "name": "component-license-closure",
       "next_gate": {
-        "closure_allowed": false,
-        "contract": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
-        "implicit_approval_forbidden": true,
+        "closure_allowed": true,
+        "explicit_owner_approval_accepted": true,
         "owner_approval_required": true,
-        "required_input": "explicit-owner-approval-document-bound-to-canonical-successor-r3-release-and-notice-hashes",
-        "required_output": "separate explicit owner approval document satisfying the canonical r3 approval contract",
-        "successor_after_explicit_approval": "freeze-owner-approval-authority-and-close-rb1"
+        "successor": "integrate-epoch3-selectable-release-candidate"
       },
       "required_for": [
         "selectability",
         "publication"
       ],
-      "status": "in-progress-owner-approval-pending"
+      "status": "closed-explicit-owner-approved"
     },
     {
       "completion_role": "versioned-ca-and-timezone-data-products-with-update-and-rollback",
@@ -335,7 +340,9 @@
     "non_termux_android_context_qualified": false,
     "non_termux_android_context_scope_excluded": true,
     "non_termux_android_context_supported": false,
+    "owner_approved": true,
     "publication": false,
+    "rb1_closed": true,
     "rb4_closed": true,
     "rb5_closed": true,
     "rb6_closed": true,

@@ -401,6 +401,24 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
       "role": "verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction",
       "sha256": "b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6"
+    },
+    {
+      "id": "epoch3-rb1-successor-r3-owner-approval",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+      "role": "explicit owner approval and RB-1 closure bound to exact canonical r3, notice, and support scope",
+      "sha256": "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
+    },
+    {
+      "id": "epoch3-rb1-owner-approval-temporal-verifier-amendment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json",
+      "role": "verifier-only temporal routing after all release blockers close",
+      "sha256": "2acd72ff02e974314ef3af3297ea73ca6efaba6fdd5bba1e6af7625d3cd97efd"
+    },
+    {
+      "id": "epoch3-release-blocker-closure-independent-audit",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json",
+      "role": "independent audit that all seven release blockers are closed while selectability and publication remain withheld",
+      "sha256": "fadb0421be91e2d1bb6ca14cd0d0a864029ebf624d8bb72d4aae5bfa468fb079"
     }
   ],
   "active_plan": {
@@ -409,7 +427,7 @@
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-candidate-integration-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -429,14 +447,13 @@
     "task_completion_contract_version": 1,
     "task_manifest_path": "docs/current/AGENT_TASK.json"
   },
-  "blockers": [
-    "RB-1-component-and-license-closure"
-  ],
+  "blockers": [],
   "claim_boundaries": {
     "actual_16k_runtime_qualified": false,
     "actual_16k_runtime_scope_excluded": true,
     "actual_16k_runtime_supported": false,
     "adb_shell_context_qualified": false,
+    "all_release_blockers_closed": true,
     "api24_runtime_accepted": false,
     "api24_runtime_attempted": true,
     "api24_runtime_candidate": false,
@@ -461,6 +478,9 @@
     "component_license_mapping_complete": true,
     "data_product_rollback_complete": true,
     "deterministic_release_catalog_complete": true,
+    "distribution_repository_created": false,
+    "distribution_repository_creation_deferred_to_epoch3_final": true,
+    "distribution_repository_separate": true,
     "dual_real_device_aarch64_termux_compatibility": true,
     "emergency_revocation_readback_complete": true,
     "emulator_qualified": false,
@@ -478,6 +498,7 @@
     "non_termux_android_context_supported": true,
     "official_patch_update_rehearsal_complete": true,
     "other_non_termux_android_contexts_supported": false,
+    "owner_approved": true,
     "predecessor_family_historical_valid": true,
     "predecessor_family_superseded": true,
     "predecessor_family_supersession_authorized": true,
@@ -485,6 +506,7 @@
     "production_revocation_applied": false,
     "publication_authorized": false,
     "qualification_replay_bound_to_canonical_3146": true,
+    "rb1_closed": true,
     "rb1_rebound": true,
     "rb1_technical_legal_evidence_complete": true,
     "rb2_closed": true,
@@ -530,10 +552,10 @@
     "id": "AGENT-TASK-COMPLETION",
     "migration_complete": true,
     "name": "agent task completion contract hardening",
-    "next_action_class": "resolve-epoch3-release-blocking-experiments",
+    "next_action_class": "integrate-epoch3-selectable-release-candidate",
     "next_phase": null,
     "physical_moves_decision": "not-required",
-    "resume_program_action_class": "resolve-epoch3-release-blocking-experiments",
+    "resume_program_action_class": "integrate-epoch3-selectable-release-candidate",
     "status": "completed"
   },
   "documentation_layers": {
@@ -557,23 +579,23 @@
     "status": "generated-and-verified",
     "target_count": 16
   },
-  "next_action_class": "resolve-epoch3-release-blocking-experiments",
+  "next_action_class": "integrate-epoch3-selectable-release-candidate",
   "predecessor": {
-    "commit": "b8eff93231bca88b03179d618bfd96292ef49417",
-    "tree": "9a31eccb32cca2475949cb3a3078b9d9993de0ec"
+    "commit": "b0ba0a2ee9024afd2485dd8a4a3f6c753f8a593b",
+    "tree": "25ccdc647fb9586a892eda5be52110f9079b1e86"
   },
   "program": {
     "epoch": {
       "id": "E3",
       "name": "clean upstream-derived Android standalone distribution",
-      "status": "release-blocker-resolution-in-progress"
+      "status": "release-candidate-integration-pending"
     },
     "gate": {
-      "id": "E3/RELEASE-BLOCKERS",
-      "name": "Release-blocking evidence, data products, compatibility, runtime contexts, and operations",
-      "status": "in-progress"
+      "id": "E3/RELEASE-CANDIDATE",
+      "name": "Internal selectable release-candidate integration",
+      "status": "ready"
     },
-    "next_action_class": "resolve-epoch3-release-blocking-experiments",
+    "next_action_class": "integrate-epoch3-selectable-release-candidate",
     "status": "in-progress"
   },
   "project_model": {
@@ -614,18 +636,18 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 59,
+  "state_revision": 60,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "1651814c21d0de25ac1f10a6419ae1294321fd5b8eebfc527deb5e13ad225605"
+    "sha256": "3bc17bba74b9f6a6510f3fe421a564387c0c404b5708894f9df6f346560cbd89"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
     "authority_sha256": "c45411577e916f3b3fe95e98fd4de439d81ca4858deeb29b21df177e298a5539",
     "contract_version": 1,
-    "current_action_class": "resolve-epoch3-release-blocking-experiments",
-    "pass_successor_action_class": "integrate-epoch3-selectable-release-candidate",
+    "current_action_class": "integrate-epoch3-selectable-release-candidate",
+    "pass_successor_action_class": "prepare-epoch3-final-distribution-handoff",
     "status": "enforced"
   },
   "unresolved_risks": [
@@ -639,12 +661,11 @@
     "source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4",
     "selectability-not-authorized",
     "publication-not-authorized",
-    "final-notice-set-not-owner-approved",
-    "owner-approval-must-bind-exact-release-and-notice-hashes",
-    "rb1-owner-review-result-receipt-index-incomplete-dossier-valid",
     "zero-producer-path-rule-not-derived-from-astral-golden-contract",
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
-    "rb1-owner-approval-remains-pending-after-technical-rebinding"
+    "internal-selectable-release-candidate-not-yet-integrated",
+    "separate-distribution-and-maintenance-repository-deferred-to-epoch3-final",
+    "publication-not-authorized"
   ],
-  "updated_by_transaction": "rb5-rb7-runtime-support-policy-corrected-appuid-qualified-owner-approval-retained"
+  "updated_by_transaction": "rb1-explicit-owner-approved-all-release-blockers-closed-release-candidate-integration-authorized"
 }

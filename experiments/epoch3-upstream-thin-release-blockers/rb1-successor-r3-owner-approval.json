@@ -1,0 +1,55 @@
+{
+  "accepted_support_scope": {
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "adb_shell_context_qualified": false,
+    "api24_runtime_device_validated": false,
+    "api24_runtime_supported": true,
+    "app_uid_non_termux_runtime_qualified": true,
+    "minimum_supported_android_api": 24,
+    "other_non_termux_android_contexts_supported": false,
+    "qualified_non_termux_scope": "android-terminal-appuid-native-shell-on-SM-S908N-API36-arm64-v8a",
+    "static_16k_compatibility_retained": true
+  },
+  "approval_kind": "epoch3-rb1-successor-r3-explicit-owner-approval",
+  "approved": true,
+  "approver": {
+    "git_identity": {
+      "email": "hwjang00@snu.ac.kr",
+      "name": "daylight-00"
+    },
+    "github_owner_id": "daylight-00",
+    "human_name": "David Hyunyoo Jang"
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "distribution_authorized": false,
+    "owner_approved": true,
+    "publication": false,
+    "rb1_closed_by_authority": false,
+    "selectable": false
+  },
+  "decision_date": "2026-07-24",
+  "exact_binding": {
+    "appuid_runtime_evidence_sha256": "569f67ed59352822ecf77542d4c46f985243cfeaf1c26772185acb9111c54212",
+    "rb1_legal_integration_authority_sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba",
+    "release_file_count": 128,
+    "release_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c",
+    "successor_r3_rebinding_authority_sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89",
+    "support_policy_correction_authority_sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13",
+    "third_party_notices_sha256": "80cf82a6b6957fd830701e2559755d1eecdf01c61cbcb4f8f8843b9735eaf613"
+  },
+  "repository_role": {
+    "distribution_repository_created": false,
+    "distribution_repository_creation_deferred_to_epoch3_final": true,
+    "distribution_repository_separate": true,
+    "id": "epoch3-experiment-decision-and-completion",
+    "publication_approved": false,
+    "selectability_approved": false
+  },
+  "schema_version": 1,
+  "scope_attestation": "I, David Hyunyoo Jang, acting as the repository owner daylight-00, approve these exact identities, evidence, notice bindings, and support-scope decisions as the completed canonical result of the cpython-android-cli Epoch 3 experiment-and-decision repository. This approval does not authorize publication or distribution, does not create or approve the separate distribution and maintenance repository, and does not mark the artifacts selectable.",
+  "statement": "I approve the exact canonical successor r3 release and the exact bound notice set for the accepted support scope."
+}

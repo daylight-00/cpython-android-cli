@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 59
+> **State revision:** 60
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -10,8 +10,8 @@
 ```text
 bootstrap       AGENT_BOOTSTRAP.md
 task manifest   docs/current/AGENT_TASK.json
-action          resolve-epoch3-release-blocking-experiments
-work gate       E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
+action          integrate-epoch3-selectable-release-candidate
+work gate       E3/RELEASE-CANDIDATE — Internal selectable release-candidate integration
 ```
 
 ## Mandatory project and session modules
@@ -25,8 +25,8 @@ work gate       E3/RELEASE-BLOCKERS — Release-blocking evidence, data products
 
 ```text
 epoch   E3 — clean upstream-derived Android standalone distribution
-gate    E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
-status  in-progress
+gate    E3/RELEASE-CANDIDATE — Internal selectable release-candidate integration
+status  ready
 ```
 
 ## Accepted authorities
@@ -98,10 +98,13 @@ status  in-progress
 65. [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json) — verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval
 66. [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json) — superseding API 24 declared-support policy and exact S22 app-UID non-Termux runtime qualification while preserving 16 KiB exclusion
 67. [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json) — verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction
+68. [`experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json) — explicit owner approval and RB-1 closure bound to exact canonical r3, notice, and support scope
+69. [`experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json) — verifier-only temporal routing after all release blockers close
+70. [`experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json`](../experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json) — independent audit that all seven release blockers are closed while selectability and publication remain withheld
 
 ## Blockers
 
-- RB-1-component-and-license-closure
+None.
 
 ## Unresolved risks
 
@@ -115,11 +118,10 @@ status  in-progress
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- final-notice-set-not-owner-approved
-- owner-approval-must-bind-exact-release-and-notice-hashes
-- rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- rb1-owner-approval-remains-pending-after-technical-rebinding
+- internal-selectable-release-candidate-not-yet-integrated
+- separate-distribution-and-maintenance-repository-deferred-to-epoch3-final
+- publication-not-authorized
 
 History, handoffs, stages, unrelated evidence, unrelated experiments, and unselected roadmap sections are excluded from onboarding unless the generated task manifest requires them.

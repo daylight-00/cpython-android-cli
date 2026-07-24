@@ -1,231 +1,129 @@
 {
   "claim_boundary": {
-    "actual_16k_runtime_claim": false,
-    "actual_16k_runtime_scope_excluded_claim": true,
     "actual_16k_runtime_supported_claim": false,
-    "adb_shell_context_claim": false,
-    "api24_runtime_claim": false,
+    "all_release_blockers_closed_claim": true,
     "api24_runtime_device_validated_claim": false,
-    "api24_runtime_scope_excluded_claim": false,
     "api24_runtime_supported_claim": true,
     "app_uid_non_termux_context_claim": true,
-    "artifact_family_complete_claim": true,
-    "astral_consumer_compatibility_complete_claim": true,
-    "canonical_full_complete_claim": true,
-    "canonical_install_only_complete_claim": true,
-    "canonical_stripped_complete_claim": true,
-    "component_license_mapping_complete_claim": true,
-    "epoch2_closed_claim": true,
-    "epoch3_selection_claim": true,
-    "minimum_supported_android_api_declared_claim": true,
-    "native_sdk_baseline_extension_16k_required": true,
-    "non_termux_context_claim": true,
-    "non_termux_context_scope_excluded_claim": false,
-    "non_termux_context_supported_claim": true,
-    "official_upstream_identity_claim": true,
-    "portable_user_built_wheel_claim": false,
-    "predecessor_family_historical_valid_claim": true,
+    "distribution_repository_created_claim": false,
+    "owner_approved_claim": true,
     "product_selectability_claim": false,
-    "publication_claim": false,
-    "rb3_closed_claim": true,
-    "rb4_closed_claim": true,
-    "rb5_closed_claim": true,
-    "rb6_closed_claim": true,
-    "rb7_closed_claim": true,
-    "release_blocker_resolution_started_claim": true,
-    "release_operations_complete_claim": true,
-    "successor_family_canonical_claim": true,
-    "successor_family_complete_claim": true,
-    "successor_full_accepted_claim": true,
-    "successor_install_only_accepted_claim": true,
-    "successor_legal_family_complete_claim": true,
-    "successor_stripped_accepted_claim": true,
-    "successor_technical_family_complete_claim": true,
-    "user_built_wheel_repair_claim": false
+    "publication_claim": false
   },
   "completion_contract": {
     "always": {
       "all_required_verifiers_must_pass": true,
-      "artifact_family_authority_must_match": true,
+      "distribution_repository_creation_forbidden": true,
       "frozen_artifact_bytes_must_not_change": true,
       "generated_views_must_be_regenerated": true,
       "new_markdown_or_json_requires_registry_update": true,
       "one_runner_and_complete_receipt_required": true,
-      "publication_and_selectability_forbidden": true
+      "publication_forbidden": true
     },
     "contract_version": 1,
     "fail": {
-      "allowed_action_policy": "retain exact canonical r3, corrected API 24 and app-UID support policy, all closed blockers, and RB-1 open; do not infer approval or change frozen bytes",
+      "allowed_action_policy": "retain all closed blockers and owner approval while leaving selectability and publication false",
       "complete_receipt_required": true
     },
     "pass": {
-      "required_blockers": [
-        "RB-1",
-        "RB-2",
-        "RB-3",
-        "RB-4",
-        "RB-5",
-        "RB-6",
-        "RB-7"
-      ],
       "required_output_roles": [
-        "component-license-authority",
-        "ca-timezone-data-authority",
-        "astral-consumer-compatibility-authority",
-        "release-operations-authority",
-        "api24-support-scope-authority",
-        "real-16k-support-scope-authority",
-        "non-termux-support-scope-authority",
-        "explicit-owner-approval-authority",
-        "release-blocker-independent-audit",
-        "runtime-support-policy-correction-authority"
+        "selectable-release-candidate-contract",
+        "selectable-release-candidate-authority",
+        "release-blocker-closure-binding",
+        "distribution-handoff-readiness"
       ],
-      "successor_action_class": "integrate-epoch3-selectable-release-candidate",
+      "successor_action_class": "prepare-epoch3-final-distribution-handoff",
       "successor_must_exist": false,
-      "successor_task_id": "E3-RELEASE-CANDIDATE"
+      "successor_task_id": "E3-FINAL-HANDOFF"
     }
   },
   "default_exclusions": [
     "docs/history/**",
     "docs/handoff/**",
     "docs/stages/**",
-    "unselected-epoch2-experiments",
-    "producer-only-source-build-machinery",
-    "legacy-components/standalone-product-path",
-    "past-chat-transcripts",
+    "distribution-repository-implementation",
+    "publication-channel-implementation",
     "unrelated-evidence",
-    "unrelated-experiments",
-    "roadmap-outside-selected-section"
+    "past-chat-transcripts"
   ],
   "deliverable": {
-    "class": "explicit-owner-approval",
-    "current_bounded_transition": "rb1-successor-r3-explicit-owner-approval",
-    "owner_interface": "separate human owner decision bound to exact hashes and the corrected accepted support scope; runner execution alone is not approval",
-    "result": "an explicit approved owner document and frozen authority, or a complete fail receipt leaving RB-1 open"
+    "class": "repository-internal-release-candidate-integration",
+    "current_bounded_transition": "epoch3-selectable-release-candidate-integration",
+    "owner_interface": "one-runner",
+    "result": "selectable internal release candidate authority or complete fail receipt with selectability false"
   },
   "generated_from": {
     "state": "docs/current/STATE.json",
     "task_catalog": "docs/agent/TASK_CATALOG.json"
   },
   "input_routing": {
-    "fallback": "if approval is not granted, retain RB-1 open and make no selectability or publication claim",
-    "first_attempt": "read the exact canonical r3 owner-approval contract and the rebound RB-1 technical/legal authority; request the owner decision only against the frozen hashes",
+    "fallback": "bounded correction retaining all closed blockers",
+    "first_attempt": "integrate existing frozen authorities without reacquiring artifact bytes",
     "forbidden": [
-      "implicit-owner-approval",
-      "runner-execution-counts-as-approval",
-      "approval-bound-only-to-predecessor-r2",
-      "change-artifact-notice-or-authority-bytes",
-      "claim-selectability-or-publication-before-final-integration"
+      "publication",
+      "distribution-repository-creation",
+      "artifact-byte-change",
+      "support-scope-expansion"
     ]
   },
   "manifest_kind": "generated-current-agent-task",
   "onboarding_certificate_required": true,
   "program_gate": {
-    "id": "E3/RELEASE-BLOCKERS",
-    "name": "Release-blocking evidence, data products, compatibility, runtime contexts, and operations",
-    "status": "in-progress"
+    "id": "E3/RELEASE-CANDIDATE",
+    "name": "Internal selectable release-candidate integration",
+    "status": "ready"
   },
   "required_authorities": [
     {
-      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
-      "reason": "Exact canonical successor r3 selection and notice identity.",
-      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
-      "reason": "Accepted component/license mapping and exact notice set; owner approval remains false.",
-      "sha256": "23717b5b69b52f76f37240f008e1cf1718158adc0419fcf05dd0729cf492f8ba"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
-      "reason": "Accepted technical/legal rebinding of RB-1 evidence to canonical successor r3.",
-      "sha256": "98417df172d350dff256516c759b6b9b671df2c5d98062ca64fdcd5c9dedfb89"
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+      "reason": "Accepted explicit owner approval and RB-1 closure.",
+      "sha256": "6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb"
     },
     {
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
-      "reason": "Accepted API 24 declared-support and exact app-UID non-Termux qualification policy correction.",
+      "reason": "Accepted support scope.",
       "sha256": "7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13"
     },
     {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
-      "reason": "Verifier-only temporal routing for historical authorities after accepted runtime support-policy correction.",
-      "sha256": "b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6"
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "reason": "Canonical artifact family lock.",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
     }
   ],
   "required_reads": [
     {
       "path": "docs/current/STATE.json",
-      "reason": "Current revision 59 boundary with corrected API 24 and app-UID non-Termux support policy and RB-1 as the only blocker.",
+      "reason": "Current revision 60 with all release blockers closed and owner approval accepted.",
       "scope": "full"
     },
     {
-      "path": "docs/current/AGENT_TASK.json",
-      "reason": "Generated current owner-approval completion contract.",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/epoch3-release-candidate-integration-contract.json",
+      "reason": "Exact internal release-candidate integration contract.",
+      "scope": "full"
+    },
+    {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json",
+      "reason": "Exact owner approval and RB-1 closure authority.",
       "scope": "full"
     },
     {
       "path": "experiments/epoch3-upstream-thin-release-blockers/blocker-register.json",
-      "reason": "RB-2 through RB-7 closure and RB-1 owner-approval pending status.",
+      "reason": "All seven release blockers closed.",
       "scope": "full"
     },
     {
       "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
-      "reason": "Exact release, fingerprint, notice, and canonical-family identities.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-contract.json",
-      "reason": "Required explicit owner approval fields and forbidden implicit approval.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-authority.json",
-      "reason": "Historical RB-7 scope-exclusion authority superseded only for support language by the correction authority.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb1-legal-integration-authority.json",
-      "reason": "Exact notice set and remaining owner approval gap.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb3-successor-legal-data-rebinding-m-authority.json",
-      "reason": "Canonical r3 RB-1 technical/legal rebinding.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json",
-      "reason": "Temporal monotonicity for historical RB-3 through RB-6 verifiers after RB-7 closure.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/android-terminal-appuid-runtime-qualification-r1-return-inspection.json",
-      "reason": "Exact S22 android-terminal app-UID runtime qualification result inspection.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-contract.json",
-      "reason": "Owner-selected API 24 and app-UID support-policy correction contract.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json",
-      "reason": "Accepted superseding runtime support-policy correction authority.",
-      "scope": "full"
-    },
-    {
-      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json",
-      "reason": "Temporal monotonicity amendment for historical verifiers after policy correction.",
+      "reason": "Canonical release identities.",
       "scope": "full"
     }
   ],
   "schema_version": 2,
-  "state_revision": 59,
+  "state_revision": 60,
   "task": {
-    "action_class": "resolve-epoch3-release-blocking-experiments",
-    "goal": "Close the final remaining blocker RB-1 through a separate explicit owner approval document bound to the exact canonical successor r3 release, fingerprint, unchanged notice hash, and corrected accepted support scope. API 24 is declared supported but device-unvalidated; the exact S22 android-terminal app-UID native-shell context is qualified. Keep selectability and publication false until final integration.",
-    "id": "E3-RELEASE-BLOCKERS",
-    "title": "Obtain explicit owner approval for canonical successor r3",
+    "action_class": "integrate-epoch3-selectable-release-candidate",
+    "goal": "Bind all closed release-blocker authorities and the exact owner approval into a repository-internal selectable release candidate while keeping publication, distribution, and the separate maintenance repository deferred.",
+    "id": "E3-RELEASE-CANDIDATE",
+    "title": "Integrate the internal Epoch 3 selectable release candidate",
     "work_class": "L"
   }
 }

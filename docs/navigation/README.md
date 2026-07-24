@@ -6,9 +6,9 @@
 ## Current coordinates
 
 ```text
-action       resolve-epoch3-release-blocking-experiments
-gate         E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
-tracked docs 1032
+action       integrate-epoch3-selectable-release-candidate
+gate         E3/RELEASE-CANDIDATE — Internal selectable release-candidate integration
+tracked docs 1038
 indexes      16
 ```
 

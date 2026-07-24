@@ -12,9 +12,9 @@ This repository is the laboratory, governance record, and historical evidence ar
 ```text
 agent bootstrap       established — AGENT_BOOTSTRAP.md
 session transport     full Git bundle -> one runner -> complete receipt
-immediate action      resolve-epoch3-release-blocking-experiments
+immediate action      integrate-epoch3-selectable-release-candidate
 program epoch         E3 — clean upstream-derived Android standalone distribution
-program gate          E3/RELEASE-BLOCKERS — Release-blocking evidence, data products, compatibility, runtime contexts, and operations
+program gate          E3/RELEASE-CANDIDATE — Internal selectable release-candidate integration
 ```
 
 ### Current claim boundary
@@ -29,7 +29,7 @@ Epoch 3 selection     true
 
 ### Active blockers
 
-- RB-1-component-and-license-closure
+none
 
 ### Unresolved risks
 
@@ -43,12 +43,11 @@ Epoch 3 selection     true
 - source-producer-host-isolation-and-libffi-fix-deferred-to-epoch4
 - selectability-not-authorized
 - publication-not-authorized
-- final-notice-set-not-owner-approved
-- owner-approval-must-bind-exact-release-and-notice-hashes
-- rb1-owner-review-result-receipt-index-incomplete-dossier-valid
 - zero-producer-path-rule-not-derived-from-astral-golden-contract
 - user-built-wheel-portability-and-repair-explicitly-out-of-scope
-- rb1-owner-approval-remains-pending-after-technical-rebinding
+- internal-selectable-release-candidate-not-yet-integrated
+- separate-distribution-and-maintenance-repository-deferred-to-epoch3-final
+- publication-not-authorized
 
 ### Accepted authorities
 
@@ -119,6 +118,9 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-7 scope disposition into canonical r3 owner approval (`c0545678ad0f0d2c0846ab586270a252d20a451dc3489b7e997741fd4782aa9e`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-authority.json): superseding API 24 declared-support policy and exact S22 app-UID non-Termux runtime qualification while preserving 16 KiB exclusion (`7b0304575f97a8dc45a05bbfcde827a594a6b9c6cbf798936bd63f2bc6a3ff13`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-rb7-runtime-support-policy-correction-temporal-verifier-amendment.json): verifier-only temporal routing preserving historical authorities after API 24 declared-support and exact app-UID non-Termux qualification correction (`b15d285245ffa669020de2bdfa466e620f8a307c2c6858e0985b77bce9d113e6`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-authority.json): explicit owner approval and RB-1 closure bound to exact canonical r3, notice, and support scope (`6794102f1941ec1b1715dfaa1b6a7bf4935c6f7c6798d5a731846cfd9843aceb`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb1-successor-r3-owner-approval-temporal-verifier-amendment.json): verifier-only temporal routing after all release blockers close (`2acd72ff02e974314ef3af3297ea73ca6efaba6fdd5bba1e6af7625d3cd97efd`)
+- [`experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json`](experiments/epoch3-upstream-thin-release-blockers/epoch3-release-blocker-closure-independent-audit.json): independent audit that all seven release blockers are closed while selectability and publication remain withheld (`fadb0421be91e2d1bb6ca14cd0d0a864029ebf624d8bb72d4aae5bfa468fb079`)
 
 ### Agent entry
 
