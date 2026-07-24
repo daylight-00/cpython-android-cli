@@ -1,0 +1,86 @@
+{
+  "authority_kind": "epoch3-rb5-api24-runtime-support-scope-disposition",
+  "claim_boundary": {
+    "actual_16k_runtime_qualified": false,
+    "api24_runtime_accepted": false,
+    "api24_runtime_attempted": true,
+    "api24_runtime_candidate": false,
+    "api24_runtime_qualified": false,
+    "api24_runtime_scope_excluded": true,
+    "api24_runtime_started": false,
+    "api24_runtime_supported": false,
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "publication": false,
+    "rb5_closed": true,
+    "rb6_closed": false,
+    "rb7_closed": false,
+    "selectable": false
+  },
+  "failed_qualification": {
+    "failure_reason": "exact-api24-aarch64-target-not-found",
+    "inspection_path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-r1-return-inspection.json",
+    "result_archive_sha256": "4c47f137a72612a5ac44ffb81e6cf21f1fc62c4d67d940a8926889ffdcf56c4d",
+    "result_archive_size": 8912,
+    "rollback_verified": true
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json": "a2d8f426f4c19ee6460fadb06d9386dc250886fbcb7ce8d74026696a2bdb54ca",
+    "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-execution-contract.json": "cf3e70a1c39c4ed95d7c093dc89f787dbe182e856bd84d30cb4af5a674430042",
+    "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json": "2f523028cb817d47f9b08d2419638c2de2b4b0f5cb70db1378d052ea0f2d1080",
+    "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-r1-return-inspection.json": "51115b40db7252f78a3d39156c36f8aa6bf8eb316730274c6ad5d0df37e943d6",
+    "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-decision-contract.json": "fdcba34cd716a16f93aabe63305ea693e0cf213734a3477200c8dc6e163f4bc9",
+    "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json": "42642fe5f21c8c82e8a4128316e318927c96246ec0251c00bfa3cb34eb305a0b"
+  },
+  "next_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json",
+    "id": "RB-6/REAL-16K-RUNTIME-SUPPORT-DISPOSITION",
+    "required_output": "real-16k-runtime-authority-or-explicit-owner-scope-exclusion"
+  },
+  "non_claims": [
+    "API 24 support",
+    "API 24 runtime qualification",
+    "minimum supported Android API",
+    "real 16 KiB runtime support",
+    "non-Termux runtime support",
+    "product selectability",
+    "publication"
+  ],
+  "owner_decision": {
+    "additional_device_testing_required": false,
+    "available_real_device_apis": [
+      29,
+      36
+    ],
+    "decision_date": "2026-07-24",
+    "disposition": "exclude API 24 from supported runtime scope",
+    "exact_api24_aarch64_target_available": false,
+    "x86_substitution_accepted": false
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "canonical_family": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "dual_real_device_history": {
+      "path": "experiments/epoch2-archive-qualification/secondary-real-device-qualification-authority.json",
+      "sha256": "e380198cda8c49cad704483e3edc33c2d745cc65857155b3a7edb1887410f06c"
+    },
+    "rb4_release_operations": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
+      "sha256": "abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8"
+    }
+  },
+  "status": "closed-owner-scope-excluded-api24-unsupported-not-qualified",
+  "support_policy": {
+    "api24_runtime_qualified": false,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_supported": false,
+    "api24_support_language": "unsupported-not-qualified-owner-scope-excluded",
+    "build_abi_floor_android_api": 24,
+    "build_identity_retained": true,
+    "build_sysconfig_platform": "android-24-arm64_v8a",
+    "minimum_supported_android_api_declared": false
+  }
+}

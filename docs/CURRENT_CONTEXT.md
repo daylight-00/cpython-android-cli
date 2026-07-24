@@ -1,7 +1,7 @@
 # Current Project Context
 
 > **Generated view:** [`docs/current/STATE.json`](current/STATE.json) is the sole temporal authority.
-> **State revision:** 55
+> **State revision:** 56
 > **Agent sessions:** start at [`AGENT_BOOTSTRAP.md`](../AGENT_BOOTSTRAP.md).
 > **Do not hand-edit.**
 
@@ -90,17 +90,19 @@ status  in-progress
 57. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json) — deterministic release catalog, official patch-update binding, rollback, revocation readback, support status, and security ownership
 58. [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json) — verifier-only fifth temporal monotonicity amendment allowing RB-5 API-24 owner qualification after closed RB-4 while preserving all accepted artifacts and authorities
 59. [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json) — verifier-only temporal monotonicity for prepared exact API 24 owner qualification
+60. [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json) — explicit build-floor versus runtime-support split, API 24 unsupported scope exclusion, and RB-5 closure
+61. [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json`](../experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json) — verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6
 
 ## Blockers
 
 - RB-1-component-and-license-closure
-- RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
 - RB-7-non-termux-android-runtime-qualification
 
 ## Unresolved risks
 
-- API24-runtime-owner-qualification-pending-exact-target
+- minimum-supported-Android-API-not-yet-declared
+- API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate

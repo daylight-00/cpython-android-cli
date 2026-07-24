@@ -1,0 +1,47 @@
+{
+  "allowed_dispositions": {
+    "owner_scope_exclusion": {
+      "allowed": true,
+      "effect": "close RB-6 without a 16 KiB support claim",
+      "required_language": "unsupported-not-qualified-owner-scope-excluded",
+      "runtime_16k_claim_must_remain_false": true,
+      "static_16k_compatibility_may_be_retained": true
+    },
+    "qualification": {
+      "artifact_bytes_must_match_canonical": true,
+      "require_exact_real_device": true,
+      "required_architecture": "aarch64",
+      "required_page_size": 16384
+    }
+  },
+  "basis": {
+    "canonical_family_lock": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "platform_portability_authority": {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    "rb5_disposition_path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json"
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_qualified": false,
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "publication": false,
+    "rb6_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb6-real-16k-runtime-support-disposition",
+  "forbidden": [
+    "infer-runtime-support-from-static-elf-alignment",
+    "infer-real-device-support-from-emulator-or-host",
+    "change-frozen-artifact-bytes",
+    "claim-selectability-or-publication",
+    "close-rb7"
+  ],
+  "goal": "Resolve the real 16 KiB page-size support claim without changing the canonical artifact family.",
+  "schema_version": 1,
+  "status": "authorized-not-started"
+}

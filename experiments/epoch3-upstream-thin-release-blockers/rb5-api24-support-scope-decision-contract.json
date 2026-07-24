@@ -1,0 +1,49 @@
+{
+  "artifact_bytes_changed": false,
+  "contract_kind": "epoch3-rb5-api24-runtime-support-scope-owner-decision",
+  "decision": "remove API 24 runtime support from the distribution support scope instead of acquiring another device",
+  "non_claims": [
+    "API 24 runtime qualified",
+    "API 29 canonical-family runtime qualified by this decision",
+    "API 36 canonical-family runtime qualified by this decision",
+    "broad Android device support",
+    "real 16 KiB runtime support",
+    "non-Termux Android runtime support",
+    "selectability",
+    "publication"
+  ],
+  "owner_observation": {
+    "additional_device_testing_declined": true,
+    "available_arm64_real_devices": [
+      {
+        "android_api": 36,
+        "architecture": "aarch64",
+        "device": "Samsung Galaxy S22"
+      },
+      {
+        "android_api": 29,
+        "architecture": "aarch64",
+        "device": "Samsung Galaxy Note9"
+      }
+    ],
+    "x86_does_not_substitute_for_aarch64_runtime_qualification": true,
+    "x86_workstation_can_host_varied_environments": true
+  },
+  "required_disposition": {
+    "api24_runtime_qualified": false,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_scope_excluded": true,
+    "api24_runtime_supported": false,
+    "closure_status": "closed-owner-scope-excluded-api24-unsupported-not-qualified",
+    "rb5_closed": true
+  },
+  "schema_version": 1,
+  "semantic_split": {
+    "build_abi_floor_android_api": 24,
+    "build_identity_changed": false,
+    "build_sysconfig_platform": "android-24-arm64_v8a",
+    "distribution_api24_support_claim": false,
+    "minimum_supported_android_api_declared_by_this_transition": false
+  },
+  "status": "owner-decision-ready"
+}

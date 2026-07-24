@@ -72,9 +72,12 @@ def verify(root: Path) -> dict[str, Any]:
     rb5_contract = "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json"
     rb4_authority = "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json"
     rb4_temporal_amendment = "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json"
+    rb5_scope_authority = "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json"
+    rb5_scope_temporal = "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json"
+    rb6_contract = "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json"
     task_reads = {row.get("path") for row in task.get("required_reads", [])}
     task_authorities = {row.get("path"): row.get("sha256") for row in task.get("required_authorities", [])}
-    later_progression = (
+    rb5_progression = (
         state.get("state_revision", 0) >= 54
         and state.get("active_work_package") == rb5_contract
         and state.get("claim_boundaries", {}).get("rb4_closed") is True
@@ -86,6 +89,19 @@ def verify(root: Path) -> dict[str, Any]:
         and task_authorities.get(rb4_authority) == sha(root, rb4_authority)
         and task_authorities.get(rb4_temporal_amendment) == sha(root, rb4_temporal_amendment)
     )
+    scope_progression = (
+        state.get("state_revision") == 56
+        and state.get("active_work_package") == rb6_contract
+        and state.get("claim_boundaries", {}).get("rb5_closed") is True
+        and state.get("claim_boundaries", {}).get("api24_runtime_supported") is False
+        and state.get("claim_boundaries", {}).get("api24_runtime_scope_excluded") is True
+        and task.get("deliverable", {}).get("current_bounded_transition") == "rb6-real-16k-runtime-support-disposition"
+        and {rb6_contract, rb5_scope_authority, rb5_scope_temporal}.issubset(task_reads)
+        and all((root / path).is_file() for path in (rb5_scope_authority, rb5_scope_temporal, rb6_contract))
+        and task_authorities.get(rb5_scope_authority) == sha(root, rb5_scope_authority)
+        and task_authorities.get(rb5_scope_temporal) == sha(root, rb5_scope_temporal)
+    )
+    later_progression = rb5_progression or scope_progression
     expected_r1_archive = {
         "filename": "cpython-android-cli-e3-rb3-successor-install-only-m-r1-results.tar.zst",
         "sha256": "ecd0b73bd3e9f6339ab8119000959cec721104b5d1c5a260998f9054ca2c8bf3",

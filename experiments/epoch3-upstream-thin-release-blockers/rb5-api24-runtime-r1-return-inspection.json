@@ -1,0 +1,73 @@
+{
+  "canonical_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "claim_boundary": {
+    "api24_runtime_accepted": false,
+    "api24_runtime_candidate": false,
+    "api24_runtime_qualified": false,
+    "api24_runtime_started": false,
+    "artifact_bytes_changed": false,
+    "publication": false,
+    "rb5_closed": false,
+    "selectable": false
+  },
+  "conclusion": "No exact API 24 AArch64 target was present. The failed result is valid negative infrastructure evidence only and cannot support an API 24 runtime claim.",
+  "inspection_kind": "epoch3-rb5-exact-api24-runtime-r1-failed-target-return-inspection",
+  "pre_target_checks": {
+    "exact_current_data": true,
+    "exact_data_result": true,
+    "exact_family_result": true,
+    "exact_install_only": true,
+    "extension_inventory_67": true,
+    "pkg_config": true,
+    "product_tests": "73/73",
+    "release_blocker_tests": "110/110",
+    "total_tests": "183/183"
+  },
+  "result_archive": {
+    "filename": "cpython-android-cli-e3-rb5-api24-runtime-r1-results.tar.zst",
+    "remote": "gdrive:HW-T-results/cpython-android-cli-e3-rb5-api24-runtime-r1-results.tar.zst",
+    "self_index_exact": true,
+    "self_index_file_count": 26,
+    "sha256": "4c47f137a72612a5ac44ffb81e6cf21f1fc62c4d67d940a8926889ffdcf56c4d",
+    "size_bytes": 8912
+  },
+  "schema_version": 1,
+  "status": "verified-fail-closed-exact-target-unavailable",
+  "target_discovery": {
+    "adb_candidates": [],
+    "exact_target_available": false,
+    "local": {
+      "abi": "arm64-v8a",
+      "android_api": 36,
+      "exact_match": false,
+      "machine": "aarch64"
+    },
+    "requested_mode": "auto",
+    "required_android_api": 24,
+    "required_architecture": "aarch64",
+    "selection_error": "expected-one-exact-api24-aarch64-target-observed-0"
+  },
+  "transaction": {
+    "action": "failed-target",
+    "archive_rc": 0,
+    "archive_verify_rc": 0,
+    "claim_transaction_rc": 1,
+    "failure_reason": "exact-api24-runtime-qualification-failed",
+    "first_failure": "target",
+    "post_head": "4b4efa9db57ca89dce611bea659f4ba5d871e919",
+    "post_tree": "9bcd9516481e98482f862dee8b1c25e61c6520ef",
+    "pre_head": "4b4efa9db57ca89dce611bea659f4ba5d871e919",
+    "pre_tree": "9bcd9516481e98482f862dee8b1c25e61c6520ef",
+    "receipt_rc": 0,
+    "remote_post_head": null,
+    "remote_pre_head": "4b4efa9db57ca89dce611bea659f4ba5d871e919",
+    "rollback_rc": 0,
+    "upload_rc": 0
+  }
+}

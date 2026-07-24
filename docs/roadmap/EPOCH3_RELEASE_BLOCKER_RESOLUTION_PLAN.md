@@ -75,11 +75,11 @@ Goal: define the lifecycle for official Python patch updates, adaptation changes
 
 Completion requires deterministic catalog transitions, immutable prior-release retention, no ambiguous replacement of the same identity, security ownership boundaries, support status, rollback receipt, and revocation readback.
 
-### Lane T1 — API 24 runtime
+### Lane T1 — API 24 runtime support disposition
 
-Goal: directly execute the frozen artifact family on Android API 24, the official upstream floor.
+Goal: either directly qualify the frozen artifact family on an exact AArch64 Android API 24 target or explicitly exclude API 24 from the distribution support scope.
 
-Static API metadata is not sufficient. The exact artifact must pass startup, relocation, read-only execution, native-extension imports, subprocess re-entry, pip, venv, `python-config`, and pkg-config on an API 24 target.
+Static API metadata is not sufficient for a runtime support claim. Qualification requires the exact artifact to pass startup, relocation, read-only execution, native-extension imports, subprocess re-entry, pip, venv, `python-config`, and pkg-config on an API 24 target. If the owner declines further target acquisition, the lane may close only as `unsupported-not-qualified-owner-scope-excluded`; the build ABI floor and `android-24-arm64_v8a` sysconfig identity remain unchanged, but no API 24 runtime support claim is permitted.
 
 ### Lane T2 — Real 16 KiB page-size runtime
 
@@ -102,12 +102,12 @@ The context must record package/process identity, filesystem roots, environment,
 | RB-2 | CA/timezone data products | yes | intended product selection |
 | RB-3 | Astral consumer compatibility | yes | Astral-like selection claim |
 | RB-4 | Release/security/update/revocation operations | yes | publication |
-| RB-5 | API 24 runtime | yes | API 24 support claim |
+| RB-5 | API 24 runtime support disposition | yes | API 24 support claim; explicit scope exclusion closes the lane without that claim |
 | RB-6 | Real 16 KiB runtime | yes | 16 KiB support claim |
 | RB-7 | Non-Termux runtime | yes | Termux-independence claim |
-| RB-8 | Final release-candidate integration | after RB-1..RB-7 | selectability |
+| RB-8 | Final release-candidate integration | after RB-1..RB-7 are qualified or explicitly scope-disposed | selectability within the accepted support scope |
 
-RB-5, RB-6, and RB-7 do not have to be satisfied by one physical device, but every receipt must bind the exact same frozen artifact identities.
+RB-5, RB-6, and RB-7 do not have to be satisfied by one physical device. A target lane may close through exact qualification or an explicit owner support-scope exclusion, but an excluded capability remains unsupported and unqualified. Every qualification or scope-disposition receipt must bind the exact same frozen artifact identities.
 
 ## 6. First bounded action
 

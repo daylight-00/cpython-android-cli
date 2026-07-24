@@ -30,13 +30,13 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-5-api24-runtime-qualification
 - RB-6-real-16k-runtime-qualification
 - RB-7-non-termux-android-runtime-qualification
 
 ### Unresolved risks
 
-- API24-runtime-owner-qualification-pending-exact-target
+- minimum-supported-Android-API-not-yet-declared
+- API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
 - runtime-16KiB-device-support-unqualified
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
@@ -113,6 +113,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json): deterministic release catalog, official patch-update binding, rollback, revocation readback, support status, and security ownership (`abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-temporal-verifier-amendment.json): verifier-only fifth temporal monotonicity amendment allowing RB-5 API-24 owner qualification after closed RB-4 while preserving all accepted artifacts and authorities (`575688ae02ce564a803acb1b5ba69e2d97e2bf885fc57041e1dedcf70e3cf232`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json): verifier-only temporal monotonicity for prepared exact API 24 owner qualification (`bc8aa9da7c81d4d2a48b11759a9aa058118f6db8be9a5f2501ebc220d134d8c0`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json): explicit build-floor versus runtime-support split, API 24 unsupported scope exclusion, and RB-5 closure (`0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json): verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6 (`22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89`)
 
 ### Agent entry
 

@@ -206,18 +206,28 @@
       "status": "closed-deterministic-release-operations-qualified"
     },
     {
-      "completion_role": "exact-artifact-runtime-on-android-api-24",
+      "completion_role": "explicit-api24-runtime-support-disposition",
       "evidence": {
+        "api24_runtime_qualified": false,
+        "api24_runtime_required_for_selectability": false,
+        "api24_runtime_supported": false,
+        "build_abi_floor_android_api": 24,
+        "build_sysconfig_platform": "android-24-arm64_v8a",
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
         "exact_api_required": 24,
         "exact_data_result_sha256": "6419154d3888ac1e3e5331b11b9692262ca2d90709389e20dfeb848f28507d1c",
         "exact_family_result_sha256": "c43975ec955f0d4f692567d728ded4200c1ea246574e2d514fbd44dca64ff3f7",
         "exact_install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
         "exact_release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+        "exact_target_available": false,
         "execution_contract": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-execution-contract.json",
         "execution_contract_sha256": "cf3e70a1c39c4ed95d7c093dc89f787dbe182e856bd84d30cb4af5a674430042",
+        "failed_result_inspection": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-r1-return-inspection.json",
+        "failed_result_sha256": "4c47f137a72612a5ac44ffb81e6cf21f1fc62c4d67d940a8926889ffdcf56c4d",
         "host_preflight": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-host-preflight.json",
         "host_preflight_sha256": "2f523028cb817d47f9b08d2419638c2de2b4b0f5cb70db1378d052ea0f2d1080",
+        "support_scope_authority": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+        "support_scope_authority_sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723",
         "target_selection": "local-exact-api24-aarch64-or-one-adb-exact-api24-aarch64",
         "temporal_amendment": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json",
         "temporal_amendment_sha256": "bc8aa9da7c81d4d2a48b11759a9aa058118f6db8be9a5f2501ebc220d134d8c0"
@@ -225,14 +235,22 @@
       "id": "RB-5",
       "lane": "target",
       "name": "api24-runtime",
+      "next_gate": {
+        "closure_allowed": true,
+        "disposition": "API 24 unsupported and unqualified by explicit owner scope exclusion",
+        "successor": "resolve RB-6 real 16 KiB runtime support disposition"
+      },
       "required_for": [
-        "api24-support",
-        "selectability"
+        "api24-support-disposition"
       ],
-      "status": "in-progress-owner-qualification-prepared"
+      "status": "closed-owner-scope-excluded-api24-unsupported-not-qualified"
     },
     {
       "completion_role": "exact-artifact-runtime-on-real-16384-byte-page-device",
+      "evidence": {
+        "contract": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json",
+        "contract_sha256": "42642fe5f21c8c82e8a4128316e318927c96246ec0251c00bfa3cb34eb305a0b"
+      },
       "id": "RB-6",
       "lane": "target",
       "name": "real-16k-runtime",
@@ -240,7 +258,7 @@
         "16k-support",
         "selectability"
       ],
-      "status": "open"
+      "status": "open-owner-support-disposition"
     },
     {
       "completion_role": "exact-artifact-runtime-in-non-termux-android-context",
@@ -256,13 +274,22 @@
   ],
   "claim_boundary": {
     "api24_runtime_accepted": false,
+    "api24_runtime_attempted": true,
     "api24_runtime_candidate": false,
-    "api24_runtime_started": true,
+    "api24_runtime_qualified": false,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_scope_excluded": true,
+    "api24_runtime_started": false,
+    "api24_runtime_supported": false,
     "artifact_bytes_frozen": true,
     "artifact_family_authority_frozen": true,
     "astral_consumer_compatibility_complete": true,
+    "minimum_supported_android_api_declared": false,
     "publication": false,
     "rb4_closed": true,
+    "rb5_closed": true,
+    "rb6_closed": false,
+    "rb7_closed": false,
     "release_operations_complete": true,
     "selectable": false
   },
@@ -270,9 +297,11 @@
     "device_lanes_may_use_distinct_devices": true,
     "exact_artifact_identity_required_everywhere": true,
     "local_and_target_lanes_parallel": true,
-    "metadata_revision_may_not_change_artifact_bytes": true
+    "metadata_revision_may_not_change_artifact_bytes": true,
+    "scope_exclusion_forbids_support_claim": true,
+    "target_lane_scope_exclusion_allowed": true
   },
-  "next_bounded_action": "execute-rb5-exact-api24-runtime-owner-qualification-with-candidate-only-receipt",
+  "next_bounded_action": "resolve-rb6-real-16k-runtime-support-disposition",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

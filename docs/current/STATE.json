@@ -353,15 +353,27 @@
       "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json",
       "role": "verifier-only temporal monotonicity for prepared exact API 24 owner qualification",
       "sha256": "bc8aa9da7c81d4d2a48b11759a9aa058118f6db8be9a5f2501ebc220d134d8c0"
+    },
+    {
+      "id": "epoch3-rb5-api24-support-scope-disposition",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+      "role": "explicit build-floor versus runtime-support split, API 24 unsupported scope exclusion, and RB-5 closure",
+      "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+    },
+    {
+      "id": "epoch3-rb5-api24-support-scope-temporal-amendment",
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json",
+      "role": "verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6",
+      "sha256": "22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89"
     }
   ],
   "active_plan": {
     "detail_path": "docs/roadmap/EPOCH3_RELEASE_BLOCKER_RESOLUTION_PLAN.md",
-    "detail_sha256": "881931f480bda20666f1b3bc6bbad0804633c4055ecee23adb496d2777b9d6c5",
+    "detail_sha256": "e72b5208ec27c18e6e02c539a5b3b3d2483de43fa18380dc7d31993be14f0915",
     "path": "docs/epochs/EPOCH3_CHARTER.md",
     "sha256": "134bc3f1564f1d106f85ddc5aa670426a8f5d79f84cd70203b2869a589d1663a"
   },
-  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-contract.json",
+  "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json",
   "agent_onboarding": {
     "authority_path": "experiments/agent-bootstrap/agent-bootstrap-authority.json",
     "authority_sha256": "86f80a2325003d47884c81f5a03c13ad5a5cacb5fa124937124c4c371b668f79",
@@ -383,16 +395,19 @@
   },
   "blockers": [
     "RB-1-component-and-license-closure",
-    "RB-5-api24-runtime-qualification",
     "RB-6-real-16k-runtime-qualification",
     "RB-7-non-termux-android-runtime-qualification"
   ],
   "claim_boundaries": {
     "actual_16k_runtime_qualified": false,
     "api24_runtime_accepted": false,
+    "api24_runtime_attempted": true,
     "api24_runtime_candidate": false,
     "api24_runtime_qualified": false,
-    "api24_runtime_started": true,
+    "api24_runtime_required_for_selectability": false,
+    "api24_runtime_scope_excluded": true,
+    "api24_runtime_started": false,
+    "api24_runtime_supported": false,
     "artifact_family_implementation_started": true,
     "artifact_family_release_complete": true,
     "astral_consumer_compatibility_complete": true,
@@ -412,6 +427,7 @@
     "full_release_complete": true,
     "install_only_implementation_started": true,
     "install_only_release_complete": true,
+    "minimum_supported_android_api_declared": false,
     "native_sdk_baseline_extension_16k_required": true,
     "non_termux_android_context_qualified": false,
     "official_patch_update_rehearsal_complete": true,
@@ -428,6 +444,8 @@
     "rb2_data_runtime_evidence_complete": true,
     "rb2_rebound": true,
     "rb4_closed": true,
+    "rb5_closed": true,
+    "rb6_closed": false,
     "release_blocker_resolution_started": true,
     "release_family_rollback_complete": true,
     "release_operations_complete": true,
@@ -548,11 +566,11 @@
     "sha256": "f26b097027f1924a88ccf8a95dbca3337d03dcbac269de2ca0ac50dff9d4ef47"
   },
   "state_kind": "project-current-state",
-  "state_revision": 55,
+  "state_revision": 56,
   "task_catalog": {
     "path": "docs/agent/TASK_CATALOG.json",
     "schema_version": 2,
-    "sha256": "2d88df60f1dc148912146dc5738c6c42565a7a1aa3c6ae4c8cd3e50385ca63c3"
+    "sha256": "1d6c819ea1cf6f0d27d6f33c646c03f66c60ff8e9ae467483f1dff2eadf996e1"
   },
   "task_completion": {
     "authority_path": "experiments/agent-task-completion/agent-task-completion-authority.json",
@@ -563,7 +581,8 @@
     "status": "enforced"
   },
   "unresolved_risks": [
-    "API24-runtime-owner-qualification-pending-exact-target",
+    "minimum-supported-Android-API-not-yet-declared",
+    "API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded",
     "runtime-16KiB-device-support-unqualified",
     "non-Termux-Android-context-unqualified",
     "emulator-unqualified-and-not-required-for-current-release-blocker-gate",
@@ -579,5 +598,5 @@
     "user-built-wheel-portability-and-repair-explicitly-out-of-scope",
     "rb1-owner-approval-remains-pending-after-technical-rebinding"
   ],
-  "updated_by_transaction": "rb4-release-operations-r1-closed-api24-authorized"
+  "updated_by_transaction": "rb5-api24-runtime-support-scope-excluded-rb6-disposition-authorized"
 }
