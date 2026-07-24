@@ -81,11 +81,11 @@ Goal: either directly qualify the frozen artifact family on an exact AArch64 And
 
 Static API metadata is not sufficient for a runtime support claim. Qualification requires the exact artifact to pass startup, relocation, read-only execution, native-extension imports, subprocess re-entry, pip, venv, `python-config`, and pkg-config on an API 24 target. If the owner declines further target acquisition, the lane may close only as `unsupported-not-qualified-owner-scope-excluded`; the build ABI floor and `android-24-arm64_v8a` sysconfig identity remain unchanged, but no API 24 runtime support claim is permitted.
 
-### Lane T2 — Real 16 KiB page-size runtime
+### Lane T2 — Real 16 KiB page-size runtime support disposition
 
-Goal: execute the exact artifact on a real AArch64 Android device whose runtime page size is 16,384 bytes.
+Goal: either execute the exact artifact on a real AArch64 Android device whose runtime page size is 16,384 bytes or explicitly exclude real 16 KiB runtime from the supported scope.
 
-ELF alignment is already statically verified. This lane proves actual runtime support and must record kernel page size, device identity, Android version/API, and all bounded runtime checks.
+ELF alignment is already statically verified but is not runtime evidence. A support claim requires exact real-device execution and must record kernel page size, device identity, Android version/API, and all bounded runtime checks. When the owner declines acquisition of another device, the lane may close only as `unsupported-not-qualified-owner-scope-excluded`. The owner runner must first measure the current local device page size; if it is 16,384 bytes, scope exclusion is forbidden and a separate exact runtime qualification is required. Static 16 KiB compatibility may remain recorded, but no runtime support claim is permitted after scope exclusion.
 
 ### Lane T3 — Non-Termux Android context
 
@@ -103,7 +103,7 @@ The context must record package/process identity, filesystem roots, environment,
 | RB-3 | Astral consumer compatibility | yes | Astral-like selection claim |
 | RB-4 | Release/security/update/revocation operations | yes | publication |
 | RB-5 | API 24 runtime support disposition | yes | API 24 support claim; explicit scope exclusion closes the lane without that claim |
-| RB-6 | Real 16 KiB runtime | yes | 16 KiB support claim |
+| RB-6 | Real 16 KiB runtime support disposition | yes | 16 KiB support claim; explicit scope exclusion closes the lane without that claim |
 | RB-7 | Non-Termux runtime | yes | Termux-independence claim |
 | RB-8 | Final release-candidate integration | after RB-1..RB-7 are qualified or explicitly scope-disposed | selectability within the accepted support scope |
 
@@ -263,3 +263,9 @@ exercise current update, rollback, and reactivation through an atomic relative
 and America/New_York with the exact frozen Android install-only interpreter.
 The exact artifact family must remain unchanged. RB-2 remains open until a
 complete self-indexed owner receipt and independent audit are accepted.
+
+## 19. RB-6 real 16 KiB runtime support-scope disposition
+
+The owner has no known external real AArch64 Android target with a 16,384-byte runtime page size and declines acquiring another device solely for this gate. x86 host or emulator evidence is not accepted as a substitute for the frozen AArch64 Android family.
+
+RB-6 may therefore close only through an explicit owner support-scope exclusion. The transition must preserve static 16 KiB ELF compatibility as a bounded static property while setting real 16 KiB runtime qualification and support to false. Before applying the scope authority, the owner runner must measure the current local device page size. A measured value of 16,384 bytes forbids automatic scope exclusion and requires a separate exact runtime qualification; an unknown page size also fails closed. A non-16-KiB local result permits the owner scope-exclusion transition. Frozen artifact bytes, the canonical family, RB-7, selectability, and publication remain unchanged.

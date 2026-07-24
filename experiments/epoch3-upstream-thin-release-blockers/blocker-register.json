@@ -246,22 +246,39 @@
       "status": "closed-owner-scope-excluded-api24-unsupported-not-qualified"
     },
     {
-      "completion_role": "exact-artifact-runtime-on-real-16384-byte-page-device",
+      "completion_role": "explicit-real-16k-runtime-support-disposition",
       "evidence": {
+        "actual_16k_runtime_qualified": false,
+        "actual_16k_runtime_scope_excluded": true,
+        "actual_16k_runtime_supported": false,
         "contract": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json",
-        "contract_sha256": "42642fe5f21c8c82e8a4128316e318927c96246ec0251c00bfa3cb34eb305a0b"
+        "contract_sha256": "42642fe5f21c8c82e8a4128316e318927c96246ec0251c00bfa3cb34eb305a0b",
+        "decision_contract": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-decision-contract.json",
+        "decision_contract_sha256": "b64b66cec9f8bed407f10644e51ea59dde17c1bdc2d4c3b51b005f1b199d40bf",
+        "local_page_size_guard_required": true,
+        "static_16k_compatibility_retained": true,
+        "support_scope_authority": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+        "support_scope_authority_sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414"
       },
       "id": "RB-6",
       "lane": "target",
       "name": "real-16k-runtime",
+      "next_gate": {
+        "closure_allowed": true,
+        "disposition": "real 16 KiB runtime unsupported and unqualified by explicit owner scope exclusion",
+        "successor": "resolve RB-7 non-Termux Android runtime support disposition"
+      },
       "required_for": [
-        "16k-support",
-        "selectability"
+        "16k-support-disposition"
       ],
-      "status": "open-owner-support-disposition"
+      "status": "closed-owner-scope-excluded-16k-unsupported-not-qualified"
     },
     {
-      "completion_role": "exact-artifact-runtime-in-non-termux-android-context",
+      "completion_role": "explicit-non-termux-android-runtime-support-disposition",
+      "evidence": {
+        "contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+        "contract_sha256": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317"
+      },
       "id": "RB-7",
       "lane": "target",
       "name": "non-termux-runtime",
@@ -269,10 +286,13 @@
         "termux-independence",
         "selectability"
       ],
-      "status": "open"
+      "status": "open-owner-support-disposition"
     }
   ],
   "claim_boundary": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
     "api24_runtime_accepted": false,
     "api24_runtime_attempted": true,
     "api24_runtime_candidate": false,
@@ -285,10 +305,13 @@
     "artifact_family_authority_frozen": true,
     "astral_consumer_compatibility_complete": true,
     "minimum_supported_android_api_declared": false,
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_scope_excluded": false,
+    "non_termux_android_context_supported": false,
     "publication": false,
     "rb4_closed": true,
     "rb5_closed": true,
-    "rb6_closed": false,
+    "rb6_closed": true,
     "rb7_closed": false,
     "release_operations_complete": true,
     "selectable": false
@@ -297,11 +320,12 @@
     "device_lanes_may_use_distinct_devices": true,
     "exact_artifact_identity_required_everywhere": true,
     "local_and_target_lanes_parallel": true,
+    "local_page_size_16384_forbids_automatic_rb6_scope_exclusion": true,
     "metadata_revision_may_not_change_artifact_bytes": true,
     "scope_exclusion_forbids_support_claim": true,
     "target_lane_scope_exclusion_allowed": true
   },
-  "next_bounded_action": "resolve-rb6-real-16k-runtime-support-disposition",
+  "next_bounded_action": "resolve-rb7-non-termux-android-runtime-support-disposition",
   "register_kind": "epoch3-release-blocker-register",
   "schema_version": 1
 }

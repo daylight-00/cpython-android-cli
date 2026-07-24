@@ -399,8 +399,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Current gate work, required outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-0 \u2014 Exact official upstream control",
-          "stop_before_heading": "## UT-1 \u2014 Astral artifact and metadata prototype"
+          "section_heading": "## UT-0 — Exact official upstream control",
+          "stop_before_heading": "## UT-1 — Astral artifact and metadata prototype"
         }
       ],
       "task_id": "E2-R1-UT-0",
@@ -539,8 +539,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Successor gate work, required variants, outputs, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-1 \u2014 Astral artifact and metadata prototype",
-          "stop_before_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath"
+          "section_heading": "## UT-1 — Astral artifact and metadata prototype",
+          "stop_before_heading": "## UT-2 — Loader, relocation, launcher, and getpath"
         }
       ],
       "task_id": "E2-R1-UT-1",
@@ -681,8 +681,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Loader, relocation, launcher, getpath variants, evidence, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-2 \u2014 Loader, relocation, launcher, and getpath",
-          "stop_before_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK"
+          "section_heading": "## UT-2 — Loader, relocation, launcher, and getpath",
+          "stop_before_heading": "## UT-3 — Sysconfig and native-extension SDK"
         }
       ],
       "task_id": "E2-R1-UT-2",
@@ -828,8 +828,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Sysconfig, SDK normalization phases, native-extension probe, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-3 \u2014 Sysconfig and native-extension SDK",
-          "stop_before_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy"
+          "section_heading": "## UT-3 — Sysconfig and native-extension SDK",
+          "stop_before_heading": "## UT-4 — Android-mandatory data and writable-state policy"
         }
       ],
       "task_id": "E2-R1-UT-3",
@@ -982,8 +982,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Android-mandatory data candidates, writable-state boundaries, negative scans, and exit condition.",
           "scope": "section",
-          "section_heading": "## UT-4 \u2014 Android-mandatory data and writable-state policy",
-          "stop_before_heading": "## UT-5 \u2014 Feature capability and product-surface qualification"
+          "section_heading": "## UT-4 — Android-mandatory data and writable-state policy",
+          "stop_before_heading": "## UT-5 — Feature capability and product-surface qualification"
         }
       ],
       "task_id": "E2-R1-UT-4",
@@ -1140,8 +1140,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Subprocess, venv, pip, multiprocessing matrices and explicit feature support boundary.",
           "scope": "section",
-          "section_heading": "## UT-5 \u2014 Feature capability and product-surface qualification",
-          "stop_before_heading": "## UT-6 \u2014 Dependency and provenance closure"
+          "section_heading": "## UT-5 — Feature capability and product-surface qualification",
+          "stop_before_heading": "## UT-6 — Dependency and provenance closure"
         }
       ],
       "task_id": "E2-R1-UT-5",
@@ -1303,8 +1303,8 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Platform portability matrix and boundaries.",
           "scope": "section",
-          "section_heading": "## UT-6 \u2014 Platform portability",
-          "stop_before_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability"
+          "section_heading": "## UT-6 — Platform portability",
+          "stop_before_heading": "## UT-7 — Upstream evolution and maintenance portability"
         }
       ],
       "task_id": "E2-R1-UT-6",
@@ -1472,7 +1472,7 @@
           "path": "docs/roadmap/EPOCH2_REMAINING_WORK_AND_EPOCH3_COMPLETION_GATES.md",
           "reason": "Patch update and Python 3.15 preview maintenance portability.",
           "scope": "section",
-          "section_heading": "## UT-7 \u2014 Upstream evolution and maintenance portability",
+          "section_heading": "## UT-7 — Upstream evolution and maintenance portability",
           "stop_before_heading": "## API-36 controlled source-equivalent comparison track"
         }
       ],
@@ -2115,15 +2115,17 @@
     {
       "action_class": "resolve-epoch3-release-blocking-experiments",
       "activation": {
-        "accepted_authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
-        "accepted_authority_sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723",
+        "accepted_authority_path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+        "accepted_authority_sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414",
         "prerequisites_satisfied": true,
-        "required_authority_role": "api24-support-scope-authority",
+        "required_authority_role": "real-16k-support-scope-authority",
         "required_predecessor_action_class": "resolve-epoch3-release-blocking-experiments",
         "status": "in-progress"
       },
       "claim_boundary": {
         "actual_16k_runtime_claim": false,
+        "actual_16k_runtime_scope_excluded_claim": true,
+        "actual_16k_runtime_supported_claim": false,
         "api24_runtime_claim": false,
         "api24_runtime_scope_excluded_claim": true,
         "api24_runtime_supported_claim": false,
@@ -2137,6 +2139,8 @@
         "epoch3_selection_claim": true,
         "native_sdk_baseline_extension_16k_required": true,
         "non_termux_context_claim": false,
+        "non_termux_context_scope_excluded_claim": false,
+        "non_termux_context_supported_claim": false,
         "official_upstream_identity_claim": true,
         "portable_user_built_wheel_claim": false,
         "predecessor_family_historical_valid_claim": true,
@@ -2145,7 +2149,8 @@
         "rb3_closed_claim": true,
         "rb4_closed_claim": true,
         "rb5_closed_claim": true,
-        "rb6_closed_claim": false,
+        "rb6_closed_claim": true,
+        "rb7_closed_claim": false,
         "release_blocker_resolution_started_claim": true,
         "release_operations_complete_claim": true,
         "successor_family_canonical_claim": true,
@@ -2169,7 +2174,7 @@
         },
         "contract_version": 1,
         "fail": {
-          "allowed_action_policy": "retain closed RB-5 scope disposition and exact canonical r3; leave RB-6 open; correct only the bounded real-16K qualification or owner support-scope disposition; do not infer runtime support from static alignment or change frozen bytes",
+          "allowed_action_policy": "retain closed RB-5 and RB-6 scope dispositions and exact canonical r3; leave RB-7 open; correct only the bounded non-Termux qualification or owner support-scope disposition; do not infer support from Termux execution or change frozen bytes",
           "complete_receipt_required": true
         },
         "pass": {
@@ -2188,8 +2193,8 @@
             "astral-consumer-compatibility-authority",
             "release-operations-authority",
             "api24-support-scope-authority",
-            "real-16k-runtime-authority-or-scope-disposition",
-            "non-termux-runtime-authority",
+            "real-16k-support-scope-authority",
+            "non-termux-runtime-authority-or-scope-disposition",
             "release-blocker-independent-audit"
           ],
           "successor_action_class": "integrate-epoch3-selectable-release-candidate",
@@ -2210,30 +2215,24 @@
         "roadmap-outside-selected-section"
       ],
       "deliverable": {
-        "class": "real-16k-runtime-support-disposition",
-        "current_bounded_transition": "rb6-real-16k-runtime-support-disposition",
+        "class": "non-termux-runtime-support-disposition",
+        "current_bounded_transition": "rb7-non-termux-runtime-support-disposition",
         "owner_interface": "one-runner-per-bounded-claim-bearing-transition",
-        "result": "either exact real-device 16 KiB runtime evidence or an explicit unsupported-not-qualified owner scope exclusion; separate final integration remains required"
+        "result": "either exact non-Termux Android runtime evidence or an explicit unsupported-not-qualified owner scope exclusion; separate final integration remains required"
       },
-      "goal": "Resolve RB-6 for the exact canonical successor r3 family. Either qualify the unmodified artifact on a real AArch64 Android device with a 16,384-byte runtime page size, or record an explicit owner support-scope exclusion. Static ELF alignment is not runtime evidence. Keep RB-7, selectability, publication, and all frozen artifact identities unchanged.",
+      "goal": "Resolve RB-7 for the exact canonical successor r3 family. Either qualify the unmodified artifact in an exact non-Termux Android context without Termux native providers, or record an explicit unsupported-not-qualified owner scope exclusion. RB-6 is closed without a 16 KiB support claim. Keep selectability, publication, minimum supported API, and all frozen artifact identities unchanged.",
       "input_routing": {
-        "fallback": "if no real 16 KiB target will be tested, create an explicit owner scope-exclusion authority that closes RB-6 as unsupported and unqualified; retain static 16 KiB compatibility only",
-        "first_attempt": "read the RB-6 support-disposition contract and exact canonical family authority; use a real AArch64 16 KiB Android device only when making a runtime support claim",
+        "fallback": "if no non-Termux Android context will be tested, create an explicit owner scope-exclusion authority that closes RB-7 as unsupported and unqualified",
+        "first_attempt": "read the RB-7 support-disposition contract and exact canonical family authority; use a genuinely non-Termux Android context only when making a Termux-independence claim",
         "forbidden": [
-          "infer-runtime-support-from-static-elf-alignment",
-          "accept-emulator-or-host-as-real-device-evidence",
+          "infer-non-termux-support-from-termux-runtime",
+          "accept-x86-as-aarch64-runtime-evidence",
           "change-artifact-or-data-bytes",
           "claim-selectability-or-publication",
-          "close-rb7",
           "omit-exact-family-binding"
         ]
       },
       "required_authorities": [
-        {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
-          "reason": "Accepted API 24 support-scope disposition closing RB-5 without a runtime support claim.",
-          "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
-        },
         {
           "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
           "reason": "Canonical family selection lock.",
@@ -2241,69 +2240,69 @@
         },
         {
           "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
-          "reason": "Static 16 KiB compatibility and explicitly withheld real-device runtime claim.",
+          "reason": "Static platform portability evidence and explicitly withheld target-context claims.",
           "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb4-release-operations-authority.json",
-          "reason": "Closed release operations authority.",
-          "sha256": "abd185b4ffc4b37c41334a459af6735a85203a4d44ba569bf055b5fb369c8ab8"
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+          "reason": "Accepted API 24 support-scope disposition.",
+          "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json",
-          "reason": "Seventh verifier-only temporal amendment routing accepted RB-5 scope disposition into RB-6.",
-          "sha256": "22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89"
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+          "reason": "Accepted RB-6 real 16 KiB support-scope disposition closing RB-6 without a runtime support claim.",
+          "sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json",
+          "reason": "Eighth verifier-only temporal amendment routing accepted RB-6 scope disposition into RB-7.",
+          "sha256": "606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85"
         }
       ],
       "required_reads": [
-        {
-          "path": "docs/current/STATE.json",
-          "reason": "Current revision 56 claim boundary and active RB-6 support-disposition route.",
-          "scope": "full"
-        },
-        {
-          "path": "docs/current/AGENT_TASK.json",
-          "reason": "Generated current RB-6 completion contract.",
-          "scope": "full"
-        },
-        {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json",
-          "reason": "Allowed exact-target and owner-scope-exclusion dispositions.",
-          "scope": "full"
-        },
-        {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
-          "reason": "Accepted RB-5 closure and build-floor versus support-scope split.",
-          "scope": "full"
-        },
-        {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-r1-return-inspection.json",
-          "reason": "Verified exact-target-unavailable failed receipt and rollback.",
-          "scope": "full"
-        },
-        {
-          "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
-          "reason": "Static 16 KiB evidence and withheld real-device claim.",
-          "scope": "full"
-        },
         {
           "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
           "reason": "Exact canonical successor r3 identity.",
           "scope": "full"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/blocker-register.json",
-          "reason": "RB-5 closed disposition and active RB-6 status.",
+          "path": "docs/current/AGENT_TASK.json",
+          "reason": "Generated current RB-7 completion contract.",
           "scope": "full"
         },
         {
-          "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json",
-          "reason": "Temporal monotonicity for historical RB-3/RB-4 verifiers after RB-5 scope closure.",
+          "path": "docs/current/STATE.json",
+          "reason": "Current revision 57 claim boundary and active RB-7 support-disposition route.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/blocker-register.json",
+          "reason": "RB-6 closed disposition and active RB-7 status.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+          "reason": "Accepted RB-6 closure and static-versus-runtime 16 KiB split.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-decision-contract.json",
+          "reason": "Owner decision and local 16 KiB guard.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json",
+          "reason": "Temporal monotonicity for historical RB-3/RB-4/RB-5 verifiers after RB-6 scope closure.",
+          "scope": "full"
+        },
+        {
+          "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+          "reason": "Allowed exact-context and owner-scope-exclusion dispositions.",
           "scope": "full"
         }
       ],
       "task_id": "E3-RELEASE-BLOCKERS",
-      "title": "Resolve real 16 KiB runtime support disposition",
+      "title": "Resolve non-Termux Android runtime support disposition",
       "work_class": "T"
     }
   ]

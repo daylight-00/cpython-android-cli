@@ -1,0 +1,53 @@
+{
+  "contract_kind": "epoch3-rb6-real-16k-runtime-support-scope-decision",
+  "disposition": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "artifact_bytes_changed": false,
+    "required_language": "unsupported-not-qualified-owner-scope-excluded",
+    "static_16k_compatibility_retained": true
+  },
+  "exact_family_binding": {
+    "canonical_family_lock": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_file_count": 128,
+    "release_fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "goal": "Close RB-6 without a real 16 KiB runtime support claim when no currently available owner target reports a 16,384-byte runtime page size and additional device acquisition is declined.",
+  "non_claims": [
+    "real 16 KiB runtime qualification",
+    "real 16 KiB runtime support",
+    "non-Termux Android context support",
+    "minimum supported Android API",
+    "product selectability",
+    "publication"
+  ],
+  "owner_observation": {
+    "additional_device_testing_declined": true,
+    "available_real_device_apis": [
+      29,
+      36
+    ],
+    "available_real_device_architecture": "aarch64",
+    "decision_date": "2026-07-24",
+    "known_external_real_16k_target_available": false,
+    "local_owner_device_page_size_must_be_checked_by_runner": true,
+    "x86_reason": "x86 host or emulator evidence does not qualify the frozen AArch64 Android artifact",
+    "x86_substitution_accepted": false
+  },
+  "runner_guard": {
+    "if_page_size_16384": "fail-closed-and-require-separate-exact-runtime-qualification",
+    "if_page_size_not_16384": "allow-owner-scope-exclusion-transition",
+    "if_page_size_unknown": "fail-closed",
+    "page_size_sources": [
+      "getconf PAGESIZE",
+      "getconf PAGE_SIZE",
+      "python os.sysconf(SC_PAGE_SIZE)"
+    ]
+  },
+  "schema_version": 1,
+  "status": "owner-decision-ready"
+}

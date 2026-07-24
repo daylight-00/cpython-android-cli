@@ -1,0 +1,91 @@
+{
+  "accepted_scope_authority": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json",
+    "sha256": "0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414"
+  },
+  "allowed_progression": {
+    "active_work_package": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "publication": false,
+    "rb6_closed": true,
+    "selectable": false,
+    "state_revision": 57,
+    "task_transition": "rb7-non-termux-runtime-support-disposition"
+  },
+  "amendment_kind": "epoch3-rb6-real-16k-runtime-support-scope-temporal-verifier-amendment",
+  "invariants": {
+    "accepted_artifact_bytes_changed": false,
+    "accepted_authority_bytes_changed": false,
+    "canonical_family_identity_changed": false,
+    "later_state_progression_allowed": true,
+    "owner_evidence_changed": false,
+    "runtime_16k_support_claim_added": false,
+    "static_16k_evidence_changed": false
+  },
+  "modified_verifiers": [
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py",
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py"
+  ],
+  "next_contract": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+    "sha256": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317"
+  },
+  "non_claims": [
+    "real 16 KiB runtime qualified",
+    "real 16 KiB runtime supported",
+    "non-Termux runtime qualified",
+    "minimum supported Android API declared",
+    "selectability",
+    "publication"
+  ],
+  "predecessor_amendment": {
+    "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json",
+    "sha256": "22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89"
+  },
+  "replacements": {
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_install_only_m_contract.py": {
+      "original_sha256": "7aba5af0ae756e42d71adb210c6bccbc9ab02337541c80da19305a7b90a29fde",
+      "reason": "allow the historical install-only verifier to recognize accepted RB-6 scope exclusion and RB-7 routing",
+      "replacement_sha256": "e747e07373bfbe71d9c2b9fed899d2b6b88db9425745ea136bd37c5f6572608a"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_predecessor_supersession_m.py": {
+      "original_sha256": "0fa849c0092348249fd32fbaf760f7a2a6a8855fdaac1a1d97ffef7d02d042a9",
+      "reason": "allow the frozen supersession verifier to recognize accepted RB-6 scope exclusion while preserving family identities",
+      "replacement_sha256": "ecb08b50270bbe5845cbd2c4a86e6d377793ff1cd71a612b96e1a46b61ead4f3"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_acceptance.py": {
+      "original_sha256": "b560954ea8359e598f703185f436b03850e7aa376504ec2071ca5a5450b97ad7",
+      "reason": "extend the stripped acceptance identity overlay through accepted RB-6 scope exclusion and RB-7 routing",
+      "replacement_sha256": "e874dffbd484a1d8ee6c2dd7bfed0f5d93a96a020fa5cabed27ecddcc1900d9f"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_stripped_m_contract.py": {
+      "original_sha256": "f073fa90215094d83369bd38004db220c641316eb7225936961806b50f3e8bb8",
+      "reason": "allow the historical stripped verifier to recognize accepted RB-6 scope exclusion and RB-7 routing",
+      "replacement_sha256": "9edc72d09f100110576ba149afebc2a4ac7c350f57f290b842c578d9ec44c661"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb3_successor_technical_family_m_acceptance.py": {
+      "original_sha256": "b5d25da8723936eb4e606227904a2540d2cb2220c5393bb972883101e0862083",
+      "reason": "extend the technical-family acceptance identity overlay through accepted RB-6 scope exclusion and RB-7 routing",
+      "replacement_sha256": "d5e44aeb36bdfe6154785cfb4e5b6ab7cf17b4a3f864a571e296fcc769a1d2f1"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb4_release_operations.py": {
+      "original_sha256": "2bbf5e9b9211b874d72cf37ada80afce64ddfa39e2b07a82bc7f6d74fdcec91f",
+      "reason": "allow closed RB-4 verification after accepted RB-6 scope exclusion and RB-7 routing",
+      "replacement_sha256": "beb7ee9eae28293c607c1a5b46bd89cd5d089714dca05b1210b7a9d62d54455a"
+    },
+    "experiments/epoch3-upstream-thin-release-blockers/verify_rb5_api24_support_scope.py": {
+      "original_sha256": "f6175a956f372f4c2e86aecf8eafd9a75cc6a5733246148bcaaf8463f7ea12d1",
+      "reason": "allow the frozen RB-5 scope verifier to recognize closed RB-6 and RB-7 routing",
+      "replacement_sha256": "122810a609f8b57e5573c0acd06416f78de856fd73a5b1045ef32b8d700da9c5"
+    }
+  },
+  "schema_version": 1,
+  "scope": "verifier-only temporal monotonicity; accepted artifact, canonical family, static 16 KiB evidence, unsupported runtime disposition, and claim boundaries unchanged",
+  "status": "frozen-verifier-only-rb7-routing-enabled"
+}

@@ -30,14 +30,13 @@ Epoch 3 selection     true
 ### Active blockers
 
 - RB-1-component-and-license-closure
-- RB-6-real-16k-runtime-qualification
 - RB-7-non-termux-android-runtime-qualification
 
 ### Unresolved risks
 
 - minimum-supported-Android-API-not-yet-declared
 - API24-runtime-explicitly-unsupported-unqualified-owner-scope-excluded
-- runtime-16KiB-device-support-unqualified
+- runtime-16KiB-explicitly-unsupported-unqualified-owner-scope-excluded
 - non-Termux-Android-context-unqualified
 - emulator-unqualified-and-not-required-for-current-release-blocker-gate
 - other-Android-ABIs-explicitly-out-of-scope
@@ -115,6 +114,8 @@ Epoch 3 selection     true
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-runtime-temporal-verifier-amendment.json): verifier-only temporal monotonicity for prepared exact API 24 owner qualification (`bc8aa9da7c81d4d2a48b11759a9aa058118f6db8be9a5f2501ebc220d134d8c0`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json): explicit build-floor versus runtime-support split, API 24 unsupported scope exclusion, and RB-5 closure (`0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723`)
 - [`experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-temporal-verifier-amendment.json): verifier-only monotonic routing from accepted API 24 scope exclusion into RB-6 (`22f54b767cd606453c952ddf8e58fb5ac46446e44f98aa1e02137c6b34fe9c89`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json`](experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-authority.json): closed real 16 KiB runtime support-scope disposition preserving static compatibility without a runtime support claim (`0a38c44e2efcdfa9bda402c4b2aa5db5a51116f7310feb82cca126c8998c8414`)
+- [`experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json`](experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-temporal-verifier-amendment.json): verifier-only temporal monotonicity routing accepted RB-6 scope disposition into RB-7 (`606bb992ede5470a53c95dedf7a3b23f34df2033879d54e784c23de7f51ceb85`)
 
 ### Agent entry
 

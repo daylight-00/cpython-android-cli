@@ -1,0 +1,56 @@
+{
+  "allowed_dispositions": {
+    "owner_scope_exclusion": {
+      "allowed": true,
+      "effect": "close RB-7 without a Termux-independence claim",
+      "non_termux_runtime_claim_must_remain_false": true,
+      "required_language": "unsupported-not-qualified-owner-scope-excluded"
+    },
+    "qualification": {
+      "artifact_bytes_must_match_canonical": true,
+      "require_exact_android_context": true,
+      "required_architecture": "aarch64",
+      "required_evidence": [
+        "process and package identity",
+        "filesystem roots",
+        "environment",
+        "dynamic provider resolution",
+        "absence of Termux prefix dependencies",
+        "startup relocation native imports subprocess pip venv and data loading"
+      ],
+      "termux_package_prefix_forbidden": true
+    }
+  },
+  "basis": {
+    "canonical_family_lock": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "platform_portability_authority": {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    "rb5_support_scope_authority": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+      "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+    }
+  },
+  "claim_boundary": {
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_supported": false,
+    "publication": false,
+    "rb7_closed": false,
+    "selectable": false
+  },
+  "contract_kind": "epoch3-rb7-non-termux-android-runtime-support-disposition",
+  "forbidden": [
+    "infer-non-termux-support-from-termux-runtime",
+    "infer-aarch64-runtime-from-x86",
+    "change-frozen-artifact-bytes",
+    "claim-selectability-or-publication"
+  ],
+  "goal": "Resolve whether the exact canonical AArch64 Android CLI family is supported in a non-Termux Android context without changing frozen artifact bytes.",
+  "schema_version": 1,
+  "status": "authorized-not-started"
+}

@@ -1,0 +1,79 @@
+{
+  "authority_kind": "epoch3-rb6-real-16k-runtime-support-scope-disposition",
+  "canonical_family": {
+    "file_count": 128,
+    "fingerprint_sha256": "c8d76b6dcb934c12098efb2de985c5ab4799e4b5db5ae1c2b7c0f5a68438a82a",
+    "install_only_sha256": "c904a4d1da527e512c715a3227c62da99728ec62747487795292320cee71ab56",
+    "release_id": "cpython-3.14.6+e3-r3-aarch64-linux-android",
+    "release_sha256": "2c31578f95a11291eee1693db80048568a7b533e77877f36a8b1570241ce1e1c"
+  },
+  "claim_boundary": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "artifact_bytes_changed": false,
+    "non_termux_android_context_qualified": false,
+    "non_termux_android_context_supported": false,
+    "publication": false,
+    "rb5_closed": true,
+    "rb6_closed": true,
+    "rb7_closed": false,
+    "selectable": false
+  },
+  "file_identities": {
+    "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-disposition-contract.json": "42642fe5f21c8c82e8a4128316e318927c96246ec0251c00bfa3cb34eb305a0b",
+    "experiments/epoch3-upstream-thin-release-blockers/rb6-real-16k-runtime-support-scope-decision-contract.json": "b64b66cec9f8bed407f10644e51ea59dde17c1bdc2d4c3b51b005f1b199d40bf",
+    "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json": "0a89f6076bf408f56cf8627b26420ac7791bcfd1ce86cb41633906b9dcfec317"
+  },
+  "next_gate": {
+    "contract": "experiments/epoch3-upstream-thin-release-blockers/rb7-non-termux-runtime-support-disposition-contract.json",
+    "id": "RB-7/NON-TERMUX-ANDROID-RUNTIME-SUPPORT-DISPOSITION",
+    "required_output": "non-termux-runtime-authority-or-explicit-owner-scope-exclusion"
+  },
+  "non_claims": [
+    "real 16 KiB runtime qualification",
+    "real 16 KiB runtime support",
+    "non-Termux Android runtime support",
+    "minimum supported Android API",
+    "selectability",
+    "publication"
+  ],
+  "owner_decision": {
+    "additional_device_testing_required": false,
+    "available_architecture": "aarch64",
+    "available_real_device_apis": [
+      29,
+      36
+    ],
+    "decision_date": "2026-07-24",
+    "disposition": "exclude real 16 KiB runtime from supported scope unless the owner runner detects a local 16,384-byte page target",
+    "known_external_real_16k_target_available": false,
+    "local_page_size_16384_forbids_scope_exclusion": true,
+    "local_page_size_guard_required": true,
+    "x86_substitution_accepted": false
+  },
+  "schema_version": 1,
+  "source_authorities": {
+    "canonical_family": {
+      "path": "config/products/cpython-3.14.6-aarch64-linux-android-upstream-thin-canonical-family-r1.lock.json",
+      "sha256": "861d4536b13b58f1181c5249f98e498270f2860d8f51622e0176ed91bf075c0b"
+    },
+    "platform_portability": {
+      "path": "experiments/epoch2-upstream-thin-platform-portability/platform-portability-authority.json",
+      "sha256": "b21eddfee574343772d0875a7b6f26aa7b5dd494ccf0a5f1be9b8c09201276f4"
+    },
+    "rb5_support_scope": {
+      "path": "experiments/epoch3-upstream-thin-release-blockers/rb5-api24-support-scope-authority.json",
+      "sha256": "0c24db1a651924a64d7e4b1f907ed0deaca56413609cf9794449d30040ea2723"
+    }
+  },
+  "status": "closed-owner-scope-excluded-16k-unsupported-not-qualified",
+  "support_policy": {
+    "actual_16k_runtime_qualified": false,
+    "actual_16k_runtime_scope_excluded": true,
+    "actual_16k_runtime_supported": false,
+    "static_16k_compatibility_is_runtime_support": false,
+    "static_16k_compatibility_retained": true,
+    "support_language": "unsupported-not-qualified-owner-scope-excluded"
+  }
+}
